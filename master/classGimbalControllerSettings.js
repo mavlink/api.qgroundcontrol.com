@@ -1,0 +1,28 @@
+var classGimbalControllerSettings =
+[
+    [ "GimbalControllerSettings", "classGimbalControllerSettings.html#aa9f480fa75b121d435b4c34d5a519e21", null ],
+    [ "CameraHFov", "classGimbalControllerSettings.html#afd2e47b08c2f85f87216e504b0d89467", null ],
+    [ "CameraSlideSpeed", "classGimbalControllerSettings.html#afe2fa8d41b3abca1d9693db54a583890", null ],
+    [ "CameraVFov", "classGimbalControllerSettings.html#ae460cae6bd3c0fb8f97602e1d381ece1", null ],
+    [ "ControlType", "classGimbalControllerSettings.html#a670a519bf0f2bbfd04c037eadd4e2ac9", null ],
+    [ "EnableOnScreenControl", "classGimbalControllerSettings.html#a06156ea40571b9a1b5f29bc65b5d9522", null ],
+    [ "joystickButtonsSpeed", "classGimbalControllerSettings.html#a05b752f25493b8dd5576dfbcef164e82", null ],
+    [ "showAzimuthIndicatorOnMap", "classGimbalControllerSettings.html#a3e0d9dc3cdf2128df34cae31370c14e6", null ],
+    [ "toolbarIndicatorShowAcquireReleaseControl", "classGimbalControllerSettings.html#a43d835f5ed2cc05e3065b2b77852ece0", null ],
+    [ "toolbarIndicatorShowAzimuth", "classGimbalControllerSettings.html#aaa68d81b4752b2fb2a6662498320673f", null ],
+    [ "zoomMaxSpeed", "classGimbalControllerSettings.html#af0a3c259a4f7beacbdbbabd8a9780ef8", null ],
+    [ "zoomMinSpeed", "classGimbalControllerSettings.html#a2e74b46afec474909eb86142cb41862e", null ],
+    [ "CameraHFovName", "classGimbalControllerSettings.html#abaf739c1be16aec3ef4ecd4e77d6ca51", null ],
+    [ "CameraSlideSpeedName", "classGimbalControllerSettings.html#a14818542c37afe5abd5fc9fed05d565e", null ],
+    [ "CameraVFovName", "classGimbalControllerSettings.html#a33813e19f4bcb41a1db24553c6d74ee4", null ],
+    [ "ControlTypeName", "classGimbalControllerSettings.html#a0293e1f3205cf012ddf632bbdba11cd9", null ],
+    [ "EnableOnScreenControlName", "classGimbalControllerSettings.html#a87d8337bff953f6b404797c71e88ffae", null ],
+    [ "joystickButtonsSpeedName", "classGimbalControllerSettings.html#a44552befaba4226b3e8c8b945a3c9c8b", null ],
+    [ "name", "classGimbalControllerSettings.html#ae19b9a9038c915f922c396d6ffb3ce00", null ],
+    [ "settingsGroup", "classGimbalControllerSettings.html#ac33495bb7b889d146b7d2a2989ad496b", null ],
+    [ "showAzimuthIndicatorOnMapName", "classGimbalControllerSettings.html#aed359aeeaaee20b64f9412c6c5c7c894", null ],
+    [ "toolbarIndicatorShowAcquireReleaseControlName", "classGimbalControllerSettings.html#a3477d3f98bf589459a43f333bbd908f2", null ],
+    [ "toolbarIndicatorShowAzimuthName", "classGimbalControllerSettings.html#a7d337b0b54f144f4900c48cba569ce08", null ],
+    [ "zoomMaxSpeedName", "classGimbalControllerSettings.html#adffba436610e89975d2f50710f2518b3", null ],
+    [ "zoomMinSpeedName", "classGimbalControllerSettings.html#af26c5a336c1d376bfee0ad77e2e90027", null ]
+];

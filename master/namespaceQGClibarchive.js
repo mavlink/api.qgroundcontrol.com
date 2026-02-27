@@ -1,0 +1,38 @@
+var namespaceQGClibarchive =
+[
+    [ "ArchiveReader", "classQGClibarchive_1_1ArchiveReader.html", "classQGClibarchive_1_1ArchiveReader" ],
+    [ "ArchiveEntry", "namespaceQGClibarchive.html#a36f407e2efb2b1867aaa9ed1866d1527", null ],
+    [ "ArchiveStats", "namespaceQGClibarchive.html#af48370d3d3d29cb3acf4cf6070dbee64", null ],
+    [ "EntryFilter", "namespaceQGClibarchive.html#a048d7afe208de33cd458bd890515261d", null ],
+    [ "ProgressCallback", "namespaceQGClibarchive.html#a232010105d238475d7540b81106ecce4", null ],
+    [ "ReaderMode", "namespaceQGClibarchive.html#a26151fa42367cd4c640dd3435f65e120", [
+      [ "AllFormats", "namespaceQGClibarchive.html#a26151fa42367cd4c640dd3435f65e120a2798fb45b8bbcd8948de1413ec449b48", null ],
+      [ "RawFormat", "namespaceQGClibarchive.html#a26151fa42367cd4c640dd3435f65e120ac7359bd00dc54ffd8cc1cc9435321660", null ]
+    ] ],
+    [ "decompressDataFromDevice", "namespaceQGClibarchive.html#a6299729e369a7305306a32891e4a1775", null ],
+    [ "decompressDataFromMemory", "namespaceQGClibarchive.html#a89d0aa516147a0e44a3b61d2ceaeaa05", null ],
+    [ "decompressFromDevice", "namespaceQGClibarchive.html#ac112e362cf8cbc13c52f42398ce07d7a", null ],
+    [ "decompressSingleFile", "namespaceQGClibarchive.html#a2d79e3a7c2cee8ec04b14d607b6e73c1", null ],
+    [ "deviceCloseCallback", "namespaceQGClibarchive.html#ae9b91e78f2397f942e794cb132006f2d", null ],
+    [ "deviceReadCallback", "namespaceQGClibarchive.html#a3fc66c08e89b31289dcb88e480e76222", null ],
+    [ "deviceSeekCallback", "namespaceQGClibarchive.html#a720d8bfc7324bcdd5ccee4fc66279911", null ],
+    [ "deviceSkipCallback", "namespaceQGClibarchive.html#a18c21672f325b49a5e9579d8c9535b50", null ],
+    [ "extractAnyArchive", "namespaceQGClibarchive.html#ada2b17c38291bf0350cc0b58797ca3fe", null ],
+    [ "extractArchiveAtomic", "namespaceQGClibarchive.html#a7fde831e5ea6397f8ac60e16b291ac2c", null ],
+    [ "extractByPattern", "namespaceQGClibarchive.html#aff8f682a84e29833743617b2969a87b9", null ],
+    [ "extractFileDataFromDevice", "namespaceQGClibarchive.html#afcba1004c3d839730cc37c6ea9449bbe", null ],
+    [ "extractFileToMemory", "namespaceQGClibarchive.html#a82a527d16ddbea721f7ce6f8581e18d5", null ],
+    [ "extractFromDevice", "namespaceQGClibarchive.html#a30b75a4d7a56dc7bc606db07f43bdd0d", null ],
+    [ "extractMultipleFiles", "namespaceQGClibarchive.html#a11eefc2b284b567518bbef5859f1c8b2", null ],
+    [ "extractSingleFile", "namespaceQGClibarchive.html#a4beb0c74c9f715f0ae34e240586c64ac", null ],
+    [ "extractWithFilter", "namespaceQGClibarchive.html#a14e68c20ff0a9fe17efb4429768afdc4", null ],
+    [ "fileExistsInArchive", "namespaceQGClibarchive.html#ab23777cf2fa42c692103b1536a7ce4ee", null ],
+    [ "getArchiveStats", "namespaceQGClibarchive.html#a108faf96d4d227bfc528ddf81ce781a8", null ],
+    [ "lastDetectedFilterName", "namespaceQGClibarchive.html#a25beb9f35249828dea334fc0c9ca4df8", null ],
+    [ "lastDetectedFormatName", "namespaceQGClibarchive.html#a148d418f837ee4fe29811d472263b9b0", null ],
+    [ "listArchiveEntries", "namespaceQGClibarchive.html#a3f235172856de8ccbc823ad6daf4c353", null ],
+    [ "listArchiveEntriesDetailed", "namespaceQGClibarchive.html#a6c9fa0e1546070fd3cc4d8cb1125f595", null ],
+    [ "openArchiveForReading", "namespaceQGClibarchive.html#a60a47226e0add3ba3361e12b5eb8d66d", null ],
+    [ "toArchiveEntry", "namespaceQGClibarchive.html#a974dbb5721cb1a2ef9628b38a08d97b6", null ],
+    [ "validateArchive", "namespaceQGClibarchive.html#a9837bb9e3aa91c61224d08a1ac206b90", null ]
+];

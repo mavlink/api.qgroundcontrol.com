@@ -1,0 +1,28 @@
+var namespaceJsonHelper =
+[
+    [ "KeyValidateInfo", "structJsonHelper_1_1KeyValidateInfo.html", "structJsonHelper_1_1KeyValidateInfo" ],
+    [ "_addDefaultLocKeys", "namespaceJsonHelper.html#ae80a77593f3079563d59f0cdc4d09945", null ],
+    [ "_translateArray", "namespaceJsonHelper.html#abcf15ee720e7cc0f1b88bf1f37315db5", null ],
+    [ "_translateObject", "namespaceJsonHelper.html#a4fe7ac6763f5982bf004ecec849f8853", null ],
+    [ "_translateRoot", "namespaceJsonHelper.html#a4ad1588bb58d47cf04794084fba041d7", null ],
+    [ "loadGeoCoordinate", "namespaceJsonHelper.html#af69232f15cc675c9d88da5f7ae0fdeca", null ],
+    [ "loadGeoCoordinateArray", "namespaceJsonHelper.html#acda14185377c50a723dc06fb9cf63387", null ],
+    [ "loadGeoCoordinateArray", "namespaceJsonHelper.html#a136d9d57acc46ff2442fede143ae7eb3", null ],
+    [ "loadPolygon", "namespaceJsonHelper.html#a77609893411bb95759d654059838cb36", null ],
+    [ "openInternalQGCJsonFile", "namespaceJsonHelper.html#a222d0d92b99e64eaba29bdb160bb00ec", null ],
+    [ "saveGeoCoordinate", "namespaceJsonHelper.html#ad9eb7d9b1746f79f4ac41c9898659559", null ],
+    [ "saveGeoCoordinateArray", "namespaceJsonHelper.html#ae4a757ee586cbbf6a90738901e5e6ef2", null ],
+    [ "saveGeoCoordinateArray", "namespaceJsonHelper.html#a134fa14e99a5fe9e629a22c5c4a2a392", null ],
+    [ "savePolygon", "namespaceJsonHelper.html#abf53a1556705fecd68b61cf23bd4fc9e", null ],
+    [ "saveQGCJsonFileHeader", "namespaceJsonHelper.html#aad6fc141c8cbd7b33e60fc634788dc64", null ],
+    [ "translator", "namespaceJsonHelper.html#a6ecfc2eadfd8486c78d6d7d6039cba46", null ],
+    [ "validateExternalQGCJsonFile", "namespaceJsonHelper.html#a1054328884f654ddea1764e134fac277", null ],
+    [ "validateInternalQGCJsonFile", "namespaceJsonHelper.html#ac483818e46eec716d6d2b486598348ec", null ],
+    [ "validateKeys", "namespaceJsonHelper.html#a96b54c245d570a0b2e62b2a98f074c79", null ],
+    [ "_arrayIDKeysKey", "namespaceJsonHelper.html#ace976bea928810d2b4af21c6cd12387e", null ],
+    [ "_jsonGroundStationKey", "namespaceJsonHelper.html#a3993c1edbe06e59fdd64bd475ce674e6", null ],
+    [ "_jsonGroundStationValue", "namespaceJsonHelper.html#a4b3f1ea52eeaa1d145e1db2d7ccae539", null ],
+    [ "_translateKeysKey", "namespaceJsonHelper.html#a8912d3e886b2187c9590a294ca666729", null ],
+    [ "jsonFileTypeKey", "namespaceJsonHelper.html#abd59b2c1102a4a45a29225fe8fb0f71f", null ],
+    [ "jsonVersionKey", "namespaceJsonHelper.html#a6e8f432b8d91f38373d7e8ae4a76a3e6", null ]
+];

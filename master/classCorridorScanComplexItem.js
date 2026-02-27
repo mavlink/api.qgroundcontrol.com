@@ -1,0 +1,26 @@
+var classCorridorScanComplexItem =
+[
+    [ "CorridorScanComplexItem", "classCorridorScanComplexItem.html#a6f98f3e3b302cf2bc195fad3df55a495", null ],
+    [ "abbreviation", "classCorridorScanComplexItem.html#ad238924cbe6ce191af455341bd1d1cbc", null ],
+    [ "additionalTimeDelay", "classCorridorScanComplexItem.html#a129d8bbcc82133e00adc1ffc9bc2227f", null ],
+    [ "commandDescription", "classCorridorScanComplexItem.html#ae9f0459e0a722c6003979cf24b18fbec", null ],
+    [ "commandName", "classCorridorScanComplexItem.html#ae7b2bd7d6572fe70263aab9a81af5fab", null ],
+    [ "CONSTANT", "classCorridorScanComplexItem.html#ae6228d4e74b71441ee26fc19ed7c8a3b", null ],
+    [ "corridorPolyline", "classCorridorScanComplexItem.html#a417d226ae862b5519642b0e57a902266", null ],
+    [ "corridorWidth", "classCorridorScanComplexItem.html#a1bf111abb91a577da028d27fb56c1a1f", null ],
+    [ "load", "classCorridorScanComplexItem.html#a0a8fa73bec7bcf9a585d142df184dd2a", null ],
+    [ "loadPreset", "classCorridorScanComplexItem.html#a90024a8fa118244b802dacd4ef8db0cc", null ],
+    [ "mapVisualQML", "classCorridorScanComplexItem.html#ada667198fff1fd8c365709554712e2d8", null ],
+    [ "patternName", "classCorridorScanComplexItem.html#ae271a46916335db716fe249573bef801", null ],
+    [ "presetsSettingsGroup", "classCorridorScanComplexItem.html#af2bcf81fb771d542dae27b17ec301805", null ],
+    [ "readyForSaveState", "classCorridorScanComplexItem.html#af1070d0f1d07834b970fbbd42e62c0bd", null ],
+    [ "rotateEntryPoint", "classCorridorScanComplexItem.html#aac3140a49cbd5212cc391757d3910215", null ],
+    [ "save", "classCorridorScanComplexItem.html#a3f1ae9d13ef0d53cb2f7cae055375fc9", null ],
+    [ "savePreset", "classCorridorScanComplexItem.html#a171aaf4d01502ec135748c794972e00e", null ],
+    [ "specifiesCoordinate", "classCorridorScanComplexItem.html#a7d45ee69076313f01917a21b3312d95a", null ],
+    [ "timeBetweenShots", "classCorridorScanComplexItem.html#a1b8a579e28de3221b219b09ab778c6dd", null ],
+    [ "corridorWidthName", "classCorridorScanComplexItem.html#a41cea20d6b0939a969d8fca1c3d60b0c", null ],
+    [ "jsonComplexItemTypeValue", "classCorridorScanComplexItem.html#ae8435312bfac18506cffa7b87d11c519", null ],
+    [ "name", "classCorridorScanComplexItem.html#a52108358d3ad85b38d578194a8c28778", null ],
+    [ "settingsGroup", "classCorridorScanComplexItem.html#af1eb71cec1f0920ee22ca8ebccc44955", null ]
+];

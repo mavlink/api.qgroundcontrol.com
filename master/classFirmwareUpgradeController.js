@@ -1,0 +1,58 @@
+var classFirmwareUpgradeController =
+[
+    [ "FirmwareIdentifier", "classFirmwareUpgradeController_1_1FirmwareIdentifier.html", "classFirmwareUpgradeController_1_1FirmwareIdentifier" ],
+    [ "AutoPilotStackType_t", "classFirmwareUpgradeController.html#a8a4105dc791b708e21192e54c7c34cba", [
+      [ "AutoPilotStackPX4", "classFirmwareUpgradeController.html#a8a4105dc791b708e21192e54c7c34cbaa9d90920392aabd6163a02fa18ce4b7d8", null ],
+      [ "AutoPilotStackAPM", "classFirmwareUpgradeController.html#a8a4105dc791b708e21192e54c7c34cbaa27d3dcedeeac52d23c3502b18f45a498", null ],
+      [ "SiKRadio", "classFirmwareUpgradeController.html#a8a4105dc791b708e21192e54c7c34cbaa1dcc2220ca2aaa113442af4b4214b814", null ],
+      [ "SingleFirmwareMode", "classFirmwareUpgradeController.html#a8a4105dc791b708e21192e54c7c34cbaa1da0ffdfa8913f573213406506fceb40", null ]
+    ] ],
+    [ "FirmwareBuildType_t", "classFirmwareUpgradeController.html#a7a32a4c6394409049bad1f996e95d756", [
+      [ "StableFirmware", "classFirmwareUpgradeController.html#a7a32a4c6394409049bad1f996e95d756a4378ea35557c56ef871c4d9e1d83668c", null ],
+      [ "BetaFirmware", "classFirmwareUpgradeController.html#a7a32a4c6394409049bad1f996e95d756a396456b103a60eaaccb6a0c3519aa422", null ],
+      [ "DeveloperFirmware", "classFirmwareUpgradeController.html#a7a32a4c6394409049bad1f996e95d756a02eebfb7ae3441f8285a9b008f065afe", null ],
+      [ "CustomFirmware", "classFirmwareUpgradeController.html#a7a32a4c6394409049bad1f996e95d756ae3fbd3e29f38faa864591777bd56c32b", null ]
+    ] ],
+    [ "FirmwareVehicleType_t", "classFirmwareUpgradeController.html#ab0f52479539462d351d2512acc16fdea", [
+      [ "CopterFirmware", "classFirmwareUpgradeController.html#ab0f52479539462d351d2512acc16fdeaa052ed525349cd03e791e6d8ad3e5fb93", null ],
+      [ "HeliFirmware", "classFirmwareUpgradeController.html#ab0f52479539462d351d2512acc16fdeaa2cff01811a425638f54c71715094f445", null ],
+      [ "PlaneFirmware", "classFirmwareUpgradeController.html#ab0f52479539462d351d2512acc16fdeaa9198938f2100c06b23e6967b8f90a0e3", null ],
+      [ "RoverFirmware", "classFirmwareUpgradeController.html#ab0f52479539462d351d2512acc16fdeaad0ac2468b851404a41deb0cad828cf4c", null ],
+      [ "SubFirmware", "classFirmwareUpgradeController.html#ab0f52479539462d351d2512acc16fdeaa166c3c02229981595a67ba0640767741", null ],
+      [ "DefaultVehicleFirmware", "classFirmwareUpgradeController.html#ab0f52479539462d351d2512acc16fdeaa2dcbea3afde0a92c3a20280377016146", null ]
+    ] ],
+    [ "FirmwareUpgradeController", "classFirmwareUpgradeController.html#a6b28c9e8b1b51dab2c61895b37ded8dd", null ],
+    [ "~FirmwareUpgradeController", "classFirmwareUpgradeController.html#af5098ccf4542df072291a27b49832971", null ],
+    [ "apmFirmwareNamesChanged", "classFirmwareUpgradeController.html#a2a4cc5477a935aeedee553ff32c960b4", null ],
+    [ "availableBoardsName", "classFirmwareUpgradeController.html#ac9a0078cc7ddd2e1fb70d68c4d4e4391", null ],
+    [ "boardDescription", "classFirmwareUpgradeController.html#a4d5fc64f222c3358d93b486d33521f61", null ],
+    [ "boardFound", "classFirmwareUpgradeController.html#a8c89cc8c22ea6b6979f8f1c6dd806f30", null ],
+    [ "boardGone", "classFirmwareUpgradeController.html#a37cda9c268e1fa4fef26095cad3a6f33", null ],
+    [ "boardPort", "classFirmwareUpgradeController.html#a3f6de390396b74be7c394ae4862ae113", null ],
+    [ "cancel", "classFirmwareUpgradeController.html#a7130c70acdff8e0a256aea06493df8fe", null ],
+    [ "downloadingFirmwareListChanged", "classFirmwareUpgradeController.html#ae5c9911bc8bb4984dd1ee15e6492b7ae", null ],
+    [ "downloadingFirmwareListChanged", "classFirmwareUpgradeController.html#a17d72449dfbb6d126093eb6e254e2791", null ],
+    [ "error", "classFirmwareUpgradeController.html#a6699180de24ac9df8593ed2e7a4fe1cc", null ],
+    [ "firmwareTypeAsString", "classFirmwareUpgradeController.html#acf5e52fa2a6fcf9d4a31519e7d96bc26", null ],
+    [ "flash", "classFirmwareUpgradeController.html#a234486bd1356293202d8b476ab80409f", null ],
+    [ "flash", "classFirmwareUpgradeController.html#a38925bfd61b236378380050026e5e745", null ],
+    [ "flashCancelled", "classFirmwareUpgradeController.html#a26d84bfc94f0f79d07914be6a9cce70f", null ],
+    [ "flashComplete", "classFirmwareUpgradeController.html#a588cbc156098595a5172112e3f3849db", null ],
+    [ "flashFirmwareUrl", "classFirmwareUpgradeController.html#af6df24493f3dd1e9f0bf840adb968d03", null ],
+    [ "flashSingleFirmwareMode", "classFirmwareUpgradeController.html#aa6964a1cefd81f6fb93b90abb46a1d00", null ],
+    [ "noBoardFound", "classFirmwareUpgradeController.html#ab34dc2bc4765ebb3558720273ab3c6e7", null ],
+    [ "pixhawkBoard", "classFirmwareUpgradeController.html#a39495deb5a7a8203a819cdb64325c8b1", null ],
+    [ "progressBar", "classFirmwareUpgradeController.html#a51ab1729f87e40bf58ae53250c92899c", null ],
+    [ "px4BetaVersion", "classFirmwareUpgradeController.html#ade5e5a3b0357bcb8730d9d8f0ea454f1", null ],
+    [ "px4BetaVersionChanged", "classFirmwareUpgradeController.html#a4fc1b343ef329555ec4019ac21614a53", null ],
+    [ "px4StableVersion", "classFirmwareUpgradeController.html#abfda7c690e45627c27726b73d1fda17d", null ],
+    [ "px4StableVersionChanged", "classFirmwareUpgradeController.html#a6631bd66323be47ccbc16821cf3c1ad2", null ],
+    [ "selectedFirmwareBuildType", "classFirmwareUpgradeController.html#ab1a84e5ef13056e122659b77fc51d404", null ],
+    [ "selectedFirmwareBuildTypeChanged", "classFirmwareUpgradeController.html#acbe264c529fdd02903eea679c6d77eaa", null ],
+    [ "setProgressBar", "classFirmwareUpgradeController.html#afb542c8606b7171f1c7d3e2b9c3d92f5", null ],
+    [ "setSelectedFirmwareBuildType", "classFirmwareUpgradeController.html#ad743e5e4f66fb3f6ea694ed7ae9b8bd2", null ],
+    [ "setStatusLog", "classFirmwareUpgradeController.html#afc0679164ad6635b19c61c367c6b37f4", null ],
+    [ "showFirmwareSelectDlg", "classFirmwareUpgradeController.html#a8d05054501e872907893ec6cdec2a532", null ],
+    [ "statusLog", "classFirmwareUpgradeController.html#adf8fc73eaf69b65be9b50ccb3cd68d9c", null ],
+    [ "vehicleTypeFromFirmwareSelectionIndex", "classFirmwareUpgradeController.html#a3ef4922ce6e62d65c9b55552114e95a9", null ]
+];

@@ -1,0 +1,25 @@
+var classMockConfiguration =
+[
+    [ "cameraCanCaptureImageInVideoModeChanged", "classMockConfiguration.html#a96fe68bebcda31f1a0757e87a81a464e", null ],
+    [ "cameraCanCaptureVideoInImageModeChanged", "classMockConfiguration.html#a02c6cdc46219b85c0a12e58b97f8c9e9", null ],
+    [ "cameraCaptureImageChanged", "classMockConfiguration.html#a4bb7db6ed049fd99af3023aff9e8f247", null ],
+    [ "cameraCaptureVideoChanged", "classMockConfiguration.html#a9d5933f8a31ffa1e692b51434d9a5f31", null ],
+    [ "cameraHasBasicZoomChanged", "classMockConfiguration.html#a11dabc325943955582f7c3a3c760afc5", null ],
+    [ "cameraHasModesChanged", "classMockConfiguration.html#a4fe333f2986dcceaafd2e93b241f5843", null ],
+    [ "cameraHasTrackingPointChanged", "classMockConfiguration.html#a055874b1a9ed4e1eebe1c057fbb802d8", null ],
+    [ "cameraHasTrackingRectangleChanged", "classMockConfiguration.html#af01f11ddf669ff0721f50f80200b4265", null ],
+    [ "cameraHasVideoStreamChanged", "classMockConfiguration.html#aa6435fa3eddf399148341c8319238933", null ],
+    [ "enableCameraChanged", "classMockConfiguration.html#a3b120318c52e952cc1acfcb3c0cf2797", null ],
+    [ "enableGimbalChanged", "classMockConfiguration.html#aab3fbb2630bfcfb51070be1389df63a8", null ],
+    [ "firmwareChanged", "classMockConfiguration.html#a7a63f34ca7c311b1539f4a166966c473", null ],
+    [ "gimbalHasNeutralChanged", "classMockConfiguration.html#ac2c9177d36cf5a3eb34e33294366065d", null ],
+    [ "gimbalHasPitchAxisChanged", "classMockConfiguration.html#a01e08ecb8232fafb2c80ee2191c8f1e0", null ],
+    [ "gimbalHasRetractChanged", "classMockConfiguration.html#a5189d36e9e26f55c0397033ba11681dd", null ],
+    [ "gimbalHasRollAxisChanged", "classMockConfiguration.html#ac9f00968d9f0771dbd9a580cc6df5a13", null ],
+    [ "gimbalHasYawAxisChanged", "classMockConfiguration.html#af303c85acd76cc928d1e4a53c25828f2", null ],
+    [ "gimbalHasYawFollowChanged", "classMockConfiguration.html#ae98655ba806c7b8dee422c86688c29de", null ],
+    [ "gimbalHasYawLockChanged", "classMockConfiguration.html#aaac61b7fc77cd0a96a4094b9d7450590", null ],
+    [ "incrementVehicleIdChanged", "classMockConfiguration.html#adb6b17663d24f0b33b8ceb1ae64ffce4", null ],
+    [ "sendStatusChanged", "classMockConfiguration.html#a68c88a89e5493c1a4a9de4048669e1de", null ],
+    [ "vehicleChanged", "classMockConfiguration.html#a71598a7f4dad1335d731462e58ae02f1", null ]
+];

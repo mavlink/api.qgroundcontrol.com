@@ -1,0 +1,26 @@
+var structMissionController_1_1MissionFlightStatus__t =
+[
+    [ "ampMinutesAvailable", "structMissionController_1_1MissionFlightStatus__t.html#a74109befb0d56ad2dd4bbd61106284ca", null ],
+    [ "batteriesRequired", "structMissionController_1_1MissionFlightStatus__t.html#ae61d6477cc28c3cf533991ea07eca0f1", null ],
+    [ "batteryChangePoint", "structMissionController_1_1MissionFlightStatus__t.html#a557f8e5d86b5a8a9b92942c25df06ed0", null ],
+    [ "cruiseAmps", "structMissionController_1_1MissionFlightStatus__t.html#a563f96196a3310c84a74a318d6350f9b", null ],
+    [ "cruiseAmpsTotal", "structMissionController_1_1MissionFlightStatus__t.html#a96179bcd0536834d4e6ec88a06bcc423", null ],
+    [ "cruiseDistance", "structMissionController_1_1MissionFlightStatus__t.html#a64d07351ff6396be36e23af4ae66b6ec", null ],
+    [ "cruiseSpeed", "structMissionController_1_1MissionFlightStatus__t.html#a780626a10198bee6f5cf4cdd163ee6ba", null ],
+    [ "cruiseTime", "structMissionController_1_1MissionFlightStatus__t.html#a3d4a0792a4a81b74df2171fde340f216", null ],
+    [ "gimbalPitch", "structMissionController_1_1MissionFlightStatus__t.html#a1a4347cfc57be0d70cf944eafc584a94", null ],
+    [ "gimbalYaw", "structMissionController_1_1MissionFlightStatus__t.html#aa49c003d91537b8cf5753a889b74b52b", null ],
+    [ "hoverAmps", "structMissionController_1_1MissionFlightStatus__t.html#ae07166c1b6a04d436dc26072f8c86e32", null ],
+    [ "hoverAmpsTotal", "structMissionController_1_1MissionFlightStatus__t.html#a18af56eb73c0c311ea8e9bae4f77f6b4", null ],
+    [ "hoverDistance", "structMissionController_1_1MissionFlightStatus__t.html#a643b20e2b0998822b793d13d317313a1", null ],
+    [ "hoverSpeed", "structMissionController_1_1MissionFlightStatus__t.html#a7900977deb02626daf051e5ecf8c8b8c", null ],
+    [ "hoverTime", "structMissionController_1_1MissionFlightStatus__t.html#a6cbc3179cb248ade19280e600ee234fe", null ],
+    [ "mAhBattery", "structMissionController_1_1MissionFlightStatus__t.html#a367c4220e2e0029ddb867898ef066bd1", null ],
+    [ "maxTelemetryDistance", "structMissionController_1_1MissionFlightStatus__t.html#ad2692fd4ef81318c6cd68bb0b51b6b26", null ],
+    [ "plannedDistance", "structMissionController_1_1MissionFlightStatus__t.html#a49bd2c6f22e08031382e909005b8b52b", null ],
+    [ "totalDistance", "structMissionController_1_1MissionFlightStatus__t.html#acba15d07f2f1f592614b8f17a5191f7c", null ],
+    [ "totalTime", "structMissionController_1_1MissionFlightStatus__t.html#aadfddc9d455c4f37fe289ba7503c602a", null ],
+    [ "vehicleSpeed", "structMissionController_1_1MissionFlightStatus__t.html#a0dbe1ea42474bcca52d321dbeb52ac6b", null ],
+    [ "vehicleYaw", "structMissionController_1_1MissionFlightStatus__t.html#a7ac9196c148f5818e439f4d8bc204564", null ],
+    [ "vtolMode", "structMissionController_1_1MissionFlightStatus__t.html#a26bc6aec03bfa103c2a1ea3200a4284d", null ]
+];

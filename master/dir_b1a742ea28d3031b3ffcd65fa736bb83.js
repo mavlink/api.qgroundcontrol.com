@@ -1,0 +1,26 @@
+var dir_b1a742ea28d3031b3ffcd65fa736bb83 =
+[
+    [ "ADSBServerSettings.qml", "ADSBServerSettings_8qml.html", null ],
+    [ "BluetoothSettings.qml", "BluetoothSettings_8qml.html", null ],
+    [ "DebugWindow.qml", "DebugWindow_8qml.html", null ],
+    [ "FlyViewSettings.qml", "FlyViewSettings_8qml.html", null ],
+    [ "GeneralSettings.qml", "GeneralSettings_8qml.html", null ],
+    [ "HelpSettings.qml", "HelpSettings_8qml.html", null ],
+    [ "LinkSettings.qml", "LinkSettings_8qml.html", null ],
+    [ "LogReplaySettings.qml", "LogReplaySettings_8qml.html", null ],
+    [ "MapSettings.qml", "MapSettings_8qml.html", null ],
+    [ "MockLink.qml", "MockLink_8qml.html", null ],
+    [ "MockLinkSettings.qml", "MockLinkSettings_8qml.html", null ],
+    [ "NTRIPSettings.qml", "NTRIPSettings_8qml.html", null ],
+    [ "PlanViewSettings.qml", "PlanViewSettings_8qml.html", null ],
+    [ "PX4LogTransferSettings.qml", "PX4LogTransferSettings_8qml.html", null ],
+    [ "QmlTest.qml", "QmlTest_8qml.html", null ],
+    [ "RemoteIDSettings.qml", "RemoteIDSettings_8qml.html", null ],
+    [ "SerialSettings.qml", "SerialSettings_8qml.html", null ],
+    [ "SettingsPage.qml", "SettingsPage_8qml.html", null ],
+    [ "SettingsPagesModel.qml", "SettingsPagesModel_8qml.html", null ],
+    [ "TcpSettings.qml", "TcpSettings_8qml.html", null ],
+    [ "TelemetrySettings.qml", "TelemetrySettings_8qml.html", null ],
+    [ "UdpSettings.qml", "UdpSettings_8qml.html", null ],
+    [ "VideoSettings.qml", "VideoSettings_8qml.html", null ]
+];

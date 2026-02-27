@@ -1,0 +1,27 @@
+var classStatusTextHandler =
+[
+    [ "StatusTextHandler", "classStatusTextHandler.html#a3caf4cd6b00c4f4706c0540dfb80d066", null ],
+    [ "~StatusTextHandler", "classStatusTextHandler.html#ae943c76a5ca4c27e7b2b5b6e4ecb83a6", null ],
+    [ "clearMessages", "classStatusTextHandler.html#a9da1cc2fff2f745427adc605c2d1d8cf", null ],
+    [ "formattedMessages", "classStatusTextHandler.html#aab5fce9f97c61ec18d6b79eb416b2652", null ],
+    [ "getErrorCount", "classStatusTextHandler.html#a6ae7462ccfa9af5581a280c0b05f2987", null ],
+    [ "getErrorCountTotal", "classStatusTextHandler.html#a8c5a54409d2d4028245cf3313895416a", null ],
+    [ "getMessageText", "classStatusTextHandler.html#a698e80a2c8a349726775248bbd45facc", null ],
+    [ "getNormalCount", "classStatusTextHandler.html#aa6a8316acadc7c9d8fa64f2b4b8cb853", null ],
+    [ "getWarningCount", "classStatusTextHandler.html#aa30d6dc7df15dc96f584566237d3e21e", null ],
+    [ "handleHTMLEscapedTextMessage", "classStatusTextHandler.html#a4367b80bb528295b72f97e33996892ab", null ],
+    [ "mavlinkMessageReceived", "classStatusTextHandler.html#a7b727476ba5d7be7f38e2c98fcb18359", null ],
+    [ "messageCount", "classStatusTextHandler.html#aa0659e17243584d1b46c7c27ccb40a8e", null ],
+    [ "messageCountChanged", "classStatusTextHandler.html#a806bef5301f10d8e7b3d746706867f87", null ],
+    [ "messages", "classStatusTextHandler.html#a450ddff064da8cfe5dafc4f09e3c0f1a", null ],
+    [ "messageTypeChanged", "classStatusTextHandler.html#ab7ac602c741f13078cb21ac1391b08c5", null ],
+    [ "messageTypeError", "classStatusTextHandler.html#a361062c1798c5bed2faa65306e59e3a3", null ],
+    [ "messageTypeNone", "classStatusTextHandler.html#a1aed4453cca24930ee0257a11e5d2d1e", null ],
+    [ "messageTypeNormal", "classStatusTextHandler.html#a4c3d357ded23d9e8a29740a22912b33c", null ],
+    [ "messageTypeWarning", "classStatusTextHandler.html#ae62aa020e71143ebf07c0f6ee240ab09", null ],
+    [ "newErrorMessage", "classStatusTextHandler.html#a65507a74ffd964b47090f27dc7d9c0de", null ],
+    [ "newFormattedMessage", "classStatusTextHandler.html#aa73f3a6739158f1cc1b771956552d0e6", null ],
+    [ "resetAllMessages", "classStatusTextHandler.html#a93541b6c6f98860ef78f24b01015e5c9", null ],
+    [ "resetErrorLevelMessages", "classStatusTextHandler.html#a7532753e5a8b52895ce74c6921c6ceff", null ],
+    [ "textMessageReceived", "classStatusTextHandler.html#a9311effdfb4f5eb836e07bb1ea2d8f79", null ]
+];

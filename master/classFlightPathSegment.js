@@ -1,0 +1,36 @@
+var classFlightPathSegment =
+[
+    [ "SegmentType", "classFlightPathSegment.html#a1a9904d97f3b74589f3177247b570ffe", [
+      [ "SegmentTypeTakeoff", "classFlightPathSegment.html#a1a9904d97f3b74589f3177247b570ffeacf6d5ff706fe3c36df92a29890411d1f", null ],
+      [ "SegmentTypeGeneric", "classFlightPathSegment.html#a1a9904d97f3b74589f3177247b570ffea24c3119aa46d97dd748d37fad5a1c377", null ],
+      [ "SegmentTypeLand", "classFlightPathSegment.html#a1a9904d97f3b74589f3177247b570ffeac66610729820ee8d458a20062d5e0003", null ],
+      [ "SegmentTypeTerrainFrame", "classFlightPathSegment.html#a1a9904d97f3b74589f3177247b570ffea45cd6a53b59c316a2ada0807c3419c74", null ]
+    ] ],
+    [ "FlightPathSegment", "classFlightPathSegment.html#a1c8c266fe04622875c109d9c6cab543c", null ],
+    [ "amslTerrainHeights", "classFlightPathSegment.html#a5cb557b761e72ffc2d0996162b8e1fdf", null ],
+    [ "amslTerrainHeightsChanged", "classFlightPathSegment.html#a6c981bb68cb13040e4882e38bbf4a262", null ],
+    [ "coord1AMSLAlt", "classFlightPathSegment.html#afdf28de08b029348157d037c4f911039", null ],
+    [ "coord1AMSLAltChanged", "classFlightPathSegment.html#a49595d5420ad2e0ecc1847f8a2cdb8b8", null ],
+    [ "coord2AMSLAlt", "classFlightPathSegment.html#af95570dadd1e8f73de18349316e07758", null ],
+    [ "coord2AMSLAltChanged", "classFlightPathSegment.html#a11f926680361a8796c5f719f687791cc", null ],
+    [ "coordinate1Changed", "classFlightPathSegment.html#a2263fba9c734a443864b7263d166f7c0", null ],
+    [ "coordinate1Changed", "classFlightPathSegment.html#a4e03b4d531b90f7fd294b9a482f3226d", null ],
+    [ "coordinate2", "classFlightPathSegment.html#a22498a3ff040fc183435c54bc92ca7bf", null ],
+    [ "coordinate2Changed", "classFlightPathSegment.html#aaa36fe3ba8699a09aefbf258c117122b", null ],
+    [ "distanceBetween", "classFlightPathSegment.html#a0aa4c7af0fc8581f0cb8eac227ac0f72", null ],
+    [ "distanceBetweenChanged", "classFlightPathSegment.html#ad2f33c2f854314d23c3d264c30ed7ac6", null ],
+    [ "finalDistanceBetween", "classFlightPathSegment.html#ad02fd9fa0992adad997afb389f3660a0", null ],
+    [ "finalDistanceBetweenChanged", "classFlightPathSegment.html#a178f121eb157826f224eaa7bc81ecc69", null ],
+    [ "segmentType", "classFlightPathSegment.html#a278d784f22981cb6c63a5a00c401ceac", null ],
+    [ "setCoord1AMSLAlt", "classFlightPathSegment.html#adad94dae730d1113ef50faab4a781b19", null ],
+    [ "setCoord2AMSLAlt", "classFlightPathSegment.html#ab91a0faa2165d5e87ea5710992442bc7", null ],
+    [ "setCoordinate1", "classFlightPathSegment.html#aee82be8412e04f5eec4591b3a2108a47", null ],
+    [ "setCoordinate2", "classFlightPathSegment.html#a0e02096bebe10f35f5838a5f1271dfea", null ],
+    [ "setSpecialVisual", "classFlightPathSegment.html#a67a948a8b779a4a679b782c13605c682", null ],
+    [ "specialVisual", "classFlightPathSegment.html#a92443dfe2286fbc7cda417fd9a3bbff9", null ],
+    [ "specialVisualChanged", "classFlightPathSegment.html#a9b2b2c7efb0a21d0eabf8d1524ea6f02", null ],
+    [ "terrainCollision", "classFlightPathSegment.html#adbd70af45479b61c72d84f5b9ade73fb", null ],
+    [ "terrainCollisionChanged", "classFlightPathSegment.html#a06adbe7de47c19b475cb27736637cac2", null ],
+    [ "totalDistance", "classFlightPathSegment.html#aeca2025a8d0588e1c1e78a6c97316c60", null ],
+    [ "totalDistanceChanged", "classFlightPathSegment.html#a0b919619bff00baae630c7f7b23f3bef", null ]
+];

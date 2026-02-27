@@ -1,0 +1,26 @@
+var classMavlinkSettings =
+[
+    [ "MavlinkSettings", "classMavlinkSettings.html#a4a7c50a6e0e37dae9c029a08bb24defc", null ],
+    [ "apmStartMavlinkStreams", "classMavlinkSettings.html#ad9223acc2ec853518f0dc922e21fd054", null ],
+    [ "forwardMavlink", "classMavlinkSettings.html#a1d19deca2f2e1601f06cba515e33c9a3", null ],
+    [ "forwardMavlinkAPMSupportHostName", "classMavlinkSettings.html#ab0486a797c55120958d417bc5bb09d30", null ],
+    [ "forwardMavlinkHostName", "classMavlinkSettings.html#a7586e448c7ce52dbe78b43058bef0c03", null ],
+    [ "gcsMavlinkSystemID", "classMavlinkSettings.html#a7cb28c28ec126590e2135d551aaf7673", null ],
+    [ "mavlink2SigningKey", "classMavlinkSettings.html#a18a78933acebbd32f5077ea98f0103d7", null ],
+    [ "saveCsvTelemetry", "classMavlinkSettings.html#a7def5e6d5fcccc4c7c9f4017efbebf63", null ],
+    [ "sendGCSHeartbeat", "classMavlinkSettings.html#aeca250e630a7f64810b3cbf6d9423501", null ],
+    [ "telemetrySave", "classMavlinkSettings.html#a6b5b080cf9c5b4a44e01c5bc2ddc35d2", null ],
+    [ "telemetrySaveNotArmed", "classMavlinkSettings.html#a51a54014e98979f552544dfe8b04cce5", null ],
+    [ "apmStartMavlinkStreamsName", "classMavlinkSettings.html#a596fcca553340fd564c2975c0644c622", null ],
+    [ "forwardMavlinkAPMSupportHostNameName", "classMavlinkSettings.html#a4a2ea699e232a21188519bf1aa74b836", null ],
+    [ "forwardMavlinkHostNameName", "classMavlinkSettings.html#aeaa0474ab73d605ed9e7041cc6d956e6", null ],
+    [ "forwardMavlinkName", "classMavlinkSettings.html#a31ee2dadd00ae6c8d65250f2efdeeac2", null ],
+    [ "gcsMavlinkSystemIDName", "classMavlinkSettings.html#af6e56a1c90f194ae3758b1559fa967f8", null ],
+    [ "mavlink2SigningKeyName", "classMavlinkSettings.html#a94a1bf94a310ffd399b60a6366bd8533", null ],
+    [ "name", "classMavlinkSettings.html#a8346ad3c14bd0f6ef153a93fbcc6f603", null ],
+    [ "saveCsvTelemetryName", "classMavlinkSettings.html#ac49a82960726ada8cf5c10f2f5e1739e", null ],
+    [ "sendGCSHeartbeatName", "classMavlinkSettings.html#a5d20eb0147795f88971d25a6b44bad3d", null ],
+    [ "settingsGroup", "classMavlinkSettings.html#a3381283c36370484e4003589de850034", null ],
+    [ "telemetrySaveName", "classMavlinkSettings.html#a321f49c1549586f856a24d599d481e32", null ],
+    [ "telemetrySaveNotArmedName", "classMavlinkSettings.html#abc7d4df3c9050e0aec915b5f5398e0cc", null ]
+];

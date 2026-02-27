@@ -1,0 +1,28 @@
+var QGCFileHelper_8cc =
+[
+    [ "atomicWrite", "QGCFileHelper_8cc.html#a5a4d6dde81040f267edcd06e9ee7ab3d", null ],
+    [ "availableDiskSpace", "QGCFileHelper_8cc.html#a01457a6a8f144aa5ef5983ea4a545544", null ],
+    [ "computeDecompressedFileHash", "QGCFileHelper_8cc.html#ad8d7231ce7dc4d41ee22595b880663d4", null ],
+    [ "computeFileHash", "QGCFileHelper_8cc.html#a9c6d26d40625b7b415129392441736b8", null ],
+    [ "computeHash", "QGCFileHelper_8cc.html#a4f33c961014dc4e4508e53183a9fcbe5", null ],
+    [ "copyDirectoryRecursively", "QGCFileHelper_8cc.html#a4fd16fb2a9197ead1b39e88bb2e194bf", null ],
+    [ "createTempCopy", "QGCFileHelper_8cc.html#a54f575c1fd829767fad031964b7c946b", null ],
+    [ "createTempFile", "QGCFileHelper_8cc.html#a749e2ba9f0fbccd2101bfc1ebc7a7e9c", null ],
+    [ "ensureDirectoryExists", "QGCFileHelper_8cc.html#a6dae830a847a89ef11cd37401b3f8cd0", null ],
+    [ "ensureParentExists", "QGCFileHelper_8cc.html#a2ac39e11d90f8d19215de4d887707cd8", null ],
+    [ "exists", "QGCFileHelper_8cc.html#a92f5c18a2f09dbe630adfa0e82dd8171", null ],
+    [ "hashAlgorithmName", "QGCFileHelper_8cc.html#a470ddc1ed27ec06abb5da1e361a7ccf8", null ],
+    [ "hasSufficientDiskSpace", "QGCFileHelper_8cc.html#a60912987dfe0b950b50731faf2afc045", null ],
+    [ "isLocalPath", "QGCFileHelper_8cc.html#a03f35dbd1c1b11d4ea2848257b8b0392", null ],
+    [ "isQtResource", "QGCFileHelper_8cc.html#a09ea55504cb7d7eee2ff5c4d12ebd4f9", null ],
+    [ "joinPath", "QGCFileHelper_8cc.html#a7fb1699a7fbd1ab62a1db78caa761e7b", null ],
+    [ "moveFileOrCopy", "QGCFileHelper_8cc.html#a2ce67ca40c69dca6cc046474f198ea26", null ],
+    [ "optimalBufferSize", "QGCFileHelper_8cc.html#ac25ae676a345f58997140a5fdb75bd2e", null ],
+    [ "readFile", "QGCFileHelper_8cc.html#ae3efa88e1ccb0cd0cb4884fe2ae8035e", null ],
+    [ "replaceFileFromTemp", "QGCFileHelper_8cc.html#ac8e13f1003ec424571d947d4dbe6102c", null ],
+    [ "tempDirectory", "QGCFileHelper_8cc.html#af608581ec52090c2f7ca51e18cb4bb3e", null ],
+    [ "toLocalPath", "QGCFileHelper_8cc.html#a5f2e6419a9f9d9aa39df6377581882c4", null ],
+    [ "toLocalPath", "QGCFileHelper_8cc.html#ad5271d8dd4854c4d8575b545e12d4c1a", null ],
+    [ "uniqueTempPath", "QGCFileHelper_8cc.html#a1feb91740ef21785df1ad89743a88993", null ],
+    [ "verifyFileHash", "QGCFileHelper_8cc.html#acbe46dbaffa762ff73e1c1d33abda3d1", null ]
+];

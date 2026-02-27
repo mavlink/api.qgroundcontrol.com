@@ -1,0 +1,35 @@
+var classMockLinkMissionItemHandler =
+[
+    [ "FailureMode_t", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54e", [
+      [ "FailNone", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54eaf9a624c70519b23959aab9eb7981330d", null ],
+      [ "FailReadRequestListNoResponse", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54eada26e1b29226479e6790747853d9ae2e", null ],
+      [ "FailReadRequestListFirstResponse", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54eac759cd5ac7fcedf8d0320c9ada958c38", null ],
+      [ "FailReadRequest0NoResponse", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea8b08ba8a1b67deb246529d695440ebbc", null ],
+      [ "FailReadRequest1NoResponse", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54eaba65cb98322eecfec5fe2f068a272a0f", null ],
+      [ "FailReadRequest1FirstResponse", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54eaffb1af95d5e03edef918b359954a7d6e", null ],
+      [ "FailReadRequest0IncorrectSequence", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea605cd21846f5c6243efb29e675184618", null ],
+      [ "FailReadRequest1IncorrectSequence", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea461b3a883c399a3dd699bbe3462a3d5e", null ],
+      [ "FailReadRequest0ErrorAck", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ead1faa87521d41fb9ee07bd377d396c59", null ],
+      [ "FailReadRequest1ErrorAck", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea82d45aad0d502a7a6f3ed3b2fdcbf1d8", null ],
+      [ "FailWriteMissionCountNoResponse", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea6c9792423dc542cd957b30fab071b3fe", null ],
+      [ "FailWriteMissionCountFirstResponse", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea1fd904a1e2269e82c483ed24ee58d96b", null ],
+      [ "FailWriteRequest1NoResponse", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea70315e4adeb029393dfb54bb9350b586", null ],
+      [ "FailWriteRequest0IncorrectSequence", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ead5bc8d678b654a4844165d34d38969b1", null ],
+      [ "FailWriteRequest1IncorrectSequence", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea1e8041b3bec0f7de898f07c9339c81e6", null ],
+      [ "FailWriteRequest0ErrorAck", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea39ea33057d499e0ed9138083dd6ddad5", null ],
+      [ "FailWriteRequest1ErrorAck", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea3336def22ff95ada20aae5f6e591ab60", null ],
+      [ "FailWriteFinalAckNoResponse", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea1b85898df41b8df2168f755bbad83619", null ],
+      [ "FailWriteFinalAckErrorAck", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea83e0a24b7ea81f623c8e05b1f84d4aad", null ],
+      [ "FailWriteFinalAckMissingRequests", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea14c897ae69c223ec79101d25ffcbbf71", null ]
+    ] ],
+    [ "MockLinkMissionItemHandler", "classMockLinkMissionItemHandler.html#a7ba87a43043d3513ea2e62682544c2ee", null ],
+    [ "~MockLinkMissionItemHandler", "classMockLinkMissionItemHandler.html#ac7b573935ef19e4e92d46c8278684544", null ],
+    [ "handleMavlinkMessage", "classMockLinkMissionItemHandler.html#a3fb8454c3cc7cfb6d0261c43bacfeed5", null ],
+    [ "reset", "classMockLinkMissionItemHandler.html#a1cff66acb88b64a17830507639fe2566", null ],
+    [ "sendUnexpectedMissionAck", "classMockLinkMissionItemHandler.html#a1c94d30fcef6548fe060b4ad62feaa24", null ],
+    [ "sendUnexpectedMissionItem", "classMockLinkMissionItemHandler.html#ab70c4593362e31bd87fcef5145dd5859", null ],
+    [ "sendUnexpectedMissionRequest", "classMockLinkMissionItemHandler.html#a70703f3805440e5a23522090418a64e2", null ],
+    [ "setFailureMode", "classMockLinkMissionItemHandler.html#a4aae97a4f1f5f9771d98843653434db9", null ],
+    [ "setSendHomePositionOnEmptyList", "classMockLinkMissionItemHandler.html#a6de11a8c8bed9ce3a8520e22d8f192d6", null ],
+    [ "shutdown", "classMockLinkMissionItemHandler.html#ae71407432b2f2ff61c7555fc840b3499", null ]
+];

@@ -1,0 +1,25 @@
+var classVehicleLinkManager =
+[
+    [ "VehicleLinkManager", "classVehicleLinkManager.html#a707a139fb5c27231a3eb7186ac5e173e", null ],
+    [ "~VehicleLinkManager", "classVehicleLinkManager.html#ad179fa750f4a2a6c62c4e796358c66f4", null ],
+    [ "allLinksRemoved", "classVehicleLinkManager.html#a485c33ae7c44019ec10b5f93266ec05b", null ],
+    [ "autoDisconnectChanged", "classVehicleLinkManager.html#a3882e58a4a4ab9eecbec3e03a52d1d36", null ],
+    [ "closeVehicle", "classVehicleLinkManager.html#af94a838910e381d3509e8054f4eff130", null ],
+    [ "communicationLost", "classVehicleLinkManager.html#adb2f92d3dff7d390d058f9b8cc69987d", null ],
+    [ "communicationLostChanged", "classVehicleLinkManager.html#aaa42748af79acb4ebd98bb0aa09da330", null ],
+    [ "communicationLostEnabled", "classVehicleLinkManager.html#ac5ea91e0b5fb195e6765cebc22938108", null ],
+    [ "communicationLostEnabledChanged", "classVehicleLinkManager.html#a134365d638e014c9e075aa4174f3a74e", null ],
+    [ "containsLink", "classVehicleLinkManager.html#a91cca64c7cdb60aadb54d5987615d8ce", null ],
+    [ "linkNames", "classVehicleLinkManager.html#a3291a36313e0adadb5e0e6ec3bb489c8", null ],
+    [ "linkNamesChanged", "classVehicleLinkManager.html#adcf0648461b4cc30b0a63d2c4152de4e", null ],
+    [ "linkStatuses", "classVehicleLinkManager.html#a49d892d3ed89a4afb317f25300f8b2a9", null ],
+    [ "linkStatusesChanged", "classVehicleLinkManager.html#abc8998fb39026dd5b473ce82625ef393", null ],
+    [ "mavlinkMessageReceived", "classVehicleLinkManager.html#a5c004834c56f0506e3760b7aac1aa833", null ],
+    [ "primaryLink", "classVehicleLinkManager.html#a46e03af5d8cf9aa9620b080468bbe7b6", null ],
+    [ "primaryLinkChanged", "classVehicleLinkManager.html#a2a15f94f98f9f536ece88c4c26353f24", null ],
+    [ "primaryLinkName", "classVehicleLinkManager.html#aebf98c00334c00d1d51e57e39c304c59", null ],
+    [ "setCommunicationLostEnabled", "classVehicleLinkManager.html#a89b6f2c35ef09472f5be852ed8936eef", null ],
+    [ "setPrimaryLinkByName", "classVehicleLinkManager.html#a59a83d22f15950de7ca317ef20970a7a", null ],
+    [ "kTestCommLostDetectionTimeoutMs", "classVehicleLinkManager.html#a7e6f77bcabdc1bda8f3a7b665155ef8e", null ],
+    [ "kTestHeartbeatTimeoutMs", "classVehicleLinkManager.html#ab353f46c860169c591b4c1441a1b4463", null ]
+];

@@ -1,0 +1,28 @@
+var gstqgcvideosinkbin_8cc =
+[
+    [ "DEFAULT_ENABLE_LAST_SAMPLE", "gstqgcvideosinkbin_8cc.html#a90a2aa3edd19497728d1726b455d2bb1", null ],
+    [ "DEFAULT_FORCE_ASPECT_RATIO", "gstqgcvideosinkbin_8cc.html#a7d5ca42eafbc02af11a1d273babe6575", null ],
+    [ "DEFAULT_PAR_D", "gstqgcvideosinkbin_8cc.html#a061cacea9bee790d15cc8f22b7cdc325", null ],
+    [ "DEFAULT_PAR_N", "gstqgcvideosinkbin_8cc.html#ac821f5ceb9ad2bf8a8d082d9d7b80624", null ],
+    [ "DEFAULT_SYNC", "gstqgcvideosinkbin_8cc.html#a933b73ac2cb52f95c2e1c3c0d8541cbb", null ],
+    [ "GST_CAT_DEFAULT", "gstqgcvideosinkbin_8cc.html#adef911caed7c65a1643062817f4a59d7", null ],
+    [ "gst_qgc_video_sink_bin_parent_class", "gstqgcvideosinkbin_8cc.html#a693e99147a078d8d5f57790622749e9a", null ],
+    [ "PROP_ENABLE_LAST_SAMPLE_NAME", "gstqgcvideosinkbin_8cc.html#a8c3b6255f04393046c5ed1d443ca4d54", null ],
+    [ "PROP_FORCE_ASPECT_RATIO_NAME", "gstqgcvideosinkbin_8cc.html#a7549fcc7ed7279a8e29c4af894dbdecb", null ],
+    [ "PROP_LAST_SAMPLE_NAME", "gstqgcvideosinkbin_8cc.html#ae751469b16cbd83cb13b1f6b45e860dd", null ],
+    [ "PROP_PIXEL_ASPECT_RATIO_NAME", "gstqgcvideosinkbin_8cc.html#ab08d225ad848e24361997b3427d778fe", null ],
+    [ "PROP_SYNC_NAME", "gstqgcvideosinkbin_8cc.html#abb6989000af027bcfaee4814eee50d48", null ],
+    [ "PROP_WIDGET_NAME", "gstqgcvideosinkbin_8cc.html#a87a76916cfc415d3dae2dbc20a9207eb", null ],
+    [ "G_DEFINE_TYPE_WITH_CODE", "gstqgcvideosinkbin_8cc.html#a21ce42e925f6d7e2de7dbb6c4344010e", null ],
+    [ "GST_DEBUG_CATEGORY_STATIC", "gstqgcvideosinkbin_8cc.html#ad5fb00877e3f1acb7bd0b3465e5cd1b7", null ],
+    [ "GST_ELEMENT_REGISTER_DEFINE_WITH_CODE", "gstqgcvideosinkbin_8cc.html#a48f6b8d812825038a66fccb9ac23a236", null ],
+    [ "gst_qgc_video_sink_bin_class_init", "gstqgcvideosinkbin_8cc.html#a71d18ecb4b51f030f60a395c81b80145", null ],
+    [ "gst_qgc_video_sink_bin_dispose", "gstqgcvideosinkbin_8cc.html#ae54f663634fd8a97cdc293c717dd50d9", null ],
+    [ "gst_qgc_video_sink_bin_finalize", "gstqgcvideosinkbin_8cc.html#abd0bc9271c3af0d229f55599b74611d9", null ],
+    [ "gst_qgc_video_sink_bin_get_property", "gstqgcvideosinkbin_8cc.html#ae553b550d9a1dbb5fbe4110e09bef45a", null ],
+    [ "gst_qgc_video_sink_bin_init", "gstqgcvideosinkbin_8cc.html#afe3a7cf4f8187794ca0f0251f96d6aa5", null ],
+    [ "gst_qgc_video_sink_bin_on_glsinkbin_create_element", "gstqgcvideosinkbin_8cc.html#aac1ae7ebdd4dc3c472e413290af7a0cc", null ],
+    [ "gst_qgc_video_sink_bin_set_property", "gstqgcvideosinkbin_8cc.html#a18a1d551b40c1c08d7a225f57bb2f282", null ],
+    [ "gst_qgc_video_sink_bin_signals", "gstqgcvideosinkbin_8cc.html#aea85d51ac8352b3d63144a3a2fdca101", null ],
+    [ "properties", "gstqgcvideosinkbin_8cc.html#a3cdac116630040974e90b173303c8464", null ]
+];
