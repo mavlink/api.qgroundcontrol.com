@@ -1,5 +1,9 @@
 var NAVTREEINDEX36 =
 {
+"classQGCFileWatcher.html#a81e7a1a3873701ddcc9db21086eb7543":[2,0,343,9],
+"classQGCFileWatcher.html#a90af18e3e2e0b380a6d8db9d523dfddb":[2,0,343,8],
+"classQGCFileWatcher.html#a9c32c0d43664d0ecbe95e8bde4915d34":[2,0,343,17],
+"classQGCFileWatcher.html#a9cee2fee801319c2871904aaf0cf974f":[2,0,343,5],
 "classQGCFileWatcher.html#a9f15e5c24e4dd8f63f3b0c58ba38d0ea":[2,0,343,6],
 "classQGCFileWatcher.html#aacd9f3eb95df3be4d0f3787dc2ccbae0":[2,0,343,4],
 "classQGCFileWatcher.html#ab89e06d1db2fdf7f7bd914da0a8d040c":[2,0,343,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX36 =
 "classQGCMapCircle.html#a5ffbc322cc5f11a251c50f11a561aa7b":[2,0,356,23],
 "classQGCMapCircle.html#a6b5ae936934e8a1eddeb36a2c229ff82":[2,0,356,7],
 "classQGCMapCircle.html#a79a2f328457032ad660da6d2c524157c":[2,0,356,11],
-"classQGCMapCircle.html#aa10aa2182d923437a4d55a5c7c9024ce":[2,0,356,2],
-"classQGCMapCircle.html#aabc724b76f3c2f8079604ba543fe4745":[2,0,356,20],
-"classQGCMapCircle.html#ab582002bdc49eae2875d81500ac4a4d7":[2,0,356,3],
-"classQGCMapCircle.html#abce1f824e8089c2565365a85a2bd147c":[2,0,356,5],
-"classQGCMapCircle.html#ac153ba1014b51a3e5d8ea38c125fd80b":[2,0,356,21]
+"classQGCMapCircle.html#aa10aa2182d923437a4d55a5c7c9024ce":[2,0,356,2]
 };

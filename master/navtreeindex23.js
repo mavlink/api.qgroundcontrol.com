@@ -1,6 +1,5 @@
 var NAVTREEINDEX23 =
 {
-"classFirmwarePluginManager.html":[2,0,153],
 "classFirmwarePluginManager.html#a14cc570657102de38d40b7e963ebfa77":[2,0,153,1],
 "classFirmwarePluginManager.html#a19b2ad83bcffea9598dd301d66590fc5":[2,0,153,2],
 "classFirmwarePluginManager.html#a5dd1f2da7715ae4ad531499d7c330b46":[2,0,153,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX23 =
 "classGPSRtk.html#ac4a851c34e7c81a4d0134cb32dd1a270":[2,0,184,2],
 "classGPSRtk.html#ac860036342bed7f5778ceb3a54e002a2":[2,0,184,0],
 "classGenericAutoPilotPlugin.html":[2,0,167],
-"classGenericAutoPilotPlugin.html#a735cb7f31f1c1428b832161bb2b18db4":[2,0,167,0]
+"classGenericAutoPilotPlugin.html#a735cb7f31f1c1428b832161bb2b18db4":[2,0,167,0],
+"classGenericAutoPilotPlugin.html#a7db89f485614fea4ccd9834367503a1c":[2,0,167,2]
 };

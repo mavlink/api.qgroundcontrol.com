@@ -1,5 +1,9 @@
 var NAVTREEINDEX56 =
 {
+"namespaceSDLJoystick.html#a1fcda213100f35d9820dc7b20a0f69e5":[1,0,32,44],
+"namespaceSDLJoystick.html#a30b9974a628892f2958a542abb63604d":[1,0,32,28],
+"namespaceSDLJoystick.html#a321acc477530f61c282fbeb5d6aa8742":[1,0,32,37],
+"namespaceSDLJoystick.html#a3f892804ebe5fa2f1de7ee0f8542dd6e":[1,0,32,40],
 "namespaceSDLJoystick.html#a456c58b7951a5b44571538df86748bcf":[1,0,32,13],
 "namespaceSDLJoystick.html#a47788e4f9a58d341204b08363bef5fc9":[1,0,32,31],
 "namespaceSDLJoystick.html#a478828cafc1837246f14e3bfa5107d3d":[1,0,32,43],
@@ -245,9 +249,5 @@ var NAVTREEINDEX56 =
 "qt6glitem_8cc.html#a85d1e0696d01b9c0c03e6bd78da62edd":[3,0,0,25,0,0,1,0,10,5],
 "qt6glitem_8cc.html#ac821f5ceb9ad2bf8a8d082d9d7b80624":[3,0,0,25,0,0,1,0,10,3],
 "qt6glitem_8cc.html#adef911caed7c65a1643062817f4a59d7":[3,0,0,25,0,0,1,0,10,4],
-"qt6glitem_8cc_source.html":[3,0,0,25,0,0,1,0,10],
-"qt6glitem_8h.html":[3,0,0,25,0,0,1,0,11],
-"qt6glitem_8h.html#a015f9009c6de770d81ee76093f9a299d":[3,0,0,25,0,0,1,0,11,2],
-"qt6glitem_8h_source.html":[3,0,0,25,0,0,1,0,11],
-"qtserialportexports_8h.html":[3,0,0,2,0,9]
+"qt6glitem_8cc_source.html":[3,0,0,25,0,0,1,0,10]
 };

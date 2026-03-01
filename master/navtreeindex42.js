@@ -1,5 +1,9 @@
 var NAVTREEINDEX42 =
 {
+"classSDLJoystick_1_1JoystickLock.html#a8793053a701c665f18d171daf2bdd90f":[1,0,32,0,2],
+"classSDLJoystick_1_1JoystickLock.html#a8793053a701c665f18d171daf2bdd90f":[2,0,15,0,2],
+"classSDLJoystick_1_1JoystickLock.html#a9ac5bcc21c3a4a9dbabc99f48bfadaeb":[2,0,15,0,0],
+"classSDLJoystick_1_1JoystickLock.html#a9ac5bcc21c3a4a9dbabc99f48bfadaeb":[1,0,32,0,0],
 "classSDLJoystick_1_1JoystickLock.html#ac2b7cab4942699773dfa8ea133995b85":[2,0,15,0,1],
 "classSDLJoystick_1_1JoystickLock.html#ac2b7cab4942699773dfa8ea133995b85":[1,0,32,0,1],
 "classSafetyComponent.html":[2,0,423],
@@ -245,9 +249,5 @@ var NAVTREEINDEX42 =
 "classSimulatedCameraControl.html#a06e5d09fdda9ea4383878d9b97b08e78":[2,0,448,14],
 "classSimulatedCameraControl.html#a102a41e5d12447d39ea95e02ef6de415":[2,0,448,15],
 "classSimulatedCameraControl.html#a15f9436055d4b0989471985f63a3ea3e":[2,0,448,19],
-"classSimulatedCameraControl.html#a17cb8c4d23c900c658c2ea945483f3b3":[2,0,448,75],
-"classSimulatedCameraControl.html#a18470c76a7c9fcc7686ec2b7cf55d5ca":[2,0,448,71],
-"classSimulatedCameraControl.html#a1934f77645df8832833a7308033c953d":[2,0,448,65],
-"classSimulatedCameraControl.html#a1eee29235ae061e74f15e0a2ede73860":[2,0,448,49],
-"classSimulatedCameraControl.html#a22c9ef5953df29fdd238981fcee671fb":[2,0,448,70]
+"classSimulatedCameraControl.html#a17cb8c4d23c900c658c2ea945483f3b3":[2,0,448,75]
 };

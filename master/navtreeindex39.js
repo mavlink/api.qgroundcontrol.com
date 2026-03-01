@@ -1,5 +1,9 @@
 var NAVTREEINDEX39 =
 {
+"classQGeoServiceProviderFactoryQGC.html#a229e716e07cc998175d1464108af0a17":[2,0,386,0],
+"classQGeoServiceProviderFactoryQGC.html#a42a7971059e9f249b7b90f02d24c5f03":[2,0,386,1],
+"classQGeoServiceProviderFactoryQGC.html#a761514f5b0f51364f8beb52c89a9d420":[2,0,386,6],
+"classQGeoServiceProviderFactoryQGC.html#a76b377c292ae9836c8bbab38db201e28":[2,0,386,4],
 "classQGeoServiceProviderFactoryQGC.html#af3fb5726258ff4d5ad563b149287c795":[2,0,386,3],
 "classQGeoServiceProviderFactoryQGC.html#af5477cdcce66124591941f977dd2f886":[2,0,386,2],
 "classQGeoTileFetcherQGC.html":[2,0,390],
@@ -245,9 +249,5 @@ var NAVTREEINDEX39 =
 "classQSerialPortInfoPrivate.html#a97e25b9a17d1968aaba28c9805c2f9e6":[2,0,398,8],
 "classQSerialPortInfoPrivate.html#ac07021c77a9f84d96a7fec255faf349a":[2,0,398,6],
 "classQSerialPortInfoPrivate.html#ac55cef3bb4a688fc13e69fb230e15471":[2,0,398,3],
-"classQSerialPortInfoPrivate.html#af8437d8cc9dc01351a4fbfe4d601c16b":[2,0,398,5],
-"classQSerialPortPrivate.html":[2,0,399],
-"classQSerialPortPrivate.html#a036bd4358ba1702d7c35dfd94bf0d4c1":[2,0,399,30],
-"classQSerialPortPrivate.html#a08dfc00f307b6daa74b35dee629e8932":[2,0,399,26],
-"classQSerialPortPrivate.html#a0a0178764145a6b904fae45c82a41df9":[2,0,399,11]
+"classQSerialPortInfoPrivate.html#af8437d8cc9dc01351a4fbfe4d601c16b":[2,0,398,5]
 };

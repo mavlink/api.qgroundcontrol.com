@@ -1,5 +1,9 @@
 var NAVTREEINDEX54 =
 {
+"namespaceAndroidSerial.html#a28312aeec042656d82ea54042c0d1473":[1,0,5,29],
+"namespaceAndroidSerial.html#a29a4bcd5ffb8ed9ae432d9c69b5fbfe0":[1,0,5,9],
+"namespaceAndroidSerial.html#a2decc78cd2ea593cbc2ee34cd9655d0a":[1,0,5,28],
+"namespaceAndroidSerial.html#a2f34a0cf44bb2897199a2cada4a7810b":[1,0,5,23],
 "namespaceAndroidSerial.html#a364c268d938a97a87a0ec56bac337559":[1,0,5,19],
 "namespaceAndroidSerial.html#a36f84eaf08ab3e5739cc49ea18cb6caf":[1,0,5,50],
 "namespaceAndroidSerial.html#a40910738286d01715fecb37d7bbc97f1":[1,0,5,16],
@@ -245,9 +249,5 @@ var NAVTREEINDEX54 =
 "namespaceQGCCommandLineParser.html#a54c6f85bc35de7937987eaecd6f0f14c":[1,0,25,2],
 "namespaceQGCCommandLineParser.html#aa014bff8744784249bd0f779ebb0decc":[1,0,25,1],
 "namespaceQGCCommandLineParser.html#aa014bff8744784249bd0f779ebb0decca4532438350365f4f46d2c20d43a6246c":[1,0,25,1,0],
-"namespaceQGCCommandLineParser.html#aa014bff8744784249bd0f779ebb0deccabdebfc4d7c08e6ca8b6bced35af5ce14":[1,0,25,1,1],
-"namespaceQGCCommandLineParser.html#aabded445241b59bef0574a2712a14787":[1,0,25,5],
-"namespaceQGCCommandLineParser.html#af09d9b4208a6cc4760ef3a8c8315e5b6":[1,0,25,3],
-"namespaceQGCCompression.html":[1,0,26],
-"namespaceQGCCompression.html#a01c7a1f29ea9b9eeb445b8947fc23811":[1,0,26,35]
+"namespaceQGCCommandLineParser.html#aa014bff8744784249bd0f779ebb0deccabdebfc4d7c08e6ca8b6bced35af5ce14":[1,0,25,1,1]
 };

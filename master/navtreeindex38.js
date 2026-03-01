@@ -1,5 +1,9 @@
 var NAVTREEINDEX38 =
 {
+"classQGCPalette.html#a6d047b4137c9c2211f165777df25f22b":[2,0,368,62],
+"classQGCPalette.html#a6f38042bc8d5bc2681cd239f7648191d":[2,0,368,25],
+"classQGCPalette.html#a70122af4fb56e12ad3eca1a92e81abc0":[2,0,368,134],
+"classQGCPalette.html#a71f88b4c37b682cb4cb9c4d845b9ee1d":[2,0,368,4],
 "classQGCPalette.html#a72cf8798e74b5ef9335123c8e03cef0b":[2,0,368,53],
 "classQGCPalette.html#a7318366c14f5b3899ff5f50c3a38c36d":[2,0,368,20],
 "classQGCPalette.html#a75249905d58dd02dbde4f60947477046":[2,0,368,60],
@@ -245,9 +249,5 @@ var NAVTREEINDEX38 =
 "classQGeoFileTileCacheQGC.html#a7be122d6477a508f102c301fc20b3fbc":[2,0,385,6],
 "classQGeoFileTileCacheQGC.html#a9f11756f4652714e6c9f23fdd474e674":[2,0,385,1],
 "classQGeoServiceProviderFactoryQGC.html":[2,0,386],
-"classQGeoServiceProviderFactoryQGC.html#a014e92f9d72bb07903d2da73db2957fb":[2,0,386,5],
-"classQGeoServiceProviderFactoryQGC.html#a229e716e07cc998175d1464108af0a17":[2,0,386,0],
-"classQGeoServiceProviderFactoryQGC.html#a42a7971059e9f249b7b90f02d24c5f03":[2,0,386,1],
-"classQGeoServiceProviderFactoryQGC.html#a761514f5b0f51364f8beb52c89a9d420":[2,0,386,6],
-"classQGeoServiceProviderFactoryQGC.html#a76b377c292ae9836c8bbab38db201e28":[2,0,386,4]
+"classQGeoServiceProviderFactoryQGC.html#a014e92f9d72bb07903d2da73db2957fb":[2,0,386,5]
 };

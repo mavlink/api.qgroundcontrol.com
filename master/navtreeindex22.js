@@ -1,6 +1,5 @@
 var NAVTREEINDEX22 =
 {
-"classFactMetaData.html#a8500545abf2175c369711f5b4b7bd49d":[2,0,141,27],
 "classFactMetaData.html#a852078afb7688b62f8532d91494d1491":[2,0,141,64],
 "classFactMetaData.html#a85fad3d89927a985651c29b489e9b617":[2,0,141,65],
 "classFactMetaData.html#a867590a043d65ed3731fd2a2e2bece5e":[2,0,141,40],
@@ -249,5 +248,6 @@ var NAVTREEINDEX22 =
 "classFirmwarePluginInstanceData.html#a1c6d665a4804c4eb92e66bc551581d08a696b031073e74bf2cb98e5ef201d4aa3":[2,0,152,0,2],
 "classFirmwarePluginInstanceData.html#a45926c0b0c12b6bfb7179ec67023eaa9":[2,0,152,1],
 "classFirmwarePluginInstanceData.html#a48b33de4a7628e303775d522b6888563":[2,0,152,2],
-"classFirmwarePluginInstanceData.html#ac5e135cca4780c49a19b4da87f985b62":[2,0,152,3]
+"classFirmwarePluginInstanceData.html#ac5e135cca4780c49a19b4da87f985b62":[2,0,152,3],
+"classFirmwarePluginManager.html":[2,0,153]
 };

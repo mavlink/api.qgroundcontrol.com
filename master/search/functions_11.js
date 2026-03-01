@@ -41,7 +41,7 @@ var searchData=
   ['qgcgeoboundingcube_38',['qgcgeoboundingcube',['../classQGCGeoBoundingCube.html#a1abb1ddf563a54cba79076beafe6f503',1,'QGCGeoBoundingCube::QGCGeoBoundingCube(QObject *parent=nullptr)'],['../classQGCGeoBoundingCube.html#aebf15d80aa1835733343a23d340c79e6',1,'QGCGeoBoundingCube::QGCGeoBoundingCube(const QGCGeoBoundingCube &amp;other)'],['../classQGCGeoBoundingCube.html#a49f5570bf42fde733609912bf96b4265',1,'QGCGeoBoundingCube::QGCGeoBoundingCube(QGeoCoordinate p1, QGeoCoordinate p2)']]],
   ['qgcgettiledownloadlisttask_39',['QGCGetTileDownloadListTask',['../classQGCGetTileDownloadListTask.html#a0cf1bc688499ae8555e8a2a27967b325',1,'QGCGetTileDownloadListTask']]],
   ['qgchistorystate_40',['QGCHistoryState',['../classQGCHistoryState.html#adf93364e15d9379fb4dcc09505c25f42',1,'QGCHistoryState']]],
-  ['qgcimageprovider_41',['qgcimageprovider',['../classQGCApplication.html#aa8310cebe9ad87c28ad334141a455b21',1,'QGCApplication::qgcImageProvider()'],['../classQGCImageProvider.html#aa745c642752a35f6c7c663dec929fa2a',1,'QGCImageProvider::QGCImageProvider()']]],
+  ['qgcimageprovider_41',['qgcimageprovider',['../classQGCImageProvider.html#aa745c642752a35f6c7c663dec929fa2a',1,'QGCImageProvider::QGCImageProvider()'],['../classQGCApplication.html#aa8310cebe9ad87c28ad334141a455b21',1,'QGCApplication::qgcImageProvider()']]],
   ['qgcimporttiletask_42',['QGCImportTileTask',['../classQGCImportTileTask.html#a1906f28c2dcf07a5ce25b6608e7b2112',1,'QGCImportTileTask']]],
   ['qgclogging_43',['QGCLogging',['../classQGCLogging.html#a6bb4a85c4ada54c4d89bc8bdc9a4fcd1',1,'QGCLogging']]],
   ['qgcloggingcategory_44',['QGCLoggingCategory',['../classQGCLoggingCategory.html#a5697aca4406ab58e2770d745759996e6',1,'QGCLoggingCategory']]],

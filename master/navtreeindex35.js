@@ -1,5 +1,9 @@
 var NAVTREEINDEX35 =
 {
+"classQGCCachedFileDownload.html#ae835555d18265c4a0927bcc141753ecd":[2,0,322,9],
+"classQGCCachedFileDownload.html#ae8647b40ec503a26ace55399570b8b79":[2,0,322,10],
+"classQGCCachedTileSet.html":[2,0,323],
+"classQGCCachedTileSet.html#a0192a52179fea012f0f71af9ff4371c7":[2,0,323,3],
 "classQGCCachedTileSet.html#a04c95e636d3e2d0e09801a44e07266e8":[2,0,323,1],
 "classQGCCachedTileSet.html#a128032fc54550eb16a40f57c9ef89ce8":[2,0,323,4],
 "classQGCCachedTileSet.html#a28407dc4486f627cb71cdbebcf70ae15":[2,0,323,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX35 =
 "classQGCFileWatcher.html#a59cbbd9399367f5bff7fda6d4396a2d4":[2,0,343,1],
 "classQGCFileWatcher.html#a73b7e40b080546bd5fe00d3fb57f2d42":[2,0,343,12],
 "classQGCFileWatcher.html#a782869917434bc9c280739846c2d6a22":[2,0,343,2],
-"classQGCFileWatcher.html#a7924a0e610d83ae566a42d3c8a8bb38f":[2,0,343,15],
-"classQGCFileWatcher.html#a81e7a1a3873701ddcc9db21086eb7543":[2,0,343,9],
-"classQGCFileWatcher.html#a90af18e3e2e0b380a6d8db9d523dfddb":[2,0,343,8],
-"classQGCFileWatcher.html#a9c32c0d43664d0ecbe95e8bde4915d34":[2,0,343,17],
-"classQGCFileWatcher.html#a9cee2fee801319c2871904aaf0cf974f":[2,0,343,5]
+"classQGCFileWatcher.html#a7924a0e610d83ae566a42d3c8a8bb38f":[2,0,343,15]
 };

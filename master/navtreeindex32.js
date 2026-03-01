@@ -1,5 +1,7 @@
 var NAVTREEINDEX32 =
 {
+"classNTRIPManager.html#a261e6a9d2b92450c6f47cc6ad7860126":[2,0,274,0],
+"classNTRIPManager.html#a319a46063df67ab6760a720ce2a9d2d1":[2,0,274,2],
 "classNTRIPManager.html#a6528f9197b6819161ddd10210059bffa":[2,0,274,4],
 "classNTRIPManager.html#a7a0817d769567c4aa8ee69424f82f151":[2,0,274,3],
 "classNTRIPManager.html#ac52d3be1eadfb614bf795bb1ee296647":[2,0,274,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX32 =
 "classPX4FlightBehavior.html#a3b1d7f6cdad811f31854b372a11687a8":[2,0,310,1],
 "classPX4FlightBehavior.html#a4751a9226f98bafaf4f309b2bd644964":[2,0,310,4],
 "classPX4FlightBehavior.html#a482ad0ff4f94b684b61e522852936e97":[2,0,310,8],
-"classPX4FlightBehavior.html#a4e1a5f1fc566871451b15a482b771087":[2,0,310,2],
-"classPX4FlightBehavior.html#a9cfc6fbf86a44b64431e8be789555e70":[2,0,310,0],
-"classPX4FlightBehavior.html#a9d591127b3647b916174aa322e0e484b":[2,0,310,10]
+"classPX4FlightBehavior.html#a4e1a5f1fc566871451b15a482b771087":[2,0,310,2]
 };

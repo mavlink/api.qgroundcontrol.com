@@ -1,5 +1,9 @@
 var NAVTREEINDEX45 =
 {
+"classTerrainPolyPathQuery.html#ab06519ee0acaaf779f4b916fba837d88":[2,0,484,1],
+"classTerrainPolyPathQuery.html#ac3f7b000f5230c2f28dfeaf3ec122f24":[2,0,484,3],
+"classTerrainPolyPathQuery.html#ae62945cdd6fd463899af1d2ae3a2c229":[2,0,484,4],
+"classTerrainPolyPathQuery.html#ae71e62946d7f97f25da539ddc090a8ac":[2,0,484,2],
 "classTerrainProfile.html":[2,0,485],
 "classTerrainProfile.html#a2193ab91f8e06a5e9b4eb7959143ee38":[2,0,485,9],
 "classTerrainProfile.html#a287c745017ca062d24f2833094ca7382":[2,0,485,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX45 =
 "classTransectStyleComplexItem.html#ab8e3d1f8829639261a11dabc7fe4498b":[2,0,502,89],
 "classTransectStyleComplexItem.html#abc0c83ac768f16c55cfce60ecb16d9fd":[2,0,502,90],
 "classTransectStyleComplexItem.html#abeb16602a9e4506c77f59e847de28f17":[2,0,502,111],
-"classTransectStyleComplexItem.html#abf856b42bf9d75aae54e9efcec410e2f":[2,0,502,120],
-"classTransectStyleComplexItem.html#ac1fdc9d18f5ac2907c8126a6b7cdf7f2":[2,0,502,103],
-"classTransectStyleComplexItem.html#ac6f3d5185dc54820f1cb84cba07bb941":[2,0,502,80],
-"classTransectStyleComplexItem.html#ac8701130a69432d7c5853d5e5e40b147":[2,0,502,35],
-"classTransectStyleComplexItem.html#acb459ec25771242b27bd01486dd50591":[2,0,502,91]
+"classTransectStyleComplexItem.html#abf856b42bf9d75aae54e9efcec410e2f":[2,0,502,120]
 };

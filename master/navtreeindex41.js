@@ -1,5 +1,9 @@
 var NAVTREEINDEX41 =
 {
+"classRemoteControlCalibrationController.html#a0acf647765e415b69345cac33efa9f81":[2,0,409,80],
+"classRemoteControlCalibrationController.html#a0b7840e02dfcf55c200bbda36663a6d0":[2,0,409,47],
+"classRemoteControlCalibrationController.html#a0bbca28541c5d461e4276a33f3eba833":[2,0,409,56],
+"classRemoteControlCalibrationController.html#a147b9d6e40a9d6ab269f896e427b30a3":[2,0,409,5],
 "classRemoteControlCalibrationController.html#a14b15506574e89183ba3b82e2cadb945":[2,0,409,53],
 "classRemoteControlCalibrationController.html#a14de9e00e6e0439808feb4fed459a8e2":[2,0,409,61],
 "classRemoteControlCalibrationController.html#a1643cf8af099af25ca11337f62a55059":[2,0,409,30],
@@ -245,9 +249,5 @@ var NAVTREEINDEX41 =
 "classSDLJoystick_1_1JoystickLock.html":[2,0,15,0],
 "classSDLJoystick_1_1JoystickLock.html":[1,0,32,0],
 "classSDLJoystick_1_1JoystickLock.html#a5b819e1e644fe19213062a2539d60384":[2,0,15,0,3],
-"classSDLJoystick_1_1JoystickLock.html#a5b819e1e644fe19213062a2539d60384":[1,0,32,0,3],
-"classSDLJoystick_1_1JoystickLock.html#a8793053a701c665f18d171daf2bdd90f":[1,0,32,0,2],
-"classSDLJoystick_1_1JoystickLock.html#a8793053a701c665f18d171daf2bdd90f":[2,0,15,0,2],
-"classSDLJoystick_1_1JoystickLock.html#a9ac5bcc21c3a4a9dbabc99f48bfadaeb":[2,0,15,0,0],
-"classSDLJoystick_1_1JoystickLock.html#a9ac5bcc21c3a4a9dbabc99f48bfadaeb":[1,0,32,0,0]
+"classSDLJoystick_1_1JoystickLock.html#a5b819e1e644fe19213062a2539d60384":[1,0,32,0,3]
 };

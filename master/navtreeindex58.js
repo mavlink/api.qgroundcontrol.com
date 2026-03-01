@@ -1,5 +1,9 @@
 var NAVTREEINDEX58 =
 {
+"structAndroidSerial_1_1JniMethodCache.html#a7a1e2de7badf483f732ff122b2c3be19":[1,0,5,1,19],
+"structAndroidSerial_1_1JniMethodCache.html#a8057591565cafdf9d00bd00e0e8c6a65":[1,0,5,1,8],
+"structAndroidSerial_1_1JniMethodCache.html#a8057591565cafdf9d00bd00e0e8c6a65":[2,0,5,1,8],
+"structAndroidSerial_1_1JniMethodCache.html#a83b3d6b6de079713c7d37dea642ee295":[2,0,5,1,22],
 "structAndroidSerial_1_1JniMethodCache.html#a83b3d6b6de079713c7d37dea642ee295":[1,0,5,1,22],
 "structAndroidSerial_1_1JniMethodCache.html#a921c09c52f5a218776d247519c6d3680":[1,0,5,1,20],
 "structAndroidSerial_1_1JniMethodCache.html#a921c09c52f5a218776d247519c6d3680":[2,0,5,1,20],
@@ -245,9 +249,5 @@ var NAVTREEINDEX58 =
 "structMixer_1_1Rule.html#acc334ff615b9a78b88279ac518fd2044":[2,0,9,11,3],
 "structMixer_1_1Rule.html#acc334ff615b9a78b88279ac518fd2044":[1,0,22,11,3],
 "structMixer_1_1Rule_1_1RuleItem.html":[2,0,9,11,0],
-"structMixer_1_1Rule_1_1RuleItem.html":[1,0,22,11,0],
-"structMixer_1_1Rule_1_1RuleItem.html#a01761912e705bcbf0dce273832d24e90":[1,0,22,11,0,2],
-"structMixer_1_1Rule_1_1RuleItem.html#a01761912e705bcbf0dce273832d24e90":[2,0,9,11,0,2],
-"structMixer_1_1Rule_1_1RuleItem.html#a84743d4169a0b67a39460baa4d4e01d7":[1,0,22,11,0,1],
-"structMixer_1_1Rule_1_1RuleItem.html#a84743d4169a0b67a39460baa4d4e01d7":[2,0,9,11,0,1]
+"structMixer_1_1Rule_1_1RuleItem.html":[1,0,22,11,0]
 };

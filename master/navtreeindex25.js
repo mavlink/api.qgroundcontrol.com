@@ -1,6 +1,5 @@
 var NAVTREEINDEX25 =
 {
-"classInstrumentValueData.html#a37ece440dbc4a5eecb066ccf2364bb22":[2,0,195,42],
 "classInstrumentValueData.html#a44faa36fc85afcb5c15b5cb53a3bbdcb":[2,0,195,11],
 "classInstrumentValueData.html#a4911636f2d730da0366e11e0c621f4fc":[2,0,195,26],
 "classInstrumentValueData.html#a51a838a470e89a397d442960b892bd6d":[2,0,195,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX25 =
 "classJoystick.html#ae57bef85609a84e96c73c719892a165c":[2,0,202,80],
 "classJoystick.html#ae5f76d41b5d8c22ca6a4a178f60fb159":[2,0,202,140],
 "classJoystick.html#ae8927b302c2e09db10eaa0e9bcc4b285":[2,0,202,51],
-"classJoystick.html#ae9b80594a6c7cc6f3d1a3c6060d20fb0":[2,0,202,104]
+"classJoystick.html#ae9b80594a6c7cc6f3d1a3c6060d20fb0":[2,0,202,104],
+"classJoystick.html#aefe056464896ca7194b5c2a3cf098e4c":[2,0,202,89]
 };

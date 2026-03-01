@@ -1,5 +1,9 @@
 var NAVTREEINDEX55 =
 {
+"namespaceQGCCommandLineParser.html#aabded445241b59bef0574a2712a14787":[1,0,25,5],
+"namespaceQGCCommandLineParser.html#af09d9b4208a6cc4760ef3a8c8315e5b6":[1,0,25,3],
+"namespaceQGCCompression.html":[1,0,26],
+"namespaceQGCCompression.html#a01c7a1f29ea9b9eeb445b8947fc23811":[1,0,26,35],
 "namespaceQGCCompression.html#a0e9e1f66288760988c64d25f9463df13":[1,0,26,28],
 "namespaceQGCCompression.html#a0ef25b6a5f074267bfdccf5ed0d874a2":[1,0,26,43],
 "namespaceQGCCompression.html#a13285748433c899ec879df10a7378b69":[1,0,26,7],
@@ -245,9 +249,5 @@ var NAVTREEINDEX55 =
 "namespaceSDLJoystick.html#a05d2b83ef1b51944e52c4f1a36ae7f82":[1,0,32,6],
 "namespaceSDLJoystick.html#a0cb76d6a72dfe7cb27e68fd9dc853abf":[1,0,32,4],
 "namespaceSDLJoystick.html#a0ed923be02b3e97ad752de6c9df5f108":[1,0,32,12],
-"namespaceSDLJoystick.html#a194e9a4ef3a50e1083843e7040e76b7a":[1,0,32,22],
-"namespaceSDLJoystick.html#a1fcda213100f35d9820dc7b20a0f69e5":[1,0,32,44],
-"namespaceSDLJoystick.html#a30b9974a628892f2958a542abb63604d":[1,0,32,28],
-"namespaceSDLJoystick.html#a321acc477530f61c282fbeb5d6aa8742":[1,0,32,37],
-"namespaceSDLJoystick.html#a3f892804ebe5fa2f1de7ee0f8542dd6e":[1,0,32,40]
+"namespaceSDLJoystick.html#a194e9a4ef3a50e1083843e7040e76b7a":[1,0,32,22]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX27 =
 {
-"classLandingComplexItem.html#a7cd865a04f8da2df48044a298890af3a":[2,0,212,55],
 "classLandingComplexItem.html#a7da862c5203caf401294acf0b666ff92":[2,0,212,92],
 "classLandingComplexItem.html#a7ec51eeaebba8d7c668fb73bcc427278":[2,0,212,82],
 "classLandingComplexItem.html#a7ef460343f7ce37a970ae265f7a225f2":[2,0,212,89],
@@ -249,5 +248,6 @@ var NAVTREEINDEX27 =
 "classMAVLinkProtocol.html#a0dcfa4ab4c6266ce891bda1b7ca31d36":[2,0,252,12],
 "classMAVLinkProtocol.html#a20368c4c3b9066eedf9aca59f4e3a3fa":[2,0,252,2],
 "classMAVLinkProtocol.html#a2999b6e6d6ac482d0b7c1aaf91c015e7":[2,0,252,4],
-"classMAVLinkProtocol.html#a2e268672f1761a0c31eabde50ece97a3":[2,0,252,10]
+"classMAVLinkProtocol.html#a2e268672f1761a0c31eabde50ece97a3":[2,0,252,10],
+"classMAVLinkProtocol.html#a4eed5b51ded1af1e045edd791ec5c1d0":[2,0,252,11]
 };

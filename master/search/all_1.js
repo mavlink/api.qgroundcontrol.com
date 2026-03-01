@@ -79,7 +79,7 @@ var searchData=
   ['actuators_2eh_76',['Actuators.h',['../Actuators_8h.html',1,'']]],
   ['actuatorschanged_77',['actuatorschanged',['../classActuatorTesting_1_1ActuatorTest.html#a4a0ed837d30f0db47657e41dcdd79bde',1,'ActuatorTesting::ActuatorTest::actuatorsChanged(Actuator *allMotorsActuator READ allMotorsActuator NOTIFY actuatorsChanged) 1(bool hadFailure READ hadFailure NOTIFY hadFailureChanged) QmlObjectListModel *actuators()'],['../classActuatorTesting_1_1ActuatorTest.html#a56b3e2a7b88a84eac7323c18fa1cd918',1,'ActuatorTesting::ActuatorTest::actuatorsChanged()']]],
   ['actuatorslider_2eqml_78',['ActuatorSlider.qml',['../ActuatorSlider_8qml.html',1,'']]],
-  ['actuatortest_79',['actuatortest',['../classActuatorTesting_1_1ActuatorTest.html',1,'ActuatorTesting::ActuatorTest'],['../classActuators.html#a5520379d6faa72c3b045b2ae434c33ac',1,'Actuators::actuatorTest()'],['../classActuatorTesting_1_1ActuatorTest.html#a35449492a52c872318d2333d043e2a08',1,'ActuatorTesting::ActuatorTest::ActuatorTest()']]],
+  ['actuatortest_79',['actuatortest',['../classActuatorTesting_1_1ActuatorTest.html',1,'ActuatorTesting::ActuatorTest'],['../classActuatorTesting_1_1ActuatorTest.html#a35449492a52c872318d2333d043e2a08',1,'ActuatorTesting::ActuatorTest::ActuatorTest()'],['../classActuators.html#a5520379d6faa72c3b045b2ae434c33ac',1,'Actuators::actuatorTest()']]],
   ['actuatortesting_80',['ActuatorTesting',['../namespaceActuatorTesting.html',1,'']]],
   ['actuatortesting_2ecc_81',['ActuatorTesting.cc',['../ActuatorTesting_8cc.html',1,'']]],
   ['actuatortesting_2eh_82',['ActuatorTesting.h',['../ActuatorTesting_8h.html',1,'']]],

@@ -1,5 +1,9 @@
 var NAVTREEINDEX40 =
 {
+"classQSerialPortPrivate.html":[2,0,399],
+"classQSerialPortPrivate.html#a036bd4358ba1702d7c35dfd94bf0d4c1":[2,0,399,30],
+"classQSerialPortPrivate.html#a08dfc00f307b6daa74b35dee629e8932":[2,0,399,26],
+"classQSerialPortPrivate.html#a0a0178764145a6b904fae45c82a41df9":[2,0,399,11],
 "classQSerialPortPrivate.html#a23f2d0d5f984445ab6225f9a7ec5632c":[2,0,399,2],
 "classQSerialPortPrivate.html#a2ec9d608f3d49c6c7b58dba93f432d2f":[2,0,399,27],
 "classQSerialPortPrivate.html#a320bb3c06a818d48ee4f19105ddf6b87":[2,0,399,20],
@@ -245,9 +249,5 @@ var NAVTREEINDEX40 =
 "classRemoteControlCalibrationController.html#a0046b51568f3ff918679769c5e67862c":[2,0,409,50],
 "classRemoteControlCalibrationController.html#a02246111eebc445a48d79428fbf186bc":[2,0,409,4],
 "classRemoteControlCalibrationController.html#a023e23838a4da59efeeb123a8020158f":[2,0,409,49],
-"classRemoteControlCalibrationController.html#a031d9ac08e7f133d8162083795de7727":[2,0,409,6],
-"classRemoteControlCalibrationController.html#a0acf647765e415b69345cac33efa9f81":[2,0,409,80],
-"classRemoteControlCalibrationController.html#a0b7840e02dfcf55c200bbda36663a6d0":[2,0,409,47],
-"classRemoteControlCalibrationController.html#a0bbca28541c5d461e4276a33f3eba833":[2,0,409,56],
-"classRemoteControlCalibrationController.html#a147b9d6e40a9d6ab269f896e427b30a3":[2,0,409,5]
+"classRemoteControlCalibrationController.html#a031d9ac08e7f133d8162083795de7727":[2,0,409,6]
 };

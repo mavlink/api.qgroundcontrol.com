@@ -15,7 +15,6 @@ var classFact =
     [ "_metaData", "classFact.html#a4e18d6e4801e1104b862bc4e3da8a9ff", null ],
     [ "_name", "classFact.html#a03d01969a5812de98807e5e4477fb2a3", null ],
     [ "_rawValue", "classFact.html#ad1f9557b766028569b00ccec711f4687", null ],
-    [ "_rawValueIsNotSet", "classFact.html#a7416fee815f0e2d18b6db2dc8a8e5239", null ],
     [ "_rawValueMutex", "classFact.html#a8517b4261a33e2acd44d234b45f0195a", null ],
     [ "_sendValueChangedSignals", "classFact.html#a00e06bd771dbe47984ebe6d105368103", null ],
     [ "_type", "classFact.html#a6ee724ca86d4f9d993abc8824562d1e0", null ],

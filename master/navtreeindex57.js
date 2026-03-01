@@ -1,5 +1,9 @@
 var NAVTREEINDEX57 =
 {
+"qt6glitem_8h.html":[3,0,0,25,0,0,1,0,11],
+"qt6glitem_8h.html#a015f9009c6de770d81ee76093f9a299d":[3,0,0,25,0,0,1,0,11,2],
+"qt6glitem_8h_source.html":[3,0,0,25,0,0,1,0,11],
+"qtserialportexports_8h.html":[3,0,0,2,0,9],
 "qtserialportexports_8h.html#a0feaae2fb6a3f843f6dd33dafd25ebdf":[3,0,0,2,0,9,0],
 "qtserialportexports_8h.html#a50ed425b24ec0c89b2f50c6a2f8c56eb":[3,0,0,2,0,9,1],
 "qtserialportexports_8h.html#a5a03ed915d5ec0c537c8cd0000019b91":[3,0,0,2,0,9,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX57 =
 "structAndroidSerial_1_1JniMethodCache.html#a5e28b4474547caab9c58f2177d5b178a":[2,0,5,1,16],
 "structAndroidSerial_1_1JniMethodCache.html#a6f91937bba2e10ed1c35b3e73b898906":[2,0,5,1,6],
 "structAndroidSerial_1_1JniMethodCache.html#a6f91937bba2e10ed1c35b3e73b898906":[1,0,5,1,6],
-"structAndroidSerial_1_1JniMethodCache.html#a7a1e2de7badf483f732ff122b2c3be19":[2,0,5,1,19],
-"structAndroidSerial_1_1JniMethodCache.html#a7a1e2de7badf483f732ff122b2c3be19":[1,0,5,1,19],
-"structAndroidSerial_1_1JniMethodCache.html#a8057591565cafdf9d00bd00e0e8c6a65":[1,0,5,1,8],
-"structAndroidSerial_1_1JniMethodCache.html#a8057591565cafdf9d00bd00e0e8c6a65":[2,0,5,1,8],
-"structAndroidSerial_1_1JniMethodCache.html#a83b3d6b6de079713c7d37dea642ee295":[2,0,5,1,22]
+"structAndroidSerial_1_1JniMethodCache.html#a7a1e2de7badf483f732ff122b2c3be19":[2,0,5,1,19]
 };

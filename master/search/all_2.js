@@ -54,7 +54,7 @@ var searchData=
   ['baud9600_51',['Baud9600',['../classQSerialPort.html#ac98215b9f88bd9c4a2d95224ee69e8f5a3155fdff9ec4dd7b546332713b11dd5e',1,'QSerialPort']]],
   ['baudchanged_52',['baudChanged',['../classSerialConfiguration.html#a00575eba1f24919d6dd31fa260242105',1,'SerialConfiguration']]],
   ['baudindexchanged_53',['baudIndexChanged',['../classESP8266ComponentController.html#aca367a4e86a6c82469800877351954e5',1,'ESP8266ComponentController']]],
-  ['baudrate_54',['baudrate',['../classQSerialPort.html#a135a3adf6ef92df64cdda137c9306030',1,'QSerialPort::baudRate(Directions directions=AllDirections) const'],['../classQSerialPort.html#ac98215b9f88bd9c4a2d95224ee69e8f5',1,'QSerialPort::BaudRate']]],
+  ['baudrate_54',['baudrate',['../classQSerialPort.html#ac98215b9f88bd9c4a2d95224ee69e8f5',1,'QSerialPort::BaudRate'],['../classQSerialPort.html#a135a3adf6ef92df64cdda137c9306030',1,'QSerialPort::baudRate(Directions directions=AllDirections) const']]],
   ['baudratechanged_55',['baudRateChanged',['../classQSerialPort.html#a37b3751e75dee27b1e80eb00f2d3b8af',1,'QSerialPort']]],
   ['bb_5fmax_56',['bb_max',['../structOsmParserThread_1_1BuildingType__t.html#a668ef022fca48d2adc66c14d1bad4f30',1,'OsmParserThread::BuildingType_t']]],
   ['bb_5fmin_57',['bb_min',['../structOsmParserThread_1_1BuildingType__t.html#ada6b6bde71ecbbd42ef037fc8a231975',1,'OsmParserThread::BuildingType_t']]],

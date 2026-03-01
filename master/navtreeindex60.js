@@ -1,5 +1,9 @@
 var NAVTREEINDEX60 =
 {
+"structStateHistoryRecorder_1_1HistoryEntry.html#a5063803318a628b064170987a7cd9419":[2,0,454,0,4],
+"structStateHistoryRecorder_1_1HistoryEntry.html#a7f1bd1767c52ec3b9e841495a5335bae":[2,0,454,0,3],
+"structStateMachineLogger_1_1LogEntry.html":[2,0,455,0],
+"structStateMachineLogger_1_1LogEntry.html#a0c17599b91f7ed91f9c3a15a723ea1a6":[2,0,455,0,2],
 "structStateMachineLogger_1_1LogEntry.html#a26892b24b4fead6bef4983accc8a7e1a":[2,0,455,0,10],
 "structStateMachineLogger_1_1LogEntry.html#a450d6f6381db2390ffc304bef7c95215":[2,0,455,0,7],
 "structStateMachineLogger_1_1LogEntry.html#a55a67c9d56244ad08a5aca1811b37e74":[2,0,455,0,6],

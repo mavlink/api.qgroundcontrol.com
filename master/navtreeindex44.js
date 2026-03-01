@@ -1,5 +1,9 @@
 var NAVTREEINDEX44 =
 {
+"classStatusText.html":[2,0,460],
+"classStatusText.html#a2f4773bf24de666533789059e6b016d8":[2,0,460,0],
+"classStatusText.html#aa26e71478883d0f08ebb110d028e709b":[2,0,460,1],
+"classStatusText.html#aa66a6c7cec6aaf46585acd510a09dfa9":[2,0,460,6],
 "classStatusText.html#aab63448f510480546884cea0f53506e4":[2,0,460,5],
 "classStatusText.html#aac0741ab874ca211f895d6157c893fd6":[2,0,460,2],
 "classStatusText.html#ad40c635551d6cd0ed140f6696ca50fd2":[2,0,460,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX44 =
 "classTerrainPathQuery.html#a62e9e3879cb638db4cb0bdbdce31a997":[2,0,483,1],
 "classTerrainPathQuery.html#adaa77d2728a3c259c24b0f21de707b40":[2,0,483,3],
 "classTerrainPolyPathQuery.html":[2,0,484],
-"classTerrainPolyPathQuery.html#a13d3eac1ec5827452a8d5343ff4c637a":[2,0,484,0],
-"classTerrainPolyPathQuery.html#ab06519ee0acaaf779f4b916fba837d88":[2,0,484,1],
-"classTerrainPolyPathQuery.html#ac3f7b000f5230c2f28dfeaf3ec122f24":[2,0,484,3],
-"classTerrainPolyPathQuery.html#ae62945cdd6fd463899af1d2ae3a2c229":[2,0,484,4],
-"classTerrainPolyPathQuery.html#ae71e62946d7f97f25da539ddc090a8ac":[2,0,484,2]
+"classTerrainPolyPathQuery.html#a13d3eac1ec5827452a8d5343ff4c637a":[2,0,484,0]
 };
