@@ -29,5 +29,7 @@ var dir_924006918299b661f7f5467ff93fed23 =
     [ "VehicleLinkManager.cc", "VehicleLinkManager_8cc.html", null ],
     [ "VehicleLinkManager.h", "VehicleLinkManager_8h.html", "VehicleLinkManager_8h" ],
     [ "VehicleObjectAvoidance.cc", "VehicleObjectAvoidance_8cc.html", null ],
-    [ "VehicleObjectAvoidance.h", "VehicleObjectAvoidance_8h.html", "VehicleObjectAvoidance_8h" ]
+    [ "VehicleObjectAvoidance.h", "VehicleObjectAvoidance_8h.html", "VehicleObjectAvoidance_8h" ],
+    [ "VehicleSupports.cc", "VehicleSupports_8cc.html", null ],
+    [ "VehicleSupports.h", "VehicleSupports_8h.html", "VehicleSupports_8h" ]
 ];

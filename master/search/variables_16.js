@@ -53,10 +53,11 @@ var searchData=
   ['virtualjoystickautocenterthrottlename_50',['virtualJoystickAutoCenterThrottleName',['../classAppSettings.html#adefe8b783ef97090ffe3f34af21f1f14',1,'AppSettings']]],
   ['virtualjoysticklefthandedmodename_51',['virtualJoystickLeftHandedModeName',['../classAppSettings.html#a38f77788355183b99cb8229545e72314',1,'AppSettings']]],
   ['virtualjoystickname_52',['virtualJoystickName',['../classAppSettings.html#ad5e9518b3886219aed9801218b53becb',1,'AppSettings']]],
-  ['vtolmode_53',['vtolMode',['../structMissionController_1_1MissionFlightStatus__t.html#a26bc6aec03bfa103c2a1ea3200a4284d',1,'MissionController::MissionFlightStatus_t']]],
-  ['vtoltransitiondistancename_54',['vtolTransitionDistanceName',['../classPlanViewSettings.html#af955f4e8db52671f3f44d698a927b9e1',1,'PlanViewSettings']]],
-  ['vworldtokenname_55',['vworldTokenName',['../classAppSettings.html#a730a75ac88248e218b35561daba786f9',1,'AppSettings']]],
-  ['vxmeterspersec_56',['vxMetersPerSec',['../structFollowMe_1_1GCSMotionReport.html#af21523343cd2851b6e9766e2bab03136',1,'FollowMe::GCSMotionReport']]],
-  ['vymeterspersec_57',['vyMetersPerSec',['../structFollowMe_1_1GCSMotionReport.html#aee2a6f0fe1fecb37a694ae6bce934318',1,'FollowMe::GCSMotionReport']]],
-  ['vzmeterspersec_58',['vzMetersPerSec',['../structFollowMe_1_1GCSMotionReport.html#a0c0e4d7d38e4099065146842f1d75bc5',1,'FollowMe::GCSMotionReport']]]
+  ['visualitemindexforobject_53',['visualItemIndexForObject',['../classMissionController.html#a40b635d90b34ac346edf572aae329126',1,'MissionController']]],
+  ['vtolmode_54',['vtolMode',['../structMissionController_1_1MissionFlightStatus__t.html#a26bc6aec03bfa103c2a1ea3200a4284d',1,'MissionController::MissionFlightStatus_t']]],
+  ['vtoltransitiondistancename_55',['vtolTransitionDistanceName',['../classPlanViewSettings.html#af955f4e8db52671f3f44d698a927b9e1',1,'PlanViewSettings']]],
+  ['vworldtokenname_56',['vworldTokenName',['../classAppSettings.html#a730a75ac88248e218b35561daba786f9',1,'AppSettings']]],
+  ['vxmeterspersec_57',['vxMetersPerSec',['../structFollowMe_1_1GCSMotionReport.html#af21523343cd2851b6e9766e2bab03136',1,'FollowMe::GCSMotionReport']]],
+  ['vymeterspersec_58',['vyMetersPerSec',['../structFollowMe_1_1GCSMotionReport.html#aee2a6f0fe1fecb37a694ae6bce934318',1,'FollowMe::GCSMotionReport']]],
+  ['vzmeterspersec_59',['vzMetersPerSec',['../structFollowMe_1_1GCSMotionReport.html#a0c0e4d7d38e4099065146842f1d75bc5',1,'FollowMe::GCSMotionReport']]]
 ];

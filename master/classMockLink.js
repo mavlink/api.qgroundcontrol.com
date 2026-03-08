@@ -50,6 +50,7 @@ var classMockLink =
     [ "setParamRequestReadFailureMode", "classMockLink.html#a215c9982935f4672ae60ebea17bcc848", null ],
     [ "setParamSetFailureMode", "classMockLink.html#ab2ecb38bd22e74021810aab84b59fd6e", null ],
     [ "setRequestMessageFailureMode", "classMockLink.html#a16bdf1b808cd9f262f00c05e2b0c3ab2", null ],
+    [ "setRequestMessageNoResponse", "classMockLink.html#aebfbe8cb680a7dcdc3d550a325f7facc", null ],
     [ "shouldSendStatusText", "classMockLink.html#a54c5e54b6a85c500afa40de7a7529704", null ],
     [ "simulateConnectionRemoved", "classMockLink.html#afbc68f1e502cd429985a964aaafc3c64", null ],
     [ "startAPMArduCopterMockLink", "classMockLink.html#a6e84402bbd4b56a0897298f5b603a6a7", null ],

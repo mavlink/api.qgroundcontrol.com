@@ -15,6 +15,8 @@ var classMissionSettingsItem =
     [ "CONSTANT", "classMissionSettingsItem.html#a23213f8e70eb2b4c1bf6baa9ca519cd9", null ],
     [ "coordinate", "classMissionSettingsItem.html#a4d4a50eb4e50e83b8f382e231af54d7a", null ],
     [ "dirty", "classMissionSettingsItem.html#aa1806256c0c9fe4f12e031ce511690fa", null ],
+    [ "editableAlt", "classMissionSettingsItem.html#ab1910513dea2618fb8a079a31a022a12", null ],
+    [ "entryCoordinate", "classMissionSettingsItem.html#a77ba5ba7d87cd43cf2b9dc4cb8ad4eca", null ],
     [ "exitCoordinate", "classMissionSettingsItem.html#a37f0689cd3d284973e353b70ed6bbd90", null ],
     [ "exitCoordinateSameAsEntry", "classMissionSettingsItem.html#a72d02e940156c04efbfa57e389efa6aa", null ],
     [ "greatestDistanceTo", "classMissionSettingsItem.html#ae087fcaf69146b7755dce5c00720cb79", null ],

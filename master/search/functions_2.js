@@ -29,7 +29,7 @@ var searchData=
   ['baudratechanged_26',['baudRateChanged',['../classQSerialPort.html#a37b3751e75dee27b1e80eb00f2d3b8af',1,'QSerialPort']]],
   ['begin_27',['begin',['../classTransactionGuard.html#a7f16b4fb4c19bb5fb6ac25c4c5401e2d',1,'TransactionGuard']]],
   ['beginreset_28',['beginreset',['../classParameterTableModel.html#ab033bcfce51b9dd153157d2b42cb8fa1',1,'ParameterTableModel::beginReset()'],['../classQGCMapPolygon.html#aa9fbbb6bfd072c149836ea97fb473f57',1,'QGCMapPolygon::beginReset()'],['../classQGCMapPolyline.html#a09a704323ac3466b19754eef95e1dd09',1,'QGCMapPolyline::beginReset()']]],
-  ['beginresetmodel_29',['beginResetModel',['../classObjectListModelBase.html#a3a462cd24636a694b8acdb7cf3ed4c6e',1,'ObjectListModelBase']]],
+  ['beginresetmodel_29',['beginResetModel',['../classObjectItemModelBase.html#a3c0ba5120a4b8e7c097c869b37cfe590',1,'ObjectItemModelBase']]],
   ['bicoloricon_30',['biColorIcon',['../classToolStripAction.html#adc75823d399f4426c0a88dacac4e24f5',1,'ToolStripAction']]],
   ['bicoloriconchanged_31',['biColorIconChanged',['../classToolStripAction.html#a3daa4be661f420714098e312161d79bb',1,'ToolStripAction']]],
   ['bigsizembtostring_32',['bigSizeMBToString',['../classQGCApplication.html#aca2b6a9d9ce2e40ec36a49cf13949751',1,'QGCApplication']]],

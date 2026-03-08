@@ -1,6 +1,7 @@
 var classOsmParser =
 [
     [ "OsmParser", "classOsmParser.html#abd7d9be0222ecda85d27c844824d3abe", null ],
+    [ "~OsmParser", "classOsmParser.html#ac556c411bddecdf3012bbac2bd472d18", null ],
     [ "buildingLevelHeight", "classOsmParser.html#a970d3a501e28be60030586d81641d0d1", null ],
     [ "buildingLevelHeightChanged", "classOsmParser.html#a077ba0799e12acfa82990098b5c1a1a3", null ],
     [ "buildingToMesh", "classOsmParser.html#ad09252664beb4d05ea15cb9e0d412cd4", null ],

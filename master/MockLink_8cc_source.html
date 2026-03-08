@@ -2116,141 +2116,152 @@ $(document).ready(function(){initNavTree('MockLink_8cc_source.html',''); initRes
 <div class="line"><a id="l01982" name="l01982"></a><span class="lineno"> 1982</span>    accepted = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l01983" name="l01983"></a><span class="lineno"> 1983</span>    noAck = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l01984" name="l01984"></a><span class="lineno"> 1984</span> </div>
-<div class="line"><a id="l01985" name="l01985"></a><span class="lineno"> 1985</span>    <span class="keywordflow">switch</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(request.param1)) {</div>
-<div class="line"><a id="l01986" name="l01986"></a><span class="lineno"> 1986</span>    <span class="keywordflow">case</span> MAVLINK_MSG_ID_AUTOPILOT_VERSION:</div>
-<div class="line"><a id="l01987" name="l01987"></a><span class="lineno"> 1987</span>        _handleRequestMessageAutopilotVersion(request, accepted);</div>
-<div class="line"><a id="l01988" name="l01988"></a><span class="lineno"> 1988</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l01989" name="l01989"></a><span class="lineno"> 1989</span>    <span class="keywordflow">case</span> MAVLINK_MSG_ID_COMPONENT_METADATA:</div>
-<div class="line"><a id="l01990" name="l01990"></a><span class="lineno"> 1990</span>        <span class="keywordflow">if</span> (_firmwareType == MAV_AUTOPILOT_PX4) {</div>
-<div class="line"><a id="l01991" name="l01991"></a><span class="lineno"> 1991</span>            _sendGeneralMetaData();</div>
-<div class="line"><a id="l01992" name="l01992"></a><span class="lineno"> 1992</span>            accepted = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01985" name="l01985"></a><span class="lineno"> 1985</span>    <span class="keyword">const</span> uint32_t requestedMessageId = <span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(request.param1);</div>
+<div class="line"><a id="l01986" name="l01986"></a><span class="lineno"> 1986</span> </div>
+<div class="line"><a id="l01987" name="l01987"></a><span class="lineno"> 1987</span>    <span class="comment">// Per-message-ID no-response injection: silently drop the request (no ACK, no message)</span></div>
+<div class="line"><a id="l01988" name="l01988"></a><span class="lineno"> 1988</span>    {</div>
+<div class="line"><a id="l01989" name="l01989"></a><span class="lineno"> 1989</span>        QMutexLocker locker(&amp;_requestMessageNoResponseMutex);</div>
+<div class="line"><a id="l01990" name="l01990"></a><span class="lineno"> 1990</span>        <span class="keywordflow">if</span> (_requestMessageNoResponseIds.contains(requestedMessageId)) {</div>
+<div class="line"><a id="l01991" name="l01991"></a><span class="lineno"> 1991</span>            noAck = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01992" name="l01992"></a><span class="lineno"> 1992</span>            <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l01993" name="l01993"></a><span class="lineno"> 1993</span>        }</div>
-<div class="line"><a id="l01994" name="l01994"></a><span class="lineno"> 1994</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l01995" name="l01995"></a><span class="lineno"> 1995</span>    <span class="keywordflow">case</span> MAVLINK_MSG_ID_DEBUG:</div>
-<div class="line"><a id="l01996" name="l01996"></a><span class="lineno"> 1996</span>        _handleRequestMessageDebug(request, accepted, noAck);</div>
-<div class="line"><a id="l01997" name="l01997"></a><span class="lineno"> 1997</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l01998" name="l01998"></a><span class="lineno"> 1998</span>    <span class="keywordflow">case</span> MAVLINK_MSG_ID_AVAILABLE_MODES:</div>
-<div class="line"><a id="l01999" name="l01999"></a><span class="lineno"> 1999</span>        _handleRequestMessageAvailableModes(request, accepted);</div>
-<div class="line"><a id="l02000" name="l02000"></a><span class="lineno"> 2000</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l02001" name="l02001"></a><span class="lineno"> 2001</span>    }</div>
-<div class="line"><a id="l02002" name="l02002"></a><span class="lineno"> 2002</span>}</div>
-<div class="line"><a id="l02003" name="l02003"></a><span class="lineno"> 2003</span> </div>
-<div class="line"><a id="l02004" name="l02004"></a><span class="lineno"> 2004</span><span class="keywordtype">void</span> MockLink::_sendGeneralMetaData()</div>
-<div class="line"><a id="l02005" name="l02005"></a><span class="lineno"> 2005</span>{</div>
-<div class="line"><a id="l02006" name="l02006"></a><span class="lineno"> 2006</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> metaDataURI[MAVLINK_MSG_COMPONENT_METADATA_FIELD_URI_LEN] = <span class="stringliteral">&quot;mftp://[;comp=1]general.json&quot;</span>; </div>
-<div class="line"><a id="l02007" name="l02007"></a><span class="lineno"> 2007</span> </div>
-<div class="line"><a id="l02008" name="l02008"></a><span class="lineno"> 2008</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> responseMsg{};</div>
-<div class="line"><a id="l02009" name="l02009"></a><span class="lineno"> 2009</span>    (void) mavlink_msg_component_metadata_pack_chan(</div>
-<div class="line"><a id="l02010" name="l02010"></a><span class="lineno"> 2010</span>        _vehicleSystemId,</div>
-<div class="line"><a id="l02011" name="l02011"></a><span class="lineno"> 2011</span>        _vehicleComponentId,</div>
-<div class="line"><a id="l02012" name="l02012"></a><span class="lineno"> 2012</span>        <a class="code hl_function" href="classLinkInterface.html#a21d4864924f17c16d573810140ce8baa">mavlinkChannel</a>(),</div>
-<div class="line"><a id="l02013" name="l02013"></a><span class="lineno"> 2013</span>        &amp;responseMsg,</div>
-<div class="line"><a id="l02014" name="l02014"></a><span class="lineno"> 2014</span>        0, <span class="comment">// time_boot_ms</span></div>
-<div class="line"><a id="l02015" name="l02015"></a><span class="lineno"> 2015</span>        100, <span class="comment">// general_metadata_file_crc</span></div>
-<div class="line"><a id="l02016" name="l02016"></a><span class="lineno"> 2016</span>        metaDataURI</div>
-<div class="line"><a id="l02017" name="l02017"></a><span class="lineno"> 2017</span>    );</div>
-<div class="line"><a id="l02018" name="l02018"></a><span class="lineno"> 2018</span>    <a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(responseMsg);</div>
-<div class="line"><a id="l02019" name="l02019"></a><span class="lineno"> 2019</span>}</div>
-<div class="line"><a id="l02020" name="l02020"></a><span class="lineno"> 2020</span> </div>
-<div class="line"><a id="l02021" name="l02021"></a><span class="lineno"> 2021</span><span class="keywordtype">void</span> MockLink::_sendRemoteIDArmStatus()</div>
-<div class="line"><a id="l02022" name="l02022"></a><span class="lineno"> 2022</span>{</div>
-<div class="line"><a id="l02023" name="l02023"></a><span class="lineno"> 2023</span>    <span class="keywordtype">char</span> armStatusError[MAVLINK_MSG_OPEN_DRONE_ID_ARM_STATUS_FIELD_ERROR_LEN] = {};</div>
-<div class="line"><a id="l02024" name="l02024"></a><span class="lineno"> 2024</span>    std::strncpy(armStatusError, <span class="stringliteral">&quot;No Error&quot;</span>, <span class="keyword">sizeof</span>(armStatusError) - 1);</div>
-<div class="line"><a id="l02025" name="l02025"></a><span class="lineno"> 2025</span> </div>
-<div class="line"><a id="l02026" name="l02026"></a><span class="lineno"> 2026</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg{};</div>
-<div class="line"><a id="l02027" name="l02027"></a><span class="lineno"> 2027</span>    (void) mavlink_msg_open_drone_id_arm_status_pack(</div>
-<div class="line"><a id="l02028" name="l02028"></a><span class="lineno"> 2028</span>        _vehicleSystemId,</div>
-<div class="line"><a id="l02029" name="l02029"></a><span class="lineno"> 2029</span>        MAV_COMP_ID_ODID_TXRX_1,</div>
-<div class="line"><a id="l02030" name="l02030"></a><span class="lineno"> 2030</span>        &amp;msg,</div>
-<div class="line"><a id="l02031" name="l02031"></a><span class="lineno"> 2031</span>        MAV_ODID_ARM_STATUS_GOOD_TO_ARM,</div>
-<div class="line"><a id="l02032" name="l02032"></a><span class="lineno"> 2032</span>        armStatusError</div>
-<div class="line"><a id="l02033" name="l02033"></a><span class="lineno"> 2033</span>    );</div>
-<div class="line"><a id="l02034" name="l02034"></a><span class="lineno"> 2034</span>    <a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(msg);</div>
-<div class="line"><a id="l02035" name="l02035"></a><span class="lineno"> 2035</span>}</div>
+<div class="line"><a id="l01994" name="l01994"></a><span class="lineno"> 1994</span>    }</div>
+<div class="line"><a id="l01995" name="l01995"></a><span class="lineno"> 1995</span> </div>
+<div class="line"><a id="l01996" name="l01996"></a><span class="lineno"> 1996</span>    <span class="keywordflow">switch</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(request.param1)) {</div>
+<div class="line"><a id="l01997" name="l01997"></a><span class="lineno"> 1997</span>    <span class="keywordflow">case</span> MAVLINK_MSG_ID_AUTOPILOT_VERSION:</div>
+<div class="line"><a id="l01998" name="l01998"></a><span class="lineno"> 1998</span>        _handleRequestMessageAutopilotVersion(request, accepted);</div>
+<div class="line"><a id="l01999" name="l01999"></a><span class="lineno"> 1999</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02000" name="l02000"></a><span class="lineno"> 2000</span>    <span class="keywordflow">case</span> MAVLINK_MSG_ID_COMPONENT_METADATA:</div>
+<div class="line"><a id="l02001" name="l02001"></a><span class="lineno"> 2001</span>        <span class="keywordflow">if</span> (_firmwareType == MAV_AUTOPILOT_PX4) {</div>
+<div class="line"><a id="l02002" name="l02002"></a><span class="lineno"> 2002</span>            _sendGeneralMetaData();</div>
+<div class="line"><a id="l02003" name="l02003"></a><span class="lineno"> 2003</span>            accepted = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l02004" name="l02004"></a><span class="lineno"> 2004</span>        }</div>
+<div class="line"><a id="l02005" name="l02005"></a><span class="lineno"> 2005</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02006" name="l02006"></a><span class="lineno"> 2006</span>    <span class="keywordflow">case</span> MAVLINK_MSG_ID_DEBUG:</div>
+<div class="line"><a id="l02007" name="l02007"></a><span class="lineno"> 2007</span>        _handleRequestMessageDebug(request, accepted, noAck);</div>
+<div class="line"><a id="l02008" name="l02008"></a><span class="lineno"> 2008</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02009" name="l02009"></a><span class="lineno"> 2009</span>    <span class="keywordflow">case</span> MAVLINK_MSG_ID_AVAILABLE_MODES:</div>
+<div class="line"><a id="l02010" name="l02010"></a><span class="lineno"> 2010</span>        _handleRequestMessageAvailableModes(request, accepted);</div>
+<div class="line"><a id="l02011" name="l02011"></a><span class="lineno"> 2011</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l02012" name="l02012"></a><span class="lineno"> 2012</span>    }</div>
+<div class="line"><a id="l02013" name="l02013"></a><span class="lineno"> 2013</span>}</div>
+<div class="line"><a id="l02014" name="l02014"></a><span class="lineno"> 2014</span> </div>
+<div class="line"><a id="l02015" name="l02015"></a><span class="lineno"> 2015</span><span class="keywordtype">void</span> MockLink::_sendGeneralMetaData()</div>
+<div class="line"><a id="l02016" name="l02016"></a><span class="lineno"> 2016</span>{</div>
+<div class="line"><a id="l02017" name="l02017"></a><span class="lineno"> 2017</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> metaDataURI[MAVLINK_MSG_COMPONENT_METADATA_FIELD_URI_LEN] = <span class="stringliteral">&quot;mftp://[;comp=1]general.json&quot;</span>; </div>
+<div class="line"><a id="l02018" name="l02018"></a><span class="lineno"> 2018</span> </div>
+<div class="line"><a id="l02019" name="l02019"></a><span class="lineno"> 2019</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> responseMsg{};</div>
+<div class="line"><a id="l02020" name="l02020"></a><span class="lineno"> 2020</span>    (void) mavlink_msg_component_metadata_pack_chan(</div>
+<div class="line"><a id="l02021" name="l02021"></a><span class="lineno"> 2021</span>        _vehicleSystemId,</div>
+<div class="line"><a id="l02022" name="l02022"></a><span class="lineno"> 2022</span>        _vehicleComponentId,</div>
+<div class="line"><a id="l02023" name="l02023"></a><span class="lineno"> 2023</span>        <a class="code hl_function" href="classLinkInterface.html#a21d4864924f17c16d573810140ce8baa">mavlinkChannel</a>(),</div>
+<div class="line"><a id="l02024" name="l02024"></a><span class="lineno"> 2024</span>        &amp;responseMsg,</div>
+<div class="line"><a id="l02025" name="l02025"></a><span class="lineno"> 2025</span>        0, <span class="comment">// time_boot_ms</span></div>
+<div class="line"><a id="l02026" name="l02026"></a><span class="lineno"> 2026</span>        100, <span class="comment">// general_metadata_file_crc</span></div>
+<div class="line"><a id="l02027" name="l02027"></a><span class="lineno"> 2027</span>        metaDataURI</div>
+<div class="line"><a id="l02028" name="l02028"></a><span class="lineno"> 2028</span>    );</div>
+<div class="line"><a id="l02029" name="l02029"></a><span class="lineno"> 2029</span>    <a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(responseMsg);</div>
+<div class="line"><a id="l02030" name="l02030"></a><span class="lineno"> 2030</span>}</div>
+<div class="line"><a id="l02031" name="l02031"></a><span class="lineno"> 2031</span> </div>
+<div class="line"><a id="l02032" name="l02032"></a><span class="lineno"> 2032</span><span class="keywordtype">void</span> MockLink::_sendRemoteIDArmStatus()</div>
+<div class="line"><a id="l02033" name="l02033"></a><span class="lineno"> 2033</span>{</div>
+<div class="line"><a id="l02034" name="l02034"></a><span class="lineno"> 2034</span>    <span class="keywordtype">char</span> armStatusError[MAVLINK_MSG_OPEN_DRONE_ID_ARM_STATUS_FIELD_ERROR_LEN] = {};</div>
+<div class="line"><a id="l02035" name="l02035"></a><span class="lineno"> 2035</span>    std::strncpy(armStatusError, <span class="stringliteral">&quot;No Error&quot;</span>, <span class="keyword">sizeof</span>(armStatusError) - 1);</div>
 <div class="line"><a id="l02036" name="l02036"></a><span class="lineno"> 2036</span> </div>
-<div class="foldopen" id="foldopen02037" data-start="{" data-end="}">
-<div class="line"><a id="l02037" name="l02037"></a><span class="lineno"><a class="line" href="classMockLink.html#afbc68f1e502cd429985a964aaafc3c64"> 2037</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classMockLink.html#afbc68f1e502cd429985a964aaafc3c64">MockLink::simulateConnectionRemoved</a>()</div>
-<div class="line"><a id="l02038" name="l02038"></a><span class="lineno"> 2038</span>{</div>
-<div class="line"><a id="l02039" name="l02039"></a><span class="lineno"> 2039</span>    _commLost = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l02040" name="l02040"></a><span class="lineno"> 2040</span>    <a class="code hl_function" href="classLinkInterface.html#a826dfdd241228c3d06dc7cbc0ab91827">_connectionRemoved</a>();</div>
-<div class="line"><a id="l02041" name="l02041"></a><span class="lineno"> 2041</span>}</div>
-</div>
-<div class="line"><a id="l02042" name="l02042"></a><span class="lineno"> 2042</span> </div>
-<div class="foldopen" id="foldopen02043" data-start="{" data-end="}">
-<div class="line"><a id="l02043" name="l02043"></a><span class="lineno"><a class="line" href="classMockLink.html#a63027cc232c6a2681c03c9b202bf8ba8"> 2043</a></span><a class="code hl_class" href="classMockLinkFTP.html">MockLinkFTP</a> *<a class="code hl_function" href="classMockLink.html#a63027cc232c6a2681c03c9b202bf8ba8">MockLink::mockLinkFTP</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l02044" name="l02044"></a><span class="lineno"> 2044</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l02045" name="l02045"></a><span class="lineno"> 2045</span>    <span class="keywordflow">return</span> _mockLinkFTP;</div>
+<div class="line"><a id="l02037" name="l02037"></a><span class="lineno"> 2037</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg{};</div>
+<div class="line"><a id="l02038" name="l02038"></a><span class="lineno"> 2038</span>    (void) mavlink_msg_open_drone_id_arm_status_pack(</div>
+<div class="line"><a id="l02039" name="l02039"></a><span class="lineno"> 2039</span>        _vehicleSystemId,</div>
+<div class="line"><a id="l02040" name="l02040"></a><span class="lineno"> 2040</span>        MAV_COMP_ID_ODID_TXRX_1,</div>
+<div class="line"><a id="l02041" name="l02041"></a><span class="lineno"> 2041</span>        &amp;msg,</div>
+<div class="line"><a id="l02042" name="l02042"></a><span class="lineno"> 2042</span>        MAV_ODID_ARM_STATUS_GOOD_TO_ARM,</div>
+<div class="line"><a id="l02043" name="l02043"></a><span class="lineno"> 2043</span>        armStatusError</div>
+<div class="line"><a id="l02044" name="l02044"></a><span class="lineno"> 2044</span>    );</div>
+<div class="line"><a id="l02045" name="l02045"></a><span class="lineno"> 2045</span>    <a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(msg);</div>
 <div class="line"><a id="l02046" name="l02046"></a><span class="lineno"> 2046</span>}</div>
-</div>
 <div class="line"><a id="l02047" name="l02047"></a><span class="lineno"> 2047</span> </div>
-<div class="line"><a id="l02048" name="l02048"></a><span class="lineno"> 2048</span><span class="keywordtype">void</span> MockLink::_sendAvailableMode(uint8_t modeIndexOneBased)</div>
+<div class="foldopen" id="foldopen02048" data-start="{" data-end="}">
+<div class="line"><a id="l02048" name="l02048"></a><span class="lineno"><a class="line" href="classMockLink.html#afbc68f1e502cd429985a964aaafc3c64"> 2048</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classMockLink.html#afbc68f1e502cd429985a964aaafc3c64">MockLink::simulateConnectionRemoved</a>()</div>
 <div class="line"><a id="l02049" name="l02049"></a><span class="lineno"> 2049</span>{</div>
-<div class="line"><a id="l02050" name="l02050"></a><span class="lineno"> 2050</span>    <span class="keywordflow">if</span> (modeIndexOneBased &gt; _availableModesCount()) {</div>
-<div class="line"><a id="l02051" name="l02051"></a><span class="lineno"> 2051</span>        qCWarning(MockLinkLog) &lt;&lt; <span class="stringliteral">&quot;modeIndexOneBased out of range&quot;</span> &lt;&lt; modeIndexOneBased &lt;&lt; _availableModesCount();</div>
-<div class="line"><a id="l02052" name="l02052"></a><span class="lineno"> 2052</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l02053" name="l02053"></a><span class="lineno"> 2053</span>    }</div>
-<div class="line"><a id="l02054" name="l02054"></a><span class="lineno"> 2054</span> </div>
-<div class="line"><a id="l02055" name="l02055"></a><span class="lineno"> 2055</span>    qCDebug(MockLinkLog) &lt;&lt; <span class="stringliteral">&quot;_sendAvailableMode modeIndexOneBased:&quot;</span> &lt;&lt; modeIndexOneBased;</div>
-<div class="line"><a id="l02056" name="l02056"></a><span class="lineno"> 2056</span> </div>
-<div class="line"><a id="l02057" name="l02057"></a><span class="lineno"> 2057</span>    <span class="keyword">const</span> FlightMode_t &amp;availableMode = _availableFlightModes[modeIndexOneBased - 1];</div>
-<div class="line"><a id="l02058" name="l02058"></a><span class="lineno"> 2058</span>    <span class="keywordtype">char</span> modeName[MAVLINK_MSG_AVAILABLE_MODES_FIELD_MODE_NAME_LEN] = {};</div>
-<div class="line"><a id="l02059" name="l02059"></a><span class="lineno"> 2059</span>    std::strncpy(modeName, availableMode.name, <span class="keyword">sizeof</span>(modeName) - 1);</div>
-<div class="line"><a id="l02060" name="l02060"></a><span class="lineno"> 2060</span> </div>
-<div class="line"><a id="l02061" name="l02061"></a><span class="lineno"> 2061</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg{};</div>
-<div class="line"><a id="l02062" name="l02062"></a><span class="lineno"> 2062</span> </div>
-<div class="line"><a id="l02063" name="l02063"></a><span class="lineno"> 2063</span>    (void) mavlink_msg_available_modes_pack_chan(</div>
-<div class="line"><a id="l02064" name="l02064"></a><span class="lineno"> 2064</span>        _vehicleSystemId,</div>
-<div class="line"><a id="l02065" name="l02065"></a><span class="lineno"> 2065</span>        _vehicleComponentId,</div>
-<div class="line"><a id="l02066" name="l02066"></a><span class="lineno"> 2066</span>        <a class="code hl_function" href="classLinkInterface.html#a21d4864924f17c16d573810140ce8baa">mavlinkChannel</a>(),</div>
-<div class="line"><a id="l02067" name="l02067"></a><span class="lineno"> 2067</span>        &amp;msg,</div>
-<div class="line"><a id="l02068" name="l02068"></a><span class="lineno"> 2068</span>        _availableModesCount(),</div>
-<div class="line"><a id="l02069" name="l02069"></a><span class="lineno"> 2069</span>        modeIndexOneBased,</div>
-<div class="line"><a id="l02070" name="l02070"></a><span class="lineno"> 2070</span>        availableMode.standard_mode,</div>
-<div class="line"><a id="l02071" name="l02071"></a><span class="lineno"> 2071</span>        availableMode.custom_mode,</div>
-<div class="line"><a id="l02072" name="l02072"></a><span class="lineno"> 2072</span>        availableMode.canBeSet ? 0 : MAV_MODE_PROPERTY_NOT_USER_SELECTABLE,</div>
-<div class="line"><a id="l02073" name="l02073"></a><span class="lineno"> 2073</span>        modeName);</div>
-<div class="line"><a id="l02074" name="l02074"></a><span class="lineno"> 2074</span>    <a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(msg);</div>
-<div class="line"><a id="l02075" name="l02075"></a><span class="lineno"> 2075</span>}</div>
-<div class="line"><a id="l02076" name="l02076"></a><span class="lineno"> 2076</span> </div>
-<div class="line"><a id="l02077" name="l02077"></a><span class="lineno"> 2077</span><span class="keywordtype">void</span> MockLink::_availableModesWorker()</div>
-<div class="line"><a id="l02078" name="l02078"></a><span class="lineno"> 2078</span>{</div>
-<div class="line"><a id="l02079" name="l02079"></a><span class="lineno"> 2079</span>    <span class="comment">// Runs every 2ms (500Hz on worker thread). Reads and increments shared index modified by main.</span></div>
-<div class="line"><a id="l02080" name="l02080"></a><span class="lineno"> 2080</span>    <span class="comment">// Read-modify-write must be atomic to prevent lost updates or incorrect state transitions.</span></div>
-<div class="line"><a id="l02081" name="l02081"></a><span class="lineno"> 2081</span>    QMutexLocker locker(&amp;_availableModesWorkerMutex);</div>
-<div class="line"><a id="l02082" name="l02082"></a><span class="lineno"> 2082</span>    <span class="keywordflow">if</span> (_availableModesWorkerNextModeIndex == 0) {</div>
-<div class="line"><a id="l02083" name="l02083"></a><span class="lineno"> 2083</span>        <span class="comment">//  Not active</span></div>
-<div class="line"><a id="l02084" name="l02084"></a><span class="lineno"> 2084</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l02085" name="l02085"></a><span class="lineno"> 2085</span>    }</div>
-<div class="line"><a id="l02086" name="l02086"></a><span class="lineno"> 2086</span> </div>
-<div class="line"><a id="l02087" name="l02087"></a><span class="lineno"> 2087</span>    _sendAvailableMode(qAbs(_availableModesWorkerNextModeIndex));</div>
-<div class="line"><a id="l02088" name="l02088"></a><span class="lineno"> 2088</span> </div>
-<div class="line"><a id="l02089" name="l02089"></a><span class="lineno"> 2089</span>    <span class="keywordflow">if</span> (_availableModesWorkerNextModeIndex &lt; 0) {</div>
-<div class="line"><a id="l02090" name="l02090"></a><span class="lineno"> 2090</span>        <span class="comment">// Single mode request, stop worker</span></div>
-<div class="line"><a id="l02091" name="l02091"></a><span class="lineno"> 2091</span>        _availableModesWorkerNextModeIndex = 0;</div>
-<div class="line"><a id="l02092" name="l02092"></a><span class="lineno"> 2092</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (++_availableModesWorkerNextModeIndex &gt; _availableModesCount()) {</div>
-<div class="line"><a id="l02093" name="l02093"></a><span class="lineno"> 2093</span>        <span class="comment">// All modes sent, stop worker</span></div>
-<div class="line"><a id="l02094" name="l02094"></a><span class="lineno"> 2094</span>        _availableModesWorkerNextModeIndex = 0;</div>
-<div class="line"><a id="l02095" name="l02095"></a><span class="lineno"> 2095</span>        qCDebug(MockLinkLog) &lt;&lt; <span class="stringliteral">&quot;_availableModesWorker: all modes sent, stopping worker&quot;</span>;</div>
+<div class="line"><a id="l02050" name="l02050"></a><span class="lineno"> 2050</span>    _commLost = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l02051" name="l02051"></a><span class="lineno"> 2051</span>    <a class="code hl_function" href="classLinkInterface.html#a826dfdd241228c3d06dc7cbc0ab91827">_connectionRemoved</a>();</div>
+<div class="line"><a id="l02052" name="l02052"></a><span class="lineno"> 2052</span>}</div>
+</div>
+<div class="line"><a id="l02053" name="l02053"></a><span class="lineno"> 2053</span> </div>
+<div class="foldopen" id="foldopen02054" data-start="{" data-end="}">
+<div class="line"><a id="l02054" name="l02054"></a><span class="lineno"><a class="line" href="classMockLink.html#a63027cc232c6a2681c03c9b202bf8ba8"> 2054</a></span><a class="code hl_class" href="classMockLinkFTP.html">MockLinkFTP</a> *<a class="code hl_function" href="classMockLink.html#a63027cc232c6a2681c03c9b202bf8ba8">MockLink::mockLinkFTP</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l02055" name="l02055"></a><span class="lineno"> 2055</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l02056" name="l02056"></a><span class="lineno"> 2056</span>    <span class="keywordflow">return</span> _mockLinkFTP;</div>
+<div class="line"><a id="l02057" name="l02057"></a><span class="lineno"> 2057</span>}</div>
+</div>
+<div class="line"><a id="l02058" name="l02058"></a><span class="lineno"> 2058</span> </div>
+<div class="line"><a id="l02059" name="l02059"></a><span class="lineno"> 2059</span><span class="keywordtype">void</span> MockLink::_sendAvailableMode(uint8_t modeIndexOneBased)</div>
+<div class="line"><a id="l02060" name="l02060"></a><span class="lineno"> 2060</span>{</div>
+<div class="line"><a id="l02061" name="l02061"></a><span class="lineno"> 2061</span>    <span class="keywordflow">if</span> (modeIndexOneBased &gt; _availableModesCount()) {</div>
+<div class="line"><a id="l02062" name="l02062"></a><span class="lineno"> 2062</span>        qCWarning(MockLinkLog) &lt;&lt; <span class="stringliteral">&quot;modeIndexOneBased out of range&quot;</span> &lt;&lt; modeIndexOneBased &lt;&lt; _availableModesCount();</div>
+<div class="line"><a id="l02063" name="l02063"></a><span class="lineno"> 2063</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l02064" name="l02064"></a><span class="lineno"> 2064</span>    }</div>
+<div class="line"><a id="l02065" name="l02065"></a><span class="lineno"> 2065</span> </div>
+<div class="line"><a id="l02066" name="l02066"></a><span class="lineno"> 2066</span>    qCDebug(MockLinkLog) &lt;&lt; <span class="stringliteral">&quot;_sendAvailableMode modeIndexOneBased:&quot;</span> &lt;&lt; modeIndexOneBased;</div>
+<div class="line"><a id="l02067" name="l02067"></a><span class="lineno"> 2067</span> </div>
+<div class="line"><a id="l02068" name="l02068"></a><span class="lineno"> 2068</span>    <span class="keyword">const</span> FlightMode_t &amp;availableMode = _availableFlightModes[modeIndexOneBased - 1];</div>
+<div class="line"><a id="l02069" name="l02069"></a><span class="lineno"> 2069</span>    <span class="keywordtype">char</span> modeName[MAVLINK_MSG_AVAILABLE_MODES_FIELD_MODE_NAME_LEN] = {};</div>
+<div class="line"><a id="l02070" name="l02070"></a><span class="lineno"> 2070</span>    std::strncpy(modeName, availableMode.name, <span class="keyword">sizeof</span>(modeName) - 1);</div>
+<div class="line"><a id="l02071" name="l02071"></a><span class="lineno"> 2071</span> </div>
+<div class="line"><a id="l02072" name="l02072"></a><span class="lineno"> 2072</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg{};</div>
+<div class="line"><a id="l02073" name="l02073"></a><span class="lineno"> 2073</span> </div>
+<div class="line"><a id="l02074" name="l02074"></a><span class="lineno"> 2074</span>    (void) mavlink_msg_available_modes_pack_chan(</div>
+<div class="line"><a id="l02075" name="l02075"></a><span class="lineno"> 2075</span>        _vehicleSystemId,</div>
+<div class="line"><a id="l02076" name="l02076"></a><span class="lineno"> 2076</span>        _vehicleComponentId,</div>
+<div class="line"><a id="l02077" name="l02077"></a><span class="lineno"> 2077</span>        <a class="code hl_function" href="classLinkInterface.html#a21d4864924f17c16d573810140ce8baa">mavlinkChannel</a>(),</div>
+<div class="line"><a id="l02078" name="l02078"></a><span class="lineno"> 2078</span>        &amp;msg,</div>
+<div class="line"><a id="l02079" name="l02079"></a><span class="lineno"> 2079</span>        _availableModesCount(),</div>
+<div class="line"><a id="l02080" name="l02080"></a><span class="lineno"> 2080</span>        modeIndexOneBased,</div>
+<div class="line"><a id="l02081" name="l02081"></a><span class="lineno"> 2081</span>        availableMode.standard_mode,</div>
+<div class="line"><a id="l02082" name="l02082"></a><span class="lineno"> 2082</span>        availableMode.custom_mode,</div>
+<div class="line"><a id="l02083" name="l02083"></a><span class="lineno"> 2083</span>        availableMode.canBeSet ? 0 : MAV_MODE_PROPERTY_NOT_USER_SELECTABLE,</div>
+<div class="line"><a id="l02084" name="l02084"></a><span class="lineno"> 2084</span>        modeName);</div>
+<div class="line"><a id="l02085" name="l02085"></a><span class="lineno"> 2085</span>    <a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(msg);</div>
+<div class="line"><a id="l02086" name="l02086"></a><span class="lineno"> 2086</span>}</div>
+<div class="line"><a id="l02087" name="l02087"></a><span class="lineno"> 2087</span> </div>
+<div class="line"><a id="l02088" name="l02088"></a><span class="lineno"> 2088</span><span class="keywordtype">void</span> MockLink::_availableModesWorker()</div>
+<div class="line"><a id="l02089" name="l02089"></a><span class="lineno"> 2089</span>{</div>
+<div class="line"><a id="l02090" name="l02090"></a><span class="lineno"> 2090</span>    <span class="comment">// Runs every 2ms (500Hz on worker thread). Reads and increments shared index modified by main.</span></div>
+<div class="line"><a id="l02091" name="l02091"></a><span class="lineno"> 2091</span>    <span class="comment">// Read-modify-write must be atomic to prevent lost updates or incorrect state transitions.</span></div>
+<div class="line"><a id="l02092" name="l02092"></a><span class="lineno"> 2092</span>    QMutexLocker locker(&amp;_availableModesWorkerMutex);</div>
+<div class="line"><a id="l02093" name="l02093"></a><span class="lineno"> 2093</span>    <span class="keywordflow">if</span> (_availableModesWorkerNextModeIndex == 0) {</div>
+<div class="line"><a id="l02094" name="l02094"></a><span class="lineno"> 2094</span>        <span class="comment">//  Not active</span></div>
+<div class="line"><a id="l02095" name="l02095"></a><span class="lineno"> 2095</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l02096" name="l02096"></a><span class="lineno"> 2096</span>    }</div>
-<div class="line"><a id="l02097" name="l02097"></a><span class="lineno"> 2097</span>}</div>
-<div class="line"><a id="l02098" name="l02098"></a><span class="lineno"> 2098</span> </div>
-<div class="line"><a id="l02099" name="l02099"></a><span class="lineno"> 2099</span><span class="keywordtype">void</span> MockLink::_sendAvailableModesMonitor()</div>
-<div class="line"><a id="l02100" name="l02100"></a><span class="lineno"> 2100</span>{</div>
-<div class="line"><a id="l02101" name="l02101"></a><span class="lineno"> 2101</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg{};</div>
-<div class="line"><a id="l02102" name="l02102"></a><span class="lineno"> 2102</span> </div>
-<div class="line"><a id="l02103" name="l02103"></a><span class="lineno"> 2103</span>    (void) mavlink_msg_available_modes_monitor_pack_chan(</div>
-<div class="line"><a id="l02104" name="l02104"></a><span class="lineno"> 2104</span>        _vehicleSystemId,</div>
-<div class="line"><a id="l02105" name="l02105"></a><span class="lineno"> 2105</span>        _vehicleComponentId,</div>
-<div class="line"><a id="l02106" name="l02106"></a><span class="lineno"> 2106</span>        <a class="code hl_function" href="classLinkInterface.html#a21d4864924f17c16d573810140ce8baa">mavlinkChannel</a>(),</div>
-<div class="line"><a id="l02107" name="l02107"></a><span class="lineno"> 2107</span>        &amp;msg,</div>
-<div class="line"><a id="l02108" name="l02108"></a><span class="lineno"> 2108</span>        _availableModesMonitorSeqNumber);</div>
-<div class="line"><a id="l02109" name="l02109"></a><span class="lineno"> 2109</span>    <a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(msg);</div>
-<div class="line"><a id="l02110" name="l02110"></a><span class="lineno"> 2110</span>}</div>
-<div class="line"><a id="l02111" name="l02111"></a><span class="lineno"> 2111</span> </div>
-<div class="line"><a id="l02112" name="l02112"></a><span class="lineno"> 2112</span><span class="keywordtype">int</span> MockLink::_availableModesCount()<span class="keyword"> const</span></div>
-<div class="line"><a id="l02113" name="l02113"></a><span class="lineno"> 2113</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l02114" name="l02114"></a><span class="lineno"> 2114</span>    <span class="keywordflow">return</span> _availableFlightModes.count() - (_availableModesMonitorSeqNumber == 0 ? 1 : 0); <span class="comment">// Exclude the delayed mode</span></div>
-<div class="line"><a id="l02115" name="l02115"></a><span class="lineno"> 2115</span>}</div>
+<div class="line"><a id="l02097" name="l02097"></a><span class="lineno"> 2097</span> </div>
+<div class="line"><a id="l02098" name="l02098"></a><span class="lineno"> 2098</span>    _sendAvailableMode(qAbs(_availableModesWorkerNextModeIndex));</div>
+<div class="line"><a id="l02099" name="l02099"></a><span class="lineno"> 2099</span> </div>
+<div class="line"><a id="l02100" name="l02100"></a><span class="lineno"> 2100</span>    <span class="keywordflow">if</span> (_availableModesWorkerNextModeIndex &lt; 0) {</div>
+<div class="line"><a id="l02101" name="l02101"></a><span class="lineno"> 2101</span>        <span class="comment">// Single mode request, stop worker</span></div>
+<div class="line"><a id="l02102" name="l02102"></a><span class="lineno"> 2102</span>        _availableModesWorkerNextModeIndex = 0;</div>
+<div class="line"><a id="l02103" name="l02103"></a><span class="lineno"> 2103</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (++_availableModesWorkerNextModeIndex &gt; _availableModesCount()) {</div>
+<div class="line"><a id="l02104" name="l02104"></a><span class="lineno"> 2104</span>        <span class="comment">// All modes sent, stop worker</span></div>
+<div class="line"><a id="l02105" name="l02105"></a><span class="lineno"> 2105</span>        _availableModesWorkerNextModeIndex = 0;</div>
+<div class="line"><a id="l02106" name="l02106"></a><span class="lineno"> 2106</span>        qCDebug(MockLinkLog) &lt;&lt; <span class="stringliteral">&quot;_availableModesWorker: all modes sent, stopping worker&quot;</span>;</div>
+<div class="line"><a id="l02107" name="l02107"></a><span class="lineno"> 2107</span>    }</div>
+<div class="line"><a id="l02108" name="l02108"></a><span class="lineno"> 2108</span>}</div>
+<div class="line"><a id="l02109" name="l02109"></a><span class="lineno"> 2109</span> </div>
+<div class="line"><a id="l02110" name="l02110"></a><span class="lineno"> 2110</span><span class="keywordtype">void</span> MockLink::_sendAvailableModesMonitor()</div>
+<div class="line"><a id="l02111" name="l02111"></a><span class="lineno"> 2111</span>{</div>
+<div class="line"><a id="l02112" name="l02112"></a><span class="lineno"> 2112</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg{};</div>
+<div class="line"><a id="l02113" name="l02113"></a><span class="lineno"> 2113</span> </div>
+<div class="line"><a id="l02114" name="l02114"></a><span class="lineno"> 2114</span>    (void) mavlink_msg_available_modes_monitor_pack_chan(</div>
+<div class="line"><a id="l02115" name="l02115"></a><span class="lineno"> 2115</span>        _vehicleSystemId,</div>
+<div class="line"><a id="l02116" name="l02116"></a><span class="lineno"> 2116</span>        _vehicleComponentId,</div>
+<div class="line"><a id="l02117" name="l02117"></a><span class="lineno"> 2117</span>        <a class="code hl_function" href="classLinkInterface.html#a21d4864924f17c16d573810140ce8baa">mavlinkChannel</a>(),</div>
+<div class="line"><a id="l02118" name="l02118"></a><span class="lineno"> 2118</span>        &amp;msg,</div>
+<div class="line"><a id="l02119" name="l02119"></a><span class="lineno"> 2119</span>        _availableModesMonitorSeqNumber);</div>
+<div class="line"><a id="l02120" name="l02120"></a><span class="lineno"> 2120</span>    <a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(msg);</div>
+<div class="line"><a id="l02121" name="l02121"></a><span class="lineno"> 2121</span>}</div>
+<div class="line"><a id="l02122" name="l02122"></a><span class="lineno"> 2122</span> </div>
+<div class="line"><a id="l02123" name="l02123"></a><span class="lineno"> 2123</span><span class="keywordtype">int</span> MockLink::_availableModesCount()<span class="keyword"> const</span></div>
+<div class="line"><a id="l02124" name="l02124"></a><span class="lineno"> 2124</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l02125" name="l02125"></a><span class="lineno"> 2125</span>    <span class="keywordflow">return</span> _availableFlightModes.count() - (_availableModesMonitorSeqNumber == 0 ? 1 : 0); <span class="comment">// Exclude the delayed mode</span></div>
+<div class="line"><a id="l02126" name="l02126"></a><span class="lineno"> 2126</span>}</div>
 <div class="ttc" id="aFactMetaData_8h_html"><div class="ttname"><a href="FactMetaData_8h.html">FactMetaData.h</a></div></div>
 <div class="ttc" id="aFirmwarePlugin_8h_html"><div class="ttname"><a href="FirmwarePlugin_8h.html">FirmwarePlugin.h</a></div></div>
 <div class="ttc" id="aLinkConfiguration_8h_html_a6aba49400b7520d5927fd2a5de190290"><div class="ttname"><a href="LinkConfiguration_8h.html#a6aba49400b7520d5927fd2a5de190290">SharedLinkConfigurationPtr</a></div><div class="ttdeci">std::shared_ptr&lt; LinkConfiguration &gt; SharedLinkConfigurationPtr</div><div class="ttdef"><b>Definition</b> <a href="LinkConfiguration_8h_source.html#l00138">LinkConfiguration.h:138</a></div></div>
@@ -2295,45 +2306,45 @@ $(document).ready(function(){initNavTree('MockLink_8cc_source.html',''); initRes
 <div class="ttc" id="aclassMockLinkMissionItemHandler_html_ae71407432b2f2ff61c7555fc840b3499"><div class="ttname"><a href="classMockLinkMissionItemHandler.html#ae71407432b2f2ff61c7555fc840b3499">MockLinkMissionItemHandler::shutdown</a></div><div class="ttdeci">void shutdown()</div><div class="ttdef"><b>Definition</b> <a href="MockLinkMissionItemHandler_8cc_source.html#l00425">MockLinkMissionItemHandler.cc:425</a></div></div>
 <div class="ttc" id="aclassMockLinkWorker_html"><div class="ttname"><a href="classMockLinkWorker.html">MockLinkWorker</a></div><div class="ttdef"><b>Definition</b> <a href="MockLinkWorker_8h_source.html#l00010">MockLinkWorker.h:11</a></div></div>
 <div class="ttc" id="aclassMockLinkWorker_html_ac532a11bc9ca79e03b1ab53cd4c5eb01"><div class="ttname"><a href="classMockLinkWorker.html#ac532a11bc9ca79e03b1ab53cd4c5eb01">MockLinkWorker::startWork</a></div><div class="ttdeci">void startWork()</div><div class="ttdef"><b>Definition</b> <a href="MockLinkWorker_8cc_source.html#l00018">MockLinkWorker.cc:18</a></div></div>
-<div class="ttc" id="aclassMockLink_html"><div class="ttname"><a href="classMockLink.html">MockLink</a></div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00026">MockLink.h:27</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a1fcc8cbbc6c8b4782b63065d0622f5a5a18c6e9e3065693ec142858db283b8c36"><div class="ttname"><a href="classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5a18c6e9e3065693ec142858db283b8c36">MockLink::FailRequestMessageCommandAcceptedMsgNotSent</a></div><div class="ttdeci">@ FailRequestMessageCommandAcceptedMsgNotSent</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00092">MockLink.h:92</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a1fcc8cbbc6c8b4782b63065d0622f5a5a4ec58f1ce11a3369a51abb8858d28fc0"><div class="ttname"><a href="classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5a4ec58f1ce11a3369a51abb8858d28fc0">MockLink::FailRequestMessageCommandNoResponse</a></div><div class="ttdeci">@ FailRequestMessageCommandNoResponse</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00094">MockLink.h:94</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a1fcc8cbbc6c8b4782b63065d0622f5a5a683ed2658f4b943fbcfd3b25b961533d"><div class="ttname"><a href="classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5a683ed2658f4b943fbcfd3b25b961533d">MockLink::FailRequestMessageCommandUnsupported</a></div><div class="ttdeci">@ FailRequestMessageCommandUnsupported</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00093">MockLink.h:93</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a1fcc8cbbc6c8b4782b63065d0622f5a5abe7d4e24d79f9a632d5038106988dd65"><div class="ttname"><a href="classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5abe7d4e24d79f9a632d5038106988dd65">MockLink::FailRequestMessageNone</a></div><div class="ttdeci">@ FailRequestMessageNone</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00091">MockLink.h:91</a></div></div>
+<div class="ttc" id="aclassMockLink_html"><div class="ttname"><a href="classMockLink.html">MockLink</a></div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00027">MockLink.h:28</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a1fcc8cbbc6c8b4782b63065d0622f5a5a18c6e9e3065693ec142858db283b8c36"><div class="ttname"><a href="classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5a18c6e9e3065693ec142858db283b8c36">MockLink::FailRequestMessageCommandAcceptedMsgNotSent</a></div><div class="ttdeci">@ FailRequestMessageCommandAcceptedMsgNotSent</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00093">MockLink.h:93</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a1fcc8cbbc6c8b4782b63065d0622f5a5a4ec58f1ce11a3369a51abb8858d28fc0"><div class="ttname"><a href="classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5a4ec58f1ce11a3369a51abb8858d28fc0">MockLink::FailRequestMessageCommandNoResponse</a></div><div class="ttdeci">@ FailRequestMessageCommandNoResponse</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00095">MockLink.h:95</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a1fcc8cbbc6c8b4782b63065d0622f5a5a683ed2658f4b943fbcfd3b25b961533d"><div class="ttname"><a href="classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5a683ed2658f4b943fbcfd3b25b961533d">MockLink::FailRequestMessageCommandUnsupported</a></div><div class="ttdeci">@ FailRequestMessageCommandUnsupported</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00094">MockLink.h:94</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a1fcc8cbbc6c8b4782b63065d0622f5a5abe7d4e24d79f9a632d5038106988dd65"><div class="ttname"><a href="classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5abe7d4e24d79f9a632d5038106988dd65">MockLink::FailRequestMessageNone</a></div><div class="ttdeci">@ FailRequestMessageNone</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00092">MockLink.h:92</a></div></div>
 <div class="ttc" id="aclassMockLink_html_a2d85b6cede25156baf71112328317193"><div class="ttname"><a href="classMockLink.html#a2d85b6cede25156baf71112328317193">MockLink::writeBytesQueuedSignal</a></div><div class="ttdeci">void writeBytesQueuedSignal(const QByteArray &amp;bytes)</div></div>
 <div class="ttc" id="aclassMockLink_html_a32c81abcb2be05dafe80196b3d769049"><div class="ttname"><a href="classMockLink.html#a32c81abcb2be05dafe80196b3d769049">MockLink::setMockParamValue</a></div><div class="ttdeci">void setMockParamValue(int componentId, const QString &amp;paramName, float value)</div><div class="ttdoc">Change a float parameter value directly on MockLink (for testing cache invalidation)</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00790">MockLink.cc:790</a></div></div>
 <div class="ttc" id="aclassMockLink_html_a34c5edd1ed0683ff9cc6716a9849ee60"><div class="ttname"><a href="classMockLink.html#a34c5edd1ed0683ff9cc6716a9849ee60">MockLink::startGenericMockLink</a></div><div class="ttdeci">static MockLink * startGenericMockLink(bool sendStatusText, bool enableCamera, bool enableGimbal, MockConfiguration::FailureMode_t failureMode=MockConfiguration::FailNone)</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l01646">MockLink.cc:1646</a></div></div>
 <div class="ttc" id="aclassMockLink_html_a34cfe91913377387a295d9a82c27c09e"><div class="ttname"><a href="classMockLink.html#a34cfe91913377387a295d9a82c27c09e">MockLink::run10HzTasks</a></div><div class="ttdeci">void run10HzTasks()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00219">MockLink.cc:219</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a4830742176f1a546396a9856a8c634dd"><div class="ttname"><a href="classMockLink.html#a4830742176f1a546396a9856a8c634dd">MockLink::MAV_CMD_MOCKLINK_ALWAYS_RESULT_ACCEPTED</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_ALWAYS_RESULT_ACCEPTED</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00135">MockLink.h:135</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a56c4c7ff06207a68a850e31f72843ff5a388ce1172a10cc5ea6894a7140741289"><div class="ttname"><a href="classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5a388ce1172a10cc5ea6894a7140741289">MockLink::FailParamSetFirstAttemptNoAck</a></div><div class="ttdeci">@ FailParamSetFirstAttemptNoAck</div><div class="ttdoc">Skip ack on first attempt, respond to retry.</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00101">MockLink.h:101</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a56c4c7ff06207a68a850e31f72843ff5a66b6a385709fbb5b206154cb7dc0ac70"><div class="ttname"><a href="classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5a66b6a385709fbb5b206154cb7dc0ac70">MockLink::FailParamSetNoAck</a></div><div class="ttdeci">@ FailParamSetNoAck</div><div class="ttdoc">Do not send PARAM_VALUE ack.</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00100">MockLink.h:100</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a57b62dc35660be49d7b8180e69b0fc06"><div class="ttname"><a href="classMockLink.html#a57b62dc35660be49d7b8180e69b0fc06">MockLink::MAV_CMD_MOCKLINK_SECOND_ATTEMPT_RESULT_ACCEPTED</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_SECOND_ATTEMPT_RESULT_ACCEPTED</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00137">MockLink.h:137</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a63027cc232c6a2681c03c9b202bf8ba8"><div class="ttname"><a href="classMockLink.html#a63027cc232c6a2681c03c9b202bf8ba8">MockLink::mockLinkFTP</a></div><div class="ttdeci">MockLinkFTP * mockLinkFTP() const</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l02043">MockLink.cc:2043</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a4830742176f1a546396a9856a8c634dd"><div class="ttname"><a href="classMockLink.html#a4830742176f1a546396a9856a8c634dd">MockLink::MAV_CMD_MOCKLINK_ALWAYS_RESULT_ACCEPTED</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_ALWAYS_RESULT_ACCEPTED</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00147">MockLink.h:147</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a56c4c7ff06207a68a850e31f72843ff5a388ce1172a10cc5ea6894a7140741289"><div class="ttname"><a href="classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5a388ce1172a10cc5ea6894a7140741289">MockLink::FailParamSetFirstAttemptNoAck</a></div><div class="ttdeci">@ FailParamSetFirstAttemptNoAck</div><div class="ttdoc">Skip ack on first attempt, respond to retry.</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00113">MockLink.h:113</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a56c4c7ff06207a68a850e31f72843ff5a66b6a385709fbb5b206154cb7dc0ac70"><div class="ttname"><a href="classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5a66b6a385709fbb5b206154cb7dc0ac70">MockLink::FailParamSetNoAck</a></div><div class="ttdeci">@ FailParamSetNoAck</div><div class="ttdoc">Do not send PARAM_VALUE ack.</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00112">MockLink.h:112</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a57b62dc35660be49d7b8180e69b0fc06"><div class="ttname"><a href="classMockLink.html#a57b62dc35660be49d7b8180e69b0fc06">MockLink::MAV_CMD_MOCKLINK_SECOND_ATTEMPT_RESULT_ACCEPTED</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_SECOND_ATTEMPT_RESULT_ACCEPTED</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00149">MockLink.h:149</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a63027cc232c6a2681c03c9b202bf8ba8"><div class="ttname"><a href="classMockLink.html#a63027cc232c6a2681c03c9b202bf8ba8">MockLink::mockLinkFTP</a></div><div class="ttdeci">MockLinkFTP * mockLinkFTP() const</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l02054">MockLink.cc:2054</a></div></div>
 <div class="ttc" id="aclassMockLink_html_a67e4d3a539721027a3a2bc92a92c85e5"><div class="ttname"><a href="classMockLink.html#a67e4d3a539721027a3a2bc92a92c85e5">MockLink::startAPMArduSubMockLink</a></div><div class="ttdeci">static MockLink * startAPMArduSubMockLink(bool sendStatusText, bool enableCamera, bool enableGimbal, MockConfiguration::FailureMode_t failureMode=MockConfiguration::FailNone)</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l01666">MockLink.cc:1666</a></div></div>
 <div class="ttc" id="aclassMockLink_html_a6e84402bbd4b56a0897298f5b603a6a7"><div class="ttname"><a href="classMockLink.html#a6e84402bbd4b56a0897298f5b603a6a7">MockLink::startAPMArduCopterMockLink</a></div><div class="ttdeci">static MockLink * startAPMArduCopterMockLink(bool sendStatusText, bool enableCamera, bool enableGimbal, MockConfiguration::FailureMode_t failureMode=MockConfiguration::FailNone)</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l01656">MockLink.cc:1656</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a6fe6ed3768fe5239e820acad1ae98fa1"><div class="ttname"><a href="classMockLink.html#a6fe6ed3768fe5239e820acad1ae98fa1">MockLink::MAV_CMD_MOCKLINK_ALWAYS_RESULT_FAILED</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_ALWAYS_RESULT_FAILED</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00136">MockLink.h:136</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a6fe6ed3768fe5239e820acad1ae98fa1"><div class="ttname"><a href="classMockLink.html#a6fe6ed3768fe5239e820acad1ae98fa1">MockLink::MAV_CMD_MOCKLINK_ALWAYS_RESULT_FAILED</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_ALWAYS_RESULT_FAILED</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00148">MockLink.h:148</a></div></div>
 <div class="ttc" id="aclassMockLink_html_a7998185c15908fc9d40242d4b75db8a5"><div class="ttname"><a href="classMockLink.html#a7998185c15908fc9d40242d4b75db8a5">MockLink::startNoInitialConnectMockLink</a></div><div class="ttdeci">static MockLink * startNoInitialConnectMockLink(bool sendStatusText, bool enableCamera, bool enableGimbal, MockConfiguration::FailureMode_t failureMode=MockConfiguration::FailNone)</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l01651">MockLink.cc:1651</a></div></div>
 <div class="ttc" id="aclassMockLink_html_a7bd680c0f9c98c2cf7e69277332e8647"><div class="ttname"><a href="classMockLink.html#a7bd680c0f9c98c2cf7e69277332e8647">MockLink::startPX4MockLink</a></div><div class="ttdeci">static MockLink * startPX4MockLink(bool sendStatusText, bool enableCamera, bool enableGimbal, MockConfiguration::FailureMode_t failureMode=MockConfiguration::FailNone)</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l01641">MockLink.cc:1641</a></div></div>
 <div class="ttc" id="aclassMockLink_html_a7cd2437e5cee84b405ab1c1a5a180309"><div class="ttname"><a href="classMockLink.html#a7cd2437e5cee84b405ab1c1a5a180309">MockLink::startAPMArduRoverMockLink</a></div><div class="ttdeci">static MockLink * startAPMArduRoverMockLink(bool sendStatusText, bool enableCamera, bool enableGimbal, MockConfiguration::FailureMode_t failureMode=MockConfiguration::FailNone)</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l01671">MockLink.cc:1671</a></div></div>
 <div class="ttc" id="aclassMockLink_html_a86f04e1b09aca765486fff8ae3a2064d"><div class="ttname"><a href="classMockLink.html#a86f04e1b09aca765486fff8ae3a2064d">MockLink::disconnect</a></div><div class="ttdeci">void disconnect() final</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00152">MockLink.cc:152</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a8b74631b500b815bad29b6f78de7e3c6"><div class="ttname"><a href="classMockLink.html#a8b74631b500b815bad29b6f78de7e3c6">MockLink::MAV_CMD_MOCKLINK_SECOND_ATTEMPT_RESULT_FAILED</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_SECOND_ATTEMPT_RESULT_FAILED</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00138">MockLink.h:138</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a8b74631b500b815bad29b6f78de7e3c6"><div class="ttname"><a href="classMockLink.html#a8b74631b500b815bad29b6f78de7e3c6">MockLink::MAV_CMD_MOCKLINK_SECOND_ATTEMPT_RESULT_FAILED</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_SECOND_ATTEMPT_RESULT_FAILED</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00150">MockLink.h:150</a></div></div>
 <div class="ttc" id="aclassMockLink_html_a94630d7aac53b1ba17c5d730b09ca7ac"><div class="ttname"><a href="classMockLink.html#a94630d7aac53b1ba17c5d730b09ca7ac">MockLink::run500HzTasks</a></div><div class="ttdeci">void run500HzTasks()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00244">MockLink.cc:244</a></div></div>
 <div class="ttc" id="aclassMockLink_html_a94b2e99a1bfe6da83b5a5d8aeb8e4147"><div class="ttname"><a href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">MockLink::respondWithMavlinkMessage</a></div><div class="ttdeci">void respondWithMavlinkMessage(const mavlink_message_t &amp;msg)</div><div class="ttdoc">Sends the specified mavlink message to QGC.</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00558">MockLink.cc:558</a></div></div>
-<div class="ttc" id="aclassMockLink_html_aa306d490cb2902fc550e40a7e7a1ad2f"><div class="ttname"><a href="classMockLink.html#aa306d490cb2902fc550e40a7e7a1ad2f">MockLink::MAV_CMD_MOCKLINK_NO_RESPONSE</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_NO_RESPONSE</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00139">MockLink.h:139</a></div></div>
+<div class="ttc" id="aclassMockLink_html_aa306d490cb2902fc550e40a7e7a1ad2f"><div class="ttname"><a href="classMockLink.html#aa306d490cb2902fc550e40a7e7a1ad2f">MockLink::MAV_CMD_MOCKLINK_NO_RESPONSE</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_NO_RESPONSE</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00151">MockLink.h:151</a></div></div>
 <div class="ttc" id="aclassMockLink_html_aa8bdfea93241743bb583639d9a3b88c8"><div class="ttname"><a href="classMockLink.html#aa8bdfea93241743bb583639d9a3b88c8">MockLink::MockLink</a></div><div class="ttdeci">MockLink(SharedLinkConfigurationPtr &amp;config, QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00048">MockLink.cc:48</a></div></div>
 <div class="ttc" id="aclassMockLink_html_ab63be4c534cfb3d803583429526f1c2b"><div class="ttname"><a href="classMockLink.html#ab63be4c534cfb3d803583429526f1c2b">MockLink::~MockLink</a></div><div class="ttdeci">virtual ~MockLink()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00118">MockLink.cc:118</a></div></div>
 <div class="ttc" id="aclassMockLink_html_abbc1ff19b256e148872956ccf451d3d7"><div class="ttname"><a href="classMockLink.html#abbc1ff19b256e148872956ccf451d3d7">MockLink::startAPMArduPlaneMockLink</a></div><div class="ttdeci">static MockLink * startAPMArduPlaneMockLink(bool sendStatusText, bool enableCamera, bool enableGimbal, MockConfiguration::FailureMode_t failureMode=MockConfiguration::FailNone)</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l01661">MockLink.cc:1661</a></div></div>
-<div class="ttc" id="aclassMockLink_html_ad131fa41a24d628dd87ce12be7268ca4"><div class="ttname"><a href="classMockLink.html#ad131fa41a24d628dd87ce12be7268ca4">MockLink::MAV_CMD_MOCKLINK_RESULT_IN_PROGRESS_ACCEPTED</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_RESULT_IN_PROGRESS_ACCEPTED</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00141">MockLink.h:141</a></div></div>
+<div class="ttc" id="aclassMockLink_html_ad131fa41a24d628dd87ce12be7268ca4"><div class="ttname"><a href="classMockLink.html#ad131fa41a24d628dd87ce12be7268ca4">MockLink::MAV_CMD_MOCKLINK_RESULT_IN_PROGRESS_ACCEPTED</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_RESULT_IN_PROGRESS_ACCEPTED</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00153">MockLink.h:153</a></div></div>
 <div class="ttc" id="aclassMockLink_html_ad20d757e767a98bb0ce5d5c753eab585"><div class="ttname"><a href="classMockLink.html#ad20d757e767a98bb0ce5d5c753eab585">MockLink::highLatencyTransmissionEnabledChanged</a></div><div class="ttdeci">void highLatencyTransmissionEnabledChanged(bool highLatencyTransmissionEnabled)</div></div>
-<div class="ttc" id="aclassMockLink_html_ad5e57b7b8f3b00581188d6d0df13ed5d"><div class="ttname"><a href="classMockLink.html#ad5e57b7b8f3b00581188d6d0df13ed5d">MockLink::MAV_CMD_MOCKLINK_RESULT_IN_PROGRESS_FAILED</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_RESULT_IN_PROGRESS_FAILED</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00142">MockLink.h:142</a></div></div>
+<div class="ttc" id="aclassMockLink_html_ad5e57b7b8f3b00581188d6d0df13ed5d"><div class="ttname"><a href="classMockLink.html#ad5e57b7b8f3b00581188d6d0df13ed5d">MockLink::MAV_CMD_MOCKLINK_RESULT_IN_PROGRESS_FAILED</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_RESULT_IN_PROGRESS_FAILED</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00154">MockLink.h:154</a></div></div>
 <div class="ttc" id="aclassMockLink_html_ad6b982a4b7ffd2a382cbce54d546de94"><div class="ttname"><a href="classMockLink.html#ad6b982a4b7ffd2a382cbce54d546de94">MockLink::sendUnexpectedCommandAck</a></div><div class="ttdeci">void sendUnexpectedCommandAck(MAV_CMD command, MAV_RESULT ackResult)</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l01362">MockLink.cc:1362</a></div></div>
 <div class="ttc" id="aclassMockLink_html_ada66da5b1664af60f5b32103d0ec3454"><div class="ttname"><a href="classMockLink.html#ada66da5b1664af60f5b32103d0ec3454">MockLink::sendStatusTextMessages</a></div><div class="ttdeci">void sendStatusTextMessages()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00257">MockLink.cc:257</a></div></div>
-<div class="ttc" id="aclassMockLink_html_adc2514d204c22d410a2e1a0348fe0a79a2d4710cb7d7160eb9cea0fd951ad6bc0"><div class="ttname"><a href="classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79a2d4710cb7d7160eb9cea0fd951ad6bc0">MockLink::FailParamRequestReadFirstAttemptNoResponse</a></div><div class="ttdeci">@ FailParamRequestReadFirstAttemptNoResponse</div><div class="ttdoc">Skip response on first attempt, respond to retry.</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00111">MockLink.h:111</a></div></div>
-<div class="ttc" id="aclassMockLink_html_adc2514d204c22d410a2e1a0348fe0a79a643a2fbb920b873700a83463ff966a38"><div class="ttname"><a href="classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79a643a2fbb920b873700a83463ff966a38">MockLink::FailParamRequestReadNoResponse</a></div><div class="ttdeci">@ FailParamRequestReadNoResponse</div><div class="ttdoc">Do not respond to PARAM_REQUEST_READ.</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00110">MockLink.h:110</a></div></div>
-<div class="ttc" id="aclassMockLink_html_ae58a183eeec8ddbef84a3b9bb332a6ab"><div class="ttname"><a href="classMockLink.html#ae58a183eeec8ddbef84a3b9bb332a6ab">MockLink::MAV_CMD_MOCKLINK_RESULT_IN_PROGRESS_NO_ACK</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_RESULT_IN_PROGRESS_NO_ACK</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00143">MockLink.h:143</a></div></div>
-<div class="ttc" id="aclassMockLink_html_aea39c92beb1be095b8b340ba28e8a75a"><div class="ttname"><a href="classMockLink.html#aea39c92beb1be095b8b340ba28e8a75a">MockLink::MAV_CMD_MOCKLINK_NO_RESPONSE_NO_RETRY</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_NO_RESPONSE_NO_RETRY</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00140">MockLink.h:140</a></div></div>
+<div class="ttc" id="aclassMockLink_html_adc2514d204c22d410a2e1a0348fe0a79a2d4710cb7d7160eb9cea0fd951ad6bc0"><div class="ttname"><a href="classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79a2d4710cb7d7160eb9cea0fd951ad6bc0">MockLink::FailParamRequestReadFirstAttemptNoResponse</a></div><div class="ttdeci">@ FailParamRequestReadFirstAttemptNoResponse</div><div class="ttdoc">Skip response on first attempt, respond to retry.</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00123">MockLink.h:123</a></div></div>
+<div class="ttc" id="aclassMockLink_html_adc2514d204c22d410a2e1a0348fe0a79a643a2fbb920b873700a83463ff966a38"><div class="ttname"><a href="classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79a643a2fbb920b873700a83463ff966a38">MockLink::FailParamRequestReadNoResponse</a></div><div class="ttdeci">@ FailParamRequestReadNoResponse</div><div class="ttdoc">Do not respond to PARAM_REQUEST_READ.</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00122">MockLink.h:122</a></div></div>
+<div class="ttc" id="aclassMockLink_html_ae58a183eeec8ddbef84a3b9bb332a6ab"><div class="ttname"><a href="classMockLink.html#ae58a183eeec8ddbef84a3b9bb332a6ab">MockLink::MAV_CMD_MOCKLINK_RESULT_IN_PROGRESS_NO_ACK</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_RESULT_IN_PROGRESS_NO_ACK</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00155">MockLink.h:155</a></div></div>
+<div class="ttc" id="aclassMockLink_html_aea39c92beb1be095b8b340ba28e8a75a"><div class="ttname"><a href="classMockLink.html#aea39c92beb1be095b8b340ba28e8a75a">MockLink::MAV_CMD_MOCKLINK_NO_RESPONSE_NO_RETRY</a></div><div class="ttdeci">static constexpr MAV_CMD MAV_CMD_MOCKLINK_NO_RESPONSE_NO_RETRY</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00152">MockLink.h:152</a></div></div>
 <div class="ttc" id="aclassMockLink_html_af40d589debe1b8bb3f71fef234801908"><div class="ttname"><a href="classMockLink.html#af40d589debe1b8bb3f71fef234801908">MockLink::run1HzTasks</a></div><div class="ttdeci">void run1HzTasks()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00173">MockLink.cc:173</a></div></div>
-<div class="ttc" id="aclassMockLink_html_afbc68f1e502cd429985a964aaafc3c64"><div class="ttname"><a href="classMockLink.html#afbc68f1e502cd429985a964aaafc3c64">MockLink::simulateConnectionRemoved</a></div><div class="ttdeci">void simulateConnectionRemoved()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l02037">MockLink.cc:2037</a></div></div>
+<div class="ttc" id="aclassMockLink_html_afbc68f1e502cd429985a964aaafc3c64"><div class="ttname"><a href="classMockLink.html#afbc68f1e502cd429985a964aaafc3c64">MockLink::simulateConnectionRemoved</a></div><div class="ttdeci">void simulateConnectionRemoved()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l02048">MockLink.cc:2048</a></div></div>
 <div class="ttc" id="aclassParameterManager_html_a1f7b7b847dff74069d48f22775007489"><div class="ttname"><a href="classParameterManager.html#a1f7b7b847dff74069d48f22775007489">ParameterManager::mavTypeToFactType</a></div><div class="ttdeci">static FactMetaData::ValueType_t mavTypeToFactType(MAV_PARAM_TYPE mavType)</div><div class="ttdef"><b>Definition</b> <a href="ParameterManager_8cc_source.html#l01153">ParameterManager.cc:1153</a></div></div>
 <div class="ttc" id="anamespaceQGC_html_a2b96db87d5dfa9f6abd229d3156c07f6"><div class="ttname"><a href="namespaceQGC.html#a2b96db87d5dfa9f6abd229d3156c07f6">QGC::crc32</a></div><div class="ttdeci">quint32 crc32(const quint8 *src, unsigned len, unsigned state)</div><div class="ttdef"><b>Definition</b> <a href="QGC_8cc_source.html#l00097">QGC.cc:97</a></div></div>
 <div class="ttc" id="astructPX4CustomMode_html_aecc2382684270f9807723fefbf4d5495a0f3350a2ac2ba524ff58adc8559ef5ef"><div class="ttname"><a href="structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495a0f3350a2ac2ba524ff58adc8559ef5ef">PX4CustomMode::OFFBOARD</a></div><div class="ttdeci">@ OFFBOARD</div><div class="ttdef"><b>Definition</b> <a href="px4__custom__mode_8h_source.html#l00055">px4_custom_mode.h:55</a></div></div>

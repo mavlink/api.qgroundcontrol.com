@@ -85,13 +85,14 @@ var searchData=
   ['qgroundcontrolqmlglobal_82',['QGroundControlQmlGlobal',['../classQGroundControlQmlGlobal.html',1,'']]],
   ['qmlcomponentinfo_83',['QmlComponentInfo',['../classQmlComponentInfo.html',1,'']]],
   ['qmlobjectlistmodel_84',['QmlObjectListModel',['../classQmlObjectListModel.html',1,'']]],
-  ['qmlunitsconversion_85',['QmlUnitsConversion',['../classQmlUnitsConversion.html',1,'']]],
-  ['qserialport_86',['QSerialPort',['../classQSerialPort.html',1,'']]],
-  ['qserialporterrorinfo_87',['QSerialPortErrorInfo',['../classQSerialPortErrorInfo.html',1,'']]],
-  ['qserialportinfo_88',['QSerialPortInfo',['../classQSerialPortInfo.html',1,'']]],
-  ['qserialportinfoprivate_89',['QSerialPortInfoPrivate',['../classQSerialPortInfoPrivate.html',1,'']]],
-  ['qserialportprivate_90',['QSerialPortPrivate',['../classQSerialPortPrivate.html',1,'']]],
-  ['qt6glvideoitem_91',['Qt6GLVideoItem',['../classQt6GLVideoItem.html',1,'']]],
-  ['qt6glvideoiteminterface_92',['Qt6GLVideoItemInterface',['../classQt6GLVideoItemInterface.html',1,'']]],
-  ['qtmultimediareceiver_93',['QtMultimediaReceiver',['../classQtMultimediaReceiver.html',1,'']]]
+  ['qmlobjecttreemodel_85',['QmlObjectTreeModel',['../classQmlObjectTreeModel.html',1,'']]],
+  ['qmlunitsconversion_86',['QmlUnitsConversion',['../classQmlUnitsConversion.html',1,'']]],
+  ['qserialport_87',['QSerialPort',['../classQSerialPort.html',1,'']]],
+  ['qserialporterrorinfo_88',['QSerialPortErrorInfo',['../classQSerialPortErrorInfo.html',1,'']]],
+  ['qserialportinfo_89',['QSerialPortInfo',['../classQSerialPortInfo.html',1,'']]],
+  ['qserialportinfoprivate_90',['QSerialPortInfoPrivate',['../classQSerialPortInfoPrivate.html',1,'']]],
+  ['qserialportprivate_91',['QSerialPortPrivate',['../classQSerialPortPrivate.html',1,'']]],
+  ['qt6glvideoitem_92',['Qt6GLVideoItem',['../classQt6GLVideoItem.html',1,'']]],
+  ['qt6glvideoiteminterface_93',['Qt6GLVideoItemInterface',['../classQt6GLVideoItemInterface.html',1,'']]],
+  ['qtmultimediareceiver_94',['QtMultimediaReceiver',['../classQtMultimediaReceiver.html',1,'']]]
 ];

@@ -27,6 +27,7 @@ var hierarchy =
     [ "CalibrationResult", "structCalibrationResult.html", null ],
     [ "CameraMetaData", "classCameraMetaData.html", null ],
     [ "MockLinkCamera::CameraState", "structMockLinkCamera_1_1CameraState.html", null ],
+    [ "CapturedLogMessage", "structCapturedLogMessage.html", null ],
     [ "TerrainAreaQuery::CarpetHeightInfo_t", "structTerrainAreaQuery_1_1CarpetHeightInfo__t.html", null ],
     [ "RemoteControlCalibrationController::ChannelInfo", "structRemoteControlCalibrationController_1_1ChannelInfo.html", null ],
     [ "QGCCommandLineParser::CommandLineParseResult", "structQGCCommandLineParser_1_1CommandLineParseResult.html", null ],
@@ -139,17 +140,22 @@ var hierarchy =
     [ "PauseVehicleThenChangeAltData_t", "structPauseVehicleThenChangeAltData__t.html", null ],
     [ "px4_custom_mode", "unionpx4__custom__mode.html", null ],
     [ "PX4CustomMode", "structPX4CustomMode.html", null ],
+    [ "QAbstractItemModel", null, [
+      [ "ObjectItemModelBase", "classObjectItemModelBase.html", [
+        [ "ObjectListModelBase", "classObjectListModelBase.html", [
+          [ "QmlObjectListModel", "classQmlObjectListModel.html", [
+            [ "FactGroupListModel", "classFactGroupListModel.html", [
+              [ "BatteryFactGroupListModel", "classBatteryFactGroupListModel.html", null ],
+              [ "EscStatusFactGroupListModel", "classEscStatusFactGroupListModel.html", null ]
+            ] ]
+          ] ]
+        ] ],
+        [ "QmlObjectTreeModel", "classQmlObjectTreeModel.html", null ]
+      ] ]
+    ] ],
     [ "QAbstractListModel", null, [
       [ "FactValueSliderListModel", "classFactValueSliderListModel.html", null ],
       [ "GeoTagImageModel", "classGeoTagImageModel.html", null ],
-      [ "ObjectListModelBase", "classObjectListModelBase.html", [
-        [ "QmlObjectListModel", "classQmlObjectListModel.html", [
-          [ "FactGroupListModel", "classFactGroupListModel.html", [
-            [ "BatteryFactGroupListModel", "classBatteryFactGroupListModel.html", null ],
-            [ "EscStatusFactGroupListModel", "classEscStatusFactGroupListModel.html", null ]
-          ] ]
-        ] ]
-      ] ],
       [ "QGCArchiveModel", "classQGCArchiveModel.html", null ]
     ] ],
     [ "QAbstractTableModel", null, [
@@ -594,6 +600,7 @@ var hierarchy =
       ] ],
       [ "VehicleLinkManager", "classVehicleLinkManager.html", null ],
       [ "VehicleObjectAvoidance", "classVehicleObjectAvoidance.html", null ],
+      [ "VehicleSupports", "classVehicleSupports.html", null ],
       [ "VideoManager", "classVideoManager.html", null ],
       [ "VideoReceiver", "classVideoReceiver.html", [
         [ "GstVideoReceiver", "classGstVideoReceiver.html", null ],

@@ -44,6 +44,8 @@ var classLandingComplexItem =
     [ "CONSTANT", "classLandingComplexItem.html#a00b1af3234b211ab32ab996883c31311", null ],
     [ "coordinate", "classLandingComplexItem.html#a5ffca81917e36ecd34a7e71eb7903c77", null ],
     [ "dirty", "classLandingComplexItem.html#af915c03cf469ddec145f3d7d9a039255", null ],
+    [ "editableAlt", "classLandingComplexItem.html#ad9f85d152e3bc92fe6e6fa6561454b5e", null ],
+    [ "entryCoordinate", "classLandingComplexItem.html#a5cf2395e1cfd694678f96a0ba6cd30f0", null ],
     [ "exitCoordinate", "classLandingComplexItem.html#a41b83836547347125ede7952f22c5e58", null ],
     [ "exitCoordinateSameAsEntry", "classLandingComplexItem.html#a7b0908566241e4af58339558df35e096", null ],
     [ "finalApproachAltitude", "classLandingComplexItem.html#a5cd7f6894eae41fafa5b849cc42663f3", null ],

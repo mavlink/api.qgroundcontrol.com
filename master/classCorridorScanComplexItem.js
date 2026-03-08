@@ -17,6 +17,7 @@ var classCorridorScanComplexItem =
     [ "rotateEntryPoint", "classCorridorScanComplexItem.html#aac3140a49cbd5212cc391757d3910215", null ],
     [ "save", "classCorridorScanComplexItem.html#a3f1ae9d13ef0d53cb2f7cae055375fc9", null ],
     [ "savePreset", "classCorridorScanComplexItem.html#a171aaf4d01502ec135748c794972e00e", null ],
+    [ "setCoordinate", "classCorridorScanComplexItem.html#a193ffc22f362853b41dd1b5f7e208e4e", null ],
     [ "specifiesCoordinate", "classCorridorScanComplexItem.html#a7d45ee69076313f01917a21b3312d95a", null ],
     [ "timeBetweenShots", "classCorridorScanComplexItem.html#a1b8a579e28de3221b219b09ab778c6dd", null ],
     [ "corridorWidthName", "classCorridorScanComplexItem.html#a41cea20d6b0939a969d8fca1c3d60b0c", null ],

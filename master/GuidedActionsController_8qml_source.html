@@ -225,15 +225,15 @@ $(document).ready(function(){initNavTree('GuidedActionsController_8qml_source.ht
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    property bool showArm:                  _guidedActionsEnabled &amp;&amp; !_vehicleArmed &amp;&amp; _canArm</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    property bool showForceArm:             _guidedActionsEnabled &amp;&amp; !_vehicleArmed</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    property bool showDisarm:               _guidedActionsEnabled &amp;&amp; _vehicleArmed &amp;&amp; !_vehicleFlying</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    property bool showRTL:                  _guidedActionsEnabled &amp;&amp; _vehicleArmed &amp;&amp; _activeVehicle.guidedModeSupported &amp;&amp; _vehicleFlying &amp;&amp; !_vehicleInRTLMode</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    property bool showTakeoff:              _guidedActionsEnabled &amp;&amp; _activeVehicle.takeoffVehicleSupported &amp;&amp; !_vehicleFlying &amp;&amp; _canTakeoff</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    property bool showLand:                 _guidedActionsEnabled &amp;&amp; _activeVehicle.guidedModeSupported &amp;&amp; _vehicleArmed &amp;&amp; !_activeVehicle.fixedWing &amp;&amp; !_vehicleInLandMode</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    property bool showRTL:                  _guidedActionsEnabled &amp;&amp; _vehicleArmed &amp;&amp; _activeVehicle.supports.guidedMode &amp;&amp; _vehicleFlying &amp;&amp; !_vehicleInRTLMode</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    property bool showTakeoff:              _guidedActionsEnabled &amp;&amp; (_activeVehicle.supports.guidedTakeoffWithAltitude || _activeVehicle.supports.guidedTakeoffWithoutAltitude) &amp;&amp; !_vehicleFlying &amp;&amp; _canTakeoff</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    property bool showLand:                 _guidedActionsEnabled &amp;&amp; _activeVehicle.supports.guidedMode &amp;&amp; _vehicleArmed &amp;&amp; !_activeVehicle.fixedWing &amp;&amp; !_vehicleInLandMode</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    property bool showStartMission:         _guidedActionsEnabled &amp;&amp; _missionAvailable &amp;&amp; !_missionActive &amp;&amp; !_vehicleFlying &amp;&amp; _canStartMission</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    property bool showContinueMission:      _guidedActionsEnabled &amp;&amp; _missionAvailable &amp;&amp; !_missionActive &amp;&amp; _vehicleArmed &amp;&amp; _vehicleFlying &amp;&amp; (_currentMissionIndex &lt; _missionItemCount - 1)</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    property bool showPause:                _guidedActionsEnabled &amp;&amp; _vehicleArmed &amp;&amp; _activeVehicle.pauseVehicleSupported &amp;&amp; _vehicleFlying &amp;&amp; !_vehiclePaused &amp;&amp; !_fixedWingOnApproach</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    property bool showChangeAlt:            _guidedActionsEnabled &amp;&amp; _vehicleFlying &amp;&amp; _activeVehicle.guidedModeSupported &amp;&amp; _vehicleArmed &amp;&amp; !_missionActive</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    property bool showChangeLoiterRadius:   _guidedActionsEnabled &amp;&amp; _vehicleFlying &amp;&amp; _activeVehicle.guidedModeSupported &amp;&amp; _vehicleArmed &amp;&amp; !_missionActive &amp;&amp; _vehicleInFwdFlight &amp;&amp; fwdFlightGotoMapCircle.visible</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    property bool showChangeSpeed:          _guidedActionsEnabled &amp;&amp; _vehicleFlying &amp;&amp; _activeVehicle.guidedModeSupported &amp;&amp; _vehicleArmed &amp;&amp; !_missionActive &amp;&amp; _speedLimitsAvailable</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    property bool showPause:                _guidedActionsEnabled &amp;&amp; _vehicleArmed &amp;&amp; _activeVehicle.supports.pauseVehicle &amp;&amp; _vehicleFlying &amp;&amp; !_vehiclePaused &amp;&amp; !_fixedWingOnApproach</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    property bool showChangeAlt:            _guidedActionsEnabled &amp;&amp; _vehicleFlying &amp;&amp; _activeVehicle.supports.guidedMode &amp;&amp; _vehicleArmed &amp;&amp; !_missionActive</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    property bool showChangeLoiterRadius:   _guidedActionsEnabled &amp;&amp; _vehicleFlying &amp;&amp; _activeVehicle.supports.guidedMode &amp;&amp; _vehicleArmed &amp;&amp; !_missionActive &amp;&amp; _vehicleInFwdFlight &amp;&amp; fwdFlightGotoMapCircle.visible</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    property bool showChangeSpeed:          _guidedActionsEnabled &amp;&amp; _vehicleFlying &amp;&amp; _activeVehicle.supports.guidedMode &amp;&amp; _vehicleArmed &amp;&amp; !_missionActive &amp;&amp; _speedLimitsAvailable</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    property bool showOrbit:                _guidedActionsEnabled &amp;&amp; _vehicleFlying &amp;&amp; __orbitSupported &amp;&amp; !_missionActive &amp;&amp; _activeVehicle.homePosition.isValid &amp;&amp; !isNaN(_activeVehicle.homePosition.altitude)</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    property bool showROI:                  _guidedActionsEnabled &amp;&amp; _vehicleFlying &amp;&amp; __roiSupported</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    property bool showLandAbort:            _guidedActionsEnabled &amp;&amp; _vehicleFlying &amp;&amp; _fixedWingOnApproach</div>
@@ -276,10 +276,10 @@ $(document).ready(function(){initNavTree('GuidedActionsController_8qml_source.ht
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    property bool  _speedLimitsAvailable:   _activeVehicle &amp;&amp; ((_vehicleInFwdFlight &amp;&amp; _activeVehicle.haveFWSpeedLimits) || (!_vehicleInFwdFlight &amp;&amp; _activeVehicle.haveMRSpeedLimits))</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    // You can turn on log output for GuidedActionsController by turning on GuidedActionsControllerLog category</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    property bool __guidedModeSupported:    _activeVehicle ? _activeVehicle.guidedModeSupported : false</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    property bool __pauseVehicleSupported:  _activeVehicle ? _activeVehicle.pauseVehicleSupported : false</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    property bool __roiSupported:           _activeVehicle ? !_hideROI &amp;&amp; _activeVehicle.roiModeSupported : false</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    property bool __orbitSupported:         _activeVehicle ? !_hideOrbit &amp;&amp; _activeVehicle.orbitModeSupported : false</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    property bool __guidedModeSupported:    _activeVehicle ? _activeVehicle.supports.guidedMode : false</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    property bool __pauseVehicleSupported:  _activeVehicle ? _activeVehicle.supports.pauseVehicle : false</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    property bool __roiSupported:           _activeVehicle ? !_hideROI &amp;&amp; _activeVehicle.supports.roiMode : false</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    property bool __orbitSupported:         _activeVehicle ? !_hideOrbit &amp;&amp; _activeVehicle.supports.orbitMode : false</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    property bool __flightMode:             _flightMode</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    // Allow custom builds to add custom actions by overriding CustomGuidedActionsController.qml</div>
@@ -526,7 +526,7 @@ $(document).ready(function(){initNavTree('GuidedActionsController_8qml_source.ht
 <div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>            confirmDialog.title = takeoffTitle</div>
 <div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>            confirmDialog.message = takeoffMessage</div>
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>            confirmDialog.hideTrigger = Qt.binding(function() { return !showTakeoff })</div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>            guidedValueSlider.visible = _activeVehicle.guidedTakeoffSupported</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>            guidedValueSlider.visible = _activeVehicle.supports.guidedTakeoffWithAltitude</div>
 <div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>            break;</div>
 <div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>        case actionStartMission:</div>
 <div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>            showImmediate = false</div>
@@ -561,7 +561,7 @@ $(document).ready(function(){initNavTree('GuidedActionsController_8qml_source.ht
 <div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>        case actionRTL:</div>
 <div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>            confirmDialog.title = rtlTitle</div>
 <div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>            confirmDialog.message = rtlMessage</div>
-<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>            if (_activeVehicle.supportsSmartRTL) {</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>            if (_activeVehicle.supports.smartRTL) {</div>
 <div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>                confirmDialog.optionText = qsTr(&quot;Smart RTL&quot;)</div>
 <div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>                confirmDialog.optionChecked = false</div>
 <div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>            }</div>
@@ -660,7 +660,7 @@ $(document).ready(function(){initNavTree('GuidedActionsController_8qml_source.ht
 <div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>            _activeVehicle.guidedModeLand()</div>
 <div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>            break</div>
 <div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        case actionTakeoff:</div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>            if (_activeVehicle.guidedTakeoffSupported) {</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>            if (_activeVehicle.supports.guidedTakeoffWithAltitude) {</div>
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>                var valueInMeters = _unitsConversion.appSettingsVerticalDistanceUnitsToMeters(sliderOutputValue)</div>
 <div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>                _activeVehicle.guidedModeTakeoff(valueInMeters)</div>
 <div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>            } else {</div>

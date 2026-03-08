@@ -12,7 +12,7 @@ var searchData=
   ['jnidevicehasdisconnected_9',['jniDeviceHasDisconnected',['../namespaceAndroidSerial.html#a2decc78cd2ea593cbc2ee34cd9655d0a',1,'AndroidSerial']]],
   ['jnidevicenewdata_10',['jniDeviceNewData',['../namespaceAndroidSerial.html#a28312aeec042656d82ea54042c0d1473',1,'AndroidSerial']]],
   ['jniinit_11',['jniInit',['../AndroidInit_8cc.html#a95200a236c47646d098af3c0683938f2',1,'AndroidInit.cc']]],
-  ['jnilocalref_12',['jnilocalref',['../classAndroidInterface_1_1JniLocalRef.html#aeac7352cb87a89e95221acf5844e01ef',1,'AndroidInterface::JniLocalRef::JniLocalRef(JniLocalRef &amp;&amp;other) noexcept'],['../classAndroidInterface_1_1JniLocalRef.html#ad1e0ea04c56b0b1a3e6653a8d95260fe',1,'AndroidInterface::JniLocalRef::JniLocalRef(const JniLocalRef &amp;)=delete'],['../classAndroidInterface_1_1JniLocalRef.html#ae1fefa0cc237dd60db586072969b4f19',1,'AndroidInterface::JniLocalRef::JniLocalRef(JNIEnv *env, T ref=nullptr)']]],
+  ['jnilocalref_12',['jnilocalref',['../classAndroidInterface_1_1JniLocalRef.html#ae1fefa0cc237dd60db586072969b4f19',1,'AndroidInterface::JniLocalRef::JniLocalRef(JNIEnv *env, T ref=nullptr)'],['../classAndroidInterface_1_1JniLocalRef.html#ad1e0ea04c56b0b1a3e6653a8d95260fe',1,'AndroidInterface::JniLocalRef::JniLocalRef(const JniLocalRef &amp;)=delete'],['../classAndroidInterface_1_1JniLocalRef.html#aeac7352cb87a89e95221acf5844e01ef',1,'AndroidInterface::JniLocalRef::JniLocalRef(JniLocalRef &amp;&amp;other) noexcept']]],
   ['jnilogdebug_13',['jniLogDebug',['../namespaceAndroidInterface.html#a20c48a7f792ff325b881df0b323900f0',1,'AndroidInterface']]],
   ['jnilogwarning_14',['jniLogWarning',['../namespaceAndroidInterface.html#a6e5849a57d07fc56696949356011f7f0',1,'AndroidInterface']]],
   ['jnisetnativemethods_15',['jniSetNativeMethods',['../AndroidInit_8cc.html#aefeb6170ff0af6d2544a2610450a9410',1,'AndroidInit.cc']]],
@@ -30,5 +30,6 @@ var searchData=
   ['joystickmodechanged_27',['joystickModeChanged',['../classRemoteControlCalibrationController.html#a0b7840e02dfcf55c200bbda36663a6d0',1,'RemoteControlCalibrationController']]],
   ['joysticksdl_28',['JoystickSDL',['../classJoystickSDL.html#a48484d7746455865418f8aac73c5c3b9',1,'JoystickSDL']]],
   ['joysticksettings_29',['JoystickSettings',['../classJoystickSettings.html#a7aee274cb8bb2aef07f5773f5b46792f',1,'JoystickSettings']]],
-  ['joystickstatuschanged_30',['joystickStatusChanged',['../classJoystickComponent.html#a060154a256dab2fb0eeb42a40aeee52b',1,'JoystickComponent']]]
+  ['joystickstatuschanged_30',['joystickStatusChanged',['../classJoystickComponent.html#a060154a256dab2fb0eeb42a40aeee52b',1,'JoystickComponent']]],
+  ['jsbutton_31',['jsButton',['../classVehicleSupports.html#ac399028124f173cd6d2ce3d69d9e7aad',1,'VehicleSupports']]]
 ];

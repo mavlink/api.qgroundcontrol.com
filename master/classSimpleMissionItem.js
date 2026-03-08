@@ -25,6 +25,8 @@ var classSimpleMissionItem =
     [ "commandName", "classSimpleMissionItem.html#ac249007d6f3182673e4576e1fdf66eec", null ],
     [ "coordinate", "classSimpleMissionItem.html#abb276509a670db9f8ef67683e83d58a0", null ],
     [ "dirty", "classSimpleMissionItem.html#a21417a24c774da986e767d9d17074559", null ],
+    [ "editableAlt", "classSimpleMissionItem.html#a17827f1aaf83badea652c3cb7d85dadb", null ],
+    [ "entryCoordinate", "classSimpleMissionItem.html#a5cd9746eb404e5e86238023fc13cfaf2", null ],
     [ "exitCoordinate", "classSimpleMissionItem.html#aae0f9195f3955a0c1c2a740788ec8459", null ],
     [ "exitCoordinateSameAsEntry", "classSimpleMissionItem.html#a12e1765071ae9c2e914f6424856be490", null ],
     [ "friendlyEditAllowed", "classSimpleMissionItem.html#a29b7986accbe0c6fadeaeaea35ec8e0f", null ],

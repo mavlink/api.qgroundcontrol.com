@@ -99,107 +99,109 @@ $(document).ready(function(){initNavTree('CompInfoGeneral_8cc_source.html',''); 
 </div><!--header-->
 <div class="contents">
 <a href="CompInfoGeneral_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="CompInfoGeneral_8h.html">CompInfoGeneral.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="JsonHelper_8h.html">JsonHelper.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="JsonParsing_8h.html">JsonParsing.h</a>&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QtCore/QJsonDocument&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QtCore/QJsonArray&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(CompInfoGeneralLog, <span class="stringliteral">&quot;ComponentInformation.CompInfoGeneral&quot;</span>)</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classCompInfoGeneral.html#ac06e06a85f74c67a9b0f1de9c9f6c635">   11</a></span><a class="code hl_class" href="classCompInfoGeneral.html">CompInfoGeneral</a>::<a class="code hl_class" href="classCompInfoGeneral.html">CompInfoGeneral</a>(uint8_t compId_, <a class="code hl_class" href="classVehicle.html">Vehicle</a>* vehicle_, QObject* parent)</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    : <a class="code hl_class" href="classCompInfo.html">CompInfo</a>(COMP_METADATA_TYPE_GENERAL, compId_, vehicle_, parent)</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="ComponentInformationManager_8h.html">ComponentInformationManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="JsonHelper_8h.html">JsonHelper.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="JsonParsing_8h.html">JsonParsing.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QtCore/QJsonDocument&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QtCore/QJsonArray&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(CompInfoGeneralLog, <span class="stringliteral">&quot;ComponentInformation.CompInfoGeneral&quot;</span>)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classCompInfoGeneral.html#ac06e06a85f74c67a9b0f1de9c9f6c635">   12</a></span><a class="code hl_class" href="classCompInfoGeneral.html">CompInfoGeneral</a>::<a class="code hl_class" href="classCompInfoGeneral.html">CompInfoGeneral</a>(uint8_t compId_, <a class="code hl_class" href="classVehicle.html">Vehicle</a>* vehicle_, QObject* parent)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    : <a class="code hl_class" href="classCompInfo.html">CompInfo</a>(COMP_METADATA_TYPE_GENERAL, compId_, vehicle_, parent)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
 </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classCompInfoGeneral.html#af9e5869845842e2bf8e4145bce8440f1">   17</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classCompInfoGeneral.html#af9e5869845842e2bf8e4145bce8440f1">CompInfoGeneral::setUris</a>(<a class="code hl_class" href="classCompInfo.html">CompInfo</a> &amp;compInfo)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; metadataTypeIter = _supportedTypes.constFind(compInfo.<a class="code hl_variable" href="classCompInfo.html#a074c0ae5a1a489c4975e0bcaa76afe9a">type</a>);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> (metadataTypeIter == _supportedTypes.constEnd()) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        compInfo._uris = {}; <span class="comment">// reset</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        compInfo._uris = *metadataTypeIter;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classCompInfoGeneral.html#af9e5869845842e2bf8e4145bce8440f1">   18</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classCompInfoGeneral.html#af9e5869845842e2bf8e4145bce8440f1">CompInfoGeneral::setUris</a>(<a class="code hl_class" href="classCompInfo.html">CompInfo</a> &amp;compInfo)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; metadataTypeIter = _supportedTypes.constFind(compInfo.<a class="code hl_variable" href="classCompInfo.html#a074c0ae5a1a489c4975e0bcaa76afe9a">type</a>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">if</span> (metadataTypeIter == _supportedTypes.constEnd()) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        compInfo._uris = {}; <span class="comment">// reset</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        compInfo._uris = *metadataTypeIter;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classCompInfoGeneral.html#a65fe781f7b7240003419944966b57b1b">   27</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classCompInfoGeneral.html#a65fe781f7b7240003419944966b57b1b">CompInfoGeneral::setJson</a>(<span class="keyword">const</span> QString&amp; metadataJsonFileName)</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (metadataJsonFileName.isEmpty()) {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    QString         <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    QJsonDocument   jsonDoc;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceJsonParsing.html#a9835bf5a2c8e57c435a6f216dcd4fd52">JsonParsing::isJsonFile</a>(metadataJsonFileName, jsonDoc, <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        qCWarning(CompInfoGeneralLog) &lt;&lt; <span class="stringliteral">&quot;Metadata json file open failed: compid:&quot;</span> &lt;&lt; <a class="code hl_variable" href="classCompInfo.html#a9c463f5a341588903c204c1ab91e04ed">compId</a> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    QJsonObject jsonObj = jsonDoc.object();</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    QList&lt;JsonHelper::KeyValidateInfo&gt; keyInfoList = {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        { <a class="code hl_variable" href="namespaceJsonHelper.html#a6e8f432b8d91f38373d7e8ae4a76a3e6">JsonHelper::jsonVersionKey</a>,           QJsonValue::Double, <span class="keyword">true</span> },</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        { _jsonMetadataTypesKey,   QJsonValue::Array,  <span class="keyword">true</span> },</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    };</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceJsonHelper.html#a96b54c245d570a0b2e62b2a98f074c79">JsonHelper::validateKeys</a>(jsonObj, keyInfoList, <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        qCWarning(CompInfoGeneralLog) &lt;&lt; <span class="stringliteral">&quot;Metadata json validation failed: compid:&quot;</span> &lt;&lt; <a class="code hl_variable" href="classCompInfo.html#a9c463f5a341588903c204c1ab91e04ed">compId</a> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">int</span> version = jsonObj[<a class="code hl_variable" href="namespaceJsonHelper.html#a6e8f432b8d91f38373d7e8ae4a76a3e6">JsonHelper::jsonVersionKey</a>].toInt();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">if</span> (version != 1) {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        qCWarning(CompInfoGeneralLog) &lt;&lt; <span class="stringliteral">&quot;Metadata json unsupported version&quot;</span> &lt;&lt; version;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    QJsonArray rgSupportedTypes = jsonObj[_jsonMetadataTypesKey].toArray();</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">for</span> (QJsonValue typeValue : rgSupportedTypes) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordtype">int</span> metadataType = typeValue[<span class="stringliteral">&quot;type&quot;</span>].toInt(-1);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">if</span> (metadataType == -1)</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        Uris uris;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        uris.uriMetaData = typeValue[<span class="stringliteral">&quot;uri&quot;</span>].toString();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        uris.crcMetaData = typeValue[<span class="stringliteral">&quot;fileCrc&quot;</span>].toVariant().toLongLong(); <span class="comment">// Note: can&#39;t use toInt(), as it returns 0 when exceeding 2^31</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        uris.crcMetaDataValid = typeValue.toObject().contains(<span class="stringliteral">&quot;fileCrc&quot;</span>);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        uris.uriMetaDataFallback = typeValue[<span class="stringliteral">&quot;uriFallback&quot;</span>].toString();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        uris.crcMetaDataFallback = typeValue[<span class="stringliteral">&quot;fileCrcFallback&quot;</span>].toVariant().toLongLong();</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        uris.crcMetaDataFallbackValid = typeValue.toObject().contains(<span class="stringliteral">&quot;fileCrcFallback&quot;</span>);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        uris.uriTranslation = typeValue[<span class="stringliteral">&quot;translationUri&quot;</span>].toString();</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        uris.uriTranslationFallback = typeValue[<span class="stringliteral">&quot;translationUriFallback&quot;</span>].toString();</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">if</span> (uris.uriMetaData.isEmpty() || !uris.crcMetaDataValid) {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="comment">// The CRC is optional for dynamically updated metadata, and once we want to support that this logic needs</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="comment">// to be updated.</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            qCDebug(CompInfoGeneralLog) &lt;&lt; <span class="stringliteral">&quot;Metadata missing fields: type:uri:crcValid&quot;</span> &lt;&lt; metadataType &lt;&lt;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                    uris.uriMetaData &lt;&lt; uris.crcMetaDataValid;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        _supportedTypes[(COMP_METADATA_TYPE)metadataType] = uris;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        qCDebug(CompInfoGeneralLog) &lt;&lt; <span class="stringliteral">&quot;Metadata type : uri : crc&quot;</span> &lt;&lt; metadataType &lt;&lt; uris.uriMetaData &lt;&lt; uris.crcMetaData;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classCompInfoGeneral.html#a65fe781f7b7240003419944966b57b1b">   28</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classCompInfoGeneral.html#a65fe781f7b7240003419944966b57b1b">CompInfoGeneral::setJson</a>(<span class="keyword">const</span> QString&amp; metadataJsonFileName)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span> (metadataJsonFileName.isEmpty()) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    QString         <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    QJsonDocument   jsonDoc;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceJsonParsing.html#a9835bf5a2c8e57c435a6f216dcd4fd52">JsonParsing::isJsonFile</a>(metadataJsonFileName, jsonDoc, <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        qCWarning(CompInfoGeneralLog) &lt;&lt; <span class="stringliteral">&quot;Metadata json file open failed: compid:&quot;</span> &lt;&lt; <a class="code hl_variable" href="classCompInfo.html#a9c463f5a341588903c204c1ab91e04ed">compId</a> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    QJsonObject jsonObj = jsonDoc.object();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    QList&lt;JsonHelper::KeyValidateInfo&gt; keyInfoList = {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        { <a class="code hl_variable" href="namespaceJsonHelper.html#a6e8f432b8d91f38373d7e8ae4a76a3e6">JsonHelper::jsonVersionKey</a>,           QJsonValue::Double, <span class="keyword">true</span> },</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        { _jsonMetadataTypesKey,   QJsonValue::Array,  <span class="keyword">true</span> },</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    };</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceJsonHelper.html#a96b54c245d570a0b2e62b2a98f074c79">JsonHelper::validateKeys</a>(jsonObj, keyInfoList, <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        qCWarning(CompInfoGeneralLog) &lt;&lt; <span class="stringliteral">&quot;Metadata json validation failed: compid:&quot;</span> &lt;&lt; <a class="code hl_variable" href="classCompInfo.html#a9c463f5a341588903c204c1ab91e04ed">compId</a> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">int</span> version = jsonObj[<a class="code hl_variable" href="namespaceJsonHelper.html#a6e8f432b8d91f38373d7e8ae4a76a3e6">JsonHelper::jsonVersionKey</a>].toInt();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">if</span> (version != 1) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        qCWarning(CompInfoGeneralLog) &lt;&lt; <span class="stringliteral">&quot;Metadata json unsupported version&quot;</span> &lt;&lt; version;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    QJsonArray rgSupportedTypes = jsonObj[_jsonMetadataTypesKey].toArray();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">for</span> (QJsonValue typeValue : rgSupportedTypes) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordtype">int</span> metadataType = typeValue[<span class="stringliteral">&quot;type&quot;</span>].toInt(-1);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span> (metadataType == -1)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        Uris uris;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        uris.uriMetaData = typeValue[<span class="stringliteral">&quot;uri&quot;</span>].toString();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        uris.crcMetaData = typeValue[<span class="stringliteral">&quot;fileCrc&quot;</span>].toVariant().toLongLong(); <span class="comment">// Note: can&#39;t use toInt(), as it returns 0 when exceeding 2^31</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        uris.crcMetaDataValid = typeValue.toObject().contains(<span class="stringliteral">&quot;fileCrc&quot;</span>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        uris.uriMetaDataFallback = typeValue[<span class="stringliteral">&quot;uriFallback&quot;</span>].toString();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        uris.crcMetaDataFallback = typeValue[<span class="stringliteral">&quot;fileCrcFallback&quot;</span>].toVariant().toLongLong();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        uris.crcMetaDataFallbackValid = typeValue.toObject().contains(<span class="stringliteral">&quot;fileCrcFallback&quot;</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        uris.uriTranslation = typeValue[<span class="stringliteral">&quot;translationUri&quot;</span>].toString();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        uris.uriTranslationFallback = typeValue[<span class="stringliteral">&quot;translationUriFallback&quot;</span>].toString();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">if</span> (uris.uriMetaData.isEmpty() || !uris.crcMetaDataValid) {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="comment">// The CRC is optional for dynamically updated metadata, and once we want to support that this logic needs</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="comment">// to be updated.</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            qCDebug(ComponentInformationManagerLog) &lt;&lt; <span class="stringliteral">&quot;Metadata missing fields: type:uri:crcValid&quot;</span> &lt;&lt; metadataType &lt;&lt;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                    uris.uriMetaData &lt;&lt; uris.crcMetaDataValid;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        _supportedTypes[(COMP_METADATA_TYPE)metadataType] = uris;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        qCDebug(CompInfoGeneralLog) &lt;&lt; <span class="stringliteral">&quot;Metadata type : uri : crc&quot;</span> &lt;&lt; metadataType &lt;&lt; uris.uriMetaData &lt;&lt; uris.crcMetaData;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
 </div>
 <div class="ttc" id="aCompInfoGeneral_8h_html"><div class="ttname"><a href="CompInfoGeneral_8h.html">CompInfoGeneral.h</a></div></div>
+<div class="ttc" id="aComponentInformationManager_8h_html"><div class="ttname"><a href="ComponentInformationManager_8h.html">ComponentInformationManager.h</a></div></div>
 <div class="ttc" id="aJsonHelper_8h_html"><div class="ttname"><a href="JsonHelper_8h.html">JsonHelper.h</a></div></div>
 <div class="ttc" id="aJsonParsing_8h_html"><div class="ttname"><a href="JsonParsing_8h.html">JsonParsing.h</a></div></div>
 <div class="ttc" id="aQGCCompression_8cc_html_a09cce169e65d8066c742ebfe55010cfb"><div class="ttname"><a href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a></div><div class="ttdeci">QString errorString</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00113">QGCCompression.cc:113</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00014">QGCLoggingCategory.h:14</a></div></div>
 <div class="ttc" id="aclassCompInfoGeneral_html"><div class="ttname"><a href="classCompInfoGeneral.html">CompInfoGeneral</a></div><div class="ttdef"><b>Definition</b> <a href="CompInfoGeneral_8h_source.html#l00015">CompInfoGeneral.h:16</a></div></div>
-<div class="ttc" id="aclassCompInfoGeneral_html_a65fe781f7b7240003419944966b57b1b"><div class="ttname"><a href="classCompInfoGeneral.html#a65fe781f7b7240003419944966b57b1b">CompInfoGeneral::setJson</a></div><div class="ttdeci">void setJson(const QString &amp;metadataJsonFileName) override</div><div class="ttdef"><b>Definition</b> <a href="CompInfoGeneral_8cc_source.html#l00027">CompInfoGeneral.cc:27</a></div></div>
-<div class="ttc" id="aclassCompInfoGeneral_html_af9e5869845842e2bf8e4145bce8440f1"><div class="ttname"><a href="classCompInfoGeneral.html#af9e5869845842e2bf8e4145bce8440f1">CompInfoGeneral::setUris</a></div><div class="ttdeci">void setUris(CompInfo &amp;compInfo) const</div><div class="ttdef"><b>Definition</b> <a href="CompInfoGeneral_8cc_source.html#l00017">CompInfoGeneral.cc:17</a></div></div>
+<div class="ttc" id="aclassCompInfoGeneral_html_a65fe781f7b7240003419944966b57b1b"><div class="ttname"><a href="classCompInfoGeneral.html#a65fe781f7b7240003419944966b57b1b">CompInfoGeneral::setJson</a></div><div class="ttdeci">void setJson(const QString &amp;metadataJsonFileName) override</div><div class="ttdef"><b>Definition</b> <a href="CompInfoGeneral_8cc_source.html#l00028">CompInfoGeneral.cc:28</a></div></div>
+<div class="ttc" id="aclassCompInfoGeneral_html_af9e5869845842e2bf8e4145bce8440f1"><div class="ttname"><a href="classCompInfoGeneral.html#af9e5869845842e2bf8e4145bce8440f1">CompInfoGeneral::setUris</a></div><div class="ttdeci">void setUris(CompInfo &amp;compInfo) const</div><div class="ttdef"><b>Definition</b> <a href="CompInfoGeneral_8cc_source.html#l00018">CompInfoGeneral.cc:18</a></div></div>
 <div class="ttc" id="aclassCompInfo_html"><div class="ttname"><a href="classCompInfo.html">CompInfo</a></div><div class="ttdoc">Base class for all CompInfo types.</div><div class="ttdef"><b>Definition</b> <a href="CompInfo_8h_source.html#l00013">CompInfo.h:14</a></div></div>
 <div class="ttc" id="aclassCompInfo_html_a074c0ae5a1a489c4975e0bcaa76afe9a"><div class="ttname"><a href="classCompInfo.html#a074c0ae5a1a489c4975e0bcaa76afe9a">CompInfo::type</a></div><div class="ttdeci">const COMP_METADATA_TYPE type</div><div class="ttdef"><b>Definition</b> <a href="CompInfo_8h_source.html#l00035">CompInfo.h:35</a></div></div>
 <div class="ttc" id="aclassCompInfo_html_a9c463f5a341588903c204c1ab91e04ed"><div class="ttname"><a href="classCompInfo.html#a9c463f5a341588903c204c1ab91e04ed">CompInfo::compId</a></div><div class="ttdeci">const uint8_t compId</div><div class="ttdef"><b>Definition</b> <a href="CompInfo_8h_source.html#l00037">CompInfo.h:37</a></div></div>
-<div class="ttc" id="aclassVehicle_html"><div class="ttname"><a href="classVehicle.html">Vehicle</a></div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00080">Vehicle.h:81</a></div></div>
+<div class="ttc" id="aclassVehicle_html"><div class="ttname"><a href="classVehicle.html">Vehicle</a></div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00081">Vehicle.h:82</a></div></div>
 <div class="ttc" id="anamespaceJsonHelper_html_a6e8f432b8d91f38373d7e8ae4a76a3e6"><div class="ttname"><a href="namespaceJsonHelper.html#a6e8f432b8d91f38373d7e8ae4a76a3e6">JsonHelper::jsonVersionKey</a></div><div class="ttdeci">constexpr const char * jsonVersionKey</div><div class="ttdef"><b>Definition</b> <a href="JsonHelper_8h_source.html#l00109">JsonHelper.h:109</a></div></div>
 <div class="ttc" id="anamespaceJsonHelper_html_a96b54c245d570a0b2e62b2a98f074c79"><div class="ttname"><a href="namespaceJsonHelper.html#a96b54c245d570a0b2e62b2a98f074c79">JsonHelper::validateKeys</a></div><div class="ttdeci">bool validateKeys(const QJsonObject &amp;jsonObject, const QList&lt; KeyValidateInfo &gt; &amp;keyInfo, QString &amp;errorString)</div></div>
 <div class="ttc" id="anamespaceJsonParsing_html_a9835bf5a2c8e57c435a6f216dcd4fd52"><div class="ttname"><a href="namespaceJsonParsing.html#a9835bf5a2c8e57c435a6f216dcd4fd52">JsonParsing::isJsonFile</a></div><div class="ttdeci">bool isJsonFile(const QByteArray &amp;bytes, QJsonDocument &amp;jsonDoc, QString &amp;errorString)</div><div class="ttdoc">Determines whether an in-memory byte buffer contains parseable JSON content.</div><div class="ttdef"><b>Definition</b> <a href="JsonParsing_8cc_source.html#l00093">JsonParsing.cc:93</a></div></div>

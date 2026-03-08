@@ -9,7 +9,7 @@ var searchData=
   ['nedpolygon_6',['nedPolygon',['../classQGCMapPolygon.html#aad632792f853539b66caea4bf75c898c',1,'QGCMapPolygon']]],
   ['nedpolyline_7',['nedPolyline',['../classQGCMapPolyline.html#a1e93c1f3af4864e81334b205ac8bd766',1,'QGCMapPolyline']]],
   ['needdispatch_8',['needDispatch',['../classGstVideoWorker.html#a47fb02280a9988e36b210087dd9a965b',1,'GstVideoWorker']]],
-  ['negativethrust_9',['negativeThrust',['../classJoystickSettings.html#a1fa5345ee51e70603b25cc71d16734da',1,'JoystickSettings']]],
+  ['negativethrust_9',['negativethrust',['../classVehicleSupports.html#a30edc6c377875251d59f7557018b6165',1,'VehicleSupports::negativeThrust()'],['../classJoystickSettings.html#a1fa5345ee51e70603b25cc71d16734da',1,'JoystickSettings::negativeThrust()']]],
   ['networkmanager_10',['networkManager',['../classQGeoTiledMappingManagerEngineQGC.html#ab763abd2805c39b8a2a676fe5569f588',1,'QGeoTiledMappingManagerEngineQGC']]],
   ['newdataarrived_11',['newDataArrived',['../classQSerialPortPrivate.html#abeea7cacdef87d811e5f8c84c0cebf6c',1,'QSerialPortPrivate']]],
   ['newerfirmware_12',['newerFirmware',['../classPowerComponentController.html#a3bc5bac955431aefa1e32a7ebbdcdc01',1,'PowerComponentController']]],

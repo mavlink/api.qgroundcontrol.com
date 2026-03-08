@@ -54,7 +54,7 @@ var searchData=
   ['maxwest_51',['MaxWest',['../classQGCGeoBoundingCube.html#aa9778904d2e45d9dc48b613968f9a424',1,'QGCGeoBoundingCube']]],
   ['maxzoom_52',['maxZoom',['../structTileSetRecord.html#ac76a9f5cb1f2f8499722283056160ad7',1,'TileSetRecord']]],
   ['maxzoomleveldownloadname_53',['maxZoomLevelDownloadName',['../classOfflineMapsSettings.html#ae3722aae709fda92ec6652e8ae28ccea',1,'OfflineMapsSettings']]],
-  ['message_54',['message',['../structStateMachineLogger_1_1LogEntry.html#a6b4c19239aca4584cb5a1ea0e1f08f0f',1,'StateMachineLogger::LogEntry']]],
+  ['message_54',['message',['../structCapturedLogMessage.html#aa1d9261771328ff4b61ea15c28d4e830',1,'CapturedLogMessage::message'],['../structStateMachineLogger_1_1LogEntry.html#a6b4c19239aca4584cb5a1ea0e1f08f0f',1,'StateMachineLogger::LogEntry::message']]],
   ['min_55',['min',['../structJoystick_1_1AxisCalibration__t.html#a539dab15d61d79ad716665c6e4bda037',1,'Joystick::AxisCalibration_t::min'],['../classAPMFactMetaDataRaw.html#aca52a5d5bc8e717810655e300f5a6b2a',1,'APMFactMetaDataRaw::min'],['../structMixer_1_1ActuatorType_1_1Values.html#adb79f00e5c7781101e4dc36f088660e2',1,'Mixer::ActuatorType::Values::min'],['../structMixer_1_1Rule_1_1RuleItem.html#af2015c5f5dcef74119dbf3b9c269c0f7',1,'Mixer::Rule::RuleItem::min']]],
   ['min_5fread_5ftimeout_56',['MIN_READ_TIMEOUT',['../qserialport__p_8h.html#a2b2c47c45516f32605ba0a14f5fead1c',1,'qserialport_p.h']]],
   ['minalt_57',['MinAlt',['../classQGCGeoBoundingCube.html#a7f3f9517015790e81b86483ec28b0b9e',1,'QGCGeoBoundingCube']]],

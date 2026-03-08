@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['objectrole_0',['ObjectRole',['../classObjectListModelBase.html#a6ca66270b3a97b6db8d54af51f04eef8',1,'ObjectListModelBase']]],
+  ['objectrole_0',['ObjectRole',['../classObjectItemModelBase.html#a53027bbb345beac90630d9726b3a0860',1,'ObjectItemModelBase']]],
   ['offlineeditingascentspeedname_1',['offlineEditingAscentSpeedName',['../classAppSettings.html#a8c26752f4177dddba84c41c8eb7d59b4',1,'AppSettings']]],
   ['offlineeditingcruisespeedname_2',['offlineEditingCruiseSpeedName',['../classAppSettings.html#ab9b353c27fa2701fa2548bdb557ddc4b',1,'AppSettings']]],
   ['offlineeditingdescentspeedname_3',['offlineEditingDescentSpeedName',['../classAppSettings.html#a62d6b07cd97149927e2fb091f4143137',1,'AppSettings']]],

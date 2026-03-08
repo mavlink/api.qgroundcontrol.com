@@ -116,14 +116,14 @@ $(document).ready(function(){initNavTree('SubMachineState_8cc_source.html',''); 
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_function" href="classQGCAbstractState.html#a3a157c9f515771538441fc9b3648a8b6">QGCState::onEntry</a>(<a class="code hl_function" href="classQGCAbstractState.html#a609522d4a2b81b7f4634fe98bd353873">event</a>);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">if</span> (!_factory) {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        qCWarning(QGCStateMachineLog) &lt;&lt; <a class="code hl_function" href="classQGCAbstractState.html#a59f431eaa8e10ee421aa0fb8632beed5">stateName</a>() &lt;&lt; <span class="stringliteral">&quot;no machine factory provided&quot;</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        qCCritical(QGCStateMachineLog) &lt;&lt; <a class="code hl_function" href="classQGCAbstractState.html#a59f431eaa8e10ee421aa0fb8632beed5">stateName</a>() &lt;&lt; <span class="stringliteral">&quot;no machine factory provided&quot;</span>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        emit <a class="code hl_signal" href="classQGCAbstractState.html#ab234b3f3e43a46a03afdca18ffd57440">error</a>();</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    _childMachine = _factory(<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">if</span> (!_childMachine) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        qCWarning(QGCStateMachineLog) &lt;&lt; <a class="code hl_function" href="classQGCAbstractState.html#a59f431eaa8e10ee421aa0fb8632beed5">stateName</a>() &lt;&lt; <span class="stringliteral">&quot;factory returned null machine&quot;</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        qCCritical(QGCStateMachineLog) &lt;&lt; <a class="code hl_function" href="classQGCAbstractState.html#a59f431eaa8e10ee421aa0fb8632beed5">stateName</a>() &lt;&lt; <span class="stringliteral">&quot;factory returned null machine&quot;</span>;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        emit <a class="code hl_signal" href="classQGCAbstractState.html#ab234b3f3e43a46a03afdca18ffd57440">error</a>();</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
