@@ -100,52 +100,58 @@ $(document).ready(function(){initNavTree('APMPowerComponentSummary_8qml_source.h
 <div class="contents">
 <a href="APMPowerComponentSummary_8qml.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>import QtQuick</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span>import QtQuick.Controls</div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>import QGroundControl</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>import QGroundControl.FactControls</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>import QGroundControl.Controls</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>Item {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    anchors.fill:   parent</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    FactPanelController { id: controller; }</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    property Fact _batt1Monitor:            controller.getParameterFact(-1, &quot;BATT_MONITOR&quot;)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    property Fact _batt2Monitor:            controller.getParameterFact(-1, &quot;BATT2_MONITOR&quot;, false /* reportMissing */)</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    property bool _batt2MonitorAvailable:   controller.parameterExists(-1, &quot;BATT2_MONITOR&quot;)</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    property bool _batt1MonitorEnabled:     _batt1Monitor.rawValue !== 0</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    property bool _batt2MonitorEnabled:     _batt2MonitorAvailable &amp;&amp; _batt2Monitor.rawValue !== 0</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    property Fact _battCapacity:            controller.getParameterFact(-1, &quot;BATT_CAPACITY&quot;, false /* reportMissing */)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    property Fact _batt2Capacity:           controller.getParameterFact(-1, &quot;BATT2_CAPACITY&quot;, false /* reportMissing */)</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    property bool _battCapacityAvailable:   controller.parameterExists(-1, &quot;BATT_CAPACITY&quot;)</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>import QtQuick.Layouts</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>import QGroundControl</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>import QGroundControl.FactControls</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>import QGroundControl.Controls</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>Item {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    implicitWidth: mainLayout.implicitWidth</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    implicitHeight: mainLayout.implicitHeight</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    width: parent.width  // grows when Loader is wider than implicitWidth</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    FactPanelController { id: controller }</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    APMBatteryParams {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        id:             battParams</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        controller:     controller</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        batteryIndex:   0</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    Column {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        anchors.fill:       parent</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        VehicleSummaryRow {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            labelText: qsTr(&quot;Batt1 monitor&quot;)</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            valueText: _batt1Monitor.enumStringValue</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        VehicleSummaryRow {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            labelText: qsTr(&quot;Batt1 capacity&quot;)</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            valueText:  _batt1MonitorEnabled ? _battCapacity.valueString + &quot; &quot; + _battCapacity.units : &quot;&quot;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            visible:    _batt1MonitorEnabled</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        VehicleSummaryRow {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            labelText:  qsTr(&quot;Batt2 monitor&quot;)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            valueText:  _batt2MonitorAvailable ? _batt2Monitor.enumStringValue : &quot;&quot;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            visible:    _batt2MonitorAvailable</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        VehicleSummaryRow {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            labelText:  qsTr(&quot;Batt2 capacity&quot;)</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            valueText:  _batt2MonitorEnabled ? _batt2Capacity.valueString + &quot; &quot; + _batt2Capacity.units : &quot;&quot;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            visible:    _batt2MonitorEnabled</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    ColumnLayout {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        id: mainLayout</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        spacing: 0</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        Repeater {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            model: battParams.getBatteryCount()</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            delegate: ColumnLayout {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                required property int index</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                spacing: 0</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                visible: _monitorEnabled</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                property string _prefix:            battParams.prefixForIndex(index)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                property string _label:             battParams.labelForIndex(index)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                property Fact   _monitor:           controller.getParameterFact(-1, _prefix + &quot;MONITOR&quot;)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                property bool   _monitorEnabled:    _monitor.rawValue !== 0</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                property bool   _capacityAvailable: controller.parameterExists(-1, _prefix + &quot;CAPACITY&quot;)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                property Fact   _capacity:          _capacityAvailable ? controller.getParameterFact(-1, _prefix + &quot;CAPACITY&quot;) : null</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                VehicleSummaryRow {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                    labelText: qsTr(&quot;Batt%1 monitor&quot;).arg(_label)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                    valueText: _monitor.enumStringValue</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                VehicleSummaryRow {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                    labelText: qsTr(&quot;Batt%1 capacity&quot;).arg(_label)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                    valueText: _capacity ? _capacity.valueString + &quot; &quot; + _capacity.units : &quot;&quot;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                    visible:   _capacityAvailable</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

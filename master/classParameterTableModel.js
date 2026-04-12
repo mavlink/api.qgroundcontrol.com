@@ -10,6 +10,7 @@ var classParameterTableModel =
     [ "data", "classParameterTableModel.html#a19cbf1e20e860b40cab06a8a7ee6378c", null ],
     [ "endReset", "classParameterTableModel.html#a87a381df32518d8a8e7efaa4df73c423", null ],
     [ "factAt", "classParameterTableModel.html#af2b724f6cad8c7ac0a58745cf2d68e1e", null ],
+    [ "headerData", "classParameterTableModel.html#a150af57520d877fd266ca91c21d9bb26", null ],
     [ "insert", "classParameterTableModel.html#a07839cb530fca4c61ffc7123851be5a4", null ],
     [ "roleNames", "classParameterTableModel.html#a2d29afc5d29efa9382fed1b2a127ec78", null ],
     [ "rowCount", "classParameterTableModel.html#a0921f380cdb29119a64f63d878861df1", null ],

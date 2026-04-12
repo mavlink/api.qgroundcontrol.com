@@ -19,6 +19,7 @@ var namespaceJsonHelper =
     [ "validateExternalQGCJsonFile", "namespaceJsonHelper.html#a1054328884f654ddea1764e134fac277", null ],
     [ "validateInternalQGCJsonFile", "namespaceJsonHelper.html#ac483818e46eec716d6d2b486598348ec", null ],
     [ "validateKeys", "namespaceJsonHelper.html#a96b54c245d570a0b2e62b2a98f074c79", null ],
+    [ "validateKeysStrict", "namespaceJsonHelper.html#acc813a939792bbf46e2a440b3a7ea3d1", null ],
     [ "_arrayIDKeysKey", "namespaceJsonHelper.html#ace976bea928810d2b4af21c6cd12387e", null ],
     [ "_jsonGroundStationKey", "namespaceJsonHelper.html#a3993c1edbe06e59fdd64bd475ce674e6", null ],
     [ "_jsonGroundStationValue", "namespaceJsonHelper.html#a4b3f1ea52eeaa1d145e1db2d7ccae539", null ],

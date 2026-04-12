@@ -10,8 +10,6 @@ var dir_87225e6cbcb4cf5309991212c88ac25b =
     [ "AutoConnectSettings.h", "AutoConnectSettings_8h.html", "AutoConnectSettings_8h" ],
     [ "BatteryIndicatorSettings.cc", "BatteryIndicatorSettings_8cc.html", null ],
     [ "BatteryIndicatorSettings.h", "BatteryIndicatorSettings_8h.html", "BatteryIndicatorSettings_8h" ],
-    [ "BrandImageSettings.cc", "BrandImageSettings_8cc.html", null ],
-    [ "BrandImageSettings.h", "BrandImageSettings_8h.html", "BrandImageSettings_8h" ],
     [ "FirmwareUpgradeSettings.cc", "FirmwareUpgradeSettings_8cc.html", null ],
     [ "FirmwareUpgradeSettings.h", "FirmwareUpgradeSettings_8h.html", "FirmwareUpgradeSettings_8h" ],
     [ "FlightMapSettings.cc", "FlightMapSettings_8cc.html", null ],
@@ -48,7 +46,7 @@ var dir_87225e6cbcb4cf5309991212c88ac25b =
     [ "SettingsManager.h", "SettingsManager_8h.html", "SettingsManager_8h" ],
     [ "UnitsSettings.cc", "UnitsSettings_8cc.html", null ],
     [ "UnitsSettings.h", "UnitsSettings_8h.html", "UnitsSettings_8h" ],
-    [ "VideoSettings.cc", "VideoSettings_8cc.html", null ],
+    [ "VideoSettings.cc", "VideoSettings_8cc.html", "VideoSettings_8cc" ],
     [ "VideoSettings.h", "VideoSettings_8h.html", "VideoSettings_8h" ],
     [ "Viewer3DSettings.cc", "Viewer3DSettings_8cc.html", null ],
     [ "Viewer3DSettings.h", "Viewer3DSettings_8h.html", "Viewer3DSettings_8h" ]

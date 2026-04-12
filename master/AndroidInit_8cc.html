@@ -91,13 +91,17 @@ $(document).ready(function(){initNavTree('AndroidInit_8cc.html',''); initResizab
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">AndroidInit.cc File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="AndroidInterface_8h_source.html">AndroidInterface.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="AndroidSerial_8h_source.html">AndroidSerial.h</a>&quot;</code><br />
 <code>#include &lt;QtCore/QJniEnvironment&gt;</code><br />
+<code>#include &lt;QtCore/QJniObject&gt;</code><br />
+<code>#include &lt;QtCore/QLoggingCategory&gt;</code><br />
+<code>#include &lt;atomic&gt;</code><br />
 <code>#include &quot;<a class="el" href="QGCLoggingCategory_8h_source.html">QGCLoggingCategory.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for AndroidInit.cc:</div>
@@ -121,6 +125,15 @@ Functions</h2></td></tr>
 <tr class="separator:a4557379bdb013820038b81acc5afb097"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e593f6ac1beb76a1a62b861dc29b2fa" id="r_a8e593f6ac1beb76a1a62b861dc29b2fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AndroidInit_8cc.html#a8e593f6ac1beb76a1a62b861dc29b2fa">JNI_OnUnload</a> (JavaVM *vm, void *)</td></tr>
 <tr class="separator:a8e593f6ac1beb76a1a62b861dc29b2fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa2122f89c1d3a32da322af355134123d" id="r_aa2122f89c1d3a32da322af355134123d"><td class="memItemLeft" align="right" valign="top">static std::atomic&lt; jobject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AndroidInit_8cc.html#aa2122f89c1d3a32da322af355134123d">_context</a> {nullptr}</td></tr>
+<tr class="separator:aa2122f89c1d3a32da322af355134123d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad46a541cc41bd27d64f210b565e0ca4f" id="r_ad46a541cc41bd27d64f210b565e0ca4f"><td class="memItemLeft" align="right" valign="top">static std::atomic&lt; jobject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AndroidInit_8cc.html#ad46a541cc41bd27d64f210b565e0ca4f">_class_loader</a> {nullptr}</td></tr>
+<tr class="separator:ad46a541cc41bd27d64f210b565e0ca4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaed5aa2ac527d082644cebccec405017" id="r_aaed5aa2ac527d082644cebccec405017"><td class="memItemLeft" align="right" valign="top">static std::atomic&lt; JavaVM * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AndroidInit_8cc.html#aaed5aa2ac527d082644cebccec405017">_java_vm</a> {nullptr}</td></tr>
+<tr class="separator:aaed5aa2ac527d082644cebccec405017"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a4557379bdb013820038b81acc5afb097" name="a4557379bdb013820038b81acc5afb097"></a>
@@ -149,9 +162,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AndroidInit_8cc_source.html#l00080">80</a> of file <a class="el" href="AndroidInit_8cc_source.html">AndroidInit.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AndroidInit_8cc_source.html#l00144">144</a> of file <a class="el" href="AndroidInit_8cc_source.html">AndroidInit.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="AndroidInit_8cc_source.html#l00063">jniSetNativeMethods()</a>, <a class="el" href="AndroidInterface_8cc_source.html#l00087">AndroidInterface::setNativeMethods()</a>, and <a class="el" href="AndroidSerial_8cc_source.html#l00293">AndroidSerial::setNativeMethods()</a>.</p>
+<p class="reference">References <a class="el" href="AndroidInit_8cc_source.html#l00017">_java_vm</a>, <a class="el" href="AndroidInit_8cc_source.html#l00111">jniSetNativeMethods()</a>, <a class="el" href="AndroidInterface_8cc_source.html#l00102">AndroidInterface::setNativeMethods()</a>, and <a class="el" href="AndroidSerial_8cc_source.html#l00293">AndroidSerial::setNativeMethods()</a>.</p>
 
 </div>
 </div>
@@ -181,9 +194,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AndroidInit_8cc_source.html#l00108">108</a> of file <a class="el" href="AndroidInit_8cc_source.html">AndroidInit.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AndroidInit_8cc_source.html#l00170">170</a> of file <a class="el" href="AndroidInit_8cc_source.html">AndroidInit.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="AndroidSerial_8cc_source.html#l00272">AndroidSerial::cleanupJniCache()</a>.</p>
+<p class="reference">References <a class="el" href="AndroidInit_8cc_source.html#l00016">_class_loader</a>, <a class="el" href="AndroidInit_8cc_source.html#l00015">_context</a>, <a class="el" href="AndroidInit_8cc_source.html#l00017">_java_vm</a>, and <a class="el" href="AndroidSerial_8cc_source.html#l00272">AndroidSerial::cleanupJniCache()</a>.</p>
 
 </div>
 </div>
@@ -221,9 +234,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AndroidInit_8cc_source.html#l00026">26</a> of file <a class="el" href="AndroidInit_8cc_source.html">AndroidInit.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AndroidInit_8cc_source.html#l00046">46</a> of file <a class="el" href="AndroidInit_8cc_source.html">AndroidInit.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="AndroidInit_8cc_source.html#l00063">jniSetNativeMethods()</a>.</p>
+<p class="reference">References <a class="el" href="AndroidInit_8cc_source.html#l00016">_class_loader</a>, and <a class="el" href="AndroidInit_8cc_source.html#l00015">_context</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="AndroidInit_8cc_source.html#l00111">jniSetNativeMethods()</a>.</p>
 
 </div>
 </div>
@@ -250,11 +265,11 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AndroidInit_8cc_source.html#l00063">63</a> of file <a class="el" href="AndroidInit_8cc_source.html">AndroidInit.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AndroidInit_8cc_source.html#l00111">111</a> of file <a class="el" href="AndroidInit_8cc_source.html">AndroidInit.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="AndroidInit_8cc_source.html#l00026">jniInit()</a>, and <a class="el" href="AndroidInterface_8h_source.html#l00015">AndroidInterface::kJniQGCActivityClassName</a>.</p>
+<p class="reference">References <a class="el" href="AndroidInit_8cc_source.html#l00046">jniInit()</a>, and <a class="el" href="AndroidInterface_8h_source.html#l00018">AndroidInterface::kJniQGCActivityClassName</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="AndroidInit_8cc_source.html#l00080">JNI_OnLoad()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="AndroidInit_8cc_source.html#l00144">JNI_OnLoad()</a>.</p>
 
 </div>
 </div>
@@ -283,6 +298,85 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ad46a541cc41bd27d64f210b565e0ca4f" name="ad46a541cc41bd27d64f210b565e0ca4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad46a541cc41bd27d64f210b565e0ca4f">&#9670;&#160;</a></span>_class_loader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;jobject&gt; _class_loader {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AndroidInit_8cc_source.html#l00016">16</a> of file <a class="el" href="AndroidInit_8cc_source.html">AndroidInit.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="AndroidInit_8cc_source.html#l00170">JNI_OnUnload()</a>, and <a class="el" href="AndroidInit_8cc_source.html#l00046">jniInit()</a>.</p>
+
+</div>
+</div>
+<a id="aa2122f89c1d3a32da322af355134123d" name="aa2122f89c1d3a32da322af355134123d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2122f89c1d3a32da322af355134123d">&#9670;&#160;</a></span>_context</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;jobject&gt; _context {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AndroidInit_8cc_source.html#l00015">15</a> of file <a class="el" href="AndroidInit_8cc_source.html">AndroidInit.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="AndroidInit_8cc_source.html#l00170">JNI_OnUnload()</a>, and <a class="el" href="AndroidInit_8cc_source.html#l00046">jniInit()</a>.</p>
+
+</div>
+</div>
+<a id="aaed5aa2ac527d082644cebccec405017" name="aaed5aa2ac527d082644cebccec405017"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaed5aa2ac527d082644cebccec405017">&#9670;&#160;</a></span>_java_vm</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;JavaVM*&gt; _java_vm {nullptr}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="AndroidInit_8cc_source.html#l00017">17</a> of file <a class="el" href="AndroidInit_8cc_source.html">AndroidInit.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="AndroidInit_8cc_source.html#l00144">JNI_OnLoad()</a>, and <a class="el" href="AndroidInit_8cc_source.html#l00170">JNI_OnUnload()</a>.</p>
 
 </div>
 </div>

@@ -12,7 +12,6 @@ var classMockLinkFTP =
     [ "MockLinkFTP", "classMockLinkFTP.html#a50b111502c59daf5ed668dc5e0a77bf1", null ],
     [ "~MockLinkFTP", "classMockLinkFTP.html#a5e87d3c591eacdb80eece4710e8f04fe", null ],
     [ "clearUploadedFiles", "classMockLinkFTP.html#ac5dea658c300fa8b5412f17b2add33c4", null ],
-    [ "enableBinParamFile", "classMockLinkFTP.html#a2b68882a69bc3754a7d5225e45072451", null ],
     [ "enableRandomDrops", "classMockLinkFTP.html#a1992bfadad12872167624bbe7dac4c55", null ],
     [ "mavlinkMessageReceived", "classMockLinkFTP.html#a7d5842bf524b2f8cf60d57e70b7f3546", null ],
     [ "resetCommandReceived", "classMockLinkFTP.html#a1a37fc5c6dfb2b7f5229a57ca329c65a", null ],

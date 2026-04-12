@@ -1,5 +1,5 @@
 var dir_5a5621ed8d9fc1335c9227d29ae995d1 =
 [
-    [ "OfflineVehicleFirstRunPrompt.qml", "OfflineVehicleFirstRunPrompt_8qml.html", null ],
-    [ "UnitsFirstRunPrompt.qml", "UnitsFirstRunPrompt_8qml.html", null ]
+    [ "FirstRunPrompt.qml", "FirstRunPrompt_8qml.html", null ],
+    [ "InitialSetupPrompt.qml", "InitialSetupPrompt_8qml.html", null ]
 ];

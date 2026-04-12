@@ -171,8 +171,8 @@ $(document).ready(function(){initNavTree('APMSensorsComponent_8qml_source.html',
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            property var    _mapPosition:                    QGroundControl.flightMapPosition</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            function showOrientationsDialog(calType) {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                var dialogTitle</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                var dialogButtons = Dialog.Ok</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                let dialogTitle</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                let dialogButtons = Dialog.Ok</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                _showSimpleAccelCalOption = false</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                _orientationDialogCalType = calType</div>
@@ -204,9 +204,9 @@ $(document).ready(function(){initNavTree('APMSensorsComponent_8qml_source.html',
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            }</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            function compassLabel(index) {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                var label = qsTr(&quot;Compass %1 &quot;).arg(index+1)</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                var addOpenParan = true</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                var addComma = false</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                let label = qsTr(&quot;Compass %1 &quot;).arg(index+1)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                let addOpenParan = true</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                let addComma = false</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                if (sensorParams.compassPrimaryFactAvailable) {</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                    label += sensorParams.rgCompassPrimary[index] ? qsTr(&quot;(primary&quot;) : qsTr(&quot;(secondary&quot;)</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                    addComma = true</div>
@@ -466,8 +466,8 @@ $(document).ready(function(){initNavTree('APMSensorsComponent_8qml_source.html',
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span> </div>
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>                                function selectPriorityfromParams() {</div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>                                    currentIndex = 3</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>                                    var compassId = sensorParams.rgCompassId[_compassIndex].rawValue</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>                                    for (var prioIndex=0; prioIndex&lt;3; prioIndex++) {</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>                                    let compassId = sensorParams.rgCompassId[_compassIndex].rawValue</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>                                    for (let prioIndex=0; prioIndex&lt;3; prioIndex++) {</div>
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>                                        console.log(`comparing ${compassId} with ${sensorParams.rgCompassPrio[prioIndex].rawValue} (index ${prioIndex})`)</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>                                        if (compassId == sensorParams.rgCompassPrio[prioIndex].rawValue) {</div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>                                            currentIndex = prioIndex</div>
@@ -515,7 +515,7 @@ $(document).ready(function(){initNavTree('APMSensorsComponent_8qml_source.html',
 <div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span> </div>
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>                QGCPopupDialog {</div>
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>                    function compassMask () {</div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>                        var mask = 0</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>                        let mask = 0</div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>                        mask |=  (0 + (sensorParams.rgCompassPrio[0].rawValue !== 0)) &lt;&lt; 0</div>
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>                        mask |=  (0 + (sensorParams.rgCompassPrio[1].rawValue !== 0)) &lt;&lt; 1</div>
 <div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>                        mask |=  (0 + (sensorParams.rgCompassPrio[2].rawValue !== 0)) &lt;&lt; 2</div>
@@ -529,8 +529,8 @@ $(document).ready(function(){initNavTree('APMSensorsComponent_8qml_source.html',
 <div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>                            if (!northCalibrationCheckBox.checked) {</div>
 <div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>                                controller.calibrateCompass()</div>
 <div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>                            } else {</div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>                                var lat = parseFloat(northCalLat.text)</div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>                                var lon = parseFloat(northCalLon.text)</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>                                let lat = parseFloat(northCalLat.text)</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>                                let lon = parseFloat(northCalLon.text)</div>
 <div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>                                if (useMapPositionCheckbox.checked) {</div>
 <div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>                                    lat = _mapPosition.latitude</div>
 <div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>                                    lon = _mapPosition.longitude</div>

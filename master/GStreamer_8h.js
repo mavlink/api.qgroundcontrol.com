@@ -11,8 +11,12 @@ var GStreamer_8h =
       [ "ForceVideoDecoderVulkan", "GStreamer_8h.html#aa1745ec8f9ef63ada08418c5b045ca74a50efaf0c1917c70a080c6e0cc01f8439", null ],
       [ "ForceVideoDecoderHardware", "GStreamer_8h.html#aa1745ec8f9ef63ada08418c5b045ca74afa61249faa3fbcfef834969ef2b7337a", null ]
     ] ],
+    [ "completeInit", "GStreamer_8h.html#a71ff21ae8d70082b4d3da0e5e04e9659", null ],
     [ "createVideoReceiver", "GStreamer_8h.html#a36d3ccf699a6b03bd580a791b0008d16", null ],
     [ "createVideoSink", "GStreamer_8h.html#a707b7c08d1008e6a9c8b3b675dc17fe4", null ],
     [ "initialize", "GStreamer_8h.html#aaeb4e5fb3ccc3013d331b0fbdc2d29f3", null ],
-    [ "releaseVideoSink", "GStreamer_8h.html#a668a7521fce6db761dd0f6987f05c51b", null ]
+    [ "prepareEnvironment", "GStreamer_8h.html#ab4da15ecef7d5ae8adc8084d3ffbf40c", null ],
+    [ "releaseVideoSink", "GStreamer_8h.html#a668a7521fce6db761dd0f6987f05c51b", null ],
+    [ "setDebugLevel", "GStreamer_8h.html#a427dbea4be97a87f50ad05516aaf1b78", null ],
+    [ "setupAppleSinkAdapter", "GStreamer_8h.html#aad40da762987097c50c3f44801986b20", null ]
 ];

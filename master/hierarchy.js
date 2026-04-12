@@ -27,7 +27,6 @@ var hierarchy =
     [ "CalibrationResult", "structCalibrationResult.html", null ],
     [ "CameraMetaData", "classCameraMetaData.html", null ],
     [ "MockLinkCamera::CameraState", "structMockLinkCamera_1_1CameraState.html", null ],
-    [ "CapturedLogMessage", "structCapturedLogMessage.html", null ],
     [ "TerrainAreaQuery::CarpetHeightInfo_t", "structTerrainAreaQuery_1_1CarpetHeightInfo__t.html", null ],
     [ "RemoteControlCalibrationController::ChannelInfo", "structRemoteControlCalibrationController_1_1ChannelInfo.html", null ],
     [ "QGCCommandLineParser::CommandLineParseResult", "structQGCCommandLineParser_1_1CommandLineParseResult.html", null ],
@@ -48,6 +47,7 @@ var hierarchy =
       [ "OsmBuildingHandler", "classOsmBuildingHandler.html", null ]
     ] ],
     [ "StateHistoryRecorder::HistoryEntry", "structStateHistoryRecorder_1_1HistoryEntry.html", null ],
+    [ "NTRIPHttpTransport::HttpStatus", "structNTRIPHttpTransport_1_1HttpStatus.html", null ],
     [ "GeometryImage::VehicleGeometryImageProvider::ImagePosition", "structGeometryImage_1_1VehicleGeometryImageProvider_1_1ImagePosition.html", null ],
     [ "AndroidSerial::JniContext", "structAndroidSerial_1_1JniContext.html", null ],
     [ "AndroidInterface::JniLocalRef< T >", "classAndroidInterface_1_1JniLocalRef.html", null ],
@@ -55,8 +55,9 @@ var hierarchy =
     [ "SDLJoystick::JoystickLock", "classSDLJoystick_1_1JoystickLock.html", null ],
     [ "JsonHelper::KeyValidateInfo", "structJsonHelper_1_1KeyValidateInfo.html", null ],
     [ "KMLSchemaValidator", "classKMLSchemaValidator.html", null ],
-    [ "LogDownloadData", "structLogDownloadData.html", null ],
+    [ "LogEntry", "structLogEntry.html", null ],
     [ "StateMachineLogger::LogEntry", "structStateMachineLogger_1_1LogEntry.html", null ],
+    [ "LoggingCategoryTreeNode", "structLoggingCategoryTreeNode.html", null ],
     [ "MapProvider", "classMapProvider.html", [
       [ "BingMapProvider", "classBingMapProvider.html", [
         [ "BingHybridMapProvider", "classBingHybridMapProvider.html", null ],
@@ -125,7 +126,8 @@ var hierarchy =
     [ "MAVLinkLogProcessor", "classMAVLinkLogProcessor.html", null ],
     [ "MAVLinkStreamConfig", "classMAVLinkStreamConfig.html", null ],
     [ "DataFlashUtility::MessageFormat", "structDataFlashUtility_1_1MessageFormat.html", null ],
-    [ "MissionController::MissionFlightStatus_t", "structMissionController_1_1MissionFlightStatus__t.html", null ],
+    [ "MissionFlightStatus_t", "structMissionFlightStatus__t.html", null ],
+    [ "MissionFlightStatusCalculator", "classMissionFlightStatusCalculator.html", null ],
     [ "Mixer::MixerOption", "structMixer_1_1MixerOption.html", null ],
     [ "Mixer::MixerParameter", "structMixer_1_1MixerParameter.html", null ],
     [ "MockLinkCamera", "classMockLinkCamera.html", null ],
@@ -134,6 +136,8 @@ var hierarchy =
     [ "QtAndroidPrivate::NewIntentListener", null, [
       [ "AndroidEvents", "classAndroidEvents.html", null ]
     ] ],
+    [ "NTRIPTransportConfig", "structNTRIPTransportConfig.html", null ],
+    [ "OnboardLogDownloadData", "structOnboardLogDownloadData.html", null ],
     [ "Mixer::Mixers::OutputFunction", "structMixer_1_1Mixers_1_1OutputFunction.html", null ],
     [ "Parameter", "structParameter.html", null ],
     [ "TerrainPathQuery::PathHeightInfo_t", "structTerrainPathQuery_1_1PathHeightInfo__t.html", null ],
@@ -141,6 +145,7 @@ var hierarchy =
     [ "px4_custom_mode", "unionpx4__custom__mode.html", null ],
     [ "PX4CustomMode", "structPX4CustomMode.html", null ],
     [ "QAbstractItemModel", null, [
+      [ "LoggingCategoryTreeModel", "classLoggingCategoryTreeModel.html", null ],
       [ "ObjectItemModelBase", "classObjectItemModelBase.html", [
         [ "ObjectListModelBase", "classObjectListModelBase.html", [
           [ "QmlObjectListModel", "classQmlObjectListModel.html", [
@@ -156,9 +161,14 @@ var hierarchy =
     [ "QAbstractListModel", null, [
       [ "FactValueSliderListModel", "classFactValueSliderListModel.html", null ],
       [ "GeoTagImageModel", "classGeoTagImageModel.html", null ],
+      [ "LoggingCategoryFlatModel", "classLoggingCategoryFlatModel.html", null ],
       [ "QGCArchiveModel", "classQGCArchiveModel.html", null ]
     ] ],
     [ "QAbstractTableModel", null, [
+      [ "LogEntryTableModel", "classLogEntryTableModel.html", [
+        [ "LogModel", "classLogModel.html", null ],
+        [ "LogStoreQueryModel", "classLogStoreQueryModel.html", null ]
+      ] ],
       [ "ParameterTableModel", "classParameterTableModel.html", null ]
     ] ],
     [ "QAbstractTransition", null, [
@@ -192,6 +202,9 @@ var hierarchy =
     ] ],
     [ "QGCCacheTile", "structQGCCacheTile.html", null ],
     [ "QGCLoggingCategory", "classQGCLoggingCategory.html", null ],
+    [ "QGCMAVLinkTypes", "structQGCMAVLinkTypes.html", [
+      [ "QGCMAVLink", "classQGCMAVLink.html", null ]
+    ] ],
     [ "QGCTile", "structQGCTile.html", null ],
     [ "QGCTileCacheDatabase", "classQGCTileCacheDatabase.html", null ],
     [ "QGCTileSet", "structQGCTileSet.html", null ],
@@ -233,9 +246,7 @@ var hierarchy =
       [ "ADSBTCPLink", "classADSBTCPLink.html", null ],
       [ "ADSBVehicle", "classADSBVehicle.html", null ],
       [ "ADSBVehicleManager", "classADSBVehicleManager.html", null ],
-      [ "APMFactMetaDataRaw", "classAPMFactMetaDataRaw.html", null ],
       [ "APMFrameClass", "classAPMFrameClass.html", null ],
-      [ "APMParameterMetaData", "classAPMParameterMetaData.html", null ],
       [ "ActuatorActions::Action", "classActuatorActions_1_1Action.html", null ],
       [ "ActuatorActions::ActionGroup", "classActuatorActions_1_1ActionGroup.html", null ],
       [ "ActuatorOutputs::ActuatorOutput", "classActuatorOutputs_1_1ActuatorOutput.html", null ],
@@ -275,7 +286,6 @@ var hierarchy =
       ] ],
       [ "ComponentInformationCache", "classComponentInformationCache.html", null ],
       [ "ComponentInformationTranslation", "classComponentInformationTranslation.html", null ],
-      [ "EditPositionDialogController", "classEditPositionDialogController.html", null ],
       [ "EventHandler", "classEventHandler.html", null ],
       [ "FTPController", "classFTPController.html", null ],
       [ "FTPManager", "classFTPManager.html", null ],
@@ -292,7 +302,7 @@ var hierarchy =
         ] ],
         [ "GPSRTKFactGroup", "classGPSRTKFactGroup.html", null ],
         [ "Gimbal", "classGimbal.html", null ],
-        [ "MavlinkCameraControl", "classMavlinkCameraControl.html", [
+        [ "MavlinkCameraControlInterface", "classMavlinkCameraControlInterface.html", [
           [ "SimulatedCameraControl", "classSimulatedCameraControl.html", null ],
           [ "VehicleCameraControl", "classVehicleCameraControl.html", null ]
         ] ],
@@ -330,12 +340,14 @@ var hierarchy =
         [ "PX4SimpleFlightModesController", "classPX4SimpleFlightModesController.html", null ],
         [ "ParameterEditorController", "classParameterEditorController.html", null ],
         [ "PowerComponentController", "classPowerComponentController.html", null ],
+        [ "PowerModulePresetController", "classPowerModulePresetController.html", null ],
         [ "RCChannelMonitorController", "classRCChannelMonitorController.html", null ],
         [ "RemoteControlCalibrationController", "classRemoteControlCalibrationController.html", [
           [ "JoystickConfigController", "classJoystickConfigController.html", null ],
           [ "RadioComponentController", "classRadioComponentController.html", null ]
         ] ],
         [ "SensorsComponentController", "classSensorsComponentController.html", null ],
+        [ "ServoOutputMonitorController", "classServoOutputMonitorController.html", null ],
         [ "SyslinkComponentController", "classSyslinkComponentController.html", null ]
       ] ],
       [ "FirmwareImage", "classFirmwareImage.html", null ],
@@ -365,6 +377,7 @@ var hierarchy =
       [ "GPSRtk", "classGPSRtk.html", null ],
       [ "GeoTagController", "classGeoTagController.html", null ],
       [ "GimbalController", "classGimbalController.html", null ],
+      [ "GstAppSinkAdapter", "classGstAppSinkAdapter.html", null ],
       [ "HealthAndArmingCheckProblem", "classHealthAndArmingCheckProblem.html", null ],
       [ "HealthAndArmingCheckReport", "classHealthAndArmingCheckReport.html", null ],
       [ "ImageProtocolManager", "classImageProtocolManager.html", null ],
@@ -387,14 +400,18 @@ var hierarchy =
         [ "UDPLink", "classUDPLink.html", null ]
       ] ],
       [ "LinkManager", "classLinkManager.html", null ],
-      [ "LogDownloadController", "classLogDownloadController.html", null ],
+      [ "LogManager", "classLogManager.html", null ],
+      [ "LogRemoteSink", "classLogRemoteSink.html", null ],
       [ "LogReplayLinkController", "classLogReplayLinkController.html", null ],
       [ "LogReplayWorker", "classLogReplayWorker.html", null ],
+      [ "LogStore", "classLogStore.html", null ],
       [ "MAVLinkChartController", "classMAVLinkChartController.html", null ],
       [ "MAVLinkInspectorController", "classMAVLinkInspectorController.html", null ],
       [ "MAVLinkLogFiles", "classMAVLinkLogFiles.html", null ],
       [ "MAVLinkLogManager", "classMAVLinkLogManager.html", null ],
       [ "MAVLinkProtocol", "classMAVLinkProtocol.html", null ],
+      [ "MAVLinkSigningKey", "classMAVLinkSigningKey.html", null ],
+      [ "MAVLinkSigningKeys", "classMAVLinkSigningKeys.html", null ],
       [ "MavlinkAction", "classMavlinkAction.html", null ],
       [ "MavlinkActionManager", "classMavlinkActionManager.html", null ],
       [ "MissionCmdParamInfo", "classMissionCmdParamInfo.html", null ],
@@ -417,17 +434,24 @@ var hierarchy =
       [ "MockLinkWorker", "classMockLinkWorker.html", null ],
       [ "MotorAssignment", "classMotorAssignment.html", null ],
       [ "MultiVehicleManager", "classMultiVehicleManager.html", null ],
+      [ "NTRIPHttpTransport", "classNTRIPHttpTransport.html", null ],
       [ "NTRIPManager", "classNTRIPManager.html", null ],
-      [ "NTRIPTCPLink", "classNTRIPTCPLink.html", null ],
+      [ "NTRIPMountpointModel", "classNTRIPMountpointModel.html", null ],
+      [ "NTRIPSourceTableFetcher", "classNTRIPSourceTableFetcher.html", null ],
+      [ "NTRIPSourceTableModel", "classNTRIPSourceTableModel.html", null ],
+      [ "OnboardLogController", "classOnboardLogController.html", null ],
       [ "OsmParserThread", "classOsmParserThread.html", null ],
       [ "PX4AirframeLoader", "classPX4AirframeLoader.html", null ],
       [ "PX4FirmwareUpgradeThreadController", "classPX4FirmwareUpgradeThreadController.html", null ],
       [ "PX4FirmwareUpgradeThreadWorker", "classPX4FirmwareUpgradeThreadWorker.html", null ],
-      [ "PX4ParameterMetaData", "classPX4ParameterMetaData.html", null ],
       [ "ParameterEditorCategory", "classParameterEditorCategory.html", null ],
       [ "ParameterEditorDiff", "classParameterEditorDiff.html", null ],
       [ "ParameterEditorGroup", "classParameterEditorGroup.html", null ],
       [ "ParameterManager", "classParameterManager.html", null ],
+      [ "ParameterMetaData", "classParameterMetaData.html", [
+        [ "APMParameterMetaData", "classAPMParameterMetaData.html", null ],
+        [ "PX4ParameterMetaData", "classPX4ParameterMetaData.html", null ]
+      ] ],
       [ "PlanCreator", "classPlanCreator.html", [
         [ "BlankPlanCreator", "classBlankPlanCreator.html", null ],
         [ "CorridorScanPlanCreator", "classCorridorScanPlanCreator.html", null ],
@@ -460,9 +484,9 @@ var hierarchy =
       [ "QGCFileDialogController", "classQGCFileDialogController.html", null ],
       [ "QGCFileDownload", "classQGCFileDownload.html", null ],
       [ "QGCFileWatcher", "classQGCFileWatcher.html", null ],
+      [ "QGCFileWriter", "classQGCFileWriter.html", null ],
       [ "QGCFlyViewOptions", "classQGCFlyViewOptions.html", null ],
       [ "QGCGeoBoundingCube", "classQGCGeoBoundingCube.html", null ],
-      [ "QGCLogEntry", "classQGCLogEntry.html", null ],
       [ "QGCLoggingCategoryItem", "classQGCLoggingCategoryItem.html", null ],
       [ "QGCLoggingCategoryManager", "classQGCLoggingCategoryManager.html", null ],
       [ "QGCMAVLink", "classQGCMAVLink.html", null ],
@@ -493,6 +517,7 @@ var hierarchy =
         [ "QGCSaveTileTask", "classQGCSaveTileTask.html", null ],
         [ "QGCUpdateTileDownloadStateTask", "classQGCUpdateTileDownloadStateTask.html", null ]
       ] ],
+      [ "QGCOnboardLogEntry", "classQGCOnboardLogEntry.html", null ],
       [ "QGCOptions", "classQGCOptions.html", null ],
       [ "QGCPalette", "classQGCPalette.html", null ],
       [ "QGCPositionManager", "classQGCPositionManager.html", null ],
@@ -507,6 +532,10 @@ var hierarchy =
       [ "RTCMMavlink", "classRTCMMavlink.html", null ],
       [ "RallyPoint", "classRallyPoint.html", null ],
       [ "RemoteIDManager", "classRemoteIDManager.html", null ],
+      [ "RemoteTransport", "classRemoteTransport.html", [
+        [ "TcpTransport", "classTcpTransport.html", null ],
+        [ "UdpTransport", "classUdpTransport.html", null ]
+      ] ],
       [ "ScreenToolsController", "classScreenToolsController.html", null ],
       [ "Section", "classSection.html", [
         [ "CameraSection", "classCameraSection.html", null ],
@@ -519,7 +548,6 @@ var hierarchy =
         [ "AppSettings", "classAppSettings.html", null ],
         [ "AutoConnectSettings", "classAutoConnectSettings.html", null ],
         [ "BatteryIndicatorSettings", "classBatteryIndicatorSettings.html", null ],
-        [ "BrandImageSettings", "classBrandImageSettings.html", null ],
         [ "FirmwareUpgradeSettings", "classFirmwareUpgradeSettings.html", null ],
         [ "FlightMapSettings", "classFlightMapSettings.html", null ],
         [ "FlightModeSettings", "classFlightModeSettings.html", null ],
@@ -566,10 +594,17 @@ var hierarchy =
       [ "ToolStripAction", "classToolStripAction.html", null ],
       [ "ToolStripActionList", "classToolStripActionList.html", null ],
       [ "TrajectoryPoints", "classTrajectoryPoints.html", null ],
+      [ "TransformPositionController", "classTransformPositionController.html", null ],
+      [ "TransportStrategy", "classTransportStrategy.html", null ],
       [ "UDPWorker", "classUDPWorker.html", null ],
       [ "VehicleComponent", "classVehicleComponent.html", [
+        [ "APMAdvancedTuningCopterComponent", "classAPMAdvancedTuningCopterComponent.html", null ],
         [ "APMAirframeComponent", "classAPMAirframeComponent.html", null ],
+        [ "APMAirspeedComponent", "classAPMAirspeedComponent.html", null ],
+        [ "APMESCComponent", "classAPMESCComponent.html", null ],
+        [ "APMFailsafesComponent", "classAPMFailsafesComponent.html", null ],
         [ "APMFlightModesComponent", "classAPMFlightModesComponent.html", null ],
+        [ "APMFlightSafetyComponent", "classAPMFlightSafetyComponent.html", null ],
         [ "APMFollowComponent", "classAPMFollowComponent.html", null ],
         [ "APMGimbalComponent", "classAPMGimbalComponent.html", null ],
         [ "APMHeliComponent", "classAPMHeliComponent.html", null ],
@@ -579,6 +614,7 @@ var hierarchy =
         [ "APMRemoteSupportComponent", "classAPMRemoteSupportComponent.html", null ],
         [ "APMSafetyComponent", "classAPMSafetyComponent.html", null ],
         [ "APMSensorsComponent", "classAPMSensorsComponent.html", null ],
+        [ "APMServoComponent", "classAPMServoComponent.html", null ],
         [ "APMSubFrameComponent", "classAPMSubFrameComponent.html", null ],
         [ "APMTuningComponent", "classAPMTuningComponent.html", null ],
         [ "ActuatorComponent", "classActuatorComponent.html", null ],
@@ -663,7 +699,6 @@ var hierarchy =
       [ "VideoItemStub", "classVideoItemStub.html", null ]
     ] ],
     [ "QRunnable", null, [
-      [ "FinishVideoInitialization", "classFinishVideoInitialization.html", null ],
       [ "RenderJob", "structRenderJob.html", null ]
     ] ],
     [ "QSerialPortErrorInfo", "classQSerialPortErrorInfo.html", null ],
@@ -725,8 +760,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "QStringListModel", null, [
-      [ "MAVLinkConsoleController", "classMAVLinkConsoleController.html", null ],
-      [ "QGCLogging", "classQGCLogging.html", null ]
+      [ "MAVLinkConsoleController", "classMAVLinkConsoleController.html", null ]
     ] ],
     [ "QThread", null, [
       [ "GPSProvider", "classGPSProvider.html", null ],
@@ -750,7 +784,9 @@ var hierarchy =
     [ "Mixer::Rule::RuleItem", "structMixer_1_1Rule_1_1RuleItem.html", null ],
     [ "RunGuard", "classRunGuard.html", null ],
     [ "satellite_info_s", "structsatellite__info__s.html", null ],
+    [ "QGCSqlHelper::ScopedConnection", "classQGCSqlHelper_1_1ScopedConnection.html", null ],
     [ "ScopedExportDB", "structScopedExportDB.html", null ],
+    [ "LogStore::ScopedReadConnection", "classLogStore_1_1ScopedReadConnection.html", null ],
     [ "sensor_gnss_relative_s", "structsensor__gnss__relative__s.html", null ],
     [ "sensor_gps_s", "structsensor__gps__s.html", null ],
     [ "SetTotalsResult", "structSetTotalsResult.html", null ],
@@ -772,6 +808,10 @@ var hierarchy =
     [ "UDPClient", "structUDPClient.html", null ],
     [ "UrlFactory", "classUrlFactory.html", null ],
     [ "KMLSchemaValidator::ValidationResult", "structKMLSchemaValidator_1_1ValidationResult.html", null ],
+    [ "ParameterMetaData::ValueDescPair", "structParameterMetaData_1_1ValueDescPair.html", null ],
     [ "Mixer::ActuatorType::Values", "structMixer_1_1ActuatorType_1_1Values.html", null ],
-    [ "ADSB::VehicleInfo_t", "structADSB_1_1VehicleInfo__t.html", null ]
+    [ "ADSB::VehicleInfo_t", "structADSB_1_1VehicleInfo__t.html", null ],
+    [ "VehicleTypes", "structVehicleTypes.html", [
+      [ "Vehicle", "classVehicle.html", null ]
+    ] ]
 ];

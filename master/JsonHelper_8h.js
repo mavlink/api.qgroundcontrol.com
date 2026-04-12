@@ -15,6 +15,7 @@ var JsonHelper_8h =
     [ "validateExternalQGCJsonFile", "JsonHelper_8h.html#a1054328884f654ddea1764e134fac277", null ],
     [ "validateInternalQGCJsonFile", "JsonHelper_8h.html#ac483818e46eec716d6d2b486598348ec", null ],
     [ "validateKeys", "JsonHelper_8h.html#a96b54c245d570a0b2e62b2a98f074c79", null ],
+    [ "validateKeysStrict", "JsonHelper_8h.html#acc813a939792bbf46e2a440b3a7ea3d1", null ],
     [ "jsonFileTypeKey", "JsonHelper_8h.html#abd59b2c1102a4a45a29225fe8fb0f71f", null ],
     [ "jsonVersionKey", "JsonHelper_8h.html#a6e8f432b8d91f38373d7e8ae4a76a3e6", null ]
 ];

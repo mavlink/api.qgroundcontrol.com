@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['zoomlevel_0',['zoomlevel',['../classMavlinkCameraControl.html#a559c6ff3426657a158149b4fa4a9795e',1,'MavlinkCameraControl::zoomLevel()'],['../classSimulatedCameraControl.html#a55d07a5ac58fefcb8df7ef8807968e3c',1,'SimulatedCameraControl::zoomLevel()'],['../classVehicleCameraControl.html#a442dd4f9ac7662d767c5358ad6c120e7',1,'VehicleCameraControl::zoomLevel()']]],
-  ['zoomlevelchanged_1',['zoomLevelChanged',['../classMavlinkCameraControl.html#a3c7021d2620b1311106975705cca39ea',1,'MavlinkCameraControl']]],
+  ['zoomlevel_0',['zoomlevel',['../classMavlinkCameraControlInterface.html#aba754be690a19e344afa656e04ac4647',1,'MavlinkCameraControlInterface::zoomLevel()'],['../classSimulatedCameraControl.html#a55d07a5ac58fefcb8df7ef8807968e3c',1,'SimulatedCameraControl::zoomLevel()'],['../classVehicleCameraControl.html#a442dd4f9ac7662d767c5358ad6c120e7',1,'VehicleCameraControl::zoomLevel()']]],
+  ['zoomlevelchanged_1',['zoomLevelChanged',['../classMavlinkCameraControlInterface.html#a3e03ce5c41fe58834ff52965dfa79672',1,'MavlinkCameraControlInterface']]],
   ['zoommaxspeed_2',['zoomMaxSpeed',['../classGimbalControllerSettings.html#af0a3c259a4f7beacbdbbabd8a9780ef8',1,'GimbalControllerSettings']]],
   ['zoomminspeed_3',['zoomMinSpeed',['../classGimbalControllerSettings.html#a2e74b46afec474909eb86142cb41862e',1,'GimbalControllerSettings']]],
   ['zordermapitems_4',['zOrderMapItems',['../classQGroundControlQmlGlobal.html#a6c2807a24059b26c2ca82a81cafe6683',1,'QGroundControlQmlGlobal']]],

@@ -6,9 +6,8 @@ var classAudioOutput =
     ] ],
     [ "AudioOutput", "classAudioOutput.html#a3b2c5038ba0a3401d75eae3d5dec84c3", null ],
     [ "~AudioOutput", "classAudioOutput.html#a95719dfdce3899ee2847e20dc403e25e", null ],
-    [ "init", "classAudioOutput.html#a8a581fd7464112be5820e9813530bdb3", null ],
+    [ "init", "classAudioOutput.html#abca3c2f72fd182b75a394a0077fb70a3", null ],
     [ "instance", "classAudioOutput.html#a88a84f92e378fa3d3acc9f429627f569", null ],
-    [ "isMuted", "classAudioOutput.html#a9b164a8148e822719da3ec65812904fd", null ],
     [ "say", "classAudioOutput.html#a1ba00b090c09fa0b0c05ee5706bf84a7", null ],
-    [ "setMuted", "classAudioOutput.html#a69debf82daa909003302d038bcf3d341", null ]
+    [ "testAudioOutput", "classAudioOutput.html#a3d2c7281669b1ef52f9b700ee758a5ca", null ]
 ];

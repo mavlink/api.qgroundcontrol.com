@@ -5,6 +5,7 @@ var classFlightModesComponent =
     [ "iconResource", "classFlightModesComponent.html#a752194fdc9c50fb2bd84ade8b676f4a4", null ],
     [ "name", "classFlightModesComponent.html#a1c0cc58e559c51cc2ffe4a68e63d584a", null ],
     [ "requiresSetup", "classFlightModesComponent.html#a8a67ed00dc5d783e668e0f6bb175983b", null ],
+    [ "sections", "classFlightModesComponent.html#a55a1f02537e8a4132dd9d2222533a420", null ],
     [ "setupComplete", "classFlightModesComponent.html#a54538e1e6496f43ede8064a7dd15eb96", null ],
     [ "setupCompleteChangedTriggerList", "classFlightModesComponent.html#ae9cb51c663afb35a16a2fc2bc1216c16", null ],
     [ "setupSource", "classFlightModesComponent.html#a938ccd25f8d4d350d602c3a31c4a0e00", null ],

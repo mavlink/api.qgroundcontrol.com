@@ -1,13 +1,12 @@
 var searchData=
 [
-  ['tasktype_0',['TaskType',['../classQGCMapTask.html#a69ac69d198c7e296bd46daf594702f31',1,'QGCMapTask']]],
-  ['temperatureunits_1',['TemperatureUnits',['../classUnitsSettings.html#a20ac7a84597670c3370111536ff1ddc9',1,'UnitsSettings']]],
-  ['textmod_2',['TextMod',['../classAudioOutput.html#a58b2d1a7d5b0720bf2d261462cd8de5e',1,'AudioOutput']]],
-  ['theme_3',['Theme',['../classQGCPalette.html#a5e5dfd80c6b66a7b02f5147e918b905c',1,'QGCPalette']]],
-  ['thermalviewmode_4',['ThermalViewMode',['../classMavlinkCameraControl.html#a31592f1cb1561328cfc285fd5c3f05eb',1,'MavlinkCameraControl']]],
-  ['tilestate_5',['TileState',['../structQGCTile.html#a9e47ec1e89debdca4ec927e2c4461940',1,'QGCTile']]],
-  ['trackingstatus_6',['TrackingStatus',['../classMavlinkCameraControl.html#a7130437a475161b899496936a50745f8',1,'MavlinkCameraControl']]],
-  ['transactiontype_5ft_7',['TransactionType_t',['../classPlanManager.html#aae587787ec6b603649e9e922a049fa79',1,'PlanManager']]],
-  ['transitionreason_8',['TransitionReason',['../classStateHistoryRecorder.html#aab67d02c9b0dfc3cf3b0dcf278a511fd',1,'StateHistoryRecorder']]],
-  ['type_9',['type',['../structActuatorActions_1_1Config.html#a8e9187acc813ed0131a212a99427445a',1,'ActuatorActions::Config::Type'],['../structActuatorGeometry.html#af7841751ef9e6ac838cc523e3ca76339',1,'ActuatorGeometry::Type']]]
+  ['segmenttype_0',['SegmentType',['../classFlightPathSegment.html#a1a9904d97f3b74589f3177247b570ffe',1,'FlightPathSegment']]],
+  ['sendtovehicleprecheckstate_1',['SendToVehiclePreCheckState',['../classMissionController.html#a6854644a576d0f3d705ada955ed2868a',1,'MissionController']]],
+  ['serialporterror_2',['SerialPortError',['../classQSerialPort.html#aa31f0921d43bb30acfe9a6cc5abbe6b0',1,'QSerialPort']]],
+  ['speedunits_3',['SpeedUnits',['../classUnitsSettings.html#ab88fe16dd3ad9e6cf0933b873e46b46e',1,'UnitsSettings']]],
+  ['spindirection_4',['SpinDirection',['../structActuatorGeometry.html#a7ccc0079932245698dfce1667c559f4e',1,'ActuatorGeometry']]],
+  ['state_5',['state',['../classCircuitBreakerState.html#ae3872f8cde49f3dff3b4f1e005d112ca',1,'CircuitBreakerState::State'],['../namespaceTerrainQuery.html#ae7bc82310721c6cdfb6eff221ff6781c',1,'TerrainQuery::State']]],
+  ['status_6',['status',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76',1,'QGCCommandLineParser::CommandLineParseResult::Status'],['../classVideoReceiver.html#af67154a257e1617a5b94bbc4b8e6defb',1,'VideoReceiver::STATUS']]],
+  ['stopbits_7',['stopbits',['../classQSerialPort.html#ad4ec8df2fd7623ca1f2450b0681e5082',1,'QSerialPort::StopBits'],['../namespaceAndroidSerial.html#ad14d38e3ec2393a218ef66898641a5b4',1,'AndroidSerial::StopBits']]],
+  ['storagestatus_8',['StorageStatus',['../classMavlinkCameraControlInterface.html#a826dd4c19d0bb5275e9fcb6ad6d6fc8c',1,'MavlinkCameraControlInterface']]]
 ];

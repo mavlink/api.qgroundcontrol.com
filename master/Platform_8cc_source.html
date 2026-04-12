@@ -255,110 +255,114 @@ $(document).ready(function(){initNavTree('Platform_8cc_source.html',''); initRes
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="comment">// --- Environment setup ---</span></div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">#ifdef Q_OS_UNIX</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordflow">if</span> (!qEnvironmentVariableIsSet(<span class="stringliteral">&quot;QT_ASSUME_STDERR_HAS_CONSOLE&quot;</span>)) {</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        (void) qputenv(<span class="stringliteral">&quot;QT_ASSUME_STDERR_HAS_CONSOLE&quot;</span>, <span class="stringliteral">&quot;1&quot;</span>);</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">if</span> (!qEnvironmentVariableIsSet(<span class="stringliteral">&quot;QT_FORCE_STDERR_LOGGING&quot;</span>)) {</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        (void) qputenv(<span class="stringliteral">&quot;QT_FORCE_STDERR_LOGGING&quot;</span>, <span class="stringliteral">&quot;1&quot;</span>);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">#ifndef Q_OS_ANDROID</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="comment">// On Android, skip these — either env var triggers shouldLogToStderr(),</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="comment">// which bypasses Qt&#39;s __android_log_print path to logcat.</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">if</span> (!qEnvironmentVariableIsSet(<span class="stringliteral">&quot;QT_ASSUME_STDERR_HAS_CONSOLE&quot;</span>)) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        (void) qputenv(<span class="stringliteral">&quot;QT_ASSUME_STDERR_HAS_CONSOLE&quot;</span>, <span class="stringliteral">&quot;1&quot;</span>);</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    }</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordflow">if</span> (!qEnvironmentVariableIsSet(<span class="stringliteral">&quot;QT_WIN_DEBUG_CONSOLE&quot;</span>)) {</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        (void) qputenv(<span class="stringliteral">&quot;QT_WIN_DEBUG_CONSOLE&quot;</span>, <span class="stringliteral">&quot;attach&quot;</span>);</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    }</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    setWindowsErrorModes(args.<a class="code hl_variable" href="structQGCCommandLineParser_1_1CommandLineParseResult.html#a21b64d61fc67ec670d6df42ebe939911">quietWindowsAsserts</a>);</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="preprocessor">#ifdef Q_OS_MACOS</span></div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    disableAppNapViaInfoDict();</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">if</span> (!qEnvironmentVariableIsSet(<span class="stringliteral">&quot;QT_FORCE_STDERR_LOGGING&quot;</span>)) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        (void) qputenv(<span class="stringliteral">&quot;QT_FORCE_STDERR_LOGGING&quot;</span>, <span class="stringliteral">&quot;1&quot;</span>);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">if</span> (!qEnvironmentVariableIsSet(<span class="stringliteral">&quot;QT_WIN_DEBUG_CONSOLE&quot;</span>)) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        (void) qputenv(<span class="stringliteral">&quot;QT_WIN_DEBUG_CONSOLE&quot;</span>, <span class="stringliteral">&quot;attach&quot;</span>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    setWindowsErrorModes(args.<a class="code hl_variable" href="structQGCCommandLineParser_1_1CommandLineParseResult.html#a21b64d61fc67ec670d6df42ebe939911">quietWindowsAsserts</a>);</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="comment">// --- Unit test mode: run headless ---</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">#ifdef QGC_UNITTEST_BUILD</span></div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordflow">if</span> (args.<a class="code hl_variable" href="structQGCCommandLineParser_1_1CommandLineParseResult.html#a18177f5bdd61bca241d41f9ef06e30f2">runningUnitTests</a> || args.<a class="code hl_variable" href="structQGCCommandLineParser_1_1CommandLineParseResult.html#a42eac23811fc8c6ef5dc9dee0eac2149">listTests</a>) {</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">if</span> (!qEnvironmentVariableIsSet(<span class="stringliteral">&quot;QT_QPA_PLATFORM&quot;</span>)) {</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            (void) qputenv(<span class="stringliteral">&quot;QT_QPA_PLATFORM&quot;</span>, <span class="stringliteral">&quot;offscreen&quot;</span>);</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        }</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    }</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="comment">// --- Qt attributes ---</span></div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keywordflow">if</span> (args.<a class="code hl_variable" href="structQGCCommandLineParser_1_1CommandLineParseResult.html#a808825538f42c5310af88358686afd52">useDesktopGL</a>) {</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        QCoreApplication::setAttribute(Qt::AA_UseDesktopOpenGL);</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordflow">if</span> (args.<a class="code hl_variable" href="structQGCCommandLineParser_1_1CommandLineParseResult.html#ad2fec5165dd4a0441521f3697f179e7e">useSwRast</a>) {</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        QCoreApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#ifdef Q_OS_MACOS</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    disableAppNapViaInfoDict();</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="comment">// --- Unit test mode: run headless ---</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="preprocessor">#ifdef QGC_UNITTEST_BUILD</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordflow">if</span> (args.<a class="code hl_variable" href="structQGCCommandLineParser_1_1CommandLineParseResult.html#a18177f5bdd61bca241d41f9ef06e30f2">runningUnitTests</a> || args.<a class="code hl_variable" href="structQGCCommandLineParser_1_1CommandLineParseResult.html#a42eac23811fc8c6ef5dc9dee0eac2149">listTests</a>) {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="keywordflow">if</span> (!qEnvironmentVariableIsSet(<span class="stringliteral">&quot;QT_QPA_PLATFORM&quot;</span>)) {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            (void) qputenv(<span class="stringliteral">&quot;QT_QPA_PLATFORM&quot;</span>, <span class="stringliteral">&quot;offscreen&quot;</span>);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="comment">// --- Qt attributes ---</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordflow">if</span> (args.<a class="code hl_variable" href="structQGCCommandLineParser_1_1CommandLineParseResult.html#a808825538f42c5310af88358686afd52">useDesktopGL</a>) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        QCoreApplication::setAttribute(Qt::AA_UseDesktopOpenGL);</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    }</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    QCoreApplication::setAttribute(Qt::AA_CompressTabletEvents);</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>}</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordflow">if</span> (args.<a class="code hl_variable" href="structQGCCommandLineParser_1_1CommandLineParseResult.html#ad2fec5165dd4a0441521f3697f179e7e">useSwRast</a>) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        QCoreApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    QCoreApplication::setAttribute(Qt::AA_CompressTabletEvents);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}</div>
 </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="foldopen" id="foldopen00200" data-start="{" data-end="}">
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="namespacePlatform.html#a47c9e42710d883700596e8acc3bcaae4">  200</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacePlatform.html#a47c9e42710d883700596e8acc3bcaae4">Platform::setupPostApp</a>()</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>{</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="preprocessor">#if !defined(Q_OS_IOS) &amp;&amp; !defined(Q_OS_ANDROID)</span></div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <a class="code hl_class" href="classSignalHandler.html">SignalHandler</a>* signalHandler = <span class="keyword">new</span> <a class="code hl_class" href="classSignalHandler.html">SignalHandler</a>(QCoreApplication::instance());</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    (void) signalHandler-&gt;<a class="code hl_function" href="classSignalHandler.html#a64c8da2a54920c09bc5416f96da4988a">setupSignalHandlers</a>();</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <a class="code hl_function" href="namespaceAndroidInterface.html#a1de144acd3a125271bdc37028e50e01d">AndroidInterface::checkStoragePermissions</a>();</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="foldopen" id="foldopen00204" data-start="{" data-end="}">
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="namespacePlatform.html#a47c9e42710d883700596e8acc3bcaae4">  204</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacePlatform.html#a47c9e42710d883700596e8acc3bcaae4">Platform::setupPostApp</a>()</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>{</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="preprocessor">#if !defined(Q_OS_IOS) &amp;&amp; !defined(Q_OS_ANDROID)</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <a class="code hl_class" href="classSignalHandler.html">SignalHandler</a>* signalHandler = <span class="keyword">new</span> <a class="code hl_class" href="classSignalHandler.html">SignalHandler</a>(QCoreApplication::instance());</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    (void) signalHandler-&gt;<a class="code hl_function" href="classSignalHandler.html#a64c8da2a54920c09bc5416f96da4988a">setupSignalHandlers</a>();</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>}</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <a class="code hl_function" href="namespaceAndroidInterface.html#a1de144acd3a125271bdc37028e50e01d">AndroidInterface::checkStoragePermissions</a>();</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>}</div>
 </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="preprocessor">#if defined(Q_OS_LINUX) &amp;&amp; !defined(Q_OS_ANDROID)</span></div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keywordtype">bool</span> Platform::isRunningAsRoot()</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>{</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    return ::getuid() == 0;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>}</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="keywordtype">int</span> Platform::showRootError(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>{</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keyword">const</span> QApplication errorApp(argc, argv);</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    (void) QMessageBox::critical(<span class="keyword">nullptr</span>,</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        QCoreApplication::translate(<span class="stringliteral">&quot;main&quot;</span>, <span class="stringliteral">&quot;Error&quot;</span>),</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        QCoreApplication::translate(<span class="stringliteral">&quot;main&quot;</span>,</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            <span class="stringliteral">&quot;You are running %1 as root. &quot;</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            <span class="stringliteral">&quot;You should not do this since it will cause other issues with %1. &quot;</span></div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <span class="stringliteral">&quot;%1 will now exit.&lt;br/&gt;&lt;br/&gt;&quot;</span>).arg(QLatin1String(QGC_APP_NAME)));</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>}</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="preprocessor">#if !defined(Q_OS_ANDROID) &amp;&amp; !defined(Q_OS_IOS)</span></div>
-<div class="foldopen" id="foldopen00232" data-start="{" data-end="}">
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="namespacePlatform.html#afc5c30b79fec330ef978e5ae6b1a79b8">  232</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacePlatform.html#afc5c30b79fec330ef978e5ae6b1a79b8">Platform::showMultipleInstanceError</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>{</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="keyword">const</span> QApplication errorApp(argc, argv);</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    (void) QMessageBox::critical(<span class="keyword">nullptr</span>,</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        QCoreApplication::translate(<span class="stringliteral">&quot;main&quot;</span>, <span class="stringliteral">&quot;Error&quot;</span>),</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        QCoreApplication::translate(<span class="stringliteral">&quot;main&quot;</span>,</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            <span class="stringliteral">&quot;A second instance of %1 is already running. &quot;</span></div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>            <span class="stringliteral">&quot;Please close the other instance and try again.&quot;</span>).arg(QLatin1String(QGC_APP_NAME)));</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>}</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="preprocessor">#if defined(Q_OS_LINUX) &amp;&amp; !defined(Q_OS_ANDROID)</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="keywordtype">bool</span> Platform::isRunningAsRoot()</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>{</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    return ::getuid() == 0;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>}</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="keywordtype">int</span> Platform::showRootError(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>{</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keyword">const</span> QApplication errorApp(argc, argv);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    (void) QMessageBox::critical(<span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        QCoreApplication::translate(<span class="stringliteral">&quot;main&quot;</span>, <span class="stringliteral">&quot;Error&quot;</span>),</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        QCoreApplication::translate(<span class="stringliteral">&quot;main&quot;</span>,</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            <span class="stringliteral">&quot;You are running %1 as root. &quot;</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            <span class="stringliteral">&quot;You should not do this since it will cause other issues with %1. &quot;</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            <span class="stringliteral">&quot;%1 will now exit.&lt;br/&gt;&lt;br/&gt;&quot;</span>).arg(QLatin1String(QGC_APP_NAME)));</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>}</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="preprocessor">#if !defined(Q_OS_ANDROID) &amp;&amp; !defined(Q_OS_IOS)</span></div>
+<div class="foldopen" id="foldopen00236" data-start="{" data-end="}">
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="namespacePlatform.html#afc5c30b79fec330ef978e5ae6b1a79b8">  236</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacePlatform.html#afc5c30b79fec330ef978e5ae6b1a79b8">Platform::showMultipleInstanceError</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> *argv[])</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>{</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keyword">const</span> QApplication errorApp(argc, argv);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    (void) QMessageBox::critical(<span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        QCoreApplication::translate(<span class="stringliteral">&quot;main&quot;</span>, <span class="stringliteral">&quot;Error&quot;</span>),</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        QCoreApplication::translate(<span class="stringliteral">&quot;main&quot;</span>,</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            <span class="stringliteral">&quot;A second instance of %1 is already running. &quot;</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            <span class="stringliteral">&quot;Please close the other instance and try again.&quot;</span>).arg(QLatin1String(QGC_APP_NAME)));</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>}</div>
 </div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
-<div class="foldopen" id="foldopen00243" data-start="{" data-end="}">
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="namespacePlatform.html#a46580111c8b49c9f9ce7e495f637ae11">  243</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacePlatform.html#a46580111c8b49c9f9ce7e495f637ae11">Platform::checkSingleInstance</a>(<span class="keywordtype">bool</span> allowMultiple)</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>{</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordflow">if</span> (allowMultiple) {</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    }</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="keyword">static</span> <span class="keyword">const</span> QString runguardString = QStringLiteral(<span class="stringliteral">&quot;%1 RunGuardKey&quot;</span>).arg(QLatin1String(QGC_APP_NAME));</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keyword">static</span> <a class="code hl_class" href="classRunGuard.html">RunGuard</a> guard(runguardString);</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    <span class="keywordflow">return</span> guard.<a class="code hl_function" href="classRunGuard.html#a6eaac5e7b6657f7bd9a0d7966c6d0498">tryToRun</a>();</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>}</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="foldopen" id="foldopen00247" data-start="{" data-end="}">
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno"><a class="line" href="namespacePlatform.html#a46580111c8b49c9f9ce7e495f637ae11">  247</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacePlatform.html#a46580111c8b49c9f9ce7e495f637ae11">Platform::checkSingleInstance</a>(<span class="keywordtype">bool</span> allowMultiple)</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>{</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="keywordflow">if</span> (allowMultiple) {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="keyword">static</span> <span class="keyword">const</span> QString runguardString = QStringLiteral(<span class="stringliteral">&quot;%1 RunGuardKey&quot;</span>).arg(QLatin1String(QGC_APP_NAME));</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keyword">static</span> <a class="code hl_class" href="classRunGuard.html">RunGuard</a> guard(runguardString);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <span class="keywordflow">return</span> guard.<a class="code hl_function" href="classRunGuard.html#a6eaac5e7b6657f7bd9a0d7966c6d0498">tryToRun</a>();</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>}</div>
 </div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aAndroidInterface_8h_html"><div class="ttname"><a href="AndroidInterface_8h.html">AndroidInterface.h</a></div></div>
 <div class="ttc" id="aPlatform_8h_html"><div class="ttname"><a href="Platform_8h.html">Platform.h</a></div></div>
 <div class="ttc" id="aQGCCommandLineParser_8h_html"><div class="ttname"><a href="QGCCommandLineParser_8h.html">QGCCommandLineParser.h</a></div></div>
@@ -368,11 +372,11 @@ $(document).ready(function(){initNavTree('Platform_8cc_source.html',''); initRes
 <div class="ttc" id="aclassRunGuard_html_a6eaac5e7b6657f7bd9a0d7966c6d0498"><div class="ttname"><a href="classRunGuard.html#a6eaac5e7b6657f7bd9a0d7966c6d0498">RunGuard::tryToRun</a></div><div class="ttdeci">bool tryToRun()</div><div class="ttdef"><b>Definition</b> <a href="RunGuard_8cc_source.html#l00050">RunGuard.cc:50</a></div></div>
 <div class="ttc" id="aclassSignalHandler_html"><div class="ttname"><a href="classSignalHandler.html">SignalHandler</a></div><div class="ttdef"><b>Definition</b> <a href="SignalHandler_8h_source.html#l00016">SignalHandler.h:17</a></div></div>
 <div class="ttc" id="aclassSignalHandler_html_a64c8da2a54920c09bc5416f96da4988a"><div class="ttname"><a href="classSignalHandler.html#a64c8da2a54920c09bc5416f96da4988a">SignalHandler::setupSignalHandlers</a></div><div class="ttdeci">int setupSignalHandlers()</div><div class="ttdef"><b>Definition</b> <a href="SignalHandler_8cc_source.html#l00144">SignalHandler.cc:144</a></div></div>
-<div class="ttc" id="anamespaceAndroidInterface_html_a1de144acd3a125271bdc37028e50e01d"><div class="ttname"><a href="namespaceAndroidInterface.html#a1de144acd3a125271bdc37028e50e01d">AndroidInterface::checkStoragePermissions</a></div><div class="ttdeci">bool checkStoragePermissions()</div><div class="ttdef"><b>Definition</b> <a href="AndroidInterface_8cc_source.html#l00104">AndroidInterface.cc:104</a></div></div>
-<div class="ttc" id="anamespacePlatform_html_a46580111c8b49c9f9ce7e495f637ae11"><div class="ttname"><a href="namespacePlatform.html#a46580111c8b49c9f9ce7e495f637ae11">Platform::checkSingleInstance</a></div><div class="ttdeci">bool checkSingleInstance(bool allowMultiple)</div><div class="ttdoc">Check if another instance is already running (single instance guard)</div><div class="ttdef"><b>Definition</b> <a href="Platform_8cc_source.html#l00243">Platform.cc:243</a></div></div>
-<div class="ttc" id="anamespacePlatform_html_a47c9e42710d883700596e8acc3bcaae4"><div class="ttname"><a href="namespacePlatform.html#a47c9e42710d883700596e8acc3bcaae4">Platform::setupPostApp</a></div><div class="ttdeci">void setupPostApp()</div><div class="ttdoc">Complete platform setup after application exists.</div><div class="ttdef"><b>Definition</b> <a href="Platform_8cc_source.html#l00200">Platform.cc:200</a></div></div>
+<div class="ttc" id="anamespaceAndroidInterface_html_a1de144acd3a125271bdc37028e50e01d"><div class="ttname"><a href="namespaceAndroidInterface.html#a1de144acd3a125271bdc37028e50e01d">AndroidInterface::checkStoragePermissions</a></div><div class="ttdeci">bool checkStoragePermissions()</div><div class="ttdef"><b>Definition</b> <a href="AndroidInterface_8cc_source.html#l00120">AndroidInterface.cc:120</a></div></div>
+<div class="ttc" id="anamespacePlatform_html_a46580111c8b49c9f9ce7e495f637ae11"><div class="ttname"><a href="namespacePlatform.html#a46580111c8b49c9f9ce7e495f637ae11">Platform::checkSingleInstance</a></div><div class="ttdeci">bool checkSingleInstance(bool allowMultiple)</div><div class="ttdoc">Check if another instance is already running (single instance guard)</div><div class="ttdef"><b>Definition</b> <a href="Platform_8cc_source.html#l00247">Platform.cc:247</a></div></div>
+<div class="ttc" id="anamespacePlatform_html_a47c9e42710d883700596e8acc3bcaae4"><div class="ttname"><a href="namespacePlatform.html#a47c9e42710d883700596e8acc3bcaae4">Platform::setupPostApp</a></div><div class="ttdeci">void setupPostApp()</div><div class="ttdoc">Complete platform setup after application exists.</div><div class="ttdef"><b>Definition</b> <a href="Platform_8cc_source.html#l00204">Platform.cc:204</a></div></div>
 <div class="ttc" id="anamespacePlatform_html_a7a8cdd24323060a25af6d64764743c8c"><div class="ttname"><a href="namespacePlatform.html#a7a8cdd24323060a25af6d64764743c8c">Platform::initialize</a></div><div class="ttdeci">std::optional&lt; int &gt; initialize(int argc, char *argv[], const QGCCommandLineParser::CommandLineParseResult &amp;args)</div><div class="ttdoc">Initialize platform: run safety checks and configure environment.</div><div class="ttdef"><b>Definition</b> <a href="Platform_8cc_source.html#l00135">Platform.cc:135</a></div></div>
-<div class="ttc" id="anamespacePlatform_html_afc5c30b79fec330ef978e5ae6b1a79b8"><div class="ttname"><a href="namespacePlatform.html#afc5c30b79fec330ef978e5ae6b1a79b8">Platform::showMultipleInstanceError</a></div><div class="ttdeci">int showMultipleInstanceError(int argc, char *argv[])</div><div class="ttdoc">Show error dialog when another instance is already running.</div><div class="ttdef"><b>Definition</b> <a href="Platform_8cc_source.html#l00232">Platform.cc:232</a></div></div>
+<div class="ttc" id="anamespacePlatform_html_afc5c30b79fec330ef978e5ae6b1a79b8"><div class="ttname"><a href="namespacePlatform.html#afc5c30b79fec330ef978e5ae6b1a79b8">Platform::showMultipleInstanceError</a></div><div class="ttdeci">int showMultipleInstanceError(int argc, char *argv[])</div><div class="ttdoc">Show error dialog when another instance is already running.</div><div class="ttdef"><b>Definition</b> <a href="Platform_8cc_source.html#l00236">Platform.cc:236</a></div></div>
 <div class="ttc" id="astructQGCCommandLineParser_1_1CommandLineParseResult_html"><div class="ttname"><a href="structQGCCommandLineParser_1_1CommandLineParseResult.html">QGCCommandLineParser::CommandLineParseResult</a></div><div class="ttdoc">Result of parsing command-line arguments.</div><div class="ttdef"><b>Definition</b> <a href="QGCCommandLineParser_8h_source.html#l00018">QGCCommandLineParser.h:19</a></div></div>
 <div class="ttc" id="astructQGCCommandLineParser_1_1CommandLineParseResult_html_a18177f5bdd61bca241d41f9ef06e30f2"><div class="ttname"><a href="structQGCCommandLineParser_1_1CommandLineParseResult.html#a18177f5bdd61bca241d41f9ef06e30f2">QGCCommandLineParser::CommandLineParseResult::runningUnitTests</a></div><div class="ttdeci">bool runningUnitTests</div><div class="ttdef"><b>Definition</b> <a href="QGCCommandLineParser_8h_source.html#l00045">QGCCommandLineParser.h:45</a></div></div>
 <div class="ttc" id="astructQGCCommandLineParser_1_1CommandLineParseResult_html_a21b64d61fc67ec670d6df42ebe939911"><div class="ttname"><a href="structQGCCommandLineParser_1_1CommandLineParseResult.html#a21b64d61fc67ec670d6df42ebe939911">QGCCommandLineParser::CommandLineParseResult::quietWindowsAsserts</a></div><div class="ttdeci">bool quietWindowsAsserts</div><div class="ttdoc">Windows only: Disable assert dialogs.</div><div class="ttdef"><b>Definition</b> <a href="QGCCommandLineParser_8h_source.html#l00060">QGCCommandLineParser.h:60</a></div></div>

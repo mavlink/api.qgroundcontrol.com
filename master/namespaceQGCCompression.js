@@ -4,6 +4,12 @@ var namespaceQGCCompression =
     [ "ArchiveStats", "structQGCCompression_1_1ArchiveStats.html", "structQGCCompression_1_1ArchiveStats" ],
     [ "EntryFilter", "namespaceQGCCompression.html#a31b317a56a2a66a39df0f0dc5253d1e0", null ],
     [ "ProgressCallback", "namespaceQGCCompression.html#ac456cbd09587d97bc7994bbd6ae75cfd", null ],
+    [ "CompressionLevel", "namespaceQGCCompression.html#a5293269680acb2a4429884885795b1c3", [
+      [ "None", "namespaceQGCCompression.html#a5293269680acb2a4429884885795b1c3a6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "Fast", "namespaceQGCCompression.html#a5293269680acb2a4429884885795b1c3ae16b5b7f26f54214445cbe38d72c2828", null ],
+      [ "Default", "namespaceQGCCompression.html#a5293269680acb2a4429884885795b1c3a7a1920d61156abc05a60135aefe8bc67", null ],
+      [ "Best", "namespaceQGCCompression.html#a5293269680acb2a4429884885795b1c3a68ef004de6166492c1d668eb8efe09bd", null ]
+    ] ],
     [ "Error", "namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7", [
       [ "None", "namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7a6adf97f83acf6453d4a6a4b1070f3754", null ],
       [ "FileNotFound", "namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7a2767828026039e8ba7b38973cbb701f2", null ],
@@ -33,6 +39,8 @@ var namespaceQGCCompression =
       [ "TAR_LZ4", "namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5a636d71afb26ec15bed8936ef09ec3c4e", null ]
     ] ],
     [ "captureFormatInfo", "namespaceQGCCompression.html#aa4597e46db324dfaed364a4ce129acf1", null ],
+    [ "compress", "namespaceQGCCompression.html#aa39c757274d165b446f84c6481dc9f3b", null ],
+    [ "compressData", "namespaceQGCCompression.html#a4973097b77aedf9b4dc94e03319c4093", null ],
     [ "decompressData", "namespaceQGCCompression.html#a13285748433c899ec879df10a7378b69", null ],
     [ "decompressFile", "namespaceQGCCompression.html#a1ecc29aedf734bf8ca80e52addac1546", null ],
     [ "decompressFromDevice", "namespaceQGCCompression.html#a9e9077bd5287b1607545f8854a7e8001", null ],
@@ -62,14 +70,21 @@ var namespaceQGCCompression =
     [ "isArchiveFormat", "namespaceQGCCompression.html#a5ea391e13fd47cad2ba98d012a665bd0", null ],
     [ "isCompressedFile", "namespaceQGCCompression.html#a9447499bd313fb5727b1aeccb0c0c2f8", null ],
     [ "isCompressionFormat", "namespaceQGCCompression.html#a01c7a1f29ea9b9eeb445b8947fc23811", null ],
+    [ "isDataCompressed", "namespaceQGCCompression.html#ad2f5e1c07c1d47992028018471f6baaf", null ],
+    [ "lastCompressionRatio", "namespaceQGCCompression.html#a43f66fb29ef043322dfb087f3a0471f7", null ],
     [ "lastError", "namespaceQGCCompression.html#ac5b2365d27f55bc632d7567a6678b37c", null ],
     [ "lastErrorString", "namespaceQGCCompression.html#a69650929455f64d9a0ba463f4475bc72", null ],
     [ "listArchive", "namespaceQGCCompression.html#a498974e1e03f09b2711830114687c4f7", null ],
     [ "listArchiveDetailed", "namespaceQGCCompression.html#aa8d1a172131add5634d81be4ff0b4985", null ],
     [ "strippedPath", "namespaceQGCCompression.html#a8383c990bb8ec070be023eb18b48ffb5", null ],
+    [ "uncompress", "namespaceQGCCompression.html#aa4942c43b5f0c671c86f69dc29c4cff2", null ],
+    [ "uncompressData", "namespaceQGCCompression.html#a40482c2aa120dfea39590614058a2dc4", null ],
     [ "validateArchive", "namespaceQGCCompression.html#abeb1713ae6335cecb1dd73319f132cd0", null ],
     [ "validateArchiveInput", "namespaceQGCCompression.html#a96b87941ba09c38daee64fa7640cb3bc", null ],
     [ "validateDeviceInput", "namespaceQGCCompression.html#a0ef25b6a5f074267bfdccf5ed0d874a2", null ],
     [ "validateFileInput", "namespaceQGCCompression.html#ab42d6969ede38ebd685f52b013e350ce", null ],
-    [ "kDefaultFilePermissions", "namespaceQGCCompression.html#ac9380b65b4a601c224cfd34a900a3933", null ]
+    [ "kDefaultFilePermissions", "namespaceQGCCompression.html#ac9380b65b4a601c224cfd34a900a3933", null ],
+    [ "kHeaderCompressed", "namespaceQGCCompression.html#a1734b7c486b7f90a0ff1e80c97fe9502", null ],
+    [ "kHeaderUncompressed", "namespaceQGCCompression.html#ae3eb9985004531855922d48d355b07d6", null ],
+    [ "s_lastCompressionRatio", "namespaceQGCCompression.html#a7aa3247e948563b47ac4d251b8830454", null ]
 ];

@@ -1,0 +1,26 @@
+var dir_387619659fceb43882a735ce9a40a27b =
+[
+    [ "AppLogging.qml", "AppLogging_8qml.html", null ],
+    [ "LogEntry.cc", "LogEntry_8cc.html", null ],
+    [ "LogEntry.h", "LogEntry_8h.html", "LogEntry_8h" ],
+    [ "LogEntryTableModel.cc", "LogEntryTableModel_8cc.html", null ],
+    [ "LogEntryTableModel.h", "LogEntryTableModel_8h.html", "LogEntryTableModel_8h" ],
+    [ "LogFormatter.cc", "LogFormatter_8cc.html", "LogFormatter_8cc" ],
+    [ "LogFormatter.h", "LogFormatter_8h.html", "LogFormatter_8h" ],
+    [ "LoggingCategoriesDialog.qml", "LoggingCategoriesDialog_8qml.html", null ],
+    [ "LoggingCategoryModel.cc", "LoggingCategoryModel_8cc.html", null ],
+    [ "LoggingCategoryModel.h", "LoggingCategoryModel_8h.html", "LoggingCategoryModel_8h" ],
+    [ "LoggingSettingsDialog.qml", "LoggingSettingsDialog_8qml.html", null ],
+    [ "LogManager.cc", "LogManager_8cc.html", "LogManager_8cc" ],
+    [ "LogManager.h", "LogManager_8h.html", "LogManager_8h" ],
+    [ "LogModel.cc", "LogModel_8cc.html", "LogModel_8cc" ],
+    [ "LogModel.h", "LogModel_8h.html", "LogModel_8h" ],
+    [ "LogRemoteSink.cc", "LogRemoteSink_8cc.html", "LogRemoteSink_8cc" ],
+    [ "LogRemoteSink.h", "LogRemoteSink_8h.html", "LogRemoteSink_8h" ],
+    [ "LogStore.cc", "LogStore_8cc.html", "LogStore_8cc" ],
+    [ "LogStore.h", "LogStore_8h.html", "LogStore_8h" ],
+    [ "LogStoreQueryModel.cc", "LogStoreQueryModel_8cc.html", "LogStoreQueryModel_8cc" ],
+    [ "LogStoreQueryModel.h", "LogStoreQueryModel_8h.html", "LogStoreQueryModel_8h" ],
+    [ "QGCLoggingCategory.cc", "QGCLoggingCategory_8cc.html", "QGCLoggingCategory_8cc" ],
+    [ "QGCLoggingCategory.h", "QGCLoggingCategory_8h.html", "QGCLoggingCategory_8h" ]
+];

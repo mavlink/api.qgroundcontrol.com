@@ -9,5 +9,6 @@ var classPowerComponent =
     [ "setupComplete", "classPowerComponent.html#a7fa5d9cd66c95fee3b8f921e736b4f34", null ],
     [ "setupCompleteChangedTriggerList", "classPowerComponent.html#a17f639c4360ad8b73d58fbb80aaa43b2", null ],
     [ "setupSource", "classPowerComponent.html#ae1f4bfb776dc3efa9113eca6bcc62711", null ],
-    [ "summaryQmlSource", "classPowerComponent.html#acac299ae17c2b4671fcf2f3156af5962", null ]
+    [ "summaryQmlSource", "classPowerComponent.html#acac299ae17c2b4671fcf2f3156af5962", null ],
+    [ "vehicleConfigJson", "classPowerComponent.html#a9e9d12cee82e00db107e9d8197f31a26", null ]
 ];

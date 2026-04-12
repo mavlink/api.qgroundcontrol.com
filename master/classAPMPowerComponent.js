@@ -9,5 +9,6 @@ var classAPMPowerComponent =
     [ "setupComplete", "classAPMPowerComponent.html#aecc4ef802acd8c239663fddc9caf829d", null ],
     [ "setupCompleteChangedTriggerList", "classAPMPowerComponent.html#acb7dbf4b5a402dd7bc236f11e0e8b42b", null ],
     [ "setupSource", "classAPMPowerComponent.html#a2478577f9b67990bf295864e366224eb", null ],
-    [ "summaryQmlSource", "classAPMPowerComponent.html#af4a526758f7cc57ac2b2dad488240e43", null ]
+    [ "summaryQmlSource", "classAPMPowerComponent.html#af4a526758f7cc57ac2b2dad488240e43", null ],
+    [ "vehicleConfigJson", "classAPMPowerComponent.html#a3e5c938c63102399e1f08c1280958210", null ]
 ];

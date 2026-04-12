@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/Utilities/QGCLoggingCategory.cc File Reference</title>
+<title>QGroundControl: src/Utilities/Logging/QGCLoggingCategory.cc File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,33 +97,98 @@ $(document).ready(function(){initNavTree('QGCLoggingCategory_8cc.html',''); init
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="QGCLoggingCategory_8h_source.html">QGCLoggingCategory.h</a>&quot;</code><br />
-<code>#include &lt;QtCore/QGlobalStatic&gt;</code><br />
+<code>#include &lt;QtCore/QMetaObject&gt;</code><br />
+<code>#include &lt;QtCore/QMutex&gt;</code><br />
 <code>#include &lt;QtCore/QSettings&gt;</code><br />
+<code>#include &lt;QtQml/QJSEngine&gt;</code><br />
+<code>#include &quot;<a class="el" href="LoggingCategoryModel_8h_source.html">LoggingCategoryModel.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for QGCLoggingCategory.cc:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="QGCLoggingCategory_8cc__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="QGCLoggingCategory_8cc__incl.svg" width="100%" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="QGCLoggingCategory_8cc_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2da9d9282e0627e0806898375039a350" id="r_a2da9d9282e0627e0806898375039a350"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCLoggingCategory_8cc.html#a2da9d9282e0627e0806898375039a350">Q_LOGGING_CATEGORY</a> (QGCLoggingCategoryRegisterLog, &quot;Utilities.QGCLoggingCategoryManager&quot;, QtWarningMsg) <a class="el" href="FirmwarePluginFactory_8cc.html#a3654017758c9a98912deaa4eac16a2f1">Q_GLOBAL_STATIC</a>(<a class="el" href="classQGCLoggingCategoryManager.html">QGCLoggingCategoryManager</a></td></tr>
-<tr class="separator:a2da9d9282e0627e0806898375039a350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af05a08d81d0250db1bf02c407145d268" id="r_af05a08d81d0250db1bf02c407145d268"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCLoggingCategory_8cc.html#af05a08d81d0250db1bf02c407145d268">Q_LOGGING_CATEGORY</a> (QGCLoggingCategoryRegisterLog, &quot;Utilities.QGCLoggingCategoryManager&quot;, QtWarningMsg) static int severityRank(int qtMsgType)</td></tr>
+<tr class="separator:af05a08d81d0250db1bf02c407145d268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60e6802134158ebc25b2ae4726998dd6" id="r_a60e6802134158ebc25b2ae4726998dd6"><td class="memItemLeft" align="right" valign="top">static QMutex &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCLoggingCategory_8cc.html#a60e6802134158ebc25b2ae4726998dd6">earlyMutex</a> ()</td></tr>
+<tr class="separator:a60e6802134158ebc25b2ae4726998dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8694110074825fbdc324292e54685db" id="r_ac8694110074825fbdc324292e54685db"><td class="memItemLeft" align="right" valign="top">static QStringList *&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCLoggingCategory_8cc.html#ac8694110074825fbdc324292e54685db">earlyPending</a> ()</td></tr>
+<tr class="separator:ac8694110074825fbdc324292e54685db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a6e84db95728e859d714cbfd016990b7d" id="r_a6e84db95728e859d714cbfd016990b7d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classQGCLoggingCategory.html">QGCLoggingCategory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCLoggingCategory_8cc.html#a6e84db95728e859d714cbfd016990b7d">qgcCategoryQGCLoggingCategoryRegisterLog</a> (&quot;Utilities.QGCLoggingCategoryManager&quot;)</td></tr>
 <tr class="separator:a6e84db95728e859d714cbfd016990b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3cc83669bb7b5b758056c2dfc875b2a" id="r_ae3cc83669bb7b5b758056c2dfc875b2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCLoggingCategory_8cc.html#ae3cc83669bb7b5b758056c2dfc875b2a">_QGCLoggingCategoryManagerInstance</a></td></tr>
-<tr class="separator:ae3cc83669bb7b5b758056c2dfc875b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea4425eb041bc748fdce312a582374d5" id="r_aea4425eb041bc748fdce312a582374d5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classQGCLoggingCategoryManager.html">QGCLoggingCategoryManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCLoggingCategory_8cc.html#aea4425eb041bc748fdce312a582374d5">s_managerInstance</a> = nullptr</td></tr>
+<tr class="separator:aea4425eb041bc748fdce312a582374d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a2da9d9282e0627e0806898375039a350" name="a2da9d9282e0627e0806898375039a350"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2da9d9282e0627e0806898375039a350">&#9670;&#160;</a></span>Q_LOGGING_CATEGORY()</h2>
+<a id="a60e6802134158ebc25b2ae4726998dd6" name="a60e6802134158ebc25b2ae4726998dd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60e6802134158ebc25b2ae4726998dd6">&#9670;&#160;</a></span>earlyMutex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static QMutex &amp; earlyMutex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="QGCLoggingCategory_8cc_source.html#l00031">31</a> of file <a class="el" href="QGCLoggingCategory_8cc_source.html">QGCLoggingCategory.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="QGCLoggingCategory_8cc_source.html#l00312">QGCLoggingCategory::QGCLoggingCategory()</a>.</p>
+
+</div>
+</div>
+<a id="ac8694110074825fbdc324292e54685db" name="ac8694110074825fbdc324292e54685db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8694110074825fbdc324292e54685db">&#9670;&#160;</a></span>earlyPending()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static QStringList *&amp; earlyPending </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="QGCLoggingCategory_8cc_source.html#l00037">37</a> of file <a class="el" href="QGCLoggingCategory_8cc_source.html">QGCLoggingCategory.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="QGCLoggingCategory_8cc_source.html#l00312">QGCLoggingCategory::QGCLoggingCategory()</a>.</p>
+
+</div>
+</div>
+<a id="af05a08d81d0250db1bf02c407145d268" name="af05a08d81d0250db1bf02c407145d268"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af05a08d81d0250db1bf02c407145d268">&#9670;&#160;</a></span>Q_LOGGING_CATEGORY()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,27 +219,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="QGCLoggingCategory_8cc_source.html#l00010">10</a> of file <a class="el" href="QGCLoggingCategory_8cc_source.html">QGCLoggingCategory.cc</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ae3cc83669bb7b5b758056c2dfc875b2a" name="ae3cc83669bb7b5b758056c2dfc875b2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3cc83669bb7b5b758056c2dfc875b2a">&#9670;&#160;</a></span>_QGCLoggingCategoryManagerInstance</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">_QGCLoggingCategoryManagerInstance</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="QGCLoggingCategory_8cc_source.html#l00008">8</a> of file <a class="el" href="QGCLoggingCategory_8cc_source.html">QGCLoggingCategory.cc</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="QGCLoggingCategory_8cc_source.html#l00010">QGCLoggingCategoryManager::instance()</a>.</p>
-
-</div>
-</div>
 <a id="a6e84db95728e859d714cbfd016990b7d" name="a6e84db95728e859d714cbfd016990b7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e84db95728e859d714cbfd016990b7d">&#9670;&#160;</a></span>qgcCategoryQGCLoggingCategoryRegisterLog</h2>
 
@@ -201,12 +250,36 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="aea4425eb041bc748fdce312a582374d5" name="aea4425eb041bc748fdce312a582374d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea4425eb041bc748fdce312a582374d5">&#9670;&#160;</a></span>s_managerInstance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classQGCLoggingCategoryManager.html">QGCLoggingCategoryManager</a>* s_managerInstance = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="QGCLoggingCategory_8cc_source.html#l00027">27</a> of file <a class="el" href="QGCLoggingCategory_8cc_source.html">QGCLoggingCategory.cc</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ff383ddf1aa4eab0c4ce7910366d05a5.html">Utilities</a></li><li class="navelem"><a class="el" href="QGCLoggingCategory_8cc.html">QGCLoggingCategory.cc</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ff383ddf1aa4eab0c4ce7910366d05a5.html">Utilities</a></li><li class="navelem"><a class="el" href="dir_387619659fceb43882a735ce9a40a27b.html">Logging</a></li><li class="navelem"><a class="el" href="QGCLoggingCategory_8cc.html">QGCLoggingCategory.cc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

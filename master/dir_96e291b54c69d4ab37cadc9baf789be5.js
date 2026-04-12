@@ -7,5 +7,7 @@ var dir_96e291b54c69d4ab37cadc9baf789be5 =
     [ "FirmwarePluginFactory.cc", "FirmwarePluginFactory_8cc.html", "FirmwarePluginFactory_8cc" ],
     [ "FirmwarePluginFactory.h", "FirmwarePluginFactory_8h.html", "FirmwarePluginFactory_8h" ],
     [ "FirmwarePluginManager.cc", "FirmwarePluginManager_8cc.html", "FirmwarePluginManager_8cc" ],
-    [ "FirmwarePluginManager.h", "FirmwarePluginManager_8h.html", "FirmwarePluginManager_8h" ]
+    [ "FirmwarePluginManager.h", "FirmwarePluginManager_8h.html", "FirmwarePluginManager_8h" ],
+    [ "ParameterMetaData.cc", "ParameterMetaData_8cc.html", null ],
+    [ "ParameterMetaData.h", "ParameterMetaData_8h.html", "ParameterMetaData_8h" ]
 ];

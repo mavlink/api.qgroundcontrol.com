@@ -20,11 +20,12 @@ var searchData=
   ['hidden_17',['hidden',['../structMixer_1_1Rule_1_1RuleItem.html#ad2ea54391257a7689f679caf5ac9d0dc',1,'Mixer::Rule::RuleItem']]],
   ['highlight_18',['highlight',['../structActuatorGeometry_1_1RenderOptions.html#a478d5bd528063381cbe638e65cec1762',1,'ActuatorGeometry::RenderOptions']]],
   ['horizontaldistanceunitsname_19',['horizontalDistanceUnitsName',['../classUnitsSettings.html#adc64f4d53818507e493556eaf8da5a03',1,'UnitsSettings']]],
-  ['hoveramps_20',['hoverAmps',['../structMissionController_1_1MissionFlightStatus__t.html#ae07166c1b6a04d436dc26072f8c86e32',1,'MissionController::MissionFlightStatus_t']]],
-  ['hoverampstotal_21',['hoverAmpsTotal',['../structMissionController_1_1MissionFlightStatus__t.html#a18af56eb73c0c311ea8e9bae4f77f6b4',1,'MissionController::MissionFlightStatus_t']]],
-  ['hoverandcapturename_22',['hoverAndCaptureName',['../classTransectStyleComplexItem.html#a9cb45fd59e5149a4b43982b100ec86f2',1,'TransectStyleComplexItem']]],
-  ['hoverdistance_23',['hoverDistance',['../structMissionController_1_1MissionFlightStatus__t.html#a643b20e2b0998822b793d13d317313a1',1,'MissionController::MissionFlightStatus_t']]],
-  ['hoverspeed_24',['hoverSpeed',['../structMissionController_1_1MissionFlightStatus__t.html#a7900977deb02626daf051e5ecf8c8b8c',1,'MissionController::MissionFlightStatus_t']]],
-  ['hovertime_25',['hoverTime',['../structMissionController_1_1MissionFlightStatus__t.html#a6cbc3179cb248ade19280e600ee234fe',1,'MissionController::MissionFlightStatus_t']]],
-  ['http2allowed_26',['http2Allowed',['../structQGCNetworkHelper_1_1RequestConfig.html#a86042e3edb8b8e42268b24cba664de15',1,'QGCNetworkHelper::RequestConfig']]]
+  ['host_20',['host',['../structNTRIPTransportConfig.html#a567d9641a55a16767f68a3a95be66b29',1,'NTRIPTransportConfig']]],
+  ['hoveramps_21',['hoverAmps',['../structMissionFlightStatus__t.html#a4911990b2b7315d1f06b812449d12094',1,'MissionFlightStatus_t']]],
+  ['hoverampstotal_22',['hoverAmpsTotal',['../structMissionFlightStatus__t.html#ababbc5c85e5907fcf134ae97ab606147',1,'MissionFlightStatus_t']]],
+  ['hoverandcapturename_23',['hoverAndCaptureName',['../classTransectStyleComplexItem.html#a9cb45fd59e5149a4b43982b100ec86f2',1,'TransectStyleComplexItem']]],
+  ['hoverdistance_24',['hoverDistance',['../structMissionFlightStatus__t.html#a8e9e0ce702cb9d26004b5ebc78a6e3e4',1,'MissionFlightStatus_t']]],
+  ['hoverspeed_25',['hoverSpeed',['../structMissionFlightStatus__t.html#a1ff3b40553b857358dd768c984e54b4e',1,'MissionFlightStatus_t']]],
+  ['hovertime_26',['hoverTime',['../structMissionFlightStatus__t.html#a926053f7a5acf52a0ce0d7736225163e',1,'MissionFlightStatus_t']]],
+  ['http2allowed_27',['http2Allowed',['../structQGCNetworkHelper_1_1RequestConfig.html#a86042e3edb8b8e42268b24cba664de15',1,'QGCNetworkHelper::RequestConfig']]]
 ];

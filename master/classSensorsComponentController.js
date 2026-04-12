@@ -1,11 +1,13 @@
 var classSensorsComponentController =
 [
     [ "SensorsComponentController", "classSensorsComponentController.html#a1beda733fbf5c80a9a76755e0402afc6", null ],
-    [ "_statusLog", "classSensorsComponentController.html#afcc6d318fc0dcd91203ed4d1eab5085f", null ],
+    [ "_statusLog", "classSensorsComponentController.html#af8ac368bde876bb2d2aac2b9669fdd7a", null ],
     [ "calibrateAccel", "classSensorsComponentController.html#a28ea39877b844305f42c571f17ec0086", null ],
     [ "calibrateAirspeed", "classSensorsComponentController.html#ac29d07f60c7a86e9c60e31694a6daa86", null ],
     [ "calibrateGyro", "classSensorsComponentController.html#a2446f23780226ea37ec5e6cde14793e2", null ],
     [ "calibrateLevel", "classSensorsComponentController.html#a38d519e1987d44f4ed1ff9f0a33f70cf", null ],
+    [ "calibrationActive", "classSensorsComponentController.html#a028a2adced50450d1fb438df9745971c", null ],
+    [ "calibrationActiveChanged", "classSensorsComponentController.html#ad0fe3621b635f931644b55faffb5354c", null ],
     [ "cancelCalibration", "classSensorsComponentController.html#ace09ff2f4dc9b41e312a5e25b308e9a6", null ],
     [ "magCalComplete", "classSensorsComponentController.html#a38aefb8decf2328aa5694228257f9634", null ],
     [ "orientationCalSidesDoneChanged", "classSensorsComponentController.html#a837372e703fe36d6b40a3d77fd5005bb", null ],

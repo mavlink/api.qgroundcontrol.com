@@ -107,8 +107,11 @@ $(document).ready(function(){initNavTree('PreFlightSoundCheck_8qml_source.html',
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    name:                   qsTr(&quot;Sound output&quot;)</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    manualText:             qsTr(&quot;QGC audio output enabled. System audio output enabled, too?&quot;)</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    telemetryTextFailure:   qsTr(&quot;QGC audio output is disabled. Please enable it under application settings-&gt;general to hear audio warnings!&quot;)</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    telemetryFailure:       QGroundControl.settingsManager.appSettings.audioMuted.rawValue</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    telemetryFailure:       _audioMuted || _audioVolume &lt;= 0.0</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    property real _audioVolume: QGroundControl.settingsManager.appSettings.audioVolume.rawValue</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    property bool _audioMuted:  QGroundControl.settingsManager.appSettings.audioMuted.rawValue</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -100,198 +100,200 @@ $(document).ready(function(){initNavTree('Autotune_8cpp_source.html',''); initRe
 <div class="contents">
 <a href="Autotune_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="Autotune_8h.html">Autotune.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="QGCApplication_8h.html">QGCApplication.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="classAutotune.html#a7385373ee237fd4bb034387b4504db24">    5</a></span><a class="code hl_function" href="classAutotune.html#a7385373ee237fd4bb034387b4504db24">Autotune::Autotune</a>(<a class="code hl_class" href="classVehicle.html">Vehicle</a> *vehicle) :</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    QObject(vehicle)</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    , _vehicle(vehicle)</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    _pollTimer.setInterval(1000); <span class="comment">// 1s for the polling interval</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    _pollTimer.setSingleShot(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    connect(&amp;_pollTimer, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classAutotune.html#aa0ff12a9e4ee23614f8cf909124fe37a">Autotune::sendMavlinkRequest</a>);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="Vehicle_8h.html">Vehicle.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classAutotune.html#a7385373ee237fd4bb034387b4504db24">    6</a></span><a class="code hl_function" href="classAutotune.html#a7385373ee237fd4bb034387b4504db24">Autotune::Autotune</a>(<a class="code hl_class" href="classVehicle.html">Vehicle</a> *vehicle) :</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    QObject(vehicle)</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    , _vehicle(vehicle)</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    _pollTimer.setInterval(1000); <span class="comment">// 1s for the polling interval</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    _pollTimer.setSingleShot(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    connect(&amp;_pollTimer, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="classAutotune.html#aa0ff12a9e4ee23614f8cf909124fe37a">Autotune::sendMavlinkRequest</a>);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
 </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">void</span> Autotune::autotuneRequest()</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_slot" href="classAutotune.html#aa0ff12a9e4ee23614f8cf909124fe37a">sendMavlinkRequest</a>();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    startTimers();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    _autotuneInProgress  = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: In progress&quot;</span>);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    emit <a class="code hl_signal" href="classAutotune.html#a8cfc2c7afcf41b3128c2b413edab3b12">autotuneChanged</a>();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span> Autotune::autotuneRequest()</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_slot" href="classAutotune.html#aa0ff12a9e4ee23614f8cf909124fe37a">sendMavlinkRequest</a>();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    startTimers();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    _autotuneInProgress  = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: In progress&quot;</span>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    emit <a class="code hl_signal" href="classAutotune.html#a8cfc2c7afcf41b3128c2b413edab3b12">autotuneChanged</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classAutotune.html#a2debe8b8947bd85cbec55f210d35cad4">   29</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classAutotune.html#a2debe8b8947bd85cbec55f210d35cad4">Autotune::ackHandler</a>(<span class="keywordtype">void</span>* resultHandlerData, <span class="keywordtype">int</span> compId, <span class="keyword">const</span> mavlink_command_ack_t&amp; ack, <a class="code hl_enumeration" href="classVehicle.html#a5c5a350001313dd461f142c188e830ed">Vehicle::MavCmdResultFailureCode_t</a> failureCode)</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    Q_UNUSED(compId);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    Q_UNUSED(failureCode);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">auto</span> * autotune = <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classAutotune.html">Autotune</a> *<span class="keyword">&gt;</span>(resultHandlerData);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (autotune-&gt;_autotuneInProgress) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">if</span> (failureCode == <a class="code hl_enumvalue" href="classVehicle.html#a5c5a350001313dd461f142c188e830eda59e83ecc8b3ae0ac633b9f08f772d7b1">Vehicle::MavCmdResultCommandResultOnly</a>) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="keywordflow">if</span> ((ack.result == MAV_RESULT_IN_PROGRESS) || (ack.result == MAV_RESULT_ACCEPTED)) {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                autotune-&gt;handleAckStatus(ack.progress);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ack.result == MAV_RESULT_FAILED) {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                autotune-&gt;handleAckFailure();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                autotune-&gt;handleAckError(ack.result);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            autotune-&gt;handleAckFailure();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        emit autotune-&gt;autotuneChanged();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Ack received for a command different from MAV_CMD_DO_AUTOTUNE_ENABLE ot wrong UI state.&quot;</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classAutotune.html#a3d599f3b2c5e1e26a3c10a5339407531">   30</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classAutotune.html#a3d599f3b2c5e1e26a3c10a5339407531">Autotune::ackHandler</a>(<span class="keywordtype">void</span>* resultHandlerData, <span class="keywordtype">int</span> compId, <span class="keyword">const</span> mavlink_command_ack_t&amp; ack, <a class="code hl_enumeration" href="structVehicleTypes.html#a7dbf59c2303d5e793924630345127d5c">VehicleTypes::MavCmdResultFailureCode_t</a> failureCode)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    Q_UNUSED(compId);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    Q_UNUSED(failureCode);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">auto</span> * autotune = <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classAutotune.html">Autotune</a> *<span class="keyword">&gt;</span>(resultHandlerData);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (autotune-&gt;_autotuneInProgress) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">if</span> (failureCode == <a class="code hl_enumvalue" href="structVehicleTypes.html#a7dbf59c2303d5e793924630345127d5ca8234ad4c8b132cf527efe1f6f0a901d7">Vehicle::MavCmdResultCommandResultOnly</a>) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordflow">if</span> ((ack.result == MAV_RESULT_IN_PROGRESS) || (ack.result == MAV_RESULT_ACCEPTED)) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                autotune-&gt;handleAckStatus(ack.progress);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ack.result == MAV_RESULT_FAILED) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                autotune-&gt;handleAckFailure();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                autotune-&gt;handleAckError(ack.result);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            autotune-&gt;handleAckFailure();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        emit autotune-&gt;autotuneChanged();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Ack received for a command different from MAV_CMD_DO_AUTOTUNE_ENABLE ot wrong UI state.&quot;</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classAutotune.html#a527733f290ebd72e5fed0de1397da650">   56</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classAutotune.html#a527733f290ebd72e5fed0de1397da650">Autotune::progressHandler</a>(<span class="keywordtype">void</span>* progressHandlerData, <span class="keywordtype">int</span> compId, <span class="keyword">const</span> mavlink_command_ack_t&amp; ack)</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    Q_UNUSED(compId);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">auto</span> * autotune = <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classAutotune.html">Autotune</a> *<span class="keyword">&gt;</span>(progressHandlerData);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">if</span> (autotune-&gt;_autotuneInProgress) {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        autotune-&gt;handleAckStatus(ack.progress);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        emit autotune-&gt;autotuneChanged();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Ack received for a command different from MAV_CMD_DO_AUTOTUNE_ENABLE ot wrong UI state.&quot;</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classAutotune.html#a527733f290ebd72e5fed0de1397da650">   57</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classAutotune.html#a527733f290ebd72e5fed0de1397da650">Autotune::progressHandler</a>(<span class="keywordtype">void</span>* progressHandlerData, <span class="keywordtype">int</span> compId, <span class="keyword">const</span> mavlink_command_ack_t&amp; ack)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    Q_UNUSED(compId);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">auto</span> * autotune = <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classAutotune.html">Autotune</a> *<span class="keyword">&gt;</span>(progressHandlerData);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> (autotune-&gt;_autotuneInProgress) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        autotune-&gt;handleAckStatus(ack.progress);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        emit autotune-&gt;autotuneChanged();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Ack received for a command different from MAV_CMD_DO_AUTOTUNE_ENABLE ot wrong UI state.&quot;</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">void</span> Autotune::handleAckStatus(uint8_t ackProgress)</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    _autotuneProgress = ackProgress/100.f;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">if</span> (ackProgress &lt; 20) {</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: initializing&quot;</span>);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ackProgress &lt; 40) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: roll&quot;</span>);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ackProgress &lt; 60) {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: pitch&quot;</span>);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ackProgress &lt; 80) {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: yaw&quot;</span>);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ackProgress == 95) {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        _autotuneStatus = tr(<span class="stringliteral">&quot;Wait for disarm&quot;</span>);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">if</span>(!_disarmMessageDisplayed) {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <a class="code hl_define" href="QGCApplication_8h.html#abe2a07273da27b516191243d9e5afe46">qgcApp</a>()-&gt;showAppMessage(tr(<span class="stringliteral">&quot;Land and disarm the vehicle in order to apply the parameters.&quot;</span>));</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            _disarmMessageDisplayed = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        }</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ackProgress &lt; 100) {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: in progress&quot;</span>);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">else</span> { <span class="comment">// success or unknown error</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        stopTimers();</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        _autotuneInProgress = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">if</span> (ackProgress == 100) {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: Success&quot;</span>);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <a class="code hl_define" href="QGCApplication_8h.html#abe2a07273da27b516191243d9e5afe46">qgcApp</a>()-&gt;showAppMessage(tr(<span class="stringliteral">&quot;Autotune successful.&quot;</span>));</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        }</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: Unknown error&quot;</span>);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> Autotune::handleAckStatus(uint8_t ackProgress)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    _autotuneProgress = ackProgress/100.f;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">if</span> (ackProgress &lt; 20) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: initializing&quot;</span>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ackProgress &lt; 40) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: roll&quot;</span>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ackProgress &lt; 60) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: pitch&quot;</span>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ackProgress &lt; 80) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: yaw&quot;</span>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ackProgress == 95) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        _autotuneStatus = tr(<span class="stringliteral">&quot;Wait for disarm&quot;</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">if</span>(!_disarmMessageDisplayed) {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <a class="code hl_define" href="QGCApplication_8h.html#abe2a07273da27b516191243d9e5afe46">qgcApp</a>()-&gt;showAppMessage(tr(<span class="stringliteral">&quot;Land and disarm the vehicle in order to apply the parameters.&quot;</span>));</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            _disarmMessageDisplayed = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ackProgress &lt; 100) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: in progress&quot;</span>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">else</span> { <span class="comment">// success or unknown error</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        stopTimers();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        _autotuneInProgress = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">if</span> (ackProgress == 100) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: Success&quot;</span>);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <a class="code hl_define" href="QGCApplication_8h.html#abe2a07273da27b516191243d9e5afe46">qgcApp</a>()-&gt;showAppMessage(tr(<span class="stringliteral">&quot;Autotune successful.&quot;</span>));</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: Unknown error&quot;</span>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keywordtype">void</span> Autotune::handleAckFailure()</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>{</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    stopTimers();</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    _autotuneInProgress = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    _disarmMessageDisplayed = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: Failed&quot;</span>);</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keywordtype">void</span> Autotune::handleAckFailure()</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>{</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    stopTimers();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    _autotuneInProgress = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    _disarmMessageDisplayed = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: Failed&quot;</span>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>}</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keywordtype">void</span> Autotune::handleAckError(uint8_t ackError)</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>{</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    stopTimers();</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    _autotuneInProgress = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    _disarmMessageDisplayed = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: Ack error %1&quot;</span>).arg(ackError);</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keywordtype">void</span> Autotune::handleAckError(uint8_t ackError)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>{</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    stopTimers();</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    _autotuneInProgress = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    _disarmMessageDisplayed = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    _autotuneStatus = tr(<span class="stringliteral">&quot;Autotune: Ack error %1&quot;</span>).arg(ackError);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>}</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keywordtype">void</span> Autotune::startTimers()</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>{</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    _pollTimer.start();</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keywordtype">void</span> Autotune::startTimers()</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>{</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    _pollTimer.start();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>}</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="keywordtype">void</span> Autotune::stopTimers()</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>{</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    _pollTimer.stop();</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>}</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="keywordtype">void</span> Autotune::stopTimers()</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>{</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    _pollTimer.stop();</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>}</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
-<div class="foldopen" id="foldopen00149" data-start="{" data-end="}">
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classAutotune.html#aa0ff12a9e4ee23614f8cf909124fe37a">  149</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="classAutotune.html#aa0ff12a9e4ee23614f8cf909124fe37a">Autotune::sendMavlinkRequest</a>()</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>{</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <a class="code hl_struct" href="structVehicle_1_1MavCmdAckHandlerInfo__s.html">Vehicle::MavCmdAckHandlerInfo_t</a> handlerInfo = {};</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    handlerInfo.<a class="code hl_variable" href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#a0e260367a99c40db2a9a6d2c72ee319a">resultHandler</a>       = <a class="code hl_function" href="classAutotune.html#a2debe8b8947bd85cbec55f210d35cad4">ackHandler</a>;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    handlerInfo.<a class="code hl_variable" href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#a9f21786d7054934e1eb7ae6376ce20fa">resultHandlerData</a>   = <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    handlerInfo.<a class="code hl_variable" href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#adaf460927e0e1b58e25da347598ce786">progressHandler</a>     = <a class="code hl_function" href="classAutotune.html#a527733f290ebd72e5fed0de1397da650">progressHandler</a>;</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    handlerInfo.<a class="code hl_variable" href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#af20e3a944347aefb617a4506dc7d5497">progressHandlerData</a> = <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#af913e43f6b252ef585a9434a76da51cd">sendMavCommandWithHandler</a>(</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            &amp;handlerInfo,</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            MAV_COMP_ID_AUTOPILOT1,           <span class="comment">// the ID of the autopilot</span></div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            MAV_CMD_DO_AUTOTUNE_ENABLE,       <span class="comment">// the mavlink command</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            1,                                <span class="comment">// request autotune</span></div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            0,                                <span class="comment">// unused parameter</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="comment">//-----------------------------------------------------------------------------</span></div>
+<div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classAutotune.html#aa0ff12a9e4ee23614f8cf909124fe37a">  150</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="classAutotune.html#aa0ff12a9e4ee23614f8cf909124fe37a">Autotune::sendMavlinkRequest</a>()</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>{</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_struct" href="structVehicle_1_1MavCmdAckHandlerInfo__s.html">Vehicle::MavCmdAckHandlerInfo_t</a> handlerInfo = {};</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    handlerInfo.<a class="code hl_variable" href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#a0e260367a99c40db2a9a6d2c72ee319a">resultHandler</a>       = <a class="code hl_function" href="classAutotune.html#a3d599f3b2c5e1e26a3c10a5339407531">ackHandler</a>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    handlerInfo.<a class="code hl_variable" href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#a9f21786d7054934e1eb7ae6376ce20fa">resultHandlerData</a>   = <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    handlerInfo.<a class="code hl_variable" href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#adaf460927e0e1b58e25da347598ce786">progressHandler</a>     = <a class="code hl_function" href="classAutotune.html#a527733f290ebd72e5fed0de1397da650">progressHandler</a>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    handlerInfo.<a class="code hl_variable" href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#af20e3a944347aefb617a4506dc7d5497">progressHandlerData</a> = <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#af913e43f6b252ef585a9434a76da51cd">sendMavCommandWithHandler</a>(</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            &amp;handlerInfo,</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            MAV_COMP_ID_AUTOPILOT1,           <span class="comment">// the ID of the autopilot</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            MAV_CMD_DO_AUTOTUNE_ENABLE,       <span class="comment">// the mavlink command</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            1,                                <span class="comment">// request autotune</span></div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            0,                                <span class="comment">// unused parameter</span></div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            0,                                <span class="comment">// unused parameter</span></div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            0,                                <span class="comment">// unused parameter</span></div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            0,                                <span class="comment">// unused parameter</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            0);</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>}</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            0,                                <span class="comment">// unused parameter</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            0);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>}</div>
 </div>
 <div class="ttc" id="aAutotune_8h_html"><div class="ttname"><a href="Autotune_8h.html">Autotune.h</a></div></div>
 <div class="ttc" id="aQGCApplication_8h_html"><div class="ttname"><a href="QGCApplication_8h.html">QGCApplication.h</a></div></div>
 <div class="ttc" id="aQGCApplication_8h_html_abe2a07273da27b516191243d9e5afe46"><div class="ttname"><a href="QGCApplication_8h.html#abe2a07273da27b516191243d9e5afe46">qgcApp</a></div><div class="ttdeci">#define qgcApp()</div><div class="ttdef"><b>Definition</b> <a href="QGCApplication_8h_source.html#l00034">QGCApplication.h:34</a></div></div>
-<div class="ttc" id="aclassAutotune_html"><div class="ttname"><a href="classAutotune.html">Autotune</a></div><div class="ttdef"><b>Definition</b> <a href="Autotune_8h_source.html#l00009">Autotune.h:10</a></div></div>
-<div class="ttc" id="aclassAutotune_html_a2debe8b8947bd85cbec55f210d35cad4"><div class="ttname"><a href="classAutotune.html#a2debe8b8947bd85cbec55f210d35cad4">Autotune::ackHandler</a></div><div class="ttdeci">static void ackHandler(void *resultHandlerData, int compId, const mavlink_command_ack_t &amp;ack, Vehicle::MavCmdResultFailureCode_t failureCode)</div><div class="ttdef"><b>Definition</b> <a href="Autotune_8cpp_source.html#l00029">Autotune.cpp:29</a></div></div>
-<div class="ttc" id="aclassAutotune_html_a527733f290ebd72e5fed0de1397da650"><div class="ttname"><a href="classAutotune.html#a527733f290ebd72e5fed0de1397da650">Autotune::progressHandler</a></div><div class="ttdeci">static void progressHandler(void *progressHandlerData, int compId, const mavlink_command_ack_t &amp;ack)</div><div class="ttdef"><b>Definition</b> <a href="Autotune_8cpp_source.html#l00056">Autotune.cpp:56</a></div></div>
-<div class="ttc" id="aclassAutotune_html_a7385373ee237fd4bb034387b4504db24"><div class="ttname"><a href="classAutotune.html#a7385373ee237fd4bb034387b4504db24">Autotune::Autotune</a></div><div class="ttdeci">Autotune(Vehicle *vehicle)</div><div class="ttdef"><b>Definition</b> <a href="Autotune_8cpp_source.html#l00005">Autotune.cpp:5</a></div></div>
+<div class="ttc" id="aVehicle_8h_html"><div class="ttname"><a href="Vehicle_8h.html">Vehicle.h</a></div></div>
+<div class="ttc" id="aclassAutotune_html"><div class="ttname"><a href="classAutotune.html">Autotune</a></div><div class="ttdef"><b>Definition</b> <a href="Autotune_8h_source.html#l00011">Autotune.h:12</a></div></div>
+<div class="ttc" id="aclassAutotune_html_a3d599f3b2c5e1e26a3c10a5339407531"><div class="ttname"><a href="classAutotune.html#a3d599f3b2c5e1e26a3c10a5339407531">Autotune::ackHandler</a></div><div class="ttdeci">static void ackHandler(void *resultHandlerData, int compId, const mavlink_command_ack_t &amp;ack, VehicleTypes::MavCmdResultFailureCode_t failureCode)</div><div class="ttdef"><b>Definition</b> <a href="Autotune_8cpp_source.html#l00030">Autotune.cpp:30</a></div></div>
+<div class="ttc" id="aclassAutotune_html_a527733f290ebd72e5fed0de1397da650"><div class="ttname"><a href="classAutotune.html#a527733f290ebd72e5fed0de1397da650">Autotune::progressHandler</a></div><div class="ttdeci">static void progressHandler(void *progressHandlerData, int compId, const mavlink_command_ack_t &amp;ack)</div><div class="ttdef"><b>Definition</b> <a href="Autotune_8cpp_source.html#l00057">Autotune.cpp:57</a></div></div>
+<div class="ttc" id="aclassAutotune_html_a7385373ee237fd4bb034387b4504db24"><div class="ttname"><a href="classAutotune.html#a7385373ee237fd4bb034387b4504db24">Autotune::Autotune</a></div><div class="ttdeci">Autotune(Vehicle *vehicle)</div><div class="ttdef"><b>Definition</b> <a href="Autotune_8cpp_source.html#l00006">Autotune.cpp:6</a></div></div>
 <div class="ttc" id="aclassAutotune_html_a8cfc2c7afcf41b3128c2b413edab3b12"><div class="ttname"><a href="classAutotune.html#a8cfc2c7afcf41b3128c2b413edab3b12">Autotune::autotuneChanged</a></div><div class="ttdeci">void autotuneChanged()</div></div>
-<div class="ttc" id="aclassAutotune_html_aa0ff12a9e4ee23614f8cf909124fe37a"><div class="ttname"><a href="classAutotune.html#aa0ff12a9e4ee23614f8cf909124fe37a">Autotune::sendMavlinkRequest</a></div><div class="ttdeci">void sendMavlinkRequest()</div><div class="ttdef"><b>Definition</b> <a href="Autotune_8cpp_source.html#l00149">Autotune.cpp:149</a></div></div>
+<div class="ttc" id="aclassAutotune_html_aa0ff12a9e4ee23614f8cf909124fe37a"><div class="ttname"><a href="classAutotune.html#aa0ff12a9e4ee23614f8cf909124fe37a">Autotune::sendMavlinkRequest</a></div><div class="ttdeci">void sendMavlinkRequest()</div><div class="ttdef"><b>Definition</b> <a href="Autotune_8cpp_source.html#l00150">Autotune.cpp:150</a></div></div>
 <div class="ttc" id="aclassVehicle_html"><div class="ttname"><a href="classVehicle.html">Vehicle</a></div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00081">Vehicle.h:82</a></div></div>
-<div class="ttc" id="aclassVehicle_html_a5c5a350001313dd461f142c188e830ed"><div class="ttname"><a href="classVehicle.html#a5c5a350001313dd461f142c188e830ed">Vehicle::MavCmdResultFailureCode_t</a></div><div class="ttdeci">MavCmdResultFailureCode_t</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00618">Vehicle.h:618</a></div></div>
-<div class="ttc" id="aclassVehicle_html_a5c5a350001313dd461f142c188e830eda59e83ecc8b3ae0ac633b9f08f772d7b1"><div class="ttname"><a href="classVehicle.html#a5c5a350001313dd461f142c188e830eda59e83ecc8b3ae0ac633b9f08f772d7b1">Vehicle::MavCmdResultCommandResultOnly</a></div><div class="ttdeci">@ MavCmdResultCommandResultOnly</div><div class="ttdoc">commandResult specifies full success/fail info</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00619">Vehicle.h:619</a></div></div>
-<div class="ttc" id="aclassVehicle_html_af913e43f6b252ef585a9434a76da51cd"><div class="ttname"><a href="classVehicle.html#af913e43f6b252ef585a9434a76da51cd">Vehicle::sendMavCommandWithHandler</a></div><div class="ttdeci">void sendMavCommandWithHandler(const MavCmdAckHandlerInfo_t *ackHandlerInfo, int compId, MAV_CMD command, float param1=0.0f, float param2=0.0f, float param3=0.0f, float param4=0.0f, float param5=0.0f, float param6=0.0f, float param7=0.0f)</div><div class="ttdoc">Sends the command and calls the callback with the result.</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8cc_source.html#l02339">Vehicle.cc:2339</a></div></div>
-<div class="ttc" id="astructVehicle_1_1MavCmdAckHandlerInfo__s_html"><div class="ttname"><a href="structVehicle_1_1MavCmdAckHandlerInfo__s.html">Vehicle::MavCmdAckHandlerInfo_s</a></div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00638">Vehicle.h:638</a></div></div>
-<div class="ttc" id="astructVehicle_1_1MavCmdAckHandlerInfo__s_html_a0e260367a99c40db2a9a6d2c72ee319a"><div class="ttname"><a href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#a0e260367a99c40db2a9a6d2c72ee319a">Vehicle::MavCmdAckHandlerInfo_s::resultHandler</a></div><div class="ttdeci">MavCmdResultHandler resultHandler</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00639">Vehicle.h:639</a></div></div>
-<div class="ttc" id="astructVehicle_1_1MavCmdAckHandlerInfo__s_html_a9f21786d7054934e1eb7ae6376ce20fa"><div class="ttname"><a href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#a9f21786d7054934e1eb7ae6376ce20fa">Vehicle::MavCmdAckHandlerInfo_s::resultHandlerData</a></div><div class="ttdeci">void * resultHandlerData</div><div class="ttdoc">‍nullptr for no handler</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00640">Vehicle.h:640</a></div></div>
-<div class="ttc" id="astructVehicle_1_1MavCmdAckHandlerInfo__s_html_adaf460927e0e1b58e25da347598ce786"><div class="ttname"><a href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#adaf460927e0e1b58e25da347598ce786">Vehicle::MavCmdAckHandlerInfo_s::progressHandler</a></div><div class="ttdeci">MavCmdProgressHandler progressHandler</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00641">Vehicle.h:641</a></div></div>
-<div class="ttc" id="astructVehicle_1_1MavCmdAckHandlerInfo__s_html_af20e3a944347aefb617a4506dc7d5497"><div class="ttname"><a href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#af20e3a944347aefb617a4506dc7d5497">Vehicle::MavCmdAckHandlerInfo_s::progressHandlerData</a></div><div class="ttdeci">void * progressHandlerData</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00642">Vehicle.h:642</a></div></div>
+<div class="ttc" id="aclassVehicle_html_af913e43f6b252ef585a9434a76da51cd"><div class="ttname"><a href="classVehicle.html#af913e43f6b252ef585a9434a76da51cd">Vehicle::sendMavCommandWithHandler</a></div><div class="ttdeci">void sendMavCommandWithHandler(const MavCmdAckHandlerInfo_t *ackHandlerInfo, int compId, MAV_CMD command, float param1=0.0f, float param2=0.0f, float param3=0.0f, float param4=0.0f, float param5=0.0f, float param6=0.0f, float param7=0.0f)</div><div class="ttdoc">Sends the command and calls the callback with the result.</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8cc_source.html#l02446">Vehicle.cc:2446</a></div></div>
+<div class="ttc" id="astructVehicleTypes_html_a7dbf59c2303d5e793924630345127d5c"><div class="ttname"><a href="structVehicleTypes.html#a7dbf59c2303d5e793924630345127d5c">VehicleTypes::MavCmdResultFailureCode_t</a></div><div class="ttdeci">MavCmdResultFailureCode_t</div><div class="ttdef"><b>Definition</b> <a href="VehicleTypes_8h_source.html#l00014">VehicleTypes.h:14</a></div></div>
+<div class="ttc" id="astructVehicleTypes_html_a7dbf59c2303d5e793924630345127d5ca8234ad4c8b132cf527efe1f6f0a901d7"><div class="ttname"><a href="structVehicleTypes.html#a7dbf59c2303d5e793924630345127d5ca8234ad4c8b132cf527efe1f6f0a901d7">VehicleTypes::MavCmdResultCommandResultOnly</a></div><div class="ttdeci">@ MavCmdResultCommandResultOnly</div><div class="ttdoc">commandResult specifies full success/fail info</div><div class="ttdef"><b>Definition</b> <a href="VehicleTypes_8h_source.html#l00015">VehicleTypes.h:15</a></div></div>
+<div class="ttc" id="astructVehicle_1_1MavCmdAckHandlerInfo__s_html"><div class="ttname"><a href="structVehicle_1_1MavCmdAckHandlerInfo__s.html">Vehicle::MavCmdAckHandlerInfo_s</a></div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00634">Vehicle.h:634</a></div></div>
+<div class="ttc" id="astructVehicle_1_1MavCmdAckHandlerInfo__s_html_a0e260367a99c40db2a9a6d2c72ee319a"><div class="ttname"><a href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#a0e260367a99c40db2a9a6d2c72ee319a">Vehicle::MavCmdAckHandlerInfo_s::resultHandler</a></div><div class="ttdeci">MavCmdResultHandler resultHandler</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00635">Vehicle.h:635</a></div></div>
+<div class="ttc" id="astructVehicle_1_1MavCmdAckHandlerInfo__s_html_a9f21786d7054934e1eb7ae6376ce20fa"><div class="ttname"><a href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#a9f21786d7054934e1eb7ae6376ce20fa">Vehicle::MavCmdAckHandlerInfo_s::resultHandlerData</a></div><div class="ttdeci">void * resultHandlerData</div><div class="ttdoc">‍nullptr for no handler</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00636">Vehicle.h:636</a></div></div>
+<div class="ttc" id="astructVehicle_1_1MavCmdAckHandlerInfo__s_html_adaf460927e0e1b58e25da347598ce786"><div class="ttname"><a href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#adaf460927e0e1b58e25da347598ce786">Vehicle::MavCmdAckHandlerInfo_s::progressHandler</a></div><div class="ttdeci">MavCmdProgressHandler progressHandler</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00637">Vehicle.h:637</a></div></div>
+<div class="ttc" id="astructVehicle_1_1MavCmdAckHandlerInfo__s_html_af20e3a944347aefb617a4506dc7d5497"><div class="ttname"><a href="structVehicle_1_1MavCmdAckHandlerInfo__s.html#af20e3a944347aefb617a4506dc7d5497">Vehicle::MavCmdAckHandlerInfo_s::progressHandlerData</a></div><div class="ttdeci">void * progressHandlerData</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00638">Vehicle.h:638</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -17,6 +17,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "Joystick", "dir_df3471da428c92590d85ed8754a76078.html", "dir_df3471da428c92590d85ed8754a76078" ],
     [ "MAVLink", "dir_179bf47964619e91d8f4b948968d2dcb.html", "dir_179bf47964619e91d8f4b948968d2dcb" ],
     [ "MissionManager", "dir_fc93cbb76f1edc6741d2b3ade811eb27.html", "dir_fc93cbb76f1edc6741d2b3ade811eb27" ],
+    [ "PlanView", "dir_a960dd57875593757f2541c050ca2fa1.html", "dir_a960dd57875593757f2541c050ca2fa1" ],
     [ "PositionManager", "dir_2e789b5f2ef5f5e229d12665af24e261.html", "dir_2e789b5f2ef5f5e229d12665af24e261" ],
     [ "QmlControls", "dir_57fd63fe491ef075147d1cb32299e674.html", "dir_57fd63fe491ef075147d1cb32299e674" ],
     [ "QtLocationPlugin", "dir_b65c89e2d6b2a8a756744f99b41d1c7e.html", "dir_b65c89e2d6b2a8a756744f99b41d1c7e" ],

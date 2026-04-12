@@ -2,7 +2,7 @@ var classPlanMasterController =
 [
     [ "PlanMasterController", "classPlanMasterController.html#a0413984b7152031be4c0eff412c3f869", null ],
     [ "~PlanMasterController", "classPlanMasterController.html#aae53624a79660ed17d9de4db8fa5405a", null ],
-    [ "_flyView", "classPlanMasterController.html#ad47be8737fabb92d9cf5a575128ded20", null ],
+    [ "_flyView", "classPlanMasterController.html#ae92463fd932028c93409e726062db913", null ],
     [ "containsItems", "classPlanMasterController.html#af860080055ffcf675400efaffec2ae1e", null ],
     [ "containsItemsChanged", "classPlanMasterController.html#a1b9c284e0f8188e74308a46b595a01b3", null ],
     [ "controllerVehicle", "classPlanMasterController.html#a23c19c0cb0caf8910e74304cbe69c294", null ],
@@ -36,6 +36,8 @@ var classPlanMasterController =
     [ "planFileRenamedChanged", "classPlanMasterController.html#a05199147b9495e0ca6742885ec83e853", null ],
     [ "promptForPlanUsageOnVehicleChange", "classPlanMasterController.html#a3c33cebc13b1d3846da8990a8c262c1d", null ],
     [ "rallyPointController", "classPlanMasterController.html#a6e74fe8a73e04fcc70c053a1a241f1f8", null ],
+    [ "readyForPlanCreation", "classPlanMasterController.html#af2889516f479ee529de3944887a076a1", null ],
+    [ "readyForPlanCreationChanged", "classPlanMasterController.html#ab3bb137d0a3307c5afc9630b64ed936d", null ],
     [ "readyForSaveState", "classPlanMasterController.html#ae70b5680a2f3e98361aa700ad3c8cdfe", null ],
     [ "removeAll", "classPlanMasterController.html#a01dcde513c605df6bd38c710464c0f5b", null ],
     [ "removeAllFromVehicle", "classPlanMasterController.html#adff73ce0517f093211e1c662033696b6", null ],

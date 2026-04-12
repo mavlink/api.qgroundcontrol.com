@@ -22,6 +22,6 @@ var dir_2614be1028e2e1372057bba9632f3a37 =
     [ "RemoteControlChannelMonitor.qml", "RemoteControlChannelMonitor_8qml.html", null ],
     [ "RemoteControlChannelValueDisplay.qml", "RemoteControlChannelValueDisplay_8qml.html", null ],
     [ "SetupParameterEditor.qml", "SetupParameterEditor_8qml.html", null ],
-    [ "SetupView.qml", "SetupView_8qml.html", null ],
+    [ "VehicleConfigView.qml", "VehicleConfigView_8qml.html", null ],
     [ "VehicleSummary.qml", "VehicleSummary_8qml.html", null ]
 ];

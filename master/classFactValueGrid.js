@@ -26,7 +26,7 @@ var classFactValueGrid =
     [ "settingsGroupChanged", "classFactValueGrid.html#aae62e29da8bc02b46af05c9b34cedf02", null ],
     [ "specificVehicleForCard", "classFactValueGrid.html#aae83e1993370863ccf36e3a30c01d3c4", null ],
     [ "specificVehicleForCardChanged", "classFactValueGrid.html#a25bf822c760af3c42c3639eb069e51ac", null ],
-    [ "vehicleClass", "classFactValueGrid.html#ab1bab50bcd03130d49d1088cbb2065a0", null ],
+    [ "vehicleClass", "classFactValueGrid.html#ac88ab6437816087e69e66a343537b26c", null ],
     [ "_activeVehicle", "classFactValueGrid.html#a0f1fcf9abd9607af9125115cafd800de", null ],
     [ "_columns", "classFactValueGrid.html#a7b1afe776da7d310c1b596055c0c16a1", null ],
     [ "_fontSize", "classFactValueGrid.html#a69535e1eb62090ce7263275dd9951526", null ],

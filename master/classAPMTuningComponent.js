@@ -9,5 +9,6 @@ var classAPMTuningComponent =
     [ "setupComplete", "classAPMTuningComponent.html#a798f65fffe65fd434b14589f8b41411d", null ],
     [ "setupCompleteChangedTriggerList", "classAPMTuningComponent.html#a1450f487c28ab62af2c1a1138a4b1389", null ],
     [ "setupSource", "classAPMTuningComponent.html#ac7509dd0d68afe5c16ae68be8fc426dd", null ],
-    [ "summaryQmlSource", "classAPMTuningComponent.html#a2cc7c5b21088c0a36b8a00fb5cda7af3", null ]
+    [ "summaryQmlSource", "classAPMTuningComponent.html#a2cc7c5b21088c0a36b8a00fb5cda7af3", null ],
+    [ "vehicleConfigJson", "classAPMTuningComponent.html#a6c99ec8414e1375d75208414f2389c00", null ]
 ];

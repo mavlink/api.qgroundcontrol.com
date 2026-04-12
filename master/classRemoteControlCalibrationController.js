@@ -1,6 +1,8 @@
 var classRemoteControlCalibrationController =
 [
     [ "ChannelInfo", "structRemoteControlCalibrationController_1_1ChannelInfo.html", "structRemoteControlCalibrationController_1_1ChannelInfo" ],
+    [ "_clampedChannelValuesChanged", "classRemoteControlCalibrationController.html#a7acc03e1d97fda3b58c1f0f65301e321", null ],
+    [ "_rawChannelValuesChanged", "classRemoteControlCalibrationController.html#ae91b856389f01ee772691e85e070eea6", null ],
     [ "_resetInternalCalibrationValues", "classRemoteControlCalibrationController.html#a4d32d217e1293952cf709f14bfca9051", null ],
     [ "_signalAllAttitudeValueChanges", "classRemoteControlCalibrationController.html#ae2b7f18c19b5600a4b5be35037aa6459", null ],
     [ "_stickFunctionEnabled", "classRemoteControlCalibrationController.html#a863781227707ff67968ca5ea47fcd6dc", null ],
@@ -56,7 +58,6 @@ var classRemoteControlCalibrationController =
     [ "pitchExtensionDeadbandChanged", "classRemoteControlCalibrationController.html#a14b15506574e89183ba3b82e2cadb945", null ],
     [ "pitchExtensionEnabledChanged", "classRemoteControlCalibrationController.html#a84b89c10670e3852a0a9cbd54e1b86e5", null ],
     [ "rawChannelValueChanged", "classRemoteControlCalibrationController.html#ac1a2e1fd1f825f4e799b9699e27c136d", null ],
-    [ "rawChannelValuesChanged", "classRemoteControlCalibrationController.html#a0bbca28541c5d461e4276a33f3eba833", null ],
     [ "rollChannelMappedChanged", "classRemoteControlCalibrationController.html#a6100e9cf4cf3bdb811c62909c9c5ccf9", null ],
     [ "rollChannelReversedChanged", "classRemoteControlCalibrationController.html#ae126ddb49f514cfc737d3d7b6a51dc8c", null ],
     [ "rollDeadbandChanged", "classRemoteControlCalibrationController.html#a823e6d91e4bfc8d55a1338826943c019", null ],

@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('RemoteIDManager_8h_source.html',''); i
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QtPositioning/QGeoPositionInfo&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QtQmlIntegration/QtQmlIntegration&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="MAVLinkLib_8h.html">MAVLinkLib.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="MAVLinkMessageType_8h.html">MAVLinkMessageType.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><a class="code hl_function" href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a>(RemoteIDManagerLog)</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
@@ -199,48 +199,53 @@ $(document).ready(function(){initNavTree('RemoteIDManager_8h_source.html',''); i
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="comment">// Basic ID</span></div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">void</span>        _sendBasicID();</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">bool</span> _isEUOperatorIDValid(<span class="keyword">const</span> QString&amp; operatorID) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    QChar _calculateLuhnMod36(<span class="keyword">const</span> QString&amp; input) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// GCS GPS status</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">void</span>        _updateGcsGpsStatus(<span class="keywordtype">bool</span> gpsGood, <span class="keyword">const</span> QString&amp; <a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a> = QString());</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_class" href="classVehicle.html">Vehicle</a>*            _vehicle;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>*   _settings;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">bool</span> _isEUOperatorIDValid(<span class="keyword">const</span> QString&amp; operatorID) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    QChar _calculateLuhnMod36(<span class="keyword">const</span> QString&amp; input) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// Flags ODID</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordtype">bool</span>    _available = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordtype">bool</span>    _armStatusGood;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    QString _armStatusError;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">bool</span>    _commsGood;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">bool</span>    _gcsGPSGood;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordtype">bool</span>    _basicIDGood;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">bool</span>    _GCSBasicIDValid;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordtype">bool</span>    _operatorIDGood;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">bool</span>        _emergencyDeclared;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    QDateTime   _lastGeoPositionTimeStamp;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">int</span>         _targetSystem;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">int</span>         _targetComponent;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="comment">// After emergency cleared, this makes sure the non emergency selfID message makes it to the vehicle</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordtype">bool</span>        _enforceSendingSelfID;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t* _id_or_mac_unknown;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="comment">// Timers</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    QTimer _odidTimeoutTimer;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    QTimer _sendMessagesTimer;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>};</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_class" href="classVehicle.html">Vehicle</a>*            _vehicle;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>*   _settings;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="comment">// Flags ODID</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">bool</span>    _available = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">bool</span>    _armStatusGood;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    QString _armStatusError;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">bool</span>    _commsGood;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordtype">bool</span>    _gcsGPSGood;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    QString _gcsGPSError;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">bool</span>    _basicIDGood;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">bool</span>    _GCSBasicIDValid;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">bool</span>    _operatorIDGood;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">bool</span>        _emergencyDeclared;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    QDateTime   _lastGeoPositionTimeStamp;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordtype">int</span>         _targetSystem;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">int</span>         _targetComponent;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="comment">// After emergency cleared, this makes sure the non emergency selfID message makes it to the vehicle</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">bool</span>        _enforceSendingSelfID;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keyword">static</span> <span class="keyword">const</span> uint8_t* _id_or_mac_unknown;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="comment">// Timers</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    QTimer _odidTimeoutTimer;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    QTimer _sendMessagesTimer;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>};</div>
 </div>
 <div class="ttc" id="aAndroidSerial_8h_html_a932681ef567cd0a6a3a714a3c519eb35"><div class="ttname"><a href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a></div><div class="ttdeci">Q_DECLARE_LOGGING_CATEGORY(AndroidSerialLog)</div></div>
-<div class="ttc" id="aMAVLinkLib_8h_html"><div class="ttname"><a href="MAVLinkLib_8h.html">MAVLinkLib.h</a></div></div>
+<div class="ttc" id="aMAVLinkMessageType_8h_html"><div class="ttname"><a href="MAVLinkMessageType_8h.html">MAVLinkMessageType.h</a></div></div>
+<div class="ttc" id="aQGCCompression_8cc_html_a5e7e27258e59f4c4a80e5fb757024a2d"><div class="ttname"><a href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a></div><div class="ttdeci">Error error</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00112">QGCCompression.cc:112</a></div></div>
 <div class="ttc" id="aQGCCorePlugin_8h_html_a2c54d7cd4caccb07d328e60c00f6147c"><div class="ttname"><a href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a></div><div class="ttdeci">struct __mavlink_message mavlink_message_t</div><div class="ttdef"><b>Definition</b> <a href="QGCCorePlugin_8h_source.html#l00023">QGCCorePlugin.h:23</a></div></div>
 <div class="ttc" id="aclassRemoteIDManager_html"><div class="ttname"><a href="classRemoteIDManager.html">RemoteIDManager</a></div><div class="ttdef"><b>Definition</b> <a href="RemoteIDManager_8h_source.html#l00018">RemoteIDManager.h:19</a></div></div>
 <div class="ttc" id="aclassRemoteIDManager_html_a0c7b071feaa23bef08c41bc8a9829d30"><div class="ttname"><a href="classRemoteIDManager.html#a0c7b071feaa23bef08c41bc8a9829d30">RemoteIDManager::availableChanged</a></div><div class="ttdeci">void availableChanged()</div></div>
 <div class="ttc" id="aclassRemoteIDManager_html_a1132d50775493dcb15026cac20152295"><div class="ttname"><a href="classRemoteIDManager.html#a1132d50775493dcb15026cac20152295">RemoteIDManager::emergencyDeclared</a></div><div class="ttdeci">bool emergencyDeclared(void) const</div><div class="ttdef"><b>Definition</b> <a href="RemoteIDManager_8h_source.html#l00048">RemoteIDManager.h:48</a></div></div>
-<div class="ttc" id="aclassRemoteIDManager_html_a1383b00ead0e32b0845e94aefca165b7"><div class="ttname"><a href="classRemoteIDManager.html#a1383b00ead0e32b0845e94aefca165b7">RemoteIDManager::mavlinkMessageReceived</a></div><div class="ttdeci">void mavlinkMessageReceived(mavlink_message_t &amp;message)</div><div class="ttdef"><b>Definition</b> <a href="RemoteIDManager_8cc_source.html#l00068">RemoteIDManager.cc:68</a></div></div>
+<div class="ttc" id="aclassRemoteIDManager_html_a1383b00ead0e32b0845e94aefca165b7"><div class="ttname"><a href="classRemoteIDManager.html#a1383b00ead0e32b0845e94aefca165b7">RemoteIDManager::mavlinkMessageReceived</a></div><div class="ttdeci">void mavlinkMessageReceived(mavlink_message_t &amp;message)</div><div class="ttdef"><b>Definition</b> <a href="RemoteIDManager_8cc_source.html#l00069">RemoteIDManager.cc:69</a></div></div>
 <div class="ttc" id="aclassRemoteIDManager_html_a14c18679ed4746fb5676535becb26c6c"><div class="ttname"><a href="classRemoteIDManager.html#a14c18679ed4746fb5676535becb26c6c">RemoteIDManager::armStatusGood</a></div><div class="ttdeci">bool armStatusGood(void) const</div><div class="ttdef"><b>Definition</b> <a href="RemoteIDManager_8h_source.html#l00043">RemoteIDManager.h:43</a></div></div>
 <div class="ttc" id="aclassRemoteIDManager_html_a15aec7eeab403c9a1356e59dc6a568cc"><div class="ttname"><a href="classRemoteIDManager.html#a15aec7eeab403c9a1356e59dc6a568cc">RemoteIDManager::commsGoodChanged</a></div><div class="ttdeci">void commsGoodChanged()</div></div>
 <div class="ttc" id="aclassRemoteIDManager_html_a1b101afd8ae9600edcad60a4c3003908"><div class="ttname"><a href="classRemoteIDManager.html#a1b101afd8ae9600edcad60a4c3003908">RemoteIDManager::operatorIDGoodChanged</a></div><div class="ttdeci">void operatorIDGoodChanged()</div></div>
-<div class="ttc" id="aclassRemoteIDManager_html_a2828ecfa1a69923ba5f1d7d35fa1e528"><div class="ttname"><a href="classRemoteIDManager.html#a2828ecfa1a69923ba5f1d7d35fa1e528">RemoteIDManager::setEmergency</a></div><div class="ttdeci">void setEmergency(bool declare)</div><div class="ttdef"><b>Definition</b> <a href="RemoteIDManager_8cc_source.html#l00476">RemoteIDManager.cc:476</a></div></div>
+<div class="ttc" id="aclassRemoteIDManager_html_a2828ecfa1a69923ba5f1d7d35fa1e528"><div class="ttname"><a href="classRemoteIDManager.html#a2828ecfa1a69923ba5f1d7d35fa1e528">RemoteIDManager::setEmergency</a></div><div class="ttdeci">void setEmergency(bool declare)</div><div class="ttdef"><b>Definition</b> <a href="RemoteIDManager_8cc_source.html#l00471">RemoteIDManager.cc:471</a></div></div>
 <div class="ttc" id="aclassRemoteIDManager_html_a2cfdc2ef9fe423a80fea3ba970e55c39"><div class="ttname"><a href="classRemoteIDManager.html#a2cfdc2ef9fe423a80fea3ba970e55c39">RemoteIDManager::armStatusErrorChanged</a></div><div class="ttdeci">void armStatusErrorChanged()</div></div>
 <div class="ttc" id="aclassRemoteIDManager_html_a36c4839b19440850ff3fbe4ca09f37ec"><div class="ttname"><a href="classRemoteIDManager.html#a36c4839b19440850ff3fbe4ca09f37ec">RemoteIDManager::basicIDGoodChanged</a></div><div class="ttdeci">void basicIDGoodChanged()</div></div>
 <div class="ttc" id="aclassRemoteIDManager_html_a4d4f5d5dec5eca0ffd067f6ca2221f46"><div class="ttname"><a href="classRemoteIDManager.html#a4d4f5d5dec5eca0ffd067f6ca2221f46">RemoteIDManager::armStatusError</a></div><div class="ttdeci">QString armStatusError(void) const</div><div class="ttdef"><b>Definition</b> <a href="RemoteIDManager_8h_source.html#l00044">RemoteIDManager.h:44</a></div></div>
@@ -249,7 +254,7 @@ $(document).ready(function(){initNavTree('RemoteIDManager_8h_source.html',''); i
 <div class="ttc" id="aclassRemoteIDManager_html_a6eb18730ce48825b9d61adf0fdf4439eab695467bf78ab3ed0be660cfa5dfbfc6"><div class="ttname"><a href="classRemoteIDManager.html#a6eb18730ce48825b9d61adf0fdf4439eab695467bf78ab3ed0be660cfa5dfbfc6">RemoteIDManager::FAA</a></div><div class="ttdeci">@ FAA</div><div class="ttdef"><b>Definition</b> <a href="RemoteIDManager_8h_source.html#l00060">RemoteIDManager.h:60</a></div></div>
 <div class="ttc" id="aclassRemoteIDManager_html_a6eb18730ce48825b9d61adf0fdf4439eafc5b63390be42efa07d7a2dcce7570f9"><div class="ttname"><a href="classRemoteIDManager.html#a6eb18730ce48825b9d61adf0fdf4439eafc5b63390be42efa07d7a2dcce7570f9">RemoteIDManager::EU</a></div><div class="ttdeci">@ EU</div><div class="ttdef"><b>Definition</b> <a href="RemoteIDManager_8h_source.html#l00062">RemoteIDManager.h:61</a></div></div>
 <div class="ttc" id="aclassRemoteIDManager_html_a6edc6871f790a4acf1babc4b3a760961"><div class="ttname"><a href="classRemoteIDManager.html#a6edc6871f790a4acf1babc4b3a760961">RemoteIDManager::gcsGPSGood</a></div><div class="ttdeci">bool gcsGPSGood(void) const</div><div class="ttdef"><b>Definition</b> <a href="RemoteIDManager_8h_source.html#l00046">RemoteIDManager.h:46</a></div></div>
-<div class="ttc" id="aclassRemoteIDManager_html_aa2aabf80a7125d01d1e529428cb354a3"><div class="ttname"><a href="classRemoteIDManager.html#aa2aabf80a7125d01d1e529428cb354a3">RemoteIDManager::setOperatorID</a></div><div class="ttdeci">void setOperatorID()</div><div class="ttdef"><b>Definition</b> <a href="RemoteIDManager_8cc_source.html#l00407">RemoteIDManager.cc:407</a></div></div>
+<div class="ttc" id="aclassRemoteIDManager_html_aa2aabf80a7125d01d1e529428cb354a3"><div class="ttname"><a href="classRemoteIDManager.html#aa2aabf80a7125d01d1e529428cb354a3">RemoteIDManager::setOperatorID</a></div><div class="ttdeci">void setOperatorID()</div><div class="ttdef"><b>Definition</b> <a href="RemoteIDManager_8cc_source.html#l00402">RemoteIDManager.cc:402</a></div></div>
 <div class="ttc" id="aclassRemoteIDManager_html_aaacfec0b04f49d774a233dd3004732f1"><div class="ttname"><a href="classRemoteIDManager.html#aaacfec0b04f49d774a233dd3004732f1">RemoteIDManager::emergencyDeclaredChanged</a></div><div class="ttdeci">void emergencyDeclaredChanged()</div></div>
 <div class="ttc" id="aclassRemoteIDManager_html_ab39086c3f2e974f8f3bdf51feb8fb914"><div class="ttname"><a href="classRemoteIDManager.html#ab39086c3f2e974f8f3bdf51feb8fb914">RemoteIDManager::operatorIDGood</a></div><div class="ttdeci">bool operatorIDGood(void) const</div><div class="ttdef"><b>Definition</b> <a href="RemoteIDManager_8h_source.html#l00049">RemoteIDManager.h:49</a></div></div>
 <div class="ttc" id="aclassRemoteIDManager_html_aba2c96c82c72b32520f044bee2715254"><div class="ttname"><a href="classRemoteIDManager.html#aba2c96c82c72b32520f044bee2715254">RemoteIDManager::armStatusGoodChanged</a></div><div class="ttdeci">void armStatusGoodChanged()</div></div>

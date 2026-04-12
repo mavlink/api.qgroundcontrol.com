@@ -32,5 +32,6 @@ var classQmlObjectTreeModel =
     [ "rowCount", "classQmlObjectTreeModel.html#a2f81057fce2325314327f9fb3c101f69", null ],
     [ "setData", "classQmlObjectTreeModel.html#aa574857975fae31e6f1d3593fea5ce00", null ],
     [ "setDirty", "classQmlObjectTreeModel.html#a1dcf8704b4a39fe6e349d0c3c824dd92", null ],
-    [ "NodeTypeRole", "classQmlObjectTreeModel.html#a3fdce9da2dcd20db068e74cb57f0c7d3", null ]
+    [ "NodeTypeRole", "classQmlObjectTreeModel.html#a3fdce9da2dcd20db068e74cb57f0c7d3", null ],
+    [ "SeparatorRole", "classQmlObjectTreeModel.html#abb2adde02a36601d9a91fa5de63dfd90", null ]
 ];

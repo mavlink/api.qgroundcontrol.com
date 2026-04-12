@@ -97,15 +97,17 @@ $(document).ready(function(){initNavTree('MAVLinkSigning_8cc.html',''); initResi
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="MAVLinkSigning_8h_source.html">MAVLinkSigning.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MAVLinkSigningKeys_8h_source.html">MAVLinkSigningKeys.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="QGCMAVLink_8h_source.html">QGCMAVLink.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="DeviceInfo_8h_source.html">DeviceInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="QmlObjectListModel_8h_source.html">QmlObjectListModel.h</a>&quot;</code><br />
+<code>#include &lt;QtCore/QCryptographicHash&gt;</code><br />
 <code>#include &lt;QtCore/QDateTime&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for MAVLinkSigning.cc:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="MAVLinkSigning_8cc__incl.svg" width="100%" height="503"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="MAVLinkSigning_8cc__incl.svg" width="100%" height="547"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="MAVLinkSigning_8cc_source.html">Go to the source code of this file.</a></p>
@@ -117,16 +119,29 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afa13db9b4391f5094b4a638d32eb6791" id="r_afa13db9b4391f5094b4a638d32eb6791"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#afa13db9b4391f5094b4a638d32eb6791">MAVLinkSigning::secureConnectionAccceptUnsignedCallback</a> (const mavlink_status_t *status, uint32_t message_id)</td></tr>
-<tr class="separator:afa13db9b4391f5094b4a638d32eb6791"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d2afbc55fcb47fef5ce2172e26d77c5" id="r_a3d2afbc55fcb47fef5ce2172e26d77c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#a3d2afbc55fcb47fef5ce2172e26d77c5">MAVLinkSigning::insecureConnectionAccceptUnsignedCallback</a> (const mavlink_status_t *status, uint32_t message_id)</td></tr>
-<tr class="separator:a3d2afbc55fcb47fef5ce2172e26d77c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af760bc3adb7d52846dc86ba8173be5f5" id="r_af760bc3adb7d52846dc86ba8173be5f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#af760bc3adb7d52846dc86ba8173be5f5">MAVLinkSigning::initSigning</a> (<a class="el" href="MAVLinkLib_8h.html#a065a729dbe076ce959268df8fc951f90">mavlink_channel_t</a> channel, QByteArrayView key, mavlink_accept_unsigned_t callback)</td></tr>
+<tr class="memitem:a9e6d7dec3bfa8e9bdd9509974b26627d" id="r_a9e6d7dec3bfa8e9bdd9509974b26627d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#a9e6d7dec3bfa8e9bdd9509974b26627d">MAVLinkSigning::secureConnectionAcceptUnsignedCallback</a> (const mavlink_status_t *status, uint32_t message_id)</td></tr>
+<tr class="separator:a9e6d7dec3bfa8e9bdd9509974b26627d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee6a741375606660e530838b65d979b5" id="r_aee6a741375606660e530838b65d979b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#aee6a741375606660e530838b65d979b5">MAVLinkSigning::insecureConnectionAcceptUnsignedCallback</a> (const mavlink_status_t *status, uint32_t message_id)</td></tr>
+<tr class="separator:aee6a741375606660e530838b65d979b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af760bc3adb7d52846dc86ba8173be5f5" id="r_af760bc3adb7d52846dc86ba8173be5f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#af760bc3adb7d52846dc86ba8173be5f5">MAVLinkSigning::initSigning</a> (<a class="el" href="MAVLinkMessageType_8h.html#a065a729dbe076ce959268df8fc951f90">mavlink_channel_t</a> channel, QByteArrayView key, mavlink_accept_unsigned_t callback)</td></tr>
 <tr class="separator:af760bc3adb7d52846dc86ba8173be5f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17982f26dbf56e3009de39218e395a6a" id="r_a17982f26dbf56e3009de39218e395a6a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#a17982f26dbf56e3009de39218e395a6a">MAVLinkSigning::checkSigningLinkId</a> (<a class="el" href="MAVLinkLib_8h.html#a065a729dbe076ce959268df8fc951f90">mavlink_channel_t</a> channel, const <a class="el" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> &amp;message)</td></tr>
+<tr class="memitem:a17982f26dbf56e3009de39218e395a6a" id="r_a17982f26dbf56e3009de39218e395a6a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#a17982f26dbf56e3009de39218e395a6a">MAVLinkSigning::checkSigningLinkId</a> (<a class="el" href="MAVLinkMessageType_8h.html#a065a729dbe076ce959268df8fc951f90">mavlink_channel_t</a> channel, const <a class="el" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> &amp;message)</td></tr>
 <tr class="separator:a17982f26dbf56e3009de39218e395a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8757ec956f0d0f6ac012152f1ade21e1" id="r_a8757ec956f0d0f6ac012152f1ade21e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#a8757ec956f0d0f6ac012152f1ade21e1">MAVLinkSigning::createSetupSigning</a> (<a class="el" href="MAVLinkLib_8h.html#a065a729dbe076ce959268df8fc951f90">mavlink_channel_t</a> channel, mavlink_system_t target_system, mavlink_setup_signing_t &amp;setup_signing)</td></tr>
-<tr class="separator:a8757ec956f0d0f6ac012152f1ade21e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f553ad7fd7338adfe3e9725af8e43bd" id="r_a8f553ad7fd7338adfe3e9725af8e43bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#a8f553ad7fd7338adfe3e9725af8e43bd">MAVLinkSigning::createSetupSigning</a> (<a class="el" href="MAVLinkMessageType_8h.html#a065a729dbe076ce959268df8fc951f90">mavlink_channel_t</a> channel, mavlink_system_t target_system, QByteArrayView keyBytes, mavlink_setup_signing_t &amp;setup_signing)</td></tr>
+<tr class="memdesc:a8f553ad7fd7338adfe3e9725af8e43bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a SETUP_SIGNING payload using the given key bytes directly.  <br /></td></tr>
+<tr class="separator:a8f553ad7fd7338adfe3e9725af8e43bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a243c244b66fa64dee20ccd17e5ba6c20" id="r_a243c244b66fa64dee20ccd17e5ba6c20"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#a243c244b66fa64dee20ccd17e5ba6c20">MAVLinkSigning::isSigningEnabled</a> (<a class="el" href="MAVLinkMessageType_8h.html#a065a729dbe076ce959268df8fc951f90">mavlink_channel_t</a> channel)</td></tr>
+<tr class="separator:a243c244b66fa64dee20ccd17e5ba6c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4912ca53258fe3aa85756070e59d3352" id="r_a4912ca53258fe3aa85756070e59d3352"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#a4912ca53258fe3aa85756070e59d3352">MAVLinkSigning::createDisableSigning</a> (mavlink_system_t target_system, mavlink_setup_signing_t &amp;setup_signing)</td></tr>
+<tr class="separator:a4912ca53258fe3aa85756070e59d3352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab0248df228a43ec97763e46c04406fa" id="r_aab0248df228a43ec97763e46c04406fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#aab0248df228a43ec97763e46c04406fa">MAVLinkSigning::isMessageSigned</a> (const <a class="el" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> &amp;message)</td></tr>
+<tr class="memdesc:aab0248df228a43ec97763e46c04406fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the message has a MAVLink2 signature.  <br /></td></tr>
+<tr class="separator:aab0248df228a43ec97763e46c04406fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b275f849a7ea6af77ba7a9e4e1e60a9" id="r_a6b275f849a7ea6af77ba7a9e4e1e60a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#a6b275f849a7ea6af77ba7a9e4e1e60a9">MAVLinkSigning::verifySignature</a> (QByteArrayView key, const <a class="el" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> &amp;message)</td></tr>
+<tr class="memdesc:a6b275f849a7ea6af77ba7a9e4e1e60a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify a key against a signed message's signature.  <br /></td></tr>
+<tr class="separator:a6b275f849a7ea6af77ba7a9e4e1e60a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f318e0d0e780a5918d47502e6e26116" id="r_a6f318e0d0e780a5918d47502e6e26116"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMAVLinkSigning.html#a6f318e0d0e780a5918d47502e6e26116">MAVLinkSigning::tryDetectKey</a> (<a class="el" href="MAVLinkMessageType_8h.html#a065a729dbe076ce959268df8fc951f90">mavlink_channel_t</a> channel, const <a class="el" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> &amp;message)</td></tr>
+<tr class="separator:a6f318e0d0e780a5918d47502e6e26116"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -10,5 +10,6 @@ var classSafetyComponent =
     [ "setupComplete", "classSafetyComponent.html#ace35bbb2fb1961a812faa9c9896f5807", null ],
     [ "setupCompleteChangedTriggerList", "classSafetyComponent.html#ac2fe057a9655d366df2f8c199fb053c2", null ],
     [ "setupSource", "classSafetyComponent.html#a7a4af0f3f20ae9f9c57531f69423d80f", null ],
-    [ "summaryQmlSource", "classSafetyComponent.html#a9084c94924075111348c64019ec11023", null ]
+    [ "summaryQmlSource", "classSafetyComponent.html#a9084c94924075111348c64019ec11023", null ],
+    [ "vehicleConfigJson", "classSafetyComponent.html#a43d9dfa47e4b44d0377c7966ca38e089", null ]
 ];

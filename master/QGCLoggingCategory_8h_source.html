@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/Utilities/QGCLoggingCategory.h Source File</title>
+<title>QGroundControl: src/Utilities/Logging/QGCLoggingCategory.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,122 +100,106 @@ $(document).ready(function(){initNavTree('QGCLoggingCategory_8h_source.html','')
 <div class="contents">
 <a href="QGCLoggingCategory_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="QmlObjectListModel_8h.html">QmlObjectListModel.h</a>&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QtCore/QLoggingCategory&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QtCore/QObject&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QtCore/QStringList&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QtCore/QMap&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span><a class="code hl_class" href="classQGCLoggingCategoryItem.html">QGCLoggingCategoryItem</a>;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QtCore/QHash&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtCore/QLoggingCategory&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QtCore/QObject&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QtCore/QReadWriteLock&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QtCore/QSet&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QtCore/QString&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QtCore/QSortFilterProxyModel&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QtQml/qqml.h&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="" data-end="">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">   14</a></span><span class="preprocessor">#define QGC_LOGGING_CATEGORY(name, categoryStr) \</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">    static QGCLoggingCategory qgcCategory ## name (categoryStr); \</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">    Q_LOGGING_CATEGORY(name, categoryStr, QtWarningMsg)</span></div>
-</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class </span>QJSEngine;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">class </span>QQmlEngine;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">class </span><a class="code hl_class" href="classLoggingCategoryFlatModel.html">LoggingCategoryFlatModel</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span><a class="code hl_class" href="classLoggingCategoryTreeModel.html">LoggingCategoryTreeModel</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span><a class="code hl_class" href="classQGCLoggingCategoryItem.html">QGCLoggingCategoryItem</a>;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="foldopen" id="foldopen00018" data-start="" data-end="">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="QGCLoggingCategory_8h.html#a01a7fb7c561ce009f6f241aba4cd91d3">   18</a></span><span class="preprocessor">#define QGC_LOGGING_CATEGORY_ON(name, categoryStr) \</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">    static QGCLoggingCategory qgcCategory ## name (categoryStr); \</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">    Q_LOGGING_CATEGORY(name, categoryStr, QtInfoMsg)</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">   18</a></span><span class="preprocessor">#define QGC_LOGGING_CATEGORY(name, categoryStr)               \</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">    static QGCLoggingCategory qgcCategory##name(categoryStr); \</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">    Q_LOGGING_CATEGORY(name, categoryStr, QtWarningMsg)</span></div>
 </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classQGCLoggingCategoryManager.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="classQGCLoggingCategoryManager.html">QGCLoggingCategoryManager</a> : <span class="keyword">public</span> QObject</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    Q_GADGET</div>
+<div class="foldopen" id="foldopen00022" data-start="" data-end="">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="QGCLoggingCategory_8h.html#a01a7fb7c561ce009f6f241aba4cd91d3">   22</a></span><span class="preprocessor">#define QGC_LOGGING_CATEGORY_ON(name, categoryStr)            \</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">    static QGCLoggingCategory qgcCategory##name(categoryStr); \</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">    Q_LOGGING_CATEGORY(name, categoryStr, QtInfoMsg)</span></div>
+</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">static</span> <a class="code hl_class" href="classQGCLoggingCategoryManager.html">QGCLoggingCategoryManager</a> *<a class="code hl_function" href="classQGCLoggingCategoryManager.html#a88b9ce12661cac22a97f6d230e2b3852">instance</a>();</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classQGCLoggingCategoryManager.html#a1ee8a182b4c11628a95372cbec9fd6ac">registerCategory</a>(<span class="keyword">const</span> QString &amp;category);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classQGCLoggingCategoryManager.html#a7e34f1dbbc1843a350d79f9c6dc6e371">   33</a></span>    <a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a> *<a class="code hl_function" href="classQGCLoggingCategoryManager.html#a7e34f1dbbc1843a350d79f9c6dc6e371">treeCategoryModel</a>() { <span class="keywordflow">return</span> &amp;_treeCategoryModel; }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classQGCLoggingCategoryManager.html#a92146c267cf509f30b1c2e176c6d36ce">   36</a></span>    <a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a> *<a class="code hl_function" href="classQGCLoggingCategoryManager.html#a92146c267cf509f30b1c2e176c6d36ce">flatCategoryModel</a>() { <span class="keywordflow">return</span> &amp;_flatCategoryModel; }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCLoggingCategoryManager.html#a4a82669a026baace1dcaf4bba920edab">categoryLoggingOn</a>(<span class="keyword">const</span> QString &amp;fullCategroryName);</div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classQGCLoggingCategoryManager.html">   26</a></span><span class="keyword">class </span><a class="code hl_class" href="classQGCLoggingCategoryManager.html">QGCLoggingCategoryManager</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    Q_OBJECT</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    QML_ELEMENT</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    QML_SINGLETON</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    Q_MOC_INCLUDE(<span class="stringliteral">&quot;LoggingCategoryModel.h&quot;</span>)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    Q_PROPERTY(<a class="code hl_class" href="classLoggingCategoryTreeModel.html">LoggingCategoryTreeModel</a>* treeModel READ treeCategoryModel CONSTANT)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    Q_PROPERTY(<a class="code hl_class" href="classLoggingCategoryFlatModel.html">LoggingCategoryFlatModel</a>* flatModel READ flatCategoryModel CONSTANT)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    Q_PROPERTY(QSortFilterProxyModel* filteredFlatModel READ filteredFlatModel CONSTANT)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">static</span> <a class="code hl_class" href="classQGCLoggingCategoryManager.html">QGCLoggingCategoryManager</a>* instance();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> init();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">static</span> <a class="code hl_class" href="classQGCLoggingCategoryManager.html">QGCLoggingCategoryManager</a>* create(QQmlEngine* qmlEngine, QJSEngine* jsEngine);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classQGCLoggingCategoryManager.html#adaf599dccda1c6f8ef5e056e655210ad">setFilterRulesFromSettings</a>(<span class="keyword">const</span> QString &amp;commandLineLoggingOptions);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> registerCategory(<span class="keyword">const</span> QString&amp; category);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_class" href="classLoggingCategoryTreeModel.html">LoggingCategoryTreeModel</a>* treeCategoryModel() { <span class="keywordflow">return</span> _treeModel; }</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classQGCLoggingCategoryManager.html#accf88d575a509d056454d439508069a2">disableAllCategories</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_class" href="classLoggingCategoryFlatModel.html">LoggingCategoryFlatModel</a>* flatCategoryModel() { <span class="keywordflow">return</span> _flatModel; }</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classQGCLoggingCategoryManager.html#ab08d1e08ba498d8a8df8830aa31b0b42">setCategoryLoggingOn</a>(<span class="keyword">const</span> QString &amp;fullCategoryName, <span class="keywordtype">bool</span> enable);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    QSortFilterProxyModel* filteredFlatModel() { <span class="keywordflow">return</span> &amp;_filteredFlatModel; }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    Q_INVOKABLE <span class="keywordtype">void</span> setFilterText(<span class="keyword">const</span> QString&amp; text);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> _splitFullCategoryName(<span class="keyword">const</span> QString &amp;fullCategoryName, QString &amp;parentCategory, QString &amp;childCategory);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_class" href="classQGCLoggingCategoryItem.html">QGCLoggingCategoryItem</a> *_findLoggingCategory(<span class="keyword">const</span> QString &amp;fullCategoryName);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> _insertSorted(<a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a>* model, <a class="code hl_class" href="classQGCLoggingCategoryItem.html">QGCLoggingCategoryItem</a>* item);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a> _treeCategoryModel;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a> _flatCategoryModel;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *kFilterRulesSettingsGroup = <span class="stringliteral">&quot;LoggingFilters&quot;</span>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    Q_INVOKABLE <span class="keywordtype">bool</span> isCategoryEnabled(<span class="keyword">const</span> QString&amp; fullCategoryName) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">int</span> categoryLevel(<span class="keyword">const</span> QString&amp; fullCategoryName) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    Q_INVOKABLE <span class="keywordtype">void</span> setCategoryLevel(<span class="keyword">const</span> QString&amp; fullCategoryName, <span class="keywordtype">int</span> qtMsgLevel);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    Q_INVOKABLE <span class="keywordtype">void</span> setCategoryEnabled(<span class="keyword">const</span> QString&amp; fullCategoryName, <span class="keywordtype">bool</span> enable);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> installFilter(<span class="keyword">const</span> QString&amp; commandLineLoggingOptions = QString());</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    Q_INVOKABLE <span class="keywordtype">void</span> disableAllCategories();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <a class="code hl_class" href="classQGCLoggingCategoryManager.html">QGCLoggingCategoryManager</a>();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">int</span> _resolvedLevel(<span class="keyword">const</span> QString&amp; fullCategoryName) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> _categoryFilter(QLoggingCategory* category);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_class" href="classLoggingCategoryTreeModel.html">LoggingCategoryTreeModel</a>* _treeModel = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_class" href="classLoggingCategoryFlatModel.html">LoggingCategoryFlatModel</a>* _flatModel = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    QSortFilterProxyModel _filteredFlatModel;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">mutable</span> QReadWriteLock _filterLock;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    QHash&lt;QString, int&gt; _categoryLevels;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    QSet&lt;QString&gt; _commandLineCategories;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">bool</span> _commandLineFullLogging = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">static</span> QLoggingCategory::CategoryFilter s_previousFilter;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kFilterRulesSettingsGroup = <span class="stringliteral">&quot;LoggingFilters&quot;</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> kDefaultLevel = QtWarningMsg;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
 </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">/*===========================================================================*/</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="foldopen" id="foldopen00064" data-start="{" data-end="};">
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classQGCLoggingCategory.html">   64</a></span><span class="keyword">class </span><a class="code hl_class" href="classQGCLoggingCategory.html">QGCLoggingCategory</a></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>{</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classQGCLoggingCategory.html#a5697aca4406ab58e2770d745759996e6">   67</a></span>    <a class="code hl_function" href="classQGCLoggingCategory.html#a5697aca4406ab58e2770d745759996e6">QGCLoggingCategory</a>(<span class="keyword">const</span> QString &amp;category) { <a class="code hl_function" href="classQGCLoggingCategoryManager.html#a88b9ce12661cac22a97f6d230e2b3852">QGCLoggingCategoryManager::instance</a>()-&gt;<a class="code hl_function" href="classQGCLoggingCategoryManager.html#a1ee8a182b4c11628a95372cbec9fd6ac">registerCategory</a>(category); }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">/*===========================================================================*/</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="};">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classQGCLoggingCategory.html">   79</a></span><span class="keyword">class </span><a class="code hl_class" href="classQGCLoggingCategory.html">QGCLoggingCategory</a></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>{</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classQGCLoggingCategory.html">QGCLoggingCategory</a>(<span class="keyword">const</span> QString&amp; category);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="foldopen" id="foldopen00070" data-start="{" data-end="};">
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classQGCLoggingCategoryItem.html">   70</a></span><span class="keyword">class </span><a class="code hl_class" href="classQGCLoggingCategoryItem.html">QGCLoggingCategoryItem</a> : <span class="keyword">public</span> QObject</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    Q_OBJECT</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    Q_PROPERTY(QString  shortCategory   MEMBER shortCategory   CONSTANT)</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    Q_PROPERTY(QString  fullCategory    MEMBER fullCategory    CONSTANT)</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    Q_PROPERTY(<span class="keywordtype">bool</span>     enabled         READ enabled WRITE setEnabled NOTIFY <a class="code hl_signal" href="classQGCLoggingCategoryItem.html#a82f9a3a61e36bd84d4493b6dc4ea0e36">enabledChanged</a>)</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    Q_PROPERTY(<span class="keywordtype">bool</span>     expanded        MEMBER expanded        NOTIFY <a class="code hl_signal" href="classQGCLoggingCategoryItem.html#a14b5afea1b15b8628baa7df99dc51b09">expandedChanged</a>)</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    Q_PROPERTY(<a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a>* children MEMBER children CONSTANT)</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_class" href="classQGCLoggingCategoryItem.html">QGCLoggingCategoryItem</a>(<span class="keyword">const</span> QString&amp; shortCategory_, <span class="keyword">const</span> QString&amp; fullCategory_, <span class="keywordtype">bool</span> enabled_, QObject* parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">bool</span> enabled()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _enabled; }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> setEnabled(<span class="keywordtype">bool</span> enabled);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    QString shortCategory;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    QString fullCategory;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">bool</span> _enabled = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">bool</span> expanded = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a>* children = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>signals:</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classQGCLoggingCategoryItem.html#a82f9a3a61e36bd84d4493b6dc4ea0e36">   93</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classQGCLoggingCategoryItem.html#a82f9a3a61e36bd84d4493b6dc4ea0e36">enabledChanged</a>();</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classQGCLoggingCategoryItem.html#a14b5afea1b15b8628baa7df99dc51b09">   94</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classQGCLoggingCategoryItem.html#a14b5afea1b15b8628baa7df99dc51b09">expandedChanged</a>();</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>};</div>
-</div>
-<div class="ttc" id="aQmlObjectListModel_8h_html"><div class="ttname"><a href="QmlObjectListModel_8h.html">QmlObjectListModel.h</a></div></div>
-<div class="ttc" id="aclassQGCLoggingCategoryItem_html"><div class="ttname"><a href="classQGCLoggingCategoryItem.html">QGCLoggingCategoryItem</a></div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00070">QGCLoggingCategory.h:71</a></div></div>
-<div class="ttc" id="aclassQGCLoggingCategoryItem_html_a14b5afea1b15b8628baa7df99dc51b09"><div class="ttname"><a href="classQGCLoggingCategoryItem.html#a14b5afea1b15b8628baa7df99dc51b09">QGCLoggingCategoryItem::expandedChanged</a></div><div class="ttdeci">void expandedChanged()</div></div>
-<div class="ttc" id="aclassQGCLoggingCategoryItem_html_a82f9a3a61e36bd84d4493b6dc4ea0e36"><div class="ttname"><a href="classQGCLoggingCategoryItem.html#a82f9a3a61e36bd84d4493b6dc4ea0e36">QGCLoggingCategoryItem::enabledChanged</a></div><div class="ttdeci">void enabledChanged()</div></div>
-<div class="ttc" id="aclassQGCLoggingCategoryManager_html"><div class="ttname"><a href="classQGCLoggingCategoryManager.html">QGCLoggingCategoryManager</a></div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00022">QGCLoggingCategory.h:23</a></div></div>
-<div class="ttc" id="aclassQGCLoggingCategoryManager_html_a1ee8a182b4c11628a95372cbec9fd6ac"><div class="ttname"><a href="classQGCLoggingCategoryManager.html#a1ee8a182b4c11628a95372cbec9fd6ac">QGCLoggingCategoryManager::registerCategory</a></div><div class="ttdeci">void registerCategory(const QString &amp;category)</div><div class="ttdoc">Registers the specified logging category to the system.</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8cc_source.html#l00027">QGCLoggingCategory.cc:27</a></div></div>
-<div class="ttc" id="aclassQGCLoggingCategoryManager_html_a4a82669a026baace1dcaf4bba920edab"><div class="ttname"><a href="classQGCLoggingCategoryManager.html#a4a82669a026baace1dcaf4bba920edab">QGCLoggingCategoryManager::categoryLoggingOn</a></div><div class="ttdeci">static bool categoryLoggingOn(const QString &amp;fullCategroryName)</div><div class="ttdoc">Returns true if logging is turned on for the specified category.</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8cc_source.html#l00083">QGCLoggingCategory.cc:83</a></div></div>
-<div class="ttc" id="aclassQGCLoggingCategoryManager_html_a7e34f1dbbc1843a350d79f9c6dc6e371"><div class="ttname"><a href="classQGCLoggingCategoryManager.html#a7e34f1dbbc1843a350d79f9c6dc6e371">QGCLoggingCategoryManager::treeCategoryModel</a></div><div class="ttdeci">QmlObjectListModel * treeCategoryModel()</div><div class="ttdoc">Returns the hierarchical list of available logging category names.</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00033">QGCLoggingCategory.h:33</a></div></div>
-<div class="ttc" id="aclassQGCLoggingCategoryManager_html_a88b9ce12661cac22a97f6d230e2b3852"><div class="ttname"><a href="classQGCLoggingCategoryManager.html#a88b9ce12661cac22a97f6d230e2b3852">QGCLoggingCategoryManager::instance</a></div><div class="ttdeci">static QGCLoggingCategoryManager * instance()</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8cc_source.html#l00010">QGCLoggingCategory.cc:10</a></div></div>
-<div class="ttc" id="aclassQGCLoggingCategoryManager_html_a92146c267cf509f30b1c2e176c6d36ce"><div class="ttname"><a href="classQGCLoggingCategoryManager.html#a92146c267cf509f30b1c2e176c6d36ce">QGCLoggingCategoryManager::flatCategoryModel</a></div><div class="ttdeci">QmlObjectListModel * flatCategoryModel()</div><div class="ttdoc">Returns the flat list of available logging category names.</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00036">QGCLoggingCategory.h:36</a></div></div>
-<div class="ttc" id="aclassQGCLoggingCategoryManager_html_ab08d1e08ba498d8a8df8830aa31b0b42"><div class="ttname"><a href="classQGCLoggingCategoryManager.html#ab08d1e08ba498d8a8df8830aa31b0b42">QGCLoggingCategoryManager::setCategoryLoggingOn</a></div><div class="ttdeci">void setCategoryLoggingOn(const QString &amp;fullCategoryName, bool enable)</div><div class="ttdoc">Turns on/off logging for the specified category. State is saved in app settings.</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8cc_source.html#l00068">QGCLoggingCategory.cc:68</a></div></div>
-<div class="ttc" id="aclassQGCLoggingCategoryManager_html_accf88d575a509d056454d439508069a2"><div class="ttname"><a href="classQGCLoggingCategoryManager.html#accf88d575a509d056454d439508069a2">QGCLoggingCategoryManager::disableAllCategories</a></div><div class="ttdeci">void disableAllCategories()</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8cc_source.html#l00152">QGCLoggingCategory.cc:152</a></div></div>
-<div class="ttc" id="aclassQGCLoggingCategoryManager_html_adaf599dccda1c6f8ef5e056e655210ad"><div class="ttname"><a href="classQGCLoggingCategoryManager.html#adaf599dccda1c6f8ef5e056e655210ad">QGCLoggingCategoryManager::setFilterRulesFromSettings</a></div><div class="ttdeci">void setFilterRulesFromSettings(const QString &amp;commandLineLoggingOptions)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8cc_source.html#l00091">QGCLoggingCategory.cc:91</a></div></div>
-<div class="ttc" id="aclassQGCLoggingCategory_html"><div class="ttname"><a href="classQGCLoggingCategory.html">QGCLoggingCategory</a></div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00064">QGCLoggingCategory.h:65</a></div></div>
-<div class="ttc" id="aclassQGCLoggingCategory_html_a5697aca4406ab58e2770d745759996e6"><div class="ttname"><a href="classQGCLoggingCategory.html#a5697aca4406ab58e2770d745759996e6">QGCLoggingCategory::QGCLoggingCategory</a></div><div class="ttdeci">QGCLoggingCategory(const QString &amp;category)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00067">QGCLoggingCategory.h:67</a></div></div>
-<div class="ttc" id="aclassQmlObjectListModel_html"><div class="ttname"><a href="classQmlObjectListModel.html">QmlObjectListModel</a></div><div class="ttdef"><b>Definition</b> <a href="QmlObjectListModel_8h_source.html#l00009">QmlObjectListModel.h:10</a></div></div>
+<div class="ttc" id="aclassLoggingCategoryFlatModel_html"><div class="ttname"><a href="classLoggingCategoryFlatModel.html">LoggingCategoryFlatModel</a></div><div class="ttdef"><b>Definition</b> <a href="LoggingCategoryModel_8h_source.html#l00041">LoggingCategoryModel.h:42</a></div></div>
+<div class="ttc" id="aclassLoggingCategoryTreeModel_html"><div class="ttname"><a href="classLoggingCategoryTreeModel.html">LoggingCategoryTreeModel</a></div><div class="ttdef"><b>Definition</b> <a href="LoggingCategoryModel_8h_source.html#l00090">LoggingCategoryModel.h:91</a></div></div>
+<div class="ttc" id="aclassQGCLoggingCategoryItem_html"><div class="ttname"><a href="classQGCLoggingCategoryItem.html">QGCLoggingCategoryItem</a></div><div class="ttdef"><b>Definition</b> <a href="LoggingCategoryModel_8h_source.html#l00010">LoggingCategoryModel.h:11</a></div></div>
+<div class="ttc" id="aclassQGCLoggingCategoryManager_html"><div class="ttname"><a href="classQGCLoggingCategoryManager.html">QGCLoggingCategoryManager</a></div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00026">QGCLoggingCategory.h:27</a></div></div>
+<div class="ttc" id="aclassQGCLoggingCategory_html"><div class="ttname"><a href="classQGCLoggingCategory.html">QGCLoggingCategory</a></div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00079">QGCLoggingCategory.h:80</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ff383ddf1aa4eab0c4ce7910366d05a5.html">Utilities</a></li><li class="navelem"><a class="el" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ff383ddf1aa4eab0c4ce7910366d05a5.html">Utilities</a></li><li class="navelem"><a class="el" href="dir_387619659fceb43882a735ce9a40a27b.html">Logging</a></li><li class="navelem"><a class="el" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

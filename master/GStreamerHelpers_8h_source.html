@@ -101,20 +101,24 @@ $(document).ready(function(){initNavTree('GStreamerHelpers_8h_source.html',''); 
 <a href="GStreamerHelpers_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;glib.h&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// Needed for GstElementFactory</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;gst/gst.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceGStreamer.html">GStreamer</a></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    gboolean <a class="code hl_function" href="namespaceGStreamer.html#a784b0de853c19761c1fd9a1e8d82959b">is_valid_rtsp_uri</a>(<span class="keyword">const</span> gchar *uri_str);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">// Returns true if the given factory likely represents a hardware-accelerated decoder.</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">// Heuristics: checks metadata/klass for &quot;Hardware&quot; and common vendor tags in the factory name.</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceGStreamer.html#a8a342b6c153606fe885ee190ac5493b1">is_hardware_decoder_factory</a>(GstElementFactory *factory);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
-<div class="ttc" id="anamespaceGStreamer_html"><div class="ttname"><a href="namespaceGStreamer.html">GStreamer</a></div><div class="ttdef"><b>Definition</b> <a href="GStreamer_8cc_source.html#l00056">GStreamer.cc:57</a></div></div>
-<div class="ttc" id="anamespaceGStreamer_html_a784b0de853c19761c1fd9a1e8d82959b"><div class="ttname"><a href="namespaceGStreamer.html#a784b0de853c19761c1fd9a1e8d82959b">GStreamer::is_valid_rtsp_uri</a></div><div class="ttdeci">gboolean is_valid_rtsp_uri(const gchar *uri_str)</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00011">GStreamerHelpers.cc:11</a></div></div>
-<div class="ttc" id="anamespaceGStreamer_html_a8a342b6c153606fe885ee190ac5493b1"><div class="ttname"><a href="namespaceGStreamer.html#a8a342b6c153606fe885ee190ac5493b1">GStreamer::is_hardware_decoder_factory</a></div><div class="ttdeci">bool is_hardware_decoder_factory(GstElementFactory *factory)</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00029">GStreamerHelpers.cc:29</a></div></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;gst/gst.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="GStreamer_8h.html">GStreamer.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceGStreamer.html">GStreamer</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    gboolean <a class="code hl_function" href="namespaceGStreamer.html#ad95cc749b99a8ea8b73c1697cd0df915">isValidRtspUri</a>(<span class="keyword">const</span> gchar *uri_str);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceGStreamer.html#aa78f2e5ccb025d8f073ac4ec3e223816">isHardwareDecoderFactory</a>(GstElementFactory *factory);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceGStreamer.html#a8fa5efb3bb1e31531b89b895c5970071">setCodecPriorities</a>(<a class="code hl_enumeration" href="namespaceGStreamer.html#aa1745ec8f9ef63ada08418c5b045ca74">VideoDecoderOptions</a> option);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
+<div class="ttc" id="aGStreamer_8h_html"><div class="ttname"><a href="GStreamer_8h.html">GStreamer.h</a></div></div>
+<div class="ttc" id="anamespaceGStreamer_html"><div class="ttname"><a href="namespaceGStreamer.html">GStreamer</a></div><div class="ttdef"><b>Definition</b> <a href="GStreamer_8cc_source.html#l00103">GStreamer.cc:104</a></div></div>
+<div class="ttc" id="anamespaceGStreamer_html_a8fa5efb3bb1e31531b89b895c5970071"><div class="ttname"><a href="namespaceGStreamer.html#a8fa5efb3bb1e31531b89b895c5970071">GStreamer::setCodecPriorities</a></div><div class="ttdeci">void setCodecPriorities(VideoDecoderOptions option)</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00201">GStreamerHelpers.cc:201</a></div></div>
+<div class="ttc" id="anamespaceGStreamer_html_aa1745ec8f9ef63ada08418c5b045ca74"><div class="ttname"><a href="namespaceGStreamer.html#aa1745ec8f9ef63ada08418c5b045ca74">GStreamer::VideoDecoderOptions</a></div><div class="ttdeci">VideoDecoderOptions</div><div class="ttdef"><b>Definition</b> <a href="GStreamer_8h_source.html#l00016">GStreamer.h:16</a></div></div>
+<div class="ttc" id="anamespaceGStreamer_html_aa78f2e5ccb025d8f073ac4ec3e223816"><div class="ttname"><a href="namespaceGStreamer.html#aa78f2e5ccb025d8f073ac4ec3e223816">GStreamer::isHardwareDecoderFactory</a></div><div class="ttdeci">bool isHardwareDecoderFactory(GstElementFactory *factory)</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00038">GStreamerHelpers.cc:38</a></div></div>
+<div class="ttc" id="anamespaceGStreamer_html_ad95cc749b99a8ea8b73c1697cd0df915"><div class="ttname"><a href="namespaceGStreamer.html#ad95cc749b99a8ea8b73c1697cd0df915">GStreamer::isValidRtspUri</a></div><div class="ttdeci">gboolean isValidRtspUri(const gchar *uri_str)</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00012">GStreamerHelpers.cc:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

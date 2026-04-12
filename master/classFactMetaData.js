@@ -2,7 +2,7 @@ var classFactMetaData =
 [
     [ "CustomCookedValidator", "classFactMetaData.html#a8853584a37ff02ace3c020752a0cbc78", null ],
     [ "DefineMap_t", "classFactMetaData.html#afdb869bed8e8d787d9a5764cc4ee01cc", null ],
-    [ "NameToMetaDataMap_t", "classFactMetaData.html#ad6b993137356ebccb764d323947c18a7", null ],
+    [ "NameToMetaDataMap_t", "classFactMetaData.html#a056f565313df5427f279fb7a77d3cfb4", null ],
     [ "Translator", "classFactMetaData.html#ab6a3f9b473f5eb9f573216abbf676902", null ],
     [ "ValueType_t", "classFactMetaData.html#a594f352eed7c8c895fa442eef891d4b4", [
       [ "valueTypeUint8", "classFactMetaData.html#a594f352eed7c8c895fa442eef891d4b4aa1e0e7bd93bcf21680329e1b56ea70dd", null ],
@@ -63,6 +63,7 @@ var classFactMetaData =
     [ "gramsToAppSettingsWeightUnits", "classFactMetaData.html#a97bf9430364d9d963ddcadfc82986740", null ],
     [ "group", "classFactMetaData.html#a4f5b1575c9cec8035ada2e617dbf8a6b", null ],
     [ "hasControl", "classFactMetaData.html#a23fd74e0dc162655fde84a2cc9f81714", null ],
+    [ "label", "classFactMetaData.html#a03d89439a29597fe415e1a3c3f22e7c8", null ],
     [ "longDescription", "classFactMetaData.html#abeb2371f9f62b79dfd284dcda7185221", null ],
     [ "maxForType", "classFactMetaData.html#a931cee3f61cb49aeb5b462814faf20e6", null ],
     [ "maxIsDefaultForType", "classFactMetaData.html#a6b218d19cfb9f1eb189c2be82ac8d8af", null ],
@@ -92,6 +93,7 @@ var classFactMetaData =
     [ "setEnumInfo", "classFactMetaData.html#a9ab4adc3d51168961b39ee7fe71eacbb", null ],
     [ "setGroup", "classFactMetaData.html#ace838c344ce517f9847bc36be2369472", null ],
     [ "setHasControl", "classFactMetaData.html#a0e2993cc2b98e02f524b2ecc0bf0aa21", null ],
+    [ "setLabel", "classFactMetaData.html#a69ff9fdc4b8b965265f26478a9efb2f4", null ],
     [ "setLongDescription", "classFactMetaData.html#a5e362fc30f43ddef900521dc2af2544b", null ],
     [ "setName", "classFactMetaData.html#a5a960c47507e5c4c69a738f764478b54", null ],
     [ "setQGCRebootRequired", "classFactMetaData.html#a42ce08c988d86e8b30e32c7537955d6b", null ],

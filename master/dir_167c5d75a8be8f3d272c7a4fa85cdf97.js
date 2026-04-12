@@ -2,6 +2,7 @@ var dir_167c5d75a8be8f3d272c7a4fa85cdf97 =
 [
     [ "AltitudeFactTextField.qml", "AltitudeFactTextField_8qml.html", null ],
     [ "FactBitmask.qml", "FactBitmask_8qml.html", null ],
+    [ "FactBitMaskCheckBoxSlider.qml", "FactBitMaskCheckBoxSlider_8qml.html", null ],
     [ "FactCheckBox.qml", "FactCheckBox_8qml.html", null ],
     [ "FactCheckBoxSlider.qml", "FactCheckBoxSlider_8qml.html", null ],
     [ "FactComboBox.qml", "FactComboBox_8qml.html", null ],
@@ -14,7 +15,9 @@ var dir_167c5d75a8be8f3d272c7a4fa85cdf97 =
     [ "FactTextFieldSlider.qml", "FactTextFieldSlider_8qml.html", null ],
     [ "FactTextFieldSlider2.qml", "FactTextFieldSlider2_8qml.html", null ],
     [ "FactValueSlider.qml", "FactValueSlider_8qml.html", null ],
+    [ "LabelledFactBrowse.qml", "LabelledFactBrowse_8qml.html", null ],
     [ "LabelledFactComboBox.qml", "LabelledFactComboBox_8qml.html", null ],
+    [ "LabelledFactIncrementer.qml", "LabelledFactIncrementer_8qml.html", null ],
     [ "LabelledFactLabel.qml", "LabelledFactLabel_8qml.html", null ],
     [ "LabelledFactTextField.qml", "LabelledFactTextField_8qml.html", null ]
 ];

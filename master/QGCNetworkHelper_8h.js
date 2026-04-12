@@ -62,6 +62,8 @@ var QGCNetworkHelper_8h =
     [ "isSslAvailable", "QGCNetworkHelper_8h.html#aee30e1ca155e8e9d4533fc6b48573fc7", null ],
     [ "isSuccess", "QGCNetworkHelper_8h.html#a0571ec3565654093f8e8deb0b74d68f4", null ],
     [ "isValidUrl", "QGCNetworkHelper_8h.html#aaae91171282372d66e7316449ec140d3", null ],
+    [ "loadCaCertificates", "QGCNetworkHelper_8h.html#a156cfadb4b06f782e482d35ca9c157ea", null ],
+    [ "loadClientCertAndKey", "QGCNetworkHelper_8h.html#a658379932e13036a7e649f18cba5310b", null ],
     [ "looksLikeCompressedData", "QGCNetworkHelper_8h.html#a8fac796134e228f1f97a04c2825ff26c", null ],
     [ "looksLikeJson", "QGCNetworkHelper_8h.html#a179a9432bf8e698e24c2400017363886", null ],
     [ "normalizeUrl", "QGCNetworkHelper_8h.html#ab78c9b1679f89319797e78196c24a545", null ],

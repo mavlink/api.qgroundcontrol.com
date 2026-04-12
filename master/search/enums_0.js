@@ -1,7 +1,7 @@
 var searchData=
 [
   ['acktype_5ft_0',['AckType_t',['../classPlanManager.html#ac9788e66f7685990ada4a63a20d9bd66',1,'PlanManager']]],
-  ['altmode_1',['AltMode',['../classQGroundControlQmlGlobal.html#a4973ced7243e58c97cae4d51fc50b097',1,'QGroundControlQmlGlobal']]],
+  ['altitudeframe_1',['AltitudeFrame',['../classQGroundControlQmlGlobal.html#a4be6aceb2e1215809dc4277adaf9f5e3',1,'QGroundControlQmlGlobal']]],
   ['androidstoragestate_2',['AndroidStorageState',['../namespaceSDLPlatform.html#aec61a1bb4831d2d46a4c9fecb37fe1fd',1,'SDLPlatform']]],
   ['appmode_3',['AppMode',['../namespaceQGCCommandLineParser.html#aa014bff8744784249bd0f779ebb0decc',1,'QGCCommandLineParser']]],
   ['areaunits_4',['AreaUnits',['../classUnitsSettings.html#aca83aeb9f913ebabedfa6c496d060b7a',1,'UnitsSettings']]],

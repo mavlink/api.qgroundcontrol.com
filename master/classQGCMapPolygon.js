@@ -18,9 +18,11 @@ var classQGCMapPolygon =
     [ "coordinateList", "classQGCMapPolygon.html#a63145b618e4931f9646c7161481d0267", null ],
     [ "count", "classQGCMapPolygon.html#acb35edd44563fdc38d96f120ed3f2574", null ],
     [ "countChanged", "classQGCMapPolygon.html#ac9fd99c411590f0f4cc05ced87a34c14", null ],
-    [ "countChanged", "classQGCMapPolygon.html#aebd3f9ffb5303065f303b50f4d81630f", null ],
+    [ "countChanged", "classQGCMapPolygon.html#a8fc9a878d9d4d7482c637045d4c4b095", null ],
     [ "dirty", "classQGCMapPolygon.html#a7cfb8c61ad2e020004f6b65e8cb12046", null ],
     [ "dirtyChanged", "classQGCMapPolygon.html#a1773cd6ee3477c885adbe4b2dea714d1", null ],
+    [ "dragCenterChanged", "classQGCMapPolygon.html#aa22241f66e8fc6e68c45782df247b23f", null ],
+    [ "dragPathChanged", "classQGCMapPolygon.html#a65575d82760723f57337607d45eefb8b", null ],
     [ "empty", "classQGCMapPolygon.html#acd6ee0bf7aed346cda5eab59fa8702f7", null ],
     [ "endReset", "classQGCMapPolygon.html#aada30433a5abfa6732b2e16a490da7e5", null ],
     [ "interactive", "classQGCMapPolygon.html#aab4ad161deea28f72784a15d9c2dfcfe", null ],
@@ -51,6 +53,7 @@ var classQGCMapPolygon =
     [ "setPath", "classQGCMapPolygon.html#a6830d055d549d4d150f864a9e2320b2b", null ],
     [ "setShowAltColor", "classQGCMapPolygon.html#ac2fd570860241f03fadc14d86691c6dc", null ],
     [ "setTraceMode", "classQGCMapPolygon.html#a5e4e1a46b9a731c967586a7bb2e1ae48", null ],
+    [ "setVertexDrag", "classQGCMapPolygon.html#a6499b71d569e11338ef1407c8e7d9af7", null ],
     [ "showAltColor", "classQGCMapPolygon.html#a7ba262dd65a974a4c16b82bc06a6dcf9", null ],
     [ "showAltColorChanged", "classQGCMapPolygon.html#a9db592fa1328afc898666c7c90899894", null ],
     [ "splitPolygonSegment", "classQGCMapPolygon.html#a4117c3fc42fe8492aa00a6e841c62aea", null ],
@@ -58,5 +61,7 @@ var classQGCMapPolygon =
     [ "traceModeChanged", "classQGCMapPolygon.html#a79e7bf4caf9c127280a9efca5a53d819", null ],
     [ "verifyClockwiseWinding", "classQGCMapPolygon.html#aa62302f14e1dadd437710bf728d38f67", null ],
     [ "vertexCoordinate", "classQGCMapPolygon.html#a828ad14f235a1858221fe8582c9b0a33", null ],
+    [ "vertexDrag", "classQGCMapPolygon.html#ac5e09b4ffedff6188f98d131f476e5e5", null ],
+    [ "vertexDragChanged", "classQGCMapPolygon.html#a519028f219253563f04240b45771e9df", null ],
     [ "jsonPolygonKey", "classQGCMapPolygon.html#ab803a6791cc1526ca183b7214dc30f2b", null ]
 ];

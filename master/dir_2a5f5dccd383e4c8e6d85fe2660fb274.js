@@ -12,6 +12,8 @@ var dir_2a5f5dccd383e4c8e6d85fe2660fb274 =
     [ "MotorComponent.cc", "MotorComponent_8cc.html", null ],
     [ "MotorComponent.h", "MotorComponent_8h.html", "MotorComponent_8h" ],
     [ "MotorComponent.qml", "MotorComponent_8qml.html", null ],
+    [ "PowerModulePresetController.cc", "PowerModulePresetController_8cc.html", null ],
+    [ "PowerModulePresetController.h", "PowerModulePresetController_8h.html", "PowerModulePresetController_8h" ],
     [ "RadioComponent.qml", "RadioComponent_8qml.html", null ],
     [ "RadioComponentController.cc", "RadioComponentController_8cc.html", null ],
     [ "RadioComponentController.h", "RadioComponentController_8h.html", "RadioComponentController_8h" ],

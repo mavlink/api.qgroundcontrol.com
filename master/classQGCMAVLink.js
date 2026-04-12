@@ -1,7 +1,5 @@
 var classQGCMAVLink =
 [
-    [ "FirmwareClass_t", "classQGCMAVLink.html#a513678cfcf71f7b2a863ab05cf45980d", null ],
-    [ "VehicleClass_t", "classQGCMAVLink.html#a816459dd286a5fbb93b19eb9799dd04e", null ],
     [ "CalibrationType", "classQGCMAVLink.html#a4fb1a0d739be2a481e5143ee029ea2e5", [
       [ "CalibrationNone", "classQGCMAVLink.html#a4fb1a0d739be2a481e5143ee029ea2e5a97a4f4039c7e65c31013f45bbcc0c44b", null ],
       [ "CalibrationRadio", "classQGCMAVLink.html#a4fb1a0d739be2a481e5143ee029ea2e5af8e1d0c26e02f65890ca31195c805883", null ],
@@ -94,7 +92,7 @@ var classQGCMAVLink =
     [ "isValidChannel", "classQGCMAVLink.html#a35b0a34eb698cc4cffe2f57a413fd49d", null ],
     [ "isValidChannel", "classQGCMAVLink.html#a89caee72b5ae75d3d0f9b110ba38dda9", null ],
     [ "isVTOL", "classQGCMAVLink.html#a66b8af15ba61d2891e5cf6ba81b3800c", null ],
-    [ "MAVPACKED", "classQGCMAVLink.html#aecf9f95f19e3e8ea7c23a2c4a6ff12c0", null ],
+    [ "MAVPACKED", "classQGCMAVLink.html#aed1c235d35aeabcb416e21e3b77a38a5", null ],
     [ "mavResultToString", "classQGCMAVLink.html#a50d72d7046cfa93d7d2b82121c45364f", null ],
     [ "mavResultToString", "classQGCMAVLink.html#ab729e57122b7056f3237b64a96fefe5d", null ],
     [ "mavSysStatusSensorToString", "classQGCMAVLink.html#a94b2447454b0a7321f46dd4d70da03bf", null ],
@@ -109,10 +107,8 @@ var classQGCMAVLink =
     [ "FirmwareClassGeneric", "classQGCMAVLink.html#a89c10d75941dd52e08a3413d2574520d", null ],
     [ "FirmwareClassPX4", "classQGCMAVLink.html#a6dcb8d1e431adad17c51470f0ee96897", null ],
     [ "mavlinkCompIdHash", "classQGCMAVLink.html#aa58e05a149424ebb64d72419622be332", null ],
-    [ "maxRcChannels", "classQGCMAVLink.html#a322c1b2c1ddf37fae3a34d1cdfc07d49", null ],
     [ "VehicleClassAirship", "classQGCMAVLink.html#a801a5009ec0c4e50247e85a3ea59282d", null ],
     [ "VehicleClassFixedWing", "classQGCMAVLink.html#a2ed981bc131bf66df339c0bdb4d7cbb3", null ],
-    [ "VehicleClassGeneric", "classQGCMAVLink.html#afc6ba6f36125e377b74c5add8bf56bc4", null ],
     [ "VehicleClassMultiRotor", "classQGCMAVLink.html#a30967bba68a3e4c947df8f8381ea6690", null ],
     [ "VehicleClassRoverBoat", "classQGCMAVLink.html#aa5983f8e34da8a6cfa074129dd357bb8", null ],
     [ "VehicleClassSpacecraft", "classQGCMAVLink.html#ab3c67ff37bca0ddf3815df0571ad2978", null ],

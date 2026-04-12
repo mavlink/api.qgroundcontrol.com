@@ -266,22 +266,21 @@ var namespaces_dup =
         [ "ForceVideoDecoderVulkan", "namespaceGStreamer.html#aa1745ec8f9ef63ada08418c5b045ca74a50efaf0c1917c70a080c6e0cc01f8439", null ],
         [ "ForceVideoDecoderHardware", "namespaceGStreamer.html#aa1745ec8f9ef63ada08418c5b045ca74afa61249faa3fbcfef834969ef2b7337a", null ]
       ] ],
-      [ "_changeFeatureRank", "namespaceGStreamer.html#a11545fed340adee6d32e2723d17b384d", null ],
-      [ "_logDecoderRanks", "namespaceGStreamer.html#ab750c8e01dbefab6d57d86f480a32766", null ],
-      [ "_logPlugin", "namespaceGStreamer.html#afb3f57843791b7b0d6cdac603b68497f", null ],
-      [ "_lowerSoftwareDecoderRanks", "namespaceGStreamer.html#a36600fc2900f3a375dde4dff4806b5a7", null ],
-      [ "_prioritizeByHardwareClass", "namespaceGStreamer.html#ac2820ca4bb66a80bc45a0a7e37ddd853", null ],
-      [ "_qtGstLog", "namespaceGStreamer.html#a93e4115fcb2a3c69593788d9afdba8db", null ],
-      [ "_registerPlugins", "namespaceGStreamer.html#aef1a2b3496480e837bd9a4ac087a1c46", null ],
-      [ "_setCodecPriorities", "namespaceGStreamer.html#a4f7fda1ef87f662dc4b7a827de976b00", null ],
-      [ "_setGstEnvVars", "namespaceGStreamer.html#a9904c0d66b2015e6fc577df4cdd351c8", null ],
-      [ "_verifyPlugins", "namespaceGStreamer.html#a74d30b54edbc7763f091bff0b3390e3d", null ],
+      [ "completeInit", "namespaceGStreamer.html#a71ff21ae8d70082b4d3da0e5e04e9659", null ],
       [ "createVideoReceiver", "namespaceGStreamer.html#a36d3ccf699a6b03bd580a791b0008d16", null ],
       [ "createVideoSink", "namespaceGStreamer.html#a707b7c08d1008e6a9c8b3b675dc17fe4", null ],
+      [ "didExternalPluginLoaderFail", "namespaceGStreamer.html#a63b9e9022c6e0b9bb4fe9b2ed2e5f44b", null ],
       [ "initialize", "namespaceGStreamer.html#aaeb4e5fb3ccc3013d331b0fbdc2d29f3", null ],
-      [ "is_hardware_decoder_factory", "namespaceGStreamer.html#a8a342b6c153606fe885ee190ac5493b1", null ],
-      [ "is_valid_rtsp_uri", "namespaceGStreamer.html#a784b0de853c19761c1fd9a1e8d82959b", null ],
-      [ "releaseVideoSink", "namespaceGStreamer.html#a668a7521fce6db761dd0f6987f05c51b", null ]
+      [ "isHardwareDecoderFactory", "namespaceGStreamer.html#aa78f2e5ccb025d8f073ac4ec3e223816", null ],
+      [ "isValidRtspUri", "namespaceGStreamer.html#ad95cc749b99a8ea8b73c1697cd0df915", null ],
+      [ "prepareEnvironment", "namespaceGStreamer.html#ab4da15ecef7d5ae8adc8084d3ffbf40c", null ],
+      [ "qtGstLog", "namespaceGStreamer.html#a3624a1b2d758c7d37e36343300e0727d", null ],
+      [ "redirectGLibLogging", "namespaceGStreamer.html#a8c63be6fc9a1c48d3d5b719dbc0b5c92", null ],
+      [ "releaseVideoSink", "namespaceGStreamer.html#a668a7521fce6db761dd0f6987f05c51b", null ],
+      [ "resetExternalPluginLoaderFailure", "namespaceGStreamer.html#abb2a908d58d10a16d717dd79df43385d", null ],
+      [ "setCodecPriorities", "namespaceGStreamer.html#a8fa5efb3bb1e31531b89b895c5970071", null ],
+      [ "setDebugLevel", "namespaceGStreamer.html#a427dbea4be97a87f50ad05516aaf1b78", null ],
+      [ "setupAppleSinkAdapter", "namespaceGStreamer.html#aad40da762987097c50c3f44801986b20", null ]
     ] ],
     [ "JsonHelper", "namespaceJsonHelper.html", "namespaceJsonHelper" ],
     [ "JsonParsing", "namespaceJsonParsing.html", [
@@ -303,12 +302,39 @@ var namespaces_dup =
       [ "loadPolylinesFromFile", "namespaceKMLHelper.html#aeb8e1dcb2a1816a6bbe3af78df00fad5", null ],
       [ "_errorPrefix", "namespaceKMLHelper.html#a409e4efd8220c372a3b0498d440b7c6b", null ]
     ] ],
+    [ "LogEntryForeign", "namespaceLogEntryForeign.html", null ],
+    [ "LogFormatter", "namespaceLogFormatter.html", [
+      [ "Format", "namespaceLogFormatter.html#abdafeb38e2d42c52b1ff8e969cb1e847", [
+        [ "PlainText", "namespaceLogFormatter.html#abdafeb38e2d42c52b1ff8e969cb1e847aeace11e0588c37e46dc5dbd137cac306", null ],
+        [ "JSON", "namespaceLogFormatter.html#abdafeb38e2d42c52b1ff8e969cb1e847afc93a88355115929043e0fceef87e84a", null ],
+        [ "CSV", "namespaceLogFormatter.html#abdafeb38e2d42c52b1ff8e969cb1e847a26483e5d053464e852eb9553e54c79a1", null ],
+        [ "JSONLines", "namespaceLogFormatter.html#abdafeb38e2d42c52b1ff8e969cb1e847aaa0e9e9483ae2d1cf2747f300948962b", null ]
+      ] ],
+      [ "JsonSchema", "namespaceLogFormatter.html#abae3f69ed35dd115266049771b78088e", [
+        [ "ExportSchema", "namespaceLogFormatter.html#abae3f69ed35dd115266049771b78088eab564d0f16a68fa7fd301fb2feea6a966", null ],
+        [ "RemoteCompactSchema", "namespaceLogFormatter.html#abae3f69ed35dd115266049771b78088eaef7eacd85a835ae0289ecdd10d6ab1b7", null ]
+      ] ],
+      [ "csvHeader", "namespaceLogFormatter.html#ab359cfa448b1a2c7aa9db1ff0d4ef014", null ],
+      [ "entryToJson", "namespaceLogFormatter.html#a59235e94f5bfb791f9c3dbb20f5af3d8", null ],
+      [ "escapeCsv", "namespaceLogFormatter.html#ae1d803224dd601d1bc94512837b841b4", null ],
+      [ "format", "namespaceLogFormatter.html#a8ee6aabd40509c19c84a3cad40dca45e", null ],
+      [ "formatAsCsv", "namespaceLogFormatter.html#a6c0af236bc2ec0e81daf09670653fca2", null ],
+      [ "formatAsJson", "namespaceLogFormatter.html#a721fef69bf9b6ad7ee807cc7bc1e17e5", null ],
+      [ "formatAsJsonLines", "namespaceLogFormatter.html#a909029ba7525f93db09803dddb7b6aa0", null ],
+      [ "formatAsText", "namespaceLogFormatter.html#a2d8222d1c76628705d5ebb2ac693a266", null ],
+      [ "formatCsvRow", "namespaceLogFormatter.html#a63804fe79a1917deacf907f61f8ede05", null ]
+    ] ],
     [ "MAVLinkSigning", "namespaceMAVLinkSigning.html", [
       [ "checkSigningLinkId", "namespaceMAVLinkSigning.html#a17982f26dbf56e3009de39218e395a6a", null ],
-      [ "createSetupSigning", "namespaceMAVLinkSigning.html#a8757ec956f0d0f6ac012152f1ade21e1", null ],
+      [ "createDisableSigning", "namespaceMAVLinkSigning.html#a4912ca53258fe3aa85756070e59d3352", null ],
+      [ "createSetupSigning", "namespaceMAVLinkSigning.html#a8f553ad7fd7338adfe3e9725af8e43bd", null ],
       [ "initSigning", "namespaceMAVLinkSigning.html#af760bc3adb7d52846dc86ba8173be5f5", null ],
-      [ "insecureConnectionAccceptUnsignedCallback", "namespaceMAVLinkSigning.html#a3d2afbc55fcb47fef5ce2172e26d77c5", null ],
-      [ "secureConnectionAccceptUnsignedCallback", "namespaceMAVLinkSigning.html#afa13db9b4391f5094b4a638d32eb6791", null ]
+      [ "insecureConnectionAcceptUnsignedCallback", "namespaceMAVLinkSigning.html#aee6a741375606660e530838b65d979b5", null ],
+      [ "isMessageSigned", "namespaceMAVLinkSigning.html#aab0248df228a43ec97763e46c04406fa", null ],
+      [ "isSigningEnabled", "namespaceMAVLinkSigning.html#a243c244b66fa64dee20ccd17e5ba6c20", null ],
+      [ "secureConnectionAcceptUnsignedCallback", "namespaceMAVLinkSigning.html#a9e6d7dec3bfa8e9bdd9509974b26627d", null ],
+      [ "tryDetectKey", "namespaceMAVLinkSigning.html#a6f318e0d0e780a5918d47502e6e26116", null ],
+      [ "verifySignature", "namespaceMAVLinkSigning.html#a6b275f849a7ea6af77ba7a9e4e1e60a9", null ]
     ] ],
     [ "Mixer", "namespaceMixer.html", "namespaceMixer" ],
     [ "Platform", "namespacePlatform.html", [
@@ -385,6 +411,7 @@ var namespaces_dup =
     ] ],
     [ "QGClibarchive", "namespaceQGClibarchive.html", "namespaceQGClibarchive" ],
     [ "QGCNetworkHelper", "namespaceQGCNetworkHelper.html", "namespaceQGCNetworkHelper" ],
+    [ "QGCSqlHelper", "namespaceQGCSqlHelper.html", "namespaceQGCSqlHelper" ],
     [ "SDLJoystick", "namespaceSDLJoystick.html", "namespaceSDLJoystick" ],
     [ "SDLPlatform", "namespaceSDLPlatform.html", [
       [ "AndroidStorageState", "namespaceSDLPlatform.html#aec61a1bb4831d2d46a4c9fecb37fe1fd", [

@@ -1,7 +1,7 @@
 var classAutotune =
 [
     [ "Autotune", "classAutotune.html#a7385373ee237fd4bb034387b4504db24", null ],
-    [ "ackHandler", "classAutotune.html#a2debe8b8947bd85cbec55f210d35cad4", null ],
+    [ "ackHandler", "classAutotune.html#a3d599f3b2c5e1e26a3c10a5339407531", null ],
     [ "autotuneChanged", "classAutotune.html#a8cfc2c7afcf41b3128c2b413edab3b12", null ],
     [ "autotuneChanged", "classAutotune.html#a400cf5acb00f77c49fdd1186a96588cd", null ],
     [ "autotuneInProgress", "classAutotune.html#a87c3a2f76274795e9eedbfbe3f23d554", null ],

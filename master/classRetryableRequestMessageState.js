@@ -1,12 +1,12 @@
 var classRetryableRequestMessageState =
 [
-    [ "FailureHandler", "classRetryableRequestMessageState.html#a085cb38aabde334309f11c4010985fcc", null ],
+    [ "FailureHandler", "classRetryableRequestMessageState.html#a5857dd103a142174ba5eb851a6ad5e87", null ],
     [ "MessageHandler", "classRetryableRequestMessageState.html#abb37aa5bfe9f09b5aee69f0329604a3b", null ],
     [ "SkipPredicate", "classRetryableRequestMessageState.html#a0d0235de4de432aeaaa11706295449c4", null ],
     [ "RetryableRequestMessageState", "classRetryableRequestMessageState.html#a5190a6e4a7262386f2fd1d1520bc9a81", null ],
     [ "connectWaitSignal", "classRetryableRequestMessageState.html#abcba80071ba05ff7b8054dc9a28a78fa", null ],
     [ "disconnectWaitSignal", "classRetryableRequestMessageState.html#a5eba4d7e0dc92e22ffad2a8b612cefff", null ],
-    [ "lastFailureCode", "classRetryableRequestMessageState.html#a54b38efd7b5127796e36e3514a1d470c", null ],
+    [ "lastFailureCode", "classRetryableRequestMessageState.html#af5a8f3bd6c11573c7525f62b2994be45", null ],
     [ "lastResult", "classRetryableRequestMessageState.html#ad784ed6d7c978d307df2238e1258d2c2", null ],
     [ "maxRetries", "classRetryableRequestMessageState.html#a05a624122fa8c052da2a58755d0bab70", null ],
     [ "messageReceived", "classRetryableRequestMessageState.html#a26c30fdcf9ed25edb08320cc23e6329f", null ],

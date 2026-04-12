@@ -42,6 +42,7 @@ var classQGCPalette =
     [ "mapWidgetBorderDarkColors", "classQGCPalette.html#afd0b80324ba2e7065cb5d178d72bc548", null ],
     [ "mapWidgetBorderLightColors", "classQGCPalette.html#a665f5a0289ca511a1f686831ab63c5eb", null ],
     [ "missionItemEditorColors", "classQGCPalette.html#a0aa46135e22a866b599e5826bbdc70f9", null ],
+    [ "modifiedParamValueColors", "classQGCPalette.html#a5fd4d48ade1807b60a09ff3a261cefe7", null ],
     [ "paletteChanged", "classQGCPalette.html#a8048fea600069caaecdaed2a532b09d5", null ],
     [ "paletteChanged", "classQGCPalette.html#aefea3983a5492d96e0540e6dd67323ea", null ],
     [ "paletteChanged", "classQGCPalette.html#a1a512cdeeb071155d2dad8255adc76fb", null ],
@@ -70,6 +71,7 @@ var classQGCPalette =
     [ "paletteChanged", "classQGCPalette.html#a6aa8a26f3d0de814b84f4443e110a5b5", null ],
     [ "paletteChanged", "classQGCPalette.html#a75249905d58dd02dbde4f60947477046", null ],
     [ "paletteChanged", "classQGCPalette.html#a50f320bf96bfbd1974124c7c460200e2", null ],
+    [ "paletteChanged", "classQGCPalette.html#a915ee08386cb0b50728ed2cdfad54361", null ],
     [ "paletteChanged", "classQGCPalette.html#a6d047b4137c9c2211f165777df25f22b", null ],
     [ "paletteChanged", "classQGCPalette.html#ab910ecd0a864224be7fece19a5184719", null ],
     [ "paletteChanged", "classQGCPalette.html#a1bce8ef1bfe52a940d4cdf0cb0b18c15", null ],
@@ -90,7 +92,6 @@ var classQGCPalette =
     [ "paletteChanged", "classQGCPalette.html#a551875145ccca5fc5b09521c963ba1bb", null ],
     [ "paletteChanged", "classQGCPalette.html#a55ed1880ba975a97def76ef4a413c384", null ],
     [ "paletteChanged", "classQGCPalette.html#aba4ded107e34d0b022287e5fb2b27b71", null ],
-    [ "paletteChanged", "classQGCPalette.html#ab27cc29df52c6b3e525d2befd55d7a33", null ],
     [ "photoCaptureButtonColorColors", "classQGCPalette.html#ac589366804ebd811c48d90d546230c92", null ],
     [ "primaryButtonColors", "classQGCPalette.html#a8516fdaca13e7bf48634be3d94040863", null ],
     [ "primaryButtonTextColors", "classQGCPalette.html#ac11412850f20e907c5078dd3927aeec6", null ],
@@ -122,6 +123,7 @@ var classQGCPalette =
     [ "setMapWidgetBorderDark", "classQGCPalette.html#a32050b9de7ce154db9a56ac2d51b8937", null ],
     [ "setMapWidgetBorderLight", "classQGCPalette.html#aaf27a22264b21f17bd6db166a84a41f1", null ],
     [ "setMissionItemEditor", "classQGCPalette.html#afaa122fa93adf12ecca6b21cd264217a", null ],
+    [ "setModifiedParamValue", "classQGCPalette.html#a963e4167a441b7b484f71d3fb29f2da3", null ],
     [ "setPhotoCaptureButtonColor", "classQGCPalette.html#a0bc983a9c6cb0411e1be602aaa5f9537", null ],
     [ "setPrimaryButton", "classQGCPalette.html#a8788c2a7e7bc8a794990ffbdaf73965a", null ],
     [ "setPrimaryButtonText", "classQGCPalette.html#a3caabb2b579e7a23fe9700abc13fa870", null ],
@@ -143,7 +145,6 @@ var classQGCPalette =
     [ "setWindowShadeDark", "classQGCPalette.html#a582357fd784517aee889a293397663c1", null ],
     [ "setWindowShadeLight", "classQGCPalette.html#a539d3c8c42814a908bb9a23e83970097", null ],
     [ "setWindowTransparent", "classQGCPalette.html#a70122af4fb56e12ad3eca1a92e81abc0", null ],
-    [ "setWindowTransparentText", "classQGCPalette.html#a6146c5eb82153154eefa4e5a9362f0a9", null ],
     [ "statusFailedTextColors", "classQGCPalette.html#a33e64599cd2f040e3079dc34d9132b13", null ],
     [ "statusPassedTextColors", "classQGCPalette.html#a42b3e137cbfafe8ec3f8dad1bb4b8d77", null ],
     [ "statusPendingTextColors", "classQGCPalette.html#ac9f85aea1248ca075bee8ce2a415c8f5", null ],
@@ -161,6 +162,5 @@ var classQGCPalette =
     [ "windowShadeColors", "classQGCPalette.html#aca6d3e245408baa36c6b2052b862d33f", null ],
     [ "windowShadeDarkColors", "classQGCPalette.html#ae5a9199fdd768e4063ec57ea96a8db4e", null ],
     [ "windowShadeLightColors", "classQGCPalette.html#ac7329de1176baefa88383b9c006ae208", null ],
-    [ "windowTransparentColors", "classQGCPalette.html#a8ac80c9b7480cdc3880b6970c210328e", null ],
-    [ "windowTransparentTextColors", "classQGCPalette.html#a50e1d6db7cad9960f48f3b5c8f315174", null ]
+    [ "windowTransparentColors", "classQGCPalette.html#a8ac80c9b7480cdc3880b6970c210328e", null ]
 ];

@@ -103,42 +103,49 @@ $(document).ready(function(){initNavTree('DeviceInfo_8cc_source.html',''); initR
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtCore/QApplicationStatic&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="DeviceInfo_8cc.html#aa2bf2282333c8e78832064ebae12ab95">    6</a></span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(QGCDeviceInfoLog, <span class="stringliteral">&quot;Utilities.QGCDeviceInfo&quot;</span>)</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(QGCDeviceInfoLog, <span class="stringliteral">&quot;Utilities.QGCDeviceInfo&quot;</span>)</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>namespace <a class="code hl_namespace" href="namespaceQGCDeviceInfo.html">QGCDeviceInfo</a></div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespaceQGCDeviceInfo.html">    8</a></span>namespace <a class="code hl_namespace" href="namespaceQGCDeviceInfo.html">QGCDeviceInfo</a></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><a class="code hl_function" href="ADSBVehicleManager_8cc.html#abf12ab32eab02bded3bfbb919345e8ad">Q_APPLICATION_STATIC</a>(QGCAmbientTemperature, s_ambientTemperature);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespaceQGCDeviceInfo.html#a7a3cac80f5e70813320d43be6fcb3cff">   13</a></span><a class="code hl_function" href="ADSBVehicleManager_8cc.html#abf12ab32eab02bded3bfbb919345e8ad">Q_APPLICATION_STATIC</a>(<a class="code hl_class" href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html">QGCAmbientTemperature</a>, s_ambientTemperature);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>QGCAmbientTemperature* QGCAmbientTemperature::instance()</div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html#abf968578d0143a2fa5058fd58a468a32">   15</a></span><a class="code hl_class" href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html">QGCAmbientTemperature</a>* QGCAmbientTemperature::instance()</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">return</span> s_ambientTemperature();</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>QGCAmbientTemperature::QGCAmbientTemperature(QObject* parent)</div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html#abc4ef0acfe1aae74c1c5ff831ca09c6e">   20</a></span>QGCAmbientTemperature::QGCAmbientTemperature(QObject* parent)</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    : QObject(parent)</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    , _ambientTemperature(<span class="keyword">new</span> QAmbientTemperatureSensor(<span class="keyword">this</span>))</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    , _ambientTemperatureFilter(std::make_shared&lt;QGCAmbientTemperatureFilter&gt;())</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    , _ambientTemperature(new QAmbientTemperatureSensor(this))</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    , _ambientTemperatureFilter(std::make_shared&lt;<a class="code hl_class" href="classQGCDeviceInfo_1_1QGCAmbientTemperatureFilter.html">QGCAmbientTemperatureFilter</a>&gt;())</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    connect(_ambientTemperature, &amp;QAmbientTemperatureSensor::sensorError, <span class="keyword">this</span>, [](<span class="keywordtype">int</span> <a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>) {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        qCWarning(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;QAmbientTemperature error:&quot;</span> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    });</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (!init()) {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html#ac1d0ed719c179a17dfe8b4ea201a929f">init</a>()) {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        qCWarning(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;Error Initializing Ambient Temperature Sensor&quot;</span>;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    qCDebug(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>QGCAmbientTemperature::~QGCAmbientTemperature()</div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html#aec59e16bee305049bcf065c129eea908">   36</a></span><a class="code hl_function" href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html#aec59e16bee305049bcf065c129eea908">QGCAmbientTemperature::~QGCAmbientTemperature</a>()</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    qCDebug(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">bool</span> QGCAmbientTemperature::init()</div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html#ac1d0ed719c179a17dfe8b4ea201a929f">   41</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html#ac1d0ed719c179a17dfe8b4ea201a929f">QGCAmbientTemperature::init</a>()</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    _ambientTemperature-&gt;addFilter(_ambientTemperatureFilter.get());</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
@@ -180,7 +187,7 @@ $(document).ready(function(){initNavTree('DeviceInfo_8cc_source.html',''); initR
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        _temperatureC = reading-&gt;temperature();</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        emit temperatureUpdated(_temperatureC);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        emit <a class="code hl_signal" href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html#a6941db97bdadf3a90209ae2aeaa710cf">temperatureUpdated</a>(_temperatureC);</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    });</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="comment">// _ambientTemperature-&gt;setActive(true);</span></div>
@@ -192,26 +199,34 @@ $(document).ready(function(){initNavTree('DeviceInfo_8cc_source.html',''); initR
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>}</div>
+</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keywordtype">void</span> QGCAmbientTemperature::quit()</div>
+<div class="foldopen" id="foldopen00096" data-start="{" data-end="}">
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html#a342a631eb6e9aebd1c0115ce59c5cba8">   96</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html#a342a631eb6e9aebd1c0115ce59c5cba8">QGCAmbientTemperature::quit</a>()</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>{</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">// _ambientTemperature-&gt;setActive(false);</span></div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    _ambientTemperature-&gt;stop();</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    _ambientTemperature-&gt;disconnect(_readingChangedConnection);</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
+</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>QGCAmbientTemperatureFilter::QGCAmbientTemperatureFilter()</div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCAmbientTemperatureFilter.html#a403d8aee272901dd6eaef2d092f0086f">  103</a></span><a class="code hl_function" href="classQGCDeviceInfo_1_1QGCAmbientTemperatureFilter.html#a403d8aee272901dd6eaef2d092f0086f">QGCAmbientTemperatureFilter::QGCAmbientTemperatureFilter</a>()</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    : QAmbientTemperatureFilter()</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>{</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    qCDebug(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>QGCAmbientTemperatureFilter::~QGCAmbientTemperatureFilter()</div>
+<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCAmbientTemperatureFilter.html#a5b555b09c98b83a48c531004bd6caf83">  109</a></span><a class="code hl_function" href="classQGCDeviceInfo_1_1QGCAmbientTemperatureFilter.html#a5b555b09c98b83a48c531004bd6caf83">QGCAmbientTemperatureFilter::~QGCAmbientTemperatureFilter</a>()</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>{</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    qCDebug(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
+</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keywordtype">bool</span> QGCAmbientTemperatureFilter::filter(QAmbientTemperatureReading *reading)</div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCAmbientTemperatureFilter.html#ad4e71ae1f0f19098dd4b03f7f538fb2e">  114</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCDeviceInfo_1_1QGCAmbientTemperatureFilter.html#ad4e71ae1f0f19098dd4b03f7f538fb2e">QGCAmbientTemperatureFilter::filter</a>(QAmbientTemperatureReading *reading)</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>{</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">if</span> (!reading) {</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -220,37 +235,45 @@ $(document).ready(function(){initNavTree('DeviceInfo_8cc_source.html',''); initR
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keyword">const</span> qreal temperature = reading-&gt;temperature();</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">return</span> ((temperature &gt;= s_minValidTemperatureC) &amp;&amp; (temperature &lt;= s_maxValidTemperatureC));</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>}</div>
+</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><a class="code hl_function" href="ADSBVehicleManager_8cc.html#abf12ab32eab02bded3bfbb919345e8ad">Q_APPLICATION_STATIC</a>(QGCPressure, s_pressure);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="namespaceQGCDeviceInfo.html#a0fcbd7a0220184edde108a7e6ffe1e27">  126</a></span><a class="code hl_function" href="namespaceQGCDeviceInfo.html#a7a3cac80f5e70813320d43be6fcb3cff">Q_APPLICATION_STATIC</a>(<a class="code hl_class" href="classQGCDeviceInfo_1_1QGCPressure.html">QGCPressure</a>, s_pressure);</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>QGCPressure* QGCPressure::instance()</div>
+<div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCPressure.html#ad92a43081ae9e9edde0101b33c3b5cc7">  128</a></span><a class="code hl_class" href="classQGCDeviceInfo_1_1QGCPressure.html">QGCPressure</a>* <a class="code hl_function" href="classQGCDeviceInfo_1_1QGCPressure.html#ad92a43081ae9e9edde0101b33c3b5cc7">QGCPressure::instance</a>()</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>{</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">return</span> s_pressure();</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
+</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>QGCPressure::QGCPressure(QObject* parent)</div>
+<div class="foldopen" id="foldopen00133" data-start="{" data-end="}">
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCPressure.html#a373ab577d599c72c676f3970037521b8">  133</a></span><a class="code hl_function" href="classQGCDeviceInfo_1_1QGCPressure.html#a373ab577d599c72c676f3970037521b8">QGCPressure::QGCPressure</a>(QObject* parent)</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    : QObject(parent)</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    , _pressure(<span class="keyword">new</span> QPressureSensor(<span class="keyword">this</span>))</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    , _pressureFilter(std::make_shared&lt;QGCPressureFilter&gt;())</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    , _pressure(new QPressureSensor(this))</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    , _pressureFilter(std::make_shared&lt;<a class="code hl_class" href="classQGCDeviceInfo_1_1QGCPressureFilter.html">QGCPressureFilter</a>&gt;())</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>{</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    connect(_pressure, &amp;QPressureSensor::sensorError, <span class="keyword">this</span>, [](<span class="keywordtype">int</span> <a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>) {</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        qCWarning(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;QPressure error:&quot;</span> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>;</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    });</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">if</span> (!init()) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classQGCDeviceInfo_1_1QGCPressure.html#adffa6130e5ac3eece7ec893ec75a412e">init</a>()) {</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        qCWarning(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;Error Initializing Pressure Sensor&quot;</span>;</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    qCDebug(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>}</div>
+</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>QGCPressure::~QGCPressure()</div>
+<div class="foldopen" id="foldopen00149" data-start="{" data-end="}">
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCPressure.html#aa9ad93efecdf324d6ff29106d7a4b8b4">  149</a></span><a class="code hl_function" href="classQGCDeviceInfo_1_1QGCPressure.html#aa9ad93efecdf324d6ff29106d7a4b8b4">QGCPressure::~QGCPressure</a>()</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>{</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    qCDebug(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
+</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keywordtype">bool</span> QGCPressure::init()</div>
+<div class="foldopen" id="foldopen00154" data-start="{" data-end="}">
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCPressure.html#adffa6130e5ac3eece7ec893ec75a412e">  154</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCDeviceInfo_1_1QGCPressure.html#adffa6130e5ac3eece7ec893ec75a412e">QGCPressure::init</a>()</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>{</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    _pressure-&gt;addFilter(_pressureFilter.get());</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
@@ -292,7 +315,7 @@ $(document).ready(function(){initNavTree('DeviceInfo_8cc_source.html',''); initR
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        _temperatureC = reading-&gt;temperature();</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        _pressurePa = reading-&gt;pressure();</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        emit pressureUpdated(_pressurePa, _temperatureC);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        emit <a class="code hl_signal" href="classQGCDeviceInfo_1_1QGCPressure.html#a5099a62ba7436df8e07863249792ccce">pressureUpdated</a>(_pressurePa, _temperatureC);</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    });</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="comment">// _pressure-&gt;setActive(true);</span></div>
@@ -304,26 +327,34 @@ $(document).ready(function(){initNavTree('DeviceInfo_8cc_source.html',''); initR
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>}</div>
+</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="keywordtype">void</span> QGCPressure::quit()</div>
+<div class="foldopen" id="foldopen00209" data-start="{" data-end="}">
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCPressure.html#aea0d0a8cb24d5306fb0396c9fc773150">  209</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCDeviceInfo_1_1QGCPressure.html#aea0d0a8cb24d5306fb0396c9fc773150">QGCPressure::quit</a>()</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>{</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="comment">// _pressure-&gt;setActive(false);</span></div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    _pressure-&gt;stop();</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    _pressure-&gt;disconnect(_readingChangedConnection);</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>}</div>
+</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>QGCPressureFilter::QGCPressureFilter()</div>
+<div class="foldopen" id="foldopen00216" data-start="{" data-end="}">
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCPressureFilter.html#a33526d71c70fe32f03ae293ab9bbbb63">  216</a></span><a class="code hl_function" href="classQGCDeviceInfo_1_1QGCPressureFilter.html#a33526d71c70fe32f03ae293ab9bbbb63">QGCPressureFilter::QGCPressureFilter</a>()</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    : QPressureFilter()</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>{</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    qCDebug(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>}</div>
+</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>QGCPressureFilter::~QGCPressureFilter()</div>
+<div class="foldopen" id="foldopen00222" data-start="{" data-end="}">
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCPressureFilter.html#a22b63007c4e10869f347a8a407fd49ce">  222</a></span><a class="code hl_function" href="classQGCDeviceInfo_1_1QGCPressureFilter.html#a22b63007c4e10869f347a8a407fd49ce">QGCPressureFilter::~QGCPressureFilter</a>()</div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>{</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    qCDebug(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>}</div>
+</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="keywordtype">bool</span> QGCPressureFilter::filter(QPressureReading *reading)</div>
+<div class="foldopen" id="foldopen00227" data-start="{" data-end="}">
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCPressureFilter.html#a1e017a7b1a75f8c4ebeafc0d65bab657">  227</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCDeviceInfo_1_1QGCPressureFilter.html#a1e017a7b1a75f8c4ebeafc0d65bab657">QGCPressureFilter::filter</a>(QPressureReading *reading)</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>{</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keywordflow">if</span> (!reading) {</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -341,19 +372,23 @@ $(document).ready(function(){initNavTree('DeviceInfo_8cc_source.html',''); initR
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>}</div>
+</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><a class="code hl_function" href="ADSBVehicleManager_8cc.html#abf12ab32eab02bded3bfbb919345e8ad">Q_APPLICATION_STATIC</a>(QGCCompass, s_compass);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="namespaceQGCDeviceInfo.html#a818ad69665a761e373cfe1e23409dbd1">  248</a></span><a class="code hl_function" href="namespaceQGCDeviceInfo.html#a7a3cac80f5e70813320d43be6fcb3cff">Q_APPLICATION_STATIC</a>(<a class="code hl_class" href="classQGCDeviceInfo_1_1QGCCompass.html">QGCCompass</a>, s_compass);</div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>QGCCompass* QGCCompass::instance()</div>
+<div class="foldopen" id="foldopen00250" data-start="{" data-end="}">
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCCompass.html#aeba676013c9f7c7bf7695568a3c8827b">  250</a></span><a class="code hl_class" href="classQGCDeviceInfo_1_1QGCCompass.html">QGCCompass</a>* <a class="code hl_function" href="classQGCDeviceInfo_1_1QGCCompass.html#aeba676013c9f7c7bf7695568a3c8827b">QGCCompass::instance</a>()</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>{</div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordflow">return</span> s_compass();</div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>}</div>
+</div>
 <div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>QGCCompass::QGCCompass(QObject* parent)</div>
+<div class="foldopen" id="foldopen00255" data-start="{" data-end="}">
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCCompass.html#aac223f999c99b578b563308014b0143b">  255</a></span><a class="code hl_function" href="classQGCDeviceInfo_1_1QGCCompass.html#aac223f999c99b578b563308014b0143b">QGCCompass::QGCCompass</a>(QObject* parent)</div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    : QObject(parent)</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    , _compass(<span class="keyword">new</span> QCompass(<span class="keyword">this</span>))</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    , _compassFilter(std::make_shared&lt;QGCCompassFilter&gt;())</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    , _compass(new QCompass(this))</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    , _compassFilter(std::make_shared&lt;<a class="code hl_class" href="classQGCDeviceInfo_1_1QGCCompassFilter.html">QGCCompassFilter</a>&gt;())</div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>{</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="comment">// qCDebug(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; this;</span></div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
@@ -361,17 +396,21 @@ $(document).ready(function(){initNavTree('DeviceInfo_8cc_source.html',''); initR
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        qCWarning(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;Compass error:&quot;</span> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>;</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    });</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="keywordflow">if</span> (!init()) {</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classQGCDeviceInfo_1_1QGCCompass.html#a2c45d0fa3695d4509d8b069f446efd2e">init</a>()) {</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        qCWarning(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;Error Initializing Compass Sensor&quot;</span>;</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    }</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>}</div>
+</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>QGCCompass::~QGCCompass()</div>
+<div class="foldopen" id="foldopen00271" data-start="{" data-end="}">
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCCompass.html#a1afdc3353d36ef15e5c9a087eebc4448">  271</a></span><a class="code hl_function" href="classQGCDeviceInfo_1_1QGCCompass.html#a1afdc3353d36ef15e5c9a087eebc4448">QGCCompass::~QGCCompass</a>()</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>{</div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="comment">// qCDebug(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; this;</span></div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>}</div>
+</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="keywordtype">bool</span> QGCCompass::init()</div>
+<div class="foldopen" id="foldopen00276" data-start="{" data-end="}">
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCCompass.html#a2c45d0fa3695d4509d8b069f446efd2e">  276</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCDeviceInfo_1_1QGCCompass.html#a2c45d0fa3695d4509d8b069f446efd2e">QGCCompass::init</a>()</div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>{</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    _compass-&gt;addFilter(_compassFilter.get());</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
@@ -414,13 +453,13 @@ $(document).ready(function(){initNavTree('DeviceInfo_8cc_source.html',''); initR
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        _calibrationLevel = reading-&gt;calibrationLevel();</div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        _azimuth = reading-&gt;azimuth();</div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        emit compassUpdated(_azimuth);</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        emit <a class="code hl_signal" href="classQGCDeviceInfo_1_1QGCCompass.html#ad571068eadf30b397f79098bd4fd39b0">compassUpdated</a>(_azimuth);</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        QGeoPositionInfo update;</div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        update.setAttribute(QGeoPositionInfo::Attribute::Direction, _azimuth);</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        update.setAttribute(QGeoPositionInfo::Attribute::DirectionAccuracy, _calibrationLevel);</div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        update.setTimestamp(QDateTime::currentDateTimeUtc());</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        emit positionUpdated(update);</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        emit <a class="code hl_signal" href="classQGCDeviceInfo_1_1QGCCompass.html#a2600514d5d8b6f06861e7a81f2943a85">positionUpdated</a>(update);</div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    });</div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    <span class="comment">// _compass-&gt;setActive(true);</span></div>
@@ -432,26 +471,34 @@ $(document).ready(function(){initNavTree('DeviceInfo_8cc_source.html',''); initR
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>}</div>
+</div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span><span class="keywordtype">void</span> QGCCompass::quit()</div>
+<div class="foldopen" id="foldopen00338" data-start="{" data-end="}">
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCCompass.html#af4ce312d2d485f4384204e5f7c3fba63">  338</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCDeviceInfo_1_1QGCCompass.html#af4ce312d2d485f4384204e5f7c3fba63">QGCCompass::quit</a>()</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>{</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    <span class="comment">// _compass-&gt;setActive(false);</span></div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    _compass-&gt;stop();</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    _compass-&gt;disconnect(_readingChangedConnection);</div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>}</div>
+</div>
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>QGCCompassFilter::QGCCompassFilter()</div>
+<div class="foldopen" id="foldopen00345" data-start="{" data-end="}">
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCCompassFilter.html#a343fccc2d2de2d7bf88564d8cff637e8">  345</a></span><a class="code hl_function" href="classQGCDeviceInfo_1_1QGCCompassFilter.html#a343fccc2d2de2d7bf88564d8cff637e8">QGCCompassFilter::QGCCompassFilter</a>()</div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>    : QCompassFilter()</div>
 <div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>{</div>
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>    qCDebug(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>}</div>
+</div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>QGCCompassFilter::~QGCCompassFilter()</div>
+<div class="foldopen" id="foldopen00351" data-start="{" data-end="}">
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCCompassFilter.html#a934275209ed99901d29f7832d8f949d5">  351</a></span><a class="code hl_function" href="classQGCDeviceInfo_1_1QGCCompassFilter.html#a934275209ed99901d29f7832d8f949d5">QGCCompassFilter::~QGCCompassFilter</a>()</div>
 <div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>{</div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    qCDebug(QGCDeviceInfoLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>}</div>
+</div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span><span class="keywordtype">bool</span> QGCCompassFilter::filter(QCompassReading *reading)</div>
+<div class="foldopen" id="foldopen00356" data-start="{" data-end="}">
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno"><a class="line" href="classQGCDeviceInfo_1_1QGCCompassFilter.html#aa67601776e04b798ab84ea2b1666e016">  356</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCDeviceInfo_1_1QGCCompassFilter.html#aa67601776e04b798ab84ea2b1666e016">QGCCompassFilter::filter</a>(QCompassReading *reading)</div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>{</div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    <span class="keywordflow">if</span> (!reading) {</div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -460,6 +507,7 @@ $(document).ready(function(){initNavTree('DeviceInfo_8cc_source.html',''); initR
 <div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    <span class="keyword">const</span> qreal calibration = reading-&gt;calibrationLevel();</div>
 <div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    <span class="keywordflow">return</span> (calibration &gt;= s_minCompassCalibrationLevel);</div>
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>}</div>
+</div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span> </div>
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>} <span class="comment">// namespace QGCDeviceInfo</span></div>
@@ -468,8 +516,41 @@ $(document).ready(function(){initNavTree('DeviceInfo_8cc_source.html',''); initR
 <div class="ttc" id="aDeviceInfo_8h_html"><div class="ttname"><a href="DeviceInfo_8h.html">DeviceInfo.h</a></div></div>
 <div class="ttc" id="aQGCCompression_8cc_html_a5e7e27258e59f4c4a80e5fb757024a2d"><div class="ttname"><a href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a></div><div class="ttdeci">Error error</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00112">QGCCompression.cc:112</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
-<div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00014">QGCLoggingCategory.h:14</a></div></div>
-<div class="ttc" id="anamespaceQGCDeviceInfo_html"><div class="ttname"><a href="namespaceQGCDeviceInfo.html">QGCDeviceInfo</a></div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8h_source.html#l00011">DeviceInfo.h:12</a></div></div>
+<div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00018">QGCLoggingCategory.h:18</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCAmbientTemperatureFilter_html"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCAmbientTemperatureFilter.html">QGCDeviceInfo::QGCAmbientTemperatureFilter</a></div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8h_source.html#l00016">DeviceInfo.h:17</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCAmbientTemperatureFilter_html_a403d8aee272901dd6eaef2d092f0086f"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCAmbientTemperatureFilter.html#a403d8aee272901dd6eaef2d092f0086f">QGCDeviceInfo::QGCAmbientTemperatureFilter::QGCAmbientTemperatureFilter</a></div><div class="ttdeci">QGCAmbientTemperatureFilter()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00103">DeviceInfo.cc:103</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCAmbientTemperatureFilter_html_a5b555b09c98b83a48c531004bd6caf83"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCAmbientTemperatureFilter.html#a5b555b09c98b83a48c531004bd6caf83">QGCDeviceInfo::QGCAmbientTemperatureFilter::~QGCAmbientTemperatureFilter</a></div><div class="ttdeci">~QGCAmbientTemperatureFilter()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00109">DeviceInfo.cc:109</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCAmbientTemperatureFilter_html_ad4e71ae1f0f19098dd4b03f7f538fb2e"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCAmbientTemperatureFilter.html#ad4e71ae1f0f19098dd4b03f7f538fb2e">QGCDeviceInfo::QGCAmbientTemperatureFilter::filter</a></div><div class="ttdeci">bool filter(QAmbientTemperatureReading *reading) final</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00114">DeviceInfo.cc:114</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCAmbientTemperature_html"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html">QGCDeviceInfo::QGCAmbientTemperature</a></div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8h_source.html#l00029">DeviceInfo.h:30</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCAmbientTemperature_html_a342a631eb6e9aebd1c0115ce59c5cba8"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html#a342a631eb6e9aebd1c0115ce59c5cba8">QGCDeviceInfo::QGCAmbientTemperature::quit</a></div><div class="ttdeci">void quit()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00096">DeviceInfo.cc:96</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCAmbientTemperature_html_a6941db97bdadf3a90209ae2aeaa710cf"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html#a6941db97bdadf3a90209ae2aeaa710cf">QGCDeviceInfo::QGCAmbientTemperature::temperatureUpdated</a></div><div class="ttdeci">void temperatureUpdated(qreal temperature)</div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCAmbientTemperature_html_ac1d0ed719c179a17dfe8b4ea201a929f"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html#ac1d0ed719c179a17dfe8b4ea201a929f">QGCDeviceInfo::QGCAmbientTemperature::init</a></div><div class="ttdeci">bool init()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00041">DeviceInfo.cc:41</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCAmbientTemperature_html_aec59e16bee305049bcf065c129eea908"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCAmbientTemperature.html#aec59e16bee305049bcf065c129eea908">QGCDeviceInfo::QGCAmbientTemperature::~QGCAmbientTemperature</a></div><div class="ttdeci">~QGCAmbientTemperature()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00036">DeviceInfo.cc:36</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCCompassFilter_html"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCCompassFilter.html">QGCDeviceInfo::QGCCompassFilter</a></div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8h_source.html#l00105">DeviceInfo.h:106</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCCompassFilter_html_a343fccc2d2de2d7bf88564d8cff637e8"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCCompassFilter.html#a343fccc2d2de2d7bf88564d8cff637e8">QGCDeviceInfo::QGCCompassFilter::QGCCompassFilter</a></div><div class="ttdeci">QGCCompassFilter()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00345">DeviceInfo.cc:345</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCCompassFilter_html_a934275209ed99901d29f7832d8f949d5"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCCompassFilter.html#a934275209ed99901d29f7832d8f949d5">QGCDeviceInfo::QGCCompassFilter::~QGCCompassFilter</a></div><div class="ttdeci">~QGCCompassFilter()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00351">DeviceInfo.cc:351</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCCompassFilter_html_aa67601776e04b798ab84ea2b1666e016"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCCompassFilter.html#aa67601776e04b798ab84ea2b1666e016">QGCDeviceInfo::QGCCompassFilter::filter</a></div><div class="ttdeci">bool filter(QCompassReading *reading) final</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00356">DeviceInfo.cc:356</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCCompass_html"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCCompass.html">QGCDeviceInfo::QGCCompass</a></div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8h_source.html#l00117">DeviceInfo.h:118</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCCompass_html_a1afdc3353d36ef15e5c9a087eebc4448"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCCompass.html#a1afdc3353d36ef15e5c9a087eebc4448">QGCDeviceInfo::QGCCompass::~QGCCompass</a></div><div class="ttdeci">~QGCCompass()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00271">DeviceInfo.cc:271</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCCompass_html_a2600514d5d8b6f06861e7a81f2943a85"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCCompass.html#a2600514d5d8b6f06861e7a81f2943a85">QGCDeviceInfo::QGCCompass::positionUpdated</a></div><div class="ttdeci">void positionUpdated(QGeoPositionInfo update)</div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCCompass_html_a2c45d0fa3695d4509d8b069f446efd2e"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCCompass.html#a2c45d0fa3695d4509d8b069f446efd2e">QGCDeviceInfo::QGCCompass::init</a></div><div class="ttdeci">bool init()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00276">DeviceInfo.cc:276</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCCompass_html_aac223f999c99b578b563308014b0143b"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCCompass.html#aac223f999c99b578b563308014b0143b">QGCDeviceInfo::QGCCompass::QGCCompass</a></div><div class="ttdeci">QGCCompass(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00255">DeviceInfo.cc:255</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCCompass_html_ad571068eadf30b397f79098bd4fd39b0"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCCompass.html#ad571068eadf30b397f79098bd4fd39b0">QGCDeviceInfo::QGCCompass::compassUpdated</a></div><div class="ttdeci">void compassUpdated(qreal azimuth)</div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCCompass_html_aeba676013c9f7c7bf7695568a3c8827b"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCCompass.html#aeba676013c9f7c7bf7695568a3c8827b">QGCDeviceInfo::QGCCompass::instance</a></div><div class="ttdeci">static QGCCompass * instance()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00250">DeviceInfo.cc:250</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCCompass_html_af4ce312d2d485f4384204e5f7c3fba63"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCCompass.html#af4ce312d2d485f4384204e5f7c3fba63">QGCDeviceInfo::QGCCompass::quit</a></div><div class="ttdeci">void quit()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00338">DeviceInfo.cc:338</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCPressureFilter_html"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCPressureFilter.html">QGCDeviceInfo::QGCPressureFilter</a></div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8h_source.html#l00058">DeviceInfo.h:59</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCPressureFilter_html_a1e017a7b1a75f8c4ebeafc0d65bab657"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCPressureFilter.html#a1e017a7b1a75f8c4ebeafc0d65bab657">QGCDeviceInfo::QGCPressureFilter::filter</a></div><div class="ttdeci">bool filter(QPressureReading *reading) final</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00227">DeviceInfo.cc:227</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCPressureFilter_html_a22b63007c4e10869f347a8a407fd49ce"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCPressureFilter.html#a22b63007c4e10869f347a8a407fd49ce">QGCDeviceInfo::QGCPressureFilter::~QGCPressureFilter</a></div><div class="ttdeci">~QGCPressureFilter()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00222">DeviceInfo.cc:222</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCPressureFilter_html_a33526d71c70fe32f03ae293ab9bbbb63"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCPressureFilter.html#a33526d71c70fe32f03ae293ab9bbbb63">QGCDeviceInfo::QGCPressureFilter::QGCPressureFilter</a></div><div class="ttdeci">QGCPressureFilter()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00216">DeviceInfo.cc:216</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCPressure_html"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCPressure.html">QGCDeviceInfo::QGCPressure</a></div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8h_source.html#l00074">DeviceInfo.h:75</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCPressure_html_a373ab577d599c72c676f3970037521b8"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCPressure.html#a373ab577d599c72c676f3970037521b8">QGCDeviceInfo::QGCPressure::QGCPressure</a></div><div class="ttdeci">QGCPressure(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00133">DeviceInfo.cc:133</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCPressure_html_a5099a62ba7436df8e07863249792ccce"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCPressure.html#a5099a62ba7436df8e07863249792ccce">QGCDeviceInfo::QGCPressure::pressureUpdated</a></div><div class="ttdeci">void pressureUpdated(qreal pressure, qreal temperature)</div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCPressure_html_aa9ad93efecdf324d6ff29106d7a4b8b4"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCPressure.html#aa9ad93efecdf324d6ff29106d7a4b8b4">QGCDeviceInfo::QGCPressure::~QGCPressure</a></div><div class="ttdeci">~QGCPressure()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00149">DeviceInfo.cc:149</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCPressure_html_ad92a43081ae9e9edde0101b33c3b5cc7"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCPressure.html#ad92a43081ae9e9edde0101b33c3b5cc7">QGCDeviceInfo::QGCPressure::instance</a></div><div class="ttdeci">static QGCPressure * instance()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00128">DeviceInfo.cc:128</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCPressure_html_adffa6130e5ac3eece7ec893ec75a412e"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCPressure.html#adffa6130e5ac3eece7ec893ec75a412e">QGCDeviceInfo::QGCPressure::init</a></div><div class="ttdeci">bool init()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00154">DeviceInfo.cc:154</a></div></div>
+<div class="ttc" id="aclassQGCDeviceInfo_1_1QGCPressure_html_aea0d0a8cb24d5306fb0396c9fc773150"><div class="ttname"><a href="classQGCDeviceInfo_1_1QGCPressure.html#aea0d0a8cb24d5306fb0396c9fc773150">QGCDeviceInfo::QGCPressure::quit</a></div><div class="ttdeci">void quit()</div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00209">DeviceInfo.cc:209</a></div></div>
+<div class="ttc" id="anamespaceQGCDeviceInfo_html"><div class="ttname"><a href="namespaceQGCDeviceInfo.html">QGCDeviceInfo</a></div><div class="ttdef"><b>Definition</b> <a href="DeviceInfo_8cc_source.html#l00008">DeviceInfo.cc:9</a></div></div>
+<div class="ttc" id="anamespaceQGCDeviceInfo_html_a7a3cac80f5e70813320d43be6fcb3cff"><div class="ttname"><a href="namespaceQGCDeviceInfo.html#a7a3cac80f5e70813320d43be6fcb3cff">QGCDeviceInfo::Q_APPLICATION_STATIC</a></div><div class="ttdeci">Q_APPLICATION_STATIC(QGCAmbientTemperature, s_ambientTemperature)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

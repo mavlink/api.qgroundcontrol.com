@@ -9,5 +9,18 @@ var structMockLinkCamera_1_1CameraState =
     [ "imagesCaptured", "structMockLinkCamera_1_1CameraState.html#a93f671fba74617e9379d3e4b9695f1dd", null ],
     [ "recording", "structMockLinkCamera_1_1CameraState.html#a535952af4e1d37ce2b0a51cb02d34309", null ],
     [ "singleShotStartMs", "structMockLinkCamera_1_1CameraState.html#a5b5c0352859dab2cd70a7373c539c06f", null ],
+    [ "trackAnchorX", "structMockLinkCamera_1_1CameraState.html#a396382d60a0be3fb480837ebee9e2f49", null ],
+    [ "trackAnchorY", "structMockLinkCamera_1_1CameraState.html#a9816276aaaea8c7f19520cd879a04b72", null ],
+    [ "trackingMode", "structMockLinkCamera_1_1CameraState.html#a8869c0076b009a1432788d27c3ae457e", null ],
+    [ "trackingStartMs", "structMockLinkCamera_1_1CameraState.html#a782bcbdb272043b2809c83de873906d9", null ],
+    [ "trackingStatusIntervalUs", "structMockLinkCamera_1_1CameraState.html#a708da01bc4ab17149f1138fe479b501d", null ],
+    [ "trackingStatusLastSentMs", "structMockLinkCamera_1_1CameraState.html#a1b4f498f279fd74b0f23d1ca50b42902", null ],
+    [ "trackPointX", "structMockLinkCamera_1_1CameraState.html#ade0ad974e7f183acee22459ab826ae94", null ],
+    [ "trackPointY", "structMockLinkCamera_1_1CameraState.html#a398f0b34fa9b4ce9480ff1d2ac1bac9d", null ],
+    [ "trackRadius", "structMockLinkCamera_1_1CameraState.html#a14808483b205829ecf5b2b374973f169", null ],
+    [ "trackRecBottomX", "structMockLinkCamera_1_1CameraState.html#a42f18a09aa99870578a4f60301b850e5", null ],
+    [ "trackRecBottomY", "structMockLinkCamera_1_1CameraState.html#ab070e517505a0db687e112f2c3f59e79", null ],
+    [ "trackRecTopX", "structMockLinkCamera_1_1CameraState.html#a6b2506df765fca9b999abac1a1978e4d", null ],
+    [ "trackRecTopY", "structMockLinkCamera_1_1CameraState.html#a0542d9b7164e876e152d2a485dc7ad16", null ],
     [ "zoomLevel", "structMockLinkCamera_1_1CameraState.html#a073fe78c923093282f35fdf3c7016ded", null ]
 ];

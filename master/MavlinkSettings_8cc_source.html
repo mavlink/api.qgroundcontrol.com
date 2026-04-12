@@ -99,68 +99,49 @@ $(document).ready(function(){initNavTree('MavlinkSettings_8cc_source.html',''); 
 </div><!--header-->
 <div class="contents">
 <a href="MavlinkSettings_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="MavlinkSettings_8h.html">MavlinkSettings.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="LinkManager_8h.html">LinkManager.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a4a7c50a6e0e37dae9c029a08bb24defc">    4</a></span><a class="code hl_define" href="SettingsGroup_8h.html#abe10d6e5a582a5f5e4c5036bf99146fa">DECLARE_SETTINGGROUP</a>(Mavlink, <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="comment">// Move deprecated settings to new location/names</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    QSettings deprecatedSettings;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    QSettings newSettings;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    newSettings.beginGroup(_settingsGroup);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* deprecatedGCSHeartbeatEnabledKey = <span class="stringliteral">&quot;gcsHeartbeatEnabled&quot;</span>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">if</span> (!newSettings.contains(sendGCSHeartbeatName) &amp;&amp; deprecatedSettings.contains(deprecatedGCSHeartbeatEnabledKey)) {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        newSettings.setValue(sendGCSHeartbeatName, deprecatedSettings.value(deprecatedGCSHeartbeatEnabledKey));</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        deprecatedSettings.remove(deprecatedGCSHeartbeatEnabledKey);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* deprecatedMavlinkGroup = <span class="stringliteral">&quot;QGC_MAVLINK_PROTOCOL&quot;</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* deprecatedMavlinkSystemIdKey = <span class="stringliteral">&quot;GCS_SYSTEM_ID&quot;</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    deprecatedSettings.beginGroup(deprecatedMavlinkGroup);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">if</span> (!newSettings.contains(gcsMavlinkSystemIDName) &amp;&amp; deprecatedSettings.contains(deprecatedMavlinkSystemIdKey)) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        newSettings.setValue(gcsMavlinkSystemIDName, deprecatedSettings.value(deprecatedMavlinkSystemIdKey));</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        deprecatedSettings.remove(deprecatedMavlinkSystemIdKey);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    newSettings.endGroup();</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    deprecatedSettings.endGroup();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="foldopen" id="foldopen00003" data-start="{" data-end="}">
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a4a7c50a6e0e37dae9c029a08bb24defc">    3</a></span><a class="code hl_define" href="SettingsGroup_8h.html#abe10d6e5a582a5f5e4c5036bf99146fa">DECLARE_SETTINGGROUP</a>(Mavlink, <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    <span class="comment">// Move deprecated settings to new location/names</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    QSettings deprecatedSettings;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    QSettings newSettings;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    newSettings.beginGroup(_settingsGroup);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* deprecatedGCSHeartbeatEnabledKey = <span class="stringliteral">&quot;gcsHeartbeatEnabled&quot;</span>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordflow">if</span> (!newSettings.contains(sendGCSHeartbeatName) &amp;&amp; deprecatedSettings.contains(deprecatedGCSHeartbeatEnabledKey)) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        newSettings.setValue(sendGCSHeartbeatName, deprecatedSettings.value(deprecatedGCSHeartbeatEnabledKey));</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        deprecatedSettings.remove(deprecatedGCSHeartbeatEnabledKey);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* deprecatedMavlinkGroup = <span class="stringliteral">&quot;QGC_MAVLINK_PROTOCOL&quot;</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* deprecatedMavlinkSystemIdKey = <span class="stringliteral">&quot;GCS_SYSTEM_ID&quot;</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    deprecatedSettings.beginGroup(deprecatedMavlinkGroup);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">if</span> (!newSettings.contains(gcsMavlinkSystemIDName) &amp;&amp; deprecatedSettings.contains(deprecatedMavlinkSystemIdKey)) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        newSettings.setValue(gcsMavlinkSystemIDName, deprecatedSettings.value(deprecatedMavlinkSystemIdKey));</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        deprecatedSettings.remove(deprecatedMavlinkSystemIdKey);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    newSettings.endGroup();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    deprecatedSettings.endGroup();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a6b5b080cf9c5b4a44e01c5bc2ddc35d2">   31</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, telemetrySave)</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a51a54014e98979f552544dfe8b04cce5">   32</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, telemetrySaveNotArmed)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#ad9223acc2ec853518f0dc922e21fd054">   33</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, apmStartMavlinkStreams)</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a7def5e6d5fcccc4c7c9f4017efbebf63">   34</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, saveCsvTelemetry)</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a1d19deca2f2e1601f06cba515e33c9a3">   35</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, forwardMavlink)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a7586e448c7ce52dbe78b43058bef0c03">   36</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, forwardMavlinkHostName)</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#ab0486a797c55120958d417bc5bb09d30">   37</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, forwardMavlinkAPMSupportHostName)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#aeca250e630a7f64810b3cbf6d9423501">   38</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, sendGCSHeartbeat)</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a7cb28c28ec126590e2135d551aaf7673">   39</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, gcsMavlinkSystemID)</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a18a78933acebbd32f5077ea98f0103d7">   41</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, mavlink2SigningKey)</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (!_mavlink2SigningKeyFact) {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        _mavlink2SigningKeyFact = _createSettingsFact(mavlink2SigningKeyName);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        connect(_mavlink2SigningKeyFact, &amp;<a class="code hl_signal" href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged</a>, <span class="keyword">this</span>, &amp;MavlinkSettings::_mavlink2SigningKeyChanged);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">return</span> _mavlink2SigningKeyFact;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
-</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">void</span> MavlinkSettings::_mavlink2SigningKeyChanged(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    LinkManager::instance()-&gt;resetMavlinkSigning();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
-<div class="ttc" id="aLinkManager_8h_html"><div class="ttname"><a href="LinkManager_8h.html">LinkManager.h</a></div></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a6b5b080cf9c5b4a44e01c5bc2ddc35d2">   30</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, telemetrySave)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a51a54014e98979f552544dfe8b04cce5">   31</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, telemetrySaveNotArmed)</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#ad9223acc2ec853518f0dc922e21fd054">   32</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, apmStartMavlinkStreams)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a7def5e6d5fcccc4c7c9f4017efbebf63">   33</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, saveCsvTelemetry)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a1d19deca2f2e1601f06cba515e33c9a3">   34</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, forwardMavlink)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a7586e448c7ce52dbe78b43058bef0c03">   35</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, forwardMavlinkHostName)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#ab0486a797c55120958d417bc5bb09d30">   36</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, forwardMavlinkAPMSupportHostName)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#aeca250e630a7f64810b3cbf6d9423501">   37</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, sendGCSHeartbeat)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a7cb28c28ec126590e2135d551aaf7673">   38</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, gcsMavlinkSystemID)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classMavlinkSettings.html#a692d91f8cf743c35596c8c179e7e4811">   39</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classMavlinkSettings.html">MavlinkSettings</a>, noInitialDownloadWhenFlying)</div>
 <div class="ttc" id="aMavlinkSettings_8h_html"><div class="ttname"><a href="MavlinkSettings_8h.html">MavlinkSettings.h</a></div></div>
-<div class="ttc" id="aSettingsGroup_8h_html_a868cabc6e02919fdbdc5e40133cc22e3"><div class="ttname"><a href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a></div><div class="ttdeci">#define DECLARE_SETTINGSFACT_NO_FUNC(CLASS, NAME)</div><div class="ttdef"><b>Definition</b> <a href="SettingsGroup_8h_source.html#l00027">SettingsGroup.h:27</a></div></div>
 <div class="ttc" id="aSettingsGroup_8h_html_a8d7b3fa9e351fa62a2f32ae6043c6cff"><div class="ttname"><a href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a></div><div class="ttdeci">#define DECLARE_SETTINGSFACT(CLASS, NAME)</div><div class="ttdef"><b>Definition</b> <a href="SettingsGroup_8h_source.html#l00017">SettingsGroup.h:17</a></div></div>
 <div class="ttc" id="aSettingsGroup_8h_html_abe10d6e5a582a5f5e4c5036bf99146fa"><div class="ttname"><a href="SettingsGroup_8h.html#abe10d6e5a582a5f5e4c5036bf99146fa">DECLARE_SETTINGGROUP</a></div><div class="ttdeci">#define DECLARE_SETTINGGROUP(NAME, GROUP)</div><div class="ttdef"><b>Definition</b> <a href="SettingsGroup_8h_source.html#l00011">SettingsGroup.h:11</a></div></div>
-<div class="ttc" id="aclassFact_html_a832a24b1e80771c8bf76dc9fbf699fad"><div class="ttname"><a href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged</a></div><div class="ttdeci">void rawValueChanged(const QVariant &amp;value)</div></div>
 <div class="ttc" id="aclassMavlinkSettings_html"><div class="ttname"><a href="classMavlinkSettings.html">MavlinkSettings</a></div><div class="ttdoc">Application Settings.</div><div class="ttdef"><b>Definition</b> <a href="MavlinkSettings_8h_source.html#l00008">MavlinkSettings.h:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

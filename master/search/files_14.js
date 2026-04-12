@@ -9,9 +9,8 @@ var searchData=
   ['ulogparser_2eh_6',['ULogParser.h',['../ULogParser_8h.html',1,'']]],
   ['ulogutility_2ecc_7',['ULogUtility.cc',['../ULogUtility_8cc.html',1,'']]],
   ['ulogutility_2eh_8',['ULogUtility.h',['../ULogUtility_8h.html',1,'']]],
-  ['unitsfirstrunprompt_2eqml_9',['UnitsFirstRunPrompt.qml',['../UnitsFirstRunPrompt_8qml.html',1,'']]],
-  ['unitssettings_2ecc_10',['UnitsSettings.cc',['../UnitsSettings_8cc.html',1,'']]],
-  ['unitssettings_2eh_11',['UnitsSettings.h',['../UnitsSettings_8h.html',1,'']]],
-  ['uvcreceiver_2ecc_12',['UVCReceiver.cc',['../UVCReceiver_8cc.html',1,'']]],
-  ['uvcreceiver_2eh_13',['UVCReceiver.h',['../UVCReceiver_8h.html',1,'']]]
+  ['unitssettings_2ecc_9',['UnitsSettings.cc',['../UnitsSettings_8cc.html',1,'']]],
+  ['unitssettings_2eh_10',['UnitsSettings.h',['../UnitsSettings_8h.html',1,'']]],
+  ['uvcreceiver_2ecc_11',['UVCReceiver.cc',['../UVCReceiver_8cc.html',1,'']]],
+  ['uvcreceiver_2eh_12',['UVCReceiver.h',['../UVCReceiver_8h.html',1,'']]]
 ];

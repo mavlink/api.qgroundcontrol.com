@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/QmlControls/TransectStyleComplexItemTerrainFollow.qml Source File</title>
+<title>QGroundControl: src/PlanView/TransectStyleComplexItemTerrainFollow.qml Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -118,29 +118,29 @@ $(document).ready(function(){initNavTree('TransectStyleComplexItemTerrainFollow_
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        onClicked: {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            var removeModes = []</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            var updateFunction = function(altMode){ missionItem.cameraCalc.distanceMode = altMode }</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            removeModes.push(QGroundControl.AltitudeModeMixed)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            var updateFunction = function(altFrame){ missionItem.cameraCalc.distanceMode = altFrame }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            removeModes.push(QGroundControl.AltitudeFrameMixed)</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            if (!missionItem.masterController.controllerVehicle.supports.terrainFrame) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                removeModes.push(QGroundControl.AltitudeModeTerrainFrame)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                removeModes.push(QGroundControl.AltitudeFrameTerrain)</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            if (!QGroundControl.corePlugin.options.showMissionAbsoluteAltitude || !_missionItem.cameraCalc.isManualCamera) {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                removeModes.push(QGroundControl.AltitudeModeAbsolute)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            if (!QGroundControl.corePlugin.options.showMissionAbsoluteAltitude || !missionItem.cameraCalc.isManualCamera) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                removeModes.push(QGroundControl.AltitudeFrameAbsolute)</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            altModeDialogFactory.open({ rgRemoveModes: removeModes, updateAltModeFn: updateFunction })</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            altFrameDialogFactory.open({ currentAltFrame: missionItem.cameraCalc.distanceMode, rgRemoveModes: removeModes, updateAltFrameFn: updateFunction })</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        }</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        QGCPopupDialogFactory {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            id: altModeDialogFactory</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            id: altFrameDialogFactory</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            dialogComponent: altModeDialogComponent</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            dialogComponent: altFrameDialogComponent</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        }</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        Component { id: altModeDialogComponent; AltModeDialog { } }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        Component { id: altFrameDialogComponent; AltFrameDialog { } }</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        RowLayout {</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            spacing: ScreenTools.defaultFontPixelWidth / 2</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            QGCLabel { text: QGroundControl.altitudeModeShortDescription(missionItem.cameraCalc.distanceMode) }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            QGCLabel { text: QGroundControl.altitudeFrameShortDescription(missionItem.cameraCalc.distanceMode) }</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            QGCColoredImage {</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                height:     ScreenTools.defaultFontPixelHeight / 2</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                width:      height</div>
@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('TransectStyleComplexItemTerrainFollow_
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        columnSpacing:      _margin</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        rowSpacing:         _margin</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        columns:            2</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        enabled:            missionItem.cameraCalc.distanceMode === QGroundControl.AltitudeModeCalcAboveTerrain</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        enabled:            missionItem.cameraCalc.distanceMode === QGroundControl.AltitudeFrameCalcAboveTerrain</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        QGCLabel { text: qsTr(&quot;Tolerance&quot;) }</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        FactTextField {</div>
@@ -181,7 +181,7 @@ $(document).ready(function(){initNavTree('TransectStyleComplexItemTerrainFollow_
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_57fd63fe491ef075147d1cb32299e674.html">QmlControls</a></li><li class="navelem"><a class="el" href="TransectStyleComplexItemTerrainFollow_8qml.html">TransectStyleComplexItemTerrainFollow.qml</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a960dd57875593757f2541c050ca2fa1.html">PlanView</a></li><li class="navelem"><a class="el" href="TransectStyleComplexItemTerrainFollow_8qml.html">TransectStyleComplexItemTerrainFollow.qml</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

@@ -1,6 +1,8 @@
 var QGCCompression_8cc =
 [
     [ "captureFormatInfo", "QGCCompression_8cc.html#aa4597e46db324dfaed364a4ce129acf1", null ],
+    [ "compress", "QGCCompression_8cc.html#aa39c757274d165b446f84c6481dc9f3b", null ],
+    [ "compressData", "QGCCompression_8cc.html#a4973097b77aedf9b4dc94e03319c4093", null ],
     [ "decompressData", "QGCCompression_8cc.html#a13285748433c899ec879df10a7378b69", null ],
     [ "decompressFile", "QGCCompression_8cc.html#a1ecc29aedf734bf8ca80e52addac1546", null ],
     [ "decompressFromDevice", "QGCCompression_8cc.html#a9e9077bd5287b1607545f8854a7e8001", null ],
@@ -28,11 +30,15 @@ var QGCCompression_8cc =
     [ "getArchiveStats", "QGCCompression_8cc.html#aa5a6851e5179fcbbc901e0a91716ae80", null ],
     [ "isArchiveFormat", "QGCCompression_8cc.html#a5ea391e13fd47cad2ba98d012a665bd0", null ],
     [ "isCompressionFormat", "QGCCompression_8cc.html#a01c7a1f29ea9b9eeb445b8947fc23811", null ],
+    [ "isDataCompressed", "QGCCompression_8cc.html#ad2f5e1c07c1d47992028018471f6baaf", null ],
+    [ "lastCompressionRatio", "QGCCompression_8cc.html#a43f66fb29ef043322dfb087f3a0471f7", null ],
     [ "lastError", "QGCCompression_8cc.html#ac5b2365d27f55bc632d7567a6678b37c", null ],
     [ "lastErrorString", "QGCCompression_8cc.html#a69650929455f64d9a0ba463f4475bc72", null ],
     [ "listArchive", "QGCCompression_8cc.html#a498974e1e03f09b2711830114687c4f7", null ],
     [ "listArchiveDetailed", "QGCCompression_8cc.html#aa8d1a172131add5634d81be4ff0b4985", null ],
     [ "strippedPath", "QGCCompression_8cc.html#a8383c990bb8ec070be023eb18b48ffb5", null ],
+    [ "uncompress", "QGCCompression_8cc.html#aa4942c43b5f0c671c86f69dc29c4cff2", null ],
+    [ "uncompressData", "QGCCompression_8cc.html#a40482c2aa120dfea39590614058a2dc4", null ],
     [ "validateArchive", "QGCCompression_8cc.html#abeb1713ae6335cecb1dd73319f132cd0", null ],
     [ "validateArchiveInput", "QGCCompression_8cc.html#a96b87941ba09c38daee64fa7640cb3bc", null ],
     [ "validateDeviceInput", "QGCCompression_8cc.html#a0ef25b6a5f074267bfdccf5ed0d874a2", null ],
@@ -40,5 +46,8 @@ var QGCCompression_8cc =
     [ "error", "QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d", null ],
     [ "errorString", "QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb", null ],
     [ "filterName", "QGCCompression_8cc.html#ab7396c1f0a53d8d89423c46142d9ad61", null ],
-    [ "formatName", "QGCCompression_8cc.html#a0561c0c06ce30c42eda3256f2bce4f17", null ]
+    [ "formatName", "QGCCompression_8cc.html#a0561c0c06ce30c42eda3256f2bce4f17", null ],
+    [ "kHeaderCompressed", "QGCCompression_8cc.html#a1734b7c486b7f90a0ff1e80c97fe9502", null ],
+    [ "kHeaderUncompressed", "QGCCompression_8cc.html#ae3eb9985004531855922d48d355b07d6", null ],
+    [ "s_lastCompressionRatio", "QGCCompression_8cc.html#a7aa3247e948563b47ac4d251b8830454", null ]
 ];

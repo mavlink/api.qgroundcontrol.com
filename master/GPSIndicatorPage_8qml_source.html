@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/QmlControls/GPSIndicatorPage.qml Source File</title>
+<title>QGroundControl: src/UI/toolbar/GPSIndicatorPage.qml Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -256,7 +256,7 @@ $(document).ready(function(){initNavTree('GPSIndicatorPage_8qml_source.html','')
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                Layout.fillWidth:   true</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                text:               qsTr(&quot;AutoConnect&quot;)</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                fact:               QGroundControl.settingsManager.autoConnectSettings.autoConnectRTKGPS</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                visible:            fact.visible</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                visible:            fact.userVisible</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            }</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            GridLayout {</div>
@@ -268,7 +268,7 @@ $(document).ready(function(){initNavTree('GPSIndicatorPage_8qml_source.html','')
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                FactComboBox {</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                    Layout.fillWidth:   true</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                    fact:               QGroundControl.settingsManager.rtkSettings.baseReceiverManufacturers</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                    visible:            QGroundControl.settingsManager.rtkSettings.baseReceiverManufacturers.visible</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                    visible:            QGroundControl.settingsManager.rtkSettings.baseReceiverManufacturers.userVisible</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                }</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            }</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
@@ -296,7 +296,7 @@ $(document).ready(function(){initNavTree('GPSIndicatorPage_8qml_source.html','')
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                majorTickStepSize:      0.1</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                visible:                (</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                    useFixedPosition == BaseModeDefinition.BaseSurveyIn</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                    &amp;&amp; rtkSettings.surveyInAccuracyLimit.visible</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                    &amp;&amp; rtkSettings.surveyInAccuracyLimit.userVisible</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                    &amp;&amp; (settingsDisplayId &amp; _ublox)</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                )</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            }</div>
@@ -309,7 +309,7 @@ $(document).ready(function(){initNavTree('GPSIndicatorPage_8qml_source.html','')
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                majorTickStepSize:      10</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                visible:                (</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>                    useFixedPosition == BaseModeDefinition.BaseSurveyIn</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                    &amp;&amp; rtkSettings.surveyInMinObservationDuration.visible</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                    &amp;&amp; rtkSettings.surveyInMinObservationDuration.userVisible</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                    &amp;&amp; (settingsDisplayId &amp; (_ublox | _femtomes | _trimble))</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                )</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            }</div>
@@ -371,7 +371,7 @@ $(document).ready(function(){initNavTree('GPSIndicatorPage_8qml_source.html','')
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_57fd63fe491ef075147d1cb32299e674.html">QmlControls</a></li><li class="navelem"><a class="el" href="GPSIndicatorPage_8qml.html">GPSIndicatorPage.qml</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7ad25bca70c4d3d9103f75d82f41ef94.html">UI</a></li><li class="navelem"><a class="el" href="dir_bcefba8c052c95baf29493728ed6789d.html">toolbar</a></li><li class="navelem"><a class="el" href="GPSIndicatorPage_8qml.html">GPSIndicatorPage.qml</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

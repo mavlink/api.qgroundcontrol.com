@@ -101,97 +101,98 @@ $(document).ready(function(){initNavTree('QGCSerialPortInfo_8h_source.html','');
 <a href="QGCSerialPortInfo_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QtCore/QLoggingCategory&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtCore/QtSystemDetection&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">    #include &quot;<a class="code" href="qserialportinfo_8h.html">qserialportinfo.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">    #include &lt;QtSerialPort/QSerialPortInfo&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">class </span>QGCSerialPortInfoTest;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><a class="code hl_function" href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a>(QGCSerialPortInfoLog)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtCore/QRegularExpression&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QtCore/QtSystemDetection&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">    #include &quot;<a class="code" href="qserialportinfo_8h.html">qserialportinfo.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">    #include &lt;QtSerialPort/QSerialPortInfo&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class </span>QGCSerialPortInfoTest;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><a class="code hl_function" href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a>(QGCSerialPortInfoLog)</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html">   17</a></span>class <a class="code hl_class" href="classQGCSerialPortInfo.html">QGCSerialPortInfo</a> : public <a class="code hl_class" href="classQSerialPortInfo.html">QSerialPortInfo</a></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html#a0d001a5918866d3536f73b0a94998141">   19</a></span>    <span class="keyword">friend</span> <span class="keyword">class </span>QGCSerialPortInfoTest;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_class" href="classQGCSerialPortInfo.html">QGCSerialPortInfo</a>();</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classQGCSerialPortInfo.html">QGCSerialPortInfo</a>(<span class="keyword">const</span> <a class="code hl_class" href="classQSerialPort.html">QSerialPort</a> &amp;port);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_class" href="classQGCSerialPortInfo.html">~QGCSerialPortInfo</a>();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05">   25</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05">BoardType_t</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05a52a804cdb5748f9996b47d88f3484d03">   26</a></span>        BoardTypePixhawk = 0,</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05ad89f277411c964bf147f639d85c05849">   27</a></span>        <a class="code hl_enumvalue" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05ad89f277411c964bf147f639d85c05849">BoardTypeSiKRadio</a>,</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05a29f7dc229c45772e4879061f922dfdcc">   28</a></span>        <a class="code hl_enumvalue" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05a29f7dc229c45772e4879061f922dfdcc">BoardTypeOpenPilot</a>,</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05aa7b158b31ce2fc15c265032f7d013a58">   29</a></span>        <a class="code hl_enumvalue" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05aa7b158b31ce2fc15c265032f7d013a58">BoardTypeRTKGPS</a>,</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        BoardTypeUnknown</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05ac139d2fc7e1eb436f4200a84da9ba9d7">   31</a></span>    };</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html">   18</a></span>class <a class="code hl_class" href="classQGCSerialPortInfo.html">QGCSerialPortInfo</a> : public <a class="code hl_class" href="classQSerialPortInfo.html">QSerialPortInfo</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html#a0d001a5918866d3536f73b0a94998141">   20</a></span>    <span class="keyword">friend</span> <span class="keyword">class </span>QGCSerialPortInfoTest;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_class" href="classQGCSerialPortInfo.html">QGCSerialPortInfo</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classQGCSerialPortInfo.html">QGCSerialPortInfo</a>(<span class="keyword">const</span> <a class="code hl_class" href="classQSerialPort.html">QSerialPort</a> &amp;port);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_class" href="classQGCSerialPortInfo.html">~QGCSerialPortInfo</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05">   26</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05">BoardType_t</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05a52a804cdb5748f9996b47d88f3484d03">   27</a></span>        BoardTypePixhawk = 0,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05ad89f277411c964bf147f639d85c05849">   28</a></span>        <a class="code hl_enumvalue" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05ad89f277411c964bf147f639d85c05849">BoardTypeSiKRadio</a>,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05a29f7dc229c45772e4879061f922dfdcc">   29</a></span>        <a class="code hl_enumvalue" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05a29f7dc229c45772e4879061f922dfdcc">BoardTypeOpenPilot</a>,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05aa7b158b31ce2fc15c265032f7d013a58">   30</a></span>        <a class="code hl_enumvalue" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05aa7b158b31ce2fc15c265032f7d013a58">BoardTypeRTKGPS</a>,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        BoardTypeUnknown</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05ac139d2fc7e1eb436f4200a84da9ba9d7">   32</a></span>    };</div>
 </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">bool</span> getBoardInfo(BoardType_t &amp;boardType, QString &amp;name) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">bool</span> canFlash() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">bool</span> isBootloader() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">bool</span> isBlackCube() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> isSystemPort(<span class="keyword">const</span> <a class="code hl_class" href="classQSerialPortInfo.html">QSerialPortInfo</a> &amp;port);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">static</span> QList&lt;QGCSerialPortInfo&gt; availablePorts();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">struct </span>BoardClassString2BoardType_t {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keyword">const</span> QString classString;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">const</span> BoardType_t boardType = BoardTypeUnknown;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    };</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> _loadJsonData();</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">static</span> BoardType_t _boardClassStringToType(<span class="keyword">const</span> QString &amp;boardClass);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">static</span> QString _boardTypeToString(BoardType_t boardType);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> _jsonLoaded;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> _jsonDataValid;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">struct </span>BoardInfo_t {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordtype">int</span> vendorId;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordtype">int</span> productId;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        BoardType_t boardType;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        QString name;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    };</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">static</span> QList&lt;BoardInfo_t&gt; _boardInfoList;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">struct </span>BoardRegExpFallback_t {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        QString regExp;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        BoardType_t boardType;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordtype">bool</span> androidOnly;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    };</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">static</span> QList&lt;BoardRegExpFallback_t&gt; _boardDescriptionFallbackList;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">static</span> QList&lt;BoardRegExpFallback_t&gt; _boardManufacturerFallbackList;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonFileTypeValue = <span class="stringliteral">&quot;USBBoardInfo&quot;</span>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonBoardInfoKey = <span class="stringliteral">&quot;boardInfo&quot;</span>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonBoardDescriptionFallbackKey = <span class="stringliteral">&quot;boardDescriptionFallback&quot;</span>;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonBoardManufacturerFallbackKey = <span class="stringliteral">&quot;boardManufacturerFallback&quot;</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonVendorIDKey = <span class="stringliteral">&quot;vendorID&quot;</span>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonProductIDKey = <span class="stringliteral">&quot;productID&quot;</span>;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonBoardClassKey = <span class="stringliteral">&quot;boardClass&quot;</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonNameKey = <span class="stringliteral">&quot;name&quot;</span>;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonRegExpKey = <span class="stringliteral">&quot;regExp&quot;</span>;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonAndroidOnlyKey = <span class="stringliteral">&quot;androidOnly&quot;</span>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">bool</span> getBoardInfo(BoardType_t &amp;boardType, QString &amp;name) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">bool</span> canFlash() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">bool</span> isBootloader() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">bool</span> isBlackCube() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> isSystemPort(<span class="keyword">const</span> <a class="code hl_class" href="classQSerialPortInfo.html">QSerialPortInfo</a> &amp;port);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">static</span> QList&lt;QGCSerialPortInfo&gt; availablePorts();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">struct </span>BoardClassString2BoardType_t {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">const</span> QString classString;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keyword">const</span> BoardType_t boardType = BoardTypeUnknown;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    };</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> _loadJsonData();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">static</span> BoardType_t _boardClassStringToType(<span class="keyword">const</span> QString &amp;boardClass);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">static</span> QString _boardTypeToString(BoardType_t boardType);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> _jsonLoaded;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> _jsonDataValid;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">struct </span>BoardInfo_t {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordtype">int</span> vendorId;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordtype">int</span> productId;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        BoardType_t boardType;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        QString name;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    };</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">static</span> QList&lt;BoardInfo_t&gt; _boardInfoList;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">struct </span>BoardRegExpFallback_t {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        QRegularExpression regExp;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        BoardType_t boardType;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordtype">bool</span> androidOnly;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    };</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">static</span> QList&lt;BoardRegExpFallback_t&gt; _boardDescriptionFallbackList;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">static</span> QList&lt;BoardRegExpFallback_t&gt; _boardManufacturerFallbackList;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonFileTypeValue = <span class="stringliteral">&quot;USBBoardInfo&quot;</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonBoardInfoKey = <span class="stringliteral">&quot;boardInfo&quot;</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonBoardDescriptionFallbackKey = <span class="stringliteral">&quot;boardDescriptionFallback&quot;</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonBoardManufacturerFallbackKey = <span class="stringliteral">&quot;boardManufacturerFallback&quot;</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonVendorIDKey = <span class="stringliteral">&quot;vendorID&quot;</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonProductIDKey = <span class="stringliteral">&quot;productID&quot;</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonBoardClassKey = <span class="stringliteral">&quot;boardClass&quot;</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonNameKey = <span class="stringliteral">&quot;name&quot;</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonRegExpKey = <span class="stringliteral">&quot;regExp&quot;</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_jsonAndroidOnlyKey = <span class="stringliteral">&quot;androidOnly&quot;</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
 </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><a class="code hl_function" href="satellite__info_8h.html#a10839ae71f821b0e66f1153ae60e4b6b">Q_DECLARE_METATYPE</a>(<a class="code hl_class" href="classQGCSerialPortInfo.html">QGCSerialPortInfo</a>)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><a class="code hl_function" href="satellite__info_8h.html#a10839ae71f821b0e66f1153ae60e4b6b">Q_DECLARE_METATYPE</a>(<a class="code hl_class" href="classQGCSerialPortInfo.html">QGCSerialPortInfo</a>)</div>
 <div class="ttc" id="aAndroidSerial_8h_html_a932681ef567cd0a6a3a714a3c519eb35"><div class="ttname"><a href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a></div><div class="ttdeci">Q_DECLARE_LOGGING_CATEGORY(AndroidSerialLog)</div></div>
-<div class="ttc" id="aclassQGCSerialPortInfo_html"><div class="ttname"><a href="classQGCSerialPortInfo.html">QGCSerialPortInfo</a></div><div class="ttdef"><b>Definition</b> <a href="QGCSerialPortInfo_8h_source.html#l00017">QGCSerialPortInfo.h:18</a></div></div>
-<div class="ttc" id="aclassQGCSerialPortInfo_html_a186396d848c9252166bc825272a13d05"><div class="ttname"><a href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05">QGCSerialPortInfo::BoardType_t</a></div><div class="ttdeci">BoardType_t</div><div class="ttdef"><b>Definition</b> <a href="QGCSerialPortInfo_8h_source.html#l00025">QGCSerialPortInfo.h:25</a></div></div>
-<div class="ttc" id="aclassQGCSerialPortInfo_html_a186396d848c9252166bc825272a13d05a29f7dc229c45772e4879061f922dfdcc"><div class="ttname"><a href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05a29f7dc229c45772e4879061f922dfdcc">QGCSerialPortInfo::BoardTypeOpenPilot</a></div><div class="ttdeci">@ BoardTypeOpenPilot</div><div class="ttdef"><b>Definition</b> <a href="QGCSerialPortInfo_8h_source.html#l00028">QGCSerialPortInfo.h:28</a></div></div>
-<div class="ttc" id="aclassQGCSerialPortInfo_html_a186396d848c9252166bc825272a13d05aa7b158b31ce2fc15c265032f7d013a58"><div class="ttname"><a href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05aa7b158b31ce2fc15c265032f7d013a58">QGCSerialPortInfo::BoardTypeRTKGPS</a></div><div class="ttdeci">@ BoardTypeRTKGPS</div><div class="ttdef"><b>Definition</b> <a href="QGCSerialPortInfo_8h_source.html#l00029">QGCSerialPortInfo.h:29</a></div></div>
-<div class="ttc" id="aclassQGCSerialPortInfo_html_a186396d848c9252166bc825272a13d05ad89f277411c964bf147f639d85c05849"><div class="ttname"><a href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05ad89f277411c964bf147f639d85c05849">QGCSerialPortInfo::BoardTypeSiKRadio</a></div><div class="ttdeci">@ BoardTypeSiKRadio</div><div class="ttdef"><b>Definition</b> <a href="QGCSerialPortInfo_8h_source.html#l00027">QGCSerialPortInfo.h:27</a></div></div>
+<div class="ttc" id="aclassQGCSerialPortInfo_html"><div class="ttname"><a href="classQGCSerialPortInfo.html">QGCSerialPortInfo</a></div><div class="ttdef"><b>Definition</b> <a href="QGCSerialPortInfo_8h_source.html#l00018">QGCSerialPortInfo.h:19</a></div></div>
+<div class="ttc" id="aclassQGCSerialPortInfo_html_a186396d848c9252166bc825272a13d05"><div class="ttname"><a href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05">QGCSerialPortInfo::BoardType_t</a></div><div class="ttdeci">BoardType_t</div><div class="ttdef"><b>Definition</b> <a href="QGCSerialPortInfo_8h_source.html#l00026">QGCSerialPortInfo.h:26</a></div></div>
+<div class="ttc" id="aclassQGCSerialPortInfo_html_a186396d848c9252166bc825272a13d05a29f7dc229c45772e4879061f922dfdcc"><div class="ttname"><a href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05a29f7dc229c45772e4879061f922dfdcc">QGCSerialPortInfo::BoardTypeOpenPilot</a></div><div class="ttdeci">@ BoardTypeOpenPilot</div><div class="ttdef"><b>Definition</b> <a href="QGCSerialPortInfo_8h_source.html#l00029">QGCSerialPortInfo.h:29</a></div></div>
+<div class="ttc" id="aclassQGCSerialPortInfo_html_a186396d848c9252166bc825272a13d05aa7b158b31ce2fc15c265032f7d013a58"><div class="ttname"><a href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05aa7b158b31ce2fc15c265032f7d013a58">QGCSerialPortInfo::BoardTypeRTKGPS</a></div><div class="ttdeci">@ BoardTypeRTKGPS</div><div class="ttdef"><b>Definition</b> <a href="QGCSerialPortInfo_8h_source.html#l00030">QGCSerialPortInfo.h:30</a></div></div>
+<div class="ttc" id="aclassQGCSerialPortInfo_html_a186396d848c9252166bc825272a13d05ad89f277411c964bf147f639d85c05849"><div class="ttname"><a href="classQGCSerialPortInfo.html#a186396d848c9252166bc825272a13d05ad89f277411c964bf147f639d85c05849">QGCSerialPortInfo::BoardTypeSiKRadio</a></div><div class="ttdeci">@ BoardTypeSiKRadio</div><div class="ttdef"><b>Definition</b> <a href="QGCSerialPortInfo_8h_source.html#l00028">QGCSerialPortInfo.h:28</a></div></div>
 <div class="ttc" id="aclassQSerialPortInfo_html"><div class="ttname"><a href="classQSerialPortInfo.html">QSerialPortInfo</a></div><div class="ttdoc">Provides information about existing serial ports.</div><div class="ttdef"><b>Definition</b> <a href="qserialportinfo_8h_source.html#l00017">qserialportinfo.h:18</a></div></div>
 <div class="ttc" id="aclassQSerialPort_html"><div class="ttname"><a href="classQSerialPort.html">QSerialPort</a></div><div class="ttdoc">Provides functions to access serial ports.</div><div class="ttdef"><b>Definition</b> <a href="qserialport_8h_source.html#l00016">qserialport.h:17</a></div></div>
 <div class="ttc" id="aqserialportinfo_8h_html"><div class="ttname"><a href="qserialportinfo_8h.html">qserialportinfo.h</a></div></div>

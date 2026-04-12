@@ -107,17 +107,19 @@ $(document).ready(function(){initNavTree('FactCheckBoxSlider_8qml_source.html','
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>QGCCheckBoxSlider {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    property Fact fact: Fact { }</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    property var checkedValue:   fact.typeIsBool ? true : 1</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    property var uncheckedValue: fact.typeIsBool ? false : 0</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    property var checkedValue:   _typeIsBool ? true : 1</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    property var uncheckedValue: _typeIsBool ? false : 0</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    Binding on checked {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        value: fact ?</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                (fact.value === uncheckedValue ? Qt.Unchecked : Qt.Checked) :</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                Qt.Unchecked</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    onClicked: fact.value = (checked ? checkedValue : uncheckedValue)</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    property var _typeIsBool: fact ? fact.typeIsBool : false</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    Binding on checked {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        value: fact ?</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                (fact.value === uncheckedValue ? Qt.Unchecked : Qt.Checked) :</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>                Qt.Unchecked</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    onClicked: fact.value = (checked ? checkedValue : uncheckedValue)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

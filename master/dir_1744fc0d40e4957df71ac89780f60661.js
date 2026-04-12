@@ -1,25 +1,10 @@
 var dir_1744fc0d40e4957df71ac89780f60661 =
 [
     [ "GeoTag", "dir_f7f7f5e9d6e8a2a476e5601a606e9d71.html", "dir_f7f7f5e9d6e8a2a476e5601a606e9d71" ],
-    [ "AnalyzeView.qml", "AnalyzeView_8qml.html", null ],
-    [ "LogDownloadController.cc", "LogDownloadController_8cc.html", null ],
-    [ "LogDownloadController.h", "LogDownloadController_8h.html", "LogDownloadController_8h" ],
-    [ "LogDownloadPage.qml", "LogDownloadPage_8qml.html", null ],
-    [ "LogEntry.cc", "LogEntry_8cc.html", null ],
-    [ "LogEntry.h", "LogEntry_8h.html", "LogEntry_8h" ],
-    [ "MAVLinkChartController.cc", "MAVLinkChartController_8cc.html", null ],
-    [ "MAVLinkChartController.h", "MAVLinkChartController_8h.html", "MAVLinkChartController_8h" ],
-    [ "MAVLinkConsoleController.cc", "MAVLinkConsoleController_8cc.html", null ],
-    [ "MAVLinkConsoleController.h", "MAVLinkConsoleController_8h.html", "MAVLinkConsoleController_8h" ],
-    [ "MAVLinkConsolePage.qml", "MAVLinkConsolePage_8qml.html", null ],
-    [ "MAVLinkInspectorController.cc", "MAVLinkInspectorController_8cc.html", null ],
-    [ "MAVLinkInspectorController.h", "MAVLinkInspectorController_8h.html", "MAVLinkInspectorController_8h" ],
-    [ "MAVLinkInspectorPage.qml", "MAVLinkInspectorPage_8qml.html", null ],
-    [ "MAVLinkMessage.cc", "MAVLinkMessage_8cc.html", null ],
-    [ "MAVLinkMessage.h", "MAVLinkMessage_8h.html", "MAVLinkMessage_8h" ],
-    [ "MAVLinkMessageField.cc", "MAVLinkMessageField_8cc.html", null ],
-    [ "MAVLinkMessageField.h", "MAVLinkMessageField_8h.html", "MAVLinkMessageField_8h" ],
-    [ "MAVLinkSystem.cc", "MAVLinkSystem_8cc.html", "MAVLinkSystem_8cc" ],
-    [ "MAVLinkSystem.h", "MAVLinkSystem_8h.html", "MAVLinkSystem_8h" ],
-    [ "VibrationPage.qml", "VibrationPage_8qml.html", null ]
+    [ "MAVLinkConsole", "dir_a84cdad1ef5b5c9fd59cc25af29fcdc2.html", "dir_a84cdad1ef5b5c9fd59cc25af29fcdc2" ],
+    [ "MAVLinkInspector", "dir_6d506937dc7e091de40daa346aa6c6d4.html", "dir_6d506937dc7e091de40daa346aa6c6d4" ],
+    [ "OnboardLogs", "dir_052375fe0c9e1fb205d033e224ca2974.html", "dir_052375fe0c9e1fb205d033e224ca2974" ],
+    [ "Vibration", "dir_dc0384b9db80d5c2c2b1237494e221b8.html", "dir_dc0384b9db80d5c2c2b1237494e221b8" ],
+    [ "AnalyzePage.qml", "AnalyzePage_8qml.html", null ],
+    [ "AnalyzeView.qml", "AnalyzeView_8qml.html", null ]
 ];

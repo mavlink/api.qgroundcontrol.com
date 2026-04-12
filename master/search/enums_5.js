@@ -7,6 +7,6 @@ var searchData=
   ['firmwarevehicletype_5ft_4',['FirmwareVehicleType_t',['../classFirmwareUpgradeController.html#ab0f52479539462d351d2512acc16fdea',1,'FirmwareUpgradeController']]],
   ['flowcontrol_5',['flowcontrol',['../classQSerialPort.html#ae3a50da39358348585e6e74dee63a353',1,'QSerialPort::FlowControl'],['../namespaceAndroidSerial.html#abb19e7c08d557535ff09bbfec57131f6',1,'AndroidSerial::FlowControl']]],
   ['fontsize_6',['FontSize',['../classFactValueGrid.html#aa0426be81b52fd789f9819794245099c',1,'FactValueGrid']]],
-  ['format_7',['Format',['../namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5',1,'QGCCompression']]],
+  ['format_7',['format',['../namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5',1,'QGCCompression::Format'],['../namespaceLogFormatter.html#abdafeb38e2d42c52b1ff8e969cb1e847',1,'LogFormatter::Format']]],
   ['function_8',['function',['../classActuatorOutputs_1_1ConfigParameter.html#a924484ba5625f88c47d44a7b9323ff4a',1,'ActuatorOutputs::ConfigParameter::Function'],['../classActuatorOutputs_1_1ChannelConfig.html#a125b177a54bd1eac1a8a20fc9a374474',1,'ActuatorOutputs::ChannelConfig::Function'],['../namespaceMixer.html#a22551be0c9f3940737770382fd90fad6',1,'Mixer::Function']]]
 ];

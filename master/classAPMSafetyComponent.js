@@ -10,5 +10,6 @@ var classAPMSafetyComponent =
     [ "setupComplete", "classAPMSafetyComponent.html#a49524cf87d8968ef37f92eaae4127a36", null ],
     [ "setupCompleteChangedTriggerList", "classAPMSafetyComponent.html#a2988bb819cd3fccf2fa9ea44117e059b", null ],
     [ "setupSource", "classAPMSafetyComponent.html#ae45ab4436d8ad9f778403b93cec065da", null ],
-    [ "summaryQmlSource", "classAPMSafetyComponent.html#ad2c43a912e7a3b62e8a992373098d2fb", null ]
+    [ "summaryQmlSource", "classAPMSafetyComponent.html#ad2c43a912e7a3b62e8a992373098d2fb", null ],
+    [ "vehicleConfigJson", "classAPMSafetyComponent.html#a942e9bb9422972a916dbaca7fec74dd0", null ]
 ];

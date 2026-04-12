@@ -5,8 +5,6 @@ var classArduSubFirmwarePlugin =
     [ "_convertToCustomFlightModeEnum", "classArduSubFirmwarePlugin.html#a1e49596640e9918f3c4b59d7f5f34858", null ],
     [ "adjustIncomingMavlinkMessage", "classArduSubFirmwarePlugin.html#a91814f8c9fdc596294e1e3015d96a960", null ],
     [ "adjustMetaData", "classArduSubFirmwarePlugin.html#a30e8da6ff83771ebf4b12b9d8efbe943", null ],
-    [ "brandImageIndoor", "classArduSubFirmwarePlugin.html#a69424c0f5c30bad07fc35cad4ce81ed3", null ],
-    [ "brandImageOutdoor", "classArduSubFirmwarePlugin.html#ad148ee0d4c48ab2730283bad21e06791", null ],
     [ "defaultJoystickTXMode", "classArduSubFirmwarePlugin.html#ac2df822206eacf3ac5175e8a312a75ab", null ],
     [ "factGroups", "classArduSubFirmwarePlugin.html#a11be8805da7f87742afe069ef81233ff", null ],
     [ "initializeStreamRates", "classArduSubFirmwarePlugin.html#a0c917bbc07f5736687cd386b934236b1", null ],

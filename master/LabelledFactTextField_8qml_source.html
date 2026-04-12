@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('LabelledFactTextField_8qml_source.html
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>import QGroundControl.FactControls</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>RowLayout {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    property string label:                   fact.shortDescription</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    property string label:                   fact ? fact.shortDescription : &quot;&quot;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    property alias  fact:                    _factTextField.fact</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    property real   textFieldPreferredWidth: -1</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    property alias  textFieldUnitsLabel:     _factTextField.unitsLabel</div>
@@ -117,16 +117,17 @@ $(document).ready(function(){initNavTree('LabelledFactTextField_8qml_source.html
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    spacing: ScreenTools.defaultFontPixelWidth * 2</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    QGCLabel {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        Layout.fillWidth:   true</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        text:               label</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        visible:            label !== &quot;&quot;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    FactTextField {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        id:                     _factTextField</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        Layout.preferredWidth:  textFieldPreferredWidth</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        Layout.fillWidth:    true</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        Layout.minimumWidth: implicitWidth</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        text:                label</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        visible:             label !== &quot;&quot;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    FactTextField {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        id:                     _factTextField</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        Layout.preferredWidth:  textFieldPreferredWidth</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

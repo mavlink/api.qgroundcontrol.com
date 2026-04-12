@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['segmenttype_0',['SegmentType',['../classFlightPathSegment.html#a1a9904d97f3b74589f3177247b570ffe',1,'FlightPathSegment']]],
-  ['sendtovehicleprecheckstate_1',['SendToVehiclePreCheckState',['../classMissionController.html#a6854644a576d0f3d705ada955ed2868a',1,'MissionController']]],
-  ['serialporterror_2',['SerialPortError',['../classQSerialPort.html#aa31f0921d43bb30acfe9a6cc5abbe6b0',1,'QSerialPort']]],
-  ['speedunits_3',['SpeedUnits',['../classUnitsSettings.html#ab88fe16dd3ad9e6cf0933b873e46b46e',1,'UnitsSettings']]],
-  ['spindirection_4',['SpinDirection',['../structActuatorGeometry.html#a7ccc0079932245698dfce1667c559f4e',1,'ActuatorGeometry']]],
-  ['state_5',['state',['../classCircuitBreakerState.html#ae3872f8cde49f3dff3b4f1e005d112ca',1,'CircuitBreakerState::State'],['../namespaceTerrainQuery.html#ae7bc82310721c6cdfb6eff221ff6781c',1,'TerrainQuery::State']]],
-  ['status_6',['status',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76',1,'QGCCommandLineParser::CommandLineParseResult::Status'],['../classVideoReceiver.html#af67154a257e1617a5b94bbc4b8e6defb',1,'VideoReceiver::STATUS']]],
-  ['stopbits_7',['stopbits',['../classQSerialPort.html#ad4ec8df2fd7623ca1f2450b0681e5082',1,'QSerialPort::StopBits'],['../namespaceAndroidSerial.html#ad14d38e3ec2393a218ef66898641a5b4',1,'AndroidSerial::StopBits']]],
-  ['storagestatus_8',['StorageStatus',['../classMavlinkCameraControl.html#a0cf0bad6f115c5fa258bc6e2fade6f89',1,'MavlinkCameraControl']]]
+  ['rangetype_0',['RangeType',['../classInstrumentValueData.html#ad155601d9c09933da6adc61d26b2c13a',1,'InstrumentValueData']]],
+  ['readermode_1',['ReaderMode',['../namespaceQGClibarchive.html#a26151fa42367cd4c640dd3435f65e120',1,'QGClibarchive']]],
+  ['readyforsavestate_2',['ReadyForSaveState',['../classVisualMissionItem.html#a0d5e189c5204846d744a4def0521f7b3',1,'VisualMissionItem']]],
+  ['region_3',['Region',['../classRemoteIDManager.html#a6eb18730ce48825b9d61adf0fdf4439e',1,'RemoteIDManager']]],
+  ['regionoperation_4',['RegionOperation',['../classRemoteIDSettings.html#ac731ea1dddd578a58b52009768f2e062',1,'RemoteIDSettings']]],
+  ['requestmessagefailuremode_5ft_5',['RequestMessageFailureMode_t',['../classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5',1,'MockLink']]],
+  ['requestmessageresulthandlerfailurecode_5ft_6',['RequestMessageResultHandlerFailureCode_t',['../structVehicleTypes.html#a9ce049e2f1375e132c762eb6cb63db0f',1,'VehicleTypes']]],
+  ['role_7',['Role',['../structLogEntry.html#a16604a76fec3f30308d55e8c0ead18e9',1,'LogEntry']]],
+  ['roles_8',['roles',['../classLoggingCategoryFlatModel.html#ad76851c285a28aa986944ec9a90f04e0',1,'LoggingCategoryFlatModel::Roles'],['../classLoggingCategoryTreeModel.html#a2e031477a1f40b4ab3c980d8999bc0fe',1,'LoggingCategoryTreeModel::Roles']]]
 ];

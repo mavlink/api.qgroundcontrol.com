@@ -22,7 +22,5 @@ var searchData=
   ['bluetoothworker_2ecc_19',['BluetoothWorker.cc',['../BluetoothWorker_8cc.html',1,'']]],
   ['bluetoothworker_2eh_20',['BluetoothWorker.h',['../BluetoothWorker_8h.html',1,'']]],
   ['bootloader_2ecc_21',['Bootloader.cc',['../Bootloader_8cc.html',1,'']]],
-  ['bootloader_2eh_22',['Bootloader.h',['../Bootloader_8h.html',1,'']]],
-  ['brandimagesettings_2ecc_23',['BrandImageSettings.cc',['../BrandImageSettings_8cc.html',1,'']]],
-  ['brandimagesettings_2eh_24',['BrandImageSettings.h',['../BrandImageSettings_8h.html',1,'']]]
+  ['bootloader_2eh_22',['Bootloader.h',['../Bootloader_8h.html',1,'']]]
 ];

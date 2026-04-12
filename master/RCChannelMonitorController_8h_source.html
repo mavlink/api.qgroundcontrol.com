@@ -101,44 +101,50 @@ $(document).ready(function(){initNavTree('RCChannelMonitorController_8h_source.h
 <a href="RCChannelMonitorController_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="FactPanelController_8h.html">FactPanelController.h</a>&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="QGCMAVLink_8h.html">QGCMAVLink.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QtCore/QLoggingCategory&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QtQmlIntegration/QtQmlIntegration&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><a class="code hl_function" href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a>(RCChannelMonitorControllerLog)</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classRCChannelMonitorController.html">   11</a></span>class <a class="code hl_class" href="classRCChannelMonitorController.html">RCChannelMonitorController</a> : public <a class="code hl_class" href="classFactPanelController.html">FactPanelController</a></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    Q_OBJECT</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    QML_ELEMENT</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    Q_PROPERTY(<span class="keywordtype">int</span> channelCount READ channelCount NOTIFY channelCountChanged)</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QtCore/QLoggingCategory&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QtQmlIntegration/QtQmlIntegration&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><a class="code hl_function" href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a>(RCChannelMonitorControllerLog)</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classRCChannelMonitorController.html">   10</a></span>class <a class="code hl_class" href="classRCChannelMonitorController.html">RCChannelMonitorController</a> : public <a class="code hl_class" href="classFactPanelController.html">FactPanelController</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    Q_OBJECT</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    QML_ELEMENT</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    Q_PROPERTY(<span class="keywordtype">int</span> channelCount READ channelCount NOTIFY channelCountChanged)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    Q_PROPERTY(<span class="keywordtype">bool</span> clampValues READ clampValues WRITE setClampValues NOTIFY clampValuesChanged)</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classRCChannelMonitorController.html">RCChannelMonitorController</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_class" href="classRCChannelMonitorController.html">~RCChannelMonitorController</a>();</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">int</span> channelCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _chanCount; }</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>signals:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classRCChannelMonitorController.html#aa0686a9e83fef7d6df3e20f0a4c8fd22">   24</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classRCChannelMonitorController.html#aa0686a9e83fef7d6df3e20f0a4c8fd22">channelCountChanged</a>(<span class="keywordtype">int</span> channelCount);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classRCChannelMonitorController.html#a09d00b983ea51cc2d6c263b629520556">   25</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classRCChannelMonitorController.html#a09d00b983ea51cc2d6c263b629520556">channelValueChanged</a>(<span class="keywordtype">int</span> channel, <span class="keywordtype">int</span> rcValue);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> channelValuesChanged(QVector&lt;int&gt; pwmValues);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">bool</span> clampValues()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _clampValues; }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> setClampValues(<span class="keywordtype">bool</span> clamp);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>signals:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classRCChannelMonitorController.html#aa0686a9e83fef7d6df3e20f0a4c8fd22">   26</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classRCChannelMonitorController.html#aa0686a9e83fef7d6df3e20f0a4c8fd22">channelCountChanged</a>(<span class="keywordtype">int</span> channelCount);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classRCChannelMonitorController.html#a09d00b983ea51cc2d6c263b629520556">   27</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classRCChannelMonitorController.html#a09d00b983ea51cc2d6c263b629520556">channelValueChanged</a>(<span class="keywordtype">int</span> channel, <span class="keywordtype">int</span> rcValue);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classRCChannelMonitorController.html#aea91f925a4fb894d054e06216d039d05">   28</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classRCChannelMonitorController.html#aea91f925a4fb894d054e06216d039d05">clampValuesChanged</a>();</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">int</span> _chanCount = 0;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> channelValuesChanged(QVector&lt;int&gt; pwmValues);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> _connectToSignal();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">int</span> _chanCount = 0;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">bool</span> _clampValues = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
 </div>
 <div class="ttc" id="aAndroidSerial_8h_html_a932681ef567cd0a6a3a714a3c519eb35"><div class="ttname"><a href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a></div><div class="ttdeci">Q_DECLARE_LOGGING_CATEGORY(AndroidSerialLog)</div></div>
 <div class="ttc" id="aFactPanelController_8h_html"><div class="ttname"><a href="FactPanelController_8h.html">FactPanelController.h</a></div></div>
-<div class="ttc" id="aQGCMAVLink_8h_html"><div class="ttname"><a href="QGCMAVLink_8h.html">QGCMAVLink.h</a></div></div>
 <div class="ttc" id="aclassFactPanelController_html"><div class="ttname"><a href="classFactPanelController.html">FactPanelController</a></div><div class="ttdoc">Used for handling missing Facts from C++ code.</div><div class="ttdef"><b>Definition</b> <a href="FactPanelController_8h_source.html#l00015">FactPanelController.h:16</a></div></div>
-<div class="ttc" id="aclassRCChannelMonitorController_html"><div class="ttname"><a href="classRCChannelMonitorController.html">RCChannelMonitorController</a></div><div class="ttdef"><b>Definition</b> <a href="RCChannelMonitorController_8h_source.html#l00011">RCChannelMonitorController.h:12</a></div></div>
+<div class="ttc" id="aclassRCChannelMonitorController_html"><div class="ttname"><a href="classRCChannelMonitorController.html">RCChannelMonitorController</a></div><div class="ttdef"><b>Definition</b> <a href="RCChannelMonitorController_8h_source.html#l00010">RCChannelMonitorController.h:11</a></div></div>
 <div class="ttc" id="aclassRCChannelMonitorController_html_a09d00b983ea51cc2d6c263b629520556"><div class="ttname"><a href="classRCChannelMonitorController.html#a09d00b983ea51cc2d6c263b629520556">RCChannelMonitorController::channelValueChanged</a></div><div class="ttdeci">void channelValueChanged(int channel, int rcValue)</div></div>
 <div class="ttc" id="aclassRCChannelMonitorController_html_aa0686a9e83fef7d6df3e20f0a4c8fd22"><div class="ttname"><a href="classRCChannelMonitorController.html#aa0686a9e83fef7d6df3e20f0a4c8fd22">RCChannelMonitorController::channelCountChanged</a></div><div class="ttdeci">void channelCountChanged(int channelCount)</div></div>
+<div class="ttc" id="aclassRCChannelMonitorController_html_aea91f925a4fb894d054e06216d039d05"><div class="ttname"><a href="classRCChannelMonitorController.html#aea91f925a4fb894d054e06216d039d05">RCChannelMonitorController::clampValuesChanged</a></div><div class="ttdeci">void clampValuesChanged()</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

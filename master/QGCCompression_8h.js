@@ -1,5 +1,11 @@
 var QGCCompression_8h =
 [
+    [ "CompressionLevel", "QGCCompression_8h.html#a5293269680acb2a4429884885795b1c3", [
+      [ "None", "QGCCompression_8h.html#a5293269680acb2a4429884885795b1c3a6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "Fast", "QGCCompression_8h.html#a5293269680acb2a4429884885795b1c3ae16b5b7f26f54214445cbe38d72c2828", null ],
+      [ "Default", "QGCCompression_8h.html#a5293269680acb2a4429884885795b1c3a7a1920d61156abc05a60135aefe8bc67", null ],
+      [ "Best", "QGCCompression_8h.html#a5293269680acb2a4429884885795b1c3a68ef004de6166492c1d668eb8efe09bd", null ]
+    ] ],
     [ "Error", "QGCCompression_8h.html#aba889dcd77ddc556c71ad821a9a798e7", [
       [ "None", "QGCCompression_8h.html#aba889dcd77ddc556c71ad821a9a798e7a6adf97f83acf6453d4a6a4b1070f3754", null ],
       [ "FileNotFound", "QGCCompression_8h.html#aba889dcd77ddc556c71ad821a9a798e7a2767828026039e8ba7b38973cbb701f2", null ],
@@ -28,6 +34,8 @@ var QGCCompression_8h =
       [ "TAR_BZ2", "QGCCompression_8h.html#a9ed6795a888693588da89174b9f072f5a26cd66da9c356a0f5149e51cda58b58b", null ],
       [ "TAR_LZ4", "QGCCompression_8h.html#a9ed6795a888693588da89174b9f072f5a636d71afb26ec15bed8936ef09ec3c4e", null ]
     ] ],
+    [ "compress", "QGCCompression_8h.html#aa39c757274d165b446f84c6481dc9f3b", null ],
+    [ "compressData", "QGCCompression_8h.html#a4973097b77aedf9b4dc94e03319c4093", null ],
     [ "decompressData", "QGCCompression_8h.html#a13285748433c899ec879df10a7378b69", null ],
     [ "decompressFile", "QGCCompression_8h.html#a1ecc29aedf734bf8ca80e52addac1546", null ],
     [ "decompressFromDevice", "QGCCompression_8h.html#a9e9077bd5287b1607545f8854a7e8001", null ],
@@ -56,10 +64,14 @@ var QGCCompression_8h =
     [ "isArchiveFormat", "QGCCompression_8h.html#a5ea391e13fd47cad2ba98d012a665bd0", null ],
     [ "isCompressedFile", "QGCCompression_8h.html#a9447499bd313fb5727b1aeccb0c0c2f8", null ],
     [ "isCompressionFormat", "QGCCompression_8h.html#a01c7a1f29ea9b9eeb445b8947fc23811", null ],
+    [ "isDataCompressed", "QGCCompression_8h.html#ad2f5e1c07c1d47992028018471f6baaf", null ],
+    [ "lastCompressionRatio", "QGCCompression_8h.html#a43f66fb29ef043322dfb087f3a0471f7", null ],
     [ "lastError", "QGCCompression_8h.html#ac5b2365d27f55bc632d7567a6678b37c", null ],
     [ "lastErrorString", "QGCCompression_8h.html#a69650929455f64d9a0ba463f4475bc72", null ],
     [ "listArchive", "QGCCompression_8h.html#a498974e1e03f09b2711830114687c4f7", null ],
     [ "listArchiveDetailed", "QGCCompression_8h.html#aa8d1a172131add5634d81be4ff0b4985", null ],
     [ "strippedPath", "QGCCompression_8h.html#a8383c990bb8ec070be023eb18b48ffb5", null ],
+    [ "uncompress", "QGCCompression_8h.html#aa4942c43b5f0c671c86f69dc29c4cff2", null ],
+    [ "uncompressData", "QGCCompression_8h.html#a40482c2aa120dfea39590614058a2dc4", null ],
     [ "validateArchive", "QGCCompression_8h.html#abeb1713ae6335cecb1dd73319f132cd0", null ]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['elapsed_0',['elapsed',['../structLogDownloadData.html#a3d9031ce405d556ee726f579e314e61b',1,'LogDownloadData']]],
+  ['elapsed_0',['elapsed',['../structOnboardLogDownloadData.html#a2d82c7b94e170c7b2684bf1e80044d80',1,'OnboardLogDownloadData']]],
   ['elapsedms_1',['elapsedMs',['../structStateMachineLogger_1_1LogEntry.html#aed5697ead8f289ff26e5058b8caea769',1,'StateMachineLogger::LogEntry']]],
   ['elevation_2',['elevation',['../structsatellite__info__s.html#a1eacbb737df0746b93520a734a1c6776',1,'satellite_info_s']]],
   ['elevationmapprovidername_3',['elevationMapProviderName',['../classFlightMapSettings.html#ae083a8c1ce0517737163f01d94b42f2d',1,'FlightMapSettings']]],
@@ -17,10 +17,10 @@ var searchData=
   ['enablemanualcontrolpitchextensionname_14',['enableManualControlPitchExtensionName',['../classJoystickSettings.html#a56413e1f71e7dbbc9b991fa1202586ee',1,'JoystickSettings']]],
   ['enablemanualcontrolrollextensionname_15',['enableManualControlRollExtensionName',['../classJoystickSettings.html#a8fd990a3264a4bf1a24787911fbb0f60',1,'JoystickSettings']]],
   ['enablemultivehiclepanelname_16',['enableMultiVehiclePanelName',['../classAppSettings.html#a4c2df4470793fa55a8d02dfb3a080a12',1,'AppSettings']]],
-  ['enableonscreencontrolname_17',['EnableOnScreenControlName',['../classGimbalControllerSettings.html#a87d8337bff953f6b404797c71e88ffae',1,'GimbalControllerSettings']]],
+  ['enableonscreencontrolname_17',['enableOnScreenControlName',['../classGimbalControllerSettings.html#a552fd7f446dd15a8af8e40919f7cd227',1,'GimbalControllerSettings']]],
   ['enablestoragelimitname_18',['enableStorageLimitName',['../classVideoSettings.html#ae183a1a22952a23ba67c32dd4ece2e18',1,'VideoSettings']]],
   ['enforcechecklistname_19',['enforceChecklistName',['../classAppSettings.html#aa5648d6b14d64323274759a10052d9a9',1,'AppSettings']]],
-  ['entry_20',['entry',['../structLogDownloadData.html#a0ffc0d81afb2e5bffa341473d2664368',1,'LogDownloadData']]],
+  ['entry_20',['entry',['../structOnboardLogDownloadData.html#a56ab8655e8ec12e1ef099e065b628a0c',1,'OnboardLogDownloadData']]],
   ['entrycount_21',['entryCount',['../structStateMachineProfiler_1_1StateProfile.html#aa55aa257a441f1b8aecf2602153ceb8e',1,'StateMachineProfiler::StateProfile']]],
   ['env_22',['env',['../structAndroidSerial_1_1JniContext.html#a86def8454e0b8dfff0b297f266178f63',1,'AndroidSerial::JniContext']]],
   ['eph_23',['eph',['../structsensor__gps__s.html#a79b8dd9c91340240ba11be0e45877a58',1,'sensor_gps_s']]],
@@ -34,5 +34,6 @@ var searchData=
   ['eventtype_31',['EventType',['../classQGCStateMachineEvent.html#a6511968fa0a14ead261b7a71af0f1a54',1,'QGCStateMachineEvent']]],
   ['excludefromactuatortesting_32',['excludeFromActuatorTesting',['../structMixer_1_1Mixers_1_1OutputFunction.html#aa5f77540be7874582db789b82ad6993f',1,'Mixer::Mixers::OutputFunction']]],
   ['exclusions_33',['exclusions',['../classQGCCameraOptionExclusion.html#a547c9a59e2e30d2fea93473fb9911117',1,'QGCCameraOptionExclusion']]],
-  ['exponentialpctname_34',['exponentialPctName',['../classJoystickSettings.html#a08f100d4c0ebff4b96f8d0e185ce0dab',1,'JoystickSettings']]]
+  ['expanded_34',['expanded',['../structLoggingCategoryTreeNode.html#a2fab1031c4c5ccec92eab535ca57d4e0',1,'LoggingCategoryTreeNode']]],
+  ['exponentialpctname_35',['exponentialPctName',['../classJoystickSettings.html#a08f100d4c0ebff4b96f8d0e185ce0dab',1,'JoystickSettings']]]
 ];

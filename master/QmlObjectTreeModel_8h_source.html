@@ -177,30 +177,32 @@ $(document).ready(function(){initNavTree('QmlObjectTreeModel_8h_source.html','')
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">void</span>    clearAndDeleteContents(); </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">bool</span>    contains(QObject* <span class="keywordtype">object</span>) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classQmlObjectTreeModel.html#a3fdce9da2dcd20db068e74cb57f0c7d3">   96</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> NodeTypeRole = Qt::UserRole + 2;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">struct </span>TreeNode {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        QObject* <span class="keywordtype">object</span> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        TreeNode* parentNode = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        QList&lt;TreeNode*&gt; children;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        QString nodeType;   </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordtype">int</span> row() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    };</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    TreeNode*   _nodeFromIndex(<span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    QModelIndex _indexForNode(<span class="keyword">const</span> TreeNode* node) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    TreeNode*   _findNode(<span class="keyword">const</span> TreeNode* root, <span class="keyword">const</span> QObject* <span class="keywordtype">object</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">static</span> <span class="keywordtype">int</span>  _subtreeCount(<span class="keyword">const</span> TreeNode* node);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">void</span>        _disconnectSubtree(TreeNode* node);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">void</span>        _deleteSubtree(TreeNode* node, <span class="keywordtype">bool</span> deleteObjects);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">void</span>        _connectDirtyChanged(QObject* <span class="keywordtype">object</span>);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">void</span>        _disconnectDirtyChanged(QObject* <span class="keywordtype">object</span>);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    TreeNode _rootNode; </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordtype">int</span>      _totalCount = 0; </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>};</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classQmlObjectTreeModel.html#a3fdce9da2dcd20db068e74cb57f0c7d3">   96</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> NodeTypeRole  = Qt::UserRole + 2;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classQmlObjectTreeModel.html#abb2adde02a36601d9a91fa5de63dfd90">   97</a></span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> SeparatorRole = Qt::UserRole + 3;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keyword">struct </span>TreeNode {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        QObject* <span class="keywordtype">object</span> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        TreeNode* parentNode = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        QList&lt;TreeNode*&gt; children;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        QString nodeType;   </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordtype">int</span> row() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    };</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    TreeNode*   _nodeFromIndex(<span class="keyword">const</span> QModelIndex&amp; index) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    QModelIndex _indexForNode(<span class="keyword">const</span> TreeNode* node) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    TreeNode*   _findNode(<span class="keyword">const</span> TreeNode* root, <span class="keyword">const</span> QObject* <span class="keywordtype">object</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keyword">static</span> <span class="keywordtype">int</span>  _subtreeCount(<span class="keyword">const</span> TreeNode* node);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">void</span>        _disconnectSubtree(TreeNode* node);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">void</span>        _deleteSubtree(TreeNode* node, <span class="keywordtype">bool</span> deleteObjects);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">void</span>        _connectDirtyChanged(QObject* <span class="keywordtype">object</span>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">void</span>        _disconnectDirtyChanged(QObject* <span class="keywordtype">object</span>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordtype">void</span>        _emitSeparatorChanged(<span class="keyword">const</span> QModelIndex&amp; parentIdx, <span class="keywordtype">int</span> fromRow);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    TreeNode _rootNode; </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordtype">int</span>      _totalCount = 0; </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>};</div>
 </div>
 <div class="ttc" id="aAndroidSerial_8h_html_a932681ef567cd0a6a3a714a3c519eb35"><div class="ttname"><a href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a></div><div class="ttdeci">Q_DECLARE_LOGGING_CATEGORY(AndroidSerialLog)</div></div>
 <div class="ttc" id="aObjectItemModelBase_8h_html"><div class="ttname"><a href="ObjectItemModelBase_8h.html">ObjectItemModelBase.h</a></div></div>
