@@ -747,6 +747,7 @@ var hierarchy =
             [ "SendMavlinkCommandState", "classSendMavlinkCommandState.html", null ],
             [ "SkippableAsyncState", "classSkippableAsyncState.html", null ],
             [ "WaitForMavlinkMessageState", "classWaitForMavlinkMessageState.html", null ],
+            [ "WaitForParamResponseState", "classWaitForParamResponseState.html", null ],
             [ "WaitForSignalState", "classWaitForSignalState.html", null ]
           ] ]
         ] ]

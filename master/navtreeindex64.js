@@ -1,5 +1,18 @@
 var NAVTREEINDEX64 =
 {
+"struct__Qt6GLVideoItemPrivate.html#a037b6f9b99d64bc28a5808be69fa3efa":[2,0,20,1],
+"struct__Qt6GLVideoItemPrivate.html#a146ea07d3af958199fba5193613c8bae":[2,0,20,18],
+"struct__Qt6GLVideoItemPrivate.html#a264c5550ac3fc82b4133ef8e40a502ef":[2,0,20,10],
+"struct__Qt6GLVideoItemPrivate.html#a2cf83238fd496cb0bec1a6d1c97bbcc2":[2,0,20,4],
+"struct__Qt6GLVideoItemPrivate.html#a33b1190f6b4ae4379558f6685b9ac9ca":[2,0,20,19],
+"struct__Qt6GLVideoItemPrivate.html#a6499c996b6f360172aaa83f4f77f2358":[2,0,20,6],
+"struct__Qt6GLVideoItemPrivate.html#a7f240d169d35e29d7365a27cc4666000":[2,0,20,16],
+"struct__Qt6GLVideoItemPrivate.html#a888836c31de22cf0c0e67df7c752a300":[2,0,20,8],
+"struct__Qt6GLVideoItemPrivate.html#a9bce49cc1a238d0b04fc08302194afdb":[2,0,20,11],
+"struct__Qt6GLVideoItemPrivate.html#a9f96005d8cebd05f8326db4eecdaa518":[2,0,20,9],
+"struct__Qt6GLVideoItemPrivate.html#aa4427338bb17045c227cc0bfafd2935c":[2,0,20,15],
+"struct__Qt6GLVideoItemPrivate.html#aace1500b00302cef11fbaea8e6674a87":[2,0,20,13],
+"struct__Qt6GLVideoItemPrivate.html#aaf5f696bd98a4d077cf04d3dbb5f7d1e":[2,0,20,17],
 "struct__Qt6GLVideoItemPrivate.html#aafbcc14328d60e5be70f8e09e8baa1c1":[2,0,20,0],
 "struct__Qt6GLVideoItemPrivate.html#ab379930d6649c683ee4390a0fb50e228":[2,0,20,14],
 "struct__Qt6GLVideoItemPrivate.html#ac921996733b8213400ea52998b94abf3":[2,0,20,2],

@@ -88,7 +88,7 @@ var searchData=
   ['firmwaremajorversion_85',['firmwareMajorVersion',['../classVehicle.html#aedfc2b88975e090d7d668dc36e8b8671',1,'Vehicle']]],
   ['firmwareminorversion_86',['firmwareMinorVersion',['../classVehicle.html#a640833fc5afe08bb82949cd545c370b1',1,'Vehicle']]],
   ['firmwarepatchversion_87',['firmwarePatchVersion',['../classVehicle.html#ad3ff7a85080189e1bbbcf77b8d78b7f7',1,'Vehicle']]],
-  ['firmwareplugin_88',['firmwareplugin',['../classVehicle.html#a56529fa0d722f6d13aab4d693157609f',1,'Vehicle::firmwarePlugin()'],['../classFirmwarePlugin.html#af440c8f54f4d7618178ef33e4bfd19d1',1,'FirmwarePlugin::FirmwarePlugin()']]],
+  ['firmwareplugin_88',['firmwareplugin',['../classFirmwarePlugin.html#af440c8f54f4d7618178ef33e4bfd19d1',1,'FirmwarePlugin::FirmwarePlugin()'],['../classVehicle.html#a56529fa0d722f6d13aab4d693157609f',1,'Vehicle::firmwarePlugin()']]],
   ['firmwarepluginfactory_89',['FirmwarePluginFactory',['../classFirmwarePluginFactory.html#a45062cce32ecf8f6e084f5d91dc90269',1,'FirmwarePluginFactory']]],
   ['firmwarepluginforautopilot_90',['firmwarepluginforautopilot',['../classAPMFirmwarePluginFactory.html#a1c9025d2784429a70c5818eb3de37a88',1,'APMFirmwarePluginFactory::firmwarePluginForAutopilot()'],['../classFirmwarePluginFactory.html#a8d5c2da5cd6facd18a7d4e6935c33261',1,'FirmwarePluginFactory::firmwarePluginForAutopilot()'],['../classFirmwarePluginManager.html#a19b2ad83bcffea9598dd301d66590fc5',1,'FirmwarePluginManager::firmwarePluginForAutopilot()'],['../classPX4FirmwarePluginFactory.html#a09d068f96677f58749131bd20baebf36',1,'PX4FirmwarePluginFactory::firmwarePluginForAutopilot()']]],
   ['firmwareplugininstancedata_91',['firmwarePluginInstanceData',['../classVehicle.html#aeae38448147ef85b724991c4500cb331',1,'Vehicle']]],

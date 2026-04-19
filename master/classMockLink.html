@@ -130,11 +130,13 @@ Public Types</h2></td></tr>
 <tr class="memitem:a56c4c7ff06207a68a850e31f72843ff5" id="r_a56c4c7ff06207a68a850e31f72843ff5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5">ParamSetFailureMode_t</a> { <a class="el" href="classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5afe9c871d2936b35ab63b9015aeed3574">FailParamSetNone</a>
 , <a class="el" href="classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5a66b6a385709fbb5b206154cb7dc0ac70">FailParamSetNoAck</a>
 , <a class="el" href="classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5a388ce1172a10cc5ea6894a7140741289">FailParamSetFirstAttemptNoAck</a>
+, <a class="el" href="classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5a15ac84d9850c0f42c6e6e9b97738a1a7">FailParamSetParamError</a>
  }</td></tr>
 <tr class="separator:a56c4c7ff06207a68a850e31f72843ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc2514d204c22d410a2e1a0348fe0a79" id="r_adc2514d204c22d410a2e1a0348fe0a79"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79">ParamRequestReadFailureMode_t</a> { <a class="el" href="classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79a6075d36eb64eda44068f33766d5f4bd1">FailParamRequestReadNone</a>
 , <a class="el" href="classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79a643a2fbb920b873700a83463ff966a38">FailParamRequestReadNoResponse</a>
 , <a class="el" href="classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79a2d4710cb7d7160eb9cea0fd951ad6bc0">FailParamRequestReadFirstAttemptNoResponse</a>
+, <a class="el" href="classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79a486cbdd8a637310ca27e3c9b6e5ca85c">FailParamRequestReadParamError</a>
  }</td></tr>
 <tr class="separator:adc2514d204c22d410a2e1a0348fe0a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -365,9 +367,11 @@ Additional Inherited Members</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="adc2514d204c22d410a2e1a0348fe0a79a2d4710cb7d7160eb9cea0fd951ad6bc0" name="adc2514d204c22d410a2e1a0348fe0a79a2d4710cb7d7160eb9cea0fd951ad6bc0"></a>FailParamRequestReadFirstAttemptNoResponse&#160;</td><td class="fielddoc"><p>Skip response on first attempt, respond to retry. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="adc2514d204c22d410a2e1a0348fe0a79a486cbdd8a637310ca27e3c9b6e5ca85c" name="adc2514d204c22d410a2e1a0348fe0a79a486cbdd8a637310ca27e3c9b6e5ca85c"></a>FailParamRequestReadParamError&#160;</td><td class="fielddoc"><p>Respond with PARAM_ERROR (DOES_NOT_EXIST) instead of PARAM_VALUE. </p>
+</td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00128">128</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00129">129</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
 </div>
 </div>
@@ -388,6 +392,8 @@ Additional Inherited Members</h2></td></tr>
 <tr><td class="fieldname"><a id="a56c4c7ff06207a68a850e31f72843ff5a66b6a385709fbb5b206154cb7dc0ac70" name="a56c4c7ff06207a68a850e31f72843ff5a66b6a385709fbb5b206154cb7dc0ac70"></a>FailParamSetNoAck&#160;</td><td class="fielddoc"><p>Do not send PARAM_VALUE ack. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a56c4c7ff06207a68a850e31f72843ff5a388ce1172a10cc5ea6894a7140741289" name="a56c4c7ff06207a68a850e31f72843ff5a388ce1172a10cc5ea6894a7140741289"></a>FailParamSetFirstAttemptNoAck&#160;</td><td class="fielddoc"><p>Skip ack on first attempt, respond to retry. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a56c4c7ff06207a68a850e31f72843ff5a15ac84d9850c0f42c6e6e9b97738a1a7" name="a56c4c7ff06207a68a850e31f72843ff5a15ac84d9850c0f42c6e6e9b97738a1a7"></a>FailParamSetParamError&#160;</td><td class="fielddoc"><p>Respond with PARAM_ERROR (VALUE_OUT_OF_RANGE) instead of PARAM_VALUE. </p>
 </td></tr>
 </table>
 
@@ -452,7 +458,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00048">48</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00049">49</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="MockLink_8h_source.html#l00064">setArmed()</a>, <a class="el" href="MockLinkWorker_8cc_source.html#l00018">MockLinkWorker::startWork()</a>, and <a class="el" href="classMockLink.html#a2d85b6cede25156baf71112328317193">writeBytesQueuedSignal()</a>.</p>
 
@@ -481,9 +487,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00122">122</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00123">123</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="MockLink_8cc_source.html#l00156">disconnect()</a>.</p>
+<p class="reference">References <a class="el" href="MockLink_8cc_source.html#l00157">disconnect()</a>.</p>
 
 </div>
 </div>
@@ -621,11 +627,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classLinkInterface.html#a9878b4e07ad890d0f1925d7330e69539">LinkInterface</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00156">156</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00157">157</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="classLinkInterface.html#a0f20e82176c72fb02a1d18a3019c5ee8">LinkInterface::disconnected()</a>, and <a class="el" href="MockLinkMissionItemHandler_8cc_source.html#l00426">MockLinkMissionItemHandler::shutdown()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00186">QGroundControlQmlGlobal::stopOneMockLink()</a>, and <a class="el" href="MockLink_8cc_source.html#l00122">~MockLink()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00186">QGroundControlQmlGlobal::stopOneMockLink()</a>, and <a class="el" href="MockLink_8cc_source.html#l00123">~MockLink()</a>.</p>
 
 </div>
 </div>
@@ -681,7 +687,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Returns the number of standalone PARAM_REQUEST_READ requests for _HASH_CHECK received. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00141">141</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00143">143</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
 </div>
 </div>
@@ -784,7 +790,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l02077">2077</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l02112">2112</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 </div>
 </div>
@@ -1023,11 +1029,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Sends the specified mavlink message to <a class="el" href="namespaceQGC.html">QGC</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00562">562</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00563">563</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="classLinkInterface.html#a09de1d004eb07755d96b3773d45804c2">LinkInterface::bytesReceived()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MockLinkFTP_8cc_source.html#l00390">MockLinkFTP::mavlinkMessageReceived()</a>, <a class="el" href="MockLinkCamera_8cc_source.html#l00073">MockLinkCamera::sendCameraHeartbeats()</a>, and <a class="el" href="MockLink_8cc_source.html#l01391">sendUnexpectedCommandAck()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MockLinkFTP_8cc_source.html#l00390">MockLinkFTP::mavlinkMessageReceived()</a>, <a class="el" href="MockLinkCamera_8cc_source.html#l00073">MockLinkCamera::sendCameraHeartbeats()</a>, and <a class="el" href="MockLink_8cc_source.html#l01426">sendUnexpectedCommandAck()</a>.</p>
 
 </div>
 </div>
@@ -1046,7 +1052,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00223">223</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00224">224</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="LinkInterface_8h_source.html#l00029">LinkInterface::linkConfiguration()</a>, <a class="el" href="LinkInterface_8cc_source.html#l00036">LinkInterface::mavlinkChannelIsSet()</a>, and <a class="el" href="MockLinkCamera_8cc_source.html#l00091">MockLinkCamera::run10HzTasks()</a>.</p>
 
@@ -1067,7 +1073,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00177">177</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00178">178</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="LinkInterface_8h_source.html#l00029">LinkInterface::linkConfiguration()</a>, <a class="el" href="LinkInterface_8cc_source.html#l00036">LinkInterface::mavlinkChannelIsSet()</a>, <a class="el" href="QGCApplication_8h_source.html#l00034">qgcApp</a>, <a class="el" href="MockLinkGimbal_8cc_source.html#l00031">MockLinkGimbal::run1HzTasks()</a>, and <a class="el" href="MockLinkCamera_8cc_source.html#l00073">MockLinkCamera::sendCameraHeartbeats()</a>.</p>
 
@@ -1088,7 +1094,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00248">248</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00249">249</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="LinkInterface_8h_source.html#l00029">LinkInterface::linkConfiguration()</a>, and <a class="el" href="LinkInterface_8cc_source.html#l00036">LinkInterface::mavlinkChannelIsSet()</a>.</p>
 
@@ -1109,7 +1115,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00261">261</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00262">262</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 </div>
 </div>
@@ -1139,9 +1145,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01391">1391</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01426">1426</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="LinkInterface_8cc_source.html#l00027">LinkInterface::mavlinkChannel()</a>, and <a class="el" href="MockLink_8cc_source.html#l00562">respondWithMavlinkMessage()</a>.</p>
+<p class="reference">References <a class="el" href="LinkInterface_8cc_source.html#l00027">LinkInterface::mavlinkChannel()</a>, and <a class="el" href="MockLink_8cc_source.html#l00563">respondWithMavlinkMessage()</a>.</p>
 
 </div>
 </div>
@@ -1261,7 +1267,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00064">64</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MockLink_8cc_source.html#l00048">MockLink()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MockLink_8cc_source.html#l00049">MockLink()</a>.</p>
 
 </div>
 </div>
@@ -1317,7 +1323,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00138">138</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00140">140</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
 </div>
 </div>
@@ -1400,7 +1406,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Change a float parameter value directly on <a class="el" href="classMockLink.html">MockLink</a> (for testing cache invalidation) </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00819">819</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l00820">820</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 </div>
 </div>
@@ -1428,7 +1434,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00133">133</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00135">135</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
 </div>
 </div>
@@ -1456,7 +1462,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00123">123</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00124">124</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
 </div>
 </div>
@@ -1598,7 +1604,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l02071">2071</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l02106">2106</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="LinkInterface_8cc_source.html#l00110">LinkInterface::_connectionRemoved()</a>.</p>
 
@@ -1650,7 +1656,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01679">1679</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01714">1714</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00142">QGroundControlQmlGlobal::startAPMArduCopterMockLink()</a>.</p>
 
@@ -1702,7 +1708,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01684">1684</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01719">1719</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00153">QGroundControlQmlGlobal::startAPMArduPlaneMockLink()</a>.</p>
 
@@ -1754,7 +1760,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01694">1694</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01729">1729</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00175">QGroundControlQmlGlobal::startAPMArduRoverMockLink()</a>.</p>
 
@@ -1806,7 +1812,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01689">1689</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01724">1724</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00164">QGroundControlQmlGlobal::startAPMArduSubMockLink()</a>.</p>
 
@@ -1858,7 +1864,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01669">1669</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01704">1704</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00131">QGroundControlQmlGlobal::startGenericMockLink()</a>.</p>
 
@@ -1910,7 +1916,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01674">1674</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01709">1709</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 </div>
 </div>
@@ -1960,7 +1966,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01664">1664</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8cc_source.html#l01699">1699</a> of file <a class="el" href="MockLink_8cc_source.html">MockLink.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00120">QGroundControlQmlGlobal::startPX4MockLink()</a>.</p>
 
@@ -2100,7 +2106,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="MockLink_8cc_source.html#l00048">MockLink()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MockLink_8cc_source.html#l00049">MockLink()</a>.</p>
 
 </div>
 </div>
@@ -2150,7 +2156,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00155">155</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00157">157</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02598">Vehicle::_sendMavCommandShouldRetry()</a>.</p>
 
@@ -2176,7 +2182,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00156">156</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00158">158</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02598">Vehicle::_sendMavCommandShouldRetry()</a>.</p>
 
@@ -2202,7 +2208,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00159">159</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00161">161</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02598">Vehicle::_sendMavCommandShouldRetry()</a>.</p>
 
@@ -2228,7 +2234,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00160">160</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00162">162</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
 </div>
 </div>
@@ -2252,7 +2258,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00161">161</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00163">163</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
 </div>
 </div>
@@ -2276,7 +2282,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00162">162</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00164">164</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
 </div>
 </div>
@@ -2300,7 +2306,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00163">163</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00165">165</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
 </div>
 </div>
@@ -2324,7 +2330,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00157">157</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00159">159</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02598">Vehicle::_sendMavCommandShouldRetry()</a>.</p>
 
@@ -2350,7 +2356,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00158">158</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLink_8h_source.html#l00160">160</a> of file <a class="el" href="MockLink_8h_source.html">MockLink.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02598">Vehicle::_sendMavCommandShouldRetry()</a>.</p>
 

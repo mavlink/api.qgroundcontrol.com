@@ -135,424 +135,425 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8h_source.html',''); i
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="ProgressState_8h.html">ProgressState.h</a>&quot;</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="RetryableRequestMessageState_8h.html">RetryableRequestMessageState.h</a>&quot;</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="WaitForMavlinkMessageState_8h.html">WaitForMavlinkMessageState.h</a>&quot;</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;<a class="code" href="WaitForSignalState_8h.html">WaitForSignalState.h</a>&quot;</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="WaitStateBase_8h.html">WaitStateBase.h</a>&quot;</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="StateContext_8h.html">StateContext.h</a>&quot;</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;<a class="code" href="ErrorRecoveryBuilder_8h.html">ErrorRecoveryBuilder.h</a>&quot;</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;<a class="code" href="ErrorHandlers_8h.html">ErrorHandlers.h</a>&quot;</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &lt;QtStateMachine/QStateMachine&gt;</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &lt;QtStateMachine/QFinalState&gt;</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#include &lt;QtStateMachine/QHistoryState&gt;</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#include &lt;QtCore/QAbstractAnimation&gt;</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#include &lt;QtCore/QJsonArray&gt;</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#include &lt;QtCore/QString&gt;</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#include &lt;QtCore/QVariant&gt;</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">class </span><a class="code hl_class" href="classVehicle.html">Vehicle</a>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">class </span><a class="code hl_class" href="classStateMachineLogger.html">StateMachineLogger</a>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">class </span><a class="code hl_class" href="classStateMachineProfiler.html">StateMachineProfiler</a>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">class </span><a class="code hl_class" href="classStateHistoryRecorder.html">StateHistoryRecorder</a>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="foldopen" id="foldopen00060" data-start="{" data-end="};">
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html">   60</a></span><span class="keyword">class </span><a class="code hl_class" href="classQGCStateMachine.html">QGCStateMachine</a> : <span class="keyword">public</span> QStateMachine</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    Q_OBJECT</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    Q_DISABLE_COPY(<a class="code hl_class" href="classQGCStateMachine.html">QGCStateMachine</a>)</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    Q_PROPERTY(QString currentStateName READ currentStateName NOTIFY <a class="code hl_signal" href="classQGCStateMachine.html#a6703ee26239fb6c04475b071bc2d7124">currentStateNameChanged</a>)</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    Q_PROPERTY(<span class="keywordtype">float</span> progress READ progress NOTIFY <a class="code hl_signal" href="classQGCStateMachine.html#a21e7b7119e1d263d8a4be7b992863056">progressUpdate</a>)</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    Q_PROPERTY(<span class="keywordtype">bool</span> running READ isRunning NOTIFY <a class="code hl_signal" href="classQGCStateMachine.html#a17522a1909a527af03ff86d246de4ea7">runningChanged</a>)</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    Q_PROPERTY(QStringList stateHistory READ stateHistory NOTIFY <a class="code hl_signal" href="classQGCStateMachine.html#ad13cfd1c5dabb133e58dd7daab0706d3">stateHistoryChanged</a>)</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">using </span>EntryCallback = std::function&lt;void()&gt;;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">using </span>ExitCallback = std::function&lt;void()&gt;;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">using </span><a class="code hl_class" href="classEventHandler.html">EventHandler</a> = std::function&lt;bool(QEvent*)&gt;;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_class" href="classQGCStateMachine.html">QGCStateMachine</a>(<span class="keyword">const</span> QString&amp; machineName, <a class="code hl_class" href="classVehicle.html">Vehicle</a>* vehicle, QObject* parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_class" href="classVehicle.html">Vehicle</a> *vehicle()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _vehicle; }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    QString machineName()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> objectName(); }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_class" href="classStateContext.html">StateContext</a>&amp; context() { <span class="keywordflow">return</span> _context; }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">const</span> <a class="code hl_class" href="classStateContext.html">StateContext</a>&amp; context()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _context; }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">bool</span> active()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> isRunning(); }</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    QString currentStateName() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    QStringList stateHistory()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _stateHistory; }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordtype">void</span> setStateHistoryLimit(<span class="keywordtype">int</span> limit) { _stateHistoryLimit = limit; }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="comment">// Entry/Exit Callbacks</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordtype">void</span> setOnEntry(EntryCallback callback) { _entryCallback = std::move(callback); }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">void</span> setOnExit(ExitCallback callback) { _exitCallback = std::move(callback); }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordtype">void</span> setCallbacks(EntryCallback <a class="code hl_function" href="classQGCStateMachine.html#ac5f883955a80b14c31beb980aa29b442">onEntry</a>, ExitCallback <a class="code hl_function" href="classQGCStateMachine.html#a3a71bac2ee5ed89f5fede6fdaffaaaff">onExit</a> = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="comment">// Event Handling</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">void</span> setEventHandler(<a class="code hl_class" href="classEventHandler.html">EventHandler</a> handler) { _eventHandler = std::move(handler); }</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordtype">void</span> enablePropertyRestore();</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordtype">bool</span> isPropertyRestoreEnabled() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordtype">void</span> setGlobalErrorState(QAbstractState* errorState);</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    QAbstractState* globalErrorState()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _globalErrorState; }</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordtype">void</span> registerState(<a class="code hl_class" href="classQGCState.html">QGCState</a>* state);</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordtype">void</span> registerState(<a class="code hl_class" href="classQGCAbstractState.html">QGCAbstractState</a>* state);</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <a class="code hl_class" href="classFunctionState.html">FunctionState</a>* addFunctionState(<span class="keyword">const</span> QString&amp; stateName, std::function&lt;<span class="keywordtype">void</span>()&gt; function);</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <a class="code hl_class" href="classAsyncFunctionState.html">AsyncFunctionState</a>* addAsyncFunctionState(<span class="keyword">const</span> QString&amp; stateName,</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                                               <a class="code hl_typedef" href="classAsyncFunctionState.html#ac171cf03073823eab485cc91cbf93b8b">AsyncFunctionState::SetupFunction</a> setupFunction,</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                                               <span class="keywordtype">int</span> timeoutMsecs = 0);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <a class="code hl_class" href="classQGCState.html">QGCState</a>* addErrorRecoveryState(<span class="keyword">const</span> QString&amp; stateName,</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                                    <a class="code hl_typedef" href="classErrorRecoveryBuilder.html#a5d60280fd4235b804ac558713e3a072e">ErrorRecoveryBuilder::Action</a> action,</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                                    <span class="keywordtype">int</span> maxRetries = 0,</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                                    <span class="keywordtype">int</span> retryDelayMsecs = 1000,</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                                    <a class="code hl_enumeration" href="classErrorRecoveryBuilder.html#a40a9086a87fc83190c0d14aa3d91fa5e">ErrorRecoveryBuilder::ExhaustedBehavior</a> exhaustedBehavior = <a class="code hl_enumvalue" href="classErrorRecoveryBuilder.html#a40a9086a87fc83190c0d14aa3d91fa5eae9659e0523acb8a72006d1280727fd66">ErrorRecoveryBuilder::EmitError</a>,</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                                    <a class="code hl_typedef" href="classErrorRecoveryBuilder.html#a5d60280fd4235b804ac558713e3a072e">ErrorRecoveryBuilder::Action</a> fallback = <span class="keyword">nullptr</span>,</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                                    <a class="code hl_typedef" href="classErrorRecoveryBuilder.html#a6d046c2eef6cfe8899485d104559f42d">ErrorRecoveryBuilder::VoidAction</a> rollback = <span class="keyword">nullptr</span>,</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                                    <span class="keywordtype">int</span> timeoutMsecs = 0);</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <a class="code hl_class" href="classDelayState.html">DelayState</a>* addDelayState(<span class="keywordtype">int</span> delayMsecs);</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <a class="code hl_class" href="classParallelState.html">ParallelState</a>* addParallelState(<span class="keyword">const</span> QString&amp; stateName);</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keywordtype">void</span> postEvent(<span class="keyword">const</span> QString&amp; eventName, <span class="keyword">const</span> QVariant&amp; data = QVariant(),</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                   EventPriority priority = NormalPriority);</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordtype">int</span> postDelayedEvent(<span class="keyword">const</span> QString&amp; eventName, <span class="keywordtype">int</span> delayMsecs, <span class="keyword">const</span> QVariant&amp; data = QVariant());</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keywordtype">bool</span> cancelDelayedEvent(<span class="keywordtype">int</span> eventId);</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="comment">// State Configuration</span></div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keywordtype">void</span> setInitialState(QAbstractState* state, <span class="keywordtype">bool</span> autoStart = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <a class="code hl_class" href="classQGCFinalState.html">QGCFinalState</a>* addFinalState(<span class="keyword">const</span> QString&amp; stateName = QString());</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <a class="code hl_class" href="classConditionalState.html">ConditionalState</a>* addConditionalState(<span class="keyword">const</span> QString&amp; stateName,</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                                          <a class="code hl_typedef" href="classConditionalState.html#ad5151451516b1ac14657193552b5b2cc">ConditionalState::Predicate</a> predicate,</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                                          <a class="code hl_typedef" href="classConditionalState.html#a8165b60ab4dac76a36af64bcc9a7f53b">ConditionalState::Action</a> action = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Func&gt;</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <a class="code hl_class" href="classWaitForSignalState.html">WaitForSignalState</a>* addWaitForSignalState(<span class="keyword">const</span> QString&amp; stateName,</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                                               <span class="keyword">const</span> QObject* sender,</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                                               Func signal,</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                                               <span class="keywordtype">int</span> timeoutMsecs = 0)</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    {</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        <span class="keyword">auto</span>* state = <span class="keyword">new</span> <a class="code hl_class" href="classWaitForSignalState.html">WaitForSignalState</a>(stateName, <span class="keyword">this</span>, sender, signal, timeoutMsecs);</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        registerState(state);</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        <span class="keywordflow">return</span> state;</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    }</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <a class="code hl_class" href="classSubMachineState.html">SubMachineState</a>* addSubMachineState(<span class="keyword">const</span> QString&amp; stateName, <a class="code hl_typedef" href="classSubMachineState.html#aa4f01d74d1b68318e9dff82662c9ce7e">SubMachineState::MachineFactory</a> factory);</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <a class="code hl_class" href="classEventQueuedState.html">EventQueuedState</a>* addEventQueuedState(<span class="keyword">const</span> QString&amp; stateName,</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>                                          <span class="keyword">const</span> QString&amp; eventName,</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                                          <span class="keywordtype">int</span> timeoutMsecs = 0);</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    QState* createTimedActionState(<span class="keyword">const</span> QString&amp; stateName,</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                                   <span class="keywordtype">int</span> durationMsecs,</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                                   std::function&lt;<span class="keywordtype">void</span>()&gt; <a class="code hl_function" href="classQGCStateMachine.html#ac5f883955a80b14c31beb980aa29b442">onEntry</a> = <span class="keyword">nullptr</span>,</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                                   std::function&lt;<span class="keywordtype">void</span>()&gt; <a class="code hl_function" href="classQGCStateMachine.html#a3a71bac2ee5ed89f5fede6fdaffaaaff">onExit</a> = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="comment">// State Queries</span></div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <span class="keywordtype">bool</span> isStateActive(QAbstractState* state) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    QSet&lt;QAbstractState*&gt; activeStates()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> configuration(); }</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    QAbstractState* findState(<span class="keyword">const</span> QString&amp; stateName) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    QList&lt;T*&gt; findStates()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        <span class="keywordflow">return</span> findChildren&lt;T*&gt;();</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    }</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    <span class="comment">// Error Handling &amp; Recovery</span></div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    <span class="keywordtype">bool</span> isInErrorState() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    <a class="code hl_class" href="classFunctionState.html">FunctionState</a>* addLogAndContinueErrorState(<span class="keyword">const</span> QString&amp; stateName,</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>                                               QAbstractState* nextState,</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                                               <span class="keyword">const</span> QString&amp; message = QString());</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    <a class="code hl_class" href="classFunctionState.html">FunctionState</a>* addLogAndStopErrorState(<span class="keyword">const</span> QString&amp; stateName,</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>                                           <span class="keyword">const</span> QString&amp; message = QString());</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    QString lastError()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>(); }</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    <span class="keywordtype">void</span> clearError(<span class="keywordtype">bool</span> restart = <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    <span class="keywordtype">bool</span> resetToState(QAbstractState* state);</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    <span class="keywordtype">bool</span> recoverFromError();</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span> </div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    <span class="keywordtype">void</span> setRecoveryState(QAbstractState* state) { _recoveryState = state; }</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span> </div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    QAbstractState* recoveryState()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _recoveryState; }</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    <span class="keywordtype">bool</span> attemptRecovery();</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span> </div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    <span class="comment">// Lifecycle Helpers</span></div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span> </div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>    <span class="keywordtype">void</span> ensureRunning();</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>    <span class="keywordtype">void</span> stopMachine(<span class="keywordtype">bool</span> deleteOnStop = <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span> </div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>    <span class="keywordtype">void</span> restart();</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span> </div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>    <span class="comment">// Transition Helpers</span></div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span> </div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Func&gt;</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>    QSignalTransition* addTransition(QState* from, Func signal, QAbstractState* to,</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>                                      QAbstractAnimation* animation = <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>    {</div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>        <span class="keyword">auto</span>* transition = from-&gt;addTransition(from, signal, to);</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>        <span class="keywordflow">if</span> (animation) {</div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>            transition-&gt;addAnimation(animation);</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>        }</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>        <span class="keywordflow">return</span> transition;</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>    }</div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span> </div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Func&gt;</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>    <a class="code hl_class" href="classGuardedTransition.html">GuardedTransition</a>* addGuardedTransition(QState* from, Func signal, QAbstractState* to,</div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>                                            <a class="code hl_typedef" href="classGuardedTransition.html#a6b723d1624374c8615ae99a6298e6f65">GuardedTransition::Guard</a> guard,</div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>                                            QAbstractAnimation* animation = <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>    {</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>        <span class="keyword">auto</span>* transition = <span class="keyword">new</span> <a class="code hl_class" href="classGuardedTransition.html">GuardedTransition</a>(from, signal, to, std::move(guard));</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>        from-&gt;addTransition(transition);</div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>        <span class="keywordflow">if</span> (animation) {</div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>            transition-&gt;addAnimation(animation);</div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>        }</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        <span class="keywordflow">return</span> transition;</div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>    }</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    <a class="code hl_class" href="classMachineEventTransition.html">MachineEventTransition</a>* addEventTransition(QState* from, <span class="keyword">const</span> QString&amp; eventName, QAbstractState* to,</div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>                                               QAbstractAnimation* animation = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span> </div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>    <a class="code hl_class" href="classTimeoutTransition.html">TimeoutTransition</a>* addTimeoutTransition(QState* from, <span class="keywordtype">int</span> timeoutMsecs, QAbstractState* to,</div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>                                            QAbstractAnimation* animation = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span> </div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> SenderType, <span class="keyword">typename</span> Func&gt;</div>
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>    <a class="code hl_class" href="classRetryTransition.html">RetryTransition</a>* addRetryTransition(SenderType* from, Func signal,</div>
-<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>                                        QAbstractState* to,</div>
-<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>                                        std::function&lt;<span class="keywordtype">void</span>()&gt; retryAction,</div>
-<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>                                        <span class="keywordtype">int</span> maxRetries = 1)</div>
-<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>    {</div>
-<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>        <span class="keyword">auto</span>* transition = <span class="keyword">new</span> <a class="code hl_class" href="classRetryTransition.html">RetryTransition</a>(from, signal, to, std::move(retryAction), maxRetries);</div>
-<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>        from-&gt;addTransition(transition);</div>
-<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>        <span class="keywordflow">return</span> transition;</div>
-<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    }</div>
-<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span> </div>
-<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> SenderType, <span class="keyword">typename</span> Func&gt;</div>
-<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>    <a class="code hl_class" href="classGuardedTransition.html">GuardedTransition</a>* addConditionalTransition(SenderType* from, Func signal,</div>
-<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>                                                 QAbstractState* to,</div>
-<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>                                                 std::function&lt;<span class="keywordtype">bool</span>()&gt; guard)</div>
-<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>    {</div>
-<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>        <span class="keyword">auto</span>* transition = <span class="keyword">new</span> <a class="code hl_class" href="classGuardedTransition.html">GuardedTransition</a>(from, signal, to, std::move(guard));</div>
-<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>        from-&gt;addTransition(transition);</div>
-<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>        <span class="keywordflow">return</span> transition;</div>
-<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>    }</div>
-<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span> </div>
-<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Sender, <span class="keyword">typename</span> Signal&gt;</div>
-<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>    QSignalTransition* addSelfLoopTransition(QState* state,</div>
-<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>                                              Sender* sender,</div>
-<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>                                              Signal signal,</div>
-<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>                                              std::function&lt;<span class="keywordtype">void</span>()&gt; action)</div>
-<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>    {</div>
-<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>        <span class="keyword">auto</span>* transition = state-&gt;addTransition(sender, signal, state);</div>
-<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>        <span class="keywordflow">if</span> (action) {</div>
-<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>            connect(transition, &amp;QAbstractTransition::triggered, <span class="keyword">this</span>, std::move(action));</div>
-<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>        }</div>
-<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>        <span class="keywordflow">return</span> transition;</div>
-<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>    }</div>
-<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span> </div>
-<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Sender, <span class="keyword">typename</span> Signal&gt;</div>
-<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>    <a class="code hl_class" href="classInternalTransition.html">InternalTransition</a>* addInternalTransition(QState* state,</div>
-<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>                                               Sender* sender,</div>
-<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>                                               Signal signal,</div>
-<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>                                               std::function&lt;<span class="keywordtype">void</span>()&gt; action)</div>
-<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>    {</div>
-<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>        <span class="keyword">auto</span>* transition = <span class="keyword">new</span> <a class="code hl_class" href="classInternalTransition.html">InternalTransition</a>(sender, signal, std::move(action));</div>
-<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>        state-&gt;addTransition(transition);</div>
-<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>        <span class="keywordflow">return</span> transition;</div>
-<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>    }</div>
-<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span> </div>
-<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>    <span class="comment">// State Introspection</span></div>
-<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span> </div>
-<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>    QList&lt;QAbstractTransition*&gt; transitionsFrom(QAbstractState* state) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span> </div>
-<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>    QList&lt;QAbstractTransition*&gt; transitionsTo(QAbstractState* state) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span> </div>
-<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>    QList&lt;QAbstractState*&gt; reachableFrom(QAbstractState* state) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span> </div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>    QList&lt;QAbstractState*&gt; predecessorsOf(QAbstractState* state) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span> </div>
-<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>    <span class="comment">// Debugging &amp; Visualization</span></div>
-<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span> </div>
-<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>    QString dumpCurrentState() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span> </div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>    QString dumpConfiguration() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span> </div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>    <span class="keywordtype">void</span> logCurrentState() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span> </div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>    <span class="keywordtype">void</span> logConfiguration() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span> </div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>    <span class="keywordtype">void</span> setHistoryRecordingEnabled(<span class="keywordtype">bool</span> enabled, <span class="keywordtype">int</span> maxEntries = 1000);</div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>    <span class="keywordtype">bool</span> historyRecordingEnabled() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    QString dumpRecordedHistory() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>    QJsonArray recordedHistoryJson() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span> </div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>    <span class="keywordtype">void</span> setProfilingEnabled(<span class="keywordtype">bool</span> enabled);</div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>    <span class="keywordtype">bool</span> profilingEnabled() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>    QString profilingSummary() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span> </div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>    <span class="keywordtype">void</span> setStructuredLoggingEnabled(<span class="keywordtype">bool</span> enabled);</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>    <span class="keywordtype">bool</span> structuredLoggingEnabled() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span> </div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    QString exportAsDot() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span> </div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>    QList&lt;QAbstractState*&gt; unreachableStates() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span> </div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>    <span class="keywordtype">int</span> maxPathLength() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span> </div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>    QList&lt;QAbstractState*&gt; deadEndStates() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span> </div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>    <span class="comment">// Progress Tracking</span></div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span> </div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    <span class="keywordtype">void</span> setProgressWeights(<span class="keyword">const</span> QList&lt;QPair&lt;QAbstractState*, int&gt;&gt;&amp; stateWeights);</div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span> </div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>    <span class="keywordtype">void</span> setSubProgress(<span class="keywordtype">float</span> subProgress);</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span> </div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>    <span class="keywordtype">float</span> progress() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span> </div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>    <span class="keywordtype">void</span> resetProgress();</div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span> </div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>    <span class="comment">// Timeout Configuration</span></div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span> </div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>    <span class="keywordtype">void</span> setTimeoutOverride(<span class="keyword">const</span> QString&amp; stateName, <span class="keywordtype">int</span> timeoutMsecs);</div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span> </div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>    <span class="keywordtype">void</span> removeTimeoutOverride(<span class="keyword">const</span> QString&amp; stateName);</div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span> </div>
-<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>    <span class="keywordtype">int</span> timeoutOverride(<span class="keyword">const</span> QString&amp; stateName) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span> </div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>    QHash&lt;QString, int&gt; allTimeoutOverrides()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _timeoutOverrides; }</div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span> </div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>    <span class="keywordtype">void</span> clearTimeoutOverrides() { _timeoutOverrides.clear(); }</div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span> </div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>    QHash&lt;QString, int&gt; timeoutStats()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _timeoutStats; }</div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span> </div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>    <span class="keywordtype">void</span> recordTimeout(<span class="keyword">const</span> QString&amp; stateName);</div>
-<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span> </div>
-<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>    <span class="keywordtype">void</span> clearTimeoutStats() { _timeoutStats.clear(); }</div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span> </div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classQGCStateMachine.html#a2199952545a8b2eb6dba675ebf6308ef">start</a>();</div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span> </div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>signals:</div>
-<div class="line"><a id="l00672" name="l00672"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a39e9ba94630d4e1016fc0ddbabcb15b1">  672</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classQGCStateMachine.html#a39e9ba94630d4e1016fc0ddbabcb15b1">error</a>();</div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span> </div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a21e7b7119e1d263d8a4be7b992863056">  676</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classQGCStateMachine.html#a21e7b7119e1d263d8a4be7b992863056">progressUpdate</a>(<span class="keywordtype">float</span> progress);</div>
-<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span> </div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a8a7bc30910ddde1407b682947f5f00d2">  681</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classQGCStateMachine.html#a8a7bc30910ddde1407b682947f5f00d2">machineEvent</a>(<span class="keyword">const</span> QString&amp; eventName);</div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span> </div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a6703ee26239fb6c04475b071bc2d7124">  684</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classQGCStateMachine.html#a6703ee26239fb6c04475b071bc2d7124">currentStateNameChanged</a>();</div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span> </div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a17522a1909a527af03ff86d246de4ea7">  687</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classQGCStateMachine.html#a17522a1909a527af03ff86d246de4ea7">runningChanged</a>();</div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span> </div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ad13cfd1c5dabb133e58dd7daab0706d3">  690</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classQGCStateMachine.html#ad13cfd1c5dabb133e58dd7daab0706d3">stateHistoryChanged</a>();</div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span> </div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ae30a0fa881398ebdfea0cc5a910f7954">  694</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#ae30a0fa881398ebdfea0cc5a910f7954">onEnter</a>() {}</div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span> </div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#aca3d3aa77509612e4dc22361da1789aa">  697</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#aca3d3aa77509612e4dc22361da1789aa">onLeave</a>() {}</div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span> </div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>    <span class="comment">// QStateMachine overrides</span></div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#ac5f883955a80b14c31beb980aa29b442">onEntry</a>(QEvent* <a class="code hl_function" href="classQGCStateMachine.html#a95fc6c144342fc103316cbd9ad9070c8">event</a>) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a3a71bac2ee5ed89f5fede6fdaffaaaff">onExit</a>(QEvent* <a class="code hl_function" href="classQGCStateMachine.html#a95fc6c144342fc103316cbd9ad9070c8">event</a>) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCStateMachine.html#a95fc6c144342fc103316cbd9ad9070c8">event</a>(QEvent* <a class="code hl_function" href="classQGCStateMachine.html#a95fc6c144342fc103316cbd9ad9070c8">event</a>) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span> </div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>    <span class="keywordtype">void</span> _onStateEntered();</div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>    <span class="keywordtype">float</span> _calculateProgress() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span> </div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>    <a class="code hl_class" href="classVehicle.html">Vehicle</a>* _vehicle = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>    QAbstractState* _globalErrorState = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>    QAbstractState* _recoveryState = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>    <span class="keywordtype">bool</span> _deleteOnStop = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>    EntryCallback _entryCallback;</div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>    ExitCallback _exitCallback;</div>
-<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>    <a class="code hl_class" href="classEventHandler.html">EventHandler</a> _eventHandler;</div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span> </div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>    <span class="comment">// Progress tracking</span></div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>    QList&lt;QAbstractState*&gt; _progressStates;</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>    QList&lt;int&gt; _progressWeights;</div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>    <span class="keywordtype">int</span> _progressTotalWeight = 0;</div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>    <span class="keywordtype">int</span> _progressCurrentIndex = -1;</div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>    <span class="keywordtype">float</span> _progressSubProgress = 0.0f;</div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>    <span class="keywordtype">float</span> _progressLastEmitted = 0.0f;</div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span> </div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>    <span class="comment">// Inter-state data context</span></div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>    <a class="code hl_class" href="classStateContext.html">StateContext</a> _context;</div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span> </div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>    <span class="comment">// QML state history</span></div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>    QStringList _stateHistory;</div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>    <span class="keywordtype">int</span> _stateHistoryLimit = 20;</div>
-<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span> </div>
-<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>    <span class="comment">// Timeout configuration</span></div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>    QHash&lt;QString, int&gt; _timeoutOverrides;</div>
-<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>    QHash&lt;QString, int&gt; _timeoutStats;</div>
-<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span> </div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>    <span class="comment">// Optional runtime diagnostics helpers (lazy-created)</span></div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>    <a class="code hl_class" href="classStateHistoryRecorder.html">StateHistoryRecorder</a>* _historyRecorder = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>    <a class="code hl_class" href="classStateMachineProfiler.html">StateMachineProfiler</a>* _profiler = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>    <a class="code hl_class" href="classStateMachineLogger.html">StateMachineLogger</a>* _logger = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;<a class="code" href="WaitForParamResponseState_8h.html">WaitForParamResponseState.h</a>&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="WaitForSignalState_8h.html">WaitForSignalState.h</a>&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="WaitStateBase_8h.html">WaitStateBase.h</a>&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;<a class="code" href="StateContext_8h.html">StateContext.h</a>&quot;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;<a class="code" href="ErrorRecoveryBuilder_8h.html">ErrorRecoveryBuilder.h</a>&quot;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &quot;<a class="code" href="ErrorHandlers_8h.html">ErrorHandlers.h</a>&quot;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &lt;QtStateMachine/QStateMachine&gt;</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#include &lt;QtStateMachine/QFinalState&gt;</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#include &lt;QtStateMachine/QHistoryState&gt;</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#include &lt;QtCore/QAbstractAnimation&gt;</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#include &lt;QtCore/QJsonArray&gt;</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#include &lt;QtCore/QString&gt;</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#include &lt;QtCore/QVariant&gt;</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">class </span><a class="code hl_class" href="classVehicle.html">Vehicle</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">class </span><a class="code hl_class" href="classStateMachineLogger.html">StateMachineLogger</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">class </span><a class="code hl_class" href="classStateMachineProfiler.html">StateMachineProfiler</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">class </span><a class="code hl_class" href="classStateHistoryRecorder.html">StateHistoryRecorder</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html">   61</a></span><span class="keyword">class </span><a class="code hl_class" href="classQGCStateMachine.html">QGCStateMachine</a> : <span class="keyword">public</span> QStateMachine</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    Q_OBJECT</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    Q_DISABLE_COPY(<a class="code hl_class" href="classQGCStateMachine.html">QGCStateMachine</a>)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    Q_PROPERTY(QString currentStateName READ currentStateName NOTIFY <a class="code hl_signal" href="classQGCStateMachine.html#a6703ee26239fb6c04475b071bc2d7124">currentStateNameChanged</a>)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    Q_PROPERTY(<span class="keywordtype">float</span> progress READ progress NOTIFY <a class="code hl_signal" href="classQGCStateMachine.html#a21e7b7119e1d263d8a4be7b992863056">progressUpdate</a>)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    Q_PROPERTY(<span class="keywordtype">bool</span> running READ isRunning NOTIFY <a class="code hl_signal" href="classQGCStateMachine.html#a17522a1909a527af03ff86d246de4ea7">runningChanged</a>)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    Q_PROPERTY(QStringList stateHistory READ stateHistory NOTIFY <a class="code hl_signal" href="classQGCStateMachine.html#ad13cfd1c5dabb133e58dd7daab0706d3">stateHistoryChanged</a>)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">using </span>EntryCallback = std::function&lt;void()&gt;;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">using </span>ExitCallback = std::function&lt;void()&gt;;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">using </span><a class="code hl_class" href="classEventHandler.html">EventHandler</a> = std::function&lt;bool(QEvent*)&gt;;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_class" href="classQGCStateMachine.html">QGCStateMachine</a>(<span class="keyword">const</span> QString&amp; machineName, <a class="code hl_class" href="classVehicle.html">Vehicle</a>* vehicle, QObject* parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <a class="code hl_class" href="classVehicle.html">Vehicle</a> *vehicle()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _vehicle; }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    QString machineName()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> objectName(); }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <a class="code hl_class" href="classStateContext.html">StateContext</a>&amp; context() { <span class="keywordflow">return</span> _context; }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">const</span> <a class="code hl_class" href="classStateContext.html">StateContext</a>&amp; context()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _context; }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">bool</span> active()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> isRunning(); }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    QString currentStateName() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    QStringList stateHistory()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _stateHistory; }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordtype">void</span> setStateHistoryLimit(<span class="keywordtype">int</span> limit) { _stateHistoryLimit = limit; }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="comment">// Entry/Exit Callbacks</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">void</span> setOnEntry(EntryCallback callback) { _entryCallback = std::move(callback); }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">void</span> setOnExit(ExitCallback callback) { _exitCallback = std::move(callback); }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordtype">void</span> setCallbacks(EntryCallback <a class="code hl_function" href="classQGCStateMachine.html#ac5f883955a80b14c31beb980aa29b442">onEntry</a>, ExitCallback <a class="code hl_function" href="classQGCStateMachine.html#a3a71bac2ee5ed89f5fede6fdaffaaaff">onExit</a> = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="comment">// Event Handling</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">void</span> setEventHandler(<a class="code hl_class" href="classEventHandler.html">EventHandler</a> handler) { _eventHandler = std::move(handler); }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordtype">void</span> enablePropertyRestore();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordtype">bool</span> isPropertyRestoreEnabled() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordtype">void</span> setGlobalErrorState(QAbstractState* errorState);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    QAbstractState* globalErrorState()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _globalErrorState; }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordtype">void</span> registerState(<a class="code hl_class" href="classQGCState.html">QGCState</a>* state);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordtype">void</span> registerState(<a class="code hl_class" href="classQGCAbstractState.html">QGCAbstractState</a>* state);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <a class="code hl_class" href="classFunctionState.html">FunctionState</a>* addFunctionState(<span class="keyword">const</span> QString&amp; stateName, std::function&lt;<span class="keywordtype">void</span>()&gt; function);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <a class="code hl_class" href="classAsyncFunctionState.html">AsyncFunctionState</a>* addAsyncFunctionState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                                               <a class="code hl_typedef" href="classAsyncFunctionState.html#ac171cf03073823eab485cc91cbf93b8b">AsyncFunctionState::SetupFunction</a> setupFunction,</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                                               <span class="keywordtype">int</span> timeoutMsecs = 0);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <a class="code hl_class" href="classQGCState.html">QGCState</a>* addErrorRecoveryState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                                    <a class="code hl_typedef" href="classErrorRecoveryBuilder.html#a5d60280fd4235b804ac558713e3a072e">ErrorRecoveryBuilder::Action</a> action,</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                                    <span class="keywordtype">int</span> maxRetries = 0,</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                                    <span class="keywordtype">int</span> retryDelayMsecs = 1000,</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                                    <a class="code hl_enumeration" href="classErrorRecoveryBuilder.html#a40a9086a87fc83190c0d14aa3d91fa5e">ErrorRecoveryBuilder::ExhaustedBehavior</a> exhaustedBehavior = <a class="code hl_enumvalue" href="classErrorRecoveryBuilder.html#a40a9086a87fc83190c0d14aa3d91fa5eae9659e0523acb8a72006d1280727fd66">ErrorRecoveryBuilder::EmitError</a>,</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                                    <a class="code hl_typedef" href="classErrorRecoveryBuilder.html#a5d60280fd4235b804ac558713e3a072e">ErrorRecoveryBuilder::Action</a> fallback = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                                    <a class="code hl_typedef" href="classErrorRecoveryBuilder.html#a6d046c2eef6cfe8899485d104559f42d">ErrorRecoveryBuilder::VoidAction</a> rollback = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                                    <span class="keywordtype">int</span> timeoutMsecs = 0);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <a class="code hl_class" href="classDelayState.html">DelayState</a>* addDelayState(<span class="keywordtype">int</span> delayMsecs);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <a class="code hl_class" href="classParallelState.html">ParallelState</a>* addParallelState(<span class="keyword">const</span> QString&amp; stateName);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordtype">void</span> postEvent(<span class="keyword">const</span> QString&amp; eventName, <span class="keyword">const</span> QVariant&amp; data = QVariant(),</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                   EventPriority priority = NormalPriority);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordtype">int</span> postDelayedEvent(<span class="keyword">const</span> QString&amp; eventName, <span class="keywordtype">int</span> delayMsecs, <span class="keyword">const</span> QVariant&amp; data = QVariant());</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="keywordtype">bool</span> cancelDelayedEvent(<span class="keywordtype">int</span> eventId);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="comment">// State Configuration</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="keywordtype">void</span> setInitialState(QAbstractState* state, <span class="keywordtype">bool</span> autoStart = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <a class="code hl_class" href="classQGCFinalState.html">QGCFinalState</a>* addFinalState(<span class="keyword">const</span> QString&amp; stateName = QString());</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <a class="code hl_class" href="classConditionalState.html">ConditionalState</a>* addConditionalState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                                          <a class="code hl_typedef" href="classConditionalState.html#ad5151451516b1ac14657193552b5b2cc">ConditionalState::Predicate</a> predicate,</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                                          <a class="code hl_typedef" href="classConditionalState.html#a8165b60ab4dac76a36af64bcc9a7f53b">ConditionalState::Action</a> action = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Func&gt;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <a class="code hl_class" href="classWaitForSignalState.html">WaitForSignalState</a>* addWaitForSignalState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                                               <span class="keyword">const</span> QObject* sender,</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                                               Func signal,</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                                               <span class="keywordtype">int</span> timeoutMsecs = 0)</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    {</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keyword">auto</span>* state = <span class="keyword">new</span> <a class="code hl_class" href="classWaitForSignalState.html">WaitForSignalState</a>(stateName, <span class="keyword">this</span>, sender, signal, timeoutMsecs);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        registerState(state);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="keywordflow">return</span> state;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    }</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <a class="code hl_class" href="classSubMachineState.html">SubMachineState</a>* addSubMachineState(<span class="keyword">const</span> QString&amp; stateName, <a class="code hl_typedef" href="classSubMachineState.html#aa4f01d74d1b68318e9dff82662c9ce7e">SubMachineState::MachineFactory</a> factory);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <a class="code hl_class" href="classEventQueuedState.html">EventQueuedState</a>* addEventQueuedState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                                          <span class="keyword">const</span> QString&amp; eventName,</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                                          <span class="keywordtype">int</span> timeoutMsecs = 0);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    QState* createTimedActionState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                                   <span class="keywordtype">int</span> durationMsecs,</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                                   std::function&lt;<span class="keywordtype">void</span>()&gt; <a class="code hl_function" href="classQGCStateMachine.html#ac5f883955a80b14c31beb980aa29b442">onEntry</a> = <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                                   std::function&lt;<span class="keywordtype">void</span>()&gt; <a class="code hl_function" href="classQGCStateMachine.html#a3a71bac2ee5ed89f5fede6fdaffaaaff">onExit</a> = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="comment">// State Queries</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keywordtype">bool</span> isStateActive(QAbstractState* state) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    QSet&lt;QAbstractState*&gt; activeStates()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> configuration(); }</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    QAbstractState* findState(<span class="keyword">const</span> QString&amp; stateName) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    QList&lt;T*&gt; findStates()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        <span class="keywordflow">return</span> findChildren&lt;T*&gt;();</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    }</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="comment">// Error Handling &amp; Recovery</span></div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="keywordtype">bool</span> isInErrorState() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    <a class="code hl_class" href="classFunctionState.html">FunctionState</a>* addLogAndContinueErrorState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                                               QAbstractState* nextState,</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>                                               <span class="keyword">const</span> QString&amp; message = QString());</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    <a class="code hl_class" href="classFunctionState.html">FunctionState</a>* addLogAndStopErrorState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>                                           <span class="keyword">const</span> QString&amp; message = QString());</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    QString lastError()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>(); }</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span> </div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    <span class="keywordtype">void</span> clearError(<span class="keywordtype">bool</span> restart = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span> </div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>    <span class="keywordtype">bool</span> resetToState(QAbstractState* state);</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    <span class="keywordtype">bool</span> recoverFromError();</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span> </div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    <span class="keywordtype">void</span> setRecoveryState(QAbstractState* state) { _recoveryState = state; }</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    QAbstractState* recoveryState()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _recoveryState; }</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span> </div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    <span class="keywordtype">bool</span> attemptRecovery();</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>    <span class="comment">// Lifecycle Helpers</span></div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span> </div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>    <span class="keywordtype">void</span> ensureRunning();</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>    <span class="keywordtype">void</span> stopMachine(<span class="keywordtype">bool</span> deleteOnStop = <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span> </div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>    <span class="keywordtype">void</span> restart();</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span> </div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>    <span class="comment">// Transition Helpers</span></div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span> </div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Func&gt;</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>    QSignalTransition* addTransition(QState* from, Func signal, QAbstractState* to,</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>                                      QAbstractAnimation* animation = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>    {</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>        <span class="keyword">auto</span>* transition = from-&gt;addTransition(from, signal, to);</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>        <span class="keywordflow">if</span> (animation) {</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>            transition-&gt;addAnimation(animation);</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>        }</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>        <span class="keywordflow">return</span> transition;</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>    }</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span> </div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Func&gt;</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>    <a class="code hl_class" href="classGuardedTransition.html">GuardedTransition</a>* addGuardedTransition(QState* from, Func signal, QAbstractState* to,</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>                                            <a class="code hl_typedef" href="classGuardedTransition.html#a6b723d1624374c8615ae99a6298e6f65">GuardedTransition::Guard</a> guard,</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>                                            QAbstractAnimation* animation = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>    {</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>        <span class="keyword">auto</span>* transition = <span class="keyword">new</span> <a class="code hl_class" href="classGuardedTransition.html">GuardedTransition</a>(from, signal, to, std::move(guard));</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>        from-&gt;addTransition(transition);</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>        <span class="keywordflow">if</span> (animation) {</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>            transition-&gt;addAnimation(animation);</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        }</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>        <span class="keywordflow">return</span> transition;</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>    }</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span> </div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    <a class="code hl_class" href="classMachineEventTransition.html">MachineEventTransition</a>* addEventTransition(QState* from, <span class="keyword">const</span> QString&amp; eventName, QAbstractState* to,</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>                                               QAbstractAnimation* animation = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span> </div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>    <a class="code hl_class" href="classTimeoutTransition.html">TimeoutTransition</a>* addTimeoutTransition(QState* from, <span class="keywordtype">int</span> timeoutMsecs, QAbstractState* to,</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>                                            QAbstractAnimation* animation = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span> </div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> SenderType, <span class="keyword">typename</span> Func&gt;</div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>    <a class="code hl_class" href="classRetryTransition.html">RetryTransition</a>* addRetryTransition(SenderType* from, Func signal,</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>                                        QAbstractState* to,</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>                                        std::function&lt;<span class="keywordtype">void</span>()&gt; retryAction,</div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>                                        <span class="keywordtype">int</span> maxRetries = 1)</div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>    {</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>        <span class="keyword">auto</span>* transition = <span class="keyword">new</span> <a class="code hl_class" href="classRetryTransition.html">RetryTransition</a>(from, signal, to, std::move(retryAction), maxRetries);</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>        from-&gt;addTransition(transition);</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>        <span class="keywordflow">return</span> transition;</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>    }</div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span> </div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> SenderType, <span class="keyword">typename</span> Func&gt;</div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>    <a class="code hl_class" href="classGuardedTransition.html">GuardedTransition</a>* addConditionalTransition(SenderType* from, Func signal,</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>                                                 QAbstractState* to,</div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>                                                 std::function&lt;<span class="keywordtype">bool</span>()&gt; guard)</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>    {</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>        <span class="keyword">auto</span>* transition = <span class="keyword">new</span> <a class="code hl_class" href="classGuardedTransition.html">GuardedTransition</a>(from, signal, to, std::move(guard));</div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>        from-&gt;addTransition(transition);</div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>        <span class="keywordflow">return</span> transition;</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>    }</div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span> </div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Sender, <span class="keyword">typename</span> Signal&gt;</div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>    QSignalTransition* addSelfLoopTransition(QState* state,</div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>                                              Sender* sender,</div>
+<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>                                              Signal signal,</div>
+<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>                                              std::function&lt;<span class="keywordtype">void</span>()&gt; action)</div>
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>    {</div>
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>        <span class="keyword">auto</span>* transition = state-&gt;addTransition(sender, signal, state);</div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>        <span class="keywordflow">if</span> (action) {</div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>            connect(transition, &amp;QAbstractTransition::triggered, <span class="keyword">this</span>, std::move(action));</div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>        }</div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>        <span class="keywordflow">return</span> transition;</div>
+<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>    }</div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span> </div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Sender, <span class="keyword">typename</span> Signal&gt;</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>    <a class="code hl_class" href="classInternalTransition.html">InternalTransition</a>* addInternalTransition(QState* state,</div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>                                               Sender* sender,</div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>                                               Signal signal,</div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>                                               std::function&lt;<span class="keywordtype">void</span>()&gt; action)</div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>    {</div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>        <span class="keyword">auto</span>* transition = <span class="keyword">new</span> <a class="code hl_class" href="classInternalTransition.html">InternalTransition</a>(sender, signal, std::move(action));</div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>        state-&gt;addTransition(transition);</div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>        <span class="keywordflow">return</span> transition;</div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>    }</div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span> </div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>    <span class="comment">// State Introspection</span></div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span> </div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>    QList&lt;QAbstractTransition*&gt; transitionsFrom(QAbstractState* state) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span> </div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>    QList&lt;QAbstractTransition*&gt; transitionsTo(QAbstractState* state) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span> </div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>    QList&lt;QAbstractState*&gt; reachableFrom(QAbstractState* state) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span> </div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>    QList&lt;QAbstractState*&gt; predecessorsOf(QAbstractState* state) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span> </div>
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>    <span class="comment">// Debugging &amp; Visualization</span></div>
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span> </div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>    QString dumpCurrentState() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span> </div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>    QString dumpConfiguration() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span> </div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>    <span class="keywordtype">void</span> logCurrentState() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span> </div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>    <span class="keywordtype">void</span> logConfiguration() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span> </div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>    <span class="keywordtype">void</span> setHistoryRecordingEnabled(<span class="keywordtype">bool</span> enabled, <span class="keywordtype">int</span> maxEntries = 1000);</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    <span class="keywordtype">bool</span> historyRecordingEnabled() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>    QString dumpRecordedHistory() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>    QJsonArray recordedHistoryJson() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span> </div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>    <span class="keywordtype">void</span> setProfilingEnabled(<span class="keywordtype">bool</span> enabled);</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>    <span class="keywordtype">bool</span> profilingEnabled() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>    QString profilingSummary() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span> </div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>    <span class="keywordtype">void</span> setStructuredLoggingEnabled(<span class="keywordtype">bool</span> enabled);</div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>    <span class="keywordtype">bool</span> structuredLoggingEnabled() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span> </div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>    QString exportAsDot() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span> </div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>    QList&lt;QAbstractState*&gt; unreachableStates() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>    <span class="keywordtype">int</span> maxPathLength() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span> </div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>    QList&lt;QAbstractState*&gt; deadEndStates() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span> </div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>    <span class="comment">// Progress Tracking</span></div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span> </div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    <span class="keywordtype">void</span> setProgressWeights(<span class="keyword">const</span> QList&lt;QPair&lt;QAbstractState*, int&gt;&gt;&amp; stateWeights);</div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span> </div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>    <span class="keywordtype">void</span> setSubProgress(<span class="keywordtype">float</span> subProgress);</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span> </div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>    <span class="keywordtype">float</span> progress() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span> </div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>    <span class="keywordtype">void</span> resetProgress();</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span> </div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>    <span class="comment">// Timeout Configuration</span></div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>    <span class="comment">// -------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span> </div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>    <span class="keywordtype">void</span> setTimeoutOverride(<span class="keyword">const</span> QString&amp; stateName, <span class="keywordtype">int</span> timeoutMsecs);</div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span> </div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>    <span class="keywordtype">void</span> removeTimeoutOverride(<span class="keyword">const</span> QString&amp; stateName);</div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span> </div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>    <span class="keywordtype">int</span> timeoutOverride(<span class="keyword">const</span> QString&amp; stateName) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span> </div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>    QHash&lt;QString, int&gt; allTimeoutOverrides()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _timeoutOverrides; }</div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span> </div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>    <span class="keywordtype">void</span> clearTimeoutOverrides() { _timeoutOverrides.clear(); }</div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span> </div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>    QHash&lt;QString, int&gt; timeoutStats()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _timeoutStats; }</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span> </div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>    <span class="keywordtype">void</span> recordTimeout(<span class="keyword">const</span> QString&amp; stateName);</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span> </div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>    <span class="keywordtype">void</span> clearTimeoutStats() { _timeoutStats.clear(); }</div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span> </div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classQGCStateMachine.html#a2199952545a8b2eb6dba675ebf6308ef">start</a>();</div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span> </div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>signals:</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a39e9ba94630d4e1016fc0ddbabcb15b1">  673</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classQGCStateMachine.html#a39e9ba94630d4e1016fc0ddbabcb15b1">error</a>();</div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span> </div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a21e7b7119e1d263d8a4be7b992863056">  677</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classQGCStateMachine.html#a21e7b7119e1d263d8a4be7b992863056">progressUpdate</a>(<span class="keywordtype">float</span> progress);</div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span> </div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a8a7bc30910ddde1407b682947f5f00d2">  682</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classQGCStateMachine.html#a8a7bc30910ddde1407b682947f5f00d2">machineEvent</a>(<span class="keyword">const</span> QString&amp; eventName);</div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span> </div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a6703ee26239fb6c04475b071bc2d7124">  685</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classQGCStateMachine.html#a6703ee26239fb6c04475b071bc2d7124">currentStateNameChanged</a>();</div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span> </div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a17522a1909a527af03ff86d246de4ea7">  688</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classQGCStateMachine.html#a17522a1909a527af03ff86d246de4ea7">runningChanged</a>();</div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span> </div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ad13cfd1c5dabb133e58dd7daab0706d3">  691</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classQGCStateMachine.html#ad13cfd1c5dabb133e58dd7daab0706d3">stateHistoryChanged</a>();</div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span> </div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ae30a0fa881398ebdfea0cc5a910f7954">  695</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#ae30a0fa881398ebdfea0cc5a910f7954">onEnter</a>() {}</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span> </div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#aca3d3aa77509612e4dc22361da1789aa">  698</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#aca3d3aa77509612e4dc22361da1789aa">onLeave</a>() {}</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span> </div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>    <span class="comment">// QStateMachine overrides</span></div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#ac5f883955a80b14c31beb980aa29b442">onEntry</a>(QEvent* <a class="code hl_function" href="classQGCStateMachine.html#a95fc6c144342fc103316cbd9ad9070c8">event</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a3a71bac2ee5ed89f5fede6fdaffaaaff">onExit</a>(QEvent* <a class="code hl_function" href="classQGCStateMachine.html#a95fc6c144342fc103316cbd9ad9070c8">event</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCStateMachine.html#a95fc6c144342fc103316cbd9ad9070c8">event</a>(QEvent* <a class="code hl_function" href="classQGCStateMachine.html#a95fc6c144342fc103316cbd9ad9070c8">event</a>) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span> </div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>    <span class="keywordtype">void</span> _onStateEntered();</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>    <span class="keywordtype">float</span> _calculateProgress() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span> </div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>    <a class="code hl_class" href="classVehicle.html">Vehicle</a>* _vehicle = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>    QAbstractState* _globalErrorState = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>    QAbstractState* _recoveryState = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>    <span class="keywordtype">bool</span> _deleteOnStop = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>    EntryCallback _entryCallback;</div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>    ExitCallback _exitCallback;</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>    <a class="code hl_class" href="classEventHandler.html">EventHandler</a> _eventHandler;</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span> </div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>    <span class="comment">// Progress tracking</span></div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>    QList&lt;QAbstractState*&gt; _progressStates;</div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>    QList&lt;int&gt; _progressWeights;</div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>    <span class="keywordtype">int</span> _progressTotalWeight = 0;</div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>    <span class="keywordtype">int</span> _progressCurrentIndex = -1;</div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>    <span class="keywordtype">float</span> _progressSubProgress = 0.0f;</div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>    <span class="keywordtype">float</span> _progressLastEmitted = 0.0f;</div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span> </div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>    <span class="comment">// Inter-state data context</span></div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>    <a class="code hl_class" href="classStateContext.html">StateContext</a> _context;</div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span> </div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>    <span class="comment">// QML state history</span></div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>    QStringList _stateHistory;</div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>    <span class="keywordtype">int</span> _stateHistoryLimit = 20;</div>
+<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span> </div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>    <span class="comment">// Timeout configuration</span></div>
+<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>    QHash&lt;QString, int&gt; _timeoutOverrides;</div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>    QHash&lt;QString, int&gt; _timeoutStats;</div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span> </div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>    <span class="comment">// Optional runtime diagnostics helpers (lazy-created)</span></div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>    <a class="code hl_class" href="classStateHistoryRecorder.html">StateHistoryRecorder</a>* _historyRecorder = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>    <a class="code hl_class" href="classStateMachineProfiler.html">StateMachineProfiler</a>* _profiler = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>    <a class="code hl_class" href="classStateMachineLogger.html">StateMachineLogger</a>* _logger = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>};</div>
 </div>
 <div class="ttc" id="aAsyncFunctionState_8h_html"><div class="ttname"><a href="AsyncFunctionState_8h.html">AsyncFunctionState.h</a></div></div>
 <div class="ttc" id="aCircuitBreakerState_8h_html"><div class="ttname"><a href="CircuitBreakerState_8h.html">CircuitBreakerState.h</a></div></div>
@@ -593,6 +594,7 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8h_source.html',''); i
 <div class="ttc" id="aSubMachineState_8h_html"><div class="ttname"><a href="SubMachineState_8h.html">SubMachineState.h</a></div></div>
 <div class="ttc" id="aTimeoutTransition_8h_html"><div class="ttname"><a href="TimeoutTransition_8h.html">TimeoutTransition.h</a></div></div>
 <div class="ttc" id="aWaitForMavlinkMessageState_8h_html"><div class="ttname"><a href="WaitForMavlinkMessageState_8h.html">WaitForMavlinkMessageState.h</a></div></div>
+<div class="ttc" id="aWaitForParamResponseState_8h_html"><div class="ttname"><a href="WaitForParamResponseState_8h.html">WaitForParamResponseState.h</a></div></div>
 <div class="ttc" id="aWaitForSignalState_8h_html"><div class="ttname"><a href="WaitForSignalState_8h.html">WaitForSignalState.h</a></div></div>
 <div class="ttc" id="aWaitStateBase_8h_html"><div class="ttname"><a href="WaitStateBase_8h.html">WaitStateBase.h</a></div></div>
 <div class="ttc" id="aclassAsyncFunctionState_html"><div class="ttname"><a href="classAsyncFunctionState.html">AsyncFunctionState</a></div><div class="ttdef"><b>Definition</b> <a href="AsyncFunctionState_8h_source.html#l00014">AsyncFunctionState.h:15</a></div></div>
@@ -615,7 +617,7 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8h_source.html',''); i
 <div class="ttc" id="aclassParallelState_html"><div class="ttname"><a href="classParallelState.html">ParallelState</a></div><div class="ttdef"><b>Definition</b> <a href="ParallelState_8h_source.html#l00008">ParallelState.h:9</a></div></div>
 <div class="ttc" id="aclassQGCAbstractState_html"><div class="ttname"><a href="classQGCAbstractState.html">QGCAbstractState</a></div><div class="ttdef"><b>Definition</b> <a href="QGCAbstractState_8h_source.html#l00027">QGCAbstractState.h:28</a></div></div>
 <div class="ttc" id="aclassQGCFinalState_html"><div class="ttname"><a href="classQGCFinalState.html">QGCFinalState</a></div><div class="ttdoc">Final state for a QGCStateMachine with logging support.</div><div class="ttdef"><b>Definition</b> <a href="QGCFinalState_8h_source.html#l00010">QGCFinalState.h:11</a></div></div>
-<div class="ttc" id="aclassQGCStateMachine_html"><div class="ttname"><a href="classQGCStateMachine.html">QGCStateMachine</a></div><div class="ttdoc">QGroundControl specific state machine with enhanced error handling.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8h_source.html#l00060">QGCStateMachine.h:61</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html"><div class="ttname"><a href="classQGCStateMachine.html">QGCStateMachine</a></div><div class="ttdoc">QGroundControl specific state machine with enhanced error handling.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8h_source.html#l00061">QGCStateMachine.h:62</a></div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_a17522a1909a527af03ff86d246de4ea7"><div class="ttname"><a href="classQGCStateMachine.html#a17522a1909a527af03ff86d246de4ea7">QGCStateMachine::runningChanged</a></div><div class="ttdeci">void runningChanged()</div><div class="ttdoc">Emitted when the running state changes (for QML binding)</div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_a2199952545a8b2eb6dba675ebf6308ef"><div class="ttname"><a href="classQGCStateMachine.html#a2199952545a8b2eb6dba675ebf6308ef">QGCStateMachine::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Start the state machine with debug logging.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00063">QGCStateMachine.cc:63</a></div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_a21e7b7119e1d263d8a4be7b992863056"><div class="ttname"><a href="classQGCStateMachine.html#a21e7b7119e1d263d8a4be7b992863056">QGCStateMachine::progressUpdate</a></div><div class="ttdeci">void progressUpdate(float progress)</div></div>
@@ -625,9 +627,9 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8h_source.html',''); i
 <div class="ttc" id="aclassQGCStateMachine_html_a8a7bc30910ddde1407b682947f5f00d2"><div class="ttname"><a href="classQGCStateMachine.html#a8a7bc30910ddde1407b682947f5f00d2">QGCStateMachine::machineEvent</a></div><div class="ttdeci">void machineEvent(const QString &amp;eventName)</div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_a95fc6c144342fc103316cbd9ad9070c8"><div class="ttname"><a href="classQGCStateMachine.html#a95fc6c144342fc103316cbd9ad9070c8">QGCStateMachine::event</a></div><div class="ttdeci">bool event(QEvent *event) override</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00959">QGCStateMachine.cc:959</a></div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_ac5f883955a80b14c31beb980aa29b442"><div class="ttname"><a href="classQGCStateMachine.html#ac5f883955a80b14c31beb980aa29b442">QGCStateMachine::onEntry</a></div><div class="ttdeci">void onEntry(QEvent *event) override</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00937">QGCStateMachine.cc:937</a></div></div>
-<div class="ttc" id="aclassQGCStateMachine_html_aca3d3aa77509612e4dc22361da1789aa"><div class="ttname"><a href="classQGCStateMachine.html#aca3d3aa77509612e4dc22361da1789aa">QGCStateMachine::onLeave</a></div><div class="ttdeci">virtual void onLeave()</div><div class="ttdoc">Override to perform actions when machine stops.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8h_source.html#l00697">QGCStateMachine.h:697</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_aca3d3aa77509612e4dc22361da1789aa"><div class="ttname"><a href="classQGCStateMachine.html#aca3d3aa77509612e4dc22361da1789aa">QGCStateMachine::onLeave</a></div><div class="ttdeci">virtual void onLeave()</div><div class="ttdoc">Override to perform actions when machine stops.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8h_source.html#l00698">QGCStateMachine.h:698</a></div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_ad13cfd1c5dabb133e58dd7daab0706d3"><div class="ttname"><a href="classQGCStateMachine.html#ad13cfd1c5dabb133e58dd7daab0706d3">QGCStateMachine::stateHistoryChanged</a></div><div class="ttdeci">void stateHistoryChanged()</div><div class="ttdoc">Emitted when the state history changes (for QML binding)</div></div>
-<div class="ttc" id="aclassQGCStateMachine_html_ae30a0fa881398ebdfea0cc5a910f7954"><div class="ttname"><a href="classQGCStateMachine.html#ae30a0fa881398ebdfea0cc5a910f7954">QGCStateMachine::onEnter</a></div><div class="ttdeci">virtual void onEnter()</div><div class="ttdoc">Override to perform actions when machine starts.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8h_source.html#l00694">QGCStateMachine.h:694</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_ae30a0fa881398ebdfea0cc5a910f7954"><div class="ttname"><a href="classQGCStateMachine.html#ae30a0fa881398ebdfea0cc5a910f7954">QGCStateMachine::onEnter</a></div><div class="ttdeci">virtual void onEnter()</div><div class="ttdoc">Override to perform actions when machine starts.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8h_source.html#l00695">QGCStateMachine.h:695</a></div></div>
 <div class="ttc" id="aclassQGCState_html"><div class="ttname"><a href="classQGCState.html">QGCState</a></div><div class="ttdef"><b>Definition</b> <a href="QGCState_8h_source.html#l00021">QGCState.h:22</a></div></div>
 <div class="ttc" id="aclassRetryTransition_html"><div class="ttname"><a href="classRetryTransition.html">RetryTransition</a></div><div class="ttdef"><b>Definition</b> <a href="RetryTransition_8h_source.html#l00026">RetryTransition.h:27</a></div></div>
 <div class="ttc" id="aclassStateContext_html"><div class="ttname"><a href="classStateContext.html">StateContext</a></div><div class="ttdef"><b>Definition</b> <a href="StateContext_8h_source.html#l00030">StateContext.h:31</a></div></div>

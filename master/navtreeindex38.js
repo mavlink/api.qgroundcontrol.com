@@ -1,5 +1,11 @@
 var NAVTREEINDEX38 =
 {
+"classQGCFetchTileTask.html#ab48bbfae2e262bde5bbf48a3da5d1798":[2,0,365,0],
+"classQGCFetchTileTask.html#ac77e1719838b4acb29907a8e6558e33c":[2,0,365,4],
+"classQGCFetchTileTask.html#afbb5d56ec2c6a4bfc05a1a49a289a75e":[2,0,365,3],
+"classQGCFileDialogController.html":[2,0,366],
+"classQGCFileDialogController.html#a2962a2348fc54d37f6d3a8328da02199":[2,0,366,4],
+"classQGCFileDialogController.html#a3e3b4374845658b2886a845b6511655d":[2,0,366,3],
 "classQGCFileDialogController.html#a4697bc9a71ff7f0bb9f5fc46ad891eeb":[2,0,366,5],
 "classQGCFileDialogController.html#a5b25a3e4116cb4bd8584ed1f542bc7bf":[2,0,366,10],
 "classQGCFileDialogController.html#a6b6689f51ab64a779b6b61baa0f71562":[2,0,366,2],
@@ -243,11 +249,5 @@ var NAVTREEINDEX38 =
 "classQGCMAVLink.html#a992853464554d4461d5dc823af810c19a58ca453500956e70fa20beaaca6d93fb":[2,0,387,1,2],
 "classQGCMAVLink.html#a992853464554d4461d5dc823af810c19a703959ef9301377f3b4f58f7ee8edd4b":[2,0,387,1,1],
 "classQGCMAVLink.html#a992853464554d4461d5dc823af810c19ac6d65fe5237c2397c38ecc7f5ebd8715":[2,0,387,1,3],
-"classQGCMAVLink.html#a992853464554d4461d5dc823af810c19af3197119abe89fae5a0af0f36726c621":[2,0,387,1,0],
-"classQGCMAVLink.html#a9f87d8314f1ba762113ab9f875aa2d22":[2,0,387,40],
-"classQGCMAVLink.html#aa58e05a149424ebb64d72419622be332":[2,0,387,44],
-"classQGCMAVLink.html#aa5983f8e34da8a6cfa074129dd357bb8":[2,0,387,48],
-"classQGCMAVLink.html#aab680e1f306d77049fb51736798489b8":[2,0,387,10],
-"classQGCMAVLink.html#ab3c67ff37bca0ddf3815df0571ad2978":[2,0,387,49],
-"classQGCMAVLink.html#ab432d983740017bdf9bce64dc1db62a7":[2,0,387,16]
+"classQGCMAVLink.html#a992853464554d4461d5dc823af810c19af3197119abe89fae5a0af0f36726c621":[2,0,387,1,0]
 };

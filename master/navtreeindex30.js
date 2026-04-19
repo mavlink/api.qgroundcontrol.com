@@ -1,5 +1,9 @@
 var NAVTREEINDEX30 =
 {
+"classMapsSettings.html#ae398e6987b3c78b2b3eb5771aa481f7e":[2,0,251,0],
+"classMavlinkAction.html":[2,0,253],
+"classMavlinkActionManager.html":[2,0,254],
+"classMavlinkActionManager.html#a310bda43cac1a72f12c8f29ea7c54857":[2,0,254,0],
 "classMavlinkActionsSettings.html":[2,0,255],
 "classMavlinkActionsSettings.html#a1ed6462b9b7fc31c8889b41122625305":[2,0,255,2],
 "classMavlinkActionsSettings.html#a1f46656a4f070ea98906950b1d485648":[2,0,255,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX30 =
 "classMavlinkSettings.html#a5d20eb0147795f88971d25a6b44bad3d":[2,0,265,19],
 "classMavlinkSettings.html#a692d91f8cf743c35596c8c179e7e4811":[2,0,265,6],
 "classMavlinkSettings.html#a6b5b080cf9c5b4a44e01c5bc2ddc35d2":[2,0,265,9],
-"classMavlinkSettings.html#a7586e448c7ce52dbe78b43058bef0c03":[2,0,265,4],
-"classMavlinkSettings.html#a7cb28c28ec126590e2135d551aaf7673":[2,0,265,5],
-"classMavlinkSettings.html#a7def5e6d5fcccc4c7c9f4017efbebf63":[2,0,265,7],
-"classMavlinkSettings.html#a8346ad3c14bd0f6ef153a93fbcc6f603":[2,0,265,16],
-"classMavlinkSettings.html#ab0486a797c55120958d417bc5bb09d30":[2,0,265,3]
+"classMavlinkSettings.html#a7586e448c7ce52dbe78b43058bef0c03":[2,0,265,4]
 };

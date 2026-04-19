@@ -1,5 +1,9 @@
 var NAVTREEINDEX19 =
 {
+"classActuators.html#a20979b1b37e14f275528f2052bca75f2":[2,0,24,14],
+"classActuators.html#a249dbed48800f3823e1afd7c028066f8":[2,0,24,9],
+"classActuators.html#a34cf84e238f78b86ef0d41ddc88db77c":[2,0,24,2],
+"classActuators.html#a36006580e5b213e1a4db38c484b282b6":[2,0,24,28],
 "classActuators.html#a3d81786c6ac24b0e2739816f293c69e1":[2,0,24,16],
 "classActuators.html#a3e7fec6a5a1f1fdc1a64215c22c068dd":[2,0,24,11],
 "classActuators.html#a5520379d6faa72c3b045b2ae434c33ac":[2,0,24,7],
@@ -71,16 +75,16 @@ var NAVTREEINDEX19 =
 "classAndroidEvents.html#afaa5fad6eb36a8a5176c2823c2962354":[2,0,34,6],
 "classAndroidInterface_1_1JniLocalRef.html":[1,0,4,0],
 "classAndroidInterface_1_1JniLocalRef.html":[2,0,4,0],
-"classAndroidInterface_1_1JniLocalRef.html#a14c85e1f1bf422d2ab1c47151ecbc979":[1,0,4,0,4],
 "classAndroidInterface_1_1JniLocalRef.html#a14c85e1f1bf422d2ab1c47151ecbc979":[2,0,4,0,4],
-"classAndroidInterface_1_1JniLocalRef.html#a59c724f3bf4c880ad6815b7f956adfe6":[2,0,4,0,7],
+"classAndroidInterface_1_1JniLocalRef.html#a14c85e1f1bf422d2ab1c47151ecbc979":[1,0,4,0,4],
 "classAndroidInterface_1_1JniLocalRef.html#a59c724f3bf4c880ad6815b7f956adfe6":[1,0,4,0,7],
-"classAndroidInterface_1_1JniLocalRef.html#a8aac486844249982cb2e85e3c8949981":[1,0,4,0,1],
+"classAndroidInterface_1_1JniLocalRef.html#a59c724f3bf4c880ad6815b7f956adfe6":[2,0,4,0,7],
 "classAndroidInterface_1_1JniLocalRef.html#a8aac486844249982cb2e85e3c8949981":[2,0,4,0,1],
-"classAndroidInterface_1_1JniLocalRef.html#a8e16bc89de67edbc7840e99ae8b93f60":[2,0,4,0,8],
+"classAndroidInterface_1_1JniLocalRef.html#a8aac486844249982cb2e85e3c8949981":[1,0,4,0,1],
 "classAndroidInterface_1_1JniLocalRef.html#a8e16bc89de67edbc7840e99ae8b93f60":[1,0,4,0,8],
-"classAndroidInterface_1_1JniLocalRef.html#ab2bea2d75cc1620d6e0635d70e10e3db":[2,0,4,0,6],
+"classAndroidInterface_1_1JniLocalRef.html#a8e16bc89de67edbc7840e99ae8b93f60":[2,0,4,0,8],
 "classAndroidInterface_1_1JniLocalRef.html#ab2bea2d75cc1620d6e0635d70e10e3db":[1,0,4,0,6],
+"classAndroidInterface_1_1JniLocalRef.html#ab2bea2d75cc1620d6e0635d70e10e3db":[2,0,4,0,6],
 "classAndroidInterface_1_1JniLocalRef.html#ad1e0ea04c56b0b1a3e6653a8d95260fe":[1,0,4,0,2],
 "classAndroidInterface_1_1JniLocalRef.html#ad1e0ea04c56b0b1a3e6653a8d95260fe":[2,0,4,0,2],
 "classAndroidInterface_1_1JniLocalRef.html#ae1fefa0cc237dd60db586072969b4f19":[2,0,4,0,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX19 =
 "classArduPlaneFirmwarePlugin.html#a1fcc298417ccbedd68e1833b4d1305e5":[2,0,75,6],
 "classArduPlaneFirmwarePlugin.html#a20da5dacf8ba7d6f1c38ddd7077c4968":[2,0,75,22],
 "classArduPlaneFirmwarePlugin.html#a2c6fbe5f812379f97308bc70020295f4":[2,0,75,21],
-"classArduPlaneFirmwarePlugin.html#a3058d4cc1e4fc73a12e5391689adefcb":[2,0,75,24],
-"classArduPlaneFirmwarePlugin.html#a32cfc30fe7836f3c5c1baa663e591757":[2,0,75,30],
-"classArduPlaneFirmwarePlugin.html#a3643a6bdc4a7cd3181fe3790b7d52593":[2,0,75,7],
-"classArduPlaneFirmwarePlugin.html#a475b67e5c5ee2a5f62adc185791d120b":[2,0,75,29],
-"classArduPlaneFirmwarePlugin.html#a4895539aba671e81b42afe610b61b68e":[2,0,75,14]
+"classArduPlaneFirmwarePlugin.html#a3058d4cc1e4fc73a12e5391689adefcb":[2,0,75,24]
 };

@@ -1,5 +1,11 @@
 var NAVTREEINDEX42 =
 {
+"classQSerialPort.html#ac5d094511260c30d5239c9b0316c2733a2e2dbc918bddcbc0d2e0468562b25d71":[2,0,422,2,2],
+"classQSerialPort.html#ac5d094511260c30d5239c9b0316c2733a7a5108aacd7749b70cb5d0b2d6add867":[2,0,422,2,0],
+"classQSerialPort.html#ac5d094511260c30d5239c9b0316c2733ae19406906828b02ac54f8d4c535d255b":[2,0,422,2,1],
+"classQSerialPort.html#ac98215b9f88bd9c4a2d95224ee69e8f5":[2,0,422,0],
+"classQSerialPort.html#ac98215b9f88bd9c4a2d95224ee69e8f5a303be17335855b37c1fecd24cb49b504":[2,0,422,0,7],
+"classQSerialPort.html#ac98215b9f88bd9c4a2d95224ee69e8f5a3155fdff9ec4dd7b546332713b11dd5e":[2,0,422,0,3],
 "classQSerialPort.html#ac98215b9f88bd9c4a2d95224ee69e8f5a486ceb1460fc2587f79b3650c9f41cb0":[2,0,422,0,4],
 "classQSerialPort.html#ac98215b9f88bd9c4a2d95224ee69e8f5a707ffe8d29ee30e74ed78a9345c17273":[2,0,422,0,1],
 "classQSerialPort.html#ac98215b9f88bd9c4a2d95224ee69e8f5a78d0aed4e04bb2e88ff0a8d187421e58":[2,0,422,0,6],
@@ -243,11 +249,5 @@ var NAVTREEINDEX42 =
 "classRCToParamDialogController.html#a1ca1c4692a659214f0b3b192df29adc2":[2,0,435,0],
 "classRTCMMavlink.html":[2,0,447],
 "classRTCMMavlink.html#a56aa75b3205bafe2c6211504d0ca397c":[2,0,447,0],
-"classRTCMMavlink.html#a8acf5237b6c1affc09cfce3a35c8691e":[2,0,447,2],
-"classRTCMMavlink.html#a8cfaa560974c782888dcd29a50c82317":[2,0,447,1],
-"classRTCMParser.html":[2,0,448],
-"classRTCMParser.html#a110f2d4519bd286d6e044b79590c4d00":[2,0,448,7],
-"classRTCMParser.html#a14128d19ced27e06a04b91bc305ed292":[2,0,448,8],
-"classRTCMParser.html#a25e064699cd425640cf57e145038eeaa":[2,0,448,2],
-"classRTCMParser.html#a7b413e2087bcd790eb51f64847aa1e9b":[2,0,448,9]
+"classRTCMMavlink.html#a8acf5237b6c1affc09cfce3a35c8691e":[2,0,447,2]
 };

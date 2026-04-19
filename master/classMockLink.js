@@ -3,12 +3,14 @@ var classMockLink =
     [ "ParamRequestReadFailureMode_t", "classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79", [
       [ "FailParamRequestReadNone", "classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79a6075d36eb64eda44068f33766d5f4bd1", null ],
       [ "FailParamRequestReadNoResponse", "classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79a643a2fbb920b873700a83463ff966a38", null ],
-      [ "FailParamRequestReadFirstAttemptNoResponse", "classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79a2d4710cb7d7160eb9cea0fd951ad6bc0", null ]
+      [ "FailParamRequestReadFirstAttemptNoResponse", "classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79a2d4710cb7d7160eb9cea0fd951ad6bc0", null ],
+      [ "FailParamRequestReadParamError", "classMockLink.html#adc2514d204c22d410a2e1a0348fe0a79a486cbdd8a637310ca27e3c9b6e5ca85c", null ]
     ] ],
     [ "ParamSetFailureMode_t", "classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5", [
       [ "FailParamSetNone", "classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5afe9c871d2936b35ab63b9015aeed3574", null ],
       [ "FailParamSetNoAck", "classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5a66b6a385709fbb5b206154cb7dc0ac70", null ],
-      [ "FailParamSetFirstAttemptNoAck", "classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5a388ce1172a10cc5ea6894a7140741289", null ]
+      [ "FailParamSetFirstAttemptNoAck", "classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5a388ce1172a10cc5ea6894a7140741289", null ],
+      [ "FailParamSetParamError", "classMockLink.html#a56c4c7ff06207a68a850e31f72843ff5a15ac84d9850c0f42c6e6e9b97738a1a7", null ]
     ] ],
     [ "RequestMessageFailureMode_t", "classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5", [
       [ "FailRequestMessageNone", "classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5abe7d4e24d79f9a632d5038106988dd65", null ],

@@ -1,5 +1,9 @@
 var NAVTREEINDEX20 =
 {
+"classArduPlaneFirmwarePlugin.html#a32cfc30fe7836f3c5c1baa663e591757":[2,0,75,30],
+"classArduPlaneFirmwarePlugin.html#a3643a6bdc4a7cd3181fe3790b7d52593":[2,0,75,7],
+"classArduPlaneFirmwarePlugin.html#a475b67e5c5ee2a5f62adc185791d120b":[2,0,75,29],
+"classArduPlaneFirmwarePlugin.html#a4895539aba671e81b42afe610b61b68e":[2,0,75,14],
 "classArduPlaneFirmwarePlugin.html#a49da51f70624c5321d95cdba74b1dfe0":[2,0,75,10],
 "classArduPlaneFirmwarePlugin.html#a515eb03218dc95c1f8b8ff9ee3854be4":[2,0,75,34],
 "classArduPlaneFirmwarePlugin.html#a56de95e1cbce49f004f13e3764baf765":[2,0,75,35],
@@ -245,9 +249,5 @@ var NAVTREEINDEX20 =
 "classBluetoothWorker.html#a8051d1e0703373213f879c2587d07b4f":[2,0,98,19],
 "classBluetoothWorker.html#a86d0befa9a72d0be61ea0f07b38cd9bf":[2,0,98,32],
 "classBluetoothWorker.html#a93843c3896f2b1c5e2ea5cb43b6094a9":[2,0,98,15],
-"classBluetoothWorker.html#aa0809dcf4f904afd443dd3247ffac97e":[2,0,98,13],
-"classBluetoothWorker.html#aa3b1d300211a1ddcbba6e8ebece82f6b":[2,0,98,33],
-"classBluetoothWorker.html#aa66ea58340739195815348eaea748216":[2,0,98,28],
-"classBluetoothWorker.html#ab0516522bbb53dc8ecd171f89ce02360":[2,0,98,4],
-"classBluetoothWorker.html#ab26707fdef0d64443081a98396ffb1fa":[2,0,98,3]
+"classBluetoothWorker.html#aa0809dcf4f904afd443dd3247ffac97e":[2,0,98,13]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX21 =
 {
+"classBluetoothWorker.html#aa3b1d300211a1ddcbba6e8ebece82f6b":[2,0,98,33],
+"classBluetoothWorker.html#aa66ea58340739195815348eaea748216":[2,0,98,28],
+"classBluetoothWorker.html#ab0516522bbb53dc8ecd171f89ce02360":[2,0,98,4],
+"classBluetoothWorker.html#ab26707fdef0d64443081a98396ffb1fa":[2,0,98,3],
 "classBluetoothWorker.html#ab7ecdb792e4705fef4d8c18ca4c5191e":[2,0,98,23],
 "classBluetoothWorker.html#ab9851e793df650c4634cec23af72513f":[2,0,98,16],
 "classBluetoothWorker.html#ac083d64cd3d105916d83ae4f457fff57":[2,0,98,27],
@@ -245,9 +249,5 @@ var NAVTREEINDEX21 =
 "classComponentInformationManager.html#abf1d2b36a6818f544316555928079711":[2,0,114,8],
 "classComponentInformationManager.html#ac4c31fe04131de9a1cd43d64e7fc5fe5":[2,0,114,10],
 "classComponentInformationManager.html#ac77800b304934e17d54541ca1eeca636":[2,0,114,6],
-"classComponentInformationManager.html#ae2bba01ba8bc33ac586ecf2d1b9b80e8":[2,0,114,0],
-"classComponentInformationManager.html#af44d89cc563e1ebd84f9ab9f8b43af17":[2,0,114,2],
-"classComponentInformationTranslation.html":[2,0,115],
-"classComponentInformationTranslation.html#a5fa7df9c5f1fbaf85558f3f053a47257":[2,0,115,2],
-"classComponentInformationTranslation.html#a64fdc5e9ce16053cd1931688d9844249":[2,0,115,1]
+"classComponentInformationManager.html#ae2bba01ba8bc33ac586ecf2d1b9b80e8":[2,0,114,0]
 };

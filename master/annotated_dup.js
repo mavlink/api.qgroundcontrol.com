@@ -649,6 +649,7 @@ var annotated_dup =
     [ "VWorldSatMapProvider", "classVWorldSatMapProvider.html", "classVWorldSatMapProvider" ],
     [ "VWorldStreetMapProvider", "classVWorldStreetMapProvider.html", "classVWorldStreetMapProvider" ],
     [ "WaitForMavlinkMessageState", "classWaitForMavlinkMessageState.html", "classWaitForMavlinkMessageState" ],
+    [ "WaitForParamResponseState", "classWaitForParamResponseState.html", "classWaitForParamResponseState" ],
     [ "WaitForSignalState", "classWaitForSignalState.html", "classWaitForSignalState" ],
     [ "WaitStateBase", "classWaitStateBase.html", "classWaitStateBase" ]
 ];

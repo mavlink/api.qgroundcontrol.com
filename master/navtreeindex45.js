@@ -1,5 +1,11 @@
 var NAVTREEINDEX45 =
 {
+"classSettingsFact.html":[2,0,468],
+"classSettingsFact.html#a24c631016d70bf75de43955d8dccea2a":[2,0,468,3],
+"classSettingsFact.html#a311e50ba1f485f19e25f91d94dc380a2":[2,0,468,0],
+"classSettingsFact.html#a7c35570cc4479f6551bae04e5bc53ec3":[2,0,468,1],
+"classSettingsFact.html#a7cfad5e3ff9b204195f372a712ae032a":[2,0,468,2],
+"classSettingsFact.html#abc39b9ed1b231d083bdee20f84c71fbe":[2,0,468,4],
 "classSettingsFact.html#ac09b23e83d3ee98441b9f543c860a81e":[2,0,468,5],
 "classSettingsGroup.html":[2,0,469],
 "classSettingsGroup.html#a09bd6bb39f321c127367616ec6ac4b17":[2,0,469,9],
@@ -243,11 +249,5 @@ var NAVTREEINDEX45 =
 "classSpeedSection.html#a60357a64175c9a4fbfcfc07696eaa032":[2,0,480,11],
 "classSpeedSection.html#a64905073c7ad34598b8b6997543da0b0":[2,0,480,5],
 "classSpeedSection.html#a74dca093b067161f7b9b23fbac754d98":[2,0,480,0],
-"classSpeedSection.html#a86a805955355a05607d45851bc4d2f44":[2,0,480,12],
-"classSpeedSection.html#a8e0137b44688b9b7642bfcfc88f0dae7":[2,0,480,9],
-"classSpeedSection.html#a8f2f6f37a38666f9a924b175dfc78365":[2,0,480,1],
-"classSpeedSection.html#ac19e78038bf798b08388aca17b2140f0":[2,0,480,8],
-"classSpeedSection.html#ac397fe8cbb5d40f4516c998f77469b92":[2,0,480,10],
-"classSpeedSection.html#ad97519cdcf70558490e2b5c06658ab66":[2,0,480,13],
-"classSpeedSection.html#adedb29bbf9117002b6b564d66ae5fe38":[2,0,480,14]
+"classSpeedSection.html#a86a805955355a05607d45851bc4d2f44":[2,0,480,12]
 };

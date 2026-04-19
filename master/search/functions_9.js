@@ -173,7 +173,7 @@ var searchData=
   ['ismetadatatypesupported_170',['isMetaDataTypeSupported',['../classCompInfoGeneral.html#a80b15e824c7c66ffbd7b4033f937fcfb',1,'CompInfoGeneral']]],
   ['ismotor_171',['isMotor',['../classActuatorTesting_1_1Actuator.html#afd54de0186423926ae203d5d690029ca',1,'ActuatorTesting::Actuator']]],
   ['ismultiplexingenabledchanged_172',['isMultiplexingEnabledChanged',['../classQGroundControlQmlGlobal.html#a90dacd08fbce881e61d188db01047cc6',1,'QGroundControlQmlGlobal']]],
-  ['ismultirotor_173',['ismultirotor',['../classQGCMAVLink.html#a26c03ae89d1541290f5b516bf0a19b52',1,'QGCMAVLink::isMultiRotor()'],['../classActuators.html#a3d81786c6ac24b0e2739816f293c69e1',1,'Actuators::isMultirotor()']]],
+  ['ismultirotor_173',['ismultirotor',['../classActuators.html#a3d81786c6ac24b0e2739816f293c69e1',1,'Actuators::isMultirotor()'],['../classQGCMAVLink.html#a26c03ae89d1541290f5b516bf0a19b52',1,'QGCMAVLink::isMultiRotor()']]],
   ['isnetworkavailable_174',['isNetworkAvailable',['../namespaceQGCNetworkHelper.html#a8755b82129ef3cab2951f88ac70cd01e',1,'QGCNetworkHelper']]],
   ['isnetworkethernet_175',['isNetworkEthernet',['../namespaceQGCNetworkHelper.html#a3b3c71af37eb290a56a9b496949014e5',1,'QGCNetworkHelper']]],
   ['isnull_176',['isNull',['../classQSerialPortInfo.html#aaea506fe2fb706083c2ec0470b8603c9',1,'QSerialPortInfo']]],

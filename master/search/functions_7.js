@@ -204,7 +204,7 @@ var searchData=
   ['gpsref_201',['gpsref',['../classOsmParser.html#a9540861ddb1cb7416a0d8211de4694f2',1,'OsmParser::gpsRef()'],['../classViewer3DMapProvider.html#ae2200686f1fe3158484d4358e87985f4',1,'Viewer3DMapProvider::gpsRef()']]],
   ['gpsrefchanged_202',['gpsrefchanged',['../classViewer3DGeoCoordinateType.html#aeaa7e9692d349058ba6ebeee479f5456',1,'Viewer3DGeoCoordinateType::gpsRefChanged()'],['../classViewer3DManager.html#a5710c25bb8127b613e8cb54896036de6',1,'Viewer3DManager::gpsRefChanged()'],['../classViewer3DMapProvider.html#af00b69ab1d3114aef9bd9e5aa1d7f6fa',1,'Viewer3DMapProvider::gpsRefChanged()']]],
   ['gpsrefpoint_203',['gpsRefPoint',['../classOsmParserThread.html#af35d3047f3f7777ee03a5cc9779c43eb',1,'OsmParserThread']]],
-  ['gpsrtk_204',['gpsrtk',['../classGPSManager.html#a2289f39036e27e72c5eb6215499f00d5',1,'GPSManager::gpsRtk()'],['../classGPSRtk.html#ac860036342bed7f5778ceb3a54e002a2',1,'GPSRtk::GPSRtk(QObject *parent=nullptr)']]],
+  ['gpsrtk_204',['gpsrtk',['../classGPSRtk.html#ac860036342bed7f5778ceb3a54e002a2',1,'GPSRtk::GPSRtk()'],['../classGPSManager.html#a2289f39036e27e72c5eb6215499f00d5',1,'GPSManager::gpsRtk()']]],
   ['gpsrtkfactgroup_205',['gpsrtkfactgroup',['../classGPSRtk.html#aac1083fb31d794c98e9c2664ed2fc363',1,'GPSRtk::gpsRtkFactGroup()'],['../classQGroundControlQmlGlobal.html#a4802d9330bc1a6ca01c7c3b2b8eb8ec7',1,'QGroundControlQmlGlobal::gpsRtkFactGroup()']]],
   ['gpsstate_206',['gpsState',['../classHealthAndArmingCheckReport.html#ac9d4168988267bdd91e51ba4ba09513a',1,'HealthAndArmingCheckReport']]],
   ['grabimage_207',['grabImage',['../classVideoManager.html#aff41925edf2224a9903db6d7fe49bec4',1,'VideoManager']]],

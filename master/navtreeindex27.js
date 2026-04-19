@@ -1,5 +1,9 @@
 var NAVTREEINDEX27 =
 {
+"classJoystick.html#a901f7ec250e8ad259c9e9d8426208159":[2,0,206,139],
+"classJoystick.html#a910eb1bee9fb0bb5ff5b5e7e75b208c3":[2,0,206,120],
+"classJoystick.html#a91749cc8283439b292e90541f3619e4e":[2,0,206,30],
+"classJoystick.html#a98381307ba1d6a6e1fc49c2b1fcac7e3":[2,0,206,145],
 "classJoystick.html#a98a2545e0646ab8a053eacff818d769c":[2,0,206,90],
 "classJoystick.html#a9a023198bee6acbb64f0f2aa8fbab8b1":[2,0,206,38],
 "classJoystick.html#a9a85ddfdde92d4e579dd75fce27187d1":[2,0,206,72],
@@ -245,9 +249,5 @@ var NAVTREEINDEX27 =
 "classKMLPlanDomDocument.html#af7eed42d09f88e9f9fbd8b687d507710":[2,0,214,2],
 "classKMLSchemaValidator.html":[2,0,215],
 "classKMLSchemaValidator.html#a0f5bf7ac9a04ee4ab19037c0e48f205c":[2,0,215,1],
-"classKMLSchemaValidator.html#a674dd781d13e958cd8995b17ee5ff23e":[2,0,215,4],
-"classKMLSchemaValidator.html#a732ff534fbefe8234d6e48d32aa350ff":[2,0,215,5],
-"classKMLSchemaValidator.html#abe24d112e3b360ea1c281356cfb12690":[2,0,215,2],
-"classKMLSchemaValidator.html#ac73d8f835ab259fee4c88c105e4fddfc":[2,0,215,7],
-"classKMLSchemaValidator.html#ae5921782fdc62db429ba6827b7d98602":[2,0,215,3]
+"classKMLSchemaValidator.html#a674dd781d13e958cd8995b17ee5ff23e":[2,0,215,4]
 };

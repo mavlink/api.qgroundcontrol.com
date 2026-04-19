@@ -1,5 +1,9 @@
 var NAVTREEINDEX31 =
 {
+"classMavlinkSettings.html#a7cb28c28ec126590e2135d551aaf7673":[2,0,265,5],
+"classMavlinkSettings.html#a7def5e6d5fcccc4c7c9f4017efbebf63":[2,0,265,7],
+"classMavlinkSettings.html#a8346ad3c14bd0f6ef153a93fbcc6f603":[2,0,265,16],
+"classMavlinkSettings.html#ab0486a797c55120958d417bc5bb09d30":[2,0,265,3],
 "classMavlinkSettings.html#abc7d4df3c9050e0aec915b5f5398e0cc":[2,0,265,22],
 "classMavlinkSettings.html#ac49a82960726ada8cf5c10f2f5e1739e":[2,0,265,18],
 "classMavlinkSettings.html#ad9223acc2ec853518f0dc922e21fd054":[2,0,265,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX31 =
 "classMissionItem.html#afdcf8fc1fe52ab9c4d16f7cde13fafc3":[2,0,276,26],
 "classMissionManager.html":[2,0,277],
 "classMissionManager.html#a02bfa7e57bbfc71421c7f938571c5d0f":[2,0,277,0],
-"classMissionManager.html#a038c5247304de81bf08aebe1c3288ff0":[2,0,277,4],
-"classMissionManager.html#a58086ae6f03adc44b1efc41a4cad91cf":[2,0,277,3],
-"classMissionManager.html#a9670f688eedd7a65f7bd00b060f95c07":[2,0,277,5],
-"classMissionManager.html#ab0fa7a44d5d7404df6560f7036b477d6":[2,0,277,1],
-"classMissionManager.html#ac9870412b849e1e112bcdf383f6586cb":[2,0,277,2]
+"classMissionManager.html#a038c5247304de81bf08aebe1c3288ff0":[2,0,277,4]
 };
