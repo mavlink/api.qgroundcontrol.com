@@ -44,7 +44,7 @@ var searchData=
   ['ntripusername_41',['ntripUsername',['../classNTRIPSettings.html#a085f48e9993c9862392d891590b86139',1,'NTRIPSettings']]],
   ['ntripusetls_42',['ntripUseTls',['../classNTRIPSettings.html#a367cfc8ca9a579a722a06fc732918f6f',1,'NTRIPSettings']]],
   ['ntripwhitelist_43',['ntripWhitelist',['../classNTRIPSettings.html#a7ba4e3769ef4f6a3f18fe6c6827b061b',1,'NTRIPSettings']]],
-  ['numbertostring_44',['numberToString',['../classQGCApplication.html#afd1dfffaeef22702cfc42366df4fd882',1,'QGCApplication']]],
+  ['numbertostring_44',['numberToString',['../namespaceQGC.html#a12c9356746e284627baac24785d9c8e8',1,'QGC']]],
   ['numchunks_45',['numChunks',['../structOnboardLogDownloadData.html#a846d3442837713238a72bdae60474934',1,'OnboardLogDownloadData']]],
   ['nummotors_46',['numMotors',['../classGeometryImage_1_1VehicleGeometryImageProvider.html#a6fbfc16d2fb8f31aa416540713783c0d',1,'GeometryImage::VehicleGeometryImageProvider']]]
 ];

@@ -98,7 +98,10 @@ $(document).ready(function(){initNavTree('QGC_8cc.html',''); initResizable(); })
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="QGC_8h_source.html">QGC.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="QGCApplication_8h_source.html">QGCApplication.h</a>&quot;</code><br />
 <code>#include &lt;QtCore/QDateTime&gt;</code><br />
+<code>#include &lt;QtCore/QLocale&gt;</code><br />
+<code>#include &lt;QtCore/QString&gt;</code><br />
 <code>#include &lt;QtCore/QtNumeric&gt;</code><br />
 <code>#include &lt;float.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -106,7 +109,7 @@ $(document).ready(function(){initNavTree('QGC_8cc.html',''); initResizable(); })
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="QGC_8cc__incl.svg" width="527" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="QGC_8cc__incl.svg" width="100%" height="437"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="QGC_8cc_source.html">Go to the source code of this file.</a></p>
@@ -133,6 +136,26 @@ Functions</h2></td></tr>
 <tr class="separator:a16c8c40ec3cc4cb32d453e0363e524f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc84f04ae1e437c0d8aa478a9b522cf4" id="r_afc84f04ae1e437c0d8aa478a9b522cf4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#afc84f04ae1e437c0d8aa478a9b522cf4">QGC::fuzzyCompare</a> (float value1, float value2, float tolerance)</td></tr>
 <tr class="separator:afc84f04ae1e437c0d8aa478a9b522cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12c9356746e284627baac24785d9c8e8" id="r_a12c9356746e284627baac24785d9c8e8"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a12c9356746e284627baac24785d9c8e8">QGC::numberToString</a> (quint64 number)</td></tr>
+<tr class="memdesc:a12c9356746e284627baac24785d9c8e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locale-aware decimal integer formatting (e.g. "1,234,567").  <br /></td></tr>
+<tr class="separator:a12c9356746e284627baac24785d9c8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cfc8548640288f991aad0e97a467e87" id="r_a2cfc8548640288f991aad0e97a467e87"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a2cfc8548640288f991aad0e97a467e87">QGC::bigSizeToString</a> (quint64 size)</td></tr>
+<tr class="memdesc:a2cfc8548640288f991aad0e97a467e87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locale-aware byte-size with unit: B, KB, MB, GB, TB. 1 fractional digit above 1 KB.  <br /></td></tr>
+<tr class="separator:a2cfc8548640288f991aad0e97a467e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82cf4b5caaac7bdf4c3fae62d71f96c3" id="r_a82cf4b5caaac7bdf4c3fae62d71f96c3"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a82cf4b5caaac7bdf4c3fae62d71f96c3">QGC::bigSizeMBToString</a> (quint64 sizeMB)</td></tr>
+<tr class="memdesc:a82cf4b5caaac7bdf4c3fae62d71f96c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locale-aware size scaled to MB, GB, or TB. Input is in MB.  <br /></td></tr>
+<tr class="separator:a82cf4b5caaac7bdf4c3fae62d71f96c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae41a6cbf29b27a1b592d9d4cfde85975" id="r_ae41a6cbf29b27a1b592d9d4cfde85975"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#ae41a6cbf29b27a1b592d9d4cfde85975">QGC::showAppMessage</a> (const QString &amp;message, const QString &amp;title=QString())</td></tr>
+<tr class="memdesc:ae41a6cbf29b27a1b592d9d4cfde85975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show a modal application message. Queued if the UI isn't ready yet.  <br /></td></tr>
+<tr class="separator:ae41a6cbf29b27a1b592d9d4cfde85975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac387e51c15a6c5c8ad5c8ce0f86ceeca" id="r_ac387e51c15a6c5c8ad5c8ce0f86ceeca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#ac387e51c15a6c5c8ad5c8ce0f86ceeca">QGC::showCriticalVehicleMessage</a> (const QString &amp;message)</td></tr>
+<tr class="separator:ac387e51c15a6c5c8ad5c8ce0f86ceeca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1160fca03370c03e04d55589c8f5f1b" id="r_ac1160fca03370c03e04d55589c8f5f1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#ac1160fca03370c03e04d55589c8f5f1b">QGC::showRebootAppMessage</a> (const QString &amp;message, const QString &amp;title=QString())</td></tr>
+<tr class="memdesc:ac1160fca03370c03e04d55589c8f5f1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show a modal reboot-required message. Debounced within 2 minutes.  <br /></td></tr>
+<tr class="separator:ac1160fca03370c03e04d55589c8f5f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f3f3b566af17170d0554bf503695719" id="r_a3f3f3b566af17170d0554bf503695719"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a3f3f3b566af17170d0554bf503695719">QGC::runningUnitTests</a> ()</td></tr>
+<tr class="memdesc:a3f3f3b566af17170d0554bf503695719"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the app is running in unit-test mode. Returns false if <a class="el" href="QGCApplication_8h.html#abe2a07273da27b516191243d9e5afe46">qgcApp()</a> doesn't exist yet.  <br /></td></tr>
+<tr class="separator:a3f3f3b566af17170d0554bf503695719"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>

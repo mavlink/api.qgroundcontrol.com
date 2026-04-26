@@ -1,4 +1,4 @@
 var classTianDiTuProvider =
 [
-    [ "TianDiTuProvider", "classTianDiTuProvider.html#a5a8bd61499f25499096c2c9fc9cb62d1", null ]
+    [ "TianDiTuProvider", "classTianDiTuProvider.html#a7eeeb094312ac4b704098c7b8cd70c1d", null ]
 ];

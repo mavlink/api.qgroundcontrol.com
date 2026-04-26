@@ -34,6 +34,7 @@ var classVehicleFactGroup =
     [ "_pitchFact", "classVehicleFactGroup.html#a8686de8c0e6dec2507af1c135039289c", null ],
     [ "_pitchRateFact", "classVehicleFactGroup.html#a69a55b78caf40bf5b19a30b4eec47c67", null ],
     [ "_rangeFinderDistFact", "classVehicleFactGroup.html#a3568a925bc6e66d7bb0540f1bbd16622", null ],
+    [ "_rcRSSIFact", "classVehicleFactGroup.html#ae001c503113300fb12e6521d11fa0623", null ],
     [ "_rollFact", "classVehicleFactGroup.html#a437ae5270746512e22311e6dbb587485", null ],
     [ "_rollRateFact", "classVehicleFactGroup.html#a19bb31c5a794b40c4eaeb4befd1f62bf", null ],
     [ "_throttlePctFact", "classVehicleFactGroup.html#a9e1a11991366045cd2abf1e2578c9115", null ],

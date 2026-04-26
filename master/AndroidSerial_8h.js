@@ -49,7 +49,6 @@ var AndroidSerial_8h =
     [ "isOpen", "AndroidSerial_8h.html#acc24ae6d84e04349cb77f2c2b4c72dd8", null ],
     [ "open", "AndroidSerial_8h.html#a035a2622d39f03ca9a45ea6db9b7e636", null ],
     [ "purgeBuffers", "AndroidSerial_8h.html#abbca01b5a5314507ebdabd656cb7011b", null ],
-    [ "Q_DECLARE_LOGGING_CATEGORY", "AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35", null ],
     [ "read", "AndroidSerial_8h.html#a0d31dbfbfa456a65864f9ac68583b4af", null ],
     [ "readThreadRunning", "AndroidSerial_8h.html#ad50d5ee6d41a8d9fe7ca92a2e03ad1d0", null ],
     [ "registerPointer", "AndroidSerial_8h.html#a0aa528b401e9fa20b9b4cbfbee655b3d", null ],

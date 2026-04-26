@@ -63,7 +63,7 @@ var classSimpleMissionItem =
     [ "setCoordinate", "classSimpleMissionItem.html#ac74d3267826d130dec1037b9c975bcb4", null ],
     [ "setDirty", "classSimpleMissionItem.html#aecd5f6183158e2ce86af28568a4d1e25", null ],
     [ "setDistance", "classSimpleMissionItem.html#a622de749f60f4ff1cf373654d997fdef", null ],
-    [ "setMissionFlightStatus", "classSimpleMissionItem.html#ada88c9f09944a4e1e9cb6a2315df0f24", null ],
+    [ "setMissionFlightStatus", "classSimpleMissionItem.html#af41717151bcf424eff191fd4e64193e5", null ],
     [ "setRadius", "classSimpleMissionItem.html#a981d6bd950cc667bcba7620d5bd2076d", null ],
     [ "setRawEdit", "classSimpleMissionItem.html#aeff91f8b39e06aadb084e72ed094c59d", null ],
     [ "setSequenceNumber", "classSimpleMissionItem.html#a089b12762f608a7d3e9859b9ee639623", null ],

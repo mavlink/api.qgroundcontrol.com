@@ -100,66 +100,62 @@ $(document).ready(function(){initNavTree('RCToParamDialogController_8h_source.ht
 <div class="contents">
 <a href="RCToParamDialogController_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QtCore/QLoggingCategory&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtCore/QObject&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QtQmlIntegration/QtQmlIntegration&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><a class="code hl_function" href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a>(RCToParamDialogControllerLog)</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QtCore/QObject&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtQmlIntegration/QtQmlIntegration&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">class </span><a class="code hl_class" href="classFact.html">Fact</a>;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">class </span><a class="code hl_class" href="classFactMetaData.html">FactMetaData</a>;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="classFact.html">Fact</a>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span><a class="code hl_class" href="classFactMetaData.html">FactMetaData</a>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classRCToParamDialogController.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="classRCToParamDialogController.html">RCToParamDialogController</a> : <span class="keyword">public</span> QObject</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    Q_OBJECT</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    QML_ELEMENT</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    Q_MOC_INCLUDE(<span class="stringliteral">&quot;Fact.h&quot;</span>)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    Q_PROPERTY(<a class="code hl_class" href="classFact.html">Fact</a> *tuningFact READ tuningFact WRITE setTuningFact NOTIFY <a class="code hl_signal" href="classRCToParamDialogController.html#a0b487557e174edefcdc413080517b454">tuningFactChanged</a>)</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    Q_PROPERTY(<a class="code hl_class" href="classFact.html">Fact</a> *scale      READ scale                          CONSTANT)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    Q_PROPERTY(<a class="code hl_class" href="classFact.html">Fact</a> *center     READ center                         CONSTANT)</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    Q_PROPERTY(<a class="code hl_class" href="classFact.html">Fact</a> *min        READ min                            CONSTANT)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    Q_PROPERTY(<a class="code hl_class" href="classFact.html">Fact</a> *max        READ max                            CONSTANT)</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    Q_PROPERTY(<span class="keywordtype">bool</span>  ready      MEMBER _ready                       NOTIFY <a class="code hl_signal" href="classRCToParamDialogController.html#a1ca1c4692a659214f0b3b192df29adc2">readyChanged</a>) <span class="comment">// true: editing can begin, false: still waiting for param update from vehicle</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classRCToParamDialogController.html">RCToParamDialogController</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_class" href="classRCToParamDialogController.html">~RCToParamDialogController</a>();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="classFact.html">Fact</a> *tuningFact() { <span class="keywordflow">return</span> _tuningFact; }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_class" href="classFact.html">Fact</a> *scale() { <span class="keywordflow">return</span> _scaleFact; }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_class" href="classFact.html">Fact</a> *center() { <span class="keywordflow">return</span> _centerFact; }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_class" href="classFact.html">Fact</a> *min() { <span class="keywordflow">return</span> _minFact; }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_class" href="classFact.html">Fact</a> *max() { <span class="keywordflow">return</span> _maxFact; }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> setTuningFact(<a class="code hl_class" href="classFact.html">Fact</a> *tuningFact);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>signals:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classRCToParamDialogController.html#a0b487557e174edefcdc413080517b454">   36</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classRCToParamDialogController.html#a0b487557e174edefcdc413080517b454">tuningFactChanged</a>(<a class="code hl_class" href="classFact.html">Fact</a> *fact);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classRCToParamDialogController.html#a1ca1c4692a659214f0b3b192df29adc2">   37</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classRCToParamDialogController.html#a1ca1c4692a659214f0b3b192df29adc2">readyChanged</a>(<span class="keywordtype">bool</span> ready);</div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classRCToParamDialogController.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="classRCToParamDialogController.html">RCToParamDialogController</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    Q_OBJECT</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    QML_ELEMENT</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    Q_MOC_INCLUDE(<span class="stringliteral">&quot;Fact.h&quot;</span>)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    Q_PROPERTY(<a class="code hl_class" href="classFact.html">Fact</a> *tuningFact READ tuningFact WRITE setTuningFact NOTIFY <a class="code hl_signal" href="classRCToParamDialogController.html#a0b487557e174edefcdc413080517b454">tuningFactChanged</a>)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    Q_PROPERTY(<a class="code hl_class" href="classFact.html">Fact</a> *scale      READ scale                          CONSTANT)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    Q_PROPERTY(<a class="code hl_class" href="classFact.html">Fact</a> *center     READ center                         CONSTANT)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    Q_PROPERTY(<a class="code hl_class" href="classFact.html">Fact</a> *min        READ min                            CONSTANT)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    Q_PROPERTY(<a class="code hl_class" href="classFact.html">Fact</a> *max        READ max                            CONSTANT)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    Q_PROPERTY(<span class="keywordtype">bool</span>  ready      MEMBER _ready                       NOTIFY <a class="code hl_signal" href="classRCToParamDialogController.html#a1ca1c4692a659214f0b3b192df29adc2">readyChanged</a>) <span class="comment">// true: editing can begin, false: still waiting for param update from vehicle</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classRCToParamDialogController.html">RCToParamDialogController</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_class" href="classRCToParamDialogController.html">~RCToParamDialogController</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_class" href="classFact.html">Fact</a> *tuningFact() { <span class="keywordflow">return</span> _tuningFact; }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_class" href="classFact.html">Fact</a> *scale() { <span class="keywordflow">return</span> _scaleFact; }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_class" href="classFact.html">Fact</a> *center() { <span class="keywordflow">return</span> _centerFact; }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="classFact.html">Fact</a> *min() { <span class="keywordflow">return</span> _minFact; }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_class" href="classFact.html">Fact</a> *max() { <span class="keywordflow">return</span> _maxFact; }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> setTuningFact(<a class="code hl_class" href="classFact.html">Fact</a> *tuningFact);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>signals:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classRCToParamDialogController.html#a0b487557e174edefcdc413080517b454">   33</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classRCToParamDialogController.html#a0b487557e174edefcdc413080517b454">tuningFactChanged</a>(<a class="code hl_class" href="classFact.html">Fact</a> *fact);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classRCToParamDialogController.html#a1ca1c4692a659214f0b3b192df29adc2">   34</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classRCToParamDialogController.html#a1ca1c4692a659214f0b3b192df29adc2">readyChanged</a>(<span class="keywordtype">bool</span> ready);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> _parameterUpdated();</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> _parameterUpdated();</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_class" href="classFact.html">Fact</a> *_tuningFact = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_class" href="classFact.html">Fact</a> *_scaleFact = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_class" href="classFact.html">Fact</a> *_centerFact = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_class" href="classFact.html">Fact</a> *_minFact = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_class" href="classFact.html">Fact</a> *_maxFact = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">bool</span> _ready = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">static</span> QMap&lt;QString, FactMetaData*&gt; _metaDataMap;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_scaleFactName = <span class="stringliteral">&quot;Scale&quot;</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_centerFactName = <span class="stringliteral">&quot;CenterValue&quot;</span>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_minFactName = <span class="stringliteral">&quot;MinValue&quot;</span>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_maxFactName = <span class="stringliteral">&quot;MaxValue&quot;</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_class" href="classFact.html">Fact</a> *_tuningFact = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_class" href="classFact.html">Fact</a> *_scaleFact = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_class" href="classFact.html">Fact</a> *_centerFact = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_class" href="classFact.html">Fact</a> *_minFact = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_class" href="classFact.html">Fact</a> *_maxFact = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">bool</span> _ready = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">static</span> QMap&lt;QString, FactMetaData*&gt; _metaDataMap;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_scaleFactName = <span class="stringliteral">&quot;Scale&quot;</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_centerFactName = <span class="stringliteral">&quot;CenterValue&quot;</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_minFactName = <span class="stringliteral">&quot;MinValue&quot;</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *_maxFactName = <span class="stringliteral">&quot;MaxValue&quot;</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
 </div>
-<div class="ttc" id="aAndroidSerial_8h_html_a932681ef567cd0a6a3a714a3c519eb35"><div class="ttname"><a href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a></div><div class="ttdeci">Q_DECLARE_LOGGING_CATEGORY(AndroidSerialLog)</div></div>
-<div class="ttc" id="aclassFactMetaData_html"><div class="ttname"><a href="classFactMetaData.html">FactMetaData</a></div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00019">FactMetaData.h:20</a></div></div>
-<div class="ttc" id="aclassFact_html"><div class="ttname"><a href="classFact.html">Fact</a></div><div class="ttdoc">A Fact is used to hold a single value within the system.</div><div class="ttdef"><b>Definition</b> <a href="Fact_8h_source.html#l00018">Fact.h:19</a></div></div>
-<div class="ttc" id="aclassRCToParamDialogController_html"><div class="ttname"><a href="classRCToParamDialogController.html">RCToParamDialogController</a></div><div class="ttdef"><b>Definition</b> <a href="RCToParamDialogController_8h_source.html#l00012">RCToParamDialogController.h:13</a></div></div>
+<div class="ttc" id="aclassFactMetaData_html"><div class="ttname"><a href="classFactMetaData.html">FactMetaData</a></div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00014">FactMetaData.h:15</a></div></div>
+<div class="ttc" id="aclassFact_html"><div class="ttname"><a href="classFact.html">Fact</a></div><div class="ttdoc">A Fact is used to hold a single value within the system.</div><div class="ttdef"><b>Definition</b> <a href="Fact_8h_source.html#l00015">Fact.h:16</a></div></div>
+<div class="ttc" id="aclassRCToParamDialogController_html"><div class="ttname"><a href="classRCToParamDialogController.html">RCToParamDialogController</a></div><div class="ttdef"><b>Definition</b> <a href="RCToParamDialogController_8h_source.html#l00009">RCToParamDialogController.h:10</a></div></div>
 <div class="ttc" id="aclassRCToParamDialogController_html_a0b487557e174edefcdc413080517b454"><div class="ttname"><a href="classRCToParamDialogController.html#a0b487557e174edefcdc413080517b454">RCToParamDialogController::tuningFactChanged</a></div><div class="ttdeci">void tuningFactChanged(Fact *fact)</div></div>
 <div class="ttc" id="aclassRCToParamDialogController_html_a1ca1c4692a659214f0b3b192df29adc2"><div class="ttname"><a href="classRCToParamDialogController.html#a1ca1c4692a659214f0b3b192df29adc2">RCToParamDialogController::readyChanged</a></div><div class="ttdeci">void readyChanged(bool ready)</div></div>
 </div><!-- fragment --></div><!-- contents -->

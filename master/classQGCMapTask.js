@@ -16,7 +16,7 @@ var classQGCMapTask =
       [ "taskImport", "classQGCMapTask.html#a69ac69d198c7e296bd46daf594702f31aacb3f29f4a541fff1ac32bf94ae1b063", null ]
     ] ],
     [ "QGCMapTask", "classQGCMapTask.html#aa1890db37b151a9349e2bd8e4e864e99", null ],
-    [ "~QGCMapTask", "classQGCMapTask.html#a6065a1d0015d0121b325d7b37c8538ae", null ],
+    [ "~QGCMapTask", "classQGCMapTask.html#a8e319306ae66afa7b385fd043de4f879", null ],
     [ "error", "classQGCMapTask.html#af536a55c8b6ba5b1f15ca7e326030846", null ],
     [ "Q_ENUM", "classQGCMapTask.html#ac781b5956aa4981dcb76d0a2308f864f", null ],
     [ "setError", "classQGCMapTask.html#a34d244bfda125e9d1f371ac001895525", null ],

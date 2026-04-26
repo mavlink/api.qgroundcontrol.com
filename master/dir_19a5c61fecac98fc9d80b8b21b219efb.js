@@ -4,6 +4,8 @@ var dir_19a5c61fecac98fc9d80b8b21b219efb =
     [ "BatteryFactGroupListModel.h", "BatteryFactGroupListModel_8h.html", "BatteryFactGroupListModel_8h" ],
     [ "EscStatusFactGroupListModel.cc", "EscStatusFactGroupListModel_8cc.html", null ],
     [ "EscStatusFactGroupListModel.h", "EscStatusFactGroupListModel_8h.html", "EscStatusFactGroupListModel_8h" ],
+    [ "RadioStatusFactGroup.cc", "RadioStatusFactGroup_8cc.html", null ],
+    [ "RadioStatusFactGroup.h", "RadioStatusFactGroup_8h.html", "RadioStatusFactGroup_8h" ],
     [ "TerrainFactGroup.cc", "TerrainFactGroup_8cc.html", null ],
     [ "TerrainFactGroup.h", "TerrainFactGroup_8h.html", "TerrainFactGroup_8h" ],
     [ "VehicleClockFactGroup.cc", "VehicleClockFactGroup_8cc.html", null ],

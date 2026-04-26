@@ -3,7 +3,6 @@ var hierarchy =
     [ "_GstQgcVideoSinkBin", "struct__GstQgcVideoSinkBin.html", null ],
     [ "_GstQml6GLSink", "struct__GstQml6GLSink.html", null ],
     [ "_Qt6GLVideoItemPrivate", "struct__Qt6GLVideoItemPrivate.html", null ],
-    [ "_sendMavCommandWithLambdaFallbackHandlerData", "struct__sendMavCommandWithLambdaFallbackHandlerData.html", null ],
     [ "QtAndroidPrivate::ActivityResultListener", null, [
       [ "AndroidEvents", "classAndroidEvents.html", null ]
     ] ],
@@ -49,6 +48,7 @@ var hierarchy =
     [ "StateHistoryRecorder::HistoryEntry", "structStateHistoryRecorder_1_1HistoryEntry.html", null ],
     [ "NTRIPHttpTransport::HttpStatus", "structNTRIPHttpTransport_1_1HttpStatus.html", null ],
     [ "GeometryImage::VehicleGeometryImageProvider::ImagePosition", "structGeometryImage_1_1VehicleGeometryImageProvider_1_1ImagePosition.html", null ],
+    [ "EventHandler::Impl", "structEventHandler_1_1Impl.html", null ],
     [ "AndroidSerial::JniContext", "structAndroidSerial_1_1JniContext.html", null ],
     [ "AndroidInterface::JniLocalRef< T >", "classAndroidInterface_1_1JniLocalRef.html", null ],
     [ "AndroidSerial::JniMethodCache", "structAndroidSerial_1_1JniMethodCache.html", null ],
@@ -121,7 +121,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "MAV_CMD_DO_REPOSITION_HandlerData", "structMAV__CMD__DO__REPOSITION__HandlerData.html", null ],
-    [ "Vehicle::MavCmdAckHandlerInfo_s", "structVehicle_1_1MavCmdAckHandlerInfo__s.html", null ],
+    [ "VehicleTypes::MavCmdAckHandlerInfo_s", "structVehicleTypes_1_1MavCmdAckHandlerInfo__s.html", null ],
     [ "MavlinkFTP", "classMavlinkFTP.html", null ],
     [ "MAVLinkLogProcessor", "classMAVLinkLogProcessor.html", null ],
     [ "MAVLinkStreamConfig", "classMAVLinkStreamConfig.html", null ],
@@ -140,7 +140,6 @@ var hierarchy =
     [ "OnboardLogDownloadData", "structOnboardLogDownloadData.html", null ],
     [ "Mixer::Mixers::OutputFunction", "structMixer_1_1Mixers_1_1OutputFunction.html", null ],
     [ "Parameter", "structParameter.html", null ],
-    [ "TerrainPathQuery::PathHeightInfo_t", "structTerrainPathQuery_1_1PathHeightInfo__t.html", null ],
     [ "PauseVehicleThenChangeAltData_t", "structPauseVehicleThenChangeAltData__t.html", null ],
     [ "px4_custom_mode", "unionpx4__custom__mode.html", null ],
     [ "PX4CustomMode", "structPX4CustomMode.html", null ],
@@ -306,6 +305,7 @@ var hierarchy =
           [ "SimulatedCameraControl", "classSimulatedCameraControl.html", null ],
           [ "VehicleCameraControl", "classVehicleCameraControl.html", null ]
         ] ],
+        [ "RadioStatusFactGroup", "classRadioStatusFactGroup.html", null ],
         [ "TerrainFactGroup", "classTerrainFactGroup.html", null ],
         [ "VehicleClockFactGroup", "classVehicleClockFactGroup.html", null ],
         [ "VehicleDistanceSensorFactGroup", "classVehicleDistanceSensorFactGroup.html", null ],
@@ -406,14 +406,17 @@ var hierarchy =
       [ "LogReplayWorker", "classLogReplayWorker.html", null ],
       [ "LogStore", "classLogStore.html", null ],
       [ "MAVLinkChartController", "classMAVLinkChartController.html", null ],
+      [ "MAVLinkEventManager", "classMAVLinkEventManager.html", null ],
       [ "MAVLinkInspectorController", "classMAVLinkInspectorController.html", null ],
       [ "MAVLinkLogFiles", "classMAVLinkLogFiles.html", null ],
       [ "MAVLinkLogManager", "classMAVLinkLogManager.html", null ],
       [ "MAVLinkProtocol", "classMAVLinkProtocol.html", null ],
       [ "MAVLinkSigningKey", "classMAVLinkSigningKey.html", null ],
       [ "MAVLinkSigningKeys", "classMAVLinkSigningKeys.html", null ],
+      [ "MavCommandQueue", "classMavCommandQueue.html", null ],
       [ "MavlinkAction", "classMavlinkAction.html", null ],
       [ "MavlinkActionManager", "classMavlinkActionManager.html", null ],
+      [ "MessageIntervalManager", "classMessageIntervalManager.html", null ],
       [ "MissionCmdParamInfo", "classMissionCmdParamInfo.html", null ],
       [ "MissionCommandList", "classMissionCommandList.html", null ],
       [ "MissionCommandTree", "classMissionCommandTree.html", null ],
@@ -536,6 +539,7 @@ var hierarchy =
         [ "TcpTransport", "classTcpTransport.html", null ],
         [ "UdpTransport", "classUdpTransport.html", null ]
       ] ],
+      [ "RequestMessageCoordinator", "classRequestMessageCoordinator.html", null ],
       [ "ScreenToolsController", "classScreenToolsController.html", null ],
       [ "Section", "classSection.html", [
         [ "CameraSection", "classCameraSection.html", null ],
@@ -584,6 +588,7 @@ var hierarchy =
       [ "TerrainPathQuery", "classTerrainPathQuery.html", null ],
       [ "TerrainPolyPathQuery", "classTerrainPolyPathQuery.html", null ],
       [ "TerrainProtocolHandler", "classTerrainProtocolHandler.html", null ],
+      [ "TerrainQueryCoordinator", "classTerrainQueryCoordinator.html", null ],
       [ "TerrainQueryInterface", "classTerrainQueryInterface.html", [
         [ "TerrainOfflineQuery", "classTerrainOfflineQuery.html", null ],
         [ "TerrainOnlineQuery", "classTerrainOnlineQuery.html", [
@@ -797,6 +802,7 @@ var hierarchy =
     [ "SequenceState::Step", "structSequenceState_1_1Step.html", null ],
     [ "FallbackChainState::StrategyEntry", "structFallbackChainState_1_1StrategyEntry.html", null ],
     [ "SwitchListItem", "structSwitchListItem.html", null ],
+    [ "TerrainPathHeightInfo", "structTerrainPathHeightInfo.html", null ],
     [ "TerrainTile", "classTerrainTile.html", [
       [ "TerrainTileCopernicus", "classTerrainTileCopernicus.html", null ]
     ] ],
@@ -813,6 +819,9 @@ var hierarchy =
     [ "Mixer::ActuatorType::Values", "structMixer_1_1ActuatorType_1_1Values.html", null ],
     [ "ADSB::VehicleInfo_t", "structADSB_1_1VehicleInfo__t.html", null ],
     [ "VehicleTypes", "structVehicleTypes.html", [
+      [ "MavCommandQueue", "classMavCommandQueue.html", null ],
+      [ "MessageIntervalManager", "classMessageIntervalManager.html", null ],
+      [ "RequestMessageCoordinator", "classRequestMessageCoordinator.html", null ],
       [ "Vehicle", "classVehicle.html", null ]
     ] ]
 ];

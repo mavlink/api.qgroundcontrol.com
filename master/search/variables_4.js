@@ -33,7 +33,7 @@ var searchData=
   ['display_5fwidth_30',['display_width',['../struct__Qt6GLVideoItemPrivate.html#a6499c996b6f360172aaa83f4f77f2358',1,'_Qt6GLVideoItemPrivate']]],
   ['displayoption_31',['displayOption',['../structParameter.html#a0710944ac419e7e40e231e94acf9f391',1,'Parameter']]],
   ['displaypresetstabfirstname_32',['displayPresetsTabFirstName',['../classPlanViewSettings.html#a2af7780b7da56fbc99a36d2b262b4457',1,'PlanViewSettings']]],
-  ['distancebetween_33',['distanceBetween',['../structTerrainPathQuery_1_1PathHeightInfo__t.html#ab55c4de74c6c89c8bf5efca83a4a188b',1,'TerrainPathQuery::PathHeightInfo_t']]],
+  ['distancebetween_33',['distanceBetween',['../structTerrainPathHeightInfo.html#af362b193fab7157740036945827c8f76',1,'TerrainPathHeightInfo']]],
   ['distancemodename_34',['distanceModeName',['../classCameraCalc.html#a064e6c69a607d793f14aee44417ee6c9',1,'CameraCalc']]],
   ['distancetosurfacename_35',['distanceToSurfaceName',['../classCameraCalc.html#ac6ae5500ff3d5b517fab9dd89d55e87f',1,'CameraCalc']]]
 ];

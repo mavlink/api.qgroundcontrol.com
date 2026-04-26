@@ -13,7 +13,7 @@ var searchData=
   ['finalapproachaltitudename_10',['finalApproachAltitudeName',['../classLandingComplexItem.html#a5a09d2b79614f256a60ba9f362f53c17',1,'LandingComplexItem']]],
   ['finalapproachspeedname_11',['finalApproachSpeedName',['../classLandingComplexItem.html#a2b07b9d203c7ec88b7363a9e901ece8a',1,'LandingComplexItem']]],
   ['finalapproachtolanddistancename_12',['finalApproachToLandDistanceName',['../classLandingComplexItem.html#a5559e50c8a1e624889e77acd16953bba',1,'LandingComplexItem']]],
-  ['finaldistancebetween_13',['finalDistanceBetween',['../structTerrainPathQuery_1_1PathHeightInfo__t.html#ac86464428f160d85cfb3181b2902655e',1,'TerrainPathQuery::PathHeightInfo_t']]],
+  ['finaldistancebetween_13',['finalDistanceBetween',['../structTerrainPathHeightInfo.html#a5473cdc5118d8f0b48e2cbef05ea7962',1,'TerrainPathHeightInfo']]],
   ['firmwareclassardupilot_14',['FirmwareClassArduPilot',['../classQGCMAVLink.html#ae67cf4739c9329360431b003d69a881e',1,'QGCMAVLink']]],
   ['firmwareclassgeneric_15',['FirmwareClassGeneric',['../classQGCMAVLink.html#a89c10d75941dd52e08a3413d2574520d',1,'QGCMAVLink']]],
   ['firmwareclasspx4_16',['FirmwareClassPX4',['../classQGCMAVLink.html#a6dcb8d1e431adad17c51470f0ee96897',1,'QGCMAVLink']]],

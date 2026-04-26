@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('RCRSSIIndicator_8qml_source.html','');
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    property bool showIndicator: _activeVehicle.supports.radio &amp;&amp; _rcRSSIAvailable</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    property var    _activeVehicle:     QGroundControl.multiVehicleManager.activeVehicle</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    property bool   _rcRSSIAvailable:   _activeVehicle.rcRSSI &gt; 0 &amp;&amp; _activeVehicle.rcRSSI &lt;= 100</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    property bool   _rcRSSIAvailable:   _activeVehicle.rcRSSI.rawValue &gt; 0 &amp;&amp; _activeVehicle.rcRSSI.rawValue &lt;= 100</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    Component {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        id: rcRSSIInfoPage</div>
@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('RCRSSIIndicator_8qml_source.html','');
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                LabelledLabel {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                    label:      qsTr(&quot;RSSI&quot;)</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                    labelText:  _activeVehicle.rcRSSI + &quot;%&quot;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                    labelText:  _activeVehicle.rcRSSI.rawValue + &quot;%&quot;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                }</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            }</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
@@ -154,7 +154,7 @@ $(document).ready(function(){initNavTree('RCRSSIIndicator_8qml_source.html','');
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        SignalStrength {</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            anchors.verticalCenter: parent.verticalCenter</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            size:                   parent.height * 0.5</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            percent:                _rcRSSIAvailable ? _activeVehicle.rcRSSI : 0</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            percent:                _rcRSSIAvailable ? _activeVehicle.rcRSSI.rawValue : 0</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        }</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>

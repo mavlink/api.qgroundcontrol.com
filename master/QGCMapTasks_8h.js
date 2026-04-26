@@ -1,6 +1,5 @@
 var QGCMapTasks_8h =
 [
-    [ "QGCMapTask", "classQGCMapTask.html", "classQGCMapTask" ],
     [ "QGCFetchTileSetTask", "classQGCFetchTileSetTask.html", "classQGCFetchTileSetTask" ],
     [ "QGCCreateTileSetTask", "classQGCCreateTileSetTask.html", "classQGCCreateTileSetTask" ],
     [ "QGCFetchTileTask", "classQGCFetchTileTask.html", "classQGCFetchTileTask" ],

@@ -108,13 +108,13 @@ $(document).ready(function(){initNavTree('PreFlightSensorsHealthCheck_8qml_sourc
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    telemetryFailure:   _unhealthySensors &amp; _allCheckedSensors</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    property int    _unhealthySensors:  globals.activeVehicle ? globals.activeVehicle.sensorsUnhealthyBits : 1</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    property int    _allCheckedSensors: Vehicle.SysStatusSensor3dMag |</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>                                        Vehicle.SysStatusSensor3dAccel |</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                                        Vehicle.SysStatusSensor3dGyro |</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                                        Vehicle.SysStatusSensorAbsolutePressure |</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                                        Vehicle.SysStatusSensorDifferentialPressure |</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                                        Vehicle.SysStatusSensorGPS |</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                                        Vehicle.SysStatusSensorAHRS</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    property int    _allCheckedSensors: MAVLinkEnums.MAV_SYS_STATUS_SENSOR_3D_MAG |</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>                                        MAVLinkEnums.MAV_SYS_STATUS_SENSOR_3D_ACCEL |</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                                        MAVLinkEnums.MAV_SYS_STATUS_SENSOR_3D_GYRO |</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                                        MAVLinkEnums.MAV_SYS_STATUS_SENSOR_ABSOLUTE_PRESSURE |</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                                        MAVLinkEnums.MAV_SYS_STATUS_SENSOR_DIFFERENTIAL_PRESSURE |</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>                                        MAVLinkEnums.MAV_SYS_STATUS_SENSOR_GPS |</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>                                        MAVLinkEnums.MAV_SYS_STATUS_AHRS</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    on_UnhealthySensorsChanged: updateTelemetryTextFailure()</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
@@ -122,13 +122,13 @@ $(document).ready(function(){initNavTree('PreFlightSensorsHealthCheck_8qml_sourc
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    function updateTelemetryTextFailure() {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        if(_unhealthySensors &amp; _allCheckedSensors) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            if (_unhealthySensors &amp; Vehicle.SysStatusSensor3dMag)                       telemetryTextFailure = qsTr(&quot;Failure. Magnetometer issues. Check console.&quot;)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            else if(_unhealthySensors &amp; Vehicle.SysStatusSensor3dAccel)                 telemetryTextFailure = qsTr(&quot;Failure. Accelerometer issues. Check console.&quot;)</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            else if(_unhealthySensors &amp; Vehicle.SysStatusSensor3dGyro)                  telemetryTextFailure = qsTr(&quot;Failure. Gyroscope issues. Check console.&quot;)</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            else if(_unhealthySensors &amp; Vehicle.SysStatusSensorAbsolutePressure)        telemetryTextFailure = qsTr(&quot;Failure. Barometer issues. Check console.&quot;)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            else if(_unhealthySensors &amp; Vehicle.SysStatusSensorDifferentialPressure)    telemetryTextFailure = qsTr(&quot;Failure. Airspeed sensor issues. Check console.&quot;)</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            else if(_unhealthySensors &amp; Vehicle.SysStatusSensorAHRS)                    telemetryTextFailure = qsTr(&quot;Failure. AHRS issues. Check console.&quot;)</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            else if(_unhealthySensors &amp; Vehicle.SysStatusSensorGPS)                     telemetryTextFailure = qsTr(&quot;Failure. GPS issues. Check console.&quot;)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            if (_unhealthySensors &amp; MAVLinkEnums.MAV_SYS_STATUS_SENSOR_3D_MAG)                       telemetryTextFailure = qsTr(&quot;Failure. Magnetometer issues. Check console.&quot;)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            else if(_unhealthySensors &amp; MAVLinkEnums.MAV_SYS_STATUS_SENSOR_3D_ACCEL)                 telemetryTextFailure = qsTr(&quot;Failure. Accelerometer issues. Check console.&quot;)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            else if(_unhealthySensors &amp; MAVLinkEnums.MAV_SYS_STATUS_SENSOR_3D_GYRO)                  telemetryTextFailure = qsTr(&quot;Failure. Gyroscope issues. Check console.&quot;)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            else if(_unhealthySensors &amp; MAVLinkEnums.MAV_SYS_STATUS_SENSOR_ABSOLUTE_PRESSURE)        telemetryTextFailure = qsTr(&quot;Failure. Barometer issues. Check console.&quot;)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            else if(_unhealthySensors &amp; MAVLinkEnums.MAV_SYS_STATUS_SENSOR_DIFFERENTIAL_PRESSURE)    telemetryTextFailure = qsTr(&quot;Failure. Airspeed sensor issues. Check console.&quot;)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            else if(_unhealthySensors &amp; MAVLinkEnums.MAV_SYS_STATUS_AHRS)                            telemetryTextFailure = qsTr(&quot;Failure. AHRS issues. Check console.&quot;)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            else if(_unhealthySensors &amp; MAVLinkEnums.MAV_SYS_STATUS_SENSOR_GPS)                      telemetryTextFailure = qsTr(&quot;Failure. GPS issues. Check console.&quot;)</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        }</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>

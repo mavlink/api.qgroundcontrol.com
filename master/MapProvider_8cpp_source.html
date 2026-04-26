@@ -102,167 +102,186 @@ $(document).ready(function(){initNavTree('MapProvider_8cpp_source.html',''); ini
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtCore/QLocale&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(MapProviderLog, <span class="stringliteral">&quot;QtLocationPlugin.MapProvider&quot;</span>)</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QtCore/QUrl&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QtLocation/private/qgeomaptype_p.h&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// QtLocation expects MapIds to start at 1 and be sequential.</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>int <a class="code hl_class" href="classMapProvider.html">MapProvider</a>::_mapIdIndex = 1;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classMapProvider.html#a8c3aa319852f075d34d64a1acf3335a2">   11</a></span><a class="code hl_class" href="classMapProvider.html">MapProvider</a>::<a class="code hl_class" href="classMapProvider.html">MapProvider</a>(</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    const QString &amp;mapName,</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    const QString &amp;referrer,</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    const QString &amp;imageFormat,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    quint32 averageSize,</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    QGeoMapType::MapStyle mapStyle)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    : _mapName(mapName)</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    , _referrer(referrer)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    , _imageFormat(imageFormat)</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    , _averageSize(averageSize)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    , _mapStyle(mapStyle)</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    , _language(!QLocale::system().uiLanguages().isEmpty() ? QLocale::system().uiLanguages().constFirst() : &quot;en&quot;)</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    , _mapId(_mapIdIndex++)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// qCDebug(MapProviderLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; this &lt;&lt; _mapId;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(MapProviderLog, <span class="stringliteral">&quot;QtLocationPlugin.MapProvider&quot;</span>)</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// MapProvider::MapStyle mirrors QGeoMapType::MapStyle to keep the public</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// header free of &lt;QtLocation/private/qgeomaptype_p.h&gt;. Catch drift at compile</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// time so the two enums never disagree.</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>static_assert(static_cast&lt;<span class="keywordtype">int</span>&gt;(<a class="code hl_class" href="classMapProvider.html">MapProvider</a>::NoMap)            == static_cast&lt;<span class="keywordtype">int</span>&gt;(QGeoMapType::NoMap));</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>static_assert(static_cast&lt;<span class="keywordtype">int</span>&gt;(<a class="code hl_class" href="classMapProvider.html">MapProvider</a>::StreetMap)        == static_cast&lt;<span class="keywordtype">int</span>&gt;(QGeoMapType::StreetMap));</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>static_assert(static_cast&lt;<span class="keywordtype">int</span>&gt;(<a class="code hl_class" href="classMapProvider.html">MapProvider</a>::SatelliteMapDay)  == static_cast&lt;<span class="keywordtype">int</span>&gt;(QGeoMapType::SatelliteMapDay));</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>static_assert(static_cast&lt;<span class="keywordtype">int</span>&gt;(<a class="code hl_class" href="classMapProvider.html">MapProvider</a>::SatelliteMapNight)== static_cast&lt;<span class="keywordtype">int</span>&gt;(QGeoMapType::SatelliteMapNight));</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>static_assert(static_cast&lt;<span class="keywordtype">int</span>&gt;(<a class="code hl_class" href="classMapProvider.html">MapProvider</a>::TerrainMap)       == static_cast&lt;<span class="keywordtype">int</span>&gt;(QGeoMapType::TerrainMap));</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>static_assert(static_cast&lt;<span class="keywordtype">int</span>&gt;(<a class="code hl_class" href="classMapProvider.html">MapProvider</a>::HybridMap)        == static_cast&lt;<span class="keywordtype">int</span>&gt;(QGeoMapType::HybridMap));</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>static_assert(static_cast&lt;<span class="keywordtype">int</span>&gt;(<a class="code hl_class" href="classMapProvider.html">MapProvider</a>::TransitMap)       == static_cast&lt;<span class="keywordtype">int</span>&gt;(QGeoMapType::TransitMap));</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>static_assert(static_cast&lt;<span class="keywordtype">int</span>&gt;(<a class="code hl_class" href="classMapProvider.html">MapProvider</a>::GrayStreetMap)    == static_cast&lt;<span class="keywordtype">int</span>&gt;(QGeoMapType::GrayStreetMap));</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>static_assert(static_cast&lt;<span class="keywordtype">int</span>&gt;(<a class="code hl_class" href="classMapProvider.html">MapProvider</a>::PedestrianMap)    == static_cast&lt;<span class="keywordtype">int</span>&gt;(QGeoMapType::PedestrianMap));</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>static_assert(static_cast&lt;<span class="keywordtype">int</span>&gt;(<a class="code hl_class" href="classMapProvider.html">MapProvider</a>::CarNavigationMap) == static_cast&lt;<span class="keywordtype">int</span>&gt;(QGeoMapType::CarNavigationMap));</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>static_assert(static_cast&lt;<span class="keywordtype">int</span>&gt;(<a class="code hl_class" href="classMapProvider.html">MapProvider</a>::CycleMap)         == static_cast&lt;<span class="keywordtype">int</span>&gt;(QGeoMapType::CycleMap));</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>static_assert(static_cast&lt;<span class="keywordtype">int</span>&gt;(<a class="code hl_class" href="classMapProvider.html">MapProvider</a>::CustomMap)        == static_cast&lt;<span class="keywordtype">int</span>&gt;(QGeoMapType::CustomMap));</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// QtLocation expects MapIds to start at 1 and be sequential.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">int</span> <a class="code hl_class" href="classMapProvider.html">MapProvider</a>::_mapIdIndex = 1;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classMapProvider.html#a9b34741668807e1a3c034cbf4e817a36">   29</a></span><a class="code hl_class" href="classMapProvider.html">MapProvider</a>::<a class="code hl_class" href="classMapProvider.html">MapProvider</a>(</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    const QString &amp;mapName,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    const QString &amp;referrer,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    const QString &amp;imageFormat,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    quint32 averageSize,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_enumeration" href="classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180ba">MapStyle</a> mapStyle)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    : _mapName(mapName)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    , _referrer(referrer)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    , _imageFormat(imageFormat)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    , _averageSize(averageSize)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    , _mapStyle(mapStyle)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    , _language(!QLocale::system().uiLanguages().isEmpty() ? QLocale::system().uiLanguages().constFirst() : &quot;en&quot;)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    , _mapId(_mapIdIndex++)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">// qCDebug(MapProviderLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; this &lt;&lt; _mapId;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
 </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classMapProvider.html#a7c53ac4633a74045b637cb202b755248">   28</a></span><a class="code hl_function" href="classMapProvider.html#a7c53ac4633a74045b637cb202b755248">MapProvider::~MapProvider</a>()</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// qCDebug(MapProviderLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; this &lt;&lt; _mapId;</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classMapProvider.html#a7c53ac4633a74045b637cb202b755248">   46</a></span><a class="code hl_function" href="classMapProvider.html#a7c53ac4633a74045b637cb202b755248">MapProvider::~MapProvider</a>()</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">// qCDebug(MapProviderLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; this &lt;&lt; _mapId;</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
 </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classMapProvider.html#ad8bb66fef25c7f3e3ac231c8927c0b31">   33</a></span>QUrl <a class="code hl_function" href="classMapProvider.html#ad8bb66fef25c7f3e3ac231c8927c0b31">MapProvider::getTileURL</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> zoom)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> QUrl(<a class="code hl_function" href="classMapProvider.html#afe08d35b15774d300cb41e458bf5f184">_getURL</a>(x, y, zoom));</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classMapProvider.html#ad8bb66fef25c7f3e3ac231c8927c0b31">   51</a></span>QUrl <a class="code hl_function" href="classMapProvider.html#ad8bb66fef25c7f3e3ac231c8927c0b31">MapProvider::getTileURL</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> zoom)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">return</span> QUrl(<a class="code hl_function" href="classMapProvider.html#afe08d35b15774d300cb41e458bf5f184">_getURL</a>(x, y, zoom));</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
 </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classMapProvider.html#ab02ab07fde6133a3179bc0092c4538fc">   38</a></span>QString <a class="code hl_function" href="classMapProvider.html#ab02ab07fde6133a3179bc0092c4538fc">MapProvider::getImageFormat</a>(QByteArrayView image)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (image.size() &lt; 3) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">return</span> QString();</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> QByteArrayView pngSignature(<span class="stringliteral">&quot;\x89\x50\x4E\x47\x0D\x0A\x1A\x0A&quot;</span>);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> (image.startsWith(pngSignature)) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;png&quot;</span>);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> QByteArrayView jpegSignature(<span class="stringliteral">&quot;\xFF\xD8\xFF&quot;</span>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">if</span> (image.startsWith(jpegSignature)) {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;jpg&quot;</span>);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> QByteArrayView gifSignature(<span class="stringliteral">&quot;\x47\x49\x46\x38&quot;</span>);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (image.startsWith(gifSignature)) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;gif&quot;</span>);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classMapProvider.html#a6ba09448623fe3e831c7ce8da691e62d">_imageFormat</a>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
-</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classMapProvider.html#ab02ab07fde6133a3179bc0092c4538fc">   56</a></span>QString <a class="code hl_function" href="classMapProvider.html#ab02ab07fde6133a3179bc0092c4538fc">MapProvider::getImageFormat</a>(QByteArrayView image)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">if</span> (image.size() &lt; 3) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">return</span> QString();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classMapProvider.html#a2e602918d8e2f69c276ae1884ee9a678">   62</a></span>QString <a class="code hl_function" href="classMapProvider.html#a2e602918d8e2f69c276ae1884ee9a678">MapProvider::_tileXYToQuadKey</a>(<span class="keywordtype">int</span> tileX, <span class="keywordtype">int</span> tileY, <span class="keywordtype">int</span> levelOfDetail)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    QString quadKey;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = levelOfDetail; i &gt; 0; i--) {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordtype">char</span> digit = <span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> mask = 1 &lt;&lt; (i - 1);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">if</span> ((tileX &amp; mask) != 0) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            digit++;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">if</span> ((tileY &amp; mask) != 0) {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            digit += 2;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        (void) quadKey.append(digit);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">return</span> quadKey;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> QByteArrayView pngSignature(<span class="stringliteral">&quot;\x89\x50\x4E\x47\x0D\x0A\x1A\x0A&quot;</span>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> (image.startsWith(pngSignature)) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;png&quot;</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> QByteArrayView jpegSignature(<span class="stringliteral">&quot;\xFF\xD8\xFF&quot;</span>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">if</span> (image.startsWith(jpegSignature)) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;jpg&quot;</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> QByteArrayView gifSignature(<span class="stringliteral">&quot;\x47\x49\x46\x38&quot;</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">if</span> (image.startsWith(gifSignature)) {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;gif&quot;</span>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classMapProvider.html#a6ba09448623fe3e831c7ce8da691e62d">_imageFormat</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classMapProvider.html#a2250266005b32cbdcc8f33c1d3c38982">   82</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classMapProvider.html#a2250266005b32cbdcc8f33c1d3c38982">MapProvider::_getServerNum</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> max)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">return</span> (x + 2 * y) % max;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>}</div>
-</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classMapProvider.html#a2e602918d8e2f69c276ae1884ee9a678">   80</a></span>QString <a class="code hl_function" href="classMapProvider.html#a2e602918d8e2f69c276ae1884ee9a678">MapProvider::_tileXYToQuadKey</a>(<span class="keywordtype">int</span> tileX, <span class="keywordtype">int</span> tileY, <span class="keywordtype">int</span> levelOfDetail)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    QString quadKey;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = levelOfDetail; i &gt; 0; i--) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordtype">char</span> digit = <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> mask = 1 &lt;&lt; (i - 1);</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classMapProvider.html#aafe9ebfa367036a998b145d1b253890a">   87</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classMapProvider.html#aafe9ebfa367036a998b145d1b253890a">MapProvider::long2tileX</a>(<span class="keywordtype">double</span> lon, <span class="keywordtype">int</span> z)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(floor((lon + 180.0) / 360.0 * pow(2.0, z)));</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
-</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classMapProvider.html#adf78a2cc833228e53833b1de6b43b9ed">   92</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classMapProvider.html#adf78a2cc833228e53833b1de6b43b9ed">MapProvider::lat2tileY</a>(<span class="keywordtype">double</span> lat, <span class="keywordtype">int</span> z)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(floor((1.0 - log(tan(lat * M_PI / 180.0) + 1.0 / cos(lat * M_PI / 180.0)) / M_PI) / 2.0 * pow(2.0, z)));</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
-</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">if</span> ((tileX &amp; mask) != 0) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            digit++;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">if</span> ((tileY &amp; mask) != 0) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            digit += 2;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        (void) quadKey.append(digit);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classMapProvider.html#aca76e6a035d21780654a736a12f40202">   97</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="classMapProvider.html#aca76e6a035d21780654a736a12f40202">MapProvider::tileX2long</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> z)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">return</span> x / std::pow(2.0, z) * 360.0 - 180.0;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">return</span> quadKey;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
 </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classMapProvider.html#a78e9a3b7faa4f47b041f722e17e7edda">  102</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="classMapProvider.html#a78e9a3b7faa4f47b041f722e17e7edda">MapProvider::tileY2lat</a>(<span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> n = M_PI - 2.0 * M_PI * y / std::pow(2.0, z);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">return</span> qRadiansToDegrees(std::atan(std::sinh(n)));</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classMapProvider.html#a2250266005b32cbdcc8f33c1d3c38982">  100</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classMapProvider.html#a2250266005b32cbdcc8f33c1d3c38982">MapProvider::_getServerNum</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> max)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">return</span> (x + 2 * y) % max;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
 </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classMapProvider.html#aa54e2256f9b2d43684f13ecb84546d4a">  108</a></span><a class="code hl_struct" href="structQGCTileSet.html">QGCTileSet</a> <a class="code hl_function" href="classMapProvider.html#aa54e2256f9b2d43684f13ecb84546d4a">MapProvider::getTileCount</a>(<span class="keywordtype">int</span> zoom, <span class="keywordtype">double</span> topleftLon,</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                                     <span class="keywordtype">double</span> topleftLat, <span class="keywordtype">double</span> bottomRightLon,</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                                     <span class="keywordtype">double</span> bottomRightLat)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classMapProvider.html#aafe9ebfa367036a998b145d1b253890a">  105</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classMapProvider.html#aafe9ebfa367036a998b145d1b253890a">MapProvider::long2tileX</a>(<span class="keywordtype">double</span> lon, <span class="keywordtype">int</span> z)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(floor((lon + 180.0) / 360.0 * pow(2.0, z)));</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="foldopen" id="foldopen00110" data-start="{" data-end="}">
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classMapProvider.html#adf78a2cc833228e53833b1de6b43b9ed">  110</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classMapProvider.html#adf78a2cc833228e53833b1de6b43b9ed">MapProvider::lat2tileY</a>(<span class="keywordtype">double</span> lat, <span class="keywordtype">int</span> z)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_struct" href="structQGCTileSet.html">QGCTileSet</a> set;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    set.<a class="code hl_variable" href="structQGCTileSet.html#a0a231463a6d66fc5190e45bac15b75aa">tileX0</a> = <a class="code hl_function" href="classMapProvider.html#aafe9ebfa367036a998b145d1b253890a">long2tileX</a>(topleftLon, zoom);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    set.<a class="code hl_variable" href="structQGCTileSet.html#aeedf23b99cd923edba7bc3d63c554d2c">tileY0</a> = <a class="code hl_function" href="classMapProvider.html#adf78a2cc833228e53833b1de6b43b9ed">lat2tileY</a>(topleftLat, zoom);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    set.<a class="code hl_variable" href="structQGCTileSet.html#a7b284e738a27d2364cbfcce2171ae5dd">tileX1</a> = <a class="code hl_function" href="classMapProvider.html#aafe9ebfa367036a998b145d1b253890a">long2tileX</a>(bottomRightLon, zoom);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    set.<a class="code hl_variable" href="structQGCTileSet.html#a9edb97eee804949cde41491ab9d49939">tileY1</a> = <a class="code hl_function" href="classMapProvider.html#adf78a2cc833228e53833b1de6b43b9ed">lat2tileY</a>(bottomRightLat, zoom);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    set.<a class="code hl_variable" href="structQGCTileSet.html#abd38b96cb53e4eb69a2565db11946702">tileCount</a> = (<span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(set.<a class="code hl_variable" href="structQGCTileSet.html#a7b284e738a27d2364cbfcce2171ae5dd">tileX1</a>) -</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                     <span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(set.<a class="code hl_variable" href="structQGCTileSet.html#a0a231463a6d66fc5190e45bac15b75aa">tileX0</a>) + 1) *</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                    (<span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(set.<a class="code hl_variable" href="structQGCTileSet.html#a9edb97eee804949cde41491ab9d49939">tileY1</a>) -</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                     <span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(set.<a class="code hl_variable" href="structQGCTileSet.html#aeedf23b99cd923edba7bc3d63c554d2c">tileY0</a>) + 1);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    set.<a class="code hl_variable" href="structQGCTileSet.html#abf4c0eca881cf19dd5080a9bc6df04c8">tileSize</a> = <a class="code hl_function" href="classMapProvider.html#aa62aea2ab132296ce588d81a5ff76daa">getAverageSize</a>() * set.<a class="code hl_variable" href="structQGCTileSet.html#abd38b96cb53e4eb69a2565db11946702">tileCount</a>;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordflow">return</span> set;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(floor((1.0 - log(tan(lat * M_PI / 180.0) + 1.0 / cos(lat * M_PI / 180.0)) / M_PI) / 2.0 * pow(2.0, z)));</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
 </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment">// Resolution math: https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Resolution_and_Scale</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classMapProvider.html#aca76e6a035d21780654a736a12f40202">  115</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="classMapProvider.html#aca76e6a035d21780654a736a12f40202">MapProvider::tileX2long</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> z)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span> x / std::pow(2.0, z) * 360.0 - 180.0;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
+</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classMapProvider.html#a78e9a3b7faa4f47b041f722e17e7edda">  120</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="classMapProvider.html#a78e9a3b7faa4f47b041f722e17e7edda">MapProvider::tileY2lat</a>(<span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> n = M_PI - 2.0 * M_PI * y / std::pow(2.0, z);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">return</span> qRadiansToDegrees(std::atan(std::sinh(n)));</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
+</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classMapProvider.html#aa54e2256f9b2d43684f13ecb84546d4a">  126</a></span><a class="code hl_struct" href="structQGCTileSet.html">QGCTileSet</a> <a class="code hl_function" href="classMapProvider.html#aa54e2256f9b2d43684f13ecb84546d4a">MapProvider::getTileCount</a>(<span class="keywordtype">int</span> zoom, <span class="keywordtype">double</span> topleftLon,</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                                     <span class="keywordtype">double</span> topleftLat, <span class="keywordtype">double</span> bottomRightLon,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                                     <span class="keywordtype">double</span> bottomRightLat)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <a class="code hl_struct" href="structQGCTileSet.html">QGCTileSet</a> set;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    set.<a class="code hl_variable" href="structQGCTileSet.html#a0a231463a6d66fc5190e45bac15b75aa">tileX0</a> = <a class="code hl_function" href="classMapProvider.html#aafe9ebfa367036a998b145d1b253890a">long2tileX</a>(topleftLon, zoom);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    set.<a class="code hl_variable" href="structQGCTileSet.html#aeedf23b99cd923edba7bc3d63c554d2c">tileY0</a> = <a class="code hl_function" href="classMapProvider.html#adf78a2cc833228e53833b1de6b43b9ed">lat2tileY</a>(topleftLat, zoom);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    set.<a class="code hl_variable" href="structQGCTileSet.html#a7b284e738a27d2364cbfcce2171ae5dd">tileX1</a> = <a class="code hl_function" href="classMapProvider.html#aafe9ebfa367036a998b145d1b253890a">long2tileX</a>(bottomRightLon, zoom);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    set.<a class="code hl_variable" href="structQGCTileSet.html#a9edb97eee804949cde41491ab9d49939">tileY1</a> = <a class="code hl_function" href="classMapProvider.html#adf78a2cc833228e53833b1de6b43b9ed">lat2tileY</a>(bottomRightLat, zoom);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    set.<a class="code hl_variable" href="structQGCTileSet.html#abd38b96cb53e4eb69a2565db11946702">tileCount</a> = (<span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(set.<a class="code hl_variable" href="structQGCTileSet.html#a7b284e738a27d2364cbfcce2171ae5dd">tileX1</a>) -</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                     <span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(set.<a class="code hl_variable" href="structQGCTileSet.html#a0a231463a6d66fc5190e45bac15b75aa">tileX0</a>) + 1) *</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                    (<span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(set.<a class="code hl_variable" href="structQGCTileSet.html#a9edb97eee804949cde41491ab9d49939">tileY1</a>) -</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                     <span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(set.<a class="code hl_variable" href="structQGCTileSet.html#aeedf23b99cd923edba7bc3d63c554d2c">tileY0</a>) + 1);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    set.<a class="code hl_variable" href="structQGCTileSet.html#abf4c0eca881cf19dd5080a9bc6df04c8">tileSize</a> = <a class="code hl_function" href="classMapProvider.html#aa62aea2ab132296ce588d81a5ff76daa">getAverageSize</a>() * set.<a class="code hl_variable" href="structQGCTileSet.html#abd38b96cb53e4eb69a2565db11946702">tileCount</a>;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">return</span> set;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>}</div>
+</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment">// Resolution math: https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames#Resolution_and_Scale</span></div>
 <div class="ttc" id="aMapProvider_8h_html"><div class="ttname"><a href="MapProvider_8h.html">MapProvider.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
-<div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00018">QGCLoggingCategory.h:18</a></div></div>
-<div class="ttc" id="aclassMapProvider_html"><div class="ttname"><a href="classMapProvider.html">MapProvider</a></div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8h_source.html#l00032">MapProvider.h:33</a></div></div>
-<div class="ttc" id="aclassMapProvider_html_a2250266005b32cbdcc8f33c1d3c38982"><div class="ttname"><a href="classMapProvider.html#a2250266005b32cbdcc8f33c1d3c38982">MapProvider::_getServerNum</a></div><div class="ttdeci">int _getServerNum(int x, int y, int max) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00082">MapProvider.cpp:82</a></div></div>
-<div class="ttc" id="aclassMapProvider_html_a2e602918d8e2f69c276ae1884ee9a678"><div class="ttname"><a href="classMapProvider.html#a2e602918d8e2f69c276ae1884ee9a678">MapProvider::_tileXYToQuadKey</a></div><div class="ttdeci">QString _tileXYToQuadKey(int tileX, int tileY, int levelOfDetail) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00062">MapProvider.cpp:62</a></div></div>
-<div class="ttc" id="aclassMapProvider_html_a6ba09448623fe3e831c7ce8da691e62d"><div class="ttname"><a href="classMapProvider.html#a6ba09448623fe3e831c7ce8da691e62d">MapProvider::_imageFormat</a></div><div class="ttdeci">const QString _imageFormat</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8h_source.html#l00072">MapProvider.h:72</a></div></div>
-<div class="ttc" id="aclassMapProvider_html_a78e9a3b7faa4f47b041f722e17e7edda"><div class="ttname"><a href="classMapProvider.html#a78e9a3b7faa4f47b041f722e17e7edda">MapProvider::tileY2lat</a></div><div class="ttdeci">virtual double tileY2lat(int y, int z) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00102">MapProvider.cpp:102</a></div></div>
-<div class="ttc" id="aclassMapProvider_html_a7c53ac4633a74045b637cb202b755248"><div class="ttname"><a href="classMapProvider.html#a7c53ac4633a74045b637cb202b755248">MapProvider::~MapProvider</a></div><div class="ttdeci">virtual ~MapProvider()</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00028">MapProvider.cpp:28</a></div></div>
-<div class="ttc" id="aclassMapProvider_html_aa54e2256f9b2d43684f13ecb84546d4a"><div class="ttname"><a href="classMapProvider.html#aa54e2256f9b2d43684f13ecb84546d4a">MapProvider::getTileCount</a></div><div class="ttdeci">virtual QGCTileSet getTileCount(int zoom, double topleftLon, double topleftLat, double bottomRightLon, double bottomRightLat) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00108">MapProvider.cpp:108</a></div></div>
-<div class="ttc" id="aclassMapProvider_html_aa62aea2ab132296ce588d81a5ff76daa"><div class="ttname"><a href="classMapProvider.html#aa62aea2ab132296ce588d81a5ff76daa">MapProvider::getAverageSize</a></div><div class="ttdeci">quint32 getAverageSize() const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8h_source.html#l00044">MapProvider.h:44</a></div></div>
-<div class="ttc" id="aclassMapProvider_html_aafe9ebfa367036a998b145d1b253890a"><div class="ttname"><a href="classMapProvider.html#aafe9ebfa367036a998b145d1b253890a">MapProvider::long2tileX</a></div><div class="ttdeci">virtual int long2tileX(double lon, int z) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00087">MapProvider.cpp:87</a></div></div>
-<div class="ttc" id="aclassMapProvider_html_ab02ab07fde6133a3179bc0092c4538fc"><div class="ttname"><a href="classMapProvider.html#ab02ab07fde6133a3179bc0092c4538fc">MapProvider::getImageFormat</a></div><div class="ttdeci">QString getImageFormat(QByteArrayView image) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00038">MapProvider.cpp:38</a></div></div>
-<div class="ttc" id="aclassMapProvider_html_aca76e6a035d21780654a736a12f40202"><div class="ttname"><a href="classMapProvider.html#aca76e6a035d21780654a736a12f40202">MapProvider::tileX2long</a></div><div class="ttdeci">virtual double tileX2long(int x, int z) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00097">MapProvider.cpp:97</a></div></div>
-<div class="ttc" id="aclassMapProvider_html_ad8bb66fef25c7f3e3ac231c8927c0b31"><div class="ttname"><a href="classMapProvider.html#ad8bb66fef25c7f3e3ac231c8927c0b31">MapProvider::getTileURL</a></div><div class="ttdeci">QUrl getTileURL(int x, int y, int zoom) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00033">MapProvider.cpp:33</a></div></div>
-<div class="ttc" id="aclassMapProvider_html_adf78a2cc833228e53833b1de6b43b9ed"><div class="ttname"><a href="classMapProvider.html#adf78a2cc833228e53833b1de6b43b9ed">MapProvider::lat2tileY</a></div><div class="ttdeci">virtual int lat2tileY(double lat, int z) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00092">MapProvider.cpp:92</a></div></div>
+<div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
+<div class="ttc" id="aclassMapProvider_html"><div class="ttname"><a href="classMapProvider.html">MapProvider</a></div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8h_source.html#l00012">MapProvider.h:13</a></div></div>
+<div class="ttc" id="aclassMapProvider_html_a2250266005b32cbdcc8f33c1d3c38982"><div class="ttname"><a href="classMapProvider.html#a2250266005b32cbdcc8f33c1d3c38982">MapProvider::_getServerNum</a></div><div class="ttdeci">int _getServerNum(int x, int y, int max) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00100">MapProvider.cpp:100</a></div></div>
+<div class="ttc" id="aclassMapProvider_html_a2e602918d8e2f69c276ae1884ee9a678"><div class="ttname"><a href="classMapProvider.html#a2e602918d8e2f69c276ae1884ee9a678">MapProvider::_tileXYToQuadKey</a></div><div class="ttdeci">QString _tileXYToQuadKey(int tileX, int tileY, int levelOfDetail) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00080">MapProvider.cpp:80</a></div></div>
+<div class="ttc" id="aclassMapProvider_html_a6ba09448623fe3e831c7ce8da691e62d"><div class="ttname"><a href="classMapProvider.html#a6ba09448623fe3e831c7ce8da691e62d">MapProvider::_imageFormat</a></div><div class="ttdeci">const QString _imageFormat</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8h_source.html#l00070">MapProvider.h:70</a></div></div>
+<div class="ttc" id="aclassMapProvider_html_a78e9a3b7faa4f47b041f722e17e7edda"><div class="ttname"><a href="classMapProvider.html#a78e9a3b7faa4f47b041f722e17e7edda">MapProvider::tileY2lat</a></div><div class="ttdeci">virtual double tileY2lat(int y, int z) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00120">MapProvider.cpp:120</a></div></div>
+<div class="ttc" id="aclassMapProvider_html_a7c53ac4633a74045b637cb202b755248"><div class="ttname"><a href="classMapProvider.html#a7c53ac4633a74045b637cb202b755248">MapProvider::~MapProvider</a></div><div class="ttdeci">virtual ~MapProvider()</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00046">MapProvider.cpp:46</a></div></div>
+<div class="ttc" id="aclassMapProvider_html_a87c7db1ed3d1e3d6c6d2290f243180ba"><div class="ttname"><a href="classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180ba">MapProvider::MapStyle</a></div><div class="ttdeci">MapStyle</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8h_source.html#l00018">MapProvider.h:18</a></div></div>
+<div class="ttc" id="aclassMapProvider_html_aa54e2256f9b2d43684f13ecb84546d4a"><div class="ttname"><a href="classMapProvider.html#aa54e2256f9b2d43684f13ecb84546d4a">MapProvider::getTileCount</a></div><div class="ttdeci">virtual QGCTileSet getTileCount(int zoom, double topleftLon, double topleftLat, double bottomRightLon, double bottomRightLat) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00126">MapProvider.cpp:126</a></div></div>
+<div class="ttc" id="aclassMapProvider_html_aa62aea2ab132296ce588d81a5ff76daa"><div class="ttname"><a href="classMapProvider.html#aa62aea2ab132296ce588d81a5ff76daa">MapProvider::getAverageSize</a></div><div class="ttdeci">quint32 getAverageSize() const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8h_source.html#l00042">MapProvider.h:42</a></div></div>
+<div class="ttc" id="aclassMapProvider_html_aafe9ebfa367036a998b145d1b253890a"><div class="ttname"><a href="classMapProvider.html#aafe9ebfa367036a998b145d1b253890a">MapProvider::long2tileX</a></div><div class="ttdeci">virtual int long2tileX(double lon, int z) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00105">MapProvider.cpp:105</a></div></div>
+<div class="ttc" id="aclassMapProvider_html_ab02ab07fde6133a3179bc0092c4538fc"><div class="ttname"><a href="classMapProvider.html#ab02ab07fde6133a3179bc0092c4538fc">MapProvider::getImageFormat</a></div><div class="ttdeci">QString getImageFormat(QByteArrayView image) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00056">MapProvider.cpp:56</a></div></div>
+<div class="ttc" id="aclassMapProvider_html_aca76e6a035d21780654a736a12f40202"><div class="ttname"><a href="classMapProvider.html#aca76e6a035d21780654a736a12f40202">MapProvider::tileX2long</a></div><div class="ttdeci">virtual double tileX2long(int x, int z) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00115">MapProvider.cpp:115</a></div></div>
+<div class="ttc" id="aclassMapProvider_html_ad8bb66fef25c7f3e3ac231c8927c0b31"><div class="ttname"><a href="classMapProvider.html#ad8bb66fef25c7f3e3ac231c8927c0b31">MapProvider::getTileURL</a></div><div class="ttdeci">QUrl getTileURL(int x, int y, int zoom) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00051">MapProvider.cpp:51</a></div></div>
+<div class="ttc" id="aclassMapProvider_html_adf78a2cc833228e53833b1de6b43b9ed"><div class="ttname"><a href="classMapProvider.html#adf78a2cc833228e53833b1de6b43b9ed">MapProvider::lat2tileY</a></div><div class="ttdeci">virtual int lat2tileY(double lat, int z) const</div><div class="ttdef"><b>Definition</b> <a href="MapProvider_8cpp_source.html#l00110">MapProvider.cpp:110</a></div></div>
 <div class="ttc" id="aclassMapProvider_html_afe08d35b15774d300cb41e458bf5f184"><div class="ttname"><a href="classMapProvider.html#afe08d35b15774d300cb41e458bf5f184">MapProvider::_getURL</a></div><div class="ttdeci">virtual QString _getURL(int x, int y, int zoom) const =0</div></div>
 <div class="ttc" id="astructQGCTileSet_html"><div class="ttname"><a href="structQGCTileSet.html">QGCTileSet</a></div><div class="ttdef"><b>Definition</b> <a href="QGCTileSet_8h_source.html#l00006">QGCTileSet.h:7</a></div></div>
 <div class="ttc" id="astructQGCTileSet_html_a0a231463a6d66fc5190e45bac15b75aa"><div class="ttname"><a href="structQGCTileSet.html#a0a231463a6d66fc5190e45bac15b75aa">QGCTileSet::tileX0</a></div><div class="ttdeci">int tileX0</div><div class="ttdef"><b>Definition</b> <a href="QGCTileSet_8h_source.html#l00025">QGCTileSet.h:25</a></div></div>

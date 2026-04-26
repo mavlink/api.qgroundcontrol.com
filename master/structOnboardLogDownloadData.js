@@ -13,7 +13,7 @@ var structOnboardLogDownloadData =
     [ "file", "structOnboardLogDownloadData.html#aef0bd2ad591c9157b58dc9b26c4e4309", null ],
     [ "filename", "structOnboardLogDownloadData.html#a58f14569a645ca8d9165a0875ea592b9", null ],
     [ "ID", "structOnboardLogDownloadData.html#a856bf13760a00e1670467ddb9dd2c941", null ],
-    [ "kChunkSize", "structOnboardLogDownloadData.html#adec703570765ec06ae80688dd1d535ab", null ],
+    [ "kChunkSize", "structOnboardLogDownloadData.html#a396a633edc1f886ce8315262b7ca0c4d", null ],
     [ "kTableBins", "structOnboardLogDownloadData.html#a3bbda108e410cd3e9ab6d33d4ecd2e2f", null ],
     [ "last_status_written", "structOnboardLogDownloadData.html#a06c960bfaaca0278b6e749b6d1fbe39a", null ],
     [ "rate_avg", "structOnboardLogDownloadData.html#afa457635fc78d9b8ee7287f6a8915567", null ],

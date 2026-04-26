@@ -1,7 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"FlyViewToolBarIndicators_8qml_source.html":[3,0,0,23,2,7],
-"FlyViewToolBar_8qml.html":[3,0,0,23,2,6],
 "FlyViewToolBar_8qml_source.html":[3,0,0,23,2,6],
 "FlyViewToolStripActionList_8qml.html":[3,0,0,10,25],
 "FlyViewToolStripActionList_8qml_source.html":[3,0,0,10,25],
@@ -249,5 +247,7 @@ var NAVTREEINDEX5 =
 "InstrumentValueLabel_8qml.html":[3,0,0,19,29],
 "InstrumentValueLabel_8qml_source.html":[3,0,0,19,29],
 "InstrumentValueValue_8qml.html":[3,0,0,19,30],
-"InstrumentValueValue_8qml_source.html":[3,0,0,19,30]
+"InstrumentValueValue_8qml_source.html":[3,0,0,19,30],
+"IntegratedAttitudeIndicator_8qml.html":[3,0,0,9,1,5],
+"IntegratedAttitudeIndicator_8qml_source.html":[3,0,0,9,1,5]
 };

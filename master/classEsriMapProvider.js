@@ -1,5 +1,5 @@
 var classEsriMapProvider =
 [
-    [ "EsriMapProvider", "classEsriMapProvider.html#add981f3ea4272a048ac45588e7926088", null ],
+    [ "EsriMapProvider", "classEsriMapProvider.html#ae5538ef3c748a382f35a9072a435f71e", null ],
     [ "getToken", "classEsriMapProvider.html#ae4f0e5ca6073cbead24307ffb808eff9", null ]
 ];

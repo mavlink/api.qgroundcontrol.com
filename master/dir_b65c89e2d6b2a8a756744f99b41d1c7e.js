@@ -8,6 +8,7 @@ var dir_b65c89e2d6b2a8a756744f99b41d1c7e =
     [ "QGCMapEngine.h", "QGCMapEngine_8h.html", "QGCMapEngine_8h" ],
     [ "QGCMapEngineManager.cc", "QGCMapEngineManager_8cc.html", "QGCMapEngineManager_8cc" ],
     [ "QGCMapEngineManager.h", "QGCMapEngineManager_8h.html", "QGCMapEngineManager_8h" ],
+    [ "QGCMapTaskBase.h", "QGCMapTaskBase_8h.html", "QGCMapTaskBase_8h" ],
     [ "QGCMapTasks.h", "QGCMapTasks_8h.html", "QGCMapTasks_8h" ],
     [ "QGCMapUrlEngine.cpp", "QGCMapUrlEngine_8cpp.html", null ],
     [ "QGCMapUrlEngine.h", "QGCMapUrlEngine_8h.html", "QGCMapUrlEngine_8h" ],

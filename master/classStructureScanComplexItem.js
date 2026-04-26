@@ -42,7 +42,7 @@ var classStructureScanComplexItem =
     [ "sequenceNumber", "classStructureScanComplexItem.html#afc1089bf1c055b00e4bbc926b2f0faa8", null ],
     [ "setCoordinate", "classStructureScanComplexItem.html#a0b2b751ac12ec6045784c5c4d77f6495", null ],
     [ "setDirty", "classStructureScanComplexItem.html#aad4b6ba1be3a7257249636f3c894967b", null ],
-    [ "setMissionFlightStatus", "classStructureScanComplexItem.html#a61fc0681a8b02ad38a6f97bdadf24cdc", null ],
+    [ "setMissionFlightStatus", "classStructureScanComplexItem.html#a2364c79e674feabc18b6587239189f1a", null ],
     [ "setSequenceNumber", "classStructureScanComplexItem.html#a7ed9526cd80f80d0407490d75f9c0317", null ],
     [ "specifiedFlightSpeed", "classStructureScanComplexItem.html#af47c7d60dc6f1555fc24adc7db4887ab", null ],
     [ "specifiedGimbalPitch", "classStructureScanComplexItem.html#a618a9f92737665953fc099daaaa1b003", null ],

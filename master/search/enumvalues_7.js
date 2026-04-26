@@ -17,5 +17,6 @@ var searchData=
   ['helprequested_14',['HelpRequested',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76ad428967e359164ab69b6f7c1d891afea',1,'QGCCommandLineParser::CommandLineParseResult']]],
   ['hold_15',['hold',['../structAPMRoverMode.html#a3c23194f39dd10536fc1689c921607f0a180ae36925df3077de1c71618d6bec74',1,'APMRoverMode::HOLD'],['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a9194c82d1def689c5f686605582a7379',1,'APM::HOLD']]],
   ['horizontaldistanceunitsfeet_16',['HorizontalDistanceUnitsFeet',['../classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1a3d129896f5fe9a1911b4df07092e2cf1',1,'UnitsSettings']]],
-  ['horizontaldistanceunitsmeters_17',['HorizontalDistanceUnitsMeters',['../classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1a4df12cbe00884399b8cfd66642230a12',1,'UnitsSettings']]]
+  ['horizontaldistanceunitsmeters_17',['HorizontalDistanceUnitsMeters',['../classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1a4df12cbe00884399b8cfd66642230a12',1,'UnitsSettings']]],
+  ['hybridmap_18',['HybridMap',['../classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa6212f53cdaf91dd05e9d99e72b8d228c',1,'MapProvider']]]
 ];

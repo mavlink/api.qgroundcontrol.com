@@ -93,7 +93,7 @@ var classVisualMissionItem =
     [ "setHasCurrentChildItem", "classVisualMissionItem.html#a107335fcc641dbb76bc7715de40b2a32", null ],
     [ "setHomePositionSpecialCase", "classVisualMissionItem.html#ad23db14266caec1f4bfcc22bcd9f4b18", null ],
     [ "setIsCurrentItem", "classVisualMissionItem.html#a0c3eb33d665f49901f58dbaa9d31f99a", null ],
-    [ "setMissionFlightStatus", "classVisualMissionItem.html#a80cb2c17a696c2b635b0e6078345b088", null ],
+    [ "setMissionFlightStatus", "classVisualMissionItem.html#af16a71e08e4e577483f21ca50e4978c7", null ],
     [ "setMissionVehicleYaw", "classVisualMissionItem.html#a22774abe6295402dbd6ef79bbe1f149b", null ],
     [ "setParentItem", "classVisualMissionItem.html#a3460dfa4e0a57a7773821de779b05e9a", null ],
     [ "setSequenceNumber", "classVisualMissionItem.html#a5c60042baabeb4ad1355b8284ee68687", null ],

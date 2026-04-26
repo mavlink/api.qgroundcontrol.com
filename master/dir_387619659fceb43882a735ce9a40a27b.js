@@ -22,5 +22,7 @@ var dir_387619659fceb43882a735ce9a40a27b =
     [ "LogStoreQueryModel.cc", "LogStoreQueryModel_8cc.html", "LogStoreQueryModel_8cc" ],
     [ "LogStoreQueryModel.h", "LogStoreQueryModel_8h.html", "LogStoreQueryModel_8h" ],
     [ "QGCLoggingCategory.cc", "QGCLoggingCategory_8cc.html", "QGCLoggingCategory_8cc" ],
-    [ "QGCLoggingCategory.h", "QGCLoggingCategory_8h.html", "QGCLoggingCategory_8h" ]
+    [ "QGCLoggingCategory.h", "QGCLoggingCategory_8h.html", "QGCLoggingCategory_8h" ],
+    [ "QGCLoggingCategoryManager.cc", "QGCLoggingCategoryManager_8cc.html", "QGCLoggingCategoryManager_8cc" ],
+    [ "QGCLoggingCategoryManager.h", "QGCLoggingCategoryManager_8h.html", "QGCLoggingCategoryManager_8h" ]
 ];

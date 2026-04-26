@@ -1,6 +1,20 @@
 var classMapProvider =
 [
-    [ "MapProvider", "classMapProvider.html#a8c3aa319852f075d34d64a1acf3335a2", null ],
+    [ "MapStyle", "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180ba", [
+      [ "NoMap", "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa44d5fc9b00dbbb95dc34daccbe8451c5", null ],
+      [ "StreetMap", "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa4693a248e6901f5a2c2d26bf6d75fd56", null ],
+      [ "SatelliteMapDay", "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa81ede7bb44e33fe77734ef464fe9392d", null ],
+      [ "SatelliteMapNight", "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa683ade31386b233f4123fb5e48f6e2f4", null ],
+      [ "TerrainMap", "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa74f67f57d3ed824328f3d57ec5609191", null ],
+      [ "HybridMap", "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa6212f53cdaf91dd05e9d99e72b8d228c", null ],
+      [ "TransitMap", "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa33fad3fd6553459d90856b025c317168", null ],
+      [ "GrayStreetMap", "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa14bbd42a1bb1cc370b172579f703cd95", null ],
+      [ "PedestrianMap", "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baaa4f1b2c9de1145c2f5279929ef9d8a44", null ],
+      [ "CarNavigationMap", "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa8d4abe008f359cb02c51be1131a88109", null ],
+      [ "CycleMap", "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa082381b7cec06c7b3df063c5b358037c", null ],
+      [ "CustomMap", "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baabf1885e78b690f5e555e5ea805f851f6", null ]
+    ] ],
+    [ "MapProvider", "classMapProvider.html#a9b34741668807e1a3c034cbf4e817a36", null ],
     [ "~MapProvider", "classMapProvider.html#a7c53ac4633a74045b637cb202b755248", null ],
     [ "_getServerNum", "classMapProvider.html#a2250266005b32cbdcc8f33c1d3c38982", null ],
     [ "_getURL", "classMapProvider.html#afe08d35b15774d300cb41e458bf5f184", null ],
@@ -9,7 +23,7 @@ var classMapProvider =
     [ "getImageFormat", "classMapProvider.html#ab02ab07fde6133a3179bc0092c4538fc", null ],
     [ "getMapId", "classMapProvider.html#a5269d17f7a00e94a6ac5d9a1a1562f96", null ],
     [ "getMapName", "classMapProvider.html#a5681cb7a76404984574a78f55b584d7e", null ],
-    [ "getMapStyle", "classMapProvider.html#ae1deffc741a32f9f3b2161eb222feadf", null ],
+    [ "getMapStyle", "classMapProvider.html#a6ed30c5420336bad92ed3b89a926ab0a", null ],
     [ "getReferrer", "classMapProvider.html#a76843d3923792c20101db13a0e4144c0", null ],
     [ "getTileCount", "classMapProvider.html#aa54e2256f9b2d43684f13ecb84546d4a", null ],
     [ "getTileURL", "classMapProvider.html#ad8bb66fef25c7f3e3ac231c8927c0b31", null ],
@@ -25,6 +39,6 @@ var classMapProvider =
     [ "_language", "classMapProvider.html#ad21c4a7fd6a2fbc8e6d850943fc5c818", null ],
     [ "_mapId", "classMapProvider.html#aeacd2fd550dfb9e6ce21acb05240d05b", null ],
     [ "_mapName", "classMapProvider.html#a9f5cd9f9205878bebcd1cdd5eafb2607", null ],
-    [ "_mapStyle", "classMapProvider.html#a887dc494e4f3fe804cffdfd8ce12b1ad", null ],
+    [ "_mapStyle", "classMapProvider.html#ab17b3c0f3f26e36f3801eb7d9f85e0ea", null ],
     [ "_referrer", "classMapProvider.html#a287aa04c5343e9922957e7e9acc4aeb3", null ]
 ];

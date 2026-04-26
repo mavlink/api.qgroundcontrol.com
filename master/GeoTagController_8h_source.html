@@ -101,250 +101,246 @@ $(document).ready(function(){initNavTree('GeoTagController_8h_source.html',''); 
 <a href="GeoTagController_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="GeoTagData_8h.html">GeoTagData.h</a>&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="GeoTagImageModel_8h.html">GeoTagImageModel.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QtCore/QElapsedTimer&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QtCore/QFileInfo&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QtCore/QFileInfoList&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QtCore/QFutureWatcher&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QtCore/QHash&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QtCore/QLoggingCategory&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QtCore/QMap&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QtCore/QMutex&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QtCore/QObject&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QtCore/QString&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;QtPositioning/QGeoCoordinate&gt;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;QtQmlIntegration/QtQmlIntegration&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QtCore/QElapsedTimer&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QtCore/QFileInfo&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QtCore/QFileInfoList&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QtCore/QFutureWatcher&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QtCore/QHash&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QtCore/QMap&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QtCore/QMutex&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QtCore/QObject&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QtCore/QString&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QtPositioning/QGeoCoordinate&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QtQmlIntegration/QtQmlIntegration&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span><a class="code hl_class" href="classGeoTagImageModel.html">GeoTagImageModel</a>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><a class="code hl_function" href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a>(GeoTagControllerLog)</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structCalibrationResult.html">   24</a></span>struct <a class="code hl_struct" href="structCalibrationResult.html">CalibrationResult</a> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structCalibrationResult.html#a06c6715e5513247266c3e177816887f6">   25</a></span>    QList&lt;int&gt; <a class="code hl_variable" href="structCalibrationResult.html#a06c6715e5513247266c3e177816887f6">imageIndices</a>;      </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structCalibrationResult.html#a74aeaca574925a5241a0f7e7e6a1b5d6">   26</a></span>    QList&lt;int&gt; <a class="code hl_variable" href="structCalibrationResult.html#a74aeaca574925a5241a0f7e7e6a1b5d6">triggerIndices</a>;    </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structCalibrationResult.html#ae5631dcaa98cc6585681d1f99febcddc">   27</a></span>    QList&lt;int&gt; <a class="code hl_variable" href="structCalibrationResult.html#ae5631dcaa98cc6585681d1f99febcddc">unmatchedImages</a>;   </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structCalibrationResult.html#abfc10931fe89b8bffaf789ac974c3ab2">   28</a></span>    <span class="keywordtype">int</span> skippedTriggers = 0;      </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structCalibrationResult.html">   22</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structCalibrationResult.html">CalibrationResult</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structCalibrationResult.html#a06c6715e5513247266c3e177816887f6">   23</a></span>    QList&lt;int&gt; <a class="code hl_variable" href="structCalibrationResult.html#a06c6715e5513247266c3e177816887f6">imageIndices</a>;      </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structCalibrationResult.html#a74aeaca574925a5241a0f7e7e6a1b5d6">   24</a></span>    QList&lt;int&gt; <a class="code hl_variable" href="structCalibrationResult.html#a74aeaca574925a5241a0f7e7e6a1b5d6">triggerIndices</a>;    </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structCalibrationResult.html#ae5631dcaa98cc6585681d1f99febcddc">   25</a></span>    QList&lt;int&gt; <a class="code hl_variable" href="structCalibrationResult.html#ae5631dcaa98cc6585681d1f99febcddc">unmatchedImages</a>;   </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structCalibrationResult.html#abfc10931fe89b8bffaf789ac974c3ab2">   26</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structCalibrationResult.html#abfc10931fe89b8bffaf789ac974c3ab2">skippedTriggers</a> = 0;      </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
 </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespaceGeoTagCalibrator.html">   29</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceGeoTagCalibrator.html">GeoTagCalibrator</a> {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="namespaceGeoTagCalibrator.html">   31</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceGeoTagCalibrator.html">GeoTagCalibrator</a> {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><a class="code hl_struct" href="structCalibrationResult.html">CalibrationResult</a> <a class="code hl_function" href="namespaceGeoTagCalibrator.html#a56084f8bcd0394c49fbe0ea590f840f0">calibrate</a>(<span class="keyword">const</span> QList&lt;qint64&gt; &amp;imageTimestamps,</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                            <span class="keyword">const</span> QList&lt;GeoTagData&gt; &amp;triggers,</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                            qint64 timeOffsetSecs,</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                            qint64 toleranceSecs);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><a class="code hl_struct" href="structCalibrationResult.html">CalibrationResult</a> <a class="code hl_function" href="namespaceGeoTagCalibrator.html#a56084f8bcd0394c49fbe0ea590f840f0">calibrate</a>(<span class="keyword">const</span> QList&lt;qint64&gt; &amp;imageTimestamps,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                            <span class="keyword">const</span> QList&lt;GeoTagData&gt; &amp;triggers,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                            qint64 timeOffsetSecs,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                            qint64 toleranceSecs);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>} <span class="comment">// namespace GeoTagCalibrator</span></div>
+</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>} <span class="comment">// namespace GeoTagCalibrator</span></div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="};">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classGeoTagController.html">   46</a></span><span class="keyword">class </span><a class="code hl_class" href="classGeoTagController.html">GeoTagController</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    Q_OBJECT</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    QML_ELEMENT</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    QML_SINGLETON</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    Q_MOC_INCLUDE(<span class="stringliteral">&quot;GeoTagImageModel.h&quot;</span>)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    Q_PROPERTY(QString           logFile         READ logFile        WRITE setLogFile        NOTIFY <a class="code hl_signal" href="classGeoTagController.html#ab0fb946c3bf22054e9829e05359c3cfe">logFileChanged</a>)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    Q_PROPERTY(QString           imageDirectory  READ imageDirectory WRITE setImageDirectory NOTIFY <a class="code hl_signal" href="classGeoTagController.html#a6c4f004348ced5c6f532a6af61bf65a0">imageDirectoryChanged</a>)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    Q_PROPERTY(QString           saveDirectory   READ saveDirectory  WRITE setSaveDirectory  NOTIFY <a class="code hl_signal" href="classGeoTagController.html#a598efc1f2f39d74b112d9673a54c2f9b">saveDirectoryChanged</a>)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    Q_PROPERTY(QString           errorMessage    READ errorMessage                           NOTIFY <a class="code hl_signal" href="classGeoTagController.html#ac0dda184c53a16c6262242d8fecec46a">errorMessageChanged</a>)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    Q_PROPERTY(<span class="keywordtype">double</span>            progress        READ progress                               NOTIFY <a class="code hl_signal" href="classGeoTagController.html#ab003d93970d7013ae664a12102612b61">progressChanged</a>)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    Q_PROPERTY(<span class="keywordtype">bool</span>              inProgress      READ inProgress                             NOTIFY <a class="code hl_signal" href="classGeoTagController.html#af942ba265317b496f0635d4baab50ec1">inProgressChanged</a>)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    Q_PROPERTY(<span class="keywordtype">int</span>               taggedCount     READ taggedCount                            NOTIFY <a class="code hl_signal" href="classGeoTagController.html#ae052039bdc8cac855a91f8a091508802">taggingCompleteChanged</a>)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    Q_PROPERTY(<span class="keywordtype">int</span>               skippedCount    READ skippedCount                           NOTIFY <a class="code hl_signal" href="classGeoTagController.html#ae052039bdc8cac855a91f8a091508802">taggingCompleteChanged</a>)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    Q_PROPERTY(<span class="keywordtype">int</span>               failedCount     READ failedCount                            NOTIFY <a class="code hl_signal" href="classGeoTagController.html#ae052039bdc8cac855a91f8a091508802">taggingCompleteChanged</a>)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    Q_PROPERTY(<span class="keywordtype">double</span>            timeOffsetSecs  READ timeOffsetSecs  WRITE setTimeOffsetSecs  NOTIFY <a class="code hl_signal" href="classGeoTagController.html#a4f7a137a92a222d40b994a5086c28b46">timeOffsetSecsChanged</a>)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    Q_PROPERTY(<span class="keywordtype">double</span>            toleranceSecs   READ toleranceSecs   WRITE setToleranceSecs   NOTIFY <a class="code hl_signal" href="classGeoTagController.html#aab7aad12b3074a1661c3252ad9d22d4a">toleranceSecsChanged</a>)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    Q_PROPERTY(<span class="keywordtype">bool</span>              previewMode     READ previewMode     WRITE setPreviewMode     NOTIFY <a class="code hl_signal" href="classGeoTagController.html#a5200177bae863f832da8792abd8c4673">previewModeChanged</a>)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    Q_PROPERTY(<span class="keywordtype">bool</span>              recursiveScan   READ recursiveScan   WRITE setRecursiveScan   NOTIFY <a class="code hl_signal" href="classGeoTagController.html#a4db78c13e714ae6ec4b03a6b362a1fc3">recursiveScanChanged</a>)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    Q_PROPERTY(<a class="code hl_class" href="classGeoTagImageModel.html">GeoTagImageModel</a>* imageModel      READ imageModel                             CONSTANT)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classGeoTagController.html">GeoTagController</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_class" href="classGeoTagController.html">~GeoTagController</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    Q_INVOKABLE <span class="keywordtype">void</span> startTagging();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    Q_INVOKABLE <span class="keywordtype">void</span> cancelTagging();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    QString logFile()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _logFile; }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    QString imageDirectory()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _imageDirectory; }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    QString saveDirectory()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _saveDirectory; }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">double</span> progress()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _progress; }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">bool</span> inProgress()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _stage != Stage::Idle; }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    QString errorMessage()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _errorMessage; }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">int</span> taggedCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _taggedCount; }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">int</span> skippedCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _skippedCount; }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">int</span> failedCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _failedCount; }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">double</span> timeOffsetSecs()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _timeOffsetSecs; }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">double</span> toleranceSecs()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _toleranceSecs; }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">bool</span> previewMode()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _previewMode; }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">bool</span> recursiveScan()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _recursiveScan; }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_class" href="classGeoTagImageModel.html">GeoTagImageModel</a>* imageModel()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _imageModel; }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> setLogFile(<span class="keyword">const</span> QString &amp;file);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordtype">void</span> setImageDirectory(<span class="keyword">const</span> QString &amp;dir);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">void</span> setSaveDirectory(<span class="keyword">const</span> QString &amp;dir);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">void</span> setTimeOffsetSecs(<span class="keywordtype">double</span> offset);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">void</span> setToleranceSecs(<span class="keywordtype">double</span> tolerance);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">void</span> setPreviewMode(<span class="keywordtype">bool</span> preview);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">void</span> setRecursiveScan(<span class="keywordtype">bool</span> recursive);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>signals:</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classGeoTagController.html#ab0fb946c3bf22054e9829e05359c3cfe">   99</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#ab0fb946c3bf22054e9829e05359c3cfe">logFileChanged</a>(<span class="keyword">const</span> QString &amp;logFile);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classGeoTagController.html#a6c4f004348ced5c6f532a6af61bf65a0">  100</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#a6c4f004348ced5c6f532a6af61bf65a0">imageDirectoryChanged</a>(<span class="keyword">const</span> QString &amp;imageDirectory);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classGeoTagController.html#a598efc1f2f39d74b112d9673a54c2f9b">  101</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#a598efc1f2f39d74b112d9673a54c2f9b">saveDirectoryChanged</a>(<span class="keyword">const</span> QString &amp;saveDirectory);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classGeoTagController.html#ab003d93970d7013ae664a12102612b61">  102</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#ab003d93970d7013ae664a12102612b61">progressChanged</a>(<span class="keywordtype">double</span> progress);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classGeoTagController.html#af942ba265317b496f0635d4baab50ec1">  103</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#af942ba265317b496f0635d4baab50ec1">inProgressChanged</a>();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classGeoTagController.html#ac0dda184c53a16c6262242d8fecec46a">  104</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#ac0dda184c53a16c6262242d8fecec46a">errorMessageChanged</a>(<span class="keyword">const</span> QString &amp;errorMessage);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classGeoTagController.html#ae052039bdc8cac855a91f8a091508802">  105</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#ae052039bdc8cac855a91f8a091508802">taggingCompleteChanged</a>();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classGeoTagController.html#a4f7a137a92a222d40b994a5086c28b46">  106</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#a4f7a137a92a222d40b994a5086c28b46">timeOffsetSecsChanged</a>(<span class="keywordtype">double</span> timeOffsetSecs);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classGeoTagController.html#aab7aad12b3074a1661c3252ad9d22d4a">  107</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#aab7aad12b3074a1661c3252ad9d22d4a">toleranceSecsChanged</a>(<span class="keywordtype">double</span> toleranceSecs);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classGeoTagController.html#a5200177bae863f832da8792abd8c4673">  108</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#a5200177bae863f832da8792abd8c4673">previewModeChanged</a>(<span class="keywordtype">bool</span> previewMode);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classGeoTagController.html#a4db78c13e714ae6ec4b03a6b362a1fc3">  109</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#a4db78c13e714ae6ec4b03a6b362a1fc3">recursiveScanChanged</a>(<span class="keywordtype">bool</span> recursiveScan);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="comment">// Processing stages for async state machine</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keyword">enum class</span> Stage {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        Idle,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        LoadingImages,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        ParsingExif,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        ParsingLogs,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        Calibrating,</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        TaggingImages,</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        Finished</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    };</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* stageName(Stage stage);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keyword">struct </span>ExifResult {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        qint64 timestamp = 0;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        QString errorMessage;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordtype">bool</span> success = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    };</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keyword">struct </span>TagResult {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordtype">int</span> imageIndex = -1;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        QString fileName;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        QString <a class="code hl_function" href="namespaceQGCNetworkHelper.html#ac65b495619f346b4f620dcbb4267ff23">errorMessage</a>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        QGeoCoordinate coordinate;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordtype">bool</span> success = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    };</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keyword">struct </span>TagTask {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordtype">int</span> imageIndex = -1;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        QFileInfo imageInfo;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <a class="code hl_struct" href="structGeoTagData.html">GeoTagData</a> geoTag;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        QString outputDir;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordtype">bool</span> previewMode = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    };</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="comment">// State machine control</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordtype">void</span> _setErrorMessage(<span class="keyword">const</span> QString &amp;errorMsg);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordtype">void</span> _setProgress(<span class="keywordtype">double</span> progress);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordtype">void</span> _transitionTo(Stage stage);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordtype">void</span> _finishWithError(<span class="keyword">const</span> QString &amp;errorMsg);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordtype">void</span> _finishSuccess();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="comment">// Stage implementations</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordtype">void</span> _startLoadImages();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordtype">void</span> _startParseExif();</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordtype">void</span> _startParseLogs();</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordtype">void</span> _startCalibrate();</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordtype">void</span> _startTagImages();</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="comment">// Async stage handlers (slots for QFutureWatcher signals)</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordtype">void</span> _onExifProgress(<span class="keywordtype">int</span> value);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordtype">void</span> _onExifFinished();</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordtype">void</span> _onTagProgress(<span class="keywordtype">int</span> value);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordtype">void</span> _onTagFinished();</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="comment">// Synchronous helpers (called from stage implementations)</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordtype">bool</span> _loadImages(QString &amp;errorMsg);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordtype">bool</span> _parseLogs(QString &amp;errorMsg);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordtype">bool</span> _calibrate(QString &amp;errorMsg);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordtype">bool</span> _validateOutputDirectory(<span class="keyword">const</span> QString &amp;outputDir, QString &amp;errorMsg);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    QList&lt;TagTask&gt; _buildTagTasks(<span class="keyword">const</span> QString &amp;outputDir, <span class="keywordtype">bool</span> preview, QString &amp;errorMsg);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    qint64 _estimateOutputSize() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    ExifResult _parseExifForImage(<span class="keyword">const</span> QFileInfo &amp;imageInfo);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    TagResult _tagImage(<span class="keyword">const</span> TagTask &amp;task);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="comment">// Image buffer cache (thread-safe)</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    QByteArray _readImageCached(<span class="keyword">const</span> QString &amp;path, QString *<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a> = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keywordtype">void</span> _evictUnmatchedImages();</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordtype">void</span> _clearImageCache();</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="comment">// QML properties</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    QString _logFile;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    QString _imageDirectory;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    QString _saveDirectory;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    QString _errorMessage;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordtype">double</span> _progress = 0.;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordtype">int</span> _taggedCount = 0;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordtype">int</span> _skippedCount = 0;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordtype">int</span> _failedCount = 0;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordtype">double</span> _timeOffsetSecs = 0.0;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordtype">double</span> _toleranceSecs = 2.0;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordtype">bool</span> _previewMode = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordtype">bool</span> _recursiveScan = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="comment">// Processing state</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keyword">struct </span>ProcessingState {</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        QFileInfoList imageList;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        QList&lt;qint64&gt; imageTimestamps;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        QList&lt;GeoTagData&gt; triggerList;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        QList&lt;int&gt; imageIndices;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        QList&lt;int&gt; triggerIndices;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <span class="keywordtype">int</span> skippedCount = 0;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keywordtype">int</span> failedCount = 0;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <span class="keywordtype">void</span> clear() {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            imageList.clear();</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            imageTimestamps.clear();</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            triggerList.clear();</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            imageIndices.clear();</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            triggerIndices.clear();</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            skippedCount = 0;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            failedCount = 0;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        }</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    };</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="comment">// Async state machine</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    Stage _stage = Stage::Idle;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    std::atomic&lt;bool&gt; _cancel{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    QElapsedTimer _totalTimer;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    QElapsedTimer _stageTimer;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="comment">// Async watchers for parallel stages</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    QFutureWatcher&lt;ExifResult&gt; _exifWatcher;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    QFutureWatcher&lt;TagResult&gt; _tagWatcher;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    ProcessingState _state;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="comment">// Image model for QML display</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <a class="code hl_class" href="classGeoTagImageModel.html">GeoTagImageModel</a> *_imageModel = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="comment">// Image buffer cache to avoid reading files twice</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="keyword">mutable</span> QMutex _bufferMutex;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    QHash&lt;QString, QByteArray&gt; _imageBuffers;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="comment">// Progress calculation constants</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> kLoadImagesEnd = 20.0;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> kParseExifEnd = 40.0;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> kParseLogsEnd = 60.0;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> kCalibrateEnd = 80.0;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> kTagImagesEnd = 100.0;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>};</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="foldopen" id="foldopen00048" data-start="{" data-end="};">
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classGeoTagController.html">   48</a></span><span class="keyword">class </span><a class="code hl_class" href="classGeoTagController.html">GeoTagController</a> : <span class="keyword">public</span> QObject</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    Q_OBJECT</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    QML_ELEMENT</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    QML_SINGLETON</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    Q_PROPERTY(QString           logFile         READ logFile        WRITE setLogFile        NOTIFY <a class="code hl_signal" href="classGeoTagController.html#ab0fb946c3bf22054e9829e05359c3cfe">logFileChanged</a>)</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    Q_PROPERTY(QString           imageDirectory  READ imageDirectory WRITE setImageDirectory NOTIFY <a class="code hl_signal" href="classGeoTagController.html#a6c4f004348ced5c6f532a6af61bf65a0">imageDirectoryChanged</a>)</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    Q_PROPERTY(QString           saveDirectory   READ saveDirectory  WRITE setSaveDirectory  NOTIFY <a class="code hl_signal" href="classGeoTagController.html#a598efc1f2f39d74b112d9673a54c2f9b">saveDirectoryChanged</a>)</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    Q_PROPERTY(QString           errorMessage    READ errorMessage                           NOTIFY <a class="code hl_signal" href="classGeoTagController.html#ac0dda184c53a16c6262242d8fecec46a">errorMessageChanged</a>)</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    Q_PROPERTY(<span class="keywordtype">double</span>            progress        READ progress                               NOTIFY <a class="code hl_signal" href="classGeoTagController.html#ab003d93970d7013ae664a12102612b61">progressChanged</a>)</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    Q_PROPERTY(<span class="keywordtype">bool</span>              inProgress      READ inProgress                             NOTIFY <a class="code hl_signal" href="classGeoTagController.html#af942ba265317b496f0635d4baab50ec1">inProgressChanged</a>)</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    Q_PROPERTY(<span class="keywordtype">int</span>               taggedCount     READ taggedCount                            NOTIFY <a class="code hl_signal" href="classGeoTagController.html#ae052039bdc8cac855a91f8a091508802">taggingCompleteChanged</a>)</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    Q_PROPERTY(<span class="keywordtype">int</span>               skippedCount    READ skippedCount                           NOTIFY <a class="code hl_signal" href="classGeoTagController.html#ae052039bdc8cac855a91f8a091508802">taggingCompleteChanged</a>)</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    Q_PROPERTY(<span class="keywordtype">int</span>               failedCount     READ failedCount                            NOTIFY <a class="code hl_signal" href="classGeoTagController.html#ae052039bdc8cac855a91f8a091508802">taggingCompleteChanged</a>)</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    Q_PROPERTY(<span class="keywordtype">double</span>            timeOffsetSecs  READ timeOffsetSecs  WRITE setTimeOffsetSecs  NOTIFY <a class="code hl_signal" href="classGeoTagController.html#a4f7a137a92a222d40b994a5086c28b46">timeOffsetSecsChanged</a>)</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    Q_PROPERTY(<span class="keywordtype">double</span>            toleranceSecs   READ toleranceSecs   WRITE setToleranceSecs   NOTIFY <a class="code hl_signal" href="classGeoTagController.html#aab7aad12b3074a1661c3252ad9d22d4a">toleranceSecsChanged</a>)</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    Q_PROPERTY(<span class="keywordtype">bool</span>              previewMode     READ previewMode     WRITE setPreviewMode     NOTIFY <a class="code hl_signal" href="classGeoTagController.html#a5200177bae863f832da8792abd8c4673">previewModeChanged</a>)</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    Q_PROPERTY(<span class="keywordtype">bool</span>              recursiveScan   READ recursiveScan   WRITE setRecursiveScan   NOTIFY <a class="code hl_signal" href="classGeoTagController.html#a4db78c13e714ae6ec4b03a6b362a1fc3">recursiveScanChanged</a>)</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    Q_PROPERTY(<a class="code hl_class" href="classGeoTagImageModel.html">GeoTagImageModel</a>* imageModel      READ imageModel                             CONSTANT)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classGeoTagController.html">GeoTagController</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_class" href="classGeoTagController.html">~GeoTagController</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    Q_INVOKABLE <span class="keywordtype">void</span> startTagging();</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    Q_INVOKABLE <span class="keywordtype">void</span> cancelTagging();</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    QString logFile()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _logFile; }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    QString imageDirectory()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _imageDirectory; }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    QString saveDirectory()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _saveDirectory; }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">double</span> progress()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _progress; }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">bool</span> inProgress()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _stage != Stage::Idle; }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    QString errorMessage()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _errorMessage; }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">int</span> taggedCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _taggedCount; }</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">int</span> skippedCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _skippedCount; }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">int</span> failedCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _failedCount; }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">double</span> timeOffsetSecs()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _timeOffsetSecs; }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">double</span> toleranceSecs()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _toleranceSecs; }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">bool</span> previewMode()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _previewMode; }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">bool</span> recursiveScan()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _recursiveScan; }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_class" href="classGeoTagImageModel.html">GeoTagImageModel</a>* imageModel()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _imageModel; }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordtype">void</span> setLogFile(<span class="keyword">const</span> QString &amp;file);</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">void</span> setImageDirectory(<span class="keyword">const</span> QString &amp;dir);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">void</span> setSaveDirectory(<span class="keyword">const</span> QString &amp;dir);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">void</span> setTimeOffsetSecs(<span class="keywordtype">double</span> offset);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">void</span> setToleranceSecs(<span class="keywordtype">double</span> tolerance);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">void</span> setPreviewMode(<span class="keywordtype">bool</span> preview);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">void</span> setRecursiveScan(<span class="keywordtype">bool</span> recursive);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>signals:</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classGeoTagController.html#ab0fb946c3bf22054e9829e05359c3cfe">  100</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#ab0fb946c3bf22054e9829e05359c3cfe">logFileChanged</a>(<span class="keyword">const</span> QString &amp;logFile);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classGeoTagController.html#a6c4f004348ced5c6f532a6af61bf65a0">  101</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#a6c4f004348ced5c6f532a6af61bf65a0">imageDirectoryChanged</a>(<span class="keyword">const</span> QString &amp;imageDirectory);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classGeoTagController.html#a598efc1f2f39d74b112d9673a54c2f9b">  102</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#a598efc1f2f39d74b112d9673a54c2f9b">saveDirectoryChanged</a>(<span class="keyword">const</span> QString &amp;saveDirectory);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classGeoTagController.html#ab003d93970d7013ae664a12102612b61">  103</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#ab003d93970d7013ae664a12102612b61">progressChanged</a>(<span class="keywordtype">double</span> progress);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classGeoTagController.html#af942ba265317b496f0635d4baab50ec1">  104</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#af942ba265317b496f0635d4baab50ec1">inProgressChanged</a>();</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classGeoTagController.html#ac0dda184c53a16c6262242d8fecec46a">  105</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#ac0dda184c53a16c6262242d8fecec46a">errorMessageChanged</a>(<span class="keyword">const</span> QString &amp;errorMessage);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classGeoTagController.html#ae052039bdc8cac855a91f8a091508802">  106</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#ae052039bdc8cac855a91f8a091508802">taggingCompleteChanged</a>();</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classGeoTagController.html#a4f7a137a92a222d40b994a5086c28b46">  107</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#a4f7a137a92a222d40b994a5086c28b46">timeOffsetSecsChanged</a>(<span class="keywordtype">double</span> timeOffsetSecs);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classGeoTagController.html#aab7aad12b3074a1661c3252ad9d22d4a">  108</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#aab7aad12b3074a1661c3252ad9d22d4a">toleranceSecsChanged</a>(<span class="keywordtype">double</span> toleranceSecs);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classGeoTagController.html#a5200177bae863f832da8792abd8c4673">  109</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#a5200177bae863f832da8792abd8c4673">previewModeChanged</a>(<span class="keywordtype">bool</span> previewMode);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classGeoTagController.html#a4db78c13e714ae6ec4b03a6b362a1fc3">  110</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classGeoTagController.html#a4db78c13e714ae6ec4b03a6b362a1fc3">recursiveScanChanged</a>(<span class="keywordtype">bool</span> recursiveScan);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="comment">// Processing stages for async state machine</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keyword">enum class</span> Stage {</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        Idle,</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        LoadingImages,</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        ParsingExif,</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        ParsingLogs,</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        Calibrating,</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        TaggingImages,</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        Finished</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    };</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* stageName(Stage stage);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keyword">struct </span>ExifResult {</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        qint64 timestamp = 0;</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        QString errorMessage;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keywordtype">bool</span> success = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    };</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keyword">struct </span>TagResult {</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordtype">int</span> imageIndex = -1;</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        QString fileName;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        QString <a class="code hl_function" href="namespaceQGCNetworkHelper.html#ac65b495619f346b4f620dcbb4267ff23">errorMessage</a>;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        QGeoCoordinate coordinate;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordtype">bool</span> success = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    };</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">struct </span>TagTask {</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordtype">int</span> imageIndex = -1;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        QFileInfo imageInfo;</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <a class="code hl_struct" href="structGeoTagData.html">GeoTagData</a> geoTag;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        QString outputDir;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordtype">bool</span> previewMode = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    };</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="comment">// State machine control</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordtype">void</span> _setErrorMessage(<span class="keyword">const</span> QString &amp;errorMsg);</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordtype">void</span> _setProgress(<span class="keywordtype">double</span> progress);</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordtype">void</span> _transitionTo(Stage stage);</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordtype">void</span> _finishWithError(<span class="keyword">const</span> QString &amp;errorMsg);</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordtype">void</span> _finishSuccess();</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="comment">// Stage implementations</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordtype">void</span> _startLoadImages();</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordtype">void</span> _startParseExif();</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordtype">void</span> _startParseLogs();</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordtype">void</span> _startCalibrate();</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordtype">void</span> _startTagImages();</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="comment">// Async stage handlers (slots for QFutureWatcher signals)</span></div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordtype">void</span> _onExifProgress(<span class="keywordtype">int</span> value);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordtype">void</span> _onExifFinished();</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordtype">void</span> _onTagProgress(<span class="keywordtype">int</span> value);</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordtype">void</span> _onTagFinished();</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">// Synchronous helpers (called from stage implementations)</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordtype">bool</span> _loadImages(QString &amp;errorMsg);</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordtype">bool</span> _parseLogs(QString &amp;errorMsg);</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordtype">bool</span> _calibrate(QString &amp;errorMsg);</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordtype">bool</span> _validateOutputDirectory(<span class="keyword">const</span> QString &amp;outputDir, QString &amp;errorMsg);</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    QList&lt;TagTask&gt; _buildTagTasks(<span class="keyword">const</span> QString &amp;outputDir, <span class="keywordtype">bool</span> preview, QString &amp;errorMsg);</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    qint64 _estimateOutputSize() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    ExifResult _parseExifForImage(<span class="keyword">const</span> QFileInfo &amp;imageInfo);</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    TagResult _tagImage(<span class="keyword">const</span> TagTask &amp;task);</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="comment">// Image buffer cache (thread-safe)</span></div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    QByteArray _readImageCached(<span class="keyword">const</span> QString &amp;path, QString *<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a> = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordtype">void</span> _evictUnmatchedImages();</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordtype">void</span> _clearImageCache();</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="comment">// QML properties</span></div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    QString _logFile;</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    QString _imageDirectory;</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    QString _saveDirectory;</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    QString _errorMessage;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordtype">double</span> _progress = 0.;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordtype">int</span> _taggedCount = 0;</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordtype">int</span> _skippedCount = 0;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordtype">int</span> _failedCount = 0;</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordtype">double</span> _timeOffsetSecs = 0.0;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordtype">double</span> _toleranceSecs = 2.0;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordtype">bool</span> _previewMode = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordtype">bool</span> _recursiveScan = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="comment">// Processing state</span></div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keyword">struct </span>ProcessingState {</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        QFileInfoList imageList;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        QList&lt;qint64&gt; imageTimestamps;</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        QList&lt;GeoTagData&gt; triggerList;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        QList&lt;int&gt; imageIndices;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        QList&lt;int&gt; triggerIndices;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keywordtype">int</span> skippedCount = 0;</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="keywordtype">int</span> failedCount = 0;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordtype">void</span> clear() {</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            imageList.clear();</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            imageTimestamps.clear();</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            triggerList.clear();</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            imageIndices.clear();</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            triggerIndices.clear();</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            skippedCount = 0;</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            failedCount = 0;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        }</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    };</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="comment">// Async state machine</span></div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    Stage _stage = Stage::Idle;</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    std::atomic&lt;bool&gt; _cancel{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    QElapsedTimer _totalTimer;</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    QElapsedTimer _stageTimer;</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="comment">// Async watchers for parallel stages</span></div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    QFutureWatcher&lt;ExifResult&gt; _exifWatcher;</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    QFutureWatcher&lt;TagResult&gt; _tagWatcher;</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    ProcessingState _state;</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="comment">// Image model for QML display</span></div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <a class="code hl_class" href="classGeoTagImageModel.html">GeoTagImageModel</a> *_imageModel = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="comment">// Image buffer cache to avoid reading files twice</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keyword">mutable</span> QMutex _bufferMutex;</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    QHash&lt;QString, QByteArray&gt; _imageBuffers;</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="comment">// Progress calculation constants</span></div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> kLoadImagesEnd = 20.0;</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> kParseExifEnd = 40.0;</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> kParseLogsEnd = 60.0;</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> kCalibrateEnd = 80.0;</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">double</span> kTagImagesEnd = 100.0;</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>};</div>
-</div>
-<div class="ttc" id="aAndroidSerial_8h_html_a932681ef567cd0a6a3a714a3c519eb35"><div class="ttname"><a href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a></div><div class="ttdeci">Q_DECLARE_LOGGING_CATEGORY(AndroidSerialLog)</div></div>
 <div class="ttc" id="aGeoTagData_8h_html"><div class="ttname"><a href="GeoTagData_8h.html">GeoTagData.h</a></div></div>
-<div class="ttc" id="aGeoTagImageModel_8h_html"><div class="ttname"><a href="GeoTagImageModel_8h.html">GeoTagImageModel.h</a></div></div>
 <div class="ttc" id="aQGCCompression_8cc_html_a09cce169e65d8066c742ebfe55010cfb"><div class="ttname"><a href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a></div><div class="ttdeci">QString errorString</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00113">QGCCompression.cc:113</a></div></div>
-<div class="ttc" id="aclassGeoTagController_html"><div class="ttname"><a href="classGeoTagController.html">GeoTagController</a></div><div class="ttdef"><b>Definition</b> <a href="GeoTagController_8h_source.html#l00048">GeoTagController.h:49</a></div></div>
+<div class="ttc" id="aclassGeoTagController_html"><div class="ttname"><a href="classGeoTagController.html">GeoTagController</a></div><div class="ttdef"><b>Definition</b> <a href="GeoTagController_8h_source.html#l00046">GeoTagController.h:47</a></div></div>
 <div class="ttc" id="aclassGeoTagController_html_a4db78c13e714ae6ec4b03a6b362a1fc3"><div class="ttname"><a href="classGeoTagController.html#a4db78c13e714ae6ec4b03a6b362a1fc3">GeoTagController::recursiveScanChanged</a></div><div class="ttdeci">void recursiveScanChanged(bool recursiveScan)</div></div>
 <div class="ttc" id="aclassGeoTagController_html_a4f7a137a92a222d40b994a5086c28b46"><div class="ttname"><a href="classGeoTagController.html#a4f7a137a92a222d40b994a5086c28b46">GeoTagController::timeOffsetSecsChanged</a></div><div class="ttdeci">void timeOffsetSecsChanged(double timeOffsetSecs)</div></div>
 <div class="ttc" id="aclassGeoTagController_html_a5200177bae863f832da8792abd8c4673"><div class="ttname"><a href="classGeoTagController.html#a5200177bae863f832da8792abd8c4673">GeoTagController::previewModeChanged</a></div><div class="ttdeci">void previewModeChanged(bool previewMode)</div></div>
@@ -356,14 +352,15 @@ $(document).ready(function(){initNavTree('GeoTagController_8h_source.html',''); 
 <div class="ttc" id="aclassGeoTagController_html_ac0dda184c53a16c6262242d8fecec46a"><div class="ttname"><a href="classGeoTagController.html#ac0dda184c53a16c6262242d8fecec46a">GeoTagController::errorMessageChanged</a></div><div class="ttdeci">void errorMessageChanged(const QString &amp;errorMessage)</div></div>
 <div class="ttc" id="aclassGeoTagController_html_ae052039bdc8cac855a91f8a091508802"><div class="ttname"><a href="classGeoTagController.html#ae052039bdc8cac855a91f8a091508802">GeoTagController::taggingCompleteChanged</a></div><div class="ttdeci">void taggingCompleteChanged()</div></div>
 <div class="ttc" id="aclassGeoTagController_html_af942ba265317b496f0635d4baab50ec1"><div class="ttname"><a href="classGeoTagController.html#af942ba265317b496f0635d4baab50ec1">GeoTagController::inProgressChanged</a></div><div class="ttdeci">void inProgressChanged()</div></div>
-<div class="ttc" id="aclassGeoTagImageModel_html"><div class="ttname"><a href="classGeoTagImageModel.html">GeoTagImageModel</a></div><div class="ttdoc">Model for displaying geotagging image status in QML.</div><div class="ttdef"><b>Definition</b> <a href="GeoTagImageModel_8h_source.html#l00011">GeoTagImageModel.h:12</a></div></div>
-<div class="ttc" id="anamespaceGeoTagCalibrator_html"><div class="ttname"><a href="namespaceGeoTagCalibrator.html">GeoTagCalibrator</a></div><div class="ttdef"><b>Definition</b> <a href="GeoTagController_8h_source.html#l00031">GeoTagController.h:31</a></div></div>
+<div class="ttc" id="aclassGeoTagImageModel_html"><div class="ttname"><a href="classGeoTagImageModel.html">GeoTagImageModel</a></div><div class="ttdoc">Model for displaying geotagging image status in QML.</div><div class="ttdef"><b>Definition</b> <a href="GeoTagImageModel_8h_source.html#l00008">GeoTagImageModel.h:9</a></div></div>
+<div class="ttc" id="anamespaceGeoTagCalibrator_html"><div class="ttname"><a href="namespaceGeoTagCalibrator.html">GeoTagCalibrator</a></div><div class="ttdef"><b>Definition</b> <a href="GeoTagController_8h_source.html#l00029">GeoTagController.h:29</a></div></div>
 <div class="ttc" id="anamespaceGeoTagCalibrator_html_a56084f8bcd0394c49fbe0ea590f840f0"><div class="ttname"><a href="namespaceGeoTagCalibrator.html#a56084f8bcd0394c49fbe0ea590f840f0">GeoTagCalibrator::calibrate</a></div><div class="ttdeci">CalibrationResult calibrate(const QList&lt; qint64 &gt; &amp;imageTimestamps, const QList&lt; GeoTagData &gt; &amp;triggers, qint64 timeOffsetSecs, qint64 toleranceSecs)</div><div class="ttdef"><b>Definition</b> <a href="GeoTagController_8cc_source.html#l00096">GeoTagController.cc:96</a></div></div>
 <div class="ttc" id="anamespaceQGCNetworkHelper_html_ac65b495619f346b4f620dcbb4267ff23"><div class="ttname"><a href="namespaceQGCNetworkHelper.html#ac65b495619f346b4f620dcbb4267ff23">QGCNetworkHelper::errorMessage</a></div><div class="ttdeci">QString errorMessage(const QNetworkReply *reply)</div><div class="ttdef"><b>Definition</b> <a href="QGCNetworkHelper_8cc_source.html#l00666">QGCNetworkHelper.cc:666</a></div></div>
-<div class="ttc" id="astructCalibrationResult_html"><div class="ttname"><a href="structCalibrationResult.html">CalibrationResult</a></div><div class="ttdoc">Result of timestamp-based calibration/matching.</div><div class="ttdef"><b>Definition</b> <a href="GeoTagController_8h_source.html#l00024">GeoTagController.h:24</a></div></div>
-<div class="ttc" id="astructCalibrationResult_html_a06c6715e5513247266c3e177816887f6"><div class="ttname"><a href="structCalibrationResult.html#a06c6715e5513247266c3e177816887f6">CalibrationResult::imageIndices</a></div><div class="ttdeci">QList&lt; int &gt; imageIndices</div><div class="ttdoc">Matched image indices (parallel with triggerIndices)</div><div class="ttdef"><b>Definition</b> <a href="GeoTagController_8h_source.html#l00025">GeoTagController.h:25</a></div></div>
-<div class="ttc" id="astructCalibrationResult_html_a74aeaca574925a5241a0f7e7e6a1b5d6"><div class="ttname"><a href="structCalibrationResult.html#a74aeaca574925a5241a0f7e7e6a1b5d6">CalibrationResult::triggerIndices</a></div><div class="ttdeci">QList&lt; int &gt; triggerIndices</div><div class="ttdoc">Matched trigger indices (parallel with imageIndices)</div><div class="ttdef"><b>Definition</b> <a href="GeoTagController_8h_source.html#l00026">GeoTagController.h:26</a></div></div>
-<div class="ttc" id="astructCalibrationResult_html_ae5631dcaa98cc6585681d1f99febcddc"><div class="ttname"><a href="structCalibrationResult.html#ae5631dcaa98cc6585681d1f99febcddc">CalibrationResult::unmatchedImages</a></div><div class="ttdeci">QList&lt; int &gt; unmatchedImages</div><div class="ttdoc">Image indices with no matching trigger.</div><div class="ttdef"><b>Definition</b> <a href="GeoTagController_8h_source.html#l00027">GeoTagController.h:27</a></div></div>
+<div class="ttc" id="astructCalibrationResult_html"><div class="ttname"><a href="structCalibrationResult.html">CalibrationResult</a></div><div class="ttdoc">Result of timestamp-based calibration/matching.</div><div class="ttdef"><b>Definition</b> <a href="GeoTagController_8h_source.html#l00022">GeoTagController.h:22</a></div></div>
+<div class="ttc" id="astructCalibrationResult_html_a06c6715e5513247266c3e177816887f6"><div class="ttname"><a href="structCalibrationResult.html#a06c6715e5513247266c3e177816887f6">CalibrationResult::imageIndices</a></div><div class="ttdeci">QList&lt; int &gt; imageIndices</div><div class="ttdoc">Matched image indices (parallel with triggerIndices)</div><div class="ttdef"><b>Definition</b> <a href="GeoTagController_8h_source.html#l00023">GeoTagController.h:23</a></div></div>
+<div class="ttc" id="astructCalibrationResult_html_a74aeaca574925a5241a0f7e7e6a1b5d6"><div class="ttname"><a href="structCalibrationResult.html#a74aeaca574925a5241a0f7e7e6a1b5d6">CalibrationResult::triggerIndices</a></div><div class="ttdeci">QList&lt; int &gt; triggerIndices</div><div class="ttdoc">Matched trigger indices (parallel with imageIndices)</div><div class="ttdef"><b>Definition</b> <a href="GeoTagController_8h_source.html#l00024">GeoTagController.h:24</a></div></div>
+<div class="ttc" id="astructCalibrationResult_html_abfc10931fe89b8bffaf789ac974c3ab2"><div class="ttname"><a href="structCalibrationResult.html#abfc10931fe89b8bffaf789ac974c3ab2">CalibrationResult::skippedTriggers</a></div><div class="ttdeci">int skippedTriggers</div><div class="ttdoc">Triggers skipped due to invalid data.</div><div class="ttdef"><b>Definition</b> <a href="GeoTagController_8h_source.html#l00026">GeoTagController.h:26</a></div></div>
+<div class="ttc" id="astructCalibrationResult_html_ae5631dcaa98cc6585681d1f99febcddc"><div class="ttname"><a href="structCalibrationResult.html#ae5631dcaa98cc6585681d1f99febcddc">CalibrationResult::unmatchedImages</a></div><div class="ttdeci">QList&lt; int &gt; unmatchedImages</div><div class="ttdoc">Image indices with no matching trigger.</div><div class="ttdef"><b>Definition</b> <a href="GeoTagController_8h_source.html#l00025">GeoTagController.h:25</a></div></div>
 <div class="ttc" id="astructGeoTagData_html"><div class="ttname"><a href="structGeoTagData.html">GeoTagData</a></div><div class="ttdef"><b>Definition</b> <a href="GeoTagData_8h_source.html#l00007">GeoTagData.h:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

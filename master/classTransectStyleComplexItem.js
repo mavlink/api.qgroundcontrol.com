@@ -75,7 +75,7 @@ var classTransectStyleComplexItem =
     [ "sequenceNumber", "classTransectStyleComplexItem.html#a83ca953148c2094426797bb955f1637b", null ],
     [ "setCoordinate", "classTransectStyleComplexItem.html#a7eb659b84d11ecea286a7906b23e1bea", null ],
     [ "setDirty", "classTransectStyleComplexItem.html#af3055a1fdcc0dbc8def0a4631982f524", null ],
-    [ "setMissionFlightStatus", "classTransectStyleComplexItem.html#a4d5b823c3bfe51a42cbeaf4548bd3994", null ],
+    [ "setMissionFlightStatus", "classTransectStyleComplexItem.html#ad5912d7bf998726e1b0a57180b9c7a2b", null ],
     [ "setSequenceNumber", "classTransectStyleComplexItem.html#a6c5dbe6c7dfcdbf59341576c8397c29e", null ],
     [ "specifiedFlightSpeed", "classTransectStyleComplexItem.html#a8d2fb162439ab4b30a933467c297d117", null ],
     [ "specifiedGimbalPitch", "classTransectStyleComplexItem.html#a10724699bef889ea712c704f75c76d1b", null ],

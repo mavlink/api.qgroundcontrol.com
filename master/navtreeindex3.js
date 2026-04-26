@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"BluetoothBleWorker_8h_source.html":[3,0,0,6,0,1],
 "BluetoothClassicWorker_8cc.html":[3,0,0,6,0,2],
 "BluetoothClassicWorker_8cc_source.html":[3,0,0,6,0,2],
 "BluetoothClassicWorker_8h.html":[3,0,0,6,0,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "EsriMapProvider_8cpp.html":[3,0,0,20,0,4],
 "EsriMapProvider_8cpp_source.html":[3,0,0,20,0,4],
 "EsriMapProvider_8h.html":[3,0,0,20,0,5],
-"EsriMapProvider_8h_source.html":[3,0,0,20,0,5]
+"EsriMapProvider_8h_source.html":[3,0,0,20,0,5],
+"EventHandler_8cc.html":[3,0,0,15,0,0]
 };

@@ -102,59 +102,57 @@ $(document).ready(function(){initNavTree('SignalHandler_8h_source.html',''); ini
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QtCore/QLoggingCategory&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QtCore/QObject&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">class </span>QWinEventNotifier;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">class </span>QSocketNotifier;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><a class="code hl_function" href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a>(SignalHandlerLog)</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classSignalHandler.html">   16</a></span>class <a class="code hl_class" href="classSignalHandler.html">SignalHandler</a> final : public QObject</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    Q_OBJECT</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classSignalHandler.html">SignalHandler</a>(QObject* parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_class" href="classSignalHandler.html">~SignalHandler</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">int</span> setupSignalHandlers();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classSignalHandler.html#a530acbb8f8538b89d51027a0d73de717">   26</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="classSignalHandler.html">SignalHandler</a>* <a class="code hl_function" href="classSignalHandler.html#a530acbb8f8538b89d51027a0d73de717">current</a>() { <span class="keywordflow">return</span> s_current.load(std::memory_order_acquire); }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> consoleCtrlHandler(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> evt);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> _onSigInt();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> _onSigTerm();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    QWinEventNotifier* _notifier{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    Qt::HANDLE _signalEvent{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> _intSignalHandler(<span class="keywordtype">int</span> signum);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> _termSignalHandler(<span class="keywordtype">int</span> signum);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> _sigIntFd[2] = {-1, -1};   <span class="comment">// socketpair read=0, write=1</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">int</span> _sigTermFd[2] = {-1, -1};</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    QSocketNotifier* _notifierInt{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    QSocketNotifier* _notifierTerm{<span class="keyword">nullptr</span>};</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">bool</span> _sigIntTriggered{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">static</span> std::atomic&lt;SignalHandler*&gt; s_current;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QtCore/QObject&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">class </span>QWinEventNotifier;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">class </span>QSocketNotifier;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classSignalHandler.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="classSignalHandler.html">SignalHandler</a> final : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    Q_OBJECT</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classSignalHandler.html">SignalHandler</a>(QObject* parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_function" href="classSignalHandler.html#a989ff6807784051a4bdb7a250a190862">~SignalHandler</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classSignalHandler.html#a64c8da2a54920c09bc5416f96da4988a">setupSignalHandlers</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classSignalHandler.html#a530acbb8f8538b89d51027a0d73de717">   23</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="classSignalHandler.html">SignalHandler</a>* <a class="code hl_function" href="classSignalHandler.html#a530acbb8f8538b89d51027a0d73de717">current</a>() { <span class="keywordflow">return</span> s_current.load(std::memory_order_acquire); }</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> consoleCtrlHandler(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> evt);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> _onSigInt();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> _onSigTerm();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    QWinEventNotifier* _notifier{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    Qt::HANDLE _signalEvent{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> _intSignalHandler(<span class="keywordtype">int</span> signum);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> _termSignalHandler(<span class="keywordtype">int</span> signum);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">int</span> _sigIntFd[2] = {-1, -1};   <span class="comment">// socketpair read=0, write=1</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">int</span> _sigTermFd[2] = {-1, -1};</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    QSocketNotifier* _notifierInt{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    QSocketNotifier* _notifierTerm{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">bool</span> _sigIntTriggered{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">static</span> std::atomic&lt;SignalHandler*&gt; s_current;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
 </div>
-<div class="ttc" id="aAndroidSerial_8h_html_a932681ef567cd0a6a3a714a3c519eb35"><div class="ttname"><a href="AndroidSerial_8h.html#a932681ef567cd0a6a3a714a3c519eb35">Q_DECLARE_LOGGING_CATEGORY</a></div><div class="ttdeci">Q_DECLARE_LOGGING_CATEGORY(AndroidSerialLog)</div></div>
-<div class="ttc" id="aclassSignalHandler_html"><div class="ttname"><a href="classSignalHandler.html">SignalHandler</a></div><div class="ttdef"><b>Definition</b> <a href="SignalHandler_8h_source.html#l00016">SignalHandler.h:17</a></div></div>
-<div class="ttc" id="aclassSignalHandler_html_a530acbb8f8538b89d51027a0d73de717"><div class="ttname"><a href="classSignalHandler.html#a530acbb8f8538b89d51027a0d73de717">SignalHandler::current</a></div><div class="ttdeci">static SignalHandler * current()</div><div class="ttdef"><b>Definition</b> <a href="SignalHandler_8h_source.html#l00026">SignalHandler.h:26</a></div></div>
+<div class="ttc" id="aclassSignalHandler_html"><div class="ttname"><a href="classSignalHandler.html">SignalHandler</a></div><div class="ttdef"><b>Definition</b> <a href="SignalHandler_8h_source.html#l00013">SignalHandler.h:14</a></div></div>
+<div class="ttc" id="aclassSignalHandler_html_a530acbb8f8538b89d51027a0d73de717"><div class="ttname"><a href="classSignalHandler.html#a530acbb8f8538b89d51027a0d73de717">SignalHandler::current</a></div><div class="ttdeci">static SignalHandler * current()</div><div class="ttdef"><b>Definition</b> <a href="SignalHandler_8h_source.html#l00023">SignalHandler.h:23</a></div></div>
+<div class="ttc" id="aclassSignalHandler_html_a64c8da2a54920c09bc5416f96da4988a"><div class="ttname"><a href="classSignalHandler.html#a64c8da2a54920c09bc5416f96da4988a">SignalHandler::setupSignalHandlers</a></div><div class="ttdeci">int setupSignalHandlers()</div><div class="ttdef"><b>Definition</b> <a href="SignalHandler_8cc_source.html#l00144">SignalHandler.cc:144</a></div></div>
+<div class="ttc" id="aclassSignalHandler_html_a989ff6807784051a4bdb7a250a190862"><div class="ttname"><a href="classSignalHandler.html#a989ff6807784051a4bdb7a250a190862">SignalHandler::~SignalHandler</a></div><div class="ttdeci">~SignalHandler() override</div><div class="ttdef"><b>Definition</b> <a href="SignalHandler_8cc_source.html#l00109">SignalHandler.cc:109</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

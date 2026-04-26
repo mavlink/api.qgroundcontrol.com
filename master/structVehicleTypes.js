@@ -1,5 +1,10 @@
 var structVehicleTypes =
 [
+    [ "MavCmdAckHandlerInfo_s", "structVehicleTypes_1_1MavCmdAckHandlerInfo__s.html", "structVehicleTypes_1_1MavCmdAckHandlerInfo__s" ],
+    [ "MavCmdAckHandlerInfo_t", "structVehicleTypes.html#a65744ad2f1cd9ffea60ba8aaaa0a58fc", null ],
+    [ "MavCmdProgressHandler", "structVehicleTypes.html#a1cb21b8d07d69a025b1ca67f379d1ef9", null ],
+    [ "MavCmdResultHandler", "structVehicleTypes.html#a1edf49a2f54e5f16dbf77f417f062960", null ],
+    [ "RequestMessageResultHandler", "structVehicleTypes.html#a46bfc59bf8b2578f7cc565e6142729cb", null ],
     [ "MavCmdResultFailureCode_t", "structVehicleTypes.html#a7dbf59c2303d5e793924630345127d5c", [
       [ "MavCmdResultCommandResultOnly", "structVehicleTypes.html#a7dbf59c2303d5e793924630345127d5ca8234ad4c8b132cf527efe1f6f0a901d7", null ],
       [ "MavCmdResultFailureNoResponseToCommand", "structVehicleTypes.html#a7dbf59c2303d5e793924630345127d5ca924c3d9d6ac8f7d94fb8d1463ebaecd0", null ],
