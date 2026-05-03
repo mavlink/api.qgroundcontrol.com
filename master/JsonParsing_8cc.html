@@ -98,17 +98,21 @@ $(document).ready(function(){initNavTree('JsonParsing_8cc.html',''); initResizab
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="JsonParsing_8h_source.html">JsonParsing.h</a>&quot;</code><br />
 <code>#include &lt;limits&gt;</code><br />
-<code>#include &lt;QtCore/QObject&gt;</code><br />
+<code>#include &lt;QtCore/QApplicationStatic&gt;</code><br />
+<code>#include &lt;QtCore/QFileInfo&gt;</code><br />
+<code>#include &lt;QtCore/QJsonArray&gt;</code><br />
 <code>#include &lt;QtCore/QJsonParseError&gt;</code><br />
-<code>#include &quot;<a class="el" href="QGCFileHelper_8h_source.html">QGCFileHelper.h</a>&quot;</code><br />
+<code>#include &lt;QtCore/QObject&gt;</code><br />
+<code>#include &lt;QtCore/QSet&gt;</code><br />
+<code>#include &lt;QtCore/QTranslator&gt;</code><br />
+<code>#include &quot;<a class="el" href="QGCCompression_8h_source.html">QGCCompression.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="QGCLoggingCategory_8h_source.html">QGCLoggingCategory.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="QGCNetworkHelper_8h_source.html">QGCNetworkHelper.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for JsonParsing.cc:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="JsonParsing_8cc__incl.svg" width="100%" height="459"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="JsonParsing_8cc__incl.svg" width="100%" height="503"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="JsonParsing_8cc_source.html">Go to the source code of this file.</a></p>
@@ -134,6 +138,24 @@ Functions</h2></td></tr>
 <tr class="memitem:ab375d257b250d16931527eab915e7d56" id="r_ab375d257b250d16931527eab915e7d56"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJsonParsing.html#ab375d257b250d16931527eab915e7d56">JsonParsing::possibleNaNJsonValue</a> (const QJsonValue &amp;value)</td></tr>
 <tr class="memdesc:ab375d257b250d16931527eab915e7d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns NaN if the value is null, or the value converted to double otherwise.  <br /></td></tr>
 <tr class="separator:ab375d257b250d16931527eab915e7d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72ea7d3eb5e623ca5955dac31bd5b854" id="r_a72ea7d3eb5e623ca5955dac31bd5b854"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJsonParsing.html#a72ea7d3eb5e623ca5955dac31bd5b854">JsonParsing::validateKeys</a> (const QJsonObject &amp;jsonObject, const QList&lt; <a class="el" href="structJsonParsing_1_1KeyValidateInfo.html">KeyValidateInfo</a> &gt; &amp;keyInfo, QString &amp;<a class="el" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)</td></tr>
+<tr class="memdesc:a72ea7d3eb5e623ca5955dac31bd5b854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that all required keys are present and that listed keys have the expected type.  <br /></td></tr>
+<tr class="separator:a72ea7d3eb5e623ca5955dac31bd5b854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed35cf5c3f61a496cf095206f9eb94ff" id="r_aed35cf5c3f61a496cf095206f9eb94ff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJsonParsing.html#aed35cf5c3f61a496cf095206f9eb94ff">JsonParsing::validateKeysStrict</a> (const QJsonObject &amp;jsonObject, const QList&lt; <a class="el" href="structJsonParsing_1_1KeyValidateInfo.html">KeyValidateInfo</a> &gt; &amp;keyInfo, QString &amp;<a class="el" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)</td></tr>
+<tr class="memdesc:aed35cf5c3f61a496cf095206f9eb94ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates keys like <code>validateKeys</code> but also rejects any keys not listed in <code>keyInfo</code>.  <br /></td></tr>
+<tr class="separator:aed35cf5c3f61a496cf095206f9eb94ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee4a5cd83f1f1dea162224b7a2284304" id="r_aee4a5cd83f1f1dea162224b7a2284304"><td class="memItemLeft" align="right" valign="top">QTranslator *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJsonParsing.html#aee4a5cd83f1f1dea162224b7a2284304">JsonParsing::translator</a> ()</td></tr>
+<tr class="memdesc:aee4a5cd83f1f1dea162224b7a2284304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translator used by <code>openInternalQGCJsonFile</code> for localized strings.  <br /></td></tr>
+<tr class="separator:aee4a5cd83f1f1dea162224b7a2284304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae006a885f4ca066dd05c90b97afff846" id="r_ae006a885f4ca066dd05c90b97afff846"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJsonParsing.html#ae006a885f4ca066dd05c90b97afff846">JsonParsing::saveQGCJsonFileHeader</a> (QJsonObject &amp;jsonObject, const QString &amp;fileType, int version)</td></tr>
+<tr class="memdesc:ae006a885f4ca066dd05c90b97afff846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the standard <a class="el" href="namespaceQGC.html">QGC</a> file header (groundStation, fileType, version) into the json object.  <br /></td></tr>
+<tr class="separator:ae006a885f4ca066dd05c90b97afff846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d0d7d05e0c5f0978d7d582473991e25" id="r_a3d0d7d05e0c5f0978d7d582473991e25"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJsonParsing.html#a3d0d7d05e0c5f0978d7d582473991e25">JsonParsing::validateInternalQGCJsonFile</a> (const QJsonObject &amp;jsonObject, const QString &amp;expectedFileType, int minSupportedVersion, int maxSupportedVersion, int &amp;version, QString &amp;<a class="el" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)</td></tr>
+<tr class="separator:a3d0d7d05e0c5f0978d7d582473991e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0761bbf9f873d05a2a40230a72fe4daf" id="r_a0761bbf9f873d05a2a40230a72fe4daf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJsonParsing.html#a0761bbf9f873d05a2a40230a72fe4daf">JsonParsing::validateExternalQGCJsonFile</a> (const QJsonObject &amp;jsonObject, const QString &amp;expectedFileType, int minSupportedVersion, int maxSupportedVersion, int &amp;version, QString &amp;<a class="el" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)</td></tr>
+<tr class="separator:a0761bbf9f873d05a2a40230a72fe4daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4926e2821e2e072504a56c734beaf9f" id="r_aa4926e2821e2e072504a56c734beaf9f"><td class="memItemLeft" align="right" valign="top">QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceJsonParsing.html#aa4926e2821e2e072504a56c734beaf9f">JsonParsing::openInternalQGCJsonFile</a> (const QString &amp;jsonFilename, const QString &amp;expectedFileType, int minSupportedVersion, int maxSupportedVersion, int &amp;version, QString &amp;<a class="el" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>, const QStringList &amp;defaultTranslateKeys, const QStringList &amp;defaultArrayIDKeys)</td></tr>
+<tr class="separator:aa4926e2821e2e072504a56c734beaf9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

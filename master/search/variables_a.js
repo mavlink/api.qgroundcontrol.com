@@ -12,12 +12,12 @@ var searchData=
   ['jsoncirclekey_9',['jsonCircleKey',['../classQGCMapCircle.html#a5ffbc322cc5f11a251c50f11a561aa7b',1,'QGCMapCircle']]],
   ['jsoncomplexitemtypekey_10',['jsonComplexItemTypeKey',['../classComplexMissionItem.html#a4111791e69fcb570ffe33657be8b75e0',1,'ComplexMissionItem']]],
   ['jsoncomplexitemtypevalue_11',['jsoncomplexitemtypevalue',['../classFixedWingLandingComplexItem.html#a35b2ba21f619ee9d58819998d0902ff1',1,'FixedWingLandingComplexItem::jsonComplexItemTypeValue'],['../classVTOLLandingComplexItem.html#af7ce3792c41f7f765d4f2699dfbcf0d8',1,'VTOLLandingComplexItem::jsonComplexItemTypeValue'],['../classSurveyComplexItem.html#a2acb951261c8ae212a147587178ed9dd',1,'SurveyComplexItem::jsonComplexItemTypeValue'],['../classStructureScanComplexItem.html#a7619796ec3c5b54ab347290aff903590',1,'StructureScanComplexItem::jsonComplexItemTypeValue'],['../classCorridorScanComplexItem.html#ae8435312bfac18506cffa7b87d11c519',1,'CorridorScanComplexItem::jsonComplexItemTypeValue']]],
-  ['jsonfiletypekey_12',['jsonFileTypeKey',['../namespaceJsonHelper.html#abd59b2c1102a4a45a29225fe8fb0f71f',1,'JsonHelper']]],
+  ['jsonfiletypekey_12',['jsonFileTypeKey',['../namespaceJsonParsing.html#aa1c62aa1c3fe9b6d971620e1d9c44592',1,'JsonParsing']]],
   ['jsonpolygonkey_13',['jsonPolygonKey',['../classQGCMapPolygon.html#ab803a6791cc1526ca183b7214dc30f2b',1,'QGCMapPolygon']]],
   ['jsonpolylinekey_14',['jsonPolylineKey',['../classQGCMapPolyline.html#a185f8fb72f0d6f59be4c131ceb1ea153',1,'QGCMapPolyline']]],
   ['jsontypecomplexitemvalue_15',['jsonTypeComplexItemValue',['../classVisualMissionItem.html#a25dcd830286429df929a12b62d4f28c4',1,'VisualMissionItem']]],
   ['jsontypekey_16',['jsonTypeKey',['../classVisualMissionItem.html#a92b4d1322c410b69b42c9703e9dc0544',1,'VisualMissionItem']]],
   ['jsontypesimpleitemvalue_17',['jsonTypeSimpleItemValue',['../classVisualMissionItem.html#abe6ec3c778db624429a484f16e41900d',1,'VisualMissionItem']]],
   ['jsonv3complexitemtypevalue_18',['jsonV3ComplexItemTypeValue',['../classSurveyComplexItem.html#addbe5c384f0b35ca57f68e3a8ccb37a8',1,'SurveyComplexItem']]],
-  ['jsonversionkey_19',['jsonVersionKey',['../namespaceJsonHelper.html#a6e8f432b8d91f38373d7e8ae4a76a3e6',1,'JsonHelper']]]
+  ['jsonversionkey_19',['jsonVersionKey',['../namespaceJsonParsing.html#af984a2314a00790e8d50fd24af083959',1,'JsonParsing']]]
 ];

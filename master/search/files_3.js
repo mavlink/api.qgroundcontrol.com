@@ -10,10 +10,8 @@ var searchData=
   ['definitions_2eh_7',['definitions.h',['../definitions_8h.html',1,'']]],
   ['delaystate_2ecc_8',['DelayState.cc',['../DelayState_8cc.html',1,'']]],
   ['delaystate_2eh_9',['DelayState.h',['../DelayState_8h.html',1,'']]],
-  ['deviceinfo_2ecc_10',['DeviceInfo.cc',['../DeviceInfo_8cc.html',1,'']]],
-  ['deviceinfo_2eh_11',['DeviceInfo.h',['../DeviceInfo_8h.html',1,'']]],
-  ['dronemodeldjif450_2eqml_12',['DroneModelDjiF450.qml',['../DroneModelDjiF450_8qml.html',1,'']]],
-  ['dronepart_2eqml_13',['DronePart.qml',['../DronePart_8qml.html',1,'']]],
-  ['dropbutton_2eqml_14',['DropButton.qml',['../DropButton_8qml.html',1,'']]],
-  ['droppanel_2eqml_15',['DropPanel.qml',['../DropPanel_8qml.html',1,'']]]
+  ['dronemodeldjif450_2eqml_10',['DroneModelDjiF450.qml',['../DroneModelDjiF450_8qml.html',1,'']]],
+  ['dronepart_2eqml_11',['DronePart.qml',['../DronePart_8qml.html',1,'']]],
+  ['dropbutton_2eqml_12',['DropButton.qml',['../DropButton_8qml.html',1,'']]],
+  ['droppanel_2eqml_13',['DropPanel.qml',['../DropPanel_8qml.html',1,'']]]
 ];

@@ -33,8 +33,8 @@ var annotated_dup =
     [ "GeometryImage", "namespaceGeometryImage.html", [
       [ "VehicleGeometryImageProvider", "classGeometryImage_1_1VehicleGeometryImageProvider.html", "classGeometryImage_1_1VehicleGeometryImageProvider" ]
     ] ],
-    [ "JsonHelper", "namespaceJsonHelper.html", [
-      [ "KeyValidateInfo", "structJsonHelper_1_1KeyValidateInfo.html", "structJsonHelper_1_1KeyValidateInfo" ]
+    [ "JsonParsing", "namespaceJsonParsing.html", [
+      [ "KeyValidateInfo", "structJsonParsing_1_1KeyValidateInfo.html", "structJsonParsing_1_1KeyValidateInfo" ]
     ] ],
     [ "Mixer", "namespaceMixer.html", [
       [ "ActuatorType", "structMixer_1_1ActuatorType.html", "structMixer_1_1ActuatorType" ],
@@ -57,22 +57,23 @@ var annotated_dup =
       [ "ArchiveEntry", "structQGCCompression_1_1ArchiveEntry.html", "structQGCCompression_1_1ArchiveEntry" ],
       [ "ArchiveStats", "structQGCCompression_1_1ArchiveStats.html", "structQGCCompression_1_1ArchiveStats" ]
     ] ],
-    [ "QGCDeviceInfo", "namespaceQGCDeviceInfo.html", [
-      [ "QGCAmbientTemperature", "classQGCDeviceInfo_1_1QGCAmbientTemperature.html", "classQGCDeviceInfo_1_1QGCAmbientTemperature" ],
-      [ "QGCAmbientTemperatureFilter", "classQGCDeviceInfo_1_1QGCAmbientTemperatureFilter.html", "classQGCDeviceInfo_1_1QGCAmbientTemperatureFilter" ],
-      [ "QGCCompass", "classQGCDeviceInfo_1_1QGCCompass.html", "classQGCDeviceInfo_1_1QGCCompass" ],
-      [ "QGCCompassFilter", "classQGCDeviceInfo_1_1QGCCompassFilter.html", "classQGCDeviceInfo_1_1QGCCompassFilter" ],
-      [ "QGCPressure", "classQGCDeviceInfo_1_1QGCPressure.html", "classQGCDeviceInfo_1_1QGCPressure" ],
-      [ "QGCPressureFilter", "classQGCDeviceInfo_1_1QGCPressureFilter.html", "classQGCDeviceInfo_1_1QGCPressureFilter" ]
-    ] ],
     [ "QGClibarchive", "namespaceQGClibarchive.html", [
       [ "ArchiveReader", "classQGClibarchive_1_1ArchiveReader.html", "classQGClibarchive_1_1ArchiveReader" ]
     ] ],
     [ "QGCNetworkHelper", "namespaceQGCNetworkHelper.html", [
       [ "RequestConfig", "structQGCNetworkHelper_1_1RequestConfig.html", "structQGCNetworkHelper_1_1RequestConfig" ]
     ] ],
+    [ "QGCSensors", "namespaceQGCSensors.html", [
+      [ "QGCAmbientTemperature", "classQGCSensors_1_1QGCAmbientTemperature.html", "classQGCSensors_1_1QGCAmbientTemperature" ],
+      [ "QGCAmbientTemperatureFilter", "classQGCSensors_1_1QGCAmbientTemperatureFilter.html", "classQGCSensors_1_1QGCAmbientTemperatureFilter" ],
+      [ "QGCCompass", "classQGCSensors_1_1QGCCompass.html", "classQGCSensors_1_1QGCCompass" ],
+      [ "QGCCompassFilter", "classQGCSensors_1_1QGCCompassFilter.html", "classQGCSensors_1_1QGCCompassFilter" ],
+      [ "QGCPressure", "classQGCSensors_1_1QGCPressure.html", "classQGCSensors_1_1QGCPressure" ],
+      [ "QGCPressureFilter", "classQGCSensors_1_1QGCPressureFilter.html", "classQGCSensors_1_1QGCPressureFilter" ]
+    ] ],
     [ "QGCSqlHelper", "namespaceQGCSqlHelper.html", [
-      [ "ScopedConnection", "classQGCSqlHelper_1_1ScopedConnection.html", "classQGCSqlHelper_1_1ScopedConnection" ]
+      [ "ScopedConnection", "classQGCSqlHelper_1_1ScopedConnection.html", "classQGCSqlHelper_1_1ScopedConnection" ],
+      [ "Transaction", "classQGCSqlHelper_1_1Transaction.html", "classQGCSqlHelper_1_1Transaction" ]
     ] ],
     [ "SDLJoystick", "namespaceSDLJoystick.html", [
       [ "JoystickLock", "classSDLJoystick_1_1JoystickLock.html", "classSDLJoystick_1_1JoystickLock" ]
@@ -168,6 +169,7 @@ var annotated_dup =
     [ "CameraSpec", "classCameraSpec.html", "classCameraSpec" ],
     [ "CircuitBreakerState", "classCircuitBreakerState.html", "classCircuitBreakerState" ],
     [ "CityMapGeometry", "classCityMapGeometry.html", "classCityMapGeometry" ],
+    [ "ColoredSvgImageProvider", "classColoredSvgImageProvider.html", "classColoredSvgImageProvider" ],
     [ "CompInfo", "classCompInfo.html", "classCompInfo" ],
     [ "CompInfoActuators", "classCompInfoActuators.html", "classCompInfoActuators" ],
     [ "CompInfoEvents", "classCompInfoEvents.html", "classCompInfoEvents" ],
@@ -366,6 +368,7 @@ var annotated_dup =
     [ "OfflineMapsSettings", "classOfflineMapsSettings.html", "classOfflineMapsSettings" ],
     [ "OnboardLogController", "classOnboardLogController.html", "classOnboardLogController" ],
     [ "OnboardLogDownloadData", "structOnboardLogDownloadData.html", "structOnboardLogDownloadData" ],
+    [ "OnboardLogFtpController", "classOnboardLogFtpController.html", "classOnboardLogFtpController" ],
     [ "OpenAIPMapProvider", "classOpenAIPMapProvider.html", "classOpenAIPMapProvider" ],
     [ "OpenStreetMapProvider", "classOpenStreetMapProvider.html", "classOpenStreetMapProvider" ],
     [ "OsmBuildingHandler", "classOsmBuildingHandler.html", "classOsmBuildingHandler" ],
@@ -457,6 +460,7 @@ var annotated_dup =
     [ "QGCMAVLinkSystem", "classQGCMAVLinkSystem.html", "classQGCMAVLinkSystem" ],
     [ "QGCMAVLinkTypes", "structQGCMAVLinkTypes.html", "structQGCMAVLinkTypes" ],
     [ "QGCOnboardLogEntry", "classQGCOnboardLogEntry.html", "classQGCOnboardLogEntry" ],
+    [ "QGCOnboardLogFtpEntry", "classQGCOnboardLogFtpEntry.html", "classQGCOnboardLogFtpEntry" ],
     [ "QGCOptions", "classQGCOptions.html", "classQGCOptions" ],
     [ "QGCPalette", "classQGCPalette.html", "classQGCPalette" ],
     [ "QGCPositionManager", "classQGCPositionManager.html", "classQGCPositionManager" ],
@@ -519,7 +523,6 @@ var annotated_dup =
     [ "RunGuard", "classRunGuard.html", "classRunGuard" ],
     [ "SafetyComponent", "classSafetyComponent.html", "classSafetyComponent" ],
     [ "satellite_info_s", "structsatellite__info__s.html", "structsatellite__info__s" ],
-    [ "ScopedExportDB", "structScopedExportDB.html", "structScopedExportDB" ],
     [ "ScreenToolsController", "classScreenToolsController.html", null ],
     [ "ScriptingComponent", "classScriptingComponent.html", "classScriptingComponent" ],
     [ "Section", "classSection.html", "classSection" ],
@@ -599,7 +602,6 @@ var annotated_dup =
     [ "ToolStripActionList", "classToolStripActionList.html", "classToolStripActionList" ],
     [ "TotalsResult", "structTotalsResult.html", "structTotalsResult" ],
     [ "TrajectoryPoints", "classTrajectoryPoints.html", "classTrajectoryPoints" ],
-    [ "TransactionGuard", "classTransactionGuard.html", "classTransactionGuard" ],
     [ "TransectStyleComplexItem", "classTransectStyleComplexItem.html", "classTransectStyleComplexItem" ],
     [ "TransformPositionController", "classTransformPositionController.html", "classTransformPositionController" ],
     [ "TransportStrategy", "classTransportStrategy.html", "classTransportStrategy" ],
@@ -647,8 +649,10 @@ var annotated_dup =
     [ "Viewer3DSettings", "classViewer3DSettings.html", "classViewer3DSettings" ],
     [ "Viewer3DTerrainGeometry", "classViewer3DTerrainGeometry.html", "classViewer3DTerrainGeometry" ],
     [ "Viewer3DTerrainTexture", "classViewer3DTerrainTexture.html", "classViewer3DTerrainTexture" ],
+    [ "Viewer3DTileInfo", "structViewer3DTileInfo.html", "structViewer3DTileInfo" ],
     [ "Viewer3DTileQuery", "classViewer3DTileQuery.html", "classViewer3DTileQuery" ],
     [ "Viewer3DTileReply", "classViewer3DTileReply.html", "classViewer3DTileReply" ],
+    [ "Viewer3DTileStatistics", "structViewer3DTileStatistics.html", "structViewer3DTileStatistics" ],
     [ "VisualMissionItem", "classVisualMissionItem.html", "classVisualMissionItem" ],
     [ "VTOLLandingComplexItem", "classVTOLLandingComplexItem.html", "classVTOLLandingComplexItem" ],
     [ "VWorldMapProvider", "classVWorldMapProvider.html", "classVWorldMapProvider" ],

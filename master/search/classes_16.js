@@ -40,11 +40,13 @@ var searchData=
   ['viewer3dsettings_37',['Viewer3DSettings',['../classViewer3DSettings.html',1,'']]],
   ['viewer3dterraingeometry_38',['Viewer3DTerrainGeometry',['../classViewer3DTerrainGeometry.html',1,'']]],
   ['viewer3dterraintexture_39',['Viewer3DTerrainTexture',['../classViewer3DTerrainTexture.html',1,'']]],
-  ['viewer3dtilequery_40',['Viewer3DTileQuery',['../classViewer3DTileQuery.html',1,'']]],
-  ['viewer3dtilereply_41',['Viewer3DTileReply',['../classViewer3DTileReply.html',1,'']]],
-  ['visualmissionitem_42',['VisualMissionItem',['../classVisualMissionItem.html',1,'']]],
-  ['vtollandingcomplexitem_43',['VTOLLandingComplexItem',['../classVTOLLandingComplexItem.html',1,'']]],
-  ['vworldmapprovider_44',['VWorldMapProvider',['../classVWorldMapProvider.html',1,'']]],
-  ['vworldsatmapprovider_45',['VWorldSatMapProvider',['../classVWorldSatMapProvider.html',1,'']]],
-  ['vworldstreetmapprovider_46',['VWorldStreetMapProvider',['../classVWorldStreetMapProvider.html',1,'']]]
+  ['viewer3dtileinfo_40',['Viewer3DTileInfo',['../structViewer3DTileInfo.html',1,'']]],
+  ['viewer3dtilequery_41',['Viewer3DTileQuery',['../classViewer3DTileQuery.html',1,'']]],
+  ['viewer3dtilereply_42',['Viewer3DTileReply',['../classViewer3DTileReply.html',1,'']]],
+  ['viewer3dtilestatistics_43',['Viewer3DTileStatistics',['../structViewer3DTileStatistics.html',1,'']]],
+  ['visualmissionitem_44',['VisualMissionItem',['../classVisualMissionItem.html',1,'']]],
+  ['vtollandingcomplexitem_45',['VTOLLandingComplexItem',['../classVTOLLandingComplexItem.html',1,'']]],
+  ['vworldmapprovider_46',['VWorldMapProvider',['../classVWorldMapProvider.html',1,'']]],
+  ['vworldsatmapprovider_47',['VWorldSatMapProvider',['../classVWorldSatMapProvider.html',1,'']]],
+  ['vworldstreetmapprovider_48',['VWorldStreetMapProvider',['../classVWorldStreetMapProvider.html',1,'']]]
 ];

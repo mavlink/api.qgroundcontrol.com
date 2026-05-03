@@ -285,10 +285,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a1fd4672d05e7364c84d24d090472882b" id="r_a1fd4672d05e7364c84d24d090472882b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#a1fd4672d05e7364c84d24d090472882b">configureProxy</a> (QNetworkAccessManager *manager)</td></tr>
 <tr class="memdesc:a1fd4672d05e7364c84d24d090472882b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up default proxy configuration on a network manager.  <br /></td></tr>
 <tr class="separator:a1fd4672d05e7364c84d24d090472882b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fac796134e228f1f97a04c2825ff26c" id="r_a8fac796134e228f1f97a04c2825ff26c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#a8fac796134e228f1f97a04c2825ff26c">looksLikeCompressedData</a> (const QByteArray &amp;data)</td></tr>
-<tr class="separator:a8fac796134e228f1f97a04c2825ff26c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a197bb04cf528d3f042dd55748bcfd087" id="r_a197bb04cf528d3f042dd55748bcfd087"><td class="memItemLeft" align="right" valign="top">QJsonDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#a197bb04cf528d3f042dd55748bcfd087">parseCompressedJson</a> (const QByteArray &amp;data, QJsonParseError *<a class="el" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>)</td></tr>
-<tr class="separator:a197bb04cf528d3f042dd55748bcfd087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ff96970adc9fc155416f936a9d4e7e6" id="r_a9ff96970adc9fc155416f936a9d4e7e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#a9ff96970adc9fc155416f936a9d4e7e6">isHttpSuccess</a> (int statusCode)</td></tr>
 <tr class="memdesc:a9ff96970adc9fc155416f936a9d4e7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if HTTP status indicates success (2xx)  <br /></td></tr>
 <tr class="separator:a9ff96970adc9fc155416f936a9d4e7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1261,7 +1257,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="QGCNetworkHelper_8cc_source.html#l00851">851</a> of file <a class="el" href="QGCNetworkHelper_8cc_source.html">QGCNetworkHelper.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00112">error</a>, and <a class="el" href="QGCNetworkHelper_8cc_source.html#l00851">ignoreSslErrors()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00114">error</a>, and <a class="el" href="QGCNetworkHelper_8cc_source.html#l00851">ignoreSslErrors()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QGCNetworkHelper_8cc_source.html#l00851">ignoreSslErrors()</a>.</p>
 
@@ -1312,7 +1308,7 @@ Variables</h2></td></tr>
 
 <p class="reference">References <a class="el" href="QGCNetworkHelper_8cc_source.html#l00897">initializeProxySupport()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCNetworkHelper_8cc_source.html#l00897">initializeProxySupport()</a>, and <a class="el" href="QGCApplication_8cc_source.html#l00053">QGCApplication::QGCApplication()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCNetworkHelper_8cc_source.html#l00897">initializeProxySupport()</a>, and <a class="el" href="QGCApplication_8cc_source.html#l00054">QGCApplication::QGCApplication()</a>.</p>
 
 </div>
 </div>
@@ -1825,37 +1821,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a8fac796134e228f1f97a04c2825ff26c" name="a8fac796134e228f1f97a04c2825ff26c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fac796134e228f1f97a04c2825ff26c">&#9670;&#160;</a></span>looksLikeCompressedData()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool QGCNetworkHelper::looksLikeCompressedData </td>
-          <td>(</td>
-          <td class="paramtype">const QByteArray &amp;&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Check if data appears to be compressed based on magic bytes Detects: gzip, xz, zstd, bzip2, lz4 </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>Data to check (needs at least 4 bytes) </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if data has a recognized compression magic signature </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="QGCNetworkHelper_8cc_source.html#l00926">926</a> of file <a class="el" href="QGCNetworkHelper_8cc_source.html">QGCNetworkHelper.cc</a>.</p>
-
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00368">QGCCompression::detectFormatFromData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00520">QGCCompression::isCompressionFormat()</a>, and <a class="el" href="QGCNetworkHelper_8cc_source.html#l00926">looksLikeCompressedData()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="QGCNetworkHelper_8cc_source.html#l00926">looksLikeCompressedData()</a>, and <a class="el" href="QGCNetworkHelper_8cc_source.html#l00931">parseCompressedJson()</a>.</p>
-
-</div>
-</div>
 <a id="a179a9432bf8e698e24c2400017363886" name="a179a9432bf8e698e24c2400017363886"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a179a9432bf8e698e24c2400017363886">&#9670;&#160;</a></span>looksLikeJson()</h2>
 
@@ -1910,48 +1875,6 @@ Variables</h2></td></tr>
 <p class="reference">References <a class="el" href="QGCNetworkHelper_8cc_source.html#l00275">normalizeUrl()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QGCNetworkHelper_8cc_source.html#l00275">normalizeUrl()</a>.</p>
-
-</div>
-</div>
-<a id="a197bb04cf528d3f042dd55748bcfd087" name="a197bb04cf528d3f042dd55748bcfd087"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a197bb04cf528d3f042dd55748bcfd087">&#9670;&#160;</a></span>parseCompressedJson()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QJsonDocument QGCNetworkHelper::parseCompressedJson </td>
-          <td>(</td>
-          <td class="paramtype">const QByteArray &amp;&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QJsonParseError *&#160;</td>
-          <td class="paramname"><em>error</em> = <code>nullptr</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Parse JSON that may be compressed Automatically detects and decompresses gzip, xz, zstd, bzip2, lz4 data </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>Raw data (compressed or uncompressed JSON) </td></tr>
-    <tr><td class="paramname">error</td><td>Optional pointer to receive parse error details </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Parsed JSON document (null if parsing failed) </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="QGCNetworkHelper_8cc_source.html#l00931">931</a> of file <a class="el" href="QGCNetworkHelper_8cc_source.html">QGCNetworkHelper.cc</a>.</p>
-
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00618">QGCCompression::decompressData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00112">error</a>, <a class="el" href="QGCNetworkHelper_8cc_source.html#l00926">looksLikeCompressedData()</a>, and <a class="el" href="QGCNetworkHelper_8cc_source.html#l00931">parseCompressedJson()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="TerrainTileCopernicus_8cc_source.html#l00023">TerrainTileCopernicus::getJsonFromData()</a>, <a class="el" href="JsonParsing_8cc_source.html#l00093">JsonParsing::isJsonFile()</a>, <a class="el" href="JsonHelper_8cc_source.html#l00240">JsonHelper::openInternalQGCJsonFile()</a>, and <a class="el" href="QGCNetworkHelper_8cc_source.html#l00931">parseCompressedJson()</a>.</p>
 
 </div>
 </div>
@@ -2016,7 +1939,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="QGCNetworkHelper_8cc_source.html#l00582">582</a> of file <a class="el" href="QGCNetworkHelper_8cc_source.html">QGCNetworkHelper.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00112">error</a>, and <a class="el" href="QGCNetworkHelper_8cc_source.html#l00582">parseJson()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00114">error</a>, and <a class="el" href="QGCNetworkHelper_8cc_source.html#l00582">parseJson()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QGCNetworkHelper_8cc_source.html#l00582">parseJson()</a>, and <a class="el" href="QGCNetworkHelper_8cc_source.html#l00598">parseJsonReply()</a>.</p>
 
@@ -2058,7 +1981,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="QGCNetworkHelper_8cc_source.html#l00598">598</a> of file <a class="el" href="QGCNetworkHelper_8cc_source.html">QGCNetworkHelper.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00112">error</a>, <a class="el" href="QGCNetworkHelper_8cc_source.html#l00582">parseJson()</a>, and <a class="el" href="QGCNetworkHelper_8cc_source.html#l00598">parseJsonReply()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00114">error</a>, <a class="el" href="QGCNetworkHelper_8cc_source.html#l00582">parseJson()</a>, and <a class="el" href="QGCNetworkHelper_8cc_source.html#l00598">parseJsonReply()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QGCNetworkHelper_8cc_source.html#l00598">parseJsonReply()</a>.</p>
 

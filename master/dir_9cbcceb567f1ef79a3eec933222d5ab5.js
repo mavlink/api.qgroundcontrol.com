@@ -14,8 +14,10 @@ var dir_9cbcceb567f1ef79a3eec933222d5ab5 =
     [ "Viewer3DTerrainGeometry.h", "Viewer3DTerrainGeometry_8h.html", "Viewer3DTerrainGeometry_8h" ],
     [ "Viewer3DTerrainTexture.cc", "Viewer3DTerrainTexture_8cc.html", null ],
     [ "Viewer3DTerrainTexture.h", "Viewer3DTerrainTexture_8h.html", "Viewer3DTerrainTexture_8h" ],
+    [ "Viewer3DTileInfo.h", "Viewer3DTileInfo_8h.html", "Viewer3DTileInfo_8h" ],
     [ "Viewer3DTileQuery.cc", "Viewer3DTileQuery_8cc.html", "Viewer3DTileQuery_8cc" ],
     [ "Viewer3DTileQuery.h", "Viewer3DTileQuery_8h.html", "Viewer3DTileQuery_8h" ],
     [ "Viewer3DTileReply.cc", "Viewer3DTileReply_8cc.html", "Viewer3DTileReply_8cc" ],
-    [ "Viewer3DTileReply.h", "Viewer3DTileReply_8h.html", "Viewer3DTileReply_8h" ]
+    [ "Viewer3DTileReply.h", "Viewer3DTileReply_8h.html", "Viewer3DTileReply_8h" ],
+    [ "Viewer3DTileStatistics.h", "Viewer3DTileStatistics_8h.html", "Viewer3DTileStatistics_8h" ]
 ];

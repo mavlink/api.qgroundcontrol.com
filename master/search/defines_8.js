@@ -1,16 +1,12 @@
 var searchData=
 [
-  ['q_5fserialport_5fexport_0',['Q_SERIALPORT_EXPORT',['../qtserialportexports_8h.html#a0feaae2fb6a3f843f6dd33dafd25ebdf',1,'qtserialportexports.h']]],
-  ['qapp_1',['qApp',['../QGCApplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07',1,'QGCApplication.h']]],
-  ['qgc_5flogging_5fcategory_2',['QGC_LOGGING_CATEGORY',['../QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81',1,'QGCLoggingCategory.h']]],
-  ['qgc_5flogging_5fcategory_5fon_3',['QGC_LOGGING_CATEGORY_ON',['../QGCLoggingCategory_8h.html#a01a7fb7c561ce009f6f241aba4cd91d3',1,'QGCLoggingCategory.h']]],
-  ['qgc_5fmax_5fmap_5fzoom_4',['QGC_MAX_MAP_ZOOM',['../MapProvider_8h.html#ade9844ef92826d89067f4a04dbe05138',1,'MapProvider.h']]],
-  ['qgcapp_5',['qgcApp',['../QGCApplication_8h.html#abe2a07273da27b516191243d9e5afe46',1,'QGCApplication.h']]],
-  ['qguiapp_6',['qGuiApp',['../QGCApplication_8h.html#a0d0d563b43b2e9dfa95e4d6e08a941ef',1,'QGCApplication.h']]],
-  ['qserialport_5fbuffersize_7',['QSERIALPORT_BUFFERSIZE',['../qserialport__p_8h.html#ae1b4751289288690313ace58fee5f9c8',1,'qserialport_p.h']]],
-  ['qt_5fserialport_5finline_5fimpl_5fsince_8',['QT_SERIALPORT_INLINE_IMPL_SINCE',['../qtserialportexports_8h.html#a50ed425b24ec0c89b2f50c6a2f8c56eb',1,'qtserialportexports.h']]],
-  ['qt_5fserialport_5finline_5fsince_9',['QT_SERIALPORT_INLINE_SINCE',['../qtserialportexports_8h.html#a5a03ed915d5ec0c537c8cd0000019b91',1,'qtserialportexports.h']]],
-  ['qt_5fserialport_5fremoved_5fsince_10',['QT_SERIALPORT_REMOVED_SINCE',['../qtserialportexports_8h.html#a96359e71d998c305919b5d98517c4055',1,'qtserialportexports.h']]],
-  ['qtserialport_5fversion_11',['QTSERIALPORT_VERSION',['../qtserialportversion_8h.html#a875ad9e704de4e58cf2c75ab21b9efea',1,'qtserialportversion.h']]],
-  ['qtserialport_5fversion_5fstr_12',['QTSERIALPORT_VERSION_STR',['../qtserialportversion_8h.html#a982fb75ad52f3e4914c0e0a4579951c5',1,'qtserialportversion.h']]]
+  ['package_0',['package',['../gstqgc_8cc.html#aca8570fb706c81df371b7f9bc454ae03',1,'PACKAGE:&#160;gstqgc.cc'],['../gstplugin_8cc.html#aca8570fb706c81df371b7f9bc454ae03',1,'PACKAGE:&#160;gstplugin.cc']]],
+  ['package_5fversion_1',['package_version',['../gstqgc_8cc.html#aa326a05d5e30f9e9a4bb0b4469d5d0c0',1,'PACKAGE_VERSION:&#160;gstqgc.cc'],['../gstplugin_8cc.html#aa326a05d5e30f9e9a4bb0b4469d5d0c0',1,'PACKAGE_VERSION:&#160;gstplugin.cc']]],
+  ['prop_5fenable_5flast_5fsample_5fname_2',['PROP_ENABLE_LAST_SAMPLE_NAME',['../gstqgcvideosinkbin_8cc.html#a8c3b6255f04393046c5ed1d443ca4d54',1,'gstqgcvideosinkbin.cc']]],
+  ['prop_5fforce_5faspect_5fratio_5fname_3',['PROP_FORCE_ASPECT_RATIO_NAME',['../gstqgcvideosinkbin_8cc.html#a7549fcc7ed7279a8e29c4af894dbdecb',1,'gstqgcvideosinkbin.cc']]],
+  ['prop_5flast_5fsample_5fname_4',['PROP_LAST_SAMPLE_NAME',['../gstqgcvideosinkbin_8cc.html#ae751469b16cbd83cb13b1f6b45e860dd',1,'gstqgcvideosinkbin.cc']]],
+  ['prop_5fmax_5flateness_5fname_5',['PROP_MAX_LATENESS_NAME',['../gstqgcvideosinkbin_8cc.html#a9ca7c98ff9a3082a885d0e54f0e2bf4a',1,'gstqgcvideosinkbin.cc']]],
+  ['prop_5fpixel_5faspect_5fratio_5fname_6',['PROP_PIXEL_ASPECT_RATIO_NAME',['../gstqgcvideosinkbin_8cc.html#ab08d225ad848e24361997b3427d778fe',1,'gstqgcvideosinkbin.cc']]],
+  ['prop_5fsync_5fname_7',['PROP_SYNC_NAME',['../gstqgcvideosinkbin_8cc.html#abb6989000af027bcfaee4814eee50d48',1,'gstqgcvideosinkbin.cc']]],
+  ['prop_5fwidget_5fname_8',['PROP_WIDGET_NAME',['../gstqgcvideosinkbin_8cc.html#a87a76916cfc415d3dae2dbc20a9207eb',1,'gstqgcvideosinkbin.cc']]]
 ];

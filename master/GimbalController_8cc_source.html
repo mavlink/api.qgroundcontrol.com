@@ -673,167 +673,152 @@ $(document).ready(function(){initNavTree('GimbalController_8cc_source.html','');
 <div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>    }</div>
 <div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span> </div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>    <span class="keywordtype">unsigned</span> flags = GIMBAL_MANAGER_FLAGS_ROLL_LOCK | GIMBAL_MANAGER_FLAGS_PITCH_LOCK;</div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span> </div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    <span class="keywordflow">if</span> (_activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a265862602acc6ccb5db97a8a7e2969a6">yawLock</a>()) {</div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>        flags |= GIMBAL_MANAGER_FLAGS_YAW_LOCK;</div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>    }</div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span> </div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>    _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a12ce7dfd32ee05e157a799b3b49c5bf4">sendMavCommand</a>(</div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a400d9bac63a62957a6c5e495b0f402f2">managerCompid</a>()-&gt;rawValue().toUInt(),</div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>        MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW,</div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>        <span class="keyword">false</span>,</div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>        NAN,</div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>        NAN,</div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a075db8ab4b966e246160a43ecd4e869e">pitchRate</a>(),</div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#adceb3e38048db6841fcce7e01a6080a7">yawRate</a>(),</div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>        flags,</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>        0,</div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a477212d3ef1160c37ee656a2bfcce941">deviceId</a>()-&gt;rawValue().toUInt());</div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span> </div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>    qCDebug(GimbalControllerLog) &lt;&lt; <span class="stringliteral">&quot;Gimbal rate sent!&quot;</span>;</div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span> </div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    <span class="comment">// Stop timeout if both unset.</span></div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>    <span class="keywordflow">if</span> ((_activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a075db8ab4b966e246160a43ecd4e869e">pitchRate</a>() == 0.f) &amp;&amp; (_activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#adceb3e38048db6841fcce7e01a6080a7">yawRate</a>() == 0.f)) {</div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>    <span class="comment">// We send raw mavlink instead of using MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW because</span></div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>    <span class="comment">// when both pitch and yaw stop simultaneously, Vehicle&#39;s duplicate command detection</span></div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    <span class="comment">// drops the second sendMavCommand call, leaving one axis spinning indefinitely.</span></div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>    _sendGimbalAttitudeRates(_activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a075db8ab4b966e246160a43ecd4e869e">pitchRate</a>(), _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#adceb3e38048db6841fcce7e01a6080a7">yawRate</a>());</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span> </div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    <span class="comment">// Stop timeout if both unset.</span></div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>    <span class="keywordflow">if</span> ((_activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a075db8ab4b966e246160a43ecd4e869e">pitchRate</a>() == 0.f) &amp;&amp; (_activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#adceb3e38048db6841fcce7e01a6080a7">yawRate</a>() == 0.f)) {</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>        _rateSenderTimer.stop();</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>        _rateSenderTimer.start();</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>    }</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>}</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span> </div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span><span class="keywordtype">void</span> GimbalController::sendGimbalRate(<span class="keywordtype">float</span> pitch_rate_deg_s, <span class="keywordtype">float</span> yaw_rate_deg_s)</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>{</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>    <span class="keywordflow">if</span> (!_tryGetGimbalControl()) {</div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>    }</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span> </div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>    _sendGimbalAttitudeRates(pitch_rate_deg_s, yaw_rate_deg_s);</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span> </div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>    <span class="keywordflow">if</span> (pitch_rate_deg_s == 0.f &amp;&amp; yaw_rate_deg_s == 0.f) {</div>
 <div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>        _rateSenderTimer.stop();</div>
 <div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>        _rateSenderTimer.start();</div>
 <div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>    }</div>
 <div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>}</div>
 <div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span><span class="keywordtype">void</span> GimbalController::sendGimbalRate(<span class="keywordtype">float</span> pitch_rate_deg_s, <span class="keywordtype">float</span> yaw_rate_deg_s)</div>
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>{</div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>    <span class="keywordflow">if</span> (!_tryGetGimbalControl()) {</div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>    }</div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span> </div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>    _sendGimbalAttitudeRates(pitch_rate_deg_s, yaw_rate_deg_s);</div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span> </div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>    <span class="keywordflow">if</span> (pitch_rate_deg_s == 0.f &amp;&amp; yaw_rate_deg_s == 0.f) {</div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>        _rateSenderTimer.stop();</div>
-<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>        _rateSenderTimer.start();</div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>    }</div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>}</div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span><span class="keywordtype">void</span> GimbalController::_sendGimbalAttitudeRates(<span class="keywordtype">float</span> pitch_rate_deg_s,</div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>                                                <span class="keywordtype">float</span> yaw_rate_deg_s)</div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>{</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span> </div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>    <span class="keyword">auto</span> sharedLink = _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a49c0f82c46858483d699df6b615b3f02">vehicleLinkManager</a>()-&gt;<a class="code hl_function" href="classVehicleLinkManager.html#a46e03af5d8cf9aa9620b080468bbe7b6">primaryLink</a>().lock();</div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>    <span class="keywordflow">if</span> (!sharedLink) {</div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>        qCDebug(GimbalControllerLog) &lt;&lt; <span class="stringliteral">&quot;_sendGimbalAttitudeRates: primary link gone!&quot;</span>;</div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>    }</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span> </div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>    uint32_t flags =</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>        GIMBAL_MANAGER_FLAGS_ROLL_LOCK |</div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>        GIMBAL_MANAGER_FLAGS_PITCH_LOCK |</div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>        GIMBAL_MANAGER_FLAGS_YAW_IN_VEHICLE_FRAME;   <span class="comment">// use vehicle/body frame</span></div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span> </div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span><span class="keywordtype">void</span> GimbalController::_sendGimbalAttitudeRates(<span class="keywordtype">float</span> pitch_rate_deg_s,</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>                                                <span class="keywordtype">float</span> yaw_rate_deg_s)</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>{</div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span> </div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>    <span class="keyword">auto</span> sharedLink = _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a49c0f82c46858483d699df6b615b3f02">vehicleLinkManager</a>()-&gt;<a class="code hl_function" href="classVehicleLinkManager.html#a46e03af5d8cf9aa9620b080468bbe7b6">primaryLink</a>().lock();</div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>    <span class="keywordflow">if</span> (!sharedLink) {</div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>        qCDebug(GimbalControllerLog) &lt;&lt; <span class="stringliteral">&quot;_sendGimbalAttitudeRates: primary link gone!&quot;</span>;</div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    }</div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span> </div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>    uint32_t flags =</div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>        GIMBAL_MANAGER_FLAGS_ROLL_LOCK |</div>
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>        GIMBAL_MANAGER_FLAGS_PITCH_LOCK |</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>        GIMBAL_MANAGER_FLAGS_YAW_IN_VEHICLE_FRAME;   <span class="comment">// use vehicle/body frame</span></div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span> </div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>    <span class="comment">// Preserve current yaw-lock state instead of changing it:</span></div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>    <span class="keywordflow">if</span> (_activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a265862602acc6ccb5db97a8a7e2969a6">yawLock</a>()) {</div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>        flags |= GIMBAL_MANAGER_FLAGS_YAW_LOCK;</div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>    }</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span> </div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> qnan[4] = {NAN, NAN, NAN, NAN};</div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg;</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    <span class="comment">// Preserve current yaw-lock state instead of changing it:</span></div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    <span class="keywordflow">if</span> (_activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a265862602acc6ccb5db97a8a7e2969a6">yawLock</a>()) {</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>        flags |= GIMBAL_MANAGER_FLAGS_YAW_LOCK;</div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>    }</div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span> </div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> qnan[4] = {NAN, NAN, NAN, NAN};</div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg;</div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span> </div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    mavlink_msg_gimbal_manager_set_attitude_pack_chan(</div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>        <a class="code hl_function" href="classMAVLinkProtocol.html#aa7efddf9f80781eb204442eb265b3fa5">MAVLinkProtocol::instance</a>()-&gt;getSystemId(),</div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>        <a class="code hl_function" href="classMAVLinkProtocol.html#a2999b6e6d6ac482d0b7c1aaf91c015e7">MAVLinkProtocol::getComponentId</a>(),</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>        sharedLink-&gt;mavlinkChannel(),</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>        &amp;msg,</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>        _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a74829d3d2c320cad6530de1bb8bee8bf">id</a>(),</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>        <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(_activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a400d9bac63a62957a6c5e495b0f402f2">managerCompid</a>()-&gt;rawValue().toUInt()),</div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>        flags,</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>        <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(_activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a477212d3ef1160c37ee656a2bfcce941">deviceId</a>()-&gt;rawValue().toUInt()),</div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>        qnan,</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>        NAN,</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>        qDegreesToRadians(pitch_rate_deg_s),</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>        qDegreesToRadians(yaw_rate_deg_s)</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>    );</div>
 <div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span> </div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>    mavlink_msg_gimbal_manager_set_attitude_pack_chan(</div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>        <a class="code hl_function" href="classMAVLinkProtocol.html#aa7efddf9f80781eb204442eb265b3fa5">MAVLinkProtocol::instance</a>()-&gt;getSystemId(),</div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>        <a class="code hl_function" href="classMAVLinkProtocol.html#a2999b6e6d6ac482d0b7c1aaf91c015e7">MAVLinkProtocol::getComponentId</a>(),</div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>        sharedLink-&gt;mavlinkChannel(),</div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>        &amp;msg,</div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>        _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a74829d3d2c320cad6530de1bb8bee8bf">id</a>(),</div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>        <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(_activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a400d9bac63a62957a6c5e495b0f402f2">managerCompid</a>()-&gt;rawValue().toUInt()),</div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>        flags,</div>
-<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>        <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(_activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a477212d3ef1160c37ee656a2bfcce941">deviceId</a>()-&gt;rawValue().toUInt()),</div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>        qnan,</div>
-<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>        NAN,</div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>        qDegreesToRadians(pitch_rate_deg_s),</div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>        qDegreesToRadians(yaw_rate_deg_s)</div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>    );</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>    _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a7b661e2cf877e915aebabc8c8ac2f57b">sendMessageOnLinkThreadSafe</a>(sharedLink.get(), msg);</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>}</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span> </div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span><span class="keywordtype">void</span> GimbalController::_rateSenderTimeout()</div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>{</div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>    <span class="comment">// Send rate again to avoid timeout on autopilot side.</span></div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>    sendRate();</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>}</div>
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span> </div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span><span class="keywordtype">void</span> GimbalController::setGimbalYawLock(<span class="keywordtype">bool</span> set)</div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>{</div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>    <span class="keywordflow">if</span> (!_tryGetGimbalControl()) {</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>    }</div>
 <div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span> </div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>    _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a7b661e2cf877e915aebabc8c8ac2f57b">sendMessageOnLinkThreadSafe</a>(sharedLink.get(), msg);</div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>}</div>
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span> </div>
-<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span><span class="keywordtype">void</span> GimbalController::_rateSenderTimeout()</div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>{</div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>    <span class="comment">// Send rate again to avoid timeout on autopilot side.</span></div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>    sendRate();</div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>    <span class="comment">// Roll and pitch are usually &quot;locked&quot;, so with horizon and not with aircraft.</span></div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>    uint32_t flags = GIMBAL_DEVICE_FLAGS_ROLL_LOCK | GIMBAL_DEVICE_FLAGS_PITCH_LOCK;</div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>    <span class="keywordflow">if</span> (set) {</div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>        flags |= GIMBAL_DEVICE_FLAGS_YAW_LOCK;</div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>    }</div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span> </div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>    sendPitchYawFlags(flags);</div>
 <div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>}</div>
 <div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span> </div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span><span class="keywordtype">void</span> GimbalController::setGimbalYawLock(<span class="keywordtype">bool</span> set)</div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span><span class="keywordtype">void</span> GimbalController::sendPitchYawFlags(uint32_t flags)</div>
 <div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>{</div>
-<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>    <span class="keywordflow">if</span> (!_tryGetGimbalControl()) {</div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>    }</div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span> </div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>    <span class="comment">// Roll and pitch are usually &quot;locked&quot;, so with horizon and not with aircraft.</span></div>
-<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>    uint32_t flags = GIMBAL_DEVICE_FLAGS_ROLL_LOCK | GIMBAL_DEVICE_FLAGS_PITCH_LOCK;</div>
-<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>    <span class="keywordflow">if</span> (set) {</div>
-<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>        flags |= GIMBAL_DEVICE_FLAGS_YAW_LOCK;</div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>    }</div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span> </div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>    sendPitchYawFlags(flags);</div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>}</div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span> </div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span><span class="keywordtype">void</span> GimbalController::sendPitchYawFlags(uint32_t flags)</div>
-<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>{</div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> yaw_in_vehicle_frame = _yawInVehicleFrame(flags);</div>
-<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span> </div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>    _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a12ce7dfd32ee05e157a799b3b49c5bf4">sendMavCommand</a>(</div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a400d9bac63a62957a6c5e495b0f402f2">managerCompid</a>()-&gt;rawValue().toUInt(),</div>
-<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>        MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW,</div>
-<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>        <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a25b6bd80253d2ec2072ef6021b6eaf1f">absolutePitch</a>()-&gt;rawValue().toFloat(),</div>
-<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>        yaw_in_vehicle_frame ? _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#ae53db2a3ae7cc18f05e5d2ccf4f9bcb4">bodyYaw</a>()-&gt;rawValue().toFloat() : _activeGimbal-&gt;absoluteYaw()-&gt;rawValue().toFloat(),</div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>        NAN,</div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>        NAN,</div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>        flags,</div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>        0,</div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>        _activeGimbal-&gt;deviceId()-&gt;rawValue().toUInt());</div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>}</div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span> </div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span><span class="keywordtype">void</span> GimbalController::acquireGimbalControl()</div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>{</div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>    <span class="keywordflow">if</span> (!_activeGimbal) {</div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>        qCCritical(GimbalControllerLog) &lt;&lt; <span class="stringliteral">&quot;acquireGimbalControl: active gimbal is nullptr, returning&quot;</span>;</div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>    }</div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span> </div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>    _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a12ce7dfd32ee05e157a799b3b49c5bf4">sendMavCommand</a>(</div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a400d9bac63a62957a6c5e495b0f402f2">managerCompid</a>()-&gt;rawValue().toUInt(),</div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>        MAV_CMD_DO_GIMBAL_MANAGER_CONFIGURE,</div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>        <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>        <a class="code hl_function" href="classMAVLinkProtocol.html#aa7efddf9f80781eb204442eb265b3fa5">MAVLinkProtocol::instance</a>()-&gt;<a class="code hl_function" href="classMAVLinkProtocol.html#ab519c8771c8ab289d2924bcb762f1cd7">getSystemId</a>(), <span class="comment">// Set us in primary control.</span></div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>        <a class="code hl_function" href="classMAVLinkProtocol.html#a2999b6e6d6ac482d0b7c1aaf91c015e7">MAVLinkProtocol::getComponentId</a>(), <span class="comment">// Set us in primary control</span></div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>        -1.f, <span class="comment">// Leave secondary unchanged</span></div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>        -1.f, <span class="comment">// Leave secondary unchanged</span></div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>        NAN, <span class="comment">// Reserved</span></div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>        NAN, <span class="comment">// Reserved</span></div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a477212d3ef1160c37ee656a2bfcce941">deviceId</a>()-&gt;rawValue().toUInt());</div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>}</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span> </div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span><span class="keywordtype">void</span> GimbalController::releaseGimbalControl()</div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>{</div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>    <span class="keywordflow">if</span> (!_activeGimbal) {</div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>        qCCritical(GimbalControllerLog) &lt;&lt; <span class="stringliteral">&quot;releaseGimbalControl: active gimbal is nullptr, returning&quot;</span>;</div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>    }</div>
-<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span> </div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>    _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a12ce7dfd32ee05e157a799b3b49c5bf4">sendMavCommand</a>(</div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a400d9bac63a62957a6c5e495b0f402f2">managerCompid</a>()-&gt;rawValue().toUInt(),</div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>        MAV_CMD_DO_GIMBAL_MANAGER_CONFIGURE,</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>        <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>        -3.f, <span class="comment">// Release primary control if we have control</span></div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>        -3.f, <span class="comment">// Release primary control if we have control</span></div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>        -1.f, <span class="comment">// Leave secondary control unchanged</span></div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>        -1.f, <span class="comment">// Leave secondary control unchanged</span></div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>        NAN, <span class="comment">// Reserved</span></div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>        NAN, <span class="comment">// Reserved</span></div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a477212d3ef1160c37ee656a2bfcce941">deviceId</a>()-&gt;rawValue().toUInt());</div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>}</div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> yaw_in_vehicle_frame = _yawInVehicleFrame(flags);</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span> </div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>    _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a12ce7dfd32ee05e157a799b3b49c5bf4">sendMavCommand</a>(</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a400d9bac63a62957a6c5e495b0f402f2">managerCompid</a>()-&gt;rawValue().toUInt(),</div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>        MAV_CMD_DO_GIMBAL_MANAGER_PITCHYAW,</div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>        <span class="keyword">true</span>,</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a25b6bd80253d2ec2072ef6021b6eaf1f">absolutePitch</a>()-&gt;rawValue().toFloat(),</div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>        yaw_in_vehicle_frame ? _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#ae53db2a3ae7cc18f05e5d2ccf4f9bcb4">bodyYaw</a>()-&gt;rawValue().toFloat() : _activeGimbal-&gt;absoluteYaw()-&gt;rawValue().toFloat(),</div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>        NAN,</div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>        NAN,</div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>        flags,</div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>        0,</div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>        _activeGimbal-&gt;deviceId()-&gt;rawValue().toUInt());</div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>}</div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span> </div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span><span class="keywordtype">void</span> GimbalController::acquireGimbalControl()</div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>{</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>    <span class="keywordflow">if</span> (!_activeGimbal) {</div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>        qCCritical(GimbalControllerLog) &lt;&lt; <span class="stringliteral">&quot;acquireGimbalControl: active gimbal is nullptr, returning&quot;</span>;</div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>    }</div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span> </div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>    _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a12ce7dfd32ee05e157a799b3b49c5bf4">sendMavCommand</a>(</div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a400d9bac63a62957a6c5e495b0f402f2">managerCompid</a>()-&gt;rawValue().toUInt(),</div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>        MAV_CMD_DO_GIMBAL_MANAGER_CONFIGURE,</div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>        <span class="keyword">true</span>,</div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>        <a class="code hl_function" href="classMAVLinkProtocol.html#aa7efddf9f80781eb204442eb265b3fa5">MAVLinkProtocol::instance</a>()-&gt;<a class="code hl_function" href="classMAVLinkProtocol.html#ab519c8771c8ab289d2924bcb762f1cd7">getSystemId</a>(), <span class="comment">// Set us in primary control.</span></div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>        <a class="code hl_function" href="classMAVLinkProtocol.html#a2999b6e6d6ac482d0b7c1aaf91c015e7">MAVLinkProtocol::getComponentId</a>(), <span class="comment">// Set us in primary control</span></div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>        -1.f, <span class="comment">// Leave secondary unchanged</span></div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>        -1.f, <span class="comment">// Leave secondary unchanged</span></div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>        NAN, <span class="comment">// Reserved</span></div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>        NAN, <span class="comment">// Reserved</span></div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a477212d3ef1160c37ee656a2bfcce941">deviceId</a>()-&gt;rawValue().toUInt());</div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>}</div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span> </div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span><span class="keywordtype">void</span> GimbalController::releaseGimbalControl()</div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>{</div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>    <span class="keywordflow">if</span> (!_activeGimbal) {</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>        qCCritical(GimbalControllerLog) &lt;&lt; <span class="stringliteral">&quot;releaseGimbalControl: active gimbal is nullptr, returning&quot;</span>;</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>    }</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span> </div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>    _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a12ce7dfd32ee05e157a799b3b49c5bf4">sendMavCommand</a>(</div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a400d9bac63a62957a6c5e495b0f402f2">managerCompid</a>()-&gt;rawValue().toUInt(),</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>        MAV_CMD_DO_GIMBAL_MANAGER_CONFIGURE,</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>        <span class="keyword">true</span>,</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>        -3.f, <span class="comment">// Release primary control if we have control</span></div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>        -3.f, <span class="comment">// Release primary control if we have control</span></div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>        -1.f, <span class="comment">// Leave secondary control unchanged</span></div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>        -1.f, <span class="comment">// Leave secondary control unchanged</span></div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>        NAN, <span class="comment">// Reserved</span></div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>        NAN, <span class="comment">// Reserved</span></div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>        _activeGimbal-&gt;<a class="code hl_function" href="classGimbal.html#a477212d3ef1160c37ee656a2bfcce941">deviceId</a>()-&gt;rawValue().toUInt());</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>}</div>
 <div class="ttc" id="aGimbalControllerSettings_8h_html"><div class="ttname"><a href="GimbalControllerSettings_8h.html">GimbalControllerSettings.h</a></div></div>
 <div class="ttc" id="aGimbalController_8h_html"><div class="ttname"><a href="GimbalController_8h.html">GimbalController.h</a></div></div>
 <div class="ttc" id="aGimbal_8h_html"><div class="ttname"><a href="Gimbal_8h.html">Gimbal.h</a></div></div>
@@ -841,7 +826,7 @@ $(document).ready(function(){initNavTree('GimbalController_8cc_source.html','');
 <div class="ttc" id="aMAVLinkProtocol_8h_html"><div class="ttname"><a href="MAVLinkProtocol_8h.html">MAVLinkProtocol.h</a></div></div>
 <div class="ttc" id="aParameterManager_8h_html"><div class="ttname"><a href="ParameterManager_8h.html">ParameterManager.h</a></div></div>
 <div class="ttc" id="aQGCCameraManager_8h_html"><div class="ttname"><a href="QGCCameraManager_8h.html">QGCCameraManager.h</a></div></div>
-<div class="ttc" id="aQGCCorePlugin_8h_html_a2c54d7cd4caccb07d328e60c00f6147c"><div class="ttname"><a href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a></div><div class="ttdeci">struct __mavlink_message mavlink_message_t</div><div class="ttdef"><b>Definition</b> <a href="QGCCorePlugin_8h_source.html#l00022">QGCCorePlugin.h:22</a></div></div>
+<div class="ttc" id="aQGCCorePlugin_8h_html_a2c54d7cd4caccb07d328e60c00f6147c"><div class="ttname"><a href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a></div><div class="ttdeci">struct __mavlink_message mavlink_message_t</div><div class="ttdef"><b>Definition</b> <a href="QGCCorePlugin_8h_source.html#l00023">QGCCorePlugin.h:23</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
 <div class="ttc" id="aQmlObjectListModel_8h_html"><div class="ttname"><a href="QmlObjectListModel_8h.html">QmlObjectListModel.h</a></div></div>
@@ -891,11 +876,11 @@ $(document).ready(function(){initNavTree('GimbalController_8cc_source.html','');
 <div class="ttc" id="aclassQmlObjectListModel_html_a0a03ad9f128b009bd5b85eba315fe53a"><div class="ttname"><a href="classQmlObjectListModel.html#a0a03ad9f128b009bd5b85eba315fe53a">QmlObjectListModel::append</a></div><div class="ttdeci">void append(QObject *object)</div><div class="ttdoc">Caller maintains responsibility for object ownership and deletion.</div><div class="ttdef"><b>Definition</b> <a href="QmlObjectListModel_8cc_source.html#l00239">QmlObjectListModel.cc:239</a></div></div>
 <div class="ttc" id="aclassVehicleLinkManager_html_a46e03af5d8cf9aa9620b080468bbe7b6"><div class="ttname"><a href="classVehicleLinkManager.html#a46e03af5d8cf9aa9620b080468bbe7b6">VehicleLinkManager::primaryLink</a></div><div class="ttdeci">WeakLinkInterfacePtr primaryLink() const</div><div class="ttdef"><b>Definition</b> <a href="VehicleLinkManager_8h_source.html#l00038">VehicleLinkManager.h:38</a></div></div>
 <div class="ttc" id="aclassVehicle_html"><div class="ttname"><a href="classVehicle.html">Vehicle</a></div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00081">Vehicle.h:82</a></div></div>
-<div class="ttc" id="aclassVehicle_html_a12ce7dfd32ee05e157a799b3b49c5bf4"><div class="ttname"><a href="classVehicle.html#a12ce7dfd32ee05e157a799b3b49c5bf4">Vehicle::sendMavCommand</a></div><div class="ttdeci">void sendMavCommand(int compId, MAV_CMD command, bool showError, float param1=0.0f, float param2=0.0f, float param3=0.0f, float param4=0.0f, float param5=0.0f, float param6=0.0f, float param7=0.0f)</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8cc_source.html#l02139">Vehicle.cc:2139</a></div></div>
+<div class="ttc" id="aclassVehicle_html_a12ce7dfd32ee05e157a799b3b49c5bf4"><div class="ttname"><a href="classVehicle.html#a12ce7dfd32ee05e157a799b3b49c5bf4">Vehicle::sendMavCommand</a></div><div class="ttdeci">void sendMavCommand(int compId, MAV_CMD command, bool showError, float param1=0.0f, float param2=0.0f, float param3=0.0f, float param4=0.0f, float param5=0.0f, float param6=0.0f, float param7=0.0f)</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8cc_source.html#l02140">Vehicle.cc:2140</a></div></div>
 <div class="ttc" id="aclassVehicle_html_a352548a48dfaaaba210f53dc731b5a21"><div class="ttname"><a href="classVehicle.html#a352548a48dfaaaba210f53dc731b5a21">Vehicle::initialConnectComplete</a></div><div class="ttdeci">void initialConnectComplete()</div></div>
 <div class="ttc" id="aclassVehicle_html_a49c0f82c46858483d699df6b615b3f02"><div class="ttname"><a href="classVehicle.html#a49c0f82c46858483d699df6b615b3f02">Vehicle::vehicleLinkManager</a></div><div class="ttdeci">VehicleLinkManager * vehicleLinkManager()</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00573">Vehicle.h:573</a></div></div>
 <div class="ttc" id="aclassVehicle_html_a74829d3d2c320cad6530de1bb8bee8bf"><div class="ttname"><a href="classVehicle.html#a74829d3d2c320cad6530de1bb8bee8bf">Vehicle::id</a></div><div class="ttdeci">int id() const</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00423">Vehicle.h:423</a></div></div>
-<div class="ttc" id="aclassVehicle_html_a7b661e2cf877e915aebabc8c8ac2f57b"><div class="ttname"><a href="classVehicle.html#a7b661e2cf877e915aebabc8c8ac2f57b">Vehicle::sendMessageOnLinkThreadSafe</a></div><div class="ttdeci">bool sendMessageOnLinkThreadSafe(LinkInterface *link, mavlink_message_t message)</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8cc_source.html#l01383">Vehicle.cc:1383</a></div></div>
+<div class="ttc" id="aclassVehicle_html_a7b661e2cf877e915aebabc8c8ac2f57b"><div class="ttname"><a href="classVehicle.html#a7b661e2cf877e915aebabc8c8ac2f57b">Vehicle::sendMessageOnLinkThreadSafe</a></div><div class="ttdeci">bool sendMessageOnLinkThreadSafe(LinkInterface *link, mavlink_message_t message)</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8cc_source.html#l01384">Vehicle.cc:1384</a></div></div>
 <div class="ttc" id="aclassVehicle_html_a877d78b66bffea55f2d7d1b1b3dbe8ad"><div class="ttname"><a href="classVehicle.html#a877d78b66bffea55f2d7d1b1b3dbe8ad">Vehicle::mavlinkMessageReceived</a></div><div class="ttdeci">void mavlinkMessageReceived(const mavlink_message_t &amp;message)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

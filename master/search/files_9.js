@@ -21,8 +21,6 @@ var searchData=
   ['joysticksettings_2ecc_18',['JoystickSettings.cc',['../JoystickSettings_8cc.html',1,'']]],
   ['joysticksettings_2eh_19',['JoystickSettings.h',['../JoystickSettings_8h.html',1,'']]],
   ['joystickthumbpad_2eqml_20',['JoystickThumbPad.qml',['../JoystickThumbPad_8qml.html',1,'']]],
-  ['jsonhelper_2ecc_21',['JsonHelper.cc',['../JsonHelper_8cc.html',1,'']]],
-  ['jsonhelper_2eh_22',['JsonHelper.h',['../JsonHelper_8h.html',1,'']]],
-  ['jsonparsing_2ecc_23',['JsonParsing.cc',['../JsonParsing_8cc.html',1,'']]],
-  ['jsonparsing_2eh_24',['JsonParsing.h',['../JsonParsing_8h.html',1,'']]]
+  ['jsonparsing_2ecc_21',['JsonParsing.cc',['../JsonParsing_8cc.html',1,'']]],
+  ['jsonparsing_2eh_22',['JsonParsing.h',['../JsonParsing_8h.html',1,'']]]
 ];

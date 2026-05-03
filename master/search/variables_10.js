@@ -41,13 +41,14 @@ var searchData=
   ['progresshandlerdata_38',['progressHandlerData',['../structVehicleTypes_1_1MavCmdAckHandlerInfo__s.html#a257cb2b7270cd27284b4eb2e1f07bfd5',1,'VehicleTypes::MavCmdAckHandlerInfo_s']]],
   ['properties_39',['properties',['../gstqgcvideosinkbin_8cc.html#a3cdac116630040974e90b173303c8464',1,'gstqgcvideosinkbin.cc']]],
   ['protocol_40',['protocol',['../structEventHandler_1_1Impl.html#a651e134062ca2b64f0513400802179eb',1,'EventHandler::Impl']]],
-  ['purgebuffers_41',['purgeBuffers',['../structAndroidSerial_1_1JniMethodCache.html#af8042e1550230a0846feb31105c14989',1,'AndroidSerial::JniMethodCache']]],
-  ['px4_5fboard_5fname_5fmap_42',['px4_board_name_map',['../FirmwareUpgradeController_8cc.html#acbba13b088ef3f7f239b411129d930f2',1,'FirmwareUpgradeController.cc']]],
-  ['px4firmwarepluginfactory_43',['PX4FirmwarePluginFactory',['../PX4FirmwarePluginFactory_8cc.html#ab3daedbf3dd901106fb4c7a6ae3f6827',1,'PX4FirmwarePluginFactory.cc']]],
-  ['px4hiddenflightmodesairshipname_44',['px4HiddenFlightModesAirshipName',['../classFlightModeSettings.html#a7496d6ae7e0d45079ec610ce24960162',1,'FlightModeSettings']]],
-  ['px4hiddenflightmodesfixedwingname_45',['px4HiddenFlightModesFixedWingName',['../classFlightModeSettings.html#a4ff70c2b024310716aa164123eb3e4a4',1,'FlightModeSettings']]],
-  ['px4hiddenflightmodesmultirotorname_46',['px4HiddenFlightModesMultiRotorName',['../classFlightModeSettings.html#a37305d4b07fbca4821fe47af59db2d3e',1,'FlightModeSettings']]],
-  ['px4hiddenflightmodesroverboatname_47',['px4HiddenFlightModesRoverBoatName',['../classFlightModeSettings.html#a074a3e264d426c643774417b542ff820',1,'FlightModeSettings']]],
-  ['px4hiddenflightmodessubname_48',['px4HiddenFlightModesSubName',['../classFlightModeSettings.html#a2b7018e25db9e8edb0866e07b4364f9e',1,'FlightModeSettings']]],
-  ['px4hiddenflightmodesvtolname_49',['px4HiddenFlightModesVTOLName',['../classFlightModeSettings.html#af7713d11017b9f36748108b62a9f06ed',1,'FlightModeSettings']]]
+  ['providerid_41',['ProviderId',['../classColoredSvgImageProvider.html#a2a361ab398e68af1eb5e33f3065a690c',1,'ColoredSvgImageProvider']]],
+  ['purgebuffers_42',['purgeBuffers',['../structAndroidSerial_1_1JniMethodCache.html#af8042e1550230a0846feb31105c14989',1,'AndroidSerial::JniMethodCache']]],
+  ['px4_5fboard_5fname_5fmap_43',['px4_board_name_map',['../FirmwareUpgradeController_8cc.html#acbba13b088ef3f7f239b411129d930f2',1,'FirmwareUpgradeController.cc']]],
+  ['px4firmwarepluginfactory_44',['PX4FirmwarePluginFactory',['../PX4FirmwarePluginFactory_8cc.html#ab3daedbf3dd901106fb4c7a6ae3f6827',1,'PX4FirmwarePluginFactory.cc']]],
+  ['px4hiddenflightmodesairshipname_45',['px4HiddenFlightModesAirshipName',['../classFlightModeSettings.html#a7496d6ae7e0d45079ec610ce24960162',1,'FlightModeSettings']]],
+  ['px4hiddenflightmodesfixedwingname_46',['px4HiddenFlightModesFixedWingName',['../classFlightModeSettings.html#a4ff70c2b024310716aa164123eb3e4a4',1,'FlightModeSettings']]],
+  ['px4hiddenflightmodesmultirotorname_47',['px4HiddenFlightModesMultiRotorName',['../classFlightModeSettings.html#a37305d4b07fbca4821fe47af59db2d3e',1,'FlightModeSettings']]],
+  ['px4hiddenflightmodesroverboatname_48',['px4HiddenFlightModesRoverBoatName',['../classFlightModeSettings.html#a074a3e264d426c643774417b542ff820',1,'FlightModeSettings']]],
+  ['px4hiddenflightmodessubname_49',['px4HiddenFlightModesSubName',['../classFlightModeSettings.html#a2b7018e25db9e8edb0866e07b4364f9e',1,'FlightModeSettings']]],
+  ['px4hiddenflightmodesvtolname_50',['px4HiddenFlightModesVTOLName',['../classFlightModeSettings.html#af7713d11017b9f36748108b62a9f06ed',1,'FlightModeSettings']]]
 ];

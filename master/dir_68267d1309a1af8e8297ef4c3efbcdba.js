@@ -15,6 +15,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "Gimbal", "dir_66c47b9977029413dec9bdf1834743ad.html", "dir_66c47b9977029413dec9bdf1834743ad" ],
     [ "GPS", "dir_43f56a1598361543d7a95c3972bc4b20.html", "dir_43f56a1598361543d7a95c3972bc4b20" ],
     [ "Joystick", "dir_df3471da428c92590d85ed8754a76078.html", "dir_df3471da428c92590d85ed8754a76078" ],
+    [ "LogManager", "dir_f35f79666da9a9c519c01a8cc0679250.html", "dir_f35f79666da9a9c519c01a8cc0679250" ],
     [ "MAVLink", "dir_179bf47964619e91d8f4b948968d2dcb.html", "dir_179bf47964619e91d8f4b948968d2dcb" ],
     [ "MissionManager", "dir_fc93cbb76f1edc6741d2b3ade811eb27.html", "dir_fc93cbb76f1edc6741d2b3ade811eb27" ],
     [ "PlanView", "dir_a960dd57875593757f2541c050ca2fa1.html", "dir_a960dd57875593757f2541c050ca2fa1" ],

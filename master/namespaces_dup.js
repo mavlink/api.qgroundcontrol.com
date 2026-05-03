@@ -243,9 +243,15 @@ var namespaces_dup =
       [ "_extractShapeValuesRecursive", "namespaceGeoJsonHelper.html#afabea51f8938342b2cef6e79f3763154", null ],
       [ "_loadFile", "namespaceGeoJsonHelper.html#adec76da270bf7dd2d110a9eba0993971", null ],
       [ "determineShapeType", "namespaceGeoJsonHelper.html#a7cf0dc5c0700f165a0fa761244657a7a", null ],
+      [ "loadGeoCoordinate", "namespaceGeoJsonHelper.html#a6fa72832795dc37692f2260382cf6afd", null ],
+      [ "loadGeoCoordinateArray", "namespaceGeoJsonHelper.html#ab484e1d84aba7ff66c1d71bc25330e11", null ],
+      [ "loadGeoCoordinateArray", "namespaceGeoJsonHelper.html#a0ef515bd3922a5008843a7bfd2f5ed52", null ],
       [ "loadGeoJsonCoordinate", "namespaceGeoJsonHelper.html#aae3d5b513e8c1a48be2d1d7716fba1c1", null ],
       [ "loadPolygonFromFile", "namespaceGeoJsonHelper.html#ae992868855aeb9655d73af80ac76321b", null ],
       [ "loadPolylineFromFile", "namespaceGeoJsonHelper.html#a7f44e907f7ca17a69e8aa2b0efe0c525", null ],
+      [ "saveGeoCoordinate", "namespaceGeoJsonHelper.html#adb96fd37154b1ce06998b1d7b07d462c", null ],
+      [ "saveGeoCoordinateArray", "namespaceGeoJsonHelper.html#ad269a09284a1e8a87e08d6fbf2b06b68", null ],
+      [ "saveGeoCoordinateArray", "namespaceGeoJsonHelper.html#a27e366cec4b8d19d6aa7a7c7975b7a2b", null ],
       [ "saveGeoJsonCoordinate", "namespaceGeoJsonHelper.html#abfdc332131ef0e9f199730fdf29d98ff", null ],
       [ "_errorPrefix", "namespaceGeoJsonHelper.html#a50d7113569308c8ddd7b44c5b334cbf7", null ],
       [ "_maxRecursionDepth", "namespaceGeoJsonHelper.html#af5f9d8ad8d92d996711933d47cf533d6", null ]
@@ -282,14 +288,7 @@ var namespaces_dup =
       [ "setDebugLevel", "namespaceGStreamer.html#a427dbea4be97a87f50ad05516aaf1b78", null ],
       [ "setupAppleSinkAdapter", "namespaceGStreamer.html#aad40da762987097c50c3f44801986b20", null ]
     ] ],
-    [ "JsonHelper", "namespaceJsonHelper.html", "namespaceJsonHelper" ],
-    [ "JsonParsing", "namespaceJsonParsing.html", [
-      [ "isJsonFile", "namespaceJsonParsing.html#a9835bf5a2c8e57c435a6f216dcd4fd52", null ],
-      [ "isJsonFile", "namespaceJsonParsing.html#a02af73076bdf13d571e9b2118a720bf9", null ],
-      [ "possibleNaNJsonValue", "namespaceJsonParsing.html#ab375d257b250d16931527eab915e7d56", null ],
-      [ "validateKeyTypes", "namespaceJsonParsing.html#a169775a5ea039159923e41c24402e8e3", null ],
-      [ "validateRequiredKeys", "namespaceJsonParsing.html#afdb5be904cccbfb72a56fa7bfeb2c3fe", null ]
-    ] ],
+    [ "JsonParsing", "namespaceJsonParsing.html", "namespaceJsonParsing" ],
     [ "KMLHelper", "namespaceKMLHelper.html", [
       [ "_checkAltitudeMode", "namespaceKMLHelper.html#af4b633ee40361b9b645cfcf625446d6c", null ],
       [ "_filterVertices", "namespaceKMLHelper.html#ab056a0e36bd18094a6c91e7a9274f778", null ],
@@ -362,11 +361,9 @@ var namespaces_dup =
     ] ],
     [ "QGCCommandLineParser", "namespaceQGCCommandLineParser.html", "namespaceQGCCommandLineParser" ],
     [ "QGCCompression", "namespaceQGCCompression.html", "namespaceQGCCompression" ],
-    [ "QGCDeviceInfo", "namespaceQGCDeviceInfo.html", "namespaceQGCDeviceInfo" ],
     [ "QGCFileHelper", "namespaceQGCFileHelper.html", [
       [ "atomicWrite", "namespaceQGCFileHelper.html#a5a4d6dde81040f267edcd06e9ee7ab3d", null ],
       [ "availableDiskSpace", "namespaceQGCFileHelper.html#a01457a6a8f144aa5ef5983ea4a545544", null ],
-      [ "computeDecompressedFileHash", "namespaceQGCFileHelper.html#ad8d7231ce7dc4d41ee22595b880663d4", null ],
       [ "computeFileHash", "namespaceQGCFileHelper.html#a9c6d26d40625b7b415129392441736b8", null ],
       [ "computeHash", "namespaceQGCFileHelper.html#a4f33c961014dc4e4508e53183a9fcbe5", null ],
       [ "copyDirectoryRecursively", "namespaceQGCFileHelper.html#a4fd16fb2a9197ead1b39e88bb2e194bf", null ],
@@ -382,7 +379,7 @@ var namespaces_dup =
       [ "joinPath", "namespaceQGCFileHelper.html#a7fb1699a7fbd1ab62a1db78caa761e7b", null ],
       [ "moveFileOrCopy", "namespaceQGCFileHelper.html#a2ce67ca40c69dca6cc046474f198ea26", null ],
       [ "optimalBufferSize", "namespaceQGCFileHelper.html#ac25ae676a345f58997140a5fdb75bd2e", null ],
-      [ "readFile", "namespaceQGCFileHelper.html#ae3efa88e1ccb0cd0cb4884fe2ae8035e", null ],
+      [ "readFile", "namespaceQGCFileHelper.html#a4f9efe6ab144a918021750c36323f2a2", null ],
       [ "replaceFileFromTemp", "namespaceQGCFileHelper.html#ac8e13f1003ec424571d947d4dbe6102c", null ],
       [ "tempDirectory", "namespaceQGCFileHelper.html#af608581ec52090c2f7ca51e18cb4bb3e", null ],
       [ "toLocalPath", "namespaceQGCFileHelper.html#a5f2e6419a9f9d9aa39df6377581882c4", null ],
@@ -418,6 +415,7 @@ var namespaces_dup =
     ] ],
     [ "QGClibarchive", "namespaceQGClibarchive.html", "namespaceQGClibarchive" ],
     [ "QGCNetworkHelper", "namespaceQGCNetworkHelper.html", "namespaceQGCNetworkHelper" ],
+    [ "QGCSensors", "namespaceQGCSensors.html", "namespaceQGCSensors" ],
     [ "QGCSqlHelper", "namespaceQGCSqlHelper.html", "namespaceQGCSqlHelper" ],
     [ "SDLJoystick", "namespaceSDLJoystick.html", "namespaceSDLJoystick" ],
     [ "SDLPlatform", "namespaceSDLPlatform.html", [

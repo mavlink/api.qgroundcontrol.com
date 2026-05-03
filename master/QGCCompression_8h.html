@@ -99,7 +99,10 @@ $(document).ready(function(){initNavTree('QGCCompression_8h.html',''); initResiz
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="QGCCompressionTypes_8h_source.html">QGCCompressionTypes.h</a>&quot;</code><br />
 <code>#include &lt;QtCore/QByteArray&gt;</code><br />
+<code>#include &lt;QtCore/QCryptographicHash&gt;</code><br />
 <code>#include &lt;QtCore/QIODevice&gt;</code><br />
+<code>#include &lt;QtCore/QJsonDocument&gt;</code><br />
+<code>#include &lt;QtCore/QJsonParseError&gt;</code><br />
 <code>#include &lt;QtCore/QString&gt;</code><br />
 <code>#include &lt;QtCore/QStringList&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -265,6 +268,17 @@ Functions</h2></td></tr>
 <tr class="memitem:a43f66fb29ef043322dfb087f3a0471f7" id="r_a43f66fb29ef043322dfb087f3a0471f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCCompression.html#a43f66fb29ef043322dfb087f3a0471f7">QGCCompression::lastCompressionRatio</a> ()</td></tr>
 <tr class="memdesc:a43f66fb29ef043322dfb087f3a0471f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compression ratio from the last <a class="el" href="namespaceQGCCompression.html#a4973097b77aedf9b4dc94e03319c4093">compressData()</a> call (thread-local, percentage of original size).  <br /></td></tr>
 <tr class="separator:a43f66fb29ef043322dfb087f3a0471f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6b72697044eabb82888a3f3a2fe86e4" id="r_aa6b72697044eabb82888a3f3a2fe86e4"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCCompression.html#aa6b72697044eabb82888a3f3a2fe86e4">QGCCompression::readFile</a> (const QString &amp;filePath, QString *<a class="el" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>=nullptr, qint64 maxBytes=0)</td></tr>
+<tr class="memdesc:aa6b72697044eabb82888a3f3a2fe86e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read file contents, transparently decompressing .gz/.xz/.zst/.bz2/.lz4 files.  <br /></td></tr>
+<tr class="separator:aa6b72697044eabb82888a3f3a2fe86e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06ca3300c9e91a44c859efaf6111b533" id="r_a06ca3300c9e91a44c859efaf6111b533"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCCompression.html#a06ca3300c9e91a44c859efaf6111b533">QGCCompression::computeFileHash</a> (const QString &amp;filePath, QCryptographicHash::Algorithm algorithm=QCryptographicHash::Sha256)</td></tr>
+<tr class="memdesc:a06ca3300c9e91a44c859efaf6111b533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash file contents post-decompression.  <br /></td></tr>
+<tr class="separator:a06ca3300c9e91a44c859efaf6111b533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fbe4533962246a46fdc28c8343f92ab" id="r_a3fbe4533962246a46fdc28c8343f92ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCCompression.html#a3fbe4533962246a46fdc28c8343f92ab">QGCCompression::looksLikeCompressedData</a> (const QByteArray &amp;data)</td></tr>
+<tr class="separator:a3fbe4533962246a46fdc28c8343f92ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd183665683e88cc5d674e975b84a7e6" id="r_abd183665683e88cc5d674e975b84a7e6"><td class="memItemLeft" align="right" valign="top">QJsonDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCCompression.html#abd183665683e88cc5d674e975b84a7e6">QGCCompression::parseCompressedJson</a> (const QByteArray &amp;data, QJsonParseError *<a class="el" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>=nullptr)</td></tr>
+<tr class="memdesc:abd183665683e88cc5d674e975b84a7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse JSON from data that may be compressed. Auto-detects gzip/xz/zstd/bzip2/lz4.  <br /></td></tr>
+<tr class="separator:abd183665683e88cc5d674e975b84a7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

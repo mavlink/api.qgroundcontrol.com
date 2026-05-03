@@ -225,9 +225,8 @@ Functions</h2></td></tr>
 <tr class="memitem:aa7a9616276677ff373b457842a60be76" id="r_aa7a9616276677ff373b457842a60be76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSDLJoystick.html#aa7a9616276677ff373b457842a60be76">populateBindingResult</a> (QVariantMap &amp;result, const SDL_GamepadBinding *binding)</td></tr>
 <tr class="memdesc:aa7a9616276677ff373b457842a60be76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populate a QVariantMap with binding information from SDL_GamepadBinding.  <br /></td></tr>
 <tr class="separator:aa7a9616276677ff373b457842a60be76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd2c461b9588d29423158adc39749a24" id="r_acd2c461b9588d29423158adc39749a24"><td class="memTemplParams" colspan="2">template&lt;typename MatchFunc &gt; </td></tr>
-<tr class="memitem:acd2c461b9588d29423158adc39749a24"><td class="memTemplItemLeft" align="right" valign="top">QVariantMap&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceSDLJoystick.html#acd2c461b9588d29423158adc39749a24">findBinding</a> (<a class="el" href="JoystickSDL_8h.html#a2393985fb70bb019b3b755fbd88d200c">SDL_Gamepad</a> *gamepad, MatchFunc matchFunc)</td></tr>
-<tr class="separator:acd2c461b9588d29423158adc39749a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa841efef1ebfe66703f527d5aa65fd4b" id="r_aa841efef1ebfe66703f527d5aa65fd4b"><td class="memItemLeft" align="right" valign="top">QVariantMap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceSDLJoystick.html#aa841efef1ebfe66703f527d5aa65fd4b">findBinding</a> (<a class="el" href="JoystickSDL_8h.html#a2393985fb70bb019b3b755fbd88d200c">SDL_Gamepad</a> *gamepad, const std::function&lt; bool(const SDL_GamepadBinding *)&gt; &amp;matchFunc)</td></tr>
+<tr class="separator:aa841efef1ebfe66703f527d5aa65fd4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -415,16 +414,11 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="acd2c461b9588d29423158adc39749a24" name="acd2c461b9588d29423158adc39749a24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd2c461b9588d29423158adc39749a24">&#9670;&#160;</a></span>findBinding()</h2>
+<a id="aa841efef1ebfe66703f527d5aa65fd4b" name="aa841efef1ebfe66703f527d5aa65fd4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa841efef1ebfe66703f527d5aa65fd4b">&#9670;&#160;</a></span>findBinding()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename MatchFunc &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">QVariantMap SDLJoystick::findBinding </td>
@@ -435,7 +429,7 @@ template&lt;typename MatchFunc &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">MatchFunc&#160;</td>
+          <td class="paramtype">const std::function&lt; bool(const SDL_GamepadBinding *)&gt; &amp;&#160;</td>
           <td class="paramname"><em>matchFunc</em>&#160;</td>
         </tr>
         <tr>
@@ -444,26 +438,14 @@ template&lt;typename MatchFunc &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<p>Find a gamepad binding matching the given predicate </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">gamepad</td><td>The SDL gamepad to query </td></tr>
-    <tr><td class="paramname">matchFunc</td><td>A callable that takes (const SDL_GamepadBinding*) and returns bool </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>QVariantMap with binding info if found, or {"valid": false} if not </dd></dl>
+<p>Find a gamepad binding matching the given predicate. </p><dl class="section return"><dt>Returns</dt><dd>QVariantMap with binding info if found, or {"valid": false} if not. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="SDLJoystick_8h_source.html#l00179">179</a> of file <a class="el" href="SDLJoystick_8h_source.html">SDLJoystick.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SDLJoystick_8cc_source.html#l00635">635</a> of file <a class="el" href="SDLJoystick_8cc_source.html">SDLJoystick.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="SDLJoystick_8cc_source.html#l00619">populateBindingResult()</a>.</p>
+<p class="reference">References <a class="el" href="SDLJoystick_8cc_source.html#l00635">findBinding()</a>, and <a class="el" href="SDLJoystick_8cc_source.html#l00619">populateBindingResult()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="JoystickSDL_8cc_source.html#l00825">JoystickSDL::getAxisBinding()</a>, and <a class="el" href="JoystickSDL_8cc_source.html#l00858">JoystickSDL::getButtonBinding()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SDLJoystick_8cc_source.html#l00635">findBinding()</a>, <a class="el" href="JoystickSDL_8cc_source.html#l00825">JoystickSDL::getAxisBinding()</a>, and <a class="el" href="JoystickSDL_8cc_source.html#l00858">JoystickSDL::getButtonBinding()</a>.</p>
 
 </div>
 </div>
@@ -1152,7 +1134,7 @@ template&lt;typename MatchFunc &gt; </div>
 
 <p class="reference">References <a class="el" href="SDLJoystick_8cc_source.html#l00188">lockJoysticks()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SDLJoystick_8h_source.html#l00057">SDLJoystick::JoystickLock::JoystickLock()</a>, and <a class="el" href="SDLJoystick_8cc_source.html#l00188">lockJoysticks()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SDLJoystick_8h_source.html#l00062">SDLJoystick::JoystickLock::JoystickLock()</a>, and <a class="el" href="SDLJoystick_8cc_source.html#l00188">lockJoysticks()</a>.</p>
 
 </div>
 </div>
@@ -1188,7 +1170,7 @@ template&lt;typename MatchFunc &gt; </div>
 
 <p class="reference">References <a class="el" href="SDLJoystick_8cc_source.html#l00619">populateBindingResult()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SDLJoystick_8h_source.html#l00179">findBinding()</a>, and <a class="el" href="SDLJoystick_8cc_source.html#l00619">populateBindingResult()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SDLJoystick_8cc_source.html#l00635">findBinding()</a>, and <a class="el" href="SDLJoystick_8cc_source.html#l00619">populateBindingResult()</a>.</p>
 
 </div>
 </div>
@@ -1338,7 +1320,7 @@ template&lt;typename MatchFunc &gt; </div>
 
 <p class="reference">References <a class="el" href="SDLJoystick_8cc_source.html#l00193">unlockJoysticks()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SDLJoystick_8cc_source.html#l00193">unlockJoysticks()</a>, and <a class="el" href="SDLJoystick_8h_source.html#l00058">SDLJoystick::JoystickLock::~JoystickLock()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SDLJoystick_8cc_source.html#l00193">unlockJoysticks()</a>, and <a class="el" href="SDLJoystick_8h_source.html#l00063">SDLJoystick::JoystickLock::~JoystickLock()</a>.</p>
 
 </div>
 </div>

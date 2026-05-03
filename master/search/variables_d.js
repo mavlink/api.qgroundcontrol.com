@@ -11,7 +11,7 @@ var searchData=
   ['mapboxstylename_8',['mapboxStyleName',['../classAppSettings.html#ab63f26eb7bb1974c92b2bc48885baecd',1,'AppSettings']]],
   ['mapboxtokenname_9',['mapboxTokenName',['../classAppSettings.html#a2cd89228e528fa28ed2e47ffa38201dc',1,'AppSettings']]],
   ['mapgroupname2group_10',['mapGroupName2Group',['../classParameterEditorCategory.html#a1a7205a698b149c9a1c195c012761472',1,'ParameterEditorCategory']]],
-  ['mapid_11',['mapId',['../structViewer3DTileReply_1_1TileInfo__t.html#a4854390a50c5e92d7d0259e2f01d1212',1,'Viewer3DTileReply::TileInfo_t']]],
+  ['mapid_11',['mapId',['../structViewer3DTileInfo.html#ab723e23c94f7a00da435bd59941eff41',1,'Viewer3DTileInfo']]],
   ['mapprovidername_12',['mapprovidername',['../classFlightMapSettings.html#aabb5e4cb9b3a95bf7ded8ed17381470d',1,'FlightMapSettings::mapProviderName'],['../classViewer3DSettings.html#a728643f6b9b0e965af3841eabe578017',1,'Viewer3DSettings::mapProviderName']]],
   ['maptypename_13',['mapTypeName',['../classFlightMapSettings.html#a745bce891e139ff50afc41771e1ca9a3',1,'FlightMapSettings']]],
   ['maptypestr_14',['mapTypeStr',['../structTileSetRecord.html#a8fde944f4cf466bcea68c891f3d5b7f4',1,'TileSetRecord']]],

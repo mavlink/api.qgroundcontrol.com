@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/Utilities/Logging/LogManager.cc Source File</title>
+<title>QGroundControl: src/LogManager/LogManager.cc Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -120,15 +120,15 @@ $(document).ready(function(){initNavTree('LogManager_8cc_source.html',''); initR
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="QGCFileWriter_8h.html">QGCFileWriter.h</a>&quot;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="LogManager_8cc.html#a2da8435e20b319dfa5f9c0ca5c163b7d">   23</a></span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(LogManagerLog, <span class="stringliteral">&quot;Utilities.LogManager&quot;</span>)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(LogManagerLog, <span class="stringliteral">&quot;Utilities.LogManager&quot;</span>)</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>static std::atomic&lt;<a class="code hl_class" href="classLogManager.html">LogManager</a>*&gt; s_instance{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="LogManager_8cc.html#aee761fce672833a2969aac319732e57c">   25</a></span>static std::atomic&lt;<a class="code hl_class" href="classLogManager.html">LogManager</a>*&gt; <a class="code hl_variable" href="LogManager_8cc.html#aee761fce672833a2969aac319732e57c">s_instance</a>{<span class="keyword">nullptr</span>};</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">// ---------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// Test capture storage</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// ---------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="LogManager_8cc.html#ad23098b6c6f351c8f4ca7097ee42d50b">   31</a></span><span class="keyword">static</span> std::atomic&lt;bool&gt; <a class="code hl_variable" href="LogManager_8cc.html#ad23098b6c6f351c8f4ca7097ee42d50b">s_captureEnabled</a>{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="LogManager_8cc.html#a179c8f40f12fd8b4af99c13061bb2d38">   31</a></span><span class="keyword">static</span> std::atomic&lt;bool&gt; <a class="code hl_variable" href="LogManager_8cc.html#a179c8f40f12fd8b4af99c13061bb2d38">s_captureEnabled</a>{<span class="keyword">false</span>};</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="LogManager_8cc.html#ab2f363bf4ad16c0322bbf3463cee766d">   32</a></span><span class="keyword">static</span> QMutex <a class="code hl_variable" href="LogManager_8cc.html#ab2f363bf4ad16c0322bbf3463cee766d">s_captureMutex</a>;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="LogManager_8cc.html#ace9de5e80c1df708077da23266662a4a">   33</a></span><span class="keyword">static</span> QList&lt;LogEntry&gt; <a class="code hl_variable" href="LogManager_8cc.html#ace9de5e80c1df708077da23266662a4a">s_capturedMessages</a>;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
@@ -140,7 +140,7 @@ $(document).ready(function(){initNavTree('LogManager_8cc_source.html',''); initR
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> LogManager::msgHandler(QtMsgType type, <span class="keyword">const</span> QMessageLogContext&amp; context, <span class="keyword">const</span> QString&amp; msg)</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">auto</span>* inst = s_instance.load(std::memory_order_acquire);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">auto</span>* inst = <a class="code hl_variable" href="LogManager_8cc.html#aee761fce672833a2969aac319732e57c">s_instance</a>.load(std::memory_order_acquire);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="LogManager_8cc.html#a57240ac4d908484060c0342c448db6b9">s_defaultHandler</a>) {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_variable" href="LogManager_8cc.html#a57240ac4d908484060c0342c448db6b9">s_defaultHandler</a>(type, context, msg);</div>
@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('LogManager_8cc_source.html',''); initR
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><a class="code hl_class" href="classLogManager.html">LogManager</a>* LogManager::instance()</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">return</span> s_instance.load(std::memory_order_acquire);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="LogManager_8cc.html#aee761fce672833a2969aac319732e57c">s_instance</a>.load(std::memory_order_acquire);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><a class="code hl_class" href="classLogManager.html">LogManager</a>* LogManager::create(QQmlEngine* qmlEngine, QJSEngine* jsEngine)</div>
@@ -179,7 +179,7 @@ $(document).ready(function(){initNavTree('LogManager_8cc_source.html',''); initR
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>LogManager::LogManager(QObject* parent) : QObject(parent)</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>{</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    s_instance.store(<span class="keyword">this</span>, std::memory_order_release);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_variable" href="LogManager_8cc.html#aee761fce672833a2969aac319732e57c">s_instance</a>.store(<span class="keyword">this</span>, std::memory_order_release);</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    _model = <span class="keyword">new</span> <a class="code hl_class" href="classLogModel.html">LogModel</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    _remoteSink = <span class="keyword">new</span> <a class="code hl_class" href="classLogRemoteSink.html">LogRemoteSink</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    _logStore = <span class="keyword">new</span> <a class="code hl_class" href="classLogStore.html">LogStore</a>(<span class="keyword">this</span>);</div>
@@ -202,8 +202,8 @@ $(document).ready(function(){initNavTree('LogManager_8cc_source.html',''); initR
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>LogManager::~LogManager()</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>{</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="comment">// Detach from the message handler so no new entries are queued.</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">if</span> (s_instance.load(std::memory_order_relaxed) == <span class="keyword">this</span>) {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        s_instance.store(<span class="keyword">nullptr</span>, std::memory_order_release);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="LogManager_8cc.html#aee761fce672833a2969aac319732e57c">s_instance</a>.load(std::memory_order_relaxed) == <span class="keyword">this</span>) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <a class="code hl_variable" href="LogManager_8cc.html#aee761fce672833a2969aac319732e57c">s_instance</a>.store(<span class="keyword">nullptr</span>, std::memory_order_release);</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="comment">// Drain any already-queued invokeMethod lambdas that reference us.</span></div>
@@ -222,7 +222,7 @@ $(document).ready(function(){initNavTree('LogManager_8cc_source.html',''); initR
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keywordtype">void</span> LogManager::installHandler()</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>{</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    Q_ASSERT(!s_instance.load(std::memory_order_relaxed));</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    Q_ASSERT(!<a class="code hl_variable" href="LogManager_8cc.html#aee761fce672833a2969aac319732e57c">s_instance</a>.load(std::memory_order_relaxed));</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keyword">auto</span>* mgr = <span class="keyword">new</span> <a class="code hl_class" href="classLogManager.html">LogManager</a>();</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    qSetMessagePattern(</div>
@@ -539,7 +539,7 @@ $(document).ready(function(){initNavTree('LogManager_8cc_source.html',''); initR
 <div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span> </div>
 <div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span><span class="keywordtype">void</span> LogManager::setCaptureEnabled(<span class="keywordtype">bool</span> enabled)</div>
 <div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>{</div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>    <a class="code hl_variable" href="LogManager_8cc.html#ad23098b6c6f351c8f4ca7097ee42d50b">s_captureEnabled</a>.store(enabled, std::memory_order_relaxed);</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>    <a class="code hl_variable" href="LogManager_8cc.html#a179c8f40f12fd8b4af99c13061bb2d38">s_captureEnabled</a>.store(enabled, std::memory_order_relaxed);</div>
 <div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>}</div>
 <div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span> </div>
 <div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span><span class="keywordtype">void</span> LogManager::clearCapturedMessages()</div>
@@ -599,7 +599,7 @@ $(document).ready(function(){initNavTree('LogManager_8cc_source.html',''); initR
 <div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span> </div>
 <div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span><span class="keywordtype">void</span> LogManager::captureIfEnabled(QtMsgType type, <span class="keyword">const</span> QMessageLogContext&amp; context, <span class="keyword">const</span> QString&amp; msg)</div>
 <div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>{</div>
-<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="LogManager_8cc.html#ad23098b6c6f351c8f4ca7097ee42d50b">s_captureEnabled</a>.load(std::memory_order_relaxed)) {</div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="LogManager_8cc.html#a179c8f40f12fd8b4af99c13061bb2d38">s_captureEnabled</a>.load(std::memory_order_relaxed)) {</div>
 <div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>    }</div>
 <div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span> </div>
@@ -628,10 +628,11 @@ $(document).ready(function(){initNavTree('LogManager_8cc_source.html',''); initR
 <div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>    <span class="keywordflow">return</span> entry;</div>
 <div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>}</div>
 <div class="ttc" id="aLogFormatter_8h_html"><div class="ttname"><a href="LogFormatter_8h.html">LogFormatter.h</a></div></div>
+<div class="ttc" id="aLogManager_8cc_html_a179c8f40f12fd8b4af99c13061bb2d38"><div class="ttname"><a href="LogManager_8cc.html#a179c8f40f12fd8b4af99c13061bb2d38">s_captureEnabled</a></div><div class="ttdeci">static std::atomic&lt; bool &gt; s_captureEnabled</div><div class="ttdef"><b>Definition</b> <a href="LogManager_8cc_source.html#l00031">LogManager.cc:31</a></div></div>
 <div class="ttc" id="aLogManager_8cc_html_a57240ac4d908484060c0342c448db6b9"><div class="ttname"><a href="LogManager_8cc.html#a57240ac4d908484060c0342c448db6b9">s_defaultHandler</a></div><div class="ttdeci">static QtMessageHandler s_defaultHandler</div><div class="ttdef"><b>Definition</b> <a href="LogManager_8cc_source.html#l00039">LogManager.cc:39</a></div></div>
 <div class="ttc" id="aLogManager_8cc_html_ab2f363bf4ad16c0322bbf3463cee766d"><div class="ttname"><a href="LogManager_8cc.html#ab2f363bf4ad16c0322bbf3463cee766d">s_captureMutex</a></div><div class="ttdeci">static QMutex s_captureMutex</div><div class="ttdef"><b>Definition</b> <a href="LogManager_8cc_source.html#l00032">LogManager.cc:32</a></div></div>
 <div class="ttc" id="aLogManager_8cc_html_ace9de5e80c1df708077da23266662a4a"><div class="ttname"><a href="LogManager_8cc.html#ace9de5e80c1df708077da23266662a4a">s_capturedMessages</a></div><div class="ttdeci">static QList&lt; LogEntry &gt; s_capturedMessages</div><div class="ttdef"><b>Definition</b> <a href="LogManager_8cc_source.html#l00033">LogManager.cc:33</a></div></div>
-<div class="ttc" id="aLogManager_8cc_html_ad23098b6c6f351c8f4ca7097ee42d50b"><div class="ttname"><a href="LogManager_8cc.html#ad23098b6c6f351c8f4ca7097ee42d50b">s_captureEnabled</a></div><div class="ttdeci">static Q_LOGGING_CATEGORY(LogManagerLog, &quot;Utilities.LogManager&quot;, QtWarningMsg) static std std::atomic&lt; bool &gt; s_captureEnabled</div><div class="ttdef"><b>Definition</b> <a href="LogManager_8cc_source.html#l00031">LogManager.cc:31</a></div></div>
+<div class="ttc" id="aLogManager_8cc_html_aee761fce672833a2969aac319732e57c"><div class="ttname"><a href="LogManager_8cc.html#aee761fce672833a2969aac319732e57c">s_instance</a></div><div class="ttdeci">static std::atomic&lt; LogManager * &gt; s_instance</div><div class="ttdef"><b>Definition</b> <a href="LogManager_8cc_source.html#l00025">LogManager.cc:25</a></div></div>
 <div class="ttc" id="aLogManager_8h_html"><div class="ttname"><a href="LogManager_8h.html">LogManager.h</a></div></div>
 <div class="ttc" id="aLogModel_8h_html"><div class="ttname"><a href="LogModel_8h.html">LogModel.h</a></div></div>
 <div class="ttc" id="aLogRemoteSink_8h_html"><div class="ttname"><a href="LogRemoteSink_8h.html">LogRemoteSink.h</a></div></div>
@@ -678,7 +679,7 @@ $(document).ready(function(){initNavTree('LogManager_8cc_source.html',''); initR
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ff383ddf1aa4eab0c4ce7910366d05a5.html">Utilities</a></li><li class="navelem"><a class="el" href="dir_387619659fceb43882a735ce9a40a27b.html">Logging</a></li><li class="navelem"><a class="el" href="LogManager_8cc.html">LogManager.cc</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_f35f79666da9a9c519c01a8cc0679250.html">LogManager</a></li><li class="navelem"><a class="el" href="LogManager_8cc.html">LogManager.cc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

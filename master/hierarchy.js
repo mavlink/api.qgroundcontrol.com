@@ -53,7 +53,7 @@ var hierarchy =
     [ "AndroidInterface::JniLocalRef< T >", "classAndroidInterface_1_1JniLocalRef.html", null ],
     [ "AndroidSerial::JniMethodCache", "structAndroidSerial_1_1JniMethodCache.html", null ],
     [ "SDLJoystick::JoystickLock", "classSDLJoystick_1_1JoystickLock.html", null ],
-    [ "JsonHelper::KeyValidateInfo", "structJsonHelper_1_1KeyValidateInfo.html", null ],
+    [ "JsonParsing::KeyValidateInfo", "structJsonParsing_1_1KeyValidateInfo.html", null ],
     [ "KMLSchemaValidator", "classKMLSchemaValidator.html", null ],
     [ "LogEntry", "structLogEntry.html", null ],
     [ "StateMachineLogger::LogEntry", "structStateMachineLogger_1_1LogEntry.html", null ],
@@ -177,13 +177,10 @@ var hierarchy =
       ] ]
     ] ],
     [ "QAmbientTemperatureFilter", null, [
-      [ "QGCDeviceInfo::QGCAmbientTemperatureFilter", "classQGCDeviceInfo_1_1QGCAmbientTemperatureFilter.html", null ]
-    ] ],
-    [ "QApplication", null, [
-      [ "QGCApplication", "classQGCApplication.html", null ]
+      [ "QGCSensors::QGCAmbientTemperatureFilter", "classQGCSensors_1_1QGCAmbientTemperatureFilter.html", null ]
     ] ],
     [ "QCompassFilter", null, [
-      [ "QGCDeviceInfo::QGCCompassFilter", "classQGCDeviceInfo_1_1QGCCompassFilter.html", null ]
+      [ "QGCSensors::QGCCompassFilter", "classQGCSensors_1_1QGCCompassFilter.html", null ]
     ] ],
     [ "QDomDocument", null, [
       [ "KMLDomDocument", "classKMLDomDocument.html", [
@@ -227,6 +224,9 @@ var hierarchy =
     ] ],
     [ "QGeoTileFetcher", null, [
       [ "QGeoTileFetcherQGC", "classQGeoTileFetcherQGC.html", null ]
+    ] ],
+    [ "QGuiApplication", null, [
+      [ "QGCApplication", "classQGCApplication.html", null ]
     ] ],
     [ "QHistoryState", null, [
       [ "QGCHistoryState", "classQGCHistoryState.html", null ]
@@ -443,6 +443,7 @@ var hierarchy =
       [ "NTRIPSourceTableFetcher", "classNTRIPSourceTableFetcher.html", null ],
       [ "NTRIPSourceTableModel", "classNTRIPSourceTableModel.html", null ],
       [ "OnboardLogController", "classOnboardLogController.html", null ],
+      [ "OnboardLogFtpController", "classOnboardLogFtpController.html", null ],
       [ "OsmParserThread", "classOsmParserThread.html", null ],
       [ "PX4AirframeLoader", "classPX4AirframeLoader.html", null ],
       [ "PX4FirmwareUpgradeThreadController", "classPX4FirmwareUpgradeThreadController.html", null ],
@@ -481,9 +482,6 @@ var hierarchy =
       [ "QGCCameraParamIO", "classQGCCameraParamIO.html", null ],
       [ "QGCCompressionJob", "classQGCCompressionJob.html", null ],
       [ "QGCCorePlugin", "classQGCCorePlugin.html", null ],
-      [ "QGCDeviceInfo::QGCAmbientTemperature", "classQGCDeviceInfo_1_1QGCAmbientTemperature.html", null ],
-      [ "QGCDeviceInfo::QGCCompass", "classQGCDeviceInfo_1_1QGCCompass.html", null ],
-      [ "QGCDeviceInfo::QGCPressure", "classQGCDeviceInfo_1_1QGCPressure.html", null ],
       [ "QGCFileDialogController", "classQGCFileDialogController.html", null ],
       [ "QGCFileDownload", "classQGCFileDownload.html", null ],
       [ "QGCFileWatcher", "classQGCFileWatcher.html", null ],
@@ -521,10 +519,14 @@ var hierarchy =
         [ "QGCUpdateTileDownloadStateTask", "classQGCUpdateTileDownloadStateTask.html", null ]
       ] ],
       [ "QGCOnboardLogEntry", "classQGCOnboardLogEntry.html", null ],
+      [ "QGCOnboardLogFtpEntry", "classQGCOnboardLogFtpEntry.html", null ],
       [ "QGCOptions", "classQGCOptions.html", null ],
       [ "QGCPalette", "classQGCPalette.html", null ],
       [ "QGCPositionManager", "classQGCPositionManager.html", null ],
       [ "QGCQGeoCoordinate", "classQGCQGeoCoordinate.html", null ],
+      [ "QGCSensors::QGCAmbientTemperature", "classQGCSensors_1_1QGCAmbientTemperature.html", null ],
+      [ "QGCSensors::QGCCompass", "classQGCSensors_1_1QGCCompass.html", null ],
+      [ "QGCSensors::QGCPressure", "classQGCSensors_1_1QGCPressure.html", null ],
       [ "QGCVideoStreamInfo", "classQGCVideoStreamInfo.html", null ],
       [ "QGeoServiceProviderFactoryQGC", "classQGeoServiceProviderFactoryQGC.html", null ],
       [ "QGroundControlQmlGlobal", "classQGroundControlQmlGlobal.html", null ],
@@ -679,7 +681,7 @@ var hierarchy =
       [ "Qt6GLVideoItem", "classQt6GLVideoItem.html", null ]
     ] ],
     [ "QPressureFilter", null, [
-      [ "QGCDeviceInfo::QGCPressureFilter", "classQGCDeviceInfo_1_1QGCPressureFilter.html", null ]
+      [ "QGCSensors::QGCPressureFilter", "classQGCSensors_1_1QGCPressureFilter.html", null ]
     ] ],
     [ "QQuick3DGeometry", null, [
       [ "CityMapGeometry", "classCityMapGeometry.html", null ],
@@ -692,6 +694,7 @@ var hierarchy =
       [ "Viewer3DTerrainTexture", "classViewer3DTerrainTexture.html", null ]
     ] ],
     [ "QQuickImageProvider", null, [
+      [ "ColoredSvgImageProvider", "classColoredSvgImageProvider.html", null ],
       [ "GeometryImage::VehicleGeometryImageProvider", "classGeometryImage_1_1VehicleGeometryImageProvider.html", null ],
       [ "QGCImageProvider", "classQGCImageProvider.html", null ]
     ] ],
@@ -791,7 +794,6 @@ var hierarchy =
     [ "RunGuard", "classRunGuard.html", null ],
     [ "satellite_info_s", "structsatellite__info__s.html", null ],
     [ "QGCSqlHelper::ScopedConnection", "classQGCSqlHelper_1_1ScopedConnection.html", null ],
-    [ "ScopedExportDB", "structScopedExportDB.html", null ],
     [ "LogStore::ScopedReadConnection", "classLogStore_1_1ScopedReadConnection.html", null ],
     [ "sensor_gnss_relative_s", "structsensor__gnss__relative__s.html", null ],
     [ "sensor_gps_s", "structsensor__gps__s.html", null ],
@@ -807,11 +809,9 @@ var hierarchy =
       [ "TerrainTileCopernicus", "classTerrainTileCopernicus.html", null ]
     ] ],
     [ "TerrainTile::TileInfo_t", "structTerrainTile_1_1TileInfo__t.html", null ],
-    [ "Viewer3DTileReply::TileInfo_t", "structViewer3DTileReply_1_1TileInfo__t.html", null ],
     [ "TileSetRecord", "structTileSetRecord.html", null ],
-    [ "Viewer3DTileQuery::TileStatistics_t", "structViewer3DTileQuery_1_1TileStatistics__t.html", null ],
     [ "TotalsResult", "structTotalsResult.html", null ],
-    [ "TransactionGuard", "classTransactionGuard.html", null ],
+    [ "QGCSqlHelper::Transaction", "classQGCSqlHelper_1_1Transaction.html", null ],
     [ "UDPClient", "structUDPClient.html", null ],
     [ "UrlFactory", "classUrlFactory.html", null ],
     [ "KMLSchemaValidator::ValidationResult", "structKMLSchemaValidator_1_1ValidationResult.html", null ],
@@ -823,5 +823,7 @@ var hierarchy =
       [ "MessageIntervalManager", "classMessageIntervalManager.html", null ],
       [ "RequestMessageCoordinator", "classRequestMessageCoordinator.html", null ],
       [ "Vehicle", "classVehicle.html", null ]
-    ] ]
+    ] ],
+    [ "Viewer3DTileInfo", "structViewer3DTileInfo.html", null ],
+    [ "Viewer3DTileStatistics", "structViewer3DTileStatistics.html", null ]
 ];

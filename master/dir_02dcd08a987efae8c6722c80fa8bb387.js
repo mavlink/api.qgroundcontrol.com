@@ -6,6 +6,8 @@ var dir_02dcd08a987efae8c6722c80fa8bb387 =
     [ "QGCArchiveFile.h", "QGCArchiveFile_8h.html", "QGCArchiveFile_8h" ],
     [ "QGCArchiveModel.cc", "QGCArchiveModel_8cc.html", null ],
     [ "QGCArchiveModel.h", "QGCArchiveModel_8h.html", "QGCArchiveModel_8h" ],
+    [ "QGCArchiveWatcher.cc", "QGCArchiveWatcher_8cc.html", null ],
+    [ "QGCArchiveWatcher.h", "QGCArchiveWatcher_8h.html", "QGCArchiveWatcher_8h" ],
     [ "QGCCompression.cc", "QGCCompression_8cc.html", "QGCCompression_8cc" ],
     [ "QGCCompression.h", "QGCCompression_8h.html", "QGCCompression_8h" ],
     [ "QGCCompressionJob.cc", "QGCCompressionJob_8cc.html", null ],

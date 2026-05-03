@@ -7,7 +7,7 @@ var namespaceSDLJoystick =
     [ "connectionStateToString", "namespaceSDLJoystick.html#a0cb76d6a72dfe7cb27e68fd9dc853abf", null ],
     [ "createVirtualJoystick", "namespaceSDLJoystick.html#aa422815d4a7296c8b14a5a15589e54e9", null ],
     [ "destroyVirtualJoystick", "namespaceSDLJoystick.html#a05d2b83ef1b51944e52c4f1a36ae7f82", null ],
-    [ "findBinding", "namespaceSDLJoystick.html#acd2c461b9588d29423158adc39749a24", null ],
+    [ "findBinding", "namespaceSDLJoystick.html#aa841efef1ebfe66703f527d5aa65fd4b", null ],
     [ "gamepadAxisFromString", "namespaceSDLJoystick.html#aebefd745b701d7fec700722d6987dddd", null ],
     [ "gamepadAxisToString", "namespaceSDLJoystick.html#aed3f21cb85296b2dd797cf53ecf86e02", null ],
     [ "gamepadButtonFromString", "namespaceSDLJoystick.html#a86912f4f6096fb3d645c4f7cb91fa33f", null ],

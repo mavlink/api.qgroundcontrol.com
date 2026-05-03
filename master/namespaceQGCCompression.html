@@ -265,6 +265,17 @@ Functions</h2></td></tr>
 <tr class="memitem:a43f66fb29ef043322dfb087f3a0471f7" id="r_a43f66fb29ef043322dfb087f3a0471f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCCompression.html#a43f66fb29ef043322dfb087f3a0471f7">lastCompressionRatio</a> ()</td></tr>
 <tr class="memdesc:a43f66fb29ef043322dfb087f3a0471f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compression ratio from the last <a class="el" href="namespaceQGCCompression.html#a4973097b77aedf9b4dc94e03319c4093">compressData()</a> call (thread-local, percentage of original size).  <br /></td></tr>
 <tr class="separator:a43f66fb29ef043322dfb087f3a0471f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6b72697044eabb82888a3f3a2fe86e4" id="r_aa6b72697044eabb82888a3f3a2fe86e4"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCCompression.html#aa6b72697044eabb82888a3f3a2fe86e4">readFile</a> (const QString &amp;filePath, QString *<a class="el" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>=nullptr, qint64 maxBytes=0)</td></tr>
+<tr class="memdesc:aa6b72697044eabb82888a3f3a2fe86e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read file contents, transparently decompressing .gz/.xz/.zst/.bz2/.lz4 files.  <br /></td></tr>
+<tr class="separator:aa6b72697044eabb82888a3f3a2fe86e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06ca3300c9e91a44c859efaf6111b533" id="r_a06ca3300c9e91a44c859efaf6111b533"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCCompression.html#a06ca3300c9e91a44c859efaf6111b533">computeFileHash</a> (const QString &amp;filePath, QCryptographicHash::Algorithm algorithm=QCryptographicHash::Sha256)</td></tr>
+<tr class="memdesc:a06ca3300c9e91a44c859efaf6111b533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash file contents post-decompression.  <br /></td></tr>
+<tr class="separator:a06ca3300c9e91a44c859efaf6111b533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fbe4533962246a46fdc28c8343f92ab" id="r_a3fbe4533962246a46fdc28c8343f92ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCCompression.html#a3fbe4533962246a46fdc28c8343f92ab">looksLikeCompressedData</a> (const QByteArray &amp;data)</td></tr>
+<tr class="separator:a3fbe4533962246a46fdc28c8343f92ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd183665683e88cc5d674e975b84a7e6" id="r_abd183665683e88cc5d674e975b84a7e6"><td class="memItemLeft" align="right" valign="top">QJsonDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCCompression.html#abd183665683e88cc5d674e975b84a7e6">parseCompressedJson</a> (const QByteArray &amp;data, QJsonParseError *<a class="el" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>=nullptr)</td></tr>
+<tr class="memdesc:abd183665683e88cc5d674e975b84a7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse JSON from data that may be compressed. Auto-detects gzip/xz/zstd/bzip2/lz4.  <br /></td></tr>
+<tr class="separator:abd183665683e88cc5d674e975b84a7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9447499bd313fb5727b1aeccb0c0c2f8" id="r_a9447499bd313fb5727b1aeccb0c0c2f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCCompression.html#a9447499bd313fb5727b1aeccb0c0c2f8">isCompressedFile</a> (const QString &amp;filePath)</td></tr>
 <tr class="memdesc:a9447499bd313fb5727b1aeccb0c0c2f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if file path indicates a compressed file (.gz, .xz, .zst)  <br /></td></tr>
 <tr class="separator:a9447499bd313fb5727b1aeccb0c0c2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -361,7 +372,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a5293269680acb2a4429884885795b1c3a68ef004de6166492c1d668eb8efe09bd" name="a5293269680acb2a4429884885795b1c3a68ef004de6166492c1d668eb8efe09bd"></a>Best&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8h_source.html#l00312">312</a> of file <a class="el" href="QGCCompression_8h_source.html">QGCCompression.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8h_source.html#l00315">315</a> of file <a class="el" href="QGCCompression_8h_source.html">QGCCompression.h</a>.</p>
 
 </div>
 </div>
@@ -409,7 +420,7 @@ Variables</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8h_source.html#l00020">20</a> of file <a class="el" href="QGCCompression_8h_source.html">QGCCompression.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8h_source.html#l00023">23</a> of file <a class="el" href="QGCCompression_8h_source.html">QGCCompression.h</a>.</p>
 
 </div>
 </div>
@@ -465,7 +476,7 @@ Variables</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8h_source.html#l00047">47</a> of file <a class="el" href="QGCCompression_8h_source.html">QGCCompression.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8h_source.html#l00050">50</a> of file <a class="el" href="QGCCompression_8h_source.html">QGCCompression.h</a>.</p>
 
 </div>
 </div>
@@ -495,11 +506,11 @@ Variables</h2></td></tr>
 
 <p>Capture format detection info from <a class="el" href="namespaceQGClibarchive.html">QGClibarchive</a> after an operation. </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00258">258</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00260">260</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00258">captureFormatInfo()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l00062">QGClibarchive::lastDetectedFilterName()</a>, and <a class="el" href="QGClibarchive_8cc_source.html#l00057">QGClibarchive::lastDetectedFormatName()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00260">captureFormatInfo()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l00062">QGClibarchive::lastDetectedFilterName()</a>, and <a class="el" href="QGClibarchive_8cc_source.html#l00057">QGClibarchive::lastDetectedFormatName()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00258">captureFormatInfo()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00618">decompressData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00553">decompressFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00840">decompressFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00855">decompressFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00651">extractArchive()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00670">extractArchiveAtomic()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00689">extractArchiveFiltered()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00884">extractFileDataFromDevice()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00869">extractFromDevice()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00260">captureFormatInfo()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00620">decompressData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00555">decompressFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00842">decompressFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00857">decompressFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00653">extractArchive()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00672">extractArchiveAtomic()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00691">extractArchiveFiltered()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00886">extractFileDataFromDevice()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00871">extractFromDevice()</a>.</p>
 
 </div>
 </div>
@@ -537,11 +548,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Compressed data in qCompress format, or empty on failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00907">907</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00909">909</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00907">compress()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00909">compress()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00907">compress()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00909">compress()</a>.</p>
 
 </div>
 </div>
@@ -585,11 +596,47 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00928">928</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00930">930</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00928">compressData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00924">kHeaderCompressed</a>, <a class="el" href="QGCCompression_8cc_source.html#l00923">kHeaderUncompressed</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00926">s_lastCompressionRatio</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00930">compressData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00926">kHeaderCompressed</a>, <a class="el" href="QGCCompression_8cc_source.html#l00925">kHeaderUncompressed</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00928">s_lastCompressionRatio</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00928">compressData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00930">compressData()</a>.</p>
+
+</div>
+</div>
+<a id="a06ca3300c9e91a44c859efaf6111b533" name="a06ca3300c9e91a44c859efaf6111b533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06ca3300c9e91a44c859efaf6111b533">&#9670;&#160;</a></span>computeFileHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString QGCCompression::computeFileHash </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>filePath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QCryptographicHash::Algorithm&#160;</td>
+          <td class="paramname"><em>algorithm</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Hash file contents post-decompression. </p>
+
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l01023">1023</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="QGCArchiveDeviceBase_8cc_source.html#l00040">QGCArchiveDeviceBase::close()</a>, <a class="el" href="QGCFileHelper_8cc_source.html#l00365">QGCFileHelper::computeFileHash()</a>, <a class="el" href="QGCCompression_8cc_source.html#l01023">computeFileHash()</a>, <a class="el" href="QGCCompression_8h_source.html#l00103">isCompressedFile()</a>, and <a class="el" href="QGCDecompressDevice_8cc_source.html#l00027">QGCDecompressDevice::open()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l01023">computeFileHash()</a>.</p>
 
 </div>
 </div>
@@ -634,11 +681,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Decompressed data, or empty on failure or if size limit exceeded </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00618">618</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00620">620</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00258">captureFormatInfo()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00618">decompressData()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01291">QGClibarchive::decompressDataFromMemory()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00368">detectFormatFromData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00114">formatName</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00520">isCompressionFormat()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00260">captureFormatInfo()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00620">decompressData()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01291">QGClibarchive::decompressDataFromMemory()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00370">detectFormatFromData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00116">formatName</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00522">isCompressionFormat()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00618">decompressData()</a>, and <a class="el" href="QGCNetworkHelper_8cc_source.html#l00931">QGCNetworkHelper::parseCompressedJson()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00620">decompressData()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l01068">parseCompressedJson()</a>.</p>
 
 </div>
 </div>
@@ -697,11 +744,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on failure or if size limit exceeded </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00553">553</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00555">555</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00258">captureFormatInfo()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00553">decompressFile()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01271">QGClibarchive::decompressSingleFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00651">extractArchive()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00433">formatExtension()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00114">formatName</a>, <a class="el" href="QGCCompression_8cc_source.html#l00503">isArchiveFormat()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00520">isCompressionFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00208">validateFileInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00260">captureFormatInfo()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00555">decompressFile()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01271">QGClibarchive::decompressSingleFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00653">extractArchive()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00435">formatExtension()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00116">formatName</a>, <a class="el" href="QGCCompression_8cc_source.html#l00505">isArchiveFormat()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00522">isCompressionFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00210">validateFileInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00553">decompressFile()</a>, <a class="el" href="QGCCompressionJob_8cc_source.html#l00094">QGCCompressionJob::decompressFile()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00595">decompressIfNeeded()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00555">decompressFile()</a>, <a class="el" href="QGCCompressionJob_8cc_source.html#l00094">QGCCompressionJob::decompressFile()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00597">decompressIfNeeded()</a>.</p>
 
 </div>
 </div>
@@ -753,11 +800,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on failure or if size limit exceeded </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00840">840</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00842">842</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00258">captureFormatInfo()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01377">QGClibarchive::decompressFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00840">decompressFromDevice()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00244">validateDeviceInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00260">captureFormatInfo()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01377">QGClibarchive::decompressFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00842">decompressFromDevice()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00246">validateDeviceInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00840">decompressFromDevice()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00855">decompressFromDevice()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00842">decompressFromDevice()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00857">decompressFromDevice()</a>.</p>
 
 </div>
 </div>
@@ -795,9 +842,9 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Decompressed data, or empty QByteArray on failure or if size limit exceeded </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00855">855</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00857">857</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00258">captureFormatInfo()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01398">QGClibarchive::decompressDataFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00840">decompressFromDevice()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00244">validateDeviceInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00260">captureFormatInfo()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01398">QGClibarchive::decompressDataFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00842">decompressFromDevice()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00246">validateDeviceInput()</a>.</p>
 
 </div>
 </div>
@@ -842,11 +889,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Path to result file (decompressed or original), empty string on failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00595">595</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00597">597</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00553">decompressFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00595">decompressIfNeeded()</a>, <a class="el" href="QGCCompression_8h_source.html#l00100">isCompressedFile()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00534">strippedPath()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00555">decompressFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00597">decompressIfNeeded()</a>, <a class="el" href="QGCCompression_8h_source.html#l00103">isCompressedFile()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00536">strippedPath()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00595">decompressIfNeeded()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00597">decompressIfNeeded()</a>.</p>
 
 </div>
 </div>
@@ -866,11 +913,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the detected compression filter name from the last operation (thread-local) Returns names like "gzip", "xz", "zstd", "bzip2", "none", etc. Empty string if no filter was detected </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00195">195</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00197">197</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00195">detectedFilterName()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00197">detectedFilterName()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00195">detectedFilterName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00197">detectedFilterName()</a>.</p>
 
 </div>
 </div>
@@ -890,11 +937,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Get the detected archive format name from the last operation (thread-local) Returns names like "ZIP 2.0", "POSIX ustar", "RAW", etc. Empty string if no format was detected </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00190">190</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00192">192</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00190">detectedFormatName()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00192">detectedFormatName()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00190">detectedFormatName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00192">detectedFormatName()</a>.</p>
 
 </div>
 </div>
@@ -932,11 +979,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Detected format, or <a class="el" href="namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5a06b9281e396db002010bde1de57262eb" title="Auto-detect from file extension or magic bytes.">Format::Auto</a> if detection failed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00318">318</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00320">320</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00318">detectFormat()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00268">detectFormatFromExtension()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00337">detectFormatFromFile()</a>, <a class="el" href="QGCFileHelper_8cc_source.html#l00105">QGCFileHelper::exists()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00114">formatName</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00320">detectFormat()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00270">detectFormatFromExtension()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00339">detectFormatFromFile()</a>, <a class="el" href="QGCFileHelper_8cc_source.html#l00084">QGCFileHelper::exists()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00116">formatName</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00318">detectFormat()</a>, <a class="el" href="QGCCompression_8h_source.html#l00105">isArchiveFile()</a>, <a class="el" href="QGCCompression_8h_source.html#l00100">isCompressedFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00534">strippedPath()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00208">validateFileInput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00320">detectFormat()</a>, <a class="el" href="QGCCompression_8h_source.html#l00108">isArchiveFile()</a>, <a class="el" href="QGCCompression_8h_source.html#l00103">isCompressedFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00536">strippedPath()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00210">validateFileInput()</a>.</p>
 
 </div>
 </div>
@@ -963,11 +1010,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Detected format, or <a class="el" href="namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5a06b9281e396db002010bde1de57262eb" title="Auto-detect from file extension or magic bytes.">Format::Auto</a> if detection failed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00368">368</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00370">370</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00368">detectFormatFromData()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00114">formatName</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00370">detectFormatFromData()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00116">formatName</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00618">decompressData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00368">detectFormatFromData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00337">detectFormatFromFile()</a>, and <a class="el" href="QGCNetworkHelper_8cc_source.html#l00926">QGCNetworkHelper::looksLikeCompressedData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00620">decompressData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00370">detectFormatFromData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00339">detectFormatFromFile()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l01063">looksLikeCompressedData()</a>.</p>
 
 </div>
 </div>
@@ -997,11 +1044,11 @@ Variables</h2></td></tr>
 
 <p>Extension-based format detection (internal helper) </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00268">268</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00270">270</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00268">detectFormatFromExtension()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00270">detectFormatFromExtension()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00318">detectFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00268">detectFormatFromExtension()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00320">detectFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00270">detectFormatFromExtension()</a>.</p>
 
 </div>
 </div>
@@ -1028,11 +1075,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Detected format, or <a class="el" href="namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5a06b9281e396db002010bde1de57262eb" title="Auto-detect from file extension or magic bytes.">Format::Auto</a> if detection failed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00337">337</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00339">339</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00368">detectFormatFromData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00337">detectFormatFromFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00114">formatName</a>, and <a class="el" href="QGCFileHelper_8cc_source.html#l00376">QGCFileHelper::isQtResource()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00370">detectFormatFromData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00339">detectFormatFromFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00116">formatName</a>, and <a class="el" href="QGCFileHelper_8cc_source.html#l00355">QGCFileHelper::isQtResource()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00318">detectFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00337">detectFormatFromFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00320">detectFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00339">detectFormatFromFile()</a>.</p>
 
 </div>
 </div>
@@ -1054,11 +1101,11 @@ Variables</h2></td></tr>
 
 <p>Get a human-readable name for an error code. </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00163">163</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00165">165</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00112">error</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00163">errorName()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00114">error</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00165">errorName()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00163">errorName()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00155">lastErrorString()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00165">errorName()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00157">lastErrorString()</a>.</p>
 
 </div>
 </div>
@@ -1117,11 +1164,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on failure or if size limit exceeded </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00651">651</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00653">653</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00258">captureFormatInfo()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l00747">QGClibarchive::extractAnyArchive()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00651">extractArchive()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00114">formatName</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00260">captureFormatInfo()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l00747">QGClibarchive::extractAnyArchive()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00653">extractArchive()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00116">formatName</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00553">decompressFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00651">extractArchive()</a>, and <a class="el" href="QGCCompressionJob_8cc_source.html#l00068">QGCCompressionJob::extractArchive()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00555">decompressFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00653">extractArchive()</a>, and <a class="el" href="QGCCompressionJob_8cc_source.html#l00068">QGCCompressionJob::extractArchive()</a>.</p>
 
 </div>
 </div>
@@ -1180,11 +1227,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on failure or if size limit exceeded </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00670">670</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00672">672</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00258">captureFormatInfo()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00670">extractArchiveAtomic()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l00771">QGClibarchive::extractArchiveAtomic()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00114">formatName</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00260">captureFormatInfo()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00672">extractArchiveAtomic()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l00771">QGClibarchive::extractArchiveAtomic()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00116">formatName</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00670">extractArchiveAtomic()</a>, and <a class="el" href="QGCCompressionJob_8cc_source.html#l00081">QGCCompressionJob::extractArchiveAtomic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00672">extractArchiveAtomic()</a>, and <a class="el" href="QGCCompressionJob_8cc_source.html#l00081">QGCCompressionJob::extractArchiveAtomic()</a>.</p>
 
 </div>
 </div>
@@ -1243,11 +1290,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success (even if filter skipped all entries), false on failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00689">689</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00691">691</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00258">captureFormatInfo()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00689">extractArchiveFiltered()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01188">QGClibarchive::extractWithFilter()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00260">captureFormatInfo()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00691">extractArchiveFiltered()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01188">QGClibarchive::extractWithFilter()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00689">extractArchiveFiltered()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00691">extractArchiveFiltered()</a>.</p>
 
 </div>
 </div>
@@ -1306,11 +1353,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if at least one file matched and extracted, false on error or no matches </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00818">818</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00820">820</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGClibarchive_8cc_source.html#l00994">QGClibarchive::extractByPattern()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00818">extractByPattern()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGClibarchive_8cc_source.html#l00994">QGClibarchive::extractByPattern()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00820">extractByPattern()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00818">extractByPattern()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00820">extractByPattern()</a>.</p>
 
 </div>
 </div>
@@ -1362,11 +1409,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false if file not found or extraction failed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00777">777</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00779">779</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00777">extractFile()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l00885">QGClibarchive::extractSingleFile()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00779">extractFile()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l00885">QGClibarchive::extractSingleFile()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompressionJob_8cc_source.html#l00107">QGCCompressionJob::extractFile()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00777">extractFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompressionJob_8cc_source.html#l00107">QGCCompressionJob::extractFile()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00779">extractFile()</a>.</p>
 
 </div>
 </div>
@@ -1411,11 +1458,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>File contents, or empty QByteArray if not found or extraction failed </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00792">792</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00794">794</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00792">extractFileData()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l00909">QGClibarchive::extractFileToMemory()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00794">extractFileData()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l00909">QGClibarchive::extractFileToMemory()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00792">extractFileData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00794">extractFileData()</a>.</p>
 
 </div>
 </div>
@@ -1453,11 +1500,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>File contents, or empty QByteArray if not found </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00884">884</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00886">886</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00258">captureFormatInfo()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00884">extractFileDataFromDevice()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01349">QGClibarchive::extractFileDataFromDevice()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00244">validateDeviceInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00260">captureFormatInfo()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00886">extractFileDataFromDevice()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01349">QGClibarchive::extractFileDataFromDevice()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00246">validateDeviceInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00884">extractFileDataFromDevice()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00886">extractFileDataFromDevice()</a>.</p>
 
 </div>
 </div>
@@ -1509,11 +1556,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if all files found and extracted, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00805">805</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00807">807</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00805">extractFiles()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l00941">QGClibarchive::extractMultipleFiles()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00807">extractFiles()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l00941">QGClibarchive::extractMultipleFiles()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompressionJob_8cc_source.html#l00118">QGCCompressionJob::extractFiles()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00805">extractFiles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompressionJob_8cc_source.html#l00118">QGCCompressionJob::extractFiles()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00807">extractFiles()</a>.</p>
 
 </div>
 </div>
@@ -1565,11 +1612,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on failure or if size limit exceeded </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00869">869</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00871">871</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00258">captureFormatInfo()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01332">QGClibarchive::extractFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00869">extractFromDevice()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00244">validateDeviceInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00260">captureFormatInfo()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01332">QGClibarchive::extractFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00871">extractFromDevice()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00246">validateDeviceInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00869">extractFromDevice()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00871">extractFromDevice()</a>.</p>
 
 </div>
 </div>
@@ -1614,11 +1661,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if file exists in archive </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00765">765</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00767">767</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00765">fileExists()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01096">QGClibarchive::fileExistsInArchive()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00767">fileExists()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01096">QGClibarchive::fileExistsInArchive()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00765">fileExists()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00767">fileExists()</a>.</p>
 
 </div>
 </div>
@@ -1640,11 +1687,11 @@ Variables</h2></td></tr>
 
 <p>Get file extension for a format. </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00433">433</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00435">435</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00433">formatExtension()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00435">formatExtension()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00553">decompressFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00433">formatExtension()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00534">strippedPath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00555">decompressFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00435">formatExtension()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00536">strippedPath()</a>.</p>
 
 </div>
 </div>
@@ -1666,7 +1713,7 @@ Variables</h2></td></tr>
 
 <p>Get human-readable name for a format. </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00468">468</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00470">470</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
 </div>
 </div>
@@ -1704,11 +1751,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="structQGCCompression_1_1ArchiveStats.html" title="Summary statistics for an archive.">ArchiveStats</a> struct (all zeros on failure) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00748">748</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00750">750</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGClibarchive_8cc_source.html#l01154">QGClibarchive::getArchiveStats()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00748">getArchiveStats()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGClibarchive_8cc_source.html#l01154">QGClibarchive::getArchiveStats()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00750">getArchiveStats()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00748">getArchiveStats()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00750">getArchiveStats()</a>.</p>
 
 </div>
 </div>
@@ -1738,11 +1785,11 @@ Variables</h2></td></tr>
 
 <p>Check if file path indicates an archive file (.zip, .tar, .tar.gz, etc.) </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8h_source.html#l00105">105</a> of file <a class="el" href="QGCCompression_8h_source.html">QGCCompression.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8h_source.html#l00108">108</a> of file <a class="el" href="QGCCompression_8h_source.html">QGCCompression.h</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00318">detectFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00503">isArchiveFormat()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00320">detectFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00505">isArchiveFormat()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PlanMasterController_8cc_source.html#l00829">PlanMasterController::loadFromArchive()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PlanMasterController_8cc_source.html#l00849">PlanMasterController::loadFromArchive()</a>.</p>
 
 </div>
 </div>
@@ -1764,11 +1811,11 @@ Variables</h2></td></tr>
 
 <p>Check if format is an archive (contains multiple files) </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00503">503</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00505">505</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00503">isArchiveFormat()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00505">isArchiveFormat()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00553">decompressFile()</a>, <a class="el" href="QGCCompression_8h_source.html#l00105">isArchiveFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00503">isArchiveFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00555">decompressFile()</a>, <a class="el" href="QGCCompression_8h_source.html#l00108">isArchiveFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00505">isArchiveFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>.</p>
 
 </div>
 </div>
@@ -1798,11 +1845,11 @@ Variables</h2></td></tr>
 
 <p>Check if file path indicates a compressed file (.gz, .xz, .zst) </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8h_source.html#l00100">100</a> of file <a class="el" href="QGCCompression_8h_source.html">QGCCompression.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8h_source.html#l00103">103</a> of file <a class="el" href="QGCCompression_8h_source.html">QGCCompression.h</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00318">detectFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00520">isCompressionFormat()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00320">detectFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00522">isCompressionFormat()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCFileHelper_8cc_source.html#l00409">QGCFileHelper::computeDecompressedFileHash()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00595">decompressIfNeeded()</a>, and <a class="el" href="QGCFileHelper_8cc_source.html#l00021">QGCFileHelper::readFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l01023">computeFileHash()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00597">decompressIfNeeded()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l01004">readFile()</a>.</p>
 
 </div>
 </div>
@@ -1824,11 +1871,11 @@ Variables</h2></td></tr>
 
 <p>Check if format is a compression format (single stream) </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00520">520</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00522">522</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00520">isCompressionFormat()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00522">isCompressionFormat()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00618">decompressData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00553">decompressFile()</a>, <a class="el" href="QGCCompression_8h_source.html#l00100">isCompressedFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00520">isCompressionFormat()</a>, <a class="el" href="QGCNetworkHelper_8cc_source.html#l00926">QGCNetworkHelper::looksLikeCompressedData()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00534">strippedPath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00620">decompressData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00555">decompressFile()</a>, <a class="el" href="QGCCompression_8h_source.html#l00103">isCompressedFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00522">isCompressionFormat()</a>, <a class="el" href="QGCCompression_8cc_source.html#l01063">looksLikeCompressedData()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00536">strippedPath()</a>.</p>
 
 </div>
 </div>
@@ -1850,11 +1897,11 @@ Variables</h2></td></tr>
 
 <p>Check if data has the compressed framing header. </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00992">992</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00994">994</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00992">isDataCompressed()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00924">kHeaderCompressed</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00994">isDataCompressed()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00926">kHeaderCompressed</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00992">isDataCompressed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00994">isDataCompressed()</a>.</p>
 
 </div>
 </div>
@@ -1875,11 +1922,11 @@ Variables</h2></td></tr>
 
 <p>Compression ratio from the last <a class="el" href="namespaceQGCCompression.html#a4973097b77aedf9b4dc94e03319c4093">compressData()</a> call (thread-local, percentage of original size). </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00997">997</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00999">999</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00997">lastCompressionRatio()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00926">s_lastCompressionRatio</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00999">lastCompressionRatio()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00928">s_lastCompressionRatio</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00997">lastCompressionRatio()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00999">lastCompressionRatio()</a>.</p>
 
 </div>
 </div>
@@ -1900,11 +1947,11 @@ Variables</h2></td></tr>
 
 <p>Get the error code from the last operation (thread-local) </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00150">150</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00152">152</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00150">lastError()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00152">lastError()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00150">lastError()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00152">lastError()</a>.</p>
 
 </div>
 </div>
@@ -1925,11 +1972,11 @@ Variables</h2></td></tr>
 
 <p>Get a human-readable error message from the last operation (thread-local) </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00155">155</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00157">157</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00163">errorName()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00155">lastErrorString()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00165">errorName()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00157">lastErrorString()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00155">lastErrorString()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00157">lastErrorString()</a>.</p>
 
 </div>
 </div>
@@ -1967,11 +2014,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>List of file paths in archive, empty list on failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00712">712</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00714">714</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00712">listArchive()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01118">QGClibarchive::listArchiveEntries()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00714">listArchive()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01118">QGClibarchive::listArchiveEntries()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00712">listArchive()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00714">listArchive()</a>.</p>
 
 </div>
 </div>
@@ -2009,11 +2056,114 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>List of <a class="el" href="structQGCCompression_1_1ArchiveEntry.html" title="Metadata for a single entry in an archive.">ArchiveEntry</a> structs, empty list on failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00729">729</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00731">731</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00729">listArchiveDetailed()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01136">QGClibarchive::listArchiveEntriesDetailed()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00731">listArchiveDetailed()</a>, <a class="el" href="QGClibarchive_8cc_source.html#l01136">QGClibarchive::listArchiveEntriesDetailed()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00729">listArchiveDetailed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00731">listArchiveDetailed()</a>.</p>
+
+</div>
+</div>
+<a id="a3fbe4533962246a46fdc28c8343f92ab" name="a3fbe4533962246a46fdc28c8343f92ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fbe4533962246a46fdc28c8343f92ab">&#9670;&#160;</a></span>looksLikeCompressedData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QGCCompression::looksLikeCompressedData </td>
+          <td>(</td>
+          <td class="paramtype">const QByteArray &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Quick check whether <code>data</code> begins with a recognized compression magic (gzip / xz / zstd / bzip2 / lz4). Wraps detectFormatFromData + isCompressionFormat. </p>
+
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l01063">1063</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00370">detectFormatFromData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00522">isCompressionFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l01063">looksLikeCompressedData()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l01063">looksLikeCompressedData()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l01068">parseCompressedJson()</a>.</p>
+
+</div>
+</div>
+<a id="abd183665683e88cc5d674e975b84a7e6" name="abd183665683e88cc5d674e975b84a7e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd183665683e88cc5d674e975b84a7e6">&#9670;&#160;</a></span>parseCompressedJson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QJsonDocument QGCCompression::parseCompressedJson </td>
+          <td>(</td>
+          <td class="paramtype">const QByteArray &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QJsonParseError *&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse JSON from data that may be compressed. Auto-detects gzip/xz/zstd/bzip2/lz4. </p>
+
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l01068">1068</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00620">decompressData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00114">error</a>, <a class="el" href="QGCCompression_8cc_source.html#l01063">looksLikeCompressedData()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l01068">parseCompressedJson()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TerrainTileCopernicus_8cc_source.html#l00023">TerrainTileCopernicus::getJsonFromData()</a>, <a class="el" href="JsonParsing_8cc_source.html#l00097">JsonParsing::isJsonFile()</a>, <a class="el" href="JsonParsing_8cc_source.html#l00334">JsonParsing::openInternalQGCJsonFile()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l01068">parseCompressedJson()</a>.</p>
+
+</div>
+</div>
+<a id="aa6b72697044eabb82888a3f3a2fe86e4" name="aa6b72697044eabb82888a3f3a2fe86e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6b72697044eabb82888a3f3a2fe86e4">&#9670;&#160;</a></span>readFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray QGCCompression::readFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>filePath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *&#160;</td>
+          <td class="paramname"><em>errorString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>maxBytes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read file contents, transparently decompressing .gz/.xz/.zst/.bz2/.lz4 files. </p>
+
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l01004">1004</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="QGCArchiveDeviceBase_8cc_source.html#l00040">QGCArchiveDeviceBase::close()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00115">errorString</a>, <a class="el" href="QGCCompression_8h_source.html#l00103">isCompressedFile()</a>, <a class="el" href="QGCDecompressDevice_8cc_source.html#l00027">QGCDecompressDevice::open()</a>, <a class="el" href="QGCCompression_8cc_source.html#l01004">readFile()</a>, and <a class="el" href="QGCFileHelper_8cc_source.html#l00019">QGCFileHelper::readFile()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00547">FirmwarePlugin::cacheParameterMetaDataFile()</a>, <a class="el" href="JsonParsing_8cc_source.html#l00114">JsonParsing::isJsonFile()</a>, <a class="el" href="JsonParsing_8cc_source.html#l00334">JsonParsing::openInternalQGCJsonFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l01004">readFile()</a>, and <a class="el" href="ParameterMetaData_8cc_source.html#l00112">ParameterMetaData::versionFromMetaDataFile()</a>.</p>
 
 </div>
 </div>
@@ -2034,11 +2184,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Get path with compression extension stripped (.gz, .xz, .zst removed) Returns original path if not a compressed file format </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00534">534</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00536">536</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00318">detectFormat()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00433">formatExtension()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00520">isCompressionFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00534">strippedPath()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00320">detectFormat()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00435">formatExtension()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00522">isCompressionFormat()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00536">strippedPath()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00595">decompressIfNeeded()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00534">strippedPath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00597">decompressIfNeeded()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00536">strippedPath()</a>.</p>
 
 </div>
 </div>
@@ -2065,11 +2215,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Decompressed data, or empty on failure </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00915">915</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00917">917</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00915">uncompress()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00917">uncompress()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00915">uncompress()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00917">uncompress()</a>.</p>
 
 </div>
 </div>
@@ -2106,11 +2256,11 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00958">958</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00960">960</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00924">kHeaderCompressed</a>, <a class="el" href="QGCCompression_8cc_source.html#l00923">kHeaderUncompressed</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00958">uncompressData()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00926">kHeaderCompressed</a>, <a class="el" href="QGCCompression_8cc_source.html#l00925">kHeaderUncompressed</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00960">uncompressData()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00958">uncompressData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00960">uncompressData()</a>.</p>
 
 </div>
 </div>
@@ -2148,11 +2298,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if archive is valid and all entries can be read </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00756">756</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00758">758</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGClibarchive_8cc_source.html#l01068">QGClibarchive::validateArchive()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00756">validateArchive()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGClibarchive_8cc_source.html#l01068">QGClibarchive::validateArchive()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00758">validateArchive()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00756">validateArchive()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00758">validateArchive()</a>.</p>
 
 </div>
 </div>
@@ -2192,11 +2342,11 @@ Variables</h2></td></tr>
 
 <p>Validate archive input: file exists, format detected, and is archive format. </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00230">230</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00232">232</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00114">formatName</a>, <a class="el" href="QGCCompression_8cc_source.html#l00503">isArchiveFormat()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00208">validateFileInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00116">formatName</a>, <a class="el" href="QGCCompression_8cc_source.html#l00505">isArchiveFormat()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00210">validateFileInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00651">extractArchive()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00670">extractArchiveAtomic()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00689">extractArchiveFiltered()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00818">extractByPattern()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00777">extractFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00792">extractFileData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00805">extractFiles()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00765">fileExists()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00748">getArchiveStats()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00712">listArchive()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00729">listArchiveDetailed()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00756">validateArchive()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00653">extractArchive()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00672">extractArchiveAtomic()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00691">extractArchiveFiltered()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00820">extractByPattern()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00779">extractFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00794">extractFileData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00807">extractFiles()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00767">fileExists()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00750">getArchiveStats()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00714">listArchive()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00731">listArchiveDetailed()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00758">validateArchive()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>.</p>
 
 </div>
 </div>
@@ -2226,11 +2376,11 @@ Variables</h2></td></tr>
 
 <p>Validate device input for streaming operations. </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00244">244</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00246">246</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00244">validateDeviceInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00246">validateDeviceInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00840">decompressFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00855">decompressFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00884">extractFileDataFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00869">extractFromDevice()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00244">validateDeviceInput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00842">decompressFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00857">decompressFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00886">extractFileDataFromDevice()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00871">extractFromDevice()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00246">validateDeviceInput()</a>.</p>
 
 </div>
 </div>
@@ -2276,11 +2426,11 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if file exists and format was detected </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00208">208</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00210">210</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00318">detectFormat()</a>, <a class="el" href="QGCFileHelper_8cc_source.html#l00105">QGCFileHelper::exists()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00208">validateFileInput()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00320">detectFormat()</a>, <a class="el" href="QGCFileHelper_8cc_source.html#l00084">QGCFileHelper::exists()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00210">validateFileInput()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00553">decompressFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00230">validateArchiveInput()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00208">validateFileInput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00555">decompressFile()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00232">validateArchiveInput()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00210">validateFileInput()</a>.</p>
 
 </div>
 </div>
@@ -2331,9 +2481,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00924">924</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00926">926</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00928">compressData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00992">isDataCompressed()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00958">uncompressData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00930">compressData()</a>, <a class="el" href="QGCCompression_8cc_source.html#l00994">isDataCompressed()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00960">uncompressData()</a>.</p>
 
 </div>
 </div>
@@ -2357,9 +2507,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00923">923</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00925">925</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00928">compressData()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00958">uncompressData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00930">compressData()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00960">uncompressData()</a>.</p>
 
 </div>
 </div>
@@ -2383,9 +2533,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00926">926</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCompression_8cc_source.html#l00928">928</a> of file <a class="el" href="QGCCompression_8cc_source.html">QGCCompression.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00928">compressData()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00997">lastCompressionRatio()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCompression_8cc_source.html#l00930">compressData()</a>, and <a class="el" href="QGCCompression_8cc_source.html#l00999">lastCompressionRatio()</a>.</p>
 
 </div>
 </div>

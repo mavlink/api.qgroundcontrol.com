@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('FactMetaData_8cc_source.html',''); ini
 </div><!--header-->
 <div class="contents">
 <a href="FactMetaData_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="FactMetaData_8h.html">FactMetaData.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="JsonHelper_8h.html">JsonHelper.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="JsonParsing_8h.html">JsonParsing.h</a>&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="MAVLinkLib_8h.html">MAVLinkLib.h</a>&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="SettingsManager_8h.html">SettingsManager.h</a>&quot;</span></div>
@@ -1363,7 +1363,7 @@ $(document).ready(function(){initNavTree('FactMetaData_8cc_source.html',''); ini
 <div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>{</div>
 <div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span>    QString <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
 <div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span> </div>
-<div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>    <span class="keyword">static</span> <span class="keyword">const</span> QList&lt;JsonHelper::KeyValidateInfo&gt; keyInfoList = {</div>
+<div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>    <span class="keyword">static</span> <span class="keyword">const</span> QList&lt;JsonParsing::KeyValidateInfo&gt; keyInfoList = {</div>
 <div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span>        { _nameJsonKey,                 QJsonValue::String, <span class="keyword">true</span> },</div>
 <div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span>        { _labelJsonKey,                QJsonValue::String, <span class="keyword">false</span> },</div>
 <div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>        { _typeJsonKey,                 QJsonValue::String, <span class="keyword">true</span> },</div>
@@ -1388,7 +1388,7 @@ $(document).ready(function(){initNavTree('FactMetaData_8cc_source.html',''); ini
 <div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>        { _enumStringsJsonKey,          QJsonValue::String, <span class="keyword">false</span> },</div>
 <div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>    };</div>
 <div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span> </div>
-<div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceJsonHelper.html#a96b54c245d570a0b2e62b2a98f074c79">JsonHelper::validateKeys</a>(json, keyInfoList, <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)) {</div>
+<div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceJsonParsing.html#a72ea7d3eb5e623ca5955dac31bd5b854">JsonParsing::validateKeys</a>(json, keyInfoList, <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)) {</div>
 <div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>        qWarning(FactMetaDataLog) &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
 <div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="classFactMetaData.html">FactMetaData</a>(<a class="code hl_enumvalue" href="classFactMetaData.html#a594f352eed7c8c895fa442eef891d4b4aaf8d84b88f6b971761c620a275247cc3">valueTypeUint32</a>, metaDataParent);</div>
 <div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span>    }</div>
@@ -1578,249 +1578,250 @@ $(document).ready(function(){initNavTree('FactMetaData_8cc_source.html',''); ini
 <div class="line"><a id="l01387" name="l01387"></a><span class="lineno"> 1387</span>    }</div>
 <div class="line"><a id="l01388" name="l01388"></a><span class="lineno"> 1388</span>    metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a724b1c7bc64d2aef6fa8b4bac7852656">setVehicleRebootRequired</a>(rebootRequired);</div>
 <div class="line"><a id="l01389" name="l01389"></a><span class="lineno"> 1389</span> </div>
-<div class="line"><a id="l01390" name="l01390"></a><span class="lineno"> 1390</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classFactMetaData.html#af3e7a2ea1151725416c673b0477726a9">volatileValue</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01391" name="l01391"></a><span class="lineno"> 1391</span>    <span class="keywordflow">if</span> (json.contains(_volatileJsonKey)) {</div>
-<div class="line"><a id="l01392" name="l01392"></a><span class="lineno"> 1392</span>        <a class="code hl_function" href="classFactMetaData.html#af3e7a2ea1151725416c673b0477726a9">volatileValue</a> = json[_volatileJsonKey].toBool();</div>
+<div class="line"><a id="l01390" name="l01390"></a><span class="lineno"> 1390</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classFactMetaData.html#aa27787be380a351c8e9864e11e91540b">readOnly</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01391" name="l01391"></a><span class="lineno"> 1391</span>    <span class="keywordflow">if</span> (json.contains(_readOnlyJsonKey)) {</div>
+<div class="line"><a id="l01392" name="l01392"></a><span class="lineno"> 1392</span>        <a class="code hl_function" href="classFactMetaData.html#aa27787be380a351c8e9864e11e91540b">readOnly</a> = json[_readOnlyJsonKey].toBool();</div>
 <div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span>    }</div>
-<div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span>    metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#acb3453c3539f8cdf8b37a886e0e4f189">setVolatileValue</a>(<a class="code hl_function" href="classFactMetaData.html#af3e7a2ea1151725416c673b0477726a9">volatileValue</a>);</div>
+<div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span>    metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#afdfddd6c29668ac2bee6ca72ceb5d095">setReadOnly</a>(<a class="code hl_function" href="classFactMetaData.html#aa27787be380a351c8e9864e11e91540b">readOnly</a>);</div>
 <div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span> </div>
-<div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span>    <span class="keywordflow">if</span> (json.contains(_readOnlyJsonKey)) {</div>
-<div class="line"><a id="l01397" name="l01397"></a><span class="lineno"> 1397</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#afdfddd6c29668ac2bee6ca72ceb5d095">setReadOnly</a>(json[_readOnlyJsonKey].toBool());</div>
-<div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span>    }</div>
-<div class="line"><a id="l01399" name="l01399"></a><span class="lineno"> 1399</span> </div>
-<div class="line"><a id="l01400" name="l01400"></a><span class="lineno"> 1400</span>    <span class="keywordflow">if</span> (json.contains(_groupJsonKey)) {</div>
-<div class="line"><a id="l01401" name="l01401"></a><span class="lineno"> 1401</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#ace838c344ce517f9847bc36be2369472">setGroup</a>(json[_groupJsonKey].toString());</div>
-<div class="line"><a id="l01402" name="l01402"></a><span class="lineno"> 1402</span>    }</div>
-<div class="line"><a id="l01403" name="l01403"></a><span class="lineno"> 1403</span> </div>
-<div class="line"><a id="l01404" name="l01404"></a><span class="lineno"> 1404</span>    <span class="keywordflow">if</span> (json.contains(_categoryJsonKey)) {</div>
-<div class="line"><a id="l01405" name="l01405"></a><span class="lineno"> 1405</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a836290d5cd3a6892ea2a808b8f2f93aa">setCategory</a>(json[_categoryJsonKey].toString());</div>
-<div class="line"><a id="l01406" name="l01406"></a><span class="lineno"> 1406</span>    }</div>
-<div class="line"><a id="l01407" name="l01407"></a><span class="lineno"> 1407</span> </div>
-<div class="line"><a id="l01408" name="l01408"></a><span class="lineno"> 1408</span>    <span class="keywordflow">return</span> metaData;</div>
-<div class="line"><a id="l01409" name="l01409"></a><span class="lineno"> 1409</span>}</div>
+<div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classFactMetaData.html#af3e7a2ea1151725416c673b0477726a9">volatileValue</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01397" name="l01397"></a><span class="lineno"> 1397</span>    <span class="keywordflow">if</span> (json.contains(_volatileJsonKey)) {</div>
+<div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span>        <a class="code hl_function" href="classFactMetaData.html#af3e7a2ea1151725416c673b0477726a9">volatileValue</a> = json[_volatileJsonKey].toBool();</div>
+<div class="line"><a id="l01399" name="l01399"></a><span class="lineno"> 1399</span>    }</div>
+<div class="line"><a id="l01400" name="l01400"></a><span class="lineno"> 1400</span>    metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#acb3453c3539f8cdf8b37a886e0e4f189">setVolatileValue</a>(<a class="code hl_function" href="classFactMetaData.html#af3e7a2ea1151725416c673b0477726a9">volatileValue</a>);</div>
+<div class="line"><a id="l01401" name="l01401"></a><span class="lineno"> 1401</span>    <span class="keywordflow">if</span> (json.contains(_groupJsonKey)) {</div>
+<div class="line"><a id="l01402" name="l01402"></a><span class="lineno"> 1402</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#ace838c344ce517f9847bc36be2369472">setGroup</a>(json[_groupJsonKey].toString());</div>
+<div class="line"><a id="l01403" name="l01403"></a><span class="lineno"> 1403</span>    }</div>
+<div class="line"><a id="l01404" name="l01404"></a><span class="lineno"> 1404</span> </div>
+<div class="line"><a id="l01405" name="l01405"></a><span class="lineno"> 1405</span>    <span class="keywordflow">if</span> (json.contains(_categoryJsonKey)) {</div>
+<div class="line"><a id="l01406" name="l01406"></a><span class="lineno"> 1406</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a836290d5cd3a6892ea2a808b8f2f93aa">setCategory</a>(json[_categoryJsonKey].toString());</div>
+<div class="line"><a id="l01407" name="l01407"></a><span class="lineno"> 1407</span>    }</div>
+<div class="line"><a id="l01408" name="l01408"></a><span class="lineno"> 1408</span> </div>
+<div class="line"><a id="l01409" name="l01409"></a><span class="lineno"> 1409</span>    <span class="keywordflow">return</span> metaData;</div>
+<div class="line"><a id="l01410" name="l01410"></a><span class="lineno"> 1410</span>}</div>
 </div>
-<div class="line"><a id="l01410" name="l01410"></a><span class="lineno"> 1410</span> </div>
-<div class="line"><a id="l01411" name="l01411"></a><span class="lineno"> 1411</span><span class="keywordtype">void</span> FactMetaData::_loadJsonDefines(<span class="keyword">const</span> QJsonObject &amp;jsonDefinesObject, QMap&lt;QString, QString&gt; &amp;defineMap)</div>
-<div class="line"><a id="l01412" name="l01412"></a><span class="lineno"> 1412</span>{</div>
-<div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;defineName: jsonDefinesObject.keys()) {</div>
-<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span>        <span class="keyword">const</span> QString mapKey = _jsonMetaDataDefinesName + QStringLiteral(<span class="stringliteral">&quot;.&quot;</span>) + defineName;</div>
-<div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span>        defineMap[mapKey] = jsonDefinesObject[defineName].toString();</div>
-<div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span>    }</div>
-<div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span>}</div>
-<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span> </div>
-<div class="foldopen" id="foldopen01419" data-start="{" data-end="}">
-<div class="line"><a id="l01419" name="l01419"></a><span class="lineno"><a class="line" href="classFactMetaData.html#a50187556f0c777ec378c1c110c06947a"> 1419</a></span>QMap&lt;QString, FactMetaData*&gt; <a class="code hl_function" href="classFactMetaData.html#a50187556f0c777ec378c1c110c06947a">FactMetaData::createMapFromJsonFile</a>(<span class="keyword">const</span> QString &amp;jsonFilename, QObject *metaDataParent)</div>
-<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span>{</div>
-<div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span>    QMap&lt;QString, FactMetaData*&gt; metaDataMap;</div>
-<div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span> </div>
-<div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span>    QString <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
-<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span>    <span class="keywordtype">int</span> version;</div>
-<div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span>    <span class="keyword">const</span> QJsonObject jsonObject = <a class="code hl_function" href="namespaceJsonHelper.html#a222d0d92b99e64eaba29bdb160bb00ec">JsonHelper::openInternalQGCJsonFile</a>(jsonFilename, <a class="code hl_variable" href="classFactMetaData.html#a1fbd6f69329dc3f248dcf1477272bd76">qgcFileType</a>, 1, 1, version, <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>);</div>
-<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>.isEmpty()) {</div>
-<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span>        qWarning(FactMetaDataLog) &lt;&lt; <span class="stringliteral">&quot;Internal Error:&quot;</span> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
-<div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span>        <span class="keywordflow">return</span> metaDataMap;</div>
-<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span>    }</div>
-<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span> </div>
-<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span>    <span class="keyword">static</span> <span class="keyword">const</span> QList&lt;JsonHelper::KeyValidateInfo&gt; keyInfoList = {</div>
-<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span>        { FactMetaData::_jsonMetaDataDefinesName, QJsonValue::Object, <span class="keyword">false</span> },</div>
-<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span>        { FactMetaData::_jsonMetaDataFactsName, QJsonValue::Array, <span class="keyword">true</span> },</div>
-<div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span>    };</div>
-<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceJsonHelper.html#a96b54c245d570a0b2e62b2a98f074c79">JsonHelper::validateKeys</a>(jsonObject, keyInfoList, <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)) {</div>
-<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span>        qWarning(FactMetaDataLog) &lt;&lt; <span class="stringliteral">&quot;Json document incorrect format:&quot;</span> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
-<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span>        <span class="keywordflow">return</span> metaDataMap;</div>
-<div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span>    }</div>
-<div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span> </div>
-<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span>    QMap&lt;QString <span class="comment">/* define name */</span>, QString <span class="comment">/* define value */</span>&gt; defineMap;</div>
-<div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span>    _loadJsonDefines(jsonObject[FactMetaData::_jsonMetaDataDefinesName].toObject(), defineMap);</div>
-<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span>    <span class="keyword">const</span> QJsonArray factArray = jsonObject[FactMetaData::_jsonMetaDataFactsName].toArray();</div>
+<div class="line"><a id="l01411" name="l01411"></a><span class="lineno"> 1411</span> </div>
+<div class="line"><a id="l01412" name="l01412"></a><span class="lineno"> 1412</span><span class="keywordtype">void</span> FactMetaData::_loadJsonDefines(<span class="keyword">const</span> QJsonObject &amp;jsonDefinesObject, QMap&lt;QString, QString&gt; &amp;defineMap)</div>
+<div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span>{</div>
+<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;defineName: jsonDefinesObject.keys()) {</div>
+<div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span>        <span class="keyword">const</span> QString mapKey = _jsonMetaDataDefinesName + QStringLiteral(<span class="stringliteral">&quot;.&quot;</span>) + defineName;</div>
+<div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span>        defineMap[mapKey] = jsonDefinesObject[defineName].toString();</div>
+<div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span>    }</div>
+<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span>}</div>
+<div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span> </div>
+<div class="foldopen" id="foldopen01420" data-start="{" data-end="}">
+<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"><a class="line" href="classFactMetaData.html#a50187556f0c777ec378c1c110c06947a"> 1420</a></span>QMap&lt;QString, FactMetaData*&gt; <a class="code hl_function" href="classFactMetaData.html#a50187556f0c777ec378c1c110c06947a">FactMetaData::createMapFromJsonFile</a>(<span class="keyword">const</span> QString &amp;jsonFilename, QObject *metaDataParent)</div>
+<div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span>{</div>
+<div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span>    QMap&lt;QString, FactMetaData*&gt; metaDataMap;</div>
+<div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span> </div>
+<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span>    QString <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
+<div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span>    <span class="keywordtype">int</span> version;</div>
+<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span>    <span class="keyword">const</span> QJsonObject jsonObject = <a class="code hl_function" href="namespaceJsonParsing.html#aa4926e2821e2e072504a56c734beaf9f">JsonParsing::openInternalQGCJsonFile</a>(</div>
+<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span>        jsonFilename, <a class="code hl_variable" href="classFactMetaData.html#a1fbd6f69329dc3f248dcf1477272bd76">qgcFileType</a>, 1, 1, version, <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>,</div>
+<div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span>        QStringList{<span class="stringliteral">&quot;shortDesc&quot;</span>, <span class="stringliteral">&quot;longDesc&quot;</span>, <span class="stringliteral">&quot;enumStrings&quot;</span>},</div>
+<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span>        QStringList{<span class="stringliteral">&quot;name&quot;</span>});</div>
+<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>.isEmpty()) {</div>
+<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span>        qWarning(FactMetaDataLog) &lt;&lt; <span class="stringliteral">&quot;Internal Error:&quot;</span> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
+<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span>        <span class="keywordflow">return</span> metaDataMap;</div>
+<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span>    }</div>
+<div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span> </div>
+<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span>    <span class="keyword">static</span> <span class="keyword">const</span> QList&lt;JsonParsing::KeyValidateInfo&gt; keyInfoList = {</div>
+<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span>        { FactMetaData::_jsonMetaDataDefinesName, QJsonValue::Object, <span class="keyword">false</span> },</div>
+<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span>        { FactMetaData::_jsonMetaDataFactsName, QJsonValue::Array, <span class="keyword">true</span> },</div>
+<div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span>    };</div>
+<div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceJsonParsing.html#a72ea7d3eb5e623ca5955dac31bd5b854">JsonParsing::validateKeys</a>(jsonObject, keyInfoList, <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)) {</div>
+<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span>        qWarning(FactMetaDataLog) &lt;&lt; <span class="stringliteral">&quot;Json document incorrect format:&quot;</span> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
+<div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span>        <span class="keywordflow">return</span> metaDataMap;</div>
+<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span>    }</div>
 <div class="line"><a id="l01443" name="l01443"></a><span class="lineno"> 1443</span> </div>
-<div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classFactMetaData.html#a629ef2ac9ed3c983a0ea18050032b033">createMapFromJsonArray</a>(factArray, defineMap, metaDataParent);</div>
-<div class="line"><a id="l01445" name="l01445"></a><span class="lineno"> 1445</span>}</div>
+<div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span>    QMap&lt;QString <span class="comment">/* define name */</span>, QString <span class="comment">/* define value */</span>&gt; defineMap;</div>
+<div class="line"><a id="l01445" name="l01445"></a><span class="lineno"> 1445</span>    _loadJsonDefines(jsonObject[FactMetaData::_jsonMetaDataDefinesName].toObject(), defineMap);</div>
+<div class="line"><a id="l01446" name="l01446"></a><span class="lineno"> 1446</span>    <span class="keyword">const</span> QJsonArray factArray = jsonObject[FactMetaData::_jsonMetaDataFactsName].toArray();</div>
+<div class="line"><a id="l01447" name="l01447"></a><span class="lineno"> 1447</span> </div>
+<div class="line"><a id="l01448" name="l01448"></a><span class="lineno"> 1448</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classFactMetaData.html#a629ef2ac9ed3c983a0ea18050032b033">createMapFromJsonArray</a>(factArray, defineMap, metaDataParent);</div>
+<div class="line"><a id="l01449" name="l01449"></a><span class="lineno"> 1449</span>}</div>
 </div>
-<div class="line"><a id="l01446" name="l01446"></a><span class="lineno"> 1446</span> </div>
-<div class="foldopen" id="foldopen01447" data-start="{" data-end="}">
-<div class="line"><a id="l01447" name="l01447"></a><span class="lineno"><a class="line" href="classFactMetaData.html#a629ef2ac9ed3c983a0ea18050032b033"> 1447</a></span>QMap&lt;QString, FactMetaData*&gt; <a class="code hl_function" href="classFactMetaData.html#a629ef2ac9ed3c983a0ea18050032b033">FactMetaData::createMapFromJsonArray</a>(<span class="keyword">const</span> QJsonArray &amp;jsonArray, <span class="keyword">const</span> QMap&lt;QString, QString&gt; &amp;defineMap, QObject *metaDataParent)</div>
-<div class="line"><a id="l01448" name="l01448"></a><span class="lineno"> 1448</span>{</div>
-<div class="line"><a id="l01449" name="l01449"></a><span class="lineno"> 1449</span>    QMap&lt;QString, FactMetaData*&gt; metaDataMap;</div>
-<div class="line"><a id="l01450" name="l01450"></a><span class="lineno"> 1450</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QJsonValue &amp;jsonValue : jsonArray) {</div>
-<div class="line"><a id="l01451" name="l01451"></a><span class="lineno"> 1451</span>        <span class="keywordflow">if</span> (!jsonValue.isObject()) {</div>
-<div class="line"><a id="l01452" name="l01452"></a><span class="lineno"> 1452</span>            qWarning(FactMetaDataLog) &lt;&lt; <span class="stringliteral">&quot;JsonValue is not an object&quot;</span>;</div>
-<div class="line"><a id="l01453" name="l01453"></a><span class="lineno"> 1453</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l01454" name="l01454"></a><span class="lineno"> 1454</span>        }</div>
-<div class="line"><a id="l01455" name="l01455"></a><span class="lineno"> 1455</span> </div>
-<div class="line"><a id="l01456" name="l01456"></a><span class="lineno"> 1456</span>        <span class="keyword">const</span> QJsonObject jsonObject = jsonValue.toObject();</div>
-<div class="line"><a id="l01457" name="l01457"></a><span class="lineno"> 1457</span>        <a class="code hl_class" href="classFactMetaData.html">FactMetaData</a> *<span class="keyword">const</span> metaData = <a class="code hl_function" href="classFactMetaData.html#a00da4e16558b6a77ca2bd57dc9d0545d">createFromJsonObject</a>(jsonObject, defineMap, metaDataParent);</div>
-<div class="line"><a id="l01458" name="l01458"></a><span class="lineno"> 1458</span>        <span class="keywordflow">if</span> (metaDataMap.contains(metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#acb3dfebc3a8ea4253c38f317b6735ef3">name</a>())) {</div>
-<div class="line"><a id="l01459" name="l01459"></a><span class="lineno"> 1459</span>            qWarning(FactMetaDataLog) &lt;&lt; <span class="stringliteral">&quot;Duplicate fact name:&quot;</span> &lt;&lt; metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#acb3dfebc3a8ea4253c38f317b6735ef3">name</a>();</div>
-<div class="line"><a id="l01460" name="l01460"></a><span class="lineno"> 1460</span>            <span class="keyword">delete</span> metaData;</div>
-<div class="line"><a id="l01461" name="l01461"></a><span class="lineno"> 1461</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01462" name="l01462"></a><span class="lineno"> 1462</span>            metaDataMap[metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#acb3dfebc3a8ea4253c38f317b6735ef3">name</a>()] = metaData;</div>
-<div class="line"><a id="l01463" name="l01463"></a><span class="lineno"> 1463</span>        }</div>
-<div class="line"><a id="l01464" name="l01464"></a><span class="lineno"> 1464</span>    }</div>
-<div class="line"><a id="l01465" name="l01465"></a><span class="lineno"> 1465</span> </div>
-<div class="line"><a id="l01466" name="l01466"></a><span class="lineno"> 1466</span>    <span class="keywordflow">return</span> metaDataMap;</div>
-<div class="line"><a id="l01467" name="l01467"></a><span class="lineno"> 1467</span>}</div>
+<div class="line"><a id="l01450" name="l01450"></a><span class="lineno"> 1450</span> </div>
+<div class="foldopen" id="foldopen01451" data-start="{" data-end="}">
+<div class="line"><a id="l01451" name="l01451"></a><span class="lineno"><a class="line" href="classFactMetaData.html#a629ef2ac9ed3c983a0ea18050032b033"> 1451</a></span>QMap&lt;QString, FactMetaData*&gt; <a class="code hl_function" href="classFactMetaData.html#a629ef2ac9ed3c983a0ea18050032b033">FactMetaData::createMapFromJsonArray</a>(<span class="keyword">const</span> QJsonArray &amp;jsonArray, <span class="keyword">const</span> QMap&lt;QString, QString&gt; &amp;defineMap, QObject *metaDataParent)</div>
+<div class="line"><a id="l01452" name="l01452"></a><span class="lineno"> 1452</span>{</div>
+<div class="line"><a id="l01453" name="l01453"></a><span class="lineno"> 1453</span>    QMap&lt;QString, FactMetaData*&gt; metaDataMap;</div>
+<div class="line"><a id="l01454" name="l01454"></a><span class="lineno"> 1454</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QJsonValue &amp;jsonValue : jsonArray) {</div>
+<div class="line"><a id="l01455" name="l01455"></a><span class="lineno"> 1455</span>        <span class="keywordflow">if</span> (!jsonValue.isObject()) {</div>
+<div class="line"><a id="l01456" name="l01456"></a><span class="lineno"> 1456</span>            qWarning(FactMetaDataLog) &lt;&lt; <span class="stringliteral">&quot;JsonValue is not an object&quot;</span>;</div>
+<div class="line"><a id="l01457" name="l01457"></a><span class="lineno"> 1457</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l01458" name="l01458"></a><span class="lineno"> 1458</span>        }</div>
+<div class="line"><a id="l01459" name="l01459"></a><span class="lineno"> 1459</span> </div>
+<div class="line"><a id="l01460" name="l01460"></a><span class="lineno"> 1460</span>        <span class="keyword">const</span> QJsonObject jsonObject = jsonValue.toObject();</div>
+<div class="line"><a id="l01461" name="l01461"></a><span class="lineno"> 1461</span>        <a class="code hl_class" href="classFactMetaData.html">FactMetaData</a> *<span class="keyword">const</span> metaData = <a class="code hl_function" href="classFactMetaData.html#a00da4e16558b6a77ca2bd57dc9d0545d">createFromJsonObject</a>(jsonObject, defineMap, metaDataParent);</div>
+<div class="line"><a id="l01462" name="l01462"></a><span class="lineno"> 1462</span>        <span class="keywordflow">if</span> (metaDataMap.contains(metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#acb3dfebc3a8ea4253c38f317b6735ef3">name</a>())) {</div>
+<div class="line"><a id="l01463" name="l01463"></a><span class="lineno"> 1463</span>            qWarning(FactMetaDataLog) &lt;&lt; <span class="stringliteral">&quot;Duplicate fact name:&quot;</span> &lt;&lt; metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#acb3dfebc3a8ea4253c38f317b6735ef3">name</a>();</div>
+<div class="line"><a id="l01464" name="l01464"></a><span class="lineno"> 1464</span>            <span class="keyword">delete</span> metaData;</div>
+<div class="line"><a id="l01465" name="l01465"></a><span class="lineno"> 1465</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01466" name="l01466"></a><span class="lineno"> 1466</span>            metaDataMap[metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#acb3dfebc3a8ea4253c38f317b6735ef3">name</a>()] = metaData;</div>
+<div class="line"><a id="l01467" name="l01467"></a><span class="lineno"> 1467</span>        }</div>
+<div class="line"><a id="l01468" name="l01468"></a><span class="lineno"> 1468</span>    }</div>
+<div class="line"><a id="l01469" name="l01469"></a><span class="lineno"> 1469</span> </div>
+<div class="line"><a id="l01470" name="l01470"></a><span class="lineno"> 1470</span>    <span class="keywordflow">return</span> metaDataMap;</div>
+<div class="line"><a id="l01471" name="l01471"></a><span class="lineno"> 1471</span>}</div>
 </div>
-<div class="line"><a id="l01468" name="l01468"></a><span class="lineno"> 1468</span> </div>
-<div class="foldopen" id="foldopen01469" data-start="{" data-end="}">
-<div class="line"><a id="l01469" name="l01469"></a><span class="lineno"><a class="line" href="classFactMetaData.html#a499ebbcddee840e3a2d0540428ccaba3"> 1469</a></span>QVariant <a class="code hl_function" href="classFactMetaData.html#a499ebbcddee840e3a2d0540428ccaba3">FactMetaData::cookedMax</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l01470" name="l01470"></a><span class="lineno"> 1470</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l01471" name="l01471"></a><span class="lineno"> 1471</span>    <span class="comment">// We have to be careful with cooked min/max. Running the raw values through the translator could flip min and max.</span></div>
-<div class="line"><a id="l01472" name="l01472"></a><span class="lineno"> 1472</span>    <span class="keywordflow">return</span> qMax(_rawTranslator(_rawMax).toDouble(), _rawTranslator(_rawMin).toDouble());</div>
-<div class="line"><a id="l01473" name="l01473"></a><span class="lineno"> 1473</span>}</div>
+<div class="line"><a id="l01472" name="l01472"></a><span class="lineno"> 1472</span> </div>
+<div class="foldopen" id="foldopen01473" data-start="{" data-end="}">
+<div class="line"><a id="l01473" name="l01473"></a><span class="lineno"><a class="line" href="classFactMetaData.html#a499ebbcddee840e3a2d0540428ccaba3"> 1473</a></span>QVariant <a class="code hl_function" href="classFactMetaData.html#a499ebbcddee840e3a2d0540428ccaba3">FactMetaData::cookedMax</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l01474" name="l01474"></a><span class="lineno"> 1474</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l01475" name="l01475"></a><span class="lineno"> 1475</span>    <span class="comment">// We have to be careful with cooked min/max. Running the raw values through the translator could flip min and max.</span></div>
+<div class="line"><a id="l01476" name="l01476"></a><span class="lineno"> 1476</span>    <span class="keywordflow">return</span> qMax(_rawTranslator(_rawMax).toDouble(), _rawTranslator(_rawMin).toDouble());</div>
+<div class="line"><a id="l01477" name="l01477"></a><span class="lineno"> 1477</span>}</div>
 </div>
-<div class="line"><a id="l01474" name="l01474"></a><span class="lineno"> 1474</span> </div>
-<div class="foldopen" id="foldopen01475" data-start="{" data-end="}">
-<div class="line"><a id="l01475" name="l01475"></a><span class="lineno"><a class="line" href="classFactMetaData.html#a32af8da046652da9695c75b4d52c3ef0"> 1475</a></span>QVariant <a class="code hl_function" href="classFactMetaData.html#a32af8da046652da9695c75b4d52c3ef0">FactMetaData::cookedMin</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l01476" name="l01476"></a><span class="lineno"> 1476</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l01477" name="l01477"></a><span class="lineno"> 1477</span>    <span class="comment">// We have to be careful with cooked min/max. Running the raw values through the translator could flip min and max.</span></div>
-<div class="line"><a id="l01478" name="l01478"></a><span class="lineno"> 1478</span>    <span class="keywordflow">return</span> qMin(_rawTranslator(_rawMax).toDouble(), _rawTranslator(_rawMin).toDouble());</div>
-<div class="line"><a id="l01479" name="l01479"></a><span class="lineno"> 1479</span>}</div>
+<div class="line"><a id="l01478" name="l01478"></a><span class="lineno"> 1478</span> </div>
+<div class="foldopen" id="foldopen01479" data-start="{" data-end="}">
+<div class="line"><a id="l01479" name="l01479"></a><span class="lineno"><a class="line" href="classFactMetaData.html#a32af8da046652da9695c75b4d52c3ef0"> 1479</a></span>QVariant <a class="code hl_function" href="classFactMetaData.html#a32af8da046652da9695c75b4d52c3ef0">FactMetaData::cookedMin</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l01480" name="l01480"></a><span class="lineno"> 1480</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l01481" name="l01481"></a><span class="lineno"> 1481</span>    <span class="comment">// We have to be careful with cooked min/max. Running the raw values through the translator could flip min and max.</span></div>
+<div class="line"><a id="l01482" name="l01482"></a><span class="lineno"> 1482</span>    <span class="keywordflow">return</span> qMin(_rawTranslator(_rawMax).toDouble(), _rawTranslator(_rawMin).toDouble());</div>
+<div class="line"><a id="l01483" name="l01483"></a><span class="lineno"> 1483</span>}</div>
 </div>
-<div class="line"><a id="l01480" name="l01480"></a><span class="lineno"> 1480</span> </div>
-<div class="foldopen" id="foldopen01481" data-start="{" data-end="}">
-<div class="line"><a id="l01481" name="l01481"></a><span class="lineno"><a class="line" href="classFactMetaData.html#acb3453c3539f8cdf8b37a886e0e4f189"> 1481</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classFactMetaData.html#acb3453c3539f8cdf8b37a886e0e4f189">FactMetaData::setVolatileValue</a>(<span class="keywordtype">bool</span> bValue)</div>
-<div class="line"><a id="l01482" name="l01482"></a><span class="lineno"> 1482</span>{</div>
-<div class="line"><a id="l01483" name="l01483"></a><span class="lineno"> 1483</span>    _volatile = bValue;</div>
-<div class="line"><a id="l01484" name="l01484"></a><span class="lineno"> 1484</span>    <span class="keywordflow">if</span> (_volatile) {</div>
-<div class="line"><a id="l01485" name="l01485"></a><span class="lineno"> 1485</span>        _readOnly = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01486" name="l01486"></a><span class="lineno"> 1486</span>    }</div>
-<div class="line"><a id="l01487" name="l01487"></a><span class="lineno"> 1487</span>}</div>
+<div class="line"><a id="l01484" name="l01484"></a><span class="lineno"> 1484</span> </div>
+<div class="foldopen" id="foldopen01485" data-start="{" data-end="}">
+<div class="line"><a id="l01485" name="l01485"></a><span class="lineno"><a class="line" href="classFactMetaData.html#acb3453c3539f8cdf8b37a886e0e4f189"> 1485</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classFactMetaData.html#acb3453c3539f8cdf8b37a886e0e4f189">FactMetaData::setVolatileValue</a>(<span class="keywordtype">bool</span> bValue)</div>
+<div class="line"><a id="l01486" name="l01486"></a><span class="lineno"> 1486</span>{</div>
+<div class="line"><a id="l01487" name="l01487"></a><span class="lineno"> 1487</span>    _volatile = bValue;</div>
+<div class="line"><a id="l01488" name="l01488"></a><span class="lineno"> 1488</span>}</div>
 </div>
-<div class="line"><a id="l01488" name="l01488"></a><span class="lineno"> 1488</span> </div>
-<div class="foldopen" id="foldopen01489" data-start="{" data-end="}">
-<div class="line"><a id="l01489" name="l01489"></a><span class="lineno"><a class="line" href="classFactMetaData.html#a4d29052279b5b8479b1d8114f61f7237"> 1489</a></span>QStringList <a class="code hl_function" href="classFactMetaData.html#a4d29052279b5b8479b1d8114f61f7237">FactMetaData::splitTranslatedList</a>(<span class="keyword">const</span> QString &amp;translatedList)</div>
-<div class="line"><a id="l01490" name="l01490"></a><span class="lineno"> 1490</span>{</div>
-<div class="line"><a id="l01491" name="l01491"></a><span class="lineno"> 1491</span>    <span class="keyword">const</span> QRegularExpression splitRegex(<span class="stringliteral">&quot;[,，、]&quot;</span>); <span class="comment">// Note chinese commas for translations which have modified the english comma</span></div>
-<div class="line"><a id="l01492" name="l01492"></a><span class="lineno"> 1492</span>    QStringList valueList = translatedList.split(splitRegex, Qt::SkipEmptyParts);</div>
-<div class="line"><a id="l01493" name="l01493"></a><span class="lineno"> 1493</span>    <span class="keywordflow">for</span> (QString &amp;value: valueList) {</div>
-<div class="line"><a id="l01494" name="l01494"></a><span class="lineno"> 1494</span>        value = value.trimmed();</div>
-<div class="line"><a id="l01495" name="l01495"></a><span class="lineno"> 1495</span>    }</div>
-<div class="line"><a id="l01496" name="l01496"></a><span class="lineno"> 1496</span>    <span class="keywordflow">return</span> valueList;</div>
-<div class="line"><a id="l01497" name="l01497"></a><span class="lineno"> 1497</span>}</div>
+<div class="line"><a id="l01489" name="l01489"></a><span class="lineno"> 1489</span> </div>
+<div class="foldopen" id="foldopen01490" data-start="{" data-end="}">
+<div class="line"><a id="l01490" name="l01490"></a><span class="lineno"><a class="line" href="classFactMetaData.html#a4d29052279b5b8479b1d8114f61f7237"> 1490</a></span>QStringList <a class="code hl_function" href="classFactMetaData.html#a4d29052279b5b8479b1d8114f61f7237">FactMetaData::splitTranslatedList</a>(<span class="keyword">const</span> QString &amp;translatedList)</div>
+<div class="line"><a id="l01491" name="l01491"></a><span class="lineno"> 1491</span>{</div>
+<div class="line"><a id="l01492" name="l01492"></a><span class="lineno"> 1492</span>    <span class="keyword">const</span> QRegularExpression splitRegex(<span class="stringliteral">&quot;[,，、]&quot;</span>); <span class="comment">// Note chinese commas for translations which have modified the english comma</span></div>
+<div class="line"><a id="l01493" name="l01493"></a><span class="lineno"> 1493</span>    QStringList valueList = translatedList.split(splitRegex, Qt::SkipEmptyParts);</div>
+<div class="line"><a id="l01494" name="l01494"></a><span class="lineno"> 1494</span>    <span class="keywordflow">for</span> (QString &amp;value: valueList) {</div>
+<div class="line"><a id="l01495" name="l01495"></a><span class="lineno"> 1495</span>        value = value.trimmed();</div>
+<div class="line"><a id="l01496" name="l01496"></a><span class="lineno"> 1496</span>    }</div>
+<div class="line"><a id="l01497" name="l01497"></a><span class="lineno"> 1497</span>    <span class="keywordflow">return</span> valueList;</div>
+<div class="line"><a id="l01498" name="l01498"></a><span class="lineno"> 1498</span>}</div>
 </div>
-<div class="line"><a id="l01498" name="l01498"></a><span class="lineno"> 1498</span> </div>
-<div class="line"><a id="l01499" name="l01499"></a><span class="lineno"> 1499</span><span class="keywordtype">bool</span> FactMetaData::_parseEnum(<span class="keyword">const</span> QString&amp; name, <span class="keyword">const</span> QJsonObject &amp;jsonObject, <span class="keyword">const</span> DefineMap_t &amp;defineMap, QStringList &amp;rgDescriptions, QStringList &amp;rgValues, QString &amp;<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)</div>
-<div class="line"><a id="l01500" name="l01500"></a><span class="lineno"> 1500</span>{</div>
-<div class="line"><a id="l01501" name="l01501"></a><span class="lineno"> 1501</span>    rgDescriptions.clear();</div>
-<div class="line"><a id="l01502" name="l01502"></a><span class="lineno"> 1502</span>    rgValues.clear();</div>
-<div class="line"><a id="l01503" name="l01503"></a><span class="lineno"> 1503</span>    <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>.clear();</div>
-<div class="line"><a id="l01504" name="l01504"></a><span class="lineno"> 1504</span> </div>
-<div class="line"><a id="l01505" name="l01505"></a><span class="lineno"> 1505</span>    <span class="keywordflow">if</span> (!jsonObject.contains(_enumStringsJsonKey)) {</div>
-<div class="line"><a id="l01506" name="l01506"></a><span class="lineno"> 1506</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01507" name="l01507"></a><span class="lineno"> 1507</span>    }</div>
-<div class="line"><a id="l01508" name="l01508"></a><span class="lineno"> 1508</span> </div>
-<div class="line"><a id="l01509" name="l01509"></a><span class="lineno"> 1509</span>    <span class="keyword">const</span> QString jsonStrings = jsonObject.value(_enumStringsJsonKey).toString();</div>
-<div class="line"><a id="l01510" name="l01510"></a><span class="lineno"> 1510</span>    <span class="keyword">const</span> QString defineMapStrings = defineMap.value(jsonStrings, jsonStrings);</div>
-<div class="line"><a id="l01511" name="l01511"></a><span class="lineno"> 1511</span>    rgDescriptions = <a class="code hl_function" href="classFactMetaData.html#a4d29052279b5b8479b1d8114f61f7237">splitTranslatedList</a>(defineMapStrings);</div>
-<div class="line"><a id="l01512" name="l01512"></a><span class="lineno"> 1512</span> </div>
-<div class="line"><a id="l01513" name="l01513"></a><span class="lineno"> 1513</span>    <span class="keyword">const</span> QString jsonValues = jsonObject.value(_enumValuesJsonKey).toString();</div>
-<div class="line"><a id="l01514" name="l01514"></a><span class="lineno"> 1514</span>    <span class="keyword">const</span> QString defineMapValues = defineMap.value(jsonValues, jsonValues);</div>
-<div class="line"><a id="l01515" name="l01515"></a><span class="lineno"> 1515</span>    rgValues = <a class="code hl_function" href="classFactMetaData.html#a4d29052279b5b8479b1d8114f61f7237">splitTranslatedList</a>(defineMapValues); <span class="comment">// Never translated but still useful to use common string splitting code</span></div>
-<div class="line"><a id="l01516" name="l01516"></a><span class="lineno"> 1516</span> </div>
-<div class="line"><a id="l01517" name="l01517"></a><span class="lineno"> 1517</span>    <span class="keywordflow">if</span> (rgDescriptions.count() != rgValues.count()) {</div>
-<div class="line"><a id="l01518" name="l01518"></a><span class="lineno"> 1518</span>        <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a> = QStringLiteral(<span class="stringliteral">&quot;Enum strings/values count mismatch - name: &#39;%1&#39; strings: &#39;%2&#39;[%3] values: &#39;%4&#39;[%5]&quot;</span>).arg(<a class="code hl_function" href="classFactMetaData.html#acb3dfebc3a8ea4253c38f317b6735ef3">name</a>).arg(defineMapStrings).arg(rgDescriptions.count()).arg(defineMapValues).arg(rgValues.count());</div>
-<div class="line"><a id="l01519" name="l01519"></a><span class="lineno"> 1519</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01520" name="l01520"></a><span class="lineno"> 1520</span>    }</div>
-<div class="line"><a id="l01521" name="l01521"></a><span class="lineno"> 1521</span> </div>
-<div class="line"><a id="l01522" name="l01522"></a><span class="lineno"> 1522</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01523" name="l01523"></a><span class="lineno"> 1523</span>}</div>
-<div class="line"><a id="l01524" name="l01524"></a><span class="lineno"> 1524</span> </div>
-<div class="line"><a id="l01525" name="l01525"></a><span class="lineno"> 1525</span><span class="keywordtype">bool</span> FactMetaData::_parseValuesArray(<span class="keyword">const</span> QJsonObject &amp;jsonObject, QStringList &amp;rgDescriptions, QList&lt;double&gt; &amp;rgValues, QString &amp;<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)</div>
-<div class="line"><a id="l01526" name="l01526"></a><span class="lineno"> 1526</span>{</div>
-<div class="line"><a id="l01527" name="l01527"></a><span class="lineno"> 1527</span>    rgDescriptions.clear();</div>
-<div class="line"><a id="l01528" name="l01528"></a><span class="lineno"> 1528</span>    rgValues.clear();</div>
-<div class="line"><a id="l01529" name="l01529"></a><span class="lineno"> 1529</span>    <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>.clear();</div>
-<div class="line"><a id="l01530" name="l01530"></a><span class="lineno"> 1530</span> </div>
-<div class="line"><a id="l01531" name="l01531"></a><span class="lineno"> 1531</span>    <span class="keywordflow">if</span> (!jsonObject.contains(_enumValuesArrayJsonKey)) {</div>
-<div class="line"><a id="l01532" name="l01532"></a><span class="lineno"> 1532</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01533" name="l01533"></a><span class="lineno"> 1533</span>    }</div>
-<div class="line"><a id="l01534" name="l01534"></a><span class="lineno"> 1534</span> </div>
-<div class="line"><a id="l01535" name="l01535"></a><span class="lineno"> 1535</span>    <span class="keyword">static</span> <span class="keyword">const</span> QList&lt;JsonHelper::KeyValidateInfo&gt; keyInfoList = {</div>
-<div class="line"><a id="l01536" name="l01536"></a><span class="lineno"> 1536</span>        { _enumValuesArrayDescriptionJsonKey, QJsonValue::String, <span class="keyword">true</span> },</div>
-<div class="line"><a id="l01537" name="l01537"></a><span class="lineno"> 1537</span>        { _enumValuesArrayValueJsonKey, QJsonValue::Double, <span class="keyword">true</span> },</div>
-<div class="line"><a id="l01538" name="l01538"></a><span class="lineno"> 1538</span>    };</div>
-<div class="line"><a id="l01539" name="l01539"></a><span class="lineno"> 1539</span> </div>
-<div class="line"><a id="l01540" name="l01540"></a><span class="lineno"> 1540</span>    <span class="keyword">const</span> QJsonArray &amp;rgValueDescription = jsonObject[_enumValuesArrayJsonKey].toArray();</div>
-<div class="line"><a id="l01541" name="l01541"></a><span class="lineno"> 1541</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QJsonValue&amp; jsonValue : rgValueDescription) {</div>
-<div class="line"><a id="l01542" name="l01542"></a><span class="lineno"> 1542</span>        <span class="keywordflow">if</span> (jsonValue.type() != QJsonValue::Object) {</div>
-<div class="line"><a id="l01543" name="l01543"></a><span class="lineno"> 1543</span>            <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a> = QStringLiteral(<span class="stringliteral">&quot;Value in \&quot;values\&quot; array is not an object.&quot;</span>);</div>
-<div class="line"><a id="l01544" name="l01544"></a><span class="lineno"> 1544</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01545" name="l01545"></a><span class="lineno"> 1545</span>        }</div>
-<div class="line"><a id="l01546" name="l01546"></a><span class="lineno"> 1546</span> </div>
-<div class="line"><a id="l01547" name="l01547"></a><span class="lineno"> 1547</span>        <span class="keyword">const</span> QJsonObject &amp;valueDescriptionObject = jsonValue.toObject();</div>
-<div class="line"><a id="l01548" name="l01548"></a><span class="lineno"> 1548</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceJsonHelper.html#a96b54c245d570a0b2e62b2a98f074c79">JsonHelper::validateKeys</a>(valueDescriptionObject, keyInfoList, <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)) {</div>
-<div class="line"><a id="l01549" name="l01549"></a><span class="lineno"> 1549</span>            <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a> = QStringLiteral(<span class="stringliteral">&quot;Object in \&quot;values\&quot; array failed validation &#39;%2&#39;.&quot;</span>).arg(<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>);</div>
-<div class="line"><a id="l01550" name="l01550"></a><span class="lineno"> 1550</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01551" name="l01551"></a><span class="lineno"> 1551</span>        }</div>
-<div class="line"><a id="l01552" name="l01552"></a><span class="lineno"> 1552</span> </div>
-<div class="line"><a id="l01553" name="l01553"></a><span class="lineno"> 1553</span>        rgDescriptions.append(valueDescriptionObject[_enumValuesArrayDescriptionJsonKey].toString());</div>
-<div class="line"><a id="l01554" name="l01554"></a><span class="lineno"> 1554</span>        rgValues.append(valueDescriptionObject[_enumValuesArrayValueJsonKey].toDouble());</div>
-<div class="line"><a id="l01555" name="l01555"></a><span class="lineno"> 1555</span>    }</div>
-<div class="line"><a id="l01556" name="l01556"></a><span class="lineno"> 1556</span> </div>
-<div class="line"><a id="l01557" name="l01557"></a><span class="lineno"> 1557</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01558" name="l01558"></a><span class="lineno"> 1558</span>}</div>
-<div class="line"><a id="l01559" name="l01559"></a><span class="lineno"> 1559</span> </div>
-<div class="line"><a id="l01560" name="l01560"></a><span class="lineno"> 1560</span><span class="keywordtype">bool</span> FactMetaData::_parseBitmaskArray(<span class="keyword">const</span> QJsonObject &amp;jsonObject, QStringList &amp;rgDescriptions, QList&lt;int&gt; &amp;rgValues, QString &amp;<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)</div>
-<div class="line"><a id="l01561" name="l01561"></a><span class="lineno"> 1561</span>{</div>
-<div class="line"><a id="l01562" name="l01562"></a><span class="lineno"> 1562</span>    rgDescriptions.clear();</div>
-<div class="line"><a id="l01563" name="l01563"></a><span class="lineno"> 1563</span>    rgValues.clear();</div>
-<div class="line"><a id="l01564" name="l01564"></a><span class="lineno"> 1564</span>    <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>.clear();</div>
-<div class="line"><a id="l01565" name="l01565"></a><span class="lineno"> 1565</span> </div>
-<div class="line"><a id="l01566" name="l01566"></a><span class="lineno"> 1566</span>    <span class="keywordflow">if</span> (!jsonObject.contains(_enumBitmaskArrayJsonKey)) {</div>
-<div class="line"><a id="l01567" name="l01567"></a><span class="lineno"> 1567</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01568" name="l01568"></a><span class="lineno"> 1568</span>    }</div>
-<div class="line"><a id="l01569" name="l01569"></a><span class="lineno"> 1569</span> </div>
-<div class="line"><a id="l01570" name="l01570"></a><span class="lineno"> 1570</span>    <span class="keyword">static</span> <span class="keyword">const</span> QList&lt;JsonHelper::KeyValidateInfo&gt; keyInfoList = {</div>
-<div class="line"><a id="l01571" name="l01571"></a><span class="lineno"> 1571</span>        { _enumBitmaskArrayDescriptionJsonKey, QJsonValue::String, <span class="keyword">true</span> },</div>
-<div class="line"><a id="l01572" name="l01572"></a><span class="lineno"> 1572</span>        { _enumBitmaskArrayIndexJsonKey, QJsonValue::Double, <span class="keyword">true</span> },</div>
-<div class="line"><a id="l01573" name="l01573"></a><span class="lineno"> 1573</span>    };</div>
-<div class="line"><a id="l01574" name="l01574"></a><span class="lineno"> 1574</span> </div>
-<div class="line"><a id="l01575" name="l01575"></a><span class="lineno"> 1575</span>    <span class="keyword">const</span> QJsonArray &amp;rgValueDescription = jsonObject[_enumBitmaskArrayJsonKey].toArray();</div>
-<div class="line"><a id="l01576" name="l01576"></a><span class="lineno"> 1576</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QJsonValue &amp;jsonValue : rgValueDescription) {</div>
-<div class="line"><a id="l01577" name="l01577"></a><span class="lineno"> 1577</span>        <span class="keywordflow">if</span> (jsonValue.type() != QJsonValue::Object) {</div>
-<div class="line"><a id="l01578" name="l01578"></a><span class="lineno"> 1578</span>            <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a> = QStringLiteral(<span class="stringliteral">&quot;Value in \&quot;values\&quot; array is not an object.&quot;</span>);</div>
-<div class="line"><a id="l01579" name="l01579"></a><span class="lineno"> 1579</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01580" name="l01580"></a><span class="lineno"> 1580</span>        }</div>
-<div class="line"><a id="l01581" name="l01581"></a><span class="lineno"> 1581</span> </div>
-<div class="line"><a id="l01582" name="l01582"></a><span class="lineno"> 1582</span>        <span class="keyword">const</span> QJsonObject &amp;valueDescriptionObject = jsonValue.toObject();</div>
-<div class="line"><a id="l01583" name="l01583"></a><span class="lineno"> 1583</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceJsonHelper.html#a96b54c245d570a0b2e62b2a98f074c79">JsonHelper::validateKeys</a>(valueDescriptionObject, keyInfoList, <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)) {</div>
-<div class="line"><a id="l01584" name="l01584"></a><span class="lineno"> 1584</span>            <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a> = QStringLiteral(<span class="stringliteral">&quot;Object in \&quot;values\&quot; array failed validation &#39;%2&#39;.&quot;</span>).arg(<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>);</div>
-<div class="line"><a id="l01585" name="l01585"></a><span class="lineno"> 1585</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01586" name="l01586"></a><span class="lineno"> 1586</span>        }</div>
-<div class="line"><a id="l01587" name="l01587"></a><span class="lineno"> 1587</span> </div>
-<div class="line"><a id="l01588" name="l01588"></a><span class="lineno"> 1588</span>        rgDescriptions.append(valueDescriptionObject[_enumBitmaskArrayDescriptionJsonKey].toString());</div>
-<div class="line"><a id="l01589" name="l01589"></a><span class="lineno"> 1589</span>        rgValues.append(valueDescriptionObject[_enumBitmaskArrayIndexJsonKey].toInt());</div>
-<div class="line"><a id="l01590" name="l01590"></a><span class="lineno"> 1590</span>    }</div>
-<div class="line"><a id="l01591" name="l01591"></a><span class="lineno"> 1591</span> </div>
-<div class="line"><a id="l01592" name="l01592"></a><span class="lineno"> 1592</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01593" name="l01593"></a><span class="lineno"> 1593</span>}</div>
-<div class="line"><a id="l01594" name="l01594"></a><span class="lineno"> 1594</span> </div>
-<div class="foldopen" id="foldopen01595" data-start="{" data-end="}">
-<div class="line"><a id="l01595" name="l01595"></a><span class="lineno"><a class="line" href="classFactMetaData.html#a814b2e6d776dd2e86c5e9c584b59e33d"> 1595</a></span>QVariant <a class="code hl_function" href="classFactMetaData.html#a814b2e6d776dd2e86c5e9c584b59e33d">FactMetaData::cookedUserMin</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l01596" name="l01596"></a><span class="lineno"> 1596</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l01597" name="l01597"></a><span class="lineno"> 1597</span>    <span class="keywordflow">if</span> (!_rawUserMin.isValid()) {</div>
-<div class="line"><a id="l01598" name="l01598"></a><span class="lineno"> 1598</span>        <span class="keywordflow">return</span> QVariant();</div>
-<div class="line"><a id="l01599" name="l01599"></a><span class="lineno"> 1599</span>    }</div>
-<div class="line"><a id="l01600" name="l01600"></a><span class="lineno"> 1600</span> </div>
-<div class="line"><a id="l01601" name="l01601"></a><span class="lineno"> 1601</span>    <span class="keywordflow">return</span> _rawTranslator(_rawUserMin);</div>
-<div class="line"><a id="l01602" name="l01602"></a><span class="lineno"> 1602</span>}</div>
+<div class="line"><a id="l01499" name="l01499"></a><span class="lineno"> 1499</span> </div>
+<div class="line"><a id="l01500" name="l01500"></a><span class="lineno"> 1500</span><span class="keywordtype">bool</span> FactMetaData::_parseEnum(<span class="keyword">const</span> QString&amp; name, <span class="keyword">const</span> QJsonObject &amp;jsonObject, <span class="keyword">const</span> DefineMap_t &amp;defineMap, QStringList &amp;rgDescriptions, QStringList &amp;rgValues, QString &amp;<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)</div>
+<div class="line"><a id="l01501" name="l01501"></a><span class="lineno"> 1501</span>{</div>
+<div class="line"><a id="l01502" name="l01502"></a><span class="lineno"> 1502</span>    rgDescriptions.clear();</div>
+<div class="line"><a id="l01503" name="l01503"></a><span class="lineno"> 1503</span>    rgValues.clear();</div>
+<div class="line"><a id="l01504" name="l01504"></a><span class="lineno"> 1504</span>    <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>.clear();</div>
+<div class="line"><a id="l01505" name="l01505"></a><span class="lineno"> 1505</span> </div>
+<div class="line"><a id="l01506" name="l01506"></a><span class="lineno"> 1506</span>    <span class="keywordflow">if</span> (!jsonObject.contains(_enumStringsJsonKey)) {</div>
+<div class="line"><a id="l01507" name="l01507"></a><span class="lineno"> 1507</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01508" name="l01508"></a><span class="lineno"> 1508</span>    }</div>
+<div class="line"><a id="l01509" name="l01509"></a><span class="lineno"> 1509</span> </div>
+<div class="line"><a id="l01510" name="l01510"></a><span class="lineno"> 1510</span>    <span class="keyword">const</span> QString jsonStrings = jsonObject.value(_enumStringsJsonKey).toString();</div>
+<div class="line"><a id="l01511" name="l01511"></a><span class="lineno"> 1511</span>    <span class="keyword">const</span> QString defineMapStrings = defineMap.value(jsonStrings, jsonStrings);</div>
+<div class="line"><a id="l01512" name="l01512"></a><span class="lineno"> 1512</span>    rgDescriptions = <a class="code hl_function" href="classFactMetaData.html#a4d29052279b5b8479b1d8114f61f7237">splitTranslatedList</a>(defineMapStrings);</div>
+<div class="line"><a id="l01513" name="l01513"></a><span class="lineno"> 1513</span> </div>
+<div class="line"><a id="l01514" name="l01514"></a><span class="lineno"> 1514</span>    <span class="keyword">const</span> QString jsonValues = jsonObject.value(_enumValuesJsonKey).toString();</div>
+<div class="line"><a id="l01515" name="l01515"></a><span class="lineno"> 1515</span>    <span class="keyword">const</span> QString defineMapValues = defineMap.value(jsonValues, jsonValues);</div>
+<div class="line"><a id="l01516" name="l01516"></a><span class="lineno"> 1516</span>    rgValues = <a class="code hl_function" href="classFactMetaData.html#a4d29052279b5b8479b1d8114f61f7237">splitTranslatedList</a>(defineMapValues); <span class="comment">// Never translated but still useful to use common string splitting code</span></div>
+<div class="line"><a id="l01517" name="l01517"></a><span class="lineno"> 1517</span> </div>
+<div class="line"><a id="l01518" name="l01518"></a><span class="lineno"> 1518</span>    <span class="keywordflow">if</span> (rgDescriptions.count() != rgValues.count()) {</div>
+<div class="line"><a id="l01519" name="l01519"></a><span class="lineno"> 1519</span>        <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a> = QStringLiteral(<span class="stringliteral">&quot;Enum strings/values count mismatch - name: &#39;%1&#39; strings: &#39;%2&#39;[%3] values: &#39;%4&#39;[%5]&quot;</span>).arg(<a class="code hl_function" href="classFactMetaData.html#acb3dfebc3a8ea4253c38f317b6735ef3">name</a>).arg(defineMapStrings).arg(rgDescriptions.count()).arg(defineMapValues).arg(rgValues.count());</div>
+<div class="line"><a id="l01520" name="l01520"></a><span class="lineno"> 1520</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01521" name="l01521"></a><span class="lineno"> 1521</span>    }</div>
+<div class="line"><a id="l01522" name="l01522"></a><span class="lineno"> 1522</span> </div>
+<div class="line"><a id="l01523" name="l01523"></a><span class="lineno"> 1523</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01524" name="l01524"></a><span class="lineno"> 1524</span>}</div>
+<div class="line"><a id="l01525" name="l01525"></a><span class="lineno"> 1525</span> </div>
+<div class="line"><a id="l01526" name="l01526"></a><span class="lineno"> 1526</span><span class="keywordtype">bool</span> FactMetaData::_parseValuesArray(<span class="keyword">const</span> QJsonObject &amp;jsonObject, QStringList &amp;rgDescriptions, QList&lt;double&gt; &amp;rgValues, QString &amp;<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)</div>
+<div class="line"><a id="l01527" name="l01527"></a><span class="lineno"> 1527</span>{</div>
+<div class="line"><a id="l01528" name="l01528"></a><span class="lineno"> 1528</span>    rgDescriptions.clear();</div>
+<div class="line"><a id="l01529" name="l01529"></a><span class="lineno"> 1529</span>    rgValues.clear();</div>
+<div class="line"><a id="l01530" name="l01530"></a><span class="lineno"> 1530</span>    <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>.clear();</div>
+<div class="line"><a id="l01531" name="l01531"></a><span class="lineno"> 1531</span> </div>
+<div class="line"><a id="l01532" name="l01532"></a><span class="lineno"> 1532</span>    <span class="keywordflow">if</span> (!jsonObject.contains(_enumValuesArrayJsonKey)) {</div>
+<div class="line"><a id="l01533" name="l01533"></a><span class="lineno"> 1533</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01534" name="l01534"></a><span class="lineno"> 1534</span>    }</div>
+<div class="line"><a id="l01535" name="l01535"></a><span class="lineno"> 1535</span> </div>
+<div class="line"><a id="l01536" name="l01536"></a><span class="lineno"> 1536</span>    <span class="keyword">static</span> <span class="keyword">const</span> QList&lt;JsonParsing::KeyValidateInfo&gt; keyInfoList = {</div>
+<div class="line"><a id="l01537" name="l01537"></a><span class="lineno"> 1537</span>        { _enumValuesArrayDescriptionJsonKey, QJsonValue::String, <span class="keyword">true</span> },</div>
+<div class="line"><a id="l01538" name="l01538"></a><span class="lineno"> 1538</span>        { _enumValuesArrayValueJsonKey, QJsonValue::Double, <span class="keyword">true</span> },</div>
+<div class="line"><a id="l01539" name="l01539"></a><span class="lineno"> 1539</span>    };</div>
+<div class="line"><a id="l01540" name="l01540"></a><span class="lineno"> 1540</span> </div>
+<div class="line"><a id="l01541" name="l01541"></a><span class="lineno"> 1541</span>    <span class="keyword">const</span> QJsonArray &amp;rgValueDescription = jsonObject[_enumValuesArrayJsonKey].toArray();</div>
+<div class="line"><a id="l01542" name="l01542"></a><span class="lineno"> 1542</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QJsonValue&amp; jsonValue : rgValueDescription) {</div>
+<div class="line"><a id="l01543" name="l01543"></a><span class="lineno"> 1543</span>        <span class="keywordflow">if</span> (jsonValue.type() != QJsonValue::Object) {</div>
+<div class="line"><a id="l01544" name="l01544"></a><span class="lineno"> 1544</span>            <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a> = QStringLiteral(<span class="stringliteral">&quot;Value in \&quot;values\&quot; array is not an object.&quot;</span>);</div>
+<div class="line"><a id="l01545" name="l01545"></a><span class="lineno"> 1545</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01546" name="l01546"></a><span class="lineno"> 1546</span>        }</div>
+<div class="line"><a id="l01547" name="l01547"></a><span class="lineno"> 1547</span> </div>
+<div class="line"><a id="l01548" name="l01548"></a><span class="lineno"> 1548</span>        <span class="keyword">const</span> QJsonObject &amp;valueDescriptionObject = jsonValue.toObject();</div>
+<div class="line"><a id="l01549" name="l01549"></a><span class="lineno"> 1549</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceJsonParsing.html#a72ea7d3eb5e623ca5955dac31bd5b854">JsonParsing::validateKeys</a>(valueDescriptionObject, keyInfoList, <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)) {</div>
+<div class="line"><a id="l01550" name="l01550"></a><span class="lineno"> 1550</span>            <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a> = QStringLiteral(<span class="stringliteral">&quot;Object in \&quot;values\&quot; array failed validation &#39;%2&#39;.&quot;</span>).arg(<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>);</div>
+<div class="line"><a id="l01551" name="l01551"></a><span class="lineno"> 1551</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01552" name="l01552"></a><span class="lineno"> 1552</span>        }</div>
+<div class="line"><a id="l01553" name="l01553"></a><span class="lineno"> 1553</span> </div>
+<div class="line"><a id="l01554" name="l01554"></a><span class="lineno"> 1554</span>        rgDescriptions.append(valueDescriptionObject[_enumValuesArrayDescriptionJsonKey].toString());</div>
+<div class="line"><a id="l01555" name="l01555"></a><span class="lineno"> 1555</span>        rgValues.append(valueDescriptionObject[_enumValuesArrayValueJsonKey].toDouble());</div>
+<div class="line"><a id="l01556" name="l01556"></a><span class="lineno"> 1556</span>    }</div>
+<div class="line"><a id="l01557" name="l01557"></a><span class="lineno"> 1557</span> </div>
+<div class="line"><a id="l01558" name="l01558"></a><span class="lineno"> 1558</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01559" name="l01559"></a><span class="lineno"> 1559</span>}</div>
+<div class="line"><a id="l01560" name="l01560"></a><span class="lineno"> 1560</span> </div>
+<div class="line"><a id="l01561" name="l01561"></a><span class="lineno"> 1561</span><span class="keywordtype">bool</span> FactMetaData::_parseBitmaskArray(<span class="keyword">const</span> QJsonObject &amp;jsonObject, QStringList &amp;rgDescriptions, QList&lt;int&gt; &amp;rgValues, QString &amp;<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)</div>
+<div class="line"><a id="l01562" name="l01562"></a><span class="lineno"> 1562</span>{</div>
+<div class="line"><a id="l01563" name="l01563"></a><span class="lineno"> 1563</span>    rgDescriptions.clear();</div>
+<div class="line"><a id="l01564" name="l01564"></a><span class="lineno"> 1564</span>    rgValues.clear();</div>
+<div class="line"><a id="l01565" name="l01565"></a><span class="lineno"> 1565</span>    <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>.clear();</div>
+<div class="line"><a id="l01566" name="l01566"></a><span class="lineno"> 1566</span> </div>
+<div class="line"><a id="l01567" name="l01567"></a><span class="lineno"> 1567</span>    <span class="keywordflow">if</span> (!jsonObject.contains(_enumBitmaskArrayJsonKey)) {</div>
+<div class="line"><a id="l01568" name="l01568"></a><span class="lineno"> 1568</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01569" name="l01569"></a><span class="lineno"> 1569</span>    }</div>
+<div class="line"><a id="l01570" name="l01570"></a><span class="lineno"> 1570</span> </div>
+<div class="line"><a id="l01571" name="l01571"></a><span class="lineno"> 1571</span>    <span class="keyword">static</span> <span class="keyword">const</span> QList&lt;JsonParsing::KeyValidateInfo&gt; keyInfoList = {</div>
+<div class="line"><a id="l01572" name="l01572"></a><span class="lineno"> 1572</span>        { _enumBitmaskArrayDescriptionJsonKey, QJsonValue::String, <span class="keyword">true</span> },</div>
+<div class="line"><a id="l01573" name="l01573"></a><span class="lineno"> 1573</span>        { _enumBitmaskArrayIndexJsonKey, QJsonValue::Double, <span class="keyword">true</span> },</div>
+<div class="line"><a id="l01574" name="l01574"></a><span class="lineno"> 1574</span>    };</div>
+<div class="line"><a id="l01575" name="l01575"></a><span class="lineno"> 1575</span> </div>
+<div class="line"><a id="l01576" name="l01576"></a><span class="lineno"> 1576</span>    <span class="keyword">const</span> QJsonArray &amp;rgValueDescription = jsonObject[_enumBitmaskArrayJsonKey].toArray();</div>
+<div class="line"><a id="l01577" name="l01577"></a><span class="lineno"> 1577</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QJsonValue &amp;jsonValue : rgValueDescription) {</div>
+<div class="line"><a id="l01578" name="l01578"></a><span class="lineno"> 1578</span>        <span class="keywordflow">if</span> (jsonValue.type() != QJsonValue::Object) {</div>
+<div class="line"><a id="l01579" name="l01579"></a><span class="lineno"> 1579</span>            <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a> = QStringLiteral(<span class="stringliteral">&quot;Value in \&quot;values\&quot; array is not an object.&quot;</span>);</div>
+<div class="line"><a id="l01580" name="l01580"></a><span class="lineno"> 1580</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01581" name="l01581"></a><span class="lineno"> 1581</span>        }</div>
+<div class="line"><a id="l01582" name="l01582"></a><span class="lineno"> 1582</span> </div>
+<div class="line"><a id="l01583" name="l01583"></a><span class="lineno"> 1583</span>        <span class="keyword">const</span> QJsonObject &amp;valueDescriptionObject = jsonValue.toObject();</div>
+<div class="line"><a id="l01584" name="l01584"></a><span class="lineno"> 1584</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceJsonParsing.html#a72ea7d3eb5e623ca5955dac31bd5b854">JsonParsing::validateKeys</a>(valueDescriptionObject, keyInfoList, <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)) {</div>
+<div class="line"><a id="l01585" name="l01585"></a><span class="lineno"> 1585</span>            <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a> = QStringLiteral(<span class="stringliteral">&quot;Object in \&quot;values\&quot; array failed validation &#39;%2&#39;.&quot;</span>).arg(<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>);</div>
+<div class="line"><a id="l01586" name="l01586"></a><span class="lineno"> 1586</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01587" name="l01587"></a><span class="lineno"> 1587</span>        }</div>
+<div class="line"><a id="l01588" name="l01588"></a><span class="lineno"> 1588</span> </div>
+<div class="line"><a id="l01589" name="l01589"></a><span class="lineno"> 1589</span>        rgDescriptions.append(valueDescriptionObject[_enumBitmaskArrayDescriptionJsonKey].toString());</div>
+<div class="line"><a id="l01590" name="l01590"></a><span class="lineno"> 1590</span>        rgValues.append(valueDescriptionObject[_enumBitmaskArrayIndexJsonKey].toInt());</div>
+<div class="line"><a id="l01591" name="l01591"></a><span class="lineno"> 1591</span>    }</div>
+<div class="line"><a id="l01592" name="l01592"></a><span class="lineno"> 1592</span> </div>
+<div class="line"><a id="l01593" name="l01593"></a><span class="lineno"> 1593</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01594" name="l01594"></a><span class="lineno"> 1594</span>}</div>
+<div class="line"><a id="l01595" name="l01595"></a><span class="lineno"> 1595</span> </div>
+<div class="foldopen" id="foldopen01596" data-start="{" data-end="}">
+<div class="line"><a id="l01596" name="l01596"></a><span class="lineno"><a class="line" href="classFactMetaData.html#a814b2e6d776dd2e86c5e9c584b59e33d"> 1596</a></span>QVariant <a class="code hl_function" href="classFactMetaData.html#a814b2e6d776dd2e86c5e9c584b59e33d">FactMetaData::cookedUserMin</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l01597" name="l01597"></a><span class="lineno"> 1597</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l01598" name="l01598"></a><span class="lineno"> 1598</span>    <span class="keywordflow">if</span> (!_rawUserMin.isValid()) {</div>
+<div class="line"><a id="l01599" name="l01599"></a><span class="lineno"> 1599</span>        <span class="keywordflow">return</span> QVariant();</div>
+<div class="line"><a id="l01600" name="l01600"></a><span class="lineno"> 1600</span>    }</div>
+<div class="line"><a id="l01601" name="l01601"></a><span class="lineno"> 1601</span> </div>
+<div class="line"><a id="l01602" name="l01602"></a><span class="lineno"> 1602</span>    <span class="keywordflow">return</span> _rawTranslator(_rawUserMin);</div>
+<div class="line"><a id="l01603" name="l01603"></a><span class="lineno"> 1603</span>}</div>
 </div>
-<div class="line"><a id="l01603" name="l01603"></a><span class="lineno"> 1603</span> </div>
-<div class="foldopen" id="foldopen01604" data-start="{" data-end="}">
-<div class="line"><a id="l01604" name="l01604"></a><span class="lineno"><a class="line" href="classFactMetaData.html#a41c77ce35e30f3c43ea8004ddb1b2175"> 1604</a></span>QVariant <a class="code hl_function" href="classFactMetaData.html#a41c77ce35e30f3c43ea8004ddb1b2175">FactMetaData::cookedUserMax</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l01605" name="l01605"></a><span class="lineno"> 1605</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l01606" name="l01606"></a><span class="lineno"> 1606</span>    <span class="keywordflow">if</span> (!_rawUserMax.isValid()) {</div>
-<div class="line"><a id="l01607" name="l01607"></a><span class="lineno"> 1607</span>        <span class="keywordflow">return</span> QVariant();</div>
-<div class="line"><a id="l01608" name="l01608"></a><span class="lineno"> 1608</span>    }</div>
-<div class="line"><a id="l01609" name="l01609"></a><span class="lineno"> 1609</span> </div>
-<div class="line"><a id="l01610" name="l01610"></a><span class="lineno"> 1610</span>    <span class="keywordflow">return</span> _rawTranslator(_rawUserMax);</div>
-<div class="line"><a id="l01611" name="l01611"></a><span class="lineno"> 1611</span>}</div>
+<div class="line"><a id="l01604" name="l01604"></a><span class="lineno"> 1604</span> </div>
+<div class="foldopen" id="foldopen01605" data-start="{" data-end="}">
+<div class="line"><a id="l01605" name="l01605"></a><span class="lineno"><a class="line" href="classFactMetaData.html#a41c77ce35e30f3c43ea8004ddb1b2175"> 1605</a></span>QVariant <a class="code hl_function" href="classFactMetaData.html#a41c77ce35e30f3c43ea8004ddb1b2175">FactMetaData::cookedUserMax</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l01606" name="l01606"></a><span class="lineno"> 1606</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l01607" name="l01607"></a><span class="lineno"> 1607</span>    <span class="keywordflow">if</span> (!_rawUserMax.isValid()) {</div>
+<div class="line"><a id="l01608" name="l01608"></a><span class="lineno"> 1608</span>        <span class="keywordflow">return</span> QVariant();</div>
+<div class="line"><a id="l01609" name="l01609"></a><span class="lineno"> 1609</span>    }</div>
+<div class="line"><a id="l01610" name="l01610"></a><span class="lineno"> 1610</span> </div>
+<div class="line"><a id="l01611" name="l01611"></a><span class="lineno"> 1611</span>    <span class="keywordflow">return</span> _rawTranslator(_rawUserMax);</div>
+<div class="line"><a id="l01612" name="l01612"></a><span class="lineno"> 1612</span>}</div>
 </div>
 <div class="ttc" id="aFactMetaData_8h_html"><div class="ttname"><a href="FactMetaData_8h.html">FactMetaData.h</a></div></div>
-<div class="ttc" id="aJsonHelper_8h_html"><div class="ttname"><a href="JsonHelper_8h.html">JsonHelper.h</a></div></div>
+<div class="ttc" id="aJsonParsing_8h_html"><div class="ttname"><a href="JsonParsing_8h.html">JsonParsing.h</a></div></div>
 <div class="ttc" id="aMAVLinkLib_8h_html"><div class="ttname"><a href="MAVLinkLib_8h.html">MAVLinkLib.h</a></div></div>
-<div class="ttc" id="aQGCCompression_8cc_html_a09cce169e65d8066c742ebfe55010cfb"><div class="ttname"><a href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a></div><div class="ttdeci">QString errorString</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00113">QGCCompression.cc:113</a></div></div>
+<div class="ttc" id="aQGCCompression_8cc_html_a09cce169e65d8066c742ebfe55010cfb"><div class="ttname"><a href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a></div><div class="ttdeci">QString errorString</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00115">QGCCompression.cc:115</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
 <div class="ttc" id="aQGCMAVLinkTypes_8h_html_a289a561d78d2012c8ed18ec2b5cf8f2b"><div class="ttname"><a href="QGCMAVLinkTypes_8h.html#a289a561d78d2012c8ed18ec2b5cf8f2b">MAVLINK_MSG_PARAM_EXT_SET_FIELD_PARAM_VALUE_LEN</a></div><div class="ttdeci">#define MAVLINK_MSG_PARAM_EXT_SET_FIELD_PARAM_VALUE_LEN</div><div class="ttdef"><b>Definition</b> <a href="QGCMAVLinkTypes_8h_source.html#l00019">QGCMAVLinkTypes.h:19</a></div></div>
@@ -1836,19 +1837,19 @@ $(document).ready(function(){initNavTree('FactMetaData_8cc_source.html',''); ini
 <div class="ttc" id="aclassFactMetaData_html_a212b4841a7b847588d275ef9ecc872fc"><div class="ttname"><a href="classFactMetaData.html#a212b4841a7b847588d275ef9ecc872fc">FactMetaData::appSettingsAreaUnitsToSquareMeters</a></div><div class="ttdeci">static QVariant appSettingsAreaUnitsToSquareMeters(const QVariant &amp;area)</div><div class="ttdoc">Converts from user specified distance unit to meters.</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01056">FactMetaData.cc:1056</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a235e1df6f1253ad764f6e79121166af7"><div class="ttname"><a href="classFactMetaData.html#a235e1df6f1253ad764f6e79121166af7">FactMetaData::metersToAppSettingsVerticalDistanceUnits</a></div><div class="ttdeci">static QVariant metersToAppSettingsVerticalDistanceUnits(const QVariant &amp;meters)</div><div class="ttdoc">Converts from meters to the user specified vertical distance unit.</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00986">FactMetaData.cc:986</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a279cebcd740fa74e50bef163b1c6c042"><div class="ttname"><a href="classFactMetaData.html#a279cebcd740fa74e50bef163b1c6c042">FactMetaData::setShortDescription</a></div><div class="ttdeci">void setShortDescription(const QString &amp;shortDescription)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00179">FactMetaData.h:179</a></div></div>
-<div class="ttc" id="aclassFactMetaData_html_a32af8da046652da9695c75b4d52c3ef0"><div class="ttname"><a href="classFactMetaData.html#a32af8da046652da9695c75b4d52c3ef0">FactMetaData::cookedMin</a></div><div class="ttdeci">QVariant cookedMin() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01475">FactMetaData.cc:1475</a></div></div>
+<div class="ttc" id="aclassFactMetaData_html_a32af8da046652da9695c75b4d52c3ef0"><div class="ttname"><a href="classFactMetaData.html#a32af8da046652da9695c75b4d52c3ef0">FactMetaData::cookedMin</a></div><div class="ttdeci">QVariant cookedMin() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01479">FactMetaData.cc:1479</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a36fc604c35662d29a2151977e0ffae81"><div class="ttname"><a href="classFactMetaData.html#a36fc604c35662d29a2151977e0ffae81">FactMetaData::metersToAppSettingsHorizontalDistanceUnits</a></div><div class="ttdeci">static QVariant metersToAppSettingsHorizontalDistanceUnits(const QVariant &amp;meters)</div><div class="ttdoc">Converts from meters to the user specified horizontal distance unit.</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00976">FactMetaData.cc:976</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a3bc05881be560e5edb14e673049d56e1"><div class="ttname"><a href="classFactMetaData.html#a3bc05881be560e5edb14e673049d56e1">FactMetaData::metersSecondToAppSettingsSpeedUnits</a></div><div class="ttdeci">static QVariant metersSecondToAppSettingsSpeedUnits(const QVariant &amp;metersSecond)</div><div class="ttdoc">Converts from meters/second to the user specified speed unit.</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01094">FactMetaData.cc:1094</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a3c30204b1f6b07e4efe82b6234ae426e"><div class="ttname"><a href="classFactMetaData.html#a3c30204b1f6b07e4efe82b6234ae426e">FactMetaData::clampValue</a></div><div class="ttdeci">bool clampValue(const QVariant &amp;cookedValue, QVariant &amp;typedValue) const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00497">FactMetaData.cc:497</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a3d2e7b3569018881ad8bd7ec94320583"><div class="ttname"><a href="classFactMetaData.html#a3d2e7b3569018881ad8bd7ec94320583">FactMetaData::qgcRebootRequired</a></div><div class="ttdeci">bool qgcRebootRequired() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00143">FactMetaData.h:143</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a401018586651779332f0dc7f27c14a39"><div class="ttname"><a href="classFactMetaData.html#a401018586651779332f0dc7f27c14a39">FactMetaData::convertAndValidateCooked</a></div><div class="ttdeci">bool convertAndValidateCooked(const QVariant &amp;cookedValue, bool convertOnly, QVariant &amp;typedValue, QString &amp;errorString) const</div><div class="ttdoc">Same as convertAndValidateRaw except for cookedValue input.</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00409">FactMetaData.cc:409</a></div></div>
-<div class="ttc" id="aclassFactMetaData_html_a41c77ce35e30f3c43ea8004ddb1b2175"><div class="ttname"><a href="classFactMetaData.html#a41c77ce35e30f3c43ea8004ddb1b2175">FactMetaData::cookedUserMax</a></div><div class="ttdeci">QVariant cookedUserMax() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01604">FactMetaData.cc:1604</a></div></div>
+<div class="ttc" id="aclassFactMetaData_html_a41c77ce35e30f3c43ea8004ddb1b2175"><div class="ttname"><a href="classFactMetaData.html#a41c77ce35e30f3c43ea8004ddb1b2175">FactMetaData::cookedUserMax</a></div><div class="ttdeci">QVariant cookedUserMax() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01605">FactMetaData.cc:1605</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a42ce08c988d86e8b30e32c7537955d6b"><div class="ttname"><a href="classFactMetaData.html#a42ce08c988d86e8b30e32c7537955d6b">FactMetaData::setQGCRebootRequired</a></div><div class="ttdeci">void setQGCRebootRequired(bool rebootRequired)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00182">FactMetaData.h:182</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a46574bdc9d2912134f0715025cc9894b"><div class="ttname"><a href="classFactMetaData.html#a46574bdc9d2912134f0715025cc9894b">FactMetaData::typeToSize</a></div><div class="ttdeci">static size_t typeToSize(ValueType_t type)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00865">FactMetaData.cc:865</a></div></div>
-<div class="ttc" id="aclassFactMetaData_html_a499ebbcddee840e3a2d0540428ccaba3"><div class="ttname"><a href="classFactMetaData.html#a499ebbcddee840e3a2d0540428ccaba3">FactMetaData::cookedMax</a></div><div class="ttdeci">QVariant cookedMax() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01469">FactMetaData.cc:1469</a></div></div>
-<div class="ttc" id="aclassFactMetaData_html_a4d29052279b5b8479b1d8114f61f7237"><div class="ttname"><a href="classFactMetaData.html#a4d29052279b5b8479b1d8114f61f7237">FactMetaData::splitTranslatedList</a></div><div class="ttdeci">static QStringList splitTranslatedList(const QString &amp;translatedList)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01489">FactMetaData.cc:1489</a></div></div>
+<div class="ttc" id="aclassFactMetaData_html_a499ebbcddee840e3a2d0540428ccaba3"><div class="ttname"><a href="classFactMetaData.html#a499ebbcddee840e3a2d0540428ccaba3">FactMetaData::cookedMax</a></div><div class="ttdeci">QVariant cookedMax() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01473">FactMetaData.cc:1473</a></div></div>
+<div class="ttc" id="aclassFactMetaData_html_a4d29052279b5b8479b1d8114f61f7237"><div class="ttname"><a href="classFactMetaData.html#a4d29052279b5b8479b1d8114f61f7237">FactMetaData::splitTranslatedList</a></div><div class="ttdeci">static QStringList splitTranslatedList(const QString &amp;translatedList)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01490">FactMetaData.cc:1490</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a4dd8266d01980260ce54f5a402038c19"><div class="ttname"><a href="classFactMetaData.html#a4dd8266d01980260ce54f5a402038c19">FactMetaData::typeToString</a></div><div class="ttdeci">static QString typeToString(ValueType_t type)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00854">FactMetaData.cc:854</a></div></div>
-<div class="ttc" id="aclassFactMetaData_html_a50187556f0c777ec378c1c110c06947a"><div class="ttname"><a href="classFactMetaData.html#a50187556f0c777ec378c1c110c06947a">FactMetaData::createMapFromJsonFile</a></div><div class="ttdeci">static QMap&lt; QString, FactMetaData * &gt; createMapFromJsonFile(const QString &amp;jsonFilename, QObject *metaDataParent)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01419">FactMetaData.cc:1419</a></div></div>
+<div class="ttc" id="aclassFactMetaData_html_a50187556f0c777ec378c1c110c06947a"><div class="ttname"><a href="classFactMetaData.html#a50187556f0c777ec378c1c110c06947a">FactMetaData::createMapFromJsonFile</a></div><div class="ttdeci">static QMap&lt; QString, FactMetaData * &gt; createMapFromJsonFile(const QString &amp;jsonFilename, QObject *metaDataParent)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01420">FactMetaData.cc:1420</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a55a4548326015ac214957582053295a0"><div class="ttname"><a href="classFactMetaData.html#a55a4548326015ac214957582053295a0">FactMetaData::rawMin</a></div><div class="ttdeci">QVariant rawMin() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00129">FactMetaData.h:129</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a594f352eed7c8c895fa442eef891d4b4"><div class="ttname"><a href="classFactMetaData.html#a594f352eed7c8c895fa442eef891d4b4">FactMetaData::ValueType_t</a></div><div class="ttdeci">ValueType_t</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00022">FactMetaData.h:22</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a594f352eed7c8c895fa442eef891d4b4a0c0c0b76a6693ac4695bceb73e7f31be"><div class="ttname"><a href="classFactMetaData.html#a594f352eed7c8c895fa442eef891d4b4a0c0c0b76a6693ac4695bceb73e7f31be">FactMetaData::valueTypeInt16</a></div><div class="ttdeci">@ valueTypeInt16</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00026">FactMetaData.h:26</a></div></div>
@@ -1867,7 +1868,7 @@ $(document).ready(function(){initNavTree('FactMetaData_8cc_source.html',''); ini
 <div class="ttc" id="aclassFactMetaData_html_a594f352eed7c8c895fa442eef891d4b4adc6c546f77a1ddc63482508ccefc686d"><div class="ttname"><a href="classFactMetaData.html#a594f352eed7c8c895fa442eef891d4b4adc6c546f77a1ddc63482508ccefc686d">FactMetaData::valueTypeUint16</a></div><div class="ttdeci">@ valueTypeUint16</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00025">FactMetaData.h:25</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a5e27e4f5e1959fb49cd661f5a922818a"><div class="ttname"><a href="classFactMetaData.html#a5e27e4f5e1959fb49cd661f5a922818a">FactMetaData::addBitmaskInfo</a></div><div class="ttdeci">void addBitmaskInfo(const QString &amp;name, const QVariant &amp;value)</div><div class="ttdoc">Used to add new values to the bitmask lists after the meta data has been loaded.</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00572">FactMetaData.cc:572</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a5e362fc30f43ddef900521dc2af2544b"><div class="ttname"><a href="classFactMetaData.html#a5e362fc30f43ddef900521dc2af2544b">FactMetaData::setLongDescription</a></div><div class="ttdeci">void setLongDescription(const QString &amp;longDescription)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00172">FactMetaData.h:172</a></div></div>
-<div class="ttc" id="aclassFactMetaData_html_a629ef2ac9ed3c983a0ea18050032b033"><div class="ttname"><a href="classFactMetaData.html#a629ef2ac9ed3c983a0ea18050032b033">FactMetaData::createMapFromJsonArray</a></div><div class="ttdeci">static QMap&lt; QString, FactMetaData * &gt; createMapFromJsonArray(const QJsonArray &amp;jsonArray, const DefineMap_t &amp;defineMap, QObject *metaDataParent)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01447">FactMetaData.cc:1447</a></div></div>
+<div class="ttc" id="aclassFactMetaData_html_a629ef2ac9ed3c983a0ea18050032b033"><div class="ttname"><a href="classFactMetaData.html#a629ef2ac9ed3c983a0ea18050032b033">FactMetaData::createMapFromJsonArray</a></div><div class="ttdeci">static QMap&lt; QString, FactMetaData * &gt; createMapFromJsonArray(const QJsonArray &amp;jsonArray, const DefineMap_t &amp;defineMap, QObject *metaDataParent)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01451">FactMetaData.cc:1451</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a67fec6094e223b1e6e75d3d6259e03e6"><div class="ttname"><a href="classFactMetaData.html#a67fec6094e223b1e6e75d3d6259e03e6">FactMetaData::appSettingsVerticalDistanceUnitsString</a></div><div class="ttdeci">static QString appSettingsVerticalDistanceUnitsString()</div><div class="ttdoc">Returns the string for vertical distance units which has configued by user.</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01026">FactMetaData.cc:1026</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a6987de2e1561f7a42297e9c0cb394a0e"><div class="ttname"><a href="classFactMetaData.html#a6987de2e1561f7a42297e9c0cb394a0e">FactMetaData::setRawUserMax</a></div><div class="ttdeci">void setRawUserMax(const QVariant &amp;rawUserMax)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00190">FactMetaData.cc:190</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a69ff9fdc4b8b965265f26478a9efb2f4"><div class="ttname"><a href="classFactMetaData.html#a69ff9fdc4b8b965265f26478a9efb2f4">FactMetaData::setLabel</a></div><div class="ttdeci">void setLabel(const QString &amp;label)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00178">FactMetaData.h:178</a></div></div>
@@ -1878,7 +1879,7 @@ $(document).ready(function(){initNavTree('FactMetaData_8cc_source.html',''); ini
 <div class="ttc" id="aclassFactMetaData_html_a7c156dcb4f3511ff6d573d62c62a999f"><div class="ttname"><a href="classFactMetaData.html#a7c156dcb4f3511ff6d573d62c62a999f">FactMetaData::appSettingsWeightUnitsString</a></div><div class="ttdeci">static QString appSettingsWeightUnitsString()</div><div class="ttdoc">Returns the string for weight units which has configued by user.</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01036">FactMetaData.cc:1036</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a7e2e8f730345e35ef3ae1033704e04bd"><div class="ttname"><a href="classFactMetaData.html#a7e2e8f730345e35ef3ae1033704e04bd">FactMetaData::setTranslators</a></div><div class="ttdeci">void setTranslators(Translator rawTranslator_, Translator cookedTranslator_)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00608">FactMetaData.cc:608</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a8148ace65691b2a4ba059cf8f444d6b5"><div class="ttname"><a href="classFactMetaData.html#a8148ace65691b2a4ba059cf8f444d6b5">FactMetaData::setRawMin</a></div><div class="ttdeci">void setRawMin(const QVariant &amp;rawMin)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00143">FactMetaData.cc:143</a></div></div>
-<div class="ttc" id="aclassFactMetaData_html_a814b2e6d776dd2e86c5e9c584b59e33d"><div class="ttname"><a href="classFactMetaData.html#a814b2e6d776dd2e86c5e9c584b59e33d">FactMetaData::cookedUserMin</a></div><div class="ttdeci">QVariant cookedUserMin() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01595">FactMetaData.cc:1595</a></div></div>
+<div class="ttc" id="aclassFactMetaData_html_a814b2e6d776dd2e86c5e9c584b59e33d"><div class="ttname"><a href="classFactMetaData.html#a814b2e6d776dd2e86c5e9c584b59e33d">FactMetaData::cookedUserMin</a></div><div class="ttdeci">QVariant cookedUserMin() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01596">FactMetaData.cc:1596</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a81f6960f876738ca1bfcdc5070314891"><div class="ttname"><a href="classFactMetaData.html#a81f6960f876738ca1bfcdc5070314891">FactMetaData::rawUserMin</a></div><div class="ttdeci">QVariant rawUserMin() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00132">FactMetaData.h:132</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a836290d5cd3a6892ea2a808b8f2f93aa"><div class="ttname"><a href="classFactMetaData.html#a836290d5cd3a6892ea2a808b8f2f93aa">FactMetaData::setCategory</a></div><div class="ttdeci">void setCategory(const QString &amp;category)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00170">FactMetaData.h:170</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a8500545abf2175c369711f5b4b7bd49d"><div class="ttname"><a href="classFactMetaData.html#a8500545abf2175c369711f5b4b7bd49d">FactMetaData::convertAndValidateRaw</a></div><div class="ttdeci">bool convertAndValidateRaw(const QVariant &amp;rawValue, bool convertOnly, QVariant &amp;typedValue, QString &amp;errorString) const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00328">FactMetaData.cc:328</a></div></div>
@@ -1894,6 +1895,7 @@ $(document).ready(function(){initNavTree('FactMetaData_8cc_source.html',''); ini
 <div class="ttc" id="aclassFactMetaData_html_a9ab4adc3d51168961b39ee7fe71eacbb"><div class="ttname"><a href="classFactMetaData.html#a9ab4adc3d51168961b39ee7fe71eacbb">FactMetaData::setEnumInfo</a></div><div class="ttdeci">void setEnumInfo(const QStringList &amp;strings, const QVariantList &amp;values)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00578">FactMetaData.cc:578</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a9dfcfb0d68c2bfba0f0c70db93cde85f"><div class="ttname"><a href="classFactMetaData.html#a9dfcfb0d68c2bfba0f0c70db93cde85f">FactMetaData::setBitmaskInfo</a></div><div class="ttdeci">void setBitmaskInfo(const QStringList &amp;strings, const QVariantList &amp;values)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00560">FactMetaData.cc:560</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_aa164236c77e456f93beeb4f3f05a6f54"><div class="ttname"><a href="classFactMetaData.html#aa164236c77e456f93beeb4f3f05a6f54">FactMetaData::setRawMax</a></div><div class="ttdeci">void setRawMax(const QVariant &amp;rawMax)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00160">FactMetaData.cc:160</a></div></div>
+<div class="ttc" id="aclassFactMetaData_html_aa27787be380a351c8e9864e11e91540b"><div class="ttname"><a href="classFactMetaData.html#aa27787be380a351c8e9864e11e91540b">FactMetaData::readOnly</a></div><div class="ttdeci">bool readOnly() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00145">FactMetaData.h:145</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_aa424cac5618ec0a18d548a65a0e87a1a"><div class="ttname"><a href="classFactMetaData.html#aa424cac5618ec0a18d548a65a0e87a1a">FactMetaData::squareMetersToAppSettingsAreaUnits</a></div><div class="ttdeci">static QVariant squareMetersToAppSettingsAreaUnits(const QVariant &amp;squareMeters)</div><div class="ttdoc">Converts from meters to the user specified distance unit.</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01046">FactMetaData.cc:1046</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_ab0f27b61161fd303cc056ab86477275d"><div class="ttname"><a href="classFactMetaData.html#ab0f27b61161fd303cc056ab86477275d">FactMetaData::~FactMetaData</a></div><div class="ttdeci">~FactMetaData()</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00084">FactMetaData.cc:84</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_ab21d299995ffcdd4dfb2c5f4f6178b44"><div class="ttname"><a href="classFactMetaData.html#ab21d299995ffcdd4dfb2c5f4f6178b44">FactMetaData::removeEnumInfo</a></div><div class="ttdeci">void removeEnumInfo(const QVariant &amp;value)</div><div class="ttdoc">Used to remove values from the enum lists after the meta data has been loaded.</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00596">FactMetaData.cc:596</a></div></div>
@@ -1901,7 +1903,7 @@ $(document).ready(function(){initNavTree('FactMetaData_8cc_source.html',''); ini
 <div class="ttc" id="aclassFactMetaData_html_abd9cacfef4f6e68c5ec9678dea73d5bb"><div class="ttname"><a href="classFactMetaData.html#abd9cacfef4f6e68c5ec9678dea73d5bb">FactMetaData::appSettingsVerticalDistanceUnitsToMeters</a></div><div class="ttdeci">static QVariant appSettingsVerticalDistanceUnitsToMeters(const QVariant &amp;distance)</div><div class="ttdoc">Converts from user specified vertical distance unit to meters.</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01006">FactMetaData.cc:1006</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_ac8d7eb90b447d6872b8cb466a9c95e68"><div class="ttname"><a href="classFactMetaData.html#ac8d7eb90b447d6872b8cb466a9c95e68">FactMetaData::setRawIncrement</a></div><div class="ttdeci">void setRawIncrement(double increment)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00183">FactMetaData.h:183</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_acb051a10e1af4c37bfa803a5fd6fd284"><div class="ttname"><a href="classFactMetaData.html#acb051a10e1af4c37bfa803a5fd6fd284">FactMetaData::addEnumInfo</a></div><div class="ttdeci">void addEnumInfo(const QString &amp;name, const QVariant &amp;value)</div><div class="ttdoc">Used to add new values to the enum lists after the meta data has been loaded.</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00590">FactMetaData.cc:590</a></div></div>
-<div class="ttc" id="aclassFactMetaData_html_acb3453c3539f8cdf8b37a886e0e4f189"><div class="ttname"><a href="classFactMetaData.html#acb3453c3539f8cdf8b37a886e0e4f189">FactMetaData::setVolatileValue</a></div><div class="ttdeci">void setVolatileValue(bool bValue)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01481">FactMetaData.cc:1481</a></div></div>
+<div class="ttc" id="aclassFactMetaData_html_acb3453c3539f8cdf8b37a886e0e4f189"><div class="ttname"><a href="classFactMetaData.html#acb3453c3539f8cdf8b37a886e0e4f189">FactMetaData::setVolatileValue</a></div><div class="ttdeci">void setVolatileValue(bool bValue)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01485">FactMetaData.cc:1485</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_acb3dfebc3a8ea4253c38f317b6735ef3"><div class="ttname"><a href="classFactMetaData.html#acb3dfebc3a8ea4253c38f317b6735ef3">FactMetaData::name</a></div><div class="ttdeci">QString name() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00136">FactMetaData.h:136</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_acb5fd5443b86030ad7ad2763d2420db9"><div class="ttname"><a href="classFactMetaData.html#acb5fd5443b86030ad7ad2763d2420db9">FactMetaData::appSettingsHorizontalDistanceUnitsToMeters</a></div><div class="ttdeci">static QVariant appSettingsHorizontalDistanceUnitsToMeters(const QVariant &amp;distance)</div><div class="ttdoc">Converts from user specified horizontal distance unit to meters.</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00996">FactMetaData.cc:996</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_ace63eeee10a4cc8adf16fa22a6e3fb5f"><div class="ttname"><a href="classFactMetaData.html#ace63eeee10a4cc8adf16fa22a6e3fb5f">FactMetaData::operator=</a></div><div class="ttdeci">const FactMetaData &amp; operator=(const FactMetaData &amp;other)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00089">FactMetaData.cc:89</a></div></div>
@@ -1945,8 +1947,8 @@ $(document).ready(function(){initNavTree('FactMetaData_8cc_source.html',''); ini
 <div class="ttc" id="aclassUnitsSettings_html_ace2361f4e36a835e4ddbe3ffee9bebe1a4df12cbe00884399b8cfd66642230a12"><div class="ttname"><a href="classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1a4df12cbe00884399b8cfd66642230a12">UnitsSettings::HorizontalDistanceUnitsMeters</a></div><div class="ttdeci">@ HorizontalDistanceUnitsMeters</div><div class="ttdef"><b>Definition</b> <a href="UnitsSettings_8h_source.html#l00018">UnitsSettings.h:17</a></div></div>
 <div class="ttc" id="aclassUnitsSettings_html_aefb6e92c5807e43b864979c206ce7630"><div class="ttname"><a href="classUnitsSettings.html#aefb6e92c5807e43b864979c206ce7630">UnitsSettings::verticalDistanceUnits</a></div><div class="ttdeci">Fact *verticalDistanceUnits READ verticalDistanceUnits CONSTANT Fact * verticalDistanceUnits()</div><div class="ttdef"><b>Definition</b> <a href="UnitsSettings_8cc_source.html#l00039">UnitsSettings.cc:39</a></div></div>
 <div class="ttc" id="aclassUnitsSettings_html_af6090c39c7075f2c27a0837e08efe166"><div class="ttname"><a href="classUnitsSettings.html#af6090c39c7075f2c27a0837e08efe166">UnitsSettings::areaUnits</a></div><div class="ttdeci">Fact *areaUnits READ areaUnits CONSTANT Fact * areaUnits()</div><div class="ttdef"><b>Definition</b> <a href="UnitsSettings_8cc_source.html#l00070">UnitsSettings.cc:70</a></div></div>
-<div class="ttc" id="anamespaceJsonHelper_html_a222d0d92b99e64eaba29bdb160bb00ec"><div class="ttname"><a href="namespaceJsonHelper.html#a222d0d92b99e64eaba29bdb160bb00ec">JsonHelper::openInternalQGCJsonFile</a></div><div class="ttdeci">QJsonObject openInternalQGCJsonFile(const QString &amp;jsonFilename, const QString &amp;expectedFileType, int minSupportedVersion, int maxSupportedVersion, int &amp;version, QString &amp;errorString)</div><div class="ttdoc">returned error string if validation fails</div><div class="ttdef"><b>Definition</b> <a href="JsonHelper_8cc_source.html#l00240">JsonHelper.cc:240</a></div></div>
-<div class="ttc" id="anamespaceJsonHelper_html_a96b54c245d570a0b2e62b2a98f074c79"><div class="ttname"><a href="namespaceJsonHelper.html#a96b54c245d570a0b2e62b2a98f074c79">JsonHelper::validateKeys</a></div><div class="ttdeci">bool validateKeys(const QJsonObject &amp;jsonObject, const QList&lt; KeyValidateInfo &gt; &amp;keyInfo, QString &amp;errorString)</div></div>
+<div class="ttc" id="anamespaceJsonParsing_html_a72ea7d3eb5e623ca5955dac31bd5b854"><div class="ttname"><a href="namespaceJsonParsing.html#a72ea7d3eb5e623ca5955dac31bd5b854">JsonParsing::validateKeys</a></div><div class="ttdeci">bool validateKeys(const QJsonObject &amp;jsonObject, const QList&lt; KeyValidateInfo &gt; &amp;keyInfo, QString &amp;errorString)</div><div class="ttdoc">Validates that all required keys are present and that listed keys have the expected type.</div><div class="ttdef"><b>Definition</b> <a href="JsonParsing_8cc_source.html#l00133">JsonParsing.cc:133</a></div></div>
+<div class="ttc" id="anamespaceJsonParsing_html_aa4926e2821e2e072504a56c734beaf9f"><div class="ttname"><a href="namespaceJsonParsing.html#aa4926e2821e2e072504a56c734beaf9f">JsonParsing::openInternalQGCJsonFile</a></div><div class="ttdeci">QJsonObject openInternalQGCJsonFile(const QString &amp;jsonFilename, const QString &amp;expectedFileType, int minSupportedVersion, int maxSupportedVersion, int &amp;version, QString &amp;errorString, const QStringList &amp;defaultTranslateKeys, const QStringList &amp;defaultArrayIDKeys)</div><div class="ttdef"><b>Definition</b> <a href="JsonParsing_8cc_source.html#l00334">JsonParsing.cc:334</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

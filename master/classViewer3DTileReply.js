@@ -1,6 +1,6 @@
 var classViewer3DTileReply =
 [
-    [ "TileInfo_t", "structViewer3DTileReply_1_1TileInfo__t.html", "structViewer3DTileReply_1_1TileInfo__t" ],
+    [ "TileInfo_t", "classViewer3DTileReply.html#ac86afaf446568258c5f3cf6c1a483599", null ],
     [ "Viewer3DTileReply", "classViewer3DTileReply.html#a0fa04ad6afc32d7ba7644ed71ccf2140", null ],
     [ "~Viewer3DTileReply", "classViewer3DTileReply.html#a781334d55cf533216236d8c8699a0e4a", null ],
     [ "tileDone", "classViewer3DTileReply.html#a0156817256ffa53cf3473acce6dca495", null ],

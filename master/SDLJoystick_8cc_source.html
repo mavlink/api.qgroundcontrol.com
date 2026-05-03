@@ -819,7 +819,38 @@ $(document).ready(function(){initNavTree('SDLJoystick_8cc_source.html',''); init
 <div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>}</div>
 </div>
 <div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span> </div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>} <span class="comment">// namespace SDLJoystick</span></div>
+<div class="foldopen" id="foldopen00635" data-start="{" data-end="}">
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno"><a class="line" href="namespaceSDLJoystick.html#aa841efef1ebfe66703f527d5aa65fd4b">  635</a></span>QVariantMap <a class="code hl_function" href="namespaceSDLJoystick.html#aa841efef1ebfe66703f527d5aa65fd4b">findBinding</a>(<a class="code hl_typedef" href="JoystickSDL_8h.html#a2393985fb70bb019b3b755fbd88d200c">SDL_Gamepad</a> *gamepad,</div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>                        <span class="keyword">const</span> std::function&lt;<span class="keywordtype">bool</span>(<span class="keyword">const</span> SDL_GamepadBinding *)&gt; &amp;matchFunc)</div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>{</div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>    QVariantMap result;</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>    result[QStringLiteral(<span class="stringliteral">&quot;valid&quot;</span>)] = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span> </div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>    <span class="keywordflow">if</span> (!gamepad) {</div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>    }</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span> </div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>    <span class="keywordtype">int</span> bindingCount = 0;</div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>    SDL_GamepadBinding **bindings = SDL_GetGamepadBindings(gamepad, &amp;bindingCount);</div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>    <span class="keywordflow">if</span> (!bindings) {</div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>    }</div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span> </div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; bindingCount; ++i) {</div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>        SDL_GamepadBinding *binding = bindings[i];</div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>        <span class="keywordflow">if</span> (binding &amp;&amp; matchFunc(binding)) {</div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>            <a class="code hl_function" href="namespaceSDLJoystick.html#aa7a9616276677ff373b457842a60be76">populateBindingResult</a>(result, binding);</div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>            SDL_free(bindings);</div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>            <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>        }</div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>    }</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span> </div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>    SDL_free(bindings);</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>}</div>
+</div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span> </div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>} <span class="comment">// namespace SDLJoystick</span></div>
 </div>
 <div class="ttc" id="aJoystickSDL_8h_html_a2393985fb70bb019b3b755fbd88d200c"><div class="ttname"><a href="JoystickSDL_8h.html#a2393985fb70bb019b3b755fbd88d200c">SDL_Gamepad</a></div><div class="ttdeci">struct SDL_Gamepad SDL_Gamepad</div><div class="ttdef"><b>Definition</b> <a href="JoystickSDL_8h_source.html#l00013">JoystickSDL.h:13</a></div></div>
 <div class="ttc" id="aJoystickSDL_8h_html_a7a773505fbae8a268a51e0bf24c2023d"><div class="ttname"><a href="JoystickSDL_8h.html#a7a773505fbae8a268a51e0bf24c2023d">SDL_Joystick</a></div><div class="ttdeci">struct SDL_Joystick SDL_Joystick</div><div class="ttdef"><b>Definition</b> <a href="JoystickSDL_8h_source.html#l00010">JoystickSDL.h:10</a></div></div>
@@ -859,6 +890,7 @@ $(document).ready(function(){initNavTree('SDLJoystick_8cc_source.html',''); init
 <div class="ttc" id="anamespaceSDLJoystick_html_aa422815d4a7296c8b14a5a15589e54e9"><div class="ttname"><a href="namespaceSDLJoystick.html#aa422815d4a7296c8b14a5a15589e54e9">SDLJoystick::createVirtualJoystick</a></div><div class="ttdeci">int createVirtualJoystick(const QString &amp;name, int axisCount, int buttonCount, int hatCount)</div><div class="ttdoc">Create a virtual joystick.</div><div class="ttdef"><b>Definition</b> <a href="SDLJoystick_8cc_source.html#l00570">SDLJoystick.cc:570</a></div></div>
 <div class="ttc" id="anamespaceSDLJoystick_html_aa6422bda7250cb6085b1dd7c24b49ffe"><div class="ttname"><a href="namespaceSDLJoystick.html#aa6422bda7250cb6085b1dd7c24b49ffe">SDLJoystick::setGamepadEventsEnabled</a></div><div class="ttdeci">void setGamepadEventsEnabled(bool enabled)</div><div class="ttdoc">Enable/disable gamepad event processing.</div><div class="ttdef"><b>Definition</b> <a href="SDLJoystick_8cc_source.html#l00164">SDLJoystick.cc:164</a></div></div>
 <div class="ttc" id="anamespaceSDLJoystick_html_aa7a9616276677ff373b457842a60be76"><div class="ttname"><a href="namespaceSDLJoystick.html#aa7a9616276677ff373b457842a60be76">SDLJoystick::populateBindingResult</a></div><div class="ttdeci">void populateBindingResult(QVariantMap &amp;result, const SDL_GamepadBinding *binding)</div><div class="ttdoc">Populate a QVariantMap with binding information from SDL_GamepadBinding.</div><div class="ttdef"><b>Definition</b> <a href="SDLJoystick_8cc_source.html#l00619">SDLJoystick.cc:619</a></div></div>
+<div class="ttc" id="anamespaceSDLJoystick_html_aa841efef1ebfe66703f527d5aa65fd4b"><div class="ttname"><a href="namespaceSDLJoystick.html#aa841efef1ebfe66703f527d5aa65fd4b">SDLJoystick::findBinding</a></div><div class="ttdeci">QVariantMap findBinding(SDL_Gamepad *gamepad, const std::function&lt; bool(const SDL_GamepadBinding *)&gt; &amp;matchFunc)</div><div class="ttdef"><b>Definition</b> <a href="SDLJoystick_8cc_source.html#l00635">SDLJoystick.cc:635</a></div></div>
 <div class="ttc" id="anamespaceSDLJoystick_html_aa9a68874c737fdb2f39d5bfd738cb872"><div class="ttname"><a href="namespaceSDLJoystick.html#aa9a68874c737fdb2f39d5bfd738cb872">SDLJoystick::addMappingPersistent</a></div><div class="ttdeci">bool addMappingPersistent(const QString &amp;mapping)</div><div class="ttdoc">Add a mapping and persist it to user's config file.</div><div class="ttdef"><b>Definition</b> <a href="SDLJoystick_8cc_source.html#l00375">SDLJoystick.cc:375</a></div></div>
 <div class="ttc" id="anamespaceSDLJoystick_html_ab574fc7ea6ac40bf4d7aeba4e89fa9f8"><div class="ttname"><a href="namespaceSDLJoystick.html#ab574fc7ea6ac40bf4d7aeba4e89fa9f8">SDLJoystick::pumpEvents</a></div><div class="ttdeci">void pumpEvents()</div><div class="ttdoc">Pump SDL events (call periodically)</div><div class="ttdef"><b>Definition</b> <a href="SDLJoystick_8cc_source.html#l00148">SDLJoystick.cc:148</a></div></div>
 <div class="ttc" id="anamespaceSDLJoystick_html_ab9280b4892a2b637fb83a2799173477c"><div class="ttname"><a href="namespaceSDLJoystick.html#ab9280b4892a2b637fb83a2799173477c">SDLJoystick::joystickEventsEnabled</a></div><div class="ttdeci">bool joystickEventsEnabled()</div><div class="ttdef"><b>Definition</b> <a href="SDLJoystick_8cc_source.html#l00159">SDLJoystick.cc:159</a></div></div>

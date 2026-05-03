@@ -1,6 +1,6 @@
 var classViewer3DTileQuery =
 [
-    [ "TileStatistics_t", "structViewer3DTileQuery_1_1TileStatistics__t.html", "structViewer3DTileQuery_1_1TileStatistics__t" ],
+    [ "TileStatistics_t", "classViewer3DTileQuery.html#afa8baf81e30b9d20f739c99ebde6563f", null ],
     [ "Viewer3DTileQuery", "classViewer3DTileQuery.html#ac37cf29e268ce502b362f9d85ff3e766", null ],
     [ "adaptiveMapTilesLoader", "classViewer3DTileQuery.html#a5ffca54dd503b31c719c52c5c1b69f5d", null ],
     [ "loadingMapCompleted", "classViewer3DTileQuery.html#ad40941a8dab4517670426c380371a353", null ],
