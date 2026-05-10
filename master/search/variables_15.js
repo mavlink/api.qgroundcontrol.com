@@ -26,7 +26,5 @@ var searchData=
   ['useragent_23',['userAgent',['../structQGCNetworkHelper_1_1RequestConfig.html#ad6c014eb273bcad5a5315d8257b78df1',1,'QGCNetworkHelper::RequestConfig']]],
   ['username_24',['username',['../structNTRIPTransportConfig.html#a8568e27df73c204b26a1ca04b6d300b3',1,'NTRIPTransportConfig']]],
   ['useswrast_25',['useSwRast',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#ad2fec5165dd4a0441521f3697f179e7e',1,'QGCCommandLineParser::CommandLineParseResult']]],
-  ['usetls_26',['useTls',['../structNTRIPTransportConfig.html#a82d184cf1f405ce4aeb2f28bf9fe88cf',1,'NTRIPTransportConfig']]],
-  ['using_5fappsink_27',['using_appsink',['../struct__GstQgcVideoSinkBin.html#a6a8a9a7185b6d8ffdbf7a5b46da3c92a',1,'_GstQgcVideoSinkBin']]],
-  ['using_5fd3d11_28',['using_d3d11',['../struct__GstQgcVideoSinkBin.html#a3d0e6f045353deb80dc7b3539373b7a3',1,'_GstQgcVideoSinkBin']]]
+  ['usetls_26',['useTls',['../structNTRIPTransportConfig.html#a82d184cf1f405ce4aeb2f28bf9fe88cf',1,'NTRIPTransportConfig']]]
 ];

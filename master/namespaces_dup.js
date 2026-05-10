@@ -189,6 +189,7 @@ var namespaces_dup =
         [ "AUX_FUNCTION_MAX", "namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03aae658588267a69b714d78757902816e1", null ]
       ] ]
     ] ],
+    [ "APMDataFlashUtility", "namespaceAPMDataFlashUtility.html", "namespaceAPMDataFlashUtility" ],
     [ "Colors", "namespaceColors.html", [
       [ "Blue", "namespaceColors.html#a7a37e8eeabb1a8923aeaead271b40152", null ],
       [ "BoldRed", "namespaceColors.html#ab7aead119f377470f758fc1dc2dc1eb0", null ],
@@ -203,9 +204,9 @@ var namespaces_dup =
     ] ],
     [ "DataFlashParser", "namespaceDataFlashParser.html", [
       [ "getTagsFromLog", "namespaceDataFlashParser.html#ad09a1d0aee552cd48beccaff2da738f4", null ],
-      [ "getTagsFromLog", "namespaceDataFlashParser.html#a7a0426b74551d4bfeaeb44cd36974048", null ]
+      [ "getTagsFromLog", "namespaceDataFlashParser.html#a7a0426b74551d4bfeaeb44cd36974048", null ],
+      [ "parseFile", "namespaceDataFlashParser.html#afaa692300ec306c42a5a2e49d2d881a0", null ]
     ] ],
-    [ "DataFlashUtility", "namespaceDataFlashUtility.html", "namespaceDataFlashUtility" ],
     [ "ErrorHandlers", "namespaceErrorHandlers.html", [
       [ "constantDelay", "namespaceErrorHandlers.html#a6db38b3608833335609e6b905356be88", null ],
       [ "exponentialBackoff", "namespaceErrorHandlers.html#a0944e3a22c8a5bbd46f478ca5f0b7c8c", null ],
@@ -274,7 +275,7 @@ var namespaces_dup =
       ] ],
       [ "completeInit", "namespaceGStreamer.html#a71ff21ae8d70082b4d3da0e5e04e9659", null ],
       [ "createVideoReceiver", "namespaceGStreamer.html#a36d3ccf699a6b03bd580a791b0008d16", null ],
-      [ "createVideoSink", "namespaceGStreamer.html#a707b7c08d1008e6a9c8b3b675dc17fe4", null ],
+      [ "createVideoSink", "namespaceGStreamer.html#ad61801d3c0899cf9430a2a447aea76f7", null ],
       [ "didExternalPluginLoaderFail", "namespaceGStreamer.html#a63b9e9022c6e0b9bb4fe9b2ed2e5f44b", null ],
       [ "initialize", "namespaceGStreamer.html#aaeb4e5fb3ccc3013d331b0fbdc2d29f3", null ],
       [ "isHardwareDecoderFactory", "namespaceGStreamer.html#aa78f2e5ccb025d8f073ac4ec3e223816", null ],
@@ -284,9 +285,10 @@ var namespaces_dup =
       [ "redirectGLibLogging", "namespaceGStreamer.html#a8c63be6fc9a1c48d3d5b719dbc0b5c92", null ],
       [ "releaseVideoSink", "namespaceGStreamer.html#a668a7521fce6db761dd0f6987f05c51b", null ],
       [ "resetExternalPluginLoaderFailure", "namespaceGStreamer.html#abb2a908d58d10a16d717dd79df43385d", null ],
+      [ "setAppSinkAdaptersActive", "namespaceGStreamer.html#aa7780e8ee9eb00ef68f24511b00fe9e5", null ],
       [ "setCodecPriorities", "namespaceGStreamer.html#a8fa5efb3bb1e31531b89b895c5970071", null ],
       [ "setDebugLevel", "namespaceGStreamer.html#a427dbea4be97a87f50ad05516aaf1b78", null ],
-      [ "setupAppleSinkAdapter", "namespaceGStreamer.html#aad40da762987097c50c3f44801986b20", null ]
+      [ "setupAppSinkAdapter", "namespaceGStreamer.html#ac0fa0b5246673ae86daf9d21b93a844c", null ]
     ] ],
     [ "JsonParsing", "namespaceJsonParsing.html", "namespaceJsonParsing" ],
     [ "KMLHelper", "namespaceKMLHelper.html", [
@@ -323,18 +325,7 @@ var namespaces_dup =
       [ "formatAsText", "namespaceLogFormatter.html#a2d8222d1c76628705d5ebb2ac693a266", null ],
       [ "formatCsvRow", "namespaceLogFormatter.html#a63804fe79a1917deacf907f61f8ede05", null ]
     ] ],
-    [ "MAVLinkSigning", "namespaceMAVLinkSigning.html", [
-      [ "checkSigningLinkId", "namespaceMAVLinkSigning.html#a17982f26dbf56e3009de39218e395a6a", null ],
-      [ "createDisableSigning", "namespaceMAVLinkSigning.html#a4912ca53258fe3aa85756070e59d3352", null ],
-      [ "createSetupSigning", "namespaceMAVLinkSigning.html#a8f553ad7fd7338adfe3e9725af8e43bd", null ],
-      [ "initSigning", "namespaceMAVLinkSigning.html#af760bc3adb7d52846dc86ba8173be5f5", null ],
-      [ "insecureConnectionAcceptUnsignedCallback", "namespaceMAVLinkSigning.html#aee6a741375606660e530838b65d979b5", null ],
-      [ "isMessageSigned", "namespaceMAVLinkSigning.html#aab0248df228a43ec97763e46c04406fa", null ],
-      [ "isSigningEnabled", "namespaceMAVLinkSigning.html#a243c244b66fa64dee20ccd17e5ba6c20", null ],
-      [ "secureConnectionAcceptUnsignedCallback", "namespaceMAVLinkSigning.html#a9e6d7dec3bfa8e9bdd9509974b26627d", null ],
-      [ "tryDetectKey", "namespaceMAVLinkSigning.html#a6f318e0d0e780a5918d47502e6e26116", null ],
-      [ "verifySignature", "namespaceMAVLinkSigning.html#a6b275f849a7ea6af77ba7a9e4e1e60a9", null ]
-    ] ],
+    [ "MAVLinkSigning", "namespaceMAVLinkSigning.html", "namespaceMAVLinkSigning" ],
     [ "Mixer", "namespaceMixer.html", "namespaceMixer" ],
     [ "Platform", "namespacePlatform.html", [
       [ "checkSingleInstance", "namespacePlatform.html#a46580111c8b49c9f9ce7e495f637ae11", null ],
@@ -342,23 +333,8 @@ var namespaces_dup =
       [ "setupPostApp", "namespacePlatform.html#a47c9e42710d883700596e8acc3bcaae4", null ],
       [ "showMultipleInstanceError", "namespacePlatform.html#afc5c30b79fec330ef978e5ae6b1a79b8", null ]
     ] ],
-    [ "QGC", "namespaceQGC.html", [
-      [ "bigSizeMBToString", "namespaceQGC.html#a82cf4b5caaac7bdf4c3fae62d71f96c3", null ],
-      [ "bigSizeToString", "namespaceQGC.html#a2cfc8548640288f991aad0e97a467e87", null ],
-      [ "crc32", "namespaceQGC.html#a2b96db87d5dfa9f6abd229d3156c07f6", null ],
-      [ "fuzzyCompare", "namespaceQGC.html#aa03f35b3e7b8aa775c70b17b2479d60a", null ],
-      [ "fuzzyCompare", "namespaceQGC.html#a7887633568068ad06ca797ae0fb1c4c7", null ],
-      [ "fuzzyCompare", "namespaceQGC.html#a16c8c40ec3cc4cb32d453e0363e524f2", null ],
-      [ "fuzzyCompare", "namespaceQGC.html#afc84f04ae1e437c0d8aa478a9b522cf4", null ],
-      [ "limitAngleToPMPId", "namespaceQGC.html#a40cc55b89c3252116cfdeb10923fcfb3", null ],
-      [ "limitAngleToPMPIf", "namespaceQGC.html#afad0f30adc8a4b62763f57ae9021e94c", null ],
-      [ "numberToString", "namespaceQGC.html#a12c9356746e284627baac24785d9c8e8", null ],
-      [ "runningUnitTests", "namespaceQGC.html#a3f3f3b566af17170d0554bf503695719", null ],
-      [ "showAppMessage", "namespaceQGC.html#ae41a6cbf29b27a1b592d9d4cfde85975", null ],
-      [ "showCriticalVehicleMessage", "namespaceQGC.html#ac387e51c15a6c5c8ad5c8ce0f86ceeca", null ],
-      [ "showRebootAppMessage", "namespaceQGC.html#ac1160fca03370c03e04d55589c8f5f1b", null ],
-      [ "crctab", "namespaceQGC.html#aec50cfb7c95f1d61002e2851f18f887f", null ]
-    ] ],
+    [ "PX4ULogUtility", "namespacePX4ULogUtility.html", "namespacePX4ULogUtility" ],
+    [ "QGC", "namespaceQGC.html", "namespaceQGC" ],
     [ "QGCCommandLineParser", "namespaceQGCCommandLineParser.html", "namespaceQGCCommandLineParser" ],
     [ "QGCCompression", "namespaceQGCCompression.html", "namespaceQGCCompression" ],
     [ "QGCFileHelper", "namespaceQGCFileHelper.html", [
@@ -413,8 +389,18 @@ var namespaces_dup =
       [ "polygonArea", "namespaceQGCGeo.html#a72cfeb7fe2441d5918d832ed1560cfcb", null ],
       [ "polygonPerimeter", "namespaceQGCGeo.html#a191021c1a06f8d96b5590c8d325dc558", null ]
     ] ],
+    [ "QGCKeychain", "namespaceQGCKeychain.html", [
+      [ "readBinary", "namespaceQGCKeychain.html#a4cba186e66dad3b3941499598b99f6f1", null ],
+      [ "remove", "namespaceQGCKeychain.html#a80d709ef3cc8b603a4986830e1ef6092", null ],
+      [ "writeBinary", "namespaceQGCKeychain.html#a4df5e2b75d6cf0e9a0977f413c15288f", null ]
+    ] ],
     [ "QGClibarchive", "namespaceQGClibarchive.html", "namespaceQGClibarchive" ],
     [ "QGCNetworkHelper", "namespaceQGCNetworkHelper.html", "namespaceQGCNetworkHelper" ],
+    [ "QGCRhiCapture", "namespaceQGCRhiCapture.html", [
+      [ "cachedRhi", "namespaceQGCRhiCapture.html#a73fd0fc405f41931d20089596749d602", null ],
+      [ "connectWindow", "namespaceQGCRhiCapture.html#a7f32da349828923bad28d7086ce08085", null ],
+      [ "qrhi", "namespaceQGCRhiCapture.html#a69e9dbcd5c59a1cadc83744d483c26b8", null ]
+    ] ],
     [ "QGCSensors", "namespaceQGCSensors.html", "namespaceQGCSensors" ],
     [ "QGCSqlHelper", "namespaceQGCSqlHelper.html", "namespaceQGCSqlHelper" ],
     [ "SDLJoystick", "namespaceSDLJoystick.html", "namespaceSDLJoystick" ],
@@ -474,7 +460,7 @@ var namespaces_dup =
     [ "ULogParser", "namespaceULogParser.html", [
       [ "getTagsFromLog", "namespaceULogParser.html#aad41777b045b559d4234a2e5664cd9b0", null ],
       [ "getTagsFromLog", "namespaceULogParser.html#adc26a791bb2ee621d2c62c7464f90dba", null ],
+      [ "parseFile", "namespaceULogParser.html#a7a22a55d6b152608b7fd3c4cfdbe53b7", null ],
       [ "parseGeoTagData", "namespaceULogParser.html#a918d2fe41d1621d82ae289ef48b17c36", null ]
-    ] ],
-    [ "ULogUtility", "namespaceULogUtility.html", "namespaceULogUtility" ]
+    ] ]
 ];

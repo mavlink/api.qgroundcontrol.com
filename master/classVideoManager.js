@@ -12,8 +12,6 @@ var classVideoManager =
     [ "fullScreen", "classVideoManager.html#a136384bc7c2292c95d728503399d568e", null ],
     [ "fullScreenChanged", "classVideoManager.html#aa20b32d10b9d25cc1367acdf4119cbb7", null ],
     [ "grabImage", "classVideoManager.html#aff41925edf2224a9903db6d7fe49bec4", null ],
-    [ "gstreamerAppleSink", "classVideoManager.html#ace943fcd00b397fc9968a5511ef9d80b", null ],
-    [ "gstreamerD3D11Sink", "classVideoManager.html#ab8d3993da6bd1025b97db1483d8d26a7", null ],
     [ "gstreamerEnabled", "classVideoManager.html#a17e2f20b65a831b89eecbaa53d835c97", null ],
     [ "hasThermal", "classVideoManager.html#a4da97bcc66561a60cec46dfb55dbada9", null ],
     [ "hasVideo", "classVideoManager.html#aa402a497c789a8f8f99391e242e5609c", null ],

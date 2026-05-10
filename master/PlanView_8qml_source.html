@@ -127,7 +127,7 @@ $(document).ready(function(){initNavTree('PlanView_8qml_source.html',''); initRe
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    property var    _geoFenceController: _planMasterController.geoFenceController</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    property var    _rallyPointController: _planMasterController.rallyPointController</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    property var    _visualItems: _missionController.visualItems</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    property bool   _singleComplexItem: _missionController.complexMissionItemNames.length === 1</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    property bool   _singleComplexItem: _missionController.complexMissionItems.length === 1</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    property int    _editingLayer: _layerMission</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    property var    _appSettings: QGroundControl.settingsManager.appSettings</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    property var    _planViewSettings: QGroundControl.settingsManager.planViewSettings</div>
@@ -545,14 +545,14 @@ $(document).ready(function(){initNavTree('PlanView_8qml_source.html',''); initRe
 <div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>                        }</div>
 <div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>                    },</div>
 <div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>                    ToolStripAction {</div>
-<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>                        text: _singleComplexItem ? _missionController.complexMissionItemNames[0] : qsTr(&quot;Pattern&quot;)</div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>                        text: _singleComplexItem ? _missionController.complexMissionItems[0].translatedName : qsTr(&quot;Pattern&quot;)</div>
 <div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>                        iconSource: &quot;/qmlimages/MapDrawShape.svg&quot;</div>
 <div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>                        enabled: _homePositionSet &amp;&amp; _missionController.flyThroughCommandsAllowed</div>
 <div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>                        visible: toolStrip._isMissionLayer</div>
 <div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>                        dropPanelComponent: _singleComplexItem ? undefined : patternDropPanel</div>
 <div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>                        onTriggered: {</div>
 <div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>                            if (_singleComplexItem) {</div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>                                insertComplexItemAfterCurrent(_missionController.complexMissionItemNames[0])</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>                                insertComplexItemAfterCurrent(_missionController.complexMissionItems[0].canonicalName)</div>
 <div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>                            }</div>
 <div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>                        }</div>
 <div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>                    },</div>
@@ -855,14 +855,14 @@ $(document).ready(function(){initNavTree('PlanView_8qml_source.html',''); initRe
 <div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>            QGCLabel { text: qsTr(&quot;Create complex pattern:&quot;) }</div>
 <div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span> </div>
 <div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>            Repeater {</div>
-<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>                model: _missionController.complexMissionItemNames</div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>                model: _missionController.complexMissionItems</div>
 <div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span> </div>
 <div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>                QGCButton {</div>
-<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>                    text: modelData</div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>                    text: modelData.translatedName</div>
 <div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>                    Layout.fillWidth: true</div>
 <div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span> </div>
 <div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>                    onClicked: {</div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>                        insertComplexItemAfterCurrent(modelData)</div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>                        insertComplexItemAfterCurrent(modelData.canonicalName)</div>
 <div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>                        dropPanel.hide()</div>
 <div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>                    }</div>
 <div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>                }</div>

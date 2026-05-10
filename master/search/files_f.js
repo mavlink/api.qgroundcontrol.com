@@ -109,5 +109,7 @@ var searchData=
   ['px4tuningcomponentspacecraftposition_2eqml_106',['PX4TuningComponentSpacecraftPosition.qml',['../PX4TuningComponentSpacecraftPosition_8qml.html',1,'']]],
   ['px4tuningcomponentspacecraftrate_2eqml_107',['PX4TuningComponentSpacecraftRate.qml',['../PX4TuningComponentSpacecraftRate_8qml.html',1,'']]],
   ['px4tuningcomponentspacecraftvelocity_2eqml_108',['PX4TuningComponentSpacecraftVelocity.qml',['../PX4TuningComponentSpacecraftVelocity_8qml.html',1,'']]],
-  ['px4tuningcomponentvtol_2eqml_109',['PX4TuningComponentVTOL.qml',['../PX4TuningComponentVTOL_8qml.html',1,'']]]
+  ['px4tuningcomponentvtol_2eqml_109',['PX4TuningComponentVTOL.qml',['../PX4TuningComponentVTOL_8qml.html',1,'']]],
+  ['px4ulogutility_2ecc_110',['PX4ULogUtility.cc',['../PX4ULogUtility_8cc.html',1,'']]],
+  ['px4ulogutility_2eh_111',['PX4ULogUtility.h',['../PX4ULogUtility_8h.html',1,'']]]
 ];

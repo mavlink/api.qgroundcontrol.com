@@ -16,6 +16,7 @@ var classQGroundControlQmlGlobal =
     [ "apmFirmwareSupported", "classQGroundControlQmlGlobal.html#ae1b6023975d5d493139ece3a04bf3d77", null ],
     [ "appName", "classQGroundControlQmlGlobal.html#a87d11d9bdae73668a37b716a30929542", null ],
     [ "CONSTANT", "classQGroundControlQmlGlobal.html#a3bdc1cdaa182cfb1472b5eb656aad424", null ],
+    [ "copyToClipboard", "classQGroundControlQmlGlobal.html#ae3f41b9a5efb3206e62169985a4775c1", null ],
     [ "corePlugin", "classQGroundControlQmlGlobal.html#ab05e0a149219ee6df07c21108424e903", null ],
     [ "elevationProviderName", "classQGroundControlQmlGlobal.html#a2365f60ed7148d3b6e83b19f8f4ff526", null ],
     [ "elevationProviderNotice", "classQGroundControlQmlGlobal.html#a760f935dfcf170b9b29a0f48fb64694a", null ],

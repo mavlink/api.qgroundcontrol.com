@@ -1,6 +1,7 @@
 var dir_1744fc0d40e4957df71ac89780f60661 =
 [
     [ "GeoTag", "dir_f7f7f5e9d6e8a2a476e5601a606e9d71.html", "dir_f7f7f5e9d6e8a2a476e5601a606e9d71" ],
+    [ "LogViewer", "dir_82fef53ae72530ec940497c346ce4244.html", "dir_82fef53ae72530ec940497c346ce4244" ],
     [ "MAVLinkConsole", "dir_a84cdad1ef5b5c9fd59cc25af29fcdc2.html", "dir_a84cdad1ef5b5c9fd59cc25af29fcdc2" ],
     [ "MAVLinkInspector", "dir_6d506937dc7e091de40daa346aa6c6d4.html", "dir_6d506937dc7e091de40daa346aa6c6d4" ],
     [ "OnboardLogs", "dir_052375fe0c9e1fb205d033e224ca2974.html", "dir_052375fe0c9e1fb205d033e224ca2974" ],

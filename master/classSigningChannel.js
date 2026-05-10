@@ -1,0 +1,28 @@
+var classSigningChannel =
+[
+    [ "TimestampSnapshot", "structSigningChannel_1_1TimestampSnapshot.html", "structSigningChannel_1_1TimestampSnapshot" ],
+    [ "SigningChannel", "classSigningChannel.html#aa966e7e94ad2b2296313d3c65fe184bd", null ],
+    [ "~SigningChannel", "classSigningChannel.html#ae62a5504c39d2548fa9240505dc9e293", null ],
+    [ "SigningChannel", "classSigningChannel.html#ac234d4cf5e389f794d1ea406545f2988", null ],
+    [ "SigningChannel", "classSigningChannel.html#a33d11d8bf7bf82bff70a49da17dc5bee", null ],
+    [ "clearDetectCooldown", "classSigningChannel.html#aa27d59249131607a927a149d59fdc984", null ],
+    [ "clearKeyHint", "classSigningChannel.html#a51249a3ca72be788245a1213bf700b41", null ],
+    [ "consumeStatusTransition", "classSigningChannel.html#abcc19dc7dba82a6091566b24dbc43b94", null ],
+    [ "currentTimestampAndName", "classSigningChannel.html#adae765b853f4b920d4af7cd40fbb77c3", null ],
+    [ "detectSnapshot", "classSigningChannel.html#a742cbca9143a4735e20862dcf7490cf1", null ],
+    [ "init", "classSigningChannel.html#a177be69a1c814b711f128305f88ccf5e", null ],
+    [ "isAutoDetectSuspended", "classSigningChannel.html#aa4be88cbbe9321742fc8fdac211249f5", null ],
+    [ "isEnabled", "classSigningChannel.html#a9699e23740c47c49ba5222e6028bdf93", null ],
+    [ "isInDetectCooldown", "classSigningChannel.html#acf48c4e19e7905db9b1f7179a97bd83b", null ],
+    [ "keyHint", "classSigningChannel.html#a4e0be7ccf2663bc12361858b9b632b5b", null ],
+    [ "operator=", "classSigningChannel.html#a6f22764941dbb536aa285b7ecf039ef3", null ],
+    [ "operator=", "classSigningChannel.html#accb9b2a736d0b3d819ca9a3a4f2e1612", null ],
+    [ "recordDetectMiss", "classSigningChannel.html#aef8b9f186fd667e266796d9128edc345", null ],
+    [ "setAcceptUnsignedCallback", "classSigningChannel.html#a68ca1d71b285c48cc47c190db8c16136", null ],
+    [ "setKeyHint", "classSigningChannel.html#a65f9c51b2fbb104e7d648ffe99c41716", null ],
+    [ "streamCount", "classSigningChannel.html#a9654f4815f89658b61442cabe61f5d0b", null ],
+    [ "suspendAutoDetect", "classSigningChannel.html#a6e9385099b50450d15bf1f14af16ad6e", null ],
+    [ "SigningController", "classSigningChannel.html#a432d46f39f3bf8fa4ea0ac970f4bfde0", null ],
+    [ "kDetectCooldownMs", "classSigningChannel.html#ad09c839c3686baa2ab144cbf80e2858b", null ],
+    [ "kPersistedTimestampSafetyBumpTicks", "classSigningChannel.html#a81cc238850812636c567bdcd9dc83e22", null ]
+];

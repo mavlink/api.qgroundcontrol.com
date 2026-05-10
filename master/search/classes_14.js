@@ -28,12 +28,13 @@ var searchData=
   ['tileinfo_5ft_25',['TileInfo_t',['../structTerrainTile_1_1TileInfo__t.html',1,'TerrainTile']]],
   ['tilesetrecord_26',['TileSetRecord',['../structTileSetRecord.html',1,'']]],
   ['timeouttransition_27',['TimeoutTransition',['../classTimeoutTransition.html',1,'']]],
-  ['toolstripaction_28',['ToolStripAction',['../classToolStripAction.html',1,'']]],
-  ['toolstripactionlist_29',['ToolStripActionList',['../classToolStripActionList.html',1,'']]],
-  ['totalsresult_30',['TotalsResult',['../structTotalsResult.html',1,'']]],
-  ['trajectorypoints_31',['TrajectoryPoints',['../classTrajectoryPoints.html',1,'']]],
-  ['transaction_32',['Transaction',['../classQGCSqlHelper_1_1Transaction.html',1,'QGCSqlHelper']]],
-  ['transectstylecomplexitem_33',['TransectStyleComplexItem',['../classTransectStyleComplexItem.html',1,'']]],
-  ['transformpositioncontroller_34',['TransformPositionController',['../classTransformPositionController.html',1,'']]],
-  ['transportstrategy_35',['TransportStrategy',['../classTransportStrategy.html',1,'']]]
+  ['timestampsnapshot_28',['TimestampSnapshot',['../structSigningChannel_1_1TimestampSnapshot.html',1,'SigningChannel']]],
+  ['toolstripaction_29',['ToolStripAction',['../classToolStripAction.html',1,'']]],
+  ['toolstripactionlist_30',['ToolStripActionList',['../classToolStripActionList.html',1,'']]],
+  ['totalsresult_31',['TotalsResult',['../structTotalsResult.html',1,'']]],
+  ['trajectorypoints_32',['TrajectoryPoints',['../classTrajectoryPoints.html',1,'']]],
+  ['transaction_33',['Transaction',['../classQGCSqlHelper_1_1Transaction.html',1,'QGCSqlHelper']]],
+  ['transectstylecomplexitem_34',['TransectStyleComplexItem',['../classTransectStyleComplexItem.html',1,'']]],
+  ['transformpositioncontroller_35',['TransformPositionController',['../classTransformPositionController.html',1,'']]],
+  ['transportstrategy_36',['TransportStrategy',['../classTransportStrategy.html',1,'']]]
 ];

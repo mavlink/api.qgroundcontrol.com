@@ -13,7 +13,6 @@ var classLinkInterface =
     [ "decodedFirstMavlinkPacket", "classLinkInterface.html#a4314727d146c523e3dc735319c276cf5", null ],
     [ "disconnect", "classLinkInterface.html#a9878b4e07ad890d0f1925d7330e69539", null ],
     [ "disconnected", "classLinkInterface.html#a0f20e82176c72fb02a1d18a3019c5ee8", null ],
-    [ "initMavlinkSigning", "classLinkInterface.html#a9b9d1a72f5a99cb77b17093ba288f448", null ],
     [ "isConnected", "classLinkInterface.html#a8f248895b1fa293a65c80d7a5e4f2e1d", null ],
     [ "isLogReplay", "classLinkInterface.html#a31ea33e8660c43b40fe9216dd1c1b411", null ],
     [ "isSecureConnection", "classLinkInterface.html#ab3c754f7874ad386781df90f594d52f5", null ],
@@ -24,7 +23,8 @@ var classLinkInterface =
     [ "removeVehicleReference", "classLinkInterface.html#aaeb24d8e6bc5e1cdfbf283b3c39652c7", null ],
     [ "reportMavlinkV1Traffic", "classLinkInterface.html#a66ff79d564811ddba4ceb22a5e1a7dda", null ],
     [ "setDecodedFirstMavlinkPacket", "classLinkInterface.html#a18985fd2730d86548428466e4a4bcd50", null ],
-    [ "setSigningSignatureFailure", "classLinkInterface.html#ab8c066d6130a77f0afc13f54f5907567", null ],
+    [ "signing", "classLinkInterface.html#a98e4707e8a6dd846dbf40c17f33a77d2", null ],
+    [ "signing", "classLinkInterface.html#ab9c104c54d5c07a28a9e678e21d34c27", null ],
     [ "writeBytesThreadSafe", "classLinkInterface.html#ae84ae374b1d7fcf733bbfa5083e46a40", null ],
     [ "LinkManager", "classLinkInterface.html#a209d207af87c1b7828cee00c53729e72", null ],
     [ "_config", "classLinkInterface.html#af9fb7d026b62cf6410dbe9900e06c63a", null ]

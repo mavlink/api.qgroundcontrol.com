@@ -1,8 +1,6 @@
 var hierarchy =
 [
     [ "_GstQgcVideoSinkBin", "struct__GstQgcVideoSinkBin.html", null ],
-    [ "_GstQml6GLSink", "struct__GstQml6GLSink.html", null ],
-    [ "_Qt6GLVideoItemPrivate", "struct__Qt6GLVideoItemPrivate.html", null ],
     [ "QtAndroidPrivate::ActivityResultListener", null, [
       [ "AndroidEvents", "classAndroidEvents.html", null ]
     ] ],
@@ -21,6 +19,7 @@ var hierarchy =
     [ "QGClibarchive::ArchiveReader", "classQGClibarchive_1_1ArchiveReader.html", null ],
     [ "QGCCompression::ArchiveStats", "structQGCCompression_1_1ArchiveStats.html", null ],
     [ "AssignedButtonAction", "classAssignedButtonAction.html", null ],
+    [ "QGC::AutoSuspendGuard", "classQGC_1_1AutoSuspendGuard.html", null ],
     [ "Joystick::AxisCalibration_t", "structJoystick_1_1AxisCalibration__t.html", null ],
     [ "OsmParserThread::BuildingType_t", "structOsmParserThread_1_1BuildingType__t.html", null ],
     [ "CalibrationResult", "structCalibrationResult.html", null ],
@@ -34,8 +33,12 @@ var hierarchy =
     [ "TransectStyleComplexItem::CoordInfo_t", "structTransectStyleComplexItem_1_1CoordInfo__t.html", null ],
     [ "DatabaseResult", "structDatabaseResult.html", null ],
     [ "ulog_cpp::DataHandlerInterface", null, [
-      [ "ULogUtility::MessageHandler", "classULogUtility_1_1MessageHandler.html", null ]
+      [ "PX4ULogUtility::MessageHandler", "classPX4ULogUtility_1_1MessageHandler.html", null ],
+      [ "ULogFullHandler", "classULogFullHandler.html", null ]
     ] ],
+    [ "MAVLinkSigning::DetectSnapshot", "structMAVLinkSigning_1_1DetectSnapshot.html", null ],
+    [ "QGC::EdgeTriggeredCounter< CountT >", "classQGC_1_1EdgeTriggeredCounter.html", null ],
+    [ "QGC::EdgeTriggeredCounter< uint8_t >", "classQGC_1_1EdgeTriggeredCounter.html", null ],
     [ "ErrorRecoveryBuilder", "classErrorRecoveryBuilder.html", null ],
     [ "FirmwareFlightMode", "structFirmwareFlightMode.html", null ],
     [ "FirmwareUpgradeController::FirmwareIdentifier", "classFirmwareUpgradeController_1_1FirmwareIdentifier.html", null ],
@@ -58,6 +61,7 @@ var hierarchy =
     [ "LogEntry", "structLogEntry.html", null ],
     [ "StateMachineLogger::LogEntry", "structStateMachineLogger_1_1LogEntry.html", null ],
     [ "LoggingCategoryTreeNode", "structLoggingCategoryTreeNode.html", null ],
+    [ "LogParseResult", "structLogParseResult.html", null ],
     [ "MapProvider", "classMapProvider.html", [
       [ "BingMapProvider", "classBingMapProvider.html", [
         [ "BingHybridMapProvider", "classBingHybridMapProvider.html", null ],
@@ -125,7 +129,7 @@ var hierarchy =
     [ "MavlinkFTP", "classMavlinkFTP.html", null ],
     [ "MAVLinkLogProcessor", "classMAVLinkLogProcessor.html", null ],
     [ "MAVLinkStreamConfig", "classMAVLinkStreamConfig.html", null ],
-    [ "DataFlashUtility::MessageFormat", "structDataFlashUtility_1_1MessageFormat.html", null ],
+    [ "APMDataFlashUtility::MessageFormat", "structAPMDataFlashUtility_1_1MessageFormat.html", null ],
     [ "MissionFlightStatus_t", "structMissionFlightStatus__t.html", null ],
     [ "MissionFlightStatusCalculator", "classMissionFlightStatusCalculator.html", null ],
     [ "Mixer::MixerOption", "structMixer_1_1MixerOption.html", null ],
@@ -231,6 +235,9 @@ var hierarchy =
     [ "QHistoryState", null, [
       [ "QGCHistoryState", "classQGCHistoryState.html", null ]
     ] ],
+    [ "QHwVideoBuffer", null, [
+      [ "GstHwVideoBuffer", "classGstHwVideoBuffer.html", null ]
+    ] ],
     [ "QIODevice", null, [
       [ "QGCArchiveDeviceBase", "classQGCArchiveDeviceBase.html", [
         [ "QGCArchiveFile", "classQGCArchiveFile.html", null ],
@@ -245,6 +252,7 @@ var hierarchy =
       [ "ADSBTCPLink", "classADSBTCPLink.html", null ],
       [ "ADSBVehicle", "classADSBVehicle.html", null ],
       [ "ADSBVehicleManager", "classADSBVehicleManager.html", null ],
+      [ "APMDataFlashLogParser", "classAPMDataFlashLogParser.html", null ],
       [ "APMFrameClass", "classAPMFrameClass.html", null ],
       [ "ActuatorActions::Action", "classActuatorActions_1_1Action.html", null ],
       [ "ActuatorActions::ActionGroup", "classActuatorActions_1_1ActionGroup.html", null ],
@@ -400,11 +408,13 @@ var hierarchy =
         [ "UDPLink", "classUDPLink.html", null ]
       ] ],
       [ "LinkManager", "classLinkManager.html", null ],
+      [ "LogFileParser", "classLogFileParser.html", null ],
       [ "LogManager", "classLogManager.html", null ],
       [ "LogRemoteSink", "classLogRemoteSink.html", null ],
       [ "LogReplayLinkController", "classLogReplayLinkController.html", null ],
       [ "LogReplayWorker", "classLogReplayWorker.html", null ],
       [ "LogStore", "classLogStore.html", null ],
+      [ "LogViewerController", "classLogViewerController.html", null ],
       [ "MAVLinkChartController", "classMAVLinkChartController.html", null ],
       [ "MAVLinkEventManager", "classMAVLinkEventManager.html", null ],
       [ "MAVLinkInspectorController", "classMAVLinkInspectorController.html", null ],
@@ -532,7 +542,6 @@ var hierarchy =
       [ "QGroundControlQmlGlobal", "classQGroundControlQmlGlobal.html", null ],
       [ "QmlComponentInfo", "classQmlComponentInfo.html", null ],
       [ "QmlUnitsConversion", "classQmlUnitsConversion.html", null ],
-      [ "Qt6GLVideoItemInterface", "classQt6GLVideoItemInterface.html", null ],
       [ "RCToParamDialogController", "classRCToParamDialogController.html", null ],
       [ "RTCMMavlink", "classRTCMMavlink.html", null ],
       [ "RallyPoint", "classRallyPoint.html", null ],
@@ -576,6 +585,7 @@ var hierarchy =
       [ "SettingsManager", "classSettingsManager.html", null ],
       [ "ShapeFileHelper", "classShapeFileHelper.html", null ],
       [ "SignalHandler", "classSignalHandler.html", null ],
+      [ "SigningController", "classSigningController.html", null ],
       [ "StandardModes", "classStandardModes.html", null ],
       [ "StateHistoryRecorder", "classStateHistoryRecorder.html", null ],
       [ "StateMachineLogger", "classStateMachineLogger.html", null ],
@@ -643,6 +653,7 @@ var hierarchy =
       ] ],
       [ "VehicleLinkManager", "classVehicleLinkManager.html", null ],
       [ "VehicleObjectAvoidance", "classVehicleObjectAvoidance.html", null ],
+      [ "VehicleSigningController", "classVehicleSigningController.html", null ],
       [ "VehicleSupports", "classVehicleSupports.html", null ],
       [ "VideoManager", "classVideoManager.html", null ],
       [ "VideoReceiver", "classVideoReceiver.html", [
@@ -676,10 +687,6 @@ var hierarchy =
         ] ]
       ] ]
     ] ],
-    [ "QOpenGLFunctions", null, [
-      [ "GstQSG6OpenGLNode", "classGstQSG6OpenGLNode.html", null ],
-      [ "Qt6GLVideoItem", "classQt6GLVideoItem.html", null ]
-    ] ],
     [ "QPressureFilter", null, [
       [ "QGCSensors::QGCPressureFilter", "classQGCSensors_1_1QGCPressureFilter.html", null ]
     ] ],
@@ -702,24 +709,13 @@ var hierarchy =
       [ "FactValueGrid", "classFactValueGrid.html", [
         [ "HorizontalFactValueGrid", "classHorizontalFactValueGrid.html", null ]
       ] ],
-      [ "Qt6GLVideoItem", "classQt6GLVideoItem.html", null ],
-      [ "TerrainProfile", "classTerrainProfile.html", null ],
-      [ "VideoItemStub", "classVideoItemStub.html", null ]
-    ] ],
-    [ "QRunnable", null, [
-      [ "RenderJob", "structRenderJob.html", null ]
+      [ "TerrainProfile", "classTerrainProfile.html", null ]
     ] ],
     [ "QSerialPortErrorInfo", "classQSerialPortErrorInfo.html", null ],
     [ "QSerialPortInfo", "classQSerialPortInfo.html", [
       [ "QGCSerialPortInfo", "classQGCSerialPortInfo.html", null ]
     ] ],
     [ "QSerialPortInfoPrivate", "classQSerialPortInfoPrivate.html", null ],
-    [ "QSGSimpleTextureNode", null, [
-      [ "GstQSG6OpenGLNode", "classGstQSG6OpenGLNode.html", null ]
-    ] ],
-    [ "QSGTextureProvider", null, [
-      [ "GstQSG6OpenGLNode", "classGstQSG6OpenGLNode.html", null ]
-    ] ],
     [ "QSignalTransition", null, [
       [ "QGCSignalTransition", "classQGCSignalTransition.html", [
         [ "GuardedTransition", "classGuardedTransition.html", null ],
@@ -798,6 +794,9 @@ var hierarchy =
     [ "sensor_gnss_relative_s", "structsensor__gnss__relative__s.html", null ],
     [ "sensor_gps_s", "structsensor__gps__s.html", null ],
     [ "SetTotalsResult", "structSetTotalsResult.html", null ],
+    [ "SigningChannel", "classSigningChannel.html", null ],
+    [ "SigningFailure", "classSigningFailure.html", null ],
+    [ "SigningStatus", "structSigningStatus.html", null ],
     [ "StateContext", "classStateContext.html", null ],
     [ "StateMachineProfiler::StateProfile", "structStateMachineProfiler_1_1StateProfile.html", null ],
     [ "StatusText", "classStatusText.html", null ],
@@ -810,6 +809,7 @@ var hierarchy =
     ] ],
     [ "TerrainTile::TileInfo_t", "structTerrainTile_1_1TileInfo__t.html", null ],
     [ "TileSetRecord", "structTileSetRecord.html", null ],
+    [ "SigningChannel::TimestampSnapshot", "structSigningChannel_1_1TimestampSnapshot.html", null ],
     [ "TotalsResult", "structTotalsResult.html", null ],
     [ "QGCSqlHelper::Transaction", "classQGCSqlHelper_1_1Transaction.html", null ],
     [ "UDPClient", "structUDPClient.html", null ],

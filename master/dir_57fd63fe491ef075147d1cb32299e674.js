@@ -144,7 +144,6 @@ var dir_57fd63fe491ef075147d1cb32299e674 =
     [ "SettingsButton.qml", "SettingsButton_8qml.html", null ],
     [ "SettingsGroupLayout.qml", "SettingsGroupLayout_8qml.html", null ],
     [ "SetupPage.qml", "SetupPage_8qml.html", null ],
-    [ "SigningKeyManager.qml", "SigningKeyManager_8qml.html", null ],
     [ "SliderSwitch.qml", "SliderSwitch_8qml.html", null ],
     [ "SubMenuButton.qml", "SubMenuButton_8qml.html", null ],
     [ "TerrainProfile.cc", "TerrainProfile_8cc.html", null ],

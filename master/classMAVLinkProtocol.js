@@ -14,6 +14,7 @@ var classMAVLinkProtocol =
     [ "messageReceived", "classMAVLinkProtocol.html#a4eed5b51ded1af1e045edd791ec5c1d0", null ],
     [ "receiveBytes", "classMAVLinkProtocol.html#a0dcfa4ab4c6266ce891bda1b7ca31d36", null ],
     [ "resetMetadataForLink", "classMAVLinkProtocol.html#aba275d7ed76b84a88abdc6f1df064bba", null ],
+    [ "resetSequenceTracking", "classMAVLinkProtocol.html#a64841fb1dcd89b89a1e2d98d1fb5b9c9", null ],
     [ "suspendLogForReplay", "classMAVLinkProtocol.html#aea774e5d0b2a4ef135b644abdb1ed8cf", null ],
     [ "vehicleHeartbeatInfo", "classMAVLinkProtocol.html#a5046ea1deb538ea6b8fde86c1511de2c", null ]
 ];

@@ -31,12 +31,12 @@ var classSurveyComplexItem =
     [ "specifiesCoordinate", "classSurveyComplexItem.html#a183e956ecba88aa843363084ee9eb403", null ],
     [ "splitConcavePolygons", "classSurveyComplexItem.html#a477bd2b5c10a75a9361a792eb05bcf4b", null ],
     [ "timeBetweenShots", "classSurveyComplexItem.html#a24cd9aa8b280e858bdf731519fea1702", null ],
+    [ "canonicalName", "classSurveyComplexItem.html#a92685a16647d38300723b91e8584ffe6", null ],
     [ "flyAlternateTransectsName", "classSurveyComplexItem.html#af89d6a3d38dd13807e6392a3ffe5e689", null ],
     [ "gridAngleName", "classSurveyComplexItem.html#a92d8bb1f43b8e2b2c05fbe8fe0ffd367", null ],
     [ "gridEntryLocationName", "classSurveyComplexItem.html#adc9ac916f38c9cfa42faac67dee00d6d", null ],
     [ "jsonComplexItemTypeValue", "classSurveyComplexItem.html#a2acb951261c8ae212a147587178ed9dd", null ],
     [ "jsonV3ComplexItemTypeValue", "classSurveyComplexItem.html#addbe5c384f0b35ca57f68e3a8ccb37a8", null ],
-    [ "name", "classSurveyComplexItem.html#aa94cfda6fdbc575ee79be29e720970cf", null ],
     [ "settingsGroup", "classSurveyComplexItem.html#a50ea8e2b1a826bd269f1748cfc3a85ee", null ],
     [ "splitConcavePolygonsName", "classSurveyComplexItem.html#a8732831ca996a374de7c1b3b0965c8a5", null ]
 ];

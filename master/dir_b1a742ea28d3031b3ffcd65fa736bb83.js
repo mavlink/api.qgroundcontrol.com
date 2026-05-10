@@ -25,6 +25,7 @@ var dir_b1a742ea28d3031b3ffcd65fa736bb83 =
     [ "RemoteIDGpsLocation.qml", "RemoteIDGpsLocation_8qml.html", null ],
     [ "SerialSettings.qml", "SerialSettings_8qml.html", null ],
     [ "SettingsPage.qml", "SettingsPage_8qml.html", null ],
+    [ "SigningKeyManager.qml", "SigningKeyManager_8qml.html", null ],
     [ "TcpSettings.qml", "TcpSettings_8qml.html", null ],
     [ "UdpSettings.qml", "UdpSettings_8qml.html", null ]
 ];

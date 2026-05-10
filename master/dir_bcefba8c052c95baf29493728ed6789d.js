@@ -26,7 +26,6 @@ var dir_bcefba8c052c95baf29493728ed6789d =
     [ "RTKGPSIndicator.qml", "RTKGPSIndicator_8qml.html", null ],
     [ "SelectViewDropdown.qml", "SelectViewDropdown_8qml.html", null ],
     [ "SignalStrength.qml", "SignalStrength_8qml.html", null ],
-    [ "SigningIndicator.qml", "SigningIndicator_8qml.html", null ],
     [ "TelemetryRSSIIndicator.qml", "TelemetryRSSIIndicator_8qml.html", null ],
     [ "VehicleGPSIndicator.qml", "VehicleGPSIndicator_8qml.html", null ],
     [ "VehicleMessageList.qml", "VehicleMessageList_8qml.html", null ]

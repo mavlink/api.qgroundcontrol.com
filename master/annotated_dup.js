@@ -27,14 +27,17 @@ var annotated_dup =
       [ "JniContext", "structAndroidSerial_1_1JniContext.html", "structAndroidSerial_1_1JniContext" ],
       [ "JniMethodCache", "structAndroidSerial_1_1JniMethodCache.html", "structAndroidSerial_1_1JniMethodCache" ]
     ] ],
-    [ "DataFlashUtility", "namespaceDataFlashUtility.html", [
-      [ "MessageFormat", "structDataFlashUtility_1_1MessageFormat.html", "structDataFlashUtility_1_1MessageFormat" ]
+    [ "APMDataFlashUtility", "namespaceAPMDataFlashUtility.html", [
+      [ "MessageFormat", "structAPMDataFlashUtility_1_1MessageFormat.html", "structAPMDataFlashUtility_1_1MessageFormat" ]
     ] ],
     [ "GeometryImage", "namespaceGeometryImage.html", [
       [ "VehicleGeometryImageProvider", "classGeometryImage_1_1VehicleGeometryImageProvider.html", "classGeometryImage_1_1VehicleGeometryImageProvider" ]
     ] ],
     [ "JsonParsing", "namespaceJsonParsing.html", [
       [ "KeyValidateInfo", "structJsonParsing_1_1KeyValidateInfo.html", "structJsonParsing_1_1KeyValidateInfo" ]
+    ] ],
+    [ "MAVLinkSigning", "namespaceMAVLinkSigning.html", [
+      [ "DetectSnapshot", "structMAVLinkSigning_1_1DetectSnapshot.html", "structMAVLinkSigning_1_1DetectSnapshot" ]
     ] ],
     [ "Mixer", "namespaceMixer.html", [
       [ "ActuatorType", "structMixer_1_1ActuatorType.html", "structMixer_1_1ActuatorType" ],
@@ -49,6 +52,13 @@ var annotated_dup =
       [ "MixerParameter", "structMixer_1_1MixerParameter.html", "structMixer_1_1MixerParameter" ],
       [ "Mixers", "classMixer_1_1Mixers.html", "classMixer_1_1Mixers" ],
       [ "Rule", "structMixer_1_1Rule.html", "structMixer_1_1Rule" ]
+    ] ],
+    [ "PX4ULogUtility", "namespacePX4ULogUtility.html", [
+      [ "MessageHandler", "classPX4ULogUtility_1_1MessageHandler.html", "classPX4ULogUtility_1_1MessageHandler" ]
+    ] ],
+    [ "QGC", "namespaceQGC.html", [
+      [ "AutoSuspendGuard", "classQGC_1_1AutoSuspendGuard.html", "classQGC_1_1AutoSuspendGuard" ],
+      [ "EdgeTriggeredCounter", "classQGC_1_1EdgeTriggeredCounter.html", "classQGC_1_1EdgeTriggeredCounter" ]
     ] ],
     [ "QGCCommandLineParser", "namespaceQGCCommandLineParser.html", [
       [ "CommandLineParseResult", "structQGCCommandLineParser_1_1CommandLineParseResult.html", "structQGCCommandLineParser_1_1CommandLineParseResult" ]
@@ -78,12 +88,7 @@ var annotated_dup =
     [ "SDLJoystick", "namespaceSDLJoystick.html", [
       [ "JoystickLock", "classSDLJoystick_1_1JoystickLock.html", "classSDLJoystick_1_1JoystickLock" ]
     ] ],
-    [ "ULogUtility", "namespaceULogUtility.html", [
-      [ "MessageHandler", "classULogUtility_1_1MessageHandler.html", "classULogUtility_1_1MessageHandler" ]
-    ] ],
     [ "_GstQgcVideoSinkBin", "struct__GstQgcVideoSinkBin.html", "struct__GstQgcVideoSinkBin" ],
-    [ "_GstQml6GLSink", "struct__GstQml6GLSink.html", "struct__GstQml6GLSink" ],
-    [ "_Qt6GLVideoItemPrivate", "struct__Qt6GLVideoItemPrivate.html", "struct__Qt6GLVideoItemPrivate" ],
     [ "ActuatorComponent", "classActuatorComponent.html", "classActuatorComponent" ],
     [ "ActuatorGeometry", "structActuatorGeometry.html", "structActuatorGeometry" ],
     [ "Actuators", "classActuators.html", "classActuators" ],
@@ -104,6 +109,7 @@ var annotated_dup =
     [ "APMAutoPilotPlugin", "classAPMAutoPilotPlugin.html", "classAPMAutoPilotPlugin" ],
     [ "APMCopterMode", "structAPMCopterMode.html", "structAPMCopterMode" ],
     [ "APMCustomMode", "structAPMCustomMode.html", "structAPMCustomMode" ],
+    [ "APMDataFlashLogParser", "classAPMDataFlashLogParser.html", "classAPMDataFlashLogParser" ],
     [ "APMESCComponent", "classAPMESCComponent.html", "classAPMESCComponent" ],
     [ "APMFailsafesComponent", "classAPMFailsafesComponent.html", "classAPMFailsafesComponent" ],
     [ "APMFirmwarePlugin", "classAPMFirmwarePlugin.html", "classAPMFirmwarePlugin" ],
@@ -253,7 +259,7 @@ var annotated_dup =
     [ "GPSRtk", "classGPSRtk.html", "classGPSRtk" ],
     [ "GPSRTKFactGroup", "classGPSRTKFactGroup.html", null ],
     [ "GstAppSinkAdapter", "classGstAppSinkAdapter.html", "classGstAppSinkAdapter" ],
-    [ "GstQSG6OpenGLNode", "classGstQSG6OpenGLNode.html", "classGstQSG6OpenGLNode" ],
+    [ "GstHwVideoBuffer", "classGstHwVideoBuffer.html", "classGstHwVideoBuffer" ],
     [ "GstVideoReceiver", "classGstVideoReceiver.html", "classGstVideoReceiver" ],
     [ "GstVideoWorker", "classGstVideoWorker.html", "classGstVideoWorker" ],
     [ "GuardedTransition", "classGuardedTransition.html", "classGuardedTransition" ],
@@ -286,11 +292,13 @@ var annotated_dup =
     [ "LINZBasemapMapProvider", "classLINZBasemapMapProvider.html", "classLINZBasemapMapProvider" ],
     [ "LogEntry", "structLogEntry.html", "structLogEntry" ],
     [ "LogEntryTableModel", "classLogEntryTableModel.html", "classLogEntryTableModel" ],
+    [ "LogFileParser", "classLogFileParser.html", "classLogFileParser" ],
     [ "LoggingCategoryFlatModel", "classLoggingCategoryFlatModel.html", "classLoggingCategoryFlatModel" ],
     [ "LoggingCategoryTreeModel", "classLoggingCategoryTreeModel.html", "classLoggingCategoryTreeModel" ],
     [ "LoggingCategoryTreeNode", "structLoggingCategoryTreeNode.html", "structLoggingCategoryTreeNode" ],
     [ "LogManager", "classLogManager.html", "classLogManager" ],
     [ "LogModel", "classLogModel.html", "classLogModel" ],
+    [ "LogParseResult", "structLogParseResult.html", "structLogParseResult" ],
     [ "LogRemoteSink", "classLogRemoteSink.html", "classLogRemoteSink" ],
     [ "LogReplayConfiguration", "classLogReplayConfiguration.html", "classLogReplayConfiguration" ],
     [ "LogReplayLink", "classLogReplayLink.html", "classLogReplayLink" ],
@@ -298,6 +306,7 @@ var annotated_dup =
     [ "LogReplayWorker", "classLogReplayWorker.html", "classLogReplayWorker" ],
     [ "LogStore", "classLogStore.html", "classLogStore" ],
     [ "LogStoreQueryModel", "classLogStoreQueryModel.html", "classLogStoreQueryModel" ],
+    [ "LogViewerController", "classLogViewerController.html", "classLogViewerController" ],
     [ "LoopState", "classLoopState.html", "classLoopState" ],
     [ "MachineEventTransition", "classMachineEventTransition.html", "classMachineEventTransition" ],
     [ "MapboxBrightMapProvider", "classMapboxBrightMapProvider.html", "classMapboxBrightMapProvider" ],
@@ -495,8 +504,6 @@ var annotated_dup =
     [ "QSerialPortInfo", "classQSerialPortInfo.html", "classQSerialPortInfo" ],
     [ "QSerialPortInfoPrivate", "classQSerialPortInfoPrivate.html", "classQSerialPortInfoPrivate" ],
     [ "QSerialPortPrivate", "classQSerialPortPrivate.html", "classQSerialPortPrivate" ],
-    [ "Qt6GLVideoItem", "classQt6GLVideoItem.html", "classQt6GLVideoItem" ],
-    [ "Qt6GLVideoItemInterface", "classQt6GLVideoItemInterface.html", "classQt6GLVideoItemInterface" ],
     [ "QtMultimediaReceiver", "classQtMultimediaReceiver.html", "classQtMultimediaReceiver" ],
     [ "RadioComponentController", "classRadioComponentController.html", "classRadioComponentController" ],
     [ "RadioStatusFactGroup", "classRadioStatusFactGroup.html", null ],
@@ -509,7 +516,6 @@ var annotated_dup =
     [ "RemoteIDManager", "classRemoteIDManager.html", "classRemoteIDManager" ],
     [ "RemoteIDSettings", "classRemoteIDSettings.html", "classRemoteIDSettings" ],
     [ "RemoteTransport", "classRemoteTransport.html", "classRemoteTransport" ],
-    [ "RenderJob", "structRenderJob.html", "structRenderJob" ],
     [ "RequestMessageCoordinator", "classRequestMessageCoordinator.html", "classRequestMessageCoordinator" ],
     [ "RequestMessageState", "classRequestMessageState.html", "classRequestMessageState" ],
     [ "RequestMetaDataTypeStateMachine", "classRequestMetaDataTypeStateMachine.html", "classRequestMetaDataTypeStateMachine" ],
@@ -545,6 +551,10 @@ var annotated_dup =
     [ "ShowAppMessageState", "classShowAppMessageState.html", "classShowAppMessageState" ],
     [ "SignalDataTransition", "classSignalDataTransition.html", "classSignalDataTransition" ],
     [ "SignalHandler", "classSignalHandler.html", "classSignalHandler" ],
+    [ "SigningChannel", "classSigningChannel.html", "classSigningChannel" ],
+    [ "SigningController", "classSigningController.html", "classSigningController" ],
+    [ "SigningFailure", "classSigningFailure.html", "classSigningFailure" ],
+    [ "SigningStatus", "structSigningStatus.html", "structSigningStatus" ],
     [ "SimpleMissionItem", "classSimpleMissionItem.html", "classSimpleMissionItem" ],
     [ "SimulatedCameraControl", "classSimulatedCameraControl.html", "classSimulatedCameraControl" ],
     [ "SimulatedPosition", "classSimulatedPosition.html", "classSimulatedPosition" ],
@@ -611,6 +621,7 @@ var annotated_dup =
     [ "UDPLink", "classUDPLink.html", "classUDPLink" ],
     [ "UdpTransport", "classUdpTransport.html", "classUdpTransport" ],
     [ "UDPWorker", "classUDPWorker.html", "classUDPWorker" ],
+    [ "ULogFullHandler", "classULogFullHandler.html", "classULogFullHandler" ],
     [ "UnitsSettings", "classUnitsSettings.html", "classUnitsSettings" ],
     [ "UrlFactory", "classUrlFactory.html", "classUrlFactory" ],
     [ "UVCReceiver", "classUVCReceiver.html", "classUVCReceiver" ],
@@ -633,12 +644,12 @@ var annotated_dup =
     [ "VehicleObjectAvoidance", "classVehicleObjectAvoidance.html", "classVehicleObjectAvoidance" ],
     [ "VehicleRPMFactGroup", "classVehicleRPMFactGroup.html", null ],
     [ "VehicleSetpointFactGroup", "classVehicleSetpointFactGroup.html", null ],
+    [ "VehicleSigningController", "classVehicleSigningController.html", "classVehicleSigningController" ],
     [ "VehicleSupports", "classVehicleSupports.html", "classVehicleSupports" ],
     [ "VehicleTemperatureFactGroup", "classVehicleTemperatureFactGroup.html", null ],
     [ "VehicleTypes", "structVehicleTypes.html", "structVehicleTypes" ],
     [ "VehicleVibrationFactGroup", "classVehicleVibrationFactGroup.html", null ],
     [ "VehicleWindFactGroup", "classVehicleWindFactGroup.html", null ],
-    [ "VideoItemStub", "classVideoItemStub.html", "classVideoItemStub" ],
     [ "VideoManager", "classVideoManager.html", "classVideoManager" ],
     [ "VideoReceiver", "classVideoReceiver.html", "classVideoReceiver" ],
     [ "VideoSettings", "classVideoSettings.html", "classVideoSettings" ],

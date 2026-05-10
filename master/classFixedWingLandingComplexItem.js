@@ -8,9 +8,9 @@ var classFixedWingLandingComplexItem =
     [ "save", "classFixedWingLandingComplexItem.html#a92812af4dc3aca03acd1b684d0262f4f", null ],
     [ "scanForItems", "classFixedWingLandingComplexItem.html#a67ea2093c594b1df8bb1d18f6c936bbb", null ],
     [ "valueSetIsDistance", "classFixedWingLandingComplexItem.html#a60a4e61ea6f93f9c3616b0c2c19c0342", null ],
+    [ "canonicalName", "classFixedWingLandingComplexItem.html#acf593bb99a2b74d46dfe82fb52a97d3c", null ],
     [ "glideSlopeName", "classFixedWingLandingComplexItem.html#a09832aee362e8a2e233900bbae4bfcff", null ],
     [ "jsonComplexItemTypeValue", "classFixedWingLandingComplexItem.html#a35b2ba21f619ee9d58819998d0902ff1", null ],
-    [ "name", "classFixedWingLandingComplexItem.html#a7df123e65e5713fe5d4499ee851ccb9c", null ],
     [ "settingsGroup", "classFixedWingLandingComplexItem.html#a6b117cd7ef183c63ad271c5e8e2e0f2c", null ],
     [ "valueSetIsDistanceName", "classFixedWingLandingComplexItem.html#ad2086bd92088f60ddc276dad4027f472", null ]
 ];

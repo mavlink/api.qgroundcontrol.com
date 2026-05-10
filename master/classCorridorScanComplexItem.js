@@ -20,8 +20,8 @@ var classCorridorScanComplexItem =
     [ "setCoordinate", "classCorridorScanComplexItem.html#a193ffc22f362853b41dd1b5f7e208e4e", null ],
     [ "specifiesCoordinate", "classCorridorScanComplexItem.html#a7d45ee69076313f01917a21b3312d95a", null ],
     [ "timeBetweenShots", "classCorridorScanComplexItem.html#a1b8a579e28de3221b219b09ab778c6dd", null ],
+    [ "canonicalName", "classCorridorScanComplexItem.html#a875a904c264883fb59511a6770cbdd8c", null ],
     [ "corridorWidthName", "classCorridorScanComplexItem.html#a41cea20d6b0939a969d8fca1c3d60b0c", null ],
     [ "jsonComplexItemTypeValue", "classCorridorScanComplexItem.html#ae8435312bfac18506cffa7b87d11c519", null ],
-    [ "name", "classCorridorScanComplexItem.html#a52108358d3ad85b38d578194a8c28778", null ],
     [ "settingsGroup", "classCorridorScanComplexItem.html#af1eb71cec1f0920ee22ca8ebccc44955", null ]
 ];

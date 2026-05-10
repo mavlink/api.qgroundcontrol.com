@@ -10,6 +10,7 @@ var classPX4FirmwareUpgradeThreadWorker =
     [ "foundBoard", "classPX4FirmwareUpgradeThreadWorker.html#a0a144e5af74dc65d395de5b169f3466e", null ],
     [ "foundBoardInfo", "classPX4FirmwareUpgradeThreadWorker.html#a825427bb4ac0f8143740b2c3f13f19bf", null ],
     [ "noBoardFound", "classPX4FirmwareUpgradeThreadWorker.html#acd07acd93f79491924917000d91a37c3", null ],
+    [ "portsAvailable", "classPX4FirmwareUpgradeThreadWorker.html#a0cef1bec0556481437af6fb861bdb142", null ],
     [ "status", "classPX4FirmwareUpgradeThreadWorker.html#ab6963f25ba1eeda9ac71c3d7d4b937c2", null ],
     [ "updateProgress", "classPX4FirmwareUpgradeThreadWorker.html#af0ebc125763dd1a8e563d92bf2f41d2d", null ]
 ];

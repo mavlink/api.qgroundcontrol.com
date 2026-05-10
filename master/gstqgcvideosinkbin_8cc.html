@@ -100,30 +100,27 @@ $(document).ready(function(){initNavTree('gstqgcvideosinkbin_8cc.html',''); init
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="gstqgcvideosinkbin_8h_source.html">gstqgcvideosinkbin.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="gstqgcelements_8h_source.html">gstqgcelements.h</a>&quot;</code><br />
-<code>#include &lt;gst/gl/gl.h&gt;</code><br />
+<code>#include &lt;gst/app/gstappsink.h&gt;</code><br />
+<code>#include &lt;gst/video/gstvideometa.h&gt;</code><br />
+<code>#include &lt;gst/video/video-info.h&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for gstqgcvideosinkbin.cc:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="gstqgcvideosinkbin_8cc__incl.svg" width="446" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="gstqgcvideosinkbin_8cc__incl.svg" width="100%" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="gstqgcvideosinkbin_8cc_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:adef911caed7c65a1643062817f4a59d7" id="r_adef911caed7c65a1643062817f4a59d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#adef911caed7c65a1643062817f4a59d7">GST_CAT_DEFAULT</a>&#160;&#160;&#160;gst_qgc_video_sink_bin_debug</td></tr>
+<tr class="memitem:adef911caed7c65a1643062817f4a59d7" id="r_adef911caed7c65a1643062817f4a59d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#adef911caed7c65a1643062817f4a59d7">GST_CAT_DEFAULT</a>&#160;&#160;&#160;<a class="el" href="gstqgcelements_8h.html#a7bc2221ac2687cd380c065db9bfee08f">gst_qgc_debug</a></td></tr>
 <tr class="separator:adef911caed7c65a1643062817f4a59d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90a2aa3edd19497728d1726b455d2bb1" id="r_a90a2aa3edd19497728d1726b455d2bb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a90a2aa3edd19497728d1726b455d2bb1">DEFAULT_ENABLE_LAST_SAMPLE</a>&#160;&#160;&#160;FALSE</td></tr>
 <tr class="separator:a90a2aa3edd19497728d1726b455d2bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d5ca42eafbc02af11a1d273babe6575" id="r_a7d5ca42eafbc02af11a1d273babe6575"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a7d5ca42eafbc02af11a1d273babe6575">DEFAULT_FORCE_ASPECT_RATIO</a>&#160;&#160;&#160;TRUE</td></tr>
-<tr class="separator:a7d5ca42eafbc02af11a1d273babe6575"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac821f5ceb9ad2bf8a8d082d9d7b80624" id="r_ac821f5ceb9ad2bf8a8d082d9d7b80624"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#ac821f5ceb9ad2bf8a8d082d9d7b80624">DEFAULT_PAR_N</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:ac821f5ceb9ad2bf8a8d082d9d7b80624"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a061cacea9bee790d15cc8f22b7cdc325" id="r_a061cacea9bee790d15cc8f22b7cdc325"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a061cacea9bee790d15cc8f22b7cdc325">DEFAULT_PAR_D</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a061cacea9bee790d15cc8f22b7cdc325"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a933b73ac2cb52f95c2e1c3c0d8541cbb" id="r_a933b73ac2cb52f95c2e1c3c0d8541cbb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a933b73ac2cb52f95c2e1c3c0d8541cbb">DEFAULT_SYNC</a>&#160;&#160;&#160;TRUE</td></tr>
+<tr class="memitem:a933b73ac2cb52f95c2e1c3c0d8541cbb" id="r_a933b73ac2cb52f95c2e1c3c0d8541cbb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a933b73ac2cb52f95c2e1c3c0d8541cbb">DEFAULT_SYNC</a>&#160;&#160;&#160;FALSE</td></tr>
 <tr class="separator:a933b73ac2cb52f95c2e1c3c0d8541cbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a491d09c4c32eadbd3bdb225005a13ea7" id="r_a491d09c4c32eadbd3bdb225005a13ea7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a491d09c4c32eadbd3bdb225005a13ea7">DEFAULT_MAX_LATENESS</a>&#160;&#160;&#160;G_GINT64_CONSTANT(-1)</td></tr>
 <tr class="separator:a491d09c4c32eadbd3bdb225005a13ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,12 +128,6 @@ Macros</h2></td></tr>
 <tr class="separator:a8c3b6255f04393046c5ed1d443ca4d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae751469b16cbd83cb13b1f6b45e860dd" id="r_ae751469b16cbd83cb13b1f6b45e860dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#ae751469b16cbd83cb13b1f6b45e860dd">PROP_LAST_SAMPLE_NAME</a>&#160;&#160;&#160;&quot;last-sample&quot;</td></tr>
 <tr class="separator:ae751469b16cbd83cb13b1f6b45e860dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87a76916cfc415d3dae2dbc20a9207eb" id="r_a87a76916cfc415d3dae2dbc20a9207eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a87a76916cfc415d3dae2dbc20a9207eb">PROP_WIDGET_NAME</a>&#160;&#160;&#160;&quot;widget&quot;</td></tr>
-<tr class="separator:a87a76916cfc415d3dae2dbc20a9207eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7549fcc7ed7279a8e29c4af894dbdecb" id="r_a7549fcc7ed7279a8e29c4af894dbdecb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a7549fcc7ed7279a8e29c4af894dbdecb">PROP_FORCE_ASPECT_RATIO_NAME</a>&#160;&#160;&#160;&quot;force-aspect-ratio&quot;</td></tr>
-<tr class="separator:a7549fcc7ed7279a8e29c4af894dbdecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab08d225ad848e24361997b3427d778fe" id="r_ab08d225ad848e24361997b3427d778fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#ab08d225ad848e24361997b3427d778fe">PROP_PIXEL_ASPECT_RATIO_NAME</a>&#160;&#160;&#160;&quot;pixel-aspect-ratio&quot;</td></tr>
-<tr class="separator:ab08d225ad848e24361997b3427d778fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb6989000af027bcfaee4814eee50d48" id="r_abb6989000af027bcfaee4814eee50d48"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#abb6989000af027bcfaee4814eee50d48">PROP_SYNC_NAME</a>&#160;&#160;&#160;&quot;sync&quot;</td></tr>
 <tr class="separator:abb6989000af027bcfaee4814eee50d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ca7c98ff9a3082a885d0e54f0e2bf4a" id="r_a9ca7c98ff9a3082a885d0e54f0e2bf4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a9ca7c98ff9a3082a885d0e54f0e2bf4a">PROP_MAX_LATENESS_NAME</a>&#160;&#160;&#160;&quot;max-lateness&quot;</td></tr>
@@ -150,12 +141,12 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="gstqgcvideosinkbin_8cc.html#ab04a0655cd1e3bcac5e8f48c18df1a57ac37dda0da1a44e10c0504afeeb863f3c">PROP_0</a>
 , <a class="el" href="gstqgcvideosinkbin_8cc.html#ab04a0655cd1e3bcac5e8f48c18df1a57a35426e91bb6ca7a026aa4013375faca3">PROP_ENABLE_LAST_SAMPLE</a>
 , <a class="el" href="gstqgcvideosinkbin_8cc.html#ab04a0655cd1e3bcac5e8f48c18df1a57ac078db304a6a06a1b03778369bc4834c">PROP_LAST_SAMPLE</a>
-, <a class="el" href="gstqgcvideosinkbin_8cc.html#ab04a0655cd1e3bcac5e8f48c18df1a57abf7866167c9f740bdacaa103a372b335">PROP_WIDGET</a>
-, <br />
-&#160;&#160;<a class="el" href="gstqgcvideosinkbin_8cc.html#ab04a0655cd1e3bcac5e8f48c18df1a57a91f41c9deb30d46efafeb20661349ddd">PROP_FORCE_ASPECT_RATIO</a>
-, <a class="el" href="gstqgcvideosinkbin_8cc.html#ab04a0655cd1e3bcac5e8f48c18df1a57aa2f28fa364f29cbcb7fe9ca2ab0f69c5">PROP_PIXEL_ASPECT_RATIO</a>
 , <a class="el" href="gstqgcvideosinkbin_8cc.html#ab04a0655cd1e3bcac5e8f48c18df1a57ad7f4225f2d48bf243bcf799509582725">PROP_SYNC</a>
-, <a class="el" href="gstqgcvideosinkbin_8cc.html#ab04a0655cd1e3bcac5e8f48c18df1a57a8ceb39312ddd0937e06ab1fffeadbc21">PROP_MAX_LATENESS</a>
+, <br />
+&#160;&#160;<a class="el" href="gstqgcvideosinkbin_8cc.html#ab04a0655cd1e3bcac5e8f48c18df1a57a8ceb39312ddd0937e06ab1fffeadbc21">PROP_MAX_LATENESS</a>
+, <a class="el" href="gstqgcvideosinkbin_8cc.html#ab04a0655cd1e3bcac5e8f48c18df1a57a572cde624ab958aecdb7da033b33e137">PROP_GPU_ZEROCOPY</a>
+, <a class="el" href="gstqgcvideosinkbin_8cc.html#ab04a0655cd1e3bcac5e8f48c18df1a57a8db8f75e84e1cfa991d5e6f7e3763a1f">PROP_CONVERSION_ELEMENT</a>
+, <a class="el" href="gstqgcvideosinkbin_8cc.html#ab04a0655cd1e3bcac5e8f48c18df1a57a4eeb5e8db09c862c57481b32e54ac7b1">PROP_DISABLE_PAR</a>
 , <br />
 &#160;&#160;<a class="el" href="gstqgcvideosinkbin_8cc.html#ab04a0655cd1e3bcac5e8f48c18df1a57ab2ccf2ce99ca729409339bda94f10e60">PROP_LAST</a>
 <br />
@@ -164,27 +155,45 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad5fb00877e3f1acb7bd0b3465e5cd1b7" id="r_ad5fb00877e3f1acb7bd0b3465e5cd1b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#ad5fb00877e3f1acb7bd0b3465e5cd1b7">GST_DEBUG_CATEGORY_STATIC</a> (gst_qgc_video_sink_bin_debug)</td></tr>
-<tr class="separator:ad5fb00877e3f1acb7bd0b3465e5cd1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21ce42e925f6d7e2de7dbb6c4344010e" id="r_a21ce42e925f6d7e2de7dbb6c4344010e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a21ce42e925f6d7e2de7dbb6c4344010e">G_DEFINE_TYPE_WITH_CODE</a> (GstQgcVideoSinkBin, gst_qgc_video_sink_bin, GST_TYPE_BIN, GST_DEBUG_CATEGORY_INIT(gst_qgc_video_sink_bin_debug, &quot;qgcsinkbin&quot;, 0, &quot;QGC Video Sink Bin&quot;))</td></tr>
-<tr class="separator:a21ce42e925f6d7e2de7dbb6c4344010e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31b0634fb7e587b349ac27f8a347aebd" id="r_a31b0634fb7e587b349ac27f8a347aebd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a31b0634fb7e587b349ac27f8a347aebd">G_DEFINE_TYPE</a> (GstQgcVideoSinkBin, gst_qgc_video_sink_bin, GST_TYPE_BIN)</td></tr>
+<tr class="separator:a31b0634fb7e587b349ac27f8a347aebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48f6b8d812825038a66fccb9ac23a236" id="r_a48f6b8d812825038a66fccb9ac23a236"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a48f6b8d812825038a66fccb9ac23a236">GST_ELEMENT_REGISTER_DEFINE_WITH_CODE</a> (qgcvideosinkbin,&quot;qgcvideosinkbin&quot;, GST_RANK_NONE,(gst_qgc_video_sink_bin_get_type()), <a class="el" href="gstqgcelement_8cc.html#ae95d21d259de8c02ea340257d6804c9f">qgc_element_init</a>(plugin))</td></tr>
 <tr class="separator:a48f6b8d812825038a66fccb9ac23a236"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18a1d551b40c1c08d7a225f57bb2f282" id="r_a18a1d551b40c1c08d7a225f57bb2f282"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a18a1d551b40c1c08d7a225f57bb2f282">gst_qgc_video_sink_bin_set_property</a> (GObject *object, guint prop_id, const GValue *value, GParamSpec *pspec)</td></tr>
 <tr class="separator:a18a1d551b40c1c08d7a225f57bb2f282"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae553b550d9a1dbb5fbe4110e09bef45a" id="r_ae553b550d9a1dbb5fbe4110e09bef45a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#ae553b550d9a1dbb5fbe4110e09bef45a">gst_qgc_video_sink_bin_get_property</a> (GObject *object, guint prop_id, GValue *value, GParamSpec *pspec)</td></tr>
 <tr class="separator:ae553b550d9a1dbb5fbe4110e09bef45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbf60f68aa55ea12e5ae9fbdc2e9b5eb" id="r_acbf60f68aa55ea12e5ae9fbdc2e9b5eb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#acbf60f68aa55ea12e5ae9fbdc2e9b5eb">gst_qgc_video_sink_bin_constructed</a> (GObject *object)</td></tr>
+<tr class="separator:acbf60f68aa55ea12e5ae9fbdc2e9b5eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae54f663634fd8a97cdc293c717dd50d9" id="r_ae54f663634fd8a97cdc293c717dd50d9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#ae54f663634fd8a97cdc293c717dd50d9">gst_qgc_video_sink_bin_dispose</a> (GObject *object)</td></tr>
+<tr class="separator:ae54f663634fd8a97cdc293c717dd50d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa629645c96f3bd5c440986a2e8da0951" id="r_aa629645c96f3bd5c440986a2e8da0951"><td class="memItemLeft" align="right" valign="top">static GstStateChangeReturn&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#aa629645c96f3bd5c440986a2e8da0951">gst_qgc_video_sink_bin_change_state</a> (<a class="el" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *element, GstStateChange transition)</td></tr>
+<tr class="separator:aa629645c96f3bd5c440986a2e8da0951"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71d18ecb4b51f030f60a395c81b80145" id="r_a71d18ecb4b51f030f60a395c81b80145"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a71d18ecb4b51f030f60a395c81b80145">gst_qgc_video_sink_bin_class_init</a> (GstQgcVideoSinkBinClass *klass)</td></tr>
 <tr class="separator:a71d18ecb4b51f030f60a395c81b80145"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d5264b46c96acb6c1dfed029b43c89b" id="r_a5d5264b46c96acb6c1dfed029b43c89b"><td class="memItemLeft" align="right" valign="top">static GstPadProbeReturn&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a5d5264b46c96acb6c1dfed029b43c89b">gst_qgc_handle_allocation_query</a> (GstQuery *query)</td></tr>
+<tr class="separator:a5d5264b46c96acb6c1dfed029b43c89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b69cd84d85bb4b13131933a869eea30" id="r_a6b69cd84d85bb4b13131933a869eea30"><td class="memItemLeft" align="right" valign="top">static GstPadProbeReturn&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a6b69cd84d85bb4b13131933a869eea30">gst_qgc_appsink_query_probe</a> (GstPad *pad, GstPadProbeInfo *info, gpointer user_data)</td></tr>
+<tr class="separator:a6b69cd84d85bb4b13131933a869eea30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb56d647fa5fb2623fd6526dc6accba4" id="r_afb56d647fa5fb2623fd6526dc6accba4"><td class="memItemLeft" align="right" valign="top">static gboolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#afb56d647fa5fb2623fd6526dc6accba4">gst_qgc_video_sink_bin_ghost_pad</a> (GstQgcVideoSinkBin *self, <a class="el" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *inner)</td></tr>
 <tr class="separator:afb56d647fa5fb2623fd6526dc6accba4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe3a7cf4f8187794ca0f0251f96d6aa5" id="r_afe3a7cf4f8187794ca0f0251f96d6aa5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#afe3a7cf4f8187794ca0f0251f96d6aa5">gst_qgc_video_sink_bin_init</a> (GstQgcVideoSinkBin *self)</td></tr>
 <tr class="separator:afe3a7cf4f8187794ca0f0251f96d6aa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02a45529762579a78a57c6368799009a" id="r_a02a45529762579a78a57c6368799009a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a02a45529762579a78a57c6368799009a">gst_qgc_video_sink_bin_make_conversion_element</a> (GstQgcVideoSinkBin *self)</td></tr>
+<tr class="separator:a02a45529762579a78a57c6368799009a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a372cba4c3e5498097b9726bf0ceacb27" id="r_a372cba4c3e5498097b9726bf0ceacb27"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a372cba4c3e5498097b9726bf0ceacb27">gst_qgc_video_sink_bin_setup</a> (GstQgcVideoSinkBin *self)</td></tr>
+<tr class="separator:a372cba4c3e5498097b9726bf0ceacb27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c341597ffa8ecf73396ecc78ef17149" id="r_a3c341597ffa8ecf73396ecc78ef17149"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a3c341597ffa8ecf73396ecc78ef17149">gst_qgc_video_sink_bin_get_appsink</a> (GstQgcVideoSinkBin *self)</td></tr>
+<tr class="separator:a3c341597ffa8ecf73396ecc78ef17149"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a3cdac116630040974e90b173303c8464" id="r_a3cdac116630040974e90b173303c8464"><td class="memItemLeft" align="right" valign="top">static GParamSpec *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a3cdac116630040974e90b173303c8464">properties</a> [<a class="el" href="gstqgcvideosinkbin_8cc.html#ab04a0655cd1e3bcac5e8f48c18df1a57ab2ccf2ce99ca729409339bda94f10e60">PROP_LAST</a>]</td></tr>
 <tr class="separator:a3cdac116630040974e90b173303c8464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c3b88a6174b442587875b361d888720" id="r_a7c3b88a6174b442587875b361d888720"><td class="memItemLeft" align="right" valign="top">static GstStaticPadTemplate&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a7c3b88a6174b442587875b361d888720">sink_factory</a></td></tr>
+<tr class="separator:a7c3b88a6174b442587875b361d888720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f132dd9222d0e284a7172e2ae5d4c3c" id="r_a5f132dd9222d0e284a7172e2ae5d4c3c"><td class="memItemLeft" align="right" valign="top">constexpr guint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcvideosinkbin_8cc.html#a5f132dd9222d0e284a7172e2ae5d4c3c">kProposedMinBuffers</a> = 4</td></tr>
+<tr class="separator:a5f132dd9222d0e284a7172e2ae5d4c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a90a2aa3edd19497728d1726b455d2bb1" name="a90a2aa3edd19497728d1726b455d2bb1"></a>
@@ -199,23 +208,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00012">12</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
-
-</div>
-</div>
-<a id="a7d5ca42eafbc02af11a1d273babe6575" name="a7d5ca42eafbc02af11a1d273babe6575"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d5ca42eafbc02af11a1d273babe6575">&#9670;&#160;</a></span>DEFAULT_FORCE_ASPECT_RATIO</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEFAULT_FORCE_ASPECT_RATIO&#160;&#160;&#160;TRUE</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00013">13</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00019">19</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
 </div>
 </div>
@@ -231,39 +224,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00017">17</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
-
-</div>
-</div>
-<a id="a061cacea9bee790d15cc8f22b7cdc325" name="a061cacea9bee790d15cc8f22b7cdc325"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a061cacea9bee790d15cc8f22b7cdc325">&#9670;&#160;</a></span>DEFAULT_PAR_D</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEFAULT_PAR_D&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00015">15</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
-
-</div>
-</div>
-<a id="ac821f5ceb9ad2bf8a8d082d9d7b80624" name="ac821f5ceb9ad2bf8a8d082d9d7b80624"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac821f5ceb9ad2bf8a8d082d9d7b80624">&#9670;&#160;</a></span>DEFAULT_PAR_N</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEFAULT_PAR_N&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00014">14</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00021">21</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
 </div>
 </div>
@@ -274,12 +235,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DEFAULT_SYNC&#160;&#160;&#160;TRUE</td>
+          <td class="memname">#define DEFAULT_SYNC&#160;&#160;&#160;FALSE</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00016">16</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00020">20</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
 </div>
 </div>
@@ -290,12 +251,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define GST_CAT_DEFAULT&#160;&#160;&#160;gst_qgc_video_sink_bin_debug</td>
+          <td class="memname">#define GST_CAT_DEFAULT&#160;&#160;&#160;<a class="el" href="gstqgcelements_8h.html#a7bc2221ac2687cd380c065db9bfee08f">gst_qgc_debug</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00009">9</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00017">17</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
 </div>
 </div>
@@ -311,7 +272,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00042">42</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00049">49</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
 </div>
 </div>
@@ -327,23 +288,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00019">19</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
-
-</div>
-</div>
-<a id="a7549fcc7ed7279a8e29c4af894dbdecb" name="a7549fcc7ed7279a8e29c4af894dbdecb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7549fcc7ed7279a8e29c4af894dbdecb">&#9670;&#160;</a></span>PROP_FORCE_ASPECT_RATIO_NAME</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PROP_FORCE_ASPECT_RATIO_NAME&#160;&#160;&#160;&quot;force-aspect-ratio&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00022">22</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00023">23</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
 </div>
 </div>
@@ -359,7 +304,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00020">20</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00024">24</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
 </div>
 </div>
@@ -375,23 +320,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00025">25</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
-
-</div>
-</div>
-<a id="ab08d225ad848e24361997b3427d778fe" name="ab08d225ad848e24361997b3427d778fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab08d225ad848e24361997b3427d778fe">&#9670;&#160;</a></span>PROP_PIXEL_ASPECT_RATIO_NAME</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PROP_PIXEL_ASPECT_RATIO_NAME&#160;&#160;&#160;&quot;pixel-aspect-ratio&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00023">23</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00026">26</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
 </div>
 </div>
@@ -407,23 +336,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00024">24</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
-
-</div>
-</div>
-<a id="a87a76916cfc415d3dae2dbc20a9207eb" name="a87a76916cfc415d3dae2dbc20a9207eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87a76916cfc415d3dae2dbc20a9207eb">&#9670;&#160;</a></span>PROP_WIDGET_NAME</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PROP_WIDGET_NAME&#160;&#160;&#160;&quot;widget&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00021">21</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00025">25</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
 </div>
 </div>
@@ -443,27 +356,27 @@ Variables</h2></td></tr>
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab04a0655cd1e3bcac5e8f48c18df1a57ac37dda0da1a44e10c0504afeeb863f3c" name="ab04a0655cd1e3bcac5e8f48c18df1a57ac37dda0da1a44e10c0504afeeb863f3c"></a>PROP_0&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ab04a0655cd1e3bcac5e8f48c18df1a57a35426e91bb6ca7a026aa4013375faca3" name="ab04a0655cd1e3bcac5e8f48c18df1a57a35426e91bb6ca7a026aa4013375faca3"></a>PROP_ENABLE_LAST_SAMPLE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ab04a0655cd1e3bcac5e8f48c18df1a57ac078db304a6a06a1b03778369bc4834c" name="ab04a0655cd1e3bcac5e8f48c18df1a57ac078db304a6a06a1b03778369bc4834c"></a>PROP_LAST_SAMPLE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab04a0655cd1e3bcac5e8f48c18df1a57abf7866167c9f740bdacaa103a372b335" name="ab04a0655cd1e3bcac5e8f48c18df1a57abf7866167c9f740bdacaa103a372b335"></a>PROP_WIDGET&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab04a0655cd1e3bcac5e8f48c18df1a57a91f41c9deb30d46efafeb20661349ddd" name="ab04a0655cd1e3bcac5e8f48c18df1a57a91f41c9deb30d46efafeb20661349ddd"></a>PROP_FORCE_ASPECT_RATIO&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ab04a0655cd1e3bcac5e8f48c18df1a57aa2f28fa364f29cbcb7fe9ca2ab0f69c5" name="ab04a0655cd1e3bcac5e8f48c18df1a57aa2f28fa364f29cbcb7fe9ca2ab0f69c5"></a>PROP_PIXEL_ASPECT_RATIO&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ab04a0655cd1e3bcac5e8f48c18df1a57ad7f4225f2d48bf243bcf799509582725" name="ab04a0655cd1e3bcac5e8f48c18df1a57ad7f4225f2d48bf243bcf799509582725"></a>PROP_SYNC&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ab04a0655cd1e3bcac5e8f48c18df1a57a8ceb39312ddd0937e06ab1fffeadbc21" name="ab04a0655cd1e3bcac5e8f48c18df1a57a8ceb39312ddd0937e06ab1fffeadbc21"></a>PROP_MAX_LATENESS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab04a0655cd1e3bcac5e8f48c18df1a57a572cde624ab958aecdb7da033b33e137" name="ab04a0655cd1e3bcac5e8f48c18df1a57a572cde624ab958aecdb7da033b33e137"></a>PROP_GPU_ZEROCOPY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab04a0655cd1e3bcac5e8f48c18df1a57a8db8f75e84e1cfa991d5e6f7e3763a1f" name="ab04a0655cd1e3bcac5e8f48c18df1a57a8db8f75e84e1cfa991d5e6f7e3763a1f"></a>PROP_CONVERSION_ELEMENT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab04a0655cd1e3bcac5e8f48c18df1a57a4eeb5e8db09c862c57481b32e54ac7b1" name="ab04a0655cd1e3bcac5e8f48c18df1a57a4eeb5e8db09c862c57481b32e54ac7b1"></a>PROP_DISABLE_PAR&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ab04a0655cd1e3bcac5e8f48c18df1a57ab2ccf2ce99ca729409339bda94f10e60" name="ab04a0655cd1e3bcac5e8f48c18df1a57ab2ccf2ce99ca729409339bda94f10e60"></a>PROP_LAST&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00027">27</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00028">28</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a21ce42e925f6d7e2de7dbb6c4344010e" name="a21ce42e925f6d7e2de7dbb6c4344010e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21ce42e925f6d7e2de7dbb6c4344010e">&#9670;&#160;</a></span>G_DEFINE_TYPE_WITH_CODE()</h2>
+<a id="a31b0634fb7e587b349ac27f8a347aebd" name="a31b0634fb7e587b349ac27f8a347aebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31b0634fb7e587b349ac27f8a347aebd">&#9670;&#160;</a></span>G_DEFINE_TYPE()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">G_DEFINE_TYPE_WITH_CODE </td>
+          <td class="memname">G_DEFINE_TYPE </td>
           <td>(</td>
           <td class="paramtype">GstQgcVideoSinkBin&#160;</td>
           <td class="paramname">, </td>
@@ -478,36 +391,12 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">GST_TYPE_BIN&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">GST_DEBUG_CATEGORY_INIT(gst_qgc_video_sink_bin_debug, &quot;qgcsinkbin&quot;, 0, &quot;QGC Video Sink Bin&quot;)&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
           <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad5fb00877e3f1acb7bd0b3465e5cd1b7" name="ad5fb00877e3f1acb7bd0b3465e5cd1b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5fb00877e3f1acb7bd0b3465e5cd1b7">&#9670;&#160;</a></span>GST_DEBUG_CATEGORY_STATIC()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">GST_DEBUG_CATEGORY_STATIC </td>
-          <td>(</td>
-          <td class="paramtype">gst_qgc_video_sink_bin_debug&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -560,6 +449,128 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a6b69cd84d85bb4b13131933a869eea30" name="a6b69cd84d85bb4b13131933a869eea30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b69cd84d85bb4b13131933a869eea30">&#9670;&#160;</a></span>gst_qgc_appsink_query_probe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static GstPadProbeReturn gst_qgc_appsink_query_probe </td>
+          <td>(</td>
+          <td class="paramtype">GstPad *&#160;</td>
+          <td class="paramname"><em>pad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GstPadProbeInfo *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">gpointer&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00200">200</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00141">gst_qgc_handle_allocation_query()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00287">gst_qgc_video_sink_bin_setup()</a>.</p>
+
+</div>
+</div>
+<a id="a5d5264b46c96acb6c1dfed029b43c89b" name="a5d5264b46c96acb6c1dfed029b43c89b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d5264b46c96acb6c1dfed029b43c89b">&#9670;&#160;</a></span>gst_qgc_handle_allocation_query()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static GstPadProbeReturn gst_qgc_handle_allocation_query </td>
+          <td>(</td>
+          <td class="paramtype">GstQuery *&#160;</td>
+          <td class="paramname"><em>query</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00141">141</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00138">kProposedMinBuffers</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00200">gst_qgc_appsink_query_probe()</a>.</p>
+
+</div>
+</div>
+<a id="aa629645c96f3bd5c440986a2e8da0951" name="aa629645c96f3bd5c440986a2e8da0951"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa629645c96f3bd5c440986a2e8da0951">&#9670;&#160;</a></span>gst_qgc_video_sink_bin_change_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static GstStateChangeReturn gst_qgc_video_sink_bin_change_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *&#160;</td>
+          <td class="paramname"><em>element</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GstStateChange&#160;</td>
+          <td class="paramname"><em>transition</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00514">514</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00049">gst_qgc_video_sink_bin_parent_class</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00064">gst_qgc_video_sink_bin_class_init()</a>.</p>
+
+</div>
+</div>
 <a id="a71d18ecb4b51f030f60a395c81b80145" name="a71d18ecb4b51f030f60a395c81b80145"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a71d18ecb4b51f030f60a395c81b80145">&#9670;&#160;</a></span>gst_qgc_video_sink_bin_class_init()</h2>
 
@@ -584,9 +595,94 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00062">62</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00064">64</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00012">DEFAULT_ENABLE_LAST_SAMPLE</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00013">DEFAULT_FORCE_ASPECT_RATIO</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00017">DEFAULT_MAX_LATENESS</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00015">DEFAULT_PAR_D</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00014">DEFAULT_PAR_N</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00016">DEFAULT_SYNC</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00325">gst_qgc_video_sink_bin_get_property()</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00252">gst_qgc_video_sink_bin_set_property()</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00030">PROP_ENABLE_LAST_SAMPLE</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00033">PROP_FORCE_ASPECT_RATIO</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00037">PROP_LAST</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00031">PROP_LAST_SAMPLE</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00036">PROP_MAX_LATENESS</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00034">PROP_PIXEL_ASPECT_RATIO</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00035">PROP_SYNC</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00032">PROP_WIDGET</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00040">properties</a>.</p>
+<p class="reference">References <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00019">DEFAULT_ENABLE_LAST_SAMPLE</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00021">DEFAULT_MAX_LATENESS</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00020">DEFAULT_SYNC</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00514">gst_qgc_video_sink_bin_change_state()</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00491">gst_qgc_video_sink_bin_constructed()</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00501">gst_qgc_video_sink_bin_dispose()</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00570">gst_qgc_video_sink_bin_get_property()</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00527">gst_qgc_video_sink_bin_set_property()</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00036">PROP_CONVERSION_ELEMENT</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00037">PROP_DISABLE_PAR</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00031">PROP_ENABLE_LAST_SAMPLE</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00035">PROP_GPU_ZEROCOPY</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00038">PROP_LAST</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00032">PROP_LAST_SAMPLE</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00034">PROP_MAX_LATENESS</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00033">PROP_SYNC</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00041">properties</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00043">sink_factory</a>.</p>
+
+</div>
+</div>
+<a id="acbf60f68aa55ea12e5ae9fbdc2e9b5eb" name="acbf60f68aa55ea12e5ae9fbdc2e9b5eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbf60f68aa55ea12e5ae9fbdc2e9b5eb">&#9670;&#160;</a></span>gst_qgc_video_sink_bin_constructed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void gst_qgc_video_sink_bin_constructed </td>
+          <td>(</td>
+          <td class="paramtype">GObject *&#160;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00491">491</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00049">gst_qgc_video_sink_bin_parent_class</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00287">gst_qgc_video_sink_bin_setup()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00064">gst_qgc_video_sink_bin_class_init()</a>.</p>
+
+</div>
+</div>
+<a id="ae54f663634fd8a97cdc293c717dd50d9" name="ae54f663634fd8a97cdc293c717dd50d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae54f663634fd8a97cdc293c717dd50d9">&#9670;&#160;</a></span>gst_qgc_video_sink_bin_dispose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void gst_qgc_video_sink_bin_dispose </td>
+          <td>(</td>
+          <td class="paramtype">GObject *&#160;</td>
+          <td class="paramname"><em>object</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00501">501</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00049">gst_qgc_video_sink_bin_parent_class</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00064">gst_qgc_video_sink_bin_class_init()</a>.</p>
+
+</div>
+</div>
+<a id="a3c341597ffa8ecf73396ecc78ef17149" name="a3c341597ffa8ecf73396ecc78ef17149"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c341597ffa8ecf73396ecc78ef17149">&#9670;&#160;</a></span>gst_qgc_video_sink_bin_get_appsink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> * gst_qgc_video_sink_bin_get_appsink </td>
+          <td>(</td>
+          <td class="paramtype">GstQgcVideoSinkBin *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns the internal appsink element with a ref. Caller unrefs (transfer-full, matching gst_bin_get_by_name semantics). Returns NULL if the bin is not fully constructed yet. </p>
+
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00634">634</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
 </div>
 </div>
@@ -636,11 +732,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00325">325</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00570">570</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00017">DEFAULT_MAX_LATENESS</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00030">PROP_ENABLE_LAST_SAMPLE</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00019">PROP_ENABLE_LAST_SAMPLE_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00033">PROP_FORCE_ASPECT_RATIO</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00022">PROP_FORCE_ASPECT_RATIO_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00031">PROP_LAST_SAMPLE</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00020">PROP_LAST_SAMPLE_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00036">PROP_MAX_LATENESS</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00025">PROP_MAX_LATENESS_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00034">PROP_PIXEL_ASPECT_RATIO</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00023">PROP_PIXEL_ASPECT_RATIO_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00035">PROP_SYNC</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00024">PROP_SYNC_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00032">PROP_WIDGET</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00021">PROP_WIDGET_NAME</a>.</p>
+<p class="reference">References <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00021">DEFAULT_MAX_LATENESS</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00036">PROP_CONVERSION_ELEMENT</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00037">PROP_DISABLE_PAR</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00031">PROP_ENABLE_LAST_SAMPLE</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00023">PROP_ENABLE_LAST_SAMPLE_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00035">PROP_GPU_ZEROCOPY</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00032">PROP_LAST_SAMPLE</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00024">PROP_LAST_SAMPLE_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00034">PROP_MAX_LATENESS</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00026">PROP_MAX_LATENESS_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00033">PROP_SYNC</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00025">PROP_SYNC_NAME</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00062">gst_qgc_video_sink_bin_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00064">gst_qgc_video_sink_bin_class_init()</a>.</p>
 
 </div>
 </div>
@@ -678,9 +774,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00131">131</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00226">226</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00155">gst_qgc_video_sink_bin_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00287">gst_qgc_video_sink_bin_setup()</a>.</p>
 
 </div>
 </div>
@@ -708,9 +804,37 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00155">155</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00251">251</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00131">gst_qgc_video_sink_bin_ghost_pad()</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00019">PROP_ENABLE_LAST_SAMPLE_NAME</a>.</p>
+</div>
+</div>
+<a id="a02a45529762579a78a57c6368799009a" name="a02a45529762579a78a57c6368799009a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02a45529762579a78a57c6368799009a">&#9670;&#160;</a></span>gst_qgc_video_sink_bin_make_conversion_element()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> * gst_qgc_video_sink_bin_make_conversion_element </td>
+          <td>(</td>
+          <td class="paramtype">GstQgcVideoSinkBin *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00264">264</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00287">gst_qgc_video_sink_bin_setup()</a>.</p>
 
 </div>
 </div>
@@ -760,15 +884,73 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00252">252</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00527">527</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00030">PROP_ENABLE_LAST_SAMPLE</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00019">PROP_ENABLE_LAST_SAMPLE_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00033">PROP_FORCE_ASPECT_RATIO</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00022">PROP_FORCE_ASPECT_RATIO_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00036">PROP_MAX_LATENESS</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00025">PROP_MAX_LATENESS_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00034">PROP_PIXEL_ASPECT_RATIO</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00023">PROP_PIXEL_ASPECT_RATIO_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00035">PROP_SYNC</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00024">PROP_SYNC_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00032">PROP_WIDGET</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00021">PROP_WIDGET_NAME</a>.</p>
+<p class="reference">References <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00036">PROP_CONVERSION_ELEMENT</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00037">PROP_DISABLE_PAR</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00031">PROP_ENABLE_LAST_SAMPLE</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00023">PROP_ENABLE_LAST_SAMPLE_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00035">PROP_GPU_ZEROCOPY</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00034">PROP_MAX_LATENESS</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00026">PROP_MAX_LATENESS_NAME</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00033">PROP_SYNC</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00025">PROP_SYNC_NAME</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00062">gst_qgc_video_sink_bin_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00064">gst_qgc_video_sink_bin_class_init()</a>.</p>
+
+</div>
+</div>
+<a id="a372cba4c3e5498097b9726bf0ceacb27" name="a372cba4c3e5498097b9726bf0ceacb27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a372cba4c3e5498097b9726bf0ceacb27">&#9670;&#160;</a></span>gst_qgc_video_sink_bin_setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void gst_qgc_video_sink_bin_setup </td>
+          <td>(</td>
+          <td class="paramtype">GstQgcVideoSinkBin *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00287">287</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00200">gst_qgc_appsink_query_probe()</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00226">gst_qgc_video_sink_bin_ghost_pad()</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00264">gst_qgc_video_sink_bin_make_conversion_element()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00491">gst_qgc_video_sink_bin_constructed()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a5f132dd9222d0e284a7172e2ae5d4c3c" name="a5f132dd9222d0e284a7172e2ae5d4c3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f132dd9222d0e284a7172e2ae5d4c3c">&#9670;&#160;</a></span>kProposedMinBuffers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr guint kProposedMinBuffers = 4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00138">138</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00141">gst_qgc_handle_allocation_query()</a>.</p>
+
+</div>
+</div>
 <a id="a3cdac116630040974e90b173303c8464" name="a3cdac116630040974e90b173303c8464"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3cdac116630040974e90b173303c8464">&#9670;&#160;</a></span>properties</h2>
 
@@ -789,9 +971,40 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00040">40</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00041">41</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00062">gst_qgc_video_sink_bin_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00064">gst_qgc_video_sink_bin_class_init()</a>.</p>
+
+</div>
+</div>
+<a id="a7c3b88a6174b442587875b361d888720" name="a7c3b88a6174b442587875b361d888720"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3b88a6174b442587875b361d888720">&#9670;&#160;</a></span>sink_factory</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GstStaticPadTemplate sink_factory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= GST_STATIC_PAD_TEMPLATE(</div>
+<div class="line">    <span class="stringliteral">&quot;sink&quot;</span>,</div>
+<div class="line">    GST_PAD_SINK,</div>
+<div class="line">    GST_PAD_ALWAYS,</div>
+<div class="line">    GST_STATIC_CAPS_ANY)</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00043">43</a> of file <a class="el" href="gstqgcvideosinkbin_8cc_source.html">gstqgcvideosinkbin.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00064">gst_qgc_video_sink_bin_class_init()</a>.</p>
 
 </div>
 </div>

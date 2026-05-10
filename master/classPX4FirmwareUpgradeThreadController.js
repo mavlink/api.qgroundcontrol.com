@@ -6,6 +6,7 @@ var classPX4FirmwareUpgradeThreadController =
     [ "_flashOnThread", "classPX4FirmwareUpgradeThreadController.html#a444717fb571fca2070a12374df13a478", null ],
     [ "_initThreadWorker", "classPX4FirmwareUpgradeThreadController.html#a8d3cdd0f69db0ebb5cda6afac4da7972", null ],
     [ "_rebootOnThread", "classPX4FirmwareUpgradeThreadController.html#a2f844a0926282fe8c44dde32a802ef09", null ],
+    [ "_setTargetPortOnThread", "classPX4FirmwareUpgradeThreadController.html#a16f26d05ba816f4f7d3165c2296228ae", null ],
     [ "_startFindBoardLoopOnThread", "classPX4FirmwareUpgradeThreadController.html#a5634098009481144b2bd923a9fdd610b", null ],
     [ "boardGone", "classPX4FirmwareUpgradeThreadController.html#ae8b340c0f62f4afa36a6ff2c6b91713a", null ],
     [ "cancel", "classPX4FirmwareUpgradeThreadController.html#a857f775736507e80e8d870a01da0918e", null ],
@@ -18,7 +19,9 @@ var classPX4FirmwareUpgradeThreadController =
     [ "foundBoardInfo", "classPX4FirmwareUpgradeThreadController.html#ae35d1f8e3fad031e911e5be56532ea00", null ],
     [ "image", "classPX4FirmwareUpgradeThreadController.html#af5fc8c55a8de059c6274ff96267b542d", null ],
     [ "noBoardFound", "classPX4FirmwareUpgradeThreadController.html#a92bb78282bd317269473d653cab3fba8", null ],
+    [ "portsAvailable", "classPX4FirmwareUpgradeThreadController.html#a3b868697f232f2d56429d2aab8de77f5", null ],
     [ "reboot", "classPX4FirmwareUpgradeThreadController.html#a63b7e32b3e42ad1e40b0fca767919727", null ],
+    [ "setTargetPort", "classPX4FirmwareUpgradeThreadController.html#a40820032897a9f32e9409566d574e562", null ],
     [ "startFindBoardLoop", "classPX4FirmwareUpgradeThreadController.html#ab145ec23091f727ae11208a3cd3e6ea5", null ],
     [ "status", "classPX4FirmwareUpgradeThreadController.html#ae26c3082684e423782fa2f4fc3de3b00", null ],
     [ "updateProgress", "classPX4FirmwareUpgradeThreadController.html#a33c959cc1cacf3fd570f58adf34748da", null ]

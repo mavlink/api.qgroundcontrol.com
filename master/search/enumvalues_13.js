@@ -39,7 +39,7 @@ var searchData=
   ['throttle_36',['THROTTLE',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03ab9ea74a5bd0ca3874066aa5bc01ad7a5',1,'APM']]],
   ['throttlefunction_37',['throttleFunction',['../classJoystick.html#a29afe0a72d52ef70e0536879a5136abfabad325f7f1c8f708e432ec2fbf9ffef7',1,'Joystick']]],
   ['throw_38',['throw',['../structAPMCopterMode.html#a0c1acd0660670de405dbcb9ed0587ea0a38e5477983ec84d5148d22fe9f26a66d',1,'APMCopterMode::THROW'],['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a546dd405203eb5f9bee0fae669176f54',1,'APM::THROW']]],
-  ['timeout_39',['Timeout',['../classStateHistoryRecorder.html#aab67d02c9b0dfc3cf3b0dcf278a511fda02507103181820c0f03627c734d2c687',1,'StateHistoryRecorder']]],
+  ['timeout_39',['timeout',['../classSigningFailure.html#ab2ff84d9c60e91a48b591991e732c29bac85a251cc457840f1e032f1b733e9398',1,'SigningFailure::Timeout'],['../classStateHistoryRecorder.html#aab67d02c9b0dfc3cf3b0dcf278a511fda02507103181820c0f03627c734d2c687',1,'StateHistoryRecorder::Timeout']]],
   ['timeouterror_40',['TimeoutError',['../classQSerialPort.html#aa31f0921d43bb30acfe9a6cc5abbe6b0a9daca66b41f8a5d4770c3bc5700b0a7f',1,'QSerialPort']]],
   ['timestampcolumn_41',['TimestampColumn',['../structLogEntry.html#aa9897dc0d2f69070e489858898264d5ea38586bfa12bd4d5642189abb331b630f',1,'LogEntry']]],
   ['timestamprole_42',['TimestampRole',['../structLogEntry.html#a16604a76fec3f30308d55e8c0ead18e9a5a7533ef46e07cc605f7a086c7a86382',1,'LogEntry']]],

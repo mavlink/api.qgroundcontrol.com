@@ -6,7 +6,7 @@ var classVTOLLandingComplexItem =
     [ "patternName", "classVTOLLandingComplexItem.html#a4df6149de5d0c58be485439e6dcfd67b", null ],
     [ "save", "classVTOLLandingComplexItem.html#ac700e009c6e3136403d865845c839da7", null ],
     [ "scanForItems", "classVTOLLandingComplexItem.html#aa8c48b1f27af59dc23f49c6da0546ce0", null ],
+    [ "canonicalName", "classVTOLLandingComplexItem.html#a07b4d49a939933b02234afa652e7ecba", null ],
     [ "jsonComplexItemTypeValue", "classVTOLLandingComplexItem.html#af7ce3792c41f7f765d4f2699dfbcf0d8", null ],
-    [ "name", "classVTOLLandingComplexItem.html#a9fdac4fb1fe84205b48ad91d89effb31", null ],
     [ "settingsGroup", "classVTOLLandingComplexItem.html#afe59490313945d80b3687cc86036df8b", null ]
 ];

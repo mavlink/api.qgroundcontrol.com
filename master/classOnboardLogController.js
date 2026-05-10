@@ -2,6 +2,7 @@ var classOnboardLogController =
 [
     [ "OnboardLogController", "classOnboardLogController.html#a51b31020e72e0762a6f396c3f66e318a", null ],
     [ "~OnboardLogController", "classOnboardLogController.html#ac77a9118898869b6d9e440517d4288b2", null ],
+    [ "allLogsSelected", "classOnboardLogController.html#a9606bbc3ed8dbd6db04a3eb3fc9d4fdf", null ],
     [ "cancel", "classOnboardLogController.html#ac6d6b12dacd7feb31746db79937c4e62", null ],
     [ "cancelCompression", "classOnboardLogController.html#af351ac858eb765a6949424cd99b270f2", null ],
     [ "compressing", "classOnboardLogController.html#a84cda0ca6d418e4748b0d76ecba13262", null ],
@@ -17,6 +18,12 @@ var classOnboardLogController =
     [ "eraseAll", "classOnboardLogController.html#a30a68fb38667b87c4675590848903199", null ],
     [ "refresh", "classOnboardLogController.html#a85d431b45f5551c55e4b11698c232c66", null ],
     [ "requestingListChanged", "classOnboardLogController.html#a08e94ffc0176390fdd4b68efaf674b4e", null ],
+    [ "selectAll", "classOnboardLogController.html#a2c120e35568c23c312a3967403b442e2", null ],
+    [ "selectedCount", "classOnboardLogController.html#a01468656f63a8b897f2342a2f2fbe66b", null ],
     [ "selectionChanged", "classOnboardLogController.html#aa10ab61d85581d6b9ef47decdc335421", null ],
-    [ "setCompressLogs", "classOnboardLogController.html#a9ae033bb8f7ff9ab4385d6596dd8bfa4", null ]
+    [ "setCompressLogs", "classOnboardLogController.html#a9ae033bb8f7ff9ab4385d6596dd8bfa4", null ],
+    [ "setSortAscending", "classOnboardLogController.html#aa3d90728703a9b393f69c8b2e1c84809", null ],
+    [ "sortAscending", "classOnboardLogController.html#a07beb299f7e5b97ba396918f5ed3ed02", null ],
+    [ "sortAscendingChanged", "classOnboardLogController.html#aa2fb60dbf8dde4ee1b456c699190f84a", null ],
+    [ "toggleSortByDate", "classOnboardLogController.html#a6e16c0280cd1496105c2639cc789cdc2", null ]
 ];

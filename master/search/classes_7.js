@@ -21,7 +21,7 @@ var searchData=
   ['gpsrtk_18',['GPSRtk',['../classGPSRtk.html',1,'']]],
   ['gpsrtkfactgroup_19',['GPSRTKFactGroup',['../classGPSRTKFactGroup.html',1,'']]],
   ['gstappsinkadapter_20',['GstAppSinkAdapter',['../classGstAppSinkAdapter.html',1,'']]],
-  ['gstqsg6openglnode_21',['GstQSG6OpenGLNode',['../classGstQSG6OpenGLNode.html',1,'']]],
+  ['gsthwvideobuffer_21',['GstHwVideoBuffer',['../classGstHwVideoBuffer.html',1,'']]],
   ['gstvideoreceiver_22',['GstVideoReceiver',['../classGstVideoReceiver.html',1,'']]],
   ['gstvideoworker_23',['GstVideoWorker',['../classGstVideoWorker.html',1,'']]],
   ['guardedtransition_24',['GuardedTransition',['../classGuardedTransition.html',1,'']]]

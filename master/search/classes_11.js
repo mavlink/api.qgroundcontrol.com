@@ -94,7 +94,5 @@ var searchData=
   ['qserialportinfo_91',['QSerialPortInfo',['../classQSerialPortInfo.html',1,'']]],
   ['qserialportinfoprivate_92',['QSerialPortInfoPrivate',['../classQSerialPortInfoPrivate.html',1,'']]],
   ['qserialportprivate_93',['QSerialPortPrivate',['../classQSerialPortPrivate.html',1,'']]],
-  ['qt6glvideoitem_94',['Qt6GLVideoItem',['../classQt6GLVideoItem.html',1,'']]],
-  ['qt6glvideoiteminterface_95',['Qt6GLVideoItemInterface',['../classQt6GLVideoItemInterface.html',1,'']]],
-  ['qtmultimediareceiver_96',['QtMultimediaReceiver',['../classQtMultimediaReceiver.html',1,'']]]
+  ['qtmultimediareceiver_94',['QtMultimediaReceiver',['../classQtMultimediaReceiver.html',1,'']]]
 ];
