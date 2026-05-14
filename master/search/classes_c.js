@@ -22,5 +22,6 @@ var searchData=
   ['logstore_19',['LogStore',['../classLogStore.html',1,'']]],
   ['logstorequerymodel_20',['LogStoreQueryModel',['../classLogStoreQueryModel.html',1,'']]],
   ['logviewercontroller_21',['LogViewerController',['../classLogViewerController.html',1,'']]],
-  ['loopstate_22',['LoopState',['../classLoopState.html',1,'']]]
+  ['logviewerparammetadata_22',['LogViewerParamMetaData',['../classLogViewerParamMetaData.html',1,'']]],
+  ['loopstate_23',['LoopState',['../classLoopState.html',1,'']]]
 ];

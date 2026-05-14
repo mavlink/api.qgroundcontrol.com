@@ -12,5 +12,6 @@ var classULogFullHandler =
     [ "isHeaderComplete", "classULogFullHandler.html#a43aa338ccc93e39ae61d4f66c54eea0e", null ],
     [ "logging", "classULogFullHandler.html#a620359e053aabfbe59531de2e09fb2dc", null ],
     [ "messageFormat", "classULogFullHandler.html#a851838e65458241951f2f446b19aa51b", null ],
-    [ "parameter", "classULogFullHandler.html#a0527a2f48e5e1c75ace14bd370835588", null ]
+    [ "parameter", "classULogFullHandler.html#a0527a2f48e5e1c75ace14bd370835588", null ],
+    [ "parameterDefault", "classULogFullHandler.html#a87f2b5b9c418246d52767ffe504b1a4c", null ]
 ];

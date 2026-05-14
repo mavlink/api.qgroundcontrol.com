@@ -56,6 +56,8 @@ var dir_b125c1a6d6bd38bad076914ead21a0c9 =
     [ "APMLightsComponent.h", "APMLightsComponent_8h.html", "APMLightsComponent_8h" ],
     [ "APMLightsComponent.qml", "APMLightsComponent_8qml.html", null ],
     [ "APMLightsComponentSummary.qml", "APMLightsComponentSummary_8qml.html", null ],
+    [ "APMLoggingComponent.cc", "APMLoggingComponent_8cc.html", null ],
+    [ "APMLoggingComponent.h", "APMLoggingComponent_8h.html", "APMLoggingComponent_8h" ],
     [ "APMMotorComponent.cc", "APMMotorComponent_8cc.html", null ],
     [ "APMMotorComponent.h", "APMMotorComponent_8h.html", "APMMotorComponent_8h" ],
     [ "APMMotorComponent.qml", "APMMotorComponent_8qml.html", null ],

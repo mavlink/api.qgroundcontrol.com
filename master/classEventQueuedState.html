@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('classEventQueuedState.html',''); initR
 </div><!--header-->
 <div class="contents">
 
+<p>A state that waits for one or more named events before advancing.  
+ <a href="classEventQueuedState.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="EventQueuedState_8h_source.html">EventQueuedState.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for EventQueuedState:</div>
@@ -246,7 +249,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a0194fe1a7c72ef87415e1eb9a90ca3f1 inherit pub_types_classQGCAbstractState"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A state that waits for one or more named events before advancing.</p>
+<div class="textblock"><p>A state that waits for one or more named events before advancing. </p>
 <p>This state integrates with <a class="el" href="classQGCStateMachine.html" title="QGroundControl specific state machine with enhanced error handling.">QGCStateMachine</a>'s postEvent() and postDelayedEvent() methods to provide event-based state coordination.</p>
 <p>Example usage: </p><div class="fragment"><div class="line"><span class="comment">// Create state that waits for &quot;dataReady&quot; event</span></div>
 <div class="line"><span class="keyword">auto</span>* waitForData = <span class="keyword">new</span> <a class="code hl_class" href="classEventQueuedState.html">EventQueuedState</a>(<span class="stringliteral">&quot;WaitForData&quot;</span>, &amp;<a class="code hl_function" href="classQGCAbstractState.html#ac3d46e1d9c83004a2f340846eb9a538c">machine</a>, <span class="stringliteral">&quot;dataReady&quot;</span>, 5000);</div>
@@ -257,13 +260,13 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Later, from another state or external code:</span></div>
 <div class="line"><a class="code hl_function" href="classQGCAbstractState.html#ac3d46e1d9c83004a2f340846eb9a538c">machine</a>.postEvent(<span class="stringliteral">&quot;dataReady&quot;</span>);  <span class="comment">// Triggers advancement</span></div>
-<div class="ttc" id="aclassEventQueuedState_html"><div class="ttname"><a href="classEventQueuedState.html">EventQueuedState</a></div><div class="ttdef"><b>Definition</b> <a href="EventQueuedState_8h_source.html#l00029">EventQueuedState.h:30</a></div></div>
+<div class="ttc" id="aclassEventQueuedState_html"><div class="ttname"><a href="classEventQueuedState.html">EventQueuedState</a></div><div class="ttdoc">A state that waits for one or more named events before advancing.</div><div class="ttdef"><b>Definition</b> <a href="EventQueuedState_8h_source.html#l00030">EventQueuedState.h:31</a></div></div>
 <div class="ttc" id="aclassQGCAbstractState_html_ac3d46e1d9c83004a2f340846eb9a538c"><div class="ttname"><a href="classQGCAbstractState.html#ac3d46e1d9c83004a2f340846eb9a538c">QGCAbstractState::machine</a></div><div class="ttdeci">QGCStateMachine * machine() const</div><div class="ttdef"><b>Definition</b> <a href="QGCAbstractState_8cc_source.html#l00011">QGCAbstractState.cc:11</a></div></div>
 <div class="ttc" id="aclassWaitStateBase_html_a07984aa65c18e5ff48ffe2edbea767dd"><div class="ttname"><a href="classWaitStateBase.html#a07984aa65c18e5ff48ffe2edbea767dd">WaitStateBase::completed</a></div><div class="ttdeci">void completed()</div></div>
 <div class="ttc" id="aclassWaitStateBase_html_a48dac536c18f9ccd696a9d8d6c2a1759"><div class="ttname"><a href="classWaitStateBase.html#a48dac536c18f9ccd696a9d8d6c2a1759">WaitStateBase::timedOut</a></div><div class="ttdeci">void timedOut()</div></div>
-</div><!-- fragment --><p>Multiple events can be configured using <a class="el" href="classEventQueuedState.html#ae0afd0542caf233cae846d86279857a4">addExpectedEvent()</a>. The state advances when ANY of the expected events is received (OR logic). For AND logic (wait for all events), chain multiple <a class="el" href="classEventQueuedState.html">EventQueuedState</a> instances. </p>
+</div><!-- fragment --><p>Multiple events can be configured using <a class="el" href="classEventQueuedState.html#ae0afd0542caf233cae846d86279857a4">addExpectedEvent()</a>. The state advances when ANY of the expected events is received (OR logic). For AND logic (wait for all events), chain multiple <a class="el" href="classEventQueuedState.html" title="A state that waits for one or more named events before advancing.">EventQueuedState</a> instances. </p>
 
-<p class="definition">Definition at line <a class="el" href="EventQueuedState_8h_source.html#l00029">29</a> of file <a class="el" href="EventQueuedState_8h_source.html">EventQueuedState.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventQueuedState_8h_source.html#l00030">30</a> of file <a class="el" href="EventQueuedState_8h_source.html">EventQueuedState.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8c7b725884e0bc777a16c9b3aa4672a7" name="a8c7b725884e0bc777a16c9b3aa4672a7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c7b725884e0bc777a16c9b3aa4672a7">&#9670;&#160;</a></span>EventQueuedState() <span class="overload">[1/2]</span></h2>
@@ -302,7 +305,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Create an <a class="el" href="classEventQueuedState.html">EventQueuedState</a> waiting for a single event </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Create an <a class="el" href="classEventQueuedState.html" title="A state that waits for one or more named events before advancing.">EventQueuedState</a> waiting for a single event </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">stateName</td><td>Name for logging </td></tr>
     <tr><td class="paramname">parent</td><td>Parent state </td></tr>
@@ -353,7 +356,7 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Create an <a class="el" href="classEventQueuedState.html">EventQueuedState</a> waiting for any of multiple events </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Create an <a class="el" href="classEventQueuedState.html" title="A state that waits for one or more named events before advancing.">EventQueuedState</a> waiting for any of multiple events </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">stateName</td><td>Name for logging </td></tr>
     <tr><td class="paramname">parent</td><td>Parent state </td></tr>
@@ -515,7 +518,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get the set of expected event names. </p>
 
-<p class="definition">Definition at line <a class="el" href="EventQueuedState_8h_source.html#l00060">60</a> of file <a class="el" href="EventQueuedState_8h_source.html">EventQueuedState.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventQueuedState_8h_source.html#l00061">61</a> of file <a class="el" href="EventQueuedState_8h_source.html">EventQueuedState.h</a>.</p>
 
 </div>
 </div>
@@ -577,7 +580,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get the event that triggered completion (valid after <a class="el" href="classWaitStateBase.html#a07984aa65c18e5ff48ffe2edbea767dd">completed()</a> signal) </p>
 
-<p class="definition">Definition at line <a class="el" href="EventQueuedState_8h_source.html#l00063">63</a> of file <a class="el" href="EventQueuedState_8h_source.html">EventQueuedState.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="EventQueuedState_8h_source.html#l00064">64</a> of file <a class="el" href="EventQueuedState_8h_source.html">EventQueuedState.h</a>.</p>
 
 </div>
 </div>

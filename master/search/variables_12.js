@@ -50,7 +50,9 @@ var searchData=
   ['rtcm_5fmsg_5fused_5fnot_5fused_47',['RTCM_MSG_USED_NOT_USED',['../structsensor__gps__s.html#a7f85a75e4fb38f091885897e4d2eb087',1,'sensor_gps_s']]],
   ['rtcm_5fmsg_5fused_5funknown_48',['RTCM_MSG_USED_UNKNOWN',['../structsensor__gps__s.html#a48b240983abd11e12ba3a18880f93e81',1,'sensor_gps_s']]],
   ['rtcm_5fmsg_5fused_5fused_49',['RTCM_MSG_USED_USED',['../structsensor__gps__s.html#a7de4d97cfe151b8802bc855779415105',1,'sensor_gps_s']]],
-  ['rtsptimeoutname_50',['rtspTimeoutName',['../classVideoSettings.html#abedcc68508235c4043bacd93f45f134f',1,'VideoSettings']]],
-  ['rtspurlname_51',['rtspUrlName',['../classVideoSettings.html#ad16fd6a2a3d34fc84a8c127722f99edb',1,'VideoSettings']]],
-  ['runningunittests_52',['runningUnitTests',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#a18177f5bdd61bca241d41f9ef06e30f2',1,'QGCCommandLineParser::CommandLineParseResult']]]
+  ['rtcmudpinputenabledname_50',['rtcmUdpInputEnabledName',['../classNTRIPSettings.html#afea67dcb1b237327a7ec6e6a054d0596',1,'NTRIPSettings']]],
+  ['rtcmudpinputportname_51',['rtcmUdpInputPortName',['../classNTRIPSettings.html#a49e701518562fd2d63fa9d62e56a2ab0',1,'NTRIPSettings']]],
+  ['rtsptimeoutname_52',['rtspTimeoutName',['../classVideoSettings.html#abedcc68508235c4043bacd93f45f134f',1,'VideoSettings']]],
+  ['rtspurlname_53',['rtspUrlName',['../classVideoSettings.html#ad16fd6a2a3d34fc84a8c127722f99edb',1,'VideoSettings']]],
+  ['runningunittests_54',['runningUnitTests',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#a18177f5bdd61bca241d41f9ef06e30f2',1,'QGCCommandLineParser::CommandLineParseResult']]]
 ];

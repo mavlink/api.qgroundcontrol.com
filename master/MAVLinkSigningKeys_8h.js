@@ -1,5 +1,5 @@
 var MAVLinkSigningKeys_8h =
 [
-    [ "MAVLinkSigningKey", "classMAVLinkSigningKey.html", null ],
+    [ "MAVLinkSigningKey", "classMAVLinkSigningKey.html", "classMAVLinkSigningKey" ],
     [ "MAVLinkSigningKeys", "classMAVLinkSigningKeys.html", "classMAVLinkSigningKeys" ]
 ];

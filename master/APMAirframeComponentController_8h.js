@@ -1,6 +1,6 @@
 var APMAirframeComponentController_8h =
 [
-    [ "APMAirframeComponentController", "classAPMAirframeComponentController.html", null ],
+    [ "APMAirframeComponentController", "classAPMAirframeComponentController.html", "classAPMAirframeComponentController" ],
     [ "APMFrameClass", "classAPMFrameClass.html", "classAPMFrameClass" ],
     [ "FRAME_CLASS_BALANCEBOT", "APMAirframeComponentController_8h.html#a47c729cf47124e1dccf6eb2448370de1", null ],
     [ "FRAME_CLASS_BICOPTER", "APMAirframeComponentController_8h.html#a3984062b8dd64c28f846ebe721356b07", null ],

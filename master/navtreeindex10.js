@@ -1,5 +1,15 @@
 var NAVTREEINDEX10 =
 {
+"PositionManager_8cpp.html":[3,0,0,19,0],
+"PositionManager_8cpp.html#a2a2c9810117bee409aeb8b1e5af870dd":[3,0,0,19,0,0],
+"PositionManager_8cpp_source.html":[3,0,0,19,0],
+"PositionManager_8h.html":[3,0,0,19,1],
+"PositionManager_8h_source.html":[3,0,0,19,1],
+"PowerComponentController_8cc.html":[3,0,0,4,3,22],
+"PowerComponentController_8cc_source.html":[3,0,0,4,3,22],
+"PowerComponentController_8h.html":[3,0,0,4,3,23],
+"PowerComponentController_8h_source.html":[3,0,0,4,3,23],
+"PowerComponentSummary_8qml.html":[3,0,0,4,3,24],
 "PowerComponentSummary_8qml_source.html":[3,0,0,4,3,24],
 "PowerComponent_8cc.html":[3,0,0,4,3,20],
 "PowerComponent_8cc_source.html":[3,0,0,4,3,20],
@@ -239,15 +249,5 @@ var NAVTREEINDEX10 =
 "QGCCompression_8h.html#a9ed6795a888693588da89174b9f072f5aef01abce9646c28f96de24223e801024":[3,0,0,25,1,9,2,8],
 "QGCCompression_8h.html#a9ed6795a888693588da89174b9f072f5af1cd28417b03cfab3a8e16d66e34e18a":[3,0,0,25,1,9,2,3],
 "QGCCompression_8h.html#a9f94e257ac487939eba76cf1688daab1":[3,0,0,25,1,9,22],
-"QGCCompression_8h.html#aa39c757274d165b446f84c6481dc9f3b":[3,0,0,25,1,9,3],
-"QGCCompression_8h.html#aa4942c43b5f0c671c86f69dc29c4cff2":[3,0,0,25,1,9,44],
-"QGCCompression_8h.html#aa5a6851e5179fcbbc901e0a91716ae80":[3,0,0,25,1,9,29],
-"QGCCompression_8h.html#aa6b72697044eabb82888a3f3a2fe86e4":[3,0,0,25,1,9,42],
-"QGCCompression_8h.html#aa8d1a172131add5634d81be4ff0b4985":[3,0,0,25,1,9,39],
-"QGCCompression_8h.html#aba889dcd77ddc556c71ad821a9a798e7":[3,0,0,25,1,9,1],
-"QGCCompression_8h.html#aba889dcd77ddc556c71ad821a9a798e7a2767828026039e8ba7b38973cbb701f2":[3,0,0,25,1,9,1,1],
-"QGCCompression_8h.html#aba889dcd77ddc556c71ad821a9a798e7a465d60d88a7ea23531539094f1995b90":[3,0,0,25,1,9,1,7],
-"QGCCompression_8h.html#aba889dcd77ddc556c71ad821a9a798e7a4b33a686be73bb172407d73b26356275":[3,0,0,25,1,9,1,2],
-"QGCCompression_8h.html#aba889dcd77ddc556c71ad821a9a798e7a538273d971a3da3f944bfb95091df5d8":[3,0,0,25,1,9,1,3],
-"QGCCompression_8h.html#aba889dcd77ddc556c71ad821a9a798e7a6adf97f83acf6453d4a6a4b1070f3754":[3,0,0,25,1,9,1,0]
+"QGCCompression_8h.html#aa39c757274d165b446f84c6481dc9f3b":[3,0,0,25,1,9,3]
 };

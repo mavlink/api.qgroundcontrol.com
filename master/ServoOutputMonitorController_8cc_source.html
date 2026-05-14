@@ -105,17 +105,22 @@ $(document).ready(function(){initNavTree('ServoOutputMonitorController_8cc_sourc
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(ServoOutputMonitorControllerLog, <span class="stringliteral">&quot;QMLControls.ServoOutputMonitorController&quot;</span>)</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><a class="code hl_class" href="classServoOutputMonitorController.html">ServoOutputMonitorController</a>::<a class="code hl_class" href="classServoOutputMonitorController.html">ServoOutputMonitorController</a>(QObject *parent)</div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classServoOutputMonitorController.html#a8204978e15ff99cb5605d20e413066ea">    8</a></span><a class="code hl_class" href="classServoOutputMonitorController.html">ServoOutputMonitorController</a>::<a class="code hl_class" href="classServoOutputMonitorController.html">ServoOutputMonitorController</a>(QObject *parent)</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    : <a class="code hl_class" href="classFactPanelController.html">FactPanelController</a>(parent)</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    (void) connect(_vehicle, &amp;<a class="code hl_signal" href="classVehicle.html#af5ba5192ae7af96318dfd6e7a8ce49d3">Vehicle::servoOutputsChanged</a>, <span class="keyword">this</span>, &amp;ServoOutputMonitorController::servoValuesChanged);</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
+</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>ServoOutputMonitorController::~ServoOutputMonitorController()</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classServoOutputMonitorController.html#ac0ae4e368e42b09195c7d761de9aba77">   14</a></span><a class="code hl_function" href="classServoOutputMonitorController.html#ac0ae4e368e42b09195c7d761de9aba77">ServoOutputMonitorController::~ServoOutputMonitorController</a>()</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">int</span> ServoOutputMonitorController::servoValue(<span class="keywordtype">int</span> servoIndex)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classServoOutputMonitorController.html#a54ab77640f0b1c83470a1978f986d56b">   18</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classServoOutputMonitorController.html#a54ab77640f0b1c83470a1978f986d56b">ServoOutputMonitorController::servoValue</a>(<span class="keywordtype">int</span> servoIndex)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> (servoIndex &gt;= 0 &amp;&amp; servoIndex &lt; _servoValues.size()) {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">return</span> _servoValues[servoIndex];</div>
@@ -123,19 +128,20 @@ $(document).ready(function(){initNavTree('ServoOutputMonitorController_8cc_sourc
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> -1;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> ServoOutputMonitorController::servoValuesChanged(QVector&lt;int&gt; pwmValues)</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> servoCount = pwmValues.size();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classServoOutputMonitorController.html#ab33e58c447b65649cb787c6f6952b0cf">servoCount</a> = pwmValues.size();</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    _servoValues = pwmValues;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">if</span> (_servoCount != servoCount) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        _servoCount = servoCount;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">if</span> (_servoCount != <a class="code hl_function" href="classServoOutputMonitorController.html#ab33e58c447b65649cb787c6f6952b0cf">servoCount</a>) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        _servoCount = <a class="code hl_function" href="classServoOutputMonitorController.html#ab33e58c447b65649cb787c6f6952b0cf">servoCount</a>;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        emit <a class="code hl_signal" href="classServoOutputMonitorController.html#a43a6f4c2b99bfec80a52584c3948c4fe">servoCountChanged</a>(_servoCount);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> servo = 0; servo &lt; servoCount; servo++) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> servo = 0; servo &lt; <a class="code hl_function" href="classServoOutputMonitorController.html#ab33e58c447b65649cb787c6f6952b0cf">servoCount</a>; servo++) {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        emit <a class="code hl_signal" href="classServoOutputMonitorController.html#a1a4a98227c968fa728a26e7aaf2394c0">servoValueChanged</a>(servo, pwmValues[servo]);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
@@ -143,10 +149,13 @@ $(document).ready(function(){initNavTree('ServoOutputMonitorController_8cc_sourc
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
 <div class="ttc" id="aServoOutputMonitorController_8h_html"><div class="ttname"><a href="ServoOutputMonitorController_8h.html">ServoOutputMonitorController.h</a></div></div>
 <div class="ttc" id="aVehicle_8h_html"><div class="ttname"><a href="Vehicle_8h.html">Vehicle.h</a></div></div>
-<div class="ttc" id="aclassFactPanelController_html"><div class="ttname"><a href="classFactPanelController.html">FactPanelController</a></div><div class="ttdoc">Used for handling missing Facts from C++ code.</div><div class="ttdef"><b>Definition</b> <a href="FactPanelController_8h_source.html#l00012">FactPanelController.h:13</a></div></div>
+<div class="ttc" id="aclassFactPanelController_html"><div class="ttname"><a href="classFactPanelController.html">FactPanelController</a></div><div class="ttdoc">Used for handling missing Facts from C++ code.</div><div class="ttdef"><b>Definition</b> <a href="FactPanelController_8h_source.html#l00013">FactPanelController.h:14</a></div></div>
 <div class="ttc" id="aclassServoOutputMonitorController_html"><div class="ttname"><a href="classServoOutputMonitorController.html">ServoOutputMonitorController</a></div><div class="ttdef"><b>Definition</b> <a href="ServoOutputMonitorController_8h_source.html#l00007">ServoOutputMonitorController.h:8</a></div></div>
 <div class="ttc" id="aclassServoOutputMonitorController_html_a1a4a98227c968fa728a26e7aaf2394c0"><div class="ttname"><a href="classServoOutputMonitorController.html#a1a4a98227c968fa728a26e7aaf2394c0">ServoOutputMonitorController::servoValueChanged</a></div><div class="ttdeci">void servoValueChanged(int servo, int pwmValue)</div></div>
 <div class="ttc" id="aclassServoOutputMonitorController_html_a43a6f4c2b99bfec80a52584c3948c4fe"><div class="ttname"><a href="classServoOutputMonitorController.html#a43a6f4c2b99bfec80a52584c3948c4fe">ServoOutputMonitorController::servoCountChanged</a></div><div class="ttdeci">void servoCountChanged(int servoCount)</div></div>
+<div class="ttc" id="aclassServoOutputMonitorController_html_a54ab77640f0b1c83470a1978f986d56b"><div class="ttname"><a href="classServoOutputMonitorController.html#a54ab77640f0b1c83470a1978f986d56b">ServoOutputMonitorController::servoValue</a></div><div class="ttdeci">int servoValue(int servoIndex) const</div><div class="ttdoc">Servo index is 0..15 (SERVO1..SERVO16)</div><div class="ttdef"><b>Definition</b> <a href="ServoOutputMonitorController_8cc_source.html#l00018">ServoOutputMonitorController.cc:18</a></div></div>
+<div class="ttc" id="aclassServoOutputMonitorController_html_ab33e58c447b65649cb787c6f6952b0cf"><div class="ttname"><a href="classServoOutputMonitorController.html#ab33e58c447b65649cb787c6f6952b0cf">ServoOutputMonitorController::servoCount</a></div><div class="ttdeci">int servoCount() const</div><div class="ttdef"><b>Definition</b> <a href="ServoOutputMonitorController_8h_source.html#l00017">ServoOutputMonitorController.h:17</a></div></div>
+<div class="ttc" id="aclassServoOutputMonitorController_html_ac0ae4e368e42b09195c7d761de9aba77"><div class="ttname"><a href="classServoOutputMonitorController.html#ac0ae4e368e42b09195c7d761de9aba77">ServoOutputMonitorController::~ServoOutputMonitorController</a></div><div class="ttdeci">~ServoOutputMonitorController()</div><div class="ttdef"><b>Definition</b> <a href="ServoOutputMonitorController_8cc_source.html#l00014">ServoOutputMonitorController.cc:14</a></div></div>
 <div class="ttc" id="aclassVehicle_html_af5ba5192ae7af96318dfd6e7a8ce49d3"><div class="ttname"><a href="classVehicle.html#af5ba5192ae7af96318dfd6e7a8ce49d3">Vehicle::servoOutputsChanged</a></div><div class="ttdeci">void servoOutputsChanged(QVector&lt; int &gt; servoValues)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

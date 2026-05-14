@@ -1,5 +1,15 @@
 var NAVTREEINDEX9 =
 {
+"ObjectItemModelBase_8h_source.html":[3,0,0,20,48],
+"ObjectListModelBase_8cc.html":[3,0,0,20,49],
+"ObjectListModelBase_8cc_source.html":[3,0,0,20,49],
+"ObjectListModelBase_8h.html":[3,0,0,20,50],
+"ObjectListModelBase_8h_source.html":[3,0,0,20,50],
+"ObstacleDistanceOverlayMap_8qml.html":[3,0,0,10,39],
+"ObstacleDistanceOverlayMap_8qml_source.html":[3,0,0,10,39],
+"ObstacleDistanceOverlayVideo_8qml.html":[3,0,0,10,40],
+"ObstacleDistanceOverlayVideo_8qml_source.html":[3,0,0,10,40],
+"ObstacleDistanceOverlay_8qml.html":[3,0,0,10,38],
 "ObstacleDistanceOverlay_8qml_source.html":[3,0,0,10,38],
 "OfflineMapButton_8qml.html":[3,0,0,20,51],
 "OfflineMapButton_8qml_source.html":[3,0,0,20,51],
@@ -239,15 +249,5 @@ var NAVTREEINDEX9 =
 "Platform_8h.html#a47c9e42710d883700596e8acc3bcaae4":[3,0,0,25,13,2,2],
 "Platform_8h.html#a7a8cdd24323060a25af6d64764743c8c":[3,0,0,25,13,2,1],
 "Platform_8h.html#afc5c30b79fec330ef978e5ae6b1a79b8":[3,0,0,25,13,2,3],
-"Platform_8h_source.html":[3,0,0,25,13,2],
-"PositionManager_8cpp.html":[3,0,0,19,0],
-"PositionManager_8cpp.html#a2a2c9810117bee409aeb8b1e5af870dd":[3,0,0,19,0,0],
-"PositionManager_8cpp_source.html":[3,0,0,19,0],
-"PositionManager_8h.html":[3,0,0,19,1],
-"PositionManager_8h_source.html":[3,0,0,19,1],
-"PowerComponentController_8cc.html":[3,0,0,4,3,22],
-"PowerComponentController_8cc_source.html":[3,0,0,4,3,22],
-"PowerComponentController_8h.html":[3,0,0,4,3,23],
-"PowerComponentController_8h_source.html":[3,0,0,4,3,23],
-"PowerComponentSummary_8qml.html":[3,0,0,4,3,24]
+"Platform_8h_source.html":[3,0,0,25,13,2]
 };

@@ -1,5 +1,15 @@
 var NAVTREEINDEX12 =
 {
+"QGCMAVLink_8cc_source.html":[3,0,0,16,10],
+"QGCMAVLink_8h.html":[3,0,0,16,11],
+"QGCMAVLink_8h_source.html":[3,0,0,16,11],
+"QGCMapCircleVisuals_8qml.html":[3,0,0,9,0,8],
+"QGCMapCircleVisuals_8qml_source.html":[3,0,0,9,0,8],
+"QGCMapCircle_8cc.html":[3,0,0,20,87],
+"QGCMapCircle_8cc_source.html":[3,0,0,20,87],
+"QGCMapCircle_8h.html":[3,0,0,20,88],
+"QGCMapCircle_8h_source.html":[3,0,0,20,88],
+"QGCMapEngineManager_8cc.html":[3,0,0,21,6],
 "QGCMapEngineManager_8cc.html#aef014bfb66a9ed63d881a2819621ec74":[3,0,0,21,6,0],
 "QGCMapEngineManager_8cc_source.html":[3,0,0,21,6],
 "QGCMapEngineManager_8h.html":[3,0,0,21,7],
@@ -239,15 +249,5 @@ var NAVTREEINDEX12 =
 "QGCPitchIndicator_8qml.html":[3,0,0,9,1,12],
 "QGCPitchIndicator_8qml_source.html":[3,0,0,9,1,12],
 "QGCPopupDialogFactory_8qml.html":[3,0,0,20,107],
-"QGCPopupDialogFactory_8qml_source.html":[3,0,0,20,107],
-"QGCPopupDialog_8qml.html":[3,0,0,20,106],
-"QGCPopupDialog_8qml_source.html":[3,0,0,20,106],
-"QGCQGeoCoordinate_8cc.html":[3,0,0,20,108],
-"QGCQGeoCoordinate_8cc_source.html":[3,0,0,20,108],
-"QGCQGeoCoordinate_8h.html":[3,0,0,20,109],
-"QGCQGeoCoordinate_8h_source.html":[3,0,0,20,109],
-"QGCRadioButton_8qml.html":[3,0,0,20,110],
-"QGCRadioButton_8qml_source.html":[3,0,0,20,110],
-"QGCRhiCapture_8cc.html":[3,0,0,27,0,0,1,26],
-"QGCRhiCapture_8cc.html#a69e9dbcd5c59a1cadc83744d483c26b8":[3,0,0,27,0,0,1,26,2]
+"QGCPopupDialogFactory_8qml_source.html":[3,0,0,20,107]
 };

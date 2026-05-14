@@ -19,6 +19,7 @@ var classAPMAutoPilotPlugin =
     [ "_incorrectParameterVersion", "classAPMAutoPilotPlugin.html#acedf0f52f51664428a17a8533f23530a", null ],
     [ "_joystickComponent", "classAPMAutoPilotPlugin.html#a494506f6e44d08db1c09d5a719bf550b", null ],
     [ "_lightsComponent", "classAPMAutoPilotPlugin.html#a313122255dc124ac6d18d09ed69d0142", null ],
+    [ "_loggingComponent", "classAPMAutoPilotPlugin.html#a03bb9988abaa8966c3a7e1b829021a46", null ],
     [ "_motorComponent", "classAPMAutoPilotPlugin.html#a26321b6f017649aad0017d6b3fda4083", null ],
     [ "_powerComponent", "classAPMAutoPilotPlugin.html#a7be1081355f2ef50d2fa50938dec12c4", null ],
     [ "_radioComponent", "classAPMAutoPilotPlugin.html#a1ff689ee839e7ac59592597068c4eed6", null ],

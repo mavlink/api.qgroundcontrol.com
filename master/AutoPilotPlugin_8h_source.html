@@ -109,67 +109,67 @@ $(document).ready(function(){initNavTree('AutoPilotPlugin_8h_source.html',''); i
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span><a class="code hl_class" href="classVehicle.html">Vehicle</a>;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span><a class="code hl_class" href="classVehicleComponent.html">VehicleComponent</a>;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classAutoPilotPlugin.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="classAutoPilotPlugin.html">AutoPilotPlugin</a> : <span class="keyword">public</span> QObject</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    Q_OBJECT</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    QML_ELEMENT</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    QML_UNCREATABLE(<span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    Q_PROPERTY(QVariantList vehicleComponents   READ vehicleComponents  NOTIFY <a class="code hl_signal" href="classAutoPilotPlugin.html#a478baa249078fbc5fc544e898136d83b">vehicleComponentsChanged</a>)    </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    Q_PROPERTY(<span class="keywordtype">bool</span>         setupComplete       READ setupComplete      NOTIFY <a class="code hl_signal" href="classAutoPilotPlugin.html#a8f8429afe3018fd687fe7eb87568477d">setupCompleteChanged</a>)        </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classAutoPilotPlugin.html">AutoPilotPlugin</a>(<a class="code hl_class" href="classVehicle.html">Vehicle</a> *vehicle, QObject *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classAutoPilotPlugin.html">~AutoPilotPlugin</a>();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// Vehicle Components which are available for firmware types</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">enum</span> KnownVehicleComponent {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        KnownRadioVehicleComponent,</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        KnownFlightModesVehicleComponent,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        KnownSensorsVehicleComponent,</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        KnownSafetyVehicleComponent,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        KnownPowerVehicleComponent,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        KnownJoystickVehicleComponent,</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        KnownESCVehicleComponent,</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        UnknownVehicleComponent <span class="comment">// Firmware specific vehicle components</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    };</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    Q_ENUM(KnownVehicleComponent)</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> parametersReadyPreChecks();</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">// Must be implemented by derived class</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">virtual</span> <span class="keyword">const</span> QVariantList &amp;vehicleComponents() = 0;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    Q_INVOKABLE <span class="keyword">virtual</span> QString prerequisiteSetup(<a class="code hl_class" href="classVehicleComponent.html">VehicleComponent</a> *component) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    Q_INVOKABLE <span class="keywordtype">bool</span> knownVehicleComponentAvailable(KnownVehicleComponent knownVehicleComponent) { <span class="keywordflow">return</span> (findKnownVehicleComponent(knownVehicleComponent) != <span class="keyword">nullptr</span>); }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    Q_INVOKABLE <a class="code hl_class" href="classVehicleComponent.html">VehicleComponent</a> *findKnownVehicleComponent(KnownVehicleComponent knownVehicleComponent);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">bool</span> setupComplete()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classAutoPilotPlugin.html#a55ae53299e5a5e0b5e11e34a6e4cf684">_setupComplete</a>; }</div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classAutoPilotPlugin.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="classAutoPilotPlugin.html">AutoPilotPlugin</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    Q_OBJECT</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    QML_ELEMENT</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    QML_UNCREATABLE(<span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Q_PROPERTY(QVariantList vehicleComponents   READ vehicleComponents  NOTIFY <a class="code hl_signal" href="classAutoPilotPlugin.html#a478baa249078fbc5fc544e898136d83b">vehicleComponentsChanged</a>)    </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    Q_PROPERTY(<span class="keywordtype">bool</span>         setupComplete       READ setupComplete      NOTIFY <a class="code hl_signal" href="classAutoPilotPlugin.html#a8f8429afe3018fd687fe7eb87568477d">setupCompleteChanged</a>)        </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classAutoPilotPlugin.html">AutoPilotPlugin</a>(<a class="code hl_class" href="classVehicle.html">Vehicle</a> *vehicle, QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">virtual</span> <a class="code hl_class" href="classAutoPilotPlugin.html">~AutoPilotPlugin</a>();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// Vehicle Components which are available for firmware types</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">enum</span> KnownVehicleComponent {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        KnownRadioVehicleComponent,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        KnownFlightModesVehicleComponent,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        KnownSensorsVehicleComponent,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        KnownSafetyVehicleComponent,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        KnownPowerVehicleComponent,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        KnownJoystickVehicleComponent,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        KnownESCVehicleComponent,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        UnknownVehicleComponent <span class="comment">// Firmware specific vehicle components</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    };</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    Q_ENUM(KnownVehicleComponent)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> parametersReadyPreChecks();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">// Must be implemented by derived class</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">virtual</span> <span class="keyword">const</span> QVariantList &amp;vehicleComponents() = 0;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    Q_INVOKABLE <span class="keyword">virtual</span> QString prerequisiteSetup(<a class="code hl_class" href="classVehicleComponent.html">VehicleComponent</a> *component) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    Q_INVOKABLE <span class="keywordtype">bool</span> knownVehicleComponentAvailable(KnownVehicleComponent knownVehicleComponent) { <span class="keywordflow">return</span> (findKnownVehicleComponent(knownVehicleComponent) != <span class="keyword">nullptr</span>); }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    Q_INVOKABLE <a class="code hl_class" href="classVehicleComponent.html">VehicleComponent</a> *findKnownVehicleComponent(KnownVehicleComponent knownVehicleComponent);</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>signals:</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classAutoPilotPlugin.html#a8f8429afe3018fd687fe7eb87568477d">   60</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classAutoPilotPlugin.html#a8f8429afe3018fd687fe7eb87568477d">setupCompleteChanged</a>();</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classAutoPilotPlugin.html#a478baa249078fbc5fc544e898136d83b">   61</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classAutoPilotPlugin.html#a478baa249078fbc5fc544e898136d83b">vehicleComponentsChanged</a>();</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classAutoPilotPlugin.html#a01b3778d977b8a62e4f506e07ba3e55c">   64</a></span>    <a class="code hl_class" href="classVehicle.html">Vehicle</a> *<a class="code hl_variable" href="classAutoPilotPlugin.html#a01b3778d977b8a62e4f506e07ba3e55c">_vehicle</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classAutoPilotPlugin.html#a900f894a4750f014552071b17b558b5e">   65</a></span>    <a class="code hl_class" href="classFirmwarePlugin.html">FirmwarePlugin</a> *<a class="code hl_variable" href="classAutoPilotPlugin.html#a900f894a4750f014552071b17b558b5e">_firmwarePlugin</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classAutoPilotPlugin.html#a55ae53299e5a5e0b5e11e34a6e4cf684">   66</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classAutoPilotPlugin.html#a55ae53299e5a5e0b5e11e34a6e4cf684">_setupComplete</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> _recalcSetupComplete();</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>};</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">bool</span> setupComplete()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classAutoPilotPlugin.html#a55ae53299e5a5e0b5e11e34a6e4cf684">_setupComplete</a>; }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>signals:</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classAutoPilotPlugin.html#a8f8429afe3018fd687fe7eb87568477d">   62</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classAutoPilotPlugin.html#a8f8429afe3018fd687fe7eb87568477d">setupCompleteChanged</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classAutoPilotPlugin.html#a478baa249078fbc5fc544e898136d83b">   63</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classAutoPilotPlugin.html#a478baa249078fbc5fc544e898136d83b">vehicleComponentsChanged</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classAutoPilotPlugin.html#a01b3778d977b8a62e4f506e07ba3e55c">   66</a></span>    <a class="code hl_class" href="classVehicle.html">Vehicle</a> *<a class="code hl_variable" href="classAutoPilotPlugin.html#a01b3778d977b8a62e4f506e07ba3e55c">_vehicle</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classAutoPilotPlugin.html#a900f894a4750f014552071b17b558b5e">   67</a></span>    <a class="code hl_class" href="classFirmwarePlugin.html">FirmwarePlugin</a> *<a class="code hl_variable" href="classAutoPilotPlugin.html#a900f894a4750f014552071b17b558b5e">_firmwarePlugin</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classAutoPilotPlugin.html#a55ae53299e5a5e0b5e11e34a6e4cf684">   68</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classAutoPilotPlugin.html#a55ae53299e5a5e0b5e11e34a6e4cf684">_setupComplete</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">void</span> _recalcSetupComplete();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
 </div>
-<div class="ttc" id="aclassAutoPilotPlugin_html"><div class="ttname"><a href="classAutoPilotPlugin.html">AutoPilotPlugin</a></div><div class="ttdef"><b>Definition</b> <a href="AutoPilotPlugin_8h_source.html#l00016">AutoPilotPlugin.h:17</a></div></div>
-<div class="ttc" id="aclassAutoPilotPlugin_html_a01b3778d977b8a62e4f506e07ba3e55c"><div class="ttname"><a href="classAutoPilotPlugin.html#a01b3778d977b8a62e4f506e07ba3e55c">AutoPilotPlugin::_vehicle</a></div><div class="ttdeci">Vehicle * _vehicle</div><div class="ttdef"><b>Definition</b> <a href="AutoPilotPlugin_8h_source.html#l00064">AutoPilotPlugin.h:64</a></div></div>
+<div class="ttc" id="aclassAutoPilotPlugin_html"><div class="ttname"><a href="classAutoPilotPlugin.html">AutoPilotPlugin</a></div><div class="ttdoc">The AutoPilotPlugin class is an abstract base class which represent the methods and objects.</div><div class="ttdef"><b>Definition</b> <a href="AutoPilotPlugin_8h_source.html#l00018">AutoPilotPlugin.h:19</a></div></div>
+<div class="ttc" id="aclassAutoPilotPlugin_html_a01b3778d977b8a62e4f506e07ba3e55c"><div class="ttname"><a href="classAutoPilotPlugin.html#a01b3778d977b8a62e4f506e07ba3e55c">AutoPilotPlugin::_vehicle</a></div><div class="ttdeci">Vehicle * _vehicle</div><div class="ttdef"><b>Definition</b> <a href="AutoPilotPlugin_8h_source.html#l00066">AutoPilotPlugin.h:66</a></div></div>
 <div class="ttc" id="aclassAutoPilotPlugin_html_a478baa249078fbc5fc544e898136d83b"><div class="ttname"><a href="classAutoPilotPlugin.html#a478baa249078fbc5fc544e898136d83b">AutoPilotPlugin::vehicleComponentsChanged</a></div><div class="ttdeci">void vehicleComponentsChanged()</div></div>
-<div class="ttc" id="aclassAutoPilotPlugin_html_a55ae53299e5a5e0b5e11e34a6e4cf684"><div class="ttname"><a href="classAutoPilotPlugin.html#a55ae53299e5a5e0b5e11e34a6e4cf684">AutoPilotPlugin::_setupComplete</a></div><div class="ttdeci">bool _setupComplete</div><div class="ttdef"><b>Definition</b> <a href="AutoPilotPlugin_8h_source.html#l00066">AutoPilotPlugin.h:66</a></div></div>
+<div class="ttc" id="aclassAutoPilotPlugin_html_a55ae53299e5a5e0b5e11e34a6e4cf684"><div class="ttname"><a href="classAutoPilotPlugin.html#a55ae53299e5a5e0b5e11e34a6e4cf684">AutoPilotPlugin::_setupComplete</a></div><div class="ttdeci">bool _setupComplete</div><div class="ttdef"><b>Definition</b> <a href="AutoPilotPlugin_8h_source.html#l00068">AutoPilotPlugin.h:68</a></div></div>
 <div class="ttc" id="aclassAutoPilotPlugin_html_a8f8429afe3018fd687fe7eb87568477d"><div class="ttname"><a href="classAutoPilotPlugin.html#a8f8429afe3018fd687fe7eb87568477d">AutoPilotPlugin::setupCompleteChanged</a></div><div class="ttdeci">void setupCompleteChanged()</div></div>
-<div class="ttc" id="aclassAutoPilotPlugin_html_a900f894a4750f014552071b17b558b5e"><div class="ttname"><a href="classAutoPilotPlugin.html#a900f894a4750f014552071b17b558b5e">AutoPilotPlugin::_firmwarePlugin</a></div><div class="ttdeci">FirmwarePlugin * _firmwarePlugin</div><div class="ttdef"><b>Definition</b> <a href="AutoPilotPlugin_8h_source.html#l00065">AutoPilotPlugin.h:65</a></div></div>
-<div class="ttc" id="aclassFirmwarePlugin_html"><div class="ttname"><a href="classFirmwarePlugin.html">FirmwarePlugin</a></div><div class="ttdef"><b>Definition</b> <a href="FirmwarePlugin_8h_source.html#l00070">FirmwarePlugin.h:71</a></div></div>
-<div class="ttc" id="aclassVehicleComponent_html"><div class="ttname"><a href="classVehicleComponent.html">VehicleComponent</a></div><div class="ttdef"><b>Definition</b> <a href="VehicleComponent_8h_source.html#l00017">VehicleComponent.h:18</a></div></div>
+<div class="ttc" id="aclassAutoPilotPlugin_html_a900f894a4750f014552071b17b558b5e"><div class="ttname"><a href="classAutoPilotPlugin.html#a900f894a4750f014552071b17b558b5e">AutoPilotPlugin::_firmwarePlugin</a></div><div class="ttdeci">FirmwarePlugin * _firmwarePlugin</div><div class="ttdef"><b>Definition</b> <a href="AutoPilotPlugin_8h_source.html#l00067">AutoPilotPlugin.h:67</a></div></div>
+<div class="ttc" id="aclassFirmwarePlugin_html"><div class="ttname"><a href="classFirmwarePlugin.html">FirmwarePlugin</a></div><div class="ttdoc">The FirmwarePlugin class represents the methods and objects which are specific to a certain Firmware ...</div><div class="ttdef"><b>Definition</b> <a href="FirmwarePlugin_8h_source.html#l00072">FirmwarePlugin.h:73</a></div></div>
+<div class="ttc" id="aclassVehicleComponent_html"><div class="ttname"><a href="classVehicleComponent.html">VehicleComponent</a></div><div class="ttdoc">A vehicle component is an object which abstracts the physical portion of a vehicle into a set of.</div><div class="ttdef"><b>Definition</b> <a href="VehicleComponent_8h_source.html#l00019">VehicleComponent.h:20</a></div></div>
 <div class="ttc" id="aclassVehicle_html"><div class="ttname"><a href="classVehicle.html">Vehicle</a></div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00082">Vehicle.h:83</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

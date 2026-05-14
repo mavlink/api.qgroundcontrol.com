@@ -1,5 +1,9 @@
 var NAVTREEINDEX5 =
 {
+"FlyViewInsetViewer_8qml.html":[3,0,0,10,17],
+"FlyViewInsetViewer_8qml_source.html":[3,0,0,10,17],
+"FlyViewInstrumentPanel_8qml.html":[3,0,0,10,18],
+"FlyViewInstrumentPanel_8qml_source.html":[3,0,0,10,18],
 "FlyViewMap_8qml.html":[3,0,0,10,19],
 "FlyViewMap_8qml_source.html":[3,0,0,10,19],
 "FlyViewMissionCompleteDialog_8qml.html":[3,0,0,10,20],
@@ -245,9 +249,5 @@ var NAVTREEINDEX5 =
 "GstDmaBufVideoBuffer_8cc.html":[3,0,0,27,0,0,1,15],
 "GstDmaBufVideoBuffer_8cc_source.html":[3,0,0,27,0,0,1,15],
 "GstDmaBufVideoBuffer_8h.html":[3,0,0,27,0,0,1,16],
-"GstDmaBufVideoBuffer_8h_source.html":[3,0,0,27,0,0,1,16],
-"GstGlContextBridge_8cc.html":[3,0,0,27,0,0,1,17],
-"GstGlContextBridge_8cc_source.html":[3,0,0,27,0,0,1,17],
-"GstGlContextBridge_8h.html":[3,0,0,27,0,0,1,18],
-"GstGlContextBridge_8h_source.html":[3,0,0,27,0,0,1,18]
+"GstDmaBufVideoBuffer_8h_source.html":[3,0,0,27,0,0,1,16]
 };

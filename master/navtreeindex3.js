@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"AudioOutput_8cc.html#a47a658aa403447291489954f20998933":[3,0,0,25,0,0,0],
+"AudioOutput_8cc.html#aa08ba65ea6fb50538eaf7de61769920d":[3,0,0,25,0,0,1],
+"AudioOutput_8cc_source.html":[3,0,0,25,0,0],
+"AudioOutput_8h.html":[3,0,0,25,0,1],
 "AudioOutput_8h_source.html":[3,0,0,25,0,1],
 "AutoConnectSettings_8cc.html":[3,0,0,22,6],
 "AutoConnectSettings_8cc_source.html":[3,0,0,22,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX3 =
 "ErrorHandlers_8h.html":[3,0,0,25,16,0,1],
 "ErrorHandlers_8h.html#a0944e3a22c8a5bbd46f478ca5f0b7c8c":[3,0,0,25,16,0,1,1],
 "ErrorHandlers_8h.html#a3917ba380b76e9d7d3bf04e3def21240":[3,0,0,25,16,0,1,2],
-"ErrorHandlers_8h.html#a6db38b3608833335609e6b905356be88":[3,0,0,25,16,0,1,0],
-"ErrorHandlers_8h.html#a93c1cb9a44b6e3786f897da32a50a0ae":[3,0,0,25,16,0,1,4],
-"ErrorHandlers_8h.html#abe4e06cdc726e154f3495c7f2d0e8f8e":[3,0,0,25,16,0,1,5],
-"ErrorHandlers_8h.html#afa4e5c13ca2499d6641225861299c657":[3,0,0,25,16,0,1,3],
-"ErrorHandlers_8h_source.html":[3,0,0,25,16,0,1]
+"ErrorHandlers_8h.html#a6db38b3608833335609e6b905356be88":[3,0,0,25,16,0,1,0]
 };

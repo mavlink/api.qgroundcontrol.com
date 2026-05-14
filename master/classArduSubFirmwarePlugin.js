@@ -16,6 +16,7 @@ var classArduSubFirmwarePlugin =
     [ "stabilizedFlightMode", "classArduSubFirmwarePlugin.html#a39db2d2ac0518139af73c922b7106eb9", null ],
     [ "supportsJSButton", "classArduSubFirmwarePlugin.html#acdee7950438355c614a2a4fe6301365c", null ],
     [ "supportsMotorInterference", "classArduSubFirmwarePlugin.html#a689dc63896bf93fb7d2161fe7846f1d6", null ],
+    [ "supportsNegativeThrust", "classArduSubFirmwarePlugin.html#a3cfe8a2d8122d1dcd9f741b77c723661", null ],
     [ "supportsRadio", "classArduSubFirmwarePlugin.html#a58e61b8b2bad1e6e2282bd8edb6291f2", null ],
     [ "supportsThrottleModeCenterZero", "classArduSubFirmwarePlugin.html#adf98f6dab58cced41e142188a4cd5290", null ],
     [ "updateAvailableFlightModes", "classArduSubFirmwarePlugin.html#af4128cff13242f23d74b25d18b9b3cbc", null ],

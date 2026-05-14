@@ -9,5 +9,5 @@ var searchData=
   ['requestmessagefailuremode_5ft_6',['RequestMessageFailureMode_t',['../classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5',1,'MockLink']]],
   ['requestmessageresulthandlerfailurecode_5ft_7',['RequestMessageResultHandlerFailureCode_t',['../structVehicleTypes.html#a9ce049e2f1375e132c762eb6cb63db0f',1,'VehicleTypes']]],
   ['role_8',['Role',['../structLogEntry.html#a16604a76fec3f30308d55e8c0ead18e9',1,'LogEntry']]],
-  ['roles_9',['roles',['../classLoggingCategoryFlatModel.html#ad76851c285a28aa986944ec9a90f04e0',1,'LoggingCategoryFlatModel::Roles'],['../classLoggingCategoryTreeModel.html#a2e031477a1f40b4ab3c980d8999bc0fe',1,'LoggingCategoryTreeModel::Roles']]]
+  ['roles_9',['roles',['../classGeoTagImageModel.html#a0e38381de2dc5ec37b3391b75c13ed65',1,'GeoTagImageModel::Roles'],['../classLoggingCategoryFlatModel.html#ad76851c285a28aa986944ec9a90f04e0',1,'LoggingCategoryFlatModel::Roles'],['../classLoggingCategoryTreeModel.html#a2e031477a1f40b4ab3c980d8999bc0fe',1,'LoggingCategoryTreeModel::Roles']]]
 ];

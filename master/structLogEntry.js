@@ -20,7 +20,7 @@ var structLogEntry =
       [ "LineRole", "structLogEntry.html#a16604a76fec3f30308d55e8c0ead18e9a04e98771f2f9a64b9c308bdb2cb3c071", null ],
       [ "ThreadIdRole", "structLogEntry.html#a16604a76fec3f30308d55e8c0ead18e9aa33afe4275f21a8ae7b5ddfc0bacf83c", null ]
     ] ],
-    [ "LogEntry", "structLogEntry.html#ae8aa52586ffa6ed641138c0735d83e5f", null ],
+    [ "LogEntry", "structLogEntry.html#ab873d780539f6a4d5a0785474bf89137", null ],
     [ "LogEntry", "structLogEntry.html#a645b8ef1e648fb4f208e0aad9277d6cc", null ],
     [ "LogEntry", "structLogEntry.html#a1e1317f853cd529354ee6c7709cd0ffe", null ],
     [ "buildFormatted", "structLogEntry.html#adcde3a8cbaad62a9246f0bce9efae18d", null ],

@@ -62,6 +62,7 @@ var hierarchy =
     [ "StateMachineLogger::LogEntry", "structStateMachineLogger_1_1LogEntry.html", null ],
     [ "LoggingCategoryTreeNode", "structLoggingCategoryTreeNode.html", null ],
     [ "LogParseResult", "structLogParseResult.html", null ],
+    [ "LogViewerParamMetaData", "classLogViewerParamMetaData.html", null ],
     [ "MapProvider", "classMapProvider.html", [
       [ "BingMapProvider", "classBingMapProvider.html", [
         [ "BingHybridMapProvider", "classBingHybridMapProvider.html", null ],
@@ -544,6 +545,7 @@ var hierarchy =
       [ "QmlUnitsConversion", "classQmlUnitsConversion.html", null ],
       [ "RCToParamDialogController", "classRCToParamDialogController.html", null ],
       [ "RTCMMavlink", "classRTCMMavlink.html", null ],
+      [ "RTCMUdpInput", "classRTCMUdpInput.html", null ],
       [ "RallyPoint", "classRallyPoint.html", null ],
       [ "RemoteIDManager", "classRemoteIDManager.html", null ],
       [ "RemoteTransport", "classRemoteTransport.html", [
@@ -626,6 +628,7 @@ var hierarchy =
         [ "APMGimbalComponent", "classAPMGimbalComponent.html", null ],
         [ "APMHeliComponent", "classAPMHeliComponent.html", null ],
         [ "APMLightsComponent", "classAPMLightsComponent.html", null ],
+        [ "APMLoggingComponent", "classAPMLoggingComponent.html", null ],
         [ "APMPowerComponent", "classAPMPowerComponent.html", null ],
         [ "APMRadioComponent", "classAPMRadioComponent.html", null ],
         [ "APMRemoteSupportComponent", "classAPMRemoteSupportComponent.html", null ],
