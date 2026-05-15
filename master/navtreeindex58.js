@@ -1,5 +1,6 @@
 var NAVTREEINDEX58 =
 {
+"namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a18496d78d33848bfa8d0ff5d3dc5de00":[1,0,6,0,96],
 "namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a1a046daa33407814e2bc021a291a401d":[1,0,6,0,98],
 "namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a1a2a12a57fa0e6df156019237fca63df":[1,0,6,0,3],
 "namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a20c321540bfeb3dbfa5dc52495abb983":[1,0,6,0,161],
@@ -248,6 +249,5 @@ var NAVTREEINDEX58 =
 "namespaceAndroidSerial.html#abb19e7c08d557535ff09bbfec57131f6aa311403ba1ef2f339d68267f47740b26":[1,0,5,4,4],
 "namespaceAndroidSerial.html#abb19e7c08d557535ff09bbfec57131f6aa632c092cb6f5fbb2ba8df96ae34884a":[1,0,5,4,3],
 "namespaceAndroidSerial.html#abb19e7c08d557535ff09bbfec57131f6ab0e77a28626bccc2ebbbf0821d35b881":[1,0,5,4,0],
-"namespaceAndroidSerial.html#abb19e7c08d557535ff09bbfec57131f6ac3b944ff14b5893da014f655cc2bd517":[1,0,5,4,1],
-"namespaceAndroidSerial.html#abbca01b5a5314507ebdabd656cb7011b":[1,0,5,34]
+"namespaceAndroidSerial.html#abb19e7c08d557535ff09bbfec57131f6ac3b944ff14b5893da014f655cc2bd517":[1,0,5,4,1]
 };

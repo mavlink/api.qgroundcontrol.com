@@ -1,5 +1,6 @@
 var NAVTREEINDEX51 =
 {
+"classUDPConfiguration.html#a4b12407fbcccba41fc61afb0faeca210":[2,0,551,1],
 "classUDPConfiguration.html#a8bbf46a5130be2abe1becc1ed9aae29c":[2,0,551,0],
 "classUDPLink.html":[2,0,553],
 "classUDPLink.html#a10d5b690559887e2f963b216222ca87c":[2,0,553,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX51 =
 "classVehicle.html#a424ecc8d60213e8d4136df6335051020":[2,0,560,32],
 "classVehicle.html#a4371004f1d850fef52dc42caca9816bd":[2,0,560,122],
 "classVehicle.html#a443a80f0f01569982535792b18dbd4db":[2,0,560,245],
-"classVehicle.html#a4473d4922bcd7f02b1f20576aadbc79d":[2,0,560,9],
-"classVehicle.html#a44857038eb86bd90af18ca19f5f2045f":[2,0,560,128]
+"classVehicle.html#a4473d4922bcd7f02b1f20576aadbc79d":[2,0,560,9]
 };

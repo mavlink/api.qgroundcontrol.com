@@ -145,7 +145,7 @@ var searchData=
   ['qgchistorystate_142',['qgchistorystate',['../classQGCHistoryState.html',1,'QGCHistoryState'],['../classQGCHistoryState.html#adf93364e15d9379fb4dcc09505c25f42',1,'QGCHistoryState::QGCHistoryState()']]],
   ['qgchistorystate_2ecc_143',['QGCHistoryState.cc',['../QGCHistoryState_8cc.html',1,'']]],
   ['qgchistorystate_2eh_144',['QGCHistoryState.h',['../QGCHistoryState_8h.html',1,'']]],
-  ['qgcimageprovider_145',['qgcimageprovider',['../classQGCImageProvider.html',1,'QGCImageProvider'],['../classQGCImageProvider.html#aa745c642752a35f6c7c663dec929fa2a',1,'QGCImageProvider::QGCImageProvider()'],['../classQGCApplication.html#aa8310cebe9ad87c28ad334141a455b21',1,'QGCApplication::qgcImageProvider()']]],
+  ['qgcimageprovider_145',['qgcimageprovider',['../classQGCImageProvider.html',1,'QGCImageProvider'],['../classQGCApplication.html#aa8310cebe9ad87c28ad334141a455b21',1,'QGCApplication::qgcImageProvider()'],['../classQGCImageProvider.html#aa745c642752a35f6c7c663dec929fa2a',1,'QGCImageProvider::QGCImageProvider()']]],
   ['qgcimageprovider_2ecc_146',['QGCImageProvider.cc',['../QGCImageProvider_8cc.html',1,'']]],
   ['qgcimageprovider_2eh_147',['QGCImageProvider.h',['../QGCImageProvider_8h.html',1,'']]],
   ['qgcimporttiletask_148',['qgcimporttiletask',['../classQGCImportTileTask.html',1,'QGCImportTileTask'],['../classQGCImportTileTask.html#a1906f28c2dcf07a5ce25b6608e7b2112',1,'QGCImportTileTask::QGCImportTileTask()']]],

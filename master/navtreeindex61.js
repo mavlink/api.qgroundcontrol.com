@@ -1,5 +1,6 @@
 var NAVTREEINDEX61 =
 {
+"namespaceQGClibarchive.html#a6299729e369a7305306a32891e4a1775":[1,0,32,6],
 "namespaceQGClibarchive.html#a6c9fa0e1546070fd3cc4d8cb1125f595":[1,0,32,28],
 "namespaceQGClibarchive.html#a720d8bfc7324bcdd5ccee4fc66279911":[1,0,32,12],
 "namespaceQGClibarchive.html#a7fde831e5ea6397f8ac60e16b291ac2c":[1,0,32,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX61 =
 "qserialportinfo_8cpp.html":[3,0,0,2,0,5],
 "qserialportinfo_8cpp.html#a6533d62fa642e868e6be8ea6c69c7dee":[3,0,0,2,0,5,0],
 "qserialportinfo_8cpp_source.html":[3,0,0,2,0,5],
-"qserialportinfo_8h.html":[3,0,0,2,0,6],
-"qserialportinfo_8h_source.html":[3,0,0,2,0,6]
+"qserialportinfo_8h.html":[3,0,0,2,0,6]
 };

@@ -6,6 +6,7 @@ var classComplexMissionItem =
     [ "_savePresetJson", "classComplexMissionItem.html#a078bb2650b4e3520215fe5e352ccb95b", null ],
     [ "_segmentTerrainCollisionChanged", "classComplexMissionItem.html#af965e0f1a910aabf98bc1a851f41effb", null ],
     [ "addKMLVisuals", "classComplexMissionItem.html#af25794a4475fd73e2a2dbfce466b9db4", null ],
+    [ "applyPreviousAltitudeFrame", "classComplexMissionItem.html#a6ab7eff02514f7504fa44c732a8c11d1", null ],
     [ "boundingCubeChanged", "classComplexMissionItem.html#a2dc4be65caa8c082c45f0ce51e7e08ae", null ],
     [ "complexDistance", "classComplexMissionItem.html#aaaded5288540ace5a5037edc1bc80a24", null ],
     [ "complexDistanceChanged", "classComplexMissionItem.html#ad4d91bd22520d38c11f68aa26ce8d4c1", null ],

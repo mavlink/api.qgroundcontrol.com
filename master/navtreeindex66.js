@@ -1,5 +1,6 @@
 var NAVTREEINDEX66 =
 {
+"structsatellite__info__s.html#a697de46f0c45d666b3a7314a1adb127e":[2,0,463,5],
 "structsatellite__info__s.html#a6b75b4cba4c90df17b66cf74b93070e0":[2,0,463,6],
 "structsatellite__info__s.html#a73fe86806f7ca49d9e0a37fd9a19f5e5":[2,0,463,8],
 "structsatellite__info__s.html#a8e5e9a78bcff69115dd488aa4426b243":[2,0,463,7],

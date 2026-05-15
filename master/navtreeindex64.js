@@ -1,5 +1,6 @@
 var NAVTREEINDEX64 =
 {
+"structMixer_1_1ActuatorType.html#a889f20cf81593ab0d7b09ef2a4be65c2":[2,0,10,0,1],
 "structMixer_1_1ActuatorType_1_1Values.html":[2,0,10,0,0],
 "structMixer_1_1ActuatorType_1_1Values.html":[1,0,23,0,0],
 "structMixer_1_1ActuatorType_1_1Values.html#a842b7f2a94af8bbdba36e7d511928bff":[2,0,10,0,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX64 =
 "structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76a4422f0e8526579b457d472a6f9ac4835":[2,0,13,0,0,2],
 "structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76a4422f0e8526579b457d472a6f9ac4835":[1,0,27,0,0,2],
 "structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76a902b0d55fddef6f8d651fe1035b7d4bd":[2,0,13,0,0,1],
-"structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76a902b0d55fddef6f8d651fe1035b7d4bd":[1,0,27,0,0,1],
-"structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76aa60852f204ed8028c1c58808b746d115":[2,0,13,0,0,0]
+"structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76a902b0d55fddef6f8d651fe1035b7d4bd":[1,0,27,0,0,1]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX13 =
 {
-"QGCPopupDialog_8qml.html":[3,0,0,20,106],
 "QGCPopupDialog_8qml_source.html":[3,0,0,20,106],
 "QGCQGeoCoordinate_8cc.html":[3,0,0,20,108],
 "QGCQGeoCoordinate_8cc_source.html":[3,0,0,20,108],
@@ -249,5 +248,6 @@ var NAVTREEINDEX13 =
 "RadioComponentController_8cc_source.html":[3,0,0,4,1,15],
 "RadioComponentController_8h.html":[3,0,0,4,1,16],
 "RadioComponentController_8h_source.html":[3,0,0,4,1,16],
-"RadioComponent_8qml.html":[3,0,0,4,1,14]
+"RadioComponent_8qml.html":[3,0,0,4,1,14],
+"RadioComponent_8qml_source.html":[3,0,0,4,1,14]
 };

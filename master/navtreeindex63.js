@@ -1,5 +1,6 @@
 var NAVTREEINDEX63 =
 {
+"structAndroidSerial_1_1JniMethodCache.html#a35b65e5d9ab4823299b703de1ec2ecef":[1,0,5,1,2],
 "structAndroidSerial_1_1JniMethodCache.html#a35b65e5d9ab4823299b703de1ec2ecef":[2,0,5,1,2],
 "structAndroidSerial_1_1JniMethodCache.html#a3bdbdd2608f9b0cb776c1a9fe6438b57":[2,0,5,1,7],
 "structAndroidSerial_1_1JniMethodCache.html#a3bdbdd2608f9b0cb776c1a9fe6438b57":[1,0,5,1,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX63 =
 "structMixer_1_1ActuatorType.html#a2d6b81e437f5ce7988b40d27c9c37ba3":[1,0,23,0,3],
 "structMixer_1_1ActuatorType.html#a4eb292e79dfa601d2fb8098cf927f3e5":[1,0,23,0,4],
 "structMixer_1_1ActuatorType.html#a4eb292e79dfa601d2fb8098cf927f3e5":[2,0,10,0,4],
-"structMixer_1_1ActuatorType.html#a889f20cf81593ab0d7b09ef2a4be65c2":[1,0,23,0,1],
-"structMixer_1_1ActuatorType.html#a889f20cf81593ab0d7b09ef2a4be65c2":[2,0,10,0,1]
+"structMixer_1_1ActuatorType.html#a889f20cf81593ab0d7b09ef2a4be65c2":[1,0,23,0,1]
 };

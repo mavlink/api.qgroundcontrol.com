@@ -11,7 +11,7 @@ var searchData=
   ['rallygroupindex_8',['rallyGroupIndex',['../classMissionController.html#ad9d919b96e6d7e6c259c38c1628d48a4',1,'MissionController']]],
   ['rallypoint_9',['rallypoint',['../classRallyPoint.html#a913aa78cbd6b5c7e05f3da227dda0e45',1,'RallyPoint::RallyPoint(const QGeoCoordinate &amp;coordinate, QObject *parent=nullptr)'],['../classRallyPoint.html#af55afcb15f4e5c11a29acac8e35edda4',1,'RallyPoint::RallyPoint(const RallyPoint &amp;other, QObject *parent=nullptr)']]],
   ['rallypointcontroller_10',['rallypointcontroller',['../classRallyPointController.html#a0b4cc92062eece685346b2d0fb3095e8',1,'RallyPointController::RallyPointController()'],['../classPlanMasterController.html#a6e74fe8a73e04fcc70c053a1a241f1f8',1,'PlanMasterController::rallyPointController()']]],
-  ['rallypointmanager_11',['rallypointmanager',['../classRallyPointManager.html#aa6f28354deeb72b5e302895812584eed',1,'RallyPointManager::RallyPointManager()'],['../classVehicle.html#ac047fc15aec1704e58a2ea4b726f0925',1,'Vehicle::rallyPointManager()']]],
+  ['rallypointmanager_11',['rallypointmanager',['../classVehicle.html#ac047fc15aec1704e58a2ea4b726f0925',1,'Vehicle::rallyPointManager()'],['../classRallyPointManager.html#aa6f28354deeb72b5e302895812584eed',1,'RallyPointManager::RallyPointManager()']]],
   ['rangecolors_12',['rangeColors',['../classInstrumentValueData.html#a793b089937385235b38a76804c8cf59a',1,'InstrumentValueData']]],
   ['rangecolorschanged_13',['rangeColorsChanged',['../classInstrumentValueData.html#aba527b4e1cc326485f22513804f18e7f',1,'InstrumentValueData']]],
   ['rangeicons_14',['rangeIcons',['../classInstrumentValueData.html#ae873b145d5ed8208751701f4eed08513',1,'InstrumentValueData']]],

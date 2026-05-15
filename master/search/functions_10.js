@@ -28,7 +28,7 @@ var searchData=
   ['parametereditorgroup_25',['ParameterEditorGroup',['../classParameterEditorGroup.html#a7010c21c9691ee62bed72835f2b1700d',1,'ParameterEditorGroup']]],
   ['parameterexists_26',['parameterexists',['../classFactPanelController.html#abfd8493f4409e58fc9968f9122774268',1,'FactPanelController::parameterExists()'],['../classParameterManager.html#a01508e3d9f8b288c2b8c2f5b2ffb6377',1,'ParameterManager::parameterExists()']]],
   ['parameterfileextension_27',['parameterFileExtension',['../classQGroundControlQmlGlobal.html#ac0bda5b0c6fe6e26f6f8ab1261f886a7',1,'QGroundControlQmlGlobal']]],
-  ['parametermanager_28',['parametermanager',['../classVehicle.html#aa95afb086124549292e14497ee0a0315',1,'Vehicle::parameterManager() const'],['../classVehicle.html#ac79367e12a17e97e7c01fb0c861e518e',1,'Vehicle::parameterManager()'],['../classParameterManager.html#a443a10c07a173a93b7830466bce7a43f',1,'ParameterManager::ParameterManager()']]],
+  ['parametermanager_28',['parametermanager',['../classParameterManager.html#a443a10c07a173a93b7830466bce7a43f',1,'ParameterManager::ParameterManager()'],['../classVehicle.html#aa95afb086124549292e14497ee0a0315',1,'Vehicle::parameterManager() const'],['../classVehicle.html#ac79367e12a17e97e7c01fb0c861e518e',1,'Vehicle::parameterManager()']]],
   ['parametermetadata_29',['ParameterMetaData',['../classParameterMetaData.html#a975a428572243551974ab2a7db879869',1,'ParameterMetaData']]],
   ['parameternames_30',['parameterNames',['../classParameterManager.html#a7f8fc22b84cbb433d471e735538f68c7',1,'ParameterManager']]],
   ['parameterreadyvehicleavailablechanged_31',['parameterReadyVehicleAvailableChanged',['../classMultiVehicleManager.html#a8133c80d0eff8f171e142a0093eca5b6',1,'MultiVehicleManager']]],

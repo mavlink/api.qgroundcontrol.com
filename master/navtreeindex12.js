@@ -1,6 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"QGCMAVLink_8cc_source.html":[3,0,0,16,10],
 "QGCMAVLink_8h.html":[3,0,0,16,11],
 "QGCMAVLink_8h_source.html":[3,0,0,16,11],
 "QGCMapCircleVisuals_8qml.html":[3,0,0,9,0,8],
@@ -249,5 +248,6 @@ var NAVTREEINDEX12 =
 "QGCPitchIndicator_8qml.html":[3,0,0,9,1,12],
 "QGCPitchIndicator_8qml_source.html":[3,0,0,9,1,12],
 "QGCPopupDialogFactory_8qml.html":[3,0,0,20,107],
-"QGCPopupDialogFactory_8qml_source.html":[3,0,0,20,107]
+"QGCPopupDialogFactory_8qml_source.html":[3,0,0,20,107],
+"QGCPopupDialog_8qml.html":[3,0,0,20,106]
 };

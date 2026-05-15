@@ -1,6 +1,5 @@
 var NAVTREEINDEX9 =
 {
-"ObjectItemModelBase_8h_source.html":[3,0,0,20,48],
 "ObjectListModelBase_8cc.html":[3,0,0,20,49],
 "ObjectListModelBase_8cc_source.html":[3,0,0,20,49],
 "ObjectListModelBase_8h.html":[3,0,0,20,50],
@@ -249,5 +248,6 @@ var NAVTREEINDEX9 =
 "Platform_8h.html#a47c9e42710d883700596e8acc3bcaae4":[3,0,0,25,13,2,2],
 "Platform_8h.html#a7a8cdd24323060a25af6d64764743c8c":[3,0,0,25,13,2,1],
 "Platform_8h.html#afc5c30b79fec330ef978e5ae6b1a79b8":[3,0,0,25,13,2,3],
-"Platform_8h_source.html":[3,0,0,25,13,2]
+"Platform_8h_source.html":[3,0,0,25,13,2],
+"PositionManager_8cpp.html":[3,0,0,19,0]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX18 =
 {
-"classAPMDataFlashLogParser.html#a780c9b0ee529e5484e50c7bdead8399b":[2,0,41,6],
 "classAPMDataFlashLogParser.html#a79a25ebc1e53f8db00689039b4b5dd25":[2,0,41,2],
 "classAPMDataFlashLogParser.html#a8660e812110ac07e3f5deced581a5216":[2,0,41,7],
 "classAPMDataFlashLogParser.html#a929ca68f741c6a5a63c01ea1f89007d9":[2,0,41,8],
@@ -249,5 +248,6 @@ var NAVTREEINDEX18 =
 "classAPMRemoteSupportComponent.html#ad03d02baef0f15b1c70c813d94f0e015":[2,0,63,4],
 "classAPMRemoteSupportComponent.html#af0a8352788404fd9bc5701fad1b10d6c":[2,0,63,8],
 "classAPMRemoteSupportComponent.html#af18d793c317d439abd99ead24dc9a264":[2,0,63,3],
-"classAPMSafetyComponent.html":[2,0,65]
+"classAPMSafetyComponent.html":[2,0,65],
+"classAPMSafetyComponent.html#a2988bb819cd3fccf2fa9ea44117e059b":[2,0,65,8]
 };

@@ -120,7 +120,7 @@ var searchData=
   ['logandstop_117',['logAndStop',['../namespaceErrorHandlers.html#abe4e06cdc726e154f3495c7f2d0e8f8e',1,'ErrorHandlers']]],
   ['logdata_118',['logData',['../classVehicle.html#aff07ae368c65c008b7f6f289ecb99e39',1,'Vehicle']]],
   ['logdownloadfile_119',['logDownloadFile',['../classMockLink.html#a91a0398367424cd0568865510f004c54',1,'MockLink']]],
-  ['logentry_120',['logentry',['../structLogEntry.html#ab873d780539f6a4d5a0785474bf89137',1,'LogEntry::LogEntry()=default'],['../structLogEntry.html#a645b8ef1e648fb4f208e0aad9277d6cc',1,'LogEntry::LogEntry(const LogEntry &amp;)=default'],['../structLogEntry.html#a1e1317f853cd529354ee6c7709cd0ffe',1,'LogEntry::LogEntry(LogEntry &amp;&amp;) noexcept=default'],['../classVehicle.html#a4f34f18b23edaec3794deed9d8602470',1,'Vehicle::logEntry()']]],
+  ['logentry_120',['logentry',['../classVehicle.html#a4f34f18b23edaec3794deed9d8602470',1,'Vehicle::logEntry()'],['../structLogEntry.html#ab873d780539f6a4d5a0785474bf89137',1,'LogEntry::LogEntry()=default'],['../structLogEntry.html#a645b8ef1e648fb4f208e0aad9277d6cc',1,'LogEntry::LogEntry(const LogEntry &amp;)=default'],['../structLogEntry.html#a1e1317f853cd529354ee6c7709cd0ffe',1,'LogEntry::LogEntry(LogEntry &amp;&amp;) noexcept=default']]],
   ['logevent_121',['logEvent',['../classStateMachineLogger.html#ac28c6ed9f4b45cc77b237b7d7b8fa7c0',1,'StateMachineLogger']]],
   ['logfilechanged_122',['logFileChanged',['../classGeoTagController.html#ab0fb946c3bf22054e9829e05359c3cfe',1,'GeoTagController']]],
   ['logfilename_123',['logFilename',['../classLogReplayConfiguration.html#aaf4de41c5bbfb05bc8e0f39d9cdf2b22',1,'LogReplayConfiguration']]],

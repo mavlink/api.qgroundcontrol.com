@@ -1,6 +1,5 @@
 var NAVTREEINDEX10 =
 {
-"PositionManager_8cpp.html":[3,0,0,19,0],
 "PositionManager_8cpp.html#a2a2c9810117bee409aeb8b1e5af870dd":[3,0,0,19,0,0],
 "PositionManager_8cpp_source.html":[3,0,0,19,0],
 "PositionManager_8h.html":[3,0,0,19,1],
@@ -249,5 +248,6 @@ var NAVTREEINDEX10 =
 "QGCCompression_8h.html#a9ed6795a888693588da89174b9f072f5aef01abce9646c28f96de24223e801024":[3,0,0,25,1,9,2,8],
 "QGCCompression_8h.html#a9ed6795a888693588da89174b9f072f5af1cd28417b03cfab3a8e16d66e34e18a":[3,0,0,25,1,9,2,3],
 "QGCCompression_8h.html#a9f94e257ac487939eba76cf1688daab1":[3,0,0,25,1,9,22],
-"QGCCompression_8h.html#aa39c757274d165b446f84c6481dc9f3b":[3,0,0,25,1,9,3]
+"QGCCompression_8h.html#aa39c757274d165b446f84c6481dc9f3b":[3,0,0,25,1,9,3],
+"QGCCompression_8h.html#aa4942c43b5f0c671c86f69dc29c4cff2":[3,0,0,25,1,9,44]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX54 =
 {
+"classVehicleCameraControl.html#af460b97eecaa2242dfd56357f6fc9819":[2,0,561,22],
 "classVehicleCameraControl.html#af489e026f5b7d90adda5884f157910fb":[2,0,561,185],
 "classVehicleCameraControl.html#af4f9ed6296483017247decc69ac5e22a":[2,0,561,38],
 "classVehicleCameraControl.html#af6d0775df79286e533f04d44972bcffe":[2,0,561,168],
@@ -248,6 +249,5 @@ var NAVTREEINDEX54 =
 "classVideoReceiver.html#a5d59f0ae0f87a78c82cf3a8a14034c50":[2,0,586,40],
 "classVideoReceiver.html#a60d5723ffb077db7ff12c4e3bfa44315":[2,0,586,8],
 "classVideoReceiver.html#a6282abbccfb1c1e6785b3809a494d896":[2,0,586,41],
-"classVideoReceiver.html#a63d93233ba1495ae195ba67372dbdc7c":[2,0,586,56],
-"classVideoReceiver.html#a67b05da9eec029166c14bc23812b913b":[2,0,586,18]
+"classVideoReceiver.html#a63d93233ba1495ae195ba67372dbdc7c":[2,0,586,56]
 };

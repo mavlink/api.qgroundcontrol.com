@@ -36,7 +36,7 @@ var searchData=
   ['weaklinkconfigurationptr_33',['WeakLinkConfigurationPtr',['../LinkConfiguration_8h.html#a8e7345f84b61f9de9ad4c9fc219ee5c0',1,'LinkConfiguration.h']]],
   ['weaklinkinterfaceptr_34',['WeakLinkInterfacePtr',['../LinkInterface_8h.html#a3481cd0035d068c8fcd68477ce46e46b',1,'LinkInterface.h']]],
   ['weather_5fvane_5fenable_35',['WEATHER_VANE_ENABLE',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a39d8312d36978b7010330181b824b5a5',1,'APM']]],
-  ['weightunits_36',['weightunits',['../classUnitsSettings.html#a89848113b6875473ba4714c6dcb35aab',1,'UnitsSettings::weightUnits()'],['../classUnitsSettings.html#ac20f65142b912f441f0d035f51500c67',1,'UnitsSettings::WeightUnits']]],
+  ['weightunits_36',['weightunits',['../classUnitsSettings.html#ac20f65142b912f441f0d035f51500c67',1,'UnitsSettings::WeightUnits'],['../classUnitsSettings.html#a89848113b6875473ba4714c6dcb35aab',1,'UnitsSettings::weightUnits()']]],
   ['weightunitsgrams_37',['WeightUnitsGrams',['../classUnitsSettings.html#ac20f65142b912f441f0d035f51500c67a165405f361f88edf41ae264059b8de1e',1,'UnitsSettings']]],
   ['weightunitskg_38',['WeightUnitsKg',['../classUnitsSettings.html#ac20f65142b912f441f0d035f51500c67adaf5c210fdd7b765636acb29a07e1113',1,'UnitsSettings']]],
   ['weightunitslbs_39',['WeightUnitsLbs',['../classUnitsSettings.html#ac20f65142b912f441f0d035f51500c67a66f9b80ffe06e2f27ba25e7a14354e0c',1,'UnitsSettings']]],

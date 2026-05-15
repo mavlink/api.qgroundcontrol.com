@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('classLogViewerParamMetaData.html','');
 </div><!--header-->
 <div class="contents">
 
-<p>Helper that enriches parameter rows with metadata from the bundled.  
+<p>Enriches log parameter rows with metadata from bundled PX4 / <a class="el" href="namespaceAPM.html">APM</a> <a class="el" href="classFactMetaData.html" title="Holds the meta data associated with a Fact.">FactMetaData</a> JSON files.  
  <a href="classLogViewerParamMetaData.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="LogViewerParamMetaData_8h_source.html">LogViewerParamMetaData.h</a>&gt;</code></p>
@@ -105,16 +105,14 @@ $(document).ready(function(){initNavTree('classLogViewerParamMetaData.html','');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:afd223e9cd36d65287c70f70fb552825a" id="r_afd223e9cd36d65287c70f70fb552825a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogViewerParamMetaData.html#afd223e9cd36d65287c70f70fb552825a">enrichForPX4</a> (QVariantList &amp;parameters)</td></tr>
-<tr class="memdesc:afd223e9cd36d65287c70f70fb552825a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enrich parameters from a PX4 ULog file.  <br /></td></tr>
 <tr class="separator:afd223e9cd36d65287c70f70fb552825a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd20bbc04441af3630bfa3ac7ca0ba1f" id="r_afd20bbc04441af3630bfa3ac7ca0ba1f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogViewerParamMetaData.html#afd20bbc04441af3630bfa3ac7ca0ba1f">enrichForAPM</a> (QVariantList &amp;parameters, const QString &amp;vehicleType, int major, int minor)</td></tr>
 <tr class="separator:afd20bbc04441af3630bfa3ac7ca0ba1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Helper that enriches parameter rows with metadata from the bundled. </p>
-<p>PX4 / <a class="el" href="namespaceAPM.html">APM</a> <a class="el" href="classFactMetaData.html" title="Holds the meta data associated with a Fact. This is kept in a separate object from the Fact itself.">FactMetaData</a> JSON files. Each row in <em>parameters</em> is a QVariantMap; on return the following keys are added (or left absent if no metadata was found for that parameter): decimalPlaces int — from <a class="el" href="classFactMetaData.html#a71f3fe8ffb6792727f72dd62c7d76797">FactMetaData::decimalPlaces()</a>; -1 = unknown units QString — raw unit string (e.g. "m/s") shortDescription QString — one-line summary enumStrings QStringList — ordered enum labels (empty if not an enum) enumValues QVariantList — corresponding numeric values (parallel array) </p>
+<div class="textblock"><p>Enriches log parameter rows with metadata from bundled PX4 / <a class="el" href="namespaceAPM.html">APM</a> <a class="el" href="classFactMetaData.html" title="Holds the meta data associated with a Fact.">FactMetaData</a> JSON files. </p>
 
-<p class="definition">Definition at line <a class="el" href="LogViewerParamMetaData_8h_source.html#l00017">17</a> of file <a class="el" href="LogViewerParamMetaData_8h_source.html">LogViewerParamMetaData.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LogViewerParamMetaData_8h_source.html#l00008">8</a> of file <a class="el" href="LogViewerParamMetaData_8h_source.html">LogViewerParamMetaData.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="afd20bbc04441af3630bfa3ac7ca0ba1f" name="afd20bbc04441af3630bfa3ac7ca0ba1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd20bbc04441af3630bfa3ac7ca0ba1f">&#9670;&#160;</a></span>enrichForAPM()</h2>
@@ -161,7 +159,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Enrich parameters from an <a class="el" href="namespaceAPM.html">APM</a> DataFlash file. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Enrich parameters from an <a class="el" href="namespaceAPM.html">APM</a> DataFlash file. Adds the same keys as <a class="el" href="classLogViewerParamMetaData.html#afd223e9cd36d65287c70f70fb552825a">enrichForPX4()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">vehicleType</td><td><a class="el" href="namespaceAPM.html">APM</a> vehicle name: "ArduCopter", "ArduPlane", "ArduRover", "ArduSub" </td></tr>
     <tr><td class="paramname">major</td><td>/ minor Firmware version numbers parsed from the log (pass -1 if unknown). </td></tr>
@@ -169,7 +167,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="LogViewerParamMetaData_8cc_source.html#l00101">101</a> of file <a class="el" href="LogViewerParamMetaData_8cc_source.html">LogViewerParamMetaData.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LogViewerParamMetaData_8cc_source.html#l00108">108</a> of file <a class="el" href="LogViewerParamMetaData_8cc_source.html">LogViewerParamMetaData.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="ParameterMetaData_8cc_source.html#l00026">ParameterMetaData::loadParameterFactMetaDataFile()</a>.</p>
 
@@ -198,10 +196,10 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Enrich parameters from a PX4 ULog file.</p>
+<p>Each entry in <em>parameters</em> is a QVariantMap. On return the following keys are added (or left absent if no metadata was found for that parameter): decimalPlaces int — from <a class="el" href="classFactMetaData.html#a71f3fe8ffb6792727f72dd62c7d76797">FactMetaData::decimalPlaces()</a>; -1 = unknown units QString — raw unit string (e.g. "m/s") shortDescription QString — one-line summary enumStrings QStringList — ordered enum labels (empty if not an enum) enumValues QVariantList — corresponding numeric values (parallel array) </p>
 
-<p>Enrich parameters from a PX4 ULog file. </p>
-
-<p class="definition">Definition at line <a class="el" href="LogViewerParamMetaData_8cc_source.html#l00086">86</a> of file <a class="el" href="LogViewerParamMetaData_8cc_source.html">LogViewerParamMetaData.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LogViewerParamMetaData_8cc_source.html#l00092">92</a> of file <a class="el" href="LogViewerParamMetaData_8cc_source.html">LogViewerParamMetaData.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="ParameterMetaData_8cc_source.html#l00026">ParameterMetaData::loadParameterFactMetaDataFile()</a>.</p>
 

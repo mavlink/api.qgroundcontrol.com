@@ -1,5 +1,6 @@
 var NAVTREEINDEX60 =
 {
+"namespaceQGCCompression.html#a25eeeed4d955de8ce6f0f9bce3741712":[1,0,28,34],
 "namespaceQGCCompression.html#a2a3d391b5552565f7057d7a433f9d0a2":[1,0,28,36],
 "namespaceQGCCompression.html#a31b317a56a2a66a39df0f0dc5253d1e0":[1,0,28,2],
 "namespaceQGCCompression.html#a3fbe4533962246a46fdc28c8343f92ab":[1,0,28,46],
@@ -248,6 +249,5 @@ var NAVTREEINDEX60 =
 "namespaceQGClibarchive.html#a3f235172856de8ccbc823ad6daf4c353":[1,0,32,27],
 "namespaceQGClibarchive.html#a3fc66c08e89b31289dcb88e480e76222":[1,0,32,11],
 "namespaceQGClibarchive.html#a4beb0c74c9f715f0ae34e240586c64ac":[1,0,32,21],
-"namespaceQGClibarchive.html#a60a47226e0add3ba3361e12b5eb8d66d":[1,0,32,29],
-"namespaceQGClibarchive.html#a6299729e369a7305306a32891e4a1775":[1,0,32,6]
+"namespaceQGClibarchive.html#a60a47226e0add3ba3361e12b5eb8d66d":[1,0,32,29]
 };

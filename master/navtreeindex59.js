@@ -1,5 +1,6 @@
 var NAVTREEINDEX59 =
 {
+"namespaceAndroidSerial.html#abbca01b5a5314507ebdabd656cb7011b":[1,0,5,34],
 "namespaceAndroidSerial.html#ac10a477f82119b5378c4b2b028d5191c":[1,0,5,54],
 "namespaceAndroidSerial.html#ac2b1fed8d763d53c184a0277b1f055b7":[1,0,5,14],
 "namespaceAndroidSerial.html#acc24ae6d84e04349cb77f2c2b4c72dd8":[1,0,5,26],
@@ -248,6 +249,5 @@ var NAVTREEINDEX59 =
 "namespaceQGCCompression.html#a14e77386e025cffbd91c75d4387b4683":[1,0,28,24],
 "namespaceQGCCompression.html#a1734b7c486b7f90a0ff1e80c97fe9502":[1,0,28,57],
 "namespaceQGCCompression.html#a1d53b50e448de68e0a22683e0b91f5ea":[1,0,28,23],
-"namespaceQGCCompression.html#a1ecc29aedf734bf8ca80e52addac1546":[1,0,28,12],
-"namespaceQGCCompression.html#a25eeeed4d955de8ce6f0f9bce3741712":[1,0,28,34]
+"namespaceQGCCompression.html#a1ecc29aedf734bf8ca80e52addac1546":[1,0,28,12]
 };

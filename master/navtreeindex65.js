@@ -1,5 +1,6 @@
 var NAVTREEINDEX65 =
 {
+"structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76aa60852f204ed8028c1c58808b746d115":[2,0,13,0,0,0],
 "structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76aa60852f204ed8028c1c58808b746d115":[1,0,27,0,0,0],
 "structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76ad428967e359164ab69b6f7c1d891afea":[1,0,27,0,0,3],
 "structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76ad428967e359164ab69b6f7c1d891afea":[2,0,13,0,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX65 =
 "structsatellite__info__s.html#a070df7bedb74dc84bb1fa731ad302b3d":[2,0,463,4],
 "structsatellite__info__s.html#a1eacbb737df0746b93520a734a1c6776":[2,0,463,2],
 "structsatellite__info__s.html#a30b44cbbc2aef9b6910fc4a6d7eefaab":[2,0,463,1],
-"structsatellite__info__s.html#a57a11ba5c1a3f3e0434d3f4d179ca65b":[2,0,463,3],
-"structsatellite__info__s.html#a697de46f0c45d666b3a7314a1adb127e":[2,0,463,5]
+"structsatellite__info__s.html#a57a11ba5c1a3f3e0434d3f4d179ca65b":[2,0,463,3]
 };

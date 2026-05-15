@@ -1,5 +1,6 @@
 var NAVTREEINDEX62 =
 {
+"qserialportinfo_8h_source.html":[3,0,0,2,0,6],
 "qserialportinfo__android_8cpp.html":[3,0,0,2,0,7],
 "qserialportinfo__android_8cpp.html#a326bbf8378557e6977a0b9cbb3127de6":[3,0,0,2,0,7,0],
 "qserialportinfo__android_8cpp.html#a85ed707e038b78520bc134c2cbb8672b":[3,0,0,2,0,7,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX62 =
 "structAndroidSerial_1_1JniMethodCache.html#a24eeea2f728e69ad89d4bec58cf7d1c5":[1,0,5,1,17],
 "structAndroidSerial_1_1JniMethodCache.html#a24eeea2f728e69ad89d4bec58cf7d1c5":[2,0,5,1,17],
 "structAndroidSerial_1_1JniMethodCache.html#a28b2e5a7e599f83f152a28666e8f5980":[1,0,5,1,18],
-"structAndroidSerial_1_1JniMethodCache.html#a28b2e5a7e599f83f152a28666e8f5980":[2,0,5,1,18],
-"structAndroidSerial_1_1JniMethodCache.html#a35b65e5d9ab4823299b703de1ec2ecef":[1,0,5,1,2]
+"structAndroidSerial_1_1JniMethodCache.html#a28b2e5a7e599f83f152a28666e8f5980":[2,0,5,1,18]
 };

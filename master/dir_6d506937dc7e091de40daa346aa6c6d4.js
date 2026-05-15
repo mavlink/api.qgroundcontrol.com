@@ -11,6 +11,6 @@ var dir_6d506937dc7e091de40daa346aa6c6d4 =
     [ "MAVLinkMessageButton.qml", "MAVLinkMessageButton_8qml.html", null ],
     [ "MAVLinkMessageField.cc", "MAVLinkMessageField_8cc.html", null ],
     [ "MAVLinkMessageField.h", "MAVLinkMessageField_8h.html", "MAVLinkMessageField_8h" ],
-    [ "MAVLinkSystem.cc", "MAVLinkSystem_8cc.html", "MAVLinkSystem_8cc" ],
+    [ "MAVLinkSystem.cc", "MAVLinkSystem_8cc.html", null ],
     [ "MAVLinkSystem.h", "MAVLinkSystem_8h.html", "MAVLinkSystem_8h" ]
 ];

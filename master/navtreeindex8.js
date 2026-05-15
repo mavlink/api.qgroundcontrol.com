@@ -7,7 +7,6 @@ var NAVTREEINDEX8 =
 "MAVLinkStreamConfig_8h.html":[3,0,0,16,9],
 "MAVLinkStreamConfig_8h_source.html":[3,0,0,16,9],
 "MAVLinkSystem_8cc.html":[3,0,0,1,3,11],
-"MAVLinkSystem_8cc.html#a15034e647bee46c8bcc25d8db59240c4":[3,0,0,1,3,11,0],
 "MAVLinkSystem_8cc_source.html":[3,0,0,1,3,11],
 "MAVLinkSystem_8h.html":[3,0,0,1,3,12],
 "MAVLinkSystem_8h_source.html":[3,0,0,1,3,12],
@@ -249,5 +248,6 @@ var NAVTREEINDEX8 =
 "NtripServerSettings_8qml_source.html":[3,0,0,24,0,14],
 "ObjectItemModelBase_8cc.html":[3,0,0,20,47],
 "ObjectItemModelBase_8cc_source.html":[3,0,0,20,47],
-"ObjectItemModelBase_8h.html":[3,0,0,20,48]
+"ObjectItemModelBase_8h.html":[3,0,0,20,48],
+"ObjectItemModelBase_8h_source.html":[3,0,0,20,48]
 };

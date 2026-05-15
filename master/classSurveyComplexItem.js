@@ -11,6 +11,7 @@ var classSurveyComplexItem =
     [ "SurveyComplexItem", "classSurveyComplexItem.html#a9646745ba3558ca7cfbcecc03a7a9a55", null ],
     [ "abbreviation", "classSurveyComplexItem.html#ac4652358372fc5201121b4fee42c1c23", null ],
     [ "additionalTimeDelay", "classSurveyComplexItem.html#a8ecb638d9fa07528b657ff353436315a", null ],
+    [ "applyPreviousAltitudeFrame", "classSurveyComplexItem.html#aa2338af6c84175b79e702ddb4a12ae83", null ],
     [ "centerCoordinate", "classSurveyComplexItem.html#a066452e4c8eee60b274c299123af047e", null ],
     [ "commandDescription", "classSurveyComplexItem.html#ad12c42d4453eb39891c3ec9938e40efe", null ],
     [ "commandName", "classSurveyComplexItem.html#a6c568a561061e45ce30c423fe3eaccf2", null ],

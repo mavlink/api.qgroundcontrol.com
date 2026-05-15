@@ -154,7 +154,7 @@ var searchData=
   ['homepositionset_151',['homePositionSet',['../classMissionController.html#aac542af9c2bce5b54e9c6446b61b4062',1,'MissionController']]],
   ['homepositionsetchanged_152',['homePositionSetChanged',['../classMissionController.html#a45120da63cc76ad1c9898d980fdc681e',1,'MissionController']]],
   ['horizontalcompassattitude_2eqml_153',['HorizontalCompassAttitude.qml',['../HorizontalCompassAttitude_8qml.html',1,'']]],
-  ['horizontaldistanceunits_154',['horizontaldistanceunits',['../classUnitsSettings.html#abe71c04ecc489c0664a58af58384db75',1,'UnitsSettings::horizontalDistanceUnits()'],['../classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1',1,'UnitsSettings::HorizontalDistanceUnits']]],
+  ['horizontaldistanceunits_154',['horizontaldistanceunits',['../classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1',1,'UnitsSettings::HorizontalDistanceUnits'],['../classUnitsSettings.html#abe71c04ecc489c0664a58af58384db75',1,'UnitsSettings::horizontalDistanceUnits()']]],
   ['horizontaldistanceunitsfeet_155',['HorizontalDistanceUnitsFeet',['../classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1a3d129896f5fe9a1911b4df07092e2cf1',1,'UnitsSettings']]],
   ['horizontaldistanceunitsmeters_156',['HorizontalDistanceUnitsMeters',['../classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1a4df12cbe00884399b8cfd66642230a12',1,'UnitsSettings']]],
   ['horizontaldistanceunitsname_157',['horizontalDistanceUnitsName',['../classUnitsSettings.html#adc64f4d53818507e493556eaf8da5a03',1,'UnitsSettings']]],

@@ -1,6 +1,5 @@
 var NAVTREEINDEX21 =
 {
-"classAppSettings.html#adce838b9cad5f82eb254761789c98633":[2,0,74,56],
 "classAppSettings.html#add17021815a94cda0da7e7040d75c0ef":[2,0,74,63],
 "classAppSettings.html#adefe8b783ef97090ffe3f34af21f1f14":[2,0,74,123],
 "classAppSettings.html#ae37543f2da261c87575dc1edf19f23f4":[2,0,74,69],
@@ -249,5 +248,6 @@ var NAVTREEINDEX21 =
 "classBluetoothClassicWorker.html":[2,0,96],
 "classBluetoothClassicWorker.html#a194649deb12137bd022fe5f2950f693f":[2,0,96,6],
 "classBluetoothClassicWorker.html#a3dbf8b1e82173605134ee383d94edb59":[2,0,96,7],
-"classBluetoothClassicWorker.html#a6ef230b301d346bc2c3824b56e306c40":[2,0,96,1]
+"classBluetoothClassicWorker.html#a6ef230b301d346bc2c3824b56e306c40":[2,0,96,1],
+"classBluetoothClassicWorker.html#a73acc9abef4a8e31f287f60a6342ad24":[2,0,96,0]
 };

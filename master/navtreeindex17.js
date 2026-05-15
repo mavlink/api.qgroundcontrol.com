@@ -1,6 +1,5 @@
 var NAVTREEINDEX17 =
 {
-"VehicleMapItem_8qml.html":[3,0,0,9,0,12],
 "VehicleMapItem_8qml_source.html":[3,0,0,9,0,12],
 "VehicleMessageList_8qml.html":[3,0,0,24,2,28],
 "VehicleMessageList_8qml_source.html":[3,0,0,24,2,28],
@@ -249,5 +248,6 @@ var NAVTREEINDEX17 =
 "classAPMDataFlashLogParser.html#a29d3243a284c9717674c4c2520f66c13":[2,0,41,3],
 "classAPMDataFlashLogParser.html#a5285cb7b9910869caa83d5996a95ee4e":[2,0,41,1],
 "classAPMDataFlashLogParser.html#a65def3ffae72ec92bac0090d06e0574e":[2,0,41,4],
-"classAPMDataFlashLogParser.html#a72f3f8505322cb36c1e6d35559e2ac6a":[2,0,41,9]
+"classAPMDataFlashLogParser.html#a72f3f8505322cb36c1e6d35559e2ac6a":[2,0,41,9],
+"classAPMDataFlashLogParser.html#a780c9b0ee529e5484e50c7bdead8399b":[2,0,41,6]
 };
