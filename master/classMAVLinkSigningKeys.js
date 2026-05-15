@@ -21,5 +21,6 @@ var classMAVLinkSigningKeys =
     [ "removeAllKeys", "classMAVLinkSigningKeys.html#a562e7deb474f696fbc8d819c7ffd8a16", null ],
     [ "removeKey", "classMAVLinkSigningKeys.html#a8d3d437390f8f6f7de949b9d1b71340f", null ],
     [ "setPbkdf2IterationsForTesting", "classMAVLinkSigningKeys.html#aced4505f025c8f14e70da03539228704", null ],
-    [ "tryDetectKey", "classMAVLinkSigningKeys.html#aa2c305af61082c52ccf1f37ff5b7aba8", null ]
+    [ "tryDetectKey", "classMAVLinkSigningKeys.html#aa2c305af61082c52ccf1f37ff5b7aba8", null ],
+    [ "SigningTest", "classMAVLinkSigningKeys.html#a94ad48e2e9e359faf0187245648b37f9", null ]
 ];

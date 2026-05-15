@@ -10,6 +10,7 @@ var classActuators =
     [ "actuatorTest", "classActuators.html#a5520379d6faa72c3b045b2ae434c33ac", null ],
     [ "hasUnsetRequiredFunctions", "classActuators.html#abf7d87e611e9e8dcca9a4d8a3b27a286", null ],
     [ "hasUnsetRequiredFunctionsChanged", "classActuators.html#a249dbed48800f3823e1afd7c028066f8", null ],
+    [ "imageClicked", "classActuators.html#a863c6146522aa3ea4915a90b81a3a9fd", null ],
     [ "imageRefreshFlag", "classActuators.html#a5cc865d40729cee84f564ee4deeecf43", null ],
     [ "imageRefreshFlagChanged", "classActuators.html#a3e7fec6a5a1f1fdc1a64215c22c068dd", null ],
     [ "init", "classActuators.html#a8417a91bf0578b0d86c2ef6ffe4c471d", null ],
@@ -26,10 +27,10 @@ var classActuators =
     [ "motorAssignmentMessage", "classActuators.html#ad5bd3b3353227548a2102da9bc6c0130", null ],
     [ "motorAssignmentMessageChanged", "classActuators.html#a72af00e4ef7904cd3abccb39c92db7cf", null ],
     [ "parametersChanged", "classActuators.html#ab91d391acc2835dad9d1ca7780ed7c84", null ],
+    [ "selectActuatorOutput", "classActuators.html#a760484e1e1bb523ceb2826c98e387693", null ],
     [ "selectedActuatorOutput", "classActuators.html#a994e124da38b2a338c9e0fd8da581b1a", null ],
     [ "selectedActuatorOutputChanged", "classActuators.html#ae2434d12735c12d5b4b4cdacb5c15425", null ],
     [ "showUi", "classActuators.html#a36006580e5b213e1a4db38c484b282b6", null ],
-    [ "spinCurrentMotor", "classActuators.html#ac926c96659bc39644904fe1210f4365c", null ],
-    [ "startMotorAssignment", "classActuators.html#a8146c5fc89f7e7c1497f401f4a95f1eb", null ],
-    [ "selectActuatorOutput", "classActuators.html#a5c51784dd74d416ce98e96bc2d132b11", null ]
+    [ "spinCurrentMotor", "classActuators.html#ac2a49b6662a941dfd37fee007461e6f2", null ],
+    [ "startMotorAssignment", "classActuators.html#a8146c5fc89f7e7c1497f401f4a95f1eb", null ]
 ];

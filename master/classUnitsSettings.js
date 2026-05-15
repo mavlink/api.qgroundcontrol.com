@@ -33,19 +33,5 @@ var classUnitsSettings =
       [ "WeightUnitsOz", "classUnitsSettings.html#ac20f65142b912f441f0d035f51500c67a28fe7554b0509502e6cae7ef60c1f61d", null ],
       [ "WeightUnitsLbs", "classUnitsSettings.html#ac20f65142b912f441f0d035f51500c67a66f9b80ffe06e2f27ba25e7a14354e0c", null ]
     ] ],
-    [ "UnitsSettings", "classUnitsSettings.html#a95a2666f950037415dd2acf84714c35e", null ],
-    [ "areaUnits", "classUnitsSettings.html#af6090c39c7075f2c27a0837e08efe166", null ],
-    [ "horizontalDistanceUnits", "classUnitsSettings.html#abe71c04ecc489c0664a58af58384db75", null ],
-    [ "speedUnits", "classUnitsSettings.html#a992980e79b35745dc749a63fc7079aad", null ],
-    [ "temperatureUnits", "classUnitsSettings.html#ac4e990d5eb84b4d3a166c88d76204b45", null ],
-    [ "verticalDistanceUnits", "classUnitsSettings.html#aefb6e92c5807e43b864979c206ce7630", null ],
-    [ "weightUnits", "classUnitsSettings.html#a89848113b6875473ba4714c6dcb35aab", null ],
-    [ "areaUnitsName", "classUnitsSettings.html#aa48c404fbb3dacd92ea6268c70b29d6a", null ],
-    [ "horizontalDistanceUnitsName", "classUnitsSettings.html#adc64f4d53818507e493556eaf8da5a03", null ],
-    [ "name", "classUnitsSettings.html#a8669bea909013fde92eedba73190736d", null ],
-    [ "settingsGroup", "classUnitsSettings.html#a91110148fa4deed713d5846ff852c551", null ],
-    [ "speedUnitsName", "classUnitsSettings.html#acc808c193b0dad2b970126a75b86bacd", null ],
-    [ "temperatureUnitsName", "classUnitsSettings.html#a625c081e92e0417c4d42eef9f235c08a", null ],
-    [ "verticalDistanceUnitsName", "classUnitsSettings.html#a06e4184297f4da5b15274e5f9a0aaaf6", null ],
-    [ "weightUnitsName", "classUnitsSettings.html#ace631d6097e18b4cc34cd32e2426d4fb", null ]
+    [ "UnitsSettings", "classUnitsSettings.html#a95a2666f950037415dd2acf84714c35e", null ]
 ];

@@ -1,5 +1,7 @@
 var classQGCFlyViewOptions =
 [
+    [ "QGCFlyViewOptions", "classQGCFlyViewOptions.html#a1c3548adcf945aca562edc06338f880d", null ],
+    [ "~QGCFlyViewOptions", "classQGCFlyViewOptions.html#a305f1b3bed44fc3fb5aa83e3f88138a3", null ],
     [ "guidedBarShowEmergencyStop", "classQGCFlyViewOptions.html#a54dfe113b5adb64f6ceef32e90a6172a", null ],
     [ "guidedBarShowEmergencyStopChanged", "classQGCFlyViewOptions.html#aa7f6ab525dd12756d5c643fc571cdf6c", null ],
     [ "guidedBarShowOrbit", "classQGCFlyViewOptions.html#a332cef2ee2f0d23db17c9ee58a5cdf32", null ],

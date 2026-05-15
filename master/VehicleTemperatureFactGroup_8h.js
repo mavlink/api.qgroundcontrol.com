@@ -1,4 +1,4 @@
 var VehicleTemperatureFactGroup_8h =
 [
-    [ "VehicleTemperatureFactGroup", "classVehicleTemperatureFactGroup.html", null ]
+    [ "VehicleTemperatureFactGroup", "classVehicleTemperatureFactGroup.html", "classVehicleTemperatureFactGroup" ]
 ];

@@ -9,11 +9,12 @@ var searchData=
   ['jnilocalref_6',['JniLocalRef',['../classAndroidInterface_1_1JniLocalRef.html',1,'AndroidInterface']]],
   ['jnimethodcache_7',['JniMethodCache',['../structAndroidSerial_1_1JniMethodCache.html',1,'AndroidSerial']]],
   ['joystick_8',['Joystick',['../classJoystick.html',1,'']]],
-  ['joystickcomponent_9',['JoystickComponent',['../classJoystickComponent.html',1,'']]],
-  ['joystickconfigcontroller_10',['JoystickConfigController',['../classJoystickConfigController.html',1,'']]],
-  ['joysticklock_11',['JoystickLock',['../classSDLJoystick_1_1JoystickLock.html',1,'SDLJoystick']]],
-  ['joystickmanager_12',['JoystickManager',['../classJoystickManager.html',1,'']]],
-  ['joystickmanagersettings_13',['JoystickManagerSettings',['../classJoystickManagerSettings.html',1,'']]],
-  ['joysticksdl_14',['JoystickSDL',['../classJoystickSDL.html',1,'']]],
-  ['joysticksettings_15',['JoystickSettings',['../classJoystickSettings.html',1,'']]]
+  ['joystickaction_9',['JoystickAction',['../structQGCCorePlugin_1_1JoystickAction.html',1,'QGCCorePlugin']]],
+  ['joystickcomponent_10',['JoystickComponent',['../classJoystickComponent.html',1,'']]],
+  ['joystickconfigcontroller_11',['JoystickConfigController',['../classJoystickConfigController.html',1,'']]],
+  ['joysticklock_12',['JoystickLock',['../classSDLJoystick_1_1JoystickLock.html',1,'SDLJoystick']]],
+  ['joystickmanager_13',['JoystickManager',['../classJoystickManager.html',1,'']]],
+  ['joystickmanagersettings_14',['JoystickManagerSettings',['../classJoystickManagerSettings.html',1,'']]],
+  ['joysticksdl_15',['JoystickSDL',['../classJoystickSDL.html',1,'']]],
+  ['joysticksettings_16',['JoystickSettings',['../classJoystickSettings.html',1,'']]]
 ];

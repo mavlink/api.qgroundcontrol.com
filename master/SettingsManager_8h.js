@@ -1,4 +1,4 @@
 var SettingsManager_8h =
 [
-    [ "SettingsManager", "classSettingsManager.html", null ]
+    [ "SettingsManager", "classSettingsManager.html", "classSettingsManager" ]
 ];

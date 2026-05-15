@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"APMParameterMetaData_8h.html":[3,0,0,8,0,9],
+"APMParameterMetaData_8h_source.html":[3,0,0,8,0,9],
 "APMPowerComponentSummary_8qml.html":[3,0,0,4,0,64],
 "APMPowerComponentSummary_8qml_source.html":[3,0,0,4,0,64],
 "APMPowerComponent_8cc.html":[3,0,0,4,0,62],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "APM_8h.html#a38eecba0679940625d1b2985ac1a1c03afc7acc57380ea07472c8f4cd411c5057":[3,0,0,8,0,0,0,115],
 "APM_8h.html#a38eecba0679940625d1b2985ac1a1c03afcde91b8e0995cf0d6efb710138b8ca9":[3,0,0,8,0,0,0,116],
 "APM_8h.html#a38eecba0679940625d1b2985ac1a1c03afdcdb813144849b7e4f2883d7a8f3410":[3,0,0,8,0,0,0,164],
-"APM_8h.html#a38eecba0679940625d1b2985ac1a1c03afde19f5037b56f402641394498ae8ac7":[3,0,0,8,0,0,0,21],
-"APM_8h.html#a38eecba0679940625d1b2985ac1a1c03afe1abb92dbfdd1cb10e88dd17a69267a":[3,0,0,8,0,0,0,155],
-"APM_8h_source.html":[3,0,0,8,0,0]
+"APM_8h.html#a38eecba0679940625d1b2985ac1a1c03afde19f5037b56f402641394498ae8ac7":[3,0,0,8,0,0,0,21]
 };

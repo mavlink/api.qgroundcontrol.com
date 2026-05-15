@@ -37,5 +37,6 @@ var classGimbal =
     [ "yawLock", "classGimbal.html#a265862602acc6ccb5db97a8a7e2969a6", null ],
     [ "yawLockChanged", "classGimbal.html#ab2565cae87b60476f7d2a49927a74ef0", null ],
     [ "yawRate", "classGimbal.html#adceb3e38048db6841fcce7e01a6080a7", null ],
-    [ "yawRateChanged", "classGimbal.html#a02be81a249454fb9b0fd9a8a8d0ca29f", null ]
+    [ "yawRateChanged", "classGimbal.html#a02be81a249454fb9b0fd9a8a8d0ca29f", null ],
+    [ "GimbalController", "classGimbal.html#afdcdaa42022bcc930a1e0d7f8cc88cc1", null ]
 ];

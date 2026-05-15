@@ -32,7 +32,6 @@ var classFirmwareUpgradeController =
     [ "boardPort", "classFirmwareUpgradeController.html#a3f6de390396b74be7c394ae4862ae113", null ],
     [ "cancel", "classFirmwareUpgradeController.html#a7130c70acdff8e0a256aea06493df8fe", null ],
     [ "downloadingFirmwareListChanged", "classFirmwareUpgradeController.html#ae5c9911bc8bb4984dd1ee15e6492b7ae", null ],
-    [ "downloadingFirmwareListChanged", "classFirmwareUpgradeController.html#a5c737248866d63be8d03ccca3b840368", null ],
     [ "eraseStarted", "classFirmwareUpgradeController.html#ae16f99e86f3cf9409cb18fa4fdccfd1f", null ],
     [ "error", "classFirmwareUpgradeController.html#a6699180de24ac9df8593ed2e7a4fe1cc", null ],
     [ "firmwareTypeAsString", "classFirmwareUpgradeController.html#acf5e52fa2a6fcf9d4a31519e7d96bc26", null ],
@@ -56,6 +55,7 @@ var classFirmwareUpgradeController =
     [ "setSelectedFirmwareBuildType", "classFirmwareUpgradeController.html#ad743e5e4f66fb3f6ea694ed7ae9b8bd2", null ],
     [ "setStatusLog", "classFirmwareUpgradeController.html#afc0679164ad6635b19c61c367c6b37f4", null ],
     [ "showFirmwareSelectDlg", "classFirmwareUpgradeController.html#a8d05054501e872907893ec6cdec2a532", null ],
+    [ "startBoardSearch", "classFirmwareUpgradeController.html#a1cd0f36d3fa5ac449b998d51bd95a35b", null ],
     [ "statusLog", "classFirmwareUpgradeController.html#adf8fc73eaf69b65be9b50ccb3cd68d9c", null ],
     [ "vehicleTypeFromFirmwareSelectionIndex", "classFirmwareUpgradeController.html#a3ef4922ce6e62d65c9b55552114e95a9", null ]
 ];

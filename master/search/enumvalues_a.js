@@ -30,6 +30,13 @@ var searchData=
   ['kill_5fimu1_27',['KILL_IMU1',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a18496d78d33848bfa8d0ff5d3dc5de00',1,'APM']]],
   ['kill_5fimu2_28',['KILL_IMU2',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a099adfdf6cefa015358556df1c8963fd',1,'APM']]],
   ['kill_5fimu3_29',['KILL_IMU3',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03adf1a49969922130c18c16911e32503b5',1,'APM']]],
-  ['krspack_30',['kRspAck',['../classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ab5fa78f43fb90c08b344e8419459338f',1,'MavlinkFTP']]],
-  ['krspnak_31',['kRspNak',['../classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ae43f0c43517b9d27766398115ba9d499',1,'MavlinkFTP']]]
+  ['knownescvehiclecomponent_30',['KnownESCVehicleComponent',['../classAutoPilotPlugin.html#a36579eead1a0032bbebf1369d6d4c6acab106950964ac269ea1a5024b5e156c3b',1,'AutoPilotPlugin']]],
+  ['knownflightmodesvehiclecomponent_31',['KnownFlightModesVehicleComponent',['../classAutoPilotPlugin.html#a36579eead1a0032bbebf1369d6d4c6acaad519cc9d5f3750fca9cdfe6ccaed344',1,'AutoPilotPlugin']]],
+  ['knownjoystickvehiclecomponent_32',['KnownJoystickVehicleComponent',['../classAutoPilotPlugin.html#a36579eead1a0032bbebf1369d6d4c6acae64b53d2d483f32a937c6c07fd9ab688',1,'AutoPilotPlugin']]],
+  ['knownpowervehiclecomponent_33',['KnownPowerVehicleComponent',['../classAutoPilotPlugin.html#a36579eead1a0032bbebf1369d6d4c6aca803055c534165d17cf9e89570f40a61c',1,'AutoPilotPlugin']]],
+  ['knownradiovehiclecomponent_34',['KnownRadioVehicleComponent',['../classAutoPilotPlugin.html#a36579eead1a0032bbebf1369d6d4c6aca254923353984afe6e221b5362693d132',1,'AutoPilotPlugin']]],
+  ['knownsafetyvehiclecomponent_35',['KnownSafetyVehicleComponent',['../classAutoPilotPlugin.html#a36579eead1a0032bbebf1369d6d4c6aca8cb195d949e4d876eed0d4fe8a257fdf',1,'AutoPilotPlugin']]],
+  ['knownsensorsvehiclecomponent_36',['KnownSensorsVehicleComponent',['../classAutoPilotPlugin.html#a36579eead1a0032bbebf1369d6d4c6aca40eac8f73c9bc3f20876172bc663c596',1,'AutoPilotPlugin']]],
+  ['krspack_37',['kRspAck',['../classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ab5fa78f43fb90c08b344e8419459338f',1,'MavlinkFTP']]],
+  ['krspnak_38',['kRspNak',['../classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ae43f0c43517b9d27766398115ba9d499',1,'MavlinkFTP']]]
 ];

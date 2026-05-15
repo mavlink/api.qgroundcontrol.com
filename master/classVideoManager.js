@@ -45,5 +45,6 @@ var classVideoManager =
     [ "uvcVideoSourceIDChanged", "classVideoManager.html#a4c22a9f464ef94ee8ac243550dbd58a1", null ],
     [ "videoSize", "classVideoManager.html#ac9c77bd19c9f25f3a01eb01058c70e97", null ],
     [ "videoSizeChanged", "classVideoManager.html#ad64790fefdfcb036c6d306c918dce030", null ],
-    [ "waitForGStreamerInit", "classVideoManager.html#abc22691a0748487b9ea3062c0fa8d4c2", null ]
+    [ "waitForGStreamerInit", "classVideoManager.html#abc22691a0748487b9ea3062c0fa8d4c2", null ],
+    [ "VideoManagerInitTest", "classVideoManager.html#ab11818990e755115bb5eb519b2714707", null ]
 ];

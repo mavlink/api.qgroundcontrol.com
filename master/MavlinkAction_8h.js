@@ -1,4 +1,4 @@
 var MavlinkAction_8h =
 [
-    [ "MavlinkAction", "classMavlinkAction.html", null ]
+    [ "MavlinkAction", "classMavlinkAction.html", "classMavlinkAction" ]
 ];

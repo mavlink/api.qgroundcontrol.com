@@ -2,8 +2,8 @@ var classSection =
 [
     [ "Section", "classSection.html#a997f78eecf16fd9bb9fe98e31b9551d7", null ],
     [ "appendSectionItems", "classSection.html#a9a6be9c54fcdbbb8adccc46d573f2fb1", null ],
+    [ "available", "classSection.html#acafcf6a6805d6e891cfd696465d3181c", null ],
     [ "availableChanged", "classSection.html#ac2b21140f8fd33970e81630b81bb7207", null ],
-    [ "availableChanged", "classSection.html#acadbb36e293655855d44fc19d1d79ac1", null ],
     [ "dirty", "classSection.html#acfec3c309baa292f3322d0fbdd1c3eaf", null ],
     [ "dirtyChanged", "classSection.html#a607d360d64c8491af61bfc7ec9f20eed", null ],
     [ "itemCount", "classSection.html#ac7920013447426b8b26c51c2531de1a4", null ],

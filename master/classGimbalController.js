@@ -1,11 +1,26 @@
 var classGimbalController =
 [
+    [ "GimbalController", "classGimbalController.html#a9c6103407d202045b4766a0d953056cb", null ],
+    [ "~GimbalController", "classGimbalController.html#a6005ceb9b3cf6d023ea9d6788c53da11", null ],
+    [ "acquireGimbalControl", "classGimbalController.html#aaa716d5b2cd9c8d1d2aa87686a213b6a", null ],
+    [ "activeGimbal", "classGimbalController.html#a4cc5545cdb32834a428766de112f083e", null ],
     [ "activeGimbalChanged", "classGimbalController.html#a51609b4405c764b784b89cbb5489578d", null ],
     [ "centerGimbal", "classGimbalController.html#a4aa5512aebaaafad1f531612fc715071", null ],
+    [ "gimbalOnScreenControl", "classGimbalController.html#a9f49da784d86663f34ee1f143b1ba74a", null ],
     [ "gimbalPitchStart", "classGimbalController.html#acfdf550b704f81684f77d698a5a0ad15", null ],
     [ "gimbalPitchStop", "classGimbalController.html#aa0a33fe6a379b1283831f96229dd3543", null ],
+    [ "gimbals", "classGimbalController.html#a1d1dbb477904934a45bcc62983134d14", null ],
     [ "gimbalYawLock", "classGimbalController.html#a63c2a7cc8e506cab97526c4661c641c3", null ],
     [ "gimbalYawStart", "classGimbalController.html#abefe18f998b634afea2a6db8f0710e56", null ],
     [ "gimbalYawStop", "classGimbalController.html#aa1c852e69f7154f2d8fc92fa987c1ffe", null ],
+    [ "releaseGimbalControl", "classGimbalController.html#ad60af3cbf8c403328d8b0d2f0c77758b", null ],
+    [ "sendGimbalRate", "classGimbalController.html#a0d4ece0aae0b5b18856e751ea675eaec", null ],
+    [ "sendPitchAbsoluteYaw", "classGimbalController.html#a59d32f8fabb279a4cd5c4a27174c4def", null ],
+    [ "sendPitchBodyYaw", "classGimbalController.html#ae05df43b8489f9b59e58896a36eaab3e", null ],
+    [ "sendPitchYawFlags", "classGimbalController.html#a06f137ed5875f4380d07bf4a8dbae8b9", null ],
+    [ "sendRate", "classGimbalController.html#a563fb40148f6fd31b38cf10ce887536c", null ],
+    [ "setActiveGimbal", "classGimbalController.html#aab3cb61601df168271df2bab4e5e0ecf", null ],
+    [ "setGimbalRetract", "classGimbalController.html#ac55b7d4a2b2a9d950eafe028df4f35a0", null ],
+    [ "setGimbalYawLock", "classGimbalController.html#a10efc3bcf4dcf9fdff41d7f9b5338d11", null ],
     [ "showAcquireGimbalControlPopup", "classGimbalController.html#ac9665784cc04a96986676a9080910bef", null ]
 ];

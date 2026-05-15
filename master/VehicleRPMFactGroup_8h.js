@@ -1,4 +1,4 @@
 var VehicleRPMFactGroup_8h =
 [
-    [ "VehicleRPMFactGroup", "classVehicleRPMFactGroup.html", null ]
+    [ "VehicleRPMFactGroup", "classVehicleRPMFactGroup.html", "classVehicleRPMFactGroup" ]
 ];

@@ -1,32 +1,4 @@
 var classNTRIPSettings =
 [
-    [ "NTRIPSettings", "classNTRIPSettings.html#abf64538a63f34d71d6d304bd474ae59c", null ],
-    [ "ntripMountpoint", "classNTRIPSettings.html#a8b312fb6ccac6f687fc597ae15b6534a", null ],
-    [ "ntripPassword", "classNTRIPSettings.html#ac2df049d1cdb344fd7ba88df10a02ed1", null ],
-    [ "ntripServerConnectEnabled", "classNTRIPSettings.html#a64083f21f9495fd87a3c0d3d525259fb", null ],
-    [ "ntripServerHostAddress", "classNTRIPSettings.html#a206aac35af066f1b493917e6d5c5e5d6", null ],
-    [ "ntripServerPort", "classNTRIPSettings.html#a67e57aaf04375bf45a8bf01b9fbbf573", null ],
-    [ "ntripUdpForwardEnabled", "classNTRIPSettings.html#accc327e00f6875f665090048f32146f1", null ],
-    [ "ntripUdpTargetAddress", "classNTRIPSettings.html#a6df25472c84dddd86086bd371dd62248", null ],
-    [ "ntripUdpTargetPort", "classNTRIPSettings.html#ae0db558572863f869e100b3d87a55363", null ],
-    [ "ntripUsername", "classNTRIPSettings.html#a085f48e9993c9862392d891590b86139", null ],
-    [ "ntripUseTls", "classNTRIPSettings.html#a367cfc8ca9a579a722a06fc732918f6f", null ],
-    [ "ntripWhitelist", "classNTRIPSettings.html#a7ba4e3769ef4f6a3f18fe6c6827b061b", null ],
-    [ "rtcmUdpInputEnabled", "classNTRIPSettings.html#a87abf5cefc47026365d2d8673a17e7d1", null ],
-    [ "rtcmUdpInputPort", "classNTRIPSettings.html#acebbb866429968ca26a463795642e137", null ],
-    [ "name", "classNTRIPSettings.html#ac336813122fe8c56503d0ee30bff8833", null ],
-    [ "ntripMountpointName", "classNTRIPSettings.html#af166c73f877529f342120dddc568c84f", null ],
-    [ "ntripPasswordName", "classNTRIPSettings.html#a5ad12293e8e60954d028591b6991de98", null ],
-    [ "ntripServerConnectEnabledName", "classNTRIPSettings.html#a78a2e4d1949c420400d2958334c57be1", null ],
-    [ "ntripServerHostAddressName", "classNTRIPSettings.html#a3e8a983177d2fe80d5d3660e816e8d99", null ],
-    [ "ntripServerPortName", "classNTRIPSettings.html#af48de8d22b4b8dc44571406854113e43", null ],
-    [ "ntripUdpForwardEnabledName", "classNTRIPSettings.html#af3959acf678b096413646a0ac2865790", null ],
-    [ "ntripUdpTargetAddressName", "classNTRIPSettings.html#a4ec407d78e8e9794b6d6c918d7210164", null ],
-    [ "ntripUdpTargetPortName", "classNTRIPSettings.html#a00c268d86a9c56f455d88ae09ddda1f1", null ],
-    [ "ntripUsernameName", "classNTRIPSettings.html#af8155f020726d37247bec20244f4a098", null ],
-    [ "ntripUseTlsName", "classNTRIPSettings.html#ac181053fac5ed580da6e8d8fd9bbb742", null ],
-    [ "ntripWhitelistName", "classNTRIPSettings.html#af9c10ad16a294d37b0f3a30519f55a04", null ],
-    [ "rtcmUdpInputEnabledName", "classNTRIPSettings.html#afea67dcb1b237327a7ec6e6a054d0596", null ],
-    [ "rtcmUdpInputPortName", "classNTRIPSettings.html#a49e701518562fd2d63fa9d62e56a2ab0", null ],
-    [ "settingsGroup", "classNTRIPSettings.html#ad9ca6fce90eef9d217ba8aaaf3f875ab", null ]
+    [ "NTRIPSettings", "classNTRIPSettings.html#abf64538a63f34d71d6d304bd474ae59c", null ]
 ];

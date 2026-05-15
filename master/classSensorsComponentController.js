@@ -1,9 +1,9 @@
 var classSensorsComponentController =
 [
     [ "SensorsComponentController", "classSensorsComponentController.html#a1beda733fbf5c80a9a76755e0402afc6", null ],
-    [ "_statusLog", "classSensorsComponentController.html#af8ac368bde876bb2d2aac2b9669fdd7a", null ],
     [ "calibrateAccel", "classSensorsComponentController.html#a28ea39877b844305f42c571f17ec0086", null ],
     [ "calibrateAirspeed", "classSensorsComponentController.html#ac29d07f60c7a86e9c60e31694a6daa86", null ],
+    [ "calibrateCompass", "classSensorsComponentController.html#aca29c929ad0a60929cc2afd1c359045d", null ],
     [ "calibrateGyro", "classSensorsComponentController.html#a2446f23780226ea37ec5e6cde14793e2", null ],
     [ "calibrateLevel", "classSensorsComponentController.html#a38d519e1987d44f4ed1ff9f0a33f70cf", null ],
     [ "calibrationActive", "classSensorsComponentController.html#a028a2adced50450d1fb438df9745971c", null ],

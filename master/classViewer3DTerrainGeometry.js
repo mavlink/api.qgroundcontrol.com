@@ -16,5 +16,6 @@ var classViewer3DTerrainGeometry =
     [ "setStackCount", "classViewer3DTerrainGeometry.html#a42a87aa2ee5e2b329cfd627b0fd2c15e", null ],
     [ "stackCount", "classViewer3DTerrainGeometry.html#a030f01a4ef9724e0d41a54804d8edf56", null ],
     [ "stackCountChanged", "classViewer3DTerrainGeometry.html#ac1e2fbe6ac884a85f92eea368408bcd6", null ],
-    [ "updateEarthData", "classViewer3DTerrainGeometry.html#a48f035208e3671756cd72bf15fef34fe", null ]
+    [ "updateEarthData", "classViewer3DTerrainGeometry.html#a48f035208e3671756cd72bf15fef34fe", null ],
+    [ "Viewer3DTerrainGeometryTest", "classViewer3DTerrainGeometry.html#a911a0a7f66c97961f25c0813147151f8", null ]
 ];

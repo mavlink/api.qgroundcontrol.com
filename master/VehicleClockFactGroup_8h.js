@@ -1,4 +1,4 @@
 var VehicleClockFactGroup_8h =
 [
-    [ "VehicleClockFactGroup", "classVehicleClockFactGroup.html", null ]
+    [ "VehicleClockFactGroup", "classVehicleClockFactGroup.html", "classVehicleClockFactGroup" ]
 ];

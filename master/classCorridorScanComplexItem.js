@@ -1,11 +1,16 @@
 var classCorridorScanComplexItem =
 [
+    [ "EntryPointLocation", "classCorridorScanComplexItem.html#acf67a5dc35a877736f5e655fcea9ef65", [
+      [ "EntryPointDefaultOrder", "classCorridorScanComplexItem.html#acf67a5dc35a877736f5e655fcea9ef65aff5d1e1058133239335523f3bc2667b7", null ],
+      [ "EntryPointStartSameEndOppositeSide", "classCorridorScanComplexItem.html#acf67a5dc35a877736f5e655fcea9ef65a9aac0c922c7e88190575f2a89c213a1e", null ],
+      [ "EntryPointStartOppositeEndSameSide", "classCorridorScanComplexItem.html#acf67a5dc35a877736f5e655fcea9ef65a2af3253152e5f3f6ca58a671e7adcdbc", null ],
+      [ "EntryPointStartOppositeEndOppositeSide", "classCorridorScanComplexItem.html#acf67a5dc35a877736f5e655fcea9ef65a85a2d5d40991aaad6540e633cbb3326e", null ]
+    ] ],
     [ "CorridorScanComplexItem", "classCorridorScanComplexItem.html#a6f98f3e3b302cf2bc195fad3df55a495", null ],
     [ "abbreviation", "classCorridorScanComplexItem.html#ad238924cbe6ce191af455341bd1d1cbc", null ],
     [ "additionalTimeDelay", "classCorridorScanComplexItem.html#a129d8bbcc82133e00adc1ffc9bc2227f", null ],
     [ "commandDescription", "classCorridorScanComplexItem.html#ae9f0459e0a722c6003979cf24b18fbec", null ],
     [ "commandName", "classCorridorScanComplexItem.html#ae7b2bd7d6572fe70263aab9a81af5fab", null ],
-    [ "CONSTANT", "classCorridorScanComplexItem.html#ae6228d4e74b71441ee26fc19ed7c8a3b", null ],
     [ "corridorPolyline", "classCorridorScanComplexItem.html#a417d226ae862b5519642b0e57a902266", null ],
     [ "corridorWidth", "classCorridorScanComplexItem.html#a1bf111abb91a577da028d27fb56c1a1f", null ],
     [ "load", "classCorridorScanComplexItem.html#a0a8fa73bec7bcf9a585d142df184dd2a", null ],

@@ -1,7 +1,7 @@
 var classFixedWingLandingComplexItem =
 [
     [ "FixedWingLandingComplexItem", "classFixedWingLandingComplexItem.html#acae91cdd650de1b347beecae3ac90ff7", null ],
-    [ "CONSTANT", "classFixedWingLandingComplexItem.html#a6232474676a368a9d3a9bc5e862378bf", null ],
+    [ "glideSlope", "classFixedWingLandingComplexItem.html#a84d1b24972c0bea8e31b8ef7dfcf6ff1", null ],
     [ "load", "classFixedWingLandingComplexItem.html#af2c075cb262a5000f5cb961cdd8523d5", null ],
     [ "mapVisualQML", "classFixedWingLandingComplexItem.html#ad460bdbdc415a23b0140535151109312", null ],
     [ "patternName", "classFixedWingLandingComplexItem.html#a35ec2ad9dc432ee422cfd91bcb4d023b", null ],

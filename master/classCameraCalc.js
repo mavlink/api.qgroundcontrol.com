@@ -37,6 +37,8 @@ var classCameraCalc =
     [ "updateCameraStats", "classCameraCalc.html#a3002412ee94de6cc99abd4f9ba3d361c", null ],
     [ "valueSetIsDistance", "classCameraCalc.html#ad87f26c22f5137f533fc942259978172", null ],
     [ "valueSetIsDistance", "classCameraCalc.html#a0e3a1368a6d03a18ef2e300876ce64a2", null ],
+    [ "xlatCustomCameraName", "classCameraCalc.html#aed5dd4f508a46e4603930dac3d36ca44", null ],
+    [ "xlatManualCameraName", "classCameraCalc.html#a0b7a9168e81d677d2e186a2eb194b16e", null ],
     [ "adjustedFootprintFrontalName", "classCameraCalc.html#a4762e9243e819035111c953664331c23", null ],
     [ "adjustedFootprintSideName", "classCameraCalc.html#a57ddf286e69fa60400528bc9e2c21fcf", null ],
     [ "cameraNameName", "classCameraCalc.html#a74c024c67a2847528bf3b28cf3a18014", null ],
@@ -45,6 +47,5 @@ var classCameraCalc =
     [ "frontalOverlapName", "classCameraCalc.html#a46501ffd247cd0be37d6d30f05f91e5b", null ],
     [ "imageDensityName", "classCameraCalc.html#accd38306a60365d16484557790e36f42", null ],
     [ "sideOverlapName", "classCameraCalc.html#a1936133833b11fb4e10b0599d25b3c7f", null ],
-    [ "valueSetIsDistanceName", "classCameraCalc.html#a5e194231ad3a68368b11a1ba1cf77e14", null ],
-    [ "xlatManualCameraName", "classCameraCalc.html#a34aef423e27b88006a446ac37462d007", null ]
+    [ "valueSetIsDistanceName", "classCameraCalc.html#a5e194231ad3a68368b11a1ba1cf77e14", null ]
 ];

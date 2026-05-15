@@ -48,7 +48,7 @@ var classMockLink =
     [ "sendUnexpectedMissionItem", "classMockLink.html#aea0fb1b42369cbe74090a5450ebcfa2e", null ],
     [ "sendUnexpectedMissionRequest", "classMockLink.html#a25bdb8063965c2bbdb36a084dd2acd6f", null ],
     [ "setArmed", "classMockLink.html#ab8f8b19b3f95532406bbc85ddbf7bc30", null ],
-    [ "setCommLost", "classMockLink.html#af3ea55833c770aa3b2057aa82be88cc5", null ],
+    [ "setCommLost", "classMockLink.html#a04b148d1d10f8cc21846ee1235921e06", null ],
     [ "setHashCheckNoResponse", "classMockLink.html#adeb730b7b330f572aed248f43dcfc33b", null ],
     [ "setMissionItemFailureMode", "classMockLink.html#a9e58441424b2e61d3c6b5cf5b08e2e90", null ],
     [ "setMockParamValue", "classMockLink.html#a32c81abcb2be05dafe80196b3d769049", null ],

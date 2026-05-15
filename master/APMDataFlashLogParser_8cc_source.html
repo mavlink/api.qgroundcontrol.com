@@ -655,21 +655,26 @@ $(document).ready(function(){initNavTree('APMDataFlashLogParser_8cc_source.html'
 <div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>}</div>
 <div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>} <span class="comment">// namespace</span></div>
 <div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span> </div>
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>APMDataFlashLogParser::APMDataFlashLogParser(QObject *parent)</div>
+<div class="foldopen" id="foldopen00558" data-start="{" data-end="}">
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno"><a class="line" href="classAPMDataFlashLogParser.html#a33db308ecc3e98a4b0a440a3af2e4231">  558</a></span><a class="code hl_function" href="classAPMDataFlashLogParser.html#a33db308ecc3e98a4b0a440a3af2e4231">APMDataFlashLogParser::APMDataFlashLogParser</a>(QObject *parent)</div>
 <div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>    : QObject(parent)</div>
 <div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>{</div>
 <div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>    qCDebug(APMDataFlashLogParserLog) &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>}</div>
+</div>
 <div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span> </div>
-<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>APMDataFlashLogParser::~APMDataFlashLogParser()</div>
+<div class="foldopen" id="foldopen00564" data-start="{" data-end="}">
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno"><a class="line" href="classAPMDataFlashLogParser.html#afaf1d782c6fee7edf466e69f83c753ba">  564</a></span><a class="code hl_function" href="classAPMDataFlashLogParser.html#afaf1d782c6fee7edf466e69f83c753ba">APMDataFlashLogParser::~APMDataFlashLogParser</a>()</div>
 <div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>{</div>
 <div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>    qCDebug(APMDataFlashLogParserLog) &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>}</div>
+</div>
 <div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span> </div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span><span class="keywordtype">bool</span> APMDataFlashLogParser::parseFile(<span class="keyword">const</span> QString &amp;filePath)</div>
+<div class="foldopen" id="foldopen00569" data-start="{" data-end="}">
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno"><a class="line" href="classAPMDataFlashLogParser.html#a54c78ce0aedcfdd97f2d7aacec3f8834">  569</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classAPMDataFlashLogParser.html#a54c78ce0aedcfdd97f2d7aacec3f8834">APMDataFlashLogParser::parseFile</a>(<span class="keyword">const</span> QString &amp;filePath)</div>
 <div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>{</div>
 <div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    ++_parseRequestId; <span class="comment">// Invalidate any in-flight async parse results.</span></div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>    clear();</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>    <a class="code hl_function" href="classAPMDataFlashLogParser.html#ab24c1bde56ce77763c4616c57889a584">clear</a>();</div>
 <div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>    <span class="keyword">const</span> ParseResult result = _parseDataFlashFile(filePath);</div>
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>    <span class="keywordflow">if</span> (!result.ok) {</div>
 <div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>        _setParseError(result.errorMessage);</div>
@@ -704,11 +709,13 @@ $(document).ready(function(){initNavTree('APMDataFlashLogParser_8cc_source.html'
 <div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>    qCDebug(APMDataFlashLogParserLog) &lt;&lt; <span class="stringliteral">&quot;Parsed fields&quot;</span> &lt;&lt; _availableFields.count() &lt;&lt; <span class="stringliteral">&quot;parameters&quot;</span> &lt;&lt; _parameters.count() &lt;&lt; <span class="stringliteral">&quot;events&quot;</span> &lt;&lt; _events.count();</div>
 <div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>}</div>
+</div>
 <div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span> </div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span><span class="keywordtype">void</span> APMDataFlashLogParser::parseFileAsync(<span class="keyword">const</span> QString &amp;filePath)</div>
+<div class="foldopen" id="foldopen00608" data-start="{" data-end="}">
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno"><a class="line" href="classAPMDataFlashLogParser.html#a18707b889033119c0f89235686a3fe6c">  608</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classAPMDataFlashLogParser.html#a18707b889033119c0f89235686a3fe6c">APMDataFlashLogParser::parseFileAsync</a>(<span class="keyword">const</span> QString &amp;filePath)</div>
 <div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>{</div>
 <div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    <span class="keyword">const</span> quint64 requestId = ++_parseRequestId;</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>    clear();</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>    <a class="code hl_function" href="classAPMDataFlashLogParser.html#ab24c1bde56ce77763c4616c57889a584">clear</a>();</div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span> </div>
 <div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>    <span class="keyword">auto</span> *watcher = <span class="keyword">new</span> QFutureWatcher&lt;ParseResult&gt;(<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>    (void) connect(watcher, &amp;QFutureWatcher&lt;ParseResult&gt;::finished, <span class="keyword">this</span>, [<span class="keyword">this</span>, watcher, filePath, requestId]() {</div>
@@ -758,8 +765,10 @@ $(document).ready(function(){initNavTree('APMDataFlashLogParser_8cc_source.html'
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>        <span class="keywordflow">return</span> _parseDataFlashFile(filePath);</div>
 <div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>    }));</div>
 <div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>}</div>
+</div>
 <div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span> </div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span><span class="keywordtype">void</span> APMDataFlashLogParser::clear()</div>
+<div class="foldopen" id="foldopen00662" data-start="{" data-end="}">
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno"><a class="line" href="classAPMDataFlashLogParser.html#ab24c1bde56ce77763c4616c57889a584">  662</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classAPMDataFlashLogParser.html#ab24c1bde56ce77763c4616c57889a584">APMDataFlashLogParser::clear</a>()</div>
 <div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>{</div>
 <div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> oldParsed = _parsed;</div>
 <div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>    _parsed = <span class="keyword">false</span>;</div>
@@ -819,8 +828,10 @@ $(document).ready(function(){initNavTree('APMDataFlashLogParser_8cc_source.html'
 <div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>        emit <a class="code hl_signal" href="classAPMDataFlashLogParser.html#aac8aa110f8343d71b05895fa202d27bf">sampleCountChanged</a>();</div>
 <div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>    }</div>
 <div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>}</div>
+</div>
 <div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span> </div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>QVariantList APMDataFlashLogParser::fieldSamples(<span class="keyword">const</span> QString &amp;fieldName)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00723" data-start="{" data-end="}">
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno"><a class="line" href="classAPMDataFlashLogParser.html#a1d26eaefe53059bc47b756fa4d9c3461">  723</a></span>QVariantList <a class="code hl_function" href="classAPMDataFlashLogParser.html#a1d26eaefe53059bc47b756fa4d9c3461">APMDataFlashLogParser::fieldSamples</a>(<span class="keyword">const</span> QString &amp;fieldName)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>    QVariantList output;</div>
 <div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>    <span class="keyword">const</span> <span class="keyword">auto</span> fieldIt = _fieldSamples.constFind(fieldName);</div>
@@ -836,8 +847,10 @@ $(document).ready(function(){initNavTree('APMDataFlashLogParser_8cc_source.html'
 <div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span> </div>
 <div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>    <span class="keywordflow">return</span> output;</div>
 <div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>}</div>
+</div>
 <div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span> </div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span><span class="keywordtype">double</span> APMDataFlashLogParser::fieldValueAt(<span class="keyword">const</span> QString &amp;fieldName, <span class="keywordtype">double</span> timestampSeconds)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00740" data-start="{" data-end="}">
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno"><a class="line" href="classAPMDataFlashLogParser.html#af2ce28974141d20782a63078fd3353a3">  740</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="classAPMDataFlashLogParser.html#af2ce28974141d20782a63078fd3353a3">APMDataFlashLogParser::fieldValueAt</a>(<span class="keyword">const</span> QString &amp;fieldName, <span class="keywordtype">double</span> timestampSeconds)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>    <span class="keyword">const</span> <span class="keyword">auto</span> fieldIt = _fieldSamples.constFind(fieldName);</div>
 <div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>    <span class="keywordflow">if</span> ((fieldIt == _fieldSamples.cend()) || fieldIt-&gt;isEmpty()) {</div>
@@ -866,8 +879,10 @@ $(document).ready(function(){initNavTree('APMDataFlashLogParser_8cc_source.html'
 <div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>        ? previous-&gt;y()</div>
 <div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>        : lower-&gt;y();</div>
 <div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>}</div>
+</div>
 <div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span> </div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>QString APMDataFlashLogParser::modeAt(<span class="keywordtype">double</span> timestampSeconds)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00770" data-start="{" data-end="}">
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno"><a class="line" href="classAPMDataFlashLogParser.html#abb384bb71c0f02319dbd57a3359d0b77">  770</a></span>QString <a class="code hl_function" href="classAPMDataFlashLogParser.html#abb384bb71c0f02319dbd57a3359d0b77">APMDataFlashLogParser::modeAt</a>(<span class="keywordtype">double</span> timestampSeconds)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QVariant &amp;variant : _modeSegments) {</div>
 <div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>        <span class="keyword">const</span> QVariantMap segment = variant.toMap();</div>
@@ -880,8 +895,10 @@ $(document).ready(function(){initNavTree('APMDataFlashLogParser_8cc_source.html'
 <div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span> </div>
 <div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>    <span class="keywordflow">return</span> QString();</div>
 <div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>}</div>
+</div>
 <div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span> </div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>QVariantList APMDataFlashLogParser::eventsNear(<span class="keywordtype">double</span> timestampSeconds, <span class="keywordtype">double</span> thresholdSeconds)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00784" data-start="{" data-end="}">
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno"><a class="line" href="classAPMDataFlashLogParser.html#aea502f729f84ef3fa8f560476d071175">  784</a></span>QVariantList <a class="code hl_function" href="classAPMDataFlashLogParser.html#aea502f729f84ef3fa8f560476d071175">APMDataFlashLogParser::eventsNear</a>(<span class="keywordtype">double</span> timestampSeconds, <span class="keywordtype">double</span> thresholdSeconds)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>    QVariantList matches;</div>
 <div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> threshold = std::max(0.0, thresholdSeconds);</div>
@@ -901,6 +918,7 @@ $(document).ready(function(){initNavTree('APMDataFlashLogParser_8cc_source.html'
 <div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span> </div>
 <div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>    <span class="keywordflow">return</span> matches;</div>
 <div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>}</div>
+</div>
 <div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span> </div>
 <div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span><span class="keywordtype">void</span> APMDataFlashLogParser::_setParseError(<span class="keyword">const</span> QString &amp;<a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>)</div>
 <div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>{</div>
@@ -915,9 +933,13 @@ $(document).ready(function(){initNavTree('APMDataFlashLogParser_8cc_source.html'
 <div class="ttc" id="aQGCCompression_8cc_html_a5e7e27258e59f4c4a80e5fb757024a2d"><div class="ttname"><a href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a></div><div class="ttdeci">Error error</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00114">QGCCompression.cc:114</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
+<div class="ttc" id="aclassAPMDataFlashLogParser_html_a18707b889033119c0f89235686a3fe6c"><div class="ttname"><a href="classAPMDataFlashLogParser.html#a18707b889033119c0f89235686a3fe6c">APMDataFlashLogParser::parseFileAsync</a></div><div class="ttdeci">Q_INVOKABLE void parseFileAsync(const QString &amp;filePath)</div><div class="ttdef"><b>Definition</b> <a href="APMDataFlashLogParser_8cc_source.html#l00608">APMDataFlashLogParser.cc:608</a></div></div>
+<div class="ttc" id="aclassAPMDataFlashLogParser_html_a1d26eaefe53059bc47b756fa4d9c3461"><div class="ttname"><a href="classAPMDataFlashLogParser.html#a1d26eaefe53059bc47b756fa4d9c3461">APMDataFlashLogParser::fieldSamples</a></div><div class="ttdeci">Q_INVOKABLE QVariantList fieldSamples(const QString &amp;fieldName) const</div><div class="ttdef"><b>Definition</b> <a href="APMDataFlashLogParser_8cc_source.html#l00723">APMDataFlashLogParser.cc:723</a></div></div>
 <div class="ttc" id="aclassAPMDataFlashLogParser_html_a20e20007398b5d434740cc60923f61da"><div class="ttname"><a href="classAPMDataFlashLogParser.html#a20e20007398b5d434740cc60923f61da">APMDataFlashLogParser::parametersChanged</a></div><div class="ttdeci">void parametersChanged()</div></div>
 <div class="ttc" id="aclassAPMDataFlashLogParser_html_a29d3243a284c9717674c4c2520f66c13"><div class="ttname"><a href="classAPMDataFlashLogParser.html#a29d3243a284c9717674c4c2520f66c13">APMDataFlashLogParser::messagesChanged</a></div><div class="ttdeci">void messagesChanged()</div></div>
+<div class="ttc" id="aclassAPMDataFlashLogParser_html_a33db308ecc3e98a4b0a440a3af2e4231"><div class="ttname"><a href="classAPMDataFlashLogParser.html#a33db308ecc3e98a4b0a440a3af2e4231">APMDataFlashLogParser::APMDataFlashLogParser</a></div><div class="ttdeci">APMDataFlashLogParser(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="APMDataFlashLogParser_8cc_source.html#l00558">APMDataFlashLogParser.cc:558</a></div></div>
 <div class="ttc" id="aclassAPMDataFlashLogParser_html_a5285cb7b9910869caa83d5996a95ee4e"><div class="ttname"><a href="classAPMDataFlashLogParser.html#a5285cb7b9910869caa83d5996a95ee4e">APMDataFlashLogParser::detectedVehicleTypeChanged</a></div><div class="ttdeci">void detectedVehicleTypeChanged()</div></div>
+<div class="ttc" id="aclassAPMDataFlashLogParser_html_a54c78ce0aedcfdd97f2d7aacec3f8834"><div class="ttname"><a href="classAPMDataFlashLogParser.html#a54c78ce0aedcfdd97f2d7aacec3f8834">APMDataFlashLogParser::parseFile</a></div><div class="ttdeci">Q_INVOKABLE bool parseFile(const QString &amp;filePath)</div><div class="ttdef"><b>Definition</b> <a href="APMDataFlashLogParser_8cc_source.html#l00569">APMDataFlashLogParser.cc:569</a></div></div>
 <div class="ttc" id="aclassAPMDataFlashLogParser_html_a65def3ffae72ec92bac0090d06e0574e"><div class="ttname"><a href="classAPMDataFlashLogParser.html#a65def3ffae72ec92bac0090d06e0574e">APMDataFlashLogParser::modeSegmentsChanged</a></div><div class="ttdeci">void modeSegmentsChanged()</div></div>
 <div class="ttc" id="aclassAPMDataFlashLogParser_html_a72f3f8505322cb36c1e6d35559e2ac6a"><div class="ttname"><a href="classAPMDataFlashLogParser.html#a72f3f8505322cb36c1e6d35559e2ac6a">APMDataFlashLogParser::plottableFieldsChanged</a></div><div class="ttdeci">void plottableFieldsChanged()</div></div>
 <div class="ttc" id="aclassAPMDataFlashLogParser_html_a780c9b0ee529e5484e50c7bdead8399b"><div class="ttname"><a href="classAPMDataFlashLogParser.html#a780c9b0ee529e5484e50c7bdead8399b">APMDataFlashLogParser::parsedChanged</a></div><div class="ttdeci">void parsedChanged()</div></div>
@@ -925,8 +947,13 @@ $(document).ready(function(){initNavTree('APMDataFlashLogParser_8cc_source.html'
 <div class="ttc" id="aclassAPMDataFlashLogParser_html_a8660e812110ac07e3f5deced581a5216"><div class="ttname"><a href="classAPMDataFlashLogParser.html#a8660e812110ac07e3f5deced581a5216">APMDataFlashLogParser::parseErrorChanged</a></div><div class="ttdeci">void parseErrorChanged()</div></div>
 <div class="ttc" id="aclassAPMDataFlashLogParser_html_a929ca68f741c6a5a63c01ea1f89007d9"><div class="ttname"><a href="classAPMDataFlashLogParser.html#a929ca68f741c6a5a63c01ea1f89007d9">APMDataFlashLogParser::parseFileFinished</a></div><div class="ttdeci">void parseFileFinished(const QString &amp;filePath, bool ok, const QString &amp;errorMessage)</div></div>
 <div class="ttc" id="aclassAPMDataFlashLogParser_html_aac8aa110f8343d71b05895fa202d27bf"><div class="ttname"><a href="classAPMDataFlashLogParser.html#aac8aa110f8343d71b05895fa202d27bf">APMDataFlashLogParser::sampleCountChanged</a></div><div class="ttdeci">void sampleCountChanged()</div></div>
+<div class="ttc" id="aclassAPMDataFlashLogParser_html_ab24c1bde56ce77763c4616c57889a584"><div class="ttname"><a href="classAPMDataFlashLogParser.html#ab24c1bde56ce77763c4616c57889a584">APMDataFlashLogParser::clear</a></div><div class="ttdeci">Q_INVOKABLE void clear()</div><div class="ttdef"><b>Definition</b> <a href="APMDataFlashLogParser_8cc_source.html#l00662">APMDataFlashLogParser.cc:662</a></div></div>
 <div class="ttc" id="aclassAPMDataFlashLogParser_html_ab3b73f30be0ea696405e6de4179647a9"><div class="ttname"><a href="classAPMDataFlashLogParser.html#ab3b73f30be0ea696405e6de4179647a9">APMDataFlashLogParser::availableFieldsChanged</a></div><div class="ttdeci">void availableFieldsChanged()</div></div>
+<div class="ttc" id="aclassAPMDataFlashLogParser_html_abb384bb71c0f02319dbd57a3359d0b77"><div class="ttname"><a href="classAPMDataFlashLogParser.html#abb384bb71c0f02319dbd57a3359d0b77">APMDataFlashLogParser::modeAt</a></div><div class="ttdeci">Q_INVOKABLE QString modeAt(double timestampSeconds) const</div><div class="ttdef"><b>Definition</b> <a href="APMDataFlashLogParser_8cc_source.html#l00770">APMDataFlashLogParser.cc:770</a></div></div>
 <div class="ttc" id="aclassAPMDataFlashLogParser_html_ad0a51d86a0068a99b6f2eb70f2e74980"><div class="ttname"><a href="classAPMDataFlashLogParser.html#ad0a51d86a0068a99b6f2eb70f2e74980">APMDataFlashLogParser::timeRangeChanged</a></div><div class="ttdeci">void timeRangeChanged()</div></div>
+<div class="ttc" id="aclassAPMDataFlashLogParser_html_aea502f729f84ef3fa8f560476d071175"><div class="ttname"><a href="classAPMDataFlashLogParser.html#aea502f729f84ef3fa8f560476d071175">APMDataFlashLogParser::eventsNear</a></div><div class="ttdeci">Q_INVOKABLE QVariantList eventsNear(double timestampSeconds, double thresholdSeconds) const</div><div class="ttdef"><b>Definition</b> <a href="APMDataFlashLogParser_8cc_source.html#l00784">APMDataFlashLogParser.cc:784</a></div></div>
+<div class="ttc" id="aclassAPMDataFlashLogParser_html_af2ce28974141d20782a63078fd3353a3"><div class="ttname"><a href="classAPMDataFlashLogParser.html#af2ce28974141d20782a63078fd3353a3">APMDataFlashLogParser::fieldValueAt</a></div><div class="ttdeci">Q_INVOKABLE double fieldValueAt(const QString &amp;fieldName, double timestampSeconds) const</div><div class="ttdef"><b>Definition</b> <a href="APMDataFlashLogParser_8cc_source.html#l00740">APMDataFlashLogParser.cc:740</a></div></div>
+<div class="ttc" id="aclassAPMDataFlashLogParser_html_afaf1d782c6fee7edf466e69f83c753ba"><div class="ttname"><a href="classAPMDataFlashLogParser.html#afaf1d782c6fee7edf466e69f83c753ba">APMDataFlashLogParser::~APMDataFlashLogParser</a></div><div class="ttdeci">~APMDataFlashLogParser()</div><div class="ttdef"><b>Definition</b> <a href="APMDataFlashLogParser_8cc_source.html#l00564">APMDataFlashLogParser.cc:564</a></div></div>
 <div class="ttc" id="anamespaceAPMDataFlashUtility_html_a6cc100fb893c4b48669a54c1106cef0e"><div class="ttname"><a href="namespaceAPMDataFlashUtility.html#a6cc100fb893c4b48669a54c1106cef0e">APMDataFlashUtility::iterateMessages</a></div><div class="ttdeci">int iterateMessages(const char *data, qint64 size, const QMap&lt; uint8_t, MessageFormat &gt; &amp;formats, const MessageCallback &amp;callback)</div><div class="ttdef"><b>Definition</b> <a href="APMDataFlashUtility_8cc_source.html#l00275">APMDataFlashUtility.cc:275</a></div></div>
 <div class="ttc" id="anamespaceAPMDataFlashUtility_html_ac7e5a54b1595a7b029c7265dcfaf9113"><div class="ttname"><a href="namespaceAPMDataFlashUtility.html#ac7e5a54b1595a7b029c7265dcfaf9113">APMDataFlashUtility::parseFmtMessages</a></div><div class="ttdeci">bool parseFmtMessages(const char *data, qint64 size, QMap&lt; uint8_t, MessageFormat &gt; &amp;formats)</div><div class="ttdef"><b>Definition</b> <a href="APMDataFlashUtility_8cc_source.html#l00228">APMDataFlashUtility.cc:228</a></div></div>
 <div class="ttc" id="anamespaceQGCNetworkHelper_html_ac65b495619f346b4f620dcbb4267ff23"><div class="ttname"><a href="namespaceQGCNetworkHelper.html#ac65b495619f346b4f620dcbb4267ff23">QGCNetworkHelper::errorMessage</a></div><div class="ttdeci">QString errorMessage(const QNetworkReply *reply)</div><div class="ttdef"><b>Definition</b> <a href="QGCNetworkHelper_8cc_source.html#l00666">QGCNetworkHelper.cc:666</a></div></div>

@@ -111,69 +111,86 @@ $(document).ready(function(){initNavTree('QGCArchiveWatcher_8cc_source.html','')
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// Construction / Destruction</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// ============================================================================</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><a class="code hl_class" href="classQGCArchiveWatcher.html">QGCArchiveWatcher</a>::<a class="code hl_class" href="classQGCArchiveWatcher.html">QGCArchiveWatcher</a>(QObject *parent)</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classQGCArchiveWatcher.html#aac7360663446d919be2658324871e7f7">   14</a></span><a class="code hl_class" href="classQGCArchiveWatcher.html">QGCArchiveWatcher</a>::<a class="code hl_class" href="classQGCArchiveWatcher.html">QGCArchiveWatcher</a>(QObject *parent)</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    : QObject(parent)</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    , _fileWatcher(new <a class="code hl_class" href="classQGCFileWatcher.html">QGCFileWatcher</a>(this))</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    _fileWatcher-&gt;setDebounceDelay(500);  <span class="comment">// Longer debounce for file copy operations</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    _fileWatcher-&gt;<a class="code hl_function" href="classQGCArchiveWatcher.html#a7a19d209a9f9049fa21f544e74491e48">setDebounceDelay</a>(500);  <span class="comment">// Longer debounce for file copy operations</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    connect(_fileWatcher, &amp;<a class="code hl_signal" href="classQGCFileWatcher.html#a9cee2fee801319c2871904aaf0cf974f">QGCFileWatcher::directoryChanged</a>,</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            <span class="keyword">this</span>, &amp;QGCArchiveWatcher::_onDirectoryChanged);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>QGCArchiveWatcher::~QGCArchiveWatcher()</div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classQGCArchiveWatcher.html#af8c52ad63cac21cf4be64a7d6a1f132e">   24</a></span><a class="code hl_function" href="classQGCArchiveWatcher.html#af8c52ad63cac21cf4be64a7d6a1f132e">QGCArchiveWatcher::~QGCArchiveWatcher</a>()</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">if</span> (_extractionJob != <span class="keyword">nullptr</span> &amp;&amp; _extractionJob-&gt;isRunning()) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">if</span> (_extractionJob != <span class="keyword">nullptr</span> &amp;&amp; _extractionJob-&gt;<a class="code hl_function" href="classQGCCompressionJob.html#ac3a0f282aed8cd27814d19df7a021696">isRunning</a>()) {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        _cancelPending = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        _extractionJob-&gt;<a class="code hl_slot" href="classQGCCompressionJob.html#a832225340fa99a0bee854eabca51ec94">cancel</a>();</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">// ============================================================================</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">// Configuration</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">// ============================================================================</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">void</span> QGCArchiveWatcher::setFilterMode(FilterMode mode)</div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classQGCArchiveWatcher.html#a759404d48ef96b57038659c23d636c0a">   36</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCArchiveWatcher.html#a759404d48ef96b57038659c23d636c0a">QGCArchiveWatcher::setFilterMode</a>(<a class="code hl_enumeration" href="classQGCArchiveWatcher.html#ae77de53fa4d5da43748b7d543e2f6020">FilterMode</a> mode)</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    _filterMode = mode;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">void</span> QGCArchiveWatcher::setAutoDecompress(<span class="keywordtype">bool</span> enable)</div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classQGCArchiveWatcher.html#add10f1d31ab828388a05bcc428c72a61">   41</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCArchiveWatcher.html#add10f1d31ab828388a05bcc428c72a61">QGCArchiveWatcher::setAutoDecompress</a>(<span class="keywordtype">bool</span> enable)</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (_autoDecompress != enable) {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        _autoDecompress = enable;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        emit <a class="code hl_signal" href="classQGCArchiveWatcher.html#a6442e775aa2750079844c63dc8f7e478">autoDecompressChanged</a>(_autoDecompress);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keywordtype">void</span> QGCArchiveWatcher::setOutputDirectory(<span class="keyword">const</span> QString &amp;directory)</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classQGCArchiveWatcher.html#a51e747a81aaaa213ae172328874171c7">   49</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCArchiveWatcher.html#a51e747a81aaaa213ae172328874171c7">QGCArchiveWatcher::setOutputDirectory</a>(<span class="keyword">const</span> QString &amp;directory)</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> (_outputDirectory != directory) {</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        _outputDirectory = directory;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        emit <a class="code hl_signal" href="classQGCArchiveWatcher.html#aefc7e60bdf76a5e19937536401dc81a0">outputDirectoryChanged</a>(_outputDirectory);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">void</span> QGCArchiveWatcher::setRemoveAfterExtraction(<span class="keywordtype">bool</span> remove)</div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classQGCArchiveWatcher.html#a154822e2251ada8f8b2b2af46cdeb1f2">   57</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCArchiveWatcher.html#a154822e2251ada8f8b2b2af46cdeb1f2">QGCArchiveWatcher::setRemoveAfterExtraction</a>(<span class="keywordtype">bool</span> remove)</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    _removeAfterExtraction = <a class="code hl_function" href="namespaceQGCKeychain.html#a80d709ef3cc8b603a4986830e1ef6092">remove</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    _removeAfterExtraction = remove;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">void</span> QGCArchiveWatcher::setDebounceDelay(<span class="keywordtype">int</span> milliseconds)</div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classQGCArchiveWatcher.html#a7a19d209a9f9049fa21f544e74491e48">   62</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCArchiveWatcher.html#a7a19d209a9f9049fa21f544e74491e48">QGCArchiveWatcher::setDebounceDelay</a>(<span class="keywordtype">int</span> milliseconds)</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>{</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    _fileWatcher-&gt;<a class="code hl_function" href="classQGCFileWatcher.html#a81e7a1a3873701ddcc9db21086eb7543">setDebounceDelay</a>(milliseconds);</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
+</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">int</span> QGCArchiveWatcher::debounceDelay()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classQGCArchiveWatcher.html#a00223e67b3c1a2399e6a50e2521d6a6e">   67</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classQGCArchiveWatcher.html#a00223e67b3c1a2399e6a50e2521d6a6e">QGCArchiveWatcher::debounceDelay</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> _fileWatcher-&gt;<a class="code hl_function" href="classQGCFileWatcher.html#aacd9f3eb95df3be4d0f3787dc2ccbae0">debounceDelay</a>();</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">// ============================================================================</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">// Directory Watching</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">// ============================================================================</span></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keywordtype">bool</span> QGCArchiveWatcher::watchDirectory(<span class="keyword">const</span> QString &amp;directoryPath)</div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classQGCArchiveWatcher.html#a9284a4eab07a18fc03994e0f4a9fc7d7">   76</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCArchiveWatcher.html#a9284a4eab07a18fc03994e0f4a9fc7d7">QGCArchiveWatcher::watchDirectory</a>(<span class="keyword">const</span> QString &amp;directoryPath)</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>{</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">if</span> (directoryPath.isEmpty()) {</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        qCWarning(QGCArchiveWatcherLog) &lt;&lt; <span class="stringliteral">&quot;watchDirectory: empty path&quot;</span>;</div>
@@ -206,20 +223,26 @@ $(document).ready(function(){initNavTree('QGCArchiveWatcher_8cc_source.html','')
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
+</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keywordtype">bool</span> QGCArchiveWatcher::unwatchDirectory(<span class="keyword">const</span> QString &amp;directoryPath)</div>
+<div class="foldopen" id="foldopen00110" data-start="{" data-end="}">
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classQGCArchiveWatcher.html#a99ab991efd88d5c9ea1ff28e7792be1a">  110</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCArchiveWatcher.html#a99ab991efd88d5c9ea1ff28e7792be1a">QGCArchiveWatcher::unwatchDirectory</a>(<span class="keyword">const</span> QString &amp;directoryPath)</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>{</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">const</span> QString canonicalPath = QFileInfo(directoryPath).absoluteFilePath();</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    _knownFiles.remove(canonicalPath);</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">return</span> _fileWatcher-&gt;<a class="code hl_function" href="classQGCFileWatcher.html#a1dbcb3ff1b45803e46f9e08c1a2fc03c">unwatchDirectory</a>(canonicalPath);</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>}</div>
+</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>QStringList QGCArchiveWatcher::watchedDirectories()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classQGCArchiveWatcher.html#a26a7f86c477836d89390d09c39735b5c">  117</a></span>QStringList <a class="code hl_function" href="classQGCArchiveWatcher.html#a26a7f86c477836d89390d09c39735b5c">QGCArchiveWatcher::watchedDirectories</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">return</span> _fileWatcher-&gt;<a class="code hl_function" href="classQGCFileWatcher.html#ac136d8c8f047de0a24b570ed606c06d0">watchedDirectories</a>();</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
+</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keywordtype">void</span> QGCArchiveWatcher::clear()</div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classQGCArchiveWatcher.html#af3f62b31057a6e4ef2b033fc8f953f60">  122</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCArchiveWatcher.html#af3f62b31057a6e4ef2b033fc8f953f60">QGCArchiveWatcher::clear</a>()</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>{</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    _fileWatcher-&gt;<a class="code hl_function" href="classQGCFileWatcher.html#a4d1f16ff60f2d41216b76d3462f0e59e">clear</a>();</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    _knownFiles.clear();</div>
@@ -229,18 +252,20 @@ $(document).ready(function(){initNavTree('QGCArchiveWatcher_8cc_source.html','')
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    _setProgress(0.0);</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordflow">if</span> (_extractionJob) {</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordflow">if</span> (_extractionJob-&gt;isRunning()) {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordflow">if</span> (_extractionJob-&gt;<a class="code hl_function" href="classQGCCompressionJob.html#ac3a0f282aed8cd27814d19df7a021696">isRunning</a>()) {</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            _cancelPending = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            _extractionJob-&gt;<a class="code hl_slot" href="classQGCCompressionJob.html#a832225340fa99a0bee854eabca51ec94">cancel</a>();</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        }</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>}</div>
+</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">// ============================================================================</span></div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">// Manual Operations</span></div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment">// ============================================================================</span></div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>QStringList QGCArchiveWatcher::scanDirectory(<span class="keyword">const</span> QString &amp;directoryPath)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00143" data-start="{" data-end="}">
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classQGCArchiveWatcher.html#a300314aba4eae5a3dbf641eed5050b68">  143</a></span>QStringList <a class="code hl_function" href="classQGCArchiveWatcher.html#a300314aba4eae5a3dbf641eed5050b68">QGCArchiveWatcher::scanDirectory</a>(<span class="keyword">const</span> QString &amp;directoryPath)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    QStringList archives;</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
@@ -259,10 +284,12 @@ $(document).ready(function(){initNavTree('QGCArchiveWatcher_8cc_source.html','')
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">return</span> archives;</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}</div>
+</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="keywordtype">void</span> QGCArchiveWatcher::cancelExtraction()</div>
+<div class="foldopen" id="foldopen00163" data-start="{" data-end="}">
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="classQGCArchiveWatcher.html#a5b3ae51db159d2e75afed1833eeb01df">  163</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCArchiveWatcher.html#a5b3ae51db159d2e75afed1833eeb01df">QGCArchiveWatcher::cancelExtraction</a>()</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>{</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordflow">if</span> (_extractionJob != <span class="keyword">nullptr</span> &amp;&amp; _extractionJob-&gt;isRunning()) {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordflow">if</span> (_extractionJob != <span class="keyword">nullptr</span> &amp;&amp; _extractionJob-&gt;<a class="code hl_function" href="classQGCCompressionJob.html#ac3a0f282aed8cd27814d19df7a021696">isRunning</a>()) {</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        qCDebug(QGCArchiveWatcherLog) &lt;&lt; <span class="stringliteral">&quot;Cancelling extraction&quot;</span>;</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        _cancelPending = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        _extractionJob-&gt;<a class="code hl_slot" href="classQGCCompressionJob.html#a832225340fa99a0bee854eabca51ec94">cancel</a>();</div>
@@ -272,6 +299,7 @@ $(document).ready(function(){initNavTree('QGCArchiveWatcher_8cc_source.html','')
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    _setExtracting(<span class="keyword">false</span>);</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    _setProgress(0.0);</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>}</div>
+</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="comment">// ============================================================================</span></div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment">// Private Slots</span></div>
@@ -308,7 +336,7 @@ $(document).ready(function(){initNavTree('QGCArchiveWatcher_8cc_source.html','')
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="keywordtype">void</span> QGCArchiveWatcher::_onExtractionProgress(qreal progress)</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>{</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    _setProgress(progress);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    _setProgress(<a class="code hl_function" href="classQGCArchiveWatcher.html#a343779439d94958d101456f272330a9a">progress</a>);</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>}</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="keywordtype">void</span> QGCArchiveWatcher::_onExtractionFinished(<span class="keywordtype">bool</span> success)</div>
@@ -324,7 +352,7 @@ $(document).ready(function(){initNavTree('QGCArchiveWatcher_8cc_source.html','')
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    qCDebug(QGCArchiveWatcherLog) &lt;&lt; <span class="stringliteral">&quot;Extraction finished:&quot;</span> &lt;&lt; _currentArchive</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                                   &lt;&lt; <span class="stringliteral">&quot;success:&quot;</span> &lt;&lt; success;</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    QString outputPath = _extractionJob-&gt;outputPath();</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    QString outputPath = _extractionJob-&gt;<a class="code hl_function" href="classQGCCompressionJob.html#ad7a9a67f877810397cda8ac0ddae2f31">outputPath</a>();</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    QString <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a> = success ? QString() : _extractionJob-&gt;<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>();</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="comment">// Remove source archive if configured and extraction succeeded</span></div>
@@ -358,11 +386,11 @@ $(document).ready(function(){initNavTree('QGCArchiveWatcher_8cc_source.html','')
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keyword">const</span> <a class="code hl_enumeration" href="namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5">QGCCompression::Format</a> <a class="code hl_function" href="namespaceLogFormatter.html#a8ee6aabd40509c19c84a3cad40dca45e">format</a> = <a class="code hl_function" href="namespaceQGCCompression.html#afcb393dcbef6d5237a5ce3e3ad9f5810">QGCCompression::detectFormat</a>(filePath);</div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="keywordflow">switch</span> (_filterMode) {</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="keywordflow">case</span> FilterMode::Archives:</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classQGCArchiveWatcher.html#ae77de53fa4d5da43748b7d543e2f6020a178fde647037235223ac2a188a7106b1">FilterMode::Archives</a>:</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceQGCCompression.html#a5ea391e13fd47cad2ba98d012a665bd0">QGCCompression::isArchiveFormat</a>(format);</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keywordflow">case</span> FilterMode::Compressed:</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classQGCArchiveWatcher.html#ae77de53fa4d5da43748b7d543e2f6020a4d602abc0c0f2f7c1a5156d964517e4e">FilterMode::Compressed</a>:</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceQGCCompression.html#a01c7a1f29ea9b9eeb445b8947fc23811">QGCCompression::isCompressionFormat</a>(format);</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="keywordflow">case</span> FilterMode::Both:</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classQGCArchiveWatcher.html#ae77de53fa4d5da43748b7d543e2f6020a130c5b3473c57faa76e2a1c54e26f88e">FilterMode::Both</a>:</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceQGCCompression.html#a5ea391e13fd47cad2ba98d012a665bd0">QGCCompression::isArchiveFormat</a>(format) ||</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>               <a class="code hl_function" href="namespaceQGCCompression.html#a01c7a1f29ea9b9eeb445b8947fc23811">QGCCompression::isCompressionFormat</a>(format);</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    }</div>
@@ -452,8 +480,8 @@ $(document).ready(function(){initNavTree('QGCArchiveWatcher_8cc_source.html','')
 <div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span><span class="keywordtype">void</span> QGCArchiveWatcher::_setProgress(qreal progress)</div>
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>{</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    <span class="keywordflow">if</span> (!qFuzzyCompare(_progress, progress)) {</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        _progress = progress;</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    <span class="keywordflow">if</span> (!qFuzzyCompare(_progress, <a class="code hl_function" href="classQGCArchiveWatcher.html#a343779439d94958d101456f272330a9a">progress</a>)) {</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        _progress = <a class="code hl_function" href="classQGCArchiveWatcher.html#a343779439d94958d101456f272330a9a">progress</a>;</div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        emit <a class="code hl_signal" href="classQGCArchiveWatcher.html#ac97f24899a0feb0a002f228ce02169a2">progressChanged</a>(_progress);</div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    }</div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>}</div>
@@ -463,10 +491,28 @@ $(document).ready(function(){initNavTree('QGCArchiveWatcher_8cc_source.html','')
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
 <div class="ttc" id="aclassQGCArchiveWatcher_html"><div class="ttname"><a href="classQGCArchiveWatcher.html">QGCArchiveWatcher</a></div><div class="ttdoc">Watches directories for new archive files and optionally auto-decompresses them.</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8h_source.html#l00034">QGCArchiveWatcher.h:35</a></div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_a00223e67b3c1a2399e6a50e2521d6a6e"><div class="ttname"><a href="classQGCArchiveWatcher.html#a00223e67b3c1a2399e6a50e2521d6a6e">QGCArchiveWatcher::debounceDelay</a></div><div class="ttdeci">int debounceDelay() const</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8cc_source.html#l00067">QGCArchiveWatcher.cc:67</a></div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_a154822e2251ada8f8b2b2af46cdeb1f2"><div class="ttname"><a href="classQGCArchiveWatcher.html#a154822e2251ada8f8b2b2af46cdeb1f2">QGCArchiveWatcher::setRemoveAfterExtraction</a></div><div class="ttdeci">void setRemoveAfterExtraction(bool remove)</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8cc_source.html#l00057">QGCArchiveWatcher.cc:57</a></div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_a26a7f86c477836d89390d09c39735b5c"><div class="ttname"><a href="classQGCArchiveWatcher.html#a26a7f86c477836d89390d09c39735b5c">QGCArchiveWatcher::watchedDirectories</a></div><div class="ttdeci">QStringList watchedDirectories() const</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8cc_source.html#l00117">QGCArchiveWatcher.cc:117</a></div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_a300314aba4eae5a3dbf641eed5050b68"><div class="ttname"><a href="classQGCArchiveWatcher.html#a300314aba4eae5a3dbf641eed5050b68">QGCArchiveWatcher::scanDirectory</a></div><div class="ttdeci">QStringList scanDirectory(const QString &amp;directoryPath) const</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8cc_source.html#l00143">QGCArchiveWatcher.cc:143</a></div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_a343779439d94958d101456f272330a9a"><div class="ttname"><a href="classQGCArchiveWatcher.html#a343779439d94958d101456f272330a9a">QGCArchiveWatcher::progress</a></div><div class="ttdeci">qreal progress() const</div><div class="ttdoc">Get current extraction progress.</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8h_source.html#l00122">QGCArchiveWatcher.h:122</a></div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_a51e747a81aaaa213ae172328874171c7"><div class="ttname"><a href="classQGCArchiveWatcher.html#a51e747a81aaaa213ae172328874171c7">QGCArchiveWatcher::setOutputDirectory</a></div><div class="ttdeci">void setOutputDirectory(const QString &amp;directory)</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8cc_source.html#l00049">QGCArchiveWatcher.cc:49</a></div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_a5b3ae51db159d2e75afed1833eeb01df"><div class="ttname"><a href="classQGCArchiveWatcher.html#a5b3ae51db159d2e75afed1833eeb01df">QGCArchiveWatcher::cancelExtraction</a></div><div class="ttdeci">void cancelExtraction()</div><div class="ttdoc">Cancel current extraction.</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8cc_source.html#l00163">QGCArchiveWatcher.cc:163</a></div></div>
 <div class="ttc" id="aclassQGCArchiveWatcher_html_a6442e775aa2750079844c63dc8f7e478"><div class="ttname"><a href="classQGCArchiveWatcher.html#a6442e775aa2750079844c63dc8f7e478">QGCArchiveWatcher::autoDecompressChanged</a></div><div class="ttdeci">void autoDecompressChanged(bool autoDecompress)</div><div class="ttdoc">Property change signals.</div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_a759404d48ef96b57038659c23d636c0a"><div class="ttname"><a href="classQGCArchiveWatcher.html#a759404d48ef96b57038659c23d636c0a">QGCArchiveWatcher::setFilterMode</a></div><div class="ttdeci">void setFilterMode(FilterMode mode)</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8cc_source.html#l00036">QGCArchiveWatcher.cc:36</a></div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_a7a19d209a9f9049fa21f544e74491e48"><div class="ttname"><a href="classQGCArchiveWatcher.html#a7a19d209a9f9049fa21f544e74491e48">QGCArchiveWatcher::setDebounceDelay</a></div><div class="ttdeci">void setDebounceDelay(int milliseconds)</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8cc_source.html#l00062">QGCArchiveWatcher.cc:62</a></div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_a9284a4eab07a18fc03994e0f4a9fc7d7"><div class="ttname"><a href="classQGCArchiveWatcher.html#a9284a4eab07a18fc03994e0f4a9fc7d7">QGCArchiveWatcher::watchDirectory</a></div><div class="ttdeci">bool watchDirectory(const QString &amp;directoryPath)</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8cc_source.html#l00076">QGCArchiveWatcher.cc:76</a></div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_a99ab991efd88d5c9ea1ff28e7792be1a"><div class="ttname"><a href="classQGCArchiveWatcher.html#a99ab991efd88d5c9ea1ff28e7792be1a">QGCArchiveWatcher::unwatchDirectory</a></div><div class="ttdeci">bool unwatchDirectory(const QString &amp;directoryPath)</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8cc_source.html#l00110">QGCArchiveWatcher.cc:110</a></div></div>
 <div class="ttc" id="aclassQGCArchiveWatcher_html_ac97f24899a0feb0a002f228ce02169a2"><div class="ttname"><a href="classQGCArchiveWatcher.html#ac97f24899a0feb0a002f228ce02169a2">QGCArchiveWatcher::progressChanged</a></div><div class="ttdeci">void progressChanged(qreal progress)</div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_add10f1d31ab828388a05bcc428c72a61"><div class="ttname"><a href="classQGCArchiveWatcher.html#add10f1d31ab828388a05bcc428c72a61">QGCArchiveWatcher::setAutoDecompress</a></div><div class="ttdeci">void setAutoDecompress(bool enable)</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8cc_source.html#l00041">QGCArchiveWatcher.cc:41</a></div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_ae77de53fa4d5da43748b7d543e2f6020"><div class="ttname"><a href="classQGCArchiveWatcher.html#ae77de53fa4d5da43748b7d543e2f6020">QGCArchiveWatcher::FilterMode</a></div><div class="ttdeci">FilterMode</div><div class="ttdoc">Whether auto-decompression is enabled.</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8h_source.html#l00054">QGCArchiveWatcher.h:54</a></div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_ae77de53fa4d5da43748b7d543e2f6020a130c5b3473c57faa76e2a1c54e26f88e"><div class="ttname"><a href="classQGCArchiveWatcher.html#ae77de53fa4d5da43748b7d543e2f6020a130c5b3473c57faa76e2a1c54e26f88e">QGCArchiveWatcher::FilterMode::Both</a></div><div class="ttdeci">@ Both</div><div class="ttdoc">Watch for both archives and compressed files.</div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_ae77de53fa4d5da43748b7d543e2f6020a178fde647037235223ac2a188a7106b1"><div class="ttname"><a href="classQGCArchiveWatcher.html#ae77de53fa4d5da43748b7d543e2f6020a178fde647037235223ac2a188a7106b1">QGCArchiveWatcher::FilterMode::Archives</a></div><div class="ttdeci">@ Archives</div><div class="ttdoc">Watch for archive files (.zip, .tar, .tar.gz, .7z)</div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_ae77de53fa4d5da43748b7d543e2f6020a4d602abc0c0f2f7c1a5156d964517e4e"><div class="ttname"><a href="classQGCArchiveWatcher.html#ae77de53fa4d5da43748b7d543e2f6020a4d602abc0c0f2f7c1a5156d964517e4e">QGCArchiveWatcher::FilterMode::Compressed</a></div><div class="ttdeci">@ Compressed</div><div class="ttdoc">Watch for single-file compressed (.gz, .xz, .zst, .bz2, .lz4)</div></div>
 <div class="ttc" id="aclassQGCArchiveWatcher_html_aeba287e370462e11c45debc6d9b75599"><div class="ttname"><a href="classQGCArchiveWatcher.html#aeba287e370462e11c45debc6d9b75599">QGCArchiveWatcher::extractionComplete</a></div><div class="ttdeci">void extractionComplete(const QString &amp;archivePath, const QString &amp;outputPath, bool success, const QString &amp;errorString)</div></div>
 <div class="ttc" id="aclassQGCArchiveWatcher_html_aefc7e60bdf76a5e19937536401dc81a0"><div class="ttname"><a href="classQGCArchiveWatcher.html#aefc7e60bdf76a5e19937536401dc81a0">QGCArchiveWatcher::outputDirectoryChanged</a></div><div class="ttdeci">void outputDirectoryChanged(const QString &amp;directory)</div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_af3f62b31057a6e4ef2b033fc8f953f60"><div class="ttname"><a href="classQGCArchiveWatcher.html#af3f62b31057a6e4ef2b033fc8f953f60">QGCArchiveWatcher::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Stop watching all directories.</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8cc_source.html#l00122">QGCArchiveWatcher.cc:122</a></div></div>
+<div class="ttc" id="aclassQGCArchiveWatcher_html_af8c52ad63cac21cf4be64a7d6a1f132e"><div class="ttname"><a href="classQGCArchiveWatcher.html#af8c52ad63cac21cf4be64a7d6a1f132e">QGCArchiveWatcher::~QGCArchiveWatcher</a></div><div class="ttdeci">~QGCArchiveWatcher() override</div><div class="ttdef"><b>Definition</b> <a href="QGCArchiveWatcher_8cc_source.html#l00024">QGCArchiveWatcher.cc:24</a></div></div>
 <div class="ttc" id="aclassQGCArchiveWatcher_html_afd0c24c2af8d2e2fc54d3e8948df2fb1"><div class="ttname"><a href="classQGCArchiveWatcher.html#afd0c24c2af8d2e2fc54d3e8948df2fb1">QGCArchiveWatcher::extractingChanged</a></div><div class="ttdeci">void extractingChanged(bool extracting)</div></div>
 <div class="ttc" id="aclassQGCArchiveWatcher_html_afedb3c8cfabcab920965048181d06e5e"><div class="ttname"><a href="classQGCArchiveWatcher.html#afedb3c8cfabcab920965048181d06e5e">QGCArchiveWatcher::archiveDetected</a></div><div class="ttdeci">void archiveDetected(const QString &amp;archivePath, QGCCompression::Format format)</div></div>
 <div class="ttc" id="aclassQGCCompressionJob_html"><div class="ttname"><a href="classQGCCompressionJob.html">QGCCompressionJob</a></div><div class="ttdoc">QObject wrapper for compression operations with progress signals.</div><div class="ttdef"><b>Definition</b> <a href="QGCCompressionJob_8h_source.html#l00059">QGCCompressionJob.h:60</a></div></div>
@@ -474,6 +520,8 @@ $(document).ready(function(){initNavTree('QGCArchiveWatcher_8cc_source.html','')
 <div class="ttc" id="aclassQGCCompressionJob_html_a832225340fa99a0bee854eabca51ec94"><div class="ttname"><a href="classQGCCompressionJob.html#a832225340fa99a0bee854eabca51ec94">QGCCompressionJob::cancel</a></div><div class="ttdeci">void cancel()</div><div class="ttdoc">Cancel current operation.</div><div class="ttdef"><b>Definition</b> <a href="QGCCompressionJob_8cc_source.html#l00129">QGCCompressionJob.cc:129</a></div></div>
 <div class="ttc" id="aclassQGCCompressionJob_html_aae64a0e3ec0eac47fba1eadec2729aac"><div class="ttname"><a href="classQGCCompressionJob.html#aae64a0e3ec0eac47fba1eadec2729aac">QGCCompressionJob::finished</a></div><div class="ttdeci">void finished(bool success)</div></div>
 <div class="ttc" id="aclassQGCCompressionJob_html_abc588cca150f2b2e846daf755c1db85c"><div class="ttname"><a href="classQGCCompressionJob.html#abc588cca150f2b2e846daf755c1db85c">QGCCompressionJob::decompressFile</a></div><div class="ttdeci">void decompressFile(const QString &amp;inputPath, const QString &amp;outputPath=QString(), qint64 maxBytes=0)</div><div class="ttdef"><b>Definition</b> <a href="QGCCompressionJob_8cc_source.html#l00094">QGCCompressionJob.cc:94</a></div></div>
+<div class="ttc" id="aclassQGCCompressionJob_html_ac3a0f282aed8cd27814d19df7a021696"><div class="ttname"><a href="classQGCCompressionJob.html#ac3a0f282aed8cd27814d19df7a021696">QGCCompressionJob::isRunning</a></div><div class="ttdeci">bool isRunning() const</div><div class="ttdef"><b>Definition</b> <a href="QGCCompressionJob_8h_source.html#l00096">QGCCompressionJob.h:96</a></div></div>
+<div class="ttc" id="aclassQGCCompressionJob_html_ad7a9a67f877810397cda8ac0ddae2f31"><div class="ttname"><a href="classQGCCompressionJob.html#ad7a9a67f877810397cda8ac0ddae2f31">QGCCompressionJob::outputPath</a></div><div class="ttdeci">QString outputPath() const</div><div class="ttdef"><b>Definition</b> <a href="QGCCompressionJob_8h_source.html#l00099">QGCCompressionJob.h:99</a></div></div>
 <div class="ttc" id="aclassQGCCompressionJob_html_ad7bbe3f331b2a490cba6439f0cc596b3"><div class="ttname"><a href="classQGCCompressionJob.html#ad7bbe3f331b2a490cba6439f0cc596b3">QGCCompressionJob::extractArchive</a></div><div class="ttdeci">void extractArchive(const QString &amp;archivePath, const QString &amp;outputDirectoryPath, qint64 maxBytes=0)</div><div class="ttdef"><b>Definition</b> <a href="QGCCompressionJob_8cc_source.html#l00068">QGCCompressionJob.cc:68</a></div></div>
 <div class="ttc" id="aclassQGCFileWatcher_html"><div class="ttname"><a href="classQGCFileWatcher.html">QGCFileWatcher</a></div><div class="ttdoc">Callback-based file/directory watcher with debouncing support.</div><div class="ttdef"><b>Definition</b> <a href="QGCFileWatcher_8h_source.html#l00026">QGCFileWatcher.h:27</a></div></div>
 <div class="ttc" id="aclassQGCFileWatcher_html_a1dbcb3ff1b45803e46f9e08c1a2fc03c"><div class="ttname"><a href="classQGCFileWatcher.html#a1dbcb3ff1b45803e46f9e08c1a2fc03c">QGCFileWatcher::unwatchDirectory</a></div><div class="ttdeci">bool unwatchDirectory(const QString &amp;directoryPath)</div><div class="ttdef"><b>Definition</b> <a href="QGCFileWatcher_8cc_source.html#l00145">QGCFileWatcher.cc:145</a></div></div>
@@ -490,7 +538,6 @@ $(document).ready(function(){initNavTree('QGCArchiveWatcher_8cc_source.html','')
 <div class="ttc" id="anamespaceQGCCompression_html_a8383c990bb8ec070be023eb18b48ffb5"><div class="ttname"><a href="namespaceQGCCompression.html#a8383c990bb8ec070be023eb18b48ffb5">QGCCompression::strippedPath</a></div><div class="ttdeci">QString strippedPath(const QString &amp;filePath)</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00536">QGCCompression.cc:536</a></div></div>
 <div class="ttc" id="anamespaceQGCCompression_html_a9ed6795a888693588da89174b9f072f5"><div class="ttname"><a href="namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5">QGCCompression::Format</a></div><div class="ttdeci">Format</div><div class="ttdoc">Archive and compression format types (for decompression)</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8h_source.html#l00050">QGCCompression.h:50</a></div></div>
 <div class="ttc" id="anamespaceQGCCompression_html_afcb393dcbef6d5237a5ce3e3ad9f5810"><div class="ttname"><a href="namespaceQGCCompression.html#afcb393dcbef6d5237a5ce3e3ad9f5810">QGCCompression::detectFormat</a></div><div class="ttdeci">Format detectFormat(const QString &amp;filePath, bool useContentFallback)</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00320">QGCCompression.cc:320</a></div></div>
-<div class="ttc" id="anamespaceQGCKeychain_html_a80d709ef3cc8b603a4986830e1ef6092"><div class="ttname"><a href="namespaceQGCKeychain.html#a80d709ef3cc8b603a4986830e1ef6092">QGCKeychain::remove</a></div><div class="ttdeci">bool remove(const QString &amp;key)</div><div class="ttdef"><b>Definition</b> <a href="QGCKeychain_8cc_source.html#l00153">QGCKeychain.cc:153</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

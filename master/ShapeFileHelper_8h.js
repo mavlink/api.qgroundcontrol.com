@@ -1,4 +1,4 @@
 var ShapeFileHelper_8h =
 [
-    [ "ShapeFileHelper", "classShapeFileHelper.html", null ]
+    [ "ShapeFileHelper", "classShapeFileHelper.html", "classShapeFileHelper" ]
 ];

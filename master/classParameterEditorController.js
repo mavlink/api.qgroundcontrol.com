@@ -1,13 +1,32 @@
 var classParameterEditorController =
 [
+    [ "ParameterEditorController", "classParameterEditorController.html#ab42ba45e45be2339edfebc866f3043ae", null ],
+    [ "~ParameterEditorController", "classParameterEditorController.html#a9dc85e878ed941b2e74be56f986d795e", null ],
+    [ "buildDiffFromFile", "classParameterEditorController.html#a1d28e9fb0e1e0c977fce31197e6f249b", null ],
+    [ "categories", "classParameterEditorController.html#a61b73bcb8ee227612021ca1f621eb3d7", null ],
+    [ "clearAllFavorites", "classParameterEditorController.html#a9c445e8e429b33ecdba730ed850914a7", null ],
+    [ "clearDiff", "classParameterEditorController.html#ae035e5f69ec4938265a74f926fa12f59", null ],
+    [ "currentCategory", "classParameterEditorController.html#a7973a867dff3e80df4c493f03390100c", null ],
     [ "currentCategoryChanged", "classParameterEditorController.html#ab7d98cf244d5e22c5428a0fe96aa18c8", null ],
+    [ "currentGroup", "classParameterEditorController.html#af1fb6740490f3cb8b4f93bd8b9edfba1", null ],
     [ "currentGroupChanged", "classParameterEditorController.html#a42f431a7b14a90a5213dbab554f84dde", null ],
+    [ "diffList", "classParameterEditorController.html#a53abe04966bc2a9156ab6f3dc25fb7bf", null ],
     [ "diffMultipleComponentsChanged", "classParameterEditorController.html#a686229755c3b9132e314d4d87c35996b", null ],
     [ "diffOtherVehicleChanged", "classParameterEditorController.html#abad07b0a92ae9a49572cb6ffa2726f83", null ],
+    [ "favoriteParameterNames", "classParameterEditorController.html#a9ebd64f9e2a469b47b73d77909ecb316", null ],
     [ "favoritesChanged", "classParameterEditorController.html#ac007dfa881def35c85510d601e29123c", null ],
     [ "hideReadOnlyChanged", "classParameterEditorController.html#afd2c6a11aa20c0021cd06cd328662ede", null ],
+    [ "isFavorite", "classParameterEditorController.html#acbdaf5b75bf0ede6a20a38ee4dd920e9", null ],
     [ "parametersChanged", "classParameterEditorController.html#a2ad968a09b9c142d7caad50ce89f78bb", null ],
+    [ "refresh", "classParameterEditorController.html#a4039462a8a647e6b1f9adc546cc2b5b5", null ],
+    [ "resetAllToDefaults", "classParameterEditorController.html#af73da671d57778dee517f2ac7ce6ad36", null ],
+    [ "resetAllToVehicleConfiguration", "classParameterEditorController.html#a157d731e0ce8eedaf2ab86063d591491", null ],
+    [ "saveToFile", "classParameterEditorController.html#ab17d18bae48b0daa23212ac966f9e250", null ],
     [ "searchTextChanged", "classParameterEditorController.html#ab45dd26e74654a873d170c2ca7523ba0", null ],
+    [ "sendDiff", "classParameterEditorController.html#ab58112de140d969b8ec7111ededf9eda", null ],
+    [ "setCurrentCategory", "classParameterEditorController.html#abf55511909b90bf38a020e2f35414732", null ],
+    [ "setCurrentGroup", "classParameterEditorController.html#aa33421d685ab6a5504c99ea4300ce7d9", null ],
     [ "showFavoritesOnlyChanged", "classParameterEditorController.html#a164a8daed0b084b1ccf5ce1ec98c7666", null ],
-    [ "showModifiedOnlyChanged", "classParameterEditorController.html#ae1293485727bba0ebed60ea4e0c75ef3", null ]
+    [ "showModifiedOnlyChanged", "classParameterEditorController.html#ae1293485727bba0ebed60ea4e0c75ef3", null ],
+    [ "toggleFavorite", "classParameterEditorController.html#a7675b1e0acae6d038623a3e47b902e16", null ]
 ];

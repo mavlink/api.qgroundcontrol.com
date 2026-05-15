@@ -9,7 +9,6 @@ var classInstrumentValueData =
     [ "InstrumentValueData", "classInstrumentValueData.html#ae99ef9f078e33bdd800d4f026e3f69ac", null ],
     [ "addRangeValue", "classInstrumentValueData.html#a51a838a470e89a397d442960b892bd6d", null ],
     [ "clearFact", "classInstrumentValueData.html#a64a53b6626b26301c825b8e6f21939df", null ],
-    [ "CONSTANT", "classInstrumentValueData.html#ab88189787822fd7b4e625d81ca91b39a", null ],
     [ "currentColorChanged", "classInstrumentValueData.html#a82ba894ac068a42a2cfb042ad00997d1", null ],
     [ "currentIconChanged", "classInstrumentValueData.html#a0fdbb66f9c598466edb41047a6794a4a", null ],
     [ "currentOpacityChanged", "classInstrumentValueData.html#aeb863353c8d043d108a6a19ea7fe351c", null ],
@@ -25,8 +24,8 @@ var classInstrumentValueData =
     [ "factValueNamesChanged", "classInstrumentValueData.html#a9026d4d1d07c9de84d79acd5ea03bb3b", null ],
     [ "icon", "classInstrumentValueData.html#ae17758a585cb486c55c9a8c00470dedb", null ],
     [ "iconChanged", "classInstrumentValueData.html#ae9deeaec781ac67e31baf90a5410d9f7", null ],
-    [ "invalidColor", "classInstrumentValueData.html#abfd55f8e4f901600519f976bc6d4874e", null ],
-    [ "isValidColor", "classInstrumentValueData.html#a808625e531576ebf26a7affa0b6b2364", null ],
+    [ "invalidColor", "classInstrumentValueData.html#a6711245f1e522f4aaf08224b56d8c393", null ],
+    [ "isValidColor", "classInstrumentValueData.html#a0402d6e6de5e3f070fce5d6f085e42ca", null ],
     [ "rangeColors", "classInstrumentValueData.html#a793b089937385235b38a76804c8cf59a", null ],
     [ "rangeColorsChanged", "classInstrumentValueData.html#aba527b4e1cc326485f22513804f18e7f", null ],
     [ "rangeIcons", "classInstrumentValueData.html#ae873b145d5ed8208751701f4eed08513", null ],
@@ -38,6 +37,7 @@ var classInstrumentValueData =
     [ "rangeValues", "classInstrumentValueData.html#a84da1d79d3ed825e228d7fb0621af773", null ],
     [ "rangeValuesChanged", "classInstrumentValueData.html#ab6992b30546cf83446d25dd34cbbcde5", null ],
     [ "removeRangeValue", "classInstrumentValueData.html#a8feae30a34f0ed3b6809757fdee9582b", null ],
+    [ "setFact", "classInstrumentValueData.html#affa67a1562043ccfefc682f75415edea", null ],
     [ "setIcon", "classInstrumentValueData.html#a894bba4dc06b60a9ba3379506ecd653f", null ],
     [ "setRangeColors", "classInstrumentValueData.html#ac6117e7eb22e27772d48763d30bb2d31", null ],
     [ "setRangeIcons", "classInstrumentValueData.html#ad8ba70df31ef426036bb153e4df258a6", null ],
@@ -50,6 +50,5 @@ var classInstrumentValueData =
     [ "showUnitsChanged", "classInstrumentValueData.html#a37ece440dbc4a5eecb066ccf2364bb22", null ],
     [ "text", "classInstrumentValueData.html#a37e738cbcbacc1b1d85715941aff744a", null ],
     [ "textChanged", "classInstrumentValueData.html#a9394f4a781b0e1275e44791e5a1cc8c0", null ],
-    [ "factName", "classInstrumentValueData.html#a3341bf07d8b25d513ed2b91dc45f9b7f", null ],
     [ "vehicleFactGroupName", "classInstrumentValueData.html#a0eeb4c78a122766fbac9d89c977b0e94", null ]
 ];

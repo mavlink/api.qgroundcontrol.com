@@ -2,8 +2,8 @@ var classActuatorTesting_1_1ActuatorTest =
 [
     [ "ActuatorTest", "classActuatorTesting_1_1ActuatorTest.html#a35449492a52c872318d2333d043e2a08", null ],
     [ "~ActuatorTest", "classActuatorTesting_1_1ActuatorTest.html#aa0d437cfd7907d4f8bb6730566e72b0d", null ],
+    [ "actuators", "classActuatorTesting_1_1ActuatorTest.html#aff172d708014da4ba1759b7937a4798c", null ],
     [ "actuatorsChanged", "classActuatorTesting_1_1ActuatorTest.html#a56b3e2a7b88a84eac7323c18fa1cd918", null ],
-    [ "actuatorsChanged", "classActuatorTesting_1_1ActuatorTest.html#a4a0ed837d30f0db47657e41dcdd79bde", null ],
     [ "allMotorsActuator", "classActuatorTesting_1_1ActuatorTest.html#a87253fd105e02b0c052736ae91638abf", null ],
     [ "hadFailure", "classActuatorTesting_1_1ActuatorTest.html#a43de141f20d5f51eba81aaca2bbd84f1", null ],
     [ "hadFailureChanged", "classActuatorTesting_1_1ActuatorTest.html#a5eb89045c8b0e49e2fbd0e4d11097afc", null ],

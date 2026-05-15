@@ -15,7 +15,6 @@ var classQGroundControlQmlGlobal =
     [ "altitudeFrameShortDescription", "classQGroundControlQmlGlobal.html#ac77b17feb1d3085684781cce8452b441", null ],
     [ "apmFirmwareSupported", "classQGroundControlQmlGlobal.html#ae1b6023975d5d493139ece3a04bf3d77", null ],
     [ "appName", "classQGroundControlQmlGlobal.html#a87d11d9bdae73668a37b716a30929542", null ],
-    [ "CONSTANT", "classQGroundControlQmlGlobal.html#a3bdc1cdaa182cfb1472b5eb656aad424", null ],
     [ "copyToClipboard", "classQGroundControlQmlGlobal.html#ae3f41b9a5efb3206e62169985a4775c1", null ],
     [ "corePlugin", "classQGroundControlQmlGlobal.html#ab05e0a149219ee6df07c21108424e903", null ],
     [ "elevationProviderName", "classQGroundControlQmlGlobal.html#a2365f60ed7148d3b6e83b19f8f4ff526", null ],
@@ -44,6 +43,7 @@ var classQGroundControlQmlGlobal =
     [ "qgcPositionManger", "classQGroundControlQmlGlobal.html#af866804a8ed95105db3a4a3af338e615", null ],
     [ "qgcVersion", "classQGroundControlQmlGlobal.html#aae503ae9341c422e17462dbcd40a5f9f", null ],
     [ "saveBoolGlobalSetting", "classQGroundControlQmlGlobal.html#ac212220a715df3478ab14f9867408817", null ],
+    [ "saveGlobalSetting", "classQGroundControlQmlGlobal.html#aec92e3da0b498637d409f1924aea27f4", null ],
     [ "setFlightMapPosition", "classQGroundControlQmlGlobal.html#a041f5fda49f647eb589a3e6bfd117cfb", null ],
     [ "setFlightMapZoom", "classQGroundControlQmlGlobal.html#a179065cd76f89f3a24febab80cdf36e2", null ],
     [ "settingsManager", "classQGroundControlQmlGlobal.html#a42a6f5023842e0692fe4cc149009ce54", null ],
@@ -69,6 +69,5 @@ var classQGroundControlQmlGlobal =
     [ "zOrderWaypointIndicators", "classQGroundControlQmlGlobal.html#ae3856db002d5e34fd1dc2fa3f6ec7ed3", null ],
     [ "zOrderWaypointLines", "classQGroundControlQmlGlobal.html#a6cf0f278f90c249f6aa02da59c763b15", null ],
     [ "zOrderWidgets", "classQGroundControlQmlGlobal.html#ad871f11af9d5c0e411df478fac6cd81d", null ],
-    [ "kDefaultMessageDialogButtons", "classQGroundControlQmlGlobal.html#a1fd583e2f7a0a75ecdb59fe85dca077e", null ],
-    [ "value", "classQGroundControlQmlGlobal.html#ad4f1c0bc1b4bdbd18810d186a5c7c3fa", null ]
+    [ "kDefaultMessageDialogButtons", "classQGroundControlQmlGlobal.html#a1fd583e2f7a0a75ecdb59fe85dca077e", null ]
 ];

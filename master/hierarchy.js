@@ -25,6 +25,7 @@ var hierarchy =
     [ "CalibrationResult", "structCalibrationResult.html", null ],
     [ "CameraMetaData", "classCameraMetaData.html", null ],
     [ "MockLinkCamera::CameraState", "structMockLinkCamera_1_1CameraState.html", null ],
+    [ "QGCCameraManager::CameraStruct", "structQGCCameraManager_1_1CameraStruct.html", null ],
     [ "TerrainAreaQuery::CarpetHeightInfo_t", "structTerrainAreaQuery_1_1CarpetHeightInfo__t.html", null ],
     [ "RemoteControlCalibrationController::ChannelInfo", "structRemoteControlCalibrationController_1_1ChannelInfo.html", null ],
     [ "QGCCommandLineParser::CommandLineParseResult", "structQGCCommandLineParser_1_1CommandLineParseResult.html", null ],
@@ -55,6 +56,7 @@ var hierarchy =
     [ "AndroidSerial::JniContext", "structAndroidSerial_1_1JniContext.html", null ],
     [ "AndroidInterface::JniLocalRef< T >", "classAndroidInterface_1_1JniLocalRef.html", null ],
     [ "AndroidSerial::JniMethodCache", "structAndroidSerial_1_1JniMethodCache.html", null ],
+    [ "QGCCorePlugin::JoystickAction", "structQGCCorePlugin_1_1JoystickAction.html", null ],
     [ "SDLJoystick::JoystickLock", "classSDLJoystick_1_1JoystickLock.html", null ],
     [ "JsonParsing::KeyValidateInfo", "structJsonParsing_1_1KeyValidateInfo.html", null ],
     [ "KMLSchemaValidator", "classKMLSchemaValidator.html", null ],
@@ -781,6 +783,7 @@ var hierarchy =
     [ "QUdpSocket", null, [
       [ "UdpIODevice", "classUdpIODevice.html", null ]
     ] ],
+    [ "LogStore::QueryParams", "structLogStore_1_1QueryParams.html", null ],
     [ "ActuatorGeometry::RenderOptions", "structActuatorGeometry_1_1RenderOptions.html", null ],
     [ "QGCNetworkHelper::RequestConfig", "structQGCNetworkHelper_1_1RequestConfig.html", null ],
     [ "QtAndroidPrivate::ResumePauseListener", null, [

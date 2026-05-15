@@ -10,7 +10,7 @@ var gstqgcvideosinkbin_8cc =
     [ "PROP_MAX_LATENESS_NAME", "gstqgcvideosinkbin_8cc.html#a9ca7c98ff9a3082a885d0e54f0e2bf4a", null ],
     [ "PROP_SYNC_NAME", "gstqgcvideosinkbin_8cc.html#abb6989000af027bcfaee4814eee50d48", null ],
     [ "G_DEFINE_TYPE", "gstqgcvideosinkbin_8cc.html#a31b0634fb7e587b349ac27f8a347aebd", null ],
-    [ "GST_ELEMENT_REGISTER_DEFINE_WITH_CODE", "gstqgcvideosinkbin_8cc.html#a48f6b8d812825038a66fccb9ac23a236", null ],
+    [ "GST_ELEMENT_REGISTER_DEFINE_WITH_CODE", "gstqgcvideosinkbin_8cc.html#a6ff657c0460a81c7d5f1cc205973c1c3", null ],
     [ "gst_qgc_appsink_query_probe", "gstqgcvideosinkbin_8cc.html#a6b69cd84d85bb4b13131933a869eea30", null ],
     [ "gst_qgc_handle_allocation_query", "gstqgcvideosinkbin_8cc.html#a5d5264b46c96acb6c1dfed029b43c89b", null ],
     [ "gst_qgc_video_sink_bin_change_state", "gstqgcvideosinkbin_8cc.html#aa629645c96f3bd5c440986a2e8da0951", null ],

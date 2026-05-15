@@ -20,6 +20,7 @@ var classVehicleLinkManager =
     [ "primaryLinkName", "classVehicleLinkManager.html#aebf98c00334c00d1d51e57e39c304c59", null ],
     [ "setCommunicationLostEnabled", "classVehicleLinkManager.html#a89b6f2c35ef09472f5be852ed8936eef", null ],
     [ "setPrimaryLinkByName", "classVehicleLinkManager.html#a59a83d22f15950de7ca317ef20970a7a", null ],
+    [ "Vehicle", "classVehicleLinkManager.html#a74c93d9d035fcad5381bfb57de0426a1", null ],
     [ "kTestCommLostDetectionTimeoutMs", "classVehicleLinkManager.html#a7e6f77bcabdc1bda8f3a7b665155ef8e", null ],
     [ "kTestHeartbeatTimeoutMs", "classVehicleLinkManager.html#ab353f46c860169c591b4c1441a1b4463", null ]
 ];

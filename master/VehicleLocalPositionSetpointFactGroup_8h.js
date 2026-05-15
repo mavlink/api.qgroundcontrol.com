@@ -1,4 +1,4 @@
 var VehicleLocalPositionSetpointFactGroup_8h =
 [
-    [ "VehicleLocalPositionSetpointFactGroup", "classVehicleLocalPositionSetpointFactGroup.html", null ]
+    [ "VehicleLocalPositionSetpointFactGroup", "classVehicleLocalPositionSetpointFactGroup.html", "classVehicleLocalPositionSetpointFactGroup" ]
 ];

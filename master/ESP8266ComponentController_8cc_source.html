@@ -109,7 +109,8 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="ESP8266ComponentController_8cc.html#aecf13b8dc783db2202ca5c34fe117fc3">   10</a></span><span class="preprocessor">#define MAX_RETRIES 5</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>ESP8266ComponentController::ESP8266ComponentController(QObject *parent)</div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#aab90d6ff8bbb0649da02d16dd2fba1a9">   12</a></span><a class="code hl_function" href="classESP8266ComponentController.html#aab90d6ff8bbb0649da02d16dd2fba1a9">ESP8266ComponentController::ESP8266ComponentController</a>(QObject *parent)</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    : <a class="code hl_class" href="classFactPanelController.html">FactPanelController</a>(parent)</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    , _baud(getParameterFact(componentID(), QStringLiteral(<span class="stringliteral">&quot;UART_BAUDRATE&quot;</span>)))</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    , _ver(getParameterFact(componentID(), QStringLiteral(<span class="stringliteral">&quot;SW_VER&quot;</span>)))</div>
@@ -136,30 +137,36 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        _channels.append(QString::number(i));</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    (void) connect(_vehicle, &amp;<a class="code hl_signal" href="classVehicle.html#ae7827ca7645409c3d9beb5931842f715">Vehicle::mavCommandResult</a>, <span class="keyword">this</span>, &amp;ESP8266ComponentController::_mavCommandResult);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    (void) connect(<a class="code hl_variable" href="classFactPanelController.html#ad5f0b6d670df079684a92bc980cfadd3">_vehicle</a>, &amp;<a class="code hl_signal" href="classVehicle.html#ae7827ca7645409c3d9beb5931842f715">Vehicle::mavCommandResult</a>, <span class="keyword">this</span>, &amp;ESP8266ComponentController::_mavCommandResult);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    (void) connect(_ssid4, &amp;<a class="code hl_signal" href="classFact.html#afa7388d8e1658154fc474e09b3a803d1">Fact::valueChanged</a>, <span class="keyword">this</span>, &amp;ESP8266ComponentController::_ssidChanged);</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    (void) connect(_pwd4, &amp;<a class="code hl_signal" href="classFact.html#afa7388d8e1658154fc474e09b3a803d1">Fact::valueChanged</a>, <span class="keyword">this</span>, &amp;ESP8266ComponentController::_passwordChanged);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    (void) connect(_baud, &amp;<a class="code hl_signal" href="classFact.html#afa7388d8e1658154fc474e09b3a803d1">Fact::valueChanged</a>, <span class="keyword">this</span>, &amp;ESP8266ComponentController::_baudChanged);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    (void) connect(_ver, &amp;<a class="code hl_signal" href="classFact.html#afa7388d8e1658154fc474e09b3a803d1">Fact::valueChanged</a>, <span class="keyword">this</span>, &amp;ESP8266ComponentController::_versionChanged);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>ESP8266ComponentController::~ESP8266ComponentController()</div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#a140eb30ceece5217c7f28487dac157f0">   46</a></span><a class="code hl_function" href="classESP8266ComponentController.html#a140eb30ceece5217c7f28487dac157f0">ESP8266ComponentController::~ESP8266ComponentController</a>()</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">// qCDebug(RadioComponentControllerLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; this;</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>QString ESP8266ComponentController::version()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#afc8465107d9d1cd791c202cc4013e33c">   51</a></span>QString <a class="code hl_function" href="classESP8266ComponentController.html#afc8465107d9d1cd791c202cc4013e33c">ESP8266ComponentController::version</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">const</span> uint32_t uv = <a class="code hl_function" href="classFactPanelController.html#a165778b4869a6fb0711587f1d21dc495">getParameterFact</a>(componentID(), QStringLiteral(<span class="stringliteral">&quot;SW_VER&quot;</span>))-&gt;rawValue().toUInt();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">const</span> uint32_t uv = <a class="code hl_function" href="classFactPanelController.html#a165778b4869a6fb0711587f1d21dc495">getParameterFact</a>(<a class="code hl_function" href="classESP8266ComponentController.html#a5000d67b29e857d4d5e3eb216d263b34">componentID</a>(), QStringLiteral(<span class="stringliteral">&quot;SW_VER&quot;</span>))-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">const</span> QString versionString = QStringLiteral(<span class="stringliteral">&quot;%1.%2.%3&quot;</span>).arg(uv &gt;&gt; 24).arg((uv &gt;&gt; 16) &amp; 0xFF).arg(uv &amp; 0xFFFF);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> versionString;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>QString ESP8266ComponentController::wifiIPAddress()</div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#a259a93b732150f31e441561bad695c2a">   58</a></span>QString <a class="code hl_function" href="classESP8266ComponentController.html#a259a93b732150f31e441561bad695c2a">ESP8266ComponentController::wifiIPAddress</a>()</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (_ipAddress.isEmpty()) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classFactPanelController.html#abfd8493f4409e58fc9968f9122774268">parameterExists</a>(componentID(), QStringLiteral(<span class="stringliteral">&quot;WIFI_IPADDRESS&quot;</span>))) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keyword">const</span> QHostAddress address(qFromBigEndian(<a class="code hl_function" href="classFactPanelController.html#a165778b4869a6fb0711587f1d21dc495">getParameterFact</a>(componentID(), QStringLiteral(<span class="stringliteral">&quot;WIFI_IPADDRESS&quot;</span>))-&gt;rawValue().toUInt()));</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classFactPanelController.html#abfd8493f4409e58fc9968f9122774268">parameterExists</a>(<a class="code hl_function" href="classESP8266ComponentController.html#a5000d67b29e857d4d5e3eb216d263b34">componentID</a>(), QStringLiteral(<span class="stringliteral">&quot;WIFI_IPADDRESS&quot;</span>))) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keyword">const</span> QHostAddress address(qFromBigEndian(<a class="code hl_function" href="classFactPanelController.html#a165778b4869a6fb0711587f1d21dc495">getParameterFact</a>(<a class="code hl_function" href="classESP8266ComponentController.html#a5000d67b29e857d4d5e3eb216d263b34">componentID</a>(), QStringLiteral(<span class="stringliteral">&quot;WIFI_IPADDRESS&quot;</span>))-&gt;rawValue().toUInt()));</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            _ipAddress = address.toString();</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            _ipAddress = QStringLiteral(<span class="stringliteral">&quot;192.168.4.1&quot;</span>);</div>
@@ -168,13 +175,15 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> _ipAddress;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>QString ESP8266ComponentController::wifiSSID()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#a114e899f1dbb673e1d74da190810517d">   72</a></span>QString <a class="code hl_function" href="classESP8266ComponentController.html#a114e899f1dbb673e1d74da190810517d">ESP8266ComponentController::wifiSSID</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">const</span> uint32_t s1 = _ssid1-&gt;rawValue().toUInt();</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keyword">const</span> uint32_t s2 = _ssid2-&gt;rawValue().toUInt();</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">const</span> uint32_t s3 = _ssid3-&gt;rawValue().toUInt();</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">const</span> uint32_t s4 = _ssid4-&gt;rawValue().toUInt();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">const</span> uint32_t s1 = _ssid1-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keyword">const</span> uint32_t s2 = _ssid2-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">const</span> uint32_t s3 = _ssid3-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">const</span> uint32_t s4 = _ssid4-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">char</span> tmp[20];</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    (void) memcpy(&amp;tmp[0],  &amp;s1, <span class="keyword">sizeof</span>(uint32_t));</div>
@@ -184,8 +193,10 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> QString(tmp);</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keywordtype">void</span> ESP8266ComponentController::setWifiSSID(<span class="keyword">const</span> QString &amp;ssid)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#afd9fe339dc51cdad92453e1fc85ab701">   88</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classESP8266ComponentController.html#afd9fe339dc51cdad92453e1fc85ab701">ESP8266ComponentController::setWifiSSID</a>(<span class="keyword">const</span> QString &amp;ssid)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">char</span> tmp[20];</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    (void) memset(tmp, 0, <span class="keyword">sizeof</span>(tmp));</div>
@@ -194,21 +205,23 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    uint32_t u;</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    (void) memcpy(&amp;u, &amp;tmp[0], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    _ssid1-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    _ssid1-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    (void) memcpy(&amp;u, &amp;tmp[4], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    _ssid2-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    _ssid2-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    (void) memcpy(&amp;u, &amp;tmp[8], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    _ssid3-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    _ssid3-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    (void) memcpy(&amp;u, &amp;tmp[12], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    _ssid4-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    _ssid4-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>QString ESP8266ComponentController::wifiPassword()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#a93a40783d695e1a3bd54683148aecd95">  106</a></span>QString <a class="code hl_function" href="classESP8266ComponentController.html#a93a40783d695e1a3bd54683148aecd95">ESP8266ComponentController::wifiPassword</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keyword">const</span> uint32_t s1 = _pwd1-&gt;rawValue().toUInt();</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">const</span> uint32_t s2 = _pwd2-&gt;rawValue().toUInt();</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">const</span> uint32_t s3 = _pwd3-&gt;rawValue().toUInt();</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">const</span> uint32_t s4 = _pwd4-&gt;rawValue().toUInt();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keyword">const</span> uint32_t s1 = _pwd1-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">const</span> uint32_t s2 = _pwd2-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">const</span> uint32_t s3 = _pwd3-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">const</span> uint32_t s4 = _pwd4-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">char</span> tmp[20];</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    (void) memcpy(&amp;tmp[0],  &amp;s1, <span class="keyword">sizeof</span>(uint32_t));</div>
@@ -218,8 +231,10 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">return</span> QString(tmp);</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>}</div>
+</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keywordtype">void</span> ESP8266ComponentController::setWifiPassword(<span class="keyword">const</span> QString &amp;password)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#a811246935b7714a2ae48020045bb2837">  122</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classESP8266ComponentController.html#a811246935b7714a2ae48020045bb2837">ESP8266ComponentController::setWifiPassword</a>(<span class="keyword">const</span> QString &amp;password)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">char</span> tmp[20];</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    (void) memset(tmp, 0, <span class="keyword">sizeof</span>(tmp));</div>
@@ -228,25 +243,27 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    uint32_t u;</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    (void) memcpy(&amp;u, &amp;tmp[0], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    _pwd1-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    _pwd1-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    (void) memcpy(&amp;u, &amp;tmp[4], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    _pwd2-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    _pwd2-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    (void) memcpy(&amp;u, &amp;tmp[8], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    _pwd3-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    _pwd3-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    (void) memcpy(&amp;u, &amp;tmp[12], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    _pwd4-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    _pwd4-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}</div>
+</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>QString ESP8266ComponentController::wifiSSIDSta()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00140" data-start="{" data-end="}">
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#ae9c826d8f635abab149995bed4d63d6f">  140</a></span>QString <a class="code hl_function" href="classESP8266ComponentController.html#ae9c826d8f635abab149995bed4d63d6f">ESP8266ComponentController::wifiSSIDSta</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classFactPanelController.html#abfd8493f4409e58fc9968f9122774268">parameterExists</a>(componentID(), <span class="stringliteral">&quot;WIFI_SSIDSTA1&quot;</span>)) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classFactPanelController.html#abfd8493f4409e58fc9968f9122774268">parameterExists</a>(<a class="code hl_function" href="classESP8266ComponentController.html#a5000d67b29e857d4d5e3eb216d263b34">componentID</a>(), <span class="stringliteral">&quot;WIFI_SSIDSTA1&quot;</span>)) {</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">return</span> QString();</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keyword">const</span> uint32_t s1 = _ssidsta1-&gt;rawValue().toUInt();</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keyword">const</span> uint32_t s2 = _ssidsta2-&gt;rawValue().toUInt();</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keyword">const</span> uint32_t s3 = _ssidsta3-&gt;rawValue().toUInt();</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keyword">const</span> uint32_t s4 = _ssidsta4-&gt;rawValue().toUInt();</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keyword">const</span> uint32_t s1 = _ssidsta1-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keyword">const</span> uint32_t s2 = _ssidsta2-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keyword">const</span> uint32_t s3 = _ssidsta3-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keyword">const</span> uint32_t s4 = _ssidsta4-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordtype">char</span> tmp[20];</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    (void) memcpy(&amp;tmp[0],  &amp;s1, <span class="keyword">sizeof</span>(uint32_t));</div>
@@ -256,10 +273,12 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordflow">return</span> QString(tmp);</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>}</div>
+</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="keywordtype">void</span> ESP8266ComponentController::setWifiSSIDSta(<span class="keyword">const</span> QString &amp;ssid)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00160" data-start="{" data-end="}">
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#a6635ffca12ca96327c3578bb5d439a76">  160</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classESP8266ComponentController.html#a6635ffca12ca96327c3578bb5d439a76">ESP8266ComponentController::setWifiSSIDSta</a>(<span class="keyword">const</span> QString &amp;ssid)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classFactPanelController.html#abfd8493f4409e58fc9968f9122774268">parameterExists</a>(componentID(), <span class="stringliteral">&quot;WIFI_SSIDSTA1&quot;</span>)) {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classFactPanelController.html#abfd8493f4409e58fc9968f9122774268">parameterExists</a>(<a class="code hl_function" href="classESP8266ComponentController.html#a5000d67b29e857d4d5e3eb216d263b34">componentID</a>(), <span class="stringliteral">&quot;WIFI_SSIDSTA1&quot;</span>)) {</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    }</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
@@ -270,25 +289,27 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    uint32_t u;</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    (void) memcpy(&amp;u, &amp;tmp[0], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    _ssidsta1-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    _ssidsta1-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    (void) memcpy(&amp;u, &amp;tmp[4], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    _ssidsta2-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    _ssidsta2-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    (void) memcpy(&amp;u, &amp;tmp[8], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    _ssidsta3-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    _ssidsta3-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    (void) memcpy(&amp;u, &amp;tmp[12], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    _ssidsta4-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    _ssidsta4-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>}</div>
+</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>QString ESP8266ComponentController::wifiPasswordSta()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00182" data-start="{" data-end="}">
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#afb5aaefdb883990166c971e6342239e1">  182</a></span>QString <a class="code hl_function" href="classESP8266ComponentController.html#afb5aaefdb883990166c971e6342239e1">ESP8266ComponentController::wifiPasswordSta</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classFactPanelController.html#abfd8493f4409e58fc9968f9122774268">parameterExists</a>(componentID(), QStringLiteral(<span class="stringliteral">&quot;WIFI_PWDSTA1&quot;</span>))) {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classFactPanelController.html#abfd8493f4409e58fc9968f9122774268">parameterExists</a>(<a class="code hl_function" href="classESP8266ComponentController.html#a5000d67b29e857d4d5e3eb216d263b34">componentID</a>(), QStringLiteral(<span class="stringliteral">&quot;WIFI_PWDSTA1&quot;</span>))) {</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">return</span> QString();</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    }</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keyword">const</span> uint32_t s1 = _pwdsta1-&gt;rawValue().toUInt();</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keyword">const</span> uint32_t s2 = _pwdsta2-&gt;rawValue().toUInt();</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keyword">const</span> uint32_t s3 = _pwdsta3-&gt;rawValue().toUInt();</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keyword">const</span> uint32_t s4 = _pwdsta4-&gt;rawValue().toUInt();</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keyword">const</span> uint32_t s1 = _pwdsta1-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keyword">const</span> uint32_t s2 = _pwdsta2-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keyword">const</span> uint32_t s3 = _pwdsta3-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keyword">const</span> uint32_t s4 = _pwdsta4-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toUInt();</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordtype">char</span> tmp[20];</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    (void) memcpy(&amp;tmp[0],  &amp;s1, <span class="keyword">sizeof</span>(uint32_t));</div>
@@ -298,10 +319,12 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordflow">return</span> QString(tmp);</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>}</div>
+</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="keywordtype">void</span> ESP8266ComponentController::setWifiPasswordSta(<span class="keyword">const</span> QString &amp;password)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00202" data-start="{" data-end="}">
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#a14db20fd0c65bd5cfe6e9e9a4ab650ee">  202</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classESP8266ComponentController.html#a14db20fd0c65bd5cfe6e9e9a4ab650ee">ESP8266ComponentController::setWifiPasswordSta</a>(<span class="keyword">const</span> QString &amp;password)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classFactPanelController.html#abfd8493f4409e58fc9968f9122774268">parameterExists</a>(componentID(), QStringLiteral(<span class="stringliteral">&quot;WIFI_PWDSTA1&quot;</span>))) {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classFactPanelController.html#abfd8493f4409e58fc9968f9122774268">parameterExists</a>(<a class="code hl_function" href="classESP8266ComponentController.html#a5000d67b29e857d4d5e3eb216d263b34">componentID</a>(), QStringLiteral(<span class="stringliteral">&quot;WIFI_PWDSTA1&quot;</span>))) {</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    }</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
@@ -312,18 +335,20 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    uint32_t u;</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    (void) memcpy(&amp;u, &amp;tmp[0], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    _pwdsta1-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    _pwdsta1-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    (void) memcpy(&amp;u, &amp;tmp[4], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    _pwdsta2-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    _pwdsta2-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    (void) memcpy(&amp;u, &amp;tmp[8], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    _pwdsta3-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    _pwdsta3-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    (void) memcpy(&amp;u, &amp;tmp[12], <span class="keyword">sizeof</span>(uint32_t));</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    _pwdsta4-&gt;setRawValue(QVariant(u));</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    _pwdsta4-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(QVariant(u));</div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>}</div>
+</div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="keywordtype">int</span> ESP8266ComponentController::baudIndex()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00224" data-start="{" data-end="}">
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#a1adef96867e983cbbbdf2bdec6104620">  224</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classESP8266ComponentController.html#a1adef96867e983cbbbdf2bdec6104620">ESP8266ComponentController::baudIndex</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> b = <a class="code hl_function" href="classFactPanelController.html#a165778b4869a6fb0711587f1d21dc495">getParameterFact</a>(componentID(), QStringLiteral(<span class="stringliteral">&quot;UART_BAUDRATE&quot;</span>))-&gt;rawValue().toInt();</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> b = <a class="code hl_function" href="classFactPanelController.html#a165778b4869a6fb0711587f1d21dc495">getParameterFact</a>(<a class="code hl_function" href="classESP8266ComponentController.html#a5000d67b29e857d4d5e3eb216d263b34">componentID</a>(), QStringLiteral(<span class="stringliteral">&quot;UART_BAUDRATE&quot;</span>))-&gt;<a class="code hl_function" href="classFact.html#af957b5ff4e64f545b43824e0a984f346">rawValue</a>().toInt();</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keywordflow">switch</span> (b) {</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keywordflow">case</span> 57600:</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keywordflow">return</span> 0;</div>
@@ -338,10 +363,12 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        <span class="keywordflow">return</span> 4;</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    }</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>}</div>
+</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="keywordtype">void</span> ESP8266ComponentController::setBaudIndex(<span class="keywordtype">int</span> idx)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00242" data-start="{" data-end="}">
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#a0e6d2033159e48c98c57d039ae694126">  242</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classESP8266ComponentController.html#a0e6d2033159e48c98c57d039ae694126">ESP8266ComponentController::setBaudIndex</a>(<span class="keywordtype">int</span> idx)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordflow">if</span> ((idx &gt;= 0) &amp;&amp; (idx != baudIndex())) {</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordflow">if</span> ((idx &gt;= 0) &amp;&amp; (idx != <a class="code hl_function" href="classESP8266ComponentController.html#a1adef96867e983cbbbdf2bdec6104620">baudIndex</a>())) {</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <span class="keywordtype">int</span> baud = 921600;</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <span class="keywordflow">switch</span>(idx) {</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keywordflow">case</span> 0:</div>
@@ -359,35 +386,40 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="keywordflow">default</span>:</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            baud = 921600;</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        }</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        _baud-&gt;setRawValue(baud);</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        _baud-&gt;<a class="code hl_function" href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">setRawValue</a>(baud);</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    }</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>}</div>
+</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="keywordtype">void</span> ESP8266ComponentController::reboot()</div>
+<div class="foldopen" id="foldopen00266" data-start="{" data-end="}">
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#ad5f0c6dfdc5a18949e65a36d75b10c45">  266</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classESP8266ComponentController.html#ad5f0c6dfdc5a18949e65a36d75b10c45">ESP8266ComponentController::reboot</a>()</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>{</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    _waitType = WAIT_FOR_REBOOT;</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    emit <a class="code hl_signal" href="classESP8266ComponentController.html#a976a1f9ddd74442c89873a734bd8b0f8">busyChanged</a>();</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    _retries = <a class="code hl_define" href="ESP8266ComponentController_8cc.html#aecf13b8dc783db2202ca5c34fe117fc3">MAX_RETRIES</a>;</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    _reboot();</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>}</div>
+</div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="keywordtype">void</span> ESP8266ComponentController::restoreDefaults()</div>
+<div class="foldopen" id="foldopen00274" data-start="{" data-end="}">
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="classESP8266ComponentController.html#a1fc9093c15fcaf39f1d92754c35df5fd">  274</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classESP8266ComponentController.html#a1fc9093c15fcaf39f1d92754c35df5fd">ESP8266ComponentController::restoreDefaults</a>()</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>{</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    _waitType = WAIT_FOR_RESTORE;</div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    emit <a class="code hl_signal" href="classESP8266ComponentController.html#a976a1f9ddd74442c89873a734bd8b0f8">busyChanged</a>();</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    _retries = <a class="code hl_define" href="ESP8266ComponentController_8cc.html#aecf13b8dc783db2202ca5c34fe117fc3">MAX_RETRIES</a>;</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    _restoreDefaults();</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>}</div>
+</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="keywordtype">void</span> ESP8266ComponentController::_reboot()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <a class="code hl_variable" href="classFactPanelController.html#ad5f0b6d670df079684a92bc980cfadd3">_vehicle</a>-&gt;<a class="code hl_function" href="classVehicle.html#a12ce7dfd32ee05e157a799b3b49c5bf4">sendMavCommand</a>(componentID(), MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN, <span class="keyword">true</span> <span class="comment">/* showError */</span>, 0.0f, 1.0f);</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <a class="code hl_variable" href="classFactPanelController.html#ad5f0b6d670df079684a92bc980cfadd3">_vehicle</a>-&gt;<a class="code hl_function" href="classVehicle.html#a12ce7dfd32ee05e157a799b3b49c5bf4">sendMavCommand</a>(<a class="code hl_function" href="classESP8266ComponentController.html#a5000d67b29e857d4d5e3eb216d263b34">componentID</a>(), MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN, <span class="keyword">true</span> <span class="comment">/* showError */</span>, 0.0f, 1.0f);</div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    qCDebug(ESP8266ComponentControllerLog) &lt;&lt; <span class="stringliteral">&quot;_reboot()&quot;</span>;</div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>}</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="keywordtype">void</span> ESP8266ComponentController::_restoreDefaults()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <a class="code hl_variable" href="classFactPanelController.html#ad5f0b6d670df079684a92bc980cfadd3">_vehicle</a>-&gt;<a class="code hl_function" href="classVehicle.html#a12ce7dfd32ee05e157a799b3b49c5bf4">sendMavCommand</a>(componentID(), MAV_CMD_PREFLIGHT_STORAGE, <span class="keyword">true</span> <span class="comment">/* showError */</span>, 2.0f);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <a class="code hl_variable" href="classFactPanelController.html#ad5f0b6d670df079684a92bc980cfadd3">_vehicle</a>-&gt;<a class="code hl_function" href="classVehicle.html#a12ce7dfd32ee05e157a799b3b49c5bf4">sendMavCommand</a>(<a class="code hl_function" href="classESP8266ComponentController.html#a5000d67b29e857d4d5e3eb216d263b34">componentID</a>(), MAV_CMD_PREFLIGHT_STORAGE, <span class="keyword">true</span> <span class="comment">/* showError */</span>, 2.0f);</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    qCDebug(ESP8266ComponentControllerLog) &lt;&lt; <span class="stringliteral">&quot;_restoreDefaults()&quot;</span>;</div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>}</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
@@ -395,7 +427,7 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>{</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    Q_UNUSED(vehicleId); Q_UNUSED(failureCode);</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="keywordflow">if</span> (component != componentID()) {</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="keywordflow">if</span> (component != <a class="code hl_function" href="classESP8266ComponentController.html#a5000d67b29e857d4d5e3eb216d263b34">componentID</a>()) {</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    }</div>
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
@@ -409,7 +441,7 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        emit <a class="code hl_signal" href="classESP8266ComponentController.html#a976a1f9ddd74442c89873a734bd8b0f8">busyChanged</a>();</div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        qCDebug(ESP8266ComponentControllerLog) &lt;&lt; <span class="stringliteral">&quot;_commandAck for&quot;</span> &lt;&lt; command;</div>
 <div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        <span class="keywordflow">if</span> (command == MAV_CMD_PREFLIGHT_STORAGE) {</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            <a class="code hl_variable" href="classFactPanelController.html#ad5f0b6d670df079684a92bc980cfadd3">_vehicle</a>-&gt;<a class="code hl_function" href="classVehicle.html#ac79367e12a17e97e7c01fb0c861e518e">parameterManager</a>()-&gt;<a class="code hl_function" href="classParameterManager.html#a99a16215a6a9c1c13d0d64bb63d07b02">refreshAllParameters</a>(componentID());</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>            <a class="code hl_variable" href="classFactPanelController.html#ad5f0b6d670df079684a92bc980cfadd3">_vehicle</a>-&gt;<a class="code hl_function" href="classVehicle.html#ac79367e12a17e97e7c01fb0c861e518e">parameterManager</a>()-&gt;<a class="code hl_function" href="classParameterManager.html#a99a16215a6a9c1c13d0d64bb63d07b02">refreshAllParameters</a>(<a class="code hl_function" href="classESP8266ComponentController.html#a5000d67b29e857d4d5e3eb216d263b34">componentID</a>());</div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        }</div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    }</div>
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>}</div>
@@ -419,11 +451,30 @@ $(document).ready(function(){initNavTree('ESP8266ComponentController_8cc_source.
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
 <div class="ttc" id="aVehicle_8h_html"><div class="ttname"><a href="Vehicle_8h.html">Vehicle.h</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_a0e6d2033159e48c98c57d039ae694126"><div class="ttname"><a href="classESP8266ComponentController.html#a0e6d2033159e48c98c57d039ae694126">ESP8266ComponentController::setBaudIndex</a></div><div class="ttdeci">void setBaudIndex(int idx) const</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00242">ESP8266ComponentController.cc:242</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_a114e899f1dbb673e1d74da190810517d"><div class="ttname"><a href="classESP8266ComponentController.html#a114e899f1dbb673e1d74da190810517d">ESP8266ComponentController::wifiSSID</a></div><div class="ttdeci">QString wifiSSID() const</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00072">ESP8266ComponentController.cc:72</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_a140eb30ceece5217c7f28487dac157f0"><div class="ttname"><a href="classESP8266ComponentController.html#a140eb30ceece5217c7f28487dac157f0">ESP8266ComponentController::~ESP8266ComponentController</a></div><div class="ttdeci">~ESP8266ComponentController()</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00046">ESP8266ComponentController.cc:46</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_a14db20fd0c65bd5cfe6e9e9a4ab650ee"><div class="ttname"><a href="classESP8266ComponentController.html#a14db20fd0c65bd5cfe6e9e9a4ab650ee">ESP8266ComponentController::setWifiPasswordSta</a></div><div class="ttdeci">void setWifiPasswordSta(const QString &amp;pwd) const</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00202">ESP8266ComponentController.cc:202</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_a1adef96867e983cbbbdf2bdec6104620"><div class="ttname"><a href="classESP8266ComponentController.html#a1adef96867e983cbbbdf2bdec6104620">ESP8266ComponentController::baudIndex</a></div><div class="ttdeci">int baudIndex() const</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00224">ESP8266ComponentController.cc:224</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_a1fc9093c15fcaf39f1d92754c35df5fd"><div class="ttname"><a href="classESP8266ComponentController.html#a1fc9093c15fcaf39f1d92754c35df5fd">ESP8266ComponentController::restoreDefaults</a></div><div class="ttdeci">Q_INVOKABLE void restoreDefaults()</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00274">ESP8266ComponentController.cc:274</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_a259a93b732150f31e441561bad695c2a"><div class="ttname"><a href="classESP8266ComponentController.html#a259a93b732150f31e441561bad695c2a">ESP8266ComponentController::wifiIPAddress</a></div><div class="ttdeci">QString wifiIPAddress()</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00058">ESP8266ComponentController.cc:58</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_a5000d67b29e857d4d5e3eb216d263b34"><div class="ttname"><a href="classESP8266ComponentController.html#a5000d67b29e857d4d5e3eb216d263b34">ESP8266ComponentController::componentID</a></div><div class="ttdeci">static int componentID()</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8h_source.html#l00037">ESP8266ComponentController.h:37</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_a6635ffca12ca96327c3578bb5d439a76"><div class="ttname"><a href="classESP8266ComponentController.html#a6635ffca12ca96327c3578bb5d439a76">ESP8266ComponentController::setWifiSSIDSta</a></div><div class="ttdeci">void setWifiSSIDSta(const QString &amp;id) const</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00160">ESP8266ComponentController.cc:160</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_a811246935b7714a2ae48020045bb2837"><div class="ttname"><a href="classESP8266ComponentController.html#a811246935b7714a2ae48020045bb2837">ESP8266ComponentController::setWifiPassword</a></div><div class="ttdeci">void setWifiPassword(const QString &amp;pwd) const</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00122">ESP8266ComponentController.cc:122</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_a93a40783d695e1a3bd54683148aecd95"><div class="ttname"><a href="classESP8266ComponentController.html#a93a40783d695e1a3bd54683148aecd95">ESP8266ComponentController::wifiPassword</a></div><div class="ttdeci">QString wifiPassword() const</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00106">ESP8266ComponentController.cc:106</a></div></div>
 <div class="ttc" id="aclassESP8266ComponentController_html_a976a1f9ddd74442c89873a734bd8b0f8"><div class="ttname"><a href="classESP8266ComponentController.html#a976a1f9ddd74442c89873a734bd8b0f8">ESP8266ComponentController::busyChanged</a></div><div class="ttdeci">void busyChanged()</div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_aab90d6ff8bbb0649da02d16dd2fba1a9"><div class="ttname"><a href="classESP8266ComponentController.html#aab90d6ff8bbb0649da02d16dd2fba1a9">ESP8266ComponentController::ESP8266ComponentController</a></div><div class="ttdeci">ESP8266ComponentController(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00012">ESP8266ComponentController.cc:12</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_ad5f0c6dfdc5a18949e65a36d75b10c45"><div class="ttname"><a href="classESP8266ComponentController.html#ad5f0c6dfdc5a18949e65a36d75b10c45">ESP8266ComponentController::reboot</a></div><div class="ttdeci">Q_INVOKABLE void reboot()</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00266">ESP8266ComponentController.cc:266</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_ae9c826d8f635abab149995bed4d63d6f"><div class="ttname"><a href="classESP8266ComponentController.html#ae9c826d8f635abab149995bed4d63d6f">ESP8266ComponentController::wifiSSIDSta</a></div><div class="ttdeci">QString wifiSSIDSta() const</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00140">ESP8266ComponentController.cc:140</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_afb5aaefdb883990166c971e6342239e1"><div class="ttname"><a href="classESP8266ComponentController.html#afb5aaefdb883990166c971e6342239e1">ESP8266ComponentController::wifiPasswordSta</a></div><div class="ttdeci">QString wifiPasswordSta() const</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00182">ESP8266ComponentController.cc:182</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_afc8465107d9d1cd791c202cc4013e33c"><div class="ttname"><a href="classESP8266ComponentController.html#afc8465107d9d1cd791c202cc4013e33c">ESP8266ComponentController::version</a></div><div class="ttdeci">QString version() const</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00051">ESP8266ComponentController.cc:51</a></div></div>
+<div class="ttc" id="aclassESP8266ComponentController_html_afd9fe339dc51cdad92453e1fc85ab701"><div class="ttname"><a href="classESP8266ComponentController.html#afd9fe339dc51cdad92453e1fc85ab701">ESP8266ComponentController::setWifiSSID</a></div><div class="ttdeci">void setWifiSSID(const QString &amp;id) const</div><div class="ttdef"><b>Definition</b> <a href="ESP8266ComponentController_8cc_source.html#l00088">ESP8266ComponentController.cc:88</a></div></div>
 <div class="ttc" id="aclassFactPanelController_html"><div class="ttname"><a href="classFactPanelController.html">FactPanelController</a></div><div class="ttdoc">Used for handling missing Facts from C++ code.</div><div class="ttdef"><b>Definition</b> <a href="FactPanelController_8h_source.html#l00013">FactPanelController.h:14</a></div></div>
-<div class="ttc" id="aclassFactPanelController_html_a165778b4869a6fb0711587f1d21dc495"><div class="ttname"><a href="classFactPanelController.html#a165778b4869a6fb0711587f1d21dc495">FactPanelController::getParameterFact</a></div><div class="ttdeci">Fact * getParameterFact(int componentId, const QString &amp;name, bool reportMissing=true) const</div><div class="ttdef"><b>Definition</b> <a href="FactPanelController_8cc_source.html#l00057">FactPanelController.cc:57</a></div></div>
-<div class="ttc" id="aclassFactPanelController_html_abfd8493f4409e58fc9968f9122774268"><div class="ttname"><a href="classFactPanelController.html#abfd8493f4409e58fc9968f9122774268">FactPanelController::parameterExists</a></div><div class="ttdeci">bool parameterExists(int componentId, const QString &amp;name) const</div><div class="ttdef"><b>Definition</b> <a href="FactPanelController_8cc_source.html#l00072">FactPanelController.cc:72</a></div></div>
+<div class="ttc" id="aclassFactPanelController_html_a165778b4869a6fb0711587f1d21dc495"><div class="ttname"><a href="classFactPanelController.html#a165778b4869a6fb0711587f1d21dc495">FactPanelController::getParameterFact</a></div><div class="ttdeci">Q_INVOKABLE Fact * getParameterFact(int componentId, const QString &amp;name, bool reportMissing=true) const</div><div class="ttdef"><b>Definition</b> <a href="FactPanelController_8cc_source.html#l00057">FactPanelController.cc:57</a></div></div>
+<div class="ttc" id="aclassFactPanelController_html_abfd8493f4409e58fc9968f9122774268"><div class="ttname"><a href="classFactPanelController.html#abfd8493f4409e58fc9968f9122774268">FactPanelController::parameterExists</a></div><div class="ttdeci">Q_INVOKABLE bool parameterExists(int componentId, const QString &amp;name) const</div><div class="ttdef"><b>Definition</b> <a href="FactPanelController_8cc_source.html#l00072">FactPanelController.cc:72</a></div></div>
 <div class="ttc" id="aclassFactPanelController_html_ad5f0b6d670df079684a92bc980cfadd3"><div class="ttname"><a href="classFactPanelController.html#ad5f0b6d670df079684a92bc980cfadd3">FactPanelController::_vehicle</a></div><div class="ttdeci">Vehicle * _vehicle</div><div class="ttdef"><b>Definition</b> <a href="FactPanelController_8h_source.html#l00043">FactPanelController.h:43</a></div></div>
+<div class="ttc" id="aclassFact_html_a97ae78fa691fffbcdab5e95dec562469"><div class="ttname"><a href="classFact.html#a97ae78fa691fffbcdab5e95dec562469">Fact::setRawValue</a></div><div class="ttdeci">void setRawValue(const QVariant &amp;value)</div><div class="ttdef"><b>Definition</b> <a href="Fact_8cc_source.html#l00128">Fact.cc:128</a></div></div>
+<div class="ttc" id="aclassFact_html_af957b5ff4e64f545b43824e0a984f346"><div class="ttname"><a href="classFact.html#af957b5ff4e64f545b43824e0a984f346">Fact::rawValue</a></div><div class="ttdeci">QVariant rawValue() const</div><div class="ttdoc">Value after translation.</div><div class="ttdef"><b>Definition</b> <a href="Fact_8h_source.html#l00085">Fact.h:85</a></div></div>
 <div class="ttc" id="aclassFact_html_afa7388d8e1658154fc474e09b3a803d1"><div class="ttname"><a href="classFact.html#afa7388d8e1658154fc474e09b3a803d1">Fact::valueChanged</a></div><div class="ttdeci">void valueChanged(const QVariant &amp;value)</div><div class="ttdoc">This signal is only meant for use by the QT property system. It should not be connected to by client ...</div></div>
 <div class="ttc" id="aclassParameterManager_html_a99a16215a6a9c1c13d0d64bb63d07b02"><div class="ttname"><a href="classParameterManager.html#a99a16215a6a9c1c13d0d64bb63d07b02">ParameterManager::refreshAllParameters</a></div><div class="ttdeci">void refreshAllParameters(uint8_t componentID)</div><div class="ttdoc">Re-request the full set of parameters from the autopilot.</div><div class="ttdef"><b>Definition</b> <a href="ParameterManager_8cc_source.html#l00586">ParameterManager.cc:586</a></div></div>
 <div class="ttc" id="aclassVehicle_html_a12ce7dfd32ee05e157a799b3b49c5bf4"><div class="ttname"><a href="classVehicle.html#a12ce7dfd32ee05e157a799b3b49c5bf4">Vehicle::sendMavCommand</a></div><div class="ttdeci">void sendMavCommand(int compId, MAV_CMD command, bool showError, float param1=0.0f, float param2=0.0f, float param3=0.0f, float param4=0.0f, float param5=0.0f, float param6=0.0f, float param7=0.0f)</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8cc_source.html#l02146">Vehicle.cc:2146</a></div></div>

@@ -42,7 +42,7 @@ var classQGCMAVLink =
     [ "isValidChannel", "classQGCMAVLink.html#a35b0a34eb698cc4cffe2f57a413fd49d", null ],
     [ "isValidChannel", "classQGCMAVLink.html#a89caee72b5ae75d3d0f9b110ba38dda9", null ],
     [ "isVTOL", "classQGCMAVLink.html#a66b8af15ba61d2891e5cf6ba81b3800c", null ],
-    [ "MAVPACKED", "classQGCMAVLink.html#aed1c235d35aeabcb416e21e3b77a38a5", null ],
+    [ "MAVPACKED", "classQGCMAVLink.html#aecf9f95f19e3e8ea7c23a2c4a6ff12c0", null ],
     [ "mavResultToString", "classQGCMAVLink.html#a50d72d7046cfa93d7d2b82121c45364f", null ],
     [ "mavResultToString", "classQGCMAVLink.html#ab729e57122b7056f3237b64a96fefe5d", null ],
     [ "mavSysStatusSensorToString", "classQGCMAVLink.html#a94b2447454b0a7321f46dd4d70da03bf", null ],

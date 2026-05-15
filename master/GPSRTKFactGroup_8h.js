@@ -1,4 +1,4 @@
 var GPSRTKFactGroup_8h =
 [
-    [ "GPSRTKFactGroup", "classGPSRTKFactGroup.html", null ]
+    [ "GPSRTKFactGroup", "classGPSRTKFactGroup.html", "classGPSRTKFactGroup" ]
 ];

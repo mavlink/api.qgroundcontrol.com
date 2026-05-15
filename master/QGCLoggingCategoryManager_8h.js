@@ -1,4 +1,4 @@
 var QGCLoggingCategoryManager_8h =
 [
-    [ "QGCLoggingCategoryManager", "classQGCLoggingCategoryManager.html", null ]
+    [ "QGCLoggingCategoryManager", "classQGCLoggingCategoryManager.html", "classQGCLoggingCategoryManager" ]
 ];

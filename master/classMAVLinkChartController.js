@@ -1,10 +1,29 @@
 var classMAVLinkChartController =
 [
+    [ "MAVLinkChartController", "classMAVLinkChartController.html#a9d0ec36f8504c2d202147a398f74f241", null ],
+    [ "~MAVLinkChartController", "classMAVLinkChartController.html#a14a4bc4e83e242175e8867f800915142", null ],
+    [ "addSeries", "classMAVLinkChartController.html#ac7c499b832a7ade30b0f9e1e6a6e9d21", null ],
+    [ "chartFields", "classMAVLinkChartController.html#ad4a7a9936d270b16f6dc2b33f47dbb09", null ],
     [ "chartFieldsChanged", "classMAVLinkChartController.html#a67005b1e0eee3c491513fc93b1e184d5", null ],
+    [ "chartIndex", "classMAVLinkChartController.html#a85cf6a4aa26bf037ab38fad699452559", null ],
+    [ "delSeries", "classMAVLinkChartController.html#a4f37d61dd7365aa04521a8b620338a97", null ],
+    [ "inspectorController", "classMAVLinkChartController.html#a92a555b6748f36506180ae94d6b38496", null ],
+    [ "rangeXIndex", "classMAVLinkChartController.html#adcfdf665392566a0369ff864ddb2ef41", null ],
     [ "rangeXIndexChanged", "classMAVLinkChartController.html#a2e05bf0d3fbe8296dec0c83be195cb2d", null ],
+    [ "rangeXMax", "classMAVLinkChartController.html#aa7b73e77475a20659a241603c853ce48", null ],
     [ "rangeXMaxChanged", "classMAVLinkChartController.html#aabbadf54417fb19e4aa98e20d5714bf7", null ],
+    [ "rangeXMin", "classMAVLinkChartController.html#af25fac3da8a3c73a50e44c7342800a5a", null ],
     [ "rangeXMinChanged", "classMAVLinkChartController.html#a760073577e8bdebbe8ce57f80da8a347", null ],
+    [ "rangeXMs", "classMAVLinkChartController.html#a695446e2bee23eed9f2555a0da560e8e", null ],
+    [ "rangeYIndex", "classMAVLinkChartController.html#a1657b619cfaa6060cc230e5abb544655", null ],
     [ "rangeYIndexChanged", "classMAVLinkChartController.html#a69fadc93021fb9c7c05ee4509a791acf", null ],
+    [ "rangeYMax", "classMAVLinkChartController.html#adcabe5981b0f09b5ae1a35ebf3f7f52a", null ],
     [ "rangeYMaxChanged", "classMAVLinkChartController.html#a449af21262c2d44f1b6fa51583caea86", null ],
-    [ "rangeYMinChanged", "classMAVLinkChartController.html#a4e36603f8ccfa6f0e8673906b1ac6de4", null ]
+    [ "rangeYMin", "classMAVLinkChartController.html#a7de8b245e4e781f5871c294dc339c0e4", null ],
+    [ "rangeYMinChanged", "classMAVLinkChartController.html#a4e36603f8ccfa6f0e8673906b1ac6de4", null ],
+    [ "setInspectorController", "classMAVLinkChartController.html#ace54837e0d6c0ee8f6a8a4e463ee72dd", null ],
+    [ "setRangeXIndex", "classMAVLinkChartController.html#a5283ebabdcb011798e95dcd545c1ab46", null ],
+    [ "setRangeYIndex", "classMAVLinkChartController.html#a74fe9da3c5f6f73c26eb1c8c5d05ff7c", null ],
+    [ "updateXRange", "classMAVLinkChartController.html#adeaa0cc0e2b6f119359b1e2b50926a8f", null ],
+    [ "updateYRange", "classMAVLinkChartController.html#aa04bdb268b7f2374ffc2343f17f66d96", null ]
 ];

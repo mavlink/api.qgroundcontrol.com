@@ -85,6 +85,7 @@ var classMissionController =
     [ "recalcTerrainProfile", "classMissionController.html#a487488a38e0d9e27ef72e920ab1b3bd4", null ],
     [ "removeAll", "classMissionController.html#ac9ee16a43926d049f5745f0d25cfc36d", null ],
     [ "removeAllFromVehicle", "classMissionController.html#a4316d49abf7aa8c2f63a422fb59642a4", null ],
+    [ "removeVisualItem", "classMissionController.html#a92f78cab399ed2ad197eded247dc0df1", null ],
     [ "repositionMission", "classMissionController.html#a658439ad3c058333b6f6287c964fa9db", null ],
     [ "resumeMission", "classMissionController.html#a07bbedd6de65239ec08b6c021199538c", null ],
     [ "resumeMissionIndex", "classMissionController.html#af86dd7b60f0a10e4a553033c1fbef41d", null ],
@@ -111,6 +112,7 @@ var classMissionController =
     [ "takeoffMissionItemChanged", "classMissionController.html#a6d6067bc2e383ff81640a91245524208", null ],
     [ "transformGroupIndex", "classMissionController.html#aa75fe2d1c15b0268014d738d4d621983", null ],
     [ "travelBoundingCube", "classMissionController.html#adda325bbaf42a6a543021e75f0d99f2b", null ],
+    [ "visualItemIndexForObject", "classMissionController.html#a0eea7bbe2d8298315cf5d8cec1176523", null ],
     [ "visualItems", "classMissionController.html#aff6a9106d702e133bf3b7b7b66e03fd8", null ],
     [ "visualItemsReset", "classMissionController.html#ad38120150c2a2100abc68a3c2dcc1b8d", null ],
     [ "visualItemsTree", "classMissionController.html#a2359d345e3e8b9d98383bb83a526b4ec", null ],
@@ -120,6 +122,5 @@ var classMissionController =
     [ "kMissionGroupRow", "classMissionController.html#a22316af06366feb06bb600712c4d3e0c", null ],
     [ "kPlanFileGroupRow", "classMissionController.html#abf9c36957ca99d44adc370138d1422ce", null ],
     [ "kRallyGroupRow", "classMissionController.html#a8574b78bd9b4a4dde9d4643bcfc24462", null ],
-    [ "kTransformGroupRow", "classMissionController.html#af84ac0867c50bd35fe57108fb51315b7", null ],
-    [ "visualItemIndexForObject", "classMissionController.html#a40b635d90b34ac346edf572aae329126", null ]
+    [ "kTransformGroupRow", "classMissionController.html#af84ac0867c50bd35fe57108fb51315b7", null ]
 ];

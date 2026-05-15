@@ -8,6 +8,13 @@ var structLogEntry =
       [ "MessageColumn", "structLogEntry.html#aa9897dc0d2f69070e489858898264d5ea2de711727663c81fab09f666d1ff2f6c", null ],
       [ "ColumnCount", "structLogEntry.html#aa9897dc0d2f69070e489858898264d5ea66c054a33bc5399195e6bdaaa0d05af2", null ]
     ] ],
+    [ "Level", "structLogEntry.html#ac375e0c2fe677a2f7b95c7f5655c979f", [
+      [ "Debug", "structLogEntry.html#ac375e0c2fe677a2f7b95c7f5655c979fa4ac1516ea020401dd713a8f837010665", null ],
+      [ "Info", "structLogEntry.html#ac375e0c2fe677a2f7b95c7f5655c979fa18001a6e54c2f0ab843e1190442ea9c3", null ],
+      [ "Warning", "structLogEntry.html#ac375e0c2fe677a2f7b95c7f5655c979fac2e4aad0cb2aca65ef77422be419e977", null ],
+      [ "Critical", "structLogEntry.html#ac375e0c2fe677a2f7b95c7f5655c979fa89d1384e1a7ecf2f2cbdc97cf699dc11", null ],
+      [ "Fatal", "structLogEntry.html#ac375e0c2fe677a2f7b95c7f5655c979fab53ff9d36d21921534ef20b3ff5c1e83", null ]
+    ] ],
     [ "Role", "structLogEntry.html#a16604a76fec3f30308d55e8c0ead18e9", [
       [ "TimestampRole", "structLogEntry.html#a16604a76fec3f30308d55e8c0ead18e9a5a7533ef46e07cc605f7a086c7a86382", null ],
       [ "LevelRole", "structLogEntry.html#a16604a76fec3f30308d55e8c0ead18e9a027b6ff10fad8941e0182d29713442cb", null ],
@@ -20,7 +27,7 @@ var structLogEntry =
       [ "LineRole", "structLogEntry.html#a16604a76fec3f30308d55e8c0ead18e9a04e98771f2f9a64b9c308bdb2cb3c071", null ],
       [ "ThreadIdRole", "structLogEntry.html#a16604a76fec3f30308d55e8c0ead18e9aa33afe4275f21a8ae7b5ddfc0bacf83c", null ]
     ] ],
-    [ "LogEntry", "structLogEntry.html#ab873d780539f6a4d5a0785474bf89137", null ],
+    [ "LogEntry", "structLogEntry.html#af743311e153cbf0bcf76eccf474342fd", null ],
     [ "LogEntry", "structLogEntry.html#a645b8ef1e648fb4f208e0aad9277d6cc", null ],
     [ "LogEntry", "structLogEntry.html#a1e1317f853cd529354ee6c7709cd0ffe", null ],
     [ "buildFormatted", "structLogEntry.html#adcde3a8cbaad62a9246f0bce9efae18d", null ],

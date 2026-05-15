@@ -37,8 +37,8 @@ var classCameraSection =
     [ "specifiedGimbalYawChanged", "classCameraSection.html#a4d4d34fc5cd8511d8efb76291f994eb5", null ],
     [ "specifyCameraMode", "classCameraSection.html#a281ad542a71d54a78a4a49e6926ee63a", null ],
     [ "specifyCameraModeChanged", "classCameraSection.html#acef7797d1a9bddbfdda1812b64e9c568", null ],
+    [ "specifyGimbal", "classCameraSection.html#a9cdc49e57face0365d843dcfc1d42d2d", null ],
     [ "specifyGimbalChanged", "classCameraSection.html#a9cac76a3af22d4700747740ef78a8fe3", null ],
-    [ "specifyGimbalChanged", "classCameraSection.html#a4e92befc9fb92b26a7c53da0aa047808", null ],
     [ "stopTakingPhotosCommandCount", "classCameraSection.html#a5eeb1979094e8a82b74d25deb80c93a1", null ],
     [ "stopTakingVideoCommandCount", "classCameraSection.html#aafba2985fdc1f2cf452c2aa4897b1b62", null ]
 ];

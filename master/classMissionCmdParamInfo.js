@@ -3,7 +3,7 @@ var classMissionCmdParamInfo =
     [ "MissionCmdParamInfo", "classMissionCmdParamInfo.html#ad355c2ff2efbf1dae89f6d98a6d4c075", null ],
     [ "MissionCmdParamInfo", "classMissionCmdParamInfo.html#a361311867967f316abfefe634138de32", null ],
     [ "advanced", "classMissionCmdParamInfo.html#a2db62754d7b44a689791cb67752a898d", null ],
-    [ "CONSTANT", "classMissionCmdParamInfo.html#abd206e0ccfe380b698348b2e14320575", null ],
+    [ "decimalPlaces", "classMissionCmdParamInfo.html#a377a329e5a1b2a15822bde1bcda52673", null ],
     [ "defaultValue", "classMissionCmdParamInfo.html#aafb59161057d133e318ec7be848b413c", null ],
     [ "enumStrings", "classMissionCmdParamInfo.html#a879c99bde631fde09c2bcc585f212aa6", null ],
     [ "enumValues", "classMissionCmdParamInfo.html#a861677fd98b152c66d155a3fb5b34eae", null ],

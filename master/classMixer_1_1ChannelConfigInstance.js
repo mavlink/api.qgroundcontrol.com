@@ -2,7 +2,7 @@ var classMixer_1_1ChannelConfigInstance =
 [
     [ "ChannelConfigInstance", "classMixer_1_1ChannelConfigInstance.html#aa631ef21d88745a1a8c2a872c86befe9", null ],
     [ "allInstancesInitialized", "classMixer_1_1ChannelConfigInstance.html#a9e197d2090886da1e5d0669ae06544f1", null ],
-    [ "CONSTANT", "classMixer_1_1ChannelConfigInstance.html#ab0f456ee57d80568d86d51610a80c87e", null ],
+    [ "channelConfig", "classMixer_1_1ChannelConfigInstance.html#adf45c48d2a04083e75519b4b229a53d7", null ],
     [ "enabled", "classMixer_1_1ChannelConfigInstance.html#abe0f15661123103aabd84044c54fae91", null ],
     [ "enabledChanged", "classMixer_1_1ChannelConfigInstance.html#a58d86e467d0476b4904a21d641f1f5da", null ],
     [ "enabledRule", "classMixer_1_1ChannelConfigInstance.html#ad5b0a9a312a91361615dc45b3f048996", null ],

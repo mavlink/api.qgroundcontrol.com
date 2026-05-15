@@ -147,21 +147,26 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">// LogFileParser</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">// ============================================================================</span></div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>LogFileParser::LogFileParser(QObject *parent)</div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classLogFileParser.html#a67264f4994f9403ed1238a24827a1851">   50</a></span><a class="code hl_function" href="classLogFileParser.html#a67264f4994f9403ed1238a24827a1851">LogFileParser::LogFileParser</a>(QObject *parent)</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    : QObject(parent)</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    qCDebug(LogFileParserLog) &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>LogFileParser::~LogFileParser()</div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classLogFileParser.html#aba4c76adba7e790e1ffd208f291a8343">   56</a></span><a class="code hl_function" href="classLogFileParser.html#aba4c76adba7e790e1ffd208f291a8343">LogFileParser::~LogFileParser</a>()</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    qCDebug(LogFileParserLog) &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">bool</span> LogFileParser::parseFile(<span class="keyword">const</span> QString &amp;filePath)</div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classLogFileParser.html#acb51b1ca3d897fc7dbe74f3b7dc401cf">   61</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classLogFileParser.html#acb51b1ca3d897fc7dbe74f3b7dc401cf">LogFileParser::parseFile</a>(<span class="keyword">const</span> QString &amp;filePath)</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    ++_parseRequestId;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    clear();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_function" href="classLogFileParser.html#ac20bdf5ae7c888fe266d008c1e6528bd">clear</a>();</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structLogParseResult.html">LogParseResult</a> result = _parseFile(filePath);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">if</span> (!result.<a class="code hl_variable" href="structLogParseResult.html#a68cd8b3128f29e16e0eb7f64e43776e0">ok</a>) {</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        _setParseError(result.<a class="code hl_variable" href="structLogParseResult.html#a5c91c82855180532281db108f5bce009">errorMessage</a>);</div>
@@ -173,11 +178,13 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                              &lt;&lt; <span class="stringliteral">&quot;events&quot;</span> &lt;&lt; _events.count();</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keywordtype">void</span> LogFileParser::parseFileAsync(<span class="keyword">const</span> QString &amp;filePath)</div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classLogFileParser.html#a447d351725e77939361e4d0c0f74fa13">   77</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLogFileParser.html#a447d351725e77939361e4d0c0f74fa13">LogFileParser::parseFileAsync</a>(<span class="keyword">const</span> QString &amp;filePath)</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>{</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">const</span> quint64 requestId = ++_parseRequestId;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    clear();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_function" href="classLogFileParser.html#ac20bdf5ae7c888fe266d008c1e6528bd">clear</a>();</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">auto</span> *watcher = <span class="keyword">new</span> QFutureWatcher&lt;LogParseResult&gt;(<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    (void) connect(watcher, &amp;QFutureWatcher&lt;LogParseResult&gt;::finished, <span class="keyword">this</span>,</div>
@@ -203,6 +210,7 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">return</span> _parseFile(filePath);</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }));</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="keywordtype">void</span> LogFileParser::_applyResult(<span class="keyword">const</span> <a class="code hl_struct" href="structLogParseResult.html">LogParseResult</a> &amp;result)</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>{</div>
@@ -251,7 +259,8 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    emit <a class="code hl_signal" href="classLogFileParser.html#a8529d4c7f757e4305228e14ac16bbf75">parsedChanged</a>();</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keywordtype">void</span> LogFileParser::clear()</div>
+<div class="foldopen" id="foldopen00154" data-start="{" data-end="}">
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="classLogFileParser.html#ac20bdf5ae7c888fe266d008c1e6528bd">  154</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLogFileParser.html#ac20bdf5ae7c888fe266d008c1e6528bd">LogFileParser::clear</a>()</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>{</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> oldParsed = _parsed;</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    _parsed = <span class="keyword">false</span>;</div>
@@ -278,8 +287,10 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordflow">if</span> (_sampleCount != 0) { _sampleCount = 0; emit <a class="code hl_signal" href="classLogFileParser.html#a5c812591c8d99784b481e7224b19f5d7">sampleCountChanged</a>(); }</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>}</div>
+</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>QVariantList LogFileParser::fieldSamples(<span class="keyword">const</span> QString &amp;fieldName)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00182" data-start="{" data-end="}">
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="classLogFileParser.html#a259b78bdc6ec165409155a72ac6af7d6">  182</a></span>QVariantList <a class="code hl_function" href="classLogFileParser.html#a259b78bdc6ec165409155a72ac6af7d6">LogFileParser::fieldSamples</a>(<span class="keyword">const</span> QString &amp;fieldName)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    QVariantList output;</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keyword">const</span> <span class="keyword">auto</span> it = _fieldSamples.constFind(fieldName);</div>
@@ -289,8 +300,10 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QPointF &amp;p : points) { output.append(p); }</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordflow">return</span> output;</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>}</div>
+</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>QVariantMap LogFileParser::fieldMinMax(<span class="keyword">const</span> QString &amp;fieldName)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00193" data-start="{" data-end="}">
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="classLogFileParser.html#a1fd209b511a4a30b6829b32bbcc0ac87">  193</a></span>QVariantMap <a class="code hl_function" href="classLogFileParser.html#a1fd209b511a4a30b6829b32bbcc0ac87">LogFileParser::fieldMinMax</a>(<span class="keyword">const</span> QString &amp;fieldName)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keyword">const</span> <span class="keyword">auto</span> it = _fieldSamples.constFind(fieldName);</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordflow">if</span> (it == _fieldSamples.cend() || it-&gt;isEmpty()) { <span class="keywordflow">return</span> {}; }</div>
@@ -303,8 +316,10 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    }</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordflow">return</span> QVariantMap{{QStringLiteral(<span class="stringliteral">&quot;min&quot;</span>), minY}, {QStringLiteral(<span class="stringliteral">&quot;max&quot;</span>), maxY}};</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>}</div>
+</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>QVariantList LogFileParser::fieldSamplesFiltered(<span class="keyword">const</span> QString &amp;fieldName, <span class="keywordtype">double</span> minX, <span class="keywordtype">double</span> maxX, <span class="keywordtype">int</span> pixelWidth)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00207" data-start="{" data-end="}">
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="classLogFileParser.html#a16633b3c8578ebfa6c7f9a76d9c51820">  207</a></span>QVariantList <a class="code hl_function" href="classLogFileParser.html#a16633b3c8578ebfa6c7f9a76d9c51820">LogFileParser::fieldSamplesFiltered</a>(<span class="keyword">const</span> QString &amp;fieldName, <span class="keywordtype">double</span> minX, <span class="keywordtype">double</span> maxX, <span class="keywordtype">int</span> pixelWidth)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    QVariantList output;</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keyword">const</span> <span class="keyword">auto</span> it = _fieldSamples.constFind(fieldName);</div>
@@ -377,8 +392,10 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keywordflow">return</span> output;</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>}</div>
+</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="keywordtype">double</span> LogFileParser::fieldValueAt(<span class="keyword">const</span> QString &amp;fieldName, <span class="keywordtype">double</span> timestampSeconds)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00281" data-start="{" data-end="}">
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="classLogFileParser.html#a06e8baa0e557822174f54b2959a0b50b">  281</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="classLogFileParser.html#a06e8baa0e557822174f54b2959a0b50b">LogFileParser::fieldValueAt</a>(<span class="keyword">const</span> QString &amp;fieldName, <span class="keywordtype">double</span> timestampSeconds)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <span class="keyword">const</span> <span class="keyword">auto</span> it = _fieldSamples.constFind(fieldName);</div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <span class="keywordflow">if</span> (it == _fieldSamples.cend() || it-&gt;isEmpty()) {</div>
@@ -395,8 +412,10 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keywordflow">return</span> (std::fabs(prev-&gt;x() - timestampSeconds) &lt;= std::fabs(lower-&gt;x() - timestampSeconds))</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        ? prev-&gt;y() : lower-&gt;y();</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>}</div>
+</div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>QString LogFileParser::modeAt(<span class="keywordtype">double</span> timestampSeconds)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00299" data-start="{" data-end="}">
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno"><a class="line" href="classLogFileParser.html#a972ed7fbf2dec08707147b2ba947dcc9">  299</a></span>QString <a class="code hl_function" href="classLogFileParser.html#a972ed7fbf2dec08707147b2ba947dcc9">LogFileParser::modeAt</a>(<span class="keywordtype">double</span> timestampSeconds)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QVariant &amp;v : _modeSegments) {</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        <span class="keyword">const</span> QVariantMap seg = v.toMap();</div>
@@ -408,8 +427,10 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    }</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    <span class="keywordflow">return</span> QString();</div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>}</div>
+</div>
 <div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>QVariantList LogFileParser::eventsNear(<span class="keywordtype">double</span> timestampSeconds, <span class="keywordtype">double</span> thresholdSeconds)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00312" data-start="{" data-end="}">
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno"><a class="line" href="classLogFileParser.html#a00d104d6a7ed1cadf81975ea9a7111c1">  312</a></span>QVariantList <a class="code hl_function" href="classLogFileParser.html#a00d104d6a7ed1cadf81975ea9a7111c1">LogFileParser::eventsNear</a>(<span class="keywordtype">double</span> timestampSeconds, <span class="keywordtype">double</span> thresholdSeconds)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    QVariantList matches;</div>
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> threshold = std::max(0.0, thresholdSeconds);</div>
@@ -425,6 +446,7 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    }</div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="keywordflow">return</span> matches;</div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>}</div>
+</div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="keywordtype">void</span> LogFileParser::_setParseError(<span class="keyword">const</span> QString &amp;<a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>)</div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>{</div>
@@ -434,12 +456,15 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    }</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>}</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>QString LogFileParser::gpsAltitudeFieldName()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00337" data-start="{" data-end="}">
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno"><a class="line" href="classLogFileParser.html#aa0b346d676a3ab530fe0b669c3f80421">  337</a></span>QString <a class="code hl_function" href="classLogFileParser.html#aa0b346d676a3ab530fe0b669c3f80421">LogFileParser::gpsAltitudeFieldName</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    <span class="keywordflow">return</span> _gpsAltField;</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>}</div>
+</div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>QVariantMap LogFileParser::gpsCoordAt(<span class="keywordtype">double</span> timestampSeconds)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00342" data-start="{" data-end="}">
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno"><a class="line" href="classLogFileParser.html#a902388c49599b958f648b82cd77d5fb5">  342</a></span>QVariantMap <a class="code hl_function" href="classLogFileParser.html#a902388c49599b958f648b82cd77d5fb5">LogFileParser::gpsCoordAt</a>(<span class="keywordtype">double</span> timestampSeconds)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    <span class="keywordflow">if</span> (_gpsLatField.isEmpty() || _gpsLonField.isEmpty()) {</div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        <span class="keywordflow">return</span> {};</div>
@@ -483,8 +508,10 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>    coord[QStringLiteral(<span class="stringliteral">&quot;longitude&quot;</span>)] = lonPts[lonIdx].y();</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>    <span class="keywordflow">return</span> coord;</div>
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>}</div>
+</div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span> </div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>QVariantList LogFileParser::gpsPath()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00387" data-start="{" data-end="}">
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno"><a class="line" href="classLogFileParser.html#aa924e383b54902da09353f8b2fd1422b">  387</a></span>QVariantList <a class="code hl_function" href="classLogFileParser.html#aa924e383b54902da09353f8b2fd1422b">LogFileParser::gpsPath</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>    <span class="comment">// Candidate field-name pairs tried in priority order.</span></div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>    <span class="comment">// All values are stored in degrees (the parsers handle any raw-unit conversion).</span></div>
@@ -590,6 +617,7 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>    }</div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>    <span class="keywordflow">return</span> {};</div>
 <div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>}</div>
+</div>
 <div class="ttc" id="aLogFileParser_8h_html"><div class="ttname"><a href="LogFileParser_8h.html">LogFileParser.h</a></div></div>
 <div class="ttc" id="aLogParseResultPrivate_8h_html"><div class="ttname"><a href="LogParseResultPrivate_8h.html">LogParseResultPrivate.h</a></div></div>
 <div class="ttc" id="aLogViewerDataFlashParser_8h_html"><div class="ttname"><a href="LogViewerDataFlashParser_8h.html">LogViewerDataFlashParser.h</a></div></div>
@@ -598,17 +626,31 @@ $(document).ready(function(){initNavTree('LogFileParser_8cc_source.html',''); in
 <div class="ttc" id="aQGCCompression_8cc_html_a5e7e27258e59f4c4a80e5fb757024a2d"><div class="ttname"><a href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a></div><div class="ttdeci">Error error</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00114">QGCCompression.cc:114</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
+<div class="ttc" id="aclassLogFileParser_html_a00d104d6a7ed1cadf81975ea9a7111c1"><div class="ttname"><a href="classLogFileParser.html#a00d104d6a7ed1cadf81975ea9a7111c1">LogFileParser::eventsNear</a></div><div class="ttdeci">Q_INVOKABLE QVariantList eventsNear(double timestampSeconds, double thresholdSeconds) const</div><div class="ttdef"><b>Definition</b> <a href="LogFileParser_8cc_source.html#l00312">LogFileParser.cc:312</a></div></div>
+<div class="ttc" id="aclassLogFileParser_html_a06e8baa0e557822174f54b2959a0b50b"><div class="ttname"><a href="classLogFileParser.html#a06e8baa0e557822174f54b2959a0b50b">LogFileParser::fieldValueAt</a></div><div class="ttdeci">Q_INVOKABLE double fieldValueAt(const QString &amp;fieldName, double timestampSeconds) const</div><div class="ttdef"><b>Definition</b> <a href="LogFileParser_8cc_source.html#l00281">LogFileParser.cc:281</a></div></div>
+<div class="ttc" id="aclassLogFileParser_html_a16633b3c8578ebfa6c7f9a76d9c51820"><div class="ttname"><a href="classLogFileParser.html#a16633b3c8578ebfa6c7f9a76d9c51820">LogFileParser::fieldSamplesFiltered</a></div><div class="ttdeci">Q_INVOKABLE QVariantList fieldSamplesFiltered(const QString &amp;fieldName, double minX, double maxX, int pixelWidth) const</div><div class="ttdef"><b>Definition</b> <a href="LogFileParser_8cc_source.html#l00207">LogFileParser.cc:207</a></div></div>
 <div class="ttc" id="aclassLogFileParser_html_a16817f013474fffc63c0957037f882dc"><div class="ttname"><a href="classLogFileParser.html#a16817f013474fffc63c0957037f882dc">LogFileParser::parametersChanged</a></div><div class="ttdeci">void parametersChanged()</div></div>
+<div class="ttc" id="aclassLogFileParser_html_a1fd209b511a4a30b6829b32bbcc0ac87"><div class="ttname"><a href="classLogFileParser.html#a1fd209b511a4a30b6829b32bbcc0ac87">LogFileParser::fieldMinMax</a></div><div class="ttdeci">Q_INVOKABLE QVariantMap fieldMinMax(const QString &amp;fieldName) const</div><div class="ttdef"><b>Definition</b> <a href="LogFileParser_8cc_source.html#l00193">LogFileParser.cc:193</a></div></div>
+<div class="ttc" id="aclassLogFileParser_html_a259b78bdc6ec165409155a72ac6af7d6"><div class="ttname"><a href="classLogFileParser.html#a259b78bdc6ec165409155a72ac6af7d6">LogFileParser::fieldSamples</a></div><div class="ttdeci">Q_INVOKABLE QVariantList fieldSamples(const QString &amp;fieldName) const</div><div class="ttdef"><b>Definition</b> <a href="LogFileParser_8cc_source.html#l00182">LogFileParser.cc:182</a></div></div>
 <div class="ttc" id="aclassLogFileParser_html_a37b3db5083b6c6cb372a1882cebb71c9"><div class="ttname"><a href="classLogFileParser.html#a37b3db5083b6c6cb372a1882cebb71c9">LogFileParser::timeRangeChanged</a></div><div class="ttdeci">void timeRangeChanged()</div></div>
 <div class="ttc" id="aclassLogFileParser_html_a408c0ebe71c67bc64d6e1b0bc977df5e"><div class="ttname"><a href="classLogFileParser.html#a408c0ebe71c67bc64d6e1b0bc977df5e">LogFileParser::parseErrorChanged</a></div><div class="ttdeci">void parseErrorChanged()</div></div>
 <div class="ttc" id="aclassLogFileParser_html_a4387283726b0059bfafe47e5c278e2fb"><div class="ttname"><a href="classLogFileParser.html#a4387283726b0059bfafe47e5c278e2fb">LogFileParser::dropoutsChanged</a></div><div class="ttdeci">void dropoutsChanged()</div></div>
+<div class="ttc" id="aclassLogFileParser_html_a447d351725e77939361e4d0c0f74fa13"><div class="ttname"><a href="classLogFileParser.html#a447d351725e77939361e4d0c0f74fa13">LogFileParser::parseFileAsync</a></div><div class="ttdeci">Q_INVOKABLE void parseFileAsync(const QString &amp;filePath)</div><div class="ttdef"><b>Definition</b> <a href="LogFileParser_8cc_source.html#l00077">LogFileParser.cc:77</a></div></div>
 <div class="ttc" id="aclassLogFileParser_html_a5ae75039ff5752038a67067aec657d21"><div class="ttname"><a href="classLogFileParser.html#a5ae75039ff5752038a67067aec657d21">LogFileParser::detectedVehicleTypeChanged</a></div><div class="ttdeci">void detectedVehicleTypeChanged()</div></div>
 <div class="ttc" id="aclassLogFileParser_html_a5c812591c8d99784b481e7224b19f5d7"><div class="ttname"><a href="classLogFileParser.html#a5c812591c8d99784b481e7224b19f5d7">LogFileParser::sampleCountChanged</a></div><div class="ttdeci">void sampleCountChanged()</div></div>
+<div class="ttc" id="aclassLogFileParser_html_a67264f4994f9403ed1238a24827a1851"><div class="ttname"><a href="classLogFileParser.html#a67264f4994f9403ed1238a24827a1851">LogFileParser::LogFileParser</a></div><div class="ttdeci">LogFileParser(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="LogFileParser_8cc_source.html#l00050">LogFileParser.cc:50</a></div></div>
 <div class="ttc" id="aclassLogFileParser_html_a6c13b134804d9a1e18c1c76750e0afb1"><div class="ttname"><a href="classLogFileParser.html#a6c13b134804d9a1e18c1c76750e0afb1">LogFileParser::plottableFieldsChanged</a></div><div class="ttdeci">void plottableFieldsChanged()</div></div>
 <div class="ttc" id="aclassLogFileParser_html_a734d75cfe178446ac763c8fa96a75196"><div class="ttname"><a href="classLogFileParser.html#a734d75cfe178446ac763c8fa96a75196">LogFileParser::availableFieldsChanged</a></div><div class="ttdeci">void availableFieldsChanged()</div></div>
 <div class="ttc" id="aclassLogFileParser_html_a778ebc3e5fa9fbb3a1b3352c9cd3fe99"><div class="ttname"><a href="classLogFileParser.html#a778ebc3e5fa9fbb3a1b3352c9cd3fe99">LogFileParser::modeSegmentsChanged</a></div><div class="ttdeci">void modeSegmentsChanged()</div></div>
 <div class="ttc" id="aclassLogFileParser_html_a8529d4c7f757e4305228e14ac16bbf75"><div class="ttname"><a href="classLogFileParser.html#a8529d4c7f757e4305228e14ac16bbf75">LogFileParser::parsedChanged</a></div><div class="ttdeci">void parsedChanged()</div></div>
+<div class="ttc" id="aclassLogFileParser_html_a902388c49599b958f648b82cd77d5fb5"><div class="ttname"><a href="classLogFileParser.html#a902388c49599b958f648b82cd77d5fb5">LogFileParser::gpsCoordAt</a></div><div class="ttdeci">Q_INVOKABLE QVariantMap gpsCoordAt(double timestampSeconds) const</div><div class="ttdef"><b>Definition</b> <a href="LogFileParser_8cc_source.html#l00342">LogFileParser.cc:342</a></div></div>
+<div class="ttc" id="aclassLogFileParser_html_a972ed7fbf2dec08707147b2ba947dcc9"><div class="ttname"><a href="classLogFileParser.html#a972ed7fbf2dec08707147b2ba947dcc9">LogFileParser::modeAt</a></div><div class="ttdeci">Q_INVOKABLE QString modeAt(double timestampSeconds) const</div><div class="ttdef"><b>Definition</b> <a href="LogFileParser_8cc_source.html#l00299">LogFileParser.cc:299</a></div></div>
+<div class="ttc" id="aclassLogFileParser_html_aa0b346d676a3ab530fe0b669c3f80421"><div class="ttname"><a href="classLogFileParser.html#aa0b346d676a3ab530fe0b669c3f80421">LogFileParser::gpsAltitudeFieldName</a></div><div class="ttdeci">Q_INVOKABLE QString gpsAltitudeFieldName() const</div><div class="ttdef"><b>Definition</b> <a href="LogFileParser_8cc_source.html#l00337">LogFileParser.cc:337</a></div></div>
+<div class="ttc" id="aclassLogFileParser_html_aa924e383b54902da09353f8b2fd1422b"><div class="ttname"><a href="classLogFileParser.html#aa924e383b54902da09353f8b2fd1422b">LogFileParser::gpsPath</a></div><div class="ttdeci">Q_INVOKABLE QVariantList gpsPath() const</div><div class="ttdef"><b>Definition</b> <a href="LogFileParser_8cc_source.html#l00387">LogFileParser.cc:387</a></div></div>
 <div class="ttc" id="aclassLogFileParser_html_ab4d7bbf92c44c9fdd3649350d6c4d888"><div class="ttname"><a href="classLogFileParser.html#ab4d7bbf92c44c9fdd3649350d6c4d888">LogFileParser::parseFileFinished</a></div><div class="ttdeci">void parseFileFinished(const QString &amp;filePath, bool ok, const QString &amp;errorMessage)</div></div>
+<div class="ttc" id="aclassLogFileParser_html_aba4c76adba7e790e1ffd208f291a8343"><div class="ttname"><a href="classLogFileParser.html#aba4c76adba7e790e1ffd208f291a8343">LogFileParser::~LogFileParser</a></div><div class="ttdeci">~LogFileParser()</div><div class="ttdef"><b>Definition</b> <a href="LogFileParser_8cc_source.html#l00056">LogFileParser.cc:56</a></div></div>
+<div class="ttc" id="aclassLogFileParser_html_ac20bdf5ae7c888fe266d008c1e6528bd"><div class="ttname"><a href="classLogFileParser.html#ac20bdf5ae7c888fe266d008c1e6528bd">LogFileParser::clear</a></div><div class="ttdeci">Q_INVOKABLE void clear()</div><div class="ttdef"><b>Definition</b> <a href="LogFileParser_8cc_source.html#l00154">LogFileParser.cc:154</a></div></div>
+<div class="ttc" id="aclassLogFileParser_html_acb51b1ca3d897fc7dbe74f3b7dc401cf"><div class="ttname"><a href="classLogFileParser.html#acb51b1ca3d897fc7dbe74f3b7dc401cf">LogFileParser::parseFile</a></div><div class="ttdeci">Q_INVOKABLE bool parseFile(const QString &amp;filePath)</div><div class="ttdef"><b>Definition</b> <a href="LogFileParser_8cc_source.html#l00061">LogFileParser.cc:61</a></div></div>
 <div class="ttc" id="aclassLogFileParser_html_af4df73339e1939115f46d765775361dd"><div class="ttname"><a href="classLogFileParser.html#af4df73339e1939115f46d765775361dd">LogFileParser::eventsChanged</a></div><div class="ttdeci">void eventsChanged()</div></div>
 <div class="ttc" id="aclassLogFileParser_html_afec4b38948a1cfe304d9b8791327e93c"><div class="ttname"><a href="classLogFileParser.html#afec4b38948a1cfe304d9b8791327e93c">LogFileParser::messagesChanged</a></div><div class="ttdeci">void messagesChanged()</div></div>
 <div class="ttc" id="aclassLogViewerParamMetaData_html_afd20bbc04441af3630bfa3ac7ca0ba1f"><div class="ttname"><a href="classLogViewerParamMetaData.html#afd20bbc04441af3630bfa3ac7ca0ba1f">LogViewerParamMetaData::enrichForAPM</a></div><div class="ttdeci">static void enrichForAPM(QVariantList &amp;parameters, const QString &amp;vehicleType, int major, int minor)</div><div class="ttdef"><b>Definition</b> <a href="LogViewerParamMetaData_8cc_source.html#l00108">LogViewerParamMetaData.cc:108</a></div></div>

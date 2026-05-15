@@ -1,4 +1,4 @@
 var VehicleGPSAggregateFactGroup_8h =
 [
-    [ "VehicleGPSAggregateFactGroup", "classVehicleGPSAggregateFactGroup.html", null ]
+    [ "VehicleGPSAggregateFactGroup", "classVehicleGPSAggregateFactGroup.html", "classVehicleGPSAggregateFactGroup" ]
 ];

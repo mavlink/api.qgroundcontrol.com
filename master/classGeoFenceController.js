@@ -3,12 +3,12 @@ var classGeoFenceController =
     [ "GeoFenceController", "classGeoFenceController.html#af7593b4041e03b3d46ca24276477da74", null ],
     [ "~GeoFenceController", "classGeoFenceController.html#a0e2ea39bd5473be499d034b304c3ff33", null ],
     [ "addInclusionCircle", "classGeoFenceController.html#a774dbf16dc96a2d23ab96f212a2e83a7", null ],
+    [ "addInclusionPolygon", "classGeoFenceController.html#a1002d48cfe683acfdd385a6f33573617", null ],
     [ "breachReturnAltitude", "classGeoFenceController.html#a0d1abd2b499497d98fc723a9d486cbc0", null ],
     [ "breachReturnPoint", "classGeoFenceController.html#ae24e07151a337ba2ea04468c3321f431", null ],
     [ "breachReturnPointChanged", "classGeoFenceController.html#a3dba86f395cf0507e21cff551f270c9c", null ],
     [ "circles", "classGeoFenceController.html#a5e35aea15bed977fd5f8fb2cdca94f5e", null ],
     [ "clearAllInteractive", "classGeoFenceController.html#af27ce97b7147995cb2204bad2600c6a8", null ],
-    [ "CONSTANT", "classGeoFenceController.html#a861ae7c567f49c215efcd66b21675ba7", null ],
     [ "containsItems", "classGeoFenceController.html#a3f5a8788829d79c834319170f53e655e", null ],
     [ "deleteCircle", "classGeoFenceController.html#af8fa73619558596be0816465ddab69a6", null ],
     [ "deletePolygon", "classGeoFenceController.html#a520c8d14cf36aea5abab06927a9a8a74", null ],
@@ -30,6 +30,5 @@ var classGeoFenceController =
     [ "showPlanFromManagerVehicle", "classGeoFenceController.html#a03c88fed46e2f0d63a80540e06974756", null ],
     [ "start", "classGeoFenceController.html#ac7018c6c559e81375c444459881d4905", null ],
     [ "supported", "classGeoFenceController.html#a8de3bed7612978a8055ca212eea48d84", null ],
-    [ "syncInProgress", "classGeoFenceController.html#a6a1076d8cf7b520c20af9d92be03ad15", null ],
-    [ "bottomRight", "classGeoFenceController.html#a2a55cdbe77e0bf2af4edd9d327cae553", null ]
+    [ "syncInProgress", "classGeoFenceController.html#a6a1076d8cf7b520c20af9d92be03ad15", null ]
 ];

@@ -11,7 +11,7 @@ var classLinkInterface =
     [ "communicationError", "classLinkInterface.html#ab5eec51087fb23b7f1964452f59b3466", null ],
     [ "connected", "classLinkInterface.html#af08f68378ce5eba20e172e67ca239288", null ],
     [ "decodedFirstMavlinkPacket", "classLinkInterface.html#a4314727d146c523e3dc735319c276cf5", null ],
-    [ "disconnect", "classLinkInterface.html#a9878b4e07ad890d0f1925d7330e69539", null ],
+    [ "disconnect", "classLinkInterface.html#a5e977d7c29a15e275adf356b80625d13", null ],
     [ "disconnected", "classLinkInterface.html#a0f20e82176c72fb02a1d18a3019c5ee8", null ],
     [ "isConnected", "classLinkInterface.html#a8f248895b1fa293a65c80d7a5e4f2e1d", null ],
     [ "isLogReplay", "classLinkInterface.html#a31ea33e8660c43b40fe9216dd1c1b411", null ],

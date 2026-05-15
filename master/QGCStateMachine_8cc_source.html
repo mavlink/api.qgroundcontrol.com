@@ -112,19 +112,20 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>QGCStateMachine::QGCStateMachine(<span class="keyword">const</span> QString&amp; machineName, <a class="code hl_class" href="classVehicle.html">Vehicle</a> *vehicle, QObject* parent)</div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a803a597794ac01e3e739f45afc08b81f">   15</a></span><a class="code hl_function" href="classQGCStateMachine.html#a803a597794ac01e3e739f45afc08b81f">QGCStateMachine::QGCStateMachine</a>(<span class="keyword">const</span> QString&amp; machineName, <a class="code hl_class" href="classVehicle.html">Vehicle</a> *vehicle, QObject* parent)</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    : QStateMachine (parent)</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    , _vehicle      (vehicle)</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    setObjectName(machineName);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    setObjectName(<a class="code hl_function" href="classQGCStateMachine.html#a80413092375ae2d145859fcb9b4c2cf8">machineName</a>);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    connect(<span class="keyword">this</span>, &amp;QGCStateMachine::started, <span class="keyword">this</span>, [<span class="keyword">this</span>] () {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        qCDebug(QGCStateMachineLog) &lt;&lt; <span class="stringliteral">&quot;State machine started:&quot;</span> &lt;&lt; objectName();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        emit runningChanged();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        emit <a class="code hl_signal" href="classQGCStateMachine.html#a17522a1909a527af03ff86d246de4ea7">runningChanged</a>();</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    });</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    connect(<span class="keyword">this</span>, &amp;QGCStateMachine::stopped, <span class="keyword">this</span>, [<span class="keyword">this</span>] () {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        qCDebug(QGCStateMachineLog) &lt;&lt; <span class="stringliteral">&quot;State machine stopped:&quot;</span> &lt;&lt; objectName();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        emit runningChanged();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        emit <a class="code hl_signal" href="classQGCStateMachine.html#a17522a1909a527af03ff86d246de4ea7">runningChanged</a>();</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">if</span> (_deleteOnStop) {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            deleteLater();</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        }</div>
@@ -133,31 +134,34 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        qCDebug(QGCStateMachineLog) &lt;&lt; <span class="stringliteral">&quot;State machine finished:&quot;</span> &lt;&lt; objectName();</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">if</span> (_progressTotalWeight &gt; 0 &amp;&amp; _progressLastEmitted &lt; 1.0f) {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            _progressLastEmitted = 1.0f;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            emit progressUpdate(1.0f);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            emit <a class="code hl_signal" href="classQGCStateMachine.html#a21e7b7119e1d263d8a4be7b992863056">progressUpdate</a>(1.0f);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    });</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (qEnvironmentVariableIsSet(<span class="stringliteral">&quot;QGC_STATEMACHINE_HISTORY&quot;</span>)) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        setHistoryRecordingEnabled(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_function" href="classQGCStateMachine.html#a935063687c6be8c0474c1ef94253ffa6">setHistoryRecordingEnabled</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (qEnvironmentVariableIsSet(<span class="stringliteral">&quot;QGC_STATEMACHINE_PROFILE&quot;</span>)) {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        setProfilingEnabled(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_function" href="classQGCStateMachine.html#a98e5aa412d505559179ab84453727fda">setProfilingEnabled</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">if</span> (qEnvironmentVariableIsSet(<span class="stringliteral">&quot;QGC_STATEMACHINE_LOG&quot;</span>)) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        setStructuredLoggingEnabled(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_function" href="classQGCStateMachine.html#a4ba8342d27c0e85d9a63a5dbb22f59bf">setStructuredLoggingEnabled</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>QString QGCStateMachine::currentStateName()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ab5d04bec90623644c998d324b6634efc">   51</a></span>QString <a class="code hl_function" href="classQGCStateMachine.html#ab5d04bec90623644c998d324b6634efc">QGCStateMachine::currentStateName</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">const</span> <span class="keyword">auto</span> activeStates = configuration();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span> (activeStates.isEmpty()) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_function" href="classQGCStateMachine.html#a4a318f0c3966ac5117c5fc3feece2a14">activeStates</a> = configuration();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classQGCStateMachine.html#a4a318f0c3966ac5117c5fc3feece2a14">activeStates</a>.isEmpty()) {</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">return</span> QString();</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="comment">// Return the name of the first (deepest) active state</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    QAbstractState* active = *activeStates.begin();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">return</span> active ? active-&gt;objectName() : QString();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    QAbstractState* <a class="code hl_function" href="classQGCStateMachine.html#a9ddd94f819145bebc2df74f8684e3ecb">active</a> = *<a class="code hl_function" href="classQGCStateMachine.html#a4a318f0c3966ac5117c5fc3feece2a14">activeStates</a>.begin();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classQGCStateMachine.html#a9ddd94f819145bebc2df74f8684e3ecb">active</a> ? <a class="code hl_function" href="classQGCStateMachine.html#a9ddd94f819145bebc2df74f8684e3ecb">active</a>-&gt;objectName() : QString();</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a2199952545a8b2eb6dba675ebf6308ef">   62</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="classQGCStateMachine.html#a2199952545a8b2eb6dba675ebf6308ef">QGCStateMachine::start</a>()</div>
@@ -169,55 +173,70 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
 </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">void</span> QGCStateMachine::setGlobalErrorState(QAbstractState* errorState)</div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a325c2b48f7606c3e01b7e76034a498b0">   70</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a325c2b48f7606c3e01b7e76034a498b0">QGCStateMachine::setGlobalErrorState</a>(QAbstractState* errorState)</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    _globalErrorState = errorState;</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">void</span> QGCStateMachine::enablePropertyRestore()</div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a20d82c04ee97b8fbc66a90d01c357321">   75</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a20d82c04ee97b8fbc66a90d01c357321">QGCStateMachine::enablePropertyRestore</a>()</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    setGlobalRestorePolicy(QState::RestoreProperties);</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    qCDebug(QGCStateMachineLog) &lt;&lt; objectName() &lt;&lt; <span class="stringliteral">&quot;property restore enabled&quot;</span>;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
+</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keywordtype">bool</span> QGCStateMachine::isPropertyRestoreEnabled()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a26818e2ddff99bc36481d5b0dc5a81ca">   81</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCStateMachine.html#a26818e2ddff99bc36481d5b0dc5a81ca">QGCStateMachine::isPropertyRestoreEnabled</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">return</span> globalRestorePolicy() == QState::RestoreProperties;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
+</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keywordtype">void</span> QGCStateMachine::registerState(<a class="code hl_class" href="classQGCState.html">QGCState</a>* state)</div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ae3d8b5e2e11b519adfce749ce043adfe">   86</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#ae3d8b5e2e11b519adfce749ce043adfe">QGCStateMachine::registerState</a>(<a class="code hl_class" href="classQGCState.html">QGCState</a>* state)</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="comment">// Only add global error transition if no local error state is set</span></div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">if</span> (_globalErrorState &amp;&amp; !state-&gt;<a class="code hl_function" href="classQGCState.html#a0aa076b2dd30a23d98cbc74a7b019e80">localErrorState</a>()) {</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        state-&gt;addTransition(state, &amp;<a class="code hl_signal" href="classQGCAbstractState.html#ab234b3f3e43a46a03afdca18ffd57440">QGCState::error</a>, _globalErrorState);</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keywordtype">void</span> QGCStateMachine::registerState(<a class="code hl_class" href="classQGCAbstractState.html">QGCAbstractState</a>* state)</div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#abf255dd5cb34303d2cb050798d3de049">   94</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#ae3d8b5e2e11b519adfce749ce043adfe">QGCStateMachine::registerState</a>(<a class="code hl_class" href="classQGCAbstractState.html">QGCAbstractState</a>* state)</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="comment">// QGCAbstractState cannot have local error-state helpers, so wire to global.</span></div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">if</span> (_globalErrorState) {</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        state-&gt;addTransition(state, &amp;<a class="code hl_signal" href="classQGCAbstractState.html#ab234b3f3e43a46a03afdca18ffd57440">QGCAbstractState::error</a>, _globalErrorState);</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
+</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><a class="code hl_class" href="classFunctionState.html">FunctionState</a>* QGCStateMachine::addFunctionState(<span class="keyword">const</span> QString&amp; stateName, std::function&lt;<span class="keywordtype">void</span>()&gt; function)</div>
+<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a0a5543de03dabf358d330db872efe061">  102</a></span><a class="code hl_class" href="classFunctionState.html">FunctionState</a>* <a class="code hl_function" href="classQGCStateMachine.html#a0a5543de03dabf358d330db872efe061">QGCStateMachine::addFunctionState</a>(<span class="keyword">const</span> QString&amp; stateName, std::function&lt;<span class="keywordtype">void</span>()&gt; function)</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>{</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">auto</span>* state = <span class="keyword">new</span> <a class="code hl_class" href="classFunctionState.html">FunctionState</a>(stateName, <span class="keyword">this</span>, std::move(function));</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    registerState(state);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_function" href="classQGCStateMachine.html#ae3d8b5e2e11b519adfce749ce043adfe">registerState</a>(state);</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">return</span> state;</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><a class="code hl_class" href="classAsyncFunctionState.html">AsyncFunctionState</a>* QGCStateMachine::addAsyncFunctionState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a8761428fc1346c5b48da21e892ab3c4a">  109</a></span><a class="code hl_class" href="classAsyncFunctionState.html">AsyncFunctionState</a>* <a class="code hl_function" href="classQGCStateMachine.html#a8761428fc1346c5b48da21e892ab3c4a">QGCStateMachine::addAsyncFunctionState</a>(<span class="keyword">const</span> QString&amp; stateName,</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                                                            <a class="code hl_typedef" href="classAsyncFunctionState.html#ac171cf03073823eab485cc91cbf93b8b">AsyncFunctionState::SetupFunction</a> setupFunction,</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                                                            <span class="keywordtype">int</span> timeoutMsecs)</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>{</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keyword">auto</span>* state = <span class="keyword">new</span> <a class="code hl_class" href="classAsyncFunctionState.html">AsyncFunctionState</a>(stateName, <span class="keyword">this</span>, std::move(setupFunction), timeoutMsecs);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    registerState(state);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_function" href="classQGCStateMachine.html#ae3d8b5e2e11b519adfce749ce043adfe">registerState</a>(state);</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">return</span> state;</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
+</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><a class="code hl_class" href="classQGCState.html">QGCState</a>* QGCStateMachine::addErrorRecoveryState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a4884a36df170b225c7e49afc01e930f8">  118</a></span><a class="code hl_class" href="classQGCState.html">QGCState</a>* <a class="code hl_function" href="classQGCStateMachine.html#a4884a36df170b225c7e49afc01e930f8">QGCStateMachine::addErrorRecoveryState</a>(<span class="keyword">const</span> QString&amp; stateName,</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                                                 <a class="code hl_typedef" href="classErrorRecoveryBuilder.html#a5d60280fd4235b804ac558713e3a072e">ErrorRecoveryBuilder::Action</a> action,</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                                                 <span class="keywordtype">int</span> maxRetries,</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                                                 <span class="keywordtype">int</span> retryDelayMsecs,</div>
@@ -227,101 +246,123 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                                                 <span class="keywordtype">int</span> timeoutMsecs)</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>{</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_class" href="classErrorRecoveryBuilder.html">ErrorRecoveryBuilder</a> builder(<span class="keyword">this</span>, stateName);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    builder.withAction(std::move(action))</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>           .retry(maxRetries, retryDelayMsecs)</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>           .onExhausted(exhaustedBehavior);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    builder.<a class="code hl_function" href="classErrorRecoveryBuilder.html#a22ccb7a014df3ca58366b59d9dff9541">withAction</a>(std::move(action))</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>           .<a class="code hl_function" href="classErrorRecoveryBuilder.html#a1993fd364bfe4c7e331bdc799499b1e8">retry</a>(maxRetries, retryDelayMsecs)</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>           .<a class="code hl_function" href="classErrorRecoveryBuilder.html#a8a553b165a64f0db64bbee349defea9e">onExhausted</a>(exhaustedBehavior);</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">if</span> (fallback) {</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        builder.withFallback(std::move(fallback));</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        builder.<a class="code hl_function" href="classErrorRecoveryBuilder.html#a1c974655794df29ff67dfb510c122d02">withFallback</a>(std::move(fallback));</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">if</span> (rollback) {</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        builder.withRollback(std::move(rollback));</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        builder.<a class="code hl_function" href="classErrorRecoveryBuilder.html#aa936a429a9490aae729250c6bcc5620b">withRollback</a>(std::move(rollback));</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordflow">if</span> (timeoutMsecs &gt; 0) {</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        builder.withTimeout(timeoutMsecs);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        builder.<a class="code hl_function" href="classErrorRecoveryBuilder.html#aecb95b94acbc9612b36047d3a45028e3">withTimeout</a>(timeoutMsecs);</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">return</span> builder.build();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">return</span> builder.<a class="code hl_function" href="classErrorRecoveryBuilder.html#ad5b2e34c370ed09735ded28246207d53">build</a>();</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>}</div>
+</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><a class="code hl_class" href="classDelayState.html">DelayState</a>* QGCStateMachine::addDelayState(<span class="keywordtype">int</span> delayMsecs)</div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#aa4e39dc87a5fca870b017236bc1464a6">  145</a></span><a class="code hl_class" href="classDelayState.html">DelayState</a>* <a class="code hl_function" href="classQGCStateMachine.html#aa4e39dc87a5fca870b017236bc1464a6">QGCStateMachine::addDelayState</a>(<span class="keywordtype">int</span> delayMsecs)</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>{</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keyword">auto</span>* state = <span class="keyword">new</span> <a class="code hl_class" href="classDelayState.html">DelayState</a>(<span class="keyword">this</span>, delayMsecs);</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    registerState(state);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <a class="code hl_function" href="classQGCStateMachine.html#ae3d8b5e2e11b519adfce749ce043adfe">registerState</a>(state);</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">return</span> state;</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>}</div>
+</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><a class="code hl_class" href="classParallelState.html">ParallelState</a>* QGCStateMachine::addParallelState(<span class="keyword">const</span> QString&amp; stateName)</div>
+<div class="foldopen" id="foldopen00152" data-start="{" data-end="}">
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a2ea1fdf9338438b526b30f86452a153a">  152</a></span><a class="code hl_class" href="classParallelState.html">ParallelState</a>* <a class="code hl_function" href="classQGCStateMachine.html#a2ea1fdf9338438b526b30f86452a153a">QGCStateMachine::addParallelState</a>(<span class="keyword">const</span> QString&amp; stateName)</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>{</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keyword">auto</span>* state = <span class="keyword">new</span> <a class="code hl_class" href="classParallelState.html">ParallelState</a>(stateName, <span class="keyword">this</span>);</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    registerState(state);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <a class="code hl_function" href="classQGCStateMachine.html#ae3d8b5e2e11b519adfce749ce043adfe">registerState</a>(state);</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">return</span> state;</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>}</div>
+</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="keywordtype">void</span> QGCStateMachine::postEvent(<span class="keyword">const</span> QString&amp; eventName, <span class="keyword">const</span> QVariant&amp; data, EventPriority priority)</div>
+<div class="foldopen" id="foldopen00159" data-start="{" data-end="}">
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ac9764c9cf82a48662d746eda1d80c57e">  159</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#ac9764c9cf82a48662d746eda1d80c57e">QGCStateMachine::postEvent</a>(<span class="keyword">const</span> QString&amp; eventName, <span class="keyword">const</span> QVariant&amp; data, EventPriority priority)</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>{</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    qCDebug(QGCStateMachineLog) &lt;&lt; objectName() &lt;&lt; <span class="stringliteral">&quot;posting event:&quot;</span> &lt;&lt; eventName</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                                 &lt;&lt; (priority == HighPriority ? <span class="stringliteral">&quot;(high priority)&quot;</span> : <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    emit <a class="code hl_signal" href="classQGCStateMachine.html#a8a7bc30910ddde1407b682947f5f00d2">machineEvent</a>(eventName);</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    QStateMachine::postEvent(<span class="keyword">new</span> <a class="code hl_class" href="classQGCStateMachineEvent.html">QGCStateMachineEvent</a>(eventName, data), priority);</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>}</div>
+</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="keywordtype">int</span> QGCStateMachine::postDelayedEvent(<span class="keyword">const</span> QString&amp; eventName, <span class="keywordtype">int</span> delayMsecs, <span class="keyword">const</span> QVariant&amp; data)</div>
+<div class="foldopen" id="foldopen00167" data-start="{" data-end="}">
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a7817c46097a3b3d37a83e144fdbfdadf">  167</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classQGCStateMachine.html#a7817c46097a3b3d37a83e144fdbfdadf">QGCStateMachine::postDelayedEvent</a>(<span class="keyword">const</span> QString&amp; eventName, <span class="keywordtype">int</span> delayMsecs, <span class="keyword">const</span> QVariant&amp; data)</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>{</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    qCDebug(QGCStateMachineLog) &lt;&lt; objectName() &lt;&lt; <span class="stringliteral">&quot;posting delayed event:&quot;</span> &lt;&lt; eventName &lt;&lt; <span class="stringliteral">&quot;delay:&quot;</span> &lt;&lt; delayMsecs &lt;&lt; <span class="stringliteral">&quot;ms&quot;</span>;</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">return</span> QStateMachine::postDelayedEvent(<span class="keyword">new</span> <a class="code hl_class" href="classQGCStateMachineEvent.html">QGCStateMachineEvent</a>(eventName, data), delayMsecs);</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>}</div>
+</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="keywordtype">bool</span> QGCStateMachine::cancelDelayedEvent(<span class="keywordtype">int</span> eventId)</div>
+<div class="foldopen" id="foldopen00173" data-start="{" data-end="}">
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a990fefd97324df956ebc4bf6527e3b9a">  173</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCStateMachine.html#a990fefd97324df956ebc4bf6527e3b9a">QGCStateMachine::cancelDelayedEvent</a>(<span class="keywordtype">int</span> eventId)</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>{</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    qCDebug(QGCStateMachineLog) &lt;&lt; objectName() &lt;&lt; <span class="stringliteral">&quot;cancelling delayed event id:&quot;</span> &lt;&lt; eventId;</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordflow">return</span> QStateMachine::cancelDelayedEvent(eventId);</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>}</div>
+</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="comment">// State Configuration</span></div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="keywordtype">void</span> QGCStateMachine::setInitialState(QAbstractState* state, <span class="keywordtype">bool</span> autoStart)</div>
+<div class="foldopen" id="foldopen00183" data-start="{" data-end="}">
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a9b6ecfdb65b6f32417c0c084e9e05be3">  183</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a9b6ecfdb65b6f32417c0c084e9e05be3">QGCStateMachine::setInitialState</a>(QAbstractState* state, <span class="keywordtype">bool</span> autoStart)</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>{</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    QStateMachine::setInitialState(state);</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keywordflow">if</span> (autoStart) {</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <a class="code hl_slot" href="classQGCStateMachine.html#a2199952545a8b2eb6dba675ebf6308ef">start</a>();</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>}</div>
+</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><a class="code hl_class" href="classQGCFinalState.html">QGCFinalState</a>* QGCStateMachine::addFinalState(<span class="keyword">const</span> QString&amp; stateName)</div>
+<div class="foldopen" id="foldopen00191" data-start="{" data-end="}">
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#abef6859e0bb48623704340d743038f22">  191</a></span><a class="code hl_class" href="classQGCFinalState.html">QGCFinalState</a>* <a class="code hl_function" href="classQGCStateMachine.html#abef6859e0bb48623704340d743038f22">QGCStateMachine::addFinalState</a>(<span class="keyword">const</span> QString&amp; stateName)</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>{</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keyword">auto</span>* state = <span class="keyword">new</span> <a class="code hl_class" href="classQGCFinalState.html">QGCFinalState</a>(stateName.isEmpty() ? QStringLiteral(<span class="stringliteral">&quot;Final&quot;</span>) : stateName, this);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keyword">auto</span>* state = <span class="keyword">new</span> <a class="code hl_class" href="classQGCFinalState.html">QGCFinalState</a>(stateName.isEmpty() ? QStringLiteral(<span class="stringliteral">&quot;Final&quot;</span>) : stateName, <span class="keyword">this</span>);</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordflow">return</span> state;</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>}</div>
+</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><a class="code hl_class" href="classConditionalState.html">ConditionalState</a>* QGCStateMachine::addConditionalState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="foldopen" id="foldopen00197" data-start="{" data-end="}">
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#aeaf27778ba654a9badde64cb5251cc47">  197</a></span><a class="code hl_class" href="classConditionalState.html">ConditionalState</a>* <a class="code hl_function" href="classQGCStateMachine.html#aeaf27778ba654a9badde64cb5251cc47">QGCStateMachine::addConditionalState</a>(<span class="keyword">const</span> QString&amp; stateName,</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                                                        <a class="code hl_typedef" href="classConditionalState.html#ad5151451516b1ac14657193552b5b2cc">ConditionalState::Predicate</a> predicate,</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                                                        <a class="code hl_typedef" href="classConditionalState.html#a8165b60ab4dac76a36af64bcc9a7f53b">ConditionalState::Action</a> action)</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>{</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keyword">auto</span>* state = <span class="keyword">new</span> <a class="code hl_class" href="classConditionalState.html">ConditionalState</a>(stateName, <span class="keyword">this</span>, std::move(predicate), std::move(action));</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    registerState(state);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <a class="code hl_function" href="classQGCStateMachine.html#ae3d8b5e2e11b519adfce749ce043adfe">registerState</a>(state);</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordflow">return</span> state;</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>}</div>
+</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><a class="code hl_class" href="classSubMachineState.html">SubMachineState</a>* QGCStateMachine::addSubMachineState(<span class="keyword">const</span> QString&amp; stateName, <a class="code hl_typedef" href="classSubMachineState.html#aa4f01d74d1b68318e9dff82662c9ce7e">SubMachineState::MachineFactory</a> factory)</div>
+<div class="foldopen" id="foldopen00206" data-start="{" data-end="}">
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a8acbfec49593b907c5978bd0bdf90e7e">  206</a></span><a class="code hl_class" href="classSubMachineState.html">SubMachineState</a>* <a class="code hl_function" href="classQGCStateMachine.html#a8acbfec49593b907c5978bd0bdf90e7e">QGCStateMachine::addSubMachineState</a>(<span class="keyword">const</span> QString&amp; stateName, <a class="code hl_typedef" href="classSubMachineState.html#aa4f01d74d1b68318e9dff82662c9ce7e">SubMachineState::MachineFactory</a> factory)</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>{</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keyword">auto</span>* state = <span class="keyword">new</span> <a class="code hl_class" href="classSubMachineState.html">SubMachineState</a>(stateName, <span class="keyword">this</span>, std::move(factory));</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    registerState(state);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <a class="code hl_function" href="classQGCStateMachine.html#ae3d8b5e2e11b519adfce749ce043adfe">registerState</a>(state);</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keywordflow">return</span> state;</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>}</div>
+</div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><a class="code hl_class" href="classEventQueuedState.html">EventQueuedState</a>* QGCStateMachine::addEventQueuedState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="foldopen" id="foldopen00213" data-start="{" data-end="}">
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a6be2fd441a72a50f343df8ed7f97f5e6">  213</a></span><a class="code hl_class" href="classEventQueuedState.html">EventQueuedState</a>* <a class="code hl_function" href="classQGCStateMachine.html#a6be2fd441a72a50f343df8ed7f97f5e6">QGCStateMachine::addEventQueuedState</a>(<span class="keyword">const</span> QString&amp; stateName,</div>
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                                                        <span class="keyword">const</span> QString&amp; eventName,</div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                                                        <span class="keywordtype">int</span> timeoutMsecs)</div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>{</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keyword">auto</span>* state = <span class="keyword">new</span> <a class="code hl_class" href="classEventQueuedState.html">EventQueuedState</a>(stateName, <span class="keyword">this</span>, eventName, timeoutMsecs);</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    registerState(state);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <a class="code hl_function" href="classQGCStateMachine.html#ae3d8b5e2e11b519adfce749ce043adfe">registerState</a>(state);</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keywordflow">return</span> state;</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>}</div>
+</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>QState* QGCStateMachine::createTimedActionState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="foldopen" id="foldopen00222" data-start="{" data-end="}">
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ac5b0426b6cf898461d1898db847482a7">  222</a></span>QState* <a class="code hl_function" href="classQGCStateMachine.html#ac5b0426b6cf898461d1898db847482a7">QGCStateMachine::createTimedActionState</a>(<span class="keyword">const</span> QString&amp; stateName,</div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                                                 <span class="keywordtype">int</span> durationMsecs,</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                                                 std::function&lt;<span class="keywordtype">void</span>()&gt; onEntry,</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                                                 std::function&lt;<span class="keywordtype">void</span>()&gt; onExit)</div>
@@ -363,60 +404,74 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keywordflow">return</span> parentState;</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>}</div>
+</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="comment">// State Queries</span></div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="keywordtype">bool</span> QGCStateMachine::isStateActive(QAbstractState* state)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00269" data-start="{" data-end="}">
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a87eeb91eea5406cdffe9468193e9ad81">  269</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCStateMachine.html#a87eeb91eea5406cdffe9468193e9ad81">QGCStateMachine::isStateActive</a>(QAbstractState* state)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <span class="keywordflow">return</span> configuration().contains(state);</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>}</div>
+</div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>QAbstractState* QGCStateMachine::findState(<span class="keyword">const</span> QString&amp; stateName)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00274" data-start="{" data-end="}">
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a8b97a30acd3c31b8c9a67233894bcf83">  274</a></span>QAbstractState* <a class="code hl_function" href="classQGCStateMachine.html#a8b97a30acd3c31b8c9a67233894bcf83">QGCStateMachine::findState</a>(<span class="keyword">const</span> QString&amp; stateName)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="comment">// Use findChild with name parameter - more efficient than findChildren + loop</span></div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keywordflow">return</span> findChild&lt;QAbstractState*&gt;(stateName);</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>}</div>
+</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="comment">// Error Handling</span></div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="keywordtype">bool</span> QGCStateMachine::isInErrorState()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00284" data-start="{" data-end="}">
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ac143887165a857e586de6a3a85543180">  284</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCStateMachine.html#ac143887165a857e586de6a3a85543180">QGCStateMachine::isInErrorState</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <span class="keywordflow">if</span> (_globalErrorState) {</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        <span class="keywordflow">return</span> configuration().contains(_globalErrorState);</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    }</div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>}</div>
+</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><a class="code hl_class" href="classFunctionState.html">FunctionState</a>* QGCStateMachine::addLogAndContinueErrorState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="foldopen" id="foldopen00292" data-start="{" data-end="}">
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#af5ca002207813d080203bb340f2e9e36">  292</a></span><a class="code hl_class" href="classFunctionState.html">FunctionState</a>* <a class="code hl_function" href="classQGCStateMachine.html#af5ca002207813d080203bb340f2e9e36">QGCStateMachine::addLogAndContinueErrorState</a>(<span class="keyword">const</span> QString&amp; stateName,</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                                                            QAbstractState* nextState,</div>
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                                                            <span class="keyword">const</span> QString&amp; message)</div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>{</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keyword">auto</span>* state = <a class="code hl_function" href="namespaceErrorHandlers.html#a93c1cb9a44b6e3786f897da32a50a0ae">ErrorHandlers::logAndContinue</a>(<span class="keyword">this</span>, stateName, nextState, message);</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    registerState(state);</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <a class="code hl_function" href="classQGCStateMachine.html#ae3d8b5e2e11b519adfce749ce043adfe">registerState</a>(state);</div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="keywordflow">return</span> state;</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>}</div>
+</div>
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><a class="code hl_class" href="classFunctionState.html">FunctionState</a>* QGCStateMachine::addLogAndStopErrorState(<span class="keyword">const</span> QString&amp; stateName,</div>
+<div class="foldopen" id="foldopen00301" data-start="{" data-end="}">
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a1565ab3b9765b46964c4054d3e1134ff">  301</a></span><a class="code hl_class" href="classFunctionState.html">FunctionState</a>* <a class="code hl_function" href="classQGCStateMachine.html#a1565ab3b9765b46964c4054d3e1134ff">QGCStateMachine::addLogAndStopErrorState</a>(<span class="keyword">const</span> QString&amp; stateName,</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>                                                        <span class="keyword">const</span> QString&amp; message)</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>{</div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="keyword">auto</span>* state = <a class="code hl_function" href="namespaceErrorHandlers.html#abe4e06cdc726e154f3495c7f2d0e8f8e">ErrorHandlers::logAndStop</a>(<span class="keyword">this</span>, stateName, message);</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    registerState(state);</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <a class="code hl_function" href="classQGCStateMachine.html#ae3d8b5e2e11b519adfce749ce043adfe">registerState</a>(state);</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    <span class="keywordflow">return</span> state;</div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>}</div>
+</div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="keywordtype">void</span> QGCStateMachine::clearError(<span class="keywordtype">bool</span> restart)</div>
+<div class="foldopen" id="foldopen00309" data-start="{" data-end="}">
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a12a3003902d52854b9aee281b682a60f">  309</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a12a3003902d52854b9aee281b682a60f">QGCStateMachine::clearError</a>(<span class="keywordtype">bool</span> restart)</div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>{</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    <span class="keywordflow">if</span> (restart) {</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classQGCStateMachine.html#af4acb14599fbd973dd96ea3bbc744c0b">restart</a>) {</div>
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        stop();</div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        <a class="code hl_slot" href="classQGCStateMachine.html#a2199952545a8b2eb6dba675ebf6308ef">start</a>();</div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    }</div>
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>}</div>
+</div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="keywordtype">bool</span> QGCStateMachine::resetToState(QAbstractState* state)</div>
+<div class="foldopen" id="foldopen00317" data-start="{" data-end="}">
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a3be670bb92b12c8a011e9014fd80c0a6">  317</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCStateMachine.html#a3be670bb92b12c8a011e9014fd80c0a6">QGCStateMachine::resetToState</a>(QAbstractState* state)</div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>{</div>
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    <span class="keywordflow">if</span> (!state) {</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        qCCritical(QGCStateMachineLog) &lt;&lt; objectName() &lt;&lt; <span class="stringliteral">&quot;resetToState: null state&quot;</span>;</div>
@@ -436,33 +491,37 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>        <span class="keyword">auto</span> conn = std::make_shared&lt;QMetaObject::Connection&gt;();</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        *conn = connect(<span class="keyword">this</span>, &amp;QStateMachine::stopped, <span class="keyword">this</span>, [<span class="keyword">this</span>, state, conn]() {</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>            disconnect(*conn);</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>            setInitialState(state);</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>            resetProgress();</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>            <a class="code hl_function" href="classQGCStateMachine.html#a9b6ecfdb65b6f32417c0c084e9e05be3">setInitialState</a>(state);</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>            <a class="code hl_function" href="classQGCStateMachine.html#abf94cf904354cc4d282859922818d890">resetProgress</a>();</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>            <a class="code hl_slot" href="classQGCStateMachine.html#a2199952545a8b2eb6dba675ebf6308ef">start</a>();</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>        });</div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        stop();</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        setInitialState(state);</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>        resetProgress();</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        <a class="code hl_function" href="classQGCStateMachine.html#a9b6ecfdb65b6f32417c0c084e9e05be3">setInitialState</a>(state);</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>        <a class="code hl_function" href="classQGCStateMachine.html#abf94cf904354cc4d282859922818d890">resetProgress</a>();</div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        <a class="code hl_slot" href="classQGCStateMachine.html#a2199952545a8b2eb6dba675ebf6308ef">start</a>();</div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>    }</div>
 <div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span> </div>
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>}</div>
+</div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span><span class="keywordtype">bool</span> QGCStateMachine::recoverFromError()</div>
+<div class="foldopen" id="foldopen00351" data-start="{" data-end="}">
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a5c28a6b1950da115d21ca15f07011830">  351</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCStateMachine.html#a5c28a6b1950da115d21ca15f07011830">QGCStateMachine::recoverFromError</a>()</div>
 <div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>{</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    <span class="keywordflow">if</span> (!isInErrorState()) {</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classQGCStateMachine.html#ac143887165a857e586de6a3a85543180">isInErrorState</a>()) {</div>
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        qCDebug(QGCStateMachineLog) &lt;&lt; objectName() &lt;&lt; <span class="stringliteral">&quot;recoverFromError: not in error state&quot;</span>;</div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    }</div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    qCDebug(QGCStateMachineLog) &lt;&lt; objectName() &lt;&lt; <span class="stringliteral">&quot;recovering from error, restarting&quot;</span>;</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    clearError(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    <a class="code hl_function" href="classQGCStateMachine.html#a12a3003902d52854b9aee281b682a60f">clearError</a>(<span class="keyword">true</span>);</div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>}</div>
+</div>
 <div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span><span class="keywordtype">bool</span> QGCStateMachine::attemptRecovery()</div>
+<div class="foldopen" id="foldopen00363" data-start="{" data-end="}">
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a9dd075e4cc77212acaeaf7dd1745c742">  363</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCStateMachine.html#a9dd075e4cc77212acaeaf7dd1745c742">QGCStateMachine::attemptRecovery</a>()</div>
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>{</div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    <span class="keywordflow">if</span> (!_recoveryState) {</div>
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        qCDebug(QGCStateMachineLog) &lt;&lt; objectName() &lt;&lt; <span class="stringliteral">&quot;attemptRecovery: no recovery state set&quot;</span>;</div>
@@ -470,27 +529,33 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    }</div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span> </div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>    qCDebug(QGCStateMachineLog) &lt;&lt; objectName() &lt;&lt; <span class="stringliteral">&quot;attempting recovery to:&quot;</span> &lt;&lt; _recoveryState-&gt;objectName();</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>    <span class="keywordflow">return</span> resetToState(_recoveryState);</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classQGCStateMachine.html#a3be670bb92b12c8a011e9014fd80c0a6">resetToState</a>(_recoveryState);</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>}</div>
+</div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span><span class="comment">// Lifecycle Helpers</span></div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span> </div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span><span class="keywordtype">void</span> QGCStateMachine::ensureRunning()</div>
+<div class="foldopen" id="foldopen00378" data-start="{" data-end="}">
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#aa5dce951ee2bf9967153df36c492a4cc">  378</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#aa5dce951ee2bf9967153df36c492a4cc">QGCStateMachine::ensureRunning</a>()</div>
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>{</div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>    <span class="keywordflow">if</span> (!isRunning()) {</div>
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        <a class="code hl_slot" href="classQGCStateMachine.html#a2199952545a8b2eb6dba675ebf6308ef">start</a>();</div>
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>    }</div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>}</div>
+</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span> </div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span><span class="keywordtype">void</span> QGCStateMachine::stopMachine(<span class="keywordtype">bool</span> deleteOnStop)</div>
+<div class="foldopen" id="foldopen00385" data-start="{" data-end="}">
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a103530acaceed1b7ce66879bf5c8d3a1">  385</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a103530acaceed1b7ce66879bf5c8d3a1">QGCStateMachine::stopMachine</a>(<span class="keywordtype">bool</span> deleteOnStop)</div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>{</div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>    _deleteOnStop = deleteOnStop;</div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    stop();</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>}</div>
+</div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span> </div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span><span class="keywordtype">void</span> QGCStateMachine::restart()</div>
+<div class="foldopen" id="foldopen00391" data-start="{" data-end="}">
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#af4acb14599fbd973dd96ea3bbc744c0b">  391</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#af4acb14599fbd973dd96ea3bbc744c0b">QGCStateMachine::restart</a>()</div>
 <div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>{</div>
 <div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>    <span class="keywordflow">if</span> (isRunning()) {</div>
 <div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>        <span class="comment">// stop() is asynchronous, so connect to stopped signal to start again</span></div>
@@ -504,12 +569,14 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>        <a class="code hl_slot" href="classQGCStateMachine.html#a2199952545a8b2eb6dba675ebf6308ef">start</a>();</div>
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>    }</div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>}</div>
+</div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span> </div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span><span class="comment">// Transition Helpers</span></div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span> </div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span><a class="code hl_class" href="classMachineEventTransition.html">MachineEventTransition</a>* QGCStateMachine::addEventTransition(QState* from, <span class="keyword">const</span> QString&amp; eventName, QAbstractState* to,</div>
+<div class="foldopen" id="foldopen00410" data-start="{" data-end="}">
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a145dcbf7121ecaa18fa8c8553a9b5876">  410</a></span><a class="code hl_class" href="classMachineEventTransition.html">MachineEventTransition</a>* <a class="code hl_function" href="classQGCStateMachine.html#a145dcbf7121ecaa18fa8c8553a9b5876">QGCStateMachine::addEventTransition</a>(QState* from, <span class="keyword">const</span> QString&amp; eventName, QAbstractState* to,</div>
 <div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>                                                            QAbstractAnimation* animation)</div>
 <div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>{</div>
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>    <span class="keyword">auto</span>* transition = <span class="keyword">new</span> <a class="code hl_class" href="classMachineEventTransition.html">MachineEventTransition</a>(eventName, to);</div>
@@ -519,8 +586,10 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>    from-&gt;addTransition(transition);</div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>    <span class="keywordflow">return</span> transition;</div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>}</div>
+</div>
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span> </div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span><a class="code hl_class" href="classTimeoutTransition.html">TimeoutTransition</a>* QGCStateMachine::addTimeoutTransition(QState* from, <span class="keywordtype">int</span> timeoutMsecs, QAbstractState* to,</div>
+<div class="foldopen" id="foldopen00421" data-start="{" data-end="}">
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a2b03a592ddb54631f482324710f6420e">  421</a></span><a class="code hl_class" href="classTimeoutTransition.html">TimeoutTransition</a>* <a class="code hl_function" href="classQGCStateMachine.html#a2b03a592ddb54631f482324710f6420e">QGCStateMachine::addTimeoutTransition</a>(QState* from, <span class="keywordtype">int</span> timeoutMsecs, QAbstractState* to,</div>
 <div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>                                                         QAbstractAnimation* animation)</div>
 <div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>{</div>
 <div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>    <span class="keyword">auto</span>* transition = <span class="keyword">new</span> <a class="code hl_class" href="classTimeoutTransition.html">TimeoutTransition</a>(timeoutMsecs, to);</div>
@@ -531,12 +600,14 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>    from-&gt;addTransition(transition);</div>
 <div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>    <span class="keywordflow">return</span> transition;</div>
 <div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>}</div>
+</div>
 <div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span><span class="comment">// State Introspection</span></div>
 <div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span> </div>
-<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>QList&lt;QAbstractTransition*&gt; QGCStateMachine::transitionsFrom(QAbstractState* state)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00437" data-start="{" data-end="}">
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a28bdb1fe83c6a8102281cb357fa59f94">  437</a></span>QList&lt;QAbstractTransition*&gt; <a class="code hl_function" href="classQGCStateMachine.html#a28bdb1fe83c6a8102281cb357fa59f94">QGCStateMachine::transitionsFrom</a>(QAbstractState* state)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>    QList&lt;QAbstractTransition*&gt; result;</div>
 <div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span>* qstate = qobject_cast&lt;QState*&gt;(state)) {</div>
@@ -544,8 +615,10 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>    }</div>
 <div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>}</div>
+</div>
 <div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span> </div>
-<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>QList&lt;QAbstractTransition*&gt; QGCStateMachine::transitionsTo(QAbstractState* state)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00446" data-start="{" data-end="}">
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ab2d55827df7c7c916e100597551b96e2">  446</a></span>QList&lt;QAbstractTransition*&gt; <a class="code hl_function" href="classQGCStateMachine.html#ab2d55827df7c7c916e100597551b96e2">QGCStateMachine::transitionsTo</a>(QAbstractState* state)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>    QList&lt;QAbstractTransition*&gt; result;</div>
 <div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>    <span class="keyword">const</span> <span class="keyword">auto</span> allTransitions = findChildren&lt;QAbstractTransition*&gt;();</div>
@@ -557,11 +630,13 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>    }</div>
 <div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>}</div>
+</div>
 <div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span> </div>
-<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>QList&lt;QAbstractState*&gt; QGCStateMachine::reachableFrom(QAbstractState* state)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00459" data-start="{" data-end="}">
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a348194aa88b873ac9cbdc52dc9a16fbb">  459</a></span>QList&lt;QAbstractState*&gt; <a class="code hl_function" href="classQGCStateMachine.html#a348194aa88b873ac9cbdc52dc9a16fbb">QGCStateMachine::reachableFrom</a>(QAbstractState* state)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>    QList&lt;QAbstractState*&gt; result;</div>
-<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>    <span class="keywordflow">for</span> (QAbstractTransition* transition : transitionsFrom(state)) {</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>    <span class="keywordflow">for</span> (QAbstractTransition* transition : <a class="code hl_function" href="classQGCStateMachine.html#a28bdb1fe83c6a8102281cb357fa59f94">transitionsFrom</a>(state)) {</div>
 <div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>        <span class="keywordflow">for</span> (QAbstractState* target : transition-&gt;targetStates()) {</div>
 <div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>            <span class="keywordflow">if</span> (!result.contains(target)) {</div>
 <div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>                result.append(target);</div>
@@ -570,11 +645,13 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>    }</div>
 <div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>}</div>
+</div>
 <div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span> </div>
-<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>QList&lt;QAbstractState*&gt; QGCStateMachine::predecessorsOf(QAbstractState* state)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00472" data-start="{" data-end="}">
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a4a122828621bfd9e1e5c52ff4770a1e7">  472</a></span>QList&lt;QAbstractState*&gt; <a class="code hl_function" href="classQGCStateMachine.html#a4a122828621bfd9e1e5c52ff4770a1e7">QGCStateMachine::predecessorsOf</a>(QAbstractState* state)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>    QList&lt;QAbstractState*&gt; result;</div>
-<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>    <span class="keywordflow">for</span> (QAbstractTransition* transition : transitionsTo(state)) {</div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>    <span class="keywordflow">for</span> (QAbstractTransition* transition : <a class="code hl_function" href="classQGCStateMachine.html#ab2d55827df7c7c916e100597551b96e2">transitionsTo</a>(state)) {</div>
 <div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>        <span class="keywordflow">if</span> (<span class="keyword">auto</span>* source = transition-&gt;sourceState()) {</div>
 <div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>            <span class="keywordflow">if</span> (!result.contains(source)) {</div>
 <div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>                result.append(source);</div>
@@ -583,12 +660,14 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span>    }</div>
 <div class="line"><a id="l00482" name="l00482"></a><span class="lineno">  482</span>    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span>}</div>
+</div>
 <div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span> </div>
 <div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span><span class="comment">// Debugging &amp; Visualization</span></div>
 <div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span> </div>
-<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>QString QGCStateMachine::dumpCurrentState()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00489" data-start="{" data-end="}">
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#afb7a193622086873d7b375d0174d9c2e">  489</a></span>QString <a class="code hl_function" href="classQGCStateMachine.html#afb7a193622086873d7b375d0174d9c2e">QGCStateMachine::dumpCurrentState</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>    QString result = objectName() + QStringLiteral(<span class="stringliteral">&quot;: &quot;</span>);</div>
 <div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span> </div>
@@ -597,12 +676,12 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>        <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>    }</div>
 <div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span> </div>
-<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>    <span class="keyword">const</span> <span class="keyword">auto</span> active = configuration();</div>
-<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>    <span class="keywordflow">if</span> (active.isEmpty()) {</div>
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <a class="code hl_function" href="classQGCStateMachine.html#a9ddd94f819145bebc2df74f8684e3ecb">active</a> = configuration();</div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classQGCStateMachine.html#a9ddd94f819145bebc2df74f8684e3ecb">active</a>.isEmpty()) {</div>
 <div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>        result += QStringLiteral(<span class="stringliteral">&quot;(no active state)&quot;</span>);</div>
 <div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>        QStringList stateNames;</div>
-<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>        <span class="keywordflow">for</span> (QAbstractState* state : active) {</div>
+<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>        <span class="keywordflow">for</span> (QAbstractState* state : <a class="code hl_function" href="classQGCStateMachine.html#a9ddd94f819145bebc2df74f8684e3ecb">active</a>) {</div>
 <div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>            stateNames.append(state-&gt;objectName().isEmpty()</div>
 <div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>                              ? QStringLiteral(<span class="stringliteral">&quot;&lt;unnamed&gt;&quot;</span>)</div>
 <div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>                              : state-&gt;objectName());</div>
@@ -613,8 +692,10 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span> </div>
 <div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>}</div>
+</div>
 <div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span> </div>
-<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>QString QGCStateMachine::dumpConfiguration()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00515" data-start="{" data-end="}">
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#aacc4824a6593ed7b69d631484c0a3051">  515</a></span>QString <a class="code hl_function" href="classQGCStateMachine.html#aacc4824a6593ed7b69d631484c0a3051">QGCStateMachine::dumpConfiguration</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>    QString result;</div>
 <div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>    result += QStringLiteral(<span class="stringliteral">&quot;State Machine: %1\n&quot;</span>).arg(objectName());</div>
@@ -647,7 +728,7 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>        result += QStringLiteral(<span class="stringliteral">&quot;  - %1%2\n&quot;</span>).arg(stateName, marker);</div>
 <div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span> </div>
 <div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>        <span class="comment">// Show transitions from this state</span></div>
-<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>        <span class="keyword">auto</span> transitions = transitionsFrom(state);</div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>        <span class="keyword">auto</span> transitions = <a class="code hl_function" href="classQGCStateMachine.html#a28bdb1fe83c6a8102281cb357fa59f94">transitionsFrom</a>(state);</div>
 <div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>        <span class="keywordflow">for</span> (QAbstractTransition* transition : transitions) {</div>
 <div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>            <span class="keyword">const</span> <span class="keyword">auto</span> targets = transition-&gt;targetStates();</div>
 <div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>            <span class="keywordflow">for</span> (QAbstractState* target : targets) {</div>
@@ -661,23 +742,29 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span> </div>
 <div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>}</div>
+</div>
 <div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span> </div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span><span class="keywordtype">void</span> QGCStateMachine::logCurrentState()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00563" data-start="{" data-end="}">
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a6e1484338182b049584fddd0aab6e8bb">  563</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a6e1484338182b049584fddd0aab6e8bb">QGCStateMachine::logCurrentState</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>    qCDebug(QGCStateMachineLog) &lt;&lt; dumpCurrentState();</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>    qCDebug(QGCStateMachineLog) &lt;&lt; <a class="code hl_function" href="classQGCStateMachine.html#afb7a193622086873d7b375d0174d9c2e">dumpCurrentState</a>();</div>
 <div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>}</div>
+</div>
 <div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span> </div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span><span class="keywordtype">void</span> QGCStateMachine::logConfiguration()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00568" data-start="{" data-end="}">
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a2c265080b3e256a041572efec23c475a">  568</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a2c265080b3e256a041572efec23c475a">QGCStateMachine::logConfiguration</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>    <span class="keyword">const</span> <span class="keyword">auto</span> lines = dumpConfiguration().split(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>    <span class="keyword">const</span> <span class="keyword">auto</span> lines = <a class="code hl_function" href="classQGCStateMachine.html#aacc4824a6593ed7b69d631484c0a3051">dumpConfiguration</a>().split(<span class="charliteral">&#39;\n&#39;</span>);</div>
 <div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QString&amp; line : lines) {</div>
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>        <span class="keywordflow">if</span> (!line.isEmpty()) {</div>
 <div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>            qCDebug(QGCStateMachineLog) &lt;&lt; line;</div>
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>        }</div>
 <div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>    }</div>
 <div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>}</div>
+</div>
 <div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span><span class="keywordtype">void</span> QGCStateMachine::setHistoryRecordingEnabled(<span class="keywordtype">bool</span> enabled, <span class="keywordtype">int</span> maxEntries)</div>
+<div class="foldopen" id="foldopen00578" data-start="{" data-end="}">
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a935063687c6be8c0474c1ef94253ffa6">  578</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a935063687c6be8c0474c1ef94253ffa6">QGCStateMachine::setHistoryRecordingEnabled</a>(<span class="keywordtype">bool</span> enabled, <span class="keywordtype">int</span> maxEntries)</div>
 <div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>{</div>
 <div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>    <span class="keywordflow">if</span> (!_historyRecorder) {</div>
 <div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>        _historyRecorder = <span class="keyword">new</span> <a class="code hl_class" href="classStateHistoryRecorder.html">StateHistoryRecorder</a>(<span class="keyword">this</span>, maxEntries);</div>
@@ -685,54 +772,72 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>    _historyRecorder-&gt;<a class="code hl_function" href="classStateHistoryRecorder.html#a0001836505243e607a238d7abc4f9f92">setMaxEntries</a>(maxEntries);</div>
 <div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>    _historyRecorder-&gt;<a class="code hl_function" href="classStateHistoryRecorder.html#a8ba1bcfa4ffeba0ad0e1ce00d693082f">setEnabled</a>(enabled);</div>
 <div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>}</div>
+</div>
 <div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span> </div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span><span class="keywordtype">bool</span> QGCStateMachine::historyRecordingEnabled()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00587" data-start="{" data-end="}">
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a4f1106a0e2bf036a3426430231bc255f">  587</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCStateMachine.html#a4f1106a0e2bf036a3426430231bc255f">QGCStateMachine::historyRecordingEnabled</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>    <span class="keywordflow">return</span> _historyRecorder &amp;&amp; _historyRecorder-&gt;<a class="code hl_function" href="classStateHistoryRecorder.html#a566f79a3f41d13389a8a10b03ef04269">isEnabled</a>();</div>
 <div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>}</div>
+</div>
 <div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span> </div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>QString QGCStateMachine::dumpRecordedHistory()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00592" data-start="{" data-end="}">
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a4449603af9244a191e40402097b5fa35">  592</a></span>QString <a class="code hl_function" href="classQGCStateMachine.html#a4449603af9244a191e40402097b5fa35">QGCStateMachine::dumpRecordedHistory</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>    <span class="keywordflow">return</span> _historyRecorder ? _historyRecorder-&gt;<a class="code hl_function" href="classStateHistoryRecorder.html#a1315543b6621b42cc87c4f06fe0a8738">dumpHistory</a>() : QString();</div>
 <div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>}</div>
+</div>
 <div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span> </div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>QJsonArray QGCStateMachine::recordedHistoryJson()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00597" data-start="{" data-end="}">
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a7133b35c08c06de72dad0efda915abe7">  597</a></span>QJsonArray <a class="code hl_function" href="classQGCStateMachine.html#a7133b35c08c06de72dad0efda915abe7">QGCStateMachine::recordedHistoryJson</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>    <span class="keywordflow">return</span> _historyRecorder ? _historyRecorder-&gt;<a class="code hl_function" href="classStateHistoryRecorder.html#a4df5242999c63ada8fb12b1d01e97bad">toJson</a>() : QJsonArray();</div>
 <div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>}</div>
+</div>
 <div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span> </div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span><span class="keywordtype">void</span> QGCStateMachine::setProfilingEnabled(<span class="keywordtype">bool</span> enabled)</div>
+<div class="foldopen" id="foldopen00602" data-start="{" data-end="}">
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a98e5aa412d505559179ab84453727fda">  602</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a98e5aa412d505559179ab84453727fda">QGCStateMachine::setProfilingEnabled</a>(<span class="keywordtype">bool</span> enabled)</div>
 <div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>{</div>
 <div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>    <span class="keywordflow">if</span> (!_profiler) {</div>
 <div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>        _profiler = <span class="keyword">new</span> <a class="code hl_class" href="classStateMachineProfiler.html">StateMachineProfiler</a>(<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>    }</div>
 <div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>    _profiler-&gt;<a class="code hl_function" href="classStateMachineProfiler.html#af566ebcee64613b1bc74e081a5afdbfd">setEnabled</a>(enabled);</div>
 <div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>}</div>
+</div>
 <div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span> </div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span><span class="keywordtype">bool</span> QGCStateMachine::profilingEnabled()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00610" data-start="{" data-end="}">
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a2e9a47dabc432c255cc1ade7225e0f28">  610</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCStateMachine.html#a2e9a47dabc432c255cc1ade7225e0f28">QGCStateMachine::profilingEnabled</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>    <span class="keywordflow">return</span> _profiler &amp;&amp; _profiler-&gt;<a class="code hl_function" href="classStateMachineProfiler.html#a37b681a294d93f0430b4a32d35a6e6e4">isEnabled</a>();</div>
 <div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>}</div>
+</div>
 <div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span> </div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>QString QGCStateMachine::profilingSummary()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00615" data-start="{" data-end="}">
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ad6639c799b6150c5ee1bf6106b29b002">  615</a></span>QString <a class="code hl_function" href="classQGCStateMachine.html#ad6639c799b6150c5ee1bf6106b29b002">QGCStateMachine::profilingSummary</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    <span class="keywordflow">return</span> _profiler ? _profiler-&gt;<a class="code hl_function" href="classStateMachineProfiler.html#a1860bfe82870618cd03d6093babb9e22">summary</a>() : QString();</div>
 <div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>}</div>
+</div>
 <div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span> </div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span><span class="keywordtype">void</span> QGCStateMachine::setStructuredLoggingEnabled(<span class="keywordtype">bool</span> enabled)</div>
+<div class="foldopen" id="foldopen00620" data-start="{" data-end="}">
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a4ba8342d27c0e85d9a63a5dbb22f59bf">  620</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a4ba8342d27c0e85d9a63a5dbb22f59bf">QGCStateMachine::setStructuredLoggingEnabled</a>(<span class="keywordtype">bool</span> enabled)</div>
 <div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>{</div>
 <div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    <span class="keywordflow">if</span> (!_logger) {</div>
 <div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>        _logger = <span class="keyword">new</span> <a class="code hl_class" href="classStateMachineLogger.html">StateMachineLogger</a>(<span class="keyword">this</span>, <span class="keyword">this</span>);</div>
 <div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>    }</div>
 <div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>    _logger-&gt;<a class="code hl_function" href="classStateMachineLogger.html#a106fa189466a52713c5a65c67d49b264">setEnabled</a>(enabled);</div>
 <div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>}</div>
+</div>
 <div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span> </div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span><span class="keywordtype">bool</span> QGCStateMachine::structuredLoggingEnabled()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00628" data-start="{" data-end="}">
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a10d260c227085c44fd12a53ca4f36722">  628</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCStateMachine.html#a10d260c227085c44fd12a53ca4f36722">QGCStateMachine::structuredLoggingEnabled</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>    <span class="keywordflow">return</span> _logger &amp;&amp; _logger-&gt;<a class="code hl_function" href="classStateMachineLogger.html#ab7bd745e4ba12451a9de5b51d0bd6a39">isEnabled</a>();</div>
 <div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>}</div>
+</div>
 <div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span> </div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>QString QGCStateMachine::exportAsDot()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00633" data-start="{" data-end="}">
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a4a9090cf109af10231e58c4370f54162">  633</a></span>QString <a class="code hl_function" href="classQGCStateMachine.html#a4a9090cf109af10231e58c4370f54162">QGCStateMachine::exportAsDot</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>    QString dot;</div>
 <div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>    dot += QStringLiteral(<span class="stringliteral">&quot;digraph \&quot;%1\&quot; {\n&quot;</span>).arg(objectName());</div>
@@ -775,7 +880,7 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>                           ? QStringLiteral(<span class="stringliteral">&quot;state_%1&quot;</span>).arg(<span class="keyword">reinterpret_cast&lt;</span>quintptr<span class="keyword">&gt;</span>(state), 0, 16)</div>
 <div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>                           : state-&gt;objectName();</div>
 <div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span> </div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>        <span class="keyword">auto</span> transitions = transitionsFrom(state);</div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>        <span class="keyword">auto</span> transitions = <a class="code hl_function" href="classQGCStateMachine.html#a28bdb1fe83c6a8102281cb357fa59f94">transitionsFrom</a>(state);</div>
 <div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>        <span class="keywordflow">for</span> (QAbstractTransition* transition : transitions) {</div>
 <div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>            <span class="keyword">const</span> <span class="keyword">auto</span> targets = transition-&gt;targetStates();</div>
 <div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>            <span class="keywordflow">for</span> (QAbstractState* target : targets) {</div>
@@ -797,8 +902,10 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>    dot += QStringLiteral(<span class="stringliteral">&quot;}\n&quot;</span>);</div>
 <div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>    <span class="keywordflow">return</span> dot;</div>
 <div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>}</div>
+</div>
 <div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span> </div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>QList&lt;QAbstractState*&gt; QGCStateMachine::unreachableStates()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00699" data-start="{" data-end="}">
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a7b523ba514b5f342dc3741f864bcf646">  699</a></span>QList&lt;QAbstractState*&gt; <a class="code hl_function" href="classQGCStateMachine.html#a7b523ba514b5f342dc3741f864bcf646">QGCStateMachine::unreachableStates</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    QList&lt;QAbstractState*&gt; unreachable;</div>
 <div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span> </div>
@@ -814,7 +921,7 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span> </div>
 <div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>    <span class="keywordflow">while</span> (!queue.isEmpty()) {</div>
 <div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>        QAbstractState* current = queue.takeFirst();</div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>        <span class="keyword">auto</span> reachable = reachableFrom(current);</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>        <span class="keyword">auto</span> reachable = <a class="code hl_function" href="classQGCStateMachine.html#a348194aa88b873ac9cbdc52dc9a16fbb">reachableFrom</a>(current);</div>
 <div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>        <span class="keywordflow">for</span> (QAbstractState* next : reachable) {</div>
 <div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>            <span class="keywordflow">if</span> (!visited.contains(next)) {</div>
 <div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>                visited.insert(next);</div>
@@ -833,8 +940,10 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span> </div>
 <div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>    <span class="keywordflow">return</span> unreachable;</div>
 <div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>}</div>
+</div>
 <div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span> </div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span><span class="keywordtype">int</span> QGCStateMachine::maxPathLength()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00735" data-start="{" data-end="}">
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a8af14d00425d9483c0cc2f1dd92a6f0c">  735</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classQGCStateMachine.html#a8af14d00425d9483c0cc2f1dd92a6f0c">QGCStateMachine::maxPathLength</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>    <span class="keywordflow">if</span> (!initialState()) {</div>
 <div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>        <span class="keywordflow">return</span> -1;</div>
@@ -859,7 +968,7 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>        }</div>
 <div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span> </div>
-<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>        <span class="keyword">auto</span> reachable = reachableFrom(current);</div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>        <span class="keyword">auto</span> reachable = <a class="code hl_function" href="classQGCStateMachine.html#a348194aa88b873ac9cbdc52dc9a16fbb">reachableFrom</a>(current);</div>
 <div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>        <span class="keywordflow">for</span> (QAbstractState* next : reachable) {</div>
 <div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>            <span class="keywordtype">int</span> newDepth = currentDepth + 1;</div>
 <div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>            <span class="comment">// Only update if we found a longer path</span></div>
@@ -873,8 +982,10 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span> </div>
 <div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>    <span class="keywordflow">return</span> maxDepth;</div>
 <div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>}</div>
+</div>
 <div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span> </div>
-<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>QList&lt;QAbstractState*&gt; QGCStateMachine::deadEndStates()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00775" data-start="{" data-end="}">
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a7498ca3edd020250f9761882a2328a64">  775</a></span>QList&lt;QAbstractState*&gt; <a class="code hl_function" href="classQGCStateMachine.html#a7498ca3edd020250f9761882a2328a64">QGCStateMachine::deadEndStates</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>    QList&lt;QAbstractState*&gt; deadEnds;</div>
 <div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span> </div>
@@ -886,7 +997,7 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>        }</div>
 <div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span> </div>
 <div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>        <span class="comment">// Check if state has any outgoing transitions</span></div>
-<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>        <span class="keyword">auto</span> transitions = transitionsFrom(state);</div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>        <span class="keyword">auto</span> transitions = <a class="code hl_function" href="classQGCStateMachine.html#a28bdb1fe83c6a8102281cb357fa59f94">transitionsFrom</a>(state);</div>
 <div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>        <span class="keywordflow">if</span> (transitions.isEmpty()) {</div>
 <div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>            deadEnds.append(state);</div>
 <div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>        }</div>
@@ -894,12 +1005,14 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span> </div>
 <div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>    <span class="keywordflow">return</span> deadEnds;</div>
 <div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>}</div>
+</div>
 <div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span> </div>
 <div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span><span class="comment">// Progress Tracking</span></div>
 <div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span> </div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span><span class="keywordtype">void</span> QGCStateMachine::setProgressWeights(<span class="keyword">const</span> QList&lt;QPair&lt;QAbstractState*, int&gt;&gt;&amp; stateWeights)</div>
+<div class="foldopen" id="foldopen00800" data-start="{" data-end="}">
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a9d4451d3939ec11b6238b63bf3a1c825">  800</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a9d4451d3939ec11b6238b63bf3a1c825">QGCStateMachine::setProgressWeights</a>(<span class="keyword">const</span> QList&lt;QPair&lt;QAbstractState*, int&gt;&gt;&amp; stateWeights)</div>
 <div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>{</div>
 <div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>    <span class="comment">// Disconnect old connections before re-wiring</span></div>
 <div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>* state : _progressStates) {</div>
@@ -922,6 +1035,7 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>    qCDebug(QGCStateMachineLog) &lt;&lt; objectName() &lt;&lt; <span class="stringliteral">&quot;progress tracking enabled for&quot;</span></div>
 <div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>                                 &lt;&lt; _progressStates.size() &lt;&lt; <span class="stringliteral">&quot;states, total weight:&quot;</span> &lt;&lt; _progressTotalWeight;</div>
 <div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>}</div>
+</div>
 <div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span> </div>
 <div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span><span class="keywordtype">void</span> QGCStateMachine::_onStateEntered()</div>
 <div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>{</div>
@@ -953,7 +1067,8 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>    }</div>
 <div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>}</div>
 <div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span> </div>
-<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span><span class="keywordtype">void</span> QGCStateMachine::setSubProgress(<span class="keywordtype">float</span> subProgress)</div>
+<div class="foldopen" id="foldopen00854" data-start="{" data-end="}">
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a73a7373527d98c96e6b727e8344ba8bd">  854</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a73a7373527d98c96e6b727e8344ba8bd">QGCStateMachine::setSubProgress</a>(<span class="keywordtype">float</span> subProgress)</div>
 <div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>{</div>
 <div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>    _progressSubProgress = qBound(0.0f, subProgress, 1.0f);</div>
 <div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span> </div>
@@ -963,18 +1078,23 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>        emit <a class="code hl_signal" href="classQGCStateMachine.html#a21e7b7119e1d263d8a4be7b992863056">progressUpdate</a>(newProgress);</div>
 <div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>    }</div>
 <div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>}</div>
+</div>
 <div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span> </div>
-<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span><span class="keywordtype">float</span> QGCStateMachine::progress()<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00865" data-start="{" data-end="}">
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ae1ba584b472020451e0daa3ac7ac0ead">  865</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="classQGCStateMachine.html#ae1ba584b472020451e0daa3ac7ac0ead">QGCStateMachine::progress</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>    <span class="keywordflow">return</span> _progressLastEmitted;</div>
 <div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>}</div>
+</div>
 <div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span> </div>
-<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span><span class="keywordtype">void</span> QGCStateMachine::resetProgress()</div>
+<div class="foldopen" id="foldopen00870" data-start="{" data-end="}">
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#abf94cf904354cc4d282859922818d890">  870</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#abf94cf904354cc4d282859922818d890">QGCStateMachine::resetProgress</a>()</div>
 <div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>{</div>
 <div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>    _progressCurrentIndex = -1;</div>
 <div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>    _progressSubProgress = 0.0f;</div>
 <div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>    _progressLastEmitted = 0.0f;</div>
 <div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>}</div>
+</div>
 <div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span> </div>
 <div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span><span class="keywordtype">float</span> QGCStateMachine::_calculateProgress()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span><span class="keyword"></span>{</div>
@@ -998,38 +1118,48 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span><span class="comment">// Timeout Configuration</span></div>
 <div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span> </div>
-<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span><span class="keywordtype">void</span> QGCStateMachine::setTimeoutOverride(<span class="keyword">const</span> QString&amp; stateName, <span class="keywordtype">int</span> timeoutMsecs)</div>
+<div class="foldopen" id="foldopen00899" data-start="{" data-end="}">
+<div class="line"><a id="l00899" name="l00899"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ac4a2183d6a20f431358778e90c82e339">  899</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#ac4a2183d6a20f431358778e90c82e339">QGCStateMachine::setTimeoutOverride</a>(<span class="keyword">const</span> QString&amp; stateName, <span class="keywordtype">int</span> timeoutMsecs)</div>
 <div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>{</div>
 <div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>    _timeoutOverrides[stateName] = timeoutMsecs;</div>
 <div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>    qCDebug(QGCStateMachineLog) &lt;&lt; objectName() &lt;&lt; <span class="stringliteral">&quot;timeout override set for&quot;</span> &lt;&lt; stateName &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; timeoutMsecs &lt;&lt; <span class="stringliteral">&quot;ms&quot;</span>;</div>
 <div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>}</div>
+</div>
 <div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span> </div>
-<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span><span class="keywordtype">void</span> QGCStateMachine::removeTimeoutOverride(<span class="keyword">const</span> QString&amp; stateName)</div>
+<div class="foldopen" id="foldopen00905" data-start="{" data-end="}">
+<div class="line"><a id="l00905" name="l00905"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ad92af76ad1f82f885a80b135ac3af057">  905</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#ad92af76ad1f82f885a80b135ac3af057">QGCStateMachine::removeTimeoutOverride</a>(<span class="keyword">const</span> QString&amp; stateName)</div>
 <div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>{</div>
 <div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>    _timeoutOverrides.remove(stateName);</div>
 <div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>}</div>
+</div>
 <div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span> </div>
-<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span><span class="keywordtype">int</span> QGCStateMachine::timeoutOverride(<span class="keyword">const</span> QString&amp; stateName)<span class="keyword"> const</span></div>
+<div class="foldopen" id="foldopen00910" data-start="{" data-end="}">
+<div class="line"><a id="l00910" name="l00910"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a21745021b80ba0720d15f36ad13dae72">  910</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classQGCStateMachine.html#a21745021b80ba0720d15f36ad13dae72">QGCStateMachine::timeoutOverride</a>(<span class="keyword">const</span> QString&amp; stateName)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>    <span class="keywordflow">return</span> _timeoutOverrides.value(stateName, -1);</div>
 <div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>}</div>
+</div>
 <div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span> </div>
-<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span><span class="keywordtype">void</span> QGCStateMachine::recordTimeout(<span class="keyword">const</span> QString&amp; stateName)</div>
+<div class="foldopen" id="foldopen00915" data-start="{" data-end="}">
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#a0e696b88c53b7b2ea3b0bb1992c627c1">  915</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#a0e696b88c53b7b2ea3b0bb1992c627c1">QGCStateMachine::recordTimeout</a>(<span class="keyword">const</span> QString&amp; stateName)</div>
 <div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span>{</div>
 <div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>    _timeoutStats[stateName]++;</div>
 <div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span>    qCDebug(QGCStateMachineLog) &lt;&lt; objectName() &lt;&lt; <span class="stringliteral">&quot;timeout recorded for&quot;</span> &lt;&lt; stateName</div>
 <div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>                                 &lt;&lt; <span class="stringliteral">&quot;total:&quot;</span> &lt;&lt; _timeoutStats[stateName];</div>
 <div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>}</div>
+</div>
 <div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span> </div>
 <div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span><span class="comment">// Entry/Exit Callbacks</span></div>
 <div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span> </div>
-<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span><span class="keywordtype">void</span> QGCStateMachine::setCallbacks(EntryCallback onEntry, ExitCallback onExit)</div>
+<div class="foldopen" id="foldopen00926" data-start="{" data-end="}">
+<div class="line"><a id="l00926" name="l00926"></a><span class="lineno"><a class="line" href="classQGCStateMachine.html#ad5be01678b6338774cebe9695c9406b8">  926</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCStateMachine.html#ad5be01678b6338774cebe9695c9406b8">QGCStateMachine::setCallbacks</a>(<a class="code hl_typedef" href="classQGCStateMachine.html#a53878b697fd3d74d2ae011744fd8d81f">EntryCallback</a> onEntry, <a class="code hl_typedef" href="classQGCStateMachine.html#a4a42a3f9cc8d4ee501b0d5c35188b2ec">ExitCallback</a> onExit)</div>
 <div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>{</div>
 <div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span>    _entryCallback = std::move(<a class="code hl_function" href="classQGCStateMachine.html#ac5f883955a80b14c31beb980aa29b442">onEntry</a>);</div>
 <div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>    _exitCallback = std::move(<a class="code hl_function" href="classQGCStateMachine.html#a3a71bac2ee5ed89f5fede6fdaffaaaff">onExit</a>);</div>
 <div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>}</div>
+</div>
 <div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span> </div>
 <div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span><span class="comment">// -----------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span><span class="comment">// QStateMachine Overrides</span></div>
@@ -1088,9 +1218,16 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="ttc" id="aclassConditionalState_html_ad5151451516b1ac14657193552b5b2cc"><div class="ttname"><a href="classConditionalState.html#ad5151451516b1ac14657193552b5b2cc">ConditionalState::Predicate</a></div><div class="ttdeci">std::function&lt; bool()&gt; Predicate</div><div class="ttdef"><b>Definition</b> <a href="ConditionalState_8h_source.html#l00017">ConditionalState.h:17</a></div></div>
 <div class="ttc" id="aclassDelayState_html"><div class="ttname"><a href="classDelayState.html">DelayState</a></div><div class="ttdoc">Delays that state machine for the specified time in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="DelayState_8h_source.html#l00009">DelayState.h:10</a></div></div>
 <div class="ttc" id="aclassErrorRecoveryBuilder_html"><div class="ttname"><a href="classErrorRecoveryBuilder.html">ErrorRecoveryBuilder</a></div><div class="ttdoc">Fluent builder for creating error recovery states.</div><div class="ttdef"><b>Definition</b> <a href="ErrorRecoveryBuilder_8h_source.html#l00027">ErrorRecoveryBuilder.h:28</a></div></div>
+<div class="ttc" id="aclassErrorRecoveryBuilder_html_a1993fd364bfe4c7e331bdc799499b1e8"><div class="ttname"><a href="classErrorRecoveryBuilder.html#a1993fd364bfe4c7e331bdc799499b1e8">ErrorRecoveryBuilder::retry</a></div><div class="ttdeci">ErrorRecoveryBuilder &amp; retry(int maxRetries, int delayMsecs=1000)</div><div class="ttdef"><b>Definition</b> <a href="ErrorRecoveryBuilder_8cc_source.html#l00021">ErrorRecoveryBuilder.cc:21</a></div></div>
+<div class="ttc" id="aclassErrorRecoveryBuilder_html_a1c974655794df29ff67dfb510c122d02"><div class="ttname"><a href="classErrorRecoveryBuilder.html#a1c974655794df29ff67dfb510c122d02">ErrorRecoveryBuilder::withFallback</a></div><div class="ttdeci">ErrorRecoveryBuilder &amp; withFallback(Action fallback)</div><div class="ttdoc">Add a fallback action to try if primary fails.</div><div class="ttdef"><b>Definition</b> <a href="ErrorRecoveryBuilder_8cc_source.html#l00028">ErrorRecoveryBuilder.cc:28</a></div></div>
+<div class="ttc" id="aclassErrorRecoveryBuilder_html_a22ccb7a014df3ca58366b59d9dff9541"><div class="ttname"><a href="classErrorRecoveryBuilder.html#a22ccb7a014df3ca58366b59d9dff9541">ErrorRecoveryBuilder::withAction</a></div><div class="ttdeci">ErrorRecoveryBuilder &amp; withAction(Action action)</div><div class="ttdoc">Set the primary action to execute.</div><div class="ttdef"><b>Definition</b> <a href="ErrorRecoveryBuilder_8cc_source.html#l00015">ErrorRecoveryBuilder.cc:15</a></div></div>
 <div class="ttc" id="aclassErrorRecoveryBuilder_html_a40a9086a87fc83190c0d14aa3d91fa5e"><div class="ttname"><a href="classErrorRecoveryBuilder.html#a40a9086a87fc83190c0d14aa3d91fa5e">ErrorRecoveryBuilder::ExhaustedBehavior</a></div><div class="ttdeci">ExhaustedBehavior</div><div class="ttdoc">What to do when all recovery options are exhausted.</div><div class="ttdef"><b>Definition</b> <a href="ErrorRecoveryBuilder_8h_source.html#l00034">ErrorRecoveryBuilder.h:34</a></div></div>
 <div class="ttc" id="aclassErrorRecoveryBuilder_html_a5d60280fd4235b804ac558713e3a072e"><div class="ttname"><a href="classErrorRecoveryBuilder.html#a5d60280fd4235b804ac558713e3a072e">ErrorRecoveryBuilder::Action</a></div><div class="ttdeci">std::function&lt; bool()&gt; Action</div><div class="ttdef"><b>Definition</b> <a href="ErrorRecoveryBuilder_8h_source.html#l00030">ErrorRecoveryBuilder.h:30</a></div></div>
 <div class="ttc" id="aclassErrorRecoveryBuilder_html_a6d046c2eef6cfe8899485d104559f42d"><div class="ttname"><a href="classErrorRecoveryBuilder.html#a6d046c2eef6cfe8899485d104559f42d">ErrorRecoveryBuilder::VoidAction</a></div><div class="ttdeci">std::function&lt; void()&gt; VoidAction</div><div class="ttdef"><b>Definition</b> <a href="ErrorRecoveryBuilder_8h_source.html#l00031">ErrorRecoveryBuilder.h:31</a></div></div>
+<div class="ttc" id="aclassErrorRecoveryBuilder_html_a8a553b165a64f0db64bbee349defea9e"><div class="ttname"><a href="classErrorRecoveryBuilder.html#a8a553b165a64f0db64bbee349defea9e">ErrorRecoveryBuilder::onExhausted</a></div><div class="ttdeci">ErrorRecoveryBuilder &amp; onExhausted(ExhaustedBehavior behavior)</div><div class="ttdoc">Configure what happens when all options are exhausted.</div><div class="ttdef"><b>Definition</b> <a href="ErrorRecoveryBuilder_8cc_source.html#l00040">ErrorRecoveryBuilder.cc:40</a></div></div>
+<div class="ttc" id="aclassErrorRecoveryBuilder_html_aa936a429a9490aae729250c6bcc5620b"><div class="ttname"><a href="classErrorRecoveryBuilder.html#aa936a429a9490aae729250c6bcc5620b">ErrorRecoveryBuilder::withRollback</a></div><div class="ttdeci">ErrorRecoveryBuilder &amp; withRollback(VoidAction rollback)</div><div class="ttdoc">Add a rollback action to execute on failure.</div><div class="ttdef"><b>Definition</b> <a href="ErrorRecoveryBuilder_8cc_source.html#l00034">ErrorRecoveryBuilder.cc:34</a></div></div>
+<div class="ttc" id="aclassErrorRecoveryBuilder_html_ad5b2e34c370ed09735ded28246207d53"><div class="ttname"><a href="classErrorRecoveryBuilder.html#ad5b2e34c370ed09735ded28246207d53">ErrorRecoveryBuilder::build</a></div><div class="ttdeci">QGCState * build()</div><div class="ttdoc">Build and return the configured state.</div><div class="ttdef"><b>Definition</b> <a href="ErrorRecoveryBuilder_8cc_source.html#l00052">ErrorRecoveryBuilder.cc:52</a></div></div>
+<div class="ttc" id="aclassErrorRecoveryBuilder_html_aecb95b94acbc9612b36047d3a45028e3"><div class="ttname"><a href="classErrorRecoveryBuilder.html#aecb95b94acbc9612b36047d3a45028e3">ErrorRecoveryBuilder::withTimeout</a></div><div class="ttdeci">ErrorRecoveryBuilder &amp; withTimeout(int timeoutMsecs)</div><div class="ttdoc">Set a timeout for the entire operation.</div><div class="ttdef"><b>Definition</b> <a href="ErrorRecoveryBuilder_8cc_source.html#l00046">ErrorRecoveryBuilder.cc:46</a></div></div>
 <div class="ttc" id="aclassEventQueuedState_html"><div class="ttname"><a href="classEventQueuedState.html">EventQueuedState</a></div><div class="ttdoc">A state that waits for one or more named events before advancing.</div><div class="ttdef"><b>Definition</b> <a href="EventQueuedState_8h_source.html#l00030">EventQueuedState.h:31</a></div></div>
 <div class="ttc" id="aclassFunctionState_html"><div class="ttname"><a href="classFunctionState.html">FunctionState</a></div><div class="ttdef"><b>Definition</b> <a href="FunctionState_8h_source.html#l00007">FunctionState.h:8</a></div></div>
 <div class="ttc" id="aclassMachineEventTransition_html"><div class="ttname"><a href="classMachineEventTransition.html">MachineEventTransition</a></div><div class="ttdoc">Transition that fires when a named event is posted to the state machine.</div><div class="ttdef"><b>Definition</b> <a href="MachineEventTransition_8h_source.html#l00014">MachineEventTransition.h:15</a></div></div>
@@ -1099,16 +1236,86 @@ $(document).ready(function(){initNavTree('QGCStateMachine_8cc_source.html',''); 
 <div class="ttc" id="aclassQGCAbstractState_html_ab234b3f3e43a46a03afdca18ffd57440"><div class="ttname"><a href="classQGCAbstractState.html#ab234b3f3e43a46a03afdca18ffd57440">QGCAbstractState::error</a></div><div class="ttdeci">void error()</div></div>
 <div class="ttc" id="aclassQGCFinalState_html"><div class="ttname"><a href="classQGCFinalState.html">QGCFinalState</a></div><div class="ttdoc">Final state for a QGCStateMachine with logging support.</div><div class="ttdef"><b>Definition</b> <a href="QGCFinalState_8h_source.html#l00011">QGCFinalState.h:12</a></div></div>
 <div class="ttc" id="aclassQGCStateMachineEvent_html"><div class="ttname"><a href="classQGCStateMachineEvent.html">QGCStateMachineEvent</a></div><div class="ttdoc">Custom event for QGCStateMachine delayed/scheduled events.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachineEvent_8h_source.html#l00009">QGCStateMachineEvent.h:10</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a0a5543de03dabf358d330db872efe061"><div class="ttname"><a href="classQGCStateMachine.html#a0a5543de03dabf358d330db872efe061">QGCStateMachine::addFunctionState</a></div><div class="ttdeci">FunctionState * addFunctionState(const QString &amp;stateName, std::function&lt; void()&gt; function)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00102">QGCStateMachine.cc:102</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a0e696b88c53b7b2ea3b0bb1992c627c1"><div class="ttname"><a href="classQGCStateMachine.html#a0e696b88c53b7b2ea3b0bb1992c627c1">QGCStateMachine::recordTimeout</a></div><div class="ttdeci">void recordTimeout(const QString &amp;stateName)</div><div class="ttdoc">Record a timeout for statistics.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00915">QGCStateMachine.cc:915</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a103530acaceed1b7ce66879bf5c8d3a1"><div class="ttname"><a href="classQGCStateMachine.html#a103530acaceed1b7ce66879bf5c8d3a1">QGCStateMachine::stopMachine</a></div><div class="ttdeci">void stopMachine(bool deleteOnStop=true)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00385">QGCStateMachine.cc:385</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a10d260c227085c44fd12a53ca4f36722"><div class="ttname"><a href="classQGCStateMachine.html#a10d260c227085c44fd12a53ca4f36722">QGCStateMachine::structuredLoggingEnabled</a></div><div class="ttdeci">bool structuredLoggingEnabled() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00628">QGCStateMachine.cc:628</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a12a3003902d52854b9aee281b682a60f"><div class="ttname"><a href="classQGCStateMachine.html#a12a3003902d52854b9aee281b682a60f">QGCStateMachine::clearError</a></div><div class="ttdeci">void clearError(bool restart=false)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00309">QGCStateMachine.cc:309</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a145dcbf7121ecaa18fa8c8553a9b5876"><div class="ttname"><a href="classQGCStateMachine.html#a145dcbf7121ecaa18fa8c8553a9b5876">QGCStateMachine::addEventTransition</a></div><div class="ttdeci">MachineEventTransition * addEventTransition(QState *from, const QString &amp;eventName, QAbstractState *to, QAbstractAnimation *animation=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00410">QGCStateMachine.cc:410</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a1565ab3b9765b46964c4054d3e1134ff"><div class="ttname"><a href="classQGCStateMachine.html#a1565ab3b9765b46964c4054d3e1134ff">QGCStateMachine::addLogAndStopErrorState</a></div><div class="ttdeci">FunctionState * addLogAndStopErrorState(const QString &amp;stateName, const QString &amp;message=QString())</div><div class="ttdoc">Create a logging error handler state that stops the machine.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00301">QGCStateMachine.cc:301</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a17522a1909a527af03ff86d246de4ea7"><div class="ttname"><a href="classQGCStateMachine.html#a17522a1909a527af03ff86d246de4ea7">QGCStateMachine::runningChanged</a></div><div class="ttdeci">void runningChanged()</div><div class="ttdoc">Emitted when the running state changes (for QML binding)</div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a20d82c04ee97b8fbc66a90d01c357321"><div class="ttname"><a href="classQGCStateMachine.html#a20d82c04ee97b8fbc66a90d01c357321">QGCStateMachine::enablePropertyRestore</a></div><div class="ttdeci">void enablePropertyRestore()</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00075">QGCStateMachine.cc:75</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a21745021b80ba0720d15f36ad13dae72"><div class="ttname"><a href="classQGCStateMachine.html#a21745021b80ba0720d15f36ad13dae72">QGCStateMachine::timeoutOverride</a></div><div class="ttdeci">int timeoutOverride(const QString &amp;stateName) const</div><div class="ttdoc">Get the timeout override for a state, or -1 if not set.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00910">QGCStateMachine.cc:910</a></div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_a2199952545a8b2eb6dba675ebf6308ef"><div class="ttname"><a href="classQGCStateMachine.html#a2199952545a8b2eb6dba675ebf6308ef">QGCStateMachine::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Start the state machine with debug logging.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00062">QGCStateMachine.cc:62</a></div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_a21e7b7119e1d263d8a4be7b992863056"><div class="ttname"><a href="classQGCStateMachine.html#a21e7b7119e1d263d8a4be7b992863056">QGCStateMachine::progressUpdate</a></div><div class="ttdeci">void progressUpdate(float progress)</div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a26818e2ddff99bc36481d5b0dc5a81ca"><div class="ttname"><a href="classQGCStateMachine.html#a26818e2ddff99bc36481d5b0dc5a81ca">QGCStateMachine::isPropertyRestoreEnabled</a></div><div class="ttdeci">bool isPropertyRestoreEnabled() const</div><div class="ttdoc">Check if property restoration is enabled.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00081">QGCStateMachine.cc:81</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a28bdb1fe83c6a8102281cb357fa59f94"><div class="ttname"><a href="classQGCStateMachine.html#a28bdb1fe83c6a8102281cb357fa59f94">QGCStateMachine::transitionsFrom</a></div><div class="ttdeci">QList&lt; QAbstractTransition * &gt; transitionsFrom(QAbstractState *state) const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00437">QGCStateMachine.cc:437</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a2b03a592ddb54631f482324710f6420e"><div class="ttname"><a href="classQGCStateMachine.html#a2b03a592ddb54631f482324710f6420e">QGCStateMachine::addTimeoutTransition</a></div><div class="ttdeci">TimeoutTransition * addTimeoutTransition(QState *from, int timeoutMsecs, QAbstractState *to, QAbstractAnimation *animation=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00421">QGCStateMachine.cc:421</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a2c265080b3e256a041572efec23c475a"><div class="ttname"><a href="classQGCStateMachine.html#a2c265080b3e256a041572efec23c475a">QGCStateMachine::logConfiguration</a></div><div class="ttdeci">void logConfiguration() const</div><div class="ttdoc">Log the full configuration to debug output.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00568">QGCStateMachine.cc:568</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a2e9a47dabc432c255cc1ade7225e0f28"><div class="ttname"><a href="classQGCStateMachine.html#a2e9a47dabc432c255cc1ade7225e0f28">QGCStateMachine::profilingEnabled</a></div><div class="ttdeci">bool profilingEnabled() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00610">QGCStateMachine.cc:610</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a2ea1fdf9338438b526b30f86452a153a"><div class="ttname"><a href="classQGCStateMachine.html#a2ea1fdf9338438b526b30f86452a153a">QGCStateMachine::addParallelState</a></div><div class="ttdeci">ParallelState * addParallelState(const QString &amp;stateName)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00152">QGCStateMachine.cc:152</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a325c2b48f7606c3e01b7e76034a498b0"><div class="ttname"><a href="classQGCStateMachine.html#a325c2b48f7606c3e01b7e76034a498b0">QGCStateMachine::setGlobalErrorState</a></div><div class="ttdeci">void setGlobalErrorState(QAbstractState *errorState)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00070">QGCStateMachine.cc:70</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a348194aa88b873ac9cbdc52dc9a16fbb"><div class="ttname"><a href="classQGCStateMachine.html#a348194aa88b873ac9cbdc52dc9a16fbb">QGCStateMachine::reachableFrom</a></div><div class="ttdeci">QList&lt; QAbstractState * &gt; reachableFrom(QAbstractState *state) const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00459">QGCStateMachine.cc:459</a></div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_a3a71bac2ee5ed89f5fede6fdaffaaaff"><div class="ttname"><a href="classQGCStateMachine.html#a3a71bac2ee5ed89f5fede6fdaffaaaff">QGCStateMachine::onExit</a></div><div class="ttdeci">void onExit(QEvent *event) override</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00947">QGCStateMachine.cc:947</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a3be670bb92b12c8a011e9014fd80c0a6"><div class="ttname"><a href="classQGCStateMachine.html#a3be670bb92b12c8a011e9014fd80c0a6">QGCStateMachine::resetToState</a></div><div class="ttdeci">bool resetToState(QAbstractState *state)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00317">QGCStateMachine.cc:317</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a4449603af9244a191e40402097b5fa35"><div class="ttname"><a href="classQGCStateMachine.html#a4449603af9244a191e40402097b5fa35">QGCStateMachine::dumpRecordedHistory</a></div><div class="ttdeci">QString dumpRecordedHistory() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00592">QGCStateMachine.cc:592</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a4884a36df170b225c7e49afc01e930f8"><div class="ttname"><a href="classQGCStateMachine.html#a4884a36df170b225c7e49afc01e930f8">QGCStateMachine::addErrorRecoveryState</a></div><div class="ttdeci">QGCState * addErrorRecoveryState(const QString &amp;stateName, ErrorRecoveryBuilder::Action action, int maxRetries=0, int retryDelayMsecs=1000, ErrorRecoveryBuilder::ExhaustedBehavior exhaustedBehavior=ErrorRecoveryBuilder::EmitError, ErrorRecoveryBuilder::Action fallback=nullptr, ErrorRecoveryBuilder::VoidAction rollback=nullptr, int timeoutMsecs=0)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00118">QGCStateMachine.cc:118</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a4a122828621bfd9e1e5c52ff4770a1e7"><div class="ttname"><a href="classQGCStateMachine.html#a4a122828621bfd9e1e5c52ff4770a1e7">QGCStateMachine::predecessorsOf</a></div><div class="ttdeci">QList&lt; QAbstractState * &gt; predecessorsOf(QAbstractState *state) const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00472">QGCStateMachine.cc:472</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a4a318f0c3966ac5117c5fc3feece2a14"><div class="ttname"><a href="classQGCStateMachine.html#a4a318f0c3966ac5117c5fc3feece2a14">QGCStateMachine::activeStates</a></div><div class="ttdeci">QSet&lt; QAbstractState * &gt; activeStates() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8h_source.html#l00308">QGCStateMachine.h:308</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a4a42a3f9cc8d4ee501b0d5c35188b2ec"><div class="ttname"><a href="classQGCStateMachine.html#a4a42a3f9cc8d4ee501b0d5c35188b2ec">QGCStateMachine::ExitCallback</a></div><div class="ttdeci">std::function&lt; void()&gt; ExitCallback</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8h_source.html#l00081">QGCStateMachine.h:81</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a4a9090cf109af10231e58c4370f54162"><div class="ttname"><a href="classQGCStateMachine.html#a4a9090cf109af10231e58c4370f54162">QGCStateMachine::exportAsDot</a></div><div class="ttdeci">QString exportAsDot() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00633">QGCStateMachine.cc:633</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a4ba8342d27c0e85d9a63a5dbb22f59bf"><div class="ttname"><a href="classQGCStateMachine.html#a4ba8342d27c0e85d9a63a5dbb22f59bf">QGCStateMachine::setStructuredLoggingEnabled</a></div><div class="ttdeci">void setStructuredLoggingEnabled(bool enabled)</div><div class="ttdoc">Enable/disable structured state-machine logger.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00620">QGCStateMachine.cc:620</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a4f1106a0e2bf036a3426430231bc255f"><div class="ttname"><a href="classQGCStateMachine.html#a4f1106a0e2bf036a3426430231bc255f">QGCStateMachine::historyRecordingEnabled</a></div><div class="ttdeci">bool historyRecordingEnabled() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00587">QGCStateMachine.cc:587</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a53878b697fd3d74d2ae011744fd8d81f"><div class="ttname"><a href="classQGCStateMachine.html#a53878b697fd3d74d2ae011744fd8d81f">QGCStateMachine::EntryCallback</a></div><div class="ttdeci">std::function&lt; void()&gt; EntryCallback</div><div class="ttdoc">Name of the currently active state (for QML binding)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8h_source.html#l00080">QGCStateMachine.h:80</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a5c28a6b1950da115d21ca15f07011830"><div class="ttname"><a href="classQGCStateMachine.html#a5c28a6b1950da115d21ca15f07011830">QGCStateMachine::recoverFromError</a></div><div class="ttdeci">bool recoverFromError()</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00351">QGCStateMachine.cc:351</a></div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_a6703ee26239fb6c04475b071bc2d7124"><div class="ttname"><a href="classQGCStateMachine.html#a6703ee26239fb6c04475b071bc2d7124">QGCStateMachine::currentStateNameChanged</a></div><div class="ttdeci">void currentStateNameChanged()</div><div class="ttdoc">Emitted when the current state changes (for QML binding)</div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a6be2fd441a72a50f343df8ed7f97f5e6"><div class="ttname"><a href="classQGCStateMachine.html#a6be2fd441a72a50f343df8ed7f97f5e6">QGCStateMachine::addEventQueuedState</a></div><div class="ttdeci">EventQueuedState * addEventQueuedState(const QString &amp;stateName, const QString &amp;eventName, int timeoutMsecs=0)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00213">QGCStateMachine.cc:213</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a6e1484338182b049584fddd0aab6e8bb"><div class="ttname"><a href="classQGCStateMachine.html#a6e1484338182b049584fddd0aab6e8bb">QGCStateMachine::logCurrentState</a></div><div class="ttdeci">void logCurrentState() const</div><div class="ttdoc">Log the current state to debug output.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00563">QGCStateMachine.cc:563</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a7133b35c08c06de72dad0efda915abe7"><div class="ttname"><a href="classQGCStateMachine.html#a7133b35c08c06de72dad0efda915abe7">QGCStateMachine::recordedHistoryJson</a></div><div class="ttdeci">QJsonArray recordedHistoryJson() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00597">QGCStateMachine.cc:597</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a73a7373527d98c96e6b727e8344ba8bd"><div class="ttname"><a href="classQGCStateMachine.html#a73a7373527d98c96e6b727e8344ba8bd">QGCStateMachine::setSubProgress</a></div><div class="ttdeci">void setSubProgress(float subProgress)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00854">QGCStateMachine.cc:854</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a7498ca3edd020250f9761882a2328a64"><div class="ttname"><a href="classQGCStateMachine.html#a7498ca3edd020250f9761882a2328a64">QGCStateMachine::deadEndStates</a></div><div class="ttdeci">QList&lt; QAbstractState * &gt; deadEndStates() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00775">QGCStateMachine.cc:775</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a7817c46097a3b3d37a83e144fdbfdadf"><div class="ttname"><a href="classQGCStateMachine.html#a7817c46097a3b3d37a83e144fdbfdadf">QGCStateMachine::postDelayedEvent</a></div><div class="ttdeci">int postDelayedEvent(const QString &amp;eventName, int delayMsecs, const QVariant &amp;data=QVariant())</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00167">QGCStateMachine.cc:167</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a7b523ba514b5f342dc3741f864bcf646"><div class="ttname"><a href="classQGCStateMachine.html#a7b523ba514b5f342dc3741f864bcf646">QGCStateMachine::unreachableStates</a></div><div class="ttdeci">QList&lt; QAbstractState * &gt; unreachableStates() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00699">QGCStateMachine.cc:699</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a803a597794ac01e3e739f45afc08b81f"><div class="ttname"><a href="classQGCStateMachine.html#a803a597794ac01e3e739f45afc08b81f">QGCStateMachine::QGCStateMachine</a></div><div class="ttdeci">QGCStateMachine(const QString &amp;machineName, Vehicle *vehicle, QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00015">QGCStateMachine.cc:15</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a80413092375ae2d145859fcb9b4c2cf8"><div class="ttname"><a href="classQGCStateMachine.html#a80413092375ae2d145859fcb9b4c2cf8">QGCStateMachine::machineName</a></div><div class="ttdeci">QString machineName() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8h_source.html#l00087">QGCStateMachine.h:87</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a8761428fc1346c5b48da21e892ab3c4a"><div class="ttname"><a href="classQGCStateMachine.html#a8761428fc1346c5b48da21e892ab3c4a">QGCStateMachine::addAsyncFunctionState</a></div><div class="ttdeci">AsyncFunctionState * addAsyncFunctionState(const QString &amp;stateName, AsyncFunctionState::SetupFunction setupFunction, int timeoutMsecs=0)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00109">QGCStateMachine.cc:109</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a87eeb91eea5406cdffe9468193e9ad81"><div class="ttname"><a href="classQGCStateMachine.html#a87eeb91eea5406cdffe9468193e9ad81">QGCStateMachine::isStateActive</a></div><div class="ttdeci">bool isStateActive(QAbstractState *state) const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00269">QGCStateMachine.cc:269</a></div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_a8a7bc30910ddde1407b682947f5f00d2"><div class="ttname"><a href="classQGCStateMachine.html#a8a7bc30910ddde1407b682947f5f00d2">QGCStateMachine::machineEvent</a></div><div class="ttdeci">void machineEvent(const QString &amp;eventName)</div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a8acbfec49593b907c5978bd0bdf90e7e"><div class="ttname"><a href="classQGCStateMachine.html#a8acbfec49593b907c5978bd0bdf90e7e">QGCStateMachine::addSubMachineState</a></div><div class="ttdeci">SubMachineState * addSubMachineState(const QString &amp;stateName, SubMachineState::MachineFactory factory)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00206">QGCStateMachine.cc:206</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a8af14d00425d9483c0cc2f1dd92a6f0c"><div class="ttname"><a href="classQGCStateMachine.html#a8af14d00425d9483c0cc2f1dd92a6f0c">QGCStateMachine::maxPathLength</a></div><div class="ttdeci">int maxPathLength() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00735">QGCStateMachine.cc:735</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a8b97a30acd3c31b8c9a67233894bcf83"><div class="ttname"><a href="classQGCStateMachine.html#a8b97a30acd3c31b8c9a67233894bcf83">QGCStateMachine::findState</a></div><div class="ttdeci">QAbstractState * findState(const QString &amp;stateName) const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00274">QGCStateMachine.cc:274</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a935063687c6be8c0474c1ef94253ffa6"><div class="ttname"><a href="classQGCStateMachine.html#a935063687c6be8c0474c1ef94253ffa6">QGCStateMachine::setHistoryRecordingEnabled</a></div><div class="ttdeci">void setHistoryRecordingEnabled(bool enabled, int maxEntries=1000)</div><div class="ttdoc">Enable/disable structured transition history recording.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00578">QGCStateMachine.cc:578</a></div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_a95fc6c144342fc103316cbd9ad9070c8"><div class="ttname"><a href="classQGCStateMachine.html#a95fc6c144342fc103316cbd9ad9070c8">QGCStateMachine::event</a></div><div class="ttdeci">bool event(QEvent *event) override</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00958">QGCStateMachine.cc:958</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a98e5aa412d505559179ab84453727fda"><div class="ttname"><a href="classQGCStateMachine.html#a98e5aa412d505559179ab84453727fda">QGCStateMachine::setProfilingEnabled</a></div><div class="ttdeci">void setProfilingEnabled(bool enabled)</div><div class="ttdoc">Enable/disable state timing profiler.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00602">QGCStateMachine.cc:602</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a990fefd97324df956ebc4bf6527e3b9a"><div class="ttname"><a href="classQGCStateMachine.html#a990fefd97324df956ebc4bf6527e3b9a">QGCStateMachine::cancelDelayedEvent</a></div><div class="ttdeci">bool cancelDelayedEvent(int eventId)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00173">QGCStateMachine.cc:173</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a9b6ecfdb65b6f32417c0c084e9e05be3"><div class="ttname"><a href="classQGCStateMachine.html#a9b6ecfdb65b6f32417c0c084e9e05be3">QGCStateMachine::setInitialState</a></div><div class="ttdeci">void setInitialState(QAbstractState *state, bool autoStart=false)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00183">QGCStateMachine.cc:183</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a9d4451d3939ec11b6238b63bf3a1c825"><div class="ttname"><a href="classQGCStateMachine.html#a9d4451d3939ec11b6238b63bf3a1c825">QGCStateMachine::setProgressWeights</a></div><div class="ttdeci">void setProgressWeights(const QList&lt; QPair&lt; QAbstractState *, int &gt; &gt; &amp;stateWeights)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00800">QGCStateMachine.cc:800</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a9dd075e4cc77212acaeaf7dd1745c742"><div class="ttname"><a href="classQGCStateMachine.html#a9dd075e4cc77212acaeaf7dd1745c742">QGCStateMachine::attemptRecovery</a></div><div class="ttdeci">bool attemptRecovery()</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00363">QGCStateMachine.cc:363</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_a9ddd94f819145bebc2df74f8684e3ecb"><div class="ttname"><a href="classQGCStateMachine.html#a9ddd94f819145bebc2df74f8684e3ecb">QGCStateMachine::active</a></div><div class="ttdeci">bool active() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8h_source.html#l00096">QGCStateMachine.h:96</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_aa4e39dc87a5fca870b017236bc1464a6"><div class="ttname"><a href="classQGCStateMachine.html#aa4e39dc87a5fca870b017236bc1464a6">QGCStateMachine::addDelayState</a></div><div class="ttdeci">DelayState * addDelayState(int delayMsecs)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00145">QGCStateMachine.cc:145</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_aa5dce951ee2bf9967153df36c492a4cc"><div class="ttname"><a href="classQGCStateMachine.html#aa5dce951ee2bf9967153df36c492a4cc">QGCStateMachine::ensureRunning</a></div><div class="ttdeci">void ensureRunning()</div><div class="ttdoc">Start the machine if not already running.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00378">QGCStateMachine.cc:378</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_aacc4824a6593ed7b69d631484c0a3051"><div class="ttname"><a href="classQGCStateMachine.html#aacc4824a6593ed7b69d631484c0a3051">QGCStateMachine::dumpConfiguration</a></div><div class="ttdeci">QString dumpConfiguration() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00515">QGCStateMachine.cc:515</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_ab2d55827df7c7c916e100597551b96e2"><div class="ttname"><a href="classQGCStateMachine.html#ab2d55827df7c7c916e100597551b96e2">QGCStateMachine::transitionsTo</a></div><div class="ttdeci">QList&lt; QAbstractTransition * &gt; transitionsTo(QAbstractState *state) const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00446">QGCStateMachine.cc:446</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_ab5d04bec90623644c998d324b6634efc"><div class="ttname"><a href="classQGCStateMachine.html#ab5d04bec90623644c998d324b6634efc">QGCStateMachine::currentStateName</a></div><div class="ttdeci">QString currentStateName() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00051">QGCStateMachine.cc:51</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_abef6859e0bb48623704340d743038f22"><div class="ttname"><a href="classQGCStateMachine.html#abef6859e0bb48623704340d743038f22">QGCStateMachine::addFinalState</a></div><div class="ttdeci">QGCFinalState * addFinalState(const QString &amp;stateName=QString())</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00191">QGCStateMachine.cc:191</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_abf94cf904354cc4d282859922818d890"><div class="ttname"><a href="classQGCStateMachine.html#abf94cf904354cc4d282859922818d890">QGCStateMachine::resetProgress</a></div><div class="ttdeci">void resetProgress()</div><div class="ttdoc">Reset progress tracking (call when restarting the machine)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00870">QGCStateMachine.cc:870</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_ac143887165a857e586de6a3a85543180"><div class="ttname"><a href="classQGCStateMachine.html#ac143887165a857e586de6a3a85543180">QGCStateMachine::isInErrorState</a></div><div class="ttdeci">bool isInErrorState() const</div><div class="ttdoc">Check if the machine is in an error state.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00284">QGCStateMachine.cc:284</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_ac4a2183d6a20f431358778e90c82e339"><div class="ttname"><a href="classQGCStateMachine.html#ac4a2183d6a20f431358778e90c82e339">QGCStateMachine::setTimeoutOverride</a></div><div class="ttdeci">void setTimeoutOverride(const QString &amp;stateName, int timeoutMsecs)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00899">QGCStateMachine.cc:899</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_ac5b0426b6cf898461d1898db847482a7"><div class="ttname"><a href="classQGCStateMachine.html#ac5b0426b6cf898461d1898db847482a7">QGCStateMachine::createTimedActionState</a></div><div class="ttdeci">QState * createTimedActionState(const QString &amp;stateName, int durationMsecs, std::function&lt; void()&gt; onEntry=nullptr, std::function&lt; void()&gt; onExit=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00222">QGCStateMachine.cc:222</a></div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_ac5f883955a80b14c31beb980aa29b442"><div class="ttname"><a href="classQGCStateMachine.html#ac5f883955a80b14c31beb980aa29b442">QGCStateMachine::onEntry</a></div><div class="ttdeci">void onEntry(QEvent *event) override</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00936">QGCStateMachine.cc:936</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_ac9764c9cf82a48662d746eda1d80c57e"><div class="ttname"><a href="classQGCStateMachine.html#ac9764c9cf82a48662d746eda1d80c57e">QGCStateMachine::postEvent</a></div><div class="ttdeci">void postEvent(const QString &amp;eventName, const QVariant &amp;data=QVariant(), EventPriority priority=NormalPriority)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00159">QGCStateMachine.cc:159</a></div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_aca3d3aa77509612e4dc22361da1789aa"><div class="ttname"><a href="classQGCStateMachine.html#aca3d3aa77509612e4dc22361da1789aa">QGCStateMachine::onLeave</a></div><div class="ttdeci">virtual void onLeave()</div><div class="ttdoc">Override to perform actions when machine stops.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8h_source.html#l00699">QGCStateMachine.h:699</a></div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_ad13cfd1c5dabb133e58dd7daab0706d3"><div class="ttname"><a href="classQGCStateMachine.html#ad13cfd1c5dabb133e58dd7daab0706d3">QGCStateMachine::stateHistoryChanged</a></div><div class="ttdeci">void stateHistoryChanged()</div><div class="ttdoc">Emitted when the state history changes (for QML binding)</div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_ad5be01678b6338774cebe9695c9406b8"><div class="ttname"><a href="classQGCStateMachine.html#ad5be01678b6338774cebe9695c9406b8">QGCStateMachine::setCallbacks</a></div><div class="ttdeci">void setCallbacks(EntryCallback onEntry, ExitCallback onExit=nullptr)</div><div class="ttdoc">Set both entry and exit callbacks.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00926">QGCStateMachine.cc:926</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_ad6639c799b6150c5ee1bf6106b29b002"><div class="ttname"><a href="classQGCStateMachine.html#ad6639c799b6150c5ee1bf6106b29b002">QGCStateMachine::profilingSummary</a></div><div class="ttdeci">QString profilingSummary() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00615">QGCStateMachine.cc:615</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_ad92af76ad1f82f885a80b135ac3af057"><div class="ttname"><a href="classQGCStateMachine.html#ad92af76ad1f82f885a80b135ac3af057">QGCStateMachine::removeTimeoutOverride</a></div><div class="ttdeci">void removeTimeoutOverride(const QString &amp;stateName)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00905">QGCStateMachine.cc:905</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_ae1ba584b472020451e0daa3ac7ac0ead"><div class="ttname"><a href="classQGCStateMachine.html#ae1ba584b472020451e0daa3ac7ac0ead">QGCStateMachine::progress</a></div><div class="ttdeci">float progress() const</div><div class="ttdoc">Get the current overall progress (0.0 to 1.0)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00865">QGCStateMachine.cc:865</a></div></div>
 <div class="ttc" id="aclassQGCStateMachine_html_ae30a0fa881398ebdfea0cc5a910f7954"><div class="ttname"><a href="classQGCStateMachine.html#ae30a0fa881398ebdfea0cc5a910f7954">QGCStateMachine::onEnter</a></div><div class="ttdeci">virtual void onEnter()</div><div class="ttdoc">Override to perform actions when machine starts.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8h_source.html#l00696">QGCStateMachine.h:696</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_ae3d8b5e2e11b519adfce749ce043adfe"><div class="ttname"><a href="classQGCStateMachine.html#ae3d8b5e2e11b519adfce749ce043adfe">QGCStateMachine::registerState</a></div><div class="ttdeci">void registerState(QGCState *state)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00086">QGCStateMachine.cc:86</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_aeaf27778ba654a9badde64cb5251cc47"><div class="ttname"><a href="classQGCStateMachine.html#aeaf27778ba654a9badde64cb5251cc47">QGCStateMachine::addConditionalState</a></div><div class="ttdeci">ConditionalState * addConditionalState(const QString &amp;stateName, ConditionalState::Predicate predicate, ConditionalState::Action action=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00197">QGCStateMachine.cc:197</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_af4acb14599fbd973dd96ea3bbc744c0b"><div class="ttname"><a href="classQGCStateMachine.html#af4acb14599fbd973dd96ea3bbc744c0b">QGCStateMachine::restart</a></div><div class="ttdeci">void restart()</div><div class="ttdoc">Restart the machine (stop then start)</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00391">QGCStateMachine.cc:391</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_af5ca002207813d080203bb340f2e9e36"><div class="ttname"><a href="classQGCStateMachine.html#af5ca002207813d080203bb340f2e9e36">QGCStateMachine::addLogAndContinueErrorState</a></div><div class="ttdeci">FunctionState * addLogAndContinueErrorState(const QString &amp;stateName, QAbstractState *nextState, const QString &amp;message=QString())</div><div class="ttdoc">Create a logging error handler state that advances to nextState.</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00292">QGCStateMachine.cc:292</a></div></div>
+<div class="ttc" id="aclassQGCStateMachine_html_afb7a193622086873d7b375d0174d9c2e"><div class="ttname"><a href="classQGCStateMachine.html#afb7a193622086873d7b375d0174d9c2e">QGCStateMachine::dumpCurrentState</a></div><div class="ttdeci">QString dumpCurrentState() const</div><div class="ttdef"><b>Definition</b> <a href="QGCStateMachine_8cc_source.html#l00489">QGCStateMachine.cc:489</a></div></div>
 <div class="ttc" id="aclassQGCState_html"><div class="ttname"><a href="classQGCState.html">QGCState</a></div><div class="ttdoc">Full-featured base class for QGroundControl state machine states.</div><div class="ttdef"><b>Definition</b> <a href="QGCState_8h_source.html#l00022">QGCState.h:23</a></div></div>
 <div class="ttc" id="aclassQGCState_html_a0aa076b2dd30a23d98cbc74a7b019e80"><div class="ttname"><a href="classQGCState.html#a0aa076b2dd30a23d98cbc74a7b019e80">QGCState::localErrorState</a></div><div class="ttdeci">QAbstractState * localErrorState() const</div><div class="ttdoc">Get the per-state error state (nullptr if using global)</div><div class="ttdef"><b>Definition</b> <a href="QGCState_8h_source.html#l00043">QGCState.h:43</a></div></div>
 <div class="ttc" id="aclassStateHistoryRecorder_html"><div class="ttname"><a href="classStateHistoryRecorder.html">StateHistoryRecorder</a></div><div class="ttdoc">Records state machine transitions for debugging and analysis.</div><div class="ttdef"><b>Definition</b> <a href="StateHistoryRecorder_8h_source.html#l00029">StateHistoryRecorder.h:30</a></div></div>

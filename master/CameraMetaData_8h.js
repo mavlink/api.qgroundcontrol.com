@@ -1,4 +1,4 @@
 var CameraMetaData_8h =
 [
-    [ "CameraMetaData", "classCameraMetaData.html", null ]
+    [ "CameraMetaData", "classCameraMetaData.html", "classCameraMetaData" ]
 ];

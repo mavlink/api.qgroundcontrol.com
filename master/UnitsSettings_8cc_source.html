@@ -101,13 +101,13 @@ $(document).ready(function(){initNavTree('UnitsSettings_8cc_source.html',''); in
 <a href="UnitsSettings_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="UnitsSettings_8h.html">UnitsSettings.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="foldopen" id="foldopen00003" data-start="{" data-end="}">
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="classUnitsSettings.html#a95a2666f950037415dd2acf84714c35e">    3</a></span><a class="code hl_define" href="SettingsGroup_8h.html#abe10d6e5a582a5f5e4c5036bf99146fa">DECLARE_SETTINGGROUP</a>(Units, <span class="stringliteral">&quot;Units&quot;</span>)</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="UnitsSettings_8cc.html#a37cb783c0f38e77143db2fd2d30d228a">    3</a></span><a class="code hl_define" href="SettingsGroup_8h.html#abe10d6e5a582a5f5e4c5036bf99146fa">DECLARE_SETTINGGROUP</a>(Units, <span class="stringliteral">&quot;Units&quot;</span>)</div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>}</div>
 </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classUnitsSettings.html#abe71c04ecc489c0664a58af58384db75">    7</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a>(<a class="code hl_class" href="classUnitsSettings.html">UnitsSettings</a>, horizontalDistanceUnits)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="UnitsSettings_8cc.html#a7c297f15add3d318a4d8e5242a8d1a07">    7</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a>(<a class="code hl_class" href="classUnitsSettings.html">UnitsSettings</a>, horizontalDistanceUnits)</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">if</span> (!_horizontalDistanceUnitsFact) {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        <span class="comment">// Distance/Area/Speed units settings can&#39;t be loaded from json since it creates an infinite loop of meta data loading.</span></div>
@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('UnitsSettings_8cc_source.html',''); in
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a279cebcd740fa74e50bef163b1c6c042">setShortDescription</a>(UnitsSettings::tr(<span class="stringliteral">&quot;Display unit for horizontal distances and ranges.&quot;</span>));</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a9ab4adc3d51168961b39ee7fe71eacbb">setEnumInfo</a>(enumStrings, enumValues);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_enumeration" href="classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1">HorizontalDistanceUnits</a> defaultHorizontalDistanceUnit = HorizontalDistanceUnitsMeters;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        HorizontalDistanceUnits defaultHorizontalDistanceUnit = HorizontalDistanceUnitsMeters;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">switch</span>(QLocale::system().measurementSystem()) {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">case</span> QLocale::MetricSystem: {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                defaultHorizontalDistanceUnit = HorizontalDistanceUnitsMeters;</div>
@@ -141,7 +141,7 @@ $(document).ready(function(){initNavTree('UnitsSettings_8cc_source.html',''); in
 </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classUnitsSettings.html#aefb6e92c5807e43b864979c206ce7630">   39</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a>(<a class="code hl_class" href="classUnitsSettings.html">UnitsSettings</a>, verticalDistanceUnits)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="UnitsSettings_8cc.html#a9c06d48b45b6bc165548120c08c79b1f">   39</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a>(<a class="code hl_class" href="classUnitsSettings.html">UnitsSettings</a>, verticalDistanceUnits)</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">if</span> (!_verticalDistanceUnitsFact) {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="comment">// Distance/Area/Speed units settings can&#39;t be loaded from json since it creates an infinite loop of meta data loading.</span></div>
@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('UnitsSettings_8cc_source.html',''); in
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a69ff9fdc4b8b965265f26478a9efb2f4">setLabel</a>(UnitsSettings::tr(<span class="stringliteral">&quot;Vertical Distance&quot;</span>));</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a279cebcd740fa74e50bef163b1c6c042">setShortDescription</a>(UnitsSettings::tr(<span class="stringliteral">&quot;Display unit for altitudes and vertical heights.&quot;</span>));</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a9ab4adc3d51168961b39ee7fe71eacbb">setEnumInfo</a>(enumStrings, enumValues);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_enumeration" href="classUnitsSettings.html#a22c428defeb232b91194a5a9c173e037">VerticalDistanceUnits</a> defaultVerticalAltitudeUnit = VerticalDistanceUnitsMeters;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        VerticalDistanceUnits defaultVerticalAltitudeUnit = VerticalDistanceUnitsMeters;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">switch</span>(QLocale::system().measurementSystem()) {</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keywordflow">case</span> QLocale::MetricSystem: {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                defaultVerticalAltitudeUnit = VerticalDistanceUnitsMeters;</div>
@@ -174,7 +174,7 @@ $(document).ready(function(){initNavTree('UnitsSettings_8cc_source.html',''); in
 </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classUnitsSettings.html#af6090c39c7075f2c27a0837e08efe166">   70</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a>(<a class="code hl_class" href="classUnitsSettings.html">UnitsSettings</a>, areaUnits)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="UnitsSettings_8cc.html#aaea1b13e5d2e5aed03614d9c8e994c73">   70</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a>(<a class="code hl_class" href="classUnitsSettings.html">UnitsSettings</a>, areaUnits)</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">if</span> (!_areaUnitsFact) {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="comment">// Distance/Area/Speed units settings can&#39;t be loaded from json since it creates an infinite loop of meta data loading.</span></div>
@@ -194,7 +194,7 @@ $(document).ready(function(){initNavTree('UnitsSettings_8cc_source.html',''); in
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a279cebcd740fa74e50bef163b1c6c042">setShortDescription</a>(UnitsSettings::tr(<span class="stringliteral">&quot;Display unit for area measurements.&quot;</span>));</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a9ab4adc3d51168961b39ee7fe71eacbb">setEnumInfo</a>(enumStrings, enumValues);</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <a class="code hl_enumeration" href="classUnitsSettings.html#aca83aeb9f913ebabedfa6c496d060b7a">AreaUnits</a> defaultAreaUnit = AreaUnitsSquareMeters;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        AreaUnits defaultAreaUnit = AreaUnitsSquareMeters;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">switch</span>(QLocale::system().measurementSystem()) {</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordflow">case</span> QLocale::MetricSystem: {</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                defaultAreaUnit = AreaUnitsSquareMeters;</div>
@@ -213,7 +213,7 @@ $(document).ready(function(){initNavTree('UnitsSettings_8cc_source.html',''); in
 </div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
 <div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classUnitsSettings.html#a992980e79b35745dc749a63fc7079aad">  107</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a>(<a class="code hl_class" href="classUnitsSettings.html">UnitsSettings</a>, speedUnits)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="UnitsSettings_8cc.html#a1ce53070d30d50950c05a2d37fd4efdc">  107</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a>(<a class="code hl_class" href="classUnitsSettings.html">UnitsSettings</a>, speedUnits)</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>{</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">if</span> (!_speedUnitsFact) {</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="comment">// Distance/Area/Speed units settings can&#39;t be loaded from json since it creates an infinite loop of meta data loading.</span></div>
@@ -232,7 +232,7 @@ $(document).ready(function(){initNavTree('UnitsSettings_8cc_source.html',''); in
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a279cebcd740fa74e50bef163b1c6c042">setShortDescription</a>(UnitsSettings::tr(<span class="stringliteral">&quot;Display unit for speed and velocity values.&quot;</span>));</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a9ab4adc3d51168961b39ee7fe71eacbb">setEnumInfo</a>(enumStrings, enumValues);</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <a class="code hl_enumeration" href="classUnitsSettings.html#ab88fe16dd3ad9e6cf0933b873e46b46e">SpeedUnits</a> defaultSpeedUnit = SpeedUnitsMetersPerSecond;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        SpeedUnits defaultSpeedUnit = SpeedUnitsMetersPerSecond;</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">switch</span>(QLocale::system().measurementSystem()) {</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <span class="keywordflow">case</span> QLocale::MetricSystem: {</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                defaultSpeedUnit = SpeedUnitsMetersPerSecond;</div>
@@ -251,7 +251,7 @@ $(document).ready(function(){initNavTree('UnitsSettings_8cc_source.html',''); in
 </div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
 <div class="foldopen" id="foldopen00143" data-start="{" data-end="}">
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classUnitsSettings.html#ac4e990d5eb84b4d3a166c88d76204b45">  143</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a>(<a class="code hl_class" href="classUnitsSettings.html">UnitsSettings</a>, temperatureUnits)</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="UnitsSettings_8cc.html#a0124efe39f2adb27d28e63f01560681c">  143</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a>(<a class="code hl_class" href="classUnitsSettings.html">UnitsSettings</a>, temperatureUnits)</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>{</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordflow">if</span> (!_temperatureUnitsFact) {</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="comment">// Units settings can&#39;t be loaded from json since it creates an infinite loop of meta data loading.</span></div>
@@ -265,7 +265,7 @@ $(document).ready(function(){initNavTree('UnitsSettings_8cc_source.html',''); in
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a279cebcd740fa74e50bef163b1c6c042">setShortDescription</a>(UnitsSettings::tr(<span class="stringliteral">&quot;Display unit for temperature readings.&quot;</span>));</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a9ab4adc3d51168961b39ee7fe71eacbb">setEnumInfo</a>(enumStrings, enumValues);</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <a class="code hl_enumeration" href="classUnitsSettings.html#a20ac7a84597670c3370111536ff1ddc9">TemperatureUnits</a> defaultTemperatureUnit = TemperatureUnitsCelsius;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        TemperatureUnits defaultTemperatureUnit = TemperatureUnitsCelsius;</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">switch</span>(QLocale::system().measurementSystem()) {</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="keywordflow">case</span> QLocale::MetricSystem: {</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                defaultTemperatureUnit = TemperatureUnitsCelsius;</div>
@@ -284,7 +284,7 @@ $(document).ready(function(){initNavTree('UnitsSettings_8cc_source.html',''); in
 </div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
 <div class="foldopen" id="foldopen00174" data-start="{" data-end="}">
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classUnitsSettings.html#a89848113b6875473ba4714c6dcb35aab">  174</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a>(<a class="code hl_class" href="classUnitsSettings.html">UnitsSettings</a>, weightUnits)</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="UnitsSettings_8cc.html#a726c864827b56d8077de913410a6bf32">  174</a></span><a class="code hl_define" href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a>(<a class="code hl_class" href="classUnitsSettings.html">UnitsSettings</a>, weightUnits)</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>{</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordflow">if</span> (!_weightUnitsFact) {</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="comment">// Units settings can&#39;t be loaded from json since it creates an infinite loop of meta data loading.</span></div>
@@ -301,7 +301,7 @@ $(document).ready(function(){initNavTree('UnitsSettings_8cc_source.html',''); in
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a69ff9fdc4b8b965265f26478a9efb2f4">setLabel</a>(UnitsSettings::tr(<span class="stringliteral">&quot;Weight&quot;</span>));</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a279cebcd740fa74e50bef163b1c6c042">setShortDescription</a>(UnitsSettings::tr(<span class="stringliteral">&quot;Weight&quot;</span>));</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        metaData-&gt;<a class="code hl_function" href="classFactMetaData.html#a9ab4adc3d51168961b39ee7fe71eacbb">setEnumInfo</a>(enumStrings, enumValues);</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <a class="code hl_enumeration" href="classUnitsSettings.html#ac20f65142b912f441f0d035f51500c67">WeightUnits</a> defaultWeightUnit = WeightUnitsGrams;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        WeightUnits defaultWeightUnit = WeightUnitsGrams;</div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keywordflow">switch</span>(QLocale::system().measurementSystem()) {</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            <span class="keywordflow">case</span> QLocale::MetricSystem:</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            <span class="keywordflow">case</span> QLocale::ImperialUKSystem: {</div>
@@ -331,12 +331,6 @@ $(document).ready(function(){initNavTree('UnitsSettings_8cc_source.html',''); in
 <div class="ttc" id="aclassFactMetaData_html_a9ab4adc3d51168961b39ee7fe71eacbb"><div class="ttname"><a href="classFactMetaData.html#a9ab4adc3d51168961b39ee7fe71eacbb">FactMetaData::setEnumInfo</a></div><div class="ttdeci">void setEnumInfo(const QStringList &amp;strings, const QVariantList &amp;values)</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l00582">FactMetaData.cc:582</a></div></div>
 <div class="ttc" id="aclassSettingsFact_html"><div class="ttname"><a href="classSettingsFact.html">SettingsFact</a></div><div class="ttdoc">A SettingsFact is Fact which holds a QSettings value.</div><div class="ttdef"><b>Definition</b> <a href="SettingsFact_8h_source.html#l00010">SettingsFact.h:11</a></div></div>
 <div class="ttc" id="aclassUnitsSettings_html"><div class="ttname"><a href="classUnitsSettings.html">UnitsSettings</a></div><div class="ttdef"><b>Definition</b> <a href="UnitsSettings_8h_source.html#l00007">UnitsSettings.h:8</a></div></div>
-<div class="ttc" id="aclassUnitsSettings_html_a20ac7a84597670c3370111536ff1ddc9"><div class="ttname"><a href="classUnitsSettings.html#a20ac7a84597670c3370111536ff1ddc9">UnitsSettings::TemperatureUnits</a></div><div class="ttdeci">TemperatureUnits</div><div class="ttdef"><b>Definition</b> <a href="UnitsSettings_8h_source.html#l00042">UnitsSettings.h:42</a></div></div>
-<div class="ttc" id="aclassUnitsSettings_html_a22c428defeb232b91194a5a9c173e037"><div class="ttname"><a href="classUnitsSettings.html#a22c428defeb232b91194a5a9c173e037">UnitsSettings::VerticalDistanceUnits</a></div><div class="ttdeci">VerticalDistanceUnits</div><div class="ttdef"><b>Definition</b> <a href="UnitsSettings_8h_source.html#l00020">UnitsSettings.h:20</a></div></div>
-<div class="ttc" id="aclassUnitsSettings_html_ab88fe16dd3ad9e6cf0933b873e46b46e"><div class="ttname"><a href="classUnitsSettings.html#ab88fe16dd3ad9e6cf0933b873e46b46e">UnitsSettings::SpeedUnits</a></div><div class="ttdeci">SpeedUnits</div><div class="ttdef"><b>Definition</b> <a href="UnitsSettings_8h_source.html#l00034">UnitsSettings.h:34</a></div></div>
-<div class="ttc" id="aclassUnitsSettings_html_ac20f65142b912f441f0d035f51500c67"><div class="ttname"><a href="classUnitsSettings.html#ac20f65142b912f441f0d035f51500c67">UnitsSettings::WeightUnits</a></div><div class="ttdeci">WeightUnits</div><div class="ttdef"><b>Definition</b> <a href="UnitsSettings_8h_source.html#l00047">UnitsSettings.h:47</a></div></div>
-<div class="ttc" id="aclassUnitsSettings_html_aca83aeb9f913ebabedfa6c496d060b7a"><div class="ttname"><a href="classUnitsSettings.html#aca83aeb9f913ebabedfa6c496d060b7a">UnitsSettings::AreaUnits</a></div><div class="ttdeci">AreaUnits</div><div class="ttdef"><b>Definition</b> <a href="UnitsSettings_8h_source.html#l00025">UnitsSettings.h:25</a></div></div>
-<div class="ttc" id="aclassUnitsSettings_html_ace2361f4e36a835e4ddbe3ffee9bebe1"><div class="ttname"><a href="classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1">UnitsSettings::HorizontalDistanceUnits</a></div><div class="ttdeci">HorizontalDistanceUnits</div><div class="ttdef"><b>Definition</b> <a href="UnitsSettings_8h_source.html#l00015">UnitsSettings.h:15</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

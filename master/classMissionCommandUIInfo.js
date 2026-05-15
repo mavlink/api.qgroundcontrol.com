@@ -3,7 +3,7 @@ var classMissionCommandUIInfo =
     [ "MissionCommandUIInfo", "classMissionCommandUIInfo.html#afe79480b8afd6ec14105a47bc8619aa0", null ],
     [ "MissionCommandUIInfo", "classMissionCommandUIInfo.html#a9c727b5818ce11c7210e462162d610c4", null ],
     [ "category", "classMissionCommandUIInfo.html#a3b504ccd16a08d1bb69588922454f20d", null ],
-    [ "CONSTANT", "classMissionCommandUIInfo.html#a8e8644a4a38a1dd772b7b64fe243310a", null ],
+    [ "command", "classMissionCommandUIInfo.html#a1d812a8745a1b1afb7152fd3dc7e920a", null ],
     [ "description", "classMissionCommandUIInfo.html#a5a9d76ca187121a453f4c5caef2f8eca", null ],
     [ "friendlyEdit", "classMissionCommandUIInfo.html#af8d09db30b19c9508106074708d6fa55", null ],
     [ "friendlyName", "classMissionCommandUIInfo.html#a605a7438647145b0241c76881c2d51c5", null ],

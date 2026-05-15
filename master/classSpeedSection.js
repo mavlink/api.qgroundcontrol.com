@@ -13,6 +13,6 @@ var classSpeedSection =
     [ "settingsSpecified", "classSpeedSection.html#ac397fe8cbb5d40f4516c998f77469b92", null ],
     [ "specifiedFlightSpeed", "classSpeedSection.html#a60357a64175c9a4fbfcfc07696eaa032", null ],
     [ "specifiedFlightSpeedChanged", "classSpeedSection.html#a86a805955355a05607d45851bc4d2f44", null ],
-    [ "specifyFlightSpeedChanged", "classSpeedSection.html#ad97519cdcf70558490e2b5c06658ab66", null ],
-    [ "specifyFlightSpeedChanged", "classSpeedSection.html#adedb29bbf9117002b6b564d66ae5fe38", null ]
+    [ "specifyFlightSpeed", "classSpeedSection.html#a90b7c8130fe45ba5398620a44899c2b7", null ],
+    [ "specifyFlightSpeedChanged", "classSpeedSection.html#ad97519cdcf70558490e2b5c06658ab66", null ]
 ];

@@ -1,5 +1,8 @@
 var classQGCCameraManager =
 [
+    [ "CameraStruct", "structQGCCameraManager_1_1CameraStruct.html", "structQGCCameraManager_1_1CameraStruct" ],
+    [ "QGCCameraManager", "classQGCCameraManager.html#a563ba9a15c7b88cfe7db51f434b8945a", null ],
+    [ "~QGCCameraManager", "classQGCCameraManager.html#a03a4d065c5561e516e164cde0bd15633", null ],
     [ "_activeJoystickChanged", "classQGCCameraManager.html#add81b04757e47c90fbc669e3d543c9b7", null ],
     [ "_checkForLostCameras", "classQGCCameraManager.html#a2092d37dace352de032dfadc2887a99a", null ],
     [ "_mavlinkMessageReceived", "classQGCCameraManager.html#a973370661d59990fa3d04ad3a306b789", null ],
@@ -16,9 +19,24 @@ var classQGCCameraManager =
     [ "_toggleVideoRecording", "classQGCCameraManager.html#a88d8eb0cf99e45a74cfccaa539a524e7", null ],
     [ "_triggerCamera", "classQGCCameraManager.html#ad68939649a81825975016bd1102a94f4", null ],
     [ "_vehicleReady", "classQGCCameraManager.html#a1a3b21547a4c91e8d94d6ecfcc5ef2c9", null ],
+    [ "aspectForComp", "classQGCCameraManager.html#a62b43a0b2c8993de60c9654b6e987c55", null ],
+    [ "cameraLabels", "classQGCCameraManager.html#aec06940411905a7f04d251208c1d760b", null ],
     [ "cameraLabelsChanged", "classQGCCameraManager.html#a47c1bcc56ddd48c42e42f182e110d4f1", null ],
+    [ "cameraList", "classQGCCameraManager.html#a319a87ea172fbc7594a187b7f7266258", null ],
+    [ "cameras", "classQGCCameraManager.html#a4034a89b627455386a880133897b7200", null ],
+    [ "cameras", "classQGCCameraManager.html#ae150bfbf0f4e74c1a7c6616361993b8e", null ],
     [ "camerasChanged", "classQGCCameraManager.html#a4d687782b508843037d6fb6c32f96cf5", null ],
+    [ "currentCamera", "classQGCCameraManager.html#affe3dcdbc419d82ab5e06736c5a5b033", null ],
+    [ "currentCameraAspect", "classQGCCameraManager.html#a630b62fd15e7c853aea6a334b65efc1f", null ],
     [ "currentCameraChanged", "classQGCCameraManager.html#a9b198e79ee0e280e3a6043594bc31ee9", null ],
+    [ "currentCameraInstance", "classQGCCameraManager.html#a4e57350b7cfb3bafa77a7fd0c0e27e29", null ],
+    [ "currentStreamInstance", "classQGCCameraManager.html#a5716d5c45aea161881d82e3a8d139105", null ],
+    [ "currentZoomLevel", "classQGCCameraManager.html#ad21938536dbb15138becfe7ca3b115e0", null ],
     [ "currentZoomLevelChanged", "classQGCCameraManager.html#a041a450455e7ad0bacb4ee90232dfbfa", null ],
-    [ "streamChanged", "classQGCCameraManager.html#aaec6156e8df3ad420021379a3cd466fd", null ]
+    [ "findCameraStruct", "classQGCCameraManager.html#ab3f28b54788ab67824c47184328f4335", null ],
+    [ "requestCameraFovForComp", "classQGCCameraManager.html#a37c2f727d03f3f8df5b415be7c6bab1b", null ],
+    [ "setCurrentCamera", "classQGCCameraManager.html#a09e92ed15fd8d03d5aa477a7fca398b1", null ],
+    [ "streamChanged", "classQGCCameraManager.html#aaec6156e8df3ad420021379a3cd466fd", null ],
+    [ "thermalStreamInstance", "classQGCCameraManager.html#a7842b386ce504f3fced9292144343617", null ],
+    [ "vehicle", "classQGCCameraManager.html#a83e04d4441d4a30e5945b0f7617bca73", null ]
 ];

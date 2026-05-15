@@ -1,9 +1,25 @@
 var classLogStore =
 [
+    [ "QueryParams", "structLogStore_1_1QueryParams.html", "structLogStore_1_1QueryParams" ],
     [ "ScopedReadConnection", "classLogStore_1_1ScopedReadConnection.html", "classLogStore_1_1ScopedReadConnection" ],
+    [ "LogStore", "classLogStore.html#ac9e669fc778f9063148c7ff5c9f3e83e", null ],
+    [ "~LogStore", "classLogStore.html#a0e40b4e11b15754d9592350695ceefb6", null ],
+    [ "append", "classLogStore.html#a7604a423df6f64efd7fafb52ec001560", null ],
+    [ "close", "classLogStore.html#a6300adb9109af6868beec876794283d9", null ],
+    [ "databasePath", "classLogStore.html#a0598be91b071f72934418ed3363109a8", null ],
     [ "databasePathChanged", "classLogStore.html#a8a056e55195163a458ea20d56621d68d", null ],
+    [ "deleteSession", "classLogStore.html#ade8e7498887db8dc94b1c321fef398d8", null ],
+    [ "entryCount", "classLogStore.html#a028cc808121d146e032c906ca28f249f", null ],
     [ "entryCountChanged", "classLogStore.html#a3eb8ca5d41d265b04970d9157caddd96", null ],
     [ "errorOccurred", "classLogStore.html#a96f5923b7edb8db4a30ad06559c2ff3b", null ],
     [ "exportFinished", "classLogStore.html#a69f0028dfd501c9b0b5b74a34da6c582", null ],
-    [ "isOpenChanged", "classLogStore.html#ac2cf245daaa8f00992eeb5d4c2604e26", null ]
+    [ "exportSession", "classLogStore.html#a02c8ed56601ea28b90b6a120a06f4aa9", null ],
+    [ "flush", "classLogStore.html#a00130c18b02cb18ad5dda8a5977f5b56", null ],
+    [ "isOpen", "classLogStore.html#a377274be20b510b01bcef7b27b8c201e", null ],
+    [ "isOpenChanged", "classLogStore.html#ac2cf245daaa8f00992eeb5d4c2604e26", null ],
+    [ "open", "classLogStore.html#ad07c779335eac33673505c1ffef902bd", null ],
+    [ "query", "classLogStore.html#a02aac6a0af8506bb55331c58a7ed09cb", null ],
+    [ "sessionEntryCount", "classLogStore.html#a4f6faf7e16f74c90f4ffc892a9c5528b", null ],
+    [ "sessionId", "classLogStore.html#aca7348508ea42273d111516f291ebb85", null ],
+    [ "sessions", "classLogStore.html#a0d17ace542b92fdb419a5380a72f4513", null ]
 ];

@@ -1,4 +1,4 @@
 var ScreenToolsController_8h =
 [
-    [ "ScreenToolsController", "classScreenToolsController.html", null ]
+    [ "ScreenToolsController", "classScreenToolsController.html", "classScreenToolsController" ]
 ];

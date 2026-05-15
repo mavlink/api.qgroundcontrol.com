@@ -6,7 +6,7 @@ var classTakeoffMissionItem =
     [ "~TakeoffMissionItem", "classTakeoffMissionItem.html#a44113593ac6980dcefec92ed923023df", null ],
     [ "isTakeoffCommand", "classTakeoffMissionItem.html#a03abbd863da78f41685737a5709e510b", null ],
     [ "isTakeoffItem", "classTakeoffMissionItem.html#a8a06a0937b66d2f147267b2e06d9efa0", null ],
-    [ "launchCoordinateChanged", "classTakeoffMissionItem.html#a1f4dedbb60279ad9944d42b193013f81", null ],
+    [ "launchCoordinate", "classTakeoffMissionItem.html#a6447eca2bbdcecf107b0820a519d2388", null ],
     [ "launchCoordinateChanged", "classTakeoffMissionItem.html#a6ccbb3681db64262af86364a0f3028bd", null ],
     [ "launchTakeoffAtSameLocation", "classTakeoffMissionItem.html#a779b18d515fb9509a64a3f98f722f828", null ],
     [ "launchTakeoffAtSameLocationChanged", "classTakeoffMissionItem.html#adedfde3766a9f0105826402a34340a88", null ],

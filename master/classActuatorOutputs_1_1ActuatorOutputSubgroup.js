@@ -11,6 +11,6 @@ var classActuatorOutputs_1_1ActuatorOutputSubgroup =
     [ "channels", "classActuatorOutputs_1_1ActuatorOutputSubgroup.html#afe102b8987e8618c50da6c7c962e6c5c", null ],
     [ "channelsChanged", "classActuatorOutputs_1_1ActuatorOutputSubgroup.html#aa11fd7bf528df51ff241b0cc75c1e0fa", null ],
     [ "configParams", "classActuatorOutputs_1_1ActuatorOutputSubgroup.html#a9e3784bd34bbc690892deda90e196b14", null ],
-    [ "CONSTANT", "classActuatorOutputs_1_1ActuatorOutputSubgroup.html#ac6cf4236a100447470bf4c54b53b53ac", null ],
+    [ "label", "classActuatorOutputs_1_1ActuatorOutputSubgroup.html#aa6315dbe14f62aeb91d588d034fbbb15", null ],
     [ "primaryParam", "classActuatorOutputs_1_1ActuatorOutputSubgroup.html#ab037a23df765f6cab4ddbe9483abce42", null ]
 ];

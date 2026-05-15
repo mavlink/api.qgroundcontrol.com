@@ -1,8 +1,26 @@
 var classQGCMAVLinkMessage =
 [
+    [ "QGCMAVLinkMessage", "classQGCMAVLinkMessage.html#af3f9696b000dc2c9ecbc604d110f59b4", null ],
+    [ "~QGCMAVLinkMessage", "classQGCMAVLinkMessage.html#a852a83aeb1a469f9a2571a9b1819c0df", null ],
+    [ "actualRateHz", "classQGCMAVLinkMessage.html#a6ef8ba6cc0fd24ecc1d664ba995a1922", null ],
     [ "actualRateHzChanged", "classQGCMAVLinkMessage.html#a537fb3e2c3c92f121da0593017d82245", null ],
+    [ "compId", "classQGCMAVLinkMessage.html#a20e3fcf46be6841e524befb831f4be26", null ],
+    [ "count", "classQGCMAVLinkMessage.html#abdffbf45b5e01306cc85091abef78a17", null ],
     [ "countChanged", "classQGCMAVLinkMessage.html#aab6dfd465f580c8363cb0c67670119c6", null ],
+    [ "fields", "classQGCMAVLinkMessage.html#aa6650f154c8eea6cdb3e2e1bd4015794", null ],
+    [ "fieldSelected", "classQGCMAVLinkMessage.html#a7ee38287c32d15d601cddc60d522db94", null ],
     [ "fieldSelectedChanged", "classQGCMAVLinkMessage.html#a56483cdca2448bf855ee693e018fed1b", null ],
+    [ "id", "classQGCMAVLinkMessage.html#ae81e01b5c5bda2d836186d71f0c36fd3", null ],
+    [ "lastCount", "classQGCMAVLinkMessage.html#a7ec0f79b0c58d03babfda683c3f79869", null ],
+    [ "name", "classQGCMAVLinkMessage.html#a803a729eb257c585e49ac4dc5496ef2d", null ],
+    [ "selected", "classQGCMAVLinkMessage.html#ad52f30bd5f3f13fc19a074dd622ab13c", null ],
     [ "selectedChanged", "classQGCMAVLinkMessage.html#ab6140335469a757b4d6338cc1bd6e28e", null ],
-    [ "targetRateHzChanged", "classQGCMAVLinkMessage.html#a198fbdb20ca8dd936edcf27220cb2606", null ]
+    [ "setSelected", "classQGCMAVLinkMessage.html#a1f7b99ca1ccb006ecffbbff575d0ac8c", null ],
+    [ "setTargetRateHz", "classQGCMAVLinkMessage.html#a05b10ba43b74918ccdc1f356788bb2b3", null ],
+    [ "sysId", "classQGCMAVLinkMessage.html#a1df6393e776c20401a76670f9ef72377", null ],
+    [ "targetRateHz", "classQGCMAVLinkMessage.html#a6dfadc4affb86dd5da570d6e6fc70ad3", null ],
+    [ "targetRateHzChanged", "classQGCMAVLinkMessage.html#a198fbdb20ca8dd936edcf27220cb2606", null ],
+    [ "update", "classQGCMAVLinkMessage.html#a28375c8f7ae0965ab190b2e1cf7edc6d", null ],
+    [ "updateFieldSelection", "classQGCMAVLinkMessage.html#aebdd3a33cd5597385916432444fd3e0f", null ],
+    [ "updateFreq", "classQGCMAVLinkMessage.html#a05cba67bb07c654e8843d1585a010eb8", null ]
 ];

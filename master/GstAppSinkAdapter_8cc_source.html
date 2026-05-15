@@ -446,25 +446,30 @@ $(document).ready(function(){initNavTree('GstAppSinkAdapter_8cc_source.html','')
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    qCDebug(GstAppSinkAdapterLog).noquote() &lt;&lt; <span class="stringliteral">&quot;Frame stats —&quot;</span> &lt;&lt; s &lt;&lt; tail;</div>
 <div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>}</div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>GstAppSinkAdapter::GstAppSinkAdapter(QObject *parent)</div>
+<div class="foldopen" id="foldopen00339" data-start="{" data-end="}">
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno"><a class="line" href="classGstAppSinkAdapter.html#a868da71e58b174ec0d0db7a34f913d90">  339</a></span><a class="code hl_function" href="classGstAppSinkAdapter.html#a868da71e58b174ec0d0db7a34f913d90">GstAppSinkAdapter::GstAppSinkAdapter</a>(QObject *parent)</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    : QObject(parent)</div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>{</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>}</div>
+</div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span> </div>
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span><span class="comment">// Pipeline must be NULL before destroying the adapter; teardown() does not block in-flight callbacks.</span></div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>GstAppSinkAdapter::~GstAppSinkAdapter()</div>
+<div class="foldopen" id="foldopen00345" data-start="{" data-end="}">
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="classGstAppSinkAdapter.html#a094cdb67f6d25ae02b1ff44e9b980a73">  345</a></span><a class="code hl_function" href="classGstAppSinkAdapter.html#a094cdb67f6d25ae02b1ff44e9b980a73">GstAppSinkAdapter::~GstAppSinkAdapter</a>()</div>
 <div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>{</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    teardown();</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    <a class="code hl_function" href="classGstAppSinkAdapter.html#a1a59f2d0f8bba0463a261f4e8690df12">teardown</a>();</div>
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>}</div>
+</div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><span class="keywordtype">bool</span> GstAppSinkAdapter::setup(<a class="code hl_typedef" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *sinkBin, QVideoSink *videoSink)</div>
+<div class="foldopen" id="foldopen00350" data-start="{" data-end="}">
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno"><a class="line" href="classGstAppSinkAdapter.html#aa22110cf29776a6d86bb9b59373cf8c1">  350</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classGstAppSinkAdapter.html#aa22110cf29776a6d86bb9b59373cf8c1">GstAppSinkAdapter::setup</a>(<a class="code hl_typedef" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *sinkBin, QVideoSink *videoSink)</div>
 <div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>{</div>
 <div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    <span class="keywordflow">if</span> (!sinkBin || !videoSink) {</div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        qCWarning(GstAppSinkAdapterLog) &lt;&lt; <span class="stringliteral">&quot;setup() called with null arguments&quot;</span>;</div>
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    }</div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span> </div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    teardown();</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    <a class="code hl_function" href="classGstAppSinkAdapter.html#a1a59f2d0f8bba0463a261f4e8690df12">teardown</a>();</div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    <span class="keywordflow">if</span> (!GST_IS_QGC_VIDEO_SINK_BIN(sinkBin)) {</div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        qCWarning(GstAppSinkAdapterLog) &lt;&lt; <span class="stringliteral">&quot;sinkBin is not a GstQgcVideoSinkBin&quot;</span>;</div>
@@ -605,8 +610,10 @@ $(document).ready(function(){initNavTree('GstAppSinkAdapter_8cc_source.html','')
 <div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>    qCDebug(GstAppSinkAdapterLog) &lt;&lt; <span class="stringliteral">&quot;Installed appsink callbacks&quot;</span>;</div>
 <div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>}</div>
+</div>
 <div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span> </div>
-<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span><span class="keywordtype">void</span> GstAppSinkAdapter::setRefreshRate(qreal hz)</div>
+<div class="foldopen" id="foldopen00499" data-start="{" data-end="}">
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno"><a class="line" href="classGstAppSinkAdapter.html#a974f4ae47499571570a1f1dd6d8330c6">  499</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGstAppSinkAdapter.html#a974f4ae47499571570a1f1dd6d8330c6">GstAppSinkAdapter::setRefreshRate</a>(qreal hz)</div>
 <div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>{</div>
 <div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>    <span class="keywordflow">if</span> (hz &lt; 1.0) {</div>
 <div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>        <span class="keywordflow">return</span>;</div>
@@ -624,8 +631,10 @@ $(document).ready(function(){initNavTree('GstAppSinkAdapter_8cc_source.html','')
 <div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>    }</div>
 <div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>}</div>
+</div>
 <div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span> </div>
-<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span><span class="keywordtype">void</span> GstAppSinkAdapter::setSmoothingEnabled(<span class="keywordtype">bool</span> enabled, qreal refreshHz)</div>
+<div class="foldopen" id="foldopen00518" data-start="{" data-end="}">
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno"><a class="line" href="classGstAppSinkAdapter.html#a7dbecc922b6668216e88401d850b6737">  518</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGstAppSinkAdapter.html#a7dbecc922b6668216e88401d850b6737">GstAppSinkAdapter::setSmoothingEnabled</a>(<span class="keywordtype">bool</span> enabled, qreal refreshHz)</div>
 <div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>{</div>
 <div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>    <span class="keywordflow">if</span> (enabled == _smoothingEnabled.load(std::memory_order_acquire)) {</div>
 <div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>        <span class="keywordflow">return</span>;</div>
@@ -654,6 +663,7 @@ $(document).ready(function(){initNavTree('GstAppSinkAdapter_8cc_source.html','')
 <div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>        _smoothingFirstPtsNs = -1;</div>
 <div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>    }</div>
 <div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>}</div>
+</div>
 <div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span> </div>
 <div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span><span class="keywordtype">void</span> GstAppSinkAdapter::_deliverFrame(QPointer&lt;QVideoSink&gt; sink, QVideoFrame &amp;&amp;frame, int64_t ptsNs)</div>
 <div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>{</div>
@@ -721,7 +731,8 @@ $(document).ready(function(){initNavTree('GstAppSinkAdapter_8cc_source.html','')
 <div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>    pushFrameQueued(sinkSnapshot, std::move(chosen));</div>
 <div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>}</div>
 <div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span> </div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span><span class="keywordtype">void</span> GstAppSinkAdapter::teardown()</div>
+<div class="foldopen" id="foldopen00614" data-start="{" data-end="}">
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno"><a class="line" href="classGstAppSinkAdapter.html#a1a59f2d0f8bba0463a261f4e8690df12">  614</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGstAppSinkAdapter.html#a1a59f2d0f8bba0463a261f4e8690df12">GstAppSinkAdapter::teardown</a>()</div>
 <div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>{</div>
 <div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>    <span class="comment">// teardown() may fire from the streaming thread; queue stop to the timer&#39;s owner.</span></div>
 <div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    QMetaObject::invokeMethod(&amp;_telemetryEmitTimer, &amp;QTimer::stop, Qt::QueuedConnection);</div>
@@ -833,8 +844,10 @@ $(document).ready(function(){initNavTree('GstAppSinkAdapter_8cc_source.html','')
 <div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>    _latencyValid = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>    _latencyRefreshPending.store(<span class="keyword">false</span>, std::memory_order_relaxed);</div>
 <div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>}</div>
+</div>
 <div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span> </div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span><span class="keywordtype">void</span> GstAppSinkAdapter::setActive(<span class="keywordtype">bool</span> active)</div>
+<div class="foldopen" id="foldopen00727" data-start="{" data-end="}">
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno"><a class="line" href="classGstAppSinkAdapter.html#a6c51b3828acee46a9cf032bc13624b39">  727</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGstAppSinkAdapter.html#a6c51b3828acee46a9cf032bc13624b39">GstAppSinkAdapter::setActive</a>(<span class="keywordtype">bool</span> active)</div>
 <div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>{</div>
 <div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> was = _active.exchange(active, std::memory_order_acq_rel);</div>
 <div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>    <span class="keywordflow">if</span> (was == active) <span class="keywordflow">return</span>;</div>
@@ -851,6 +864,7 @@ $(document).ready(function(){initNavTree('GstAppSinkAdapter_8cc_source.html','')
 <div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>        pushFrameQueued(sinkSnapshot, QVideoFrame{});</div>
 <div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>    }</div>
 <div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>}</div>
+</div>
 <div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span> </div>
 <div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>GstFlowReturn GstAppSinkAdapter::onNewSample(GstAppSink *appsink, gpointer userData)</div>
 <div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>{</div>
@@ -1318,7 +1332,8 @@ $(document).ready(function(){initNavTree('GstAppSinkAdapter_8cc_source.html','')
 <div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>    }</div>
 <div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>}</div>
 <div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span> </div>
-<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>quint64 GstAppSinkAdapter::gpuFrameCount() const noexcept</div>
+<div class="foldopen" id="foldopen01211" data-start="{" data-end="}">
+<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"><a class="line" href="classGstAppSinkAdapter.html#a5898f1e790158f971dd65a53b7fed54c"> 1211</a></span>quint64 <a class="code hl_function" href="classGstAppSinkAdapter.html#a5898f1e790158f971dd65a53b7fed54c">GstAppSinkAdapter::gpuFrameCount</a>() const noexcept</div>
 <div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>{</div>
 <div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span>    QMutexLocker locker(&amp;_stateMutex); <span class="comment">// snapshot read; torn-write-safe on supported arches</span></div>
 <div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>    quint64 count = 0;</div>
@@ -1342,14 +1357,18 @@ $(document).ready(function(){initNavTree('GstAppSinkAdapter_8cc_source.html','')
 <div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span>    <span class="keywordflow">return</span> count;</div>
 <div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span>}</div>
+</div>
 <div class="line"><a id="l01235" name="l01235"></a><span class="lineno"> 1235</span> </div>
-<div class="line"><a id="l01236" name="l01236"></a><span class="lineno"> 1236</span>quint64 GstAppSinkAdapter::cpuFrameCount() const noexcept</div>
+<div class="foldopen" id="foldopen01236" data-start="{" data-end="}">
+<div class="line"><a id="l01236" name="l01236"></a><span class="lineno"><a class="line" href="classGstAppSinkAdapter.html#a82b4cba54bc8c7fda43b5fd285815891"> 1236</a></span>quint64 <a class="code hl_function" href="classGstAppSinkAdapter.html#a82b4cba54bc8c7fda43b5fd285815891">GstAppSinkAdapter::cpuFrameCount</a>() const noexcept</div>
 <div class="line"><a id="l01237" name="l01237"></a><span class="lineno"> 1237</span>{</div>
 <div class="line"><a id="l01238" name="l01238"></a><span class="lineno"> 1238</span>    QMutexLocker locker(&amp;_stateMutex); <span class="comment">// snapshot read; torn-write-safe on supported arches</span></div>
 <div class="line"><a id="l01239" name="l01239"></a><span class="lineno"> 1239</span>    <span class="keywordflow">return</span> _cpuFrames.load(std::memory_order_relaxed);</div>
 <div class="line"><a id="l01240" name="l01240"></a><span class="lineno"> 1240</span>}</div>
+</div>
 <div class="line"><a id="l01241" name="l01241"></a><span class="lineno"> 1241</span> </div>
-<div class="line"><a id="l01242" name="l01242"></a><span class="lineno"> 1242</span>quint64 GstAppSinkAdapter::gpuFallbackCount() const noexcept</div>
+<div class="foldopen" id="foldopen01242" data-start="{" data-end="}">
+<div class="line"><a id="l01242" name="l01242"></a><span class="lineno"><a class="line" href="classGstAppSinkAdapter.html#ad5087939008185ed73f3ac07a9fff68f"> 1242</a></span>quint64 <a class="code hl_function" href="classGstAppSinkAdapter.html#ad5087939008185ed73f3ac07a9fff68f">GstAppSinkAdapter::gpuFallbackCount</a>() const noexcept</div>
 <div class="line"><a id="l01243" name="l01243"></a><span class="lineno"> 1243</span>{</div>
 <div class="line"><a id="l01244" name="l01244"></a><span class="lineno"> 1244</span>    QMutexLocker locker(&amp;_stateMutex); <span class="comment">// snapshot read; torn-write-safe on supported arches</span></div>
 <div class="line"><a id="l01245" name="l01245"></a><span class="lineno"> 1245</span><span class="preprocessor">#if defined(QGC_HAS_ANY_GPU_PATH)</span></div>
@@ -1358,6 +1377,7 @@ $(document).ready(function(){initNavTree('GstAppSinkAdapter_8cc_source.html','')
 <div class="line"><a id="l01248" name="l01248"></a><span class="lineno"> 1248</span>    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l01249" name="l01249"></a><span class="lineno"> 1249</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span>}</div>
+</div>
 <div class="line"><a id="l01251" name="l01251"></a><span class="lineno"> 1251</span> </div>
 <div class="line"><a id="l01252" name="l01252"></a><span class="lineno"> 1252</span>quint64 GstAppSinkAdapter::_deliveredFrames() const noexcept</div>
 <div class="line"><a id="l01253" name="l01253"></a><span class="lineno"> 1253</span>{</div>
@@ -1383,12 +1403,15 @@ $(document).ready(function(){initNavTree('GstAppSinkAdapter_8cc_source.html','')
 <div class="line"><a id="l01273" name="l01273"></a><span class="lineno"> 1273</span>    <span class="keywordflow">return</span> count;</div>
 <div class="line"><a id="l01274" name="l01274"></a><span class="lineno"> 1274</span>}</div>
 <div class="line"><a id="l01275" name="l01275"></a><span class="lineno"> 1275</span> </div>
-<div class="line"><a id="l01276" name="l01276"></a><span class="lineno"> 1276</span>quint64 GstAppSinkAdapter::appsinkInputFrames() const noexcept</div>
+<div class="foldopen" id="foldopen01276" data-start="{" data-end="}">
+<div class="line"><a id="l01276" name="l01276"></a><span class="lineno"><a class="line" href="classGstAppSinkAdapter.html#ad98a6fa72a58d7bc47e6c6e8b155ca3b"> 1276</a></span>quint64 <a class="code hl_function" href="classGstAppSinkAdapter.html#ad98a6fa72a58d7bc47e6c6e8b155ca3b">GstAppSinkAdapter::appsinkInputFrames</a>() const noexcept</div>
 <div class="line"><a id="l01277" name="l01277"></a><span class="lineno"> 1277</span>{</div>
 <div class="line"><a id="l01278" name="l01278"></a><span class="lineno"> 1278</span>    <span class="keywordflow">return</span> _appsinkInputFrames.load(std::memory_order_relaxed);</div>
 <div class="line"><a id="l01279" name="l01279"></a><span class="lineno"> 1279</span>}</div>
+</div>
 <div class="line"><a id="l01280" name="l01280"></a><span class="lineno"> 1280</span> </div>
-<div class="line"><a id="l01281" name="l01281"></a><span class="lineno"> 1281</span>quint64 GstAppSinkAdapter::appsinkDroppedFrames() const noexcept</div>
+<div class="foldopen" id="foldopen01281" data-start="{" data-end="}">
+<div class="line"><a id="l01281" name="l01281"></a><span class="lineno"><a class="line" href="classGstAppSinkAdapter.html#afb8686312c936acf7d25c309bfe9bb9e"> 1281</a></span>quint64 <a class="code hl_function" href="classGstAppSinkAdapter.html#afb8686312c936acf7d25c309bfe9bb9e">GstAppSinkAdapter::appsinkDroppedFrames</a>() const noexcept</div>
 <div class="line"><a id="l01282" name="l01282"></a><span class="lineno"> 1282</span>{</div>
 <div class="line"><a id="l01283" name="l01283"></a><span class="lineno"> 1283</span>    <span class="keyword">const</span> quint64 in = _appsinkInputFrames.load(std::memory_order_relaxed);</div>
 <div class="line"><a id="l01284" name="l01284"></a><span class="lineno"> 1284</span>    <span class="keyword">const</span> quint64 out = _deliveredFrames();</div>
@@ -1397,6 +1420,7 @@ $(document).ready(function(){initNavTree('GstAppSinkAdapter_8cc_source.html','')
 <div class="line"><a id="l01287" name="l01287"></a><span class="lineno"> 1287</span>    <span class="comment">// for a single-buffer race window — clamp to zero so QML never sees a wraparound value.</span></div>
 <div class="line"><a id="l01288" name="l01288"></a><span class="lineno"> 1288</span>    <span class="keywordflow">return</span> in &gt; out ? in - out : 0;</div>
 <div class="line"><a id="l01289" name="l01289"></a><span class="lineno"> 1289</span>}</div>
+</div>
 <div class="line"><a id="l01290" name="l01290"></a><span class="lineno"> 1290</span> </div>
 <div class="line"><a id="l01291" name="l01291"></a><span class="lineno"> 1291</span>GstPadProbeReturn GstAppSinkAdapter::appsinkBufferProbe(GstPad *, GstPadProbeInfo *info, gpointer userData)</div>
 <div class="line"><a id="l01292" name="l01292"></a><span class="lineno"> 1292</span>{</div>
@@ -1475,7 +1499,19 @@ $(document).ready(function(){initNavTree('GstAppSinkAdapter_8cc_source.html','')
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
 <div class="ttc" id="aclassGstAppSinkAdapter_html"><div class="ttname"><a href="classGstAppSinkAdapter.html">GstAppSinkAdapter</a></div><div class="ttdoc">Bridges a GStreamer appsink to a Qt QVideoSink.</div><div class="ttdef"><b>Definition</b> <a href="GstAppSinkAdapter_8h_source.html#l00043">GstAppSinkAdapter.h:44</a></div></div>
+<div class="ttc" id="aclassGstAppSinkAdapter_html_a094cdb67f6d25ae02b1ff44e9b980a73"><div class="ttname"><a href="classGstAppSinkAdapter.html#a094cdb67f6d25ae02b1ff44e9b980a73">GstAppSinkAdapter::~GstAppSinkAdapter</a></div><div class="ttdeci">~GstAppSinkAdapter() override</div><div class="ttdef"><b>Definition</b> <a href="GstAppSinkAdapter_8cc_source.html#l00345">GstAppSinkAdapter.cc:345</a></div></div>
+<div class="ttc" id="aclassGstAppSinkAdapter_html_a1a59f2d0f8bba0463a261f4e8690df12"><div class="ttname"><a href="classGstAppSinkAdapter.html#a1a59f2d0f8bba0463a261f4e8690df12">GstAppSinkAdapter::teardown</a></div><div class="ttdeci">void teardown()</div><div class="ttdoc">Disconnect the callback (safe to call multiple times).</div><div class="ttdef"><b>Definition</b> <a href="GstAppSinkAdapter_8cc_source.html#l00614">GstAppSinkAdapter.cc:614</a></div></div>
+<div class="ttc" id="aclassGstAppSinkAdapter_html_a5898f1e790158f971dd65a53b7fed54c"><div class="ttname"><a href="classGstAppSinkAdapter.html#a5898f1e790158f971dd65a53b7fed54c">GstAppSinkAdapter::gpuFrameCount</a></div><div class="ttdeci">quint64 gpuFrameCount() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="GstAppSinkAdapter_8cc_source.html#l01211">GstAppSinkAdapter.cc:1211</a></div></div>
 <div class="ttc" id="aclassGstAppSinkAdapter_html_a6648a32123421978d35bc24ac23aebb9"><div class="ttname"><a href="classGstAppSinkAdapter.html#a6648a32123421978d35bc24ac23aebb9">GstAppSinkAdapter::frameCountsChanged</a></div><div class="ttdeci">void frameCountsChanged()</div></div>
+<div class="ttc" id="aclassGstAppSinkAdapter_html_a6c51b3828acee46a9cf032bc13624b39"><div class="ttname"><a href="classGstAppSinkAdapter.html#a6c51b3828acee46a9cf032bc13624b39">GstAppSinkAdapter::setActive</a></div><div class="ttdeci">void setActive(bool active)</div><div class="ttdef"><b>Definition</b> <a href="GstAppSinkAdapter_8cc_source.html#l00727">GstAppSinkAdapter.cc:727</a></div></div>
+<div class="ttc" id="aclassGstAppSinkAdapter_html_a7dbecc922b6668216e88401d850b6737"><div class="ttname"><a href="classGstAppSinkAdapter.html#a7dbecc922b6668216e88401d850b6737">GstAppSinkAdapter::setSmoothingEnabled</a></div><div class="ttdeci">void setSmoothingEnabled(bool enabled, qreal refreshHz)</div><div class="ttdef"><b>Definition</b> <a href="GstAppSinkAdapter_8cc_source.html#l00518">GstAppSinkAdapter.cc:518</a></div></div>
+<div class="ttc" id="aclassGstAppSinkAdapter_html_a82b4cba54bc8c7fda43b5fd285815891"><div class="ttname"><a href="classGstAppSinkAdapter.html#a82b4cba54bc8c7fda43b5fd285815891">GstAppSinkAdapter::cpuFrameCount</a></div><div class="ttdeci">quint64 cpuFrameCount() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="GstAppSinkAdapter_8cc_source.html#l01236">GstAppSinkAdapter.cc:1236</a></div></div>
+<div class="ttc" id="aclassGstAppSinkAdapter_html_a868da71e58b174ec0d0db7a34f913d90"><div class="ttname"><a href="classGstAppSinkAdapter.html#a868da71e58b174ec0d0db7a34f913d90">GstAppSinkAdapter::GstAppSinkAdapter</a></div><div class="ttdeci">GstAppSinkAdapter(QObject *parent=nullptr)</div><div class="ttdoc">Frames that reached the appsink sink pad (counted via pad probe).</div><div class="ttdef"><b>Definition</b> <a href="GstAppSinkAdapter_8cc_source.html#l00339">GstAppSinkAdapter.cc:339</a></div></div>
+<div class="ttc" id="aclassGstAppSinkAdapter_html_a974f4ae47499571570a1f1dd6d8330c6"><div class="ttname"><a href="classGstAppSinkAdapter.html#a974f4ae47499571570a1f1dd6d8330c6">GstAppSinkAdapter::setRefreshRate</a></div><div class="ttdeci">void setRefreshRate(qreal hz)</div><div class="ttdef"><b>Definition</b> <a href="GstAppSinkAdapter_8cc_source.html#l00499">GstAppSinkAdapter.cc:499</a></div></div>
+<div class="ttc" id="aclassGstAppSinkAdapter_html_aa22110cf29776a6d86bb9b59373cf8c1"><div class="ttname"><a href="classGstAppSinkAdapter.html#aa22110cf29776a6d86bb9b59373cf8c1">GstAppSinkAdapter::setup</a></div><div class="ttdeci">bool setup(GstElement *sinkBin, QVideoSink *videoSink)</div><div class="ttdef"><b>Definition</b> <a href="GstAppSinkAdapter_8cc_source.html#l00350">GstAppSinkAdapter.cc:350</a></div></div>
+<div class="ttc" id="aclassGstAppSinkAdapter_html_ad5087939008185ed73f3ac07a9fff68f"><div class="ttname"><a href="classGstAppSinkAdapter.html#ad5087939008185ed73f3ac07a9fff68f">GstAppSinkAdapter::gpuFallbackCount</a></div><div class="ttdeci">quint64 gpuFallbackCount() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="GstAppSinkAdapter_8cc_source.html#l01242">GstAppSinkAdapter.cc:1242</a></div></div>
+<div class="ttc" id="aclassGstAppSinkAdapter_html_ad98a6fa72a58d7bc47e6c6e8b155ca3b"><div class="ttname"><a href="classGstAppSinkAdapter.html#ad98a6fa72a58d7bc47e6c6e8b155ca3b">GstAppSinkAdapter::appsinkInputFrames</a></div><div class="ttdeci">quint64 appsinkInputFrames() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="GstAppSinkAdapter_8cc_source.html#l01276">GstAppSinkAdapter.cc:1276</a></div></div>
+<div class="ttc" id="aclassGstAppSinkAdapter_html_afb8686312c936acf7d25c309bfe9bb9e"><div class="ttname"><a href="classGstAppSinkAdapter.html#afb8686312c936acf7d25c309bfe9bb9e">GstAppSinkAdapter::appsinkDroppedFrames</a></div><div class="ttdeci">quint64 appsinkDroppedFrames() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="GstAppSinkAdapter_8cc_source.html#l01281">GstAppSinkAdapter.cc:1281</a></div></div>
 <div class="ttc" id="agstqgcvideosinkbin_8cc_html_a3c341597ffa8ecf73396ecc78ef17149"><div class="ttname"><a href="gstqgcvideosinkbin_8cc.html#a3c341597ffa8ecf73396ecc78ef17149">gst_qgc_video_sink_bin_get_appsink</a></div><div class="ttdeci">GstElement * gst_qgc_video_sink_bin_get_appsink(GstQgcVideoSinkBin *self)</div><div class="ttdef"><b>Definition</b> <a href="gstqgcvideosinkbin_8cc_source.html#l00634">gstqgcvideosinkbin.cc:634</a></div></div>
 <div class="ttc" id="agstqgcvideosinkbin_8h_html"><div class="ttname"><a href="gstqgcvideosinkbin_8h.html">gstqgcvideosinkbin.h</a></div></div>
 <div class="ttc" id="anamespaceLogFormatter_html_a8ee6aabd40509c19c84a3cad40dca45e"><div class="ttname"><a href="namespaceLogFormatter.html#a8ee6aabd40509c19c84a3cad40dca45e">LogFormatter::format</a></div><div class="ttdeci">QByteArray format(const QList&lt; LogEntry &gt; &amp;entries, int fmt)</div><div class="ttdef"><b>Definition</b> <a href="LogFormatter_8cc_source.html#l00040">LogFormatter.cc:40</a></div></div>

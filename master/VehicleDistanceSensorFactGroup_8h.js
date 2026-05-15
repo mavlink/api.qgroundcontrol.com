@@ -1,4 +1,4 @@
 var VehicleDistanceSensorFactGroup_8h =
 [
-    [ "VehicleDistanceSensorFactGroup", "classVehicleDistanceSensorFactGroup.html", null ]
+    [ "VehicleDistanceSensorFactGroup", "classVehicleDistanceSensorFactGroup.html", "classVehicleDistanceSensorFactGroup" ]
 ];

@@ -9,5 +9,6 @@ var classViewer3DInstancing =
     [ "getInstanceBuffer", "classViewer3DInstancing.html#a46a62d2384a1c699eb7e6c69ca2e2d22", null ],
     [ "selectedIndex", "classViewer3DInstancing.html#acd0b6eddcf015007141748ac5b98ddb4", null ],
     [ "selectedIndexChanged", "classViewer3DInstancing.html#a7fce9b593942378bf40a11957405823d", null ],
-    [ "setSelectedIndex", "classViewer3DInstancing.html#aadbe60c72b0961dfdb0d22eb008b2e6f", null ]
+    [ "setSelectedIndex", "classViewer3DInstancing.html#aadbe60c72b0961dfdb0d22eb008b2e6f", null ],
+    [ "Viewer3DInstancingTest", "classViewer3DInstancing.html#a72d29b1ae851a3cd05ee7f6886558e82", null ]
 ];

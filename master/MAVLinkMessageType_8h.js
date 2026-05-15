@@ -24,5 +24,5 @@ var MAVLinkMessageType_8h =
       [ "MAVLINK_COMM_15", "MAVLinkMessageType_8h.html#a065a729dbe076ce959268df8fc951f90a47d28979b3ac448b4c225116f459691d", null ]
     ] ],
     [ "mavlink_get_channel_status", "MAVLinkMessageType_8h.html#ada3ae8cdc964d419709c1a75a3ea941c", null ],
-    [ "m_mavlink_status", "MAVLinkMessageType_8h.html#ad0a9d6de2cca9d3dabbdfcb2c55577f2", null ]
+    [ "m_mavlink_status", "MAVLinkMessageType_8h.html#ab0c03b094ab29d2167b286d632d9704f", null ]
 ];

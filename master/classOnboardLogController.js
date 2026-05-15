@@ -25,5 +25,6 @@ var classOnboardLogController =
     [ "setSortAscending", "classOnboardLogController.html#aa3d90728703a9b393f69c8b2e1c84809", null ],
     [ "sortAscending", "classOnboardLogController.html#a07beb299f7e5b97ba396918f5ed3ed02", null ],
     [ "sortAscendingChanged", "classOnboardLogController.html#aa2fb60dbf8dde4ee1b456c699190f84a", null ],
-    [ "toggleSortByDate", "classOnboardLogController.html#a6e16c0280cd1496105c2639cc789cdc2", null ]
+    [ "toggleSortByDate", "classOnboardLogController.html#a6e16c0280cd1496105c2639cc789cdc2", null ],
+    [ "OnboardLogDownloadTest", "classOnboardLogController.html#abd189eadf903547ee841f7a940176841", null ]
 ];

@@ -1,4 +1,4 @@
 var VehicleSetpointFactGroup_8h =
 [
-    [ "VehicleSetpointFactGroup", "classVehicleSetpointFactGroup.html", null ]
+    [ "VehicleSetpointFactGroup", "classVehicleSetpointFactGroup.html", "classVehicleSetpointFactGroup" ]
 ];

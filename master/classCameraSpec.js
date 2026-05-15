@@ -1,7 +1,6 @@
 var classCameraSpec =
 [
     [ "CameraSpec", "classCameraSpec.html#ab39a41d239281f459576a78e16ba4779", null ],
-    [ "CONSTANT", "classCameraSpec.html#a3000f4629c2b2c8c33fb9d6b339789d2", null ],
     [ "dirty", "classCameraSpec.html#a530e818001060ef110531df36bcbf81b", null ],
     [ "dirtyChanged", "classCameraSpec.html#ab3f1b2d0422a2315531378b9b4d6e71d", null ],
     [ "fixedOrientation", "classCameraSpec.html#a1b03012b9a716406fa55a1111973fd80", null ],
@@ -14,5 +13,6 @@ var classCameraSpec =
     [ "operator=", "classCameraSpec.html#a61fe6c5524fe63f1d8ea1293ad911e20", null ],
     [ "save", "classCameraSpec.html#a509cb486ddb2667c2dd683777b5a44a1", null ],
     [ "sensorHeight", "classCameraSpec.html#aa96c526a63c8855883d1c2d603f1528e", null ],
+    [ "sensorWidth", "classCameraSpec.html#a09db142498d655e77667523e16dfce53", null ],
     [ "setDirty", "classCameraSpec.html#a9e1f888219e425e9d3ebfc161647043b", null ]
 ];

@@ -1,4 +1,4 @@
 var VehicleEFIFactGroup_8h =
 [
-    [ "VehicleEFIFactGroup", "classVehicleEFIFactGroup.html", null ]
+    [ "VehicleEFIFactGroup", "classVehicleEFIFactGroup.html", "classVehicleEFIFactGroup" ]
 ];

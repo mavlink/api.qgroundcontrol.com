@@ -2,7 +2,7 @@ var classRallyPointController =
 [
     [ "RallyPointController", "classRallyPointController.html#a0b4cc92062eece685346b2d0fb3095e8", null ],
     [ "~RallyPointController", "classRallyPointController.html#ab6695194808fe30a564a738aa605ddea", null ],
-    [ "CONSTANT", "classRallyPointController.html#a852192e6edc0a511837e24b9675fbed2", null ],
+    [ "addPoint", "classRallyPointController.html#a33424481608fa333bae3f4714ba698e4", null ],
     [ "containsItems", "classRallyPointController.html#a00216348703b38c82b26a79e04d08167", null ],
     [ "currentRallyPoint", "classRallyPointController.html#a1719964fc3c30f9387f1650fad51ee88", null ],
     [ "currentRallyPointChanged", "classRallyPointController.html#ac6155d7fb7b638cddba3e8ddc51ec238", null ],

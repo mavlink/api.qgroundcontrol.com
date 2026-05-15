@@ -1,4 +1,4 @@
 var APMFollowComponentController_8h =
 [
-    [ "APMFollowComponentController", "classAPMFollowComponentController.html", null ]
+    [ "APMFollowComponentController", "classAPMFollowComponentController.html", "classAPMFollowComponentController" ]
 ];

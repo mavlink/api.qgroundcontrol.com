@@ -12,7 +12,7 @@ var classVehicleObjectAvoidance =
     [ "maxDistance", "classVehicleObjectAvoidance.html#ad49d3a2b110378804afa010f336d257f", null ],
     [ "minDistance", "classVehicleObjectAvoidance.html#a2f478968a49032bd6f748df846e23cb6", null ],
     [ "objectAvoidanceChanged", "classVehicleObjectAvoidance.html#a19590f903a1635ccb049792b7d02c90d", null ],
-    [ "objectAvoidanceChanged", "classVehicleObjectAvoidance.html#a56041cf817f11de5bdb05ea49fa026b3", null ],
+    [ "start", "classVehicleObjectAvoidance.html#a916720ff5f348e51b168c834a9458813", null ],
     [ "stop", "classVehicleObjectAvoidance.html#a7b04a9b5d379bcbb25143686210b8cf3", null ],
     [ "update", "classVehicleObjectAvoidance.html#a18be30663377b347e7b63cee3a2890bb", null ]
 ];
