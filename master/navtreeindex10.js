@@ -1,5 +1,7 @@
 var NAVTREEINDEX10 =
 {
+"PlanMapItems_8qml_source.html":[3,0,0,9,0,6],
+"PlanMasterController_8cc.html":[3,0,0,17,47],
 "PlanMasterController_8cc_source.html":[3,0,0,17,47],
 "PlanMasterController_8h.html":[3,0,0,17,48],
 "PlanMasterController_8h_source.html":[3,0,0,17,48],
@@ -247,7 +249,5 @@ var NAVTREEINDEX10 =
 "QGCCompression_8h.html#a5293269680acb2a4429884885795b1c3":[3,0,0,25,1,9,0],
 "QGCCompression_8h.html#a5293269680acb2a4429884885795b1c3a68ef004de6166492c1d668eb8efe09bd":[3,0,0,25,1,9,0,3],
 "QGCCompression_8h.html#a5293269680acb2a4429884885795b1c3a6adf97f83acf6453d4a6a4b1070f3754":[3,0,0,25,1,9,0,0],
-"QGCCompression_8h.html#a5293269680acb2a4429884885795b1c3a7a1920d61156abc05a60135aefe8bc67":[3,0,0,25,1,9,0,2],
-"QGCCompression_8h.html#a5293269680acb2a4429884885795b1c3ae16b5b7f26f54214445cbe38d72c2828":[3,0,0,25,1,9,0,1],
-"QGCCompression_8h.html#a5e73317c29530d094a3896eecc165cf7":[3,0,0,25,1,9,19]
+"QGCCompression_8h.html#a5293269680acb2a4429884885795b1c3a7a1920d61156abc05a60135aefe8bc67":[3,0,0,25,1,9,0,2]
 };

@@ -1,5 +1,16 @@
 var NAVTREEINDEX65 =
 {
+"namespaceErrorHandlers.html#a93c1cb9a44b6e3786f897da32a50a0ae":[1,0,10,4],
+"namespaceErrorHandlers.html#abe4e06cdc726e154f3495c7f2d0e8f8e":[1,0,10,5],
+"namespaceErrorHandlers.html#afa4e5c13ca2499d6641225861299c657":[1,0,10,3],
+"namespaceExifParser.html":[1,0,12],
+"namespaceExifParser.html#a0e03f0642823c54b2f647350cee2344b":[1,0,12,0],
+"namespaceExifParser.html#a16edba36514510c8fa0cdff64b6b99e1":[1,0,12,1],
+"namespaceExifUtility.html":[1,0,13],
+"namespaceExifUtility.html#a0140179da77b209241ee7d487fe418bb":[1,0,13,4],
+"namespaceExifUtility.html#a0b4f4625c2a9c87a37e7eae4764bb34b":[1,0,13,8],
+"namespaceExifUtility.html#a0d291df52279de04a486f740f56d9cf0":[1,0,13,13],
+"namespaceExifUtility.html#a0ecf58cc1ce8807fe6e1b22b27569da7":[1,0,13,6],
 "namespaceExifUtility.html#a12876804dbf54294652f785985c653ea":[1,0,13,1],
 "namespaceExifUtility.html#a3f16d6a7fc8bf4b60c2e50be04108caf":[1,0,13,7],
 "namespaceExifUtility.html#a5371b7dd43aa5bb56150e61d88c7d58d":[1,0,13,14],
@@ -238,16 +249,5 @@ var NAVTREEINDEX65 =
 "namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5af1cd28417b03cfab3a8e16d66e34e18a":[1,0,28,6,3],
 "namespaceQGCCompression.html#a9f94e257ac487939eba76cf1688daab1":[1,0,28,28],
 "namespaceQGCCompression.html#aa39c757274d165b446f84c6481dc9f3b":[1,0,28,8],
-"namespaceQGCCompression.html#aa4597e46db324dfaed364a4ce129acf1":[1,0,28,7],
-"namespaceQGCCompression.html#aa4942c43b5f0c671c86f69dc29c4cff2":[1,0,28,50],
-"namespaceQGCCompression.html#aa5a6851e5179fcbbc901e0a91716ae80":[1,0,28,35],
-"namespaceQGCCompression.html#aa6b72697044eabb82888a3f3a2fe86e4":[1,0,28,48],
-"namespaceQGCCompression.html#aa8d1a172131add5634d81be4ff0b4985":[1,0,28,45],
-"namespaceQGCCompression.html#ab42d6969ede38ebd685f52b013e350ce":[1,0,28,55],
-"namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7":[1,0,28,5],
-"namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7a2767828026039e8ba7b38973cbb701f2":[1,0,28,5,1],
-"namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7a465d60d88a7ea23531539094f1995b90":[1,0,28,5,7],
-"namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7a4b33a686be73bb172407d73b26356275":[1,0,28,5,2],
-"namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7a538273d971a3da3f944bfb95091df5d8":[1,0,28,5,3],
-"namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7a6adf97f83acf6453d4a6a4b1070f3754":[1,0,28,5,0]
+"namespaceQGCCompression.html#aa4597e46db324dfaed364a4ce129acf1":[1,0,28,7]
 };

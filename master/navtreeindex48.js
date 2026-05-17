@@ -1,5 +1,13 @@
 var NAVTREEINDEX48 =
 {
+"classQSerialPort.html#aa3ab0eccf97411cef94a8f3d96149a40a0cc1385b5065c8fb2f6019b9cc6926c6":[2,0,433,5,3],
+"classQSerialPort.html#aa3ab0eccf97411cef94a8f3d96149a40a179dd40d903362e691ec46c05573ca72":[2,0,433,5,1],
+"classQSerialPort.html#aa3ab0eccf97411cef94a8f3d96149a40a2c3fbe341e8f2fa67ea37b7a329fe889":[2,0,433,5,0],
+"classQSerialPort.html#aa3ab0eccf97411cef94a8f3d96149a40a2dfdb120d21dacaf43a5226b24e5bfd3":[2,0,433,5,2],
+"classQSerialPort.html#aa3ab0eccf97411cef94a8f3d96149a40a30f17a633aac3e9564caf7a5e49015ad":[2,0,433,5,6],
+"classQSerialPort.html#aa3ab0eccf97411cef94a8f3d96149a40a53354bf8717d1961f494bf6c63710329":[2,0,433,5,7],
+"classQSerialPort.html#aa3ab0eccf97411cef94a8f3d96149a40a5cec81ca4aa6a05124cbb57dc0814ef2":[2,0,433,5,5],
+"classQSerialPort.html#aa3ab0eccf97411cef94a8f3d96149a40a7351abeda51a5fbdac7c08171d2c46bb":[2,0,433,5,8],
 "classQSerialPort.html#aa3ab0eccf97411cef94a8f3d96149a40ad0c28cd3b2424820876f1ac2a17b20cf":[2,0,433,5,4],
 "classQSerialPort.html#aa45e7dc83c6da4ad5e4002a81789b1e1":[2,0,433,38],
 "classQSerialPort.html#aa703a7fafeaca6e8efaa83f2c3b9cf6e":[2,0,433,44],
@@ -241,13 +249,5 @@ var NAVTREEINDEX48 =
 "classRCToParamDialogController.html":[2,0,445],
 "classRCToParamDialogController.html#a0b487557e174edefcdc413080517b454":[2,0,445,9],
 "classRCToParamDialogController.html#a0ccb58082d7dc85edbc2e19cbcc7a16f":[2,0,445,8],
-"classRCToParamDialogController.html#a0f84696cd513a2582051f8a70fa13521":[2,0,445,3],
-"classRCToParamDialogController.html#a1b5390eba016a56ca0251a0c60db7321":[2,0,445,0],
-"classRCToParamDialogController.html#a1ca1c4692a659214f0b3b192df29adc2":[2,0,445,5],
-"classRCToParamDialogController.html#a2e89ced613468790c0f335c88af1cce2":[2,0,445,2],
-"classRCToParamDialogController.html#a39419e01bd2442e72b6fb08a4d585c1a":[2,0,445,1],
-"classRCToParamDialogController.html#a5da2356e4ac6aaa583bff92a1c855321":[2,0,445,6],
-"classRCToParamDialogController.html#ab1c36148f0201a050240ed53e9964ebc":[2,0,445,4],
-"classRCToParamDialogController.html#ae7d9efdf29fb4d3359e0fba809aaeb85":[2,0,445,7],
-"classRTCMMavlink.html":[2,0,457]
+"classRCToParamDialogController.html#a0f84696cd513a2582051f8a70fa13521":[2,0,445,3]
 };

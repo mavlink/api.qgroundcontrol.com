@@ -1,5 +1,7 @@
 var NAVTREEINDEX13 =
 {
+"QGCNetworkHelper_8h.html#ade905fec36ef1206663a1a4d4a965564":[3,0,0,25,11,5,10],
+"QGCNetworkHelper_8h.html#ae0cfe83e63de18fcb21ae39645c69696":[3,0,0,25,11,5,67],
 "QGCNetworkHelper_8h.html#aea00d84a133a94d8ef343162695707fc":[3,0,0,25,11,5,72],
 "QGCNetworkHelper_8h.html#aee30e1ca155e8e9d4533fc6b48573fc7":[3,0,0,25,11,5,45],
 "QGCNetworkHelper_8h_source.html":[3,0,0,25,11,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX13 =
 "RCToParamDialogController_8cc.html":[3,0,0,20,132],
 "RCToParamDialogController_8cc_source.html":[3,0,0,20,132],
 "RCToParamDialogController_8h.html":[3,0,0,20,133],
-"RCToParamDialogController_8h_source.html":[3,0,0,20,133],
-"RCToParamDialog_8qml.html":[3,0,0,20,131],
-"RCToParamDialog_8qml_source.html":[3,0,0,20,131]
+"RCToParamDialogController_8h_source.html":[3,0,0,20,133]
 };

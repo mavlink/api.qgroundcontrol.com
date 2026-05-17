@@ -1,5 +1,16 @@
 var NAVTREEINDEX64 =
 {
+"namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a584bb6daf70b9eec47dd98c96d7b1ea9":[1,0,6,0,8],
+"namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a5bfde1b015989bbe8d71df260747aad4":[1,0,6,0,168],
+"namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a5c3f1bc142ff0a8afdd60a6255eb98f5":[1,0,6,0,162],
+"namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a5ca25e61d5cf0db7c483ba5e76abe85f":[1,0,6,0,109],
+"namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a5ddf59877d88be2c6e26496f24611063":[1,0,6,0,24],
+"namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a5ec17aa4d8215ba174940572818a002f":[1,0,6,0,177],
+"namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a5f34ceee058a9114f35eb058facaaa82":[1,0,6,0,11],
+"namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a604c741ae782e763921b9b894b1e3f4d":[1,0,6,0,102],
+"namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a610ae321b15c09bc0dd9eabb2e6d95d9":[1,0,6,0,52],
+"namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a6172078625d6c0b2f9854dcc0f26aac8":[1,0,6,0,90],
+"namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a63844f8291662b0b95a7ad34de05653c":[1,0,6,0,153],
 "namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a65691f253eb2058e97bc9d11b5c597a9":[1,0,6,0,76],
 "namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a659bd2829b9907001f8c6f18b6a9f565":[1,0,6,0,34],
 "namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a66abb462880eaf94fc4ede48b14920a8":[1,0,6,0,83],
@@ -238,16 +249,5 @@ var NAVTREEINDEX64 =
 "namespaceErrorHandlers.html":[1,0,10],
 "namespaceErrorHandlers.html#a0944e3a22c8a5bbd46f478ca5f0b7c8c":[1,0,10,1],
 "namespaceErrorHandlers.html#a3917ba380b76e9d7d3bf04e3def21240":[1,0,10,2],
-"namespaceErrorHandlers.html#a6db38b3608833335609e6b905356be88":[1,0,10,0],
-"namespaceErrorHandlers.html#a93c1cb9a44b6e3786f897da32a50a0ae":[1,0,10,4],
-"namespaceErrorHandlers.html#abe4e06cdc726e154f3495c7f2d0e8f8e":[1,0,10,5],
-"namespaceErrorHandlers.html#afa4e5c13ca2499d6641225861299c657":[1,0,10,3],
-"namespaceExifParser.html":[1,0,12],
-"namespaceExifParser.html#a0e03f0642823c54b2f647350cee2344b":[1,0,12,0],
-"namespaceExifParser.html#a16edba36514510c8fa0cdff64b6b99e1":[1,0,12,1],
-"namespaceExifUtility.html":[1,0,13],
-"namespaceExifUtility.html#a0140179da77b209241ee7d487fe418bb":[1,0,13,4],
-"namespaceExifUtility.html#a0b4f4625c2a9c87a37e7eae4764bb34b":[1,0,13,8],
-"namespaceExifUtility.html#a0d291df52279de04a486f740f56d9cf0":[1,0,13,13],
-"namespaceExifUtility.html#a0ecf58cc1ce8807fe6e1b22b27569da7":[1,0,13,6]
+"namespaceErrorHandlers.html#a6db38b3608833335609e6b905356be88":[1,0,10,0]
 };

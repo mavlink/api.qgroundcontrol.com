@@ -151,7 +151,7 @@ var searchData=
   ['logdata_148',['logData',['../classVehicle.html#aff07ae368c65c008b7f6f289ecb99e39',1,'Vehicle']]],
   ['logdirectory_149',['logDirectory',['../classLogManager.html#ab6e76059b12a55623245ec6b70228456',1,'LogManager']]],
   ['logdownloadfile_150',['logDownloadFile',['../classMockLink.html#a91a0398367424cd0568865510f004c54',1,'MockLink']]],
-  ['logentry_151',['logentry',['../classVehicle.html#a4f34f18b23edaec3794deed9d8602470',1,'Vehicle::logEntry()'],['../structLogEntry.html#af743311e153cbf0bcf76eccf474342fd',1,'LogEntry::LogEntry()=default'],['../structLogEntry.html#a645b8ef1e648fb4f208e0aad9277d6cc',1,'LogEntry::LogEntry(const LogEntry &amp;)=default'],['../structLogEntry.html#a1e1317f853cd529354ee6c7709cd0ffe',1,'LogEntry::LogEntry(LogEntry &amp;&amp;) noexcept=default']]],
+  ['logentry_151',['logentry',['../structLogEntry.html#af743311e153cbf0bcf76eccf474342fd',1,'LogEntry::LogEntry()=default'],['../structLogEntry.html#a645b8ef1e648fb4f208e0aad9277d6cc',1,'LogEntry::LogEntry(const LogEntry &amp;)=default'],['../structLogEntry.html#a1e1317f853cd529354ee6c7709cd0ffe',1,'LogEntry::LogEntry(LogEntry &amp;&amp;) noexcept=default'],['../classVehicle.html#a4f34f18b23edaec3794deed9d8602470',1,'Vehicle::logEntry()']]],
   ['logevent_152',['logEvent',['../classStateMachineLogger.html#ac28c6ed9f4b45cc77b237b7d7b8fa7c0',1,'StateMachineLogger']]],
   ['logextension_153',['logExtension',['../classMAVLinkLogManager.html#aefa9fbb534bbc22c01dd634e25570401',1,'MAVLinkLogManager']]],
   ['logfile_154',['logFile',['../classGeoTagController.html#a8300c0232902e25e433cb6a25b768c26',1,'GeoTagController']]],

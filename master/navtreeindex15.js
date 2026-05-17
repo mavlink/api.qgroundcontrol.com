@@ -1,5 +1,7 @@
 var NAVTREEINDEX15 =
 {
+"SDLPlatform_8cc.html#aad74aabcf9cf437c1cc62a5486f0440d":[3,0,0,25,14,2,9],
+"SDLPlatform_8cc.html#ac60a9433667ac14b9e2ead77985bd993":[3,0,0,25,14,2,15],
 "SDLPlatform_8cc.html#acf3aeef569b0b08398c31cb13730ef4f":[3,0,0,25,14,2,16],
 "SDLPlatform_8cc.html#adea99189a787e555b349026b355d8a3f":[3,0,0,25,14,2,13],
 "SDLPlatform_8cc.html#ae2b1693fe94c30a0af1517192debd5f4":[3,0,0,25,14,2,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX15 =
 "StructureScanMapVisual_8qml_source.html":[3,0,0,18,30],
 "StructureScanPlanCreator_8cc.html":[3,0,0,17,62],
 "StructureScanPlanCreator_8cc_source.html":[3,0,0,17,62],
-"StructureScanPlanCreator_8h.html":[3,0,0,17,63],
-"StructureScanPlanCreator_8h_source.html":[3,0,0,17,63],
-"SubChecklist_8qml.html":[3,0,0,10,53]
+"StructureScanPlanCreator_8h.html":[3,0,0,17,63]
 };

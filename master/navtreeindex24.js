@@ -1,5 +1,7 @@
 var NAVTREEINDEX24 =
 {
+"classESP8266ComponentController.html#a7a9d34906ad697561129b3a8d8203e16":[2,0,134,4],
+"classESP8266ComponentController.html#a811246935b7714a2ae48020045bb2837":[2,0,134,11],
 "classESP8266ComponentController.html#a8740f8e3d45769fc2b9bd63e3b1355fc":[2,0,134,27],
 "classESP8266ComponentController.html#a8cdef3c50137b80de383ebc2a1dd6e93":[2,0,134,15],
 "classESP8266ComponentController.html#a91cedf4d2fbd79d4a6eefb49ef1668e2":[2,0,134,17],
@@ -247,7 +249,5 @@ var NAVTREEINDEX24 =
 "classFact.html#ac2658123ba1f43b8abe03d7344959a30":[2,0,141,98],
 "classFact.html#ac7326f574f941c0ef477c076289315ba":[2,0,141,17],
 "classFact.html#ac83bbaba377b26a2f083a6a20a7416a2":[2,0,141,11],
-"classFact.html#acfe9a26d3a9619da5c6034ca830e0d1e":[2,0,141,49],
-"classFact.html#ad1f9557b766028569b00ccec711f4687":[2,0,141,94],
-"classFact.html#ad8334a2d25291649b106d8a2d2bcd9d3":[2,0,141,5]
+"classFact.html#acfe9a26d3a9619da5c6034ca830e0d1e":[2,0,141,49]
 };

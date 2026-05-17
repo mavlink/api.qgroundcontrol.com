@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"RCToParamDialog_8qml.html":[3,0,0,20,131],
+"RCToParamDialog_8qml_source.html":[3,0,0,20,131],
 "RTCMMavlink_8cc.html":[3,0,0,13,10],
 "RTCMMavlink_8cc_source.html":[3,0,0,13,10],
 "RTCMMavlink_8h.html":[3,0,0,13,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "SDLPlatform_8cc.html#a9d092f06b9aa95298643752d8f0eaafd":[3,0,0,25,14,2,14],
 "SDLPlatform_8cc.html#aa0e478457a2557330827065c2c93d247":[3,0,0,25,14,2,0],
 "SDLPlatform_8cc.html#aa0efb0c397078bf095779ed9f3d3c1d9":[3,0,0,25,14,2,7],
-"SDLPlatform_8cc.html#aa6b2b89fa9b6cbf0640800c6342b0f0f":[3,0,0,25,14,2,3],
-"SDLPlatform_8cc.html#aad74aabcf9cf437c1cc62a5486f0440d":[3,0,0,25,14,2,9],
-"SDLPlatform_8cc.html#ac60a9433667ac14b9e2ead77985bd993":[3,0,0,25,14,2,15]
+"SDLPlatform_8cc.html#aa6b2b89fa9b6cbf0640800c6342b0f0f":[3,0,0,25,14,2,3]
 };

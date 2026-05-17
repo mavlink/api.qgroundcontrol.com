@@ -1,5 +1,16 @@
 var NAVTREEINDEX66 =
 {
+"namespaceQGCCompression.html#aa4942c43b5f0c671c86f69dc29c4cff2":[1,0,28,50],
+"namespaceQGCCompression.html#aa5a6851e5179fcbbc901e0a91716ae80":[1,0,28,35],
+"namespaceQGCCompression.html#aa6b72697044eabb82888a3f3a2fe86e4":[1,0,28,48],
+"namespaceQGCCompression.html#aa8d1a172131add5634d81be4ff0b4985":[1,0,28,45],
+"namespaceQGCCompression.html#ab42d6969ede38ebd685f52b013e350ce":[1,0,28,55],
+"namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7":[1,0,28,5],
+"namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7a2767828026039e8ba7b38973cbb701f2":[1,0,28,5,1],
+"namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7a465d60d88a7ea23531539094f1995b90":[1,0,28,5,7],
+"namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7a4b33a686be73bb172407d73b26356275":[1,0,28,5,2],
+"namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7a538273d971a3da3f944bfb95091df5d8":[1,0,28,5,3],
+"namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7a6adf97f83acf6453d4a6a4b1070f3754":[1,0,28,5,0],
 "namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7a8462b58246e70e5c83e5b939a9332cb5":[1,0,28,5,9],
 "namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7aa149e85a44aeec9140e92733d9ed694e":[1,0,28,5,6],
 "namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7ab7dba7dcec0a69ec71d3749604347541":[1,0,28,5,5],
@@ -238,16 +249,5 @@ var NAVTREEINDEX66 =
 "namespaceSDLJoystick.html#a933c0333e08b02c3f54066a60ba2a732":[1,0,37,20],
 "namespaceSDLJoystick.html#a95446bc351e06b498debc11c7297a3be":[1,0,37,21],
 "namespaceSDLJoystick.html#a9793c29bcdfe730400fd6a418ef8a013":[1,0,37,23],
-"namespaceSDLJoystick.html#a9be01eeedf6d9f4a3818e918c0507335":[1,0,37,30],
-"namespaceSDLJoystick.html#aa05b628dee904c9a4b6f8b5443b165c7":[1,0,37,33],
-"namespaceSDLJoystick.html#aa2037562c7a535ea605e4a3977d52fc1":[1,0,37,39],
-"namespaceSDLJoystick.html#aa422815d4a7296c8b14a5a15589e54e9":[1,0,37,5],
-"namespaceSDLJoystick.html#aa6422bda7250cb6085b1dd7c24b49ffe":[1,0,37,38],
-"namespaceSDLJoystick.html#aa7a9616276677ff373b457842a60be76":[1,0,37,35],
-"namespaceSDLJoystick.html#aa841efef1ebfe66703f527d5aa65fd4b":[1,0,37,7],
-"namespaceSDLJoystick.html#aa9a68874c737fdb2f39d5bfd738cb872":[1,0,37,2],
-"namespaceSDLJoystick.html#ab574fc7ea6ac40bf4d7aeba4e89fa9f8":[1,0,37,36],
-"namespaceSDLJoystick.html#ab9280b4892a2b637fb83a2799173477c":[1,0,37,32],
-"namespaceSDLJoystick.html#ab9702c266f21c59edfe3e69c459594d4":[1,0,37,24],
-"namespaceSDLJoystick.html#aba6f8ae53d289aec4a93cee37297f29f":[1,0,37,14]
+"namespaceSDLJoystick.html#a9be01eeedf6d9f4a3818e918c0507335":[1,0,37,30]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX9 =
 {
+"NTRIPManager_8h.html":[3,0,0,13,0,3],
+"NTRIPManager_8h_source.html":[3,0,0,13,0,3],
 "NTRIPSettings_8cc.html":[3,0,0,22,30],
 "NTRIPSettings_8cc.html#a8bda41f6e6e161216e7fcd3c2ae05a7a":[3,0,0,22,30,0],
 "NTRIPSettings_8cc_source.html":[3,0,0,22,30],
@@ -247,7 +249,5 @@ var NAVTREEINDEX9 =
 "PlanManager_8cc_source.html":[3,0,0,17,45],
 "PlanManager_8h.html":[3,0,0,17,46],
 "PlanManager_8h_source.html":[3,0,0,17,46],
-"PlanMapItems_8qml.html":[3,0,0,9,0,6],
-"PlanMapItems_8qml_source.html":[3,0,0,9,0,6],
-"PlanMasterController_8cc.html":[3,0,0,17,47]
+"PlanMapItems_8qml.html":[3,0,0,9,0,6]
 };

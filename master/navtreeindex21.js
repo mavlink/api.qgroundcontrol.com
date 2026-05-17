@@ -1,5 +1,7 @@
 var NAVTREEINDEX21 =
 {
+"classAndroidInterface_1_1JniLocalRef.html#aeac7352cb87a89e95221acf5844e01ef":[2,0,4,0,3],
+"classAppSettings.html":[2,0,74],
 "classAppSettings.html#a084bf7ece38360eac9b6533124cfc837":[2,0,74,3],
 "classAppSettings.html#a12c2d675809478a9ec664928f2bf3c1a":[2,0,74,25],
 "classAppSettings.html#a267f13f65c1da423d704fdc732c8583b":[2,0,74,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX21 =
 "classBatteryIndicatorSettings.html":[2,0,89],
 "classBatteryIndicatorSettings.html#a8db486ef97567c13af71a857594231d7":[2,0,89,0],
 "classBatteryIndicatorSettings.html#a92c90d8a6983958fe67058d4f1519281":[2,0,89,2],
-"classBatteryIndicatorSettings.html#a96468183886ecbd2ab7fba0e74fc9ab2":[2,0,89,1],
-"classBingHybridMapProvider.html":[2,0,90],
-"classBingHybridMapProvider.html#aae779511f8ffba92959c7e399e346dad":[2,0,90,0]
+"classBatteryIndicatorSettings.html#a96468183886ecbd2ab7fba0e74fc9ab2":[2,0,89,1]
 };

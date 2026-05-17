@@ -9,6 +9,7 @@ var classQGCMAVLinkMessageField =
     [ "name", "classQGCMAVLinkMessageField.html#abbbdef2d7f8a4a3587c47f2feafba6d6", null ],
     [ "rangeMax", "classQGCMAVLinkMessageField.html#a9d4c3748849ff8cd9eb4e191851341de", null ],
     [ "rangeMin", "classQGCMAVLinkMessageField.html#ad76a2f103f96cf3ad858c885e1914c90", null ],
+    [ "resetBucketing", "classQGCMAVLinkMessageField.html#aae5a1eabe234dde3e2e2e3f1a923d164", null ],
     [ "selectable", "classQGCMAVLinkMessageField.html#aaaa3aefd0da01e108b3894a47255caaf", null ],
     [ "selectableChanged", "classQGCMAVLinkMessageField.html#af7201f2ad3b854025ecdbea07406b1f4", null ],
     [ "selected", "classQGCMAVLinkMessageField.html#a22a756b31be6e1bf8bba3719e34d19b4", null ],

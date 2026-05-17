@@ -1,5 +1,16 @@
 var NAVTREEINDEX68 =
 {
+"structADSB_1_1VehicleInfo__t.html#a93c1dad3ff03e1b962048d1ea9a9ce70":[1,0,3,0,6],
+"structADSB_1_1VehicleInfo__t.html#a93c1dad3ff03e1b962048d1ea9a9ce70":[2,0,3,0,6],
+"structADSB_1_1VehicleInfo__t.html#a9b954f2aafe862c77c946b6cca2a0b76":[1,0,3,0,5],
+"structADSB_1_1VehicleInfo__t.html#a9b954f2aafe862c77c946b6cca2a0b76":[2,0,3,0,5],
+"structADSB_1_1VehicleInfo__t.html#ab3866aa9f4c8078ec19f271f64cca0c2":[2,0,3,0,10],
+"structADSB_1_1VehicleInfo__t.html#ab3866aa9f4c8078ec19f271f64cca0c2":[1,0,3,0,10],
+"structADSB_1_1VehicleInfo__t.html#ac46df491df222d2f2b15bbc7e39aa43a":[2,0,3,0,4],
+"structADSB_1_1VehicleInfo__t.html#ac46df491df222d2f2b15bbc7e39aa43a":[1,0,3,0,4],
+"structADSB_1_1VehicleInfo__t.html#ae46de607b92b5757cbbfb63f7d8fca56":[2,0,3,0,9],
+"structADSB_1_1VehicleInfo__t.html#ae46de607b92b5757cbbfb63f7d8fca56":[1,0,3,0,9],
+"structADSB_1_1VehicleInfo__t.html#aec853d3d78a3d1a95e5528d7dfb33ad6":[2,0,3,0,11],
 "structADSB_1_1VehicleInfo__t.html#aec853d3d78a3d1a95e5528d7dfb33ad6":[1,0,3,0,11],
 "structADSB_1_1VehicleInfo__t.html#af91af1697d70a5fee30dbf757ace1ca3":[2,0,3,0,1],
 "structADSB_1_1VehicleInfo__t.html#af91af1697d70a5fee30dbf757ace1ca3":[1,0,3,0,1],
@@ -238,16 +249,5 @@ var NAVTREEINDEX68 =
 "structCalibrationResult.html#abfc10931fe89b8bffaf789ac974c3ab2":[2,0,101,1],
 "structCalibrationResult.html#ae5631dcaa98cc6585681d1f99febcddc":[2,0,101,3],
 "structDatabaseResult.html":[2,0,125],
-"structDatabaseResult.html#aaeaff6f6c12a7eb6e3896e9b572e3c32":[2,0,125,0],
-"structDatabaseResult.html#aec5e49e020ed70f2e1305a53fb8830ec":[2,0,125,1],
-"structEventHandler_1_1Impl.html":[2,0,139,0],
-"structEventHandler_1_1Impl.html#a02bad5134d439dc0b5ec2f562b0f3944":[2,0,139,0,5],
-"structEventHandler_1_1Impl.html#a0aba2515fc246a6a8dfade245df99d46":[2,0,139,0,3],
-"structEventHandler_1_1Impl.html#a1769fffdad760caee361ea7f48e25c67":[2,0,139,0,10],
-"structEventHandler_1_1Impl.html#a603d28a5ee3692342220ea64d101e611":[2,0,139,0,1],
-"structEventHandler_1_1Impl.html#a651e134062ca2b64f0513400802179eb":[2,0,139,0,9],
-"structEventHandler_1_1Impl.html#a7d9b5a71a02c1cc04a5d92c011a7e79a":[2,0,139,0,7],
-"structEventHandler_1_1Impl.html#a8e7d32fc87f91e1cb4f5c5918ae67977":[2,0,139,0,12],
-"structEventHandler_1_1Impl.html#a94a14f1833336de211d70335786d27bf":[2,0,139,0,6],
-"structEventHandler_1_1Impl.html#a97838e0f7ff018e3d65902f3868edbb4":[2,0,139,0,0]
+"structDatabaseResult.html#aaeaff6f6c12a7eb6e3896e9b572e3c32":[2,0,125,0]
 };

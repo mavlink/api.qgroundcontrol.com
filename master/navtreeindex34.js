@@ -1,5 +1,10 @@
 var NAVTREEINDEX34 =
 {
+"classMavlinkCameraControlInterface.html#a300957adff386aac66527fc75a846fce":[2,0,263,122],
+"classMavlinkCameraControlInterface.html#a30914283cc99c04aab7c85928d303fcc":[2,0,263,130],
+"classMavlinkCameraControlInterface.html#a32375592078d5a808db7f55b33b49551":[2,0,263,148],
+"classMavlinkCameraControlInterface.html#a327e07a8efe3743dc433a83cce779ca7":[2,0,263,92],
+"classMavlinkCameraControlInterface.html#a335aed94747db665af3a42dbb7b3089a":[2,0,263,140],
 "classMavlinkCameraControlInterface.html#a338943325b134518f5c29ac78fce524d":[2,0,263,27],
 "classMavlinkCameraControlInterface.html#a33965b655e7aee852e4b31c836678414":[2,0,263,47],
 "classMavlinkCameraControlInterface.html#a344dfe2e76a32f1143ee54d9f010165f":[2,0,263,29],
@@ -244,10 +249,5 @@ var NAVTREEINDEX34 =
 "classMissionCommandTree.html#aceb17f5b2f9aa4d9573a6cbf88d68ed6":[2,0,280,5],
 "classMissionCommandTree.html#acee0cc1f051d460c5590b69e338aa2b3":[2,0,280,4],
 "classMissionCommandTree.html#adeef77c02354becf0c9da27f0d84d850":[2,0,280,3],
-"classMissionCommandTree.html#adf38e0c57576109f41892e95e9206cad":[2,0,280,6],
-"classMissionCommandUIInfo.html":[2,0,281],
-"classMissionCommandUIInfo.html#a05d7080baf080aed4505d502ffd6837f":[2,0,281,13],
-"classMissionCommandUIInfo.html#a139ed01ebdfd9961d8ce639e19dce559":[2,0,281,10],
-"classMissionCommandUIInfo.html#a1cb3cc1108505fb4871f1d678cdb8c2c":[2,0,281,18],
-"classMissionCommandUIInfo.html#a1d812a8745a1b1afb7152fd3dc7e920a":[2,0,281,3]
+"classMissionCommandTree.html#adf38e0c57576109f41892e95e9206cad":[2,0,280,6]
 };

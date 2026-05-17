@@ -34,7 +34,7 @@ var searchData=
   ['uniquetilesizestr_31',['uniqueTileSizeStr',['../classQGCCachedTileSet.html#ac1dc92286f51f13a0ee7c83e062cbdb0',1,'QGCCachedTileSet']]],
   ['units_32',['units',['../classMissionCmdParamInfo.html#a6d292df32eb81e8302fcb8eca830642f',1,'MissionCmdParamInfo::units()'],['../classParameterEditorDiff.html#af712b82b514aa22ed593183fc902265d',1,'ParameterEditorDiff::units']]],
   ['unitsconversion_33',['unitsConversion',['../classQGroundControlQmlGlobal.html#a8386a89906c6d8e4b11870158148dfdf',1,'QGroundControlQmlGlobal']]],
-  ['unitssettings_34',['unitssettings',['../classSettingsManager.html#a293f9ff7faa9dcb0419e51ccba2cdf5a',1,'SettingsManager::unitsSettings()'],['../classUnitsSettings.html#a95a2666f950037415dd2acf84714c35e',1,'UnitsSettings::UnitsSettings()'],['../classUnitsSettings.html',1,'UnitsSettings']]],
+  ['unitssettings_34',['unitssettings',['../classUnitsSettings.html#a95a2666f950037415dd2acf84714c35e',1,'UnitsSettings::UnitsSettings()'],['../classSettingsManager.html#a293f9ff7faa9dcb0419e51ccba2cdf5a',1,'SettingsManager::unitsSettings()'],['../classUnitsSettings.html',1,'UnitsSettings']]],
   ['unitssettings_2ecc_35',['UnitsSettings.cc',['../UnitsSettings_8cc.html',1,'']]],
   ['unitssettings_2eh_36',['UnitsSettings.h',['../UnitsSettings_8h.html',1,'']]],
   ['unittest_37',['UnitTest',['../classQGCApplication.html#a832b4d233efee1a32feb0f4190b30d39',1,'QGCApplication']]],

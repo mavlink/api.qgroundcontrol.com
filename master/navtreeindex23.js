@@ -1,5 +1,7 @@
 var NAVTREEINDEX23 =
 {
+"classCameraSection.html#a99e9ebe5e91770c7984ed81ce19b9c18":[2,0,104,24],
+"classCameraSection.html#a9b48ede201752c0d1458f30c826919b0":[2,0,104,3],
 "classCameraSection.html#a9cac76a3af22d4700747740ef78a8fe3":[2,0,104,30],
 "classCameraSection.html#a9cdc49e57face0365d843dcfc1d42d2d":[2,0,104,29],
 "classCameraSection.html#aa4b4baa371dac134b5eada8b25c48355":[2,0,104,17],
@@ -247,7 +249,5 @@ var NAVTREEINDEX23 =
 "classESP8266ComponentController.html#a259a93b732150f31e441561bad695c2a":[2,0,134,19],
 "classESP8266ComponentController.html#a3552395c1053560d4fa7cd3903d5e453":[2,0,134,18],
 "classESP8266ComponentController.html#a5000d67b29e857d4d5e3eb216d263b34":[2,0,134,7],
-"classESP8266ComponentController.html#a6635ffca12ca96327c3578bb5d439a76":[2,0,134,14],
-"classESP8266ComponentController.html#a7a9d34906ad697561129b3a8d8203e16":[2,0,134,4],
-"classESP8266ComponentController.html#a811246935b7714a2ae48020045bb2837":[2,0,134,11]
+"classESP8266ComponentController.html#a6635ffca12ca96327c3578bb5d439a76":[2,0,134,14]
 };

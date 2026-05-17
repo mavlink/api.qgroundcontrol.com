@@ -1,5 +1,7 @@
 var NAVTREEINDEX22 =
 {
+"classBingHybridMapProvider.html":[2,0,90],
+"classBingHybridMapProvider.html#aae779511f8ffba92959c7e399e346dad":[2,0,90,0],
 "classBingMapProvider.html":[2,0,91],
 "classBingMapProvider.html#a46f57a6a38f7716d9d0373a3ae037f55":[2,0,91,0],
 "classBingMapProvider.html#a90533738eb0c9ead7a46f17d9691a633":[2,0,91,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX22 =
 "classCameraSection.html#a7ed629f9700c1c404674f008e1eed1b2":[2,0,104,10],
 "classCameraSection.html#a7efd71f6a16f8efb410f3f84e38a891d":[2,0,104,7],
 "classCameraSection.html#a8f3bb35516b20666088a245df4b64b4a":[2,0,104,8],
-"classCameraSection.html#a936d949598055f6fb6ada1bc50ca9b68":[2,0,104,13],
-"classCameraSection.html#a99e9ebe5e91770c7984ed81ce19b9c18":[2,0,104,24],
-"classCameraSection.html#a9b48ede201752c0d1458f30c826919b0":[2,0,104,3]
+"classCameraSection.html#a936d949598055f6fb6ada1bc50ca9b68":[2,0,104,13]
 };

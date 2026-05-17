@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"QGCLoggingCategoryManager_8cc.html#af83f3ec0540d637b590e31bbdba15faa":[3,0,0,25,8,4,1],
+"QGCLoggingCategoryManager_8cc_source.html":[3,0,0,25,8,4],
 "QGCLoggingCategoryManager_8h.html":[3,0,0,25,8,5],
 "QGCLoggingCategoryManager_8h_source.html":[3,0,0,25,8,5],
 "QGCLoggingCategory_8cc.html":[3,0,0,25,8,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "QGCNetworkHelper_8h.html#ac815974fc81bd8bda1afbb97268d7b23":[3,0,0,25,11,5,24],
 "QGCNetworkHelper_8h.html#acb5b35a7c64512a13df6d74567b797bf":[3,0,0,25,11,5,66],
 "QGCNetworkHelper_8h.html#ad40dc614a3336879a86d358a21f62372":[3,0,0,25,11,5,40],
-"QGCNetworkHelper_8h.html#ad92e0219bd1d68c59de12063982a7fad":[3,0,0,25,11,5,30],
-"QGCNetworkHelper_8h.html#ade905fec36ef1206663a1a4d4a965564":[3,0,0,25,11,5,10],
-"QGCNetworkHelper_8h.html#ae0cfe83e63de18fcb21ae39645c69696":[3,0,0,25,11,5,67]
+"QGCNetworkHelper_8h.html#ad92e0219bd1d68c59de12063982a7fad":[3,0,0,25,11,5,30]
 };

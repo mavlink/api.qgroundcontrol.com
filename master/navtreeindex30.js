@@ -1,5 +1,7 @@
 var NAVTREEINDEX30 =
 {
+"classJoystickSDL.html#ae745710bd37b1a37c99003e15833ee11":[2,0,213,38],
+"classJoystickSDL.html#ae8b533205d9a35fee557762c2df0db3b":[2,0,213,33],
 "classJoystickSDL.html#aecf30119d1dd2e0e1f3f8ae7dd3eb501":[2,0,213,57],
 "classJoystickSDL.html#af05a83900ec685842264b4c3b2edc003":[2,0,213,17],
 "classJoystickSDL.html#af368676b4a030a0192e0cb6e56947ba7":[2,0,213,29],
@@ -247,7 +249,5 @@ var NAVTREEINDEX30 =
 "classLinkManager.html#a05027d4f86fc230d48edac25da7c1c48":[2,0,221,6],
 "classLinkManager.html#a0c6f3a0e055e01e4779cfd4caad42aac":[2,0,221,9],
 "classLinkManager.html#a1c4f98aaa6a3055a558d6df990d232ae":[2,0,221,1],
-"classLinkManager.html#a21cd17211b7272dc303f7e2d1780abf6":[2,0,221,36],
-"classLinkManager.html#a2b5e6265ef904eb869716590ccb052ed":[2,0,221,32],
-"classLinkManager.html#a305834d62d75c6b12546e3011f28b1c9":[2,0,221,13]
+"classLinkManager.html#a21cd17211b7272dc303f7e2d1780abf6":[2,0,221,36]
 };

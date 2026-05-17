@@ -1,5 +1,10 @@
 var NAVTREEINDEX42 =
 {
+"classQGCCachedTileSet.html#a4bf6aa94c4805be50f2a5865e15324df":[2,0,358,52],
+"classQGCCachedTileSet.html#a4f184ba687faffeb814247b9b243a283":[2,0,358,66],
+"classQGCCachedTileSet.html#a5535a4f565993571d5603bded5fc048b":[2,0,358,46],
+"classQGCCachedTileSet.html#a556b7443ba0e618a5c9920c6af748fce":[2,0,358,44],
+"classQGCCachedTileSet.html#a5612a43a59c836d50d51ad6ca633e68f":[2,0,358,47],
 "classQGCCachedTileSet.html#a5a7281bb77ccc818f4821dca2b139ab8":[2,0,358,43],
 "classQGCCachedTileSet.html#a5c1e5ecf62df7e8643b2739d2dfc7ed7":[2,0,358,49],
 "classQGCCachedTileSet.html#a5f1432183c3a8c9329503e8745c81c94":[2,0,358,27],
@@ -244,10 +249,5 @@ var NAVTREEINDEX42 =
 "classQGCFencePolygon.html#a6c57dba3179651fc7d1d516926e74c42":[2,0,373,0],
 "classQGCFencePolygon.html#aa23cb21920274d51831f386b62726358":[2,0,373,2],
 "classQGCFencePolygon.html#ae5e43d547bc856896c7be6d413771f9e":[2,0,373,7],
-"classQGCFencePolygon.html#af0d2a85ebb865fdc8efa4b580da12fe0":[2,0,373,5],
-"classQGCFetchTileSetTask.html":[2,0,374],
-"classQGCFetchTileSetTask.html#a0e3332bf2f1fe6296eeb1d8752f1640c":[2,0,374,2],
-"classQGCFetchTileSetTask.html#ab051ac1d83dde6809dc7b45fba20bc14":[2,0,374,1],
-"classQGCFetchTileSetTask.html#ab13acd11804146cac2c1ce0082096fce":[2,0,374,3],
-"classQGCFetchTileSetTask.html#af2aeaf95a225d5bea9701ac345099dcd":[2,0,374,0]
+"classQGCFencePolygon.html#af0d2a85ebb865fdc8efa4b580da12fe0":[2,0,373,5]
 };

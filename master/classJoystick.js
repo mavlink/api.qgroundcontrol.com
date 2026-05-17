@@ -8,12 +8,12 @@ var classJoystick =
       [ "throttleFunction", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfabad325f7f1c8f708e432ec2fbf9ffef7", null ],
       [ "pitchExtensionFunction", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfa24912debbd72e9bc1ece42fc3b7dfd0b", null ],
       [ "rollExtensionFunction", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfaf0a67de1dc0c684b9a6d72aaeb7c5e3c", null ],
-      [ "aux1ExtensionFunction", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfaf622e2ddb96717e3b45f4e953c1872a4", null ],
-      [ "aux2ExtensionFunction", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfa0c0879e0f2ba432f49059ec5e0343cdb", null ],
-      [ "aux3ExtensionFunction", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfaad870733150502138b162e63f7b39211", null ],
-      [ "aux4ExtensionFunction", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfaf29ed204ec9968c8e65e2b8845bd745b", null ],
-      [ "aux5ExtensionFunction", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfaa4a3d259fdff0e2a98f09666bab6efc6", null ],
-      [ "aux6ExtensionFunction", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfa076a1102220c9ab8e2e99b5f7d1906e3", null ],
+      [ "additionalAxis1Function", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfa9c47cd3a9a975ba74544b31303103bcc", null ],
+      [ "additionalAxis2Function", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfa2b7dce075a622ec9adb910862c9c33fa", null ],
+      [ "additionalAxis3Function", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfa733bca98cbaedb9b43264ece0d7c224c", null ],
+      [ "additionalAxis4Function", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfa76ddd054d05eb719c0b31f6bb95da3b5", null ],
+      [ "additionalAxis5Function", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfabab5ea675609614c9e08e28c545119f7", null ],
+      [ "additionalAxis6Function", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfa5dd826d7b1bd0a61c9c497c32172a243", null ],
       [ "maxAxisFunction", "classJoystick.html#a29afe0a72d52ef70e0536879a5136abfa7e0dccbe042a887f5fe1cedcdddf6188", null ]
     ] ],
     [ "ButtonEvent_t", "classJoystick.html#a6a2f44b7587d441f4dda65f5cdf4927b", [

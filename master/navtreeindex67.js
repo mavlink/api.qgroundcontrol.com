@@ -1,5 +1,16 @@
 var NAVTREEINDEX67 =
 {
+"namespaceSDLJoystick.html#aa05b628dee904c9a4b6f8b5443b165c7":[1,0,37,33],
+"namespaceSDLJoystick.html#aa2037562c7a535ea605e4a3977d52fc1":[1,0,37,39],
+"namespaceSDLJoystick.html#aa422815d4a7296c8b14a5a15589e54e9":[1,0,37,5],
+"namespaceSDLJoystick.html#aa6422bda7250cb6085b1dd7c24b49ffe":[1,0,37,38],
+"namespaceSDLJoystick.html#aa7a9616276677ff373b457842a60be76":[1,0,37,35],
+"namespaceSDLJoystick.html#aa841efef1ebfe66703f527d5aa65fd4b":[1,0,37,7],
+"namespaceSDLJoystick.html#aa9a68874c737fdb2f39d5bfd738cb872":[1,0,37,2],
+"namespaceSDLJoystick.html#ab574fc7ea6ac40bf4d7aeba4e89fa9f8":[1,0,37,36],
+"namespaceSDLJoystick.html#ab9280b4892a2b637fb83a2799173477c":[1,0,37,32],
+"namespaceSDLJoystick.html#ab9702c266f21c59edfe3e69c459594d4":[1,0,37,24],
+"namespaceSDLJoystick.html#aba6f8ae53d289aec4a93cee37297f29f":[1,0,37,14],
 "namespaceSDLJoystick.html#ad38818076683dbd18af99779027d0814":[1,0,37,19],
 "namespaceSDLJoystick.html#ae12a8d6bd9dafb8795c3bd22b664de30":[1,0,37,11],
 "namespaceSDLJoystick.html#ae5aa2d4b519ab2aeae929c4b3b264f23":[1,0,37,15],
@@ -238,16 +249,5 @@ var NAVTREEINDEX67 =
 "structADSB_1_1VehicleInfo__t.html#a6f0fffcdb8f96c08f2d429e70ca23f28":[1,0,3,0,3],
 "structADSB_1_1VehicleInfo__t.html#a6f0fffcdb8f96c08f2d429e70ca23f28":[2,0,3,0,3],
 "structADSB_1_1VehicleInfo__t.html#a8779cc854a6a244d19ac0b8ac314db3b":[1,0,3,0,13],
-"structADSB_1_1VehicleInfo__t.html#a8779cc854a6a244d19ac0b8ac314db3b":[2,0,3,0,13],
-"structADSB_1_1VehicleInfo__t.html#a93c1dad3ff03e1b962048d1ea9a9ce70":[1,0,3,0,6],
-"structADSB_1_1VehicleInfo__t.html#a93c1dad3ff03e1b962048d1ea9a9ce70":[2,0,3,0,6],
-"structADSB_1_1VehicleInfo__t.html#a9b954f2aafe862c77c946b6cca2a0b76":[1,0,3,0,5],
-"structADSB_1_1VehicleInfo__t.html#a9b954f2aafe862c77c946b6cca2a0b76":[2,0,3,0,5],
-"structADSB_1_1VehicleInfo__t.html#ab3866aa9f4c8078ec19f271f64cca0c2":[2,0,3,0,10],
-"structADSB_1_1VehicleInfo__t.html#ab3866aa9f4c8078ec19f271f64cca0c2":[1,0,3,0,10],
-"structADSB_1_1VehicleInfo__t.html#ac46df491df222d2f2b15bbc7e39aa43a":[2,0,3,0,4],
-"structADSB_1_1VehicleInfo__t.html#ac46df491df222d2f2b15bbc7e39aa43a":[1,0,3,0,4],
-"structADSB_1_1VehicleInfo__t.html#ae46de607b92b5757cbbfb63f7d8fca56":[2,0,3,0,9],
-"structADSB_1_1VehicleInfo__t.html#ae46de607b92b5757cbbfb63f7d8fca56":[1,0,3,0,9],
-"structADSB_1_1VehicleInfo__t.html#aec853d3d78a3d1a95e5528d7dfb33ad6":[2,0,3,0,11]
+"structADSB_1_1VehicleInfo__t.html#a8779cc854a6a244d19ac0b8ac314db3b":[2,0,3,0,13]
 };

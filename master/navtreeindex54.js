@@ -1,5 +1,14 @@
 var NAVTREEINDEX54 =
 {
+"classSurveyComplexItem.html#af07ea168092ca65bc1025711599f0d58af81f993fd099166d012b160ad29084a0":[2,0,509,0,2],
+"classSurveyComplexItem.html#af409f417f12a17561dd522f472523860":[2,0,509,19],
+"classSurveyComplexItem.html#af89d6a3d38dd13807e6392a3ffe5e689":[2,0,509,26],
+"classSurveyPlanCreator.html":[2,0,510],
+"classSurveyPlanCreator.html#aac1cbbff8b204a58a44e131921d9429c":[2,0,510,1],
+"classSurveyPlanCreator.html#acfdf314317bb126cba54a08e1ca03a76":[2,0,510,0],
+"classSvalbardMapProvider.html":[2,0,511],
+"classSvalbardMapProvider.html#a941575c1d1292870dbddfc09b721e1bb":[2,0,511,0],
+"classSysStatusSensorInfo.html":[2,0,515],
 "classSysStatusSensorInfo.html#a304d27c3b6bacd86d436b0eb519985aa":[2,0,515,4],
 "classSysStatusSensorInfo.html#a319db416848debb5a69d1eb763f350d0":[2,0,515,1],
 "classSysStatusSensorInfo.html#a74336a9c967438a4513d158a0e03582e":[2,0,515,2],
@@ -240,14 +249,5 @@ var NAVTREEINDEX54 =
 "classToolStripAction.html#a118de4744e785d01439becb5d9458e7c":[2,0,543,37],
 "classToolStripAction.html#a1435ae0d4f2a2dee372c3931d19ab253":[2,0,543,19],
 "classToolStripAction.html#a19f3c4eff20dd99a696703c7c2619cac":[2,0,543,10],
-"classToolStripAction.html#a1abc056e45b95dbb0437030b5e87b73a":[2,0,543,22],
-"classToolStripAction.html#a202b5e1561ba5268faf1f7c75ada8951":[2,0,543,28],
-"classToolStripAction.html#a21ee7162be3659716a03a23eccc29854":[2,0,543,36],
-"classToolStripAction.html#a22d02095015bbff62ce658cbeac1b5c8":[2,0,543,35],
-"classToolStripAction.html#a265fb10e08b5483e9cc5bc990bce2d0a":[2,0,543,11],
-"classToolStripAction.html#a36e35a59354f1e83d20d70d5d9c46424":[2,0,543,17],
-"classToolStripAction.html#a3daa4be661f420714098e312161d79bb":[2,0,543,4],
-"classToolStripAction.html#a4154a3b0b21c4f7c2c037472cfd0b1a8":[2,0,543,2],
-"classToolStripAction.html#a449dc5cf3ff3616e7edf60e0576ed314":[2,0,543,43],
-"classToolStripAction.html#a48472dd4d7b1a5023cc1304e824b14ee":[2,0,543,39]
+"classToolStripAction.html#a1abc056e45b95dbb0437030b5e87b73a":[2,0,543,22]
 };
