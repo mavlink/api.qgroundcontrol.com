@@ -16,13 +16,15 @@ var classSigningController =
     [ "processFrame", "classSigningController.html#aaf39e27a183d3310c9d926d934adcf30", null ],
     [ "recordDetectMiss", "classSigningController.html#a4acddeaaeb965048bf5c408462fce354", null ],
     [ "resetBadSigBurst", "classSigningController.html#a3a08afdf4f9ee76015d2dbeca33d982b", null ],
+    [ "setTimeoutForTesting", "classSigningController.html#a1e8691dc809c1f30c9d8d0249b6e6221", null ],
     [ "signingConfirmed", "classSigningController.html#a186d6b2045aa6a4f87786b00749bcd96", null ],
     [ "signingFailed", "classSigningController.html#ac315345055be30f22de89c4c145ee5f4", null ],
+    [ "signOutgoing", "classSigningController.html#af3023790d13bbb109ae154811a276828", null ],
     [ "state", "classSigningController.html#a7e6799008964af40ec88e5e8088b972c", null ],
     [ "stateChanged", "classSigningController.html#a2737687de82b54be6e117efbcf2db032", null ],
     [ "status", "classSigningController.html#abe280c0167dd154b0ef297a1d7a83ea6", null ],
     [ "statusText", "classSigningController.html#ab4d1240497f15d54fbbc1b57e9ef95ce", null ],
-    [ "streamCount", "classSigningController.html#ad15ee26127bb0da83f87eb0431ab7d54", null ],
     [ "tryBeginDisable", "classSigningController.html#a79ef8a1b86cc1025c8a7518e26f74651", null ],
-    [ "tryBeginEnable", "classSigningController.html#a535eb9432d99e335b83b029f06886283", null ]
+    [ "tryBeginEnable", "classSigningController.html#a535eb9432d99e335b83b029f06886283", null ],
+    [ "wallClockRefreshActiveForTesting", "classSigningController.html#addc688f0e7abb3f9a3bf85a3edd71825", null ]
 ];

@@ -1,8 +1,8 @@
 var searchData=
 [
   ['elapsed_0',['elapsed',['../structOnboardLogDownloadData.html#a2d82c7b94e170c7b2684bf1e80044d80',1,'OnboardLogDownloadData']]],
-  ['elapsedms_1',['elapsedMs',['../structStateMachineLogger_1_1LogEntry.html#aed5697ead8f289ff26e5058b8caea769',1,'StateMachineLogger::LogEntry']]],
-  ['elevation_2',['elevation',['../structsatellite__info__s.html#a1eacbb737df0746b93520a734a1c6776',1,'satellite_info_s']]],
+  ['elapsedms_1',['elapsedms',['../structLogEntry.html#a25cef3c4ec9fd8fdb34963a87d2ef568',1,'LogEntry::elapsedMs'],['../structStateMachineLogger_1_1LogEntry.html#aed5697ead8f289ff26e5058b8caea769',1,'StateMachineLogger::LogEntry::elapsedMs']]],
+  ['elevation_2',['elevation',['../structsatellite__info__s.html#a95231162e514d7a9213e62eca59e6d98',1,'satellite_info_s']]],
   ['emit_5fthreshold_3',['EMIT_THRESHOLD',['../qserialport__p_8h.html#a50e3fe50e0af18bd0fd84e71117cb891',1,'qserialport_p.h']]],
   ['emittertype_4',['emitterType',['../structADSB_1_1VehicleInfo__t.html#a9b954f2aafe862c77c946b6cca2a0b76',1,'ADSB::VehicleInfo_t']]],
   ['enabled_5',['enabled',['../structSigningStatus.html#a5e3e056bcc041b85403e2b657e921589',1,'SigningStatus']]],

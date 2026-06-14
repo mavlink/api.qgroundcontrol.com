@@ -20,7 +20,7 @@ var searchData=
   ['pitch_17',['PITCH',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a00d99516c63ab4c88b02fbddd71a1bd0',1,'APM']]],
   ['pitchextensionfunction_18',['pitchExtensionFunction',['../classJoystick.html#a29afe0a72d52ef70e0536879a5136abfa24912debbd72e9bc1ece42fc3b7dfd0b',1,'Joystick']]],
   ['pitchfunction_19',['pitchFunction',['../classJoystick.html#a29afe0a72d52ef70e0536879a5136abfafa9e04b13169e088ddab9eaa56374d8b',1,'Joystick']]],
-  ['plaintext_20',['plaintext',['../namespaceLogFormatter.html#abdafeb38e2d42c52b1ff8e969cb1e847aeace11e0588c37e46dc5dbd137cac306',1,'LogFormatter::PlainText'],['../classLogManager.html#aa5a0ee09d0af9851bb68dcc246b66ce2a0d2208f0f81fea12f371256bd563f83c',1,'LogManager::PlainText']]],
+  ['plaintext_20',['PlainText',['../namespaceLogFormatter.html#abdafeb38e2d42c52b1ff8e969cb1e847aeace11e0588c37e46dc5dbd137cac306',1,'LogFormatter']]],
   ['plane_5fauto_5flanding_5fabort_21',['PLANE_AUTO_LANDING_ABORT',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a3b1002a0edd3214d1f453d0d6dafa9e5',1,'APM']]],
   ['planefirmware_22',['PlaneFirmware',['../classFirmwareUpgradeController.html#ab0f52479539462d351d2512acc16fdeaa9198938f2100c06b23e6967b8f90a0e3',1,'FirmwareUpgradeController']]],
   ['point_23',['Point',['../classShapeFileHelper.html#a9804f7421026dd9ac4603aaa6ed50ccea2a3cd5946cfd317eb99c3d32e35e2d4c',1,'ShapeFileHelper']]],

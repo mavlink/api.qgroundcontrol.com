@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/GPS/definitions.h File Reference</title>
+<title>QGroundControl: src/GPS/Driver/definitions.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,10 +97,12 @@ $(document).ready(function(){initNavTree('definitions_8h.html',''); initResizabl
   <div class="headertitle"><div class="title">definitions.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QtCore/QtGlobal&gt;</code><br />
-<code>#include &lt;QtCore/QDateTime&gt;</code><br />
+<div class="textblock"><code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
 <code>#include &lt;QtCore/QLoggingCategory&gt;</code><br />
 <code>#include &lt;QtCore/QThread&gt;</code><br />
+<code>#include &lt;QtCore/QtMath&gt;</code><br />
 <code>#include &quot;<a class="el" href="sensor__gps_8h_source.html">sensor_gps.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sensor__gnss__relative_8h_source.html">sensor_gnss_relative.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="satellite__info_8h_source.html">satellite_info.h</a>&quot;</code><br />
@@ -116,7 +118,7 @@ $(document).ready(function(){initNavTree('definitions_8h.html',''); initResizabl
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="definitions_8h__dep__incl.svg" width="183" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="definitions_8h__dep__incl.svg" width="214" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="definitions_8h_source.html">Go to the source code of this file.</a></p>
@@ -129,16 +131,10 @@ Macros</h2></td></tr>
 <tr class="separator:a2243cc3d1a528600c86ea7787b73cafe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9b7e34666bc006da6b3fe57b6ab3288" id="r_ae9b7e34666bc006da6b3fe57b6ab3288"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8h.html#ae9b7e34666bc006da6b3fe57b6ab3288">GPS_ERR</a>(...)&#160;&#160;&#160;qCCritical(GPSDriversLog, __VA_ARGS__)</td></tr>
 <tr class="separator:ae9b7e34666bc006da6b3fe57b6ab3288"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac640d2ff45f863b990c5163102ca4fcb" id="r_ac640d2ff45f863b990c5163102ca4fcb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8h.html#ac640d2ff45f863b990c5163102ca4fcb">M_DEG_TO_RAD</a>&#160;&#160;&#160;(M_PI / 180.0)</td></tr>
-<tr class="separator:ac640d2ff45f863b990c5163102ca4fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a739ede18516d2e789c3ca63b8ea6e363" id="r_a739ede18516d2e789c3ca63b8ea6e363"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8h.html#a739ede18516d2e789c3ca63b8ea6e363">M_DEG_TO_RAD_F</a>&#160;&#160;&#160;static_cast&lt;float&gt;(M_PI / 180.0)</td></tr>
+<tr class="separator:a739ede18516d2e789c3ca63b8ea6e363"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8128265a83b321eb3b1e8c64f8f79d76" id="r_a8128265a83b321eb3b1e8c64f8f79d76"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8h.html#a8128265a83b321eb3b1e8c64f8f79d76">M_RAD_TO_DEG</a>&#160;&#160;&#160;(180.0 / M_PI)</td></tr>
 <tr class="separator:a8128265a83b321eb3b1e8c64f8f79d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a739ede18516d2e789c3ca63b8ea6e363" id="r_a739ede18516d2e789c3ca63b8ea6e363"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8h.html#a739ede18516d2e789c3ca63b8ea6e363">M_DEG_TO_RAD_F</a>&#160;&#160;&#160;0.0174532925f</td></tr>
-<tr class="separator:a739ede18516d2e789c3ca63b8ea6e363"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8d0a36f0690850c6b5c1cabdcb8684b" id="r_ae8d0a36f0690850c6b5c1cabdcb8684b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8h.html#ae8d0a36f0690850c6b5c1cabdcb8684b">M_RAD_TO_DEG_F</a>&#160;&#160;&#160;57.2957795f</td></tr>
-<tr class="separator:ae8d0a36f0690850c6b5c1cabdcb8684b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b791d1953eea4287b0f21cf900906cc" id="r_a2b791d1953eea4287b0f21cf900906cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8h.html#a2b791d1953eea4287b0f21cf900906cc">M_PI_2_F</a>&#160;&#160;&#160;0.63661977f</td></tr>
-<tr class="separator:a2b791d1953eea4287b0f21cf900906cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -147,10 +143,10 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad26c6b5212cf832f392530cc2ffa5bcc" id="r_ad26c6b5212cf832f392530cc2ffa5bcc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8h.html#ad26c6b5212cf832f392530cc2ffa5bcc">gps_usleep</a> (unsigned long usecs)</td></tr>
-<tr class="separator:ad26c6b5212cf832f392530cc2ffa5bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1db7e60a13944fb5ead87f5a4589804" id="r_ac1db7e60a13944fb5ead87f5a4589804"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="definitions_8h.html#a1766eadd7e0dd9d04f322f87cf76811a">gps_abstime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8h.html#ac1db7e60a13944fb5ead87f5a4589804">gps_absolute_time</a> ()</td></tr>
 <tr class="separator:ac1db7e60a13944fb5ead87f5a4589804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad26c6b5212cf832f392530cc2ffa5bcc" id="r_ad26c6b5212cf832f392530cc2ffa5bcc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="definitions_8h.html#ad26c6b5212cf832f392530cc2ffa5bcc">gps_usleep</a> (unsigned long usecs)</td></tr>
+<tr class="separator:ad26c6b5212cf832f392530cc2ffa5bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ae9b7e34666bc006da6b3fe57b6ab3288" name="ae9b7e34666bc006da6b3fe57b6ab3288"></a>
@@ -169,7 +165,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00016">16</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00021">21</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
 
 </div>
 </div>
@@ -189,7 +185,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00014">14</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00019">19</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
 
 </div>
 </div>
@@ -209,23 +205,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00015">15</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
-
-</div>
-</div>
-<a id="ac640d2ff45f863b990c5163102ca4fcb" name="ac640d2ff45f863b990c5163102ca4fcb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac640d2ff45f863b990c5163102ca4fcb">&#9670;&#160;</a></span>M_DEG_TO_RAD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define M_DEG_TO_RAD&#160;&#160;&#160;(M_PI / 180.0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00018">18</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00020">20</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
 
 </div>
 </div>
@@ -236,23 +216,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define M_DEG_TO_RAD_F&#160;&#160;&#160;0.0174532925f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00020">20</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
-
-</div>
-</div>
-<a id="a2b791d1953eea4287b0f21cf900906cc" name="a2b791d1953eea4287b0f21cf900906cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b791d1953eea4287b0f21cf900906cc">&#9670;&#160;</a></span>M_PI_2_F</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define M_PI_2_F&#160;&#160;&#160;0.63661977f</td>
+          <td class="memname">#define M_DEG_TO_RAD_F&#160;&#160;&#160;static_cast&lt;float&gt;(M_PI / 180.0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -273,23 +237,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00019">19</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
-
-</div>
-</div>
-<a id="ae8d0a36f0690850c6b5c1cabdcb8684b" name="ae8d0a36f0690850c6b5c1cabdcb8684b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8d0a36f0690850c6b5c1cabdcb8684b">&#9670;&#160;</a></span>M_RAD_TO_DEG_F</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define M_RAD_TO_DEG_F&#160;&#160;&#160;57.2957795f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00021">21</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00024">24</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
 
 </div>
 </div>
@@ -306,7 +254,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00042">42</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00026">26</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
 
 </div>
 </div>
@@ -334,7 +282,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00043">43</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00028">28</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
 
 </div>
 </div>
@@ -362,7 +310,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00037">37</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="definitions_8h_source.html#l00034">34</a> of file <a class="el" href="definitions_8h_source.html">definitions.h</a>.</p>
 
 </div>
 </div>
@@ -371,7 +319,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="definitions_8h.html">definitions.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_38cd3ecbc1efe502063aa758009bff68.html">Driver</a></li><li class="navelem"><a class="el" href="definitions_8h.html">definitions.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

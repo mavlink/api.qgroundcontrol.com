@@ -789,97 +789,106 @@ $(document).ready(function(){initNavTree('MockLinkFTP_8cc_source.html',''); init
 <div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>            commonLen = 0;</div>
 <div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>        }</div>
 <div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span> </div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>        <span class="comment">// For MockLink all params are at defaults, so when withDefaults is requested</span></div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>        <span class="comment">// we still include the default value for every param (matching real ArduPilot</span></div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>        <span class="comment">// behavior where value == default means no default flag, but we include them</span></div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>        <span class="comment">// so QGC can show default values in the UI)</span></div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> addDefault = withDefaults;</div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>        <span class="keyword">const</span> quint8 flags = addDefault ? 0x01 : 0x00;</div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> packedLen = 2 + nameLen + valueSize + (addDefault ? valueSize : 0);</div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span> </div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>        <span class="comment">// FTP reads data in fixed-size blocks (readSize = 239 bytes, the MAVLink FTP</span></div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>        <span class="comment">// payload). If a multi-byte value straddles a block boundary, a retransmitted</span></div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>        <span class="comment">// block could overwrite part of the value with stale data, corrupting it.</span></div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>        <span class="comment">// To prevent this, ArduPilot inserts zero-byte padding before the entry so</span></div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>        <span class="comment">// the value bytes land entirely within one block. The parser skips leading</span></div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>        <span class="comment">// zeros between entries. See AP_Filesystem_Param::pack_param.</span></div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>        <span class="keywordflow">if</span> (valueSize &gt; 1) {</div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>            <span class="keyword">const</span> quint32 dataOfs = <span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(data.size()) - headerSize;</div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>            <span class="keyword">const</span> quint32 endOfs = dataOfs + <span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(packedLen);</div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>            <span class="keyword">const</span> quint32 endMod = endOfs % readSize;</div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>            <span class="keywordflow">if</span> (endMod &gt; 0 &amp;&amp; endMod &lt; <span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(valueSize)) {</div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>                <span class="keyword">const</span> <span class="keywordtype">int</span> pad = valueSize - <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(endMod);</div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; pad; i++) {</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>                    stream &lt;&lt; static_cast&lt;quint8&gt;(0);</div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>                }</div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>            }</div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>        }</div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span> </div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>        <span class="comment">// Type + flags byte</span></div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>        stream &lt;&lt; static_cast&lt;quint8&gt;(apType | (flags &lt;&lt; 4));</div>
-<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>        <span class="comment">// Name encoding byte: upper 4 bits = (name_len - 1), lower 4 bits = common_len</span></div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>        stream &lt;&lt; static_cast&lt;quint8&gt;(((nameLen - 1) &lt;&lt; 4) | commonLen);</div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>        <span class="comment">// Write the unique suffix of the name</span></div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>        stream.writeRawData(nameBytes.constData() + commonLen, nameLen);</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span> </div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>        <span class="comment">// Write parameter value</span></div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>        <span class="keywordflow">switch</span> (apType) {</div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>        <span class="keywordflow">case</span> AP_PARAM_INT8: {</div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>            <span class="keyword">const</span> qint8 v = <span class="keyword">static_cast&lt;</span>qint8<span class="keyword">&gt;</span>(value.toInt());</div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>            stream &lt;&lt; v;</div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>            <span class="keywordflow">if</span> (addDefault) stream &lt;&lt; v;</div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>        }</div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>        <span class="keywordflow">case</span> AP_PARAM_INT16: {</div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>            <span class="keyword">const</span> qint16 v = <span class="keyword">static_cast&lt;</span>qint16<span class="keyword">&gt;</span>(value.toInt());</div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>            stream &lt;&lt; v;</div>
-<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>            <span class="keywordflow">if</span> (addDefault) stream &lt;&lt; v;</div>
-<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>        }</div>
-<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>        <span class="keywordflow">case</span> AP_PARAM_INT32: {</div>
-<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>            <span class="keyword">const</span> qint32 v = value.toInt();</div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>            stream &lt;&lt; v;</div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>            <span class="keywordflow">if</span> (addDefault) stream &lt;&lt; v;</div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>        }</div>
-<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>        <span class="keywordflow">case</span> AP_PARAM_FLOAT: {</div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>            <span class="keyword">const</span> <span class="keywordtype">float</span> f = value.toFloat();</div>
-<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>            qint32 raw;</div>
-<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>            memcpy(&amp;raw, &amp;f, <span class="keyword">sizeof</span>(raw));</div>
-<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>            stream &lt;&lt; raw;</div>
-<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>            <span class="keywordflow">if</span> (addDefault) stream &lt;&lt; raw;</div>
-<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>        }</div>
-<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>        }</div>
-<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span> </div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>        previousName = nameBytes;</div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>    }</div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span> </div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>    <span class="comment">// Clean up previous temp file</span></div>
-<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>    <span class="keywordflow">if</span> (!_paramPckTempFile.isEmpty()) {</div>
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>        QFile::remove(_paramPckTempFile);</div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>        _paramPckTempFile.clear();</div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>    }</div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>        <span class="comment">// For ArduPilot, calibration-indicator parameters have a firmware default of 0</span></div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>        <span class="comment">// (uncalibrated). All other parameters use their current value as the default,</span></div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>        <span class="comment">// since MockLink params are loaded from a snapshot and we have no separate</span></div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>        <span class="comment">// defaults file.</span></div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> useZeroDefault = withDefaults</div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>            &amp;&amp; (_mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a728b80b8bdcda5de8b9036700fe3ba91">getFirmwareType</a>() == MAV_AUTOPILOT_ARDUPILOTMEGA)</div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>            &amp;&amp; MockLink::kAPMCalOffsetParams.contains(name);</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> addDefault = withDefaults;</div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>        <span class="keyword">const</span> quint8 flags = addDefault ? 0x01 : 0x00;</div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> packedLen = 2 + nameLen + valueSize + (addDefault ? valueSize : 0);</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span> </div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>        <span class="comment">// FTP reads data in fixed-size blocks (readSize = 239 bytes, the MAVLink FTP</span></div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>        <span class="comment">// payload). If a multi-byte value straddles a block boundary, a retransmitted</span></div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>        <span class="comment">// block could overwrite part of the value with stale data, corrupting it.</span></div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>        <span class="comment">// To prevent this, ArduPilot inserts zero-byte padding before the entry so</span></div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>        <span class="comment">// the value bytes land entirely within one block. The parser skips leading</span></div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>        <span class="comment">// zeros between entries. See AP_Filesystem_Param::pack_param.</span></div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>        <span class="keywordflow">if</span> (valueSize &gt; 1) {</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>            <span class="keyword">const</span> quint32 dataOfs = <span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(data.size()) - headerSize;</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>            <span class="keyword">const</span> quint32 endOfs = dataOfs + <span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(packedLen);</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>            <span class="keyword">const</span> quint32 endMod = endOfs % readSize;</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>            <span class="keywordflow">if</span> (endMod &gt; 0 &amp;&amp; endMod &lt; <span class="keyword">static_cast&lt;</span>quint32<span class="keyword">&gt;</span>(valueSize)) {</div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>                <span class="keyword">const</span> <span class="keywordtype">int</span> pad = valueSize - <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(endMod);</div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; pad; i++) {</div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>                    stream &lt;&lt; static_cast&lt;quint8&gt;(0);</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>                }</div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>            }</div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>        }</div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span> </div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>        <span class="comment">// Type + flags byte</span></div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>        stream &lt;&lt; static_cast&lt;quint8&gt;(apType | (flags &lt;&lt; 4));</div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>        <span class="comment">// Name encoding byte: upper 4 bits = (name_len - 1), lower 4 bits = common_len</span></div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>        stream &lt;&lt; static_cast&lt;quint8&gt;(((nameLen - 1) &lt;&lt; 4) | commonLen);</div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>        <span class="comment">// Write the unique suffix of the name</span></div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>        stream.writeRawData(nameBytes.constData() + commonLen, nameLen);</div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span> </div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>        <span class="comment">// Write parameter value</span></div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>        <span class="keywordflow">switch</span> (apType) {</div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>        <span class="keywordflow">case</span> AP_PARAM_INT8: {</div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>            <span class="keyword">const</span> qint8 v = <span class="keyword">static_cast&lt;</span>qint8<span class="keyword">&gt;</span>(value.toInt());</div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>            stream &lt;&lt; v;</div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>            <span class="keywordflow">if</span> (addDefault) stream &lt;&lt; (useZeroDefault ? qint8(0) : v);</div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>        }</div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>        <span class="keywordflow">case</span> AP_PARAM_INT16: {</div>
+<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>            <span class="keyword">const</span> qint16 v = <span class="keyword">static_cast&lt;</span>qint16<span class="keyword">&gt;</span>(value.toInt());</div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>            stream &lt;&lt; v;</div>
+<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>            <span class="keywordflow">if</span> (addDefault) stream &lt;&lt; (useZeroDefault ? qint16(0) : v);</div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>        }</div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>        <span class="keywordflow">case</span> AP_PARAM_INT32: {</div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>            <span class="keyword">const</span> qint32 v = value.toInt();</div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>            stream &lt;&lt; v;</div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>            <span class="keywordflow">if</span> (addDefault) stream &lt;&lt; (useZeroDefault ? qint32(0) : v);</div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>        }</div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>        <span class="keywordflow">case</span> AP_PARAM_FLOAT: {</div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>            <span class="keyword">const</span> <span class="keywordtype">float</span> f = value.toFloat();</div>
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>            qint32 raw;</div>
+<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>            memcpy(&amp;raw, &amp;f, <span class="keyword">sizeof</span>(raw));</div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>            stream &lt;&lt; raw;</div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>            <span class="keywordflow">if</span> (addDefault) {</div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>                <span class="keywordflow">if</span> (useZeroDefault) {</div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>                    stream &lt;&lt; qint32(0);</div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>                    stream &lt;&lt; raw;</div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>                }</div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>            }</div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>        }</div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>        }</div>
 <div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span> </div>
-<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>    <span class="comment">// Write to temp file</span></div>
-<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>    QTemporaryFile tmpFile(QDir::temp().filePath(QStringLiteral(<span class="stringliteral">&quot;MockLinkParamPckXXXXXX&quot;</span>)));</div>
-<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>    tmpFile.setAutoRemove(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span> </div>
-<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>    <span class="keywordflow">if</span> (!tmpFile.open()) {</div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>        qCWarning(MockLinkFTPLog) &lt;&lt; <span class="stringliteral">&quot;_generateParamPck: failed to create temp file&quot;</span>;</div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>        <span class="keywordflow">return</span> QString();</div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>        previousName = nameBytes;</div>
+<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>    }</div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span> </div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>    <span class="comment">// Clean up previous temp file</span></div>
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>    <span class="keywordflow">if</span> (!_paramPckTempFile.isEmpty()) {</div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>        QFile::remove(_paramPckTempFile);</div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>        _paramPckTempFile.clear();</div>
 <div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>    }</div>
 <div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span> </div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>    tmpFile.write(data);</div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>    tmpFile.close();</div>
-<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>    _paramPckTempFile = tmpFile.fileName();</div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>    <span class="comment">// Write to temp file</span></div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>    QTemporaryFile tmpFile(QDir::temp().filePath(QStringLiteral(<span class="stringliteral">&quot;MockLinkParamPckXXXXXX&quot;</span>)));</div>
+<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>    tmpFile.setAutoRemove(<span class="keyword">false</span>);</div>
 <div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span> </div>
-<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>    qCDebug(MockLinkFTPLog) &lt;&lt; <span class="stringliteral">&quot;_generateParamPck: generated&quot;</span> &lt;&lt; numParams &lt;&lt; <span class="stringliteral">&quot;params,&quot;</span></div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>                            &lt;&lt; data.size() &lt;&lt; <span class="stringliteral">&quot;bytes, withDefaults:&quot;</span> &lt;&lt; withDefaults</div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>                            &lt;&lt; <span class="stringliteral">&quot;file:&quot;</span> &lt;&lt; tmpFile.fileName();</div>
-<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span> </div>
-<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>    <span class="keywordflow">return</span> tmpFile.fileName();</div>
-<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>}</div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>    <span class="keywordflow">if</span> (!tmpFile.open()) {</div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>        qCWarning(MockLinkFTPLog) &lt;&lt; <span class="stringliteral">&quot;_generateParamPck: failed to create temp file&quot;</span>;</div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>        <span class="keywordflow">return</span> QString();</div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>    }</div>
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span> </div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>    tmpFile.write(data);</div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>    tmpFile.close();</div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>    _paramPckTempFile = tmpFile.fileName();</div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span> </div>
+<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>    qCDebug(MockLinkFTPLog) &lt;&lt; <span class="stringliteral">&quot;_generateParamPck: generated&quot;</span> &lt;&lt; numParams &lt;&lt; <span class="stringliteral">&quot;params,&quot;</span></div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>                            &lt;&lt; data.size() &lt;&lt; <span class="stringliteral">&quot;bytes, withDefaults:&quot;</span> &lt;&lt; withDefaults</div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>                            &lt;&lt; <span class="stringliteral">&quot;file:&quot;</span> &lt;&lt; tmpFile.fileName();</div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span> </div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>    <span class="keywordflow">return</span> tmpFile.fileName();</div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>}</div>
 <div class="ttc" id="aMockLinkFTP_8h_html"><div class="ttname"><a href="MockLinkFTP_8h.html">MockLinkFTP.h</a></div></div>
 <div class="ttc" id="aMockLink_8h_html"><div class="ttname"><a href="MockLink_8h.html">MockLink.h</a></div></div>
 <div class="ttc" id="aQGCCompression_8cc_html_a5e7e27258e59f4c4a80e5fb757024a2d"><div class="ttname"><a href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a></div><div class="ttdeci">Error error</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00114">QGCCompression.cc:114</a></div></div>
@@ -920,8 +929,9 @@ $(document).ready(function(){initNavTree('MockLinkFTP_8cc_source.html',''); init
 <div class="ttc" id="aclassMockLinkFTP_html_aa1f714a0d5ee3151c827bfa8bb6541b2a8e56df3f96626086056a7abf18d52684"><div class="ttname"><a href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2a8e56df3f96626086056a7abf18d52684">MockLinkFTP::errModeNone</a></div><div class="ttdeci">@ errModeNone</div><div class="ttdoc">No error, respond correctly.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkFTP_8h_source.html#l00043">MockLinkFTP.h:43</a></div></div>
 <div class="ttc" id="aclassMockLinkFTP_html_aa1f714a0d5ee3151c827bfa8bb6541b2abd6587523eb9a3da272c3ace102999fa"><div class="ttname"><a href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2abd6587523eb9a3da272c3ace102999fa">MockLinkFTP::errModeNoSecondResponse</a></div><div class="ttdeci">@ errModeNoSecondResponse</div><div class="ttdoc">No response to subsequent request to initial command.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkFTP_8h_source.html#l00046">MockLinkFTP.h:46</a></div></div>
 <div class="ttc" id="aclassMockLinkFTP_html_aa1f714a0d5ee3151c827bfa8bb6541b2ac99f2afed3669297e9270e3a8addd930"><div class="ttname"><a href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2ac99f2afed3669297e9270e3a8addd930">MockLinkFTP::errModeNakResponse</a></div><div class="ttdeci">@ errModeNakResponse</div><div class="ttdoc">Nak all requests.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkFTP_8h_source.html#l00045">MockLinkFTP.h:45</a></div></div>
-<div class="ttc" id="aclassMockLink_html"><div class="ttname"><a href="classMockLink.html">MockLink</a></div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00025">MockLink.h:26</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a94b2e99a1bfe6da83b5a5d8aeb8e4147"><div class="ttname"><a href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">MockLink::respondWithMavlinkMessage</a></div><div class="ttdeci">void respondWithMavlinkMessage(const mavlink_message_t &amp;msg)</div><div class="ttdoc">Sends the specified mavlink message to QGC.</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00631">MockLink.cc:631</a></div></div>
+<div class="ttc" id="aclassMockLink_html"><div class="ttname"><a href="classMockLink.html">MockLink</a></div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00027">MockLink.h:28</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a728b80b8bdcda5de8b9036700fe3ba91"><div class="ttname"><a href="classMockLink.html#a728b80b8bdcda5de8b9036700fe3ba91">MockLink::getFirmwareType</a></div><div class="ttdeci">MAV_AUTOPILOT getFirmwareType() const</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00050">MockLink.h:50</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a94b2e99a1bfe6da83b5a5d8aeb8e4147"><div class="ttname"><a href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">MockLink::respondWithMavlinkMessage</a></div><div class="ttdeci">void respondWithMavlinkMessage(const mavlink_message_t &amp;msg)</div><div class="ttdoc">Sends the specified mavlink message to QGC.</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00753">MockLink.cc:753</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -92,6 +92,5 @@ var dir_b125c1a6d6bd38bad076914ead21a0c9 =
     [ "APMSubMotorComponentController.cc", "APMSubMotorComponentController_8cc.html", null ],
     [ "APMSubMotorComponentController.h", "APMSubMotorComponentController_8h.html", "APMSubMotorComponentController_8h" ],
     [ "APMTuningComponent.cc", "APMTuningComponent_8cc.html", null ],
-    [ "APMTuningComponent.h", "APMTuningComponent_8h.html", "APMTuningComponent_8h" ],
-    [ "APMTuningComponentSub.qml", "APMTuningComponentSub_8qml.html", null ]
+    [ "APMTuningComponent.h", "APMTuningComponent_8h.html", "APMTuningComponent_8h" ]
 ];

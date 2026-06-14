@@ -31,7 +31,7 @@ var searchData=
   ['position_5flength_28',['position_length',['../structsensor__gnss__relative__s.html#ab140cfd7e362c85f1d8952b8ee910af8',1,'sensor_gnss_relative_s']]],
   ['positional_29',['positional',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#a79756b7ae8e969b2f1d0fe54d7f16d7a',1,'QGCCommandLineParser::CommandLineParseResult']]],
   ['previousstate_30',['previousState',['../structStateMachineLogger_1_1LogEntry.html#aeb7639edf4f8413b7cad8daeb102fa84',1,'StateMachineLogger::LogEntry']]],
-  ['prn_31',['prn',['../structsatellite__info__s.html#a57a11ba5c1a3f3e0434d3f4d179ca65b',1,'satellite_info_s']]],
+  ['prn_31',['prn',['../structsatellite__info__s.html#a8a211f6f542cd294c7d2f22e31485657',1,'satellite_info_s']]],
   ['productidentifier_32',['productIdentifier',['../classQSerialPortInfoPrivate.html#a97e25b9a17d1968aaba28c9805c2f9e6',1,'QSerialPortInfoPrivate']]],
   ['progresshandler_33',['progressHandler',['../structVehicleTypes_1_1MavCmdAckHandlerInfo__s.html#a9af41a5f4b9d2e08d6aafd6b6917f424',1,'VehicleTypes::MavCmdAckHandlerInfo_s']]],
   ['progresshandlerdata_34',['progressHandlerData',['../structVehicleTypes_1_1MavCmdAckHandlerInfo__s.html#a257cb2b7270cd27284b4eb2e1f07bfd5',1,'VehicleTypes::MavCmdAckHandlerInfo_s']]],

@@ -19,8 +19,6 @@ var classLogViewerController =
     [ "hasLoadedLog", "classLogViewerController.html#a310c3117c8c88540a2c06099a57a59b1", null ],
     [ "isFieldSelected", "classLogViewerController.html#a8ff46064aeccb975c596e44f4c9b7f3e", null ],
     [ "isGroupExpanded", "classLogViewerController.html#a0d752ecfcf38319d41addd7a3358ea5e", null ],
-    [ "modeColor", "classLogViewerController.html#ab9b712d645ac3579c23c9fdf263446e0", null ],
-    [ "modeLegendEntries", "classLogViewerController.html#add65f24d0ef589839a562151a8b37085", null ],
     [ "openBinLog", "classLogViewerController.html#a2993d3f717f05a3442d0d4dbca623ae4", null ],
     [ "openTLog", "classLogViewerController.html#a153693d1958a57909d9c4d91d968056c", null ],
     [ "openULogFile", "classLogViewerController.html#ae25cdea0eeffe30f3c8a871c17e2d16e", null ],

@@ -9,6 +9,8 @@ var classAPMSensorsComponentController =
     [ "calibrateGyro", "classAPMSensorsComponentController.html#ab2497ae27e20086082c1d23c86d35bd5", null ],
     [ "calibrateMotorInterference", "classAPMSensorsComponentController.html#a639ed83e85fb5e22369ae4b94a114598", null ],
     [ "calibratePressure", "classAPMSensorsComponentController.html#ac25636f715adb80d7eee2389dc41e65c", null ],
+    [ "calibrationActive", "classAPMSensorsComponentController.html#ac7684c90f07be247dfdec89940c2b342", null ],
+    [ "calibrationActiveChanged", "classAPMSensorsComponentController.html#a4fbd92796689050bdba823fd532794b1", null ],
     [ "calibrationComplete", "classAPMSensorsComponentController.html#ad78a36cec1d8dcaa8e4132738143e2a3", null ],
     [ "cancelCalibration", "classAPMSensorsComponentController.html#a5d81c9c0344b0363539afdd437980ff5", null ],
     [ "compass1CalFitness", "classAPMSensorsComponentController.html#aa39f38d635cea4ab09fe1e868da34dfb", null ],

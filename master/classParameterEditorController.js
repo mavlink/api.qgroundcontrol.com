@@ -17,6 +17,7 @@ var classParameterEditorController =
     [ "favoritesChanged", "classParameterEditorController.html#ac007dfa881def35c85510d601e29123c", null ],
     [ "hideReadOnlyChanged", "classParameterEditorController.html#afd2c6a11aa20c0021cd06cd328662ede", null ],
     [ "isFavorite", "classParameterEditorController.html#acbdaf5b75bf0ede6a20a38ee4dd920e9", null ],
+    [ "missingParamsFromFile", "classParameterEditorController.html#af6a1bb997d7ccf125527c6a05e4809c4", null ],
     [ "parametersChanged", "classParameterEditorController.html#a2ad968a09b9c142d7caad50ce89f78bb", null ],
     [ "refresh", "classParameterEditorController.html#a4039462a8a647e6b1f9adc546cc2b5b5", null ],
     [ "resetAllToDefaults", "classParameterEditorController.html#af73da671d57778dee517f2ac7ce6ad36", null ],

@@ -3,8 +3,7 @@ var classLoggingCategoryFlatModel =
     [ "Roles", "classLoggingCategoryFlatModel.html#ad76851c285a28aa986944ec9a90f04e0", [
       [ "ShortNameRole", "classLoggingCategoryFlatModel.html#ad76851c285a28aa986944ec9a90f04e0a6d4e556f1149e79e6d2b96a3cf0b05ee", null ],
       [ "FullNameRole", "classLoggingCategoryFlatModel.html#ad76851c285a28aa986944ec9a90f04e0a2b68df54cbde048c000128cdaff58c1a", null ],
-      [ "EnabledRole", "classLoggingCategoryFlatModel.html#ad76851c285a28aa986944ec9a90f04e0aaf276ce861a1a34aa2fed688a4e0073e", null ],
-      [ "LogLevelRole", "classLoggingCategoryFlatModel.html#ad76851c285a28aa986944ec9a90f04e0ade99e5f113c33127705514889be5f88d", null ]
+      [ "EnabledRole", "classLoggingCategoryFlatModel.html#ad76851c285a28aa986944ec9a90f04e0aaf276ce861a1a34aa2fed688a4e0073e", null ]
     ] ],
     [ "LoggingCategoryFlatModel", "classLoggingCategoryFlatModel.html#a98c8b7b48e644cdba04690ddbdab8a4c", null ],
     [ "at", "classLoggingCategoryFlatModel.html#ad0e21876484f45affa6274cb87c1531e", null ],

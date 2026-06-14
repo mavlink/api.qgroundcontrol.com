@@ -55,7 +55,5 @@ var searchData=
   ['transectstylemapvisuals_2eqml_52',['TransectStyleMapVisuals.qml',['../TransectStyleMapVisuals_8qml.html',1,'']]],
   ['transformeditor_2eqml_53',['TransformEditor.qml',['../TransformEditor_8qml.html',1,'']]],
   ['transformpositioncontroller_2ecc_54',['TransformPositionController.cc',['../TransformPositionController_8cc.html',1,'']]],
-  ['transformpositioncontroller_2eh_55',['TransformPositionController.h',['../TransformPositionController_8h.html',1,'']]],
-  ['transportstrategy_2ecc_56',['TransportStrategy.cc',['../TransportStrategy_8cc.html',1,'']]],
-  ['transportstrategy_2eh_57',['TransportStrategy.h',['../TransportStrategy_8h.html',1,'']]]
+  ['transformpositioncontroller_2eh_55',['TransformPositionController.h',['../TransformPositionController_8h.html',1,'']]]
 ];

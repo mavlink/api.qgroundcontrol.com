@@ -12,16 +12,15 @@ var searchData=
   ['loggingcategorytreemodel_9',['LoggingCategoryTreeModel',['../classLoggingCategoryTreeModel.html',1,'']]],
   ['loggingcategorytreenode_10',['LoggingCategoryTreeNode',['../structLoggingCategoryTreeNode.html',1,'']]],
   ['logmanager_11',['LogManager',['../classLogManager.html',1,'']]],
-  ['logmodel_12',['LogModel',['../classLogModel.html',1,'']]],
-  ['logparseresult_13',['LogParseResult',['../structLogParseResult.html',1,'']]],
-  ['logremotesink_14',['LogRemoteSink',['../classLogRemoteSink.html',1,'']]],
+  ['logmanagersettings_12',['LogManagerSettings',['../classLogManagerSettings.html',1,'']]],
+  ['logmodel_13',['LogModel',['../classLogModel.html',1,'']]],
+  ['logparseresult_14',['LogParseResult',['../structLogParseResult.html',1,'']]],
   ['logreplayconfiguration_15',['LogReplayConfiguration',['../classLogReplayConfiguration.html',1,'']]],
   ['logreplaylink_16',['LogReplayLink',['../classLogReplayLink.html',1,'']]],
   ['logreplaylinkcontroller_17',['LogReplayLinkController',['../classLogReplayLinkController.html',1,'']]],
   ['logreplayworker_18',['LogReplayWorker',['../classLogReplayWorker.html',1,'']]],
-  ['logstore_19',['LogStore',['../classLogStore.html',1,'']]],
-  ['logstorequerymodel_20',['LogStoreQueryModel',['../classLogStoreQueryModel.html',1,'']]],
-  ['logviewercontroller_21',['LogViewerController',['../classLogViewerController.html',1,'']]],
-  ['logviewerparammetadata_22',['LogViewerParamMetaData',['../classLogViewerParamMetaData.html',1,'']]],
-  ['loopstate_23',['LoopState',['../classLoopState.html',1,'']]]
+  ['logviewercontroller_19',['LogViewerController',['../classLogViewerController.html',1,'']]],
+  ['logviewerparammetadata_20',['LogViewerParamMetaData',['../classLogViewerParamMetaData.html',1,'']]],
+  ['logviewersettings_21',['LogViewerSettings',['../classLogViewerSettings.html',1,'']]],
+  ['loopstate_22',['LoopState',['../classLoopState.html',1,'']]]
 ];

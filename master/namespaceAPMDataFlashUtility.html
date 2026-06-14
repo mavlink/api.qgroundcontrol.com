@@ -129,8 +129,8 @@ Functions</h2></td></tr>
 <tr class="separator:afbc0c915cd1fc96a85eb1ae63853e78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7e5a54b1595a7b029c7265dcfaf9113" id="r_ac7e5a54b1595a7b029c7265dcfaf9113"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceAPMDataFlashUtility.html#ac7e5a54b1595a7b029c7265dcfaf9113">parseFmtMessages</a> (const char *data, qint64 size, QMap&lt; uint8_t, <a class="el" href="structAPMDataFlashUtility_1_1MessageFormat.html">MessageFormat</a> &gt; &amp;formats)</td></tr>
 <tr class="separator:ac7e5a54b1595a7b029c7265dcfaf9113"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cc100fb893c4b48669a54c1106cef0e" id="r_a6cc100fb893c4b48669a54c1106cef0e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceAPMDataFlashUtility.html#a6cc100fb893c4b48669a54c1106cef0e">iterateMessages</a> (const char *data, qint64 size, const QMap&lt; uint8_t, <a class="el" href="structAPMDataFlashUtility_1_1MessageFormat.html">MessageFormat</a> &gt; &amp;formats, const <a class="el" href="namespaceAPMDataFlashUtility.html#a024e24ff4af99b4ef6228ee3f2fe96b8">MessageCallback</a> &amp;callback)</td></tr>
-<tr class="separator:a6cc100fb893c4b48669a54c1106cef0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1334aeb3e8c15123a31d9fef16db273" id="r_ae1334aeb3e8c15123a31d9fef16db273"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceAPMDataFlashUtility.html#ae1334aeb3e8c15123a31d9fef16db273">iterateMessages</a> (const char *data, qint64 size, const QMap&lt; uint8_t, <a class="el" href="structAPMDataFlashUtility_1_1MessageFormat.html">MessageFormat</a> &gt; &amp;formats, const <a class="el" href="namespaceAPMDataFlashUtility.html#a024e24ff4af99b4ef6228ee3f2fe96b8">MessageCallback</a> &amp;callback, const std::function&lt; void(float)&gt; &amp;progressCallback)</td></tr>
+<tr class="separator:ae1334aeb3e8c15123a31d9fef16db273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -355,8 +355,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a6cc100fb893c4b48669a54c1106cef0e" name="a6cc100fb893c4b48669a54c1106cef0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cc100fb893c4b48669a54c1106cef0e">&#9670;&#160;</a></span>iterateMessages()</h2>
+<a id="ae1334aeb3e8c15123a31d9fef16db273" name="ae1334aeb3e8c15123a31d9fef16db273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1334aeb3e8c15123a31d9fef16db273">&#9670;&#160;</a></span>iterateMessages()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -383,7 +383,13 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="namespaceAPMDataFlashUtility.html#a024e24ff4af99b4ef6228ee3f2fe96b8">MessageCallback</a> &amp;&#160;</td>
-          <td class="paramname"><em>callback</em>&#160;</td>
+          <td class="paramname"><em>callback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::function&lt; void(float)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>progressCallback</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -398,6 +404,7 @@ Variables</h2></td></tr>
     <tr><td class="paramname">size</td><td>Size of log data </td></tr>
     <tr><td class="paramname">formats</td><td>Message formats from <a class="el" href="namespaceAPMDataFlashUtility.html#ac7e5a54b1595a7b029c7265dcfaf9113">parseFmtMessages()</a> </td></tr>
     <tr><td class="paramname">callback</td><td>Function called for each message </td></tr>
+    <tr><td class="paramname">progressCallback</td><td>Optional callback invoked every ~1000 messages with byte-position progress (0.0–1.0) </td></tr>
   </table>
   </dd>
 </dl>
@@ -407,7 +414,7 @@ Variables</h2></td></tr>
 
 <p class="reference">References <a class="el" href="APMDataFlashUtility_8cc_source.html#l00275">iterateMessages()</a>, <a class="el" href="APMDataFlashUtility_8h_source.html#l00019">kHeaderByte1</a>, <a class="el" href="APMDataFlashUtility_8h_source.html#l00020">kHeaderByte2</a>, and <a class="el" href="APMDataFlashUtility_8h_source.html#l00030">APMDataFlashUtility::MessageFormat::length</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DataFlashParser_8cc_source.html#l00080">DataFlashParser::getTagsFromLog()</a>, <a class="el" href="APMDataFlashUtility_8cc_source.html#l00275">iterateMessages()</a>, and <a class="el" href="LogViewerDataFlashParser_8cc_source.html#l00219">DataFlashParser::parseFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DataFlashParser_8cc_source.html#l00080">DataFlashParser::getTagsFromLog()</a>, <a class="el" href="APMDataFlashUtility_8cc_source.html#l00275">iterateMessages()</a>, and <a class="el" href="LogViewerDataFlashParser_8cc_source.html#l00240">DataFlashParser::parseFile()</a>.</p>
 
 </div>
 </div>
@@ -456,7 +463,7 @@ Variables</h2></td></tr>
 
 <p class="reference">References <a class="el" href="APMDataFlashUtility_8cc_source.html#l00191">isValidHeader()</a>, <a class="el" href="APMDataFlashUtility_8h_source.html#l00021">kFmtMessageType</a>, <a class="el" href="APMDataFlashUtility_8h_source.html#l00022">kFmtPayloadSize</a>, <a class="el" href="APMDataFlashUtility_8h_source.html#l00019">kHeaderByte1</a>, <a class="el" href="APMDataFlashUtility_8h_source.html#l00020">kHeaderByte2</a>, <a class="el" href="APMDataFlashUtility_8cc_source.html#l00228">parseFmtMessages()</a>, <a class="el" href="APMDataFlashUtility_8cc_source.html#l00216">parseFmtPayload()</a>, and <a class="el" href="APMDataFlashUtility_8h_source.html#l00029">APMDataFlashUtility::MessageFormat::type</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DataFlashParser_8cc_source.html#l00080">DataFlashParser::getTagsFromLog()</a>, <a class="el" href="LogViewerDataFlashParser_8cc_source.html#l00219">DataFlashParser::parseFile()</a>, and <a class="el" href="APMDataFlashUtility_8cc_source.html#l00228">parseFmtMessages()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DataFlashParser_8cc_source.html#l00080">DataFlashParser::getTagsFromLog()</a>, <a class="el" href="LogViewerDataFlashParser_8cc_source.html#l00240">DataFlashParser::parseFile()</a>, and <a class="el" href="APMDataFlashUtility_8cc_source.html#l00228">parseFmtMessages()</a>.</p>
 
 </div>
 </div>

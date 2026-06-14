@@ -22,6 +22,7 @@ var classLinkInterface =
     [ "mavlinkChannelIsSet", "classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0", null ],
     [ "removeVehicleReference", "classLinkInterface.html#aaeb24d8e6bc5e1cdfbf283b3c39652c7", null ],
     [ "reportMavlinkV1Traffic", "classLinkInterface.html#a66ff79d564811ddba4ceb22a5e1a7dda", null ],
+    [ "sendMessageThreadSafe", "classLinkInterface.html#a60cd0f2fec9024e4d6980a9bda179207", null ],
     [ "setDecodedFirstMavlinkPacket", "classLinkInterface.html#a18985fd2730d86548428466e4a4bcd50", null ],
     [ "signing", "classLinkInterface.html#a98e4707e8a6dd846dbf40c17f33a77d2", null ],
     [ "signing", "classLinkInterface.html#ab9c104c54d5c07a28a9e678e21d34c27", null ],

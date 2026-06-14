@@ -13,6 +13,7 @@ var MAVLinkSigning_8cc =
     [ "setMessageSigned", "MAVLinkSigning_8cc.html#adf7d082829b082f118c1551452426a2a", null ],
     [ "signingStatusString", "MAVLinkSigning_8cc.html#a353e105dda6740b73ad0a75d34034842", null ],
     [ "signingStreamCount", "MAVLinkSigning_8cc.html#af34878684ca726eda1c0e01943282cf9", null ],
+    [ "signMessage", "MAVLinkSigning_8cc.html#a4a9c58f9052651f3f4eb05b60e5562ae", null ],
     [ "verifySignature", "MAVLinkSigning_8cc.html#adec48c77e1653d89b7f7975b42f699a7", null ],
     [ "verifySignature", "MAVLinkSigning_8cc.html#a6b275f849a7ea6af77ba7a9e4e1e60a9", null ]
 ];

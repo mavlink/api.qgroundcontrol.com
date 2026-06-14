@@ -30,5 +30,6 @@ var searchData=
   ['distancebetween_27',['distanceBetween',['../structTerrainPathHeightInfo.html#af362b193fab7157740036945827c8f76',1,'TerrainPathHeightInfo']]],
   ['distancemodename_28',['distanceModeName',['../classCameraCalc.html#a064e6c69a607d793f14aee44417ee6c9',1,'CameraCalc']]],
   ['distancetosurfacename_29',['distanceToSurfaceName',['../classCameraCalc.html#ac6ae5500ff3d5b517fab9dd89d55e87f',1,'CameraCalc']]],
-  ['dropouts_30',['dropouts',['../structLogParseResult.html#a5a8c4ccf3afa8d76e37f9b3c8b159a2a',1,'LogParseResult']]]
+  ['dropouts_30',['dropouts',['../structLogParseResult.html#a5a8c4ccf3afa8d76e37f9b3c8b159a2a',1,'LogParseResult']]],
+  ['durationsecs_31',['durationSecs',['../structGPSSurveyInStatus.html#afa03b9c0d322f364a4920a5c0156b555',1,'GPSSurveyInStatus']]]
 ];

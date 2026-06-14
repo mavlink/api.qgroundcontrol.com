@@ -20,11 +20,12 @@ var searchData=
   ['inforeceived_17',['infoReceived',['../structQGCCameraManager_1_1CameraStruct.html#a380367d40f4eca2c4b0cea0c3049f170',1,'QGCCameraManager::CameraStruct']]],
   ['inputbaudrate_18',['inputBaudRate',['../classQSerialPortPrivate.html#a036bd4358ba1702d7c35dfd94bf0d4c1',1,'QSerialPortPrivate']]],
   ['invalid_5fdevice_5fid_19',['INVALID_DEVICE_ID',['../qserialport__p_8h.html#a7358e4e2d0bcf44ad1aef584fcf75d3e',1,'qserialport_p.h']]],
-  ['iomanagerrunning_20',['ioManagerRunning',['../structAndroidSerial_1_1JniMethodCache.html#a09dab019f88380f8f2002fca4a3386f9',1,'AndroidSerial::JniMethodCache']]],
-  ['isdevicenameopen_21',['isDeviceNameOpen',['../structAndroidSerial_1_1JniMethodCache.html#a3eea55b336f753b1ebf125165018a87d',1,'AndroidSerial::JniMethodCache']]],
-  ['isdirectory_22',['isDirectory',['../structQGCCompression_1_1ArchiveEntry.html#a15f08fb04f047b1cdb6dec3a5be2631c',1,'QGCCompression::ArchiveEntry']]],
-  ['isvalid_23',['isValid',['../structKMLSchemaValidator_1_1ValidationResult.html#a145e65bad8ae674da369f16d515d8abe',1,'KMLSchemaValidator::ValidationResult']]],
-  ['item_24',['item',['../structLoggingCategoryTreeNode.html#ad969b2393570a41e186810d23ec569b4',1,'LoggingCategoryTreeNode']]],
-  ['itemlabelprefix_25',['itemLabelPrefix',['../structMixer_1_1MixerOption_1_1ActuatorGroup.html#a8508f75ef8765b9bc3645a01f7ef4382',1,'Mixer::MixerOption::ActuatorGroup']]],
-  ['items_26',['items',['../structMixer_1_1Rule.html#aaea664a49cdd084b79a045dd630feee2',1,'Mixer::Rule']]]
+  ['inview_20',['inView',['../structGPSRtk_1_1SatelliteCounts.html#ad5dfeb6c61242830fbd8118eaf438527',1,'GPSRtk::SatelliteCounts']]],
+  ['iomanagerrunning_21',['ioManagerRunning',['../structAndroidSerial_1_1JniMethodCache.html#a09dab019f88380f8f2002fca4a3386f9',1,'AndroidSerial::JniMethodCache']]],
+  ['isdevicenameopen_22',['isDeviceNameOpen',['../structAndroidSerial_1_1JniMethodCache.html#a3eea55b336f753b1ebf125165018a87d',1,'AndroidSerial::JniMethodCache']]],
+  ['isdirectory_23',['isDirectory',['../structQGCCompression_1_1ArchiveEntry.html#a15f08fb04f047b1cdb6dec3a5be2631c',1,'QGCCompression::ArchiveEntry']]],
+  ['isvalid_24',['isValid',['../structKMLSchemaValidator_1_1ValidationResult.html#a145e65bad8ae674da369f16d515d8abe',1,'KMLSchemaValidator::ValidationResult']]],
+  ['item_25',['item',['../structLoggingCategoryTreeNode.html#ad969b2393570a41e186810d23ec569b4',1,'LoggingCategoryTreeNode']]],
+  ['itemlabelprefix_26',['itemLabelPrefix',['../structMixer_1_1MixerOption_1_1ActuatorGroup.html#a8508f75ef8765b9bc3645a01f7ef4382',1,'Mixer::MixerOption::ActuatorGroup']]],
+  ['items_27',['items',['../structMixer_1_1Rule.html#aaea664a49cdd084b79a045dd630feee2',1,'Mixer::Rule']]]
 ];

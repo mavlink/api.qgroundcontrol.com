@@ -46,6 +46,13 @@ var hierarchy =
     [ "FirmwareToUrlElement_t", "structFirmwareToUrlElement__t.html", null ],
     [ "FollowMe::GCSMotionReport", "structFollowMe_1_1GCSMotionReport.html", null ],
     [ "GeoTagData", "structGeoTagData.html", null ],
+    [ "GPSDriver", "classGPSDriver.html", null ],
+    [ "GPSDriverSinks", "structGPSDriverSinks.html", null ],
+    [ "GPSReceiverConfig", "structGPSReceiverConfig.html", null ],
+    [ "GPSSurveyInStatus", "structGPSSurveyInStatus.html", null ],
+    [ "GPSTransport", "classGPSTransport.html", [
+      [ "SerialGPSTransport", "classSerialGPSTransport.html", null ]
+    ] ],
     [ "osmium::handler::Handler", null, [
       [ "OsmBuildingHandler", "classOsmBuildingHandler.html", null ]
     ] ],
@@ -139,6 +146,7 @@ var hierarchy =
     [ "Mixer::MixerParameter", "structMixer_1_1MixerParameter.html", null ],
     [ "MockLinkCamera", "classMockLinkCamera.html", null ],
     [ "MockLinkGimbal", "classMockLinkGimbal.html", null ],
+    [ "MockLinkPX4Calibration", "classMockLinkPX4Calibration.html", null ],
     [ "StandardModes::Mode", "structStandardModes_1_1Mode.html", null ],
     [ "QtAndroidPrivate::NewIntentListener", null, [
       [ "AndroidEvents", "classAndroidEvents.html", null ]
@@ -172,8 +180,7 @@ var hierarchy =
     ] ],
     [ "QAbstractTableModel", null, [
       [ "LogEntryTableModel", "classLogEntryTableModel.html", [
-        [ "LogModel", "classLogModel.html", null ],
-        [ "LogStoreQueryModel", "classLogStoreQueryModel.html", null ]
+        [ "LogModel", "classLogModel.html", null ]
       ] ],
       [ "ParameterTableModel", "classParameterTableModel.html", null ]
     ] ],
@@ -285,6 +292,7 @@ var hierarchy =
         [ "BluetoothClassicWorker", "classBluetoothClassicWorker.html", null ]
       ] ],
       [ "Bootloader", "classBootloader.html", null ],
+      [ "BulkRefreshJob", "classBulkRefreshJob.html", null ],
       [ "CameraSpec", "classCameraSpec.html", [
         [ "CameraCalc", "classCameraCalc.html", null ]
       ] ],
@@ -413,10 +421,8 @@ var hierarchy =
       [ "LinkManager", "classLinkManager.html", null ],
       [ "LogFileParser", "classLogFileParser.html", null ],
       [ "LogManager", "classLogManager.html", null ],
-      [ "LogRemoteSink", "classLogRemoteSink.html", null ],
       [ "LogReplayLinkController", "classLogReplayLinkController.html", null ],
       [ "LogReplayWorker", "classLogReplayWorker.html", null ],
-      [ "LogStore", "classLogStore.html", null ],
       [ "LogViewerController", "classLogViewerController.html", null ],
       [ "MAVLinkChartController", "classMAVLinkChartController.html", null ],
       [ "MAVLinkEventManager", "classMAVLinkEventManager.html", null ],
@@ -550,10 +556,6 @@ var hierarchy =
       [ "RTCMUdpInput", "classRTCMUdpInput.html", null ],
       [ "RallyPoint", "classRallyPoint.html", null ],
       [ "RemoteIDManager", "classRemoteIDManager.html", null ],
-      [ "RemoteTransport", "classRemoteTransport.html", [
-        [ "TcpTransport", "classTcpTransport.html", null ],
-        [ "UdpTransport", "classUdpTransport.html", null ]
-      ] ],
       [ "RequestMessageCoordinator", "classRequestMessageCoordinator.html", null ],
       [ "ScreenToolsController", "classScreenToolsController.html", null ],
       [ "Section", "classSection.html", [
@@ -574,6 +576,8 @@ var hierarchy =
         [ "GimbalControllerSettings", "classGimbalControllerSettings.html", null ],
         [ "JoystickManagerSettings", "classJoystickManagerSettings.html", null ],
         [ "JoystickSettings", "classJoystickSettings.html", null ],
+        [ "LogManagerSettings", "classLogManagerSettings.html", null ],
+        [ "LogViewerSettings", "classLogViewerSettings.html", null ],
         [ "MapsSettings", "classMapsSettings.html", null ],
         [ "MavlinkActionsSettings", "classMavlinkActionsSettings.html", null ],
         [ "MavlinkSettings", "classMavlinkSettings.html", null ],
@@ -616,7 +620,6 @@ var hierarchy =
       [ "ToolStripActionList", "classToolStripActionList.html", null ],
       [ "TrajectoryPoints", "classTrajectoryPoints.html", null ],
       [ "TransformPositionController", "classTransformPositionController.html", null ],
-      [ "TransportStrategy", "classTransportStrategy.html", null ],
       [ "UDPWorker", "classUDPWorker.html", null ],
       [ "VehicleComponent", "classVehicleComponent.html", [
         [ "APMAdvancedTuningCopterComponent", "classAPMAdvancedTuningCopterComponent.html", null ],
@@ -783,20 +786,18 @@ var hierarchy =
     [ "QUdpSocket", null, [
       [ "UdpIODevice", "classUdpIODevice.html", null ]
     ] ],
-    [ "LogStore::QueryParams", "structLogStore_1_1QueryParams.html", null ],
     [ "ActuatorGeometry::RenderOptions", "structActuatorGeometry_1_1RenderOptions.html", null ],
     [ "QGCNetworkHelper::RequestConfig", "structQGCNetworkHelper_1_1RequestConfig.html", null ],
     [ "QtAndroidPrivate::ResumePauseListener", null, [
       [ "AndroidEvents", "classAndroidEvents.html", null ]
     ] ],
     [ "RTCMParser", "classRTCMParser.html", null ],
-    [ "GPSProvider::rtk_data_s", "structGPSProvider_1_1rtk__data__s.html", null ],
     [ "Mixer::Rule", "structMixer_1_1Rule.html", null ],
     [ "Mixer::Rule::RuleItem", "structMixer_1_1Rule_1_1RuleItem.html", null ],
     [ "RunGuard", "classRunGuard.html", null ],
     [ "satellite_info_s", "structsatellite__info__s.html", null ],
+    [ "GPSRtk::SatelliteCounts", "structGPSRtk_1_1SatelliteCounts.html", null ],
     [ "QGCSqlHelper::ScopedConnection", "classQGCSqlHelper_1_1ScopedConnection.html", null ],
-    [ "LogStore::ScopedReadConnection", "classLogStore_1_1ScopedReadConnection.html", null ],
     [ "sensor_gnss_relative_s", "structsensor__gnss__relative__s.html", null ],
     [ "sensor_gps_s", "structsensor__gps__s.html", null ],
     [ "SetTotalsResult", "structSetTotalsResult.html", null ],

@@ -16,6 +16,8 @@ var classSettingsManager =
     [ "init", "classSettingsManager.html#a04ed8c1d8f7b306c49fa647e551a5459", null ],
     [ "instance", "classSettingsManager.html#a70509f6304c076e2cceea0445951c324", null ],
     [ "joystickManagerSettings", "classSettingsManager.html#a11d664f820b2523de374626409a6cf7b", null ],
+    [ "logManagerSettings", "classSettingsManager.html#a9e4f4c76329cc6b39c0ffa1c37540660", null ],
+    [ "logViewerSettings", "classSettingsManager.html#a45f7ac7a2a149f57a880e00c4e376f26", null ],
     [ "mapsSettings", "classSettingsManager.html#a1ab015a76c7c65ee763a0cb2ef2b33b3", null ],
     [ "mavlinkActionsSettings", "classSettingsManager.html#aca289d1044a6b39cc1e5e378f55fb9fc", null ],
     [ "mavlinkSettings", "classSettingsManager.html#af3602e293b6f386993ce253e488803bd", null ],

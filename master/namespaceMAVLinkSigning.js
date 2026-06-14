@@ -21,6 +21,7 @@ var namespaceMAVLinkSigning =
     [ "signingEpoch", "namespaceMAVLinkSigning.html#a56e5f475cda9747e4b13e3d0863766cf", null ],
     [ "signingStatusString", "namespaceMAVLinkSigning.html#a353e105dda6740b73ad0a75d34034842", null ],
     [ "signingStreamCount", "namespaceMAVLinkSigning.html#af34878684ca726eda1c0e01943282cf9", null ],
+    [ "signMessage", "namespaceMAVLinkSigning.html#a4a9c58f9052651f3f4eb05b60e5562ae", null ],
     [ "verifySignature", "namespaceMAVLinkSigning.html#adec48c77e1653d89b7f7975b42f699a7", null ],
     [ "verifySignature", "namespaceMAVLinkSigning.html#a6b275f849a7ea6af77ba7a9e4e1e60a9", null ],
     [ "kSignatureHashBytes", "namespaceMAVLinkSigning.html#a0d38dc0ae0f66f9da967d3070c823bd0", null ],

@@ -6,6 +6,7 @@ var classParameterManager =
     [ "_paramRequestReadSuccess", "classParameterManager.html#a90b2223d9d3992a4db592c88d9eec160", null ],
     [ "_paramSetFailure", "classParameterManager.html#af79abd20db853c8c123fb265bd9d8e03", null ],
     [ "_paramSetSuccess", "classParameterManager.html#a9e7f37d365e4590e3b649e3c46c10adc", null ],
+    [ "bulkRefresh", "classParameterManager.html#a4a0ca12b1df034a1fb08feafd27ee83a", null ],
     [ "cacheCheckOnlyFailed", "classParameterManager.html#aaee0ace3a9de2667eec5f7218496a96b", null ],
     [ "componentIds", "classParameterManager.html#a2bafa5be07f17eaeadd109ce2289952b", null ],
     [ "factAdded", "classParameterManager.html#a1a6b015ff013fdb74ac01081e8079291", null ],
@@ -27,7 +28,6 @@ var classParameterManager =
     [ "parametersReadyChanged", "classParameterManager.html#a416f23e1cfb4254dad2da7cea5fd2b94", null ],
     [ "pendingWrites", "classParameterManager.html#a581d3e1ebd6c251402a956ceb10052ec", null ],
     [ "pendingWritesChanged", "classParameterManager.html#ab5502dc8383d9685329aa2be64b92788", null ],
-    [ "readParametersFromStream", "classParameterManager.html#a43546075f49580e536d6265a7e200954", null ],
     [ "refreshAllParameters", "classParameterManager.html#ae4e09f0588bab8c0fbcb301bb5689a38", null ],
     [ "refreshAllParameters", "classParameterManager.html#a99a16215a6a9c1c13d0d64bb63d07b02", null ],
     [ "refreshParameter", "classParameterManager.html#aaee0c7ce0c0c08bdbf75cdce6fc01459", null ],
@@ -45,6 +45,7 @@ var classParameterManager =
     [ "kParamRequestListTimeoutMs", "classParameterManager.html#a1139b93313ee18c9bb3de115a8b55274", null ],
     [ "kParamRequestReadRetryCount", "classParameterManager.html#ac10d775f36649b5d2b8224b2270a73b8", null ],
     [ "kParamSetRetryCount", "classParameterManager.html#a9b5aed7610995a81a78c52afb3ebfbc0", null ],
+    [ "kTestHashCheckTimeoutMs", "classParameterManager.html#a7b1a620285382a7df5c4a929f0ff2330", null ],
     [ "kTestInitialRequestIntervalMs", "classParameterManager.html#a15b35f241c4cc8679dacc07fb6412327", null ],
     [ "kTestMaxInitialRequestTimeMs", "classParameterManager.html#af3ad70b9d5e0a269ce70b35f15a132c9", null ],
     [ "kWaitForParamValueAckMs", "classParameterManager.html#a0aec0e3e838623c7b015812c8ccc1a37", null ]

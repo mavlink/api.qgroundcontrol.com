@@ -6,9 +6,8 @@ var searchData=
   ['reason_3',['Reason',['../classSigningFailure.html#ab2ff84d9c60e91a48b591991e732c29b',1,'SigningFailure']]],
   ['region_4',['Region',['../classRemoteIDManager.html#a6eb18730ce48825b9d61adf0fdf4439e',1,'RemoteIDManager']]],
   ['regionoperation_5',['RegionOperation',['../classRemoteIDSettings.html#ac731ea1dddd578a58b52009768f2e062',1,'RemoteIDSettings']]],
-  ['remoteprotocol_6',['RemoteProtocol',['../classLogRemoteSink.html#a689d6844153d62fcaa536cd4c938e865',1,'LogRemoteSink']]],
-  ['requestmessagefailuremode_5ft_7',['RequestMessageFailureMode_t',['../classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5',1,'MockLink']]],
-  ['requestmessageresulthandlerfailurecode_5ft_8',['RequestMessageResultHandlerFailureCode_t',['../structVehicleTypes.html#a9ce049e2f1375e132c762eb6cb63db0f',1,'VehicleTypes']]],
-  ['role_9',['role',['../structLogEntry.html#a16604a76fec3f30308d55e8c0ead18e9',1,'LogEntry::Role'],['../classQGCArchiveModel.html#aa2677402779a284f0ee65d576d55edeb',1,'QGCArchiveModel::Role']]],
-  ['roles_10',['roles',['../classGeoTagImageModel.html#a0e38381de2dc5ec37b3391b75c13ed65',1,'GeoTagImageModel::Roles'],['../classLoggingCategoryFlatModel.html#ad76851c285a28aa986944ec9a90f04e0',1,'LoggingCategoryFlatModel::Roles'],['../classLoggingCategoryTreeModel.html#a2e031477a1f40b4ab3c980d8999bc0fe',1,'LoggingCategoryTreeModel::Roles']]]
+  ['requestmessagefailuremode_5ft_6',['RequestMessageFailureMode_t',['../classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5',1,'MockLink']]],
+  ['requestmessageresulthandlerfailurecode_5ft_7',['RequestMessageResultHandlerFailureCode_t',['../structVehicleTypes.html#a9ce049e2f1375e132c762eb6cb63db0f',1,'VehicleTypes']]],
+  ['role_8',['role',['../structLogEntry.html#a16604a76fec3f30308d55e8c0ead18e9',1,'LogEntry::Role'],['../classQGCArchiveModel.html#aa2677402779a284f0ee65d576d55edeb',1,'QGCArchiveModel::Role']]],
+  ['roles_9',['roles',['../classGeoTagImageModel.html#a0e38381de2dc5ec37b3391b75c13ed65',1,'GeoTagImageModel::Roles'],['../classLoggingCategoryFlatModel.html#ad76851c285a28aa986944ec9a90f04e0',1,'LoggingCategoryFlatModel::Roles'],['../classLoggingCategoryTreeModel.html#a2e031477a1f40b4ab3c980d8999bc0fe',1,'LoggingCategoryTreeModel::Roles']]]
 ];

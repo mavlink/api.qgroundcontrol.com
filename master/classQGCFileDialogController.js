@@ -10,5 +10,7 @@ var classQGCFileDialogController =
     [ "getFiles", "classQGCFileDialogController.html#aa65097b1faedfccc710c0f168eda9ea1", null ],
     [ "importFailed", "classQGCFileDialogController.html#ac964466a5036cdc256b3d3f7f7d9c5ef", null ],
     [ "importFromNativePicker", "classQGCFileDialogController.html#aa85781bc6697dc823edc8e17c02e6cbf", null ],
+    [ "takeTestNextFile", "classQGCFileDialogController.html#a57c9d662108adc25850b2fb16561bfbf", null ],
+    [ "testHookArmed", "classQGCFileDialogController.html#a63c4cc083a056b952ed133e13040acc0", null ],
     [ "urlToLocalFile", "classQGCFileDialogController.html#a5b25a3e4116cb4bd8584ed1f542bc7bf", null ]
 ];

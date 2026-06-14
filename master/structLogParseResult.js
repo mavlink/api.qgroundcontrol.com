@@ -21,5 +21,6 @@ var structLogParseResult =
     [ "parameters", "structLogParseResult.html#a4e86cbcd1cd3f55ac714907b63f05af6", null ],
     [ "plottableFields", "structLogParseResult.html#a4348ea42e13235b4f2a765f3c6e053b5", null ],
     [ "sampleCount", "structLogParseResult.html#a9796172eb37ab5695a256998d6f78169", null ],
-    [ "sourceType", "structLogParseResult.html#a7d424b059fcb1b2642921d1643eb1bea", null ]
+    [ "sourceType", "structLogParseResult.html#a7d424b059fcb1b2642921d1643eb1bea", null ],
+    [ "startTime", "structLogParseResult.html#a8760400241989974dc3c2d235e6f0962", null ]
 ];

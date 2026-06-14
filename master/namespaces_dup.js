@@ -205,7 +205,7 @@ var namespaces_dup =
     [ "DataFlashParser", "namespaceDataFlashParser.html", [
       [ "getTagsFromLog", "namespaceDataFlashParser.html#ad09a1d0aee552cd48beccaff2da738f4", null ],
       [ "getTagsFromLog", "namespaceDataFlashParser.html#a7a0426b74551d4bfeaeb44cd36974048", null ],
-      [ "parseFile", "namespaceDataFlashParser.html#afaa692300ec306c42a5a2e49d2d881a0", null ]
+      [ "parseFile", "namespaceDataFlashParser.html#aa096f89dbb718cc816e4439af61f0a7a", null ]
     ] ],
     [ "ErrorHandlers", "namespaceErrorHandlers.html", [
       [ "constantDelay", "namespaceErrorHandlers.html#a6db38b3608833335609e6b905356be88", null ],
@@ -389,11 +389,6 @@ var namespaces_dup =
       [ "polygonArea", "namespaceQGCGeo.html#a72cfeb7fe2441d5918d832ed1560cfcb", null ],
       [ "polygonPerimeter", "namespaceQGCGeo.html#a191021c1a06f8d96b5590c8d325dc558", null ]
     ] ],
-    [ "QGCKeychain", "namespaceQGCKeychain.html", [
-      [ "readBinary", "namespaceQGCKeychain.html#a4cba186e66dad3b3941499598b99f6f1", null ],
-      [ "remove", "namespaceQGCKeychain.html#a80d709ef3cc8b603a4986830e1ef6092", null ],
-      [ "writeBinary", "namespaceQGCKeychain.html#a4df5e2b75d6cf0e9a0977f413c15288f", null ]
-    ] ],
     [ "QGClibarchive", "namespaceQGClibarchive.html", "namespaceQGClibarchive" ],
     [ "QGCNetworkHelper", "namespaceQGCNetworkHelper.html", "namespaceQGCNetworkHelper" ],
     [ "QGCRhiCapture", "namespaceQGCRhiCapture.html", [
@@ -460,7 +455,7 @@ var namespaces_dup =
     [ "ULogParser", "namespaceULogParser.html", [
       [ "getTagsFromLog", "namespaceULogParser.html#aad41777b045b559d4234a2e5664cd9b0", null ],
       [ "getTagsFromLog", "namespaceULogParser.html#adc26a791bb2ee621d2c62c7464f90dba", null ],
-      [ "parseFile", "namespaceULogParser.html#a7a22a55d6b152608b7fd3c4cfdbe53b7", null ],
+      [ "parseFile", "namespaceULogParser.html#ae879d2456fe782c95e4e1bd18a64cfb0", null ],
       [ "parseGeoTagData", "namespaceULogParser.html#a918d2fe41d1621d82ae289ef48b17c36", null ]
     ] ]
 ];

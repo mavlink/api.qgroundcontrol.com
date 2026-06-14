@@ -11,9 +11,10 @@ var searchData=
   ['opacityrange_8',['OpacityRange',['../classInstrumentValueData.html#ad155601d9c09933da6adc61d26b2c13aa6611f58c748b80c9ab4c853d228a205f',1,'InstrumentValueData']]],
   ['open_9',['Open',['../classCircuitBreakerState.html#ae3872f8cde49f3dff3b4f1e005d112caac3bf447eabe632720a3aa1a7ce401274',1,'CircuitBreakerState']]],
   ['openerror_10',['OpenError',['../classQSerialPort.html#aa31f0921d43bb30acfe9a6cc5abbe6b0a0b7a361852ee252821ed447a5a3d8c76',1,'QSerialPort']]],
-  ['optflow_5fcal_11',['OPTFLOW_CAL',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03ab7c693abcb997d58751174eddc333157',1,'APM']]],
-  ['orbitmodecapability_12',['OrbitModeCapability',['../classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18ac50737e41d49925e1c132e91a8bd39b8',1,'FirmwarePlugin']]],
-  ['other_13',['Other',['../structActuatorGeometry.html#af7841751ef9e6ac838cc523e3ca76339a6311ae17c1ee52b36e68aaf4ad066387',1,'ActuatorGeometry']]],
-  ['output_14',['Output',['../classQSerialPort.html#ac5d094511260c30d5239c9b0316c2733ae19406906828b02ac54f8d4c535d255b',1,'QSerialPort']]],
-  ['outputfunction_15',['OutputFunction',['../classActuatorOutputs_1_1ChannelConfig.html#a125b177a54bd1eac1a8a20fc9a374474af5f56535f1ffdd871678f5d9e5bd70b4',1,'ActuatorOutputs::ChannelConfig']]]
+  ['openfailed_11',['OpenFailed',['../GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac',1,'GPSProvider.h']]],
+  ['optflow_5fcal_12',['OPTFLOW_CAL',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03ab7c693abcb997d58751174eddc333157',1,'APM']]],
+  ['orbitmodecapability_13',['OrbitModeCapability',['../classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18ac50737e41d49925e1c132e91a8bd39b8',1,'FirmwarePlugin']]],
+  ['other_14',['Other',['../structActuatorGeometry.html#af7841751ef9e6ac838cc523e3ca76339a6311ae17c1ee52b36e68aaf4ad066387',1,'ActuatorGeometry']]],
+  ['output_15',['Output',['../classQSerialPort.html#ac5d094511260c30d5239c9b0316c2733ae19406906828b02ac54f8d4c535d255b',1,'QSerialPort']]],
+  ['outputfunction_16',['OutputFunction',['../classActuatorOutputs_1_1ChannelConfig.html#a125b177a54bd1eac1a8a20fc9a374474af5f56535f1ffdd871678f5d9e5bd70b4',1,'ActuatorOutputs::ChannelConfig']]]
 ];

@@ -98,6 +98,7 @@ var classFactMetaData =
     [ "setName", "classFactMetaData.html#a5a960c47507e5c4c69a738f764478b54", null ],
     [ "setQGCRebootRequired", "classFactMetaData.html#a42ce08c988d86e8b30e32c7537955d6b", null ],
     [ "setRawDefaultValue", "classFactMetaData.html#a9568c8ea8a1fd01db0b6ed8cf470fb0b", null ],
+    [ "setRawDefaultValueFirmwareForce", "classFactMetaData.html#a28a627184c2993d7f257e24472b0dc78", null ],
     [ "setRawIncrement", "classFactMetaData.html#ac8d7eb90b447d6872b8cb466a9c95e68", null ],
     [ "setRawMax", "classFactMetaData.html#aa164236c77e456f93beeb4f3f05a6f54", null ],
     [ "setRawMin", "classFactMetaData.html#a8148ace65691b2a4ba059cf8f444d6b5", null ],

@@ -15,5 +15,6 @@ var searchData=
   ['bluetoothlink_12',['BluetoothLink',['../classBluetoothLink.html',1,'']]],
   ['bluetoothworker_13',['BluetoothWorker',['../classBluetoothWorker.html',1,'']]],
   ['bootloader_14',['Bootloader',['../classBootloader.html',1,'']]],
-  ['buildingtype_5ft_15',['BuildingType_t',['../structOsmParserThread_1_1BuildingType__t.html',1,'OsmParserThread']]]
+  ['buildingtype_5ft_15',['BuildingType_t',['../structOsmParserThread_1_1BuildingType__t.html',1,'OsmParserThread']]],
+  ['bulkrefreshjob_16',['BulkRefreshJob',['../classBulkRefreshJob.html',1,'']]]
 ];

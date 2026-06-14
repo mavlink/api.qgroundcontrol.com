@@ -15,12 +15,12 @@ var searchData=
   ['lastheartbeat_12',['lastHeartbeat',['../structQGCCameraManager_1_1CameraStruct.html#a4c1adfa94d1d5a22bdab8264c5b581b4',1,'QGCCameraManager::CameraStruct']]],
   ['lasthomepositiontime_13',['lastHomePositionTime',['../classAPMFirmwarePluginInstanceData.html#a428b00262bcf37ce1000e57c1e31e02b',1,'APMFirmwarePluginInstanceData']]],
   ['lat_5fint_14',['lat_int',['../structFollowMe_1_1GCSMotionReport.html#a0bc4c73a06b3ee19ae10924b63f77086',1,'FollowMe::GCSMotionReport']]],
-  ['latitude_5fdeg_15',['latitude_deg',['../structsensor__gps__s.html#a1ed1be2f9b6f1efeef322408d22d43e3',1,'sensor_gps_s']]],
-  ['layersname_16',['layersName',['../classStructureScanComplexItem.html#a711c313af2456da10df5d724ae0cf64b',1,'StructureScanComplexItem']]],
-  ['length_17',['length',['../structAPMDataFlashUtility_1_1MessageFormat.html#a9aa3a9f622f65643de732597d79924fc',1,'APMDataFlashUtility::MessageFormat']]],
-  ['level_18',['level',['../structLogEntry.html#a93f3611f55b24ae5d2936fc5b97cfa52',1,'LogEntry::level'],['../structStateMachineLogger_1_1LogEntry.html#a55a67c9d56244ad08a5aca1811b37e74',1,'StateMachineLogger::LogEntry::level']]],
-  ['levels_19',['levels',['../structOsmParserThread_1_1BuildingType__t.html#a1db8bc2ba8807d79c1875fc50c5bbca9',1,'OsmParserThread::BuildingType_t']]],
-  ['limit_20',['limit',['../structLogStore_1_1QueryParams.html#a6cc64ea368a0f5ce5542bd9ee47da406',1,'LogStore::QueryParams']]],
+  ['latitude_15',['latitude',['../structGPSSurveyInStatus.html#a2f4f36919b79b2e0bb45f2db663bd359',1,'GPSSurveyInStatus']]],
+  ['latitude_5fdeg_16',['latitude_deg',['../structsensor__gps__s.html#a1ed1be2f9b6f1efeef322408d22d43e3',1,'sensor_gps_s']]],
+  ['layersname_17',['layersName',['../classStructureScanComplexItem.html#a711c313af2456da10df5d724ae0cf64b',1,'StructureScanComplexItem']]],
+  ['length_18',['length',['../structAPMDataFlashUtility_1_1MessageFormat.html#a9aa3a9f622f65643de732597d79924fc',1,'APMDataFlashUtility::MessageFormat']]],
+  ['level_19',['level',['../structLogEntry.html#a93f3611f55b24ae5d2936fc5b97cfa52',1,'LogEntry::level'],['../structStateMachineLogger_1_1LogEntry.html#a55a67c9d56244ad08a5aca1811b37e74',1,'StateMachineLogger::LogEntry::level']]],
+  ['levels_20',['levels',['../structOsmParserThread_1_1BuildingType__t.html#a1db8bc2ba8807d79c1875fc50c5bbca9',1,'OsmParserThread::BuildingType_t']]],
   ['line_21',['line',['../structLogEntry.html#a5d0debf2960a52acb5b9eb1e2234078d',1,'LogEntry']]],
   ['listtests_22',['listTests',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#a42eac23811fc8c6ef5dc9dee0eac2149',1,'QGCCommandLineParser::CommandLineParseResult']]],
   ['load_23',['load',['../classParameterEditorDiff.html#a65ed3ebd549cb0809b4b0032b90df959',1,'ParameterEditorDiff']]],
@@ -32,5 +32,6 @@ var searchData=
   ['loiterclockwisename_29',['loiterClockwiseName',['../classLandingComplexItem.html#ae45670e9cd7f2d0ac05249b1513c71a6',1,'LandingComplexItem']]],
   ['loiterradiusname_30',['loiterRadiusName',['../classLandingComplexItem.html#aaf8f7891419a23828e190c8bec636466',1,'LandingComplexItem']]],
   ['lon_5fint_31',['lon_int',['../structFollowMe_1_1GCSMotionReport.html#a5023d7b8a9191ef5189ae626588b5987',1,'FollowMe::GCSMotionReport']]],
-  ['longitude_5fdeg_32',['longitude_deg',['../structsensor__gps__s.html#a4e84890f8c7af90a128466ec06ff0691',1,'sensor_gps_s']]]
+  ['longitude_32',['longitude',['../structGPSSurveyInStatus.html#a53f7d60fbf785d135591637be1400c31',1,'GPSSurveyInStatus']]],
+  ['longitude_5fdeg_33',['longitude_deg',['../structsensor__gps__s.html#a4e84890f8c7af90a128466ec06ff0691',1,'sensor_gps_s']]]
 ];

@@ -60,9 +60,10 @@ var searchData=
   ['mocklinkftp_57',['MockLinkFTP',['../classMockLinkFTP.html',1,'']]],
   ['mocklinkgimbal_58',['MockLinkGimbal',['../classMockLinkGimbal.html',1,'']]],
   ['mocklinkmissionitemhandler_59',['MockLinkMissionItemHandler',['../classMockLinkMissionItemHandler.html',1,'']]],
-  ['mocklinkworker_60',['MockLinkWorker',['../classMockLinkWorker.html',1,'']]],
-  ['mode_61',['Mode',['../structStandardModes_1_1Mode.html',1,'StandardModes']]],
-  ['motorassignment_62',['MotorAssignment',['../classMotorAssignment.html',1,'']]],
-  ['motorcomponent_63',['MotorComponent',['../classMotorComponent.html',1,'']]],
-  ['multivehiclemanager_64',['MultiVehicleManager',['../classMultiVehicleManager.html',1,'']]]
+  ['mocklinkpx4calibration_60',['MockLinkPX4Calibration',['../classMockLinkPX4Calibration.html',1,'']]],
+  ['mocklinkworker_61',['MockLinkWorker',['../classMockLinkWorker.html',1,'']]],
+  ['mode_62',['Mode',['../structStandardModes_1_1Mode.html',1,'StandardModes']]],
+  ['motorassignment_63',['MotorAssignment',['../classMotorAssignment.html',1,'']]],
+  ['motorcomponent_64',['MotorComponent',['../classMotorComponent.html',1,'']]],
+  ['multivehiclemanager_65',['MultiVehicleManager',['../classMultiVehicleManager.html',1,'']]]
 ];
