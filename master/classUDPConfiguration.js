@@ -13,6 +13,7 @@ var classUDPConfiguration =
     [ "localPortChanged", "classUDPConfiguration.html#a4b12407fbcccba41fc61afb0faeca210", null ],
     [ "removeHost", "classUDPConfiguration.html#a8995e66ca65dcf406b25ded4c8569706", null ],
     [ "removeHost", "classUDPConfiguration.html#ac336cc043f8b0f590ac5f5533b197010", null ],
+    [ "resolveHosts", "classUDPConfiguration.html#aa778074faea36c95289c957a204165c7", null ],
     [ "saveSettings", "classUDPConfiguration.html#a0352b74e43f28292052147dc6bdda744", null ],
     [ "setAutoConnect", "classUDPConfiguration.html#a8d781dd0e6d4d8544a138a6be0ff5585", null ],
     [ "setLocalPort", "classUDPConfiguration.html#a994e7581aa4be713c4fd0b0c5072a23e", null ],

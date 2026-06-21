@@ -45,7 +45,7 @@ var searchData=
   ['mapquestsatmapprovider_42',['MapQuestSatMapProvider',['../classMapQuestSatMapProvider.html#af18dccb81f870027a75ee46accd793b0',1,'MapQuestSatMapProvider']]],
   ['maprccstickfunctiontoaxisfunction_43',['mapRCCStickFunctionToAxisFunction',['../classJoystick.html#a8f217a20bef2502b99ac19fff4808832',1,'Joystick']]],
   ['mapsize_44',['mapSize',['../classViewer3DTileQuery.html#aae649854da6aec9cfefa719bef6c9bfd',1,'Viewer3DTileQuery']]],
-  ['mapssettings_45',['mapssettings',['../classSettingsManager.html#a1ab015a76c7c65ee763a0cb2ef2b33b3',1,'SettingsManager::mapsSettings()'],['../classMapsSettings.html#ae398e6987b3c78b2b3eb5771aa481f7e',1,'MapsSettings::MapsSettings()']]],
+  ['mapssettings_45',['mapssettings',['../classMapsSettings.html#ae398e6987b3c78b2b3eb5771aa481f7e',1,'MapsSettings::MapsSettings()'],['../classSettingsManager.html#a1ab015a76c7c65ee763a0cb2ef2b33b3',1,'SettingsManager::mapsSettings()']]],
   ['maptiledownloaded_46',['mapTileDownloaded',['../classViewer3DTileQuery.html#a52eeeb60bf65eb5b4b0653b293896bee',1,'Viewer3DTileQuery']]],
   ['maptypelist_47',['mapTypeList',['../classQGCMapEngineManager.html#a6fd00fe64361c516db3ded11069d7b8f',1,'QGCMapEngineManager']]],
   ['maptypestr_48',['mapTypeStr',['../classQGCCachedTileSet.html#ab842eb453402584a2ce6b51d25ab30e9',1,'QGCCachedTileSet']]],
@@ -87,7 +87,7 @@ var searchData=
   ['mavlinkserialcontrol_84',['mavlinkSerialControl',['../classVehicle.html#af1e436f733943cf9e8b382c5e9c71bb4',1,'Vehicle']]],
   ['mavlinksettings_85',['mavlinksettings',['../classMavlinkSettings.html#a4a7c50a6e0e37dae9c029a08bb24defc',1,'MavlinkSettings::MavlinkSettings()'],['../classSettingsManager.html#af3602e293b6f386993ce253e488803bd',1,'SettingsManager::mavlinkSettings()']]],
   ['mavlinksigningkey_86',['MAVLinkSigningKey',['../classMAVLinkSigningKey.html#a6cf771dd2866a12ba1fdb1ff5983e202',1,'MAVLinkSigningKey']]],
-  ['mavlinksigningkeys_87',['mavlinksigningkeys',['../classMAVLinkSigningKeys.html#a5b5c42ecc92f7e29c15881c8fc13e158',1,'MAVLinkSigningKeys::MAVLinkSigningKeys()'],['../classQGroundControlQmlGlobal.html#a0621db9cfb97e6e78295ed3657690a1b',1,'QGroundControlQmlGlobal::mavlinkSigningKeys()']]],
+  ['mavlinksigningkeys_87',['mavlinksigningkeys',['../classQGroundControlQmlGlobal.html#a0621db9cfb97e6e78295ed3657690a1b',1,'QGroundControlQmlGlobal::mavlinkSigningKeys()'],['../classMAVLinkSigningKeys.html#a5b5c42ecc92f7e29c15881c8fc13e158',1,'MAVLinkSigningKeys::MAVLinkSigningKeys()']]],
   ['mavlinkstatuschanged_88',['mavlinkStatusChanged',['../classVehicle.html#abe1c53a81e02a49ec459b1120d4b5aa3',1,'Vehicle']]],
   ['mavlinkstreamconfig_89',['MAVLinkStreamConfig',['../classMAVLinkStreamConfig.html#a88d2b8b91d0ef3723e4b2cd6da267814',1,'MAVLinkStreamConfig']]],
   ['mavlinksupportforwardingenabled_90',['mavlinkSupportForwardingEnabled',['../classLinkManager.html#afa2ab93968fdf6e1808fcf064238fa74',1,'LinkManager']]],
@@ -266,5 +266,5 @@ var searchData=
   ['multirotorxconfig_263',['multirotorxconfig',['../classFirmwarePlugin.html#a62246baa9676401f4887704dddc359a5',1,'FirmwarePlugin::multiRotorXConfig()'],['../classArduCopterFirmwarePlugin.html#ab47985f843e92683745a95d1951a60a7',1,'ArduCopterFirmwarePlugin::multiRotorXConfig()']]],
   ['multivehicleenabled_264',['multiVehicleEnabled',['../classQGCOptions.html#a14664999d22094372725792d34e9aa06',1,'QGCOptions']]],
   ['multivehicleenabledchanged_265',['multiVehicleEnabledChanged',['../classQGCOptions.html#a0af966d9279ea29182b17b66c1487d9d',1,'QGCOptions']]],
-  ['multivehiclemanager_266',['multivehiclemanager',['../classQGroundControlQmlGlobal.html#ac248b44759dc15adceedb29dc1eda482',1,'QGroundControlQmlGlobal::multiVehicleManager()'],['../classMultiVehicleManager.html#a78123f3e423cca0c60e8741bb3741e48',1,'MultiVehicleManager::MultiVehicleManager()']]]
+  ['multivehiclemanager_266',['multivehiclemanager',['../classMultiVehicleManager.html#a78123f3e423cca0c60e8741bb3741e48',1,'MultiVehicleManager::MultiVehicleManager()'],['../classQGroundControlQmlGlobal.html#ac248b44759dc15adceedb29dc1eda482',1,'QGroundControlQmlGlobal::multiVehicleManager()']]]
 ];

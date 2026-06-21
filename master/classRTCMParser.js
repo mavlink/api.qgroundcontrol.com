@@ -9,5 +9,6 @@ var classRTCMParser =
     [ "messageLength", "classRTCMParser.html#aef7f08a5fceec55de53f37e52568a96b", null ],
     [ "reset", "classRTCMParser.html#a110f2d4519bd286d6e044b79590c4d00", null ],
     [ "validateCrc", "classRTCMParser.html#a14128d19ced27e06a04b91bc305ed292", null ],
-    [ "kCrcSize", "classRTCMParser.html#a7b413e2087bcd790eb51f64847aa1e9b", null ]
+    [ "kCrcSize", "classRTCMParser.html#a7b413e2087bcd790eb51f64847aa1e9b", null ],
+    [ "kHeaderSize", "classRTCMParser.html#ac0b24092cc32c22c8bb1fd55b2d7771d", null ]
 ];

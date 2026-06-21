@@ -30,6 +30,7 @@ var classMavlinkFTP =
       [ "kCmdRename", "classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6a186d09911191605fba76102f5500d8f7", null ],
       [ "kCmdCalcFileCRC32", "classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6abf37a023f4a5631ee0be242f9e32be8e", null ],
       [ "kCmdBurstReadFile", "classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ab88d547b54d94b675456e7f59ae117f9", null ],
+      [ "kCmdListDirectoryWithTime", "classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6a6566e18023865ff9a31be7ee91af986d", null ],
       [ "kRspAck", "classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ab5fa78f43fb90c08b344e8419459338f", null ],
       [ "kRspNak", "classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ae43f0c43517b9d27766398115ba9d499", null ]
     ] ],

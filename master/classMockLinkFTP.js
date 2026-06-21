@@ -17,10 +17,12 @@ var classMockLinkFTP =
     [ "resetCommandReceived", "classMockLinkFTP.html#a1a37fc5c6dfb2b7f5229a57ca329c65a", null ],
     [ "setErrorMode", "classMockLinkFTP.html#aceabb4cca15b5f3f84c94234b8d60db4", null ],
     [ "setFileList", "classMockLinkFTP.html#a1ace461ae926a2dde4448a1656800feb", null ],
+    [ "setListDirectoryWithTimeSupported", "classMockLinkFTP.html#a67069c5e7bb59b564d49a4cd78b38434", null ],
     [ "terminateCommandReceived", "classMockLinkFTP.html#a30681befccb58f7e5afe073c26ea86dd", null ],
     [ "uploadedFileContents", "classMockLinkFTP.html#adc5a23b8a491bf9b211cd93e781fe07b", null ],
     [ "uploadedFiles", "classMockLinkFTP.html#ab2d640f4db4b4429d408a0c21da10232", null ],
     [ "cFailureModes", "classMockLinkFTP.html#ac20e89037270fff4aadc4d4044542fef", null ],
+    [ "kMockModificationTime", "classMockLinkFTP.html#a1c0744e70eb970c2ca84e4ff0cb8c835", null ],
     [ "rgFailureModes", "classMockLinkFTP.html#a94766fbecbca81e1807a7dca98e98319", null ],
     [ "sizeFilenamePrefix", "classMockLinkFTP.html#a6e4aac8acfef5254b23143e52b1db6f4", null ]
 ];

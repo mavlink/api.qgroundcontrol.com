@@ -13,6 +13,8 @@ var classLinkManager =
     [ "createConnectedLink", "classLinkManager.html#a015429ac993af9062eb0800bb6f7bf9e", null ],
     [ "createMavlinkForwardingSupportLink", "classLinkManager.html#a4e8564c1cff519a3c05b0e467925f249", null ],
     [ "disconnectAll", "classLinkManager.html#a929fd1f00a39a3b7193e42aeea49fa9c", null ],
+    [ "disconnectLink", "classLinkManager.html#ab3bed69f1329a1b6794bc4216653dab1", null ],
+    [ "disconnectLinkConfiguration", "classLinkManager.html#ad3962fbc793c04b985867a95ea873f2e", null ],
     [ "endConfigurationEditing", "classLinkManager.html#a305834d62d75c6b12546e3011f28b1c9", null ],
     [ "endCreateConfiguration", "classLinkManager.html#a564c9862c2e652a5a2566f7c4b2ee1e7", null ],
     [ "freeMavlinkChannel", "classLinkManager.html#a7c1989a69a089c6a649c33c231b0f2c4", null ],
@@ -40,5 +42,6 @@ var classLinkManager =
     [ "shutdown", "classLinkManager.html#a6947170acb14b4de334d495830ab4c5d", null ],
     [ "startAutoConnectedLinks", "classLinkManager.html#a5422810359d1690790ba4515d07af067", null ],
     [ "startConfigurationEditing", "classLinkManager.html#ad92f17d2e766ca6bd5be8be13cebb06f", null ],
-    [ "startLogReplay", "classLinkManager.html#a9f8e7c1240d2b2c32ecf0d1b69d2f0fa", null ]
+    [ "startLogReplay", "classLinkManager.html#a9f8e7c1240d2b2c32ecf0d1b69d2f0fa", null ],
+    [ "LinkManagerTest", "classLinkManager.html#a87260222c92771ce06df4c4f915b1c4c", null ]
 ];

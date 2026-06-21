@@ -123,86 +123,141 @@ $(document).ready(function(){initNavTree('RTCMUdpInput_8cc_source.html',''); ini
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classRTCMUdpInput.html#a83badac9d83e7cbb1b176d7e7090e680">   18</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classRTCMUdpInput.html#a83badac9d83e7cbb1b176d7e7090e680">RTCMUdpInput::start</a>()</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_function" href="classRTCMUdpInput.html#a0bf433e3fa0c9fdfbefdab439135f6df">stop</a>();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">if</span> (!_socket.bind(QHostAddress::AnyIPv4, _port)) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        qCWarning(RTCMUdpInputLog) &lt;&lt; <span class="stringliteral">&quot;Failed to bind UDP socket on port&quot;</span> &lt;&lt; _port</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                                   &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; _socket.errorString();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    _running = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    emit <a class="code hl_signal" href="classRTCMUdpInput.html#a127610f9a2f76bc475d71f59fe3b305c">runningChanged</a>();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    qCDebug(RTCMUdpInputLog) &lt;&lt; <span class="stringliteral">&quot;Listening for RTCM data on UDP port&quot;</span> &lt;&lt; _port;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    _rtcmParser.<a class="code hl_function" href="classRTCMParser.html#a110f2d4519bd286d6e044b79590c4d00">reset</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span> (!_socket.bind(QHostAddress::AnyIPv4, _port)) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        qCWarning(RTCMUdpInputLog) &lt;&lt; <span class="stringliteral">&quot;Failed to bind UDP socket on port&quot;</span> &lt;&lt; _port</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                                   &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; _socket.errorString();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    _running = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    emit <a class="code hl_signal" href="classRTCMUdpInput.html#a127610f9a2f76bc475d71f59fe3b305c">runningChanged</a>();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    qCDebug(RTCMUdpInputLog) &lt;&lt; <span class="stringliteral">&quot;Listening for RTCM data on UDP port&quot;</span> &lt;&lt; _port;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
 </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classRTCMUdpInput.html#a0bf433e3fa0c9fdfbefdab439135f6df">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classRTCMUdpInput.html#a0bf433e3fa0c9fdfbefdab439135f6df">RTCMUdpInput::stop</a>()</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (!_running) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    _socket.close();</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    _running = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    emit <a class="code hl_signal" href="classRTCMUdpInput.html#a127610f9a2f76bc475d71f59fe3b305c">runningChanged</a>();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    qCDebug(RTCMUdpInputLog) &lt;&lt; <span class="stringliteral">&quot;Stopped listening on UDP port&quot;</span> &lt;&lt; _port;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classRTCMUdpInput.html#a0bf433e3fa0c9fdfbefdab439135f6df">   35</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classRTCMUdpInput.html#a0bf433e3fa0c9fdfbefdab439135f6df">RTCMUdpInput::stop</a>()</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (!_running) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    _socket.close();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    _running = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    emit <a class="code hl_signal" href="classRTCMUdpInput.html#a127610f9a2f76bc475d71f59fe3b305c">runningChanged</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    qCDebug(RTCMUdpInputLog) &lt;&lt; <span class="stringliteral">&quot;Stopped listening on UDP port&quot;</span> &lt;&lt; _port;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classRTCMUdpInput.html#a9135a8902925851e72ba2d11414b5102">   46</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classRTCMUdpInput.html#a9135a8902925851e72ba2d11414b5102">RTCMUdpInput::setPort</a>(quint16 port)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (_port == <a class="code hl_function" href="classRTCMUdpInput.html#ae4fc251b45a53e695059a3d3c26fa51e">port</a>) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    _port = <a class="code hl_function" href="classRTCMUdpInput.html#ae4fc251b45a53e695059a3d3c26fa51e">port</a>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    emit <a class="code hl_signal" href="classRTCMUdpInput.html#aa1c985da211200284fe92a06030a539f">portChanged</a>();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (_running) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_function" href="classRTCMUdpInput.html#a83badac9d83e7cbb1b176d7e7090e680">start</a>(); <span class="comment">// restart on new port</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classRTCMUdpInput.html#a9135a8902925851e72ba2d11414b5102">   47</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classRTCMUdpInput.html#a9135a8902925851e72ba2d11414b5102">RTCMUdpInput::setPort</a>(quint16 port)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (_port == <a class="code hl_function" href="classRTCMUdpInput.html#ae4fc251b45a53e695059a3d3c26fa51e">port</a>) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    _port = <a class="code hl_function" href="classRTCMUdpInput.html#ae4fc251b45a53e695059a3d3c26fa51e">port</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    emit <a class="code hl_signal" href="classRTCMUdpInput.html#aa1c985da211200284fe92a06030a539f">portChanged</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">if</span> (_running) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_function" href="classRTCMUdpInput.html#a83badac9d83e7cbb1b176d7e7090e680">start</a>(); <span class="comment">// restart on new port</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
 </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keywordtype">void</span> RTCMUdpInput::_readDatagrams()</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">while</span> (_socket.hasPendingDatagrams()) {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">const</span> qint64 size = _socket.pendingDatagramSize();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">if</span> (size &lt;= 0) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            (void) _socket.readDatagram(<span class="keyword">nullptr</span>, 0); <span class="comment">// discard malformed</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        QByteArray data(<span class="keyword">static_cast&lt;</span>qsizetype<span class="keyword">&gt;</span>(size), Qt::Uninitialized);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">const</span> qint64 <a class="code hl_function" href="namespaceAndroidSerial.html#a0d31dbfbfa456a65864f9ac68583b4af">read</a> = _socket.readDatagram(data.data(), size);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">if</span> (read &lt;= 0) {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            qCWarning(RTCMUdpInputLog) &lt;&lt; <span class="stringliteral">&quot;readDatagram failed:&quot;</span> &lt;&lt; _socket.errorString();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">if</span> (read != size) {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            data.resize(<span class="keyword">static_cast&lt;</span>qsizetype<span class="keyword">&gt;</span>(read));</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        qCDebug(RTCMUdpInputLog) &lt;&lt; <span class="stringliteral">&quot;Received RTCM datagram:&quot;</span> &lt;&lt; <a class="code hl_function" href="namespaceAndroidSerial.html#a0d31dbfbfa456a65864f9ac68583b4af">read</a> &lt;&lt; <span class="stringliteral">&quot;bytes&quot;</span>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        emit <a class="code hl_signal" href="classRTCMUdpInput.html#a230f406dc5c23b8e6550b440d2de8311">rtcmDataReceived</a>(data);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">void</span> RTCMUdpInput::_readDatagrams()</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">while</span> (_socket.hasPendingDatagrams()) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">const</span> qint64 size = _socket.pendingDatagramSize();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">if</span> (size &lt;= 0) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            (void) _socket.readDatagram(<span class="keyword">nullptr</span>, 0);  <span class="comment">// discard malformed</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        QByteArray data(<span class="keyword">static_cast&lt;</span>qsizetype<span class="keyword">&gt;</span>(size), Qt::Uninitialized);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keyword">const</span> qint64 <a class="code hl_function" href="namespaceAndroidSerial.html#a0d31dbfbfa456a65864f9ac68583b4af">read</a> = _socket.readDatagram(data.data(), size);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">if</span> (read &lt;= 0) {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            qCWarning(RTCMUdpInputLog) &lt;&lt; <span class="stringliteral">&quot;readDatagram failed:&quot;</span> &lt;&lt; _socket.errorString();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">if</span> (read != size) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            data.resize(<span class="keyword">static_cast&lt;</span>qsizetype<span class="keyword">&gt;</span>(read));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">if</span> (!_validateRtcm) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            qCDebug(RTCMUdpInputLog) &lt;&lt; <span class="stringliteral">&quot;Received RTCM datagram:&quot;</span> &lt;&lt; <a class="code hl_function" href="namespaceAndroidSerial.html#a0d31dbfbfa456a65864f9ac68583b4af">read</a> &lt;&lt; <span class="stringliteral">&quot;bytes&quot;</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            emit <a class="code hl_signal" href="classRTCMUdpInput.html#a230f406dc5c23b8e6550b440d2de8311">rtcmDataReceived</a>(data);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        QByteArray validData;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordtype">int</span> framesFound   = 0;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordtype">int</span> framesDropped = 0;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">for</span> (qsizetype i = 0; i &lt; data.size(); ++i) {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordflow">if</span> (!_rtcmParser.<a class="code hl_function" href="classRTCMParser.html#af91cb6a94499c270c8ad38ef35bfcfe3">addByte</a>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(data[i]))) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">if</span> (_rtcmParser.<a class="code hl_function" href="classRTCMParser.html#a14128d19ced27e06a04b91bc305ed292">validateCrc</a>()) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                <span class="keyword">const</span> uint16_t frameSize = <a class="code hl_variable" href="classRTCMParser.html#ac0b24092cc32c22c8bb1fd55b2d7771d">RTCMParser::kHeaderSize</a> + _rtcmParser.<a class="code hl_function" href="classRTCMParser.html#aef7f08a5fceec55de53f37e52568a96b">messageLength</a>() + <a class="code hl_variable" href="classRTCMParser.html#a7b413e2087bcd790eb51f64847aa1e9b">RTCMParser::kCrcSize</a>;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                validData.append(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(_rtcmParser.<a class="code hl_function" href="classRTCMParser.html#ab5b9d6f88f04041b5ece4b24ad6149da">message</a>()), <a class="code hl_variable" href="classRTCMParser.html#ac0b24092cc32c22c8bb1fd55b2d7771d">RTCMParser::kHeaderSize</a> + _rtcmParser.<a class="code hl_function" href="classRTCMParser.html#aef7f08a5fceec55de53f37e52568a96b">messageLength</a>());</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                validData.append(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(_rtcmParser.<a class="code hl_function" href="classRTCMParser.html#ae91cc97b305f0bde407cccfa228fd9ca">crcBytes</a>()), <a class="code hl_variable" href="classRTCMParser.html#a7b413e2087bcd790eb51f64847aa1e9b">RTCMParser::kCrcSize</a>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                _validBytes += frameSize;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                framesFound++;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                qCDebug(RTCMUdpInputLog) &lt;&lt; <span class="stringliteral">&quot;RTCM message&quot;</span> &lt;&lt; _rtcmParser.<a class="code hl_function" href="classRTCMParser.html#ae99434149e9bc310da68a8130e76d4e6">messageId</a>() &lt;&lt; frameSize &lt;&lt; <span class="stringliteral">&quot;bytes&quot;</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                <span class="keyword">const</span> uint16_t frameSize = <a class="code hl_variable" href="classRTCMParser.html#ac0b24092cc32c22c8bb1fd55b2d7771d">RTCMParser::kHeaderSize</a> + _rtcmParser.<a class="code hl_function" href="classRTCMParser.html#aef7f08a5fceec55de53f37e52568a96b">messageLength</a>() + <a class="code hl_variable" href="classRTCMParser.html#a7b413e2087bcd790eb51f64847aa1e9b">RTCMParser::kCrcSize</a>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                qCWarning(RTCMUdpInputLog) &lt;&lt; <span class="stringliteral">&quot;Dropped RTCM message&quot;</span> &lt;&lt; _rtcmParser.<a class="code hl_function" href="classRTCMParser.html#ae99434149e9bc310da68a8130e76d4e6">messageId</a>() &lt;&lt; <span class="stringliteral">&quot;- CRC mismatch&quot;</span>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                _invalidBytes += frameSize;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                framesDropped++;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            _rtcmParser.<a class="code hl_function" href="classRTCMParser.html#a110f2d4519bd286d6e044b79590c4d00">reset</a>();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        qCDebug(RTCMUdpInputLog) &lt;&lt; <span class="stringliteral">&quot;Datagram&quot;</span> &lt;&lt; <a class="code hl_function" href="namespaceAndroidSerial.html#a0d31dbfbfa456a65864f9ac68583b4af">read</a> &lt;&lt; <span class="stringliteral">&quot;bytes -&quot;</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                                 &lt;&lt; <span class="stringliteral">&quot;framesFound:&quot;</span> &lt;&lt; framesFound</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                                 &lt;&lt; <span class="stringliteral">&quot;framesDropped:&quot;</span> &lt;&lt; framesDropped</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                                 &lt;&lt; <span class="stringliteral">&quot;validData:&quot;</span> &lt;&lt; validData.size() &lt;&lt; <span class="stringliteral">&quot;bytes&quot;</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">if</span> (!validData.isEmpty()) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            emit <a class="code hl_signal" href="classRTCMUdpInput.html#a230f406dc5c23b8e6550b440d2de8311">rtcmDataReceived</a>(validData);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keyword">const</span> quint64 totalBytes = _validBytes + _invalidBytes;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keywordflow">if</span> (totalBytes &gt; 0) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <span class="keyword">const</span> <span class="keywordtype">double</span> dropPct = 100.0 * _invalidBytes / totalBytes;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            qCDebug(RTCMUdpInputLog) &lt;&lt; QString(<span class="stringliteral">&quot;RTCM byte stats: %1 valid, %2 invalid, %3% dropped&quot;</span>)</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                                            .arg(_validBytes).arg(_invalidBytes).arg(dropPct, 0, <span class="charliteral">&#39;f&#39;</span>, 1);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
 <div class="ttc" id="aRTCMUdpInput_8h_html"><div class="ttname"><a href="RTCMUdpInput_8h.html">RTCMUdpInput.h</a></div></div>
-<div class="ttc" id="aclassRTCMUdpInput_html"><div class="ttname"><a href="classRTCMUdpInput.html">RTCMUdpInput</a></div><div class="ttdoc">Listens on a UDP port for raw RTCM3 correction data and emits it for forwarding to connected vehicles...</div><div class="ttdef"><b>Definition</b> <a href="RTCMUdpInput_8h_source.html#l00026">RTCMUdpInput.h:27</a></div></div>
-<div class="ttc" id="aclassRTCMUdpInput_html_a0bf433e3fa0c9fdfbefdab439135f6df"><div class="ttname"><a href="classRTCMUdpInput.html#a0bf433e3fa0c9fdfbefdab439135f6df">RTCMUdpInput::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Unbind the socket and stop accepting datagrams.</div><div class="ttdef"><b>Definition</b> <a href="RTCMUdpInput_8cc_source.html#l00034">RTCMUdpInput.cc:34</a></div></div>
+<div class="ttc" id="aclassRTCMParser_html_a110f2d4519bd286d6e044b79590c4d00"><div class="ttname"><a href="classRTCMParser.html#a110f2d4519bd286d6e044b79590c4d00">RTCMParser::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8cc_source.html#l00008">RTCMParser.cc:8</a></div></div>
+<div class="ttc" id="aclassRTCMParser_html_a14128d19ced27e06a04b91bc305ed292"><div class="ttname"><a href="classRTCMParser.html#a14128d19ced27e06a04b91bc305ed292">RTCMParser::validateCrc</a></div><div class="ttdeci">bool validateCrc() const</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8cc_source.html#l00086">RTCMParser.cc:86</a></div></div>
+<div class="ttc" id="aclassRTCMParser_html_a7b413e2087bcd790eb51f64847aa1e9b"><div class="ttname"><a href="classRTCMParser.html#a7b413e2087bcd790eb51f64847aa1e9b">RTCMParser::kCrcSize</a></div><div class="ttdeci">static constexpr int kCrcSize</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8h_source.html#l00018">RTCMParser.h:18</a></div></div>
+<div class="ttc" id="aclassRTCMParser_html_ab5b9d6f88f04041b5ece4b24ad6149da"><div class="ttname"><a href="classRTCMParser.html#ab5b9d6f88f04041b5ece4b24ad6149da">RTCMParser::message</a></div><div class="ttdeci">uint8_t * message()</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8h_source.html#l00014">RTCMParser.h:14</a></div></div>
+<div class="ttc" id="aclassRTCMParser_html_ac0b24092cc32c22c8bb1fd55b2d7771d"><div class="ttname"><a href="classRTCMParser.html#ac0b24092cc32c22c8bb1fd55b2d7771d">RTCMParser::kHeaderSize</a></div><div class="ttdeci">static constexpr int kHeaderSize</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8h_source.html#l00019">RTCMParser.h:19</a></div></div>
+<div class="ttc" id="aclassRTCMParser_html_ae91cc97b305f0bde407cccfa228fd9ca"><div class="ttname"><a href="classRTCMParser.html#ae91cc97b305f0bde407cccfa228fd9ca">RTCMParser::crcBytes</a></div><div class="ttdeci">const uint8_t * crcBytes() const</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8h_source.html#l00017">RTCMParser.h:17</a></div></div>
+<div class="ttc" id="aclassRTCMParser_html_ae99434149e9bc310da68a8130e76d4e6"><div class="ttname"><a href="classRTCMParser.html#ae99434149e9bc310da68a8130e76d4e6">RTCMParser::messageId</a></div><div class="ttdeci">uint16_t messageId() const</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8cc_source.html#l00062">RTCMParser.cc:62</a></div></div>
+<div class="ttc" id="aclassRTCMParser_html_aef7f08a5fceec55de53f37e52568a96b"><div class="ttname"><a href="classRTCMParser.html#aef7f08a5fceec55de53f37e52568a96b">RTCMParser::messageLength</a></div><div class="ttdeci">uint16_t messageLength() const</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8h_source.html#l00015">RTCMParser.h:15</a></div></div>
+<div class="ttc" id="aclassRTCMParser_html_af91cb6a94499c270c8ad38ef35bfcfe3"><div class="ttname"><a href="classRTCMParser.html#af91cb6a94499c270c8ad38ef35bfcfe3">RTCMParser::addByte</a></div><div class="ttdeci">bool addByte(uint8_t byte)</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8cc_source.html#l00017">RTCMParser.cc:17</a></div></div>
+<div class="ttc" id="aclassRTCMUdpInput_html"><div class="ttname"><a href="classRTCMUdpInput.html">RTCMUdpInput</a></div><div class="ttdoc">Listens on a UDP port for raw RTCM3 correction data and emits it for forwarding to connected vehicles...</div><div class="ttdef"><b>Definition</b> <a href="RTCMUdpInput_8h_source.html#l00027">RTCMUdpInput.h:28</a></div></div>
+<div class="ttc" id="aclassRTCMUdpInput_html_a0bf433e3fa0c9fdfbefdab439135f6df"><div class="ttname"><a href="classRTCMUdpInput.html#a0bf433e3fa0c9fdfbefdab439135f6df">RTCMUdpInput::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Unbind the socket and stop accepting datagrams.</div><div class="ttdef"><b>Definition</b> <a href="RTCMUdpInput_8cc_source.html#l00035">RTCMUdpInput.cc:35</a></div></div>
 <div class="ttc" id="aclassRTCMUdpInput_html_a127610f9a2f76bc475d71f59fe3b305c"><div class="ttname"><a href="classRTCMUdpInput.html#a127610f9a2f76bc475d71f59fe3b305c">RTCMUdpInput::runningChanged</a></div><div class="ttdeci">void runningChanged()</div></div>
 <div class="ttc" id="aclassRTCMUdpInput_html_a230f406dc5c23b8e6550b440d2de8311"><div class="ttname"><a href="classRTCMUdpInput.html#a230f406dc5c23b8e6550b440d2de8311">RTCMUdpInput::rtcmDataReceived</a></div><div class="ttdeci">void rtcmDataReceived(const QByteArray &amp;data)</div></div>
 <div class="ttc" id="aclassRTCMUdpInput_html_a41d38ede86d261574c772d24e1d36a16"><div class="ttname"><a href="classRTCMUdpInput.html#a41d38ede86d261574c772d24e1d36a16">RTCMUdpInput::~RTCMUdpInput</a></div><div class="ttdeci">~RTCMUdpInput() override</div><div class="ttdef"><b>Definition</b> <a href="RTCMUdpInput_8cc_source.html#l00013">RTCMUdpInput.cc:13</a></div></div>
 <div class="ttc" id="aclassRTCMUdpInput_html_a83badac9d83e7cbb1b176d7e7090e680"><div class="ttname"><a href="classRTCMUdpInput.html#a83badac9d83e7cbb1b176d7e7090e680">RTCMUdpInput::start</a></div><div class="ttdeci">bool start()</div><div class="ttdef"><b>Definition</b> <a href="RTCMUdpInput_8cc_source.html#l00018">RTCMUdpInput.cc:18</a></div></div>
-<div class="ttc" id="aclassRTCMUdpInput_html_a9135a8902925851e72ba2d11414b5102"><div class="ttname"><a href="classRTCMUdpInput.html#a9135a8902925851e72ba2d11414b5102">RTCMUdpInput::setPort</a></div><div class="ttdeci">void setPort(quint16 port)</div><div class="ttdoc">Change the listen port. If already running, restarts automatically.</div><div class="ttdef"><b>Definition</b> <a href="RTCMUdpInput_8cc_source.html#l00046">RTCMUdpInput.cc:46</a></div></div>
+<div class="ttc" id="aclassRTCMUdpInput_html_a9135a8902925851e72ba2d11414b5102"><div class="ttname"><a href="classRTCMUdpInput.html#a9135a8902925851e72ba2d11414b5102">RTCMUdpInput::setPort</a></div><div class="ttdeci">void setPort(quint16 port)</div><div class="ttdoc">Change the listen port. If already running, restarts automatically.</div><div class="ttdef"><b>Definition</b> <a href="RTCMUdpInput_8cc_source.html#l00047">RTCMUdpInput.cc:47</a></div></div>
 <div class="ttc" id="aclassRTCMUdpInput_html_aa1c985da211200284fe92a06030a539f"><div class="ttname"><a href="classRTCMUdpInput.html#aa1c985da211200284fe92a06030a539f">RTCMUdpInput::portChanged</a></div><div class="ttdeci">void portChanged()</div></div>
-<div class="ttc" id="aclassRTCMUdpInput_html_ae4fc251b45a53e695059a3d3c26fa51e"><div class="ttname"><a href="classRTCMUdpInput.html#ae4fc251b45a53e695059a3d3c26fa51e">RTCMUdpInput::port</a></div><div class="ttdeci">quint16 port() const</div><div class="ttdef"><b>Definition</b> <a href="RTCMUdpInput_8h_source.html#l00045">RTCMUdpInput.h:45</a></div></div>
+<div class="ttc" id="aclassRTCMUdpInput_html_ae4fc251b45a53e695059a3d3c26fa51e"><div class="ttname"><a href="classRTCMUdpInput.html#ae4fc251b45a53e695059a3d3c26fa51e">RTCMUdpInput::port</a></div><div class="ttdeci">quint16 port() const</div><div class="ttdef"><b>Definition</b> <a href="RTCMUdpInput_8h_source.html#l00046">RTCMUdpInput.h:46</a></div></div>
 <div class="ttc" id="anamespaceAndroidSerial_html_a0d31dbfbfa456a65864f9ac68583b4af"><div class="ttname"><a href="namespaceAndroidSerial.html#a0d31dbfbfa456a65864f9ac68583b4af">AndroidSerial::read</a></div><div class="ttdeci">QByteArray read(int deviceId, int length, int timeout)</div><div class="ttdef"><b>Definition</b> <a href="AndroidSerial_8cc_source.html#l00656">AndroidSerial.cc:656</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

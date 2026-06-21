@@ -26,6 +26,7 @@ var classMockLinkMissionItemHandler =
     [ "~MockLinkMissionItemHandler", "classMockLinkMissionItemHandler.html#ac7b573935ef19e4e92d46c8278684544", null ],
     [ "clearRequestListCounts", "classMockLinkMissionItemHandler.html#a4efbed1d653d14de82b80cd4b1663286", null ],
     [ "handleMavlinkMessage", "classMockLinkMissionItemHandler.html#a3fb8454c3cc7cfb6d0261c43bacfeed5", null ],
+    [ "loadSimpleMultirotorMission", "classMockLinkMissionItemHandler.html#a6f04c0e521213544ca84d50f8ebb9d9d", null ],
     [ "requestListCount", "classMockLinkMissionItemHandler.html#a01bf2523a03e235d362429019ebc345a", null ],
     [ "reset", "classMockLinkMissionItemHandler.html#a1cff66acb88b64a17830507639fe2566", null ],
     [ "sendUnexpectedMissionAck", "classMockLinkMissionItemHandler.html#a1c94d30fcef6548fe060b4ad62feaa24", null ],
