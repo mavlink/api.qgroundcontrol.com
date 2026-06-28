@@ -4,11 +4,16 @@ var classRTCMParser =
     [ "addByte", "classRTCMParser.html#af91cb6a94499c270c8ad38ef35bfcfe3", null ],
     [ "crc24q", "classRTCMParser.html#a25e064699cd425640cf57e145038eeaa", null ],
     [ "crcBytes", "classRTCMParser.html#ae91cc97b305f0bde407cccfa228fd9ca", null ],
+    [ "currentFrame", "classRTCMParser.html#aab85f4988372a7cfaa2d555cb6008a7d", null ],
+    [ "extractValidFrames", "classRTCMParser.html#af6ba6e837cbdfad541c6e8ea1298a8cf", null ],
+    [ "isWhitelisted", "classRTCMParser.html#ab2b22e10e5d7860c0f1aa8d5e890452d", null ],
     [ "message", "classRTCMParser.html#ab5b9d6f88f04041b5ece4b24ad6149da", null ],
     [ "messageId", "classRTCMParser.html#ae99434149e9bc310da68a8130e76d4e6", null ],
     [ "messageLength", "classRTCMParser.html#aef7f08a5fceec55de53f37e52568a96b", null ],
     [ "reset", "classRTCMParser.html#a110f2d4519bd286d6e044b79590c4d00", null ],
+    [ "setWhitelist", "classRTCMParser.html#a14fceb619d3bf75a18bfb2efeddb44b6", null ],
     [ "validateCrc", "classRTCMParser.html#a14128d19ced27e06a04b91bc305ed292", null ],
     [ "kCrcSize", "classRTCMParser.html#a7b413e2087bcd790eb51f64847aa1e9b", null ],
-    [ "kHeaderSize", "classRTCMParser.html#ac0b24092cc32c22c8bb1fd55b2d7771d", null ]
+    [ "kHeaderSize", "classRTCMParser.html#ac0b24092cc32c22c8bb1fd55b2d7771d", null ],
+    [ "kPreamble", "classRTCMParser.html#afb4f85449cb5327505040b96e2ea0875", null ]
 ];

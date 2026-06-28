@@ -21,15 +21,16 @@ var searchData=
   ['details_18',['details',['../structStateHistoryRecorder_1_1HistoryEntry.html#a22c163f248384bf580e1f601fe485cdf',1,'StateHistoryRecorder::HistoryEntry']]],
   ['detectedvehicletype_19',['detectedVehicleType',['../structLogParseResult.html#a2800052d7ec9a4763392834f2cd701f2',1,'LogParseResult']]],
   ['device_20',['device',['../classQSerialPortInfoPrivate.html#ac55cef3bb4a688fc13e69fb230e15471',1,'QSerialPortInfoPrivate']]],
-  ['device_5fid_21',['device_id',['../structsensor__gnss__relative__s.html#a27fad31928afdc4cdc9352d440b2bd7a',1,'sensor_gnss_relative_s::device_id'],['../structsensor__gps__s.html#a2886a2462b102256fcab63311898a82f',1,'sensor_gps_s::device_id']]],
+  ['device_5fid_21',['device_id',['../structsensor__gps__s.html#a2886a2462b102256fcab63311898a82f',1,'sensor_gps_s::device_id'],['../structsensor__gnss__relative__s.html#a27fad31928afdc4cdc9352d440b2bd7a',1,'sensor_gnss_relative_s::device_id']]],
   ['differential_5fsolution_22',['differential_solution',['../structsensor__gnss__relative__s.html#a755fbfbcc87c0b7c68538aaa101c3ca5',1,'sensor_gnss_relative_s']]],
   ['directorycount_23',['directoryCount',['../structQGCCompression_1_1ArchiveStats.html#ae0350ebd77c5339c8674e3999f3aea90',1,'QGCCompression::ArchiveStats']]],
   ['disable_5fpar_24',['disable_par',['../struct__GstQgcVideoSinkBin.html#aa3258dc02ff2e3e5ac6d186c380df0c2',1,'_GstQgcVideoSinkBin']]],
   ['disabled_25',['disabled',['../structMixer_1_1Rule_1_1RuleItem.html#a84743d4169a0b67a39460baa4d4e01d7',1,'Mixer::Rule::RuleItem']]],
   ['displayoption_26',['displayOption',['../structParameter.html#a0710944ac419e7e40e231e94acf9f391',1,'Parameter']]],
   ['distancebetween_27',['distanceBetween',['../structTerrainPathHeightInfo.html#af362b193fab7157740036945827c8f76',1,'TerrainPathHeightInfo']]],
-  ['distancemodename_28',['distanceModeName',['../classCameraCalc.html#a064e6c69a607d793f14aee44417ee6c9',1,'CameraCalc']]],
-  ['distancetosurfacename_29',['distanceToSurfaceName',['../classCameraCalc.html#ac6ae5500ff3d5b517fab9dd89d55e87f',1,'CameraCalc']]],
-  ['dropouts_30',['dropouts',['../structLogParseResult.html#a5a8c4ccf3afa8d76e37f9b3c8b159a2a',1,'LogParseResult']]],
-  ['durationsecs_31',['durationSecs',['../structGPSSurveyInStatus.html#afa03b9c0d322f364a4920a5c0156b555',1,'GPSSurveyInStatus']]]
+  ['distancekm_28',['distanceKm',['../structNTRIPMountpoint.html#a4919a08c5207add5ef3d0652d5ddde5c',1,'NTRIPMountpoint']]],
+  ['distancemodename_29',['distanceModeName',['../classCameraCalc.html#a064e6c69a607d793f14aee44417ee6c9',1,'CameraCalc']]],
+  ['distancetosurfacename_30',['distanceToSurfaceName',['../classCameraCalc.html#ac6ae5500ff3d5b517fab9dd89d55e87f',1,'CameraCalc']]],
+  ['dropouts_31',['dropouts',['../structLogParseResult.html#a5a8c4ccf3afa8d76e37f9b3c8b159a2a',1,'LogParseResult']]],
+  ['durationsecs_32',['durationSecs',['../structGPSSurveyInStatus.html#afa03b9c0d322f364a4920a5c0156b555',1,'GPSSurveyInStatus']]]
 ];

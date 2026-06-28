@@ -153,12 +153,12 @@ Public Member Functions</h2></td></tr>
 <div class="line">connect(udpInput, &amp;<a class="code hl_signal" href="classRTCMUdpInput.html#a230f406dc5c23b8e6550b440d2de8311">RTCMUdpInput::rtcmDataReceived</a>,</div>
 <div class="line">        _rtcmMavlink, &amp;<a class="code hl_slot" href="classRTCMMavlink.html#a8acf5237b6c1affc09cfce3a35c8691e">RTCMMavlink::RTCMDataUpdate</a>);</div>
 <div class="line">udpInput-&gt;start();</div>
-<div class="ttc" id="aclassRTCMMavlink_html_a8acf5237b6c1affc09cfce3a35c8691e"><div class="ttname"><a href="classRTCMMavlink.html#a8acf5237b6c1affc09cfce3a35c8691e">RTCMMavlink::RTCMDataUpdate</a></div><div class="ttdeci">void RTCMDataUpdate(QByteArrayView data)</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00027">RTCMMavlink.cc:27</a></div></div>
-<div class="ttc" id="aclassRTCMUdpInput_html"><div class="ttname"><a href="classRTCMUdpInput.html">RTCMUdpInput</a></div><div class="ttdoc">Listens on a UDP port for raw RTCM3 correction data and emits it for forwarding to connected vehicles...</div><div class="ttdef"><b>Definition</b> <a href="RTCMUdpInput_8h_source.html#l00027">RTCMUdpInput.h:28</a></div></div>
+<div class="ttc" id="aclassRTCMMavlink_html_a8acf5237b6c1affc09cfce3a35c8691e"><div class="ttname"><a href="classRTCMMavlink.html#a8acf5237b6c1affc09cfce3a35c8691e">RTCMMavlink::RTCMDataUpdate</a></div><div class="ttdeci">void RTCMDataUpdate(QByteArrayView data)</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00025">RTCMMavlink.cc:25</a></div></div>
+<div class="ttc" id="aclassRTCMUdpInput_html"><div class="ttname"><a href="classRTCMUdpInput.html">RTCMUdpInput</a></div><div class="ttdoc">Listens on a UDP port for raw RTCM3 correction data and emits it for forwarding to connected vehicles...</div><div class="ttdef"><b>Definition</b> <a href="RTCMUdpInput_8h_source.html#l00030">RTCMUdpInput.h:31</a></div></div>
 <div class="ttc" id="aclassRTCMUdpInput_html_a230f406dc5c23b8e6550b440d2de8311"><div class="ttname"><a href="classRTCMUdpInput.html#a230f406dc5c23b8e6550b440d2de8311">RTCMUdpInput::rtcmDataReceived</a></div><div class="ttdeci">void rtcmDataReceived(const QByteArray &amp;data)</div></div>
-</div><!-- fragment --><p>The class accepts datagrams from any sender on the bound port. Each datagram is emitted as-is; no RTCM framing validation is performed here — that is the responsibility of the downstream consumer (<a class="el" href="classRTCMMavlink.html">RTCMMavlink</a> fragments as needed). </p>
+</div><!-- fragment --><p>The class accepts datagrams from any sender on the bound port. With validation disabled each datagram is emitted as-is; with validation enabled (see setValidation) datagrams are reframed through <a class="el" href="classRTCMParser.html">RTCMParser</a> and only CRC-valid RTCM3 frames are forwarded. Downstream (<a class="el" href="classRTCMMavlink.html">RTCMMavlink</a>) fragments as needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8h_source.html#l00027">27</a> of file <a class="el" href="RTCMUdpInput_8h_source.html">RTCMUdpInput.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8h_source.html#l00030">30</a> of file <a class="el" href="RTCMUdpInput_8h_source.html">RTCMUdpInput.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae32bce0ec178e61dce4f3de7d7b1e255" name="ae32bce0ec178e61dce4f3de7d7b1e255"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae32bce0ec178e61dce4f3de7d7b1e255">&#9670;&#160;</a></span>RTCMUdpInput()</h2>
@@ -194,7 +194,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8cc_source.html#l00006">6</a> of file <a class="el" href="RTCMUdpInput_8cc_source.html">RTCMUdpInput.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8cc_source.html#l00010">10</a> of file <a class="el" href="RTCMUdpInput_8cc_source.html">RTCMUdpInput.cc</a>.</p>
 
 </div>
 </div>
@@ -221,9 +221,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8cc_source.html#l00013">13</a> of file <a class="el" href="RTCMUdpInput_8cc_source.html">RTCMUdpInput.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8cc_source.html#l00012">12</a> of file <a class="el" href="RTCMUdpInput_8cc_source.html">RTCMUdpInput.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="RTCMUdpInput_8cc_source.html#l00035">stop()</a>.</p>
+<p class="reference">References <a class="el" href="RTCMUdpInput_8cc_source.html#l00037">stop()</a>.</p>
 
 </div>
 </div>
@@ -251,7 +251,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8h_source.html#l00045">45</a> of file <a class="el" href="RTCMUdpInput_8h_source.html">RTCMUdpInput.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8h_source.html#l00047">47</a> of file <a class="el" href="RTCMUdpInput_8h_source.html">RTCMUdpInput.h</a>.</p>
 
 </div>
 </div>
@@ -278,9 +278,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8h_source.html#l00046">46</a> of file <a class="el" href="RTCMUdpInput_8h_source.html">RTCMUdpInput.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8h_source.html#l00049">49</a> of file <a class="el" href="RTCMUdpInput_8h_source.html">RTCMUdpInput.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RTCMUdpInput_8cc_source.html#l00047">setPort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RTCMUdpInput_8cc_source.html#l00053">setPort()</a>.</p>
 
 </div>
 </div>
@@ -307,7 +307,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="RTCMUdpInput_8cc_source.html#l00047">setPort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RTCMUdpInput_8cc_source.html#l00053">setPort()</a>.</p>
 
 </div>
 </div>
@@ -336,8 +336,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Emitted once per received datagram with the raw RTCM payload. Connect directly to <a class="el" href="classRTCMMavlink.html#a8acf5237b6c1affc09cfce3a35c8691e">RTCMMavlink::RTCMDataUpdate</a> (same thread). </p>
 
-<p class="reference">Referenced by <a class="el" href="NTRIPManager_8cc_source.html#l00034">NTRIPManager::NTRIPManager()</a>.</p>
-
 </div>
 </div>
 <a id="a127610f9a2f76bc475d71f59fe3b305c" name="a127610f9a2f76bc475d71f59fe3b305c"></a>
@@ -363,7 +361,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="RTCMUdpInput_8cc_source.html#l00018">start()</a>, and <a class="el" href="RTCMUdpInput_8cc_source.html#l00035">stop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RTCMUdpInput_8cc_source.html#l00017">start()</a>, and <a class="el" href="RTCMUdpInput_8cc_source.html#l00037">stop()</a>.</p>
 
 </div>
 </div>
@@ -385,11 +383,9 @@ Public Member Functions</h2></td></tr>
 
 <p>Change the listen port. If already running, restarts automatically. </p>
 
-<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8cc_source.html#l00047">47</a> of file <a class="el" href="RTCMUdpInput_8cc_source.html">RTCMUdpInput.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8cc_source.html#l00053">53</a> of file <a class="el" href="RTCMUdpInput_8cc_source.html">RTCMUdpInput.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="RTCMUdpInput_8h_source.html#l00046">port()</a>, <a class="el" href="classRTCMUdpInput.html#aa1c985da211200284fe92a06030a539f">portChanged()</a>, and <a class="el" href="RTCMUdpInput_8cc_source.html#l00018">start()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="NTRIPManager_8cc_source.html#l00034">NTRIPManager::NTRIPManager()</a>.</p>
+<p class="reference">References <a class="el" href="RTCMUdpInput_8h_source.html#l00049">port()</a>, <a class="el" href="classRTCMUdpInput.html#aa1c985da211200284fe92a06030a539f">portChanged()</a>, and <a class="el" href="RTCMUdpInput_8cc_source.html#l00017">start()</a>.</p>
 
 </div>
 </div>
@@ -418,9 +414,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Enable/disable validation of RTCM data. With this enabled, only valid RTCM packets are converted to MAVLink. </p>
 
-<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8h_source.html#l00053">53</a> of file <a class="el" href="RTCMUdpInput_8h_source.html">RTCMUdpInput.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="NTRIPManager_8cc_source.html#l00034">NTRIPManager::NTRIPManager()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8h_source.html#l00056">56</a> of file <a class="el" href="RTCMUdpInput_8h_source.html">RTCMUdpInput.h</a>.</p>
 
 </div>
 </div>
@@ -440,11 +434,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Bind the socket and begin accepting datagrams. Safe to call on an already-running instance — restarts with the current port. </p>
 
-<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8cc_source.html#l00018">18</a> of file <a class="el" href="RTCMUdpInput_8cc_source.html">RTCMUdpInput.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8cc_source.html#l00017">17</a> of file <a class="el" href="RTCMUdpInput_8cc_source.html">RTCMUdpInput.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="RTCMParser_8cc_source.html#l00008">RTCMParser::reset()</a>, <a class="el" href="classRTCMUdpInput.html#a127610f9a2f76bc475d71f59fe3b305c">runningChanged()</a>, and <a class="el" href="RTCMUdpInput_8cc_source.html#l00035">stop()</a>.</p>
+<p class="reference">References <a class="el" href="RTCMParser_8cc_source.html#l00008">RTCMParser::reset()</a>, <a class="el" href="classRTCMUdpInput.html#a127610f9a2f76bc475d71f59fe3b305c">runningChanged()</a>, and <a class="el" href="RTCMUdpInput_8cc_source.html#l00037">stop()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NTRIPManager_8cc_source.html#l00034">NTRIPManager::NTRIPManager()</a>, and <a class="el" href="RTCMUdpInput_8cc_source.html#l00047">setPort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RTCMUdpInput_8cc_source.html#l00053">setPort()</a>.</p>
 
 </div>
 </div>
@@ -465,17 +459,17 @@ Public Member Functions</h2></td></tr>
 
 <p>Unbind the socket and stop accepting datagrams. </p>
 
-<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8cc_source.html#l00035">35</a> of file <a class="el" href="RTCMUdpInput_8cc_source.html">RTCMUdpInput.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMUdpInput_8cc_source.html#l00037">37</a> of file <a class="el" href="RTCMUdpInput_8cc_source.html">RTCMUdpInput.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="classRTCMUdpInput.html#a127610f9a2f76bc475d71f59fe3b305c">runningChanged()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NTRIPManager_8cc_source.html#l00034">NTRIPManager::NTRIPManager()</a>, <a class="el" href="RTCMUdpInput_8cc_source.html#l00018">start()</a>, and <a class="el" href="RTCMUdpInput_8cc_source.html#l00013">~RTCMUdpInput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RTCMUdpInput_8cc_source.html#l00017">start()</a>, and <a class="el" href="RTCMUdpInput_8cc_source.html#l00012">~RTCMUdpInput()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/GPS/NTRIP/<a class="el" href="RTCMUdpInput_8h_source.html">RTCMUdpInput.h</a></li>
-<li>src/GPS/NTRIP/<a class="el" href="RTCMUdpInput_8cc_source.html">RTCMUdpInput.cc</a></li>
+<li>src/GPS/RTCM/<a class="el" href="RTCMUdpInput_8h_source.html">RTCMUdpInput.h</a></li>
+<li>src/GPS/RTCM/<a class="el" href="RTCMUdpInput_8cc_source.html">RTCMUdpInput.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['platform_0',['Platform',['../namespacePlatform.html',1,'']]],
-  ['px4ulogutility_1',['PX4ULogUtility',['../namespacePX4ULogUtility.html',1,'']]]
+  ['nmeautils_0',['NMEAUtils',['../namespaceNMEAUtils.html',1,'']]],
+  ['ntriperrors_1',['NTRIPErrors',['../namespaceNTRIPErrors.html',1,'']]]
 ];

@@ -5,7 +5,7 @@ var searchData=
   ['manual_2',['manual',['../structAPMRoverMode.html#a3c23194f39dd10536fc1689c921607f0a32215d36d7549e44a8da8794c7247bc2',1,'APMRoverMode::MANUAL'],['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03ae0d738d9861096086b62c03d72f92087',1,'APM::MANUAL'],['../structAPMPlaneMode.html#a44da37564dd2b5465fa9b53f04b689ffaaa1b2465cf243063f6bef1c561ab264d',1,'APMPlaneMode::MANUAL'],['../structAPMSubMode.html#aef04f629fe975744283a567612d1777ead2dafc6d554b2b7d27b5d539c12aa35f',1,'APMSubMode::MANUAL'],['../structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495afab7385086a875fdbbf1ff1f41882f97',1,'PX4CustomMode::MANUAL']]],
   ['map_3',['Map',['../classViewer3DManager.html#af53e72a58028b0a3acb86df2cb03a239ac93c08dccdb166d50684f5fdb8db7541',1,'Viewer3DManager']]],
   ['mapproviderosm_4',['MapProviderOSM',['../classViewer3DSettings.html#a3b31d1d0f3a166d8e0260ce131e90064a7065b98a5e795e014eaa5c29825fbdab',1,'Viewer3DSettings']]],
-  ['markparity_5',['markparity',['../classQSerialPort.html#a86f1a911c1adf0ca0a5952f0957ada6fa65f8a0bd545722c11e252eed49ba4b62',1,'QSerialPort::MarkParity'],['../namespaceAndroidSerial.html#a5114a23c7f86457af4d7ca4b7971d70ea5e60324d5b4ad599eddecfa1e1fe6486',1,'AndroidSerial::MarkParity']]],
+  ['markparity_5',['markparity',['../namespaceAndroidSerial.html#a5114a23c7f86457af4d7ca4b7971d70ea5e60324d5b4ad599eddecfa1e1fe6486',1,'AndroidSerial::MarkParity'],['../classQSerialPort.html#a86f1a911c1adf0ca0a5952f0957ada6fa65f8a0bd545722c11e252eed49ba4b62',1,'QSerialPort::MarkParity']]],
   ['mavcmdresultcommandresultonly_6',['MavCmdResultCommandResultOnly',['../structVehicleTypes.html#a7dbf59c2303d5e793924630345127d5ca8234ad4c8b132cf527efe1f6f0a901d7',1,'VehicleTypes']]],
   ['mavcmdresultfailureduplicatecommand_7',['MavCmdResultFailureDuplicateCommand',['../structVehicleTypes.html#a7dbf59c2303d5e793924630345127d5ca41a5b08663f81f9ac9d0314d145f2e0d',1,'VehicleTypes']]],
   ['mavcmdresultfailurenoresponsetocommand_8',['MavCmdResultFailureNoResponseToCommand',['../structVehicleTypes.html#a7dbf59c2303d5e793924630345127d5ca924c3d9d6ac8f7d94fb8d1463ebaecd0',1,'VehicleTypes']]],
@@ -54,5 +54,6 @@ var searchData=
   ['mount2_5froll_51',['MOUNT2_ROLL',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a3bef85e30cbc52328e807cb3720428e6',1,'APM']]],
   ['mount2_5fyaw_52',['MOUNT2_YAW',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03ace3ba71eee28d5d27d5fba190ddd0e2a',1,'APM']]],
   ['mount_5flock_53',['MOUNT_LOCK',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a839a25dcfa974f8cc6de34dbffa1e113',1,'APM']]],
-  ['mount_5flrf_5fenable_54',['MOUNT_LRF_ENABLE',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a20e047b9c6d7a65e0961519ce9c320da',1,'APM']]]
+  ['mount_5flrf_5fenable_54',['MOUNT_LRF_ENABLE',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a20e047b9c6d7a65e0961519ce9c320da',1,'APM']]],
+  ['mountpointrole_55',['MountpointRole',['../classNTRIPSourceTableModel.html#a1e524e62cc4d6dbc42b1deefbf200e17abb478bd776bb59c1208d18721236208d',1,'NTRIPSourceTableModel']]]
 ];

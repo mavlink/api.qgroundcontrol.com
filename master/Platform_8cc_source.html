@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('Platform_8cc_source.html',''); initRes
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">    #include &quot;<a class="code" href="SignalHandler_8h.html">SignalHandler.h</a>&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#if defined(Q_OS_LINUX) &amp;&amp; !defined(Q_OS_ANDROID)</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#if (defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)) &amp;&amp; !defined(Q_OS_ANDROID)</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">    #include &lt;cstdio&gt;</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">    #include &lt;unistd.h&gt;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">    #include &lt;sys/types.h&gt;</span></div>
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('Platform_8cc_source.html',''); initRes
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">namespace </span>{</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#if defined(Q_OS_LINUX) &amp;&amp; !defined(Q_OS_ANDROID)</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#if (defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)) &amp;&amp; !defined(Q_OS_ANDROID)</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">static</span> <span class="keywordtype">void</span> showLinuxErrorDialog(<span class="keyword">const</span> QByteArray&amp; msg)</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">// Try to show a GUI dialog — important for AppImage users where stderr is invisible.</span></div>
@@ -260,7 +260,7 @@ $(document).ready(function(){initNavTree('Platform_8cc_source.html',''); initRes
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="namespacePlatform.html#a7a8cdd24323060a25af6d64764743c8c">  159</a></span>std::optional&lt;int&gt; <a class="code hl_function" href="namespacePlatform.html#a7a8cdd24323060a25af6d64764743c8c">Platform::initialize</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[],</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                                         <span class="keyword">const</span> <a class="code hl_struct" href="structQGCCommandLineParser_1_1CommandLineParseResult.html">QGCCommandLineParser::CommandLineParseResult</a>&amp; args)</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>{</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#if defined(Q_OS_LINUX) &amp;&amp; !defined(Q_OS_ANDROID)</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#if (defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)) &amp;&amp; !defined(Q_OS_ANDROID)</span></div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">if</span> (isRunningAsRoot()) {</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">return</span> showRootError(argc, argv);</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
@@ -338,7 +338,7 @@ $(document).ready(function(){initNavTree('Platform_8cc_source.html',''); initRes
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>}</div>
 </div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="preprocessor">#if defined(Q_OS_LINUX) &amp;&amp; !defined(Q_OS_ANDROID)</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="preprocessor">#if (defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)) &amp;&amp; !defined(Q_OS_ANDROID)</span></div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="keywordtype">bool</span> Platform::isRunningAsRoot()</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>{</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    return ::getuid() == 0;</div>

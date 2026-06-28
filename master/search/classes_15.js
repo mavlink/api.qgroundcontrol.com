@@ -2,11 +2,12 @@ var searchData=
 [
   ['udpclient_0',['UDPClient',['../structUDPClient.html',1,'']]],
   ['udpconfiguration_1',['UDPConfiguration',['../classUDPConfiguration.html',1,'']]],
-  ['udpiodevice_2',['UdpIODevice',['../classUdpIODevice.html',1,'']]],
-  ['udplink_3',['UDPLink',['../classUDPLink.html',1,'']]],
-  ['udpworker_4',['UDPWorker',['../classUDPWorker.html',1,'']]],
-  ['ulogfullhandler_5',['ULogFullHandler',['../classULogFullHandler.html',1,'']]],
-  ['unitssettings_6',['UnitsSettings',['../classUnitsSettings.html',1,'']]],
-  ['urlfactory_7',['UrlFactory',['../classUrlFactory.html',1,'']]],
-  ['uvcreceiver_8',['UVCReceiver',['../classUVCReceiver.html',1,'']]]
+  ['udpforwarder_2',['UdpForwarder',['../classUdpForwarder.html',1,'']]],
+  ['udpiodevice_3',['UdpIODevice',['../classUdpIODevice.html',1,'']]],
+  ['udplink_4',['UDPLink',['../classUDPLink.html',1,'']]],
+  ['udpworker_5',['UDPWorker',['../classUDPWorker.html',1,'']]],
+  ['ulogfullhandler_6',['ULogFullHandler',['../classULogFullHandler.html',1,'']]],
+  ['unitssettings_7',['UnitsSettings',['../classUnitsSettings.html',1,'']]],
+  ['urlfactory_8',['UrlFactory',['../classUrlFactory.html',1,'']]],
+  ['uvcreceiver_9',['UVCReceiver',['../classUVCReceiver.html',1,'']]]
 ];

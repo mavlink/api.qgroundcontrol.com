@@ -1,6 +1,5 @@
 var NTRIPSourceTable_8h =
 [
-    [ "NTRIPMountpointModel", "classNTRIPMountpointModel.html", "classNTRIPMountpointModel" ],
-    [ "NTRIPSourceTableModel", "classNTRIPSourceTableModel.html", "classNTRIPSourceTableModel" ],
-    [ "NTRIPSourceTableFetcher", "classNTRIPSourceTableFetcher.html", "classNTRIPSourceTableFetcher" ]
+    [ "NTRIPMountpoint", "structNTRIPMountpoint.html", "structNTRIPMountpoint" ],
+    [ "NTRIPSourceTableModel", "classNTRIPSourceTableModel.html", "classNTRIPSourceTableModel" ]
 ];

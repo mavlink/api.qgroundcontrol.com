@@ -11,12 +11,15 @@ var searchData=
   ['hatrightdown_8',['HatRightDown',['../classJoystick.html#a41356d90dce5903e1f122dbac5834b10ab862a529f0dd913bd114834ffa6d2143',1,'Joystick']]],
   ['hatrightup_9',['HatRightUp',['../classJoystick.html#a41356d90dce5903e1f122dbac5834b10a66bfbc1bbacd82f7d16c93ece62df662',1,'Joystick']]],
   ['hatup_10',['HatUp',['../classJoystick.html#a41356d90dce5903e1f122dbac5834b10a5f940c57950c16a2f393e544871bc608',1,'Joystick']]],
-  ['heading_11',['HEADING',['../classFollowMe.html#af598b44e05e7f61221e88c5d0455c591aadc25d3be75cb6681ced95f021ecda0f',1,'FollowMe']]],
-  ['headingavailable_12',['HeadingAvailable',['../namespaceADSB.html#ad441a129e1fe41f2eedc7ac84dfacf04aedf8fc08c18faeca0e9703e9ab3c2b0e',1,'ADSB']]],
-  ['helifirmware_13',['HeliFirmware',['../classFirmwareUpgradeController.html#ab0f52479539462d351d2512acc16fdeaa2cff01811a425638f54c71715094f445',1,'FirmwareUpgradeController']]],
-  ['helprequested_14',['HelpRequested',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76ad428967e359164ab69b6f7c1d891afea',1,'QGCCommandLineParser::CommandLineParseResult']]],
-  ['hold_15',['hold',['../structAPMRoverMode.html#a3c23194f39dd10536fc1689c921607f0a180ae36925df3077de1c71618d6bec74',1,'APMRoverMode::HOLD'],['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a9194c82d1def689c5f686605582a7379',1,'APM::HOLD']]],
-  ['horizontaldistanceunitsfeet_16',['HorizontalDistanceUnitsFeet',['../classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1a3d129896f5fe9a1911b4df07092e2cf1',1,'UnitsSettings']]],
-  ['horizontaldistanceunitsmeters_17',['HorizontalDistanceUnitsMeters',['../classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1a4df12cbe00884399b8cfd66642230a12',1,'UnitsSettings']]],
-  ['hybridmap_18',['HybridMap',['../classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa6212f53cdaf91dd05e9d99e72b8d228c',1,'MapProvider']]]
+  ['headertoolarge_11',['HeaderTooLarge',['../namespaceNTRIPErrors.html#ab3a74ce3b95766f53d1e1a5a33a22d17a4288d611b2248085168553e28116556a',1,'NTRIPErrors']]],
+  ['heading_12',['HEADING',['../classFollowMe.html#af598b44e05e7f61221e88c5d0455c591aadc25d3be75cb6681ced95f021ecda0f',1,'FollowMe']]],
+  ['headingavailable_13',['HeadingAvailable',['../namespaceADSB.html#ad441a129e1fe41f2eedc7ac84dfacf04aedf8fc08c18faeca0e9703e9ab3c2b0e',1,'ADSB']]],
+  ['helifirmware_14',['HeliFirmware',['../classFirmwareUpgradeController.html#ab0f52479539462d351d2512acc16fdeaa2cff01811a425638f54c71715094f445',1,'FirmwareUpgradeController']]],
+  ['helprequested_15',['HelpRequested',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76ad428967e359164ab69b6f7c1d891afea',1,'QGCCommandLineParser::CommandLineParseResult']]],
+  ['hold_16',['hold',['../structAPMRoverMode.html#a3c23194f39dd10536fc1689c921607f0a180ae36925df3077de1c71618d6bec74',1,'APMRoverMode::HOLD'],['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a9194c82d1def689c5f686605582a7379',1,'APM::HOLD']]],
+  ['horizontaldistanceunitsfeet_17',['HorizontalDistanceUnitsFeet',['../classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1a3d129896f5fe9a1911b4df07092e2cf1',1,'UnitsSettings']]],
+  ['horizontaldistanceunitsmeters_18',['HorizontalDistanceUnitsMeters',['../classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1a4df12cbe00884399b8cfd66642230a12',1,'UnitsSettings']]],
+  ['hotreconfigure_19',['HotReconfigure',['../classNTRIPManager.html#ab53fdb59eb5265e13d062326c133bc4da5a78cf4658106f2b938bc80067ab4985',1,'NTRIPManager']]],
+  ['httperror_20',['HttpError',['../namespaceNTRIPErrors.html#ab3a74ce3b95766f53d1e1a5a33a22d17a2feb6ea3db3fd8eb9ec285f21f1ef868',1,'NTRIPErrors']]],
+  ['hybridmap_21',['HybridMap',['../classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa6212f53cdaf91dd05e9d99e72b8d228c',1,'MapProvider']]]
 ];

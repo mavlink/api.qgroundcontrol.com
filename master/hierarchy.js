@@ -37,6 +37,7 @@ var hierarchy =
       [ "PX4ULogUtility::MessageHandler", "classPX4ULogUtility_1_1MessageHandler.html", null ],
       [ "ULogFullHandler", "classULogFullHandler.html", null ]
     ] ],
+    [ "DataRateTracker", "classDataRateTracker.html", null ],
     [ "MAVLinkSigning::DetectSnapshot", "structMAVLinkSigning_1_1DetectSnapshot.html", null ],
     [ "QGC::EdgeTriggeredCounter< CountT >", "classQGC_1_1EdgeTriggeredCounter.html", null ],
     [ "QGC::EdgeTriggeredCounter< uint8_t >", "classQGC_1_1EdgeTriggeredCounter.html", null ],
@@ -57,6 +58,7 @@ var hierarchy =
       [ "OsmBuildingHandler", "classOsmBuildingHandler.html", null ]
     ] ],
     [ "StateHistoryRecorder::HistoryEntry", "structStateHistoryRecorder_1_1HistoryEntry.html", null ],
+    [ "NTRIPHttpTransport::HttpRequest", "structNTRIPHttpTransport_1_1HttpRequest.html", null ],
     [ "NTRIPHttpTransport::HttpStatus", "structNTRIPHttpTransport_1_1HttpStatus.html", null ],
     [ "GeometryImage::VehicleGeometryImageProvider::ImagePosition", "structGeometryImage_1_1VehicleGeometryImageProvider_1_1ImagePosition.html", null ],
     [ "EventHandler::Impl", "structEventHandler_1_1Impl.html", null ],
@@ -151,11 +153,13 @@ var hierarchy =
     [ "QtAndroidPrivate::NewIntentListener", null, [
       [ "AndroidEvents", "classAndroidEvents.html", null ]
     ] ],
+    [ "NTRIPMountpoint", "structNTRIPMountpoint.html", null ],
     [ "NTRIPTransportConfig", "structNTRIPTransportConfig.html", null ],
     [ "OnboardLogDownloadData", "structOnboardLogDownloadData.html", null ],
     [ "Mixer::Mixers::OutputFunction", "structMixer_1_1Mixers_1_1OutputFunction.html", null ],
     [ "Parameter", "structParameter.html", null ],
     [ "PauseVehicleThenChangeAltData_t", "structPauseVehicleThenChangeAltData__t.html", null ],
+    [ "PositionResult", "structPositionResult.html", null ],
     [ "px4_custom_mode", "unionpx4__custom__mode.html", null ],
     [ "PX4CustomMode", "structPX4CustomMode.html", null ],
     [ "QAbstractItemModel", null, [
@@ -176,6 +180,7 @@ var hierarchy =
       [ "FactValueSliderListModel", "classFactValueSliderListModel.html", null ],
       [ "GeoTagImageModel", "classGeoTagImageModel.html", null ],
       [ "LoggingCategoryFlatModel", "classLoggingCategoryFlatModel.html", null ],
+      [ "NTRIPSourceTableModel", "classNTRIPSourceTableModel.html", null ],
       [ "QGCArchiveModel", "classQGCArchiveModel.html", null ]
     ] ],
     [ "QAbstractTableModel", null, [
@@ -456,11 +461,13 @@ var hierarchy =
       [ "MockLinkWorker", "classMockLinkWorker.html", null ],
       [ "MotorAssignment", "classMotorAssignment.html", null ],
       [ "MultiVehicleManager", "classMultiVehicleManager.html", null ],
-      [ "NTRIPHttpTransport", "classNTRIPHttpTransport.html", null ],
+      [ "NTRIPConnectionStats", "classNTRIPConnectionStats.html", null ],
+      [ "NTRIPGgaProvider", "classNTRIPGgaProvider.html", null ],
       [ "NTRIPManager", "classNTRIPManager.html", null ],
-      [ "NTRIPMountpointModel", "classNTRIPMountpointModel.html", null ],
-      [ "NTRIPSourceTableFetcher", "classNTRIPSourceTableFetcher.html", null ],
-      [ "NTRIPSourceTableModel", "classNTRIPSourceTableModel.html", null ],
+      [ "NTRIPSourceTableController", "classNTRIPSourceTableController.html", null ],
+      [ "NTRIPTransport", "classNTRIPTransport.html", [
+        [ "NTRIPHttpTransport", "classNTRIPHttpTransport.html", null ]
+      ] ],
       [ "OnboardLogController", "classOnboardLogController.html", null ],
       [ "OnboardLogFtpController", "classOnboardLogFtpController.html", null ],
       [ "OsmParserThread", "classOsmParserThread.html", null ],
@@ -621,6 +628,7 @@ var hierarchy =
       [ "TrajectoryPoints", "classTrajectoryPoints.html", null ],
       [ "TransformPositionController", "classTransformPositionController.html", null ],
       [ "UDPWorker", "classUDPWorker.html", null ],
+      [ "UdpForwarder", "classUdpForwarder.html", null ],
       [ "VehicleComponent", "classVehicleComponent.html", [
         [ "APMAdvancedTuningCopterComponent", "classAPMAdvancedTuningCopterComponent.html", null ],
         [ "APMAirframeComponent", "classAPMAirframeComponent.html", null ],

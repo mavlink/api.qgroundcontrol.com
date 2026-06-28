@@ -13,7 +13,7 @@ var dir_61de17c98e48dc46000823693a1cf54c =
     [ "MockLink.qml", "MockLink_8qml.html", null ],
     [ "MockLinkSettings.qml", "MockLinkSettings_8qml.html", null ],
     [ "NmeaGpsSettings.qml", "NmeaGpsSettings_8qml.html", null ],
-    [ "NtripConnectionStatus.qml", "NtripConnectionStatus_8qml.html", null ],
+    [ "NtripConnectionSettings.qml", "NtripConnectionSettings_8qml.html", null ],
     [ "NtripMountpointBrowser.qml", "NtripMountpointBrowser_8qml.html", null ],
     [ "NtripServerSettings.qml", "NtripServerSettings_8qml.html", null ],
     [ "OfflineMapEditor.qml", "OfflineMapEditor_8qml.html", null ],

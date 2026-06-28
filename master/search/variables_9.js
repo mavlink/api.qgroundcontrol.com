@@ -2,7 +2,7 @@ var searchData=
 [
   ['icaoaddress_0',['icaoAddress',['../structADSB_1_1VehicleInfo__t.html#a02fedb6747c737f6d0336de1049dbdea',1,'ADSB::VehicleInfo_t']]],
   ['id_1',['ID',['../structOnboardLogDownloadData.html#a856bf13760a00e1670467ddb9dd2c941',1,'OnboardLogDownloadData']]],
-  ['identifier_2',['identifier',['../structMixer_1_1MixerParameter.html#afaf0a70a2e20e20f3f03888b0150cdcf',1,'Mixer::MixerParameter']]],
+  ['identifier_2',['identifier',['../structNTRIPMountpoint.html#a7de3e393675d01161d4357cb67cc1369',1,'NTRIPMountpoint::identifier'],['../structMixer_1_1MixerParameter.html#afaf0a70a2e20e20f3f03888b0150cdcf',1,'Mixer::MixerParameter::identifier']]],
   ['image_5finterval_3',['image_interval',['../structMockLinkCamera_1_1CameraState.html#a59e683a96956ca6d422fe9525157c962',1,'MockLinkCamera::CameraState']]],
   ['image_5fstatus_4',['image_status',['../structMockLinkCamera_1_1CameraState.html#ae1b4bc7726e838419b1695724d505e46',1,'MockLinkCamera::CameraState']]],
   ['imagedensityname_5',['imageDensityName',['../classCameraCalc.html#accd38306a60365d16484557790e36f42',1,'CameraCalc']]],

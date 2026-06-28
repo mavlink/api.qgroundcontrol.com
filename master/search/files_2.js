@@ -50,12 +50,13 @@ var searchData=
   ['conditionalstate_2eh_47',['ConditionalState.h',['../ConditionalState_8h.html',1,'']]],
   ['configbutton_2eqml_48',['ConfigButton.qml',['../ConfigButton_8qml.html',1,'']]],
   ['configsection_2eqml_49',['ConfigSection.qml',['../ConfigSection_8qml.html',1,'']]],
-  ['corridorscancomplexitem_2ecc_50',['CorridorScanComplexItem.cc',['../CorridorScanComplexItem_8cc.html',1,'']]],
-  ['corridorscancomplexitem_2eh_51',['CorridorScanComplexItem.h',['../CorridorScanComplexItem_8h.html',1,'']]],
-  ['corridorscaneditor_2eqml_52',['CorridorScanEditor.qml',['../CorridorScanEditor_8qml.html',1,'']]],
-  ['corridorscanmapvisual_2eqml_53',['CorridorScanMapVisual.qml',['../CorridorScanMapVisual_8qml.html',1,'']]],
-  ['corridorscanplancreator_2ecc_54',['CorridorScanPlanCreator.cc',['../CorridorScanPlanCreator_8cc.html',1,'']]],
-  ['corridorscanplancreator_2eh_55',['CorridorScanPlanCreator.h',['../CorridorScanPlanCreator_8h.html',1,'']]],
-  ['customguidedactionscontroller_2eqml_56',['CustomGuidedActionsController.qml',['../CustomGuidedActionsController_8qml.html',1,'']]],
-  ['custommapitems_2eqml_57',['CustomMapItems.qml',['../CustomMapItems_8qml.html',1,'']]]
+  ['connectionstatusrow_2eqml_50',['ConnectionStatusRow.qml',['../ConnectionStatusRow_8qml.html',1,'']]],
+  ['corridorscancomplexitem_2ecc_51',['CorridorScanComplexItem.cc',['../CorridorScanComplexItem_8cc.html',1,'']]],
+  ['corridorscancomplexitem_2eh_52',['CorridorScanComplexItem.h',['../CorridorScanComplexItem_8h.html',1,'']]],
+  ['corridorscaneditor_2eqml_53',['CorridorScanEditor.qml',['../CorridorScanEditor_8qml.html',1,'']]],
+  ['corridorscanmapvisual_2eqml_54',['CorridorScanMapVisual.qml',['../CorridorScanMapVisual_8qml.html',1,'']]],
+  ['corridorscanplancreator_2ecc_55',['CorridorScanPlanCreator.cc',['../CorridorScanPlanCreator_8cc.html',1,'']]],
+  ['corridorscanplancreator_2eh_56',['CorridorScanPlanCreator.h',['../CorridorScanPlanCreator_8h.html',1,'']]],
+  ['customguidedactionscontroller_2eqml_57',['CustomGuidedActionsController.qml',['../CustomGuidedActionsController_8qml.html',1,'']]],
+  ['custommapitems_2eqml_58',['CustomMapItems.qml',['../CustomMapItems_8qml.html',1,'']]]
 ];
