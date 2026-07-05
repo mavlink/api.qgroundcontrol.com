@@ -29,7 +29,6 @@ var structQGCCommandLineParser_1_1CommandLineParseResult =
     [ "unitTestOutput", "structQGCCommandLineParser_1_1CommandLineParseResult.html#ada87a75e992aa6443a43636c6f4a604b", null ],
     [ "unitTests", "structQGCCommandLineParser_1_1CommandLineParseResult.html#a943da3934499a51cd04cdf3ad0f6e954", null ],
     [ "unknownOptions", "structQGCCommandLineParser_1_1CommandLineParseResult.html#a501664758dd9244f7a908e38cb81f925", null ],
-    [ "useDesktopGL", "structQGCCommandLineParser_1_1CommandLineParseResult.html#a808825538f42c5310af88358686afd52", null ],
     [ "useSwRast", "structQGCCommandLineParser_1_1CommandLineParseResult.html#ad2fec5165dd4a0441521f3697f179e7e", null ],
     [ "versionText", "structQGCCommandLineParser_1_1CommandLineParseResult.html#a78769f21789d5bb3f80e27d9059d1bc3", null ]
 ];

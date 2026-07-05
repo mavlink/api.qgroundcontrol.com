@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/VideoManager/VideoReceiver/GStreamer/HwBuffers/QGCRhiCapture.h Source File</title>
+<title>QGroundControl: src/VideoManager/VideoReceiver/GStreamer/HwBuffers/common/QGCRhiCapture.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,33 +100,48 @@ $(document).ready(function(){initNavTree('QGCRhiCapture_8h_source.html',''); ini
 <div class="contents">
 <a href="QGCRhiCapture_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QtCore/qglobal.h&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtCore/QObject&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QtCore/QObject&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtCore/QString&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QtCore/qglobal.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">class </span>QRhi;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">class </span>QQuickWindow;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceQGCRhiCapture.html">QGCRhiCapture</a> {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>QRhi *<a class="code hl_function" href="namespaceQGCRhiCapture.html#a69e9dbcd5c59a1cadc83744d483c26b8">qrhi</a>();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>QRhi *<a class="code hl_function" href="namespaceQGCRhiCapture.html#a73fd0fc405f41931d20089596749d602">cachedRhi</a>() noexcept;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceQGCRhiCapture.html#a7f32da349828923bad28d7086ce08085">connectWindow</a>(QQuickWindow *window);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceQGCRhiCapture.html">QGCRhiCapture</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>QRhi* <a class="code hl_function" href="namespaceQGCRhiCapture.html#a73fd0fc405f41931d20089596749d602">cachedRhi</a>() noexcept;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structQGCRhiCapture_1_1DeviceSnapshot.html">   19</a></span>struct <a class="code hl_struct" href="structQGCRhiCapture_1_1DeviceSnapshot.html">DeviceSnapshot</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structQGCRhiCapture_1_1DeviceSnapshot.html#a7268ded826ab2d989991d40e0ef884f3">   21</a></span>    std::atomic&lt;int&gt; backend{-1};                  </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structQGCRhiCapture_1_1DeviceSnapshot.html#ab42bb434778b2992f76c9a6b64011e34">   22</a></span>    std::atomic&lt;void*&gt; d3d11Device{<span class="keyword">nullptr</span>};       </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structQGCRhiCapture_1_1DeviceSnapshot.html#ab71f6bc06ed9a3387b78e67d658cf9a0">   23</a></span>    std::atomic&lt;void*&gt; d3d12Device{<span class="keyword">nullptr</span>};       </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structQGCRhiCapture_1_1DeviceSnapshot.html#ac55d05145fe66a6f47f59027da525aa9">   24</a></span>    std::atomic&lt;qint64&gt; adapterLuid{0};            </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structQGCRhiCapture_1_1DeviceSnapshot.html#ab8b5fda31b7b16e7b8b7797f3bb8eb54">   25</a></span>    std::atomic&lt;void*&gt; vkPhysicalDevice{<span class="keyword">nullptr</span>};  </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structQGCRhiCapture_1_1DeviceSnapshot.html#a4c64e7a656c3c436a022f6189b1d63c2">   26</a></span>    std::atomic&lt;quint32&gt; vkQueueFamilyIdx{0};      </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structQGCRhiCapture_1_1DeviceSnapshot.html#a0af972f70c3f2abe3cac0ec6b407ce6b">   27</a></span>    std::atomic&lt;quint32&gt; vkQueueIdx{0};            </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structQGCRhiCapture_1_1DeviceSnapshot.html#ac6b670c7b21f821c28add0e29e06e465">   28</a></span>    std::atomic&lt;int&gt; framesInFlight{0};            </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>DeviceSnapshot&amp; <a class="code hl_function" href="namespaceQGCRhiCapture.html#a86d550bfa8509fd17d282033d8f08f20">deviceSnapshot</a>() noexcept;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>} <span class="comment">// namespace QGCRhiCapture</span></div>
-<div class="ttc" id="anamespaceQGCRhiCapture_html"><div class="ttname"><a href="namespaceQGCRhiCapture.html">QGCRhiCapture</a></div><div class="ttdef"><b>Definition</b> <a href="QGCRhiCapture_8cc_source.html#l00015">QGCRhiCapture.cc:15</a></div></div>
-<div class="ttc" id="anamespaceQGCRhiCapture_html_a69e9dbcd5c59a1cadc83744d483c26b8"><div class="ttname"><a href="namespaceQGCRhiCapture.html#a69e9dbcd5c59a1cadc83744d483c26b8">QGCRhiCapture::qrhi</a></div><div class="ttdeci">QRhi * qrhi()</div><div class="ttdef"><b>Definition</b> <a href="QGCRhiCapture_8cc_source.html#l00025">QGCRhiCapture.cc:25</a></div></div>
-<div class="ttc" id="anamespaceQGCRhiCapture_html_a73fd0fc405f41931d20089596749d602"><div class="ttname"><a href="namespaceQGCRhiCapture.html#a73fd0fc405f41931d20089596749d602">QGCRhiCapture::cachedRhi</a></div><div class="ttdeci">QRhi * cachedRhi() noexcept</div><div class="ttdef"><b>Definition</b> <a href="QGCRhiCapture_8cc_source.html#l00034">QGCRhiCapture.cc:34</a></div></div>
-<div class="ttc" id="anamespaceQGCRhiCapture_html_a7f32da349828923bad28d7086ce08085"><div class="ttname"><a href="namespaceQGCRhiCapture.html#a7f32da349828923bad28d7086ce08085">QGCRhiCapture::connectWindow</a></div><div class="ttdeci">void connectWindow(QQuickWindow *window)</div><div class="ttdef"><b>Definition</b> <a href="QGCRhiCapture_8cc_source.html#l00039">QGCRhiCapture.cc:39</a></div></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceQGCRhiCapture.html#a7f32da349828923bad28d7086ce08085">connectWindow</a>(QQuickWindow* window);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}  <span class="comment">// namespace QGCRhiCapture</span></div>
+<div class="ttc" id="anamespaceQGCRhiCapture_html"><div class="ttname"><a href="namespaceQGCRhiCapture.html">QGCRhiCapture</a></div><div class="ttdoc">Resolves and caches the QRhi* driving QGC's main scene graph; Qt has no global RHI accessor.</div><div class="ttdef"><b>Definition</b> <a href="QGCRhiCapture_8cc_source.html#l00018">QGCRhiCapture.cc:18</a></div></div>
+<div class="ttc" id="anamespaceQGCRhiCapture_html_a73fd0fc405f41931d20089596749d602"><div class="ttname"><a href="namespaceQGCRhiCapture.html#a73fd0fc405f41931d20089596749d602">QGCRhiCapture::cachedRhi</a></div><div class="ttdeci">QRhi * cachedRhi() noexcept</div><div class="ttdoc">Cached QRhi* maintained by sceneGraph signals; safe from any thread via acquire ordering.</div><div class="ttdef"><b>Definition</b> <a href="QGCRhiCapture_8cc_source.html#l00098">QGCRhiCapture.cc:98</a></div></div>
+<div class="ttc" id="anamespaceQGCRhiCapture_html_a7f32da349828923bad28d7086ce08085"><div class="ttname"><a href="namespaceQGCRhiCapture.html#a7f32da349828923bad28d7086ce08085">QGCRhiCapture::connectWindow</a></div><div class="ttdeci">void connectWindow(QQuickWindow *window)</div><div class="ttdef"><b>Definition</b> <a href="QGCRhiCapture_8cc_source.html#l00108">QGCRhiCapture.cc:108</a></div></div>
+<div class="ttc" id="anamespaceQGCRhiCapture_html_a86d550bfa8509fd17d282033d8f08f20"><div class="ttname"><a href="namespaceQGCRhiCapture.html#a86d550bfa8509fd17d282033d8f08f20">QGCRhiCapture::deviceSnapshot</a></div><div class="ttdeci">DeviceSnapshot &amp; deviceSnapshot() noexcept</div><div class="ttdoc">Returns the global snapshot. Atomic fields make individual reads thread-safe.</div><div class="ttdef"><b>Definition</b> <a href="QGCRhiCapture_8cc_source.html#l00103">QGCRhiCapture.cc:103</a></div></div>
+<div class="ttc" id="astructQGCRhiCapture_1_1DeviceSnapshot_html"><div class="ttname"><a href="structQGCRhiCapture_1_1DeviceSnapshot.html">QGCRhiCapture::DeviceSnapshot</a></div><div class="ttdef"><b>Definition</b> <a href="QGCRhiCapture_8h_source.html#l00019">QGCRhiCapture.h:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e70d0c0f198ee0280d1f11c0ba8073e0.html">VideoManager</a></li><li class="navelem"><a class="el" href="dir_f85c3baaca5db5ced6424567291f311c.html">VideoReceiver</a></li><li class="navelem"><a class="el" href="dir_a43dccabaefb15a4c021017d49b7e301.html">GStreamer</a></li><li class="navelem"><a class="el" href="dir_5028bd29f419a81b9a32eb55ebcd9926.html">HwBuffers</a></li><li class="navelem"><a class="el" href="QGCRhiCapture_8h.html">QGCRhiCapture.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e70d0c0f198ee0280d1f11c0ba8073e0.html">VideoManager</a></li><li class="navelem"><a class="el" href="dir_f85c3baaca5db5ced6424567291f311c.html">VideoReceiver</a></li><li class="navelem"><a class="el" href="dir_a43dccabaefb15a4c021017d49b7e301.html">GStreamer</a></li><li class="navelem"><a class="el" href="dir_5028bd29f419a81b9a32eb55ebcd9926.html">HwBuffers</a></li><li class="navelem"><a class="el" href="dir_cc4911c8cd09cbf07a025371cbfa7b91.html">common</a></li><li class="navelem"><a class="el" href="QGCRhiCapture_8h.html">QGCRhiCapture.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

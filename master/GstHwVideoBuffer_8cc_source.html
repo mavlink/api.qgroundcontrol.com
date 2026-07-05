@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/VideoManager/VideoReceiver/GStreamer/HwBuffers/GstHwVideoBuffer.cc Source File</title>
+<title>QGroundControl: src/VideoManager/VideoReceiver/GStreamer/HwBuffers/common/GstHwVideoBuffer.cc Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,17 +100,17 @@ $(document).ready(function(){initNavTree('GstHwVideoBuffer_8cc_source.html','');
 <div class="contents">
 <a href="GstHwVideoBuffer_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="GstHwVideoBuffer_8h.html">GstHwVideoBuffer.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="foldopen" id="foldopen00003" data-start="{" data-end="}">
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="classGstHwVideoBuffer.html#a22a42d3e4a8e93dba174454c2ca354db">    3</a></span><a class="code hl_function" href="classGstHwVideoBuffer.html#a22a42d3e4a8e93dba174454c2ca354db">GstHwVideoBuffer::GstHwVideoBuffer</a>(QVideoFrame::HandleType handleType,</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>                                   GstSample *sample,</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>                                   <span class="keyword">const</span> GstVideoInfo &amp;videoInfo,</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;rhi/qrhi.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="classGstHwVideoBuffer.html#a22a42d3e4a8e93dba174454c2ca354db">    5</a></span><a class="code hl_function" href="classGstHwVideoBuffer.html#a22a42d3e4a8e93dba174454c2ca354db">GstHwVideoBuffer::GstHwVideoBuffer</a>(QVideoFrame::HandleType handleType, GstSample* sample, <span class="keyword">const</span> GstVideoInfo&amp; videoInfo,</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>                                   QVideoFrameFormat format)</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    : QHwVideoBuffer(handleType, nullptr)</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    , _sample(sample ? gst_sample_ref(sample) : nullptr)</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    , _videoInfo(videoInfo)</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    , _format(std::move(format))</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    : QHwVideoBuffer(handleType),</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>      _sample(sample ? gst_sample_ref(sample) : nullptr),</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>      _videoInfo(videoInfo),</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>      _format(std::move(format))</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">// Crop is applied by the renderer via QVideoFrameFormat::viewport(); see GstAppSinkAdapter::applyCropMeta.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">// Crop is applied by the renderer via QVideoFrameFormat::viewport(); see GStreamerFrameMap::applyCropMeta.</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
 </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
@@ -122,16 +122,64 @@ $(document).ready(function(){initNavTree('GstHwVideoBuffer_8cc_source.html','');
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classGstHwVideoBuffer.html#ad4a86d91b25c19ba989dc4514b650471">   22</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classGstHwVideoBuffer.html#ad4a86d91b25c19ba989dc4514b650471">GstHwVideoBuffer::checkMapPreconditions</a>(<span class="keyword">const</span> QRhi&amp; rhi, <span class="keywordtype">int</span> expectedBackend, <span class="keyword">const</span> QLoggingCategory&amp; cat,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>                                             <a class="code hl_struct" href="structGstHw_1_1MapDiagnostics.html">GstHw::MapDiagnostics</a>&amp; diag, GstBuffer*&amp; outBuffer)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classGstHwVideoBuffer.html#a2f8c6045709996fb374d2f82eaa66619">_sample</a>) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">if</span> (!diag.<a class="code hl_variable" href="structGstHw_1_1MapDiagnostics.html#a2438dcee1d24bb494a1912bae19a374f">loggedNullSample</a>.exchange(<span class="keyword">true</span>, std::memory_order_relaxed))</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            qCWarning(cat) &lt;&lt; <span class="stringliteral">&quot;mapTextures: GstSample is null&quot;</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span> (!rhi.thread()-&gt;isCurrentThread()) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">if</span> (!diag.<a class="code hl_variable" href="structGstHw_1_1MapDiagnostics.html#ae890ca682143b2d31cac7a54d12e1f16">loggedWrongThread</a>.exchange(<span class="keyword">true</span>, std::memory_order_relaxed))</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            qCWarning(cat) &lt;&lt; <span class="stringliteral">&quot;mapTextures: called outside QRhi render thread&quot;</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(rhi.backend()) != expectedBackend) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">if</span> (!diag.<a class="code hl_variable" href="structGstHw_1_1MapDiagnostics.html#a939d7da9952047b1bae340bc62ffde70">loggedBadBackend</a>.exchange(<span class="keyword">true</span>, std::memory_order_relaxed))</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            qCWarning(cat) &lt;&lt; <span class="stringliteral">&quot;mapTextures: QRhi backend is&quot;</span> &lt;&lt; rhi.backendName() &lt;&lt; <span class="stringliteral">&quot;(backend id&quot;</span> &lt;&lt; expectedBackend</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                           &lt;&lt; <span class="stringliteral">&quot;required)&quot;</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    outBuffer = gst_sample_get_buffer(<a class="code hl_variable" href="classGstHwVideoBuffer.html#a2f8c6045709996fb374d2f82eaa66619">_sample</a>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span> (!outBuffer) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span> (!diag.<a class="code hl_variable" href="structGstHw_1_1MapDiagnostics.html#a636879f6a88ee24e36b717592ffe2de2">loggedNullBuffer</a>.exchange(<span class="keyword">true</span>, std::memory_order_relaxed))</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            qCWarning(cat) &lt;&lt; <span class="stringliteral">&quot;mapTextures: GstSample has no buffer&quot;</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classGstHwVideoBuffer.html#a81632a2d3489e6860fd13c8ab5911677">   50</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classGstHwVideoBuffer.html#a81632a2d3489e6860fd13c8ab5911677">GstHwVideoBuffer::logFirstSuccess</a>(std::atomic&lt;bool&gt;&amp; flag, <span class="keyword">const</span> QLoggingCategory&amp; cat, <span class="keyword">const</span> <span class="keywordtype">char</span>* tag,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                                       QSize frameSize, QVideoFrameFormat::PixelFormat pixelFormat, <span class="keywordtype">int</span> planes)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">if</span> (!flag.exchange(<span class="keyword">true</span>, std::memory_order_relaxed)) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        qCInfo(cat) &lt;&lt; <span class="stringliteral">&quot;First&quot;</span> &lt;&lt; tag &lt;&lt; <span class="stringliteral">&quot;zero-copy mapTextures success: size=&quot;</span> &lt;&lt; frameSize</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                    &lt;&lt; <span class="stringliteral">&quot;format=&quot;</span> &lt;&lt; int(pixelFormat) &lt;&lt; <span class="stringliteral">&quot;planes=&quot;</span> &lt;&lt; planes;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+</div>
 <div class="ttc" id="aGstHwVideoBuffer_8h_html"><div class="ttname"><a href="GstHwVideoBuffer_8h.html">GstHwVideoBuffer.h</a></div></div>
-<div class="ttc" id="aclassGstHwVideoBuffer_html_a22a42d3e4a8e93dba174454c2ca354db"><div class="ttname"><a href="classGstHwVideoBuffer.html#a22a42d3e4a8e93dba174454c2ca354db">GstHwVideoBuffer::GstHwVideoBuffer</a></div><div class="ttdeci">GstHwVideoBuffer(QVideoFrame::HandleType handleType, GstSample *sample, const GstVideoInfo &amp;videoInfo, QVideoFrameFormat format)</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBuffer_8cc_source.html#l00003">GstHwVideoBuffer.cc:3</a></div></div>
-<div class="ttc" id="aclassGstHwVideoBuffer_html_a2f8c6045709996fb374d2f82eaa66619"><div class="ttname"><a href="classGstHwVideoBuffer.html#a2f8c6045709996fb374d2f82eaa66619">GstHwVideoBuffer::_sample</a></div><div class="ttdeci">GstSample * _sample</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBuffer_8h_source.html#l00032">GstHwVideoBuffer.h:32</a></div></div>
+<div class="ttc" id="aclassGstHwVideoBuffer_html_a22a42d3e4a8e93dba174454c2ca354db"><div class="ttname"><a href="classGstHwVideoBuffer.html#a22a42d3e4a8e93dba174454c2ca354db">GstHwVideoBuffer::GstHwVideoBuffer</a></div><div class="ttdeci">GstHwVideoBuffer(QVideoFrame::HandleType handleType, GstSample *sample, const GstVideoInfo &amp;videoInfo, QVideoFrameFormat format)</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBuffer_8cc_source.html#l00005">GstHwVideoBuffer.cc:5</a></div></div>
+<div class="ttc" id="aclassGstHwVideoBuffer_html_a2f8c6045709996fb374d2f82eaa66619"><div class="ttname"><a href="classGstHwVideoBuffer.html#a2f8c6045709996fb374d2f82eaa66619">GstHwVideoBuffer::_sample</a></div><div class="ttdeci">GstSample * _sample</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBuffer_8h_source.html#l00094">GstHwVideoBuffer.h:94</a></div></div>
 <div class="ttc" id="aclassGstHwVideoBuffer_html_a5af42ae2c502740295679fb6260e75b6"><div class="ttname"><a href="classGstHwVideoBuffer.html#a5af42ae2c502740295679fb6260e75b6">GstHwVideoBuffer::~GstHwVideoBuffer</a></div><div class="ttdeci">~GstHwVideoBuffer() override</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBuffer_8cc_source.html#l00015">GstHwVideoBuffer.cc:15</a></div></div>
+<div class="ttc" id="aclassGstHwVideoBuffer_html_a81632a2d3489e6860fd13c8ab5911677"><div class="ttname"><a href="classGstHwVideoBuffer.html#a81632a2d3489e6860fd13c8ab5911677">GstHwVideoBuffer::logFirstSuccess</a></div><div class="ttdeci">static void logFirstSuccess(std::atomic&lt; bool &gt; &amp;flag, const QLoggingCategory &amp;cat, const char *tag, QSize frameSize, QVideoFrameFormat::PixelFormat pixelFormat, int planes)</div><div class="ttdoc">One-shot &quot;first zero-copy success&quot; info line; silent after flag first flips.</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBuffer_8cc_source.html#l00050">GstHwVideoBuffer.cc:50</a></div></div>
+<div class="ttc" id="aclassGstHwVideoBuffer_html_ad4a86d91b25c19ba989dc4514b650471"><div class="ttname"><a href="classGstHwVideoBuffer.html#ad4a86d91b25c19ba989dc4514b650471">GstHwVideoBuffer::checkMapPreconditions</a></div><div class="ttdeci">bool checkMapPreconditions(const QRhi &amp;rhi, int expectedBackend, const QLoggingCategory &amp;cat, GstHw::MapDiagnostics &amp;diag, GstBuffer *&amp;outBuffer) const</div><div class="ttdoc">Shared mapTextures preamble; warns once per cause via diag flags, returns false on first failure.</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBuffer_8cc_source.html#l00022">GstHwVideoBuffer.cc:22</a></div></div>
+<div class="ttc" id="astructGstHw_1_1MapDiagnostics_html"><div class="ttname"><a href="structGstHw_1_1MapDiagnostics.html">GstHw::MapDiagnostics</a></div><div class="ttdoc">One-shot warning flags per failure cause; paths with extra causes (D3D, IOSurface) derive and add mem...</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBuffer_8h_source.html#l00019">GstHwVideoBuffer.h:20</a></div></div>
+<div class="ttc" id="astructGstHw_1_1MapDiagnostics_html_a2438dcee1d24bb494a1912bae19a374f"><div class="ttname"><a href="structGstHw_1_1MapDiagnostics.html#a2438dcee1d24bb494a1912bae19a374f">GstHw::MapDiagnostics::loggedNullSample</a></div><div class="ttdeci">std::atomic&lt; bool &gt; loggedNullSample</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBuffer_8h_source.html#l00022">GstHwVideoBuffer.h:22</a></div></div>
+<div class="ttc" id="astructGstHw_1_1MapDiagnostics_html_a636879f6a88ee24e36b717592ffe2de2"><div class="ttname"><a href="structGstHw_1_1MapDiagnostics.html#a636879f6a88ee24e36b717592ffe2de2">GstHw::MapDiagnostics::loggedNullBuffer</a></div><div class="ttdeci">std::atomic&lt; bool &gt; loggedNullBuffer</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBuffer_8h_source.html#l00025">GstHwVideoBuffer.h:25</a></div></div>
+<div class="ttc" id="astructGstHw_1_1MapDiagnostics_html_a939d7da9952047b1bae340bc62ffde70"><div class="ttname"><a href="structGstHw_1_1MapDiagnostics.html#a939d7da9952047b1bae340bc62ffde70">GstHw::MapDiagnostics::loggedBadBackend</a></div><div class="ttdeci">std::atomic&lt; bool &gt; loggedBadBackend</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBuffer_8h_source.html#l00024">GstHwVideoBuffer.h:24</a></div></div>
+<div class="ttc" id="astructGstHw_1_1MapDiagnostics_html_ae890ca682143b2d31cac7a54d12e1f16"><div class="ttname"><a href="structGstHw_1_1MapDiagnostics.html#ae890ca682143b2d31cac7a54d12e1f16">GstHw::MapDiagnostics::loggedWrongThread</a></div><div class="ttdeci">std::atomic&lt; bool &gt; loggedWrongThread</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBuffer_8h_source.html#l00023">GstHwVideoBuffer.h:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e70d0c0f198ee0280d1f11c0ba8073e0.html">VideoManager</a></li><li class="navelem"><a class="el" href="dir_f85c3baaca5db5ced6424567291f311c.html">VideoReceiver</a></li><li class="navelem"><a class="el" href="dir_a43dccabaefb15a4c021017d49b7e301.html">GStreamer</a></li><li class="navelem"><a class="el" href="dir_5028bd29f419a81b9a32eb55ebcd9926.html">HwBuffers</a></li><li class="navelem"><a class="el" href="GstHwVideoBuffer_8cc.html">GstHwVideoBuffer.cc</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e70d0c0f198ee0280d1f11c0ba8073e0.html">VideoManager</a></li><li class="navelem"><a class="el" href="dir_f85c3baaca5db5ced6424567291f311c.html">VideoReceiver</a></li><li class="navelem"><a class="el" href="dir_a43dccabaefb15a4c021017d49b7e301.html">GStreamer</a></li><li class="navelem"><a class="el" href="dir_5028bd29f419a81b9a32eb55ebcd9926.html">HwBuffers</a></li><li class="navelem"><a class="el" href="dir_cc4911c8cd09cbf07a025371cbfa7b91.html">common</a></li><li class="navelem"><a class="el" href="GstHwVideoBuffer_8cc.html">GstHwVideoBuffer.cc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

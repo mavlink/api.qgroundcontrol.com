@@ -15,7 +15,7 @@ var classLogManager =
     [ "hasError", "classLogManager.html#adef037c4303567641d88c94a8cd53f4b", null ],
     [ "hasErrorChanged", "classLogManager.html#ad02a824c6488d953efd27506745dac79", null ],
     [ "init", "classLogManager.html#ac5c4e2406b9c1fb1a4546810a68551f4", null ],
-    [ "installHandler", "classLogManager.html#ac6a8cb8d46820f82cbe491fd412dd450", null ],
+    [ "installHandler", "classLogManager.html#a2cf2180deeffc870e99496626fb39b7b", null ],
     [ "instance", "classLogManager.html#acb2b6114624148e0d8925e5962b1739b", null ],
     [ "lastError", "classLogManager.html#a19a8420aec620a1364d305c7b7430e08", null ],
     [ "lastErrorChanged", "classLogManager.html#a8f2cb21a22a3026e1e1f4a71d87caa48", null ],

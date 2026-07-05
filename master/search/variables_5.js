@@ -11,15 +11,16 @@ var searchData=
   ['env_8',['env',['../structAndroidSerial_1_1JniContext.html#a86def8454e0b8dfff0b297f266178f63',1,'AndroidSerial::JniContext']]],
   ['eph_9',['eph',['../structsensor__gps__s.html#a79b8dd9c91340240ba11be0e45877a58',1,'sensor_gps_s']]],
   ['epv_10',['epv',['../structsensor__gps__s.html#a6b2ce12e4a35a68162a830dc30824e6c',1,'sensor_gps_s']]],
-  ['error_11',['error',['../QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d',1,'QGCCompression.cc']]],
+  ['error_11',['error',['../structGStreamer_1_1Environment_1_1ValidationResult.html#a809b5ac42eb29c2edb0ab85e0307c04b',1,'GStreamer::Environment::ValidationResult::error'],['../structVideoBackend_1_1EnvPrepResult.html#a941f04ab5e17146ef4e90a7084dfc3ca',1,'VideoBackend::EnvPrepResult::error'],['../QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d',1,'error:&#160;QGCCompression.cc']]],
   ['errorcode_12',['errorCode',['../classQSerialPortErrorInfo.html#a4f9178e1a3eb313b3eca7721f2cf2bfb',1,'QSerialPortErrorInfo']]],
   ['errormessage_13',['errorMessage',['../structLogParseResult.html#a5c91c82855180532281db108f5bce009',1,'LogParseResult']]],
   ['errors_14',['errors',['../structKMLSchemaValidator_1_1ValidationResult.html#a931e45b15cc1b06c5b53cd318b788db4',1,'KMLSchemaValidator::ValidationResult']]],
-  ['errorstring_15',['errorstring',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#a797889935cef2f62ad651762d7bb3c8d',1,'QGCCommandLineParser::CommandLineParseResult::errorString'],['../structDatabaseResult.html#aaeaff6f6c12a7eb6e3896e9b572e3c32',1,'DatabaseResult::errorString'],['../classQSerialPortErrorInfo.html#a2b9798d0f3cf4a6f99704c1f674853f2',1,'QSerialPortErrorInfo::errorString'],['../QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb',1,'errorString:&#160;QGCCompression.cc']]],
+  ['errorstring_15',['errorstring',['../structDatabaseResult.html#aaeaff6f6c12a7eb6e3896e9b572e3c32',1,'DatabaseResult::errorString'],['../structQGCCommandLineParser_1_1CommandLineParseResult.html#a797889935cef2f62ad651762d7bb3c8d',1,'QGCCommandLineParser::CommandLineParseResult::errorString'],['../classQSerialPortErrorInfo.html#a2b9798d0f3cf4a6f99704c1f674853f2',1,'QSerialPortErrorInfo::errorString'],['../QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb',1,'errorString:&#160;QGCCompression.cc']]],
   ['event_16',['event',['../structStateMachineLogger_1_1LogEntry.html#ae5167033370e49f50a50b0eccb63d923',1,'StateMachineLogger::LogEntry']]],
   ['events_17',['events',['../structLogParseResult.html#a18b4f5b30f3d3b50c8e48c7c2a8aeae2',1,'LogParseResult']]],
   ['eventtype_18',['EventType',['../classQGCStateMachineEvent.html#a6511968fa0a14ead261b7a71af0f1a54',1,'QGCStateMachineEvent']]],
   ['excludefromactuatortesting_19',['excludeFromActuatorTesting',['../structMixer_1_1Mixers_1_1OutputFunction.html#aa5f77540be7874582db789b82ad6993f',1,'Mixer::Mixers::OutputFunction']]],
   ['exclusions_20',['exclusions',['../classQGCCameraOptionExclusion.html#a547c9a59e2e30d2fea93473fb9911117',1,'QGCCameraOptionExclusion']]],
-  ['expanded_21',['expanded',['../structLoggingCategoryTreeNode.html#a2fab1031c4c5ccec92eab535ca57d4e0',1,'LoggingCategoryTreeNode']]]
+  ['expanded_21',['expanded',['../structLoggingCategoryTreeNode.html#a2fab1031c4c5ccec92eab535ca57d4e0',1,'LoggingCategoryTreeNode']]],
+  ['explicitfencewaits_22',['explicitFenceWaits',['../GstHwPathTelemetry_8cc.html#a0affc509c91ca63616ca6ea66e01c440',1,'GstHwPathTelemetry.cc']]]
 ];

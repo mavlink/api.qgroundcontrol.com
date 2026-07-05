@@ -261,36 +261,18 @@ var namespaces_dup =
     [ "GeoTagCalibrator", "namespaceGeoTagCalibrator.html", [
       [ "calibrate", "namespaceGeoTagCalibrator.html#a56084f8bcd0394c49fbe0ea590f840f0", null ]
     ] ],
-    [ "GStreamer", "namespaceGStreamer.html", [
-      [ "VideoDecoderOptions", "namespaceGStreamer.html#aa1745ec8f9ef63ada08418c5b045ca74", [
-        [ "ForceVideoDecoderDefault", "namespaceGStreamer.html#aa1745ec8f9ef63ada08418c5b045ca74a0a33662ed43e6721e3d32dcfee51e8d5", null ],
-        [ "ForceVideoDecoderSoftware", "namespaceGStreamer.html#aa1745ec8f9ef63ada08418c5b045ca74aa2fadb6d179c664a5dab5f6ce343c256", null ],
-        [ "ForceVideoDecoderNVIDIA", "namespaceGStreamer.html#aa1745ec8f9ef63ada08418c5b045ca74abafd366233fc36e746f80691482e7a46", null ],
-        [ "ForceVideoDecoderVAAPI", "namespaceGStreamer.html#aa1745ec8f9ef63ada08418c5b045ca74ac4b22e9052f853e2fb322fe42bf16871", null ],
-        [ "ForceVideoDecoderDirectX3D", "namespaceGStreamer.html#aa1745ec8f9ef63ada08418c5b045ca74afe2ae5fe96ab5cf3e402a8e20874500c", null ],
-        [ "ForceVideoDecoderVideoToolbox", "namespaceGStreamer.html#aa1745ec8f9ef63ada08418c5b045ca74ad6cd60f7907674400e53e02a71d71e49", null ],
-        [ "ForceVideoDecoderIntel", "namespaceGStreamer.html#aa1745ec8f9ef63ada08418c5b045ca74a2a958f9b4f04226ee7b14249bfc24d8e", null ],
-        [ "ForceVideoDecoderVulkan", "namespaceGStreamer.html#aa1745ec8f9ef63ada08418c5b045ca74a50efaf0c1917c70a080c6e0cc01f8439", null ],
-        [ "ForceVideoDecoderHardware", "namespaceGStreamer.html#aa1745ec8f9ef63ada08418c5b045ca74afa61249faa3fbcfef834969ef2b7337a", null ]
-      ] ],
-      [ "completeInit", "namespaceGStreamer.html#a71ff21ae8d70082b4d3da0e5e04e9659", null ],
-      [ "createVideoReceiver", "namespaceGStreamer.html#a36d3ccf699a6b03bd580a791b0008d16", null ],
-      [ "createVideoSink", "namespaceGStreamer.html#ad61801d3c0899cf9430a2a447aea76f7", null ],
-      [ "didExternalPluginLoaderFail", "namespaceGStreamer.html#a63b9e9022c6e0b9bb4fe9b2ed2e5f44b", null ],
-      [ "initialize", "namespaceGStreamer.html#aaeb4e5fb3ccc3013d331b0fbdc2d29f3", null ],
-      [ "isHardwareDecoderFactory", "namespaceGStreamer.html#aa78f2e5ccb025d8f073ac4ec3e223816", null ],
-      [ "isValidRtspUri", "namespaceGStreamer.html#ad95cc749b99a8ea8b73c1697cd0df915", null ],
-      [ "prepareEnvironment", "namespaceGStreamer.html#ab4da15ecef7d5ae8adc8084d3ffbf40c", null ],
-      [ "qtGstLog", "namespaceGStreamer.html#a3624a1b2d758c7d37e36343300e0727d", null ],
-      [ "redirectGLibLogging", "namespaceGStreamer.html#a8c63be6fc9a1c48d3d5b719dbc0b5c92", null ],
-      [ "releaseVideoSink", "namespaceGStreamer.html#a668a7521fce6db761dd0f6987f05c51b", null ],
-      [ "resetExternalPluginLoaderFailure", "namespaceGStreamer.html#abb2a908d58d10a16d717dd79df43385d", null ],
-      [ "setAppSinkAdaptersActive", "namespaceGStreamer.html#aa7780e8ee9eb00ef68f24511b00fe9e5", null ],
-      [ "setCodecPriorities", "namespaceGStreamer.html#a8fa5efb3bb1e31531b89b895c5970071", null ],
-      [ "setDebugLevel", "namespaceGStreamer.html#a427dbea4be97a87f50ad05516aaf1b78", null ],
-      [ "setupAppSinkAdapter", "namespaceGStreamer.html#ac0fa0b5246673ae86daf9d21b93a844c", null ]
+    [ "GraphicsSetup", "namespaceGraphicsSetup.html", [
+      [ "configureMainWindow", "namespaceGraphicsSetup.html#a76b888fc245743668299f88ebefac4c1", null ]
     ] ],
+    [ "GstHw", "namespaceGstHw.html", "namespaceGstHw" ],
+    [ "GstHwPathTelemetry", "namespaceGstHwPathTelemetry.html", "namespaceGstHwPathTelemetry" ],
+    [ "GstQgc", "namespaceGstQgc.html", "namespaceGstQgc" ],
+    [ "GStreamer", "namespaceGStreamer.html", "namespaceGStreamer" ],
+    [ "HwBuffers", "namespaceHwBuffers.html", "namespaceHwBuffers" ],
     [ "JsonParsing", "namespaceJsonParsing.html", "namespaceJsonParsing" ],
+    [ "JsonSchemaValidator", "namespaceJsonSchemaValidator.html", [
+      [ "validate", "namespaceJsonSchemaValidator.html#a72c7d2d8682c3393c8d6680303f6769d", null ]
+    ] ],
     [ "KMLHelper", "namespaceKMLHelper.html", [
       [ "_checkAltitudeMode", "namespaceKMLHelper.html#af4b633ee40361b9b645cfcf625446d6c", null ],
       [ "_filterVertices", "namespaceKMLHelper.html#ab056a0e36bd18094a6c91e7a9274f778", null ],
@@ -414,11 +396,7 @@ var namespaces_dup =
     ] ],
     [ "QGClibarchive", "namespaceQGClibarchive.html", "namespaceQGClibarchive" ],
     [ "QGCNetworkHelper", "namespaceQGCNetworkHelper.html", "namespaceQGCNetworkHelper" ],
-    [ "QGCRhiCapture", "namespaceQGCRhiCapture.html", [
-      [ "cachedRhi", "namespaceQGCRhiCapture.html#a73fd0fc405f41931d20089596749d602", null ],
-      [ "connectWindow", "namespaceQGCRhiCapture.html#a7f32da349828923bad28d7086ce08085", null ],
-      [ "qrhi", "namespaceQGCRhiCapture.html#a69e9dbcd5c59a1cadc83744d483c26b8", null ]
-    ] ],
+    [ "QGCRhiCapture", "namespaceQGCRhiCapture.html", "namespaceQGCRhiCapture" ],
     [ "QGCSensors", "namespaceQGCSensors.html", "namespaceQGCSensors" ],
     [ "QGCSqlHelper", "namespaceQGCSqlHelper.html", "namespaceQGCSqlHelper" ],
     [ "SDLJoystick", "namespaceSDLJoystick.html", "namespaceSDLJoystick" ],
@@ -480,5 +458,6 @@ var namespaces_dup =
       [ "getTagsFromLog", "namespaceULogParser.html#adc26a791bb2ee621d2c62c7464f90dba", null ],
       [ "parseFile", "namespaceULogParser.html#ae879d2456fe782c95e4e1bd18a64cfb0", null ],
       [ "parseGeoTagData", "namespaceULogParser.html#a918d2fe41d1621d82ae289ef48b17c36", null ]
-    ] ]
+    ] ],
+    [ "VideoBackend", "namespaceVideoBackend.html", "namespaceVideoBackend" ]
 ];

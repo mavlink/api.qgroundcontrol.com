@@ -8,5 +8,7 @@ var searchData=
   ['horizontalcompassattitude_2eqml_5',['HorizontalCompassAttitude.qml',['../HorizontalCompassAttitude_8qml.html',1,'']]],
   ['horizontalfactvaluegrid_2ecc_6',['HorizontalFactValueGrid.cc',['../HorizontalFactValueGrid_8cc.html',1,'']]],
   ['horizontalfactvaluegrid_2eh_7',['HorizontalFactValueGrid.h',['../HorizontalFactValueGrid_8h.html',1,'']]],
-  ['horizontalfactvaluegrid_2eqml_8',['HorizontalFactValueGrid.qml',['../HorizontalFactValueGrid_8qml.html',1,'']]]
+  ['horizontalfactvaluegrid_2eqml_8',['HorizontalFactValueGrid.qml',['../HorizontalFactValueGrid_8qml.html',1,'']]],
+  ['hwbuffers_2ecc_9',['HwBuffers.cc',['../HwBuffers_8cc.html',1,'']]],
+  ['hwbuffers_2eh_10',['HwBuffers.h',['../HwBuffers_8h.html',1,'']]]
 ];

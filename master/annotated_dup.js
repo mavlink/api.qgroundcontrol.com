@@ -33,6 +33,31 @@ var annotated_dup =
     [ "GeometryImage", "namespaceGeometryImage.html", [
       [ "VehicleGeometryImageProvider", "classGeometryImage_1_1VehicleGeometryImageProvider.html", "classGeometryImage_1_1VehicleGeometryImageProvider" ]
     ] ],
+    [ "GstHw", "namespaceGstHw.html", [
+      [ "GstHwImportCache", "classGstHw_1_1GstHwImportCache.html", "classGstHw_1_1GstHwImportCache" ],
+      [ "MapDiagnostics", "structGstHw_1_1MapDiagnostics.html", "structGstHw_1_1MapDiagnostics" ]
+    ] ],
+    [ "GstHwPathTelemetry", "namespaceGstHwPathTelemetry.html", [
+      [ "ScopedMapTimer", "classGstHwPathTelemetry_1_1ScopedMapTimer.html", "classGstHwPathTelemetry_1_1ScopedMapTimer" ]
+    ] ],
+    [ "GstQgc", "namespaceGstQgc.html", [
+      [ "VideoFormatEntry", "structGstQgc_1_1VideoFormatEntry.html", "structGstQgc_1_1VideoFormatEntry" ]
+    ] ],
+    [ "GStreamer", "namespaceGStreamer.html", [
+      [ "Environment", "namespaceGStreamer_1_1Environment.html", [
+        [ "ValidationResult", "structGStreamer_1_1Environment_1_1ValidationResult.html", "structGStreamer_1_1Environment_1_1ValidationResult" ]
+      ] ],
+      [ "SourceFactory", "namespaceGStreamer_1_1SourceFactory.html", [
+        [ "Config", "structGStreamer_1_1SourceFactory_1_1Config.html", "structGStreamer_1_1SourceFactory_1_1Config" ]
+      ] ],
+      [ "GstObjectDeleter", "structGStreamer_1_1GstObjectDeleter.html", "structGStreamer_1_1GstObjectDeleter" ],
+      [ "GstQueryDeleter", "structGStreamer_1_1GstQueryDeleter.html", "structGStreamer_1_1GstQueryDeleter" ],
+      [ "VideoSinkConfig", "structGStreamer_1_1VideoSinkConfig.html", "structGStreamer_1_1VideoSinkConfig" ]
+    ] ],
+    [ "HwBuffers", "namespaceHwBuffers.html", [
+      [ "HwBufferEnvConfig", "structHwBuffers_1_1HwBufferEnvConfig.html", "structHwBuffers_1_1HwBufferEnvConfig" ],
+      [ "PathStats", "structHwBuffers_1_1PathStats.html", "structHwBuffers_1_1PathStats" ]
+    ] ],
     [ "JsonParsing", "namespaceJsonParsing.html", [
       [ "KeyValidateInfo", "structJsonParsing_1_1KeyValidateInfo.html", "structJsonParsing_1_1KeyValidateInfo" ]
     ] ],
@@ -73,6 +98,9 @@ var annotated_dup =
     [ "QGCNetworkHelper", "namespaceQGCNetworkHelper.html", [
       [ "RequestConfig", "structQGCNetworkHelper_1_1RequestConfig.html", "structQGCNetworkHelper_1_1RequestConfig" ]
     ] ],
+    [ "QGCRhiCapture", "namespaceQGCRhiCapture.html", [
+      [ "DeviceSnapshot", "structQGCRhiCapture_1_1DeviceSnapshot.html", "structQGCRhiCapture_1_1DeviceSnapshot" ]
+    ] ],
     [ "QGCSensors", "namespaceQGCSensors.html", [
       [ "QGCAmbientTemperature", "classQGCSensors_1_1QGCAmbientTemperature.html", "classQGCSensors_1_1QGCAmbientTemperature" ],
       [ "QGCAmbientTemperatureFilter", "classQGCSensors_1_1QGCAmbientTemperatureFilter.html", "classQGCSensors_1_1QGCAmbientTemperatureFilter" ],
@@ -88,6 +116,10 @@ var annotated_dup =
     [ "SDLJoystick", "namespaceSDLJoystick.html", [
       [ "JoystickLock", "classSDLJoystick_1_1JoystickLock.html", "classSDLJoystick_1_1JoystickLock" ]
     ] ],
+    [ "VideoBackend", "namespaceVideoBackend.html", [
+      [ "EnvPrepResult", "structVideoBackend_1_1EnvPrepResult.html", "structVideoBackend_1_1EnvPrepResult" ]
+    ] ],
+    [ "_GstQgcQVideoSink", "struct__GstQgcQVideoSink.html", "struct__GstQgcQVideoSink" ],
     [ "_GstQgcVideoSinkBin", "struct__GstQgcVideoSinkBin.html", "struct__GstQgcVideoSinkBin" ],
     [ "ActuatorComponent", "classActuatorComponent.html", "classActuatorComponent" ],
     [ "ActuatorGeometry", "structActuatorGeometry.html", "structActuatorGeometry" ],
@@ -192,6 +224,7 @@ var annotated_dup =
     [ "CopernicusElevationProvider", "classCopernicusElevationProvider.html", "classCopernicusElevationProvider" ],
     [ "CorridorScanComplexItem", "classCorridorScanComplexItem.html", "classCorridorScanComplexItem" ],
     [ "CorridorScanPlanCreator", "classCorridorScanPlanCreator.html", "classCorridorScanPlanCreator" ],
+    [ "CpuVideoFramePool", "classCpuVideoFramePool.html", "classCpuVideoFramePool" ],
     [ "CustomURLMapProvider", "classCustomURLMapProvider.html", "classCustomURLMapProvider" ],
     [ "CyberJapanMapProvider", "classCyberJapanMapProvider.html", "classCyberJapanMapProvider" ],
     [ "DatabaseResult", "structDatabaseResult.html", "structDatabaseResult" ],
@@ -266,7 +299,8 @@ var annotated_dup =
     [ "GPSRTKFactGroup", "classGPSRTKFactGroup.html", "classGPSRTKFactGroup" ],
     [ "GPSSurveyInStatus", "structGPSSurveyInStatus.html", "structGPSSurveyInStatus" ],
     [ "GPSTransport", "classGPSTransport.html", "classGPSTransport" ],
-    [ "GstAppSinkAdapter", "classGstAppSinkAdapter.html", "classGstAppSinkAdapter" ],
+    [ "GstGlFrameTextures", "classGstGlFrameTextures.html", "classGstGlFrameTextures" ],
+    [ "GstHwFrameTexturesBase", "classGstHwFrameTexturesBase.html", "classGstHwFrameTexturesBase" ],
     [ "GstHwVideoBuffer", "classGstHwVideoBuffer.html", "classGstHwVideoBuffer" ],
     [ "GstVideoReceiver", "classGstVideoReceiver.html", "classGstVideoReceiver" ],
     [ "GstVideoWorker", "classGstVideoWorker.html", "classGstVideoWorker" ],
@@ -274,6 +308,8 @@ var annotated_dup =
     [ "HealthAndArmingCheckProblem", "classHealthAndArmingCheckProblem.html", "classHealthAndArmingCheckProblem" ],
     [ "HealthAndArmingCheckReport", "classHealthAndArmingCheckReport.html", "classHealthAndArmingCheckReport" ],
     [ "HorizontalFactValueGrid", "classHorizontalFactValueGrid.html", "classHorizontalFactValueGrid" ],
+    [ "HwResolvedPathCache", "structHwResolvedPathCache.html", "structHwResolvedPathCache" ],
+    [ "HwVideoBufferContext", "structHwVideoBufferContext.html", "structHwVideoBufferContext" ],
     [ "ImageProtocolManager", "classImageProtocolManager.html", "classImageProtocolManager" ],
     [ "InitialConnectStateMachine", "classInitialConnectStateMachine.html", "classInitialConnectStateMachine" ],
     [ "InstrumentValueData", "classInstrumentValueData.html", "classInstrumentValueData" ],
@@ -327,6 +363,7 @@ var annotated_dup =
     [ "MapboxSatelliteMapProvider", "classMapboxSatelliteMapProvider.html", "classMapboxSatelliteMapProvider" ],
     [ "MapboxStreetMapProvider", "classMapboxStreetMapProvider.html", "classMapboxStreetMapProvider" ],
     [ "MapboxStreetsBasicMapProvider", "classMapboxStreetsBasicMapProvider.html", "classMapboxStreetsBasicMapProvider" ],
+    [ "MappedFrame", "structMappedFrame.html", "structMappedFrame" ],
     [ "MapProvider", "classMapProvider.html", "classMapProvider" ],
     [ "MapQuestMapMapProvider", "classMapQuestMapMapProvider.html", "classMapQuestMapMapProvider" ],
     [ "MapQuestMapProvider", "classMapQuestMapProvider.html", "classMapQuestMapProvider" ],
@@ -481,6 +518,7 @@ var annotated_dup =
     [ "QGCMAVLinkMessageField", "classQGCMAVLinkMessageField.html", "classQGCMAVLinkMessageField" ],
     [ "QGCMAVLinkSystem", "classQGCMAVLinkSystem.html", "classQGCMAVLinkSystem" ],
     [ "QGCMAVLinkTypes", "structQGCMAVLinkTypes.html", "structQGCMAVLinkTypes" ],
+    [ "QGCOffscreenRenderer", "classQGCOffscreenRenderer.html", "classQGCOffscreenRenderer" ],
     [ "QGCOnboardLogEntry", "classQGCOnboardLogEntry.html", "classQGCOnboardLogEntry" ],
     [ "QGCOnboardLogFtpEntry", "classQGCOnboardLogFtpEntry.html", "classQGCOnboardLogFtpEntry" ],
     [ "QGCOptions", "classQGCOptions.html", "classQGCOptions" ],
@@ -488,6 +526,7 @@ var annotated_dup =
     [ "QGCPositionManager", "classQGCPositionManager.html", "classQGCPositionManager" ],
     [ "QGCPruneCacheTask", "classQGCPruneCacheTask.html", "classQGCPruneCacheTask" ],
     [ "QGCQGeoCoordinate", "classQGCQGeoCoordinate.html", "classQGCQGeoCoordinate" ],
+    [ "QGCQVideoSinkController", "classQGCQVideoSinkController.html", "classQGCQVideoSinkController" ],
     [ "QGCRenameTileSetTask", "classQGCRenameTileSetTask.html", "classQGCRenameTileSetTask" ],
     [ "QGCResetTask", "classQGCResetTask.html", "classQGCResetTask" ],
     [ "QGCSaveTileTask", "classQGCSaveTileTask.html", "classQGCSaveTileTask" ],
@@ -500,6 +539,8 @@ var annotated_dup =
     [ "QGCTileCacheDatabase", "classQGCTileCacheDatabase.html", "classQGCTileCacheDatabase" ],
     [ "QGCTileSet", "structQGCTileSet.html", "structQGCTileSet" ],
     [ "QGCUpdateTileDownloadStateTask", "classQGCUpdateTileDownloadStateTask.html", "classQGCUpdateTileDownloadStateTask" ],
+    [ "QGCVideoNodeItem", "classQGCVideoNodeItem.html", "classQGCVideoNodeItem" ],
+    [ "QGCVideoRenderNode", "classQGCVideoRenderNode.html", "classQGCVideoRenderNode" ],
     [ "QGCVideoStreamInfo", "classQGCVideoStreamInfo.html", "classQGCVideoStreamInfo" ],
     [ "QGeoFileTileCacheQGC", "classQGeoFileTileCacheQGC.html", "classQGeoFileTileCacheQGC" ],
     [ "QGeoServiceProviderFactoryQGC", "classQGeoServiceProviderFactoryQGC.html", "classQGeoServiceProviderFactoryQGC" ],

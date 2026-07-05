@@ -4,6 +4,7 @@ var LogManager_8cc =
     [ "s_captureEnabled", "LogManager_8cc.html#a179c8f40f12fd8b4af99c13061bb2d38", null ],
     [ "s_captureMutex", "LogManager_8cc.html#ab2f363bf4ad16c0322bbf3463cee766d", null ],
     [ "s_defaultHandler", "LogManager_8cc.html#a57240ac4d908484060c0342c448db6b9", null ],
+    [ "s_echoToStderr", "LogManager_8cc.html#a155260a9772b34bdee8c90606883ebc8", null ],
     [ "s_elapsedTimer", "LogManager_8cc.html#afb63f60a764dd52c284babbbed5323c5", null ],
     [ "s_instance", "LogManager_8cc.html#aee761fce672833a2969aac319732e57c", null ]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mavlinksigning_0',['MAVLinkSigning',['../namespaceMAVLinkSigning.html',1,'']]],
-  ['mixer_1',['Mixer',['../namespaceMixer.html',1,'']]]
+  ['logentryforeign_0',['LogEntryForeign',['../namespaceLogEntryForeign.html',1,'']]],
+  ['logformatter_1',['LogFormatter',['../namespaceLogFormatter.html',1,'']]]
 ];

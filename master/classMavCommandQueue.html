@@ -144,6 +144,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a29bba02807be66b4fc60b0b6f11e4792"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3352717c96f788c601176a8d9b251e8" id="r_ad3352717c96f788c601176a8d9b251e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavCommandQueue.html#ad3352717c96f788c601176a8d9b251e8">sendCommandWithLambdaFallback</a> (std::function&lt; void()&gt; lambda, int compId, MAV_CMD command, bool showError, float param1=0.0f, float param2=0.0f, float param3=0.0f, float param4=0.0f, float param5=0.0f, float param6=0.0f, float param7=0.0f)</td></tr>
 <tr class="separator:ad3352717c96f788c601176a8d9b251e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8871c8de44f17da7ba8d7cc2e16a9f8" id="r_ac8871c8de44f17da7ba8d7cc2e16a9f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavCommandQueue.html#ac8871c8de44f17da7ba8d7cc2e16a9f8">sendCommandIntWithLambdaFallback</a> (std::function&lt; void()&gt; lambda, int compId, MAV_CMD command, MAV_FRAME frame, bool showError, float param1=0.0f, float param2=0.0f, float param3=0.0f, float param4=0.0f, double param5=0.0, double param6=0.0, float param7=0.0f)</td></tr>
+<tr class="separator:ac8871c8de44f17da7ba8d7cc2e16a9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66266007757eff508afd7250ec7ab5a7" id="r_a66266007757eff508afd7250ec7ab5a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavCommandQueue.html#a66266007757eff508afd7250ec7ab5a7">sendWorker</a> (bool commandInt, bool showError, const <a class="el" href="structVehicleTypes.html#a65744ad2f1cd9ffea60ba8aaaa0a58fc">MavCmdAckHandlerInfo_t</a> *ackHandlerInfo, int compId, MAV_CMD command, MAV_FRAME frame, float param1, float param2, float param3, float param4, double param5, double param6, float param7)</td></tr>
 <tr class="separator:a66266007757eff508afd7250ec7ab5a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cbb135eadedf05c5181be1c2a05e46b" id="r_a9cbb135eadedf05c5181be1c2a05e46b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMavCommandQueue.html#a9cbb135eadedf05c5181be1c2a05e46b">isPending</a> (int targetCompId, MAV_CMD command) const</td></tr>
@@ -316,7 +318,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Emitted for every terminal ack that has no user-provided resultHandler. </p>
 
-<p class="reference">Referenced by <a class="el" href="MavCommandQueue_8cc_source.html#l00458">handleCommandAck()</a>, and <a class="el" href="MavCommandQueue_8cc_source.html#l00243">sendWorker()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MavCommandQueue_8cc_source.html#l00476">handleCommandAck()</a>, and <a class="el" href="MavCommandQueue_8cc_source.html#l00261">sendWorker()</a>.</p>
 
 </div>
 </div>
@@ -344,11 +346,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00497">497</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00515">515</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="VehicleTypes_8h_source.html#l00018">VehicleTypes::MavCmdResultCommandResultOnly</a>, <a class="el" href="VehicleTypes_8h_source.html#l00020">VehicleTypes::MavCmdResultFailureDuplicateCommand</a>, and <a class="el" href="VehicleTypes_8h_source.html#l00019">VehicleTypes::MavCmdResultFailureNoResponseToCommand</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l03347">Vehicle::mavCmdResultFailureCodeToString()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l03371">Vehicle::mavCmdResultFailureCodeToString()</a>.</p>
 
 </div>
 </div>
@@ -380,9 +382,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Index of a matching entry in the pending queue, or -1. Exposed for test use. </p>
 
-<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00159">159</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00177">177</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02192">Vehicle::_findMavCommandListEntryIndex()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00458">handleCommandAck()</a>, and <a class="el" href="MavCommandQueue_8cc_source.html#l00154">isPending()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02198">Vehicle::_findMavCommandListEntryIndex()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00476">handleCommandAck()</a>, and <a class="el" href="MavCommandQueue_8cc_source.html#l00172">isPending()</a>.</p>
 
 </div>
 </div>
@@ -414,9 +416,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Process a COMMAND_ACK — match it to a pending entry and fire callbacks. </p>
 
-<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00458">458</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00476">476</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="classMavCommandQueue.html#a10851def3af803b8642a94f2d44b9c51">commandResult()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00159">findEntryIndex()</a>, <a class="el" href="Vehicle_8h_source.html#l00425">Vehicle::id()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00057">MissionCommandTree::instance()</a>, <a class="el" href="VehicleTypes_8h_source.html#l00018">VehicleTypes::MavCmdResultCommandResultOnly</a>, <a class="el" href="Vehicle_8h_source.html#l00494">Vehicle::px4Firmware()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00145">MissionCommandTree::rawName()</a>, and <a class="el" href="MavCommandQueue_8cc_source.html#l00433">showCommandAckError()</a>.</p>
+<p class="reference">References <a class="el" href="classMavCommandQueue.html#a10851def3af803b8642a94f2d44b9c51">commandResult()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00177">findEntryIndex()</a>, <a class="el" href="Vehicle_8h_source.html#l00429">Vehicle::id()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00057">MissionCommandTree::instance()</a>, <a class="el" href="VehicleTypes_8h_source.html#l00018">VehicleTypes::MavCmdResultCommandResultOnly</a>, <a class="el" href="Vehicle_8h_source.html#l00498">Vehicle::px4Firmware()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00145">MissionCommandTree::rawName()</a>, and <a class="el" href="MavCommandQueue_8cc_source.html#l00451">showCommandAckError()</a>.</p>
 
 </div>
 </div>
@@ -448,11 +450,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>True if a matching (targetCompId, command) is already queued or awaiting ack. </p>
 
-<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00154">154</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00172">172</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="MavCommandQueue_8cc_source.html#l00159">findEntryIndex()</a>.</p>
+<p class="reference">References <a class="el" href="MavCommandQueue_8cc_source.html#l00177">findEntryIndex()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02187">Vehicle::isMavCommandPending()</a>, and <a class="el" href="MavCommandQueue_8cc_source.html#l00243">sendWorker()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02193">Vehicle::isMavCommandPending()</a>, and <a class="el" href="MavCommandQueue_8cc_source.html#l00261">sendWorker()</a>.</p>
 
 </div>
 </div>
@@ -532,9 +534,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00045">45</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="MavCommandQueue_8cc_source.html#l00243">sendWorker()</a>.</p>
+<p class="reference">References <a class="el" href="MavCommandQueue_8cc_source.html#l00261">sendWorker()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MavCommandQueue_8cc_source.html#l00056">sendCommandDelayed()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00129">sendCommandWithLambdaFallback()</a>, and <a class="el" href="Vehicle_8cc_source.html#l02143">Vehicle::sendMavCommand()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MavCommandQueue_8cc_source.html#l00056">sendCommandDelayed()</a>, and <a class="el" href="Vehicle_8cc_source.html#l02144">Vehicle::sendMavCommand()</a>.</p>
 
 </div>
 </div>
@@ -622,7 +624,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="MavCommandQueue_8cc_source.html#l00045">sendCommand()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02148">Vehicle::sendMavCommandDelayed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02149">Vehicle::sendMavCommandDelayed()</a>.</p>
 
 </div>
 </div>
@@ -708,9 +710,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00063">63</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="MavCommandQueue_8cc_source.html#l00243">sendWorker()</a>.</p>
+<p class="reference">References <a class="el" href="MavCommandQueue_8cc_source.html#l00261">sendWorker()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02172">Vehicle::sendMavCommandInt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02173">Vehicle::sendMavCommandInt()</a>.</p>
 
 </div>
 </div>
@@ -796,9 +798,101 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00085">85</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="MavCommandQueue_8cc_source.html#l00243">sendWorker()</a>.</p>
+<p class="reference">References <a class="el" href="MavCommandQueue_8cc_source.html#l00261">sendWorker()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02177">Vehicle::sendMavCommandIntWithHandler()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02178">Vehicle::sendMavCommandIntWithHandler()</a>.</p>
+
+</div>
+</div>
+<a id="ac8871c8de44f17da7ba8d7cc2e16a9f8" name="ac8871c8de44f17da7ba8d7cc2e16a9f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8871c8de44f17da7ba8d7cc2e16a9f8">&#9670;&#160;</a></span>sendCommandIntWithLambdaFallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MavCommandQueue::sendCommandIntWithLambdaFallback </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; void()&gt;&#160;</td>
+          <td class="paramname"><em>lambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>compId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MAV_CMD&#160;</td>
+          <td class="paramname"><em>command</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MAV_FRAME&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>showError</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>param1</em> = <code>0.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>param2</em> = <code>0.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>param3</em> = <code>0.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>param4</em> = <code>0.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>param5</em> = <code>0.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>param6</em> = <code>0.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>param7</em> = <code>0.0f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00167">167</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02188">Vehicle::sendMavCommandIntWithLambdaFallback()</a>.</p>
 
 </div>
 </div>
@@ -878,9 +972,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00074">74</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="MavCommandQueue_8cc_source.html#l00243">sendWorker()</a>.</p>
+<p class="reference">References <a class="el" href="MavCommandQueue_8cc_source.html#l00261">sendWorker()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MavCommandQueue_8cc_source.html#l00129">sendCommandWithLambdaFallback()</a>, <a class="el" href="Vehicle_8cc_source.html#l02167">Vehicle::sendMavCommandWithHandler()</a>, and <a class="el" href="MessageIntervalManager_8cc_source.html#l00107">MessageIntervalManager::setMessageRate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02168">Vehicle::sendMavCommandWithHandler()</a>, and <a class="el" href="MessageIntervalManager_8cc_source.html#l00107">MessageIntervalManager::setMessageRate()</a>.</p>
 
 </div>
 </div>
@@ -964,11 +1058,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00129">129</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00162">162</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="Vehicle_8h_source.html#l00685">Vehicle::firmwarePluginInstanceData()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00045">sendCommand()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00074">sendCommandWithHandler()</a>, <a class="el" href="classFirmwarePluginInstanceData.html#a1c6d665a4804c4eb92e66bc551581d08a38e00e00fd4b081268cb0d9083899116">FirmwarePluginInstanceData::SUPPORTED</a>, <a class="el" href="classFirmwarePluginInstanceData.html#a1c6d665a4804c4eb92e66bc551581d08a696b031073e74bf2cb98e5ef201d4aa3">FirmwarePluginInstanceData::UNKNOWN</a>, and <a class="el" href="classFirmwarePluginInstanceData.html#a1c6d665a4804c4eb92e66bc551581d08a40aa75f8e8cfdf7b660c5620e953229f">FirmwarePluginInstanceData::UNSUPPORTED</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02182">Vehicle::sendMavCommandWithLambdaFallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02183">Vehicle::sendMavCommandWithLambdaFallback()</a>.</p>
 
 </div>
 </div>
@@ -1065,9 +1157,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Full-control entry point used by higher-level coordinators (e.g. <a class="el" href="classRequestMessageCoordinator.html" title="Coordinates MAV_CMD_REQUEST_MESSAGE workflows: per-component queueing, ack/message correlation,...">RequestMessageCoordinator</a>) that need to set commandInt/frame/handlers explicitly. Consumers should prefer the typed send* wrappers above. </p>
 
-<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00243">243</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00261">261</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="classMavCommandQueue.html#a10851def3af803b8642a94f2d44b9c51">commandResult()</a>, <a class="el" href="Vehicle_8h_source.html#l00425">Vehicle::id()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00057">MissionCommandTree::instance()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00154">isPending()</a>, <a class="el" href="MavCommandQueue_8h_source.html#l00064">kMaxRetryCount</a>, <a class="el" href="VehicleTypes_8h_source.html#l00018">VehicleTypes::MavCmdResultCommandResultOnly</a>, <a class="el" href="VehicleTypes_8h_source.html#l00020">VehicleTypes::MavCmdResultFailureDuplicateCommand</a>, <a class="el" href="VehicleTypes_8h_source.html#l00019">VehicleTypes::MavCmdResultFailureNoResponseToCommand</a>, <a class="el" href="VehicleLinkManager_8h_source.html#l00038">VehicleLinkManager::primaryLink()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00145">MissionCommandTree::rawName()</a>, <a class="el" href="VehicleTypes_8h_source.html#l00041">VehicleTypes::MavCmdAckHandlerInfo_s::resultHandler</a>, <a class="el" href="VehicleTypes_8h_source.html#l00042">VehicleTypes::MavCmdAckHandlerInfo_s::resultHandlerData</a>, <a class="el" href="AppMessages_8cc_source.html#l00009">QGC::showAppMessage()</a>, and <a class="el" href="Vehicle_8h_source.html#l00575">Vehicle::vehicleLinkManager()</a>.</p>
+<p class="reference">References <a class="el" href="classMavCommandQueue.html#a10851def3af803b8642a94f2d44b9c51">commandResult()</a>, <a class="el" href="Vehicle_8h_source.html#l00429">Vehicle::id()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00057">MissionCommandTree::instance()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00172">isPending()</a>, <a class="el" href="MavCommandQueue_8h_source.html#l00065">kMaxRetryCount</a>, <a class="el" href="VehicleTypes_8h_source.html#l00018">VehicleTypes::MavCmdResultCommandResultOnly</a>, <a class="el" href="VehicleTypes_8h_source.html#l00020">VehicleTypes::MavCmdResultFailureDuplicateCommand</a>, <a class="el" href="VehicleTypes_8h_source.html#l00019">VehicleTypes::MavCmdResultFailureNoResponseToCommand</a>, <a class="el" href="VehicleLinkManager_8h_source.html#l00038">VehicleLinkManager::primaryLink()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00145">MissionCommandTree::rawName()</a>, <a class="el" href="VehicleTypes_8h_source.html#l00041">VehicleTypes::MavCmdAckHandlerInfo_s::resultHandler</a>, <a class="el" href="VehicleTypes_8h_source.html#l00042">VehicleTypes::MavCmdAckHandlerInfo_s::resultHandlerData</a>, <a class="el" href="AppMessages_8cc_source.html#l00009">QGC::showAppMessage()</a>, and <a class="el" href="Vehicle_8h_source.html#l00579">Vehicle::vehicleLinkManager()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="MavCommandQueue_8cc_source.html#l00045">sendCommand()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00063">sendCommandInt()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00085">sendCommandIntWithHandler()</a>, and <a class="el" href="MavCommandQueue_8cc_source.html#l00074">sendCommandWithHandler()</a>.</p>
 
@@ -1097,11 +1189,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00433">433</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8cc_source.html#l00451">451</a> of file <a class="el" href="MavCommandQueue_8cc_source.html">MavCommandQueue.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="MissionCommandTree_8cc_source.html#l00137">MissionCommandTree::friendlyName()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00057">MissionCommandTree::instance()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00145">MissionCommandTree::rawName()</a>, and <a class="el" href="AppMessages_8cc_source.html#l00009">QGC::showAppMessage()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MavCommandQueue_8cc_source.html#l00458">handleCommandAck()</a>, and <a class="el" href="Vehicle_8cc_source.html#l02197">Vehicle::showCommandAckError()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MavCommandQueue_8cc_source.html#l00476">handleCommandAck()</a>, and <a class="el" href="Vehicle_8cc_source.html#l02203">Vehicle::showCommandAckError()</a>.</p>
 
 </div>
 </div>
@@ -1148,9 +1240,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8h_source.html#l00064">64</a> of file <a class="el" href="MavCommandQueue_8h_source.html">MavCommandQueue.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8h_source.html#l00065">65</a> of file <a class="el" href="MavCommandQueue_8h_source.html">MavCommandQueue.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MavCommandQueue_8cc_source.html#l00243">sendWorker()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MavCommandQueue_8cc_source.html#l00261">sendWorker()</a>.</p>
 
 </div>
 </div>
@@ -1174,7 +1266,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8h_source.html#l00063">63</a> of file <a class="el" href="MavCommandQueue_8h_source.html">MavCommandQueue.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8h_source.html#l00064">64</a> of file <a class="el" href="MavCommandQueue_8h_source.html">MavCommandQueue.h</a>.</p>
 
 </div>
 </div>
@@ -1198,7 +1290,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8h_source.html#l00065">65</a> of file <a class="el" href="MavCommandQueue_8h_source.html">MavCommandQueue.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MavCommandQueue_8h_source.html#l00066">66</a> of file <a class="el" href="MavCommandQueue_8h_source.html">MavCommandQueue.h</a>.</p>
 
 </div>
 </div>

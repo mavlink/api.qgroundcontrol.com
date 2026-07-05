@@ -11,6 +11,7 @@ var classMavCommandQueue =
     [ "sendCommandDelayed", "classMavCommandQueue.html#a77692d628bfcae45ebf21d36018411c5", null ],
     [ "sendCommandInt", "classMavCommandQueue.html#a0c64a548e41fa962d48722d62e57a0f2", null ],
     [ "sendCommandIntWithHandler", "classMavCommandQueue.html#a29bba02807be66b4fc60b0b6f11e4792", null ],
+    [ "sendCommandIntWithLambdaFallback", "classMavCommandQueue.html#ac8871c8de44f17da7ba8d7cc2e16a9f8", null ],
     [ "sendCommandWithHandler", "classMavCommandQueue.html#a57ad70f05a3ec36c5d0f124011d67131", null ],
     [ "sendCommandWithLambdaFallback", "classMavCommandQueue.html#ad3352717c96f788c601176a8d9b251e8", null ],
     [ "sendWorker", "classMavCommandQueue.html#a66266007757eff508afd7250ec7ab5a7", null ],

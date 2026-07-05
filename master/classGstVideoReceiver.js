@@ -6,7 +6,7 @@ var classGstVideoReceiver =
     [ "decoderName", "classGstVideoReceiver.html#a59c72a46073b681463244f4dbb9b4326", null ],
     [ "decoderStatsChanged", "classGstVideoReceiver.html#a4703b44f7f01cb1829c2ff9471abf289", null ],
     [ "droppedFrames", "classGstVideoReceiver.html#ae71e3fea97d41d15dd2fedf12a693137", null ],
-    [ "latencyChanged", "classGstVideoReceiver.html#a14c24b93e55510d1f438b278d21dc19b", null ],
+    [ "dumpPipelineGraph", "classGstVideoReceiver.html#a36718fb92417fadcf8dd9a2b99fcfe75", null ],
     [ "processedFrames", "classGstVideoReceiver.html#a831735e841e70398e7e05df0c4f0d292", null ],
     [ "qosProportion", "classGstVideoReceiver.html#a71e9b6aaf3eb75c9d47f032b2736266f", null ],
     [ "qosQuality", "classGstVideoReceiver.html#a299e87fb6c027382393489c30b119502", null ],

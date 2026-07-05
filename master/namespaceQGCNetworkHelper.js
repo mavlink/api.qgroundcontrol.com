@@ -77,7 +77,6 @@ var namespaceQGCNetworkHelper =
     [ "setJsonHeaders", "namespaceQGCNetworkHelper.html#ac069926e63d3cdf1d22129b8e13626b4", null ],
     [ "setStandardHeaders", "namespaceQGCNetworkHelper.html#a5c824670f627ad4693b7e51377ff193e", null ],
     [ "sslVersion", "namespaceQGCNetworkHelper.html#a3e65dc26a6b033eb46cfbc0b743bc3db", null ],
-    [ "urlFileName", "namespaceQGCNetworkHelper.html#a54c02cd243316a2db0e120cda405543d", null ],
     [ "urlWithoutQuery", "namespaceQGCNetworkHelper.html#abf5158ce84a53d6a3fcbf7d66eaf66dd", null ],
     [ "kContentTypeFormUrlencoded", "namespaceQGCNetworkHelper.html#a20fbf759ae62a73db1a1b6f43467747d", null ],
     [ "kContentTypeJson", "namespaceQGCNetworkHelper.html#acb5b35a7c64512a13df6d74567b797bf", null ],

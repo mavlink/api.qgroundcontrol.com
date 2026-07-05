@@ -97,20 +97,22 @@ $(document).ready(function(){initNavTree('QGCNetworkHelper_8cc.html',''); initRe
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="QGCNetworkHelper_8h_source.html">QGCNetworkHelper.h</a>&quot;</code><br />
+<code>#include &lt;QtBluetooth/QBluetoothLocalDevice&gt;</code><br />
 <code>#include &lt;QtCore/QCoreApplication&gt;</code><br />
 <code>#include &lt;QtCore/QFile&gt;</code><br />
 <code>#include &lt;QtCore/QIODevice&gt;</code><br />
 <code>#include &lt;QtCore/QJsonDocument&gt;</code><br />
 <code>#include &lt;QtCore/QUrlQuery&gt;</code><br />
+<code>#include &lt;QtNetwork/QHttpHeaders&gt;</code><br />
 <code>#include &lt;QtNetwork/QHttpPart&gt;</code><br />
 <code>#include &lt;QtNetwork/QNetworkAccessManager&gt;</code><br />
 <code>#include &lt;QtNetwork/QNetworkInformation&gt;</code><br />
 <code>#include &lt;QtNetwork/QNetworkProxy&gt;</code><br />
 <code>#include &lt;QtNetwork/QNetworkProxyFactory&gt;</code><br />
 <code>#include &lt;QtNetwork/QSslSocket&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
 <code>#include &quot;<a class="el" href="QGCCompression_8h_source.html">QGCCompression.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="QGCLoggingCategory_8h_source.html">QGCLoggingCategory.h</a>&quot;</code><br />
-<code>#include &lt;QtBluetooth/QBluetoothLocalDevice&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for QGCNetworkHelper.cc:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -161,15 +163,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a1f9b244ed37caa6b5e4dab674e592172" id="r_a1f9b244ed37caa6b5e4dab674e592172"><td class="memItemLeft" align="right" valign="top">QUrl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#a1f9b244ed37caa6b5e4dab674e592172">QGCNetworkHelper::buildUrl</a> (const QString &amp;baseUrl, const QList&lt; QPair&lt; QString, QString &gt; &gt; &amp;params)</td></tr>
 <tr class="memdesc:a1f9b244ed37caa6b5e4dab674e592172"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build URL with query parameters from a list of pairs.  <br /></td></tr>
 <tr class="separator:a1f9b244ed37caa6b5e4dab674e592172"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54c02cd243316a2db0e120cda405543d" id="r_a54c02cd243316a2db0e120cda405543d"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#a54c02cd243316a2db0e120cda405543d">QGCNetworkHelper::urlFileName</a> (const QUrl &amp;url)</td></tr>
-<tr class="memdesc:a54c02cd243316a2db0e120cda405543d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract filename from URL path (last path segment)  <br /></td></tr>
-<tr class="separator:a54c02cd243316a2db0e120cda405543d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf5158ce84a53d6a3fcbf7d66eaf66dd" id="r_abf5158ce84a53d6a3fcbf7d66eaf66dd"><td class="memItemLeft" align="right" valign="top">QUrl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#abf5158ce84a53d6a3fcbf7d66eaf66dd">QGCNetworkHelper::urlWithoutQuery</a> (const QUrl &amp;url)</td></tr>
 <tr class="memdesc:abf5158ce84a53d6a3fcbf7d66eaf66dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get URL without query string and fragment.  <br /></td></tr>
 <tr class="separator:abf5158ce84a53d6a3fcbf7d66eaf66dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade905fec36ef1206663a1a4d4a965564" id="r_ade905fec36ef1206663a1a4d4a965564"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#ade905fec36ef1206663a1a4d4a965564">QGCNetworkHelper::configureRequest</a> (QNetworkRequest &amp;request, const <a class="el" href="structQGCNetworkHelper_1_1RequestConfig.html">RequestConfig</a> &amp;config)</td></tr>
+<tr class="memitem:ade905fec36ef1206663a1a4d4a965564" id="r_ade905fec36ef1206663a1a4d4a965564"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#ade905fec36ef1206663a1a4d4a965564">QGCNetworkHelper::configureRequest</a> (QNetworkRequest &amp;request, const <a class="el" href="structQGCNetworkHelper_1_1RequestConfig.html">RequestConfig</a> &amp;<a class="el" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</td></tr>
 <tr class="separator:ade905fec36ef1206663a1a4d4a965564"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31be991fb05f51fa4b0dc21ac08283d6" id="r_a31be991fb05f51fa4b0dc21ac08283d6"><td class="memItemLeft" align="right" valign="top">QNetworkRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#a31be991fb05f51fa4b0dc21ac08283d6">QGCNetworkHelper::createRequest</a> (const QUrl &amp;url, const <a class="el" href="structQGCNetworkHelper_1_1RequestConfig.html">RequestConfig</a> &amp;config)</td></tr>
+<tr class="memitem:a31be991fb05f51fa4b0dc21ac08283d6" id="r_a31be991fb05f51fa4b0dc21ac08283d6"><td class="memItemLeft" align="right" valign="top">QNetworkRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#a31be991fb05f51fa4b0dc21ac08283d6">QGCNetworkHelper::createRequest</a> (const QUrl &amp;url, const <a class="el" href="structQGCNetworkHelper_1_1RequestConfig.html">RequestConfig</a> &amp;<a class="el" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</td></tr>
 <tr class="separator:a31be991fb05f51fa4b0dc21ac08283d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c824670f627ad4693b7e51377ff193e" id="r_a5c824670f627ad4693b7e51377ff193e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#a5c824670f627ad4693b7e51377ff193e">QGCNetworkHelper::setStandardHeaders</a> (QNetworkRequest &amp;request, const QString &amp;userAgent={})</td></tr>
 <tr class="memdesc:a5c824670f627ad4693b7e51377ff193e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set standard browser-like headers on a request.  <br /></td></tr>
@@ -201,7 +200,7 @@ Functions</h2></td></tr>
 <tr class="separator:aa687b943c0a087bf5174e58db6276118"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a799d6402a6d8265b1e4e8fe8ad66c8e1" id="r_a799d6402a6d8265b1e4e8fe8ad66c8e1"><td class="memItemLeft" align="right" valign="top">QSslConfiguration&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#a799d6402a6d8265b1e4e8fe8ad66c8e1">QGCNetworkHelper::createInsecureSslConfig</a> ()</td></tr>
 <tr class="separator:a799d6402a6d8265b1e4e8fe8ad66c8e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fd8200a6d3ad600c9c733cf10059c31" id="r_a0fd8200a6d3ad600c9c733cf10059c31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#a0fd8200a6d3ad600c9c733cf10059c31">QGCNetworkHelper::applySslConfig</a> (QNetworkRequest &amp;request, const QSslConfiguration &amp;config)</td></tr>
+<tr class="memitem:a0fd8200a6d3ad600c9c733cf10059c31" id="r_a0fd8200a6d3ad600c9c733cf10059c31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#a0fd8200a6d3ad600c9c733cf10059c31">QGCNetworkHelper::applySslConfig</a> (QNetworkRequest &amp;request, const QSslConfiguration &amp;<a class="el" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</td></tr>
 <tr class="separator:a0fd8200a6d3ad600c9c733cf10059c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a156cfadb4b06f782e482d35ca9c157ea" id="r_a156cfadb4b06f782e482d35ca9c157ea"><td class="memItemLeft" align="right" valign="top">QList&lt; QSslCertificate &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCNetworkHelper.html#a156cfadb4b06f782e482d35ca9c157ea">QGCNetworkHelper::loadCaCertificates</a> (const QString &amp;filePath, QString *errorOut)</td></tr>
 <tr class="separator:a156cfadb4b06f782e482d35ca9c157ea"><td class="memSeparator" colspan="2">&#160;</td></tr>

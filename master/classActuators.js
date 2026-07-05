@@ -18,7 +18,7 @@ var classActuators =
     [ "initMotorAssignment", "classActuators.html#a20979b1b37e14f275528f2052bca75f2", null ],
     [ "isInitialized", "classActuators.html#a68f90ca060a892a01da6c603b46d43ff", null ],
     [ "isMultirotor", "classActuators.html#a3d81786c6ac24b0e2739816f293c69e1", null ],
-    [ "load", "classActuators.html#abe3f7d5a861271fd2f7cebd8ac9e4c58", null ],
+    [ "load", "classActuators.html#ab5c927f871f94d9083d6cdea4031a6a6", null ],
     [ "mixer", "classActuators.html#a1f70a979d9ed0fdce1b4f6212ea105a8", null ],
     [ "motorAssignmentActive", "classActuators.html#adfb9a03f621ebdf8554e4a0434cd08a9", null ],
     [ "motorAssignmentActiveChanged", "classActuators.html#a8b6be08347b924a5011ce90038cfb81f", null ],

@@ -1,5 +1,7 @@
 var dir_89cbf2a859be980e7e2f250b098309d0 =
 [
+    [ "GraphicsSetup.cc", "GraphicsSetup_8cc.html", "GraphicsSetup_8cc" ],
+    [ "GraphicsSetup.h", "GraphicsSetup_8h.html", "GraphicsSetup_8h" ],
     [ "MobileScreenMgr.h", "MobileScreenMgr_8h.html", null ],
     [ "Platform.cc", "Platform_8cc.html", null ],
     [ "Platform.h", "Platform_8h.html", "Platform_8h" ],

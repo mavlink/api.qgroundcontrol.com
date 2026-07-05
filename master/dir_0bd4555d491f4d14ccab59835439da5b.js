@@ -1,5 +1,7 @@
 var dir_0bd4555d491f4d14ccab59835439da5b =
 [
+    [ "NMEAUtils.cc", "NMEAUtils_8cc.html", "NMEAUtils_8cc" ],
+    [ "NMEAUtils.h", "NMEAUtils_8h.html", "NMEAUtils_8h" ],
     [ "NTRIPConnectionStats.cc", "NTRIPConnectionStats_8cc.html", null ],
     [ "NTRIPConnectionStats.h", "NTRIPConnectionStats_8h.html", "NTRIPConnectionStats_8h" ],
     [ "NTRIPConnectionStatus.qml", "NTRIPConnectionStatus_8qml.html", null ],

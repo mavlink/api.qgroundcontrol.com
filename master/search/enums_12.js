@@ -6,12 +6,13 @@ var searchData=
   ['shapetype_3',['ShapeType',['../classShapeFileHelper.html#a9804f7421026dd9ac4603aaa6ed50cce',1,'ShapeFileHelper']]],
   ['sidecalstate_4',['SideCalState',['../classSensorsComponentController.html#a94d50a6ce986f49bd44b9bd4c561dca8',1,'SensorsComponentController']]],
   ['simplemodevalues_5',['SimpleModeValues',['../classAPMFlightModesComponentController.html#a828d4ae737efd1e9cc6c638327fc8565',1,'APMFlightModesComponentController']]],
-  ['sourcetype_6',['sourcetype',['../structLogParseResult.html#a23344f3ed0e740621f9074eb28caad6c',1,'LogParseResult::SourceType'],['../classLogViewerController.html#a85026e965a1715289f89c0c684da6c84',1,'LogViewerController::SourceType']]],
-  ['speedunits_7',['SpeedUnits',['../classUnitsSettings.html#ab88fe16dd3ad9e6cf0933b873e46b46e',1,'UnitsSettings']]],
-  ['spindirection_8',['SpinDirection',['../structActuatorGeometry.html#a7ccc0079932245698dfce1667c559f4e',1,'ActuatorGeometry']]],
-  ['state_9',['state',['../structSigningStatus.html#a535d89c670cce2658b049ab93c689406',1,'SigningStatus::State'],['../namespaceTerrainQuery.html#ae7bc82310721c6cdfb6eff221ff6781c',1,'TerrainQuery::State'],['../classCircuitBreakerState.html#ae3872f8cde49f3dff3b4f1e005d112ca',1,'CircuitBreakerState::State'],['../classQGCFileDownload.html#a0bddc2ccc72e7491ed2301f79f6b19c7',1,'QGCFileDownload::State']]],
-  ['status_10',['status',['../classVideoReceiver.html#af67154a257e1617a5b94bbc4b8e6defb',1,'VideoReceiver::STATUS'],['../classGeoTagImageModel.html#a31632896fc8174769cd6928f56d997e7',1,'GeoTagImageModel::Status'],['../structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76',1,'QGCCommandLineParser::CommandLineParseResult::Status']]],
-  ['stickfunction_11',['StickFunction',['../classRemoteControlCalibrationController.html#a3219d760dfcb6f78f4447a83ef36405c',1,'RemoteControlCalibrationController']]],
-  ['stopbits_12',['stopbits',['../classQSerialPort.html#ad4ec8df2fd7623ca1f2450b0681e5082',1,'QSerialPort::StopBits'],['../namespaceAndroidSerial.html#ad14d38e3ec2393a218ef66898641a5b4',1,'AndroidSerial::StopBits']]],
-  ['storagestatus_13',['StorageStatus',['../classMavlinkCameraControlInterface.html#a826dd4c19d0bb5275e9fcb6ad6d6fc8c',1,'MavlinkCameraControlInterface']]]
+  ['source_6',['Source',['../structMappedFrame.html#a7e801de9803d493be8e8d47db467018a',1,'MappedFrame']]],
+  ['sourcetype_7',['sourcetype',['../structLogParseResult.html#a23344f3ed0e740621f9074eb28caad6c',1,'LogParseResult::SourceType'],['../classLogViewerController.html#a85026e965a1715289f89c0c684da6c84',1,'LogViewerController::SourceType']]],
+  ['speedunits_8',['SpeedUnits',['../classUnitsSettings.html#ab88fe16dd3ad9e6cf0933b873e46b46e',1,'UnitsSettings']]],
+  ['spindirection_9',['SpinDirection',['../structActuatorGeometry.html#a7ccc0079932245698dfce1667c559f4e',1,'ActuatorGeometry']]],
+  ['state_10',['state',['../structSigningStatus.html#a535d89c670cce2658b049ab93c689406',1,'SigningStatus::State'],['../namespaceTerrainQuery.html#ae7bc82310721c6cdfb6eff221ff6781c',1,'TerrainQuery::State'],['../classCircuitBreakerState.html#ae3872f8cde49f3dff3b4f1e005d112ca',1,'CircuitBreakerState::State'],['../classQGCFileDownload.html#a0bddc2ccc72e7491ed2301f79f6b19c7',1,'QGCFileDownload::State']]],
+  ['status_11',['status',['../classGeoTagImageModel.html#a31632896fc8174769cd6928f56d997e7',1,'GeoTagImageModel::Status'],['../structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76',1,'QGCCommandLineParser::CommandLineParseResult::Status'],['../classVideoReceiver.html#af67154a257e1617a5b94bbc4b8e6defb',1,'VideoReceiver::STATUS']]],
+  ['stickfunction_12',['StickFunction',['../classRemoteControlCalibrationController.html#a3219d760dfcb6f78f4447a83ef36405c',1,'RemoteControlCalibrationController']]],
+  ['stopbits_13',['stopbits',['../classQSerialPort.html#ad4ec8df2fd7623ca1f2450b0681e5082',1,'QSerialPort::StopBits'],['../namespaceAndroidSerial.html#ad14d38e3ec2393a218ef66898641a5b4',1,'AndroidSerial::StopBits']]],
+  ['storagestatus_14',['StorageStatus',['../classMavlinkCameraControlInterface.html#a826dd4c19d0bb5275e9fcb6ad6d6fc8c',1,'MavlinkCameraControlInterface']]]
 ];

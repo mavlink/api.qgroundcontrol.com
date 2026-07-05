@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "_GstQgcQVideoSink", "struct__GstQgcQVideoSink.html", null ],
     [ "_GstQgcVideoSinkBin", "struct__GstQgcVideoSinkBin.html", null ],
     [ "QtAndroidPrivate::ActivityResultListener", null, [
       [ "AndroidEvents", "classAndroidEvents.html", null ]
@@ -31,7 +32,9 @@ var hierarchy =
     [ "QGCCommandLineParser::CommandLineParseResult", "structQGCCommandLineParser_1_1CommandLineParseResult.html", null ],
     [ "Condition", "classCondition.html", null ],
     [ "ActuatorActions::Config", "structActuatorActions_1_1Config.html", null ],
+    [ "GStreamer::SourceFactory::Config", "structGStreamer_1_1SourceFactory_1_1Config.html", null ],
     [ "TransectStyleComplexItem::CoordInfo_t", "structTransectStyleComplexItem_1_1CoordInfo__t.html", null ],
+    [ "CpuVideoFramePool", "classCpuVideoFramePool.html", null ],
     [ "DatabaseResult", "structDatabaseResult.html", null ],
     [ "ulog_cpp::DataHandlerInterface", null, [
       [ "PX4ULogUtility::MessageHandler", "classPX4ULogUtility_1_1MessageHandler.html", null ],
@@ -39,8 +42,10 @@ var hierarchy =
     ] ],
     [ "DataRateTracker", "classDataRateTracker.html", null ],
     [ "MAVLinkSigning::DetectSnapshot", "structMAVLinkSigning_1_1DetectSnapshot.html", null ],
+    [ "QGCRhiCapture::DeviceSnapshot", "structQGCRhiCapture_1_1DeviceSnapshot.html", null ],
     [ "QGC::EdgeTriggeredCounter< CountT >", "classQGC_1_1EdgeTriggeredCounter.html", null ],
     [ "QGC::EdgeTriggeredCounter< uint8_t >", "classQGC_1_1EdgeTriggeredCounter.html", null ],
+    [ "VideoBackend::EnvPrepResult", "structVideoBackend_1_1EnvPrepResult.html", null ],
     [ "ErrorRecoveryBuilder", "classErrorRecoveryBuilder.html", null ],
     [ "FirmwareFlightMode", "structFirmwareFlightMode.html", null ],
     [ "FirmwareUpgradeController::FirmwareIdentifier", "classFirmwareUpgradeController_1_1FirmwareIdentifier.html", null ],
@@ -54,12 +59,18 @@ var hierarchy =
     [ "GPSTransport", "classGPSTransport.html", [
       [ "SerialGPSTransport", "classSerialGPSTransport.html", null ]
     ] ],
+    [ "GstHw::GstHwImportCache< Key, Resource, KeyHash >", "classGstHw_1_1GstHwImportCache.html", null ],
+    [ "GStreamer::GstObjectDeleter", "structGStreamer_1_1GstObjectDeleter.html", null ],
+    [ "GStreamer::GstQueryDeleter", "structGStreamer_1_1GstQueryDeleter.html", null ],
     [ "osmium::handler::Handler", null, [
       [ "OsmBuildingHandler", "classOsmBuildingHandler.html", null ]
     ] ],
     [ "StateHistoryRecorder::HistoryEntry", "structStateHistoryRecorder_1_1HistoryEntry.html", null ],
     [ "NTRIPHttpTransport::HttpRequest", "structNTRIPHttpTransport_1_1HttpRequest.html", null ],
     [ "NTRIPHttpTransport::HttpStatus", "structNTRIPHttpTransport_1_1HttpStatus.html", null ],
+    [ "HwBuffers::HwBufferEnvConfig", "structHwBuffers_1_1HwBufferEnvConfig.html", null ],
+    [ "HwResolvedPathCache", "structHwResolvedPathCache.html", null ],
+    [ "HwVideoBufferContext", "structHwVideoBufferContext.html", null ],
     [ "GeometryImage::VehicleGeometryImageProvider::ImagePosition", "structGeometryImage_1_1VehicleGeometryImageProvider_1_1ImagePosition.html", null ],
     [ "EventHandler::Impl", "structEventHandler_1_1Impl.html", null ],
     [ "AndroidSerial::JniContext", "structAndroidSerial_1_1JniContext.html", null ],
@@ -74,6 +85,8 @@ var hierarchy =
     [ "LoggingCategoryTreeNode", "structLoggingCategoryTreeNode.html", null ],
     [ "LogParseResult", "structLogParseResult.html", null ],
     [ "LogViewerParamMetaData", "classLogViewerParamMetaData.html", null ],
+    [ "GstHw::MapDiagnostics", "structGstHw_1_1MapDiagnostics.html", null ],
+    [ "MappedFrame", "structMappedFrame.html", null ],
     [ "MapProvider", "classMapProvider.html", [
       [ "BingMapProvider", "classBingMapProvider.html", [
         [ "BingHybridMapProvider", "classBingHybridMapProvider.html", null ],
@@ -158,7 +171,9 @@ var hierarchy =
     [ "OnboardLogDownloadData", "structOnboardLogDownloadData.html", null ],
     [ "Mixer::Mixers::OutputFunction", "structMixer_1_1Mixers_1_1OutputFunction.html", null ],
     [ "Parameter", "structParameter.html", null ],
+    [ "HwBuffers::PathStats", "structHwBuffers_1_1PathStats.html", null ],
     [ "PauseVehicleThenChangeAltData_t", "structPauseVehicleThenChangeAltData__t.html", null ],
+    [ "CpuVideoFramePool::PlaneLayout", "structCpuVideoFramePool_1_1PlaneLayout.html", null ],
     [ "PositionResult", "structPositionResult.html", null ],
     [ "px4_custom_mode", "unionpx4__custom__mode.html", null ],
     [ "PX4CustomMode", "structPX4CustomMode.html", null ],
@@ -401,7 +416,6 @@ var hierarchy =
       [ "GPSRtk", "classGPSRtk.html", null ],
       [ "GeoTagController", "classGeoTagController.html", null ],
       [ "GimbalController", "classGimbalController.html", null ],
-      [ "GstAppSinkAdapter", "classGstAppSinkAdapter.html", null ],
       [ "HealthAndArmingCheckProblem", "classHealthAndArmingCheckProblem.html", null ],
       [ "HealthAndArmingCheckReport", "classHealthAndArmingCheckReport.html", null ],
       [ "ImageProtocolManager", "classImageProtocolManager.html", null ],
@@ -544,12 +558,14 @@ var hierarchy =
         [ "QGCSaveTileTask", "classQGCSaveTileTask.html", null ],
         [ "QGCUpdateTileDownloadStateTask", "classQGCUpdateTileDownloadStateTask.html", null ]
       ] ],
+      [ "QGCOffscreenRenderer", "classQGCOffscreenRenderer.html", null ],
       [ "QGCOnboardLogEntry", "classQGCOnboardLogEntry.html", null ],
       [ "QGCOnboardLogFtpEntry", "classQGCOnboardLogFtpEntry.html", null ],
       [ "QGCOptions", "classQGCOptions.html", null ],
       [ "QGCPalette", "classQGCPalette.html", null ],
       [ "QGCPositionManager", "classQGCPositionManager.html", null ],
       [ "QGCQGeoCoordinate", "classQGCQGeoCoordinate.html", null ],
+      [ "QGCQVideoSinkController", "classQGCQVideoSinkController.html", null ],
       [ "QGCSensors::QGCAmbientTemperature", "classQGCSensors_1_1QGCAmbientTemperature.html", null ],
       [ "QGCSensors::QGCCompass", "classQGCSensors_1_1QGCCompass.html", null ],
       [ "QGCSensors::QGCPressure", "classQGCSensors_1_1QGCPressure.html", null ],
@@ -725,6 +741,7 @@ var hierarchy =
       [ "FactValueGrid", "classFactValueGrid.html", [
         [ "HorizontalFactValueGrid", "classHorizontalFactValueGrid.html", null ]
       ] ],
+      [ "QGCVideoNodeItem", "classQGCVideoNodeItem.html", null ],
       [ "TerrainProfile", "classTerrainProfile.html", null ]
     ] ],
     [ "QSerialPortErrorInfo", "classQSerialPortErrorInfo.html", null ],
@@ -732,6 +749,9 @@ var hierarchy =
       [ "QGCSerialPortInfo", "classQGCSerialPortInfo.html", null ]
     ] ],
     [ "QSerialPortInfoPrivate", "classQSerialPortInfoPrivate.html", null ],
+    [ "QSGRenderNode", null, [
+      [ "QGCVideoRenderNode", "classQGCVideoRenderNode.html", null ]
+    ] ],
     [ "QSignalTransition", null, [
       [ "QGCSignalTransition", "classQGCSignalTransition.html", [
         [ "GuardedTransition", "classGuardedTransition.html", null ],
@@ -794,6 +814,11 @@ var hierarchy =
     [ "QUdpSocket", null, [
       [ "UdpIODevice", "classUdpIODevice.html", null ]
     ] ],
+    [ "QVideoFrameTextures", null, [
+      [ "GstHwFrameTexturesBase", "classGstHwFrameTexturesBase.html", [
+        [ "GstGlFrameTextures", "classGstGlFrameTextures.html", null ]
+      ] ]
+    ] ],
     [ "ActuatorGeometry::RenderOptions", "structActuatorGeometry_1_1RenderOptions.html", null ],
     [ "QGCNetworkHelper::RequestConfig", "structQGCNetworkHelper_1_1RequestConfig.html", null ],
     [ "QtAndroidPrivate::ResumePauseListener", null, [
@@ -806,6 +831,7 @@ var hierarchy =
     [ "satellite_info_s", "structsatellite__info__s.html", null ],
     [ "GPSRtk::SatelliteCounts", "structGPSRtk_1_1SatelliteCounts.html", null ],
     [ "QGCSqlHelper::ScopedConnection", "classQGCSqlHelper_1_1ScopedConnection.html", null ],
+    [ "GstHwPathTelemetry::ScopedMapTimer", "classGstHwPathTelemetry_1_1ScopedMapTimer.html", null ],
     [ "sensor_gnss_relative_s", "structsensor__gnss__relative__s.html", null ],
     [ "sensor_gps_s", "structsensor__gps__s.html", null ],
     [ "SetTotalsResult", "structSetTotalsResult.html", null ],
@@ -829,6 +855,7 @@ var hierarchy =
     [ "QGCSqlHelper::Transaction", "classQGCSqlHelper_1_1Transaction.html", null ],
     [ "UDPClient", "structUDPClient.html", null ],
     [ "UrlFactory", "classUrlFactory.html", null ],
+    [ "GStreamer::Environment::ValidationResult", "structGStreamer_1_1Environment_1_1ValidationResult.html", null ],
     [ "KMLSchemaValidator::ValidationResult", "structKMLSchemaValidator_1_1ValidationResult.html", null ],
     [ "ParameterMetaData::ValueDescPair", "structParameterMetaData_1_1ValueDescPair.html", null ],
     [ "Mixer::ActuatorType::Values", "structMixer_1_1ActuatorType_1_1Values.html", null ],
@@ -839,6 +866,8 @@ var hierarchy =
       [ "RequestMessageCoordinator", "classRequestMessageCoordinator.html", null ],
       [ "Vehicle", "classVehicle.html", null ]
     ] ],
+    [ "GstQgc::VideoFormatEntry", "structGstQgc_1_1VideoFormatEntry.html", null ],
+    [ "GStreamer::VideoSinkConfig", "structGStreamer_1_1VideoSinkConfig.html", null ],
     [ "Viewer3DTileInfo", "structViewer3DTileInfo.html", null ],
     [ "Viewer3DTileStatistics", "structViewer3DTileStatistics.html", null ]
 ];

@@ -54,6 +54,5 @@ var QGCNetworkHelper_8cc =
     [ "setJsonHeaders", "QGCNetworkHelper_8cc.html#ac069926e63d3cdf1d22129b8e13626b4", null ],
     [ "setStandardHeaders", "QGCNetworkHelper_8cc.html#a5c824670f627ad4693b7e51377ff193e", null ],
     [ "sslVersion", "QGCNetworkHelper_8cc.html#a3e65dc26a6b033eb46cfbc0b743bc3db", null ],
-    [ "urlFileName", "QGCNetworkHelper_8cc.html#a54c02cd243316a2db0e120cda405543d", null ],
     [ "urlWithoutQuery", "QGCNetworkHelper_8cc.html#abf5158ce84a53d6a3fcbf7d66eaf66dd", null ]
 ];

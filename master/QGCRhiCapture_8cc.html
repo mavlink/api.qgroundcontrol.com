@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/VideoManager/VideoReceiver/GStreamer/HwBuffers/QGCRhiCapture.cc File Reference</title>
+<title>QGroundControl: src/VideoManager/VideoReceiver/GStreamer/HwBuffers/common/QGCRhiCapture.cc File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,9 +97,9 @@ $(document).ready(function(){initNavTree('QGCRhiCapture_8cc.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="QGCRhiCapture_8h_source.html">QGCRhiCapture.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="QGCApplication_8h_source.html">QGCApplication.h</a>&quot;</code><br />
-<code>#include &lt;QtCore/QPointer&gt;</code><br />
+<code>#include &lt;QtCore/QRunnable&gt;</code><br />
 <code>#include &lt;QtQuick/QQuickWindow&gt;</code><br />
+<code>#include &lt;rhi/qrhi.h&gt;</code><br />
 <code>#include &lt;array&gt;</code><br />
 <code>#include &lt;atomic&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('QGCRhiCapture_8cc.html',''); initResiz
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="QGCRhiCapture_8cc__incl.svg" width="100%" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="QGCRhiCapture_8cc__incl.svg" width="100%" height="459"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="QGCRhiCapture_8cc_source.html">Go to the source code of this file.</a></p>
@@ -115,14 +115,17 @@ $(document).ready(function(){initNavTree('QGCRhiCapture_8cc.html',''); initResiz
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceQGCRhiCapture" id="r_namespaceQGCRhiCapture"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCRhiCapture.html">QGCRhiCapture</a></td></tr>
+<tr class="memdesc:namespaceQGCRhiCapture"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves and caches the <code>QRhi*</code> driving <a class="el" href="namespaceQGC.html">QGC</a>'s main scene graph; Qt has no global RHI accessor. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a69e9dbcd5c59a1cadc83744d483c26b8" id="r_a69e9dbcd5c59a1cadc83744d483c26b8"><td class="memItemLeft" align="right" valign="top">QRhi *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCRhiCapture.html#a69e9dbcd5c59a1cadc83744d483c26b8">QGCRhiCapture::qrhi</a> ()</td></tr>
-<tr class="separator:a69e9dbcd5c59a1cadc83744d483c26b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73fd0fc405f41931d20089596749d602" id="r_a73fd0fc405f41931d20089596749d602"><td class="memItemLeft" align="right" valign="top">QRhi *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCRhiCapture.html#a73fd0fc405f41931d20089596749d602">QGCRhiCapture::cachedRhi</a> () noexcept</td></tr>
+<tr class="memdesc:a73fd0fc405f41931d20089596749d602"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cached QRhi* maintained by sceneGraph signals; safe from any thread via acquire ordering.  <br /></td></tr>
 <tr class="separator:a73fd0fc405f41931d20089596749d602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86d550bfa8509fd17d282033d8f08f20" id="r_a86d550bfa8509fd17d282033d8f08f20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structQGCRhiCapture_1_1DeviceSnapshot.html">DeviceSnapshot</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCRhiCapture.html#a86d550bfa8509fd17d282033d8f08f20">QGCRhiCapture::deviceSnapshot</a> () noexcept</td></tr>
+<tr class="memdesc:a86d550bfa8509fd17d282033d8f08f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the global snapshot. Atomic fields make individual reads thread-safe.  <br /></td></tr>
+<tr class="separator:a86d550bfa8509fd17d282033d8f08f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f32da349828923bad28d7086ce08085" id="r_a7f32da349828923bad28d7086ce08085"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCRhiCapture.html#a7f32da349828923bad28d7086ce08085">QGCRhiCapture::connectWindow</a> (QQuickWindow *window)</td></tr>
 <tr class="separator:a7f32da349828923bad28d7086ce08085"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -131,7 +134,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e70d0c0f198ee0280d1f11c0ba8073e0.html">VideoManager</a></li><li class="navelem"><a class="el" href="dir_f85c3baaca5db5ced6424567291f311c.html">VideoReceiver</a></li><li class="navelem"><a class="el" href="dir_a43dccabaefb15a4c021017d49b7e301.html">GStreamer</a></li><li class="navelem"><a class="el" href="dir_5028bd29f419a81b9a32eb55ebcd9926.html">HwBuffers</a></li><li class="navelem"><a class="el" href="QGCRhiCapture_8cc.html">QGCRhiCapture.cc</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e70d0c0f198ee0280d1f11c0ba8073e0.html">VideoManager</a></li><li class="navelem"><a class="el" href="dir_f85c3baaca5db5ced6424567291f311c.html">VideoReceiver</a></li><li class="navelem"><a class="el" href="dir_a43dccabaefb15a4c021017d49b7e301.html">GStreamer</a></li><li class="navelem"><a class="el" href="dir_5028bd29f419a81b9a32eb55ebcd9926.html">HwBuffers</a></li><li class="navelem"><a class="el" href="dir_cc4911c8cd09cbf07a025371cbfa7b91.html">common</a></li><li class="navelem"><a class="el" href="QGCRhiCapture_8cc.html">QGCRhiCapture.cc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

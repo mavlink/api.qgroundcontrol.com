@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/VideoManager/VideoReceiver/GStreamer/HwBuffers/GstContextBridgeRegistry.cc Source File</title>
+<title>QGroundControl: src/VideoManager/VideoReceiver/GStreamer/HwBuffers/common/GstContextBridgeRegistry.cc Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,105 +99,185 @@ $(document).ready(function(){initNavTree('GstContextBridgeRegistry_8cc_source.ht
 </div><!--header-->
 <div class="contents">
 <a href="GstContextBridgeRegistry_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="GstContextBridgeRegistry_8h.html">GstContextBridgeRegistry.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#if defined(QGC_HAS_GST_GLMEMORY_GPU_PATH) || defined(QGC_HAS_GST_D3D11_GPU_PATH) || defined(QGC_HAS_GST_D3D12_GPU_PATH)</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(GstContextBridgeRegistryLog, <span class="stringliteral">&quot;Video.GStreamer.HwBuffers.GstContextBridgeRegistry&quot;</span>)</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>namespace GstContextBridgeRegistry {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>{</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> kMaxHandlers = 8;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// Atomic entries close the write-after-read hazard: dispatch loads each slot with acquire</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// ordering, paired with the release store in registerBridgeHandler.</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>std::array&lt;std::atomic&lt;BridgeHandler&gt;, kMaxHandlers&gt; s_handlers{};</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>std::atomic&lt;int&gt; s_count{0};</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>std::array&lt;std::atomic&lt;ResetCallback&gt;, kMaxHandlers&gt; s_resets{};</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>std::atomic&lt;int&gt; s_resetCount{0};</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>std::mutex s_registerMutex;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>} <span class="comment">// namespace</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> registerBridgeHandler(BridgeHandler handler)</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (!handler) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::lock_guard&lt;std::mutex&gt; lock(s_registerMutex);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> slot = s_count.load(std::memory_order_relaxed);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (slot &gt;= kMaxHandlers) {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        qCWarning(GstContextBridgeRegistryLog)</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            &lt;&lt; <span class="stringliteral">&quot;Bridge handler limit (&quot;</span> &lt;&lt; kMaxHandlers &lt;&lt; <span class="stringliteral">&quot;) exceeded — dropping registration&quot;</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">// Store handler before publishing the new count so dispatchBridges can&#39;t observe a count</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// that includes a slot whose handler write isn&#39;t yet visible.</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    s_handlers[slot].store(handler, std::memory_order_release);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    s_count.store(slot + 1, std::memory_order_release);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">// Handlers run in registration (link) order; first GST_BUS_DROP wins. Bridges must mutually</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// exclude on context-type so order doesn&#39;t shadow another bridge&#39;s intended handoff.</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>GstBusSyncReply dispatchBridges(GstMessage *message)</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> count = s_count.load(std::memory_order_acquire);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; count &amp;&amp; i &lt; kMaxHandlers; ++i) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        BridgeHandler h = s_handlers[i].load(std::memory_order_acquire);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span> (h &amp;&amp; h(message) == GST_BUS_DROP) {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordflow">return</span> GST_BUS_DROP;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> GST_BUS_PASS;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">void</span> registerResetCallback(ResetCallback callback)</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (!callback) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    std::lock_guard&lt;std::mutex&gt; lock(s_registerMutex);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> slot = s_resetCount.load(std::memory_order_relaxed);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">if</span> (slot &gt;= kMaxHandlers) {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        qCWarning(GstContextBridgeRegistryLog)</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            &lt;&lt; <span class="stringliteral">&quot;Reset callback limit (&quot;</span> &lt;&lt; kMaxHandlers &lt;&lt; <span class="stringliteral">&quot;) exceeded — dropping registration&quot;</span>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    s_resets[slot].store(callback, std::memory_order_release);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    s_resetCount.store(slot + 1, std::memory_order_release);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">void</span> resetAllBridges()</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> count = s_resetCount.load(std::memory_order_acquire);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; count &amp;&amp; i &lt; kMaxHandlers; ++i) {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        ResetCallback cb = s_resets[i].load(std::memory_order_acquire);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">if</span> (cb) cb();</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#ifdef QT_TESTLIB_LIB</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keywordtype">void</span> clearForTest()</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>{</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="comment">// Drop cached device/context state in every bridge first; otherwise a test that primes</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="comment">// a bridge then re-registers via registerBridgeHandler would observe stale s_primed=true.</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="comment">// Done before mutex acquisition because each bridge takes its own lock.</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    resetAllBridges();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    std::lock_guard&lt;std::mutex&gt; lock(s_registerMutex);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="comment">// Zero count before the slot stores so a concurrent dispatchBridges can&#39;t read a slot</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">// we&#39;ve already nulled while count is still high. Pairs with the count-after-slot store</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">// ordering in registerBridgeHandler.</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    s_count.store(0, std::memory_order_release);</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    s_resetCount.store(0, std::memory_order_release);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;slot : s_handlers) slot.store(nullptr, std::memory_order_release);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;slot : s_resets) slot.store(nullptr, std::memory_order_release);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>} <span class="comment">// namespace GstContextBridgeRegistry</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#endif </span><span class="comment">// QGC_HAS_GST_GLMEMORY_GPU_PATH || QGC_HAS_GST_D3D11_GPU_PATH || QGC_HAS_GST_D3D12_GPU_PATH</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#if defined(QGC_HAS_ANY_GPU_PATH)</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QtCore/QMutex&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(GstContextBridgeRegistryLog, <span class="stringliteral">&quot;Video.GStreamer.HwBuffers.GstContextBridgeRegistry&quot;</span>)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>namespace GstContextBridgeRegistry {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// Arrays are write-once at static-init (happen-before any GstBus thread), so dispatch reads are lock-free; mutex only</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// serializes concurrent registrations. unregister is NOT safe with concurrent dispatch.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// One slot per compiled GPU path that registers a bridge; deriving the cap from the path macros (not a fixed count)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// makes a silent drop impossible.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> kMaxBridges = 0</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#if defined(QGC_HAS_GST_GLMEMORY_GPU_PATH)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    + 1</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#if defined(QGC_HAS_GST_D3D11_GPU_PATH)</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    + 1</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#if defined(QGC_HAS_GST_D3D12_GPU_PATH)</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    + 1</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#if defined(QGC_HAS_GST_VULKAN_GPU_PATH)</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    + 1</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    ;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// Cache-reset participants: the import-cache-owning paths (NOT the bridge set). Sized from its own</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// macro list so adding a cache path without a slot is a compile-time array overflow, never a silent drop.</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">constexpr</span> <span class="keywordtype">int</span> kMaxCacheResets = 0</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#if defined(QGC_HAS_GST_DMABUF_GPU_PATH)</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    + 1</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#if defined(QGC_HAS_GST_D3D11_GPU_PATH)</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    + 1</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#if defined(QGC_HAS_GST_D3D12_GPU_PATH)</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    + 1</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#if defined(QGC_HAS_GST_IOSURFACE_GPU_PATH)</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    + 1</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#if defined(QGC_HAS_GST_AHARDWAREBUFFER_GPU_PATH)</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    + 1</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    ;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>QMutex s_mutex;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>std::array&lt;BridgeHandler, kMaxBridges&gt; s_handlers{};</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>std::atomic&lt;int&gt; s_handlerCount{0};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>std::array&lt;ResetCallback, kMaxBridges&gt; s_resets{};</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>std::atomic&lt;int&gt; s_resetCount{0};</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>std::array&lt;ResetCallback, (kMaxCacheResets &gt; 0 ? kMaxCacheResets : 1)&gt; s_cacheResets{};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>std::atomic&lt;int&gt; s_cacheResetCount{0};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}  <span class="comment">// namespace</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>RegistrationHandle registerBridgeHandler(BridgeHandler handler)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>{</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">if</span> (handler == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">return</span> kInvalidHandle;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    QMutexLocker lock(&amp;s_mutex);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> count = s_handlerCount.load(std::memory_order_relaxed);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; count; ++i) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">if</span> (s_handlers[i] == handler)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>RegistrationHandle<span class="keyword">&gt;</span>(i);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">if</span> (count &gt;= kMaxBridges) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        qCWarning(GstContextBridgeRegistryLog) &lt;&lt; <span class="stringliteral">&quot;bridge handler registry full (kMaxBridges=&quot;</span> &lt;&lt; kMaxBridges</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                                               &lt;&lt; <span class="stringliteral">&quot;); handler will not receive GstBus messages&quot;</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">return</span> kInvalidHandle;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    s_handlers[count] = handler;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    s_handlerCount.store(count + 1, std::memory_order_release);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>RegistrationHandle<span class="keyword">&gt;</span>(count);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>RegistrationHandle registerResetCallback(ResetCallback callback)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>{</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">if</span> (callback == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">return</span> kInvalidHandle;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    QMutexLocker lock(&amp;s_mutex);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> count = s_resetCount.load(std::memory_order_relaxed);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; count; ++i) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">if</span> (s_resets[i] == callback)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>RegistrationHandle<span class="keyword">&gt;</span>(i);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">if</span> (count &gt;= kMaxBridges) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        qCWarning(GstContextBridgeRegistryLog) &lt;&lt; <span class="stringliteral">&quot;reset callback registry full (kMaxBridges=&quot;</span> &lt;&lt; kMaxBridges</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                                               &lt;&lt; <span class="stringliteral">&quot;); callback will not run on QRhi teardown&quot;</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">return</span> kInvalidHandle;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    s_resets[count] = callback;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    s_resetCount.store(count + 1, std::memory_order_release);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>RegistrationHandle<span class="keyword">&gt;</span>(count);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>RegistrationHandle registerCacheReset(ResetCallback callback)</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>{</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">if</span> (callback == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">return</span> kInvalidHandle;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    QMutexLocker lock(&amp;s_mutex);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> count = s_cacheResetCount.load(std::memory_order_relaxed);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; count; ++i) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">if</span> (s_cacheResets[i] == callback)</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>RegistrationHandle<span class="keyword">&gt;</span>(i);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">if</span> (count &gt;= kMaxCacheResets) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        qCWarning(GstContextBridgeRegistryLog) &lt;&lt; <span class="stringliteral">&quot;cache-reset registry full (kMaxCacheResets=&quot;</span> &lt;&lt; kMaxCacheResets</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                                               &lt;&lt; <span class="stringliteral">&quot;); callback will not run on GPU device-loss&quot;</span>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">return</span> kInvalidHandle;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    s_cacheResets[count] = callback;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    s_cacheResetCount.store(count + 1, std::memory_order_release);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>RegistrationHandle<span class="keyword">&gt;</span>(count);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment">// First GST_BUS_DROP wins; bridges must differ on context-type so no bridge shadows another.</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>GstBusSyncReply dispatchBridges(GstMessage* message)</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>{</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="comment">// Registry lock must not be held across a bridge callout — each handler takes its own per-bridge mutex.</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> count = s_handlerCount.load(std::memory_order_acquire);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; count; ++i) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keyword">const</span> BridgeHandler h = s_handlers[i];</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keywordflow">if</span> (h &amp;&amp; (h(message) == GST_BUS_DROP))</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            <span class="keywordflow">return</span> GST_BUS_DROP;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">return</span> GST_BUS_PASS;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="keywordtype">void</span> resetAllBridges()</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>{</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> count = s_resetCount.load(std::memory_order_acquire);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; count; ++i) {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keyword">const</span> ResetCallback cb = s_resets[i];</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">if</span> (cb)</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            cb();</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>}</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="keywordtype">void</span> resetAllCaches()</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>{</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="comment">// No registry lock across the callout: each cache reset takes its own per-backend mutex (or is a</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="comment">// lock-free atomic-store deferred flag). Array is write-once at static-init (happens-before any</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="comment">// GstBus thread), so iteration is lock-free.</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> count = s_cacheResetCount.load(std::memory_order_acquire);</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; count; ++i) {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keyword">const</span> ResetCallback cb = s_cacheResets[i];</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">if</span> (cb)</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            cb();</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="preprocessor">#ifdef QGC_GST_BUILD_TESTING</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="keywordtype">void</span> clearForTest()</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>{</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    resetAllBridges();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    resetAllCaches();</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    QMutexLocker lock(&amp;s_mutex);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    s_handlers.fill(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    s_resets.fill(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    s_cacheResets.fill(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    s_handlerCount.store(0, std::memory_order_release);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    s_resetCount.store(0, std::memory_order_release);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    s_cacheResetCount.store(0, std::memory_order_release);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>}</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>}  <span class="comment">// namespace GstContextBridgeRegistry</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="preprocessor">#endif  </span><span class="comment">// QGC_HAS_ANY_GPU_PATH</span></div>
 <div class="ttc" id="aGstContextBridgeRegistry_8h_html"><div class="ttname"><a href="GstContextBridgeRegistry_8h.html">GstContextBridgeRegistry.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
@@ -206,7 +286,7 @@ $(document).ready(function(){initNavTree('GstContextBridgeRegistry_8cc_source.ht
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e70d0c0f198ee0280d1f11c0ba8073e0.html">VideoManager</a></li><li class="navelem"><a class="el" href="dir_f85c3baaca5db5ced6424567291f311c.html">VideoReceiver</a></li><li class="navelem"><a class="el" href="dir_a43dccabaefb15a4c021017d49b7e301.html">GStreamer</a></li><li class="navelem"><a class="el" href="dir_5028bd29f419a81b9a32eb55ebcd9926.html">HwBuffers</a></li><li class="navelem"><a class="el" href="GstContextBridgeRegistry_8cc.html">GstContextBridgeRegistry.cc</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e70d0c0f198ee0280d1f11c0ba8073e0.html">VideoManager</a></li><li class="navelem"><a class="el" href="dir_f85c3baaca5db5ced6424567291f311c.html">VideoReceiver</a></li><li class="navelem"><a class="el" href="dir_a43dccabaefb15a4c021017d49b7e301.html">GStreamer</a></li><li class="navelem"><a class="el" href="dir_5028bd29f419a81b9a32eb55ebcd9926.html">HwBuffers</a></li><li class="navelem"><a class="el" href="dir_cc4911c8cd09cbf07a025371cbfa7b91.html">common</a></li><li class="navelem"><a class="el" href="GstContextBridgeRegistry_8cc.html">GstContextBridgeRegistry.cc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

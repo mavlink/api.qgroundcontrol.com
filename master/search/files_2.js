@@ -57,6 +57,8 @@ var searchData=
   ['corridorscanmapvisual_2eqml_54',['CorridorScanMapVisual.qml',['../CorridorScanMapVisual_8qml.html',1,'']]],
   ['corridorscanplancreator_2ecc_55',['CorridorScanPlanCreator.cc',['../CorridorScanPlanCreator_8cc.html',1,'']]],
   ['corridorscanplancreator_2eh_56',['CorridorScanPlanCreator.h',['../CorridorScanPlanCreator_8h.html',1,'']]],
-  ['customguidedactionscontroller_2eqml_57',['CustomGuidedActionsController.qml',['../CustomGuidedActionsController_8qml.html',1,'']]],
-  ['custommapitems_2eqml_58',['CustomMapItems.qml',['../CustomMapItems_8qml.html',1,'']]]
+  ['cpuvideoframepool_2ecc_57',['CpuVideoFramePool.cc',['../CpuVideoFramePool_8cc.html',1,'']]],
+  ['cpuvideoframepool_2eh_58',['CpuVideoFramePool.h',['../CpuVideoFramePool_8h.html',1,'']]],
+  ['customguidedactionscontroller_2eqml_59',['CustomGuidedActionsController.qml',['../CustomGuidedActionsController_8qml.html',1,'']]],
+  ['custommapitems_2eqml_60',['CustomMapItems.qml',['../CustomMapItems_8qml.html',1,'']]]
 ];

@@ -106,6 +106,7 @@ $(document).ready(function(){initNavTree('LogManager_8cc.html',''); initResizabl
 <code>#include &lt;QtCore/QThread&gt;</code><br />
 <code>#include &lt;QtQml/QJSEngine&gt;</code><br />
 <code>#include &lt;atomic&gt;</code><br />
+<code>#include &lt;cstdio&gt;</code><br />
 <code>#include &lt;cstring&gt;</code><br />
 <code>#include &quot;<a class="el" href="LogFormatter_8h_source.html">LogFormatter.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="LogModel_8h_source.html">LogModel.h</a>&quot;</code><br />
@@ -138,6 +139,8 @@ Variables</h2></td></tr>
 <tr class="separator:afb63f60a764dd52c284babbbed5323c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57240ac4d908484060c0342c448db6b9" id="r_a57240ac4d908484060c0342c448db6b9"><td class="memItemLeft" align="right" valign="top">static QtMessageHandler&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LogManager_8cc.html#a57240ac4d908484060c0342c448db6b9">s_defaultHandler</a> = nullptr</td></tr>
 <tr class="separator:a57240ac4d908484060c0342c448db6b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a155260a9772b34bdee8c90606883ebc8" id="r_a155260a9772b34bdee8c90606883ebc8"><td class="memItemLeft" align="right" valign="top">static std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="LogManager_8cc.html#a155260a9772b34bdee8c90606883ebc8">s_echoToStderr</a> {false}</td></tr>
+<tr class="separator:a155260a9772b34bdee8c90606883ebc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="ace9de5e80c1df708077da23266662a4a" name="ace9de5e80c1df708077da23266662a4a"></a>
@@ -160,9 +163,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LogManager_8cc_source.html#l00033">33</a> of file <a class="el" href="LogManager_8cc_source.html">LogManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LogManager_8cc_source.html#l00034">34</a> of file <a class="el" href="LogManager_8cc_source.html">LogManager.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LogManager_8cc_source.html#l00466">LogManager::capturedMessages()</a>, <a class="el" href="LogManager_8cc_source.html#l00515">LogManager::captureIfEnabled()</a>, <a class="el" href="LogManager_8cc_source.html#l00460">LogManager::clearCapturedMessages()</a>, <a class="el" href="LogManager_8cc_source.html#l00483">LogManager::hasCapturedMessage()</a>, and <a class="el" href="LogManager_8cc_source.html#l00504">LogManager::hasCapturedUncategorizedMessage()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LogManager_8cc_source.html#l00475">LogManager::capturedMessages()</a>, <a class="el" href="LogManager_8cc_source.html#l00524">LogManager::captureIfEnabled()</a>, <a class="el" href="LogManager_8cc_source.html#l00469">LogManager::clearCapturedMessages()</a>, <a class="el" href="LogManager_8cc_source.html#l00492">LogManager::hasCapturedMessage()</a>, and <a class="el" href="LogManager_8cc_source.html#l00513">LogManager::hasCapturedUncategorizedMessage()</a>.</p>
 
 </div>
 </div>
@@ -186,9 +189,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LogManager_8cc_source.html#l00031">31</a> of file <a class="el" href="LogManager_8cc_source.html">LogManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LogManager_8cc_source.html#l00032">32</a> of file <a class="el" href="LogManager_8cc_source.html">LogManager.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LogManager_8cc_source.html#l00515">LogManager::captureIfEnabled()</a>, and <a class="el" href="LogManager_8cc_source.html#l00455">LogManager::setCaptureEnabled()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LogManager_8cc_source.html#l00524">LogManager::captureIfEnabled()</a>, and <a class="el" href="LogManager_8cc_source.html#l00464">LogManager::setCaptureEnabled()</a>.</p>
 
 </div>
 </div>
@@ -212,9 +215,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LogManager_8cc_source.html#l00032">32</a> of file <a class="el" href="LogManager_8cc_source.html">LogManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LogManager_8cc_source.html#l00033">33</a> of file <a class="el" href="LogManager_8cc_source.html">LogManager.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LogManager_8cc_source.html#l00466">LogManager::capturedMessages()</a>, <a class="el" href="LogManager_8cc_source.html#l00515">LogManager::captureIfEnabled()</a>, <a class="el" href="LogManager_8cc_source.html#l00460">LogManager::clearCapturedMessages()</a>, <a class="el" href="LogManager_8cc_source.html#l00483">LogManager::hasCapturedMessage()</a>, and <a class="el" href="LogManager_8cc_source.html#l00504">LogManager::hasCapturedUncategorizedMessage()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LogManager_8cc_source.html#l00475">LogManager::capturedMessages()</a>, <a class="el" href="LogManager_8cc_source.html#l00524">LogManager::captureIfEnabled()</a>, <a class="el" href="LogManager_8cc_source.html#l00469">LogManager::clearCapturedMessages()</a>, <a class="el" href="LogManager_8cc_source.html#l00492">LogManager::hasCapturedMessage()</a>, and <a class="el" href="LogManager_8cc_source.html#l00513">LogManager::hasCapturedUncategorizedMessage()</a>.</p>
 
 </div>
 </div>
@@ -238,9 +241,35 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LogManager_8cc_source.html#l00042">42</a> of file <a class="el" href="LogManager_8cc_source.html">LogManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LogManager_8cc_source.html#l00043">43</a> of file <a class="el" href="LogManager_8cc_source.html">LogManager.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LogManager_8cc_source.html#l00121">LogManager::installHandler()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LogManager_8cc_source.html#l00128">LogManager::installHandler()</a>.</p>
+
+</div>
+</div>
+<a id="a155260a9772b34bdee8c90606883ebc8" name="a155260a9772b34bdee8c90606883ebc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a155260a9772b34bdee8c90606883ebc8">&#9670;&#160;</a></span>s_echoToStderr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic&lt;bool&gt; s_echoToStderr {false}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="LogManager_8cc_source.html#l00044">44</a> of file <a class="el" href="LogManager_8cc_source.html">LogManager.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="LogManager_8cc_source.html#l00128">LogManager::installHandler()</a>.</p>
 
 </div>
 </div>
@@ -264,7 +293,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LogManager_8cc_source.html#l00036">36</a> of file <a class="el" href="LogManager_8cc_source.html">LogManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LogManager_8cc_source.html#l00037">37</a> of file <a class="el" href="LogManager_8cc_source.html">LogManager.cc</a>.</p>
 
 </div>
 </div>
@@ -288,9 +317,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LogManager_8cc_source.html#l00025">25</a> of file <a class="el" href="LogManager_8cc_source.html">LogManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="LogManager_8cc_source.html#l00026">26</a> of file <a class="el" href="LogManager_8cc_source.html">LogManager.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LogManager_8cc_source.html#l00121">LogManager::installHandler()</a>, <a class="el" href="LogManager_8cc_source.html#l00069">LogManager::instance()</a>, and <a class="el" href="LogManager_8cc_source.html#l00102">LogManager::~LogManager()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LogManager_8cc_source.html#l00128">LogManager::installHandler()</a>, <a class="el" href="LogManager_8cc_source.html#l00076">LogManager::instance()</a>, and <a class="el" href="LogManager_8cc_source.html#l00109">LogManager::~LogManager()</a>.</p>
 
 </div>
 </div>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['logentryforeign_0',['LogEntryForeign',['../namespaceLogEntryForeign.html',1,'']]],
-  ['logformatter_1',['LogFormatter',['../namespaceLogFormatter.html',1,'']]]
+  ['kmlhelper_0',['KMLHelper',['../namespaceKMLHelper.html',1,'']]]
 ];
