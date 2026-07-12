@@ -130,13 +130,13 @@ $(document).ready(function(){initNavTree('MissionCommandList_8cc_source.html',''
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        QStringList{<span class="stringliteral">&quot;label&quot;</span>, <span class="stringliteral">&quot;enumStrings&quot;</span>, <span class="stringliteral">&quot;friendlyName&quot;</span>, <span class="stringliteral">&quot;description&quot;</span>, <span class="stringliteral">&quot;category&quot;</span>},</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        QStringList{<span class="stringliteral">&quot;rawName&quot;</span>, <span class="stringliteral">&quot;comment&quot;</span>});</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>.isEmpty()) {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        qWarning() &lt;&lt; <span class="stringliteral">&quot;Internal Error: &quot;</span> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        qCWarning(MissionCommandListLog) &lt;&lt; <span class="stringliteral">&quot;Internal Error: &quot;</span> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    QJsonValue jsonValue = jsonObject.value(_mavCmdInfoJsonKey);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (!jsonValue.isArray()) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        qWarning() &lt;&lt; jsonFilename &lt;&lt; <span class="stringliteral">&quot;mavCmdInfo not array&quot;</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        qCWarning(MissionCommandListLog) &lt;&lt; jsonFilename &lt;&lt; <span class="stringliteral">&quot;mavCmdInfo not array&quot;</span>;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
@@ -144,7 +144,7 @@ $(document).ready(function(){initNavTree('MissionCommandList_8cc_source.html',''
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    QJsonArray jsonArray = jsonValue.toArray();</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">for</span>(QJsonValue info: jsonArray) {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">if</span> (!info.isObject()) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            qWarning() &lt;&lt; jsonFilename &lt;&lt; <span class="stringliteral">&quot;mavCmdArray should contain objects&quot;</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            qCWarning(MissionCommandListLog) &lt;&lt; jsonFilename &lt;&lt; <span class="stringliteral">&quot;mavCmdArray should contain objects&quot;</span>;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        }</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
@@ -153,7 +153,7 @@ $(document).ready(function(){initNavTree('MissionCommandList_8cc_source.html',''
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        QString uiInfoErrorString;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">if</span> (!uiInfo-&gt;<a class="code hl_function" href="classMissionCommandUIInfo.html#a05d7080baf080aed4505d502ffd6837f">loadJsonInfo</a>(info.toObject(), baseCommandList, uiInfoErrorString)) {</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            uiInfo-&gt;deleteLater();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            qWarning() &lt;&lt; jsonFilename &lt;&lt; uiInfoErrorString;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            qCWarning(MissionCommandListLog) &lt;&lt; jsonFilename &lt;&lt; uiInfoErrorString;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
@@ -195,7 +195,7 @@ $(document).ready(function(){initNavTree('MissionCommandList_8cc_source.html',''
 <div class="ttc" id="aclassMissionCommandUIInfo_html_a05d7080baf080aed4505d502ffd6837f"><div class="ttname"><a href="classMissionCommandUIInfo.html#a05d7080baf080aed4505d502ffd6837f">MissionCommandUIInfo::loadJsonInfo</a></div><div class="ttdeci">bool loadJsonInfo(const QJsonObject &amp;jsonObject, bool requireFullObject, QString &amp;errorString)</div><div class="ttdef"><b>Definition</b> <a href="MissionCommandUIInfo_8cc_source.html#l00198">MissionCommandUIInfo.cc:198</a></div></div>
 <div class="ttc" id="aclassMissionCommandUIInfo_html_a1d812a8745a1b1afb7152fd3dc7e920a"><div class="ttname"><a href="classMissionCommandUIInfo.html#a1d812a8745a1b1afb7152fd3dc7e920a">MissionCommandUIInfo::command</a></div><div class="ttdeci">MAV_CMD command(void) const</div><div class="ttdef"><b>Definition</b> <a href="MissionCommandUIInfo_8h_source.html#l00141">MissionCommandUIInfo.h:141</a></div></div>
 <div class="ttc" id="aclassMissionCommandUIInfo_html_a3b504ccd16a08d1bb69588922454f20d"><div class="ttname"><a href="classMissionCommandUIInfo.html#a3b504ccd16a08d1bb69588922454f20d">MissionCommandUIInfo::category</a></div><div class="ttdeci">QString category(void) const</div><div class="ttdef"><b>Definition</b> <a href="MissionCommandUIInfo_8cc_source.html#l00071">MissionCommandUIInfo.cc:71</a></div></div>
-<div class="ttc" id="anamespaceJsonParsing_html_aa4926e2821e2e072504a56c734beaf9f"><div class="ttname"><a href="namespaceJsonParsing.html#aa4926e2821e2e072504a56c734beaf9f">JsonParsing::openInternalQGCJsonFile</a></div><div class="ttdeci">QJsonObject openInternalQGCJsonFile(const QString &amp;jsonFilename, const QString &amp;expectedFileType, int minSupportedVersion, int maxSupportedVersion, int &amp;version, QString &amp;errorString, const QStringList &amp;defaultTranslateKeys, const QStringList &amp;defaultArrayIDKeys)</div><div class="ttdef"><b>Definition</b> <a href="JsonParsing_8cc_source.html#l00340">JsonParsing.cc:340</a></div></div>
+<div class="ttc" id="anamespaceJsonParsing_html_aa4926e2821e2e072504a56c734beaf9f"><div class="ttname"><a href="namespaceJsonParsing.html#aa4926e2821e2e072504a56c734beaf9f">JsonParsing::openInternalQGCJsonFile</a></div><div class="ttdeci">QJsonObject openInternalQGCJsonFile(const QString &amp;jsonFilename, const QString &amp;expectedFileType, int minSupportedVersion, int maxSupportedVersion, int &amp;version, QString &amp;errorString, const QStringList &amp;defaultTranslateKeys, const QStringList &amp;defaultArrayIDKeys)</div><div class="ttdef"><b>Definition</b> <a href="JsonParsing_8cc_source.html#l00344">JsonParsing.cc:344</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

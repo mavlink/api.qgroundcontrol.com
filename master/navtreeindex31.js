@@ -1,5 +1,8 @@
 var NAVTREEINDEX31 =
 {
+"classJoystick.html#a6ef9f6cd40fcc7ea0c522d3a1937e6e8":[2,0,227,28],
+"classJoystick.html#a713c3c77b4dceb58065a2a14d3c1e59c":[2,0,227,138],
+"classJoystick.html#a71e3f906f0318a3189c2d8c23634ac28":[2,0,227,88],
 "classJoystick.html#a7226a4125215095833dd3a62dae6010e":[2,0,227,141],
 "classJoystick.html#a7b7864927d802bb42ce940eb02f9c5f8":[2,0,227,45],
 "classJoystick.html#a7bb2ae56c676e37e81d15aa07f4276ee":[2,0,227,44],
@@ -246,8 +249,5 @@ var NAVTREEINDEX31 =
 "classKMLSchemaValidator.html#a674dd781d13e958cd8995b17ee5ff23e":[2,0,236,4],
 "classKMLSchemaValidator.html#a732ff534fbefe8234d6e48d32aa350ff":[2,0,236,5],
 "classKMLSchemaValidator.html#abe24d112e3b360ea1c281356cfb12690":[2,0,236,2],
-"classKMLSchemaValidator.html#ac73d8f835ab259fee4c88c105e4fddfc":[2,0,236,7],
-"classKMLSchemaValidator.html#ae5921782fdc62db429ba6827b7d98602":[2,0,236,3],
-"classKMLSchemaValidator.html#aed09a9e100ec5fcf477adee1e07d6be7":[2,0,236,6],
-"classLINZBasemapMapProvider.html":[2,0,241]
+"classKMLSchemaValidator.html#ac73d8f835ab259fee4c88c105e4fddfc":[2,0,236,7]
 };

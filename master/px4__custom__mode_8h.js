@@ -10,8 +10,10 @@ var px4__custom__mode_8h =
       [ "PX4_CUSTOM_MAIN_MODE_ACRO", "px4__custom__mode_8h.html#a5431c9e1ea20b61a861676459a3e4651a0c5569ce5df2d68fbe8794ce3e50528a", null ],
       [ "PX4_CUSTOM_MAIN_MODE_OFFBOARD", "px4__custom__mode_8h.html#a5431c9e1ea20b61a861676459a3e4651a8c44097aa32ee4b2b767d0d0f1da7a18", null ],
       [ "PX4_CUSTOM_MAIN_MODE_STABILIZED", "px4__custom__mode_8h.html#a5431c9e1ea20b61a861676459a3e4651a83e626f323c886037e137a1547a7f485", null ],
-      [ "PX4_CUSTOM_MAIN_MODE_RATTITUDE", "px4__custom__mode_8h.html#a5431c9e1ea20b61a861676459a3e4651a82ba96ba45e14bd6e8f11def4302025b", null ],
-      [ "PX4_CUSTOM_MAIN_MODE_SIMPLE", "px4__custom__mode_8h.html#a5431c9e1ea20b61a861676459a3e4651a85c27b0abd18c488917b1a24c864738e", null ]
+      [ "PX4_CUSTOM_MAIN_MODE_RATTITUDE_DEPRECATED", "px4__custom__mode_8h.html#a5431c9e1ea20b61a861676459a3e4651aedbd28d6dcb180d2f5226602d649ac2e", null ],
+      [ "PX4_CUSTOM_MAIN_MODE_SIMPLE", "px4__custom__mode_8h.html#a5431c9e1ea20b61a861676459a3e4651a85c27b0abd18c488917b1a24c864738e", null ],
+      [ "PX4_CUSTOM_MAIN_MODE_TERMINATION", "px4__custom__mode_8h.html#a5431c9e1ea20b61a861676459a3e4651a66559e50a7ff287ca499b64084bf25fc", null ],
+      [ "PX4_CUSTOM_MAIN_MODE_ALTITUDE_CRUISE", "px4__custom__mode_8h.html#a5431c9e1ea20b61a861676459a3e4651a516b15a6d56d30852568490a2e62fd21", null ]
     ] ],
     [ "PX4_CUSTOM_SUB_MODE_AUTO", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2", [
       [ "PX4_CUSTOM_SUB_MODE_AUTO_READY", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2a704959dbbef5702ed57ce150dd528b96", null ],
@@ -20,12 +22,15 @@ var px4__custom__mode_8h =
       [ "PX4_CUSTOM_SUB_MODE_AUTO_MISSION", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2a08af91b9a59af0f61330cbc3091f5791", null ],
       [ "PX4_CUSTOM_SUB_MODE_AUTO_RTL", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2a1e57825a3f1332693ea4ed0a5ad1f36a", null ],
       [ "PX4_CUSTOM_SUB_MODE_AUTO_LAND", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2a0f84ecb91094f0d3263db94087fd5801", null ],
-      [ "PX4_CUSTOM_SUB_MODE_AUTO_RTGS", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2aa115d31175dda284675a4fbcfbbbf62b", null ],
+      [ "PX4_CUSTOM_SUB_MODE_AUTO_RESERVED_DO_NOT_USE", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2ab11ad904873fcfb922d61012383359e1", null ],
       [ "PX4_CUSTOM_SUB_MODE_AUTO_FOLLOW_TARGET", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2ac081e262ec37301d4484082d4b11edf7", null ],
-      [ "PX4_CUSTOM_SUB_MODE_AUTO_PRECLAND", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2aa74de9e199a8e8a1000097f7f5fc3cde", null ]
+      [ "PX4_CUSTOM_SUB_MODE_AUTO_PRECLAND", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2aa74de9e199a8e8a1000097f7f5fc3cde", null ],
+      [ "PX4_CUSTOM_SUB_MODE_AUTO_VTOL_TAKEOFF", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2a4ba293da16892839b4717b42a503d1e0", null ],
+      [ "PX4_CUSTOM_SUB_MODE_GUIDED_COURSE", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2a5618bdc13c22b0d6bf736086942799b4", null ]
     ] ],
     [ "PX4_CUSTOM_SUB_MODE_POSCTL", "px4__custom__mode_8h.html#aa01e24012ff3dfb7219d4cb5060e6be2", [
       [ "PX4_CUSTOM_SUB_MODE_POSCTL_POSCTL", "px4__custom__mode_8h.html#aa01e24012ff3dfb7219d4cb5060e6be2a693f7152d66d07979376a555abae5127", null ],
-      [ "PX4_CUSTOM_SUB_MODE_POSCTL_ORBIT", "px4__custom__mode_8h.html#aa01e24012ff3dfb7219d4cb5060e6be2a5fb4bde474803691139edb4ba40b8fab", null ]
+      [ "PX4_CUSTOM_SUB_MODE_POSCTL_ORBIT", "px4__custom__mode_8h.html#aa01e24012ff3dfb7219d4cb5060e6be2a5fb4bde474803691139edb4ba40b8fab", null ],
+      [ "PX4_CUSTOM_SUB_MODE_POSCTL_SLOW", "px4__custom__mode_8h.html#aa01e24012ff3dfb7219d4cb5060e6be2a6bbdd51c4eba157764940c42f2d69f45", null ]
     ] ]
 ];

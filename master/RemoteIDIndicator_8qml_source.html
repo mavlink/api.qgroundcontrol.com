@@ -118,12 +118,12 @@ $(document).ready(function(){initNavTree('RemoteIDIndicator_8qml_source.html',''
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    property var    activeVehicle:      QGroundControl.multiVehicleManager.activeVehicle</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    property var    remoteIDManager:    activeVehicle ? activeVehicle.remoteIDManager : null</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    property bool   gpsFlag:            activeVehicle &amp;&amp; remoteIDManager ? remoteIDManager.gcsGPSGood         : false</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    property bool   basicIDFlag:        activeVehicle &amp;&amp; remoteIDManager ? remoteIDManager.basicIDGood        : false</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    property bool   armFlag:            activeVehicle &amp;&amp; remoteIDManager ? remoteIDManager.armStatusGood      : false</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    property bool   commsFlag:          activeVehicle &amp;&amp; remoteIDManager ? remoteIDManager.commsGood          : false</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    property bool   gpsFlag:            activeVehicle &amp;&amp; remoteIDManager ? remoteIDManager.gcsPositionUsable             : false</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    property bool   basicIDFlag:        activeVehicle &amp;&amp; remoteIDManager ? !remoteIDManager.vehicleReportsBasicIDMissing : false</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    property bool   armFlag:            activeVehicle &amp;&amp; remoteIDManager ? remoteIDManager.armStatusGoodToArm            : false</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    property bool   commsFlag:          activeVehicle &amp;&amp; remoteIDManager ? remoteIDManager.ridDeviceCommsGood            : false</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    property bool   emergencyDeclared:  activeVehicle &amp;&amp; remoteIDManager ? remoteIDManager.emergencyDeclared  : false</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    property bool   operatorIDFlag:     activeVehicle &amp;&amp; remoteIDManager ? remoteIDManager.operatorIDGood     : false</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    property bool   operatorIDFlag:     QGroundControl.settingsManager.remoteIDSettings.operatorIDValidForRegion</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    property int    remoteIDState:      getRemoteIDState()</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    property int    regionOperation:    QGroundControl.settingsManager.remoteIDSettings.region.value</div>

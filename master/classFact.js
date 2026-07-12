@@ -48,6 +48,7 @@ var classFact =
     [ "label", "classFact.html#aeeffa9bc7376bb1dba9c02a8eb817550", null ],
     [ "longDescription", "classFact.html#a2e7e254a6adc8e499215e2f6a4609e8c", null ],
     [ "maxIsDefaultForType", "classFact.html#a70a06e73ec91e821e05438ebfa3f8df1", null ],
+    [ "maxStringLength", "classFact.html#ada4b1d630a8d1cac3ac134f171aeaf58", null ],
     [ "metaData", "classFact.html#a65974a0f75e68688c33ed9b07a047572", null ],
     [ "minIsDefaultForType", "classFact.html#acfe9a26d3a9619da5c6034ca830e0d1e", null ],
     [ "name", "classFact.html#aa401e05c7ffb56e27e99b30187d9a153", null ],

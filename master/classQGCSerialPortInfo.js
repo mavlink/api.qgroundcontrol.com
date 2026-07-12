@@ -16,5 +16,6 @@ var classQGCSerialPortInfo =
     [ "isBlackCube", "classQGCSerialPortInfo.html#a2eae717298209b347efc6887f144f15d", null ],
     [ "isBootloader", "classQGCSerialPortInfo.html#a216b8425ce642c18dd9810f6655946fa", null ],
     [ "isSystemPort", "classQGCSerialPortInfo.html#a71215c4845462cfb8480ff8d04929509", null ],
+    [ "JsonResourceAuditTest", "classQGCSerialPortInfo.html#ac15ce9c09627b8a5794e8a740dc5f167", null ],
     [ "QGCSerialPortInfoTest", "classQGCSerialPortInfo.html#a0d001a5918866d3536f73b0a94998141", null ]
 ];

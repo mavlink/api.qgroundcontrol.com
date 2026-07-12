@@ -1,5 +1,8 @@
 var NAVTREEINDEX32 =
 {
+"classKMLSchemaValidator.html#ae5921782fdc62db429ba6827b7d98602":[2,0,236,3],
+"classKMLSchemaValidator.html#aed09a9e100ec5fcf477adee1e07d6be7":[2,0,236,6],
+"classLINZBasemapMapProvider.html":[2,0,241],
 "classLINZBasemapMapProvider.html#a99059177207adb79c612eb7eedc7c0c3":[2,0,241,0],
 "classLandingComplexItem.html":[2,0,237],
 "classLandingComplexItem.html#a0485ec96bb449311bd60d0630e40320a":[2,0,237,81],
@@ -246,8 +249,5 @@ var NAVTREEINDEX32 =
 "classLinkManager.html#aaf035b98b8a3a3b8c698e71817b8116d":[2,0,240,5],
 "classLinkManager.html#ab3ae710c3c4c0dcecfdd942448f46646":[2,0,240,35],
 "classLinkManager.html#ab3bed69f1329a1b6794bc4216653dab1":[2,0,240,13],
-"classLinkManager.html#ab5a19c1ce8a310ad783c247e483cab2f":[2,0,240,33],
-"classLinkManager.html#abe5fbfc03bb5628b7b61a5461f451c2b":[2,0,240,28],
-"classLinkManager.html#ad3962fbc793c04b985867a95ea873f2e":[2,0,240,14],
-"classLinkManager.html#ad92f17d2e766ca6bd5be8be13cebb06f":[2,0,240,41]
+"classLinkManager.html#ab5a19c1ce8a310ad783c247e483cab2f":[2,0,240,33]
 };

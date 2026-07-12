@@ -100,37 +100,246 @@ $(document).ready(function(){initNavTree('RemoteIDSettings_8cc_source.html','');
 <div class="contents">
 <a href="RemoteIDSettings_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="RemoteIDSettings_8h.html">RemoteIDSettings.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="foldopen" id="foldopen00003" data-start="{" data-end="}">
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="RemoteIDSettings_8cc.html#a209c2047a551fbb079ad3b29a1e31e98">    3</a></span><a class="code hl_define" href="SettingsGroup_8h.html#abe10d6e5a582a5f5e4c5036bf99146fa">DECLARE_SETTINGGROUP</a>(RemoteID, <span class="stringliteral">&quot;RemoteID&quot;</span>)</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>}</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QtCore/QSettings&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="SettingsManager_8h.html">SettingsManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(RemoteIDSettingsLog, <span class="stringliteral">&quot;Settings.RemoteIDSettings&quot;</span>)</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="RemoteIDSettings_8cc.html#a209c2047a551fbb079ad3b29a1e31e98">   10</a></span><a class="code hl_define" href="SettingsGroup_8h.html#abe10d6e5a582a5f5e4c5036bf99146fa">DECLARE_SETTINGGROUP</a>(RemoteID, &quot;RemoteID&quot;)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    migrateLegacyOperatorID();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// Reject UI writes of invalid EU operator IDs so a stored EU ID is always valid by construction</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    operatorIDEU()-&gt;metaData()-&gt;setCustomCookedValidator(&amp;RemoteIDSettings::_euOperatorIDCookedValidator);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    connect(operatorIDEU(), &amp;<a class="code hl_signal" href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged</a>, <span class="keyword">this</span>, &amp;RemoteIDSettings::_operatorIDEUChanged);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    connect(operatorIDFAA(), &amp;<a class="code hl_signal" href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged</a>, <span class="keyword">this</span>, &amp;RemoteIDSettings::_updateOperatorIDValidForRegion);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    connect(region(), &amp;<a class="code hl_signal" href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged</a>, <span class="keyword">this</span>, &amp;RemoteIDSettings::_regionChanged);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    connect(basicID(), &amp;<a class="code hl_signal" href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged</a>, <span class="keyword">this</span>, &amp;RemoteIDSettings::_updateBasicIDValidity);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    connect(basicIDType(), &amp;<a class="code hl_signal" href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged</a>, <span class="keyword">this</span>, &amp;RemoteIDSettings::_updateBasicIDValidity);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    connect(basicIDUaType(), &amp;<a class="code hl_signal" href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged</a>, <span class="keyword">this</span>, &amp;RemoteIDSettings::_updateBasicIDValidity);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    _updateOperatorIDValidForRegion();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    _updateBasicIDValidity();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  operatorID)</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  operatorIDValid)</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  operatorIDType)</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  sendOperatorID)</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  selfIDFree)</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  selfIDEmergency)</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  selfIDExtended)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  selfIDType)</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  sendSelfID)</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  basicID)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  basicIDType)</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  basicIDUaType)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  sendBasicID)</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  region)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  locationType)</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  latitudeFixed)</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  longitudeFixed)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  altitudeFixed)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  classificationType)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  categoryEU)</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  classEU)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classRemoteIDSettings.html#a21fa170617fe2528c8da57b7ef672cf5">   28</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classRemoteIDSettings.html#a21fa170617fe2528c8da57b7ef672cf5">RemoteIDSettings::migrateLegacyOperatorID</a>()</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    QSettings qSettings;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    qSettings.beginGroup(<a class="code hl_function" href="classSettingsGroup.html#a680cb629ae69a1498edbafca3aae10b4">settingsGroup</a>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Chain of legacy keys: operatorIDValid (shipped v4.4.0 - v5.0.x) was renamed to</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// operatorIDEUValid (never in a release), which was then replaced (along with the single</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// operatorID fact, shipped through v5.0.x) by the per-region facts.</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">const</span> QString legacyOperatorIDKey = QStringLiteral(<span class="stringliteral">&quot;operatorID&quot;</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">const</span> QString legacyValidKey = QStringLiteral(<span class="stringliteral">&quot;operatorIDValid&quot;</span>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">const</span> QString legacyEUValidKey = QStringLiteral(<span class="stringliteral">&quot;operatorIDEUValid&quot;</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (qSettings.contains(legacyOperatorIDKey)) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keyword">const</span> QString legacyOperatorID = qSettings.value(legacyOperatorIDKey).toString();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> legacyEUValid = qSettings.value(legacyEUValidKey, qSettings.value(legacyValidKey, <span class="keyword">false</span>)).toBool();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">if</span> (!legacyOperatorID.isEmpty()) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">if</span> (legacyEUValid) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                <span class="comment">// Keep only the 16-char public part: legacy stores could hold the full ID</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                <span class="comment">// including the secret chars, and the sanitize handler isn&#39;t connected yet</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                operatorIDEU()-&gt;setRawValue(legacyOperatorID.left(16));</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                operatorIDFAA()-&gt;setRawValue(legacyOperatorID);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        qSettings.remove(legacyOperatorIDKey);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    qSettings.remove(legacyValidKey);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    qSettings.remove(legacyEUValidKey);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    qSettings.endGroup();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>QString RemoteIDSettings::_euOperatorIDCookedValidator(<span class="keyword">const</span> QVariant&amp; cookedValue)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>* settings = <a class="code hl_function" href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a>()-&gt;<a class="code hl_function" href="classSettingsManager.html#ac7cc9fd6002efc472c7b1fab43cfc100">remoteIDSettings</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">const</span> QString candidate = cookedValue.toString();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">// Clearing and no-op re-commits of the stored (sanitized) value are always legal</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (candidate.isEmpty() || (candidate == settings-&gt;operatorIDEU()-&gt;rawValue().toString())) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">return</span> QString();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span> (_isEUOperatorIDValid(candidate)) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">return</span> QString();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> tr(<span class="stringliteral">&quot;Invalid Operator ID. Enter the full 19 or 20 character ID including the 3 secret characters.&quot;</span>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keywordtype">void</span> RemoteIDSettings::_operatorIDEUChanged()</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>{</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">if</span> (_updatingOperatorID) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="comment">// A full EU operator ID passed validation on write. Keep only the public 16-character part:</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="comment">// the 3 secret characters must not be stored or broadcast.</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">const</span> QString currentOperatorID = operatorIDEU()-&gt;rawValue().toString();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">if</span> ((currentOperatorID.length() &gt; 16) &amp;&amp; _isEUOperatorIDValid(currentOperatorID)) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        _updatingOperatorID = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        operatorIDEU()-&gt;setRawValue(currentOperatorID.sliced(0, 16));</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        _updatingOperatorID = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    _updateOperatorIDValidForRegion();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keywordtype">void</span> RemoteIDSettings::_regionChanged()</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>{</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> newRegion = region()-&gt;rawValue().toInt();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">if</span> (newRegion == <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="classRemoteIDSettings.html#ac731ea1dddd578a58b52009768f2e062af2e6e3b9bff59f293f0e9019a1ecabc5">RegionOperation::EU</a>)) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="comment">// EU regulation requires broadcasting the operator ID</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        sendOperatorID()-&gt;setRawValue(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (newRegion == <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="classRemoteIDSettings.html#ac731ea1dddd578a58b52009768f2e062a42fa02a45678e5d2e51dea62f7ed634e">RegionOperation::FAA</a>)) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="comment">// FAA requires the live operator position, not a fixed location</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        locationType()-&gt;setRawValue(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="classRemoteIDSettings.html#aa48760653686b63d8499c450ed529870af35d25277cc50c27cf7b5d69181dd381">LocationType::LIVE</a>));</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    _updateOperatorIDValidForRegion();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keywordtype">void</span> RemoteIDSettings::_updateOperatorIDValidForRegion()</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>{</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isEURegion = (region()-&gt;rawValue().toInt() == <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="classRemoteIDSettings.html#ac731ea1dddd578a58b52009768f2e062af2e6e3b9bff59f293f0e9019a1ecabc5">RegionOperation::EU</a>));</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keyword">const</span> QString currentOperatorID = (isEURegion ? operatorIDEU() : operatorIDFAA())-&gt;rawValue().toString();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="comment">// EU IDs are valid by construction (write-gated + sanitized), FAA IDs have no published</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">// spec to validate against, so presence is the only requirement for either region.</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> validForRegion = !currentOperatorID.isEmpty();</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">if</span> (_operatorIDValidForRegion != validForRegion) {</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        _operatorIDValidForRegion = validForRegion;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        emit <a class="code hl_signal" href="classRemoteIDSettings.html#aa9aea3f6dec35eb5a81fdf75a81ba5cf">operatorIDValidForRegionChanged</a>();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keywordtype">void</span> RemoteIDSettings::_updateBasicIDValidity()</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>{</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="comment">// Type facts are uint8 enums, so any value is structurally valid: presence of the ID is the only requirement</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> valid = !basicID()-&gt;rawValue().toString().isEmpty();</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">if</span> (_basicIDValid != valid) {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        _basicIDValid = valid;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        emit <a class="code hl_signal" href="classRemoteIDSettings.html#a0c321e883b4ed2bfa2ba1029e96b4dc4">basicIDValidChanged</a>();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keywordtype">bool</span> RemoteIDSettings::_isEUOperatorIDValid(<span class="keyword">const</span> QString&amp; operatorID)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>{</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="comment">// EN 4709-002 format: 3-letter country code + 12 chars [0-9a-z] + 1 checksum char,</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="comment">// optionally followed by &#39;-&#39; and 3 secret chars [0-9a-z]</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> containsDash = operatorID.contains(<span class="charliteral">&#39;-&#39;</span>);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">if</span> (!(operatorID.length() == 20 &amp;&amp; containsDash) &amp;&amp; !(operatorID.length() == 19 &amp;&amp; !containsDash)) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        qCDebug(RemoteIDSettingsLog) &lt;&lt; <span class="stringliteral">&quot;OperatorID format mismatch: expected 20 chars with dash or 19 chars without&quot;</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordflow">if</span> (containsDash &amp;&amp; (operatorID.at(16) != <span class="charliteral">&#39;-&#39;</span>)) {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        qCDebug(RemoteIDSettingsLog) &lt;&lt; <span class="stringliteral">&quot;OperatorID dash separator not at expected position&quot;</span>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keyword">const</span> QString countryCode = operatorID.sliced(0, 3);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QChar&amp; c : countryCode) {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="comment">// ISO 3166-1 alpha-3 country codes are strictly ASCII A-Z; QChar::isUpper would</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="comment">// also accept Unicode uppercase, which the checksum doesn&#39;t cover</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="keywordflow">if</span> (c &lt; QLatin1Char(<span class="charliteral">&#39;A&#39;</span>) || c &gt; QLatin1Char(<span class="charliteral">&#39;Z&#39;</span>)) {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            qCDebug(RemoteIDSettingsLog) &lt;&lt; <span class="stringliteral">&quot;OperatorID country code must be 3 uppercase ASCII letters&quot;</span>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keyword">const</span> QString number = operatorID.sliced(3, 12);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keyword">const</span> QChar checksum = operatorID.at(15);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keyword">const</span> QString secret = containsDash ? operatorID.sliced(17, 3) : operatorID.sliced(16, 3);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keyword">const</span> QString combination = number + secret + checksum;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keyword">const</span> QString alphabet = QStringLiteral(<span class="stringliteral">&quot;0123456789abcdefghijklmnopqrstuvwxyz&quot;</span>);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QChar&amp; c : combination) {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordflow">if</span> (!alphabet.contains(c)) {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            qCDebug(RemoteIDSettingsLog) &lt;&lt; <span class="stringliteral">&quot;OperatorID contains characters outside [0-9a-z]&quot;</span>;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keyword">const</span> QChar result = _calculateLuhnMod36(number + secret);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> valid = (result == checksum);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    qCDebug(RemoteIDSettingsLog) &lt;&lt; <span class="stringliteral">&quot;Operator ID checksum&quot;</span> &lt;&lt; (valid ? <span class="stringliteral">&quot;valid&quot;</span> : <span class="stringliteral">&quot;invalid&quot;</span>);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">return</span> valid;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>}</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>QChar RemoteIDSettings::_calculateLuhnMod36(<span class="keyword">const</span> QString&amp; input)</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>{</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> n = 36;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keyword">const</span> QString alphabet = QStringLiteral(<span class="stringliteral">&quot;0123456789abcdefghijklmnopqrstuvwxyz&quot;</span>);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordtype">int</span> sum = 0;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keywordtype">int</span> factor = 2;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = input.length() - 1; i &gt;= 0; i--) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> codePoint = alphabet.indexOf(input.at(i));</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="keywordtype">int</span> addend = factor * codePoint;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        factor = (factor == 2) ? 1 : 2;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        addend = (addend / n) + (addend % n);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        sum += addend;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> remainder = sum % n;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> checkCodePoint = (n - remainder) % n;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordflow">return</span> alphabet.at(checkCodePoint);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>}</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  operatorIDEU)</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  operatorIDFAA)</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  operatorIDType)</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  sendOperatorID)</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  selfIDFree)</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  selfIDEmergency)</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  selfIDExtended)</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  selfIDType)</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  sendSelfID)</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  basicID)</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  basicIDType)</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  basicIDUaType)</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  sendBasicID)</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  region)</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  locationType)</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  latitudeFixed)</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  longitudeFixed)</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  altitudeFixed)</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  classificationType)</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  categoryEU)</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classRemoteIDSettings.html">RemoteIDSettings</a>,  classEU)</div>
+<div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
+<div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
 <div class="ttc" id="aRemoteIDSettings_8h_html"><div class="ttname"><a href="RemoteIDSettings_8h.html">RemoteIDSettings.h</a></div></div>
 <div class="ttc" id="aSettingsGroup_8h_html_a8d7b3fa9e351fa62a2f32ae6043c6cff"><div class="ttname"><a href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a></div><div class="ttdeci">#define DECLARE_SETTINGSFACT(CLASS, NAME)</div><div class="ttdef"><b>Definition</b> <a href="SettingsGroup_8h_source.html#l00017">SettingsGroup.h:17</a></div></div>
 <div class="ttc" id="aSettingsGroup_8h_html_abe10d6e5a582a5f5e4c5036bf99146fa"><div class="ttname"><a href="SettingsGroup_8h.html#abe10d6e5a582a5f5e4c5036bf99146fa">DECLARE_SETTINGGROUP</a></div><div class="ttdeci">#define DECLARE_SETTINGGROUP(NAME, GROUP)</div><div class="ttdef"><b>Definition</b> <a href="SettingsGroup_8h_source.html#l00011">SettingsGroup.h:11</a></div></div>
+<div class="ttc" id="aSettingsManager_8h_html"><div class="ttname"><a href="SettingsManager_8h.html">SettingsManager.h</a></div></div>
+<div class="ttc" id="aclassFact_html_a832a24b1e80771c8bf76dc9fbf699fad"><div class="ttname"><a href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged</a></div><div class="ttdeci">void rawValueChanged(const QVariant &amp;value)</div></div>
 <div class="ttc" id="aclassRemoteIDSettings_html"><div class="ttname"><a href="classRemoteIDSettings.html">RemoteIDSettings</a></div><div class="ttdef"><b>Definition</b> <a href="RemoteIDSettings_8h_source.html#l00007">RemoteIDSettings.h:8</a></div></div>
+<div class="ttc" id="aclassRemoteIDSettings_html_a0c321e883b4ed2bfa2ba1029e96b4dc4"><div class="ttname"><a href="classRemoteIDSettings.html#a0c321e883b4ed2bfa2ba1029e96b4dc4">RemoteIDSettings::basicIDValidChanged</a></div><div class="ttdeci">void basicIDValidChanged()</div></div>
+<div class="ttc" id="aclassRemoteIDSettings_html_a21fa170617fe2528c8da57b7ef672cf5"><div class="ttname"><a href="classRemoteIDSettings.html#a21fa170617fe2528c8da57b7ef672cf5">RemoteIDSettings::migrateLegacyOperatorID</a></div><div class="ttdeci">void migrateLegacyOperatorID()</div><div class="ttdef"><b>Definition</b> <a href="RemoteIDSettings_8cc_source.html#l00028">RemoteIDSettings.cc:28</a></div></div>
+<div class="ttc" id="aclassRemoteIDSettings_html_aa48760653686b63d8499c450ed529870af35d25277cc50c27cf7b5d69181dd381"><div class="ttname"><a href="classRemoteIDSettings.html#aa48760653686b63d8499c450ed529870af35d25277cc50c27cf7b5d69181dd381">RemoteIDSettings::LocationType::LIVE</a></div><div class="ttdeci">@ LIVE</div></div>
+<div class="ttc" id="aclassRemoteIDSettings_html_aa9aea3f6dec35eb5a81fdf75a81ba5cf"><div class="ttname"><a href="classRemoteIDSettings.html#aa9aea3f6dec35eb5a81fdf75a81ba5cf">RemoteIDSettings::operatorIDValidForRegionChanged</a></div><div class="ttdeci">void operatorIDValidForRegionChanged()</div></div>
+<div class="ttc" id="aclassRemoteIDSettings_html_ac731ea1dddd578a58b52009768f2e062a42fa02a45678e5d2e51dea62f7ed634e"><div class="ttname"><a href="classRemoteIDSettings.html#ac731ea1dddd578a58b52009768f2e062a42fa02a45678e5d2e51dea62f7ed634e">RemoteIDSettings::RegionOperation::FAA</a></div><div class="ttdeci">@ FAA</div></div>
+<div class="ttc" id="aclassRemoteIDSettings_html_ac731ea1dddd578a58b52009768f2e062af2e6e3b9bff59f293f0e9019a1ecabc5"><div class="ttname"><a href="classRemoteIDSettings.html#ac731ea1dddd578a58b52009768f2e062af2e6e3b9bff59f293f0e9019a1ecabc5">RemoteIDSettings::RegionOperation::EU</a></div><div class="ttdeci">@ EU</div></div>
+<div class="ttc" id="aclassSettingsGroup_html_a680cb629ae69a1498edbafca3aae10b4"><div class="ttname"><a href="classSettingsGroup.html#a680cb629ae69a1498edbafca3aae10b4">SettingsGroup::settingsGroup</a></div><div class="ttdeci">QString settingsGroup() const</div><div class="ttdef"><b>Definition</b> <a href="SettingsGroup_8h_source.html#l00060">SettingsGroup.h:60</a></div></div>
+<div class="ttc" id="aclassSettingsManager_html_a70509f6304c076e2cceea0445951c324"><div class="ttname"><a href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a></div><div class="ttdeci">static SettingsManager * instance()</div><div class="ttdef"><b>Definition</b> <a href="SettingsManager_8cc_source.html#l00050">SettingsManager.cc:50</a></div></div>
+<div class="ttc" id="aclassSettingsManager_html_ac7cc9fd6002efc472c7b1fab43cfc100"><div class="ttname"><a href="classSettingsManager.html#ac7cc9fd6002efc472c7b1fab43cfc100">SettingsManager::remoteIDSettings</a></div><div class="ttdeci">RemoteIDSettings * remoteIDSettings() const</div><div class="ttdef"><b>Definition</b> <a href="SettingsManager_8cc_source.html#l00104">SettingsManager.cc:104</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
