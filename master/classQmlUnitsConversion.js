@@ -16,7 +16,9 @@ var classQmlUnitsConversion =
     [ "gramsToAppSettingsWeightUnits", "classQmlUnitsConversion.html#afee88c58692488afeac2485301db74ee", null ],
     [ "metersSecondToAppSettingsSpeedUnits", "classQmlUnitsConversion.html#a9d5195172ea07a850ca56dedcf6baa5a", null ],
     [ "metersToAppSettingsHorizontalDistanceUnits", "classQmlUnitsConversion.html#a9e0c108f24088204225626c7a7538daf", null ],
+    [ "metersToAppSettingsHorizontalDistanceUnitsString", "classQmlUnitsConversion.html#a7f947d0f3510d68b3b77d56528fb7731", null ],
     [ "metersToAppSettingsVerticalDistanceUnits", "classQmlUnitsConversion.html#ac207bfc81a2b654113faef976298ec5b", null ],
+    [ "metersToAppSettingsVerticalDistanceUnitsString", "classQmlUnitsConversion.html#aeaf88bf19527738da7f95143b6cca734", null ],
     [ "radiansToDegrees", "classQmlUnitsConversion.html#a9e4fc9977249e744bf7ba519ddbe823e", null ],
     [ "squareMetersToAppSettingsAreaUnits", "classQmlUnitsConversion.html#a12bb00113c52899c28dfcd574fd53f3c", null ]
 ];

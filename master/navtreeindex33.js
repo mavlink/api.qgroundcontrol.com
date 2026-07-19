@@ -1,5 +1,7 @@
 var NAVTREEINDEX33 =
 {
+"classLinkManager.html#ab3bed69f1329a1b6794bc4216653dab1":[2,0,240,13],
+"classLinkManager.html#ab5a19c1ce8a310ad783c247e483cab2f":[2,0,240,33],
 "classLinkManager.html#abe5fbfc03bb5628b7b61a5461f451c2b":[2,0,240,28],
 "classLinkManager.html#ad3962fbc793c04b985867a95ea873f2e":[2,0,240,14],
 "classLinkManager.html#ad92f17d2e766ca6bd5be8be13cebb06f":[2,0,240,41],
@@ -247,7 +249,5 @@ var NAVTREEINDEX33 =
 "classLoggingCategoryFlatModel.html#af67736c6f68b45b777ccf2fb4d254461":[2,0,245,4],
 "classLoggingCategoryTreeModel.html":[2,0,246],
 "classLoggingCategoryTreeModel.html#a2e031477a1f40b4ab3c980d8999bc0fe":[2,0,246,0],
-"classLoggingCategoryTreeModel.html#a2e031477a1f40b4ab3c980d8999bc0fea2b68df54cbde048c000128cdaff58c1a":[2,0,246,0,1],
-"classLoggingCategoryTreeModel.html#a2e031477a1f40b4ab3c980d8999bc0fea6d4e556f1149e79e6d2b96a3cf0b05ee":[2,0,246,0,0],
-"classLoggingCategoryTreeModel.html#a2e031477a1f40b4ab3c980d8999bc0feaaf276ce861a1a34aa2fed688a4e0073e":[2,0,246,0,2]
+"classLoggingCategoryTreeModel.html#a2e031477a1f40b4ab3c980d8999bc0fea2b68df54cbde048c000128cdaff58c1a":[2,0,246,0,1]
 };

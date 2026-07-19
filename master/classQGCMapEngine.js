@@ -5,5 +5,6 @@ var classQGCMapEngine =
     [ "addTask", "classQGCMapEngine.html#a5985a9ce7493da1d3a6c65d1639affd9", null ],
     [ "init", "classQGCMapEngine.html#ad8eb032ef892a536ac052224a159a48e", null ],
     [ "instance", "classQGCMapEngine.html#a4c05692a1c0bacd3e5079e9b16ec0e53", null ],
+    [ "shutdown", "classQGCMapEngine.html#a395dcf1e94b7d7b552b97527d5d1e4dc", null ],
     [ "updateTotals", "classQGCMapEngine.html#a82d914994f8e90ebcbffda78a02603c1", null ]
 ];

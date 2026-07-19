@@ -1,5 +1,7 @@
 var NAVTREEINDEX32 =
 {
+"classKMLSchemaValidator.html#abe24d112e3b360ea1c281356cfb12690":[2,0,236,2],
+"classKMLSchemaValidator.html#ac73d8f835ab259fee4c88c105e4fddfc":[2,0,236,7],
 "classKMLSchemaValidator.html#ae5921782fdc62db429ba6827b7d98602":[2,0,236,3],
 "classKMLSchemaValidator.html#aed09a9e100ec5fcf477adee1e07d6be7":[2,0,236,6],
 "classLINZBasemapMapProvider.html":[2,0,241],
@@ -247,7 +249,5 @@ var NAVTREEINDEX32 =
 "classLinkManager.html#a929fd1f00a39a3b7193e42aeea49fa9c":[2,0,240,12],
 "classLinkManager.html#a9f8e7c1240d2b2c32ecf0d1b69d2f0fa":[2,0,240,42],
 "classLinkManager.html#aaf035b98b8a3a3b8c698e71817b8116d":[2,0,240,5],
-"classLinkManager.html#ab3ae710c3c4c0dcecfdd942448f46646":[2,0,240,35],
-"classLinkManager.html#ab3bed69f1329a1b6794bc4216653dab1":[2,0,240,13],
-"classLinkManager.html#ab5a19c1ce8a310ad783c247e483cab2f":[2,0,240,33]
+"classLinkManager.html#ab3ae710c3c4c0dcecfdd942448f46646":[2,0,240,35]
 };

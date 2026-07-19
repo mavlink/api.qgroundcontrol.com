@@ -18,6 +18,7 @@ var dir_a960dd57875593757f2541c050ca2fa1 =
     [ "MissionItemStatus.qml", "MissionItemStatus_8qml.html", null ],
     [ "MissionSettingsEditor.qml", "MissionSettingsEditor_8qml.html", null ],
     [ "MissionStats.qml", "MissionStats_8qml.html", null ],
+    [ "PlanEditLayers.qml", "PlanEditLayers_8qml.html", null ],
     [ "PlanEditToolbar.qml", "PlanEditToolbar_8qml.html", null ],
     [ "PlanInfoEditor.qml", "PlanInfoEditor_8qml.html", null ],
     [ "PlanToolBarIndicators.qml", "PlanToolBarIndicators_8qml.html", null ],

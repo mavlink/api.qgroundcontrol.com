@@ -1,5 +1,6 @@
 var classQGCCameraManager =
 [
+    [ "CameraInfoRequestContext", "structQGCCameraManager_1_1CameraInfoRequestContext.html", "structQGCCameraManager_1_1CameraInfoRequestContext" ],
     [ "CameraStruct", "structQGCCameraManager_1_1CameraStruct.html", "structQGCCameraManager_1_1CameraStruct" ],
     [ "QGCCameraManager", "classQGCCameraManager.html#a563ba9a15c7b88cfe7db51f434b8945a", null ],
     [ "~QGCCameraManager", "classQGCCameraManager.html#a03a4d065c5561e516e164cde0bd15633", null ],
@@ -20,6 +21,7 @@ var classQGCCameraManager =
     [ "_triggerCamera", "classQGCCameraManager.html#ad68939649a81825975016bd1102a94f4", null ],
     [ "_vehicleReady", "classQGCCameraManager.html#a1a3b21547a4c91e8d94d6ecfcc5ef2c9", null ],
     [ "aspectForComp", "classQGCCameraManager.html#a62b43a0b2c8993de60c9654b6e987c55", null ],
+    [ "cameraInfoContext", "classQGCCameraManager.html#aa506f7c8e68a7a5eb8dd1384d43f5db7", null ],
     [ "cameraLabels", "classQGCCameraManager.html#aec06940411905a7f04d251208c1d760b", null ],
     [ "cameraLabelsChanged", "classQGCCameraManager.html#a47c1bcc56ddd48c42e42f182e110d4f1", null ],
     [ "cameraList", "classQGCCameraManager.html#a319a87ea172fbc7594a187b7f7266258", null ],

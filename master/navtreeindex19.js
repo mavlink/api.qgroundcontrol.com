@@ -1,5 +1,8 @@
 var NAVTREEINDEX19 =
 {
+"VideoSettings_8h.html":[3,0,0,25,51],
+"VideoSettings_8h_source.html":[3,0,0,25,51],
+"Viewer3DGeoCoordinateType_8cc.html":[3,0,0,31,2],
 "Viewer3DGeoCoordinateType_8cc_source.html":[3,0,0,31,2],
 "Viewer3DGeoCoordinateType_8h.html":[3,0,0,31,3],
 "Viewer3DGeoCoordinateType_8h_source.html":[3,0,0,31,3],
@@ -17,15 +20,13 @@ var NAVTREEINDEX19 =
 "Viewer3DMapProvider_8h_source.html":[3,0,0,31,9],
 "Viewer3DModel_8qml.html":[3,0,0,31,1,1,1],
 "Viewer3DModel_8qml_source.html":[3,0,0,31,1,1,1],
-"Viewer3DProgressBar_8qml.html":[3,0,0,31,1,2],
-"Viewer3DProgressBar_8qml_source.html":[3,0,0,31,1,2],
 "Viewer3DSettings_8cc.html":[3,0,0,25,52],
 "Viewer3DSettings_8cc.html#a178cecb7b02c0cfd2718aeec5234a407":[3,0,0,25,52,0],
 "Viewer3DSettings_8cc_source.html":[3,0,0,25,52],
 "Viewer3DSettings_8h.html":[3,0,0,25,53],
 "Viewer3DSettings_8h_source.html":[3,0,0,25,53],
-"Viewer3DShowAction_8qml.html":[3,0,0,31,1,3],
-"Viewer3DShowAction_8qml_source.html":[3,0,0,31,1,3],
+"Viewer3DShowAction_8qml.html":[3,0,0,31,1,2],
+"Viewer3DShowAction_8qml_source.html":[3,0,0,31,1,2],
 "Viewer3DTerrainGeometry_8cc.html":[3,0,0,31,10],
 "Viewer3DTerrainGeometry_8cc.html#aaee8325ddca8b474f9ba4811c9d311a9":[3,0,0,31,10,0],
 "Viewer3DTerrainGeometry_8cc_source.html":[3,0,0,31,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX19 =
 "classAPMFirmwarePlugin.html#a485edc360ce275b6663bd3407aa2b755":[2,0,52,39],
 "classAPMFirmwarePlugin.html#a4f327d225f4e01bdd25b1ee9ed0f83cf":[2,0,52,11],
 "classAPMFirmwarePlugin.html#a53aa433c2ddf97d2a6c65f9d92a4a20a":[2,0,52,21],
-"classAPMFirmwarePlugin.html#a549a8eae0be89c9de4a6b4182504bcf2":[2,0,52,45],
-"classAPMFirmwarePlugin.html#a597d14a32f43e796dba3c5bdac67ca6f":[2,0,52,43]
+"classAPMFirmwarePlugin.html#a549a8eae0be89c9de4a6b4182504bcf2":[2,0,52,45]
 };

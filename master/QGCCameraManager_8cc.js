@@ -1,5 +1,6 @@
 var QGCCameraManager_8cc =
 [
+    [ "_cameraStructFromContext", "QGCCameraManager_8cc.html#a58eaaf7576d082beb2df0a67ab20a17f", null ],
     [ "_handleCameraInfoRetry", "QGCCameraManager_8cc.html#a15f31827808e036e5b0047a9dc5d163f", null ],
     [ "_requestCameraInfoCommandResultHandler", "QGCCameraManager_8cc.html#a858662c9cf86b11290ee85809aee001c", null ],
     [ "_requestCameraInfoHelper", "QGCCameraManager_8cc.html#ab32d8e96b403a0150cf3657078088974", null ],

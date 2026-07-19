@@ -1,5 +1,7 @@
 var NAVTREEINDEX31 =
 {
+"classJoystick.html#a6c9cd6678e4b04867b102efb09f4b22c":[2,0,227,149],
+"classJoystick.html#a6db3e10c1c58a3d2596e83dd8d71a701":[2,0,227,8],
 "classJoystick.html#a6ef9f6cd40fcc7ea0c522d3a1937e6e8":[2,0,227,28],
 "classJoystick.html#a713c3c77b4dceb58065a2a14d3c1e59c":[2,0,227,138],
 "classJoystick.html#a71e3f906f0318a3189c2d8c23634ac28":[2,0,227,88],
@@ -247,7 +249,5 @@ var NAVTREEINDEX31 =
 "classKMLSchemaValidator.html":[2,0,236],
 "classKMLSchemaValidator.html#a0f5bf7ac9a04ee4ab19037c0e48f205c":[2,0,236,1],
 "classKMLSchemaValidator.html#a674dd781d13e958cd8995b17ee5ff23e":[2,0,236,4],
-"classKMLSchemaValidator.html#a732ff534fbefe8234d6e48d32aa350ff":[2,0,236,5],
-"classKMLSchemaValidator.html#abe24d112e3b360ea1c281356cfb12690":[2,0,236,2],
-"classKMLSchemaValidator.html#ac73d8f835ab259fee4c88c105e4fddfc":[2,0,236,7]
+"classKMLSchemaValidator.html#a732ff534fbefe8234d6e48d32aa350ff":[2,0,236,5]
 };

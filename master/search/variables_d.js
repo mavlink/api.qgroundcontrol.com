@@ -5,7 +5,7 @@ var searchData=
   ['magenta_2',['Magenta',['../namespaceColors.html#a59b4ee879e9ea88998e572f5d82cd590',1,'Colors']]],
   ['mahbattery_3',['mAhBattery',['../structMissionFlightStatus__t.html#a3ac84bdef3e528e50ed88c48b2a063bf',1,'MissionFlightStatus_t']]],
   ['main_5fmode_4',['main_mode',['../unionpx4__custom__mode.html#a6bbc0a446c411ff169fce0e1551f7089',1,'px4_custom_mode']]],
-  ['manager_5',['manager',['../structQGCCameraManager_1_1CameraStruct.html#a6ef23737efb917d1cf0d603be72d52da',1,'QGCCameraManager::CameraStruct']]],
+  ['manager_5',['manager',['../structQGCCameraManager_1_1CameraInfoRequestContext.html#ace0ee8b2a6ae37f406bcc5b989086d14',1,'QGCCameraManager::CameraInfoRequestContext::manager'],['../structQGCCameraManager_1_1CameraStruct.html#a6ef23737efb917d1cf0d603be72d52da',1,'QGCCameraManager::CameraStruct::manager']]],
   ['manufacturer_6',['manufacturer',['../classQSerialPortInfoPrivate.html#ac07021c77a9f84d96a7fec255faf349a',1,'QSerialPortInfoPrivate']]],
   ['mapdurationusewma_7',['mapDurationUsEwma',['../GstHwPathTelemetry_8cc.html#a3245bc383122ccfcc20b0b2983c51927',1,'GstHwPathTelemetry.cc']]],
   ['mapfailures_8',['mapFailures',['../GstHwPathTelemetry_8cc.html#a79fd3d9ddf20809012a20daf10ea442e',1,'GstHwPathTelemetry.cc']]],

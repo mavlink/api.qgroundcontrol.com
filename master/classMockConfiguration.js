@@ -8,6 +8,14 @@ var classMockConfiguration =
       [ "FailInitialConnectRequestMessageAutopilotVersionFailure", "classMockConfiguration.html#a4489829722113399b8ffb8e3adf57433acd1a1e16dbe9c32194bd23bd7e7238e2", null ],
       [ "FailInitialConnectRequestMessageAutopilotVersionLost", "classMockConfiguration.html#a4489829722113399b8ffb8e3adf57433a3b6efefb5da526c70b1f8439f1fbbace", null ]
     ] ],
+    [ "Option", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102f", [
+      [ "OptionNone", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fa10baeb0ff0dba28dbb9f233c4afbb5e9", null ],
+      [ "OptionSendStatusText", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fafe0089c2d2ab6dfa908a08bec844bef6", null ],
+      [ "OptionEnableCamera", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fa8e13dfffbb7076a60110458a34676b90", null ],
+      [ "OptionEnableGimbal", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fa61ff75e7bd0a4cfba6eb25fdd7ec415f", null ],
+      [ "OptionEnableProximity", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fad83fce072651fa8cecc2608a4e1438fa", null ],
+      [ "OptionPreloadMission", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fa055b8b064600af0ad2bd14112ceb1cfb", null ]
+    ] ],
     [ "MockConfiguration", "classMockConfiguration.html#a7f8607bfad0033a91b9a1bf6ca8d7146", null ],
     [ "MockConfiguration", "classMockConfiguration.html#a27afbb185515b55bd22854f112cd573c", null ],
     [ "~MockConfiguration", "classMockConfiguration.html#a3a2cd1dae4b3b8a9e2135c9eae0c8ed6", null ],
@@ -36,6 +44,8 @@ var classMockConfiguration =
     [ "enableCameraChanged", "classMockConfiguration.html#a3b120318c52e952cc1acfcb3c0cf2797", null ],
     [ "enableGimbal", "classMockConfiguration.html#a147fd507fa0e85110199df1bf0116f16", null ],
     [ "enableGimbalChanged", "classMockConfiguration.html#aab3fbb2630bfcfb51070be1389df63a8", null ],
+    [ "enableProximity", "classMockConfiguration.html#aed07bdfbf3902d74d42573470e975725", null ],
+    [ "enableProximityChanged", "classMockConfiguration.html#a3820936f96ce47a26b2920ded15a9b2d", null ],
     [ "failureMode", "classMockConfiguration.html#ae5de95d955aa33bcc5cf3c73b7f3237e", null ],
     [ "firmware", "classMockConfiguration.html#ae269f6a9876c32170fdb1d43fef63097", null ],
     [ "firmwareChanged", "classMockConfiguration.html#a7a63f34ca7c311b1539f4a166966c473", null ],
@@ -73,6 +83,7 @@ var classMockConfiguration =
     [ "setCameraHasVideoStream", "classMockConfiguration.html#a6d2c47ff689d97077c4ff915c9100bee", null ],
     [ "setEnableCamera", "classMockConfiguration.html#a71e91fe0f30ad328717cceb4dbff3071", null ],
     [ "setEnableGimbal", "classMockConfiguration.html#a838cab57d3fa2165785492027bf2512f", null ],
+    [ "setEnableProximity", "classMockConfiguration.html#a53e6202e71e3212ae033808c11a696d7", null ],
     [ "setFailureMode", "classMockConfiguration.html#a48537cca8087ab6325ceadc4dab761fa", null ],
     [ "setFirmware", "classMockConfiguration.html#a7d405bb78bb8ac00839ff6a11d5250e2", null ],
     [ "setFirmwareType", "classMockConfiguration.html#ae24890a5aced2765162d258dbc1e1f2d", null ],

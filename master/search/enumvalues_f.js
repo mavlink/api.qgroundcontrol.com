@@ -13,8 +13,14 @@ var searchData=
   ['openerror_10',['OpenError',['../classQSerialPort.html#aa31f0921d43bb30acfe9a6cc5abbe6b0a0b7a361852ee252821ed447a5a3d8c76',1,'QSerialPort']]],
   ['openfailed_11',['OpenFailed',['../GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac',1,'GPSProvider.h']]],
   ['optflow_5fcal_12',['OPTFLOW_CAL',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03ab7c693abcb997d58751174eddc333157',1,'APM']]],
-  ['orbitmodecapability_13',['OrbitModeCapability',['../classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18ac50737e41d49925e1c132e91a8bd39b8',1,'FirmwarePlugin']]],
-  ['other_14',['Other',['../structActuatorGeometry.html#af7841751ef9e6ac838cc523e3ca76339a6311ae17c1ee52b36e68aaf4ad066387',1,'ActuatorGeometry']]],
-  ['output_15',['Output',['../classQSerialPort.html#ac5d094511260c30d5239c9b0316c2733ae19406906828b02ac54f8d4c535d255b',1,'QSerialPort']]],
-  ['outputfunction_16',['OutputFunction',['../classActuatorOutputs_1_1ChannelConfig.html#a125b177a54bd1eac1a8a20fc9a374474af5f56535f1ffdd871678f5d9e5bd70b4',1,'ActuatorOutputs::ChannelConfig']]]
+  ['optionenablecamera_13',['OptionEnableCamera',['../classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fa8e13dfffbb7076a60110458a34676b90',1,'MockConfiguration']]],
+  ['optionenablegimbal_14',['OptionEnableGimbal',['../classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fa61ff75e7bd0a4cfba6eb25fdd7ec415f',1,'MockConfiguration']]],
+  ['optionenableproximity_15',['OptionEnableProximity',['../classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fad83fce072651fa8cecc2608a4e1438fa',1,'MockConfiguration']]],
+  ['optionnone_16',['OptionNone',['../classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fa10baeb0ff0dba28dbb9f233c4afbb5e9',1,'MockConfiguration']]],
+  ['optionpreloadmission_17',['OptionPreloadMission',['../classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fa055b8b064600af0ad2bd14112ceb1cfb',1,'MockConfiguration']]],
+  ['optionsendstatustext_18',['OptionSendStatusText',['../classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fafe0089c2d2ab6dfa908a08bec844bef6',1,'MockConfiguration']]],
+  ['orbitmodecapability_19',['OrbitModeCapability',['../classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18ac50737e41d49925e1c132e91a8bd39b8',1,'FirmwarePlugin']]],
+  ['other_20',['Other',['../structActuatorGeometry.html#af7841751ef9e6ac838cc523e3ca76339a6311ae17c1ee52b36e68aaf4ad066387',1,'ActuatorGeometry']]],
+  ['output_21',['Output',['../classQSerialPort.html#ac5d094511260c30d5239c9b0316c2733ae19406906828b02ac54f8d4c535d255b',1,'QSerialPort']]],
+  ['outputfunction_22',['OutputFunction',['../classActuatorOutputs_1_1ChannelConfig.html#a125b177a54bd1eac1a8a20fc9a374474af5f56535f1ffdd871678f5d9e5bd70b4',1,'ActuatorOutputs::ChannelConfig']]]
 ];

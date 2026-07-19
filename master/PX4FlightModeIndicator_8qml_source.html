@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('PX4FlightModeIndicator_8qml_source.htm
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            Layout.preferredWidth:  sliderWidth</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>            label:                  qsTr(&quot;RTL Altitude&quot;)</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            fact:                   controller.getParameterFact(-1, &quot;RTL_RETURN_ALT&quot;)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            to:                     fact.maxIsDefaultForType ? QGroundControl.unitsConversion.metersToAppSettingsVerticalDistanceUnits(121.92) : fact.max</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            to:                     fact.maxIsDefaultForType ? fact.rawToCooked(121.92) : fact.max</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            majorTickStepSize:      10</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
@@ -195,13 +195,14 @@ $(document).ready(function(){initNavTree('PX4FlightModeIndicator_8qml_source.htm
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                id:                 maxAltitudeSlider</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                Layout.fillWidth:   true</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                fact:               controller.getParameterFact(-1, &quot;GF_MAX_VER_DIST&quot;)</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                to:                 flyViewSettings.guidedMaximumAltitude.value</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                majorTickStepSize:  10</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                enabled:            fact.value &gt; 0</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                // Setting is &quot;vertical m&quot; family, slider fact may cook differently - convert through the fact&#39;s own translator</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                to:                 fact.rawToCooked(flyViewSettings.guidedMaximumAltitude.rawValue)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                majorTickStepSize:  10</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                enabled:            fact.value &gt; 0</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

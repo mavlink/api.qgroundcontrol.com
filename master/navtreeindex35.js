@@ -1,5 +1,7 @@
 var NAVTREEINDEX35 =
 {
+"classMapProvider.html#a78e9a3b7faa4f47b041f722e17e7edda":[2,0,272,20],
+"classMapProvider.html#a7c53ac4633a74045b637cb202b755248":[2,0,272,2],
 "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180ba":[2,0,272,0],
 "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa082381b7cec06c7b3df063c5b358037c":[2,0,272,0,10],
 "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180baa14bbd42a1bb1cc370b172579f703cd95":[2,0,272,0,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX35 =
 "classMavlinkCameraControlInterface.html#aca463bad30239e82e552a294737e884e":[2,0,282,15],
 "classMavlinkCameraControlInterface.html#acc088ec3a53c9b69706cafd1b8862f74":[2,0,282,21],
 "classMavlinkCameraControlInterface.html#accbba20a70bb76a0f7ff3cd7d3eff564":[2,0,282,145],
-"classMavlinkCameraControlInterface.html#acda3e535e26bb6c9459a3620b223558e":[2,0,282,119],
-"classMavlinkCameraControlInterface.html#acfd8b6adfc448d9c0486fd0d900b10d7":[2,0,282,110],
-"classMavlinkCameraControlInterface.html#acfdee3f9b9d829a4584c295b577155bb":[2,0,282,138]
+"classMavlinkCameraControlInterface.html#acda3e535e26bb6c9459a3620b223558e":[2,0,282,119]
 };

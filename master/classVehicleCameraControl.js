@@ -130,6 +130,7 @@ var classVehicleCameraControl =
     [ "_cached", "classVehicleCameraControl.html#aae5ad24636957cf7c75a2c3e4d8fb59f", null ],
     [ "_cacheFile", "classVehicleCameraControl.html#a245579bb5c7d27fc6231ff43621e0652", null ],
     [ "_cameraCaptureStatusRetries", "classVehicleCameraControl.html#ad00103767f098b40902aa12b5a488845", null ],
+    [ "_cameraSettingsRefreshTimer", "classVehicleCameraControl.html#a00667116881d13c9e56e56a5270a9a35", null ],
     [ "_cameraSettingsRetries", "classVehicleCameraControl.html#ae752c3d9ff6e782a26d7e71d12c5cfe7", null ],
     [ "_cameraSettingsTimer", "classVehicleCameraControl.html#a0a5772a5c6be4a17d241d35013e5b376", null ],
     [ "_captureInfoRetries", "classVehicleCameraControl.html#a58d4ede84e17d191859ea8a9aa80936c", null ],

@@ -24,6 +24,7 @@ var hierarchy =
     [ "Joystick::AxisCalibration_t", "structJoystick_1_1AxisCalibration__t.html", null ],
     [ "OsmParserThread::BuildingType_t", "structOsmParserThread_1_1BuildingType__t.html", null ],
     [ "CalibrationResult", "structCalibrationResult.html", null ],
+    [ "QGCCameraManager::CameraInfoRequestContext", "structQGCCameraManager_1_1CameraInfoRequestContext.html", null ],
     [ "CameraMetaData", "classCameraMetaData.html", null ],
     [ "MockLinkCamera::CameraState", "structMockLinkCamera_1_1CameraState.html", null ],
     [ "QGCCameraManager::CameraStruct", "structQGCCameraManager_1_1CameraStruct.html", null ],

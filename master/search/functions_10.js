@@ -147,7 +147,7 @@ var searchData=
   ['plannedhomeposition_144',['plannedHomePosition',['../classMissionController.html#aa49cd3b74347a098ea3a885b5f39083a',1,'MissionController']]],
   ['plannedhomepositionaltitude_145',['plannedHomePositionAltitude',['../classMissionSettingsItem.html#a96671159fc635ef7afa79033f4191768',1,'MissionSettingsItem']]],
   ['plannedhomepositionchanged_146',['plannedHomePositionChanged',['../classMissionController.html#a913cbb5c4dcced6e6df3a3db4fd10a15',1,'MissionController']]],
-  ['planviewsettings_147',['planviewsettings',['../classPlanViewSettings.html#ae7574c766fdf72cbb4db952463b1faf9',1,'PlanViewSettings::PlanViewSettings()'],['../classSettingsManager.html#a2913c3a917bd013383ed20b521585e90',1,'SettingsManager::planViewSettings()']]],
+  ['planviewsettings_147',['planviewsettings',['../classSettingsManager.html#a2913c3a917bd013383ed20b521585e90',1,'SettingsManager::planViewSettings()'],['../classPlanViewSettings.html#ae7574c766fdf72cbb4db952463b1faf9',1,'PlanViewSettings::PlanViewSettings()']]],
   ['planviewstatechanged_148',['planViewStateChanged',['../classMissionController.html#ae25fbcc7af22d9f6dbc9c3a8ceaadd7d',1,'MissionController']]],
   ['play_149',['play',['../classLogReplayLink.html#a22d9aecfffef4d5ec5b493811c7ed439',1,'LogReplayLink::play()'],['../classLogReplayWorker.html#a56f015f3ad6ab7cc99cc1d0a03acb130',1,'LogReplayWorker::play()']]],
   ['playbackatend_150',['playbackatend',['../classLogReplayWorker.html#ac5225b302b613dc55e16c262d17f5e12',1,'LogReplayWorker::playbackAtEnd()'],['../classLogReplayLink.html#a2ceef03fe4a3d006ae96710ec1bcc49b',1,'LogReplayLink::playbackAtEnd()']]],

@@ -58,6 +58,7 @@ var classFact =
     [ "rawIncrement", "classFact.html#a7073e09ae2cb523d47aaf31039d0663d", null ],
     [ "rawMax", "classFact.html#a9e30c6da36806ca35c845ee594500f2a", null ],
     [ "rawMin", "classFact.html#ab24aa2e5bb92a170613fe92918924d2c", null ],
+    [ "rawToCooked", "classFact.html#a3a3496cfd4fd18dd93bfd579800d8b93", null ],
     [ "rawUnits", "classFact.html#aba61c396bd9e654468214fb150a341b4", null ],
     [ "rawUserMax", "classFact.html#a9c3b9a07665a587985a9ae3c3da05b22", null ],
     [ "rawUserMin", "classFact.html#ae4a8b70777950b1477d2873ce2315c7f", null ],

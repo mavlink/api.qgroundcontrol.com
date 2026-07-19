@@ -128,6 +128,8 @@ Functions</h2></td></tr>
 <tr class="separator:a03b925becf0bca866e90955b75a9c199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15f31827808e036e5b0047a9dc5d163f" id="r_a15f31827808e036e5b0047a9dc5d163f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCCameraManager_8cc.html#a15f31827808e036e5b0047a9dc5d163f">_handleCameraInfoRetry</a> (<a class="el" href="structQGCCameraManager_1_1CameraStruct.html">QGCCameraManager::CameraStruct</a> *cameraInfo)</td></tr>
 <tr class="separator:a15f31827808e036e5b0047a9dc5d163f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58eaaf7576d082beb2df0a67ab20a17f" id="r_a58eaaf7576d082beb2df0a67ab20a17f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structQGCCameraManager_1_1CameraStruct.html">QGCCameraManager::CameraStruct</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCCameraManager_8cc.html#a58eaaf7576d082beb2df0a67ab20a17f">_cameraStructFromContext</a> (void *resultHandlerData)</td></tr>
+<tr class="separator:a58eaaf7576d082beb2df0a67ab20a17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a858662c9cf86b11290ee85809aee001c" id="r_a858662c9cf86b11290ee85809aee001c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCCameraManager_8cc.html#a858662c9cf86b11290ee85809aee001c">_requestCameraInfoCommandResultHandler</a> (void *resultHandlerData, int, const <a class="el" href="QGCMAVLinkTypes_8h.html#a61c426778b7fd0091d42124744bf2e7b">mavlink_command_ack_t</a> &amp;ack, <a class="el" href="structVehicleTypes.html#a7dbf59c2303d5e793924630345127d5c">Vehicle::MavCmdResultFailureCode_t</a> failureCode)</td></tr>
 <tr class="separator:a858662c9cf86b11290ee85809aee001c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45f9ccbb451763778934d095cb10ab44" id="r_a45f9ccbb451763778934d095cb10ab44"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCCameraManager_8cc.html#a45f9ccbb451763778934d095cb10ab44">_requestCameraInfoMessageResultHandler</a> (void *resultHandlerData, MAV_RESULT result, <a class="el" href="structVehicleTypes.html#a9ce049e2f1375e132c762eb6cb63db0f">Vehicle::RequestMessageResultHandlerFailureCode_t</a> failureCode, const <a class="el" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> &amp;message)</td></tr>
@@ -141,6 +143,39 @@ Variables</h2></td></tr>
 <tr class="separator:ad6a07f7a3131aa3cb3856c7eaada28c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a58eaaf7576d082beb2df0a67ab20a17f" name="a58eaaf7576d082beb2df0a67ab20a17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58eaaf7576d082beb2df0a67ab20a17f">&#9670;&#160;</a></span>_cameraStructFromContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structQGCCameraManager_1_1CameraStruct.html">QGCCameraManager::CameraStruct</a> * _cameraStructFromContext </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>resultHandlerData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Resolves the opaque callback context back to the live CameraStruct. Returns nullptr if the manager is gone or the camera was removed while the request was in flight. </p>
+
+<p class="definition">Definition at line <a class="el" href="QGCCameraManager_8cc_source.html#l00522">522</a> of file <a class="el" href="QGCCameraManager_8cc_source.html">QGCCameraManager.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="QGCMAVLink_8cc_source.html#l00542">QGCMAVLink::compIdToString()</a>, and <a class="el" href="QGCCameraManager_8h_source.html#l00058">QGCCameraManager::CameraStruct::manager</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="QGCCameraManager_8cc_source.html#l00536">_requestCameraInfoCommandResultHandler()</a>, and <a class="el" href="QGCCameraManager_8cc_source.html#l00552">_requestCameraInfoMessageResultHandler()</a>.</p>
+
+</div>
+</div>
 <a id="a15f31827808e036e5b0047a9dc5d163f" name="a15f31827808e036e5b0047a9dc5d163f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a15f31827808e036e5b0047a9dc5d163f">&#9670;&#160;</a></span>_handleCameraInfoRetry()</h2>
 
@@ -165,11 +200,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QGCCameraManager_8cc_source.html#l00559">559</a> of file <a class="el" href="QGCCameraManager_8cc_source.html">QGCCameraManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCameraManager_8cc_source.html#l00593">593</a> of file <a class="el" href="QGCCameraManager_8cc_source.html">QGCCameraManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCameraManager_8cc_source.html#l00534">_requestCameraInfoHelper()</a>, <a class="el" href="QGCCameraManager_8h_source.html#l00055">QGCCameraManager::CameraStruct::backoffTimer</a>, <a class="el" href="QGCCameraManager_8h_source.html#l00052">QGCCameraManager::CameraStruct::compID</a>, <a class="el" href="QGCMAVLink_8cc_source.html#l00542">QGCMAVLink::compIdToString()</a>, <a class="el" href="QGCCameraManager_8h_source.html#l00057">QGCCameraManager::CameraStruct::manager</a>, and <a class="el" href="QGCCameraManager_8h_source.html#l00053">QGCCameraManager::CameraStruct::retryCount</a>.</p>
+<p class="reference">References <a class="el" href="QGCCameraManager_8cc_source.html#l00568">_requestCameraInfoHelper()</a>, <a class="el" href="QGCCameraManager_8h_source.html#l00056">QGCCameraManager::CameraStruct::backoffTimer</a>, <a class="el" href="QGCCameraManager_8h_source.html#l00053">QGCCameraManager::CameraStruct::compID</a>, <a class="el" href="QGCMAVLink_8cc_source.html#l00542">QGCMAVLink::compIdToString()</a>, <a class="el" href="QGCCameraManager_8h_source.html#l00058">QGCCameraManager::CameraStruct::manager</a>, and <a class="el" href="QGCCameraManager_8h_source.html#l00054">QGCCameraManager::CameraStruct::retryCount</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCameraManager_8cc_source.html#l00508">_requestCameraInfoCommandResultHandler()</a>, and <a class="el" href="QGCCameraManager_8cc_source.html#l00521">_requestCameraInfoMessageResultHandler()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCameraManager_8cc_source.html#l00536">_requestCameraInfoCommandResultHandler()</a>, and <a class="el" href="QGCCameraManager_8cc_source.html#l00552">_requestCameraInfoMessageResultHandler()</a>.</p>
 
 </div>
 </div>
@@ -219,11 +254,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QGCCameraManager_8cc_source.html#l00508">508</a> of file <a class="el" href="QGCCameraManager_8cc_source.html">QGCCameraManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCameraManager_8cc_source.html#l00536">536</a> of file <a class="el" href="QGCCameraManager_8cc_source.html">QGCCameraManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCameraManager_8cc_source.html#l00559">_handleCameraInfoRetry()</a>, <a class="el" href="QGCMAVLink_8cc_source.html#l00542">QGCMAVLink::compIdToString()</a>, <a class="el" href="Vehicle_8cc_source.html#l03371">Vehicle::mavCmdResultFailureCodeToString()</a>, <a class="el" href="QGCMAVLink_8cc_source.html#l00308">QGCMAVLink::mavResultToString()</a>, and <a class="el" href="QGCCameraManager_8h_source.html#l00053">QGCCameraManager::CameraStruct::retryCount</a>.</p>
+<p class="reference">References <a class="el" href="QGCCameraManager_8cc_source.html#l00522">_cameraStructFromContext()</a>, <a class="el" href="QGCCameraManager_8cc_source.html#l00593">_handleCameraInfoRetry()</a>, <a class="el" href="QGCCameraManager_8h_source.html#l00053">QGCCameraManager::CameraStruct::compID</a>, <a class="el" href="QGCMAVLink_8cc_source.html#l00542">QGCMAVLink::compIdToString()</a>, <a class="el" href="Vehicle_8cc_source.html#l03371">Vehicle::mavCmdResultFailureCodeToString()</a>, <a class="el" href="QGCMAVLink_8cc_source.html#l00308">QGCMAVLink::mavResultToString()</a>, and <a class="el" href="QGCCameraManager_8h_source.html#l00054">QGCCameraManager::CameraStruct::retryCount</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCameraManager_8cc_source.html#l00534">_requestCameraInfoHelper()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCameraManager_8cc_source.html#l00568">_requestCameraInfoHelper()</a>.</p>
 
 </div>
 </div>
@@ -261,11 +296,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QGCCameraManager_8cc_source.html#l00534">534</a> of file <a class="el" href="QGCCameraManager_8cc_source.html">QGCCameraManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCameraManager_8cc_source.html#l00568">568</a> of file <a class="el" href="QGCCameraManager_8cc_source.html">QGCCameraManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCameraManager_8cc_source.html#l00508">_requestCameraInfoCommandResultHandler()</a>, <a class="el" href="QGCCameraManager_8cc_source.html#l00521">_requestCameraInfoMessageResultHandler()</a>, <a class="el" href="QGCCameraManager_8h_source.html#l00052">QGCCameraManager::CameraStruct::compID</a>, <a class="el" href="QGCMAVLink_8cc_source.html#l00542">QGCMAVLink::compIdToString()</a>, <a class="el" href="Vehicle_8cc_source.html#l02255">Vehicle::requestMessage()</a>, <a class="el" href="VehicleTypes_8h_source.html#l00041">VehicleTypes::MavCmdAckHandlerInfo_s::resultHandler</a>, <a class="el" href="QGCCameraManager_8h_source.html#l00053">QGCCameraManager::CameraStruct::retryCount</a>, <a class="el" href="Vehicle_8cc_source.html#l02168">Vehicle::sendMavCommandWithHandler()</a>, <a class="el" href="QGCCameraManager_8h_source.html#l00056">QGCCameraManager::CameraStruct::vehicle</a>, and <a class="el" href="QGCCameraManager_8h_source.html#l00074">QGCCameraManager::vehicle()</a>.</p>
+<p class="reference">References <a class="el" href="QGCCameraManager_8cc_source.html#l00536">_requestCameraInfoCommandResultHandler()</a>, <a class="el" href="QGCCameraManager_8cc_source.html#l00552">_requestCameraInfoMessageResultHandler()</a>, <a class="el" href="QGCCameraManager_8cc_source.html#l00122">QGCCameraManager::cameraInfoContext()</a>, <a class="el" href="QGCCameraManager_8h_source.html#l00053">QGCCameraManager::CameraStruct::compID</a>, <a class="el" href="QGCMAVLink_8cc_source.html#l00542">QGCMAVLink::compIdToString()</a>, <a class="el" href="Vehicle_8cc_source.html#l02255">Vehicle::requestMessage()</a>, <a class="el" href="VehicleTypes_8h_source.html#l00041">VehicleTypes::MavCmdAckHandlerInfo_s::resultHandler</a>, <a class="el" href="QGCCameraManager_8h_source.html#l00054">QGCCameraManager::CameraStruct::retryCount</a>, <a class="el" href="Vehicle_8cc_source.html#l02168">Vehicle::sendMavCommandWithHandler()</a>, <a class="el" href="QGCCameraManager_8h_source.html#l00057">QGCCameraManager::CameraStruct::vehicle</a>, and <a class="el" href="QGCCameraManager_8h_source.html#l00087">QGCCameraManager::vehicle()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCameraManager_8cc_source.html#l00559">_handleCameraInfoRetry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCameraManager_8cc_source.html#l00593">_handleCameraInfoRetry()</a>.</p>
 
 </div>
 </div>
@@ -315,11 +350,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QGCCameraManager_8cc_source.html#l00521">521</a> of file <a class="el" href="QGCCameraManager_8cc_source.html">QGCCameraManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCCameraManager_8cc_source.html#l00552">552</a> of file <a class="el" href="QGCCameraManager_8cc_source.html">QGCCameraManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCCameraManager_8cc_source.html#l00559">_handleCameraInfoRetry()</a>, <a class="el" href="QGCMAVLink_8cc_source.html#l00542">QGCMAVLink::compIdToString()</a>, <a class="el" href="QGCMAVLink_8cc_source.html#l00308">QGCMAVLink::mavResultToString()</a>, <a class="el" href="Vehicle_8cc_source.html#l03366">Vehicle::requestMessageResultHandlerFailureCodeToString()</a>, and <a class="el" href="QGCCameraManager_8h_source.html#l00053">QGCCameraManager::CameraStruct::retryCount</a>.</p>
+<p class="reference">References <a class="el" href="QGCCameraManager_8cc_source.html#l00522">_cameraStructFromContext()</a>, <a class="el" href="QGCCameraManager_8cc_source.html#l00593">_handleCameraInfoRetry()</a>, <a class="el" href="QGCCameraManager_8h_source.html#l00053">QGCCameraManager::CameraStruct::compID</a>, <a class="el" href="QGCMAVLink_8cc_source.html#l00542">QGCMAVLink::compIdToString()</a>, <a class="el" href="QGCMAVLink_8cc_source.html#l00308">QGCMAVLink::mavResultToString()</a>, <a class="el" href="Vehicle_8cc_source.html#l03366">Vehicle::requestMessageResultHandlerFailureCodeToString()</a>, and <a class="el" href="QGCCameraManager_8h_source.html#l00054">QGCCameraManager::CameraStruct::retryCount</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCameraManager_8cc_source.html#l00534">_requestCameraInfoHelper()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCameraManager_8cc_source.html#l00568">_requestCameraInfoHelper()</a>.</p>
 
 </div>
 </div>
@@ -371,7 +406,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="QGCCameraManager_8cc_source.html#l00031">31</a> of file <a class="el" href="QGCCameraManager_8cc_source.html">QGCCameraManager.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCameraManager_8cc_source.html#l00788">QGCCameraManager::requestCameraFovForComp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCCameraManager_8cc_source.html#l00822">QGCCameraManager::requestCameraFovForComp()</a>.</p>
 
 </div>
 </div>

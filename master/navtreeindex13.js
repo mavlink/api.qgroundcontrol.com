@@ -1,5 +1,8 @@
 var NAVTREEINDEX13 =
 {
+"QGCFileHelper_8h.html#a60912987dfe0b950b50731faf2afc045":[3,0,0,28,5,1,11],
+"QGCFileHelper_8h.html#a6dae830a847a89ef11cd37401b3f8cd0":[3,0,0,28,5,1,7],
+"QGCFileHelper_8h.html#a720333aa48962c7252ab044fe4e4f109":[3,0,0,28,5,1,27],
 "QGCFileHelper_8h.html#a749e2ba9f0fbccd2101bfc1ebc7a7e9c":[3,0,0,28,5,1,6],
 "QGCFileHelper_8h.html#a7fb1699a7fbd1ab62a1db78caa761e7b":[3,0,0,28,5,1,14],
 "QGCFileHelper_8h.html#a92f5c18a2f09dbe630adfa0e82dd8171":[3,0,0,28,5,1,9],
@@ -246,8 +249,5 @@ var NAVTREEINDEX13 =
 "QGCNetworkHelper_8cc.html#a846ac783f7d46781aa675a7518b35820":[3,0,0,28,11,4,2],
 "QGCNetworkHelper_8cc.html#a8755b82129ef3cab2951f88ac70cd01e":[3,0,0,28,11,4,33],
 "QGCNetworkHelper_8cc.html#a87dfaebde8850d64fd299ea6c943acb8":[3,0,0,28,11,4,47],
-"QGCNetworkHelper_8cc.html#a8876e9991bd3572703f6ee487b5223f2":[3,0,0,28,11,4,10],
-"QGCNetworkHelper_8cc.html#a8d771982d9f377d2f125af96193fb69b":[3,0,0,28,11,4,23],
-"QGCNetworkHelper_8cc.html#a9b5552f43897c2391f78858adb6ae75e":[3,0,0,28,11,4,29],
-"QGCNetworkHelper_8cc.html#a9f4759ad391430e60c72ae335bbffedb":[3,0,0,28,11,4,21]
+"QGCNetworkHelper_8cc.html#a8876e9991bd3572703f6ee487b5223f2":[3,0,0,28,11,4,10]
 };

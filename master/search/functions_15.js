@@ -21,7 +21,7 @@ var searchData=
   ['uniquetilesizestr_18',['uniqueTileSizeStr',['../classQGCCachedTileSet.html#ac1dc92286f51f13a0ee7c83e062cbdb0',1,'QGCCachedTileSet']]],
   ['units_19',['units',['../classMissionCmdParamInfo.html#a6d292df32eb81e8302fcb8eca830642f',1,'MissionCmdParamInfo']]],
   ['unitsconversion_20',['unitsConversion',['../classQGroundControlQmlGlobal.html#a8386a89906c6d8e4b11870158148dfdf',1,'QGroundControlQmlGlobal']]],
-  ['unitssettings_21',['unitssettings',['../classUnitsSettings.html#a95a2666f950037415dd2acf84714c35e',1,'UnitsSettings::UnitsSettings()'],['../classSettingsManager.html#a293f9ff7faa9dcb0419e51ccba2cdf5a',1,'SettingsManager::unitsSettings()']]],
+  ['unitssettings_21',['unitssettings',['../classSettingsManager.html#a293f9ff7faa9dcb0419e51ccba2cdf5a',1,'SettingsManager::unitsSettings()'],['../classUnitsSettings.html#a95a2666f950037415dd2acf84714c35e',1,'UnitsSettings::UnitsSettings()']]],
   ['unknownaction_22',['unknownAction',['../classJoystick.html#a713c3c77b4dceb58065a2a14d3c1e59c',1,'Joystick']]],
   ['unlockjoysticks_23',['unlockJoysticks',['../namespaceSDLJoystick.html#a03ac306142df5f01de60a335f4465826',1,'SDLJoystick']]],
   ['unreachablestates_24',['unreachableStates',['../classQGCStateMachine.html#a7b523ba514b5f342dc3741f864bcf646',1,'QGCStateMachine']]],

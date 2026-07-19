@@ -1,5 +1,8 @@
 var NAVTREEINDEX15 =
 {
+"QGClibarchive_8cc.html#a30b75a4d7a56dc7bc606db07f43bdd0d":[3,0,0,28,1,15,13],
+"QGClibarchive_8cc.html#a3f235172856de8ccbc823ad6daf4c353":[3,0,0,28,1,15,21],
+"QGClibarchive_8cc.html#a3fc66c08e89b31289dcb88e480e76222":[3,0,0,28,1,15,5],
 "QGClibarchive_8cc.html#a4beb0c74c9f715f0ae34e240586c64ac":[3,0,0,28,1,15,15],
 "QGClibarchive_8cc.html#a60a47226e0add3ba3361e12b5eb8d66d":[3,0,0,28,1,15,23],
 "QGClibarchive_8cc.html#a6299729e369a7305306a32891e4a1775":[3,0,0,28,1,15,0],
@@ -149,16 +152,16 @@ var NAVTREEINDEX15 =
 "RallyPointController_8cc_source.html":[3,0,0,20,51],
 "RallyPointController_8h.html":[3,0,0,20,52],
 "RallyPointController_8h_source.html":[3,0,0,20,52],
-"RallyPointEditorHeader_8qml.html":[3,0,0,21,24],
-"RallyPointEditorHeader_8qml_source.html":[3,0,0,21,24],
-"RallyPointItemEditor_8qml.html":[3,0,0,21,25],
-"RallyPointItemEditor_8qml_source.html":[3,0,0,21,25],
+"RallyPointEditorHeader_8qml.html":[3,0,0,21,25],
+"RallyPointEditorHeader_8qml_source.html":[3,0,0,21,25],
+"RallyPointItemEditor_8qml.html":[3,0,0,21,26],
+"RallyPointItemEditor_8qml_source.html":[3,0,0,21,26],
 "RallyPointManager_8cc.html":[3,0,0,20,53],
 "RallyPointManager_8cc_source.html":[3,0,0,20,53],
 "RallyPointManager_8h.html":[3,0,0,20,54],
 "RallyPointManager_8h_source.html":[3,0,0,20,54],
-"RallyPointMapVisuals_8qml.html":[3,0,0,21,26],
-"RallyPointMapVisuals_8qml_source.html":[3,0,0,21,26],
+"RallyPointMapVisuals_8qml.html":[3,0,0,21,27],
+"RallyPointMapVisuals_8qml_source.html":[3,0,0,21,27],
 "RallyPoint_8cc.html":[3,0,0,20,49],
 "RallyPoint_8cc_source.html":[3,0,0,20,49],
 "RallyPoint_8h.html":[3,0,0,20,50],
@@ -246,8 +249,5 @@ var NAVTREEINDEX15 =
 "RunGuard_8h.html":[3,0,0,28,13,6],
 "RunGuard_8h_source.html":[3,0,0,28,13,6],
 "SDLJoystick_8cc.html":[3,0,0,28,14,0],
-"SDLJoystick_8cc.html#a02b6a78b645b850adfcc3ed97b9534ca":[3,0,0,28,14,0,17],
-"SDLJoystick_8cc.html#a03ac306142df5f01de60a335f4465826":[3,0,0,28,14,0,40],
-"SDLJoystick_8cc.html#a05d2b83ef1b51944e52c4f1a36ae7f82":[3,0,0,28,14,0,5],
-"SDLJoystick_8cc.html#a0cb76d6a72dfe7cb27e68fd9dc853abf":[3,0,0,28,14,0,3]
+"SDLJoystick_8cc.html#a02b6a78b645b850adfcc3ed97b9534ca":[3,0,0,28,14,0,17]
 };

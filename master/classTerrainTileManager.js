@@ -6,6 +6,5 @@ var classTerrainTileManager =
     [ "addCoordinateQuery", "classTerrainTileManager.html#afff8c6909599dcd1f79e148cc1f29441", null ],
     [ "addPathQuery", "classTerrainTileManager.html#aac6fd215069cac7e3a3acc1ed47f54e1", null ],
     [ "getAltitudesForCoordinates", "classTerrainTileManager.html#a4ad6d32c057f124d04582c628d7fcd4d", null ],
-    [ "instance", "classTerrainTileManager.html#ae7e7a433a774374b58f1e93fc27044a8", null ],
-    [ "UnitTestTerrainQuery", "classTerrainTileManager.html#a3263dd6020858ed6e44ec47238b40407", null ]
+    [ "instance", "classTerrainTileManager.html#ae7e7a433a774374b58f1e93fc27044a8", null ]
 ];
