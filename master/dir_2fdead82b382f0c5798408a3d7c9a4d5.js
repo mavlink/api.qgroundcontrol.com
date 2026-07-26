@@ -1,5 +1,6 @@
 var dir_2fdead82b382f0c5798408a3d7c9a4d5 =
 [
+    [ "ADSBVehicleMapItem.qml", "ADSBVehicleMapItem_8qml.html", null ],
     [ "CameraTriggerIndicator.qml", "CameraTriggerIndicator_8qml.html", null ],
     [ "CustomMapItems.qml", "CustomMapItems_8qml.html", null ],
     [ "MapLineArrow.qml", "MapLineArrow_8qml.html", null ],

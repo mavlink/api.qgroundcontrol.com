@@ -20,13 +20,17 @@ var classLinkInterface =
     [ "linkConfiguration", "classLinkInterface.html#a6d18f49aeb5340480b7b2f91cf2c9ff8", null ],
     [ "mavlinkChannel", "classLinkInterface.html#a21d4864924f17c16d573810140ce8baa", null ],
     [ "mavlinkChannelIsSet", "classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0", null ],
+    [ "mavlinkV1TrafficReported", "classLinkInterface.html#aad495211b86f49fb456c86e01052e818", null ],
     [ "removeVehicleReference", "classLinkInterface.html#aaeb24d8e6bc5e1cdfbf283b3c39652c7", null ],
     [ "reportMavlinkV1Traffic", "classLinkInterface.html#a66ff79d564811ddba4ceb22a5e1a7dda", null ],
+    [ "reportMavlinkV2Traffic", "classLinkInterface.html#a77132d20081bf0d205071be2e85bbc86", null ],
     [ "sendMessageThreadSafe", "classLinkInterface.html#a60cd0f2fec9024e4d6980a9bda179207", null ],
     [ "setDecodedFirstMavlinkPacket", "classLinkInterface.html#a18985fd2730d86548428466e4a4bcd50", null ],
+    [ "setMavlinkV1TrafficGraceMsecs", "classLinkInterface.html#ac3df1dedd092dc4e404429b9d994fbe9", null ],
     [ "signing", "classLinkInterface.html#a98e4707e8a6dd846dbf40c17f33a77d2", null ],
     [ "signing", "classLinkInterface.html#ab9c104c54d5c07a28a9e678e21d34c27", null ],
     [ "writeBytesThreadSafe", "classLinkInterface.html#ae84ae374b1d7fcf733bbfa5083e46a40", null ],
     [ "LinkManager", "classLinkInterface.html#a209d207af87c1b7828cee00c53729e72", null ],
-    [ "_config", "classLinkInterface.html#af9fb7d026b62cf6410dbe9900e06c63a", null ]
+    [ "_config", "classLinkInterface.html#af9fb7d026b62cf6410dbe9900e06c63a", null ],
+    [ "kMavlinkV1TrafficGraceMsecsDefault", "classLinkInterface.html#aee69f84c24aff78da46cb910f735d8ab", null ]
 ];

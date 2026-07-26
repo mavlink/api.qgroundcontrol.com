@@ -1,5 +1,9 @@
 var NAVTREEINDEX24 =
 {
+"classBluetoothWorker.html#a38b555cbae523acc8942c2ba209c3762":[2,0,107,10],
+"classBluetoothWorker.html#a3e89681865f99ac6fc855e5529d5f6be":[2,0,107,29],
+"classBluetoothWorker.html#a54c6920e4ae4a11b1d1ccb1a68a12489":[2,0,107,8],
+"classBluetoothWorker.html#a58b49947477ce4f014ab4fd6c25d800d":[2,0,107,30],
 "classBluetoothWorker.html#a5b76f1f3e8b6b354187fdb3dea7b6547":[2,0,107,11],
 "classBluetoothWorker.html#a67bc7ec002fefcc73137414124226b67":[2,0,107,18],
 "classBluetoothWorker.html#a6b094bb115efc6d36f76da37b0047643":[2,0,107,31],
@@ -245,9 +249,5 @@ var NAVTREEINDEX24 =
 "classComplexMissionItem.html#a5df7460db912fb61eac6fb60ac1cb0ad":[2,0,123,34],
 "classComplexMissionItem.html#a634f234ea8cac5d62dfe9e610ecf59df":[2,0,123,13],
 "classComplexMissionItem.html#a64c2f73b885e42461f3a1092044f55d1":[2,0,123,14],
-"classComplexMissionItem.html#a6ab7eff02514f7504fa44c732a8c11d1":[2,0,123,6],
-"classComplexMissionItem.html#a6b54a96219e961b411d34e2fdf0bb741":[2,0,123,18],
-"classComplexMissionItem.html#a7343d6cb064f62e6dc602beb1c84aaac":[2,0,123,35],
-"classComplexMissionItem.html#a8bf4240fb93117aa6061bd899c28203e":[2,0,123,11],
-"classComplexMissionItem.html#a8f35e8bb2fe8af3790611cc5933353a7":[2,0,123,12]
+"classComplexMissionItem.html#a6ab7eff02514f7504fa44c732a8c11d1":[2,0,123,6]
 };

@@ -449,23 +449,28 @@ $(document).ready(function(){initNavTree('MissionItemEditor_8qml_source.html',''
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>        anchors.margins:    _innerMargin</div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        anchors.left:       parent.left</div>
 <div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        anchors.top:        topRowLayout.bottom</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        asynchronous:       true</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span> </div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        Component.onCompleted: _root._loadEditor()</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    }</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span> </div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    onHeightChanged: {</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        if (_currentItem &amp;&amp; editorLoader.status === Loader.Ready) {</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>            _editorHeightSettleTimer.restart()</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        }</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    }</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    Timer {</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>        id: _editorHeightSettleTimer</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        interval: 100</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        onTriggered: _root.editorExpandedAndLoaded()</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>    }</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>}</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        // Deliberately not asynchronous. With asynchronous: true the editor is built</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        // incrementally over later event-loop ticks. If the user switches layers before</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        // that finishes, the TreeView collapses the mission group and destroys this</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        // delegate, and the still-running load then warns &quot;Cannot create a component in</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        // an invalid context&quot;. Synchronous loading closes that window: the editor is</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        // fully built before control returns to the event loop.</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        Component.onCompleted: _root._loadEditor()</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    }</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span> </div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    onHeightChanged: {</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>        if (_currentItem &amp;&amp; editorLoader.status === Loader.Ready) {</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>            _editorHeightSettleTimer.restart()</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>        }</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>    }</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>    Timer {</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>        id: _editorHeightSettleTimer</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>        interval: 100</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>        onTriggered: _root.editorExpandedAndLoaded()</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>    }</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

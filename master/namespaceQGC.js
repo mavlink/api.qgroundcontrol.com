@@ -19,5 +19,6 @@ var namespaceQGC =
     [ "showAppMessage", "namespaceQGC.html#ae41a6cbf29b27a1b592d9d4cfde85975", null ],
     [ "showCriticalVehicleMessage", "namespaceQGC.html#ac387e51c15a6c5c8ad5c8ce0f86ceeca", null ],
     [ "showRebootAppMessage", "namespaceQGC.html#ac1160fca03370c03e04d55589c8f5f1b", null ],
+    [ "showRebootVehicleMessage", "namespaceQGC.html#a6c9783d4b3f283a92270018efa290f46", null ],
     [ "crctab", "namespaceQGC.html#aec50cfb7c95f1d61002e2851f18f887f", null ]
 ];

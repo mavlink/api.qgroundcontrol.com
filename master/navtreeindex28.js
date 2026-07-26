@@ -1,5 +1,9 @@
 var NAVTREEINDEX28 =
 {
+"classFirmwarePlugin.html#ac00c5a5b4ffeadc5327cdb202c9336af":[2,0,165,84],
+"classFirmwarePlugin.html#ac1201a8c475b9cf9f761d56210ef20e5":[2,0,165,91],
+"classFirmwarePlugin.html#ac1cb31c3ba73017edfff0a8fc204ba81":[2,0,165,9],
+"classFirmwarePlugin.html#ac24934e6d807c300f42ed5893cf9c061":[2,0,165,75],
 "classFirmwarePlugin.html#ac2b237ff5d4497aa1bb5aede327992db":[2,0,165,1],
 "classFirmwarePlugin.html#ac9c84c4d7109175e349d96740e0f021e":[2,0,165,88],
 "classFirmwarePlugin.html#acc78e889a336649376aaacb2afc42cc3":[2,0,165,97],
@@ -245,9 +249,5 @@ var NAVTREEINDEX28 =
 "classGenericAutoPilotPlugin.html#af33f3ea676053e31ac8cc76a3459cba6":[2,0,183,1],
 "classGeoFenceController.html":[2,0,184],
 "classGeoFenceController.html#a03c88fed46e2f0d63a80540e06974756":[2,0,184,27],
-"classGeoFenceController.html#a0d1abd2b499497d98fc723a9d486cbc0":[2,0,184,4],
-"classGeoFenceController.html#a0e2ea39bd5473be499d034b304c3ff33":[2,0,184,1],
-"classGeoFenceController.html#a1002d48cfe683acfdd385a6f33573617":[2,0,184,3],
-"classGeoFenceController.html#a140adb07400f33cc985438d33e8f2f68":[2,0,184,22],
-"classGeoFenceController.html#a3dba86f395cf0507e21cff551f270c9c":[2,0,184,6]
+"classGeoFenceController.html#a0d1abd2b499497d98fc723a9d486cbc0":[2,0,184,4]
 };

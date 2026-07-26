@@ -1,6 +1,8 @@
 var classViewer3DTerrainTexture =
 [
     [ "Viewer3DTerrainTexture", "classViewer3DTerrainTexture.html#a9f266f60265f80523c3fc07771c19efc", null ],
+    [ "fallbackCenter", "classViewer3DTerrainTexture.html#af670a001fe553f393197de8881c750c3", null ],
+    [ "fallbackCenterChanged", "classViewer3DTerrainTexture.html#aba1a2e604a75fc98e1eaed6bd284a742", null ],
     [ "loadTexture", "classViewer3DTerrainTexture.html#a3051f78228bb35720d3fb2618e9e0f69", null ],
     [ "mapProvider", "classViewer3DTerrainTexture.html#a3b4d755b00125bc15c75366616d527c2", null ],
     [ "mapProviderChanged", "classViewer3DTerrainTexture.html#a2a906a278c4e9682b8c7a40be7438f99", null ],
@@ -8,6 +10,7 @@ var classViewer3DTerrainTexture =
     [ "roiMaxCoordinateChanged", "classViewer3DTerrainTexture.html#a64c6bc8294bbb74d047c6d63a6cddc41", null ],
     [ "roiMinCoordinate", "classViewer3DTerrainTexture.html#a412743148d8cc1efa97e95e583f3cd7c", null ],
     [ "roiMinCoordinateChanged", "classViewer3DTerrainTexture.html#a6a2b2e99f9a4e83ffbf91ac76f4e422e", null ],
+    [ "setFallbackCenter", "classViewer3DTerrainTexture.html#a51c0561cbf26587be24fd81d22fd7696", null ],
     [ "setMapProvider", "classViewer3DTerrainTexture.html#af03eb99db7fccb1c344a7f65b787b4fa", null ],
     [ "setRoiMaxCoordinate", "classViewer3DTerrainTexture.html#a48013ea2d087aa6e5bc43a111b19c0c1", null ],
     [ "setRoiMinCoordinate", "classViewer3DTerrainTexture.html#a2e5b6f717bb0aa0d163447c340512cf3", null ],
@@ -19,5 +22,6 @@ var classViewer3DTerrainTexture =
     [ "textureLoaded", "classViewer3DTerrainTexture.html#a01182deab9cbb4a22e3a25c56679f18c", null ],
     [ "textureLoadedChanged", "classViewer3DTerrainTexture.html#a9c2ea22bf3cba517f33274cc3ac0c260", null ],
     [ "tileCount", "classViewer3DTerrainTexture.html#a36321d947898212e9ea15ea149d8968d", null ],
-    [ "tileCountChanged", "classViewer3DTerrainTexture.html#ab6d00af7b804ae48795d5f29f9ce36ff", null ]
+    [ "tileCountChanged", "classViewer3DTerrainTexture.html#ab6d00af7b804ae48795d5f29f9ce36ff", null ],
+    [ "Viewer3DTerrainTextureTest", "classViewer3DTerrainTexture.html#a8d89e2d9bd339b470d3cf8f4bbd1dc99", null ]
 ];

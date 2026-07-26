@@ -1,5 +1,10 @@
 var NAVTREEINDEX5 =
 {
+"FlightModeIndicator_8qml.html":[3,0,0,27,4],
+"FlightModeIndicator_8qml_source.html":[3,0,0,27,4],
+"FlightModeMenuIndicator_8qml.html":[3,0,0,27,5],
+"FlightModeMenuIndicator_8qml_source.html":[3,0,0,27,5],
+"FlightModeMenu_8qml.html":[3,0,0,23,22],
 "FlightModeMenu_8qml_source.html":[3,0,0,23,22],
 "FlightModeSettings_8cc.html":[3,0,0,25,14],
 "FlightModeSettings_8cc.html#a3e12805acb34b3ede9a2d98ac473b72f":[3,0,0,25,14,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX5 =
 "GeoFenceManager_8h_source.html":[3,0,0,20,19],
 "GeoFenceMapVisuals_8qml.html":[3,0,0,21,8],
 "GeoFenceMapVisuals_8qml_source.html":[3,0,0,21,8],
-"GeoJsonHelper_8cc.html":[3,0,0,28,7,0,0],
-"GeoJsonHelper_8cc.html#a487d612096a806b98b5708eed7c4bd69":[3,0,0,28,7,0,0,0],
-"GeoJsonHelper_8cc.html#a50d7113569308c8ddd7b44c5b334cbf7":[3,0,0,28,7,0,0,3],
-"GeoJsonHelper_8cc.html#adec76da270bf7dd2d110a9eba0993971":[3,0,0,28,7,0,0,2],
-"GeoJsonHelper_8cc.html#af5f9d8ad8d92d996711933d47cf533d6":[3,0,0,28,7,0,0,4],
-"GeoJsonHelper_8cc.html#afabea51f8938342b2cef6e79f3763154":[3,0,0,28,7,0,0,1]
+"GeoJsonHelper_8cc.html":[3,0,0,28,7,0,0]
 };

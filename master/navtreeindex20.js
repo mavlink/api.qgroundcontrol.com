@@ -1,5 +1,9 @@
 var NAVTREEINDEX20 =
 {
+"classAPMFirmwarePlugin.html#a485edc360ce275b6663bd3407aa2b755":[2,0,52,39],
+"classAPMFirmwarePlugin.html#a4f327d225f4e01bdd25b1ee9ed0f83cf":[2,0,52,11],
+"classAPMFirmwarePlugin.html#a53aa433c2ddf97d2a6c65f9d92a4a20a":[2,0,52,21],
+"classAPMFirmwarePlugin.html#a549a8eae0be89c9de4a6b4182504bcf2":[2,0,52,45],
 "classAPMFirmwarePlugin.html#a597d14a32f43e796dba3c5bdac67ca6f":[2,0,52,43],
 "classAPMFirmwarePlugin.html#a5a414c7b5542ce08354fe6976d25f796":[2,0,52,46],
 "classAPMFirmwarePlugin.html#a5d356a6bbb419a2218c5863e79367593":[2,0,52,25],
@@ -245,9 +249,5 @@ var NAVTREEINDEX20 =
 "classAPMSensorsComponentController.html":[2,0,75],
 "classAPMSensorsComponentController.html#a0216046f1552716f1491e03621e6fc4a":[2,0,75,5],
 "classAPMSensorsComponentController.html#a097d64459a2321db29beaa5d66aec48b":[2,0,75,21],
-"classAPMSensorsComponentController.html#a1a78f9ec072a35f5350a5ec1ce411a52":[2,0,75,38],
-"classAPMSensorsComponentController.html#a241a3b43415b364d746f62f094a286e0":[2,0,75,22],
-"classAPMSensorsComponentController.html#a2cb568f29a218d9f7cd2c42cb1a84ed9":[2,0,75,14],
-"classAPMSensorsComponentController.html#a3871b89d94cf7ea00443bee76c75d3a8":[2,0,75,27],
-"classAPMSensorsComponentController.html#a3daff66f170f4379b806cacf07d14583":[2,0,75,36]
+"classAPMSensorsComponentController.html#a1a78f9ec072a35f5350a5ec1ce411a52":[2,0,75,38]
 };

@@ -1,10 +1,5 @@
 var NAVTREEINDEX16 =
 {
-"SDLJoystick_8cc.html#a03ac306142df5f01de60a335f4465826":[3,0,0,28,14,0,40],
-"SDLJoystick_8cc.html#a05d2b83ef1b51944e52c4f1a36ae7f82":[3,0,0,28,14,0,5],
-"SDLJoystick_8cc.html#a0cb76d6a72dfe7cb27e68fd9dc853abf":[3,0,0,28,14,0,3],
-"SDLJoystick_8cc.html#a0ed923be02b3e97ad752de6c9df5f108":[3,0,0,28,14,0,11],
-"SDLJoystick_8cc.html#a194e9a4ef3a50e1083843e7040e76b7a":[3,0,0,28,14,0,21],
 "SDLJoystick_8cc.html#a1fcda213100f35d9820dc7b20a0f69e5":[3,0,0,28,14,0,43],
 "SDLJoystick_8cc.html#a30b9974a628892f2958a542abb63604d":[3,0,0,28,14,0,27],
 "SDLJoystick_8cc.html#a321acc477530f61c282fbeb5d6aa8742":[3,0,0,28,14,0,36],
@@ -249,5 +244,10 @@ var NAVTREEINDEX16 =
 "SettingsGroup_8h.html#abe10d6e5a582a5f5e4c5036bf99146fa":[3,0,0,25,45,1],
 "SettingsGroup_8h.html#ae940f76631471963fba28ec5b3a392eb":[3,0,0,25,45,5],
 "SettingsGroup_8h_source.html":[3,0,0,25,45],
-"SettingsManager_8cc.html":[3,0,0,25,46]
+"SettingsManager_8cc.html":[3,0,0,25,46],
+"SettingsManager_8cc.html#aa92960d6a1b2d4c5ad358feddb57545a":[3,0,0,25,46,0],
+"SettingsManager_8cc_source.html":[3,0,0,25,46],
+"SettingsManager_8h.html":[3,0,0,25,47],
+"SettingsManager_8h_source.html":[3,0,0,25,47],
+"SettingsPage_8qml.html":[3,0,0,4,25]
 };

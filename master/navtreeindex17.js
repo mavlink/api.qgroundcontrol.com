@@ -1,10 +1,5 @@
 var NAVTREEINDEX17 =
 {
-"SettingsManager_8cc.html#aa92960d6a1b2d4c5ad358feddb57545a":[3,0,0,25,46,0],
-"SettingsManager_8cc_source.html":[3,0,0,25,46],
-"SettingsManager_8h.html":[3,0,0,25,47],
-"SettingsManager_8h_source.html":[3,0,0,25,47],
-"SettingsPage_8qml.html":[3,0,0,4,25],
 "SettingsPage_8qml_source.html":[3,0,0,4,25],
 "SetupPage_8qml.html":[3,0,0,23,144],
 "SetupPage_8qml_source.html":[3,0,0,23,144],
@@ -69,8 +64,8 @@ var NAVTREEINDEX17 =
 "SpeedSection_8cc_source.html":[3,0,0,20,58],
 "SpeedSection_8h.html":[3,0,0,20,59],
 "SpeedSection_8h_source.html":[3,0,0,20,59],
-"SplitIndicator_8qml.html":[3,0,0,11,0,11],
-"SplitIndicator_8qml_source.html":[3,0,0,11,0,11],
+"SplitIndicator_8qml.html":[3,0,0,11,0,12],
+"SplitIndicator_8qml_source.html":[3,0,0,11,0,12],
 "StandardModes_8cc.html":[3,0,0,29,24],
 "StandardModes_8cc.html#a32c79c28d1c9ec58f60489c6f759184a":[3,0,0,29,24,0],
 "StandardModes_8cc_source.html":[3,0,0,29,24],
@@ -249,5 +244,10 @@ var NAVTREEINDEX17 =
 "ToolStripAction_8h.html":[3,0,0,23,153],
 "ToolStripAction_8h_source.html":[3,0,0,23,153],
 "ToolStripDropPanel_8qml.html":[3,0,0,23,156],
-"ToolStripDropPanel_8qml_source.html":[3,0,0,23,156]
+"ToolStripDropPanel_8qml_source.html":[3,0,0,23,156],
+"ToolStripHoverButton_8qml.html":[3,0,0,23,157],
+"ToolStripHoverButton_8qml_source.html":[3,0,0,23,157],
+"ToolStrip_8qml.html":[3,0,0,23,151],
+"ToolStrip_8qml_source.html":[3,0,0,23,151],
+"TrajectoryPoints_8cc.html":[3,0,0,29,30]
 };

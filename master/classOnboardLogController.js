@@ -16,6 +16,7 @@ var classOnboardLogController =
     [ "download", "classOnboardLogController.html#a3d0b74e61f62ddf377ace934388d2791", null ],
     [ "downloadingLogsChanged", "classOnboardLogController.html#a0370595351e9f1eae80b49fcf396f101", null ],
     [ "eraseAll", "classOnboardLogController.html#a30a68fb38667b87c4675590848903199", null ],
+    [ "eraseSelected", "classOnboardLogController.html#a3cd49c11b07a0bc0d71314c39b21fa46", null ],
     [ "refresh", "classOnboardLogController.html#a85d431b45f5551c55e4b11698c232c66", null ],
     [ "requestingListChanged", "classOnboardLogController.html#a08e94ffc0176390fdd4b68efaf674b4e", null ],
     [ "selectAll", "classOnboardLogController.html#a2c120e35568c23c312a3967403b442e2", null ],
@@ -26,5 +27,8 @@ var classOnboardLogController =
     [ "sortAscending", "classOnboardLogController.html#a07beb299f7e5b97ba396918f5ed3ed02", null ],
     [ "sortAscendingChanged", "classOnboardLogController.html#aa2fb60dbf8dde4ee1b456c699190f84a", null ],
     [ "toggleSortByDate", "classOnboardLogController.html#a6e16c0280cd1496105c2639cc789cdc2", null ],
-    [ "OnboardLogDownloadTest", "classOnboardLogController.html#abd189eadf903547ee841f7a940176841", null ]
+    [ "transport", "classOnboardLogController.html#a271439570377d949815dc50630c09e47", null ],
+    [ "transportChanged", "classOnboardLogController.html#aab9bcfa8c590b6515ec8c8cf0c0b6e9f", null ],
+    [ "OnboardLogDownloadTest", "classOnboardLogController.html#abd189eadf903547ee841f7a940176841", null ],
+    [ "OnboardLogFtpDownloadTest", "classOnboardLogController.html#ae711b6ba5e5ba85a33e6b8429d6872c5", null ]
 ];

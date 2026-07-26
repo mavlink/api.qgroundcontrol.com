@@ -1,10 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"PX4RadioComponent_8h.html":[3,0,0,5,3,34],
-"PX4RadioComponent_8h_source.html":[3,0,0,5,3,34],
-"PX4SimpleFlightModesController_8cc.html":[3,0,0,5,3,36],
-"PX4SimpleFlightModesController_8cc_source.html":[3,0,0,5,3,36],
-"PX4SimpleFlightModesController_8h.html":[3,0,0,5,3,37],
 "PX4SimpleFlightModesController_8h_source.html":[3,0,0,5,3,37],
 "PX4TuningComponentCopterAll_8qml.html":[3,0,0,5,3,42],
 "PX4TuningComponentCopterAll_8qml_source.html":[3,0,0,5,3,42],
@@ -112,8 +107,8 @@ var NAVTREEINDEX11 =
 "PlanManager_8cc_source.html":[3,0,0,20,45],
 "PlanManager_8h.html":[3,0,0,20,46],
 "PlanManager_8h_source.html":[3,0,0,20,46],
-"PlanMapItems_8qml.html":[3,0,0,11,0,6],
-"PlanMapItems_8qml_source.html":[3,0,0,11,0,6],
+"PlanMapItems_8qml.html":[3,0,0,11,0,7],
+"PlanMapItems_8qml_source.html":[3,0,0,11,0,7],
 "PlanMasterController_8cc.html":[3,0,0,20,47],
 "PlanMasterController_8cc_source.html":[3,0,0,20,47],
 "PlanMasterController_8h.html":[3,0,0,20,48],
@@ -184,8 +179,8 @@ var NAVTREEINDEX11 =
 "ProgressState_8cc_source.html":[3,0,0,28,16,1,17],
 "ProgressState_8h.html":[3,0,0,28,16,1,18],
 "ProgressState_8h_source.html":[3,0,0,28,16,1,18],
-"ProximityRadarMapView_8qml.html":[3,0,0,11,0,7],
-"ProximityRadarMapView_8qml_source.html":[3,0,0,11,0,7],
+"ProximityRadarMapView_8qml.html":[3,0,0,11,0,8],
+"ProximityRadarMapView_8qml_source.html":[3,0,0,11,0,8],
 "ProximityRadarValues_8qml.html":[3,0,0,12,50],
 "ProximityRadarValues_8qml_source.html":[3,0,0,12,50],
 "ProximityRadarVideoView_8qml.html":[3,0,0,12,51],
@@ -249,5 +244,10 @@ var NAVTREEINDEX11 =
 "QGCCameraManager_8cc.html#a858662c9cf86b11290ee85809aee001c":[3,0,0,6,6,2],
 "QGCCameraManager_8cc.html#ab32d8e96b403a0150cf3657078088974":[3,0,0,6,6,3],
 "QGCCameraManager_8cc.html#ad6a07f7a3131aa3cb3856c7eaada28c5":[3,0,0,6,6,6],
-"QGCCameraManager_8cc_source.html":[3,0,0,6,6]
+"QGCCameraManager_8cc_source.html":[3,0,0,6,6],
+"QGCCameraManager_8h.html":[3,0,0,6,7],
+"QGCCameraManager_8h_source.html":[3,0,0,6,7],
+"QGCCheckBoxSlider_8qml.html":[3,0,0,23,66],
+"QGCCheckBoxSlider_8qml_source.html":[3,0,0,23,66],
+"QGCCheckBox_8qml.html":[3,0,0,23,65]
 };

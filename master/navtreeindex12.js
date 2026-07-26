@@ -1,10 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"QGCCameraManager_8h.html":[3,0,0,6,7],
-"QGCCameraManager_8h_source.html":[3,0,0,6,7],
-"QGCCheckBoxSlider_8qml.html":[3,0,0,23,66],
-"QGCCheckBoxSlider_8qml_source.html":[3,0,0,23,66],
-"QGCCheckBox_8qml.html":[3,0,0,23,65],
 "QGCCheckBox_8qml_source.html":[3,0,0,23,65],
 "QGCColoredImage_8qml.html":[3,0,0,23,67],
 "QGCColoredImage_8qml_source.html":[3,0,0,23,67],
@@ -249,5 +244,10 @@ var NAVTREEINDEX12 =
 "QGCFileHelper_8h.html#a4fd16fb2a9197ead1b39e88bb2e194bf":[3,0,0,28,5,1,4],
 "QGCFileHelper_8h.html#a54f575c1fd829767fad031964b7c946b":[3,0,0,28,5,1,5],
 "QGCFileHelper_8h.html#a5a4d6dde81040f267edcd06e9ee7ab3d":[3,0,0,28,5,1,0],
-"QGCFileHelper_8h.html#a5f2e6419a9f9d9aa39df6377581882c4":[3,0,0,28,5,1,20]
+"QGCFileHelper_8h.html#a5f2e6419a9f9d9aa39df6377581882c4":[3,0,0,28,5,1,20],
+"QGCFileHelper_8h.html#a60912987dfe0b950b50731faf2afc045":[3,0,0,28,5,1,11],
+"QGCFileHelper_8h.html#a6dae830a847a89ef11cd37401b3f8cd0":[3,0,0,28,5,1,7],
+"QGCFileHelper_8h.html#a720333aa48962c7252ab044fe4e4f109":[3,0,0,28,5,1,27],
+"QGCFileHelper_8h.html#a749e2ba9f0fbccd2101bfc1ebc7a7e9c":[3,0,0,28,5,1,6],
+"QGCFileHelper_8h.html#a7fb1699a7fbd1ab62a1db78caa761e7b":[3,0,0,28,5,1,14]
 };

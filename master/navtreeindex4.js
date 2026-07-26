@@ -1,5 +1,9 @@
 var NAVTREEINDEX4 =
 {
+"ESP8266ComponentController_8cc_source.html":[3,0,0,5,1,3],
+"ESP8266ComponentController_8h.html":[3,0,0,5,1,4],
+"ESP8266ComponentController_8h_source.html":[3,0,0,5,1,4],
+"ESP8266ComponentSummary_8qml.html":[3,0,0,5,1,5],
 "ESP8266ComponentSummary_8qml_source.html":[3,0,0,5,1,5],
 "ESP8266Component_8cc.html":[3,0,0,5,1,0],
 "ESP8266Component_8cc_source.html":[3,0,0,5,1,0],
@@ -140,6 +144,7 @@ var NAVTREEINDEX4 =
 "FactLabel_8qml.html":[3,0,0,8,0,6],
 "FactLabel_8qml_source.html":[3,0,0,8,0,6],
 "FactMetaData_8cc.html":[3,0,0,8,11],
+"FactMetaData_8cc.html#ae1b918f873443c13c4147851dee7a791":[3,0,0,8,11,0],
 "FactMetaData_8cc_source.html":[3,0,0,8,11],
 "FactMetaData_8h.html":[3,0,0,8,12],
 "FactMetaData_8h_source.html":[3,0,0,8,12],
@@ -244,10 +249,5 @@ var NAVTREEINDEX4 =
 "FlightMapSettings_8h.html":[3,0,0,25,13],
 "FlightMapSettings_8h_source.html":[3,0,0,25,13],
 "FlightMap_8qml.html":[3,0,0,11,2],
-"FlightMap_8qml_source.html":[3,0,0,11,2],
-"FlightModeIndicator_8qml.html":[3,0,0,27,4],
-"FlightModeIndicator_8qml_source.html":[3,0,0,27,4],
-"FlightModeMenuIndicator_8qml.html":[3,0,0,27,5],
-"FlightModeMenuIndicator_8qml_source.html":[3,0,0,27,5],
-"FlightModeMenu_8qml.html":[3,0,0,23,22]
+"FlightMap_8qml_source.html":[3,0,0,11,2]
 };

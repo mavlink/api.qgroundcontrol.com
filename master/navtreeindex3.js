@@ -1,5 +1,9 @@
 var NAVTREEINDEX3 =
 {
+"ArmedIndicator_8qml.html":[3,0,0,27,0],
+"ArmedIndicator_8qml_source.html":[3,0,0,27,0],
+"AsyncFunctionState_8cc.html":[3,0,0,28,16,1,0],
+"AsyncFunctionState_8cc_source.html":[3,0,0,28,16,1,0],
 "AsyncFunctionState_8h.html":[3,0,0,28,16,1,1],
 "AsyncFunctionState_8h_source.html":[3,0,0,28,16,1,1],
 "AudioOutput_8cc.html":[3,0,0,28,0,0],
@@ -119,8 +123,8 @@ var NAVTREEINDEX3 =
 "CameraSpec_8cc_source.html":[3,0,0,20,6],
 "CameraSpec_8h.html":[3,0,0,20,7],
 "CameraSpec_8h_source.html":[3,0,0,20,7],
-"CameraTriggerIndicator_8qml.html":[3,0,0,11,0,0],
-"CameraTriggerIndicator_8qml_source.html":[3,0,0,11,0,0],
+"CameraTriggerIndicator_8qml.html":[3,0,0,11,0,1],
+"CameraTriggerIndicator_8qml_source.html":[3,0,0,11,0,1],
 "CenterMapDropButton_8qml.html":[3,0,0,11,1,0],
 "CenterMapDropButton_8qml_source.html":[3,0,0,11,1,0],
 "CenterMapDropPanel_8qml.html":[3,0,0,11,1,1],
@@ -211,8 +215,8 @@ var NAVTREEINDEX3 =
 "CpuVideoFramePool_8h_source.html":[3,0,0,30,0,0,1,2,1],
 "CustomGuidedActionsController_8qml.html":[3,0,0,12,0],
 "CustomGuidedActionsController_8qml_source.html":[3,0,0,12,0],
-"CustomMapItems_8qml.html":[3,0,0,11,0,1],
-"CustomMapItems_8qml_source.html":[3,0,0,11,0,1],
+"CustomMapItems_8qml.html":[3,0,0,11,0,2],
+"CustomMapItems_8qml_source.html":[3,0,0,11,0,2],
 "DataFlashParser_8cc.html":[3,0,0,1,0,0],
 "DataFlashParser_8cc.html#ad09a1d0aee552cd48beccaff2da738f4":[3,0,0,1,0,0,0],
 "DataFlashParser_8cc_source.html":[3,0,0,1,0,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX3 =
 "ESCCalibrationDialog_8qml.html":[3,0,0,5,3,16],
 "ESCCalibrationDialog_8qml_source.html":[3,0,0,5,3,16],
 "ESP8266ComponentController_8cc.html":[3,0,0,5,1,3],
-"ESP8266ComponentController_8cc.html#aecf13b8dc783db2202ca5c34fe117fc3":[3,0,0,5,1,3,0],
-"ESP8266ComponentController_8cc_source.html":[3,0,0,5,1,3],
-"ESP8266ComponentController_8h.html":[3,0,0,5,1,4],
-"ESP8266ComponentController_8h_source.html":[3,0,0,5,1,4],
-"ESP8266ComponentSummary_8qml.html":[3,0,0,5,1,5]
+"ESP8266ComponentController_8cc.html#aecf13b8dc783db2202ca5c34fe117fc3":[3,0,0,5,1,3,0]
 };

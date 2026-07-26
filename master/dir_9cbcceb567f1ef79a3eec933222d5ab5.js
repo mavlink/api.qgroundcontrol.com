@@ -2,6 +2,8 @@ var dir_9cbcceb567f1ef79a3eec933222d5ab5 =
 [
     [ "Providers", "dir_af039e943f56c8ae21a8f462501fba72.html", "dir_af039e943f56c8ae21a8f462501fba72" ],
     [ "Viewer3DQml", "dir_2e05f91a6b167cb643579860f39449a4.html", "dir_2e05f91a6b167cb643579860f39449a4" ],
+    [ "Viewer3DCameraController.cc", "Viewer3DCameraController_8cc.html", null ],
+    [ "Viewer3DCameraController.h", "Viewer3DCameraController_8h.html", "Viewer3DCameraController_8h" ],
     [ "Viewer3DGeoCoordinateType.cc", "Viewer3DGeoCoordinateType_8cc.html", null ],
     [ "Viewer3DGeoCoordinateType.h", "Viewer3DGeoCoordinateType_8h.html", "Viewer3DGeoCoordinateType_8h" ],
     [ "Viewer3DInstancing.cc", "Viewer3DInstancing_8cc.html", null ],

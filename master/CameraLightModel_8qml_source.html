@@ -101,86 +101,74 @@ $(document).ready(function(){initNavTree('CameraLightModel_8qml_source.html','')
 <a href="CameraLightModel_8qml.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span>import QtQuick3D</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span>Node {</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    property real _pan: 0.001</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    property real _tilt: 0.001</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    property real _zoom: 1500</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    property alias cameraOne: cameraPerspectiveOne</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    property alias cameraOneRotation: cameraPerspectiveOne.eulerRotation</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    property alias cameraTwoPosition: cameraPerspectiveTwo.position</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    property real lightsBrightness: 0.5</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    property real viewDistance: 50000</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    function resetCamera() {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        camNode.position = Qt.vector3d(0, 0, 0);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        camNode.eulerRotation = Qt.vector3d(90, 0, 0);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        cameraPerspectiveTwo.position = Qt.vector3d(_zoom * Math.sin(_tilt) * Math.cos(_pan), _zoom * Math.cos(_tilt), _zoom * Math.sin(_tilt) * Math.sin(_pan));</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        cameraPerspectiveTwo.eulerRotation = Qt.vector3d(0, 0, 0);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        cameraPerspectiveOne.position = Qt.vector3d(0, 0, 0);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        cameraPerspectiveOne.eulerRotation = Qt.vector3d(-90, 0, 0);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    DirectionalLight {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        brightness: lightsBrightness</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        eulerRotation.x: 180</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    DirectionalLight {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        brightness: 0.6</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        castsShadow: true</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        csmBlendRatio: 0.1</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        csmNumSplits: 3</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        eulerRotation.x: 0</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        lockShadowmapTexels: true</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        pcfFactor: 2.0</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        shadowBias: 5</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        shadowFactor: 50</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        shadowMapFar: viewDistance</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        shadowMapQuality: Light.ShadowMapQualityHigh</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        softShadowQuality: Light.PCF16</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    DirectionalLight {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        brightness: lightsBrightness</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        eulerRotation.x: 90</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    DirectionalLight {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        brightness: lightsBrightness</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        eulerRotation.x: 270</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    Node {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        id: camNode</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    property alias cameraOne: cameraPerspectiveOne</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    property alias orbitCenter: orbitCenterNode.position</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    property real cameraHeading: 0</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    property real cameraTilt: 0</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    property real cameraZoom: 1500</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    property real lightsBrightness: 0.5</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    property real viewDistance: 50000</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    // Two directional lights maximum: mobile GPUs with small uniform buffers</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    // make Qt Quick 3D reduce the directional light limit to 2 and silently</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    // drop the rest (&quot;Too many directional lights in scene, maximum is 2&quot;).</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    // Shadow-casting key light, shining straight down (scene is z-up)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    DirectionalLight {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        brightness: 0.6</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        castsShadow: true</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        csmBlendRatio: 0.1</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        csmNumSplits: 3</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        eulerRotation.x: 0</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        lockShadowmapTexels: true</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        pcfFactor: 2.0</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        shadowBias: 5</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        shadowFactor: 50</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        shadowMapFar: viewDistance</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        shadowMapQuality: Light.ShadowMapQualityHigh</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        softShadowQuality: Light.PCF16</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    // Slanted up/side fill so vertical faces and undersides aren&#39;t black</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    DirectionalLight {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        brightness: lightsBrightness</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        eulerRotation.x: 225</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        eulerRotation.y: 45</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    // Orbit camera rig: heading rotates around the scene up axis (z),</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    // tilt rotates around the local x axis, camera sits cameraZoom away</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    // looking back at the orbit center.</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    Node {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        id: orbitCenterNode</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        eulerRotation.z: cameraHeading</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        Node {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            id: camNode</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            eulerRotation.x: 90 + cameraTilt</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            Node {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                id: cameraPerspectiveTwo</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                position.y: cameraZoom</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        eulerRotation {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            x: 90</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        Node {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            id: cameraPerspectiveTwo</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                PerspectiveCamera {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                    id: cameraPerspectiveOne</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                    clipFar: viewDistance</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                    clipNear: 25</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                    frustumCullingEnabled: true</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            position {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                x: _zoom * Math.sin(_tilt) * Math.cos(_pan)</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                y: _zoom * Math.cos(_tilt)</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                z: _zoom * Math.sin(_tilt) * Math.sin(_pan)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                    eulerRotation {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                        x: -90</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                }</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            PerspectiveCamera {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                id: cameraPerspectiveOne</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                clipFar: viewDistance</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                clipNear: 25</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                frustumCullingEnabled: true</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                eulerRotation {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    x: -90</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

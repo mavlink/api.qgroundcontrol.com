@@ -1,5 +1,9 @@
 var NAVTREEINDEX23 =
 {
+"classArduRoverFirmwarePlugin.html#aa557387e48f8a56418e1b763505004ff":[2,0,85,9],
+"classArduRoverFirmwarePlugin.html#aaec98459a7fb40f9668604138201866d":[2,0,85,24],
+"classArduRoverFirmwarePlugin.html#abb33047cab84bcd5599fb025bf4b0dae":[2,0,85,19],
+"classArduRoverFirmwarePlugin.html#ac347bbf7ad0fb665abdef55c30a46704":[2,0,85,14],
 "classArduRoverFirmwarePlugin.html#ac49d31c83969a91928dd82fcc30fc72e":[2,0,85,2],
 "classArduRoverFirmwarePlugin.html#ac79bd6f8cce29e5109329f77bb2c392c":[2,0,85,6],
 "classArduRoverFirmwarePlugin.html#ada3556f0a55857a7bf32a75842d3f8d8":[2,0,85,20],
@@ -245,9 +249,5 @@ var NAVTREEINDEX23 =
 "classBluetoothWorker.html#a27d1b742daa20b54a45accb1daae95f5":[2,0,107,7],
 "classBluetoothWorker.html#a2b48dd2bf4d56a38f71cf658a7e4613a":[2,0,107,21],
 "classBluetoothWorker.html#a2c64b553758bd571ae4cc111e7305ea2":[2,0,107,26],
-"classBluetoothWorker.html#a34e20c59d7f29dbd24ec99c37a954662":[2,0,107,5],
-"classBluetoothWorker.html#a38b555cbae523acc8942c2ba209c3762":[2,0,107,10],
-"classBluetoothWorker.html#a3e89681865f99ac6fc855e5529d5f6be":[2,0,107,29],
-"classBluetoothWorker.html#a54c6920e4ae4a11b1d1ccb1a68a12489":[2,0,107,8],
-"classBluetoothWorker.html#a58b49947477ce4f014ab4fd6c25d800d":[2,0,107,30]
+"classBluetoothWorker.html#a34e20c59d7f29dbd24ec99c37a954662":[2,0,107,5]
 };

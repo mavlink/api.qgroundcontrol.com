@@ -1,10 +1,5 @@
 var NAVTREEINDEX18 =
 {
-"ToolStripHoverButton_8qml.html":[3,0,0,23,157],
-"ToolStripHoverButton_8qml_source.html":[3,0,0,23,157],
-"ToolStrip_8qml.html":[3,0,0,23,151],
-"ToolStrip_8qml_source.html":[3,0,0,23,151],
-"TrajectoryPoints_8cc.html":[3,0,0,29,30],
 "TrajectoryPoints_8cc_source.html":[3,0,0,29,30],
 "TrajectoryPoints_8h.html":[3,0,0,29,31],
 "TrajectoryPoints_8h_source.html":[3,0,0,29,31],
@@ -151,8 +146,8 @@ var NAVTREEINDEX18 =
 "VehicleLocalPositionSetpointFactGroup_8cc_source.html":[3,0,0,29,2,30],
 "VehicleLocalPositionSetpointFactGroup_8h.html":[3,0,0,29,2,31],
 "VehicleLocalPositionSetpointFactGroup_8h_source.html":[3,0,0,29,2,31],
-"VehicleMapItem_8qml.html":[3,0,0,11,0,12],
-"VehicleMapItem_8qml_source.html":[3,0,0,11,0,12],
+"VehicleMapItem_8qml.html":[3,0,0,11,0,13],
+"VehicleMapItem_8qml_source.html":[3,0,0,11,0,13],
 "VehicleMessageList_8qml.html":[3,0,0,27,28],
 "VehicleMessageList_8qml_source.html":[3,0,0,27,28],
 "VehicleObjectAvoidance_8cc.html":[3,0,0,29,36],
@@ -208,8 +203,8 @@ var NAVTREEINDEX18 =
 "Vehicle_8h_source.html":[3,0,0,29,33],
 "VerticalCompassAttitude_8qml.html":[3,0,0,11,1,13],
 "VerticalCompassAttitude_8qml_source.html":[3,0,0,11,1,13],
-"VibrationPage_8qml.html":[3,0,0,1,6,0],
-"VibrationPage_8qml_source.html":[3,0,0,1,6,0],
+"VibrationPage_8qml.html":[3,0,0,1,5,0],
+"VibrationPage_8qml_source.html":[3,0,0,1,5,0],
 "VideoBackend_8cc.html":[3,0,0,30,0,4],
 "VideoBackend_8cc_source.html":[3,0,0,30,0,4],
 "VideoBackend_8h.html":[3,0,0,30,0,5],
@@ -249,5 +244,10 @@ var NAVTREEINDEX18 =
 "VideoSettings_8cc.html#acfcb6a04d3467395bec389a4a28b5613":[3,0,0,25,50,11],
 "VideoSettings_8cc.html#ae5e1d66f5f8da11315b1bae71e635467":[3,0,0,25,50,6],
 "VideoSettings_8cc.html#aef1bb7374914c5f425144df29dbca41c":[3,0,0,25,50,8],
-"VideoSettings_8cc_source.html":[3,0,0,25,50]
+"VideoSettings_8cc_source.html":[3,0,0,25,50],
+"VideoSettings_8h.html":[3,0,0,25,51],
+"VideoSettings_8h_source.html":[3,0,0,25,51],
+"Viewer3DCameraController_8cc.html":[3,0,0,31,2],
+"Viewer3DCameraController_8cc_source.html":[3,0,0,31,2],
+"Viewer3DCameraController_8h.html":[3,0,0,31,3]
 };

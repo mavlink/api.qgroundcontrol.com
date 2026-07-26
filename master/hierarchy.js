@@ -83,6 +83,7 @@ var hierarchy =
     [ "KMLSchemaValidator", "classKMLSchemaValidator.html", null ],
     [ "LogEntry", "structLogEntry.html", null ],
     [ "StateMachineLogger::LogEntry", "structStateMachineLogger_1_1LogEntry.html", null ],
+    [ "MockLinkFTP::LogFile", "structMockLinkFTP_1_1LogFile.html", null ],
     [ "LoggingCategoryTreeNode", "structLoggingCategoryTreeNode.html", null ],
     [ "LogParseResult", "structLogParseResult.html", null ],
     [ "LogViewerParamMetaData", "classLogViewerParamMetaData.html", null ],
@@ -484,7 +485,6 @@ var hierarchy =
         [ "NTRIPHttpTransport", "classNTRIPHttpTransport.html", null ]
       ] ],
       [ "OnboardLogController", "classOnboardLogController.html", null ],
-      [ "OnboardLogFtpController", "classOnboardLogFtpController.html", null ],
       [ "OsmParserThread", "classOsmParserThread.html", null ],
       [ "PX4AirframeLoader", "classPX4AirframeLoader.html", null ],
       [ "PX4FirmwareUpgradeThreadController", "classPX4FirmwareUpgradeThreadController.html", null ],
@@ -561,7 +561,6 @@ var hierarchy =
       ] ],
       [ "QGCOffscreenRenderer", "classQGCOffscreenRenderer.html", null ],
       [ "QGCOnboardLogEntry", "classQGCOnboardLogEntry.html", null ],
-      [ "QGCOnboardLogFtpEntry", "classQGCOnboardLogFtpEntry.html", null ],
       [ "QGCOptions", "classQGCOptions.html", null ],
       [ "QGCPalette", "classQGCPalette.html", null ],
       [ "QGCPositionManager", "classQGCPositionManager.html", null ],
@@ -695,6 +694,7 @@ var hierarchy =
           [ "UVCReceiver", "classUVCReceiver.html", null ]
         ] ]
       ] ],
+      [ "Viewer3DCameraController", "classViewer3DCameraController.html", null ],
       [ "Viewer3DGeoCoordinateType", "classViewer3DGeoCoordinateType.html", null ],
       [ "Viewer3DManager", "classViewer3DManager.html", null ],
       [ "Viewer3DMapProvider", "classViewer3DMapProvider.html", [

@@ -14,6 +14,8 @@ var NAVTREEINDEX0 =
 "ADSBVehicleManager_8cc_source.html":[3,0,0,0,5],
 "ADSBVehicleManager_8h.html":[3,0,0,0,6],
 "ADSBVehicleManager_8h_source.html":[3,0,0,0,6],
+"ADSBVehicleMapItem_8qml.html":[3,0,0,11,0,0],
+"ADSBVehicleMapItem_8qml_source.html":[3,0,0,11,0,0],
 "ADSBVehicle_8cc.html":[3,0,0,0,3],
 "ADSBVehicle_8cc_source.html":[3,0,0,0,3],
 "ADSBVehicle_8h.html":[3,0,0,0,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "APMMotorComponent_8qml.html":[3,0,0,5,0,60],
 "APMMotorComponent_8qml_source.html":[3,0,0,5,0,60],
 "APMNotSupported_8qml.html":[3,0,0,5,0,61],
-"APMNotSupported_8qml_source.html":[3,0,0,5,0,61],
-"APMParameterMetaData_8cc.html":[3,0,0,9,0,8],
-"APMParameterMetaData_8cc_source.html":[3,0,0,9,0,8]
+"APMNotSupported_8qml_source.html":[3,0,0,5,0,61]
 };

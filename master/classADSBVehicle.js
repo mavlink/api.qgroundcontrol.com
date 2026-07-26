@@ -20,5 +20,6 @@ var classADSBVehicle =
     [ "velocity", "classADSBVehicle.html#a19f6eafb0f0c306e4a75e4518ec98699", null ],
     [ "velocityChanged", "classADSBVehicle.html#af4b14172a11708b1d61b0398dff11d37", null ],
     [ "verticalVel", "classADSBVehicle.html#ae246a2b030188df08336d55fa821be07", null ],
-    [ "verticalVelChanged", "classADSBVehicle.html#af63e5526cdb59b4b77d5258ad2500b79", null ]
+    [ "verticalVelChanged", "classADSBVehicle.html#af63e5526cdb59b4b77d5258ad2500b79", null ],
+    [ "ADSBTest", "classADSBVehicle.html#ad70d38ae85543c74928e72d7de7dea15", null ]
 ];

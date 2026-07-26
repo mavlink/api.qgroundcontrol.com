@@ -126,8 +126,8 @@ Signals</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7262b44066787e6d9baff04a1717656d" id="r_a7262b44066787e6d9baff04a1717656d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classADSBTCPLink.html#a7262b44066787e6d9baff04a1717656d">ADSBTCPLink</a> (const QHostAddress &amp;hostAddress, quint16 port=30003, QObject *parent=nullptr)</td></tr>
-<tr class="separator:a7262b44066787e6d9baff04a1717656d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d8bbf5e971afd034b17c836fe755908" id="r_a4d8bbf5e971afd034b17c836fe755908"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classADSBTCPLink.html#a4d8bbf5e971afd034b17c836fe755908">ADSBTCPLink</a> (const QString &amp;hostAddress, quint16 port=30003, QObject *parent=nullptr)</td></tr>
+<tr class="separator:a4d8bbf5e971afd034b17c836fe755908"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b09689aa4a3138b1c93ad20e0005fa2" id="r_a5b09689aa4a3138b1c93ad20e0005fa2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classADSBTCPLink.html#a5b09689aa4a3138b1c93ad20e0005fa2">~ADSBTCPLink</a> ()</td></tr>
 <tr class="memdesc:a5b09689aa4a3138b1c93ad20e0005fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the <a class="el" href="classADSBTCPLink.html" title="The ADSBTCPLink class handles the TCP connection to an ADS-B server and processes incoming ADS-B data...">ADSBTCPLink</a> object.  <br /></td></tr>
 <tr class="separator:a5b09689aa4a3138b1c93ad20e0005fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,11 +137,12 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classADSBTCPLink.html" title="The ADSBTCPLink class handles the TCP connection to an ADS-B server and processes incoming ADS-B data...">ADSBTCPLink</a> class handles the TCP connection to an ADS-B server and processes incoming ADS-B data. </p>
+<p>The link is designed to be moved to a worker thread so that socket reads and SBS-1 parsing stay off the ui thread. <a class="el" href="classADSBTCPLink.html#a1b082c8bb1cd1f59af7ee2b7d0ccaab0" title="Attempts connection to a host.">init()</a> must be invoked on the link's thread (e.g. via QThread::started). </p>
 
-<p class="definition">Definition at line <a class="el" href="ADSBTCPLink_8h_source.html#l00014">14</a> of file <a class="el" href="ADSBTCPLink_8h_source.html">ADSBTCPLink.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ADSBTCPLink_8h_source.html#l00018">18</a> of file <a class="el" href="ADSBTCPLink_8h_source.html">ADSBTCPLink.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7262b44066787e6d9baff04a1717656d" name="a7262b44066787e6d9baff04a1717656d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7262b44066787e6d9baff04a1717656d">&#9670;&#160;</a></span>ADSBTCPLink()</h2>
+<a id="a4d8bbf5e971afd034b17c836fe755908" name="a4d8bbf5e971afd034b17c836fe755908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d8bbf5e971afd034b17c836fe755908">&#9670;&#160;</a></span>ADSBTCPLink()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,7 +153,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">ADSBTCPLink::ADSBTCPLink </td>
           <td>(</td>
-          <td class="paramtype">const QHostAddress &amp;&#160;</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>hostAddress</em>, </td>
         </tr>
         <tr>
@@ -181,14 +182,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Constructs an <a class="el" href="classADSBTCPLink.html" title="The ADSBTCPLink class handles the TCP connection to an ADS-B server and processes incoming ADS-B data...">ADSBTCPLink</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">hostAddress</td><td>The address of the host to connect to. </td></tr>
+    <tr><td class="paramname">hostAddress</td><td>The IP address or hostname of the host to connect to. </td></tr>
     <tr><td class="paramname">port</td><td>The port to connect to on the host. </td></tr>
     <tr><td class="paramname">parent</td><td>The parent object. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ADSBTCPLink_8cc_source.html#l00010">10</a> of file <a class="el" href="ADSBTCPLink_8cc_source.html">ADSBTCPLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ADSBTCPLink_8cc_source.html#l00009">9</a> of file <a class="el" href="ADSBTCPLink_8cc_source.html">ADSBTCPLink.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00114">error</a>.</p>
 
@@ -211,7 +212,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Destroys the <a class="el" href="classADSBTCPLink.html" title="The ADSBTCPLink class handles the TCP connection to an ADS-B server and processes incoming ADS-B data...">ADSBTCPLink</a> object. </p>
 
-<p class="definition">Definition at line <a class="el" href="ADSBTCPLink_8cc_source.html#l00052">52</a> of file <a class="el" href="ADSBTCPLink_8cc_source.html">ADSBTCPLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ADSBTCPLink_8cc_source.html#l00047">47</a> of file <a class="el" href="ADSBTCPLink_8cc_source.html">ADSBTCPLink.cc</a>.</p>
 
 </div>
 </div>
@@ -307,7 +308,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Attempts connection to a host. </p>
 
-<p class="definition">Definition at line <a class="el" href="ADSBTCPLink_8cc_source.html#l00057">57</a> of file <a class="el" href="ADSBTCPLink_8cc_source.html">ADSBTCPLink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ADSBTCPLink_8cc_source.html#l00052">52</a> of file <a class="el" href="ADSBTCPLink_8cc_source.html">ADSBTCPLink.cc</a>.</p>
 
 </div>
 </div>

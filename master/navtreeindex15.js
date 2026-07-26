@@ -1,10 +1,5 @@
 var NAVTREEINDEX15 =
 {
-"QGClibarchive_8cc.html#a30b75a4d7a56dc7bc606db07f43bdd0d":[3,0,0,28,1,15,13],
-"QGClibarchive_8cc.html#a3f235172856de8ccbc823ad6daf4c353":[3,0,0,28,1,15,21],
-"QGClibarchive_8cc.html#a3fc66c08e89b31289dcb88e480e76222":[3,0,0,28,1,15,5],
-"QGClibarchive_8cc.html#a4beb0c74c9f715f0ae34e240586c64ac":[3,0,0,28,1,15,15],
-"QGClibarchive_8cc.html#a60a47226e0add3ba3361e12b5eb8d66d":[3,0,0,28,1,15,23],
 "QGClibarchive_8cc.html#a6299729e369a7305306a32891e4a1775":[3,0,0,28,1,15,0],
 "QGClibarchive_8cc.html#a6c9fa0e1546070fd3cc4d8cb1125f595":[3,0,0,28,1,15,22],
 "QGClibarchive_8cc.html#a720d8bfc7324bcdd5ccee4fc66279911":[3,0,0,28,1,15,6],
@@ -249,5 +244,10 @@ var NAVTREEINDEX15 =
 "RunGuard_8h.html":[3,0,0,28,13,6],
 "RunGuard_8h_source.html":[3,0,0,28,13,6],
 "SDLJoystick_8cc.html":[3,0,0,28,14,0],
-"SDLJoystick_8cc.html#a02b6a78b645b850adfcc3ed97b9534ca":[3,0,0,28,14,0,17]
+"SDLJoystick_8cc.html#a02b6a78b645b850adfcc3ed97b9534ca":[3,0,0,28,14,0,17],
+"SDLJoystick_8cc.html#a03ac306142df5f01de60a335f4465826":[3,0,0,28,14,0,40],
+"SDLJoystick_8cc.html#a05d2b83ef1b51944e52c4f1a36ae7f82":[3,0,0,28,14,0,5],
+"SDLJoystick_8cc.html#a0cb76d6a72dfe7cb27e68fd9dc853abf":[3,0,0,28,14,0,3],
+"SDLJoystick_8cc.html#a0ed923be02b3e97ad752de6c9df5f108":[3,0,0,28,14,0,11],
+"SDLJoystick_8cc.html#a194e9a4ef3a50e1083843e7040e76b7a":[3,0,0,28,14,0,21]
 };
