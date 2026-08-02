@@ -14,5 +14,6 @@ var searchData=
   ['status_11',['status',['../classVideoReceiver.html#af67154a257e1617a5b94bbc4b8e6defb',1,'VideoReceiver::STATUS'],['../classGeoTagImageModel.html#a31632896fc8174769cd6928f56d997e7',1,'GeoTagImageModel::Status'],['../structQGCCommandLineParser_1_1CommandLineParseResult.html#ab63d67d2e4a597f82cec02c640841d76',1,'QGCCommandLineParser::CommandLineParseResult::Status']]],
   ['stickfunction_12',['StickFunction',['../classRemoteControlCalibrationController.html#a3219d760dfcb6f78f4447a83ef36405c',1,'RemoteControlCalibrationController']]],
   ['stopbits_13',['stopbits',['../classQSerialPort.html#ad4ec8df2fd7623ca1f2450b0681e5082',1,'QSerialPort::StopBits'],['../namespaceAndroidSerial.html#ad14d38e3ec2393a218ef66898641a5b4',1,'AndroidSerial::StopBits']]],
-  ['storagestatus_14',['StorageStatus',['../classMavlinkCameraControlInterface.html#a826dd4c19d0bb5275e9fcb6ad6d6fc8c',1,'MavlinkCameraControlInterface']]]
+  ['storagestatus_14',['StorageStatus',['../classMavlinkCameraControlInterface.html#a826dd4c19d0bb5275e9fcb6ad6d6fc8c',1,'MavlinkCameraControlInterface']]],
+  ['streamtype_15',['StreamType',['../classMockVideoStreamServer.html#a3d99afbdad1dff72e25d9e9b09ca00f7',1,'MockVideoStreamServer']]]
 ];

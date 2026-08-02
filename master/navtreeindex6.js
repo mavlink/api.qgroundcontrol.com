@@ -1,5 +1,15 @@
 var NAVTREEINDEX6 =
 {
+"GeoFenceController_8h_source.html":[3,0,0,20,17],
+"GeoFenceEditor_8qml.html":[3,0,0,21,7],
+"GeoFenceEditor_8qml_source.html":[3,0,0,21,7],
+"GeoFenceManager_8cc.html":[3,0,0,20,18],
+"GeoFenceManager_8cc_source.html":[3,0,0,20,18],
+"GeoFenceManager_8h.html":[3,0,0,20,19],
+"GeoFenceManager_8h_source.html":[3,0,0,20,19],
+"GeoFenceMapVisuals_8qml.html":[3,0,0,21,8],
+"GeoFenceMapVisuals_8qml_source.html":[3,0,0,21,8],
+"GeoJsonHelper_8cc.html":[3,0,0,28,7,0,0],
 "GeoJsonHelper_8cc.html#a487d612096a806b98b5708eed7c4bd69":[3,0,0,28,7,0,0,0],
 "GeoJsonHelper_8cc.html#a50d7113569308c8ddd7b44c5b334cbf7":[3,0,0,28,7,0,0,3],
 "GeoJsonHelper_8cc.html#adec76da270bf7dd2d110a9eba0993971":[3,0,0,28,7,0,0,2],
@@ -239,15 +249,5 @@ var NAVTREEINDEX6 =
 "GstHwVideoBufferFactory_8cc.html":[3,0,0,30,0,0,1,2,15],
 "GstHwVideoBufferFactory_8cc.html#a74d923ff508ae33cc5c47f131e0d28e3":[3,0,0,30,0,0,1,2,15,0],
 "GstHwVideoBufferFactory_8cc_source.html":[3,0,0,30,0,0,1,2,15],
-"GstHwVideoBufferFactory_8h.html":[3,0,0,30,0,0,1,2,16],
-"GstHwVideoBufferFactory_8h.html#a0edebf87550a882d9a0748c5778e2b6c":[3,0,0,30,0,0,1,2,16,3],
-"GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb":[3,0,0,30,0,0,1,2,16,2],
-"GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba148b36231bc88654c6fef5759826f7fd":[3,0,0,30,0,0,1,2,16,2,5],
-"GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba38625270231b647116c80bcbc4f9d1d8":[3,0,0,30,0,0,1,2,16,2,7],
-"GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754":[3,0,0,30,0,0,1,2,16,2,0],
-"GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba966e13d8aabbff3966a5cd28d67b4846":[3,0,0,30,0,0,1,2,16,2,1],
-"GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbad51c33ce106109ecd1596d83a11632a5":[3,0,0,30,0,0,1,2,16,2,3],
-"GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbafac777d230cd7175697748a8c5260df6":[3,0,0,30,0,0,1,2,16,2,4],
-"GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbafb29ac97549c55d0cf103d865b01b4cc":[3,0,0,30,0,0,1,2,16,2,6],
-"GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbafe5a5431c838ce97b43a39101e22968d":[3,0,0,30,0,0,1,2,16,2,2]
+"GstHwVideoBufferFactory_8h.html":[3,0,0,30,0,0,1,2,16]
 };

@@ -127,7 +127,7 @@ var searchData=
   ['linkinterface_124',['linkinterface',['../classLinkInterface.html',1,'LinkInterface'],['../classLinkInterface.html#a55fe378b8d6087bbab9b97bb8278c922',1,'LinkInterface::LinkInterface()']]],
   ['linkinterface_2ecc_125',['LinkInterface.cc',['../LinkInterface_8cc.html',1,'']]],
   ['linkinterface_2eh_126',['LinkInterface.h',['../LinkInterface_8h.html',1,'']]],
-  ['linkmanager_127',['linkmanager',['../classQGroundControlQmlGlobal.html#a9cc381749970e0081a0268706f54fb9c',1,'QGroundControlQmlGlobal::linkManager()'],['../classLinkManager.html#a70290ed9552d91f13030dcb4b52a6e17',1,'LinkManager::LinkManager()'],['../classLinkInterface.html#a209d207af87c1b7828cee00c53729e72',1,'LinkInterface::LinkManager'],['../classLinkManager.html',1,'LinkManager']]],
+  ['linkmanager_127',['linkmanager',['../classLinkManager.html#a70290ed9552d91f13030dcb4b52a6e17',1,'LinkManager::LinkManager()'],['../classLinkInterface.html#a209d207af87c1b7828cee00c53729e72',1,'LinkInterface::LinkManager'],['../classQGroundControlQmlGlobal.html#a9cc381749970e0081a0268706f54fb9c',1,'QGroundControlQmlGlobal::linkManager()'],['../classLinkManager.html',1,'LinkManager']]],
   ['linkmanager_2ecc_128',['LinkManager.cc',['../LinkManager_8cc.html',1,'']]],
   ['linkmanager_2eh_129',['LinkManager.h',['../LinkManager_8h.html',1,'']]],
   ['linkmanagertest_130',['LinkManagerTest',['../classLinkManager.html#a87260222c92771ce06df4c4f915b1c4c',1,'LinkManager']]],

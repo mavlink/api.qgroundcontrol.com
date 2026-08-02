@@ -164,6 +164,7 @@ var hierarchy =
     [ "MockLinkCamera", "classMockLinkCamera.html", null ],
     [ "MockLinkGimbal", "classMockLinkGimbal.html", null ],
     [ "MockLinkPX4Calibration", "classMockLinkPX4Calibration.html", null ],
+    [ "MockVideoStreamServer", "classMockVideoStreamServer.html", null ],
     [ "StandardModes::Mode", "structStandardModes_1_1Mode.html", null ],
     [ "QtAndroidPrivate::NewIntentListener", null, [
       [ "AndroidEvents", "classAndroidEvents.html", null ]

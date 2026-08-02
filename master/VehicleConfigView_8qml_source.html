@@ -624,71 +624,72 @@ $(document).ready(function(){initNavTree('VehicleConfigView_8qml_source.html',''
 <div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span> </div>
 <div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>                ConfigButton {</div>
 <div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>                    id:                 parametersButton</div>
-<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>                    visible:            QGroundControl.multiVehicleManager.parameterReadyVehicleAvailable &amp;&amp;</div>
-<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>                                        !_activeVehicle.usingHighLatencyLink &amp;&amp;</div>
-<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>                                        _corePlugin.showAdvancedUI &amp;&amp;</div>
-<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>                                        vehicleConfigView._searchQuery.trim() === &quot;&quot;</div>
-<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>                    text:               qsTr(&quot;Parameters&quot;)</div>
-<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>                    Layout.fillWidth:   true</div>
-<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>                    icon.source:        &quot;/qmlimages/subMenuButtonImage.png&quot;</div>
-<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>                    checked:            vehicleConfigView._selectedSpecial === &quot;parameters&quot;</div>
-<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>                    onClicked:          showPanel(&quot;parameters&quot;, &quot;qrc:/qml/QGroundControl/VehicleSetup/SetupParameterEditor.qml&quot;)</div>
-<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>                }</div>
-<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span> </div>
-<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>                ConfigButton {</div>
-<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>                    id:                 firmwareButton</div>
-<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>                    icon.source:        &quot;/qmlimages/FirmwareUpgradeIcon.png&quot;</div>
-<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>                    visible:            !ScreenTools.isMobile &amp;&amp; _corePlugin.options.showFirmwareUpgrade &amp;&amp;</div>
-<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>                                        vehicleConfigView._searchQuery.trim() === &quot;&quot;</div>
-<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>                    text:               qsTr(&quot;Firmware&quot;)</div>
-<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>                    Layout.fillWidth:   true</div>
-<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>                    checked:            vehicleConfigView._selectedSpecial === &quot;firmware&quot;</div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span> </div>
-<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>                    onClicked: showPanel(&quot;firmware&quot;, &quot;qrc:/qml/QGroundControl/VehicleSetup/FirmwareUpgrade.qml&quot;)</div>
-<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>                }</div>
-<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>            }</div>
-<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>        }</div>
-<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>    }</div>
-<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span> </div>
-<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>    Rectangle {</div>
-<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>        id:                     divider</div>
-<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>        anchors.topMargin:      _verticalMargin</div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>        anchors.bottomMargin:   _verticalMargin</div>
-<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>        anchors.leftMargin:     _horizontalMargin</div>
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>        anchors.left:           leftPanel.right</div>
-<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>        anchors.top:            parent.top</div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>        anchors.bottom:         parent.bottom</div>
-<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>        width:                  1</div>
-<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        color:                  qgcPal.windowShade</div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>    }</div>
-<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span> </div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>    Loader {</div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>        id:                     panelLoader</div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>        objectName:             &quot;vehicleConfig_panelLoader&quot;</div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>        anchors.topMargin:      _verticalMargin</div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>        anchors.bottomMargin:   _verticalMargin</div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>        anchors.leftMargin:     _horizontalMargin</div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>        anchors.rightMargin:    _horizontalMargin</div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>        anchors.left:           divider.right</div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>        anchors.right:          parent.right</div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>        anchors.top:            parent.top</div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>        anchors.bottom:         parent.bottom</div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span> </div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>        function setSource(source, vehicleComponent) {</div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>            panelLoader.source = &quot;&quot;</div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>            panelLoader.vehicleComponent = vehicleComponent</div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>            panelLoader.source = source</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>        }</div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span> </div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>        function setSourceComponent(sourceComponent, vehicleComponent) {</div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>            panelLoader.sourceComponent = undefined</div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>            panelLoader.vehicleComponent = vehicleComponent</div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>            panelLoader.sourceComponent = sourceComponent</div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>        }</div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span> </div>
-<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>        property var vehicleComponent</div>
-<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>    }</div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>}</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>                    objectName:         &quot;vehicleConfig_parametersButton&quot;</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>                    visible:            QGroundControl.multiVehicleManager.parameterReadyVehicleAvailable &amp;&amp;</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>                                        !_activeVehicle.usingHighLatencyLink &amp;&amp;</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>                                        _corePlugin.showAdvancedUI &amp;&amp;</div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>                                        vehicleConfigView._searchQuery.trim() === &quot;&quot;</div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>                    text:               qsTr(&quot;Parameters&quot;)</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>                    Layout.fillWidth:   true</div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>                    icon.source:        &quot;/qmlimages/subMenuButtonImage.png&quot;</div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>                    checked:            vehicleConfigView._selectedSpecial === &quot;parameters&quot;</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>                    onClicked:          showPanel(&quot;parameters&quot;, &quot;qrc:/qml/QGroundControl/VehicleSetup/SetupParameterEditor.qml&quot;)</div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>                }</div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span> </div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>                ConfigButton {</div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>                    id:                 firmwareButton</div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>                    icon.source:        &quot;/qmlimages/FirmwareUpgradeIcon.png&quot;</div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>                    visible:            !ScreenTools.isMobile &amp;&amp; _corePlugin.options.showFirmwareUpgrade &amp;&amp;</div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>                                        vehicleConfigView._searchQuery.trim() === &quot;&quot;</div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>                    text:               qsTr(&quot;Firmware&quot;)</div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>                    Layout.fillWidth:   true</div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>                    checked:            vehicleConfigView._selectedSpecial === &quot;firmware&quot;</div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span> </div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>                    onClicked: showPanel(&quot;firmware&quot;, &quot;qrc:/qml/QGroundControl/VehicleSetup/FirmwareUpgrade.qml&quot;)</div>
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>                }</div>
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>            }</div>
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>        }</div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>    }</div>
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span> </div>
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>    Rectangle {</div>
+<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>        id:                     divider</div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>        anchors.topMargin:      _verticalMargin</div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>        anchors.bottomMargin:   _verticalMargin</div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>        anchors.leftMargin:     _horizontalMargin</div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>        anchors.left:           leftPanel.right</div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>        anchors.top:            parent.top</div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>        anchors.bottom:         parent.bottom</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        width:                  1</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>        color:                  qgcPal.windowShade</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>    }</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span> </div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>    Loader {</div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>        id:                     panelLoader</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>        objectName:             &quot;vehicleConfig_panelLoader&quot;</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>        anchors.topMargin:      _verticalMargin</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>        anchors.bottomMargin:   _verticalMargin</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>        anchors.leftMargin:     _horizontalMargin</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>        anchors.rightMargin:    _horizontalMargin</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>        anchors.left:           divider.right</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>        anchors.right:          parent.right</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>        anchors.top:            parent.top</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>        anchors.bottom:         parent.bottom</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>        function setSource(source, vehicleComponent) {</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>            panelLoader.source = &quot;&quot;</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>            panelLoader.vehicleComponent = vehicleComponent</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>            panelLoader.source = source</div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>        }</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span> </div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>        function setSourceComponent(sourceComponent, vehicleComponent) {</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>            panelLoader.sourceComponent = undefined</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>            panelLoader.vehicleComponent = vehicleComponent</div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>            panelLoader.sourceComponent = sourceComponent</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>        }</div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span> </div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>        property var vehicleComponent</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>    }</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

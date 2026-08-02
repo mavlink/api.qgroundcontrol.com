@@ -3,6 +3,7 @@ var AndroidSerial_8cc =
     [ "AndroidSerial::JniMethodCache", "structAndroidSerial_1_1JniMethodCache.html", "structAndroidSerial_1_1JniMethodCache" ],
     [ "AndroidSerial::JniContext", "structAndroidSerial_1_1JniContext.html", "structAndroidSerial_1_1JniContext" ],
     [ "availableDevices", "AndroidSerial_8cc.html#a181e24daf32a5504845d59915eedf9c9", null ],
+    [ "availablePosixPorts", "AndroidSerial_8cc.html#a6cea3f9a24d89557bc63694c173226e8", null ],
     [ "cacheMethodIds", "AndroidSerial_8cc.html#a05f39b838a573a5064f8901506ceb066", null ],
     [ "callBoolMethod", "AndroidSerial_8cc.html#a29a4bcd5ffb8ed9ae432d9c69b5fbfe0", null ],
     [ "callBoolSetMethod", "AndroidSerial_8cc.html#aedb0f595b864a54988ddc4da7b32f5a9", null ],
@@ -21,6 +22,7 @@ var AndroidSerial_8cc =
     [ "getRequestToSend", "AndroidSerial_8cc.html#a2f34a0cf44bb2897199a2cada4a7810b", null ],
     [ "getRingIndicator", "AndroidSerial_8cc.html#a07efa387dcd8c92127f4a926c8bc4a4a", null ],
     [ "getSerialManagerClass", "AndroidSerial_8cc.html#a0fb6b1fb5dfa15101301c7cdfc53e36a", null ],
+    [ "hasPosixSerialPorts", "AndroidSerial_8cc.html#ae2bea9dbc4897fb04385d39b9f27f556", null ],
     [ "isOpen", "AndroidSerial_8cc.html#acc24ae6d84e04349cb77f2c2b4c72dd8", null ],
     [ "jniDeviceException", "AndroidSerial_8cc.html#a4bba9759563fe4145b628c9e7667df2c", null ],
     [ "jniDeviceHasDisconnected", "AndroidSerial_8cc.html#a2decc78cd2ea593cbc2ee34cd9655d0a", null ],
@@ -40,9 +42,11 @@ var AndroidSerial_8cc =
     [ "setNativeMethods", "AndroidSerial_8cc.html#a678ff98f342654561c6955e2f6afaf00", null ],
     [ "setParameters", "AndroidSerial_8cc.html#a80c26ba62177fb086229909defab5fda", null ],
     [ "setRequestToSend", "AndroidSerial_8cc.html#ab8991c0279ad0ab6cd912ef737222541", null ],
+    [ "setUsePosixSerial", "AndroidSerial_8cc.html#ae2770d70a86f643603b2abef137568bd", null ],
     [ "startReadThread", "AndroidSerial_8cc.html#a83ed5f2dd0eb59617d62ba8ddf4ff681", null ],
     [ "stopReadThread", "AndroidSerial_8cc.html#ad74c89d88db30ad64b5546484f9aca98", null ],
     [ "unregisterPointer", "AndroidSerial_8cc.html#a54eadf6cca2ca4f696375d56caee683a", null ],
+    [ "usePosixSerial", "AndroidSerial_8cc.html#a5d3f91cc27b4c62c9acd4e8e59458ed0", null ],
     [ "write", "AndroidSerial_8cc.html#a771b5b8a3d56153c575c6eb95b44a8c4", null ],
     [ "s_cacheLock", "AndroidSerial_8cc.html#a4b5935113ab99d088ed821ab4fe7065f", null ],
     [ "s_methods", "AndroidSerial_8cc.html#a5ac2739e6c3796afc59deb2f7fa29e15", null ],
@@ -50,5 +54,6 @@ var AndroidSerial_8cc =
     [ "s_ptrLock", "AndroidSerial_8cc.html#ac10a477f82119b5378c4b2b028d5191c", null ],
     [ "s_ptrToToken", "AndroidSerial_8cc.html#ad879d151e8a77ff504fa549b95674079", null ],
     [ "s_serialManagerClass", "AndroidSerial_8cc.html#a4dfa1bcf9251eba68a6c1bd04f35ee1f", null ],
-    [ "s_tokenToPtr", "AndroidSerial_8cc.html#aa455c9fb99016d3d794a92a1901428ee", null ]
+    [ "s_tokenToPtr", "AndroidSerial_8cc.html#aa455c9fb99016d3d794a92a1901428ee", null ],
+    [ "s_usePosixSerial", "AndroidSerial_8cc.html#a86f22fa15cbe980db82af5d93e443ba3", null ]
 ];

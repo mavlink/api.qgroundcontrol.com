@@ -15,6 +15,8 @@ var dir_a43dccabaefb15a4c021017d49b7e301 =
     [ "GstSourceFactory.h", "GstSourceFactory_8h.html", "GstSourceFactory_8h" ],
     [ "GstVideoReceiver.cc", "GstVideoReceiver_8cc.html", null ],
     [ "GstVideoReceiver.h", "GstVideoReceiver_8h.html", "GstVideoReceiver_8h" ],
+    [ "MockVideoStreamServer.cc", "MockVideoStreamServer_8cc.html", null ],
+    [ "MockVideoStreamServer.h", "MockVideoStreamServer_8h.html", "MockVideoStreamServer_8h" ],
     [ "QGCQVideoSinkController.cc", "QGCQVideoSinkController_8cc.html", null ],
     [ "QGCQVideoSinkController.h", "QGCQVideoSinkController_8h.html", "QGCQVideoSinkController_8h" ]
 ];

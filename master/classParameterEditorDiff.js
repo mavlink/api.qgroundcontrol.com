@@ -2,6 +2,7 @@ var classParameterEditorDiff =
 [
     [ "ParameterEditorDiff", "classParameterEditorDiff.html#ab23495e7588e5364c7894ede9bf96dcc", null ],
     [ "loadChanged", "classParameterEditorDiff.html#a2ad4525cb70c9edc016f050c317c30f3", null ],
+    [ "cannotSend", "classParameterEditorDiff.html#a21a580009e1024aba3768e90fd31f1ab", null ],
     [ "componentId", "classParameterEditorDiff.html#a58ddd4f594f8061a486b7662605a01cd", null ],
     [ "fileValue", "classParameterEditorDiff.html#a18cae26bf605662dbfcbcafd8a948961", null ],
     [ "fileValueVar", "classParameterEditorDiff.html#af1d48f69c977241bae692fd1d7328bd2", null ],

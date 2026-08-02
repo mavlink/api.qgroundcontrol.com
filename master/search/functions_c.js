@@ -70,7 +70,7 @@ var searchData=
   ['linkedgroupmembers_67',['linkedGroupMembers',['../classJoystickManager.html#af98c6ee01e23a993cb7bc3b92538f15a',1,'JoystickManager']]],
   ['linkedgrouprole_68',['linkedGroupRole',['../classJoystick.html#ae57bef85609a84e96c73c719892a165c',1,'Joystick']]],
   ['linkinterface_69',['LinkInterface',['../classLinkInterface.html#a55fe378b8d6087bbab9b97bb8278c922',1,'LinkInterface']]],
-  ['linkmanager_70',['linkmanager',['../classQGroundControlQmlGlobal.html#a9cc381749970e0081a0268706f54fb9c',1,'QGroundControlQmlGlobal::linkManager()'],['../classLinkManager.html#a70290ed9552d91f13030dcb4b52a6e17',1,'LinkManager::LinkManager()']]],
+  ['linkmanager_70',['linkmanager',['../classLinkManager.html#a70290ed9552d91f13030dcb4b52a6e17',1,'LinkManager::LinkManager()'],['../classQGroundControlQmlGlobal.html#a9cc381749970e0081a0268706f54fb9c',1,'QGroundControlQmlGlobal::linkManager()']]],
   ['linknames_71',['linkNames',['../classVehicleLinkManager.html#a3291a36313e0adadb5e0e6ec3bb489c8',1,'VehicleLinkManager']]],
   ['linknameschanged_72',['linkNamesChanged',['../classVehicleLinkManager.html#adcf0648461b4cc30b0a63d2c4152de4e',1,'VehicleLinkManager']]],
   ['links_73',['links',['../classLinkManager.html#a888948ecda4d4864b6c6e2440ff26f0f',1,'LinkManager']]],

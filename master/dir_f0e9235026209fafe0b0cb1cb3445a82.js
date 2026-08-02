@@ -4,6 +4,7 @@ var dir_f0e9235026209fafe0b0cb1cb3445a82 =
     [ "qserialport.h", "qserialport_8h.html", "qserialport_8h" ],
     [ "qserialport_android.cpp", "qserialport__android_8cpp.html", "qserialport__android_8cpp" ],
     [ "qserialport_p.h", "qserialport__p_8h.html", "qserialport__p_8h" ],
+    [ "qserialport_posix.cpp", "qserialport__posix_8cpp.html", "qserialport__posix_8cpp" ],
     [ "qserialportglobal.h", "qserialportglobal_8h.html", null ],
     [ "qserialportinfo.cpp", "qserialportinfo_8cpp.html", "qserialportinfo_8cpp" ],
     [ "qserialportinfo.h", "qserialportinfo_8h.html", "qserialportinfo_8h" ],

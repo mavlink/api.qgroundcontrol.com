@@ -1,5 +1,15 @@
 var NAVTREEINDEX4 =
 {
+"DronePart_8qml.html":[3,0,0,31,1,0,2],
+"DronePart_8qml_source.html":[3,0,0,31,1,0,2],
+"DropButton_8qml.html":[3,0,0,23,13],
+"DropButton_8qml_source.html":[3,0,0,23,13],
+"DropPanel_8qml.html":[3,0,0,23,14],
+"DropPanel_8qml_source.html":[3,0,0,23,14],
+"ESCCalibrationDialog_8qml.html":[3,0,0,5,3,16],
+"ESCCalibrationDialog_8qml_source.html":[3,0,0,5,3,16],
+"ESP8266ComponentController_8cc.html":[3,0,0,5,1,3],
+"ESP8266ComponentController_8cc.html#aecf13b8dc783db2202ca5c34fe117fc3":[3,0,0,5,1,3,0],
 "ESP8266ComponentController_8cc_source.html":[3,0,0,5,1,3],
 "ESP8266ComponentController_8h.html":[3,0,0,5,1,4],
 "ESP8266ComponentController_8h_source.html":[3,0,0,5,1,4],
@@ -239,15 +249,5 @@ var NAVTREEINDEX4 =
 "FlightDisplayViewQtMultimedia_8qml_source.html":[3,0,0,12,4],
 "FlightDisplayViewUVC_8qml.html":[3,0,0,12,5],
 "FlightDisplayViewUVC_8qml_source.html":[3,0,0,12,5],
-"FlightDisplayViewVideoOutput_8qml.html":[3,0,0,12,7],
-"FlightDisplayViewVideoOutput_8qml_source.html":[3,0,0,12,7],
-"FlightDisplayViewVideo_8qml.html":[3,0,0,12,6],
-"FlightDisplayViewVideo_8qml_source.html":[3,0,0,12,6],
-"FlightMapSettings_8cc.html":[3,0,0,25,12],
-"FlightMapSettings_8cc.html#a5af1f9245d45d9be0ab36c8a3e500727":[3,0,0,25,12,0],
-"FlightMapSettings_8cc_source.html":[3,0,0,25,12],
-"FlightMapSettings_8h.html":[3,0,0,25,13],
-"FlightMapSettings_8h_source.html":[3,0,0,25,13],
-"FlightMap_8qml.html":[3,0,0,11,2],
-"FlightMap_8qml_source.html":[3,0,0,11,2]
+"FlightDisplayViewVideoOutput_8qml.html":[3,0,0,12,7]
 };

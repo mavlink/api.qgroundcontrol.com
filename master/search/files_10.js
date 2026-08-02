@@ -198,13 +198,14 @@ var searchData=
   ['qserialport_2eh_195',['qserialport.h',['../qserialport_8h.html',1,'']]],
   ['qserialport_5fandroid_2ecpp_196',['qserialport_android.cpp',['../qserialport__android_8cpp.html',1,'']]],
   ['qserialport_5fp_2eh_197',['qserialport_p.h',['../qserialport__p_8h.html',1,'']]],
-  ['qserialportglobal_2eh_198',['qserialportglobal.h',['../qserialportglobal_8h.html',1,'']]],
-  ['qserialportinfo_2ecpp_199',['qserialportinfo.cpp',['../qserialportinfo_8cpp.html',1,'']]],
-  ['qserialportinfo_2eh_200',['qserialportinfo.h',['../qserialportinfo_8h.html',1,'']]],
-  ['qserialportinfo_5fandroid_2ecpp_201',['qserialportinfo_android.cpp',['../qserialportinfo__android_8cpp.html',1,'']]],
-  ['qserialportinfo_5fp_2eh_202',['qserialportinfo_p.h',['../qserialportinfo__p_8h.html',1,'']]],
-  ['qtmultimediareceiver_2ecc_203',['QtMultimediaReceiver.cc',['../QtMultimediaReceiver_8cc.html',1,'']]],
-  ['qtmultimediareceiver_2eh_204',['QtMultimediaReceiver.h',['../QtMultimediaReceiver_8h.html',1,'']]],
-  ['qtserialportexports_2eh_205',['qtserialportexports.h',['../qtserialportexports_8h.html',1,'']]],
-  ['qtserialportversion_2eh_206',['qtserialportversion.h',['../qtserialportversion_8h.html',1,'']]]
+  ['qserialport_5fposix_2ecpp_198',['qserialport_posix.cpp',['../qserialport__posix_8cpp.html',1,'']]],
+  ['qserialportglobal_2eh_199',['qserialportglobal.h',['../qserialportglobal_8h.html',1,'']]],
+  ['qserialportinfo_2ecpp_200',['qserialportinfo.cpp',['../qserialportinfo_8cpp.html',1,'']]],
+  ['qserialportinfo_2eh_201',['qserialportinfo.h',['../qserialportinfo_8h.html',1,'']]],
+  ['qserialportinfo_5fandroid_2ecpp_202',['qserialportinfo_android.cpp',['../qserialportinfo__android_8cpp.html',1,'']]],
+  ['qserialportinfo_5fp_2eh_203',['qserialportinfo_p.h',['../qserialportinfo__p_8h.html',1,'']]],
+  ['qtmultimediareceiver_2ecc_204',['QtMultimediaReceiver.cc',['../QtMultimediaReceiver_8cc.html',1,'']]],
+  ['qtmultimediareceiver_2eh_205',['QtMultimediaReceiver.h',['../QtMultimediaReceiver_8h.html',1,'']]],
+  ['qtserialportexports_2eh_206',['qtserialportexports.h',['../qtserialportexports_8h.html',1,'']]],
+  ['qtserialportversion_2eh_207',['qtserialportversion.h',['../qtserialportversion_8h.html',1,'']]]
 ];

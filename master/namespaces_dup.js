@@ -399,6 +399,9 @@ var namespaces_dup =
     [ "QGCRhiCapture", "namespaceQGCRhiCapture.html", "namespaceQGCRhiCapture" ],
     [ "QGCSensors", "namespaceQGCSensors.html", "namespaceQGCSensors" ],
     [ "QGCSqlHelper", "namespaceQGCSqlHelper.html", "namespaceQGCSqlHelper" ],
+    [ "QT_BEGIN_NAMESPACE", "namespaceQT__BEGIN__NAMESPACE.html", [
+      [ "baudRateToSpeed", "namespaceQT__BEGIN__NAMESPACE.html#aacd7ed17991aba4a8a298304417387d9", null ]
+    ] ],
     [ "SDLJoystick", "namespaceSDLJoystick.html", "namespaceSDLJoystick" ],
     [ "SDLPlatform", "namespaceSDLPlatform.html", [
       [ "AndroidStorageState", "namespaceSDLPlatform.html#aec61a1bb4831d2d46a4c9fecb37fe1fd", [

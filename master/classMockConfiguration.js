@@ -19,6 +19,14 @@ var classMockConfiguration =
       [ "OptionAPMStartFreshParams", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fa42c6072b9a5687de3a23f48fd4ecaf95", null ],
       [ "OptionFtpCapability", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102faf99dc1a6b1117af4dd572431b4e5c859", null ]
     ] ],
+    [ "VideoStreamType", "classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afd", [
+      [ "VideoStreamNone", "classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda2cd62834fbd84afc5807e080d9844e3d", null ],
+      [ "VideoStreamRtpUdpH264", "classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda3c8ea939a38d66a9675751a686921e98", null ],
+      [ "VideoStreamRtpUdpH265", "classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda076b8a3e1c370ff27cade9d6a4a17b3d", null ],
+      [ "VideoStreamRtspH264", "classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda4afee63d87a7d0acee7b7027b95f9550", null ],
+      [ "VideoStreamMpegTsUdp", "classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afdadb616bf9f89309a3b7b3ac8416e1bfd8", null ],
+      [ "VideoStreamMpegTsTcp", "classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda71bd45546c4364f80a563090d9a69dc8", null ]
+    ] ],
     [ "MockConfiguration", "classMockConfiguration.html#a7f8607bfad0033a91b9a1bf6ca8d7146", null ],
     [ "MockConfiguration", "classMockConfiguration.html#a27afbb185515b55bd22854f112cd573c", null ],
     [ "~MockConfiguration", "classMockConfiguration.html#a3a2cd1dae4b3b8a9e2135c9eae0c8ed6", null ],
@@ -111,10 +119,15 @@ var classMockConfiguration =
     [ "settingsURL", "classMockConfiguration.html#a40cf69f163b3274d42858347fa28638a", null ],
     [ "setVehicle", "classMockConfiguration.html#af9d354f1370d536b6ed0ff8371e665fd", null ],
     [ "setVehicleType", "classMockConfiguration.html#a3eccdcede7329e912ef31660be3175c9", null ],
+    [ "setVideoStreamType", "classMockConfiguration.html#af4ee17b296538e6becc858c6297d0709", null ],
     [ "startArmed", "classMockConfiguration.html#a0bc5aa52004eaf7897d93cb525d5d665", null ],
     [ "stayMavlinkV1", "classMockConfiguration.html#a58c45629578274d194179eaf6a22f6c7", null ],
     [ "type", "classMockConfiguration.html#ab2dbf53f4045e2d91aa6abada5072c1b", null ],
     [ "vehicle", "classMockConfiguration.html#a3bdc1e185f56d901f9f8287e24ef0774", null ],
     [ "vehicleChanged", "classMockConfiguration.html#a71598a7f4dad1335d731462e58ae02f1", null ],
-    [ "vehicleType", "classMockConfiguration.html#af23e728e8e0a65d27ac124417d06e3b1", null ]
+    [ "vehicleType", "classMockConfiguration.html#af23e728e8e0a65d27ac124417d06e3b1", null ],
+    [ "videoStreamType", "classMockConfiguration.html#a0b10b2c955576ebb7bd7a3d6b18bfeae", null ],
+    [ "videoStreamTypeChanged", "classMockConfiguration.html#a6943e1ee6cfb0d51fd367c98367c9c38", null ],
+    [ "videoStreamTypeEnum", "classMockConfiguration.html#a4c4336ff52b8edf875812c9482209662", null ],
+    [ "videoStreamTypeFromInt", "classMockConfiguration.html#a80943a9f657345a27ade80bc0596482e", null ]
 ];

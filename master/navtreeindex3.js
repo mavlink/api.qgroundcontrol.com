@@ -1,5 +1,14 @@
 var NAVTREEINDEX3 =
 {
+"ArduPlaneFirmwarePlugin_8h_source.html":[3,0,0,9,0,14],
+"ArduRoverFirmwarePlugin_8cc.html":[3,0,0,9,0,15],
+"ArduRoverFirmwarePlugin_8cc_source.html":[3,0,0,9,0,15],
+"ArduRoverFirmwarePlugin_8h.html":[3,0,0,9,0,16],
+"ArduRoverFirmwarePlugin_8h_source.html":[3,0,0,9,0,16],
+"ArduSubFirmwarePlugin_8cc.html":[3,0,0,9,0,17],
+"ArduSubFirmwarePlugin_8cc_source.html":[3,0,0,9,0,17],
+"ArduSubFirmwarePlugin_8h.html":[3,0,0,9,0,18],
+"ArduSubFirmwarePlugin_8h_source.html":[3,0,0,9,0,18],
 "ArmedIndicator_8qml.html":[3,0,0,27,0],
 "ArmedIndicator_8qml_source.html":[3,0,0,27,0],
 "AsyncFunctionState_8cc.html":[3,0,0,28,16,1,0],
@@ -17,6 +26,7 @@ var NAVTREEINDEX3 =
 "AutoConnectSettings_8cc.html#a1b6d590453aa049d184f58fd9fa8f1f0":[3,0,0,25,6,3],
 "AutoConnectSettings_8cc.html#a3d0b062d38ccb5c93f59d41ca9026be2":[3,0,0,25,6,2],
 "AutoConnectSettings_8cc.html#a5faa570702ce425f00c71d6f714dd56e":[3,0,0,25,6,1],
+"AutoConnectSettings_8cc.html#aa46bd69de709752ddb62425053731206":[3,0,0,25,6,7],
 "AutoConnectSettings_8cc.html#aabde61fef07b63fb40150ece61c08e93":[3,0,0,25,6,5],
 "AutoConnectSettings_8cc.html#adfc5a1e6da32161c1c5d74ce8abffd5f":[3,0,0,25,6,4],
 "AutoConnectSettings_8cc.html#afc8c9a29c2a741e64897d405be4ed322":[3,0,0,25,6,6],
@@ -239,15 +249,5 @@ var NAVTREEINDEX3 =
 "DelayState_8h.html":[3,0,0,28,16,1,7],
 "DelayState_8h_source.html":[3,0,0,28,16,1,7],
 "DroneModelDjiF450_8qml.html":[3,0,0,31,1,0,1],
-"DroneModelDjiF450_8qml_source.html":[3,0,0,31,1,0,1],
-"DronePart_8qml.html":[3,0,0,31,1,0,2],
-"DronePart_8qml_source.html":[3,0,0,31,1,0,2],
-"DropButton_8qml.html":[3,0,0,23,13],
-"DropButton_8qml_source.html":[3,0,0,23,13],
-"DropPanel_8qml.html":[3,0,0,23,14],
-"DropPanel_8qml_source.html":[3,0,0,23,14],
-"ESCCalibrationDialog_8qml.html":[3,0,0,5,3,16],
-"ESCCalibrationDialog_8qml_source.html":[3,0,0,5,3,16],
-"ESP8266ComponentController_8cc.html":[3,0,0,5,1,3],
-"ESP8266ComponentController_8cc.html#aecf13b8dc783db2202ca5c34fe117fc3":[3,0,0,5,1,3,0]
+"DroneModelDjiF450_8qml_source.html":[3,0,0,31,1,0,1]
 };

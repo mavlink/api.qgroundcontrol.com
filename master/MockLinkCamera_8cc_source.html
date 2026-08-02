@@ -798,112 +798,177 @@ $(document).ready(function(){initNavTree('MockLinkCamera_8cc_source.html',''); i
 <div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>    QByteArray nameBA = name.toLocal8Bit();</div>
 <div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>    nameBA.resize(MAVLINK_MSG_VIDEO_STREAM_INFORMATION_FIELD_NAME_LEN);</div>
 <div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span> </div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>    <span class="keyword">const</span> QString uri = QStringLiteral(<span class="stringliteral">&quot;udp://127.0.0.1:5600&quot;</span>);</div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>    QByteArray uriBA = uri.toLocal8Bit();</div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>    uriBA.resize(MAVLINK_MSG_VIDEO_STREAM_INFORMATION_FIELD_URI_LEN);</div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span> </div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg{};</div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>    (void) mavlink_msg_video_stream_information_pack_chan(</div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a5406fad487c84732dd3920c1a00ff73d">vehicleId</a>(),</div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>        compId,</div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a6138841ab570cfaf188d82a40dc698be">outgoingMavlinkChannel</a>(),</div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>        &amp;msg,</div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>        streamId,                               <span class="comment">// stream_id</span></div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>        kNumStreams,                            <span class="comment">// count</span></div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>        VIDEO_STREAM_TYPE_RTPUDP,               <span class="comment">// type</span></div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>        VIDEO_STREAM_STATUS_FLAGS_RUNNING,      <span class="comment">// flags</span></div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>        30,                                     <span class="comment">// framerate</span></div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>        1920,                                   <span class="comment">// resolution_h</span></div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>        1080,                                   <span class="comment">// resolution_v</span></div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>        4000,                                   <span class="comment">// bitrate (kbit/s)</span></div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>        0,                                      <span class="comment">// rotation</span></div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>        70,                                     <span class="comment">// hfov</span></div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>        nameBA.constData(),</div>
-<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>        uriBA.constData(),</div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>        VIDEO_STREAM_ENCODING_H264,</div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>        0);                                     <span class="comment">// encoding_sub</span></div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>    _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(msg);</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span> </div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>    qCDebug(MockLinkCameraLog) &lt;&lt; <span class="stringliteral">&quot;Sent VIDEO_STREAM_INFORMATION for compId:&quot;</span> &lt;&lt; compId &lt;&lt; <span class="stringliteral">&quot;stream:&quot;</span> &lt;&lt; streamId;</div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>}</div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span> </div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span><span class="keywordtype">void</span> MockLinkCamera::_sendVideoStreamStatus(uint8_t compId, uint8_t streamId)</div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>{</div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg{};</div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>    (void) mavlink_msg_video_stream_status_pack_chan(</div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a5406fad487c84732dd3920c1a00ff73d">vehicleId</a>(),</div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>        compId,</div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a6138841ab570cfaf188d82a40dc698be">outgoingMavlinkChannel</a>(),</div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>        &amp;msg,</div>
-<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>        streamId,                               <span class="comment">// stream_id</span></div>
-<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>        VIDEO_STREAM_STATUS_FLAGS_RUNNING,      <span class="comment">// flags</span></div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>        30,                                     <span class="comment">// framerate</span></div>
-<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>        1920,                                   <span class="comment">// resolution_h</span></div>
-<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>        1080,                                   <span class="comment">// resolution_v</span></div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>        4000,                                   <span class="comment">// bitrate (kbit/s)</span></div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>        0,                                      <span class="comment">// rotation</span></div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>        70,                                     <span class="comment">// hfov</span></div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>        0);                                     <span class="comment">// encoding (reserved in status)</span></div>
-<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>    _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(msg);</div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span> </div>
-<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>    qCDebug(MockLinkCameraLog) &lt;&lt; <span class="stringliteral">&quot;Sent VIDEO_STREAM_STATUS for compId:&quot;</span> &lt;&lt; compId &lt;&lt; <span class="stringliteral">&quot;stream:&quot;</span> &lt;&lt; streamId;</div>
-<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>}</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>    <span class="comment">// Match the transport/codec/URI to whatever MockLink is actually serving so QGC&#39;s</span></div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>    <span class="comment">// receiver auto-configures correctly. Falls back to a static UDP H.264 advertisement</span></div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>    <span class="comment">// when no live stream is being served (e.g. GStreamer streaming disabled at build).</span></div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>    uint8_t streamType = VIDEO_STREAM_TYPE_RTPUDP;</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>    uint8_t encoding = VIDEO_STREAM_ENCODING_H264;</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>    QString uri = QStringLiteral(<span class="stringliteral">&quot;udp://127.0.0.1:5600&quot;</span>);</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>    uint16_t flags = VIDEO_STREAM_STATUS_FLAGS_RUNNING;</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span> </div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    <a class="code hl_enumeration" href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afd">MockConfiguration::VideoStreamType</a> servedType = <a class="code hl_enumvalue" href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda2cd62834fbd84afc5807e080d9844e3d">MockConfiguration::VideoStreamNone</a>;</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>    QString servedUri;</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>    _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a0591a9d228f939122f62e19bef1134f3">servedVideoStream</a>(servedType, servedUri);</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>    <span class="keywordflow">switch</span> (servedType) {</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda3c8ea939a38d66a9675751a686921e98">MockConfiguration::VideoStreamRtpUdpH264</a>:</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>        streamType = VIDEO_STREAM_TYPE_RTPUDP;</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>        encoding = VIDEO_STREAM_ENCODING_H264;</div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>        uri = servedUri;</div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda076b8a3e1c370ff27cade9d6a4a17b3d">MockConfiguration::VideoStreamRtpUdpH265</a>:</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>        streamType = VIDEO_STREAM_TYPE_RTPUDP;</div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>        encoding = VIDEO_STREAM_ENCODING_H265;</div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>        uri = servedUri;</div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda4afee63d87a7d0acee7b7027b95f9550">MockConfiguration::VideoStreamRtspH264</a>:</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>        streamType = VIDEO_STREAM_TYPE_RTSP;</div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>        encoding = VIDEO_STREAM_ENCODING_H264;</div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>        uri = servedUri;</div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afdadb616bf9f89309a3b7b3ac8416e1bfd8">MockConfiguration::VideoStreamMpegTsUdp</a>:</div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>        streamType = VIDEO_STREAM_TYPE_MPEG_TS;</div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>        encoding = VIDEO_STREAM_ENCODING_H264;</div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>        uri = servedUri;</div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda71bd45546c4364f80a563090d9a69dc8">MockConfiguration::VideoStreamMpegTsTcp</a>:</div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>        streamType = VIDEO_STREAM_TYPE_TCP_MPEG;</div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>        encoding = VIDEO_STREAM_ENCODING_H264;</div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>        uri = servedUri;</div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda2cd62834fbd84afc5807e080d9844e3d">MockConfiguration::VideoStreamNone</a>:</div>
+<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span><span class="preprocessor">#ifdef QGC_GST_STREAMING</span></div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>        <span class="comment">// A specific stream type was requested but no live server is running (start failed).</span></div>
+<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>        <span class="comment">// Advertise it as not-running with an empty URI so QGC doesn&#39;t try to open a receiver</span></div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>        <span class="comment">// on a dead stream (video auto-configuration keys off the URI, not the RUNNING flag).</span></div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>        <span class="comment">// When nothing was requested (the default), keep the historical static UDP advertisement.</span></div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>        <span class="keywordflow">if</span> (_mockLink-&gt;<a class="code hl_function" href="classMockLink.html#ac785536b1270364bbd3fb0e2c360d00c">requestedVideoStreamType</a>() != <a class="code hl_enumvalue" href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda2cd62834fbd84afc5807e080d9844e3d">MockConfiguration::VideoStreamNone</a>) {</div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>            flags = 0;</div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>            uri.clear();</div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>        }</div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>    }</div>
 <div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span> </div>
-<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span><span class="keywordtype">void</span> MockLinkCamera::_sendCameraTrackingImageStatus(uint8_t compId)</div>
-<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>{</div>
-<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>    <span class="keyword">const</span> CameraState *cam = _findCamera(compId);</div>
-<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>    <span class="keywordflow">if</span> (!cam || cam-&gt;trackingMode == CAMERA_TRACKING_MODE_NONE) {</div>
-<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>    }</div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span> </div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg{};</div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>    (void) mavlink_msg_camera_tracking_image_status_pack_chan(</div>
-<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a5406fad487c84732dd3920c1a00ff73d">vehicleId</a>(),</div>
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>        compId,</div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a6138841ab570cfaf188d82a40dc698be">outgoingMavlinkChannel</a>(),</div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>        &amp;msg,</div>
-<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>        CAMERA_TRACKING_STATUS_FLAGS_ACTIVE,    <span class="comment">// tracking_status</span></div>
-<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>        cam-&gt;trackingMode,                      <span class="comment">// tracking_mode</span></div>
-<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>        CAMERA_TRACKING_TARGET_DATA_EMBEDDED,   <span class="comment">// target_data</span></div>
-<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>        cam-&gt;trackPointX,                       <span class="comment">// point_x</span></div>
-<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>        cam-&gt;trackPointY,                       <span class="comment">// point_y</span></div>
-<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>        cam-&gt;trackRadius,                       <span class="comment">// radius</span></div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>        cam-&gt;trackRecTopX,                      <span class="comment">// rec_top_x</span></div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>        cam-&gt;trackRecTopY,                      <span class="comment">// rec_top_y</span></div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>        cam-&gt;trackRecBottomX,                   <span class="comment">// rec_bottom_x</span></div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>        cam-&gt;trackRecBottomY,                   <span class="comment">// rec_bottom_y</span></div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>        0);                                     <span class="comment">// camera_device_id</span></div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>    _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(msg);</div>
-<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>}</div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span> </div>
-<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span><span class="keywordtype">void</span> MockLinkCamera::_sendCommandAck(uint8_t compId, uint16_t command, uint8_t result, <span class="keywordtype">int</span> requestedMsgId)</div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>{</div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg{};</div>
-<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>    (void) mavlink_msg_command_ack_pack_chan(</div>
-<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a5406fad487c84732dd3920c1a00ff73d">vehicleId</a>(),</div>
-<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>        compId,</div>
-<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a6138841ab570cfaf188d82a40dc698be">outgoingMavlinkChannel</a>(),</div>
-<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>        &amp;msg,</div>
-<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>        command,</div>
-<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>        result,</div>
-<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>        0,   <span class="comment">// progress</span></div>
-<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>        0,   <span class="comment">// result_param2</span></div>
-<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>        0,   <span class="comment">// target_system</span></div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>        0);  <span class="comment">// target_component</span></div>
-<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>    _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(msg);</div>
-<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span> </div>
-<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>    QString commandName = <a class="code hl_function" href="classMissionCommandTree.html#a6adf2ec556ea4751320405693dc78099">MissionCommandTree::instance</a>()-&gt;<a class="code hl_function" href="classMissionCommandTree.html#a71d6622cf9abf946b8d853194c969bc6">rawName</a>(<span class="keyword">static_cast&lt;</span>MAV_CMD<span class="keyword">&gt;</span>(command));</div>
-<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>    QString logMsg = QStringLiteral(<span class="stringliteral">&quot;Sent COMMAND_ACK for compId: %1 command: %2 result: %3&quot;</span>)</div>
-<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>                        .arg(compId).arg(commandName).arg(result);</div>
-<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span> </div>
-<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>    <span class="keywordflow">if</span> (command == MAV_CMD_REQUEST_MESSAGE &amp;&amp; requestedMsgId &gt;= 0) {</div>
-<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>        <span class="keyword">const</span> mavlink_message_info_t* info = mavlink_get_message_info_by_id(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(requestedMsgId));</div>
-<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>        QString msgName = info ? info-&gt;name : QString::number(requestedMsgId);</div>
-<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>        logMsg += QStringLiteral(<span class="stringliteral">&quot; requestedMsg: %1&quot;</span>).arg(msgName);</div>
-<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>    }</div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span> </div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>    qCDebug(MockLinkCameraLog) &lt;&lt; logMsg;</div>
-<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>}</div>
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>    QByteArray uriBA = uri.toLocal8Bit();</div>
+<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>    uriBA.resize(MAVLINK_MSG_VIDEO_STREAM_INFORMATION_FIELD_URI_LEN);</div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span> </div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg{};</div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>    (void) mavlink_msg_video_stream_information_pack_chan(</div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a5406fad487c84732dd3920c1a00ff73d">vehicleId</a>(),</div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>        compId,</div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a6138841ab570cfaf188d82a40dc698be">outgoingMavlinkChannel</a>(),</div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>        &amp;msg,</div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>        streamId,                               <span class="comment">// stream_id</span></div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>        kNumStreams,                            <span class="comment">// count</span></div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>        streamType,                             <span class="comment">// type</span></div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>        flags,                                  <span class="comment">// flags</span></div>
+<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>        30,                                     <span class="comment">// framerate</span></div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>        1280,                                   <span class="comment">// resolution_h (matches MockVideoStreamServer test source)</span></div>
+<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>        720,                                    <span class="comment">// resolution_v</span></div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>        2000,                                   <span class="comment">// bitrate (kbit/s, matches encoder settings)</span></div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>        0,                                      <span class="comment">// rotation</span></div>
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>        70,                                     <span class="comment">// hfov</span></div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>        nameBA.constData(),</div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>        uriBA.constData(),</div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>        encoding,</div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>        0);                                     <span class="comment">// encoding_sub</span></div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>    _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(msg);</div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span> </div>
+<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>    qCDebug(MockLinkCameraLog) &lt;&lt; <span class="stringliteral">&quot;Sent VIDEO_STREAM_INFORMATION for compId:&quot;</span> &lt;&lt; compId &lt;&lt; <span class="stringliteral">&quot;stream:&quot;</span> &lt;&lt; streamId</div>
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>                               &lt;&lt; <span class="stringliteral">&quot;type:&quot;</span> &lt;&lt; streamType &lt;&lt; <span class="stringliteral">&quot;uri:&quot;</span> &lt;&lt; uri;</div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>}</div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span> </div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span><span class="keywordtype">void</span> MockLinkCamera::_sendVideoStreamStatus(uint8_t compId, uint8_t streamId)</div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>{</div>
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>    <span class="comment">// Mirror the served/requested logic in _sendVideoStreamInformation: when a specific</span></div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>    <span class="comment">// stream type was requested but no live server is running, report not-running so</span></div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>    <span class="comment">// STATUS doesn&#39;t overwrite the non-running state advertised in INFORMATION.</span></div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>    uint16_t flags = VIDEO_STREAM_STATUS_FLAGS_RUNNING;</div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span><span class="preprocessor">#ifdef QGC_GST_STREAMING</span></div>
+<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>    <a class="code hl_enumeration" href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afd">MockConfiguration::VideoStreamType</a> servedType = <a class="code hl_enumvalue" href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda2cd62834fbd84afc5807e080d9844e3d">MockConfiguration::VideoStreamNone</a>;</div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>    QString servedUri;</div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>    _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a0591a9d228f939122f62e19bef1134f3">servedVideoStream</a>(servedType, servedUri);</div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>    <span class="keywordflow">if</span> (servedType == <a class="code hl_enumvalue" href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda2cd62834fbd84afc5807e080d9844e3d">MockConfiguration::VideoStreamNone</a></div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>            &amp;&amp; _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#ac785536b1270364bbd3fb0e2c360d00c">requestedVideoStreamType</a>() != <a class="code hl_enumvalue" href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda2cd62834fbd84afc5807e080d9844e3d">MockConfiguration::VideoStreamNone</a>) {</div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>        flags = 0;</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>    }</div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span> </div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg{};</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>    (void) mavlink_msg_video_stream_status_pack_chan(</div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a5406fad487c84732dd3920c1a00ff73d">vehicleId</a>(),</div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>        compId,</div>
+<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a6138841ab570cfaf188d82a40dc698be">outgoingMavlinkChannel</a>(),</div>
+<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>        &amp;msg,</div>
+<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>        streamId,                               <span class="comment">// stream_id</span></div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>        flags,                                  <span class="comment">// flags</span></div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>        30,                                     <span class="comment">// framerate</span></div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>        1280,                                   <span class="comment">// resolution_h (matches MockVideoStreamServer test source)</span></div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>        720,                                    <span class="comment">// resolution_v</span></div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>        2000,                                   <span class="comment">// bitrate (kbit/s, matches encoder settings)</span></div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>        0,                                      <span class="comment">// rotation</span></div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>        70,                                     <span class="comment">// hfov</span></div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>        0);                                     <span class="comment">// encoding (reserved in status)</span></div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>    _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(msg);</div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span> </div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>    qCDebug(MockLinkCameraLog) &lt;&lt; <span class="stringliteral">&quot;Sent VIDEO_STREAM_STATUS for compId:&quot;</span> &lt;&lt; compId &lt;&lt; <span class="stringliteral">&quot;stream:&quot;</span> &lt;&lt; streamId;</div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>}</div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span> </div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span><span class="keywordtype">void</span> MockLinkCamera::_sendCameraTrackingImageStatus(uint8_t compId)</div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>{</div>
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>    <span class="keyword">const</span> CameraState *cam = _findCamera(compId);</div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>    <span class="keywordflow">if</span> (!cam || cam-&gt;trackingMode == CAMERA_TRACKING_MODE_NONE) {</div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>    }</div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span> </div>
+<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg{};</div>
+<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>    (void) mavlink_msg_camera_tracking_image_status_pack_chan(</div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a5406fad487c84732dd3920c1a00ff73d">vehicleId</a>(),</div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>        compId,</div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a6138841ab570cfaf188d82a40dc698be">outgoingMavlinkChannel</a>(),</div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>        &amp;msg,</div>
+<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>        CAMERA_TRACKING_STATUS_FLAGS_ACTIVE,    <span class="comment">// tracking_status</span></div>
+<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>        cam-&gt;trackingMode,                      <span class="comment">// tracking_mode</span></div>
+<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>        CAMERA_TRACKING_TARGET_DATA_EMBEDDED,   <span class="comment">// target_data</span></div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>        cam-&gt;trackPointX,                       <span class="comment">// point_x</span></div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>        cam-&gt;trackPointY,                       <span class="comment">// point_y</span></div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>        cam-&gt;trackRadius,                       <span class="comment">// radius</span></div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>        cam-&gt;trackRecTopX,                      <span class="comment">// rec_top_x</span></div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>        cam-&gt;trackRecTopY,                      <span class="comment">// rec_top_y</span></div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>        cam-&gt;trackRecBottomX,                   <span class="comment">// rec_bottom_x</span></div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>        cam-&gt;trackRecBottomY,                   <span class="comment">// rec_bottom_y</span></div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>        0);                                     <span class="comment">// camera_device_id</span></div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>    _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(msg);</div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>}</div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span> </div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span><span class="keywordtype">void</span> MockLinkCamera::_sendCommandAck(uint8_t compId, uint16_t command, uint8_t result, <span class="keywordtype">int</span> requestedMsgId)</div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>{</div>
+<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> msg{};</div>
+<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>    (void) mavlink_msg_command_ack_pack_chan(</div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a5406fad487c84732dd3920c1a00ff73d">vehicleId</a>(),</div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>        compId,</div>
+<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a6138841ab570cfaf188d82a40dc698be">outgoingMavlinkChannel</a>(),</div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>        &amp;msg,</div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>        command,</div>
+<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>        result,</div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>        0,   <span class="comment">// progress</span></div>
+<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>        0,   <span class="comment">// result_param2</span></div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>        0,   <span class="comment">// target_system</span></div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>        0);  <span class="comment">// target_component</span></div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>    _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">respondWithMavlinkMessage</a>(msg);</div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span> </div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>    QString commandName = <a class="code hl_function" href="classMissionCommandTree.html#a6adf2ec556ea4751320405693dc78099">MissionCommandTree::instance</a>()-&gt;<a class="code hl_function" href="classMissionCommandTree.html#a71d6622cf9abf946b8d853194c969bc6">rawName</a>(<span class="keyword">static_cast&lt;</span>MAV_CMD<span class="keyword">&gt;</span>(command));</div>
+<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>    QString logMsg = QStringLiteral(<span class="stringliteral">&quot;Sent COMMAND_ACK for compId: %1 command: %2 result: %3&quot;</span>)</div>
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>                        .arg(compId).arg(commandName).arg(result);</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span> </div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>    <span class="keywordflow">if</span> (command == MAV_CMD_REQUEST_MESSAGE &amp;&amp; requestedMsgId &gt;= 0) {</div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>        <span class="keyword">const</span> mavlink_message_info_t* info = mavlink_get_message_info_by_id(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(requestedMsgId));</div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>        QString msgName = info ? info-&gt;name : QString::number(requestedMsgId);</div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>        logMsg += QStringLiteral(<span class="stringliteral">&quot; requestedMsg: %1&quot;</span>).arg(msgName);</div>
+<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>    }</div>
+<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span> </div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>    qCDebug(MockLinkCameraLog) &lt;&lt; logMsg;</div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>}</div>
 <div class="ttc" id="aMAVLinkLib_8h_html"><div class="ttname"><a href="MAVLinkLib_8h.html">MAVLinkLib.h</a></div></div>
 <div class="ttc" id="aMissionCommandTree_8h_html"><div class="ttname"><a href="MissionCommandTree_8h.html">MissionCommandTree.h</a></div></div>
 <div class="ttc" id="aMockLinkCamera_8h_html"><div class="ttname"><a href="MockLinkCamera_8h.html">MockLinkCamera.h</a></div></div>
@@ -914,6 +979,13 @@ $(document).ready(function(){initNavTree('MockLinkCamera_8cc_source.html',''); i
 <div class="ttc" id="aQGCMAVLinkTypes_8h_html_a90e42f5abeeee26a207594d175983e46"><div class="ttname"><a href="QGCMAVLinkTypes_8h.html#a90e42f5abeeee26a207594d175983e46">mavlink_command_long_t</a></div><div class="ttdeci">struct __mavlink_command_long_t mavlink_command_long_t</div><div class="ttdef"><b>Definition</b> <a href="QGCMAVLinkTypes_8h_source.html#l00024">QGCMAVLinkTypes.h:24</a></div></div>
 <div class="ttc" id="aclassMissionCommandTree_html_a6adf2ec556ea4751320405693dc78099"><div class="ttname"><a href="classMissionCommandTree.html#a6adf2ec556ea4751320405693dc78099">MissionCommandTree::instance</a></div><div class="ttdeci">static MissionCommandTree * instance()</div><div class="ttdef"><b>Definition</b> <a href="MissionCommandTree_8cc_source.html#l00057">MissionCommandTree.cc:57</a></div></div>
 <div class="ttc" id="aclassMissionCommandTree_html_a71d6622cf9abf946b8d853194c969bc6"><div class="ttname"><a href="classMissionCommandTree.html#a71d6622cf9abf946b8d853194c969bc6">MissionCommandTree::rawName</a></div><div class="ttdeci">QString rawName(MAV_CMD command) const</div><div class="ttdoc">Returns the raw name for the specified command.</div><div class="ttdef"><b>Definition</b> <a href="MissionCommandTree_8cc_source.html#l00145">MissionCommandTree.cc:145</a></div></div>
+<div class="ttc" id="aclassMockConfiguration_html_a2a9b9cc697eaccbb5f387ecb848d3afd"><div class="ttname"><a href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afd">MockConfiguration::VideoStreamType</a></div><div class="ttdeci">VideoStreamType</div><div class="ttdef"><b>Definition</b> <a href="MockConfiguration_8h_source.html#l00058">MockConfiguration.h:58</a></div></div>
+<div class="ttc" id="aclassMockConfiguration_html_a2a9b9cc697eaccbb5f387ecb848d3afda076b8a3e1c370ff27cade9d6a4a17b3d"><div class="ttname"><a href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda076b8a3e1c370ff27cade9d6a4a17b3d">MockConfiguration::VideoStreamRtpUdpH265</a></div><div class="ttdeci">@ VideoStreamRtpUdpH265</div><div class="ttdoc">RTP/UDP H.265 -&gt; udp265://.</div><div class="ttdef"><b>Definition</b> <a href="MockConfiguration_8h_source.html#l00061">MockConfiguration.h:61</a></div></div>
+<div class="ttc" id="aclassMockConfiguration_html_a2a9b9cc697eaccbb5f387ecb848d3afda2cd62834fbd84afc5807e080d9844e3d"><div class="ttname"><a href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda2cd62834fbd84afc5807e080d9844e3d">MockConfiguration::VideoStreamNone</a></div><div class="ttdeci">@ VideoStreamNone</div><div class="ttdoc">No stream served.</div><div class="ttdef"><b>Definition</b> <a href="MockConfiguration_8h_source.html#l00059">MockConfiguration.h:59</a></div></div>
+<div class="ttc" id="aclassMockConfiguration_html_a2a9b9cc697eaccbb5f387ecb848d3afda3c8ea939a38d66a9675751a686921e98"><div class="ttname"><a href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda3c8ea939a38d66a9675751a686921e98">MockConfiguration::VideoStreamRtpUdpH264</a></div><div class="ttdeci">@ VideoStreamRtpUdpH264</div><div class="ttdoc">RTP/UDP H.264 -&gt; udp://.</div><div class="ttdef"><b>Definition</b> <a href="MockConfiguration_8h_source.html#l00060">MockConfiguration.h:60</a></div></div>
+<div class="ttc" id="aclassMockConfiguration_html_a2a9b9cc697eaccbb5f387ecb848d3afda4afee63d87a7d0acee7b7027b95f9550"><div class="ttname"><a href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda4afee63d87a7d0acee7b7027b95f9550">MockConfiguration::VideoStreamRtspH264</a></div><div class="ttdeci">@ VideoStreamRtspH264</div><div class="ttdoc">RTSP H.264 -&gt; rtsp://.</div><div class="ttdef"><b>Definition</b> <a href="MockConfiguration_8h_source.html#l00062">MockConfiguration.h:62</a></div></div>
+<div class="ttc" id="aclassMockConfiguration_html_a2a9b9cc697eaccbb5f387ecb848d3afda71bd45546c4364f80a563090d9a69dc8"><div class="ttname"><a href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda71bd45546c4364f80a563090d9a69dc8">MockConfiguration::VideoStreamMpegTsTcp</a></div><div class="ttdeci">@ VideoStreamMpegTsTcp</div><div class="ttdoc">MPEG-TS over TCP -&gt; tcp://.</div><div class="ttdef"><b>Definition</b> <a href="MockConfiguration_8h_source.html#l00064">MockConfiguration.h:64</a></div></div>
+<div class="ttc" id="aclassMockConfiguration_html_a2a9b9cc697eaccbb5f387ecb848d3afdadb616bf9f89309a3b7b3ac8416e1bfd8"><div class="ttname"><a href="classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afdadb616bf9f89309a3b7b3ac8416e1bfd8">MockConfiguration::VideoStreamMpegTsUdp</a></div><div class="ttdeci">@ VideoStreamMpegTsUdp</div><div class="ttdoc">MPEG-TS over UDP -&gt; mpegts://.</div><div class="ttdef"><b>Definition</b> <a href="MockConfiguration_8h_source.html#l00063">MockConfiguration.h:63</a></div></div>
 <div class="ttc" id="aclassMockLinkCamera_html"><div class="ttname"><a href="classMockLinkCamera.html">MockLinkCamera</a></div><div class="ttdoc">Simulates MAVLink Camera Protocol v2 components for MockLink.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkCamera_8h_source.html#l00035">MockLinkCamera.h:36</a></div></div>
 <div class="ttc" id="aclassMockLinkCamera_html_a018230395cb7a98b582c8f7cddab0028"><div class="ttname"><a href="classMockLinkCamera.html#a018230395cb7a98b582c8f7cddab0028">MockLinkCamera::sendCameraHeartbeats</a></div><div class="ttdeci">void sendCameraHeartbeats()</div><div class="ttdoc">Send heartbeats for all simulated camera components (call from 1Hz tasks)</div><div class="ttdef"><b>Definition</b> <a href="MockLinkCamera_8cc_source.html#l00074">MockLinkCamera.cc:74</a></div></div>
 <div class="ttc" id="aclassMockLinkCamera_html_a3f9b29503a55db5d181e65a51319efbf"><div class="ttname"><a href="classMockLinkCamera.html#a3f9b29503a55db5d181e65a51319efbf">MockLinkCamera::handleMavlinkMessage</a></div><div class="ttdeci">bool handleMavlinkMessage(const mavlink_message_t &amp;msg)</div><div class="ttdef"><b>Definition</b> <a href="MockLinkCamera_8cc_source.html#l00143">MockLinkCamera.cc:143</a></div></div>
@@ -922,13 +994,15 @@ $(document).ready(function(){initNavTree('MockLinkCamera_8cc_source.html',''); i
 <div class="ttc" id="aclassMockLinkCamera_html_abf86927cc7834c058804a938abd9c9a4a23b4ef1a650505a2324fd99aa86a78f6"><div class="ttname"><a href="classMockLinkCamera.html#abf86927cc7834c058804a938abd9c9a4a23b4ef1a650505a2324fd99aa86a78f6">MockLinkCamera::ImageCaptureInterval</a></div><div class="ttdeci">@ ImageCaptureInterval</div><div class="ttdoc">Interval capture enabled.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkCamera_8h_source.html#l00042">MockLinkCamera.h:42</a></div></div>
 <div class="ttc" id="aclassMockLinkCamera_html_abf86927cc7834c058804a938abd9c9a4a9b476b577bc851c21c4570378879697f"><div class="ttname"><a href="classMockLinkCamera.html#abf86927cc7834c058804a938abd9c9a4a9b476b577bc851c21c4570378879697f">MockLinkCamera::ImageCaptureIntervalCapture</a></div><div class="ttdeci">@ ImageCaptureIntervalCapture</div><div class="ttdoc">Interval capture with capture in progress.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkCamera_8h_source.html#l00043">MockLinkCamera.h:43</a></div></div>
 <div class="ttc" id="aclassMockLinkCamera_html_abf86927cc7834c058804a938abd9c9a4aefd41a687b6af8bded4774754e9bce31"><div class="ttname"><a href="classMockLinkCamera.html#abf86927cc7834c058804a938abd9c9a4aefd41a687b6af8bded4774754e9bce31">MockLinkCamera::ImageCaptureIdle</a></div><div class="ttdeci">@ ImageCaptureIdle</div><div class="ttdoc">No capture in progress.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkCamera_8h_source.html#l00040">MockLinkCamera.h:40</a></div></div>
-<div class="ttc" id="aclassMockLink_html"><div class="ttname"><a href="classMockLink.html">MockLink</a></div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00027">MockLink.h:28</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a0f861bd8b30a816fb92faf7653fe7c89"><div class="ttname"><a href="classMockLink.html#a0f861bd8b30a816fb92faf7653fe7c89">MockLink::vehicleAltitudeAMSL</a></div><div class="ttdeci">double vehicleAltitudeAMSL() const</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00054">MockLink.h:54</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a5406fad487c84732dd3920c1a00ff73d"><div class="ttname"><a href="classMockLink.html#a5406fad487c84732dd3920c1a00ff73d">MockLink::vehicleId</a></div><div class="ttdeci">int vehicleId() const</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00049">MockLink.h:49</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a6138841ab570cfaf188d82a40dc698be"><div class="ttname"><a href="classMockLink.html#a6138841ab570cfaf188d82a40dc698be">MockLink::outgoingMavlinkChannel</a></div><div class="ttdeci">uint8_t outgoingMavlinkChannel() const</div><div class="ttdoc">Vehicle-side channel used to encode outgoing (mock vehicle -&gt; QGC) messages. Signing state lives here...</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00100">MockLink.h:100</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a94b2e99a1bfe6da83b5a5d8aeb8e4147"><div class="ttname"><a href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">MockLink::respondWithMavlinkMessage</a></div><div class="ttdeci">void respondWithMavlinkMessage(const mavlink_message_t &amp;msg)</div><div class="ttdoc">Sends the specified mavlink message to QGC.</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00876">MockLink.cc:876</a></div></div>
-<div class="ttc" id="aclassMockLink_html_ab91b7bba3f1bf35144e343de1837ae16"><div class="ttname"><a href="classMockLink.html#ab91b7bba3f1bf35144e343de1837ae16">MockLink::vehicleLatitude</a></div><div class="ttdeci">double vehicleLatitude() const</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00052">MockLink.h:52</a></div></div>
-<div class="ttc" id="aclassMockLink_html_ac9f163e1d92adeacfa81ee27675327f4"><div class="ttname"><a href="classMockLink.html#ac9f163e1d92adeacfa81ee27675327f4">MockLink::vehicleLongitude</a></div><div class="ttdeci">double vehicleLongitude() const</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00053">MockLink.h:53</a></div></div>
+<div class="ttc" id="aclassMockLink_html"><div class="ttname"><a href="classMockLink.html">MockLink</a></div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00028">MockLink.h:29</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a0591a9d228f939122f62e19bef1134f3"><div class="ttname"><a href="classMockLink.html#a0591a9d228f939122f62e19bef1134f3">MockLink::servedVideoStream</a></div><div class="ttdeci">void servedVideoStream(MockConfiguration::VideoStreamType &amp;type, QString &amp;uri) const</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00296">MockLink.cc:296</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a0f861bd8b30a816fb92faf7653fe7c89"><div class="ttname"><a href="classMockLink.html#a0f861bd8b30a816fb92faf7653fe7c89">MockLink::vehicleAltitudeAMSL</a></div><div class="ttdeci">double vehicleAltitudeAMSL() const</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00055">MockLink.h:55</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a5406fad487c84732dd3920c1a00ff73d"><div class="ttname"><a href="classMockLink.html#a5406fad487c84732dd3920c1a00ff73d">MockLink::vehicleId</a></div><div class="ttdeci">int vehicleId() const</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00050">MockLink.h:50</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a6138841ab570cfaf188d82a40dc698be"><div class="ttname"><a href="classMockLink.html#a6138841ab570cfaf188d82a40dc698be">MockLink::outgoingMavlinkChannel</a></div><div class="ttdeci">uint8_t outgoingMavlinkChannel() const</div><div class="ttdoc">Vehicle-side channel used to encode outgoing (mock vehicle -&gt; QGC) messages. Signing state lives here...</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00101">MockLink.h:101</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a94b2e99a1bfe6da83b5a5d8aeb8e4147"><div class="ttname"><a href="classMockLink.html#a94b2e99a1bfe6da83b5a5d8aeb8e4147">MockLink::respondWithMavlinkMessage</a></div><div class="ttdeci">void respondWithMavlinkMessage(const mavlink_message_t &amp;msg)</div><div class="ttdoc">Sends the specified mavlink message to QGC.</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00965">MockLink.cc:965</a></div></div>
+<div class="ttc" id="aclassMockLink_html_ab91b7bba3f1bf35144e343de1837ae16"><div class="ttname"><a href="classMockLink.html#ab91b7bba3f1bf35144e343de1837ae16">MockLink::vehicleLatitude</a></div><div class="ttdeci">double vehicleLatitude() const</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00053">MockLink.h:53</a></div></div>
+<div class="ttc" id="aclassMockLink_html_ac785536b1270364bbd3fb0e2c360d00c"><div class="ttname"><a href="classMockLink.html#ac785536b1270364bbd3fb0e2c360d00c">MockLink::requestedVideoStreamType</a></div><div class="ttdeci">MockConfiguration::VideoStreamType requestedVideoStreamType() const</div><div class="ttdoc">Video stream type the configuration requested (immutable after construction).</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00215">MockLink.h:215</a></div></div>
+<div class="ttc" id="aclassMockLink_html_ac9f163e1d92adeacfa81ee27675327f4"><div class="ttname"><a href="classMockLink.html#ac9f163e1d92adeacfa81ee27675327f4">MockLink::vehicleLongitude</a></div><div class="ttdeci">double vehicleLongitude() const</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00054">MockLink.h:54</a></div></div>
 <div class="ttc" id="astructMockLinkCamera_1_1CameraState_html"><div class="ttname"><a href="structMockLinkCamera_1_1CameraState.html">MockLinkCamera::CameraState</a></div><div class="ttdoc">Per-camera simulated state.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkCamera_8h_source.html#l00047">MockLinkCamera.h:47</a></div></div>
 <div class="ttc" id="astructMockLinkCamera_1_1CameraState_html_a0542d9b7164e876e152d2a485dc7ad16"><div class="ttname"><a href="structMockLinkCamera_1_1CameraState.html#a0542d9b7164e876e152d2a485dc7ad16">MockLinkCamera::CameraState::trackRecTopY</a></div><div class="ttdeci">float trackRecTopY</div><div class="ttdef"><b>Definition</b> <a href="MockLinkCamera_8h_source.html#l00065">MockLinkCamera.h:65</a></div></div>
 <div class="ttc" id="astructMockLinkCamera_1_1CameraState_html_a1b4f498f279fd74b0f23d1ca50b42902"><div class="ttname"><a href="structMockLinkCamera_1_1CameraState.html#a1b4f498f279fd74b0f23d1ca50b42902">MockLinkCamera::CameraState::trackingStatusLastSentMs</a></div><div class="ttdeci">qint64 trackingStatusLastSentMs</div><div class="ttdoc">Timestamp of last tracking status message.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkCamera_8h_source.html#l00069">MockLinkCamera.h:69</a></div></div>

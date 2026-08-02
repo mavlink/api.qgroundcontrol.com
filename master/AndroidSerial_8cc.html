@@ -99,6 +99,7 @@ $(document).ready(function(){initNavTree('AndroidSerial_8cc.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="AndroidSerial_8h_source.html">AndroidSerial.h</a>&quot;</code><br />
+<code>#include &lt;QtCore/QDir&gt;</code><br />
 <code>#include &lt;QtCore/QHash&gt;</code><br />
 <code>#include &lt;QtCore/QJniEnvironment&gt;</code><br />
 <code>#include &lt;QtCore/QJniObject&gt;</code><br />
@@ -109,6 +110,8 @@ $(document).ready(function(){initNavTree('AndroidSerial_8cc.html',''); initResiz
 <code>#include &lt;QtCore/QThread&gt;</code><br />
 <code>#include &lt;<a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="qserialportinfo__p_8h_source.html">qserialportinfo_p.h</a>&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &quot;<a class="el" href="AndroidInterface_8h_source.html">AndroidInterface.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="QGCLoggingCategory_8h_source.html">QGCLoggingCategory.h</a>&quot;</code><br />
@@ -138,6 +141,14 @@ Namespaces</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a46e59c149a6d28aaa725b21e46920006" id="r_a46e59c149a6d28aaa725b21e46920006"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="AndroidSerial_8cc.html#a46e59c149a6d28aaa725b21e46920006">QGC_LOGGING_CATEGORY</a> (AndroidSerialLog, &quot;Android.AndroidSerial&quot;)</td></tr>
 <tr class="separator:a46e59c149a6d28aaa725b21e46920006"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2770d70a86f643603b2abef137568bd" id="r_ae2770d70a86f643603b2abef137568bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceAndroidSerial.html#ae2770d70a86f643603b2abef137568bd">AndroidSerial::setUsePosixSerial</a> (bool use)</td></tr>
+<tr class="separator:ae2770d70a86f643603b2abef137568bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d3f91cc27b4c62c9acd4e8e59458ed0" id="r_a5d3f91cc27b4c62c9acd4e8e59458ed0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceAndroidSerial.html#a5d3f91cc27b4c62c9acd4e8e59458ed0">AndroidSerial::usePosixSerial</a> ()</td></tr>
+<tr class="separator:a5d3f91cc27b4c62c9acd4e8e59458ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cea3f9a24d89557bc63694c173226e8" id="r_a6cea3f9a24d89557bc63694c173226e8"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="classQSerialPortInfo.html">QSerialPortInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceAndroidSerial.html#a6cea3f9a24d89557bc63694c173226e8">AndroidSerial::availablePosixPorts</a> ()</td></tr>
+<tr class="separator:a6cea3f9a24d89557bc63694c173226e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2bea9dbc4897fb04385d39b9f27f556" id="r_ae2bea9dbc4897fb04385d39b9f27f556"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceAndroidSerial.html#ae2bea9dbc4897fb04385d39b9f27f556">AndroidSerial::hasPosixSerialPorts</a> ()</td></tr>
+<tr class="separator:ae2bea9dbc4897fb04385d39b9f27f556"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0aa528b401e9fa20b9b4cbfbee655b3d" id="r_a0aa528b401e9fa20b9b4cbfbee655b3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceAndroidSerial.html#a0aa528b401e9fa20b9b4cbfbee655b3d">AndroidSerial::registerPointer</a> (<a class="el" href="classQSerialPortPrivate.html">QSerialPortPrivate</a> *ptr)</td></tr>
 <tr class="separator:a0aa528b401e9fa20b9b4cbfbee655b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54eadf6cca2ca4f696375d56caee683a" id="r_a54eadf6cca2ca4f696375d56caee683a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceAndroidSerial.html#a54eadf6cca2ca4f696375d56caee683a">AndroidSerial::unregisterPointer</a> (<a class="el" href="classQSerialPortPrivate.html">QSerialPortPrivate</a> *ptr)</td></tr>
@@ -224,6 +235,8 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a86f22fa15cbe980db82af5d93e443ba3" id="r_a86f22fa15cbe980db82af5d93e443ba3"><td class="memItemLeft" align="right" valign="top">static std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceAndroidSerial.html#a86f22fa15cbe980db82af5d93e443ba3">AndroidSerial::s_usePosixSerial</a> {false}</td></tr>
+<tr class="separator:a86f22fa15cbe980db82af5d93e443ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac10a477f82119b5378c4b2b028d5191c" id="r_ac10a477f82119b5378c4b2b028d5191c"><td class="memItemLeft" align="right" valign="top">static QReadWriteLock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceAndroidSerial.html#ac10a477f82119b5378c4b2b028d5191c">AndroidSerial::s_ptrLock</a></td></tr>
 <tr class="separator:ac10a477f82119b5378c4b2b028d5191c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa455c9fb99016d3d794a92a1901428ee" id="r_aa455c9fb99016d3d794a92a1901428ee"><td class="memItemLeft" align="right" valign="top">static QHash&lt; jlong, <a class="el" href="classQSerialPortPrivate.html">QSerialPortPrivate</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceAndroidSerial.html#aa455c9fb99016d3d794a92a1901428ee">AndroidSerial::s_tokenToPtr</a></td></tr>

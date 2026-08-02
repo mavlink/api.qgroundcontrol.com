@@ -407,6 +407,7 @@ var annotated_dup =
     [ "MockLinkMissionItemHandler", "classMockLinkMissionItemHandler.html", "classMockLinkMissionItemHandler" ],
     [ "MockLinkPX4Calibration", "classMockLinkPX4Calibration.html", "classMockLinkPX4Calibration" ],
     [ "MockLinkWorker", "classMockLinkWorker.html", "classMockLinkWorker" ],
+    [ "MockVideoStreamServer", "classMockVideoStreamServer.html", "classMockVideoStreamServer" ],
     [ "MotorAssignment", "classMotorAssignment.html", "classMotorAssignment" ],
     [ "MotorComponent", "classMotorComponent.html", "classMotorComponent" ],
     [ "MultiVehicleManager", "classMultiVehicleManager.html", "classMultiVehicleManager" ],

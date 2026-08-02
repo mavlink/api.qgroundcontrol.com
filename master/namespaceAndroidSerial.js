@@ -36,6 +36,7 @@ var namespaceAndroidSerial =
       [ "TwoStop", "namespaceAndroidSerial.html#ad14d38e3ec2393a218ef66898641a5b4afb132ce955586baaad1ee9785a309e3d", null ]
     ] ],
     [ "availableDevices", "namespaceAndroidSerial.html#a181e24daf32a5504845d59915eedf9c9", null ],
+    [ "availablePosixPorts", "namespaceAndroidSerial.html#a6cea3f9a24d89557bc63694c173226e8", null ],
     [ "cacheMethodIds", "namespaceAndroidSerial.html#a05f39b838a573a5064f8901506ceb066", null ],
     [ "callBoolMethod", "namespaceAndroidSerial.html#a29a4bcd5ffb8ed9ae432d9c69b5fbfe0", null ],
     [ "callBoolSetMethod", "namespaceAndroidSerial.html#aedb0f595b864a54988ddc4da7b32f5a9", null ],
@@ -54,6 +55,7 @@ var namespaceAndroidSerial =
     [ "getRequestToSend", "namespaceAndroidSerial.html#a2f34a0cf44bb2897199a2cada4a7810b", null ],
     [ "getRingIndicator", "namespaceAndroidSerial.html#a07efa387dcd8c92127f4a926c8bc4a4a", null ],
     [ "getSerialManagerClass", "namespaceAndroidSerial.html#a0fb6b1fb5dfa15101301c7cdfc53e36a", null ],
+    [ "hasPosixSerialPorts", "namespaceAndroidSerial.html#ae2bea9dbc4897fb04385d39b9f27f556", null ],
     [ "isOpen", "namespaceAndroidSerial.html#acc24ae6d84e04349cb77f2c2b4c72dd8", null ],
     [ "jniDeviceException", "namespaceAndroidSerial.html#a4bba9759563fe4145b628c9e7667df2c", null ],
     [ "jniDeviceHasDisconnected", "namespaceAndroidSerial.html#a2decc78cd2ea593cbc2ee34cd9655d0a", null ],
@@ -72,9 +74,11 @@ var namespaceAndroidSerial =
     [ "setNativeMethods", "namespaceAndroidSerial.html#a678ff98f342654561c6955e2f6afaf00", null ],
     [ "setParameters", "namespaceAndroidSerial.html#a80c26ba62177fb086229909defab5fda", null ],
     [ "setRequestToSend", "namespaceAndroidSerial.html#ab8991c0279ad0ab6cd912ef737222541", null ],
+    [ "setUsePosixSerial", "namespaceAndroidSerial.html#ae2770d70a86f643603b2abef137568bd", null ],
     [ "startReadThread", "namespaceAndroidSerial.html#a83ed5f2dd0eb59617d62ba8ddf4ff681", null ],
     [ "stopReadThread", "namespaceAndroidSerial.html#ad74c89d88db30ad64b5546484f9aca98", null ],
     [ "unregisterPointer", "namespaceAndroidSerial.html#a54eadf6cca2ca4f696375d56caee683a", null ],
+    [ "usePosixSerial", "namespaceAndroidSerial.html#a5d3f91cc27b4c62c9acd4e8e59458ed0", null ],
     [ "write", "namespaceAndroidSerial.html#a771b5b8a3d56153c575c6eb95b44a8c4", null ],
     [ "CHAR_XOFF", "namespaceAndroidSerial.html#af1f18c13cf22baea82fa556776f124a8", null ],
     [ "CHAR_XON", "namespaceAndroidSerial.html#aebcf54e4c0e3c2813428eb9bf0c49833", null ],
@@ -85,5 +89,6 @@ var namespaceAndroidSerial =
     [ "s_ptrLock", "namespaceAndroidSerial.html#ac10a477f82119b5378c4b2b028d5191c", null ],
     [ "s_ptrToToken", "namespaceAndroidSerial.html#ad879d151e8a77ff504fa549b95674079", null ],
     [ "s_serialManagerClass", "namespaceAndroidSerial.html#a4dfa1bcf9251eba68a6c1bd04f35ee1f", null ],
-    [ "s_tokenToPtr", "namespaceAndroidSerial.html#aa455c9fb99016d3d794a92a1901428ee", null ]
+    [ "s_tokenToPtr", "namespaceAndroidSerial.html#aa455c9fb99016d3d794a92a1901428ee", null ],
+    [ "s_usePosixSerial", "namespaceAndroidSerial.html#a86f22fa15cbe980db82af5d93e443ba3", null ]
 ];
