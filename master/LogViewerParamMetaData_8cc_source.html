@@ -100,153 +100,144 @@ $(document).ready(function(){initNavTree('LogViewerParamMetaData_8cc_source.html
 <div class="contents">
 <a href="LogViewerParamMetaData_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="LogViewerParamMetaData_8h.html">LogViewerParamMetaData.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef QGC_NO_ARDUPILOT_DIALECT</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="APMParameterMetaData_8h.html">APMParameterMetaData.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="FactMetaData_8h.html">FactMetaData.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="PX4ParameterMetaData_8h.html">PX4ParameterMetaData.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="APMParameterMetaData_8h.html">APMParameterMetaData.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="FactMetaData_8h.html">FactMetaData.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="PX4ParameterMetaData_8h.html">PX4ParameterMetaData.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QtCore/QFileInfo&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QtCore/QFileInfo&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(LogViewerParamMetaDataLog, <span class="stringliteral">&quot;AnalyzeView.LogViewerParamMetaData&quot;</span>)</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(LogViewerParamMetaDataLog, <span class="stringliteral">&quot;AnalyzeView.LogViewerParamMetaData&quot;</span>)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>namespace {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>namespace {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#ifndef QGC_NO_ARDUPILOT_DIALECT</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// Map the APM vehicle name as stored in detectedVehicleType to the file-path</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// component used in :/FirmwarePlugin/APM/APMParameterFactMetaData.{X}.major.minor.json</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>QString _apmFileVehicleName(<span class="keyword">const</span> QString &amp;vehicleType)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">if</span> (vehicleType == QStringLiteral(<span class="stringliteral">&quot;ArduCopter&quot;</span>)) { <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;Copter&quot;</span>); }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span> (vehicleType == QStringLiteral(<span class="stringliteral">&quot;ArduPlane&quot;</span>))  { <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;Plane&quot;</span>); }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (vehicleType == QStringLiteral(<span class="stringliteral">&quot;ArduRover&quot;</span>))  { <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;Rover&quot;</span>); }</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span> (vehicleType == QStringLiteral(<span class="stringliteral">&quot;ArduSub&quot;</span>))    { <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;Sub&quot;</span>); }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> QString();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// Walk down from (major, minor) to find the best available bundled JSON file,</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">// mirroring APMFirmwarePlugin::_internalParameterMetaDataFile logic.</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>QString _findAPMMetaDataFile(<span class="keyword">const</span> QString &amp;fileVehicleName, <span class="keywordtype">int</span> major, <span class="keywordtype">int</span> minor)</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">int</span> currMajor = major;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">int</span> currMinor = minor;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">while</span> (currMajor &gt;= 4 &amp;&amp; currMinor &gt; 0) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keyword">const</span> QString file = QStringLiteral(<span class="stringliteral">&quot;:/FirmwarePlugin/APM/APMParameterFactMetaData.%1.%2.%3.json&quot;</span>)</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            .arg(fileVehicleName).arg(currMajor).arg(currMinor);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">if</span> (QFileInfo::exists(file)) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="keywordflow">return</span> file;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        currMinor--;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span> (currMinor == 0) {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            currMinor = 10;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            currMajor--;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// Fallback: oldest available in the 4.x series</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; i++) {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keyword">const</span> QString file = QStringLiteral(<span class="stringliteral">&quot;:/FirmwarePlugin/APM/APMParameterFactMetaData.%1.4.%2.json&quot;</span>)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            .arg(fileVehicleName).arg(i);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span> (QFileInfo::exists(file)) {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordflow">return</span> file;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> QString();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif </span><span class="comment">// QGC_NO_ARDUPILOT_DIALECT</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keywordtype">void</span> _enrichRows(QVariantList &amp;parameters, <a class="code hl_class" href="classParameterMetaData.html">ParameterMetaData</a> *metaData)</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; parameters.size(); i++) {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        QVariantMap row = parameters[i].toMap();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// Map the APM vehicle name as stored in detectedVehicleType to the file-path</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// component used in :/FirmwarePlugin/APM/APMParameterFactMetaData.{X}.major.minor.json</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>QString _apmFileVehicleName(<span class="keyword">const</span> QString &amp;vehicleType)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">if</span> (vehicleType == QStringLiteral(<span class="stringliteral">&quot;ArduCopter&quot;</span>)) { <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;Copter&quot;</span>); }</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">if</span> (vehicleType == QStringLiteral(<span class="stringliteral">&quot;ArduPlane&quot;</span>))  { <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;Plane&quot;</span>); }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> (vehicleType == QStringLiteral(<span class="stringliteral">&quot;ArduRover&quot;</span>))  { <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;Rover&quot;</span>); }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">if</span> (vehicleType == QStringLiteral(<span class="stringliteral">&quot;ArduSub&quot;</span>))    { <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;Sub&quot;</span>); }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">return</span> QString();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// Walk down from (major, minor) to find the best available bundled JSON file,</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// mirroring APMFirmwarePlugin::_internalParameterMetaDataFile logic.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>QString _findAPMMetaDataFile(<span class="keyword">const</span> QString &amp;fileVehicleName, <span class="keywordtype">int</span> major, <span class="keywordtype">int</span> minor)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">int</span> currMajor = major;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">int</span> currMinor = minor;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">while</span> (currMajor &gt;= 4 &amp;&amp; currMinor &gt; 0) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keyword">const</span> QString file = QStringLiteral(<span class="stringliteral">&quot;:/FirmwarePlugin/APM/APMParameterFactMetaData.%1.%2.%3.json&quot;</span>)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            .arg(fileVehicleName).arg(currMajor).arg(currMinor);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">if</span> (QFileInfo::exists(file)) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keywordflow">return</span> file;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        currMinor--;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">if</span> (currMinor == 0) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            currMinor = 10;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            currMajor--;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">// Fallback: oldest available in the 4.x series</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; i++) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">const</span> QString file = QStringLiteral(<span class="stringliteral">&quot;:/FirmwarePlugin/APM/APMParameterFactMetaData.%1.4.%2.json&quot;</span>)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            .arg(fileVehicleName).arg(i);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">if</span> (QFileInfo::exists(file)) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordflow">return</span> file;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> QString();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">void</span> _enrichRows(QVariantList &amp;parameters, <a class="code hl_class" href="classParameterMetaData.html">ParameterMetaData</a> *metaData)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; parameters.size(); i++) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        QVariantMap row = parameters[i].toMap();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keyword">const</span> QString name = row.value(QStringLiteral(<span class="stringliteral">&quot;name&quot;</span>)).toString();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> isFloat = row.value(QStringLiteral(<span class="stringliteral">&quot;isFloat&quot;</span>), <span class="keyword">false</span>).toBool();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">const</span> <a class="code hl_enumeration" href="classFactMetaData.html#a594f352eed7c8c895fa442eef891d4b4">FactMetaData::ValueType_t</a> type = isFloat</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            ? <a class="code hl_enumvalue" href="classFactMetaData.html#a594f352eed7c8c895fa442eef891d4b4a919e7ce058eb1ebcaea7ee2e636558f5">FactMetaData::valueTypeFloat</a></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            : <a class="code hl_enumvalue" href="classFactMetaData.html#a594f352eed7c8c895fa442eef891d4b4a9ef5626225ecf2b74f67e8a2fd786054">FactMetaData::valueTypeInt32</a>;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keyword">const</span> QString name = row.value(QStringLiteral(<span class="stringliteral">&quot;name&quot;</span>)).toString();</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> isFloat = row.value(QStringLiteral(<span class="stringliteral">&quot;isFloat&quot;</span>), <span class="keyword">false</span>).toBool();</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">const</span> <a class="code hl_enumeration" href="classFactMetaData.html#a594f352eed7c8c895fa442eef891d4b4">FactMetaData::ValueType_t</a> type = isFloat</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            ? <a class="code hl_enumvalue" href="classFactMetaData.html#a594f352eed7c8c895fa442eef891d4b4a919e7ce058eb1ebcaea7ee2e636558f5">FactMetaData::valueTypeFloat</a></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            : <a class="code hl_enumvalue" href="classFactMetaData.html#a594f352eed7c8c895fa442eef891d4b4a9ef5626225ecf2b74f67e8a2fd786054">FactMetaData::valueTypeInt32</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <a class="code hl_class" href="classFactMetaData.html">FactMetaData</a> *factMeta = metaData-&gt;<a class="code hl_function" href="classParameterMetaData.html#a720be2654769699d7e610b90215f71aa">getMetaDataForFact</a>(name, type);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">if</span> (!factMeta) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            parameters[i] = row;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <a class="code hl_class" href="classFactMetaData.html">FactMetaData</a> *factMeta = metaData-&gt;<a class="code hl_function" href="classParameterMetaData.html#a720be2654769699d7e610b90215f71aa">getMetaDataForFact</a>(name, type);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">if</span> (!factMeta) {</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            parameters[i] = row;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        row[QStringLiteral(<span class="stringliteral">&quot;decimalPlaces&quot;</span>)]   = factMeta-&gt;<a class="code hl_function" href="classFactMetaData.html#a71f3fe8ffb6792727f72dd62c7d76797">decimalPlaces</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        row[QStringLiteral(<span class="stringliteral">&quot;units&quot;</span>)]           = factMeta-&gt;<a class="code hl_function" href="classFactMetaData.html#a852078afb7688b62f8532d91494d1491">rawUnits</a>();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        row[QStringLiteral(<span class="stringliteral">&quot;shortDescription&quot;</span>)] = factMeta-&gt;<a class="code hl_function" href="classFactMetaData.html#a65c44967ab725495bb4f97fd636277b2">shortDescription</a>();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        row[QStringLiteral(<span class="stringliteral">&quot;enumStrings&quot;</span>)]     = QVariant::fromValue(factMeta-&gt;<a class="code hl_function" href="classFactMetaData.html#a14eef2234a11784618925de79b1e6b91">enumStrings</a>());</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        row[QStringLiteral(<span class="stringliteral">&quot;enumValues&quot;</span>)]      = QVariant::fromValue(factMeta-&gt;<a class="code hl_function" href="classFactMetaData.html#a5c737a7d3f4c9045e70bf31069c75fd6">enumValues</a>());</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        row[QStringLiteral(<span class="stringliteral">&quot;decimalPlaces&quot;</span>)]   = factMeta-&gt;<a class="code hl_function" href="classFactMetaData.html#a71f3fe8ffb6792727f72dd62c7d76797">decimalPlaces</a>();</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        row[QStringLiteral(<span class="stringliteral">&quot;units&quot;</span>)]           = factMeta-&gt;<a class="code hl_function" href="classFactMetaData.html#a852078afb7688b62f8532d91494d1491">rawUnits</a>();</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        row[QStringLiteral(<span class="stringliteral">&quot;shortDescription&quot;</span>)] = factMeta-&gt;<a class="code hl_function" href="classFactMetaData.html#a65c44967ab725495bb4f97fd636277b2">shortDescription</a>();</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        row[QStringLiteral(<span class="stringliteral">&quot;enumStrings&quot;</span>)]     = QVariant::fromValue(factMeta-&gt;<a class="code hl_function" href="classFactMetaData.html#a14eef2234a11784618925de79b1e6b91">enumStrings</a>());</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        row[QStringLiteral(<span class="stringliteral">&quot;enumValues&quot;</span>)]      = QVariant::fromValue(factMeta-&gt;<a class="code hl_function" href="classFactMetaData.html#a5c737a7d3f4c9045e70bf31069c75fd6">enumValues</a>());</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        parameters[i] = row;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>} <span class="comment">// namespace</span></div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        parameters[i] = row;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>} <span class="comment">// namespace</span></div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classLogViewerParamMetaData.html#afd223e9cd36d65287c70f70fb552825a">   86</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLogViewerParamMetaData.html#afd223e9cd36d65287c70f70fb552825a">LogViewerParamMetaData::enrichForPX4</a>(QVariantList &amp;parameters)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> (parameters.isEmpty()) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classLogViewerParamMetaData.html#afd223e9cd36d65287c70f70fb552825a">   92</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLogViewerParamMetaData.html#afd223e9cd36d65287c70f70fb552825a">LogViewerParamMetaData::enrichForPX4</a>(QVariantList &amp;parameters)</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>{</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">if</span> (parameters.isEmpty()) {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keyword">auto</span> *metaData = <span class="keyword">new</span> <a class="code hl_class" href="classPX4ParameterMetaData.html">PX4ParameterMetaData</a>(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    metaData-&gt;<a class="code hl_function" href="classParameterMetaData.html#a96b89d4e359bb3675364c83d6916b2fe">loadParameterFactMetaDataFile</a>(</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        QStringLiteral(<span class="stringliteral">&quot;:/FirmwarePlugin/PX4/PX4ParameterFactMetaData.json&quot;</span>));</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    _enrichRows(parameters, metaData);</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">auto</span> *metaData = <span class="keyword">new</span> <a class="code hl_class" href="classPX4ParameterMetaData.html">PX4ParameterMetaData</a>(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    metaData-&gt;<a class="code hl_function" href="classParameterMetaData.html#a96b89d4e359bb3675364c83d6916b2fe">loadParameterFactMetaDataFile</a>(</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        QStringLiteral(<span class="stringliteral">&quot;:/FirmwarePlugin/PX4/PX4ParameterFactMetaData.json&quot;</span>));</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    _enrichRows(parameters, metaData);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">delete</span> metaData;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">delete</span> metaData;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
 </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#ifndef QGC_NO_ARDUPILOT_DIALECT</span></div>
-<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classLogViewerParamMetaData.html#afd20bbc04441af3630bfa3ac7ca0ba1f">  108</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLogViewerParamMetaData.html#afd20bbc04441af3630bfa3ac7ca0ba1f">LogViewerParamMetaData::enrichForAPM</a>(QVariantList &amp;parameters,</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                                          <span class="keyword">const</span> QString &amp;vehicleType,</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                                          <span class="keywordtype">int</span> major,</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                                          <span class="keywordtype">int</span> minor)</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>{</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">if</span> (parameters.isEmpty()) {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">const</span> QString fileVehicleName = _apmFileVehicleName(vehicleType);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">if</span> (fileVehicleName.isEmpty()) {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        qCDebug(LogViewerParamMetaDataLog) &lt;&lt; <span class="stringliteral">&quot;Unknown APM vehicle type:&quot;</span> &lt;&lt; vehicleType;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="comment">// If no version was detected in the log, start from a high version so the</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="comment">// walk-down finds the newest available file.</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> startMajor = (major &gt;= 4) ? major : 9;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> startMinor = (minor &gt;= 0) ? minor : 99;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classLogViewerParamMetaData.html#afd20bbc04441af3630bfa3ac7ca0ba1f">  101</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLogViewerParamMetaData.html#afd20bbc04441af3630bfa3ac7ca0ba1f">LogViewerParamMetaData::enrichForAPM</a>(QVariantList &amp;parameters,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                                          <span class="keyword">const</span> QString &amp;vehicleType,</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                                          <span class="keywordtype">int</span> major,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                                          <span class="keywordtype">int</span> minor)</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>{</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">if</span> (parameters.isEmpty()) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">const</span> QString fileVehicleName = _apmFileVehicleName(vehicleType);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">if</span> (fileVehicleName.isEmpty()) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        qCDebug(LogViewerParamMetaDataLog) &lt;&lt; <span class="stringliteral">&quot;Unknown APM vehicle type:&quot;</span> &lt;&lt; vehicleType;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="comment">// If no version was detected in the log, start from a high version so the</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="comment">// walk-down finds the newest available file.</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> startMajor = (major &gt;= 4) ? major : 9;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> startMinor = (minor &gt;= 0) ? minor : 99;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keyword">const</span> QString metaDataFile = _findAPMMetaDataFile(fileVehicleName, startMajor, startMinor);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">if</span> (metaDataFile.isEmpty()) {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        qCDebug(LogViewerParamMetaDataLog) &lt;&lt; <span class="stringliteral">&quot;No APM metadata file found for&quot;</span> &lt;&lt; vehicleType</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                                          &lt;&lt; major &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; minor;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    }</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keyword">const</span> QString metaDataFile = _findAPMMetaDataFile(fileVehicleName, startMajor, startMinor);</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">if</span> (metaDataFile.isEmpty()) {</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        qCDebug(LogViewerParamMetaDataLog) &lt;&lt; <span class="stringliteral">&quot;No APM metadata file found for&quot;</span> &lt;&lt; vehicleType</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                                          &lt;&lt; major &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; minor;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    qCDebug(LogViewerParamMetaDataLog) &lt;&lt; <span class="stringliteral">&quot;Loading APM metadata:&quot;</span> &lt;&lt; metaDataFile;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keyword">auto</span> *metaData = <span class="keyword">new</span> <a class="code hl_class" href="classAPMParameterMetaData.html">APMParameterMetaData</a>(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    metaData-&gt;<a class="code hl_function" href="classParameterMetaData.html#a96b89d4e359bb3675364c83d6916b2fe">loadParameterFactMetaDataFile</a>(metaDataFile);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    _enrichRows(parameters, metaData);</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    qCDebug(LogViewerParamMetaDataLog) &lt;&lt; <span class="stringliteral">&quot;Loading APM metadata:&quot;</span> &lt;&lt; metaDataFile;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keyword">auto</span> *metaData = <span class="keyword">new</span> <a class="code hl_class" href="classAPMParameterMetaData.html">APMParameterMetaData</a>(<span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    metaData-&gt;<a class="code hl_function" href="classParameterMetaData.html#a96b89d4e359bb3675364c83d6916b2fe">loadParameterFactMetaDataFile</a>(metaDataFile);</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    _enrichRows(parameters, metaData);</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keyword">delete</span> metaData;</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>}</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keyword">delete</span> metaData;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
 </div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="preprocessor">#endif </span><span class="comment">// QGC_NO_ARDUPILOT_DIALECT</span></div>
 <div class="ttc" id="aAPMParameterMetaData_8h_html"><div class="ttname"><a href="APMParameterMetaData_8h.html">APMParameterMetaData.h</a></div></div>
 <div class="ttc" id="aFactMetaData_8h_html"><div class="ttname"><a href="FactMetaData_8h.html">FactMetaData.h</a></div></div>
 <div class="ttc" id="aLogViewerParamMetaData_8h_html"><div class="ttname"><a href="LogViewerParamMetaData_8h.html">LogViewerParamMetaData.h</a></div></div>
@@ -263,8 +254,8 @@ $(document).ready(function(){initNavTree('LogViewerParamMetaData_8cc_source.html
 <div class="ttc" id="aclassFactMetaData_html_a65c44967ab725495bb4f97fd636277b2"><div class="ttname"><a href="classFactMetaData.html#a65c44967ab725495bb4f97fd636277b2">FactMetaData::shortDescription</a></div><div class="ttdeci">QString shortDescription() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00146">FactMetaData.h:146</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a71f3fe8ffb6792727f72dd62c7d76797"><div class="ttname"><a href="classFactMetaData.html#a71f3fe8ffb6792727f72dd62c7d76797">FactMetaData::decimalPlaces</a></div><div class="ttdeci">int decimalPlaces() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8cc_source.html#l01166">FactMetaData.cc:1166</a></div></div>
 <div class="ttc" id="aclassFactMetaData_html_a852078afb7688b62f8532d91494d1491"><div class="ttname"><a href="classFactMetaData.html#a852078afb7688b62f8532d91494d1491">FactMetaData::rawUnits</a></div><div class="ttdeci">QString rawUnits() const</div><div class="ttdef"><b>Definition</b> <a href="FactMetaData_8h_source.html#l00148">FactMetaData.h:148</a></div></div>
-<div class="ttc" id="aclassLogViewerParamMetaData_html_afd20bbc04441af3630bfa3ac7ca0ba1f"><div class="ttname"><a href="classLogViewerParamMetaData.html#afd20bbc04441af3630bfa3ac7ca0ba1f">LogViewerParamMetaData::enrichForAPM</a></div><div class="ttdeci">static void enrichForAPM(QVariantList &amp;parameters, const QString &amp;vehicleType, int major, int minor)</div><div class="ttdef"><b>Definition</b> <a href="LogViewerParamMetaData_8cc_source.html#l00108">LogViewerParamMetaData.cc:108</a></div></div>
-<div class="ttc" id="aclassLogViewerParamMetaData_html_afd223e9cd36d65287c70f70fb552825a"><div class="ttname"><a href="classLogViewerParamMetaData.html#afd223e9cd36d65287c70f70fb552825a">LogViewerParamMetaData::enrichForPX4</a></div><div class="ttdeci">static void enrichForPX4(QVariantList &amp;parameters)</div><div class="ttdef"><b>Definition</b> <a href="LogViewerParamMetaData_8cc_source.html#l00092">LogViewerParamMetaData.cc:92</a></div></div>
+<div class="ttc" id="aclassLogViewerParamMetaData_html_afd20bbc04441af3630bfa3ac7ca0ba1f"><div class="ttname"><a href="classLogViewerParamMetaData.html#afd20bbc04441af3630bfa3ac7ca0ba1f">LogViewerParamMetaData::enrichForAPM</a></div><div class="ttdeci">static void enrichForAPM(QVariantList &amp;parameters, const QString &amp;vehicleType, int major, int minor)</div><div class="ttdef"><b>Definition</b> <a href="LogViewerParamMetaData_8cc_source.html#l00101">LogViewerParamMetaData.cc:101</a></div></div>
+<div class="ttc" id="aclassLogViewerParamMetaData_html_afd223e9cd36d65287c70f70fb552825a"><div class="ttname"><a href="classLogViewerParamMetaData.html#afd223e9cd36d65287c70f70fb552825a">LogViewerParamMetaData::enrichForPX4</a></div><div class="ttdeci">static void enrichForPX4(QVariantList &amp;parameters)</div><div class="ttdef"><b>Definition</b> <a href="LogViewerParamMetaData_8cc_source.html#l00086">LogViewerParamMetaData.cc:86</a></div></div>
 <div class="ttc" id="aclassPX4ParameterMetaData_html"><div class="ttname"><a href="classPX4ParameterMetaData.html">PX4ParameterMetaData</a></div><div class="ttdef"><b>Definition</b> <a href="PX4ParameterMetaData_8h_source.html#l00005">PX4ParameterMetaData.h:6</a></div></div>
 <div class="ttc" id="aclassParameterMetaData_html"><div class="ttname"><a href="classParameterMetaData.html">ParameterMetaData</a></div><div class="ttdef"><b>Definition</b> <a href="ParameterMetaData_8h_source.html#l00012">ParameterMetaData.h:13</a></div></div>
 <div class="ttc" id="aclassParameterMetaData_html_a720be2654769699d7e610b90215f71aa"><div class="ttname"><a href="classParameterMetaData.html#a720be2654769699d7e610b90215f71aa">ParameterMetaData::getMetaDataForFact</a></div><div class="ttdeci">FactMetaData * getMetaDataForFact(const QString &amp;name, FactMetaData::ValueType_t type)</div><div class="ttdef"><b>Definition</b> <a href="ParameterMetaData_8cc_source.html#l00055">ParameterMetaData.cc:55</a></div></div>

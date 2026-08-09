@@ -295,6 +295,7 @@ var annotated_dup =
     [ "GPSManager", "classGPSManager.html", "classGPSManager" ],
     [ "GPSProvider", "classGPSProvider.html", "classGPSProvider" ],
     [ "GPSReceiverConfig", "structGPSReceiverConfig.html", "structGPSReceiverConfig" ],
+    [ "GpsRtcmPacket", "structGpsRtcmPacket.html", "structGpsRtcmPacket" ],
     [ "GPSRtk", "classGPSRtk.html", "classGPSRtk" ],
     [ "GPSRTKFactGroup", "classGPSRTKFactGroup.html", "classGPSRTKFactGroup" ],
     [ "GPSSurveyInStatus", "structGPSSurveyInStatus.html", "structGPSSurveyInStatus" ],

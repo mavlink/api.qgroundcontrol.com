@@ -1,5 +1,9 @@
 var NAVTREEINDEX68 =
 {
+"namespaceGeoTagCalibrator.html#a56084f8bcd0394c49fbe0ea590f840f0":[1,0,16,0],
+"namespaceGeometryImage.html":[1,0,15],
+"namespaceGraphicsSetup.html":[1,0,17],
+"namespaceGraphicsSetup.html#a76b888fc245743668299f88ebefac4c1":[1,0,17,0],
 "namespaceGstHw.html":[1,0,18],
 "namespaceGstHw.html#a7877676d823d4a6e6d20254a289590db":[1,0,18,2],
 "namespaceGstHw.html#a7b369eb7fffc5d5a6bdc360f12529928":[1,0,18,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX68 =
 "namespaceQGCCompression.html#a6656ca3abecac6dea4d96cc27e2500f5":[1,0,36,19],
 "namespaceQGCCompression.html#a69650929455f64d9a0ba463f4475bc72":[1,0,36,43],
 "namespaceQGCCompression.html#a7aa3247e948563b47ac4d251b8830454":[1,0,36,59],
-"namespaceQGCCompression.html#a8383c990bb8ec070be023eb18b48ffb5":[1,0,36,49],
-"namespaceQGCCompression.html#a892619e91428f83f0c31323077a924a8":[1,0,36,16],
-"namespaceQGCCompression.html#a9447499bd313fb5727b1aeccb0c0c2f8":[1,0,36,38],
-"namespaceQGCCompression.html#a96b87941ba09c38daee64fa7640cb3bc":[1,0,36,53],
-"namespaceQGCCompression.html#a97a69891d2fbddfd2e027886bc89934e":[1,0,36,22]
+"namespaceQGCCompression.html#a8383c990bb8ec070be023eb18b48ffb5":[1,0,36,49]
 };

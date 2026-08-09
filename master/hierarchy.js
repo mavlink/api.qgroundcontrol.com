@@ -56,6 +56,7 @@ var hierarchy =
     [ "GPSDriver", "classGPSDriver.html", null ],
     [ "GPSDriverSinks", "structGPSDriverSinks.html", null ],
     [ "GPSReceiverConfig", "structGPSReceiverConfig.html", null ],
+    [ "GpsRtcmPacket", "structGpsRtcmPacket.html", null ],
     [ "GPSSurveyInStatus", "structGPSSurveyInStatus.html", null ],
     [ "GPSTransport", "classGPSTransport.html", [
       [ "SerialGPSTransport", "classSerialGPSTransport.html", null ]
@@ -173,6 +174,7 @@ var hierarchy =
     [ "NTRIPTransportConfig", "structNTRIPTransportConfig.html", null ],
     [ "OnboardLogDownloadData", "structOnboardLogDownloadData.html", null ],
     [ "Mixer::Mixers::OutputFunction", "structMixer_1_1Mixers_1_1OutputFunction.html", null ],
+    [ "RTCMMavlink::PackResult", "structRTCMMavlink_1_1PackResult.html", null ],
     [ "Parameter", "structParameter.html", null ],
     [ "HwBuffers::PathStats", "structHwBuffers_1_1PathStats.html", null ],
     [ "PauseVehicleThenChangeAltData_t", "structPauseVehicleThenChangeAltData__t.html", null ],

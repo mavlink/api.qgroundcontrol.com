@@ -137,29 +137,27 @@ $(document).ready(function(){initNavTree('RTCMParser_8h_source.html',''); initRe
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    QByteArray <a class="code hl_function" href="classRTCMParser.html#aab85f4988372a7cfaa2d555cb6008a7d">currentFrame</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    QByteArray <a class="code hl_function" href="classRTCMParser.html#af6ba6e837cbdfad541c6e8ea1298a8cf">extractValidFrames</a>(<span class="keyword">const</span> QByteArray&amp; in, <span class="keywordtype">int</span>* framesFound = <span class="keyword">nullptr</span>, <span class="keywordtype">int</span>* framesDropped = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">enum class</span> State</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        WaitingForPreamble,</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        ReadingLength,</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        ReadingMessage,</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        ReadingCRC</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    };</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> uint16_t kMaxPayloadLength = 1023;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    QSet&lt;int&gt; _whitelist;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    State _state;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    uint8_t _buffer[<a class="code hl_variable" href="classRTCMParser.html#ac0b24092cc32c22c8bb1fd55b2d7771d">kHeaderSize</a> + kMaxPayloadLength];</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    uint16_t _messageLength;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    uint16_t _bytesRead;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    uint16_t _lengthBytesRead;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    uint8_t _lengthBytes[2];</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    uint16_t _crcBytesRead;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    uint8_t _crcBytes[3];</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">enum class</span> State</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        WaitingForPreamble,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        ReadingLength,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        ReadingMessage,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        ReadingCRC</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    };</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> uint16_t kMaxPayloadLength = 1023;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    QSet&lt;int&gt; _whitelist;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    State _state;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    uint8_t _buffer[<a class="code hl_variable" href="classRTCMParser.html#ac0b24092cc32c22c8bb1fd55b2d7771d">kHeaderSize</a> + kMaxPayloadLength];</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    uint16_t _messageLength;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    uint16_t _bytesRead;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    uint16_t _lengthBytesRead;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    uint8_t _lengthBytes[2];</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    uint16_t _crcBytesRead;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    uint8_t _crcBytes[3];</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
 </div>
 <div class="ttc" id="aclassRTCMParser_html"><div class="ttname"><a href="classRTCMParser.html">RTCMParser</a></div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8h_source.html#l00009">RTCMParser.h:10</a></div></div>
 <div class="ttc" id="aclassRTCMParser_html_a110f2d4519bd286d6e044b79590c4d00"><div class="ttname"><a href="classRTCMParser.html#a110f2d4519bd286d6e044b79590c4d00">RTCMParser::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8cc_source.html#l00008">RTCMParser.cc:8</a></div></div>
@@ -175,7 +173,6 @@ $(document).ready(function(){initNavTree('RTCMParser_8h_source.html',''); initRe
 <div class="ttc" id="aclassRTCMParser_html_ae91cc97b305f0bde407cccfa228fd9ca"><div class="ttname"><a href="classRTCMParser.html#ae91cc97b305f0bde407cccfa228fd9ca">RTCMParser::crcBytes</a></div><div class="ttdeci">const uint8_t * crcBytes() const</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8h_source.html#l00029">RTCMParser.h:29</a></div></div>
 <div class="ttc" id="aclassRTCMParser_html_ae99434149e9bc310da68a8130e76d4e6"><div class="ttname"><a href="classRTCMParser.html#ae99434149e9bc310da68a8130e76d4e6">RTCMParser::messageId</a></div><div class="ttdeci">uint16_t messageId() const</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8cc_source.html#l00067">RTCMParser.cc:67</a></div></div>
 <div class="ttc" id="aclassRTCMParser_html_aef7f08a5fceec55de53f37e52568a96b"><div class="ttname"><a href="classRTCMParser.html#aef7f08a5fceec55de53f37e52568a96b">RTCMParser::messageLength</a></div><div class="ttdeci">uint16_t messageLength() const</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8h_source.html#l00025">RTCMParser.h:25</a></div></div>
-<div class="ttc" id="aclassRTCMParser_html_af6ba6e837cbdfad541c6e8ea1298a8cf"><div class="ttname"><a href="classRTCMParser.html#af6ba6e837cbdfad541c6e8ea1298a8cf">RTCMParser::extractValidFrames</a></div><div class="ttdeci">QByteArray extractValidFrames(const QByteArray &amp;in, int *framesFound=nullptr, int *framesDropped=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8cc_source.html#l00110">RTCMParser.cc:110</a></div></div>
 <div class="ttc" id="aclassRTCMParser_html_af91cb6a94499c270c8ad38ef35bfcfe3"><div class="ttname"><a href="classRTCMParser.html#af91cb6a94499c270c8ad38ef35bfcfe3">RTCMParser::addByte</a></div><div class="ttdeci">bool addByte(uint8_t byte)</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8cc_source.html#l00017">RTCMParser.cc:17</a></div></div>
 <div class="ttc" id="aclassRTCMParser_html_afb4f85449cb5327505040b96e2ea0875"><div class="ttname"><a href="classRTCMParser.html#afb4f85449cb5327505040b96e2ea0875">RTCMParser::kPreamble</a></div><div class="ttdeci">static constexpr uint8_t kPreamble</div><div class="ttdef"><b>Definition</b> <a href="RTCMParser_8h_source.html#l00012">RTCMParser.h:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

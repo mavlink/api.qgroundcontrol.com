@@ -101,103 +101,187 @@ $(document).ready(function(){initNavTree('RTCMMavlink_8cc_source.html',''); init
 <a href="RTCMMavlink_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="RTCMMavlink_8h.html">RTCMMavlink.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QtCore/QByteArray&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtCore/QThread&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="MAVLinkProtocol_8h.html">MAVLinkProtocol.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="MultiVehicleManager_8h.html">MultiVehicleManager.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="QmlObjectListModel_8h.html">QmlObjectListModel.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="Vehicle_8h.html">Vehicle.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="VehicleLinkManager_8h.html">VehicleLinkManager.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(RTCMMavlinkLog, <span class="stringliteral">&quot;GPS.RTCMMavlink&quot;</span>)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classRTCMMavlink.html#a56aa75b3205bafe2c6211504d0ca397c">   15</a></span><a class="code hl_class" href="classRTCMMavlink.html">RTCMMavlink</a>::<a class="code hl_class" href="classRTCMMavlink.html">RTCMMavlink</a>(QObject* parent) : QObject(parent)</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    qCDebug(RTCMMavlinkLog) &lt;&lt; <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtCore/QSet&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QtCore/QThread&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="LinkInterface_8h.html">LinkInterface.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="MAVLinkProtocol_8h.html">MAVLinkProtocol.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="MultiVehicleManager_8h.html">MultiVehicleManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="QmlObjectListModel_8h.html">QmlObjectListModel.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="Vehicle_8h.html">Vehicle.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="VehicleLinkManager_8h.html">VehicleLinkManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(RTCMMavlinkLog, <span class="stringliteral">&quot;GPS.RTCMMavlink&quot;</span>)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// Compile-time check that our constants match the MAVLink message definition.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>static_assert(<a class="code hl_class" href="classRTCMMavlink.html">RTCMMavlink</a>::kFragmentLen == MAVLINK_MSG_GPS_RTCM_DATA_FIELD_DATA_LEN);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classRTCMMavlink.html#a56aa75b3205bafe2c6211504d0ca397c">   22</a></span><a class="code hl_class" href="classRTCMMavlink.html">RTCMMavlink</a>::<a class="code hl_class" href="classRTCMMavlink.html">RTCMMavlink</a>(QObject* parent) : QObject(parent)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    qCDebug(RTCMMavlinkLog) &lt;&lt; <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classRTCMMavlink.html#a8cfaa560974c782888dcd29a50c82317">   20</a></span><a class="code hl_function" href="classRTCMMavlink.html#a8cfaa560974c782888dcd29a50c82317">RTCMMavlink::~RTCMMavlink</a>()</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    qCDebug(RTCMMavlinkLog) &lt;&lt; <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classRTCMMavlink.html#a8cfaa560974c782888dcd29a50c82317">   27</a></span><a class="code hl_function" href="classRTCMMavlink.html#a8cfaa560974c782888dcd29a50c82317">RTCMMavlink::~RTCMMavlink</a>()</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    qCDebug(RTCMMavlinkLog) &lt;&lt; <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classRTCMMavlink.html#a8acf5237b6c1affc09cfce3a35c8691e">   25</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="classRTCMMavlink.html#a8acf5237b6c1affc09cfce3a35c8691e">RTCMMavlink::RTCMDataUpdate</a>(QByteArrayView data)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    _rateTracker.<a class="code hl_function" href="classDataRateTracker.html#a732fef26dd29410a43c00eb2eff25c69">recordBytes</a>(data.size());</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (_rateTracker.<a class="code hl_function" href="classDataRateTracker.html#aaf6d7604c81cca0a68e9a70b4b986aa2">rateUpdated</a>()) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        qCDebug(RTCMMavlinkLog) &lt;&lt; QStringLiteral(<span class="stringliteral">&quot;RTCM bandwidth: %1 kB/s&quot;</span>).arg(_rateTracker.<a class="code hl_function" href="classDataRateTracker.html#a51b9380b0e3f511c0d5843784a102231">kBps</a>(), 0, <span class="charliteral">&#39;f&#39;</span>, 3);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        emit <a class="code hl_signal" href="classRTCMMavlink.html#a61bb903c5c511b626ee8fe852d447d08">bandwidthChanged</a>();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_typedef" href="RTCMMavlink_8h.html#a98864f8df7f7d33fdb8cd1a2754df4e0">mavlink_gps_rtcm_data_t</a> gpsRtcmData{};</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> qsizetype maxMessageLength = MAVLINK_MSG_GPS_RTCM_DATA_FIELD_DATA_LEN;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (data.size() &lt; maxMessageLength) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        gpsRtcmData.len = data.size();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        gpsRtcmData.flags = (_sequenceId &amp; 0x1FU) &lt;&lt; 3;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        (void) memcpy(&amp;gpsRtcmData.data, data.data(), data.size());</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        _sendMessageToVehicle(gpsRtcmData);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        uint8_t fragmentId = 0;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        qsizetype start = 0;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">while</span> (start &lt; data.size()) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            gpsRtcmData.flags = 0x01U;                        <span class="comment">// LSB set indicates message is fragmented</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            gpsRtcmData.flags |= fragmentId++ &lt;&lt; 1;           <span class="comment">// Next 2 bits are fragment id</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            gpsRtcmData.flags |= (_sequenceId &amp; 0x1FU) &lt;&lt; 3;  <span class="comment">// Next 5 bits are sequence id</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keyword">const</span> qsizetype length = std::min(data.size() - start, maxMessageLength);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            gpsRtcmData.len = length;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            (void) memcpy(gpsRtcmData.data, data.constData() + start, length);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            _sendMessageToVehicle(gpsRtcmData);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            start += length;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    ++_sequenceId;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>uint8_t RTCMMavlink::_makeFlags(<span class="keywordtype">bool</span> fragmented, uint8_t fragmentId, uint8_t sequenceId)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    uint8_t flags = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>((sequenceId &amp; 0x1FU) &lt;&lt; 3);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">if</span> (fragmented) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        flags |= 0x01U;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        flags |= <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>((fragmentId &amp; 0x03U) &lt;&lt; 1);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">return</span> flags;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classRTCMMavlink.html#adda0a51c5ae5013a9bdc7cc07303c14f">   42</a></span><a class="code hl_struct" href="structRTCMMavlink_1_1PackResult.html">RTCMMavlink::PackResult</a> <a class="code hl_function" href="classRTCMMavlink.html#adda0a51c5ae5013a9bdc7cc07303c14f">RTCMMavlink::pack</a>(QByteArrayView data, uint8_t sequenceId)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_struct" href="structRTCMMavlink_1_1PackResult.html">PackResult</a> result;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    result.<a class="code hl_variable" href="structRTCMMavlink_1_1PackResult.html#a68f2a97d1afa7ec8f014f27605c6ce9b">nextSequenceId</a> = sequenceId;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span> (data.isEmpty()) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">// Larger than the 4-fragment reassembly window: stream unfragmented chunks so</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">// the vehicle&#39;s RTCM framer can rebuild frames from the inject stream. Do not</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// invent fragment IDs beyond 0..3 (would clobber the sequence field).</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span> (data.size() &gt; <a class="code hl_variable" href="classRTCMMavlink.html#a7e488c662f771c96277339c4d14d6a89">kMaxAssembledLen</a>) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        qsizetype start = 0;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">while</span> (start &lt; data.size()) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keyword">const</span> qsizetype length = std::min(data.size() - start, <a class="code hl_variable" href="classRTCMMavlink.html#a8914acd8b555f816073a126eb69dab6b">kFragmentLen</a>);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <a class="code hl_struct" href="structGpsRtcmPacket.html">GpsRtcmPacket</a> packet;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            packet.<a class="code hl_variable" href="structGpsRtcmPacket.html#a0d29ffd9602ec73ffdc4cb860ec3ecd4">flags</a> = _makeFlags(<span class="keyword">false</span>, 0, result.<a class="code hl_variable" href="structRTCMMavlink_1_1PackResult.html#a68f2a97d1afa7ec8f014f27605c6ce9b">nextSequenceId</a>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            packet.<a class="code hl_variable" href="structGpsRtcmPacket.html#af6ad8509b7823d4f512488ad2351dddf">data</a> = data.mid(start, length).toByteArray();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            result.<a class="code hl_variable" href="structRTCMMavlink_1_1PackResult.html#a0294fc243a8a2c17443917d8eef9e674">packets</a>.append(std::move(packet));</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            ++result.<a class="code hl_variable" href="structRTCMMavlink_1_1PackResult.html#a68f2a97d1afa7ec8f014f27605c6ce9b">nextSequenceId</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            start += length;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">if</span> (data.size() &lt;= <a class="code hl_variable" href="classRTCMMavlink.html#a8914acd8b555f816073a126eb69dab6b">kFragmentLen</a>) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <a class="code hl_struct" href="structGpsRtcmPacket.html">GpsRtcmPacket</a> packet;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        packet.<a class="code hl_variable" href="structGpsRtcmPacket.html#a0d29ffd9602ec73ffdc4cb860ec3ecd4">flags</a> = _makeFlags(<span class="keyword">false</span>, 0, sequenceId);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        packet.<a class="code hl_variable" href="structGpsRtcmPacket.html#af6ad8509b7823d4f512488ad2351dddf">data</a> = data.toByteArray();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        result.<a class="code hl_variable" href="structRTCMMavlink_1_1PackResult.html#a0294fc243a8a2c17443917d8eef9e674">packets</a>.append(std::move(packet));</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        ++result.<a class="code hl_variable" href="structRTCMMavlink_1_1PackResult.html#a68f2a97d1afa7ec8f014f27605c6ce9b">nextSequenceId</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="comment">// Fragmented: 181..720 bytes. Fragment ID is only 2 bits (0..3).</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    uint8_t fragmentId = 0;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    qsizetype start = 0;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">while</span> (start &lt; data.size()) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keyword">const</span> qsizetype length = std::min(data.size() - start, <a class="code hl_variable" href="classRTCMMavlink.html#a8914acd8b555f816073a126eb69dab6b">kFragmentLen</a>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_struct" href="structGpsRtcmPacket.html">GpsRtcmPacket</a> packet;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        packet.<a class="code hl_variable" href="structGpsRtcmPacket.html#a0d29ffd9602ec73ffdc4cb860ec3ecd4">flags</a> = _makeFlags(<span class="keyword">true</span>, fragmentId, sequenceId);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        packet.<a class="code hl_variable" href="structGpsRtcmPacket.html#af6ad8509b7823d4f512488ad2351dddf">data</a> = data.mid(start, length).toByteArray();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        result.<a class="code hl_variable" href="structRTCMMavlink_1_1PackResult.html#a0294fc243a8a2c17443917d8eef9e674">packets</a>.append(std::move(packet));</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        ++fragmentId;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        start += length;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">// Exact multiple of 180 with fewer than 4 fragments: MAVLink requires a final</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">// zero-length fragment so receivers know the message is complete. (All four</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">// full fragments complete by the &quot;all fragments present&quot; rule without this.)</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment">// See ArduPilot AP_GPS::handle_gps_rtcm_fragment and PX4 GpsRtcmMessageAssembler.</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">if</span> ((data.size() % <a class="code hl_variable" href="classRTCMMavlink.html#a8914acd8b555f816073a126eb69dab6b">kFragmentLen</a>) == 0 &amp;&amp; fragmentId &lt; <a class="code hl_variable" href="classRTCMMavlink.html#a130246f9b84b0c77760c165ec92e3fea">kMaxFragments</a>) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_struct" href="structGpsRtcmPacket.html">GpsRtcmPacket</a> terminator;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        terminator.<a class="code hl_variable" href="structGpsRtcmPacket.html#a0d29ffd9602ec73ffdc4cb860ec3ecd4">flags</a> = _makeFlags(<span class="keyword">true</span>, fragmentId, sequenceId);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        terminator.<a class="code hl_variable" href="structGpsRtcmPacket.html#af6ad8509b7823d4f512488ad2351dddf">data</a>.clear();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        result.<a class="code hl_variable" href="structRTCMMavlink_1_1PackResult.html#a0294fc243a8a2c17443917d8eef9e674">packets</a>.append(std::move(terminator));</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    ++result.<a class="code hl_variable" href="structRTCMMavlink_1_1PackResult.html#a68f2a97d1afa7ec8f014f27605c6ce9b">nextSequenceId</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
 </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classRTCMMavlink.html#a8d4beed7de05268f2af2956a924f097a">   62</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classRTCMMavlink.html#a8d4beed7de05268f2af2956a924f097a">RTCMMavlink::sendSimulatedData</a>(<span class="keyword">const</span> std::atomic_bool&amp; requestStop)</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>{</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span> kMessageLengths[] = {30, 170, 240};</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">const</span> QByteArray payload(kMessageLengths[2], <span class="charliteral">&#39;\0&#39;</span>);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">while</span> (!requestStop) {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">int</span> length : kMessageLengths) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <a class="code hl_slot" href="classRTCMMavlink.html#a8acf5237b6c1affc09cfce3a35c8691e">RTCMDataUpdate</a>(QByteArrayView(payload).first(length));</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            QThread::msleep(4);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        QThread::msleep(100);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classRTCMMavlink.html#a8acf5237b6c1affc09cfce3a35c8691e">  105</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="classRTCMMavlink.html#a8acf5237b6c1affc09cfce3a35c8691e">RTCMMavlink::RTCMDataUpdate</a>(QByteArrayView data)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>{</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">if</span> (data.isEmpty()) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    _rateTracker.<a class="code hl_function" href="classDataRateTracker.html#a732fef26dd29410a43c00eb2eff25c69">recordBytes</a>(data.size());</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">if</span> (_rateTracker.<a class="code hl_function" href="classDataRateTracker.html#aaf6d7604c81cca0a68e9a70b4b986aa2">rateUpdated</a>()) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        qCDebug(RTCMMavlinkLog) &lt;&lt; QStringLiteral(<span class="stringliteral">&quot;RTCM bandwidth: %1 kB/s&quot;</span>).arg(_rateTracker.<a class="code hl_function" href="classDataRateTracker.html#a51b9380b0e3f511c0d5843784a102231">kBps</a>(), 0, <span class="charliteral">&#39;f&#39;</span>, 3);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        emit <a class="code hl_signal" href="classRTCMMavlink.html#a61bb903c5c511b626ee8fe852d447d08">bandwidthChanged</a>();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structRTCMMavlink_1_1PackResult.html">PackResult</a> packed = <a class="code hl_function" href="classRTCMMavlink.html#adda0a51c5ae5013a9bdc7cc07303c14f">pack</a>(data, _sequenceId);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    _sequenceId = packed.<a class="code hl_variable" href="structRTCMMavlink_1_1PackResult.html#a68f2a97d1afa7ec8f014f27605c6ce9b">nextSequenceId</a>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_struct" href="structGpsRtcmPacket.html">GpsRtcmPacket</a>&amp; packet : packed.<a class="code hl_variable" href="structRTCMMavlink_1_1PackResult.html#a0294fc243a8a2c17443917d8eef9e674">packets</a>) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <a class="code hl_typedef" href="RTCMMavlink_8h.html#a98864f8df7f7d33fdb8cd1a2754df4e0">mavlink_gps_rtcm_data_t</a> gpsRtcmData{};</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        gpsRtcmData.flags = packet.flags;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        gpsRtcmData.len = <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(packet.data.size());</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">if</span> (!packet.data.isEmpty()) {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            (void) memcpy(gpsRtcmData.data, packet.data.constData(), <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(packet.data.size()));</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        _sendMessageOnAllLinks(gpsRtcmData);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
 </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">void</span> RTCMMavlink::_sendMessageToVehicle(<span class="keyword">const</span> <a class="code hl_typedef" href="RTCMMavlink_8h.html#a98864f8df7f7d33fdb8cd1a2754df4e0">mavlink_gps_rtcm_data_t</a>&amp; data)</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a>* <span class="keyword">const</span> vehicles = <a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>()-&gt;<a class="code hl_function" href="classMultiVehicleManager.html#a409947c265f2c4b6bd5f9b1c1a73bd65">vehicles</a>();</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">for</span> (qsizetype i = 0; i &lt; vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#ab39a055cf0624b6933e058d18847c275">count</a>(); i++) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <a class="code hl_class" href="classVehicle.html">Vehicle</a>* <span class="keyword">const</span> vehicle = qobject_cast&lt;Vehicle*&gt;(vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#a719d44955829b8f198c748433fba5d1f">get</a>(i));</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">if</span> (!vehicle) {</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="LinkInterface_8h.html#a06fa8dcc2f950057f6a5ae85ec96cee2">SharedLinkInterfacePtr</a> sharedLink = vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a49c0f82c46858483d699df6b615b3f02">vehicleLinkManager</a>()-&gt;<a class="code hl_function" href="classVehicleLinkManager.html#a46e03af5d8cf9aa9620b080468bbe7b6">primaryLink</a>().lock();</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">if</span> (sharedLink) {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> message;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            (void) mavlink_msg_gps_rtcm_data_encode_chan(<a class="code hl_function" href="classMAVLinkProtocol.html#aa7efddf9f80781eb204442eb265b3fa5">MAVLinkProtocol::instance</a>()-&gt;<a class="code hl_function" href="classMAVLinkProtocol.html#ab519c8771c8ab289d2924bcb762f1cd7">getSystemId</a>(),</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                                                         <a class="code hl_function" href="classMAVLinkProtocol.html#a2999b6e6d6ac482d0b7c1aaf91c015e7">MAVLinkProtocol::getComponentId</a>(),</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                                                         sharedLink-&gt;mavlinkChannel(), &amp;message, &amp;data);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            (void) vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a7b661e2cf877e915aebabc8c8ac2f57b">sendMessageOnLinkThreadSafe</a>(sharedLink.get(), message);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="foldopen" id="foldopen00131" data-start="{" data-end="}">
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classRTCMMavlink.html#a8d4beed7de05268f2af2956a924f097a">  131</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classRTCMMavlink.html#a8d4beed7de05268f2af2956a924f097a">RTCMMavlink::sendSimulatedData</a>(<span class="keyword">const</span> std::atomic_bool&amp; requestStop)</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>{</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span> kMessageLengths[] = {30, 170, 240};</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keyword">const</span> QByteArray payload(kMessageLengths[2], <span class="charliteral">&#39;\0&#39;</span>);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">while</span> (!requestStop) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">int</span> length : kMessageLengths) {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            <a class="code hl_slot" href="classRTCMMavlink.html#a8acf5237b6c1affc09cfce3a35c8691e">RTCMDataUpdate</a>(QByteArrayView(payload).first(length));</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            QThread::msleep(4);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        QThread::msleep(100);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>}</div>
+</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="keywordtype">void</span> RTCMMavlink::_sendMessageOnAllLinks(<span class="keyword">const</span> <a class="code hl_typedef" href="RTCMMavlink_8h.html#a98864f8df7f7d33fdb8cd1a2754df4e0">mavlink_gps_rtcm_data_t</a>&amp; data)</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>{</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a>* <span class="keyword">const</span> vehicles = <a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>()-&gt;<a class="code hl_function" href="classMultiVehicleManager.html#a409947c265f2c4b6bd5f9b1c1a73bd65">vehicles</a>();</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    QSet&lt;const LinkInterface*&gt; sentLinks;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordflow">for</span> (qsizetype i = 0; i &lt; vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#ab39a055cf0624b6933e058d18847c275">count</a>(); i++) {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        <a class="code hl_class" href="classVehicle.html">Vehicle</a>* <span class="keyword">const</span> vehicle = qobject_cast&lt;Vehicle*&gt;(vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#a719d44955829b8f198c748433fba5d1f">get</a>(i));</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keywordflow">if</span> (!vehicle) {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="LinkInterface_8h.html#a06fa8dcc2f950057f6a5ae85ec96cee2">SharedLinkInterfacePtr</a> sharedLink = vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a49c0f82c46858483d699df6b615b3f02">vehicleLinkManager</a>()-&gt;<a class="code hl_function" href="classVehicleLinkManager.html#a46e03af5d8cf9aa9620b080468bbe7b6">primaryLink</a>().lock();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="keywordflow">if</span> (!sharedLink || !sharedLink-&gt;isConnected()) {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="comment">// RTCM corrections are broadcast data. Send only once per link so that vehicles</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="comment">// which share the same link don&#39;t cause duplicate sends. UDP links in particular</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="comment">// send each write to all connected endpoints on the link. Send directly on the</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="comment">// link rather than through a Vehicle so the send is not tied to whichever vehicle</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="comment">// happens to be first on a shared link.</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        <span class="keywordflow">if</span> (sentLinks.contains(sharedLink.get())) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        (void) sentLinks.insert(sharedLink.get());</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> message{};</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        (void) mavlink_msg_gps_rtcm_data_encode_chan(<a class="code hl_function" href="classMAVLinkProtocol.html#aa7efddf9f80781eb204442eb265b3fa5">MAVLinkProtocol::instance</a>()-&gt;<a class="code hl_function" href="classMAVLinkProtocol.html#ab519c8771c8ab289d2924bcb762f1cd7">getSystemId</a>(),</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                                                     <a class="code hl_function" href="classMAVLinkProtocol.html#a2999b6e6d6ac482d0b7c1aaf91c015e7">MAVLinkProtocol::getComponentId</a>(), sharedLink-&gt;mavlinkChannel(),</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                                                     &amp;message, &amp;data);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        sharedLink-&gt;sendMessageThreadSafe(message);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>}</div>
+<div class="ttc" id="aLinkInterface_8h_html"><div class="ttname"><a href="LinkInterface_8h.html">LinkInterface.h</a></div></div>
 <div class="ttc" id="aLinkInterface_8h_html_a06fa8dcc2f950057f6a5ae85ec96cee2"><div class="ttname"><a href="LinkInterface_8h.html#a06fa8dcc2f950057f6a5ae85ec96cee2">SharedLinkInterfacePtr</a></div><div class="ttdeci">std::shared_ptr&lt; LinkInterface &gt; SharedLinkInterfacePtr</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8h_source.html#l00101">LinkInterface.h:101</a></div></div>
 <div class="ttc" id="aMAVLinkProtocol_8h_html"><div class="ttname"><a href="MAVLinkProtocol_8h.html">MAVLinkProtocol.h</a></div></div>
 <div class="ttc" id="aMultiVehicleManager_8h_html"><div class="ttname"><a href="MultiVehicleManager_8h.html">MultiVehicleManager.h</a></div></div>
@@ -206,7 +290,7 @@ $(document).ready(function(){initNavTree('RTCMMavlink_8cc_source.html',''); init
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
 <div class="ttc" id="aQmlObjectListModel_8h_html"><div class="ttname"><a href="QmlObjectListModel_8h.html">QmlObjectListModel.h</a></div></div>
 <div class="ttc" id="aRTCMMavlink_8h_html"><div class="ttname"><a href="RTCMMavlink_8h.html">RTCMMavlink.h</a></div></div>
-<div class="ttc" id="aRTCMMavlink_8h_html_a98864f8df7f7d33fdb8cd1a2754df4e0"><div class="ttname"><a href="RTCMMavlink_8h.html#a98864f8df7f7d33fdb8cd1a2754df4e0">mavlink_gps_rtcm_data_t</a></div><div class="ttdeci">struct __mavlink_gps_rtcm_data_t mavlink_gps_rtcm_data_t</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00008">RTCMMavlink.h:8</a></div></div>
+<div class="ttc" id="aRTCMMavlink_8h_html_a98864f8df7f7d33fdb8cd1a2754df4e0"><div class="ttname"><a href="RTCMMavlink_8h.html#a98864f8df7f7d33fdb8cd1a2754df4e0">mavlink_gps_rtcm_data_t</a></div><div class="ttdeci">struct __mavlink_gps_rtcm_data_t mavlink_gps_rtcm_data_t</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00011">RTCMMavlink.h:11</a></div></div>
 <div class="ttc" id="aVehicleLinkManager_8h_html"><div class="ttname"><a href="VehicleLinkManager_8h.html">VehicleLinkManager.h</a></div></div>
 <div class="ttc" id="aVehicle_8h_html"><div class="ttname"><a href="Vehicle_8h.html">Vehicle.h</a></div></div>
 <div class="ttc" id="aclassDataRateTracker_html_a51b9380b0e3f511c0d5843784a102231"><div class="ttname"><a href="classDataRateTracker.html#a51b9380b0e3f511c0d5843784a102231">DataRateTracker::kBps</a></div><div class="ttdeci">double kBps() const</div><div class="ttdoc">Current data rate in KB/s.</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8h_source.html#l00029">DataRateTracker.h:29</a></div></div>
@@ -220,15 +304,24 @@ $(document).ready(function(){initNavTree('RTCMMavlink_8cc_source.html',''); init
 <div class="ttc" id="aclassQmlObjectListModel_html"><div class="ttname"><a href="classQmlObjectListModel.html">QmlObjectListModel</a></div><div class="ttdef"><b>Definition</b> <a href="QmlObjectListModel_8h_source.html#l00005">QmlObjectListModel.h:6</a></div></div>
 <div class="ttc" id="aclassQmlObjectListModel_html_a719d44955829b8f198c748433fba5d1f"><div class="ttname"><a href="classQmlObjectListModel.html#a719d44955829b8f198c748433fba5d1f">QmlObjectListModel::get</a></div><div class="ttdeci">Q_INVOKABLE QObject * get(int index)</div><div class="ttdef"><b>Definition</b> <a href="QmlObjectListModel_8cc_source.html#l00059">QmlObjectListModel.cc:59</a></div></div>
 <div class="ttc" id="aclassQmlObjectListModel_html_ab39a055cf0624b6933e058d18847c275"><div class="ttname"><a href="classQmlObjectListModel.html#ab39a055cf0624b6933e058d18847c275">QmlObjectListModel::count</a></div><div class="ttdeci">int count() const override final</div><div class="ttdef"><b>Definition</b> <a href="QmlObjectListModel_8cc_source.html#l00258">QmlObjectListModel.cc:258</a></div></div>
-<div class="ttc" id="aclassRTCMMavlink_html"><div class="ttname"><a href="classRTCMMavlink.html">RTCMMavlink</a></div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00010">RTCMMavlink.h:11</a></div></div>
+<div class="ttc" id="aclassRTCMMavlink_html"><div class="ttname"><a href="classRTCMMavlink.html">RTCMMavlink</a></div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00021">RTCMMavlink.h:22</a></div></div>
+<div class="ttc" id="aclassRTCMMavlink_html_a130246f9b84b0c77760c165ec92e3fea"><div class="ttname"><a href="classRTCMMavlink.html#a130246f9b84b0c77760c165ec92e3fea">RTCMMavlink::kMaxFragments</a></div><div class="ttdeci">static constexpr qsizetype kMaxFragments</div><div class="ttdoc">Fragment ID is 2 bits — at most 4 fragments per reassembled message.</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00031">RTCMMavlink.h:31</a></div></div>
 <div class="ttc" id="aclassRTCMMavlink_html_a61bb903c5c511b626ee8fe852d447d08"><div class="ttname"><a href="classRTCMMavlink.html#a61bb903c5c511b626ee8fe852d447d08">RTCMMavlink::bandwidthChanged</a></div><div class="ttdeci">void bandwidthChanged()</div></div>
-<div class="ttc" id="aclassRTCMMavlink_html_a8acf5237b6c1affc09cfce3a35c8691e"><div class="ttname"><a href="classRTCMMavlink.html#a8acf5237b6c1affc09cfce3a35c8691e">RTCMMavlink::RTCMDataUpdate</a></div><div class="ttdeci">void RTCMDataUpdate(QByteArrayView data)</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00025">RTCMMavlink.cc:25</a></div></div>
-<div class="ttc" id="aclassRTCMMavlink_html_a8cfaa560974c782888dcd29a50c82317"><div class="ttname"><a href="classRTCMMavlink.html#a8cfaa560974c782888dcd29a50c82317">RTCMMavlink::~RTCMMavlink</a></div><div class="ttdeci">~RTCMMavlink()</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00020">RTCMMavlink.cc:20</a></div></div>
-<div class="ttc" id="aclassRTCMMavlink_html_a8d4beed7de05268f2af2956a924f097a"><div class="ttname"><a href="classRTCMMavlink.html#a8d4beed7de05268f2af2956a924f097a">RTCMMavlink::sendSimulatedData</a></div><div class="ttdeci">void sendSimulatedData(const std::atomic_bool &amp;requestStop)</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00062">RTCMMavlink.cc:62</a></div></div>
+<div class="ttc" id="aclassRTCMMavlink_html_a7e488c662f771c96277339c4d14d6a89"><div class="ttname"><a href="classRTCMMavlink.html#a7e488c662f771c96277339c4d14d6a89">RTCMMavlink::kMaxAssembledLen</a></div><div class="ttdeci">static constexpr qsizetype kMaxAssembledLen</div><div class="ttdoc">Max payload that fits one fragmented sequence (4 * 180).</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00033">RTCMMavlink.h:33</a></div></div>
+<div class="ttc" id="aclassRTCMMavlink_html_a8914acd8b555f816073a126eb69dab6b"><div class="ttname"><a href="classRTCMMavlink.html#a8914acd8b555f816073a126eb69dab6b">RTCMMavlink::kFragmentLen</a></div><div class="ttdeci">static constexpr qsizetype kFragmentLen</div><div class="ttdoc">MAVLink GPS_RTCM_DATA data[] field length.</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00029">RTCMMavlink.h:29</a></div></div>
+<div class="ttc" id="aclassRTCMMavlink_html_a8acf5237b6c1affc09cfce3a35c8691e"><div class="ttname"><a href="classRTCMMavlink.html#a8acf5237b6c1affc09cfce3a35c8691e">RTCMMavlink::RTCMDataUpdate</a></div><div class="ttdeci">void RTCMDataUpdate(QByteArrayView data)</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00105">RTCMMavlink.cc:105</a></div></div>
+<div class="ttc" id="aclassRTCMMavlink_html_a8cfaa560974c782888dcd29a50c82317"><div class="ttname"><a href="classRTCMMavlink.html#a8cfaa560974c782888dcd29a50c82317">RTCMMavlink::~RTCMMavlink</a></div><div class="ttdeci">~RTCMMavlink()</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00027">RTCMMavlink.cc:27</a></div></div>
+<div class="ttc" id="aclassRTCMMavlink_html_a8d4beed7de05268f2af2956a924f097a"><div class="ttname"><a href="classRTCMMavlink.html#a8d4beed7de05268f2af2956a924f097a">RTCMMavlink::sendSimulatedData</a></div><div class="ttdeci">void sendSimulatedData(const std::atomic_bool &amp;requestStop)</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00131">RTCMMavlink.cc:131</a></div></div>
+<div class="ttc" id="aclassRTCMMavlink_html_adda0a51c5ae5013a9bdc7cc07303c14f"><div class="ttname"><a href="classRTCMMavlink.html#adda0a51c5ae5013a9bdc7cc07303c14f">RTCMMavlink::pack</a></div><div class="ttdeci">static PackResult pack(QByteArrayView data, uint8_t sequenceId)</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00042">RTCMMavlink.cc:42</a></div></div>
 <div class="ttc" id="aclassVehicleLinkManager_html_a46e03af5d8cf9aa9620b080468bbe7b6"><div class="ttname"><a href="classVehicleLinkManager.html#a46e03af5d8cf9aa9620b080468bbe7b6">VehicleLinkManager::primaryLink</a></div><div class="ttdeci">WeakLinkInterfacePtr primaryLink() const</div><div class="ttdef"><b>Definition</b> <a href="VehicleLinkManager_8h_source.html#l00038">VehicleLinkManager.h:38</a></div></div>
 <div class="ttc" id="aclassVehicle_html"><div class="ttname"><a href="classVehicle.html">Vehicle</a></div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00086">Vehicle.h:87</a></div></div>
 <div class="ttc" id="aclassVehicle_html_a49c0f82c46858483d699df6b615b3f02"><div class="ttname"><a href="classVehicle.html#a49c0f82c46858483d699df6b615b3f02">Vehicle::vehicleLinkManager</a></div><div class="ttdeci">VehicleLinkManager * vehicleLinkManager()</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00579">Vehicle.h:579</a></div></div>
-<div class="ttc" id="aclassVehicle_html_a7b661e2cf877e915aebabc8c8ac2f57b"><div class="ttname"><a href="classVehicle.html#a7b661e2cf877e915aebabc8c8ac2f57b">Vehicle::sendMessageOnLinkThreadSafe</a></div><div class="ttdeci">bool sendMessageOnLinkThreadSafe(LinkInterface *link, mavlink_message_t message)</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8cc_source.html#l01390">Vehicle.cc:1390</a></div></div>
+<div class="ttc" id="astructGpsRtcmPacket_html"><div class="ttname"><a href="structGpsRtcmPacket.html">GpsRtcmPacket</a></div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00015">RTCMMavlink.h:16</a></div></div>
+<div class="ttc" id="astructGpsRtcmPacket_html_a0d29ffd9602ec73ffdc4cb860ec3ecd4"><div class="ttname"><a href="structGpsRtcmPacket.html#a0d29ffd9602ec73ffdc4cb860ec3ecd4">GpsRtcmPacket::flags</a></div><div class="ttdeci">uint8_t flags</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00017">RTCMMavlink.h:17</a></div></div>
+<div class="ttc" id="astructGpsRtcmPacket_html_af6ad8509b7823d4f512488ad2351dddf"><div class="ttname"><a href="structGpsRtcmPacket.html#af6ad8509b7823d4f512488ad2351dddf">GpsRtcmPacket::data</a></div><div class="ttdeci">QByteArray data</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00018">RTCMMavlink.h:18</a></div></div>
+<div class="ttc" id="astructRTCMMavlink_1_1PackResult_html"><div class="ttname"><a href="structRTCMMavlink_1_1PackResult.html">RTCMMavlink::PackResult</a></div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00053">RTCMMavlink.h:54</a></div></div>
+<div class="ttc" id="astructRTCMMavlink_1_1PackResult_html_a0294fc243a8a2c17443917d8eef9e674"><div class="ttname"><a href="structRTCMMavlink_1_1PackResult.html#a0294fc243a8a2c17443917d8eef9e674">RTCMMavlink::PackResult::packets</a></div><div class="ttdeci">QList&lt; GpsRtcmPacket &gt; packets</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00055">RTCMMavlink.h:55</a></div></div>
+<div class="ttc" id="astructRTCMMavlink_1_1PackResult_html_a68f2a97d1afa7ec8f014f27605c6ce9b"><div class="ttname"><a href="structRTCMMavlink_1_1PackResult.html#a68f2a97d1afa7ec8f014f27605c6ce9b">RTCMMavlink::PackResult::nextSequenceId</a></div><div class="ttdeci">uint8_t nextSequenceId</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00056">RTCMMavlink.h:56</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

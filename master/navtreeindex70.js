@@ -1,5 +1,9 @@
 var NAVTREEINDEX70 =
 {
+"namespaceSDLJoystick.html#a30b9974a628892f2958a542abb63604d":[1,0,45,28],
+"namespaceSDLJoystick.html#a321acc477530f61c282fbeb5d6aa8742":[1,0,45,37],
+"namespaceSDLJoystick.html#a3f892804ebe5fa2f1de7ee0f8542dd6e":[1,0,45,40],
+"namespaceSDLJoystick.html#a456c58b7951a5b44571538df86748bcf":[1,0,45,13],
 "namespaceSDLJoystick.html#a47788e4f9a58d341204b08363bef5fc9":[1,0,45,31],
 "namespaceSDLJoystick.html#a478828cafc1837246f14e3bfa5107d3d":[1,0,45,43],
 "namespaceSDLJoystick.html#a567987360f4caad5740b6cc8a105e2a6":[1,0,45,27],
@@ -245,9 +249,5 @@ var NAVTREEINDEX70 =
 "qserialportinfo_8cpp.html":[3,0,0,2,0,6],
 "qserialportinfo_8cpp.html#a6533d62fa642e868e6be8ea6c69c7dee":[3,0,0,2,0,6,0],
 "qserialportinfo_8cpp_source.html":[3,0,0,2,0,6],
-"qserialportinfo_8h.html":[3,0,0,2,0,7],
-"qserialportinfo_8h_source.html":[3,0,0,2,0,7],
-"qserialportinfo__android_8cpp.html":[3,0,0,2,0,8],
-"qserialportinfo__android_8cpp.html#a326bbf8378557e6977a0b9cbb3127de6":[3,0,0,2,0,8,0],
-"qserialportinfo__android_8cpp.html#a85ed707e038b78520bc134c2cbb8672b":[3,0,0,2,0,8,2]
+"qserialportinfo_8h.html":[3,0,0,2,0,7]
 };

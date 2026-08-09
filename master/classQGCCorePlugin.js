@@ -15,6 +15,7 @@ var classQGCCorePlugin =
     [ "createVideoSink", "classQGCCorePlugin.html#a42a114f7976d0949edaf9ac564294c74", null ],
     [ "customMapItems", "classQGCCorePlugin.html#ad1d6bfa9996601d488638de4e7800e5d", null ],
     [ "defaultSettings", "classQGCCorePlugin.html#a2e927641790eb8b2a77575ff19fd1b74", null ],
+    [ "destroyQmlApplicationEngine", "classQGCCorePlugin.html#adfad507af89aa3140902e4ec002faba3", null ],
     [ "factValueGridCreateDefaultSettings", "classQGCCorePlugin.html#a51596e1b406700eaaac8d4049e84214a", null ],
     [ "firstRunPromptCustomIds", "classQGCCorePlugin.html#a5ba63a6e00bce13092203cae39f15490", null ],
     [ "firstRunPromptResource", "classQGCCorePlugin.html#a5c7f45241d183289c7b7dedd0fbcfb65", null ],

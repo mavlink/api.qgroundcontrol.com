@@ -131,7 +131,7 @@ var NAVTREEINDEX15 =
 "RTCMMavlink_8cc.html":[3,0,0,15,2,0],
 "RTCMMavlink_8cc_source.html":[3,0,0,15,2,0],
 "RTCMMavlink_8h.html":[3,0,0,15,2,1],
-"RTCMMavlink_8h.html#a98864f8df7f7d33fdb8cd1a2754df4e0":[3,0,0,15,2,1,1],
+"RTCMMavlink_8h.html#a98864f8df7f7d33fdb8cd1a2754df4e0":[3,0,0,15,2,1,3],
 "RTCMMavlink_8h_source.html":[3,0,0,15,2,1],
 "RTCMParser_8cc.html":[3,0,0,15,2,2],
 "RTCMParser_8cc_source.html":[3,0,0,15,2,2],

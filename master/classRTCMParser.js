@@ -5,7 +5,6 @@ var classRTCMParser =
     [ "crc24q", "classRTCMParser.html#a25e064699cd425640cf57e145038eeaa", null ],
     [ "crcBytes", "classRTCMParser.html#ae91cc97b305f0bde407cccfa228fd9ca", null ],
     [ "currentFrame", "classRTCMParser.html#aab85f4988372a7cfaa2d555cb6008a7d", null ],
-    [ "extractValidFrames", "classRTCMParser.html#af6ba6e837cbdfad541c6e8ea1298a8cf", null ],
     [ "isWhitelisted", "classRTCMParser.html#ab2b22e10e5d7860c0f1aa8d5e890452d", null ],
     [ "message", "classRTCMParser.html#ab5b9d6f88f04041b5ece4b24ad6149da", null ],
     [ "messageId", "classRTCMParser.html#ae99434149e9bc310da68a8130e76d4e6", null ],
