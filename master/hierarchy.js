@@ -22,6 +22,7 @@ var hierarchy =
     [ "AssignedButtonAction", "classAssignedButtonAction.html", null ],
     [ "QGC::AutoSuspendGuard", "classQGC_1_1AutoSuspendGuard.html", null ],
     [ "Joystick::AxisCalibration_t", "structJoystick_1_1AxisCalibration__t.html", null ],
+    [ "SurfaceAnalysis::BadHeights", "structSurfaceAnalysis_1_1BadHeights.html", null ],
     [ "OsmParserThread::BuildingType_t", "structOsmParserThread_1_1BuildingType__t.html", null ],
     [ "CalibrationResult", "structCalibrationResult.html", null ],
     [ "QGCCameraManager::CameraInfoRequestContext", "structQGCCameraManager_1_1CameraInfoRequestContext.html", null ],
@@ -46,6 +47,7 @@ var hierarchy =
     [ "QGCRhiCapture::DeviceSnapshot", "structQGCRhiCapture_1_1DeviceSnapshot.html", null ],
     [ "QGC::EdgeTriggeredCounter< CountT >", "classQGC_1_1EdgeTriggeredCounter.html", null ],
     [ "QGC::EdgeTriggeredCounter< uint8_t >", "classQGC_1_1EdgeTriggeredCounter.html", null ],
+    [ "ElevationTilePyramid", "classElevationTilePyramid.html", null ],
     [ "VideoBackend::EnvPrepResult", "structVideoBackend_1_1EnvPrepResult.html", null ],
     [ "ErrorRecoveryBuilder", "classErrorRecoveryBuilder.html", null ],
     [ "FirmwareFlightMode", "structFirmwareFlightMode.html", null ],
@@ -61,6 +63,7 @@ var hierarchy =
     [ "GPSTransport", "classGPSTransport.html", [
       [ "SerialGPSTransport", "classSerialGPSTransport.html", null ]
     ] ],
+    [ "ElevationTilePyramid::Grid", "structElevationTilePyramid_1_1Grid.html", null ],
     [ "GstHw::GstHwImportCache< Key, Resource, KeyHash >", "classGstHw_1_1GstHwImportCache.html", null ],
     [ "GStreamer::GstObjectDeleter", "structGStreamer_1_1GstObjectDeleter.html", null ],
     [ "GStreamer::GstQueryDeleter", "structGStreamer_1_1GstQueryDeleter.html", null ],
@@ -68,6 +71,7 @@ var hierarchy =
       [ "OsmBuildingHandler", "classOsmBuildingHandler.html", null ]
     ] ],
     [ "StateHistoryRecorder::HistoryEntry", "structStateHistoryRecorder_1_1HistoryEntry.html", null ],
+    [ "SurfaceAnalysis::Hole", "structSurfaceAnalysis_1_1Hole.html", null ],
     [ "NTRIPHttpTransport::HttpRequest", "structNTRIPHttpTransport_1_1HttpRequest.html", null ],
     [ "NTRIPHttpTransport::HttpStatus", "structNTRIPHttpTransport_1_1HttpStatus.html", null ],
     [ "HwBuffers::HwBufferEnvConfig", "structHwBuffers_1_1HwBufferEnvConfig.html", null ],
@@ -105,7 +109,8 @@ var hierarchy =
         [ "JapanStdMapProvider", "classJapanStdMapProvider.html", null ]
       ] ],
       [ "ElevationProvider", "classElevationProvider.html", [
-        [ "CopernicusElevationProvider", "classCopernicusElevationProvider.html", null ]
+        [ "CopernicusElevationProvider", "classCopernicusElevationProvider.html", null ],
+        [ "TerrariumElevationProvider", "classTerrariumElevationProvider.html", null ]
       ] ],
       [ "EniroMapProvider", "classEniroMapProvider.html", null ],
       [ "EsriMapProvider", "classEsriMapProvider.html", [
@@ -176,6 +181,7 @@ var hierarchy =
     [ "Mixer::Mixers::OutputFunction", "structMixer_1_1Mixers_1_1OutputFunction.html", null ],
     [ "RTCMMavlink::PackResult", "structRTCMMavlink_1_1PackResult.html", null ],
     [ "Parameter", "structParameter.html", null ],
+    [ "SurfaceModel::Patch", "structSurfaceModel_1_1Patch.html", null ],
     [ "HwBuffers::PathStats", "structHwBuffers_1_1PathStats.html", null ],
     [ "PauseVehicleThenChangeAltData_t", "structPauseVehicleThenChangeAltData__t.html", null ],
     [ "CpuVideoFramePool::PlaneLayout", "structCpuVideoFramePool_1_1PlaneLayout.html", null ],
@@ -201,7 +207,8 @@ var hierarchy =
       [ "GeoTagImageModel", "classGeoTagImageModel.html", null ],
       [ "LoggingCategoryFlatModel", "classLoggingCategoryFlatModel.html", null ],
       [ "NTRIPSourceTableModel", "classNTRIPSourceTableModel.html", null ],
-      [ "QGCArchiveModel", "classQGCArchiveModel.html", null ]
+      [ "QGCArchiveModel", "classQGCArchiveModel.html", null ],
+      [ "SurfacePatchModel", "classSurfacePatchModel.html", null ]
     ] ],
     [ "QAbstractTableModel", null, [
       [ "LogEntryTableModel", "classLogEntryTableModel.html", [
@@ -419,10 +426,20 @@ var hierarchy =
       [ "FollowMe", "classFollowMe.html", null ],
       [ "GPSManager", "classGPSManager.html", null ],
       [ "GPSRtk", "classGPSRtk.html", null ],
+      [ "GeoMapCamera", "classGeoMapCamera.html", null ],
+      [ "GeoScene", "classGeoScene.html", null ],
       [ "GeoTagController", "classGeoTagController.html", null ],
       [ "GimbalController", "classGimbalController.html", null ],
       [ "HealthAndArmingCheckProblem", "classHealthAndArmingCheckProblem.html", null ],
       [ "HealthAndArmingCheckReport", "classHealthAndArmingCheckReport.html", null ],
+      [ "HeightField", "classHeightField.html", null ],
+      [ "HeightSource", "classHeightSource.html", [
+        [ "ProceduralHeightSource", "classProceduralHeightSource.html", [
+          [ "DebugHeightSource", "classDebugHeightSource.html", null ],
+          [ "FlatHeightSource", "classFlatHeightSource.html", null ]
+        ] ],
+        [ "TerrariumTileFetcher", "classTerrariumTileFetcher.html", null ]
+      ] ],
       [ "ImageProtocolManager", "classImageProtocolManager.html", null ],
       [ "InstrumentValueData", "classInstrumentValueData.html", null ],
       [ "JoystickManager", "classJoystickManager.html", null ],
@@ -456,6 +473,7 @@ var hierarchy =
       [ "MAVLinkProtocol", "classMAVLinkProtocol.html", null ],
       [ "MAVLinkSigningKey", "classMAVLinkSigningKey.html", null ],
       [ "MAVLinkSigningKeys", "classMAVLinkSigningKeys.html", null ],
+      [ "MapPositionTracker", "classMapPositionTracker.html", null ],
       [ "MavCommandQueue", "classMavCommandQueue.html", null ],
       [ "MavlinkAction", "classMavlinkAction.html", null ],
       [ "MavlinkActionManager", "classMavlinkActionManager.html", null ],
@@ -599,6 +617,7 @@ var hierarchy =
         [ "FlightMapSettings", "classFlightMapSettings.html", null ],
         [ "FlightModeSettings", "classFlightModeSettings.html", null ],
         [ "FlyViewSettings", "classFlyViewSettings.html", null ],
+        [ "GeoViewSettings", "classGeoViewSettings.html", null ],
         [ "GimbalControllerSettings", "classGimbalControllerSettings.html", null ],
         [ "JoystickManagerSettings", "classJoystickManagerSettings.html", null ],
         [ "JoystickSettings", "classJoystickSettings.html", null ],
@@ -626,6 +645,7 @@ var hierarchy =
       [ "StateMachineProfiler", "classStateMachineProfiler.html", null ],
       [ "StatusTextHandler", "classStatusTextHandler.html", null ],
       [ "SubtitleWriter", "classSubtitleWriter.html", null ],
+      [ "SurfaceModel", "classSurfaceModel.html", null ],
       [ "SysStatusSensorInfo", "classSysStatusSensorInfo.html", null ],
       [ "TCPWorker", "classTCPWorker.html", null ],
       [ "TerrainAreaQuery", "classTerrainAreaQuery.html", null ],
@@ -642,6 +662,7 @@ var hierarchy =
         ] ]
       ] ],
       [ "TerrainTileManager", "classTerrainTileManager.html", null ],
+      [ "TileImageSource", "classTileImageSource.html", null ],
       [ "ToolStripAction", "classToolStripAction.html", null ],
       [ "ToolStripActionList", "classToolStripActionList.html", null ],
       [ "TrajectoryPoints", "classTrajectoryPoints.html", null ],
@@ -728,12 +749,17 @@ var hierarchy =
     ] ],
     [ "QQuick3DGeometry", null, [
       [ "CityMapGeometry", "classCityMapGeometry.html", null ],
+      [ "FlightPathGeometry", "classFlightPathGeometry.html", null ],
+      [ "PaperPlaneGeometry", "classPaperPlaneGeometry.html", null ],
+      [ "PatchGeometry", "classPatchGeometry.html", null ],
       [ "Viewer3DTerrainGeometry", "classViewer3DTerrainGeometry.html", null ]
     ] ],
     [ "QQuick3DInstancing", null, [
       [ "Viewer3DInstancing", "classViewer3DInstancing.html", null ]
     ] ],
     [ "QQuick3DTextureData", null, [
+      [ "CheckerboardTextureData", "classCheckerboardTextureData.html", null ],
+      [ "PatchTextureData", "classPatchTextureData.html", null ],
       [ "Viewer3DTerrainTexture", "classViewer3DTerrainTexture.html", null ]
     ] ],
     [ "QQuickImageProvider", null, [
@@ -745,6 +771,7 @@ var hierarchy =
       [ "FactValueGrid", "classFactValueGrid.html", [
         [ "HorizontalFactValueGrid", "classHorizontalFactValueGrid.html", null ]
       ] ],
+      [ "GeoMapItem", "classGeoMapItem.html", null ],
       [ "QGCVideoNodeItem", "classQGCVideoNodeItem.html", null ],
       [ "TerrainProfile", "classTerrainProfile.html", null ]
     ] ],
@@ -824,6 +851,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "ActuatorGeometry::RenderOptions", "structActuatorGeometry_1_1RenderOptions.html", null ],
+    [ "SurfaceAnalysis::Report", "structSurfaceAnalysis_1_1Report.html", null ],
     [ "QGCNetworkHelper::RequestConfig", "structQGCNetworkHelper_1_1RequestConfig.html", null ],
     [ "QtAndroidPrivate::ResumePauseListener", null, [
       [ "AndroidEvents", "classAndroidEvents.html", null ]
@@ -836,6 +864,7 @@ var hierarchy =
     [ "GPSRtk::SatelliteCounts", "structGPSRtk_1_1SatelliteCounts.html", null ],
     [ "QGCSqlHelper::ScopedConnection", "classQGCSqlHelper_1_1ScopedConnection.html", null ],
     [ "GstHwPathTelemetry::ScopedMapTimer", "classGstHwPathTelemetry_1_1ScopedMapTimer.html", null ],
+    [ "SurfaceAnalysis::Seam", "structSurfaceAnalysis_1_1Seam.html", null ],
     [ "sensor_gnss_relative_s", "structsensor__gnss__relative__s.html", null ],
     [ "sensor_gps_s", "structsensor__gps__s.html", null ],
     [ "SetTotalsResult", "structSetTotalsResult.html", null ],
@@ -853,11 +882,13 @@ var hierarchy =
       [ "TerrainTileCopernicus", "classTerrainTileCopernicus.html", null ]
     ] ],
     [ "TerrainTile::TileInfo_t", "structTerrainTile_1_1TileInfo__t.html", null ],
+    [ "TileMath::TileKey", "structTileMath_1_1TileKey.html", null ],
     [ "TileSetRecord", "structTileSetRecord.html", null ],
     [ "SigningChannel::TimestampSnapshot", "structSigningChannel_1_1TimestampSnapshot.html", null ],
     [ "TotalsResult", "structTotalsResult.html", null ],
     [ "QGCSqlHelper::Transaction", "classQGCSqlHelper_1_1Transaction.html", null ],
     [ "UDPClient", "structUDPClient.html", null ],
+    [ "SurfaceModel::UpdateStats", "structSurfaceModel_1_1UpdateStats.html", null ],
     [ "UrlFactory", "classUrlFactory.html", null ],
     [ "GStreamer::Environment::ValidationResult", "structGStreamer_1_1Environment_1_1ValidationResult.html", null ],
     [ "KMLSchemaValidator::ValidationResult", "structKMLSchemaValidator_1_1ValidationResult.html", null ],
@@ -872,6 +903,8 @@ var hierarchy =
     ] ],
     [ "GstQgc::VideoFormatEntry", "structGstQgc_1_1VideoFormatEntry.html", null ],
     [ "GStreamer::VideoSinkConfig", "structGStreamer_1_1VideoSinkConfig.html", null ],
+    [ "ElevationTilePyramid::View", "structElevationTilePyramid_1_1View.html", null ],
     [ "Viewer3DTileInfo", "structViewer3DTileInfo.html", null ],
-    [ "Viewer3DTileStatistics", "structViewer3DTileStatistics.html", null ]
+    [ "Viewer3DTileStatistics", "structViewer3DTileStatistics.html", null ],
+    [ "SurfaceAnalysis::ViewState", "structSurfaceAnalysis_1_1ViewState.html", null ]
 ];

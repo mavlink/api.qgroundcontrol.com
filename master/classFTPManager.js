@@ -12,6 +12,7 @@ var classFTPManager =
     [ "downloadComplete", "classFTPManager.html#aa8e6c2937c9d37e64fc6c3082d2f12dd", null ],
     [ "listDirectory", "classFTPManager.html#a1fee66ef43a9b1a9d127c75b7c116cf0", null ],
     [ "listDirectoryComplete", "classFTPManager.html#add5bf179084a7e652cb639fc9e931a19", null ],
+    [ "listDirectoryWithTimeUnsupported", "classFTPManager.html#a04379b531eee35e5e7c19bf806c11e18", null ],
     [ "upload", "classFTPManager.html#a526c77fd865a7336729213defc2607c0", null ],
     [ "uploadComplete", "classFTPManager.html#a7e8220db74a62804d9342068f2108415", null ],
     [ "Vehicle", "classFTPManager.html#a74c93d9d035fcad5381bfb57de0426a1", null ],

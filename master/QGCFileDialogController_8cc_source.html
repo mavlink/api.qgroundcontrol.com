@@ -284,53 +284,61 @@ $(document).ready(function(){initNavTree('QGCFileDialogController_8cc_source.htm
 </div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
 <div class="foldopen" id="foldopen00166" data-start="{" data-end="}">
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classQGCFileDialogController.html#aa85781bc6697dc823edc8e17c02e6cbf">  166</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCFileDialogController.html#aa85781bc6697dc823edc8e17c02e6cbf">QGCFileDialogController::importFromNativePicker</a>()</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classQGCFileDialogController.html#aaaba73eb4de4505c98ba126d990bf205">  166</a></span>QUrl <a class="code hl_function" href="classQGCFileDialogController.html#aaaba73eb4de4505c98ba126d990bf205">QGCFileDialogController::localFileToUrl</a>(<span class="keyword">const</span> QString &amp;localFile)</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>{</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keyword">const</span> QString missionPath = <a class="code hl_function" href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a>()-&gt;<a class="code hl_function" href="classSettingsManager.html#ab674f8beaaa671be59cc6624cda10f0a">appSettings</a>()-&gt;<a class="code hl_function" href="classAppSettings.html#ae9de179fe6f2212c998250a287058339">missionSavePath</a>();</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">if</span> (missionPath.isEmpty()) {</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        qCWarning(QGCFileDialogControllerLog) &lt;&lt; <span class="stringliteral">&quot;Missions save path is empty&quot;</span>;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        emit <a class="code hl_signal" href="classQGCFileDialogController.html#ac964466a5036cdc256b3d3f7f7d9c5ef">importFailed</a>(tr(<span class="stringliteral">&quot;Missions directory is not configured&quot;</span>));</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    }</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    QDir dir(missionPath);</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">if</span> (!dir.exists()) {</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        qCWarning(QGCFileDialogControllerLog) &lt;&lt; <span class="stringliteral">&quot;Missions save path does not exist&quot;</span>;</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        emit <a class="code hl_signal" href="classQGCFileDialogController.html#ac964466a5036cdc256b3d3f7f7d9c5ef">importFailed</a>(tr(<span class="stringliteral">&quot;Missions save path does not exist&quot;</span>));</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    }</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    QPointer&lt;QGCFileDialogController&gt; self = <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <a class="code hl_function" href="namespaceAndroidInterface.html#aa776b89a15f63ed5d006cc0f1b171d1b">AndroidInterface::openFileImportDialog</a>(missionPath, [self](<span class="keyword">const</span> QString&amp; filePath) {</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">if</span> (self) {</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            QMetaObject::invokeMethod(</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                self,</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                [filePath, self]() { self-&gt;_handleImportResult(filePath); },</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                Qt::QueuedConnection);</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        }</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    });</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    qCWarning(QGCFileDialogControllerLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;only supported on Android&quot;</span>;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>}</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">// Empty in, empty out - QUrl::fromLocalFile(&quot;&quot;) would return the degenerate &quot;file:&quot; url</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordflow">return</span> localFile.isEmpty() ? QUrl() : QUrl::fromLocalFile(localFile);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>}</div>
 </div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="keywordtype">void</span> QGCFileDialogController::_handleImportResult(<span class="keyword">const</span> QString&amp; filePath)</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>{</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordflow">if</span> (filePath.isEmpty()) {</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        qCWarning(QGCFileDialogControllerLog) &lt;&lt; <span class="stringliteral">&quot;Import failed: empty file path received from Java&quot;</span>;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        emit <a class="code hl_signal" href="classQGCFileDialogController.html#ac964466a5036cdc256b3d3f7f7d9c5ef">importFailed</a>(tr(<span class="stringliteral">&quot;Failed to import file&quot;</span>));</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    }</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    qCDebug(QGCFileDialogControllerLog) &lt;&lt; <span class="stringliteral">&quot;File imported successfully to:&quot;</span> &lt;&lt; filePath;</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    emit <a class="code hl_signal" href="classQGCFileDialogController.html#a2962a2348fc54d37f6d3a8328da02199">fileImported</a>(filePath);</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>}</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="preprocessor">#endif </span><span class="comment">// Q_OS_ANDROID</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="foldopen" id="foldopen00172" data-start="{" data-end="}">
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="classQGCFileDialogController.html#aa85781bc6697dc823edc8e17c02e6cbf">  172</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCFileDialogController.html#aa85781bc6697dc823edc8e17c02e6cbf">QGCFileDialogController::importFromNativePicker</a>()</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>{</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keyword">const</span> QString missionPath = <a class="code hl_function" href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a>()-&gt;<a class="code hl_function" href="classSettingsManager.html#ab674f8beaaa671be59cc6624cda10f0a">appSettings</a>()-&gt;<a class="code hl_function" href="classAppSettings.html#ae9de179fe6f2212c998250a287058339">missionSavePath</a>();</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordflow">if</span> (missionPath.isEmpty()) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        qCWarning(QGCFileDialogControllerLog) &lt;&lt; <span class="stringliteral">&quot;Missions save path is empty&quot;</span>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        emit <a class="code hl_signal" href="classQGCFileDialogController.html#ac964466a5036cdc256b3d3f7f7d9c5ef">importFailed</a>(tr(<span class="stringliteral">&quot;Missions directory is not configured&quot;</span>));</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    }</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    QDir dir(missionPath);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keywordflow">if</span> (!dir.exists()) {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        qCWarning(QGCFileDialogControllerLog) &lt;&lt; <span class="stringliteral">&quot;Missions save path does not exist&quot;</span>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        emit <a class="code hl_signal" href="classQGCFileDialogController.html#ac964466a5036cdc256b3d3f7f7d9c5ef">importFailed</a>(tr(<span class="stringliteral">&quot;Missions save path does not exist&quot;</span>));</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    }</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    QPointer&lt;QGCFileDialogController&gt; self = <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <a class="code hl_function" href="namespaceAndroidInterface.html#aa776b89a15f63ed5d006cc0f1b171d1b">AndroidInterface::openFileImportDialog</a>(missionPath, [self](<span class="keyword">const</span> QString&amp; filePath) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="keywordflow">if</span> (self) {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            QMetaObject::invokeMethod(</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>                self,</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                [filePath, self]() { self-&gt;_handleImportResult(filePath); },</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                Qt::QueuedConnection);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    });</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    qCWarning(QGCFileDialogControllerLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; <span class="stringliteral">&quot;only supported on Android&quot;</span>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>}</div>
+</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="keywordtype">void</span> QGCFileDialogController::_handleImportResult(<span class="keyword">const</span> QString&amp; filePath)</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>{</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordflow">if</span> (filePath.isEmpty()) {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        qCWarning(QGCFileDialogControllerLog) &lt;&lt; <span class="stringliteral">&quot;Import failed: empty file path received from Java&quot;</span>;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        emit <a class="code hl_signal" href="classQGCFileDialogController.html#ac964466a5036cdc256b3d3f7f7d9c5ef">importFailed</a>(tr(<span class="stringliteral">&quot;Failed to import file&quot;</span>));</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    qCDebug(QGCFileDialogControllerLog) &lt;&lt; <span class="stringliteral">&quot;File imported successfully to:&quot;</span> &lt;&lt; filePath;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    emit <a class="code hl_signal" href="classQGCFileDialogController.html#a2962a2348fc54d37f6d3a8328da02199">fileImported</a>(filePath);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>}</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="preprocessor">#endif </span><span class="comment">// Q_OS_ANDROID</span></div>
 <div class="ttc" id="aAndroidInterface_8h_html"><div class="ttname"><a href="AndroidInterface_8h.html">AndroidInterface.h</a></div></div>
 <div class="ttc" id="aAppSettings_8h_html"><div class="ttname"><a href="AppSettings_8h.html">AppSettings.h</a></div></div>
 <div class="ttc" id="aQGCFileDialogController_8h_html"><div class="ttname"><a href="QGCFileDialogController_8h.html">QGCFileDialogController.h</a></div></div>
@@ -347,12 +355,13 @@ $(document).ready(function(){initNavTree('QGCFileDialogController_8cc_source.htm
 <div class="ttc" id="aclassQGCFileDialogController_html_a6b6689f51ab64a779b6b61baa0f71562"><div class="ttname"><a href="classQGCFileDialogController.html#a6b6689f51ab64a779b6b61baa0f71562">QGCFileDialogController::deleteFile</a></div><div class="ttdeci">static Q_INVOKABLE void deleteFile(const QString &amp;filename)</div><div class="ttdoc">Deletes the file specified by the fully qualified file name.</div><div class="ttdef"><b>Definition</b> <a href="QGCFileDialogController_8cc_source.html#l00123">QGCFileDialogController.cc:123</a></div></div>
 <div class="ttc" id="aclassQGCFileDialogController_html_a82f35101f75515a869bd95ae3246c454"><div class="ttname"><a href="classQGCFileDialogController.html#a82f35101f75515a869bd95ae3246c454">QGCFileDialogController::~QGCFileDialogController</a></div><div class="ttdeci">~QGCFileDialogController()</div><div class="ttdef"><b>Definition</b> <a href="QGCFileDialogController_8cc_source.html#l00061">QGCFileDialogController.cc:61</a></div></div>
 <div class="ttc" id="aclassQGCFileDialogController_html_aa65097b1faedfccc710c0f168eda9ea1"><div class="ttname"><a href="classQGCFileDialogController.html#aa65097b1faedfccc710c0f168eda9ea1">QGCFileDialogController::getFiles</a></div><div class="ttdeci">static Q_INVOKABLE QStringList getFiles(const QString &amp;directoryPath, const QStringList &amp;nameFilters)</div><div class="ttdoc">Return all file in the specified path which match the specified extension.</div><div class="ttdef"><b>Definition</b> <a href="QGCFileDialogController_8cc_source.html#l00066">QGCFileDialogController.cc:66</a></div></div>
-<div class="ttc" id="aclassQGCFileDialogController_html_aa85781bc6697dc823edc8e17c02e6cbf"><div class="ttname"><a href="classQGCFileDialogController.html#aa85781bc6697dc823edc8e17c02e6cbf">QGCFileDialogController::importFromNativePicker</a></div><div class="ttdeci">Q_INVOKABLE void importFromNativePicker()</div><div class="ttdef"><b>Definition</b> <a href="QGCFileDialogController_8cc_source.html#l00166">QGCFileDialogController.cc:166</a></div></div>
+<div class="ttc" id="aclassQGCFileDialogController_html_aa85781bc6697dc823edc8e17c02e6cbf"><div class="ttname"><a href="classQGCFileDialogController.html#aa85781bc6697dc823edc8e17c02e6cbf">QGCFileDialogController::importFromNativePicker</a></div><div class="ttdeci">Q_INVOKABLE void importFromNativePicker()</div><div class="ttdef"><b>Definition</b> <a href="QGCFileDialogController_8cc_source.html#l00172">QGCFileDialogController.cc:172</a></div></div>
+<div class="ttc" id="aclassQGCFileDialogController_html_aaaba73eb4de4505c98ba126d990bf205"><div class="ttname"><a href="classQGCFileDialogController.html#aaaba73eb4de4505c98ba126d990bf205">QGCFileDialogController::localFileToUrl</a></div><div class="ttdeci">static Q_INVOKABLE QUrl localFileToUrl(const QString &amp;localFile)</div><div class="ttdoc">Converts a local file path to a properly formed file:// url.</div><div class="ttdef"><b>Definition</b> <a href="QGCFileDialogController_8cc_source.html#l00166">QGCFileDialogController.cc:166</a></div></div>
 <div class="ttc" id="aclassQGCFileDialogController_html_aabc03f90f40f38187bfac062a04daa64"><div class="ttname"><a href="classQGCFileDialogController.html#aabc03f90f40f38187bfac062a04daa64">QGCFileDialogController::fullyQualifiedFilename</a></div><div class="ttdeci">static Q_INVOKABLE QString fullyQualifiedFilename(const QString &amp;directoryPath, const QString &amp;filename, const QStringList &amp;nameFilters=QStringList())</div><div class="ttdef"><b>Definition</b> <a href="QGCFileDialogController_8cc_source.html#l00087">QGCFileDialogController.cc:87</a></div></div>
 <div class="ttc" id="aclassQGCFileDialogController_html_ac964466a5036cdc256b3d3f7f7d9c5ef"><div class="ttname"><a href="classQGCFileDialogController.html#ac964466a5036cdc256b3d3f7f7d9c5ef">QGCFileDialogController::importFailed</a></div><div class="ttdeci">void importFailed(const QString &amp;errorMessage)</div></div>
 <div class="ttc" id="aclassQGCFileDialogController_html_aed70c279ebe3cb591e0722ea04534de2"><div class="ttname"><a href="classQGCFileDialogController.html#aed70c279ebe3cb591e0722ea04534de2">QGCFileDialogController::QGCFileDialogController</a></div><div class="ttdeci">QGCFileDialogController(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="QGCFileDialogController_8cc_source.html#l00055">QGCFileDialogController.cc:55</a></div></div>
-<div class="ttc" id="aclassSettingsManager_html_a70509f6304c076e2cceea0445951c324"><div class="ttname"><a href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a></div><div class="ttdeci">static SettingsManager * instance()</div><div class="ttdef"><b>Definition</b> <a href="SettingsManager_8cc_source.html#l00048">SettingsManager.cc:48</a></div></div>
-<div class="ttc" id="aclassSettingsManager_html_ab674f8beaaa671be59cc6624cda10f0a"><div class="ttname"><a href="classSettingsManager.html#ab674f8beaaa671be59cc6624cda10f0a">SettingsManager::appSettings</a></div><div class="ttdeci">AppSettings * appSettings() const</div><div class="ttdef"><b>Definition</b> <a href="SettingsManager_8cc_source.html#l00086">SettingsManager.cc:86</a></div></div>
+<div class="ttc" id="aclassSettingsManager_html_a70509f6304c076e2cceea0445951c324"><div class="ttname"><a href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a></div><div class="ttdeci">static SettingsManager * instance()</div><div class="ttdef"><b>Definition</b> <a href="SettingsManager_8cc_source.html#l00049">SettingsManager.cc:49</a></div></div>
+<div class="ttc" id="aclassSettingsManager_html_ab674f8beaaa671be59cc6624cda10f0a"><div class="ttname"><a href="classSettingsManager.html#ab674f8beaaa671be59cc6624cda10f0a">SettingsManager::appSettings</a></div><div class="ttdeci">AppSettings * appSettings() const</div><div class="ttdef"><b>Definition</b> <a href="SettingsManager_8cc_source.html#l00088">SettingsManager.cc:88</a></div></div>
 <div class="ttc" id="anamespaceAndroidInterface_html_aa776b89a15f63ed5d006cc0f1b171d1b"><div class="ttname"><a href="namespaceAndroidInterface.html#aa776b89a15f63ed5d006cc0f1b171d1b">AndroidInterface::openFileImportDialog</a></div><div class="ttdeci">void openFileImportDialog(const QString &amp;destPath, std::function&lt; void(const QString &amp;)&gt; callback)</div><div class="ttdef"><b>Definition</b> <a href="AndroidInterface_8cc_source.html#l00180">AndroidInterface.cc:180</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

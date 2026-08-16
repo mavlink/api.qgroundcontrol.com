@@ -4,5 +4,6 @@ var searchData=
   ['zigzag_5fauto_1',['ZIGZAG_Auto',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03ab876b5dc8a08acf8081878fcfbcf52c1',1,'APM']]],
   ['zigzag_5fsavewp_2',['ZIGZAG_SaveWP',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03acaf39cd46a1f6839ce36184472a6c5cf',1,'APM']]],
   ['zip_3',['ZIP',['../namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5a4348f938bbddd8475e967ccb47ecb234',1,'QGCCompression']]],
-  ['zstd_4',['ZSTD',['../namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5a8406cc2302e19183037b61249546b234',1,'QGCCompression']]]
+  ['zoomrole_4',['ZoomRole',['../classSurfacePatchModel.html#a9ec2a11be55d2683f02678c16e365f16a6a2713f90ea59cf3fc80b0e0bf1e2b2a',1,'SurfacePatchModel']]],
+  ['zstd_5',['ZSTD',['../namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5a8406cc2302e19183037b61249546b234',1,'QGCCompression']]]
 ];

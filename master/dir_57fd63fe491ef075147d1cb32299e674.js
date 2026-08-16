@@ -42,6 +42,8 @@ var dir_57fd63fe491ef075147d1cb32299e674 =
     [ "LabelledLabel.qml", "LabelledLabel_8qml.html", null ],
     [ "LabelledSlider.qml", "LabelledSlider_8qml.html", null ],
     [ "LogReplayStatusBar.qml", "LogReplayStatusBar_8qml.html", null ],
+    [ "MapPositionTracker.cc", "MapPositionTracker_8cc.html", null ],
+    [ "MapPositionTracker.h", "MapPositionTracker_8h.html", "MapPositionTracker_8h" ],
     [ "MavlinkAction.cc", "MavlinkAction_8cc.html", null ],
     [ "MavlinkAction.h", "MavlinkAction_8h.html", "MavlinkAction_8h" ],
     [ "MavlinkActionManager.cc", "MavlinkActionManager_8cc.html", null ],

@@ -8,6 +8,7 @@ var searchData=
   ['udpworker_5',['UDPWorker',['../classUDPWorker.html',1,'']]],
   ['ulogfullhandler_6',['ULogFullHandler',['../classULogFullHandler.html',1,'']]],
   ['unitssettings_7',['UnitsSettings',['../classUnitsSettings.html',1,'']]],
-  ['urlfactory_8',['UrlFactory',['../classUrlFactory.html',1,'']]],
-  ['uvcreceiver_9',['UVCReceiver',['../classUVCReceiver.html',1,'']]]
+  ['updatestats_8',['UpdateStats',['../structSurfaceModel_1_1UpdateStats.html',1,'SurfaceModel']]],
+  ['urlfactory_9',['UrlFactory',['../classUrlFactory.html',1,'']]],
+  ['uvcreceiver_10',['UVCReceiver',['../classUVCReceiver.html',1,'']]]
 ];

@@ -15,6 +15,8 @@ var dir_fa2d24d1d21adf55afa7869063ad1e9a =
     [ "FlyViewAdditionalCustomActionsList.qml", "FlyViewAdditionalCustomActionsList_8qml.html", null ],
     [ "FlyViewBottomRightRowLayout.qml", "FlyViewBottomRightRowLayout_8qml.html", null ],
     [ "FlyViewCustomLayer.qml", "FlyViewCustomLayer_8qml.html", null ],
+    [ "FlyViewGeo.qml", "FlyViewGeo_8qml.html", null ],
+    [ "FlyViewGeoMap.qml", "FlyViewGeoMap_8qml.html", null ],
     [ "FlyViewGripperButton.qml", "FlyViewGripperButton_8qml.html", null ],
     [ "FlyViewGripperDropPanel.qml", "FlyViewGripperDropPanel_8qml.html", null ],
     [ "FlyViewInsetViewer.qml", "FlyViewInsetViewer_8qml.html", null ],

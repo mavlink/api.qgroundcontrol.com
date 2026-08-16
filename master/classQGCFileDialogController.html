@@ -146,6 +146,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a6b6689f51ab64a779b6b61baa0f71562"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b25a3e4116cb4bd8584ed1f542bc7bf" id="r_a5b25a3e4116cb4bd8584ed1f542bc7bf"><td class="memItemLeft" align="right" valign="top">static Q_INVOKABLE QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQGCFileDialogController.html#a5b25a3e4116cb4bd8584ed1f542bc7bf">urlToLocalFile</a> (QUrl url)</td></tr>
 <tr class="separator:a5b25a3e4116cb4bd8584ed1f542bc7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaba73eb4de4505c98ba126d990bf205" id="r_aaaba73eb4de4505c98ba126d990bf205"><td class="memItemLeft" align="right" valign="top">static Q_INVOKABLE QUrl&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQGCFileDialogController.html#aaaba73eb4de4505c98ba126d990bf205">localFileToUrl</a> (const QString &amp;localFile)</td></tr>
+<tr class="memdesc:aaaba73eb4de4505c98ba126d990bf205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a local file path to a properly formed <a href="file://">file://</a> url.  <br /></td></tr>
+<tr class="separator:aaaba73eb4de4505c98ba126d990bf205"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4697bc9a71ff7f0bb9f5fc46ad891eeb" id="r_a4697bc9a71ff7f0bb9f5fc46ad891eeb"><td class="memItemLeft" align="right" valign="top">static Q_INVOKABLE QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQGCFileDialogController.html#a4697bc9a71ff7f0bb9f5fc46ad891eeb">fullFolderPathToShortMobilePath</a> (const QString &amp;fullFolderPath)</td></tr>
 <tr class="separator:a4697bc9a71ff7f0bb9f5fc46ad891eeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Unit test file dialog shim</div></td></tr>
@@ -329,7 +332,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="QGCFileDialogController_8cc_source.html#l00128">128</a> of file <a class="el" href="QGCFileDialogController_8cc_source.html">QGCFileDialogController.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="SettingsManager_8cc_source.html#l00086">SettingsManager::appSettings()</a>, and <a class="el" href="SettingsManager_8cc_source.html#l00048">SettingsManager::instance()</a>.</p>
+<p class="reference">References <a class="el" href="SettingsManager_8cc_source.html#l00088">SettingsManager::appSettings()</a>, and <a class="el" href="SettingsManager_8cc_source.html#l00049">SettingsManager::instance()</a>.</p>
 
 </div>
 </div>
@@ -448,7 +451,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="reference">Referenced by <a class="el" href="QGCFileDialogController_8cc_source.html#l00166">importFromNativePicker()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCFileDialogController_8cc_source.html#l00172">importFromNativePicker()</a>.</p>
 
 </div>
 </div>
@@ -468,9 +471,39 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Opens Android's native file picker (ACTION_OPEN_DOCUMENT). On non-Android platforms this is a no-op. </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCFileDialogController_8cc_source.html#l00166">166</a> of file <a class="el" href="QGCFileDialogController_8cc_source.html">QGCFileDialogController.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCFileDialogController_8cc_source.html#l00172">172</a> of file <a class="el" href="QGCFileDialogController_8cc_source.html">QGCFileDialogController.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="SettingsManager_8cc_source.html#l00086">SettingsManager::appSettings()</a>, <a class="el" href="classQGCFileDialogController.html#ac964466a5036cdc256b3d3f7f7d9c5ef">importFailed()</a>, <a class="el" href="SettingsManager_8cc_source.html#l00048">SettingsManager::instance()</a>, <a class="el" href="AppSettings_8cc_source.html#l00319">AppSettings::missionSavePath()</a>, and <a class="el" href="AndroidInterface_8cc_source.html#l00180">AndroidInterface::openFileImportDialog()</a>.</p>
+<p class="reference">References <a class="el" href="SettingsManager_8cc_source.html#l00088">SettingsManager::appSettings()</a>, <a class="el" href="classQGCFileDialogController.html#ac964466a5036cdc256b3d3f7f7d9c5ef">importFailed()</a>, <a class="el" href="SettingsManager_8cc_source.html#l00049">SettingsManager::instance()</a>, <a class="el" href="AppSettings_8cc_source.html#l00319">AppSettings::missionSavePath()</a>, and <a class="el" href="AndroidInterface_8cc_source.html#l00180">AndroidInterface::openFileImportDialog()</a>.</p>
+
+</div>
+</div>
+<a id="aaaba73eb4de4505c98ba126d990bf205" name="aaaba73eb4de4505c98ba126d990bf205"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaba73eb4de4505c98ba126d990bf205">&#9670;&#160;</a></span>localFileToUrl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QUrl QGCFileDialogController::localFileToUrl </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>localFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts a local file path to a properly formed <a href="file://">file://</a> url. </p>
+
+<p class="definition">Definition at line <a class="el" href="QGCFileDialogController_8cc_source.html#l00166">166</a> of file <a class="el" href="QGCFileDialogController_8cc_source.html">QGCFileDialogController.cc</a>.</p>
 
 </div>
 </div>

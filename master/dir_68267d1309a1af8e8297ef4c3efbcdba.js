@@ -14,6 +14,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "FlightMap", "dir_db3c6ca6f80847f3ef478f360bd80dce.html", "dir_db3c6ca6f80847f3ef478f360bd80dce" ],
     [ "FlyView", "dir_fa2d24d1d21adf55afa7869063ad1e9a.html", "dir_fa2d24d1d21adf55afa7869063ad1e9a" ],
     [ "FollowMe", "dir_44ecdf9c471fc77939481f437b718127.html", "dir_44ecdf9c471fc77939481f437b718127" ],
+    [ "GeoMap", "dir_7de38425b809b3a4df656e2c956dc465.html", "dir_7de38425b809b3a4df656e2c956dc465" ],
     [ "Gimbal", "dir_66c47b9977029413dec9bdf1834743ad.html", "dir_66c47b9977029413dec9bdf1834743ad" ],
     [ "GPS", "dir_43f56a1598361543d7a95c3972bc4b20.html", "dir_43f56a1598361543d7a95c3972bc4b20" ],
     [ "Joystick", "dir_df3471da428c92590d85ed8754a76078.html", "dir_df3471da428c92590d85ed8754a76078" ],

@@ -1,0 +1,25 @@
+var classPatchGeometry =
+[
+    [ "PatchGeometry", "classPatchGeometry.html#aae93781bb72b3a7e0daa4c0d248fa4b3", null ],
+    [ "componentComplete", "classPatchGeometry.html#a6b1dacb9298cd8715ddf1d5ef1c35745", null ],
+    [ "edgeLodDeltas", "classPatchGeometry.html#a23b25ff303eebf73529b186a3d4862bb", null ],
+    [ "edgeLodDeltasChanged", "classPatchGeometry.html#af6c061b3a4d436c79273a66b2fa70438", null ],
+    [ "gridSize", "classPatchGeometry.html#af4f4abbdd4980eb2492461e40448727d", null ],
+    [ "gridSizeChanged", "classPatchGeometry.html#a7ed6225452493b89d208f3b70f160c90", null ],
+    [ "heightField", "classPatchGeometry.html#a512137405be7dd4bc221178bdc1ffa25", null ],
+    [ "heightFieldChanged", "classPatchGeometry.html#afed3b931e1da33c0148dd1f49dbab3a6", null ],
+    [ "heights", "classPatchGeometry.html#a6812b060b5a773d7f7143ec5747df23e", null ],
+    [ "heightsChanged", "classPatchGeometry.html#a5c8231666598a9b782e4f1d85d4f530d", null ],
+    [ "sampleFromField", "classPatchGeometry.html#a7a7804a4bc9adea720bbc4bf3115e10e", null ],
+    [ "setEdgeLodDeltas", "classPatchGeometry.html#aab75cd0ee04a22c4b934dd80f8bd91c3", null ],
+    [ "setEdgeLodDeltas", "classPatchGeometry.html#a2868bc6efab022397a17e45604be24c7", null ],
+    [ "setGridSize", "classPatchGeometry.html#ac6b9d7dab4f36faa4c21334b76e537b7", null ],
+    [ "setHeightField", "classPatchGeometry.html#a33c5dda090b8c73780d6c08c7463a647", null ],
+    [ "setHeights", "classPatchGeometry.html#ad8085a8204c64b7dc4c084eec270eb46", null ],
+    [ "setSpan", "classPatchGeometry.html#ac335e5ce35418e4e8d48176f59c67d54", null ],
+    [ "span", "classPatchGeometry.html#ae3753d4943ab1303194b48857574bced", null ],
+    [ "spanChanged", "classPatchGeometry.html#a4c8f08a8606c38ea0c51698981ff5f90", null ],
+    [ "kMaxGridSize", "classPatchGeometry.html#aabef366f8bad3a875777e81728a7ea58", null ],
+    [ "kMinGridSize", "classPatchGeometry.html#a1cbfb264595f312c20ba563d24abca1a", null ],
+    [ "kSkirtDepthFraction", "classPatchGeometry.html#abeb8a5513eafc65195b1abced1a22ed6", null ]
+];

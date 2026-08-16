@@ -15,6 +15,7 @@ var classMockLinkFTP =
     [ "clearUploadedFiles", "classMockLinkFTP.html#ac5dea658c300fa8b5412f17b2add33c4", null ],
     [ "enableRandomDrops", "classMockLinkFTP.html#a1992bfadad12872167624bbe7dac4c55", null ],
     [ "logFileContents", "classMockLinkFTP.html#a8b70cddb79ab95e31a553ed77195c869", null ],
+    [ "logFiles", "classMockLinkFTP.html#a3d19ebdce6566079d4e81de9ab4b56a3", null ],
     [ "mavlinkMessageReceived", "classMockLinkFTP.html#a7d5842bf524b2f8cf60d57e70b7f3546", null ],
     [ "resetCommandReceived", "classMockLinkFTP.html#a1a37fc5c6dfb2b7f5229a57ca329c65a", null ],
     [ "setBurstReadDelayMs", "classMockLinkFTP.html#a6118d7d3bfbb0dcf4df0345397e97008", null ],

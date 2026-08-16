@@ -444,6 +444,7 @@ var namespaces_dup =
       [ "loadPolygonsFromFile", "namespaceSHPFileHelper.html#a368e1a38f70729bf3c07f8365c43033a", null ],
       [ "loadPolylinesFromFile", "namespaceSHPFileHelper.html#add1961e24f59063ab573a21912b86de4", null ]
     ] ],
+    [ "SurfaceAnalysis", "namespaceSurfaceAnalysis.html", "namespaceSurfaceAnalysis" ],
     [ "TerrainQuery", "namespaceTerrainQuery.html", [
       [ "QueryMode", "namespaceTerrainQuery.html#ab0e1050d84b12995d2e2a0fc896775a8", [
         [ "QueryModeNone", "namespaceTerrainQuery.html#ab0e1050d84b12995d2e2a0fc896775a8a5548f0c8b1d1e4c077eb31534be1181a", null ],
@@ -456,6 +457,7 @@ var namespaces_dup =
         [ "Downloading", "namespaceTerrainQuery.html#ae7bc82310721c6cdfb6eff221ff6781cac7e71badf20a04f36d11be557ceb7a5b", null ]
       ] ]
     ] ],
+    [ "TileMath", "namespaceTileMath.html", "namespaceTileMath" ],
     [ "ULogParser", "namespaceULogParser.html", [
       [ "getTagsFromLog", "namespaceULogParser.html#aad41777b045b559d4234a2e5664cd9b0", null ],
       [ "getTagsFromLog", "namespaceULogParser.html#adc26a791bb2ee621d2c62c7464f90dba", null ],

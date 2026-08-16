@@ -30,6 +30,7 @@ var classMapProvider =
     [ "getToken", "classMapProvider.html#a2d1cccd2e7161096dc22810d1398cc25", null ],
     [ "isBingProvider", "classMapProvider.html#a3fc5c25e113fd96a2972bf7a25a4b8b3", null ],
     [ "isElevationProvider", "classMapProvider.html#adc2c56ae3c88bbf2ad2156923a2c37e8", null ],
+    [ "isUserSelectable", "classMapProvider.html#afa22fc27016c279984c0a0848f447ca0", null ],
     [ "lat2tileY", "classMapProvider.html#adf78a2cc833228e53833b1de6b43b9ed", null ],
     [ "long2tileX", "classMapProvider.html#aafe9ebfa367036a998b145d1b253890a", null ],
     [ "tileX2long", "classMapProvider.html#aca76e6a035d21780654a736a12f40202", null ],

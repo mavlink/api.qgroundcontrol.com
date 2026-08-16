@@ -1,0 +1,27 @@
+var classSurfaceModel =
+[
+    [ "Patch", "structSurfaceModel_1_1Patch.html", "structSurfaceModel_1_1Patch" ],
+    [ "UpdateStats", "structSurfaceModel_1_1UpdateStats.html", "structSurfaceModel_1_1UpdateStats" ],
+    [ "SurfaceModel", "classSurfaceModel.html#a25ccb54503d2c30b01128f93216db16f", null ],
+    [ "edgeLodDeltas", "classSurfaceModel.html#aaa6c8d5e7a92c13b0597f3efb695d509", null ],
+    [ "patch", "classSurfaceModel.html#a506e535805432d223ceb4202c07f7ef7", null ],
+    [ "patchAdded", "classSurfaceModel.html#ad8d80ca7a1abe9dfc2f4524674d3bd50", null ],
+    [ "patchCount", "classSurfaceModel.html#ad1103feba91c5811e1a4cdddb9659ca5", null ],
+    [ "patchEdgeDeltasChanged", "classSurfaceModel.html#a997ccd40635f296717739116a707db76", null ],
+    [ "patches", "classSurfaceModel.html#a7b58c5b633b6b1a5b492c9ad0673ab61", null ],
+    [ "patchMeshChanged", "classSurfaceModel.html#af233b2f91b7ab948a6cae5a3a9a5aef5", null ],
+    [ "patchRemoved", "classSurfaceModel.html#aabc252bca7f765b29a170188666e5506", null ],
+    [ "pendingCount", "classSurfaceModel.html#aba9b50c1f08aa7d74776f34870d1877a", null ],
+    [ "takeUpdateStats", "classSurfaceModel.html#afbda5faaefc4f69f571843ca8ff0a20b", null ],
+    [ "update", "classSurfaceModel.html#ae77ffc926fa58aebde64140541d21c08", null ],
+    [ "updateSettled", "classSurfaceModel.html#a7fd1792deca4dd07524345b6492547e8", null ],
+    [ "visibleGroundRect", "classSurfaceModel.html#afb690fac7b723389d54a20a904a4200f", null ],
+    [ "kGridSize", "classSurfaceModel.html#a68bbf88bdc24815cef83b039af96544f", null ],
+    [ "kMaxPatchAddsPerUpdate", "classSurfaceModel.html#a399503aed6e6327836fa163ad4c0676d", null ],
+    [ "kMaxPatches", "classSurfaceModel.html#afc09646b46b02d84bfa32554ea78ad02", null ],
+    [ "kMaxPatchRemovalsPerUpdate", "classSurfaceModel.html#a512427ef4a262d12400029c153f780fa", null ],
+    [ "kMaxRangeMultiplier", "classSurfaceModel.html#a4dafbcd34143e9a1366eba95f2068320", null ],
+    [ "kRecullHeightMargin", "classSurfaceModel.html#a14c61a9ad44fb8b2c69c8cf65d1dc0f3", null ],
+    [ "kRefinePixelThreshold", "classSurfaceModel.html#af05f794ea62be0386da69b4ca1b3e040", null ],
+    [ "kVisibleSampleGrid", "classSurfaceModel.html#acca3bc4b876410beec1b90fcaa674815", null ]
+];

@@ -18,6 +18,8 @@ var dir_87225e6cbcb4cf5309991212c88ac25b =
     [ "FlightModeSettings.h", "FlightModeSettings_8h.html", "FlightModeSettings_8h" ],
     [ "FlyViewSettings.cc", "FlyViewSettings_8cc.html", "FlyViewSettings_8cc" ],
     [ "FlyViewSettings.h", "FlyViewSettings_8h.html", "FlyViewSettings_8h" ],
+    [ "GeoViewSettings.cc", "GeoViewSettings_8cc.html", "GeoViewSettings_8cc" ],
+    [ "GeoViewSettings.h", "GeoViewSettings_8h.html", "GeoViewSettings_8h" ],
     [ "GimbalControllerSettings.cc", "GimbalControllerSettings_8cc.html", "GimbalControllerSettings_8cc" ],
     [ "GimbalControllerSettings.h", "GimbalControllerSettings_8h.html", "GimbalControllerSettings_8h" ],
     [ "JoystickManagerSettings.cc", "JoystickManagerSettings_8cc.html", "JoystickManagerSettings_8cc" ],
