@@ -118,7 +118,6 @@ $(document).ready(function(){initNavTree('classProceduralHeightSource.html','');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae0c962cd790c30f4b13d8b5eb21f8c72" id="r_ae0c962cd790c30f4b13d8b5eb21f8c72"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProceduralHeightSource.html#ae0c962cd790c30f4b13d8b5eb21f8c72">requestPatchHeights</a> (const <a class="el" href="structTileMath_1_1TileKey.html">TileMath::TileKey</a> &amp;key, int gridSize) final</td></tr>
-<tr class="memdesc:ae0c962cd790c30f4b13d8b5eb21f8c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request the vertex height grid for a patch. Returns a request id (&gt; 0).  <br /></td></tr>
 <tr class="separator:ae0c962cd790c30f4b13d8b5eb21f8c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bc0fd779c7d75e0b311c7bbc1b6225c" id="r_a5bc0fd779c7d75e0b311c7bbc1b6225c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProceduralHeightSource.html#a5bc0fd779c7d75e0b311c7bbc1b6225c">cancelRequest</a> (int requestId) final</td></tr>
 <tr class="memdesc:a5bc0fd779c7d75e0b311c7bbc1b6225c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancel a pending request. No signal is emitted for a cancelled request.  <br /></td></tr>
@@ -165,7 +164,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Height source used by synchronous procedural implementations: computes the grid immediately but delivers it through the event loop, honoring cancellation. </p>
 
-<p class="definition">Definition at line <a class="el" href="HeightSource_8h_source.html#l00069">69</a> of file <a class="el" href="HeightSource_8h_source.html">HeightSource.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HeightSource_8h_source.html#l00070">70</a> of file <a class="el" href="HeightSource_8h_source.html">HeightSource.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a5bc0fd779c7d75e0b311c7bbc1b6225c" name="a5bc0fd779c7d75e0b311c7bbc1b6225c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5bc0fd779c7d75e0b311c7bbc1b6225c">&#9670;&#160;</a></span>cancelRequest()</h2>
@@ -294,8 +293,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Request the vertex height grid for a patch. Returns a request id (&gt; 0). </p>
+<p>Request the vertex height grid for a patch. Returns a request id (&gt; 0). gridSize must be a power of two (see <a class="el" href="classHeightField.html#a68f4d578d3b4d2dd4a1fab5725dec686">HeightField::samplePatch</a>). </p>
 
 <p>Implements <a class="el" href="classHeightSource.html#a3d7ac5cf92e9ae5f98218ad40b15992e">HeightSource</a>.</p>
 
@@ -334,7 +332,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HeightSource_8cc_source.html#l00056">56</a> of file <a class="el" href="HeightSource_8cc_source.html">HeightSource.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="HeightSource_8h_source.html#l00061">HeightSource::_heightField</a>, <a class="el" href="HeightField_8h_source.html#l00071">HeightField::hasTile()</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00046">ElevationTilePyramid::Grid::height</a>, <a class="el" href="classProceduralHeightSource.html#ad984bee85a14653386ebe907ec2aa3a2">heightAtWorld()</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00047">ElevationTilePyramid::Grid::heights</a>, <a class="el" href="TileMath_8cc_source.html#l00044">TileMath::isValidKey()</a>, <a class="el" href="HeightSource_8h_source.html#l00076">kSynthGridSize</a>, <a class="el" href="TileMath_8cc_source.html#l00058">TileMath::tileMinCorner()</a>, <a class="el" href="TileMath_8cc_source.html#l00053">TileMath::tileSpanAtZoom()</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00045">ElevationTilePyramid::Grid::width</a>, and <a class="el" href="TileMath_8h_source.html#l00038">TileMath::TileKey::zoom</a>.</p>
+<p class="reference">References <a class="el" href="HeightSource_8h_source.html#l00062">HeightSource::_heightField</a>, <a class="el" href="HeightField_8h_source.html#l00073">HeightField::hasTile()</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00046">ElevationTilePyramid::Grid::height</a>, <a class="el" href="classProceduralHeightSource.html#ad984bee85a14653386ebe907ec2aa3a2">heightAtWorld()</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00047">ElevationTilePyramid::Grid::heights</a>, <a class="el" href="TileMath_8cc_source.html#l00044">TileMath::isValidKey()</a>, <a class="el" href="HeightSource_8h_source.html#l00077">kSynthGridSize</a>, <a class="el" href="TileMath_8cc_source.html#l00058">TileMath::tileMinCorner()</a>, <a class="el" href="TileMath_8cc_source.html#l00053">TileMath::tileSpanAtZoom()</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00045">ElevationTilePyramid::Grid::width</a>, and <a class="el" href="TileMath_8h_source.html#l00038">TileMath::TileKey::zoom</a>.</p>
 
 </div>
 </div>
@@ -361,7 +359,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>samples per edge of a synthesized tile </p>
 
-<p class="definition">Definition at line <a class="el" href="HeightSource_8h_source.html#l00076">76</a> of file <a class="el" href="HeightSource_8h_source.html">HeightSource.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HeightSource_8h_source.html#l00077">77</a> of file <a class="el" href="HeightSource_8h_source.html">HeightSource.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HeightSource_8cc_source.html#l00056">requestTile()</a>.</p>
 

@@ -22,6 +22,7 @@ var classPX4FirmwarePlugin =
     [ "guidedModeChangeHeading", "classPX4FirmwarePlugin.html#a894b6109eea3ecddef6688b7fa8be34b", null ],
     [ "guidedModeGotoLocation", "classPX4FirmwarePlugin.html#a21a7a34f1a67504e481e7855cc98fcd1", null ],
     [ "guidedModeLand", "classPX4FirmwarePlugin.html#afec526a67c04175df680a384d2588c3d", null ],
+    [ "guidedModeROI", "classPX4FirmwarePlugin.html#a8a347ef1a82c061b10d2a791f7ca41a5", null ],
     [ "guidedModeRTL", "classPX4FirmwarePlugin.html#a85bf2cd871a229562672ceef5031f514", null ],
     [ "guidedModeTakeoff", "classPX4FirmwarePlugin.html#a976b9307cd5acf307e304e556355fe26", null ],
     [ "hasGripper", "classPX4FirmwarePlugin.html#ad7e4181542f8a526fd2520762297b649", null ],

@@ -37,7 +37,7 @@ var classQGroundControlQmlGlobal =
     [ "ntripManager", "classQGroundControlQmlGlobal.html#ae639513186ed283c6cc05156e813a8e0", null ],
     [ "parameterFileExtension", "classQGroundControlQmlGlobal.html#ac0bda5b0c6fe6e26f6f8ab1261f886a7", null ],
     [ "px4ProFirmwareSupported", "classQGroundControlQmlGlobal.html#a75032472b1daef5cc4ae94276517f8cc", null ],
-    [ "qgcAppDate", "classQGroundControlQmlGlobal.html#adb8c924e7273304d2f1c224c84a3c916", null ],
+    [ "qgcAppDate", "classQGroundControlQmlGlobal.html#a077ec70d1a08e88f1cf5e3fd23343202", null ],
     [ "qgcDailyBuild", "classQGroundControlQmlGlobal.html#a610b17e728d5bf1fc0ef125540c6ffe1", null ],
     [ "qgcPositionManger", "classQGroundControlQmlGlobal.html#af866804a8ed95105db3a4a3af338e615", null ],
     [ "qgcVersion", "classQGroundControlQmlGlobal.html#aae503ae9341c422e17462dbcd40a5f9f", null ],

@@ -129,7 +129,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abe29c6bceede35c3d4e739be5caf6af4" id="r_abe29c6bceede35c3d4e739be5caf6af4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeightSource.html#abe29c6bceede35c3d4e739be5caf6af4">HeightSource</a> (QObject *parent=nullptr)</td></tr>
 <tr class="separator:abe29c6bceede35c3d4e739be5caf6af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d7ac5cf92e9ae5f98218ad40b15992e" id="r_a3d7ac5cf92e9ae5f98218ad40b15992e"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeightSource.html#a3d7ac5cf92e9ae5f98218ad40b15992e">requestPatchHeights</a> (const <a class="el" href="structTileMath_1_1TileKey.html">TileMath::TileKey</a> &amp;key, int gridSize)=0</td></tr>
-<tr class="memdesc:a3d7ac5cf92e9ae5f98218ad40b15992e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request the vertex height grid for a patch. Returns a request id (&gt; 0).  <br /></td></tr>
 <tr class="separator:a3d7ac5cf92e9ae5f98218ad40b15992e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b6bd6a13617cef34ebc97cf9f3768ae" id="r_a1b6bd6a13617cef34ebc97cf9f3768ae"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeightSource.html#a1b6bd6a13617cef34ebc97cf9f3768ae">cancelRequest</a> (int requestId)=0</td></tr>
 <tr class="memdesc:a1b6bd6a13617cef34ebc97cf9f3768ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancel a pending request. No signal is emitted for a cancelled request.  <br /></td></tr>
@@ -212,7 +211,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HeightSource_8cc_source.html#l00012">12</a> of file <a class="el" href="HeightSource_8cc_source.html">HeightSource.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HeightSource_8cc_source.html#l00017">ProceduralHeightSource::requestPatchHeights()</a>, and <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00136">TerrariumTileFetcher::requestPatchHeights()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HeightSource_8cc_source.html#l00017">ProceduralHeightSource::requestPatchHeights()</a>, and <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00122">TerrariumTileFetcher::requestPatchHeights()</a>.</p>
 
 </div>
 </div>
@@ -343,8 +342,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Request the vertex height grid for a patch. Returns a request id (&gt; 0). </p>
+<p>Request the vertex height grid for a patch. Returns a request id (&gt; 0). gridSize must be a power of two (see <a class="el" href="classHeightField.html#a68f4d578d3b4d2dd4a1fab5725dec686">HeightField::samplePatch</a>). </p>
 
 <p>Implemented in <a class="el" href="classProceduralHeightSource.html#ae0c962cd790c30f4b13d8b5eb21f8c72">ProceduralHeightSource</a>, and <a class="el" href="classTerrariumTileFetcher.html#af0a0572849f62d8fa6ac02e12845f7bc">TerrariumTileFetcher</a>.</p>
 
@@ -377,9 +375,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classProceduralHeightSource.html#afa42c7cd212ad23b762bc21a47b5dc78">ProceduralHeightSource</a>, <a class="el" href="classFlatHeightSource.html#a33b732ad88fdc9abe99bb2a54872117b">FlatHeightSource</a>, and <a class="el" href="classTerrariumTileFetcher.html#aaa79b2578fa253f76be9f0c479a010c3">TerrariumTileFetcher</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="HeightSource_8h_source.html#l00047">47</a> of file <a class="el" href="HeightSource_8h_source.html">HeightSource.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="SurfaceModel_8cc_source.html#l00087">SurfaceModel::update()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HeightSource_8h_source.html#l00048">48</a> of file <a class="el" href="HeightSource_8h_source.html">HeightSource.h</a>.</p>
 
 </div>
 </div>
@@ -409,9 +405,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Field that receives whole tiles requested via requestTile (not owned) </p>
 
-<p class="definition">Definition at line <a class="el" href="HeightSource_8h_source.html#l00042">42</a> of file <a class="el" href="HeightSource_8h_source.html">HeightSource.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HeightSource_8h_source.html#l00043">43</a> of file <a class="el" href="HeightSource_8h_source.html">HeightSource.h</a>.</p>
 
-<p class="reference">References <a class="el" href="HeightSource_8h_source.html#l00061">_heightField</a>.</p>
+<p class="reference">References <a class="el" href="HeightSource_8h_source.html#l00062">_heightField</a>.</p>
 
 </div>
 </div>
@@ -438,9 +434,9 @@ Protected Attributes</h2></td></tr>
 
 <p>tile delivery target for requestTile (not owned) </p>
 
-<p class="definition">Definition at line <a class="el" href="HeightSource_8h_source.html#l00061">61</a> of file <a class="el" href="HeightSource_8h_source.html">HeightSource.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HeightSource_8h_source.html#l00062">62</a> of file <a class="el" href="HeightSource_8h_source.html">HeightSource.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HeightSource_8cc_source.html#l00056">ProceduralHeightSource::requestTile()</a>, <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00187">TerrariumTileFetcher::requestTile()</a>, and <a class="el" href="HeightSource_8h_source.html#l00042">setHeightField()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HeightSource_8cc_source.html#l00056">ProceduralHeightSource::requestTile()</a>, <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00173">TerrariumTileFetcher::requestTile()</a>, and <a class="el" href="HeightSource_8h_source.html#l00043">setHeightField()</a>.</p>
 
 </div>
 </div>

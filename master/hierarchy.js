@@ -182,6 +182,7 @@ var hierarchy =
     [ "RTCMMavlink::PackResult", "structRTCMMavlink_1_1PackResult.html", null ],
     [ "Parameter", "structParameter.html", null ],
     [ "SurfaceModel::Patch", "structSurfaceModel_1_1Patch.html", null ],
+    [ "PatchSampler", "classPatchSampler.html", null ],
     [ "HwBuffers::PathStats", "structHwBuffers_1_1PathStats.html", null ],
     [ "PauseVehicleThenChangeAltData_t", "structPauseVehicleThenChangeAltData__t.html", null ],
     [ "CpuVideoFramePool::PlaneLayout", "structCpuVideoFramePool_1_1PlaneLayout.html", null ],
@@ -427,6 +428,7 @@ var hierarchy =
       [ "GPSManager", "classGPSManager.html", null ],
       [ "GPSRtk", "classGPSRtk.html", null ],
       [ "GeoMapCamera", "classGeoMapCamera.html", null ],
+      [ "GeoMapProjectedPath", "classGeoMapProjectedPath.html", null ],
       [ "GeoScene", "classGeoScene.html", null ],
       [ "GeoTagController", "classGeoTagController.html", null ],
       [ "GimbalController", "classGimbalController.html", null ],
@@ -580,7 +582,6 @@ var hierarchy =
         [ "QGCSaveTileTask", "classQGCSaveTileTask.html", null ],
         [ "QGCUpdateTileDownloadStateTask", "classQGCUpdateTileDownloadStateTask.html", null ]
       ] ],
-      [ "QGCOffscreenRenderer", "classQGCOffscreenRenderer.html", null ],
       [ "QGCOnboardLogEntry", "classQGCOnboardLogEntry.html", null ],
       [ "QGCOptions", "classQGCOptions.html", null ],
       [ "QGCPalette", "classQGCPalette.html", null ],
@@ -617,7 +618,6 @@ var hierarchy =
         [ "FlightMapSettings", "classFlightMapSettings.html", null ],
         [ "FlightModeSettings", "classFlightModeSettings.html", null ],
         [ "FlyViewSettings", "classFlyViewSettings.html", null ],
-        [ "GeoViewSettings", "classGeoViewSettings.html", null ],
         [ "GimbalControllerSettings", "classGimbalControllerSettings.html", null ],
         [ "JoystickManagerSettings", "classJoystickManagerSettings.html", null ],
         [ "JoystickSettings", "classJoystickSettings.html", null ],
@@ -749,6 +749,7 @@ var hierarchy =
     ] ],
     [ "QQuick3DGeometry", null, [
       [ "CityMapGeometry", "classCityMapGeometry.html", null ],
+      [ "FenceWallGeometry", "classFenceWallGeometry.html", null ],
       [ "FlightPathGeometry", "classFlightPathGeometry.html", null ],
       [ "PaperPlaneGeometry", "classPaperPlaneGeometry.html", null ],
       [ "PatchGeometry", "classPatchGeometry.html", null ],
@@ -772,7 +773,7 @@ var hierarchy =
         [ "HorizontalFactValueGrid", "classHorizontalFactValueGrid.html", null ]
       ] ],
       [ "GeoMapItem", "classGeoMapItem.html", null ],
-      [ "QGCVideoNodeItem", "classQGCVideoNodeItem.html", null ],
+      [ "GeoMapSpriteLayer", "classGeoMapSpriteLayer.html", null ],
       [ "TerrainProfile", "classTerrainProfile.html", null ]
     ] ],
     [ "QSerialPortErrorInfo", "classQSerialPortErrorInfo.html", null ],
@@ -780,9 +781,6 @@ var hierarchy =
       [ "QGCSerialPortInfo", "classQGCSerialPortInfo.html", null ]
     ] ],
     [ "QSerialPortInfoPrivate", "classQSerialPortInfoPrivate.html", null ],
-    [ "QSGRenderNode", null, [
-      [ "QGCVideoRenderNode", "classQGCVideoRenderNode.html", null ]
-    ] ],
     [ "QSignalTransition", null, [
       [ "QGCSignalTransition", "classQGCSignalTransition.html", [
         [ "GuardedTransition", "classGuardedTransition.html", null ],

@@ -130,6 +130,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0a693f305c6473284d281fd3890dcc7a" id="r_a0a693f305c6473284d281fd3890dcc7a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFirmwarePluginManager.html#a0a693f305c6473284d281fd3890dcc7a">firmwareClassSupported</a> (<a class="el" href="structQGCMAVLinkTypes.html#a83989013164d6c570b1b85a9ce06a5c0">QGCMAVLink::FirmwareClass_t</a> firmwareClass)</td></tr>
 <tr class="memdesc:a0a693f305c6473284d281fd3890dcc7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the specified firmware class is supported by the system.  <br /></td></tr>
 <tr class="separator:a0a693f305c6473284d281fd3890dcc7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1415d6fbb4c1b5ed9bf819046ca6922" id="r_aa1415d6fbb4c1b5ed9bf819046ca6922"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFirmwarePluginManager.html#aa1415d6fbb4c1b5ed9bf819046ca6922">singleFirmwareSupport</a> ()</td></tr>
+<tr class="memdesc:aa1415d6fbb4c1b5ed9bf819046ca6922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the system supports only a single firmware class.  <br /></td></tr>
+<tr class="separator:aa1415d6fbb4c1b5ed9bf819046ca6922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac38115bb7608cf759397276dc377ccb3" id="r_ac38115bb7608cf759397276dc377ccb3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFirmwarePluginManager.html#ac38115bb7608cf759397276dc377ccb3">singleVehicleSupport</a> ()</td></tr>
+<tr class="memdesc:ac38115bb7608cf759397276dc377ccb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the system supports only a single firmware class with a single vehicle type.  <br /></td></tr>
+<tr class="separator:ac38115bb7608cf759397276dc377ccb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95612a4251607ad7d7a99f855820da4a" id="r_a95612a4251607ad7d7a99f855820da4a"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="structQGCMAVLinkTypes.html#a9616fc26aa74d9a9bc006db28a8847bf">QGCMAVLink::VehicleClass_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFirmwarePluginManager.html#a95612a4251607ad7d7a99f855820da4a">supportedVehicleClasses</a> (<a class="el" href="structQGCMAVLinkTypes.html#a83989013164d6c570b1b85a9ce06a5c0">QGCMAVLink::FirmwareClass_t</a> firmwareClass)</td></tr>
 <tr class="memdesc:a95612a4251607ad7d7a99f855820da4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of supported vehicle types for the specified firmware.  <br /></td></tr>
 <tr class="separator:a95612a4251607ad7d7a99f855820da4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,7 +230,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="FirmwarePluginManager_8cc_source.html#l00028">supportedFirmwareClasses()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00251">QGroundControlQmlGlobal::apmFirmwareSupported()</a>, and <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00246">QGroundControlQmlGlobal::px4ProFirmwareSupported()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00249">QGroundControlQmlGlobal::apmFirmwareSupported()</a>, and <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00244">QGroundControlQmlGlobal::px4ProFirmwareSupported()</a>.</p>
 
 </div>
 </div>
@@ -262,7 +268,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Singleton <a class="el" href="classFirmwarePlugin.html" title="The FirmwarePlugin class represents the methods and objects which are specific to a certain Firmware ...">FirmwarePlugin</a> instance for the specified MAV_AUTOPILOT. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePluginManager_8cc_source.html#l00064">64</a> of file <a class="el" href="FirmwarePluginManager_8cc_source.html">FirmwarePluginManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePluginManager_8cc_source.html#l00075">75</a> of file <a class="el" href="FirmwarePluginManager_8cc_source.html">FirmwarePluginManager.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="classFirmwarePluginFactory.html#a8d5c2da5cd6facd18a7d4e6935c33261">FirmwarePluginFactory::firmwarePluginForAutopilot()</a>.</p>
 
@@ -296,7 +302,57 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FirmwarePluginManager_8cc_source.html#l00023">23</a> of file <a class="el" href="FirmwarePluginManager_8cc_source.html">FirmwarePluginManager.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l00474">Vehicle::_offlineFirmwareTypeSettingChanged()</a>, <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00251">QGroundControlQmlGlobal::apmFirmwareSupported()</a>, <a class="el" href="AppSettings_8cc_source.html#l00061">DECLARE_SETTINGGROUP()</a>, <a class="el" href="FirmwareUpgradeController_8cc_source.html#l00109">FirmwareUpgradeController::FirmwareUpgradeController()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00197">MissionCommandTree::getCommandsForCategory()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00015">MissionCommandTree::MissionCommandTree()</a>, <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00246">QGroundControlQmlGlobal::px4ProFirmwareSupported()</a>, <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00232">QGroundControlQmlGlobal::singleFirmwareSupport()</a>, and <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00237">QGroundControlQmlGlobal::singleVehicleSupport()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l00474">Vehicle::_offlineFirmwareTypeSettingChanged()</a>, <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00249">QGroundControlQmlGlobal::apmFirmwareSupported()</a>, <a class="el" href="AppSettings_8cc_source.html#l00061">DECLARE_SETTINGGROUP()</a>, <a class="el" href="FirmwareUpgradeController_8cc_source.html#l00109">FirmwareUpgradeController::FirmwareUpgradeController()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00197">MissionCommandTree::getCommandsForCategory()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00015">MissionCommandTree::MissionCommandTree()</a>, <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00244">QGroundControlQmlGlobal::px4ProFirmwareSupported()</a>, <a class="el" href="QGCCorePlugin_8cc_source.html#l00176">QGCCorePlugin::showInitialSetupVehiclePreferences()</a>, <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00234">QGroundControlQmlGlobal::singleFirmwareSupport()</a>, and <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00239">QGroundControlQmlGlobal::singleVehicleSupport()</a>.</p>
+
+</div>
+</div>
+<a id="aa1415d6fbb4c1b5ed9bf819046ca6922" name="aa1415d6fbb4c1b5ed9bf819046ca6922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1415d6fbb4c1b5ed9bf819046ca6922">&#9670;&#160;</a></span>singleFirmwareSupport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FirmwarePluginManager::singleFirmwareSupport </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if the system supports only a single firmware class. </p>
+
+<p class="definition">Definition at line <a class="el" href="FirmwarePluginManager_8cc_source.html#l00046">46</a> of file <a class="el" href="FirmwarePluginManager_8cc_source.html">FirmwarePluginManager.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="FirmwarePluginManager_8cc_source.html#l00028">supportedFirmwareClasses()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00234">QGroundControlQmlGlobal::singleFirmwareSupport()</a>.</p>
+
+</div>
+</div>
+<a id="ac38115bb7608cf759397276dc377ccb3" name="ac38115bb7608cf759397276dc377ccb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac38115bb7608cf759397276dc377ccb3">&#9670;&#160;</a></span>singleVehicleSupport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool FirmwarePluginManager::singleVehicleSupport </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if the system supports only a single firmware class with a single vehicle type. </p>
+
+<p class="definition">Definition at line <a class="el" href="FirmwarePluginManager_8cc_source.html#l00051">51</a> of file <a class="el" href="FirmwarePluginManager_8cc_source.html">FirmwarePluginManager.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="FirmwarePluginManager_8cc_source.html#l00028">supportedFirmwareClasses()</a>, and <a class="el" href="FirmwarePluginManager_8cc_source.html#l00057">supportedVehicleClasses()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="QGCCorePlugin_8cc_source.html#l00176">QGCCorePlugin::showInitialSetupVehiclePreferences()</a>, and <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00239">QGroundControlQmlGlobal::singleVehicleSupport()</a>.</p>
 
 </div>
 </div>
@@ -321,7 +377,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="QGCMAVLink_8h_source.html#l00027">QGCMAVLink::FirmwareClassGeneric</a>, <a class="el" href="FirmwarePluginFactory_8cc_source.html#l00028">FirmwarePluginFactoryRegister::instance()</a>, and <a class="el" href="FirmwarePluginFactory_8h_source.html#l00042">FirmwarePluginFactoryRegister::pluginFactories()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="AppSettings_8cc_source.html#l00061">DECLARE_SETTINGGROUP()</a>, <a class="el" href="FirmwarePluginManager_8cc_source.html#l00041">firmwareClassSupported()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00015">MissionCommandTree::MissionCommandTree()</a>, and <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00232">QGroundControlQmlGlobal::singleFirmwareSupport()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="AppSettings_8cc_source.html#l00061">DECLARE_SETTINGGROUP()</a>, <a class="el" href="FirmwarePluginManager_8cc_source.html#l00041">firmwareClassSupported()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00015">MissionCommandTree::MissionCommandTree()</a>, <a class="el" href="FirmwarePluginManager_8cc_source.html#l00046">singleFirmwareSupport()</a>, and <a class="el" href="FirmwarePluginManager_8cc_source.html#l00051">singleVehicleSupport()</a>.</p>
 
 </div>
 </div>
@@ -343,11 +399,11 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns the list of supported vehicle types for the specified firmware. </p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePluginManager_8cc_source.html#l00046">46</a> of file <a class="el" href="FirmwarePluginManager_8cc_source.html">FirmwarePluginManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePluginManager_8cc_source.html#l00057">57</a> of file <a class="el" href="FirmwarePluginManager_8cc_source.html">FirmwarePluginManager.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="QGCMAVLink_8cc_source.html#l00093">QGCMAVLink::allVehicleClasses()</a>, <a class="el" href="QGCMAVLink_8h_source.html#l00027">QGCMAVLink::FirmwareClassGeneric</a>, <a class="el" href="FirmwarePluginFactory_8h_source.html#l00027">FirmwarePluginFactory::supportedVehicleClasses()</a>, and <a class="el" href="QGCMAVLinkTypes_8h_source.html#l00013">QGCMAVLinkTypes::VehicleClassGeneric</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00237">QGroundControlQmlGlobal::singleVehicleSupport()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FirmwarePluginManager_8cc_source.html#l00051">singleVehicleSupport()</a>.</p>
 
 </div>
 </div>

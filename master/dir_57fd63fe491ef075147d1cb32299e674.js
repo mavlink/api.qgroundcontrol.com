@@ -6,6 +6,7 @@ var dir_57fd63fe491ef075147d1cb32299e674 =
     [ "AppSettings.qml", "AppSettings_8qml.html", null ],
     [ "AutotuneUI.qml", "AutotuneUI_8qml.html", null ],
     [ "AxisMonitor.qml", "AxisMonitor_8qml.html", null ],
+    [ "CameraTriggerIcon.qml", "CameraTriggerIcon_8qml.html", null ],
     [ "ClickableColor.qml", "ClickableColor_8qml.html", null ],
     [ "ColoredSvgImageProvider.cc", "ColoredSvgImageProvider_8cc.html", null ],
     [ "ColoredSvgImageProvider.h", "ColoredSvgImageProvider_8h.html", "ColoredSvgImageProvider_8h" ],

@@ -26,6 +26,14 @@ var px4__custom__mode_8h =
       [ "PX4_CUSTOM_SUB_MODE_AUTO_FOLLOW_TARGET", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2ac081e262ec37301d4484082d4b11edf7", null ],
       [ "PX4_CUSTOM_SUB_MODE_AUTO_PRECLAND", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2aa74de9e199a8e8a1000097f7f5fc3cde", null ],
       [ "PX4_CUSTOM_SUB_MODE_AUTO_VTOL_TAKEOFF", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2a4ba293da16892839b4717b42a503d1e0", null ],
+      [ "PX4_CUSTOM_SUB_MODE_EXTERNAL1", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2a975df450427c056e2e17f80f90cbd03f", null ],
+      [ "PX4_CUSTOM_SUB_MODE_EXTERNAL2", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2a9c82dab6d77af6064af1a711556c1323", null ],
+      [ "PX4_CUSTOM_SUB_MODE_EXTERNAL3", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2a8486eabcb276ca4b765a4c035d756482", null ],
+      [ "PX4_CUSTOM_SUB_MODE_EXTERNAL4", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2ad3266c4f8aee142aa1b491070d1654bd", null ],
+      [ "PX4_CUSTOM_SUB_MODE_EXTERNAL5", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2a723a1c82fd50d6fa8a036cddb863efcc", null ],
+      [ "PX4_CUSTOM_SUB_MODE_EXTERNAL6", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2a59ef3b829bb4922aa1ab9405457dcfeb", null ],
+      [ "PX4_CUSTOM_SUB_MODE_EXTERNAL7", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2a307c2059bee0ec4c0b3c783525d417f8", null ],
+      [ "PX4_CUSTOM_SUB_MODE_EXTERNAL8", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2af4385fbbfbe9aec45f3b4391967787d7", null ],
       [ "PX4_CUSTOM_SUB_MODE_GUIDED_COURSE", "px4__custom__mode_8h.html#aa5d61964104476edb329ee6dee4125d2a5618bdc13c22b0d6bf736086942799b4", null ]
     ] ],
     [ "PX4_CUSTOM_SUB_MODE_POSCTL", "px4__custom__mode_8h.html#aa01e24012ff3dfb7219d4cb5060e6be2", [

@@ -189,50 +189,51 @@ $(document).ready(function(){initNavTree('GuidedActionConfirm_8qml_source.html',
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        spacing:    ScreenTools.defaultFontPixelWidth</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        QGCDelayButton {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            text:               control.title</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            enabled:            true</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            onActivated: {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                control.visible = false</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                var sliderOutputValue = 0</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                if (guidedValueSlider.visible) {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                    sliderOutputValue = guidedValueSlider.getOutputValue()</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    guidedValueSlider.visible = false</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                hideTrigger = false</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                let success = guidedController.executeAction(control.action, control.actionData, sliderOutputValue, control.optionChecked)</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                if (mapIndicator) {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                    if (success) {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                        mapIndicator.actionConfirmed()</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                    } else {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                        mapIndicator.actionCancelled()</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                    }</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                    mapIndicator = undefined</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                }</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        }</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        QGCCheckBox {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            id:                 optionCheckBox</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            visible:            text !== &quot;&quot;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        }</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        QGCColoredImage {</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            id:                 closeButton</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            Layout.alignment:   Qt.AlignTop</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            width:              height</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            height:             ScreenTools.defaultFontPixelHeight * 0.5</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            source:             &quot;/res/XDelete.svg&quot;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            fillMode:           Image.PreserveAspectFit</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            color:              qgcPal.text</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            QGCMouseArea {</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                fillItem:   parent</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                onClicked:  confirmCancelled()</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            }</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        }</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>}</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            objectName:         &quot;guidedActionConfirmButton&quot;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            text:               control.title</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            enabled:            true</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            onActivated: {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                control.visible = false</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                var sliderOutputValue = 0</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                if (guidedValueSlider.visible) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    sliderOutputValue = guidedValueSlider.getOutputValue()</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                    guidedValueSlider.visible = false</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                hideTrigger = false</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                let success = guidedController.executeAction(control.action, control.actionData, sliderOutputValue, control.optionChecked)</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                if (mapIndicator) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                    if (success) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                        mapIndicator.actionConfirmed()</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                    } else {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                        mapIndicator.actionCancelled()</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                    }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                    mapIndicator = undefined</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        QGCCheckBox {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            id:                 optionCheckBox</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            visible:            text !== &quot;&quot;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        QGCColoredImage {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            id:                 closeButton</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            Layout.alignment:   Qt.AlignTop</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            width:              height</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            height:             ScreenTools.defaultFontPixelHeight * 0.5</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            source:             &quot;/res/XDelete.svg&quot;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            fillMode:           Image.PreserveAspectFit</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            color:              qgcPal.text</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            QGCMouseArea {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                fillItem:   parent</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                onClicked:  confirmCancelled()</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

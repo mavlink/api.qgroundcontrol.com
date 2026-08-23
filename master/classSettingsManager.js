@@ -12,7 +12,6 @@ var classSettingsManager =
     [ "flightMapSettings", "classSettingsManager.html#a1d7995f413ae904681e77c14a458ec24", null ],
     [ "flightModeSettings", "classSettingsManager.html#a67aad64779093a3a006d1293b74c539f", null ],
     [ "flyViewSettings", "classSettingsManager.html#adc3fe70caa6b16779cce1c0aa272776c", null ],
-    [ "geoViewSettings", "classSettingsManager.html#ac9382be4780bee1f91bba9f3ae340d2b", null ],
     [ "gimbalControllerSettings", "classSettingsManager.html#add6447a61cbfed55d713eb661da53fd0", null ],
     [ "init", "classSettingsManager.html#a04ed8c1d8f7b306c49fa647e551a5459", null ],
     [ "instance", "classSettingsManager.html#a70509f6304c076e2cceea0445951c324", null ],

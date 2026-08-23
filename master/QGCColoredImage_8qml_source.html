@@ -128,29 +128,30 @@ $(document).ready(function(){initNavTree('QGCColoredImage_8qml_source.html','');
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    // Strip qrc: scheme and ensure leading &#39;/&#39; so the provider URL stays well-formed.</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    readonly property string _path: {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        const s = source.toString()</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        let s = source.toString()</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        if (s.length === 0)        return &quot;&quot;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        if (s.startsWith(&quot;qrc:/&quot;)) return s.substring(4)</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        if (s.startsWith(&quot;/&quot;))     return s</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        return &quot;/&quot; + s</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    // QColor in C++ parses &quot;#&quot; prefixes as URL fragments, so strip it.</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    readonly property string _hex: color.toString().replace(&quot;#&quot;, &quot;&quot;)</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    Image {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        id:                 image</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        smooth:             true</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        mipmap:             true</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        antialiasing:       true</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        asynchronous:       true</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        fillMode:           Image.PreserveAspectFit</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        anchors.fill:       parent</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        sourceSize.height:  height</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        source:             root._path.length &gt; 0</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                            ? &quot;image://coloredsvg&quot; + root._path + &quot;?color=&quot; + root._hex</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                            : &quot;&quot;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        s = Qt.resolvedUrl(s).toString()</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        if (s.startsWith(&quot;qrc:/&quot;)) return s.substring(4)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        if (s.startsWith(&quot;/&quot;))     return s</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        return &quot;/&quot; + s</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    // QColor in C++ parses &quot;#&quot; prefixes as URL fragments, so strip it.</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    readonly property string _hex: color.toString().replace(&quot;#&quot;, &quot;&quot;)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    Image {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        id:                 image</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        smooth:             true</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        mipmap:             true</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        antialiasing:       true</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        asynchronous:       true</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        fillMode:           Image.PreserveAspectFit</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        anchors.fill:       parent</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        sourceSize.height:  height</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        source:             root._path.length &gt; 0</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                            ? &quot;image://coloredsvg&quot; + root._path + &quot;?color=&quot; + root._hex</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                            : &quot;&quot;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

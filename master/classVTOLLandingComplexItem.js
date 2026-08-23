@@ -1,6 +1,7 @@
 var classVTOLLandingComplexItem =
 [
     [ "VTOLLandingComplexItem", "classVTOLLandingComplexItem.html#acffd2f24d23e625d1af46fbcbaaae5a8", null ],
+    [ "geoMapVisualQML", "classVTOLLandingComplexItem.html#a262ad04fe6c1124b131bb24aec6bdf33", null ],
     [ "load", "classVTOLLandingComplexItem.html#afe2e0f27b32af3a918842b2957c11338", null ],
     [ "mapVisualQML", "classVTOLLandingComplexItem.html#ae2dffc1c12692540f0a02e6ec41a2680", null ],
     [ "patternName", "classVTOLLandingComplexItem.html#a4df6149de5d0c58be485439e6dcfd67b", null ],

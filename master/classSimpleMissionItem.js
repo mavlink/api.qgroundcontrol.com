@@ -30,6 +30,7 @@ var classSimpleMissionItem =
     [ "exitCoordinateSameAsEntry", "classSimpleMissionItem.html#a12e1765071ae9c2e914f6424856be490", null ],
     [ "friendlyEditAllowed", "classSimpleMissionItem.html#a29b7986accbe0c6fadeaeaea35ec8e0f", null ],
     [ "friendlyEditAllowedChanged", "classSimpleMissionItem.html#a5599b03dc5b36ade1dbe45648f44a364", null ],
+    [ "geoMapVisualQML", "classSimpleMissionItem.html#a9ced89f604e413213b0d1e29e14cd790", null ],
     [ "headingDegreesChanged", "classSimpleMissionItem.html#afc68b0fa6cbcdddad4e3361c4d626cde", null ],
     [ "isLandCommand", "classSimpleMissionItem.html#ab99ac4069926d4844f3e4b912083a1ef", null ],
     [ "isLoiterItem", "classSimpleMissionItem.html#accf27329680d436f9a5a64cd757159fd", null ],

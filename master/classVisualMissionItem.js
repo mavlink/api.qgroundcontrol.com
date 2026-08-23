@@ -52,6 +52,7 @@ var classVisualMissionItem =
     [ "exitCoordinateSameAsEntry", "classVisualMissionItem.html#acff74854bfdd3460504bb05715803490", null ],
     [ "exitCoordinateSameAsEntryChanged", "classVisualMissionItem.html#a91b3a4e6ea339a13c4700a71de37bda3", null ],
     [ "flyView", "classVisualMissionItem.html#a2580fa56ac37adf1944e61ff25c25ab1", null ],
+    [ "geoMapVisualQML", "classVisualMissionItem.html#abc579ed99a9d71b7d0ce545ef3e7ca68", null ],
     [ "hasCurrentChildItem", "classVisualMissionItem.html#a2bf2cfeabf7125618259c6525a7ed73a", null ],
     [ "hasCurrentChildItemChanged", "classVisualMissionItem.html#ae56f622ecfd6b7a2ebbf1cd27feaab8a", null ],
     [ "homePosition", "classVisualMissionItem.html#a65a8209557fd50b4218969621c032c86", null ],
