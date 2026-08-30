@@ -44,7 +44,7 @@ var searchData=
   ['ntripggaprovider_41',['NTRIPGgaProvider',['../classNTRIPGgaProvider.html#a7c3bc102d5e8287a0b3fec29dd2e5407',1,'NTRIPGgaProvider']]],
   ['ntriphttptransport_42',['NTRIPHttpTransport',['../classNTRIPHttpTransport.html#ad0e7a5da50dd8cc857b61b206d29074f',1,'NTRIPHttpTransport']]],
   ['ntripmanager_43',['ntripmanager',['../classNTRIPManager.html#aa8d7f2e7cd77deb83508844b570ede94',1,'NTRIPManager::NTRIPManager()'],['../classQGroundControlQmlGlobal.html#ae639513186ed283c6cc05156e813a8e0',1,'QGroundControlQmlGlobal::ntripManager()']]],
-  ['ntripsettings_44',['ntripsettings',['../classNTRIPSettings.html#abf64538a63f34d71d6d304bd474ae59c',1,'NTRIPSettings::NTRIPSettings()'],['../classSettingsManager.html#af9e21c060537498940ccaa4b7e0657c1',1,'SettingsManager::ntripSettings()']]],
+  ['ntripsettings_44',['ntripsettings',['../classSettingsManager.html#af9e21c060537498940ccaa4b7e0657c1',1,'SettingsManager::ntripSettings()'],['../classNTRIPSettings.html#abf64538a63f34d71d6d304bd474ae59c',1,'NTRIPSettings::NTRIPSettings()']]],
   ['ntripsourcetablecontroller_45',['NTRIPSourceTableController',['../classNTRIPSourceTableController.html#a5616f3acb8428d46a2ad628cb7cf3915',1,'NTRIPSourceTableController']]],
   ['ntripsourcetablemodel_46',['NTRIPSourceTableModel',['../classNTRIPSourceTableModel.html#ab55a6e1297437780b9becf9824f00178',1,'NTRIPSourceTableModel']]],
   ['numbertostring_47',['numberToString',['../namespaceQGC.html#a12c9356746e284627baac24785d9c8e8',1,'QGC']]],

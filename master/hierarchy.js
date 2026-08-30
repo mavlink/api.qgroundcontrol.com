@@ -185,6 +185,7 @@ var hierarchy =
     [ "PatchSampler", "classPatchSampler.html", null ],
     [ "HwBuffers::PathStats", "structHwBuffers_1_1PathStats.html", null ],
     [ "PauseVehicleThenChangeAltData_t", "structPauseVehicleThenChangeAltData__t.html", null ],
+    [ "GeoMapCamera::PickRay", "structGeoMapCamera_1_1PickRay.html", null ],
     [ "CpuVideoFramePool::PlaneLayout", "structCpuVideoFramePool_1_1PlaneLayout.html", null ],
     [ "PositionResult", "structPositionResult.html", null ],
     [ "px4_custom_mode", "unionpx4__custom__mode.html", null ],

@@ -183,11 +183,11 @@ $(document).ready(function(){initNavTree('FlyViewGeoMapAdapter_8qml_source.html'
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        geoMapControl.camera.center = center</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    // Screen point -&gt; ground coordinate through the camera pick ray</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    // Screen point -&gt; coordinate of the rendered terrain surface under it</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    // (clipToViewPort accepted for signature parity, screen points are</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    // always inside the viewport for the fly view use cases)</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    function toCoordinate(point, clipToViewPort) {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        return geoMapControl.camera.coordinateAtScreenPoint(point)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        return geoMapControl.surfaceCoordinateAt(point)</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    // Geographic coordinate -&gt; screen point; invalid/behind-camera projects</div>
@@ -205,75 +205,74 @@ $(document).ready(function(){initNavTree('FlyViewGeoMapAdapter_8qml_source.html'
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        keepVehicleCentered: root.pipMode || QGroundControl.settingsManager.flyViewSettings.keepMapCenteredOnVehicle.rawValue</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        // Guided-action popup on click (FlyViewMap.onMapClicked parity).</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        // 2D-only: interactive map editing is view-only in 3D (issue #14901),</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        // and a tilted-camera pick can land kilometers from the visual target.</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        // isTopDown: the mode flips to 2D before the tilt animation finishes.</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        onMapClicked: (position) =&gt; {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            if (root.pipMode || geoMapControl.camera.mode !== GeoMapCamera.Mode2D || !geoMapControl.camera.isTopDown) {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                return</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            if (!globals.guidedControllerFlyView.guidedUIVisible &amp;&amp;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                (globals.guidedControllerFlyView.showGotoLocation || globals.guidedControllerFlyView.showOrbit ||</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                 globals.guidedControllerFlyView.showROI || globals.guidedControllerFlyView.showSetHome ||</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                 globals.guidedControllerFlyView.showSetEstimatorOrigin)) {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                const clickCoord = root.toCoordinate(Qt.point(position.x, position.y), false /* clipToViewPort */)</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                if (!clickCoord.isValid) {</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                    return</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                }</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                const windowPosition = root.mapToItem(globals.parent, position.x, position.y)</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                const dropPanel = mapClickDropPanelComponent.createObject(mainWindow, { mapClickCoord: clickCoord, clickRect: Qt.rect(windowPosition.x, windowPosition.y, 0, 0) })</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                dropPanel.open()</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            }</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        }</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    Component {</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        id: mapClickDropPanelComponent</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        FlyViewMapClickDropPanel {</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            gotoIndicator: geoMapControl.gotoIndicator</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            orbitIndicator: geoMapControl.orbitIndicator</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        }</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    ObstacleDistanceOverlayMap {</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        mapControl: root</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        showText: !root.pipMode</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    }</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    FlyViewGeoMapChrome {</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        anchors.fill: parent</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        geoMap: geoMapControl</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        visible: !root.pipMode</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        // Right edge below the instrument/photo-video panel</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        buttonsTopMargin: root.toolInsetsTopOffset</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                          + (root.toolInsets ? root.toolInsets.topEdgeRightInset : 0)</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        overlayBottomMargin: (root.toolInsets ? root.toolInsets.bottomEdgeLeftInset : 0) + ScreenTools.defaultFontPixelWidth / 2</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    PipState {</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        id: _pipState</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        pipView: root.pipView</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        isDark: _isFullWindowItemDark</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    Connections {</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        target: geoMapControl.camera</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        function onCenterChanged() {</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            root._echoingCameraCenter = true</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            root.center = geoMapControl.camera.center</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            root._echoingCameraCenter = false</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        }</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    }</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    Component.onCompleted: {</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        _echoingCameraCenter = true</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        center = geoMapControl.camera.center</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        _echoingCameraCenter = false</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    }</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>}</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        // Allowed at any tilt: toCoordinate picks the rendered terrain</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        // surface, so the click lands where the user sees it even in 3D.</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        onMapClicked: (position) =&gt; {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            if (root.pipMode) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                return</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            if (!globals.guidedControllerFlyView.guidedUIVisible &amp;&amp;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                (globals.guidedControllerFlyView.showGotoLocation || globals.guidedControllerFlyView.showOrbit ||</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                 globals.guidedControllerFlyView.showROI || globals.guidedControllerFlyView.showSetHome ||</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                 globals.guidedControllerFlyView.showSetEstimatorOrigin)) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                const clickCoord = root.toCoordinate(Qt.point(position.x, position.y), false /* clipToViewPort */)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                if (!clickCoord.isValid) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                    return</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                const windowPosition = root.mapToItem(globals.parent, position.x, position.y)</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                const dropPanel = mapClickDropPanelComponent.createObject(mainWindow, { mapClickCoord: clickCoord, clickRect: Qt.rect(windowPosition.x, windowPosition.y, 0, 0) })</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                dropPanel.open()</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    Component {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        id: mapClickDropPanelComponent</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        FlyViewMapClickDropPanel {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            gotoIndicator: geoMapControl.gotoIndicator</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            orbitIndicator: geoMapControl.orbitIndicator</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    ObstacleDistanceOverlayMap {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        mapControl: root</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        showText: !root.pipMode</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    FlyViewGeoMapChrome {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        anchors.fill: parent</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        geoMap: geoMapControl</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        visible: !root.pipMode</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        // Right edge below the instrument/photo-video panel</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        buttonsTopMargin: root.toolInsetsTopOffset</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                          + (root.toolInsets ? root.toolInsets.topEdgeRightInset : 0)</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        overlayBottomMargin: (root.toolInsets ? root.toolInsets.bottomEdgeLeftInset : 0) + ScreenTools.defaultFontPixelWidth / 2</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    PipState {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        id: _pipState</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        pipView: root.pipView</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        isDark: _isFullWindowItemDark</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    Connections {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        target: geoMapControl.camera</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        function onCenterChanged() {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            root._echoingCameraCenter = true</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            root.center = geoMapControl.camera.center</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            root._echoingCameraCenter = false</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    }</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    Component.onCompleted: {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        _echoingCameraCenter = true</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        center = geoMapControl.camera.center</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        _echoingCameraCenter = false</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

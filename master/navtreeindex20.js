@@ -1,5 +1,10 @@
 var NAVTREEINDEX20 =
 {
+"Viewer3DTileReply_8cc.html":[4,0,0,32,19],
+"Viewer3DTileReply_8cc.html#a7439405b749ac88b3002c8cf686293d5":[4,0,0,32,19,0],
+"Viewer3DTileReply_8cc_source.html":[4,0,0,32,19],
+"Viewer3DTileReply_8h.html":[4,0,0,32,20],
+"Viewer3DTileReply_8h_source.html":[4,0,0,32,20],
 "Viewer3DTileStatistics_8h.html":[4,0,0,32,21],
 "Viewer3DTileStatistics_8h_source.html":[4,0,0,32,21],
 "Viewer3DVehicleItems_8qml.html":[4,0,0,32,1,1,4],
@@ -244,10 +249,5 @@ var NAVTREEINDEX20 =
 "classAPMFirmwarePlugin.html#af84b99be971f7f35daf54ebec4bb2f8f":[3,0,54,37],
 "classAPMFirmwarePlugin.html#afca3d8a0d0d3c43e90da379f2eb07aa1":[3,0,54,26],
 "classAPMFirmwarePlugin.html#afd191c6a28c2b66916ae1acca5cb6aba":[3,0,54,15],
-"classAPMFirmwarePlugin.html#afd88d76c8d2de041c9f50e653a96eb63":[3,0,54,54],
-"classAPMFirmwarePluginFactory.html":[3,0,55],
-"classAPMFirmwarePluginFactory.html#a04ba3777fcf73b3a199409b279a01ef3":[3,0,55,1],
-"classAPMFirmwarePluginFactory.html#a1c9025d2784429a70c5818eb3de37a88":[3,0,55,2],
-"classAPMFirmwarePluginFactory.html#a3406902acf8485685466ab1ec184f92f":[3,0,55,0],
-"classAPMFirmwarePluginFactory.html#abe437b0bbec6531a1cccbbe9bc444cb1":[3,0,55,3]
+"classAPMFirmwarePlugin.html#afd88d76c8d2de041c9f50e653a96eb63":[3,0,54,54]
 };

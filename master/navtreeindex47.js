@@ -1,8 +1,5 @@
 var NAVTREEINDEX47 =
 {
-"classQGCCorePlugin.html#a8c4ff832bd1773cf73f024b1db58177e":[3,0,412,24],
-"classQGCCorePlugin.html#a8f4d1476d74b043534749a929db44d5f":[3,0,412,49],
-"classQGCCorePlugin.html#a8fdf27f7337dac167dd2e0ba63ff4031":[3,0,412,47],
 "classQGCCorePlugin.html#a9589d29b0ed20ff03439e17cd41f462e":[3,0,412,42],
 "classQGCCorePlugin.html#a9e82c86f4fa9e9d18706b6a5e9763ca4":[3,0,412,41],
 "classQGCCorePlugin.html#aa0fad7c4f78713d21c74f579d91a45e0":[3,0,412,39],
@@ -249,5 +246,8 @@ var NAVTREEINDEX47 =
 "classQGCImageProvider.html#aa745c642752a35f6c7c663dec929fa2a":[3,0,431,0],
 "classQGCImageProvider.html#aae157971c466e8785bde4be0cdbf0a41":[3,0,431,1],
 "classQGCImageProvider.html#ad25c808609a8576c9e8218791882dc35":[3,0,431,3],
-"classQGCImportTileTask.html":[3,0,432]
+"classQGCImportTileTask.html":[3,0,432],
+"classQGCImportTileTask.html#a1906f28c2dcf07a5ce25b6608e7b2112":[3,0,432,0],
+"classQGCImportTileTask.html#a2923dd5dc2eee4f7db5e44d1ca94e541":[3,0,432,7],
+"classQGCImportTileTask.html#a4adf46c3dba41bf9bca71a2157823669":[3,0,432,3]
 };

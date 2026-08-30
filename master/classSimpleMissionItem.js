@@ -79,6 +79,7 @@ var classSimpleMissionItem =
     [ "specifiesCoordinate", "classSimpleMissionItem.html#a08042c49fdde4c743df82057a320dd7e", null ],
     [ "speedSection", "classSimpleMissionItem.html#a75b8bed494355799b2672cd1103f3d52", null ],
     [ "speedSectionChanged", "classSimpleMissionItem.html#a2fb7544fda0c53ab8ebc6c767b18e72e", null ],
+    [ "terrainAltitudeRequiredInFlyView", "classSimpleMissionItem.html#a649c4dd79a0e61fd5d34ad8f7b863bad", null ],
     [ "textFieldFacts", "classSimpleMissionItem.html#a4b642ba98ab72e841f4ab01ae767e333", null ],
     [ "textFieldFactsAdvanced", "classSimpleMissionItem.html#a0ccf631d7218e076d69c345501c54c35", null ]
 ];

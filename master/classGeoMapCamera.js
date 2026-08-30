@@ -1,5 +1,6 @@
 var classGeoMapCamera =
 [
+    [ "PickRay", "structGeoMapCamera_1_1PickRay.html", "structGeoMapCamera_1_1PickRay" ],
     [ "Mode", "classGeoMapCamera.html#a337ea4c411cda34b5d95f0faab2093a1", [
       [ "Mode2D", "classGeoMapCamera.html#a337ea4c411cda34b5d95f0faab2093a1af0b37565f6ddf107bc11db81c56bfd74", null ],
       [ "Mode3D", "classGeoMapCamera.html#a337ea4c411cda34b5d95f0faab2093a1a06281e6e6d43bc2879d68aaa3864a8a0", null ]
@@ -35,6 +36,7 @@ var classGeoMapCamera =
     [ "modeChanged", "classGeoMapCamera.html#ae4eab39453c647413ced25c37ebfb87e", null ],
     [ "orbitTo", "classGeoMapCamera.html#a7e75457e79cade03ad511058a7e5c361", null ],
     [ "panTo", "classGeoMapCamera.html#a004b77a47b2f0ee453f28ec01e67d93c", null ],
+    [ "pickRayAt", "classGeoMapCamera.html#acefa7c91d2923fca53c02fe95e94996d", null ],
     [ "reset", "classGeoMapCamera.html#aaa9ec75318104e6daa68e33aec49682e", null ],
     [ "rotateBy", "classGeoMapCamera.html#acc6430d021aff755ba1e81aae4573a4c", null ],
     [ "sceneOrigin", "classGeoMapCamera.html#ab2e0e43880cba71878b0c47f5b995fce", null ],

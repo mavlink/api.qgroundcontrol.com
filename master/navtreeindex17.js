@@ -1,5 +1,10 @@
 var NAVTREEINDEX17 =
 {
+"SDLPlatform_8h.html#a1bfeeea726c78f476e6a608af58cb29f":[4,0,0,29,14,3,2],
+"SDLPlatform_8h.html#a1c292dead01a850d90dc2a40dcc771ab":[4,0,0,29,14,3,6],
+"SDLPlatform_8h.html#a2770a324e6f6edf15b7930f5c29a6b00":[4,0,0,29,14,3,18],
+"SDLPlatform_8h.html#a3737d44ef10e118fe9216cef4985aa9a":[4,0,0,29,14,3,13],
+"SDLPlatform_8h.html#a40f012bccc6b27063225e91ddc1ac5fd":[4,0,0,29,14,3,24],
 "SDLPlatform_8h.html#a4145f6f6402f8c035ac22dfc26b8fbe9":[4,0,0,29,14,3,23],
 "SDLPlatform_8h.html#a41f198e7a61922e2fffe33ad5d28e489":[4,0,0,29,14,3,11],
 "SDLPlatform_8h.html#a4cdeb3ab70d0c1b7be06857e8bd98e5d":[4,0,0,29,14,3,21],
@@ -244,10 +249,5 @@ var NAVTREEINDEX17 =
 "StructureScanPlanCreator_8h_source.html":[4,0,0,21,63],
 "SubChecklist_8qml.html":[4,0,0,12,59],
 "SubChecklist_8qml_source.html":[4,0,0,12,59],
-"SubMachineState_8cc.html":[4,0,0,29,16,1,45],
-"SubMachineState_8cc_source.html":[4,0,0,29,16,1,45],
-"SubMachineState_8h.html":[4,0,0,29,16,1,46],
-"SubMachineState_8h_source.html":[4,0,0,29,16,1,46],
-"SubMenuButton_8qml.html":[4,0,0,24,149],
-"SubMenuButton_8qml_source.html":[4,0,0,24,149]
+"SubMachineState_8cc.html":[4,0,0,29,16,1,45]
 };

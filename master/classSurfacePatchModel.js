@@ -48,6 +48,7 @@ var classSurfacePatchModel =
     [ "statsText", "classSurfacePatchModel.html#aedf0b1ff52459c9383a86f001e9d1b93", null ],
     [ "statsTextChanged", "classSurfacePatchModel.html#aa83b59da11f992fc54ebd77fd308c483", null ],
     [ "stopCapture", "classSurfacePatchModel.html#aa419fe94c204dfda0ca19f5d3ada059d", null ],
+    [ "surfaceCoordinateAtScreenPoint", "classSurfacePatchModel.html#a64b5c0ace2b67b88f0df9e4bbc79dc2b", null ],
     [ "terrain", "classSurfacePatchModel.html#ad520cf1a3073f417a7bbf2ed48b75557", null ],
     [ "terrainChanged", "classSurfacePatchModel.html#a69b17fb177776d28bf3633add4bcf3b5", null ],
     [ "terrainHeightAt", "classSurfacePatchModel.html#aebba686a35ebee1bcef3cd7491efb48b", null ],

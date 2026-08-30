@@ -13,5 +13,8 @@ var searchData=
   ['optnames_10',['optNames',['../classQGCCameraOptionRange.html#afb2fdea8b2507035d2f6e232eaa684b0',1,'QGCCameraOptionRange']]],
   ['optvalues_11',['optValues',['../classQGCCameraOptionRange.html#af30d79ed73c2e426f592f74950540c78',1,'QGCCameraOptionRange']]],
   ['optvariants_12',['optVariants',['../classQGCCameraOptionRange.html#a8770901cca9e3c32f332188ee9f33753',1,'QGCCameraOptionRange']]],
-  ['outputbaudrate_13',['outputBaudRate',['../classQSerialPortPrivate.html#a73f4dd2ffc81e55c66364a6902edc9f2',1,'QSerialPortPrivate']]]
+  ['originx_13',['originX',['../structGeoMapCamera_1_1PickRay.html#a33f4c0207b057ace1ba9fe95eb2b5e1c',1,'GeoMapCamera::PickRay']]],
+  ['originy_14',['originY',['../structGeoMapCamera_1_1PickRay.html#af935c5df0d9e64b527e6c196e73f9c4b',1,'GeoMapCamera::PickRay']]],
+  ['originz_15',['originZ',['../structGeoMapCamera_1_1PickRay.html#abb3c3d446fba451da2cf9af56c0f1c07',1,'GeoMapCamera::PickRay']]],
+  ['outputbaudrate_16',['outputBaudRate',['../classQSerialPortPrivate.html#a73f4dd2ffc81e55c66364a6902edc9f2',1,'QSerialPortPrivate']]]
 ];

@@ -34,7 +34,7 @@ var searchData=
   ['batteryfactgrouplistmodel_2ecc_31',['BatteryFactGroupListModel.cc',['../BatteryFactGroupListModel_8cc.html',1,'']]],
   ['batteryfactgrouplistmodel_2eh_32',['BatteryFactGroupListModel.h',['../BatteryFactGroupListModel_8h.html',1,'']]],
   ['batteryindicator_2eqml_33',['BatteryIndicator.qml',['../BatteryIndicator_8qml.html',1,'']]],
-  ['batteryindicatorsettings_34',['batteryindicatorsettings',['../classBatteryIndicatorSettings.html',1,'BatteryIndicatorSettings'],['../classBatteryIndicatorSettings.html#a8db486ef97567c13af71a857594231d7',1,'BatteryIndicatorSettings::BatteryIndicatorSettings()'],['../classSettingsManager.html#a473daf265b01b6105d7dec0626c686b7',1,'SettingsManager::batteryIndicatorSettings()']]],
+  ['batteryindicatorsettings_34',['batteryindicatorsettings',['../classBatteryIndicatorSettings.html',1,'BatteryIndicatorSettings'],['../classSettingsManager.html#a473daf265b01b6105d7dec0626c686b7',1,'SettingsManager::batteryIndicatorSettings()'],['../classBatteryIndicatorSettings.html#a8db486ef97567c13af71a857594231d7',1,'BatteryIndicatorSettings::BatteryIndicatorSettings()']]],
   ['batteryindicatorsettings_2ecc_35',['BatteryIndicatorSettings.cc',['../BatteryIndicatorSettings_8cc.html',1,'']]],
   ['batteryindicatorsettings_2eh_36',['BatteryIndicatorSettings.h',['../BatteryIndicatorSettings_8h.html',1,'']]],
   ['batteryparams_2eqml_37',['BatteryParams.qml',['../BatteryParams_8qml.html',1,'']]],

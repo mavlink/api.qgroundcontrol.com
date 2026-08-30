@@ -117,6 +117,7 @@ var classVisualMissionItem =
     [ "specifiesCoordinateChanged", "classVisualMissionItem.html#a4b23e2a5d4b256211f0cc01d5afd8af3", null ],
     [ "terrainAltitude", "classVisualMissionItem.html#af755cd016b34cdc84ea3ef1e07836364", null ],
     [ "terrainAltitudeChanged", "classVisualMissionItem.html#a3502c69e9864c700f4604f65e403fbcb", null ],
+    [ "terrainAltitudeRequiredInFlyView", "classVisualMissionItem.html#aab030e0b78fbfe0dfc96822069bcd95a", null ],
     [ "terrainCollision", "classVisualMissionItem.html#af4d7eb71de3f6723e230076fbef1455f", null ],
     [ "terrainCollisionChanged", "classVisualMissionItem.html#a3a23e383b9e344ecb5452bf65a152238", null ],
     [ "terrainPercent", "classVisualMissionItem.html#a545bb77c9ce8d9b6068317a840fefe82", null ],

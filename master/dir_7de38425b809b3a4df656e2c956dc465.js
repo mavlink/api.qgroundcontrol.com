@@ -14,6 +14,8 @@ var dir_7de38425b809b3a4df656e2c956dc465 =
     [ "GeoMapCamera.cc", "GeoMapCamera_8cc.html", null ],
     [ "GeoMapCamera.h", "GeoMapCamera_8h.html", "GeoMapCamera_8h" ],
     [ "GeoMapCircle.qml", "GeoMapCircle_8qml.html", null ],
+    [ "GeoMapDropLine.qml", "GeoMapDropLine_8qml.html", null ],
+    [ "GeoMapDropShadow.qml", "GeoMapDropShadow_8qml.html", null ],
     [ "GeoMapFenceWall.qml", "GeoMapFenceWall_8qml.html", null ],
     [ "GeoMapFlightPath.qml", "GeoMapFlightPath_8qml.html", null ],
     [ "GeoMapFWLandingPatternVisual.qml", "GeoMapFWLandingPatternVisual_8qml.html", null ],

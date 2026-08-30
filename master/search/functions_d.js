@@ -39,7 +39,7 @@ var searchData=
   ['mapnodes_36',['mapNodes',['../classOsmParserThread.html#a4a3ebef43c3933770e65bdab6833a4bb',1,'OsmParserThread']]],
   ['mappingremapped_37',['mappingRemapped',['../classJoystick.html#a311459201ee7a61188e7c6aa5d7059c8',1,'Joystick']]],
   ['mappositiontracker_38',['MapPositionTracker',['../classMapPositionTracker.html#a51e316deac746c4d610006e5aef96a3b',1,'MapPositionTracker']]],
-  ['mapprovider_39',['mapprovider',['../classViewer3DTerrainTexture.html#a3b4d755b00125bc15c75366616d527c2',1,'Viewer3DTerrainTexture::mapProvider()'],['../classViewer3DManager.html#a847d67942d1d902a435e69e2080b38a8',1,'Viewer3DManager::mapProvider()'],['../classCityMapGeometry.html#a5f4d33847c964d40a7095ce4ccb10032',1,'CityMapGeometry::mapProvider()'],['../classMapProvider.html#a9b34741668807e1a3c034cbf4e817a36',1,'MapProvider::MapProvider()']]],
+  ['mapprovider_39',['mapprovider',['../classMapProvider.html#a9b34741668807e1a3c034cbf4e817a36',1,'MapProvider::MapProvider()'],['../classViewer3DTerrainTexture.html#a3b4d755b00125bc15c75366616d527c2',1,'Viewer3DTerrainTexture::mapProvider()'],['../classViewer3DManager.html#a847d67942d1d902a435e69e2080b38a8',1,'Viewer3DManager::mapProvider()'],['../classCityMapGeometry.html#a5f4d33847c964d40a7095ce4ccb10032',1,'CityMapGeometry::mapProvider() const']]],
   ['mapproviderchanged_40',['mapproviderchanged',['../classCityMapGeometry.html#a6ca99e81884f5456069617705d2be73a',1,'CityMapGeometry::mapProviderChanged()'],['../classViewer3DTerrainTexture.html#a2a906a278c4e9682b8c7a40be7438f99',1,'Viewer3DTerrainTexture::mapProviderChanged()']]],
   ['mapproviderlist_41',['mapProviderList',['../classQGCMapEngineManager.html#a0a68e034efd3f65e14ad580ce0e07ee1',1,'QGCMapEngineManager']]],
   ['mapquestmapmapprovider_42',['MapQuestMapMapProvider',['../classMapQuestMapMapProvider.html#a5b020577b76545d2a15146e9aea2963a',1,'MapQuestMapMapProvider']]],
@@ -48,7 +48,7 @@ var searchData=
   ['maprccstickfunctiontoaxisfunction_45',['mapRCCStickFunctionToAxisFunction',['../classJoystick.html#a8f217a20bef2502b99ac19fff4808832',1,'Joystick']]],
   ['mapsampletoframe_46',['mapsampletoframe',['../GStreamerFrameMap_8cc.html#aa0079887c2ae8067524974ea21f86936',1,'mapSampleToFrame(GstBuffer *buffer, GstCaps *caps, const GstVideoInfo &amp;info, const QVideoFrameFormat &amp;format, const HwVideoBufferContext &amp;hwContext, HwResolvedPathCache *pathCache) noexcept:&#160;GStreamerFrameMap.cc'],['../GStreamerFrameMap_8h.html#a05d70876b7dbdeff2ab2249eeaaaffa7',1,'mapSampleToFrame(GstBuffer *buffer, GstCaps *caps, const GstVideoInfo &amp;info, const QVideoFrameFormat &amp;format, const HwVideoBufferContext &amp;hwContext, HwResolvedPathCache *pathCache=nullptr) noexcept:&#160;GStreamerFrameMap.cc']]],
   ['mapsize_47',['mapSize',['../classViewer3DTileQuery.html#aae649854da6aec9cfefa719bef6c9bfd',1,'Viewer3DTileQuery']]],
-  ['mapssettings_48',['mapssettings',['../classMapsSettings.html#ae398e6987b3c78b2b3eb5771aa481f7e',1,'MapsSettings::MapsSettings()'],['../classSettingsManager.html#a1ab015a76c7c65ee763a0cb2ef2b33b3',1,'SettingsManager::mapsSettings()']]],
+  ['mapssettings_48',['mapssettings',['../classSettingsManager.html#a1ab015a76c7c65ee763a0cb2ef2b33b3',1,'SettingsManager::mapsSettings()'],['../classMapsSettings.html#ae398e6987b3c78b2b3eb5771aa481f7e',1,'MapsSettings::MapsSettings()']]],
   ['maptype_49',['maptype',['../classTileImageSource.html#ad70711528d11213bad21f73596673591',1,'TileImageSource::mapType()'],['../classSurfacePatchModel.html#a44212f84d1b45621ec1af782ce919a3b',1,'SurfacePatchModel::mapType() const']]],
   ['maptypechanged_50',['mapTypeChanged',['../classSurfacePatchModel.html#acd6706ca2b5a97b45e27855ace020439',1,'SurfacePatchModel']]],
   ['maptypelist_51',['mapTypeList',['../classQGCMapEngineManager.html#a6fd00fe64361c516db3ded11069d7b8f',1,'QGCMapEngineManager']]],
@@ -89,7 +89,7 @@ var searchData=
   ['mavlinkreceivedcount_86',['mavlinkReceivedCount',['../classVehicle.html#abf0feaeba0c69c9ff49be163863ad366',1,'Vehicle']]],
   ['mavlinksentcount_87',['mavlinkSentCount',['../classVehicle.html#a5664f798b9d63529f32d14705d4649df',1,'Vehicle']]],
   ['mavlinkserialcontrol_88',['mavlinkSerialControl',['../classVehicle.html#af1e436f733943cf9e8b382c5e9c71bb4',1,'Vehicle']]],
-  ['mavlinksettings_89',['mavlinksettings',['../classSettingsManager.html#af3602e293b6f386993ce253e488803bd',1,'SettingsManager::mavlinkSettings()'],['../classMavlinkSettings.html#a4a7c50a6e0e37dae9c029a08bb24defc',1,'MavlinkSettings::MavlinkSettings()']]],
+  ['mavlinksettings_89',['mavlinksettings',['../classMavlinkSettings.html#a4a7c50a6e0e37dae9c029a08bb24defc',1,'MavlinkSettings::MavlinkSettings()'],['../classSettingsManager.html#af3602e293b6f386993ce253e488803bd',1,'SettingsManager::mavlinkSettings()']]],
   ['mavlinksigningkey_90',['MAVLinkSigningKey',['../classMAVLinkSigningKey.html#a6cf771dd2866a12ba1fdb1ff5983e202',1,'MAVLinkSigningKey']]],
   ['mavlinksigningkeys_91',['mavlinksigningkeys',['../classMAVLinkSigningKeys.html#a5b5c42ecc92f7e29c15881c8fc13e158',1,'MAVLinkSigningKeys::MAVLinkSigningKeys()'],['../classQGroundControlQmlGlobal.html#a0621db9cfb97e6e78295ed3657690a1b',1,'QGroundControlQmlGlobal::mavlinkSigningKeys()']]],
   ['mavlinkstatuschanged_92',['mavlinkStatusChanged',['../classVehicle.html#abe1c53a81e02a49ec459b1120d4b5aa3',1,'Vehicle']]],
@@ -224,7 +224,7 @@ var searchData=
   ['mockconfiguration_221',['mockconfiguration',['../classMockConfiguration.html#a27afbb185515b55bd22854f112cd573c',1,'MockConfiguration::MockConfiguration(const MockConfiguration *copy, QObject *parent=nullptr)'],['../classMockConfiguration.html#a7f8607bfad0033a91b9a1bf6ca8d7146',1,'MockConfiguration::MockConfiguration(const QString &amp;name, QObject *parent=nullptr)']]],
   ['mocklink_222',['MockLink',['../classMockLink.html#aa8bdfea93241743bb583639d9a3b88c8',1,'MockLink']]],
   ['mocklinkcamera_223',['MockLinkCamera',['../classMockLinkCamera.html#aeca6b1c2b735c8d2ad41346c541db08b',1,'MockLinkCamera']]],
-  ['mocklinkftp_224',['mocklinkftp',['../classMockLinkFTP.html#a50b111502c59daf5ed668dc5e0a77bf1',1,'MockLinkFTP::MockLinkFTP()'],['../classMockLink.html#a63027cc232c6a2681c03c9b202bf8ba8',1,'MockLink::mockLinkFTP()']]],
+  ['mocklinkftp_224',['mocklinkftp',['../classMockLink.html#a63027cc232c6a2681c03c9b202bf8ba8',1,'MockLink::mockLinkFTP()'],['../classMockLinkFTP.html#a50b111502c59daf5ed668dc5e0a77bf1',1,'MockLinkFTP::MockLinkFTP()']]],
   ['mocklinkgimbal_225',['MockLinkGimbal',['../classMockLinkGimbal.html#ad159560db667d0ad266f02a293d5b029',1,'MockLinkGimbal']]],
   ['mocklinkmissionitemhandler_226',['MockLinkMissionItemHandler',['../classMockLinkMissionItemHandler.html#a7ba87a43043d3513ea2e62682544c2ee',1,'MockLinkMissionItemHandler']]],
   ['mocklinkpx4calibration_227',['MockLinkPX4Calibration',['../classMockLinkPX4Calibration.html#a2b7b436e01b684efecefe6ab8debd8c7',1,'MockLinkPX4Calibration']]],
@@ -277,5 +277,5 @@ var searchData=
   ['multirotorxconfig_274',['multirotorxconfig',['../classArduCopterFirmwarePlugin.html#ab47985f843e92683745a95d1951a60a7',1,'ArduCopterFirmwarePlugin::multiRotorXConfig()'],['../classFirmwarePlugin.html#a62246baa9676401f4887704dddc359a5',1,'FirmwarePlugin::multiRotorXConfig()']]],
   ['multivehicleenabled_275',['multiVehicleEnabled',['../classQGCOptions.html#a14664999d22094372725792d34e9aa06',1,'QGCOptions']]],
   ['multivehicleenabledchanged_276',['multiVehicleEnabledChanged',['../classQGCOptions.html#a0af966d9279ea29182b17b66c1487d9d',1,'QGCOptions']]],
-  ['multivehiclemanager_277',['multivehiclemanager',['../classMultiVehicleManager.html#a78123f3e423cca0c60e8741bb3741e48',1,'MultiVehicleManager::MultiVehicleManager()'],['../classQGroundControlQmlGlobal.html#ac248b44759dc15adceedb29dc1eda482',1,'QGroundControlQmlGlobal::multiVehicleManager()']]]
+  ['multivehiclemanager_277',['multivehiclemanager',['../classQGroundControlQmlGlobal.html#ac248b44759dc15adceedb29dc1eda482',1,'QGroundControlQmlGlobal::multiVehicleManager()'],['../classMultiVehicleManager.html#a78123f3e423cca0c60e8741bb3741e48',1,'MultiVehicleManager::MultiVehicleManager()']]]
 ];

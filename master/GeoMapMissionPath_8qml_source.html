@@ -119,178 +119,258 @@ $(document).ready(function(){initNavTree('GeoMapMissionPath_8qml_source.html',''
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>/// sequence order (simple items at their coordinate; complex items via their</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>/// generic entryCoordinate/exitCoordinate, so the ribbon routes straight</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>/// through a complex item&#39;s own footprint rather than skipping it), at true</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>/// (AMSL) altitude. Stays visible in 2D mode (crossfade3D off), same as</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>/// GeoMapFlightPath. Rebuilt wholesale on any mission change (missions are</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>/// edited, not streamed, so the flight path&#39;s incremental append API is not</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>/// needed here).</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>GeoMapItem {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    id: root</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    property var missionController</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    property var vehicle       ///&lt; Active vehicle, for the RTL-to-home segment</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    // DEM-vs-home-AMSL bias (see GeoMapVehicleItem), computed once by the</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    // consumer for the active vehicle and shared with GeoMapMissionItems</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    // instead of being re-sampled here independently</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    property real homeTerrainBias: 0</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    property real lineWidth: ScreenTools.defaultFontPixelHeight / 5</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    // Matches MissionLineView.qml&#39;s existing flight-path line color</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    property color lineColor: QGroundControl.globalPalette.mapMissionTrajectory</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    altitudeMode: GeoMapItem.Absolute</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    crossfade3D: false</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    coordinate: {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        if (!_geometry || !_geometry.anchorCoordinate.isValid) {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            return QtPositioning.coordinate()</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        const anchor = _geometry.anchorCoordinate</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        return QtPositioning.coordinate(anchor.latitude, anchor.longitude, anchor.altitude + root.homeTerrainBias)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    visible: !!missionController</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    // The geometry lives inside the 3D delegate (created/destroyed with the</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    // scene); this bridges its anchor out for the coordinate binding above</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    property var _geometry: null</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    readonly property var _camera: scene ? scene.camera : null</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>/// (AMSL) altitude. A leg is flown in its destination item&#39;s frame (ArduPilot</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>/// AC_WPNav): legs arriving at a terrain-frame item are draped over the DEM</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>/// with a linear AGL ramp, all other legs are straight lines. Stays visible</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>/// in 2D mode (crossfade3D off), same as GeoMapFlightPath. Rebuilt wholesale</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>/// on any mission change (missions are edited, not streamed, so the flight</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>/// path&#39;s incremental append API is not needed here).</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>GeoMapItem {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    id: root</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    property var missionController</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    property var vehicle       ///&lt; Active vehicle, for the RTL-to-home segment</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    // DEM-vs-home-AMSL bias (see GeoMapVehicleItem), computed once by the</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    // consumer for the active vehicle and shared with GeoMapMissionItems</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    // instead of being re-sampled here independently</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    property real homeTerrainBias: 0</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    property real lineWidth: ScreenTools.defaultFontPixelHeight / 5</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    // Matches MissionLineView.qml&#39;s existing flight-path line color</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    property color lineColor: QGroundControl.globalPalette.mapMissionTrajectory</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    altitudeMode: GeoMapItem.Absolute</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    crossfade3D: false</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    coordinate: {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        if (!_geometry || !_geometry.anchorCoordinate.isValid) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            return QtPositioning.coordinate()</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        const anchor = _geometry.anchorCoordinate</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        return QtPositioning.coordinate(anchor.latitude, anchor.longitude, anchor.altitude + root.homeTerrainBias)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    visible: !!missionController</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    // The geometry lives inside the 3D delegate (created/destroyed with the</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    // scene); this bridges its anchor out for the coordinate binding above</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    property var _geometry: null</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    // Pixel-to-scene-unit factor at unit distance; the shader scales it by</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    // each vertex&#39;s own camera distance</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    readonly property real _screenFactor: _camera ? _camera.unitsPerPixelAtUnitDistance : 0</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    // Ordered coordinates (with AMSL altitude) of every item the vehicle</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    // actually routes through, mirroring MissionController::_recalcFlightPathSegments:</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    // items must specifiesCoordinate &amp;&amp; !isStandaloneCoordinate to get a</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    // segment (excludes RTL, which has no mission-encoded coordinate, and</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    // standalone items like ROI); a qualifying item contributes its</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    // entryCoordinate, plus its exitCoordinate too when that differs</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    // (exitCoordinateSameAsEntry false) — for a simple item these are always</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    // the same point, for a complex item this routes the ribbon straight</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    // through its footprint edge-to-edge. Hitting RTL stops the walk and</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    // links the last point to home instead (linkEndToHome). A land item ends</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    // the walk at its entry: its interior path (loiter exit -&gt; touchdown) is</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    // drawn by the landing pattern visual from the slope start, not straight</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    // from the loiter center, and _recalcFlightPathSegments draws no segment</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    // after a landing item either. The walk starts at item 1 (item 0 is the</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    // MissionSettingsItem, i.e. home); home is prepended only when the mission</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    // starts from the ground — rover, or a takeoff command before the first</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    // coordinate item — mirroring linkStartToHome. Recomputes automatically on</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    // any structural or per-item change since the loop below reads every</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    // NOTIFY-backed property it depends on.</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    readonly property var _pathCoordinates: {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        const coordinates = []</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        if (root.missionController) {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            const items = root.missionController.visualItems</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            let linkStartToHome = root.vehicle ? root.vehicle.rover : false</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            for (let i = 1; i &lt; items.count; ++i) {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                const visualItem = items.get(i)</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                if (visualItem.isSimpleItem &amp;&amp; visualItem.command === MAVLinkEnums.MAV_CMD_NAV_RETURN_TO_LAUNCH) {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                    if (coordinates.length &gt; 0 &amp;&amp; root.vehicle &amp;&amp; root.vehicle.homePosition.isValid) {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                        coordinates.push(root.vehicle.homePosition)</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                    }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                    break</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                if (coordinates.length === 0 &amp;&amp; visualItem.isTakeoffItem) {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                    linkStartToHome = true</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                }</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                if (visualItem.specifiesCoordinate &amp;&amp; !visualItem.isStandaloneCoordinate) {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                    coordinates.push(QtPositioning.coordinate(visualItem.entryCoordinate.latitude,</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                                                               visualItem.entryCoordinate.longitude,</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                                                               visualItem.amslEntryAlt))</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                    if (visualItem.isLandCommand) {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                        break</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                    }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                    if (!visualItem.exitCoordinateSameAsEntry) {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                        coordinates.push(QtPositioning.coordinate(visualItem.exitCoordinate.latitude,</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                                                                   visualItem.exitCoordinate.longitude,</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                                                                   visualItem.amslExitAlt))</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                    }</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                }</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            }</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            if (linkStartToHome &amp;&amp; coordinates.length &gt; 0 &amp;&amp; items.count &gt; 0) {</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                const home = items.get(0)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                if (home.coordinate.isValid) {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                    coordinates.unshift(QtPositioning.coordinate(home.coordinate.latitude,</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                                                                  home.coordinate.longitude,</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                                                                  home.amslEntryAlt))</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            }</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        }</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        return root._subdivided(coordinates)</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    // Legs longer than this are subdivided along the great circle (matching</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    // MissionLineView.qml): the geometry joins points linearly in Web</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    // Mercator, which diverges materially from the actual route over long</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    // distances</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    readonly property real _maxSegmentLengthM: 50000</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    function _subdivided(coordinates) {</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        const result = []</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        for (let i = 0; i &lt; coordinates.length; ++i) {</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            const coord = coordinates[i]</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            if (i &gt; 0) {</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                const prev = coordinates[i - 1]</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                const distance = prev.distanceTo(coord)</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                if (distance &gt; root._maxSegmentLengthM) {</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                    const segments = Math.ceil(distance / root._maxSegmentLengthM)</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                    const azimuth = prev.azimuthTo(coord)</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                    for (let j = 1; j &lt; segments; ++j) {</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                        const point = prev.atDistanceAndAzimuth((j * distance) / segments, azimuth)</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                        result.push(QtPositioning.coordinate(point.latitude, point.longitude,</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                                                             prev.altitude + ((coord.altitude - prev.altitude) * j) / segments))</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                    }</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                }</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            }</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            result.push(coord)</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        }</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        return result</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    readonly property var _camera: scene ? scene.camera : null</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    // Pixel-to-scene-unit factor at unit distance; the shader scales it by</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    // each vertex&#39;s own camera distance</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    readonly property real _screenFactor: _camera ? _camera.unitsPerPixelAtUnitDistance : 0</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    // Ordered route points ({coordinate, terrainLeg}) of every item the vehicle</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    // actually routes through, mirroring MissionController::_recalcFlightPathSegments:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    // items must specifiesCoordinate &amp;&amp; !isStandaloneCoordinate to get a</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    // segment (excludes RTL, which has no mission-encoded coordinate, and</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    // standalone items like ROI); a qualifying item contributes its</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    // entryCoordinate, plus its exitCoordinate too when that differs</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    // (exitCoordinateSameAsEntry false) — for a simple item these are always</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    // the same point, for a complex item this routes the ribbon straight</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    // through its footprint edge-to-edge. Hitting RTL stops the walk and</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    // links the last point to home instead (linkEndToHome). A land item ends</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    // the walk at its entry: its interior path (loiter exit -&gt; touchdown) is</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    // drawn by the landing pattern visual from the slope start, not straight</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    // from the loiter center, and _recalcFlightPathSegments draws no segment</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    // after a landing item either. The walk starts at item 1 (item 0 is the</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    // MissionSettingsItem, i.e. home); home is prepended only when the mission</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    // starts from the ground — rover, or a takeoff command before the first</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    // coordinate item — mirroring linkStartToHome. terrainLeg marks the leg</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    // ARRIVING at a point as terrain-frame (destination item is</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    // MAV_FRAME_GLOBAL_TERRAIN_ALT), except takeoff/land destinations, which</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    // the 2D view also draws as takeoff/land rather than terrain</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    // (segmentTypeForPair&#39;s takeoff/land override). Recomputes automatically on any</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    // structural or per-item change since the loop below reads every</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    // NOTIFY-backed property it depends on.</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    readonly property var _routePoints: {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        const points = []</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        if (root.missionController) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            const items = root.missionController.visualItems</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            let linkStartToHome = root.vehicle ? root.vehicle.rover : false</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            for (let i = 1; i &lt; items.count; ++i) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                const visualItem = items.get(i)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                if (visualItem.isSimpleItem &amp;&amp; visualItem.command === MAVLinkEnums.MAV_CMD_NAV_RETURN_TO_LAUNCH) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                    if (points.length &gt; 0 &amp;&amp; root.vehicle &amp;&amp; root.vehicle.homePosition.isValid) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                        points.push({ coordinate: root.vehicle.homePosition, terrainLeg: false })</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                    }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                    break</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                if (points.length === 0 &amp;&amp; visualItem.isTakeoffItem) {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                    linkStartToHome = true</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                if (visualItem.specifiesCoordinate &amp;&amp; !visualItem.isStandaloneCoordinate) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                    points.push({</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                        coordinate: QtPositioning.coordinate(visualItem.entryCoordinate.latitude,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                                                             visualItem.entryCoordinate.longitude,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                                                             visualItem.amslEntryAlt),</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                        terrainLeg: visualItem.isSimpleItem &amp;&amp; visualItem.altitudeFrame === QGroundControl.AltitudeFrameTerrain</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                                    &amp;&amp; !visualItem.isTakeoffItem &amp;&amp; !visualItem.isLandCommand</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                    })</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                    if (visualItem.isLandCommand) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                        break</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                    if (!visualItem.exitCoordinateSameAsEntry) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                        points.push({</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                            coordinate: QtPositioning.coordinate(visualItem.exitCoordinate.latitude,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                                                                 visualItem.exitCoordinate.longitude,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                                                                 visualItem.amslExitAlt),</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                            terrainLeg: false</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                        })</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                    }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            if (linkStartToHome &amp;&amp; points.length &gt; 0 &amp;&amp; items.count &gt; 0) {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                const home = items.get(0)</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                if (home.coordinate.isValid) {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                    points.unshift({</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                        coordinate: QtPositioning.coordinate(home.coordinate.latitude,</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                                                             home.coordinate.longitude,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                                                             home.amslEntryAlt),</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                        terrainLeg: false</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                    })</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        return points</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    // Straight legs longer than this are subdivided along the great circle</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    // (matching MissionLineView.qml): the geometry joins points linearly in</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    // Web Mercator, which diverges materially from the actual route over long</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    // distances</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    readonly property real _maxSegmentLengthM: 50000</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    // Terrain-frame legs sample the DEM at this spacing (same idea as</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    // FenceWallGeometry), capped so a degenerate long leg can&#39;t explode the</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    // vertex count</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    readonly property real _terrainSampleSpacingM: 50</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    readonly property int _maxTerrainSamplesPerLeg: 200</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    function _reloadPath() {</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        if (_geometry) {</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            _geometry.setPath(root._pathCoordinates)</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        }</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    on_PathCoordinatesChanged: _reloadPath()</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    delegate3D: Component {</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        // z offsets are relative altitudes; flatten them with the terrain</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        // during the 2D&lt;-&gt;3D transition (anchor z already tracks terrainScale</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        // through GeoMapItem)</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        Node {</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            scale: Qt.vector3d(1, 1, root.scene ? root.scene.terrainScale : 1)</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            Model {</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                geometry: FlightPathGeometry {</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                    id: pathGeometry</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                    scene: root.scene</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                }</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                materials: CustomMaterial {</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>                    shadingMode: CustomMaterial.Unshaded</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                    cullMode: Material.NoCulling</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                    vertexShader: &quot;shaders/flightpath.vert&quot;</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                    fragmentShader: &quot;shaders/flightpath.frag&quot;</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                    property real lineWidth: root.lineWidth</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                    property real screenFactor: root._screenFactor</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                    property color pathColor: root.lineColor</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                    // Ramps in as the terrain flattens, effectively disabling</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                    // depth testing in 2D mode (see flightpath.vert)</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                    property real depthPull: root.scene ? 0.5 * (1.0 - root.scene.terrainScale) : 0.0</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                }</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                Component.onCompleted: {</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                    root._geometry = pathGeometry</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>                    root._reloadPath()</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                }</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                Component.onDestruction: root._geometry = null</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            }</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        }</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    }</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>}</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    // Terrain sampling can&#39;t live in the _routePoints binding: terrainHeightAt</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    // is not NOTIFY-reactive, so draping is re-run explicitly here on route</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    // changes and on terrainHeightsChanged as DEM patches stream in</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    function _expandedPath() {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        const points = root._routePoints</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        const result = []</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        for (let i = 0; i &lt; points.length; ++i) {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            const coord = points[i].coordinate</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            if (i &gt; 0) {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                const prev = points[i - 1].coordinate</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>                if (points[i].terrainLeg &amp;&amp; root.surfaceModel) {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                    root._appendTerrainLeg(result, prev, coord)</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                } else {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                    root._appendLongLegSubdivision(result, prev, coord)</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            result.push(coord)</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        return result</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    }</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    function _appendLongLegSubdivision(result, prev, coord) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        const distance = prev.distanceTo(coord)</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        if (distance &lt;= root._maxSegmentLengthM) {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            return</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        const segments = Math.ceil(distance / root._maxSegmentLengthM)</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        const azimuth = prev.azimuthTo(coord)</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        for (let j = 1; j &lt; segments; ++j) {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            const point = prev.atDistanceAndAzimuth((j * distance) / segments, azimuth)</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            result.push(QtPositioning.coordinate(point.latitude, point.longitude,</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                                                 prev.altitude + ((coord.altitude - prev.altitude) * j) / segments))</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    // ArduPilot flies a terrain-frame leg at a height above terrain that</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    // ramps from the origin&#39;s AGL to the destination&#39;s while riding the</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    // terrain profile (AC_WPNav terrain offset); approximate that by draping</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    // the leg over the DEM with a linear AGL ramp. AGLs are computed against</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    // the same DEM the surface renders from, so the ribbon meets both</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    // endpoint markers exactly (the DEM-vs-home AMSL bias cancels between</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    // the endpoint and sample terms).</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    function _appendTerrainLeg(result, prev, coord) {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        const distance = prev.distanceTo(coord)</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        const steps = Math.min(Math.ceil(distance / root._terrainSampleSpacingM), root._maxTerrainSamplesPerLeg)</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        if (steps &lt; 2) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            return</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        const azimuth = prev.azimuthTo(coord)</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        const prevAgl = prev.altitude - root.surfaceModel.terrainHeightAt(prev)</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        const destAgl = coord.altitude - root.surfaceModel.terrainHeightAt(coord)</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        for (let j = 1; j &lt; steps; ++j) {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            const s = j / steps</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            const point = prev.atDistanceAndAzimuth(distance * s, azimuth)</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>            result.push(QtPositioning.coordinate(point.latitude, point.longitude,</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                                                 root.surfaceModel.terrainHeightAt(point) + prevAgl + ((destAgl - prevAgl) * s)))</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    function _reloadPath() {</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        if (_geometry) {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            _geometry.setPath(root._expandedPath())</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    }</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    // Qt.callLater coalesces rebuild bursts (per-patch terrainHeightsChanged</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    // during tile streaming, route + terrain changes in one pass) into one</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    // re-drape, same idea as FenceWallGeometry::_scheduleRebuild</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    function _scheduleReloadPath() {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        Qt.callLater(root._reloadPath)</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    }</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    on_RoutePointsChanged: _scheduleReloadPath()</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    // Only draped legs depend on the DEM; skip terrain-driven rebuilds for</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    // missions with straight legs only</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    readonly property bool _hasTerrainLeg: _routePoints.some(p =&gt; p.terrainLeg)</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    Connections {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        target: root.surfaceModel</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        function onTerrainHeightsChanged() {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            if (root._hasTerrainLeg) {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                root._scheduleReloadPath()</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        }</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    }</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    delegate3D: Component {</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        // z offsets are relative altitudes; flatten them with the terrain</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        // during the 2D&lt;-&gt;3D transition (anchor z already tracks terrainScale</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        // through GeoMapItem)</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        Node {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            scale: Qt.vector3d(1, 1, root.scene ? root.scene.terrainScale : 1)</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            Model {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                geometry: FlightPathGeometry {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                    id: pathGeometry</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                    scene: root.scene</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                }</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                materials: CustomMaterial {</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                    shadingMode: CustomMaterial.Unshaded</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                    cullMode: Material.NoCulling</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                    vertexShader: &quot;shaders/flightpath.vert&quot;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                    fragmentShader: &quot;shaders/flightpath.frag&quot;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                    property real lineWidth: root.lineWidth</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                    property real screenFactor: root._screenFactor</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                    property color pathColor: root.lineColor</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                    // Ramps in as the terrain flattens, effectively disabling</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                    // depth testing in 2D mode (see flightpath.vert)</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                    property real depthPull: root.scene ? 0.5 * (1.0 - root.scene.terrainScale) : 0.0</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                }</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                Component.onCompleted: {</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                    root._geometry = pathGeometry</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>                    root._reloadPath()</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                }</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                Component.onDestruction: root._geometry = null</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>            }</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        }</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    }</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

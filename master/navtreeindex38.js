@@ -1,5 +1,13 @@
 var NAVTREEINDEX38 =
 {
+"classMavlinkCameraControlInterface.html#ac6010b4a6fbc9839d92fa4a3df41acbe":[3,0,299,17],
+"classMavlinkCameraControlInterface.html#ac63631751fc93707e78a565cd42bc6df":[3,0,299,142],
+"classMavlinkCameraControlInterface.html#ac8b5930170c946de7b9d406f95342dba":[3,0,299,30],
+"classMavlinkCameraControlInterface.html#ac97451c1ffcb4eb89cd2b24732744bd7":[3,0,299,134],
+"classMavlinkCameraControlInterface.html#aca0c9ec03317d1cada8f3d1d456dcb5a":[3,0,299,131],
+"classMavlinkCameraControlInterface.html#aca463bad30239e82e552a294737e884e":[3,0,299,15],
+"classMavlinkCameraControlInterface.html#acc088ec3a53c9b69706cafd1b8862f74":[3,0,299,21],
+"classMavlinkCameraControlInterface.html#accbba20a70bb76a0f7ff3cd7d3eff564":[3,0,299,145],
 "classMavlinkCameraControlInterface.html#acda3e535e26bb6c9459a3620b223558e":[3,0,299,119],
 "classMavlinkCameraControlInterface.html#acfd8b6adfc448d9c0486fd0d900b10d7":[3,0,299,110],
 "classMavlinkCameraControlInterface.html#acfdee3f9b9d829a4584c295b577155bb":[3,0,299,138],
@@ -241,13 +249,5 @@ var NAVTREEINDEX38 =
 "classMissionController.html#ad3efaf84c8ece806ba45b9bda17e7012":[3,0,318,47],
 "classMissionController.html#ad56738f8d2fac59b648786a5ef6f72fd":[3,0,318,39],
 "classMissionController.html#ad71a05f5c08ebebac3e9d13d7c5f3503":[3,0,318,50],
-"classMissionController.html#ad804f005fe10e50d4877349e59521d38":[3,0,318,12],
-"classMissionController.html#ad915a6cf957b516af0ef87a3242eb308":[3,0,318,62],
-"classMissionController.html#ad9d919b96e6d7e6c259c38c1628d48a4":[3,0,318,75],
-"classMissionController.html#ad9ebcf9b0e25fbcdc144676772675f93":[3,0,318,7],
-"classMissionController.html#ada114d642e1496215d58fffab5956287":[3,0,318,93],
-"classMissionController.html#add3c7ca569f69b635371b6bf45fc21ef":[3,0,318,99],
-"classMissionController.html#adda325bbaf42a6a543021e75f0d99f2b":[3,0,318,106],
-"classMissionController.html#ae25fbcc7af22d9f6dbc9c3a8ceaadd7d":[3,0,318,72],
-"classMissionController.html#ae2dd9127073aca658efcab6c8fbca039":[3,0,318,25]
+"classMissionController.html#ad804f005fe10e50d4877349e59521d38":[3,0,318,12]
 };

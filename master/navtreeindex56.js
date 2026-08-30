@@ -1,7 +1,5 @@
 var NAVTREEINDEX56 =
 {
-"classSettingsManager.html#ab674f8beaaa671be59cc6624cda10f0a":[3,0,526,5],
-"classSettingsManager.html#abb07ba3610db5cca642ccb4c6bc4d490":[3,0,526,22],
 "classSettingsManager.html#ac7cc9fd6002efc472c7b1fab43cfc100":[3,0,526,24],
 "classSettingsManager.html#aca289d1044a6b39cc1e5e378f55fb9fc":[3,0,526,19],
 "classSettingsManager.html#adc3fe70caa6b16779cce1c0aa272776c":[3,0,526,11],
@@ -107,7 +105,7 @@ var NAVTREEINDEX56 =
 "classSimpleMissionItem.html#a08042c49fdde4c743df82057a320dd7e":[3,0,536,76],
 "classSimpleMissionItem.html#a089b12762f608a7d3e9859b9ee639623":[3,0,536,67],
 "classSimpleMissionItem.html#a0aedf527396dd2c11e08a12a5e081b29":[3,0,536,57],
-"classSimpleMissionItem.html#a0ccf631d7218e076d69c345501c54c35":[3,0,536,80],
+"classSimpleMissionItem.html#a0ccf631d7218e076d69c345501c54c35":[3,0,536,81],
 "classSimpleMissionItem.html#a0d8537bc896c092cfbd386508db5583e":[3,0,536,75],
 "classSimpleMissionItem.html#a107398b27417817069fee46ac1f59c4c":[3,0,536,50],
 "classSimpleMissionItem.html#a12e1765071ae9c2e914f6424856be490":[3,0,536,27],
@@ -123,7 +121,7 @@ var NAVTREEINDEX56 =
 "classSimpleMissionItem.html#a389d345180c057ba21e6ce9907112517":[3,0,536,19],
 "classSimpleMissionItem.html#a435532d787a2f3fea7aa4854a4a3b794":[3,0,536,36],
 "classSimpleMissionItem.html#a4b36ba5ef7fed53e6dcfb3219246b18c":[3,0,536,12],
-"classSimpleMissionItem.html#a4b642ba98ab72e841f4ab01ae767e333":[3,0,536,79],
+"classSimpleMissionItem.html#a4b642ba98ab72e841f4ab01ae767e333":[3,0,536,80],
 "classSimpleMissionItem.html#a4d67f90f5ac77712e4813e7882ad4115":[3,0,536,11],
 "classSimpleMissionItem.html#a4f927784fbc33f0d64ec711d51f4d0f1":[3,0,536,34],
 "classSimpleMissionItem.html#a52f10bb445011de2c6d2da2351ac728c":[3,0,536,0],
@@ -136,6 +134,7 @@ var NAVTREEINDEX56 =
 "classSimpleMissionItem.html#a622de749f60f4ff1cf373654d997fdef":[3,0,536,62],
 "classSimpleMissionItem.html#a62a8fe0953303cec92c119f56785f0eb":[3,0,536,52],
 "classSimpleMissionItem.html#a637f3392bb7407f13ed0c7d9b3555372":[3,0,536,68],
+"classSimpleMissionItem.html#a649c4dd79a0e61fd5d34ad8f7b863bad":[3,0,536,79],
 "classSimpleMissionItem.html#a68a516f8c43367b1e1782f7c58436766":[3,0,536,46],
 "classSimpleMissionItem.html#a706a60b3b21f87a18a3556267b0f33b3":[3,0,536,7],
 "classSimpleMissionItem.html#a729e972ab7dca1cf3f66bacefc03e060":[3,0,536,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX56 =
 "classSimulatedCameraControl.html#a89c5cbd84133471ae65e4c055282ef46":[3,0,537,85],
 "classSimulatedCameraControl.html#a8b0e754a6c4ceaba66af87e995305941":[3,0,537,3],
 "classSimulatedCameraControl.html#a903e4e259df9d9a7f88fdb8f8d321b18":[3,0,537,81],
-"classSimulatedCameraControl.html#a924d753b8a8a45f31d47a9c3f4b0a9a2":[3,0,537,26]
+"classSimulatedCameraControl.html#a924d753b8a8a45f31d47a9c3f4b0a9a2":[3,0,537,26],
+"classSimulatedCameraControl.html#a92a46654590f85d822588b0b20f766bd":[3,0,537,98]
 };

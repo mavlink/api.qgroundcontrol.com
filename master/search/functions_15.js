@@ -23,7 +23,7 @@ var searchData=
   ['unitsconversion_20',['unitsConversion',['../classQGroundControlQmlGlobal.html#a8386a89906c6d8e4b11870158148dfdf',1,'QGroundControlQmlGlobal']]],
   ['unitsperpixelatunitdistance_21',['unitsPerPixelAtUnitDistance',['../classGeoMapCamera.html#a08da73a4841b7641b9776c7c7d8bb67b',1,'GeoMapCamera']]],
   ['unitsperpixelatunitdistancechanged_22',['unitsPerPixelAtUnitDistanceChanged',['../classGeoMapCamera.html#a020986a0ad6a0e5e23d0082e7654094b',1,'GeoMapCamera']]],
-  ['unitssettings_23',['unitssettings',['../classUnitsSettings.html#a95a2666f950037415dd2acf84714c35e',1,'UnitsSettings::UnitsSettings()'],['../classSettingsManager.html#a293f9ff7faa9dcb0419e51ccba2cdf5a',1,'SettingsManager::unitsSettings()']]],
+  ['unitssettings_23',['unitssettings',['../classSettingsManager.html#a293f9ff7faa9dcb0419e51ccba2cdf5a',1,'SettingsManager::unitsSettings()'],['../classUnitsSettings.html#a95a2666f950037415dd2acf84714c35e',1,'UnitsSettings::UnitsSettings()']]],
   ['unknownaction_24',['unknownAction',['../classJoystick.html#a713c3c77b4dceb58065a2a14d3c1e59c',1,'Joystick']]],
   ['unlockjoysticks_25',['unlockJoysticks',['../namespaceSDLJoystick.html#a03ac306142df5f01de60a335f4465826',1,'SDLJoystick']]],
   ['unreachablestates_26',['unreachableStates',['../classQGCStateMachine.html#a7b523ba514b5f342dc3741f864bcf646',1,'QGCStateMachine']]],

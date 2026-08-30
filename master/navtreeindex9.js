@@ -1,5 +1,9 @@
 var NAVTREEINDEX9 =
 {
+"LogManager_8h_source.html":[4,0,0,18,8],
+"LogModel_8cc.html":[4,0,0,18,9],
+"LogModel_8cc_source.html":[4,0,0,18,9],
+"LogModel_8h.html":[4,0,0,18,10],
 "LogModel_8h_source.html":[4,0,0,18,10],
 "LogParseResultPrivate_8h.html":[4,0,0,1,1,4],
 "LogParseResultPrivate_8h.html#a38a5ef5d8850a2e3d4ec867c65a79d63":[4,0,0,1,1,4,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX9 =
 "MapsSettings_8h_source.html":[4,0,0,26,29],
 "MavCommandQueue_8cc.html":[4,0,0,30,12],
 "MavCommandQueue_8cc_source.html":[4,0,0,30,12],
-"MavCommandQueue_8h.html":[4,0,0,30,13],
-"MavCommandQueue_8h_source.html":[4,0,0,30,13],
-"MavlinkActionManager_8cc.html":[4,0,0,24,47],
-"MavlinkActionManager_8cc_source.html":[4,0,0,24,47],
-"MavlinkActionManager_8h.html":[4,0,0,24,48]
+"MavCommandQueue_8h.html":[4,0,0,30,13]
 };

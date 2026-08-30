@@ -674,81 +674,82 @@ $(document).ready(function(){initNavTree('UDPLink_8cc_source.html',''); initResi
 <div class="line"><a id="l00533" name="l00533"></a><span class="lineno"><a class="line" href="classUDPLink.html#af7dedb25930106b30b596ac4a8511a56">  533</a></span><a class="code hl_function" href="classUDPLink.html#af7dedb25930106b30b596ac4a8511a56">UDPLink::~UDPLink</a>()</div>
 <div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>{</div>
 <div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classUDPLink.html#a13c2e7083ae7bb80eb19070123b85ee9">isConnected</a>()) {</div>
-<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>        (void) QMetaObject::invokeMethod(_worker, <span class="stringliteral">&quot;disconnectLink&quot;</span>, Qt::BlockingQueuedConnection);</div>
-<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>        _onDisconnected();</div>
-<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>    }</div>
-<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span> </div>
-<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>    _workerThread-&gt;quit();</div>
-<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>    <span class="keywordflow">if</span> (!_workerThread-&gt;wait()) {</div>
-<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>        qCWarning(UDPLinkLog) &lt;&lt; <span class="stringliteral">&quot;Failed to wait for UDP Thread to close&quot;</span>;</div>
-<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>    }</div>
-<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span> </div>
-<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>    qCDebug(UDPLinkLog) &lt;&lt; <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>}</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>        <span class="comment">// Queued, not blocking: keeps a wedged worker from hanging the destructor before</span></div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>        <span class="comment">// _shutdownWorkerThread can bound the wait. If quit() beats the queued call,</span></div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>        <span class="comment">// ~UDPWorker still disconnects on thread finish.</span></div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>        (void) QMetaObject::invokeMethod(_worker, <span class="stringliteral">&quot;disconnectLink&quot;</span>, Qt::QueuedConnection);</div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>        _onDisconnected();</div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>    }</div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span> </div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>    <span class="comment">// No terminate: it could kill the worker while it holds _sessionTargetsMutex</span></div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>    <a class="code hl_function" href="classLinkInterface.html#a22e5fa08d27526eae24704914c53aadf">_shutdownWorkerThread</a>(_workerThread, UDPLinkLog(), <span class="keyword">false</span> <span class="comment">/* allowTerminate */</span>);</div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span> </div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>    qCDebug(UDPLinkLog) &lt;&lt; <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>}</div>
 </div>
-<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span> </div>
-<div class="foldopen" id="foldopen00548" data-start="{" data-end="}">
-<div class="line"><a id="l00548" name="l00548"></a><span class="lineno"><a class="line" href="classUDPLink.html#a13c2e7083ae7bb80eb19070123b85ee9">  548</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classUDPLink.html#a13c2e7083ae7bb80eb19070123b85ee9">UDPLink::isConnected</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>    <span class="keywordflow">return</span> _worker &amp;&amp; _worker-&gt;<a class="code hl_function" href="classUDPWorker.html#a55a4069dfe0917de8cf33e66d843a86a">isConnected</a>();</div>
-<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>}</div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span> </div>
+<div class="foldopen" id="foldopen00549" data-start="{" data-end="}">
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno"><a class="line" href="classUDPLink.html#a13c2e7083ae7bb80eb19070123b85ee9">  549</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classUDPLink.html#a13c2e7083ae7bb80eb19070123b85ee9">UDPLink::isConnected</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>    <span class="keywordflow">return</span> _worker &amp;&amp; _worker-&gt;<a class="code hl_function" href="classUDPWorker.html#a55a4069dfe0917de8cf33e66d843a86a">isConnected</a>();</div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>}</div>
 </div>
-<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span> </div>
-<div class="foldopen" id="foldopen00553" data-start="{" data-end="}">
-<div class="line"><a id="l00553" name="l00553"></a><span class="lineno"><a class="line" href="classUDPLink.html#a25c2b4b7e03f8aaa4ed33dacbb1ec8b3">  553</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classUDPLink.html#a25c2b4b7e03f8aaa4ed33dacbb1ec8b3">UDPLink::_connect</a>()</div>
-<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>{</div>
-<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>    <span class="keywordflow">return</span> QMetaObject::invokeMethod(_worker, <span class="stringliteral">&quot;connectLink&quot;</span>, Qt::QueuedConnection);</div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>}</div>
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span> </div>
+<div class="foldopen" id="foldopen00554" data-start="{" data-end="}">
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno"><a class="line" href="classUDPLink.html#a25c2b4b7e03f8aaa4ed33dacbb1ec8b3">  554</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classUDPLink.html#a25c2b4b7e03f8aaa4ed33dacbb1ec8b3">UDPLink::_connect</a>()</div>
+<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>{</div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>    <span class="keywordflow">return</span> QMetaObject::invokeMethod(_worker, <span class="stringliteral">&quot;connectLink&quot;</span>, Qt::QueuedConnection);</div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>}</div>
 </div>
-<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span> </div>
-<div class="foldopen" id="foldopen00558" data-start="{" data-end="}">
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno"><a class="line" href="classUDPLink.html#a7651bd6e19f7318f14c165b9e7da28a6">  558</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classUDPLink.html#a7651bd6e19f7318f14c165b9e7da28a6">UDPLink::disconnect</a>()</div>
-<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>{</div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classUDPLink.html#a13c2e7083ae7bb80eb19070123b85ee9">isConnected</a>()) {</div>
-<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>        (void) QMetaObject::invokeMethod(_worker, <span class="stringliteral">&quot;disconnectLink&quot;</span>, Qt::QueuedConnection);</div>
-<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>    }</div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>}</div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span> </div>
+<div class="foldopen" id="foldopen00559" data-start="{" data-end="}">
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno"><a class="line" href="classUDPLink.html#a7651bd6e19f7318f14c165b9e7da28a6">  559</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classUDPLink.html#a7651bd6e19f7318f14c165b9e7da28a6">UDPLink::disconnect</a>()</div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>{</div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classUDPLink.html#a13c2e7083ae7bb80eb19070123b85ee9">isConnected</a>()) {</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>        (void) QMetaObject::invokeMethod(_worker, <span class="stringliteral">&quot;disconnectLink&quot;</span>, Qt::QueuedConnection);</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>    }</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>}</div>
 </div>
-<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span> </div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span><span class="keywordtype">void</span> UDPLink::_onConnected()</div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>{</div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>    _disconnectedEmitted = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    emit <a class="code hl_signal" href="classLinkInterface.html#af08f68378ce5eba20e172e67ca239288">connected</a>();</div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>}</div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span> </div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span><span class="keywordtype">void</span> UDPLink::_onDisconnected()</div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>{</div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>    <span class="keywordflow">if</span> (!_disconnectedEmitted.exchange(<span class="keyword">true</span>)) {</div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>        emit <a class="code hl_signal" href="classLinkInterface.html#a0f20e82176c72fb02a1d18a3019c5ee8">disconnected</a>();</div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>    }</div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>}</div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span><span class="keywordtype">void</span> UDPLink::_onErrorOccurred(<span class="keyword">const</span> QString &amp;<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)</div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>{</div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>    qCWarning(UDPLinkLog) &lt;&lt; <span class="stringliteral">&quot;Communication error:&quot;</span> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>    emit <a class="code hl_signal" href="classLinkInterface.html#ab5eec51087fb23b7f1964452f59b3466">communicationError</a>(tr(<span class="stringliteral">&quot;UDP Link Error&quot;</span>), tr(<span class="stringliteral">&quot;Link %1: %2&quot;</span>).arg(_udpConfig-&gt;<a class="code hl_function" href="classLinkConfiguration.html#ac534702309c7ad0401bfff4a41622970">name</a>(), <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>));</div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>}</div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span> </div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span><span class="keywordtype">void</span> UDPLink::_onDataReceived(<span class="keyword">const</span> QByteArray &amp;data)</div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>{</div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    emit <a class="code hl_signal" href="classLinkInterface.html#a09de1d004eb07755d96b3773d45804c2">bytesReceived</a>(<span class="keyword">this</span>, data);</div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>}</div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span> </div>
-<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span><span class="keywordtype">void</span> UDPLink::_onDataSent(<span class="keyword">const</span> QByteArray &amp;data)</div>
-<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>{</div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>    emit <a class="code hl_signal" href="classLinkInterface.html#ac7cc83d8496bd2cae3e4f62953b1cc30">bytesSent</a>(<span class="keyword">this</span>, data);</div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>}</div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span><span class="keywordtype">void</span> UDPLink::_writeBytes(<span class="keyword">const</span> QByteArray&amp; bytes)</div>
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>{</div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>    (void) QMetaObject::invokeMethod(_worker, <span class="stringliteral">&quot;writeData&quot;</span>, Qt::QueuedConnection, Q_ARG(QByteArray, bytes));</div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>}</div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span> </div>
-<div class="foldopen" id="foldopen00599" data-start="{" data-end="}">
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno"><a class="line" href="classUDPLink.html#a10d5b690559887e2f963b216222ca87c">  599</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classUDPLink.html#a10d5b690559887e2f963b216222ca87c">UDPLink::isSecureConnection</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceQGCNetworkHelper.html#a3b3c71af37eb290a56a9b496949014e5">QGCNetworkHelper::isNetworkEthernet</a>();</div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>}</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span> </div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span><span class="keywordtype">void</span> UDPLink::_onConnected()</div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>{</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    _disconnectedEmitted = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>    emit <a class="code hl_signal" href="classLinkInterface.html#af08f68378ce5eba20e172e67ca239288">connected</a>();</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>}</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span> </div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span><span class="keywordtype">void</span> UDPLink::_onDisconnected()</div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>{</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>    <span class="keywordflow">if</span> (!_disconnectedEmitted.exchange(<span class="keyword">true</span>)) {</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>        emit <a class="code hl_signal" href="classLinkInterface.html#a0f20e82176c72fb02a1d18a3019c5ee8">disconnected</a>();</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>    }</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>}</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span> </div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span><span class="keywordtype">void</span> UDPLink::_onErrorOccurred(<span class="keyword">const</span> QString &amp;<a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>)</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>{</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>    qCWarning(UDPLinkLog) &lt;&lt; <span class="stringliteral">&quot;Communication error:&quot;</span> &lt;&lt; <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>;</div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>    emit <a class="code hl_signal" href="classLinkInterface.html#ab5eec51087fb23b7f1964452f59b3466">communicationError</a>(tr(<span class="stringliteral">&quot;UDP Link Error&quot;</span>), tr(<span class="stringliteral">&quot;Link %1: %2&quot;</span>).arg(_udpConfig-&gt;<a class="code hl_function" href="classLinkConfiguration.html#ac534702309c7ad0401bfff4a41622970">name</a>(), <a class="code hl_variable" href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a>));</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>}</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span> </div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span><span class="keywordtype">void</span> UDPLink::_onDataReceived(<span class="keyword">const</span> QByteArray &amp;data)</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>{</div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>    emit <a class="code hl_signal" href="classLinkInterface.html#a09de1d004eb07755d96b3773d45804c2">bytesReceived</a>(<span class="keyword">this</span>, data);</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>}</div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span> </div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span><span class="keywordtype">void</span> UDPLink::_onDataSent(<span class="keyword">const</span> QByteArray &amp;data)</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>{</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>    emit <a class="code hl_signal" href="classLinkInterface.html#ac7cc83d8496bd2cae3e4f62953b1cc30">bytesSent</a>(<span class="keyword">this</span>, data);</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>}</div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span> </div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span><span class="keywordtype">void</span> UDPLink::_writeBytes(<span class="keyword">const</span> QByteArray&amp; bytes)</div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>{</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>    (void) QMetaObject::invokeMethod(_worker, <span class="stringliteral">&quot;writeData&quot;</span>, Qt::QueuedConnection, Q_ARG(QByteArray, bytes));</div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>}</div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span> </div>
+<div class="foldopen" id="foldopen00600" data-start="{" data-end="}">
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno"><a class="line" href="classUDPLink.html#a10d5b690559887e2f963b216222ca87c">  600</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classUDPLink.html#a10d5b690559887e2f963b216222ca87c">UDPLink::isSecureConnection</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceQGCNetworkHelper.html#a3b3c71af37eb290a56a9b496949014e5">QGCNetworkHelper::isNetworkEthernet</a>();</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>}</div>
 </div>
 <div class="ttc" id="aAutoConnectSettings_8h_html"><div class="ttname"><a href="AutoConnectSettings_8h.html">AutoConnectSettings.h</a></div></div>
 <div class="ttc" id="aGstSourceFactory_8cc_html_a4a8dd3a2de125b72d4fe6251a0a271b5"><div class="ttname"><a href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a></div><div class="ttdeci">Config config</div><div class="ttdef"><b>Definition</b> <a href="GstSourceFactory_8cc_source.html#l00160">GstSourceFactory.cc:160</a></div></div>
@@ -766,9 +767,10 @@ $(document).ready(function(){initNavTree('UDPLink_8cc_source.html',''); initResi
 <div class="ttc" id="aclassLinkConfiguration_html_a4b9b90c35c0edee76ea785a22dd33a5f"><div class="ttname"><a href="classLinkConfiguration.html#a4b9b90c35c0edee76ea785a22dd33a5f">LinkConfiguration::isAutoConnect</a></div><div class="ttdeci">bool isAutoConnect() const</div><div class="ttdef"><b>Definition</b> <a href="LinkConfiguration_8h_source.html#l00059">LinkConfiguration.h:59</a></div></div>
 <div class="ttc" id="aclassLinkConfiguration_html_ac534702309c7ad0401bfff4a41622970"><div class="ttname"><a href="classLinkConfiguration.html#ac534702309c7ad0401bfff4a41622970">LinkConfiguration::name</a></div><div class="ttdeci">QString name() const</div><div class="ttdef"><b>Definition</b> <a href="LinkConfiguration_8h_source.html#l00035">LinkConfiguration.h:35</a></div></div>
 <div class="ttc" id="aclassLinkConfiguration_html_afc2cf93085e10e0f94fee0a481db1c0a"><div class="ttname"><a href="classLinkConfiguration.html#afc2cf93085e10e0f94fee0a481db1c0a">LinkConfiguration::setAutoConnect</a></div><div class="ttdeci">virtual void setAutoConnect(bool autoc=true)</div><div class="ttdoc">Set if this is this an Auto Connect configuration.</div><div class="ttdef"><b>Definition</b> <a href="LinkConfiguration_8cc_source.html#l00151">LinkConfiguration.cc:151</a></div></div>
-<div class="ttc" id="aclassLinkInterface_html"><div class="ttname"><a href="classLinkInterface.html">LinkInterface</a></div><div class="ttdoc">The link interface defines the interface for all links used to communicate with the ground station ap...</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8h_source.html#l00016">LinkInterface.h:17</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html"><div class="ttname"><a href="classLinkInterface.html">LinkInterface</a></div><div class="ttdoc">The link interface defines the interface for all links used to communicate with the ground station ap...</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8h_source.html#l00018">LinkInterface.h:19</a></div></div>
 <div class="ttc" id="aclassLinkInterface_html_a09de1d004eb07755d96b3773d45804c2"><div class="ttname"><a href="classLinkInterface.html#a09de1d004eb07755d96b3773d45804c2">LinkInterface::bytesReceived</a></div><div class="ttdeci">void bytesReceived(LinkInterface *link, const QByteArray &amp;data)</div></div>
 <div class="ttc" id="aclassLinkInterface_html_a0f20e82176c72fb02a1d18a3019c5ee8"><div class="ttname"><a href="classLinkInterface.html#a0f20e82176c72fb02a1d18a3019c5ee8">LinkInterface::disconnected</a></div><div class="ttdeci">void disconnected()</div></div>
+<div class="ttc" id="aclassLinkInterface_html_a22e5fa08d27526eae24704914c53aadf"><div class="ttname"><a href="classLinkInterface.html#a22e5fa08d27526eae24704914c53aadf">LinkInterface::_shutdownWorkerThread</a></div><div class="ttdeci">void _shutdownWorkerThread(QThread *thread, const QLoggingCategory &amp;category, bool allowTerminate=true)</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00034">LinkInterface.cc:34</a></div></div>
 <div class="ttc" id="aclassLinkInterface_html_ab5eec51087fb23b7f1964452f59b3466"><div class="ttname"><a href="classLinkInterface.html#ab5eec51087fb23b7f1964452f59b3466">LinkInterface::communicationError</a></div><div class="ttdeci">void communicationError(const QString &amp;title, const QString &amp;error)</div></div>
 <div class="ttc" id="aclassLinkInterface_html_ac7cc83d8496bd2cae3e4f62953b1cc30"><div class="ttname"><a href="classLinkInterface.html#ac7cc83d8496bd2cae3e4f62953b1cc30">LinkInterface::bytesSent</a></div><div class="ttdeci">void bytesSent(LinkInterface *link, const QByteArray &amp;data)</div></div>
 <div class="ttc" id="aclassLinkInterface_html_af08f68378ce5eba20e172e67ca239288"><div class="ttname"><a href="classLinkInterface.html#af08f68378ce5eba20e172e67ca239288">LinkInterface::connected</a></div><div class="ttdeci">void connected()</div></div>
@@ -788,11 +790,11 @@ $(document).ready(function(){initNavTree('UDPLink_8cc_source.html',''); initResi
 <div class="ttc" id="aclassUDPConfiguration_html_aacfbd06e9bcb9ae4d422c78f2ef432cf"><div class="ttname"><a href="classUDPConfiguration.html#aacfbd06e9bcb9ae4d422c78f2ef432cf">UDPConfiguration::~UDPConfiguration</a></div><div class="ttdeci">virtual ~UDPConfiguration()</div><div class="ttdef"><b>Definition</b> <a href="UDPLink_8cc_source.html#l00059">UDPLink.cc:59</a></div></div>
 <div class="ttc" id="aclassUDPConfiguration_html_ac84d0ef9a29492391a39a88f22c1b19d"><div class="ttname"><a href="classUDPConfiguration.html#ac84d0ef9a29492391a39a88f22c1b19d">UDPConfiguration::copyFrom</a></div><div class="ttdeci">void copyFrom(const LinkConfiguration *source) override</div><div class="ttdef"><b>Definition</b> <a href="UDPLink_8cc_source.html#l00087">UDPLink.cc:87</a></div></div>
 <div class="ttc" id="aclassUDPConfiguration_html_af0ae48dfc604b3df767853a1689cefa6"><div class="ttname"><a href="classUDPConfiguration.html#af0ae48dfc604b3df767853a1689cefa6">UDPConfiguration::loadSettings</a></div><div class="ttdeci">void loadSettings(QSettings &amp;settings, const QString &amp;root) override</div><div class="ttdef"><b>Definition</b> <a href="UDPLink_8cc_source.html#l00105">UDPLink.cc:105</a></div></div>
-<div class="ttc" id="aclassUDPLink_html_a10d5b690559887e2f963b216222ca87c"><div class="ttname"><a href="classUDPLink.html#a10d5b690559887e2f963b216222ca87c">UDPLink::isSecureConnection</a></div><div class="ttdeci">bool isSecureConnection() const override</div><div class="ttdoc">Returns true if the connection is secure (e.g. USB, wired ethernet)</div><div class="ttdef"><b>Definition</b> <a href="UDPLink_8cc_source.html#l00599">UDPLink.cc:599</a></div></div>
-<div class="ttc" id="aclassUDPLink_html_a13c2e7083ae7bb80eb19070123b85ee9"><div class="ttname"><a href="classUDPLink.html#a13c2e7083ae7bb80eb19070123b85ee9">UDPLink::isConnected</a></div><div class="ttdeci">bool isConnected() const override</div><div class="ttdef"><b>Definition</b> <a href="UDPLink_8cc_source.html#l00548">UDPLink.cc:548</a></div></div>
-<div class="ttc" id="aclassUDPLink_html_a25c2b4b7e03f8aaa4ed33dacbb1ec8b3"><div class="ttname"><a href="classUDPLink.html#a25c2b4b7e03f8aaa4ed33dacbb1ec8b3">UDPLink::_connect</a></div><div class="ttdeci">bool _connect() override</div><div class="ttdoc">connect is private since all links should be created through LinkManager::createConnectedLink calls</div><div class="ttdef"><b>Definition</b> <a href="UDPLink_8cc_source.html#l00553">UDPLink.cc:553</a></div></div>
+<div class="ttc" id="aclassUDPLink_html_a10d5b690559887e2f963b216222ca87c"><div class="ttname"><a href="classUDPLink.html#a10d5b690559887e2f963b216222ca87c">UDPLink::isSecureConnection</a></div><div class="ttdeci">bool isSecureConnection() const override</div><div class="ttdoc">Returns true if the connection is secure (e.g. USB, wired ethernet)</div><div class="ttdef"><b>Definition</b> <a href="UDPLink_8cc_source.html#l00600">UDPLink.cc:600</a></div></div>
+<div class="ttc" id="aclassUDPLink_html_a13c2e7083ae7bb80eb19070123b85ee9"><div class="ttname"><a href="classUDPLink.html#a13c2e7083ae7bb80eb19070123b85ee9">UDPLink::isConnected</a></div><div class="ttdeci">bool isConnected() const override</div><div class="ttdef"><b>Definition</b> <a href="UDPLink_8cc_source.html#l00549">UDPLink.cc:549</a></div></div>
+<div class="ttc" id="aclassUDPLink_html_a25c2b4b7e03f8aaa4ed33dacbb1ec8b3"><div class="ttname"><a href="classUDPLink.html#a25c2b4b7e03f8aaa4ed33dacbb1ec8b3">UDPLink::_connect</a></div><div class="ttdeci">bool _connect() override</div><div class="ttdoc">connect is private since all links should be created through LinkManager::createConnectedLink calls</div><div class="ttdef"><b>Definition</b> <a href="UDPLink_8cc_source.html#l00554">UDPLink.cc:554</a></div></div>
 <div class="ttc" id="aclassUDPLink_html_a5eed82b3727b3d67633d66f35b308316"><div class="ttname"><a href="classUDPLink.html#a5eed82b3727b3d67633d66f35b308316">UDPLink::UDPLink</a></div><div class="ttdeci">UDPLink(SharedLinkConfigurationPtr &amp;config, QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="UDPLink_8cc_source.html#l00509">UDPLink.cc:509</a></div></div>
-<div class="ttc" id="aclassUDPLink_html_a7651bd6e19f7318f14c165b9e7da28a6"><div class="ttname"><a href="classUDPLink.html#a7651bd6e19f7318f14c165b9e7da28a6">UDPLink::disconnect</a></div><div class="ttdeci">void disconnect() override</div><div class="ttdef"><b>Definition</b> <a href="UDPLink_8cc_source.html#l00558">UDPLink.cc:558</a></div></div>
+<div class="ttc" id="aclassUDPLink_html_a7651bd6e19f7318f14c165b9e7da28a6"><div class="ttname"><a href="classUDPLink.html#a7651bd6e19f7318f14c165b9e7da28a6">UDPLink::disconnect</a></div><div class="ttdeci">void disconnect() override</div><div class="ttdef"><b>Definition</b> <a href="UDPLink_8cc_source.html#l00559">UDPLink.cc:559</a></div></div>
 <div class="ttc" id="aclassUDPLink_html_af7dedb25930106b30b596ac4a8511a56"><div class="ttname"><a href="classUDPLink.html#af7dedb25930106b30b596ac4a8511a56">UDPLink::~UDPLink</a></div><div class="ttdeci">virtual ~UDPLink()</div><div class="ttdef"><b>Definition</b> <a href="UDPLink_8cc_source.html#l00533">UDPLink.cc:533</a></div></div>
 <div class="ttc" id="aclassUDPWorker_html"><div class="ttname"><a href="classUDPWorker.html">UDPWorker</a></div><div class="ttdef"><b>Definition</b> <a href="UDPLink_8h_source.html#l00106">UDPLink.h:107</a></div></div>
 <div class="ttc" id="aclassUDPWorker_html_a15055ec483b137ff4c20f58b9223aeba"><div class="ttname"><a href="classUDPWorker.html#a15055ec483b137ff4c20f58b9223aeba">UDPWorker::dataReceived</a></div><div class="ttdeci">void dataReceived(const QByteArray &amp;data)</div></div>

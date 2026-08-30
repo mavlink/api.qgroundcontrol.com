@@ -1,6 +1,5 @@
 var NAVTREEINDEX64 =
 {
-"classVehicleEFIFactGroup.html#ab9939c042ad6fa47e1a417ba30dbb52d":[3,0,614,20],
 "classVehicleEFIFactGroup.html#ad4e0c74fd575b145d51aa03c5a56a0fc":[3,0,614,0],
 "classVehicleEFIFactGroup.html#adb6b888e6bb38c018381c0fd89b05bb6":[3,0,614,5],
 "classVehicleEFIFactGroup.html#ae1ef65b0cbaf6e1768df8bd1f7203be6":[3,0,614,7],
@@ -249,5 +248,6 @@ var NAVTREEINDEX64 =
 "classVehicleObjectAvoidance.html#a691555943e24463c3b7e90edba2cd32e":[3,0,625,7],
 "classVehicleObjectAvoidance.html#a7b04a9b5d379bcbb25143686210b8cf3":[3,0,625,13],
 "classVehicleObjectAvoidance.html#a916720ff5f348e51b168c834a9458813":[3,0,625,12],
-"classVehicleObjectAvoidance.html#abbd1c4e426ccd4b0d61ca9ff816233cc":[3,0,625,5]
+"classVehicleObjectAvoidance.html#abbd1c4e426ccd4b0d61ca9ff816233cc":[3,0,625,5],
+"classVehicleObjectAvoidance.html#ad49d3a2b110378804afa010f336d257f":[3,0,625,9]
 };

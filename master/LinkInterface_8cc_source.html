@@ -106,177 +106,230 @@ $(document).ready(function(){initNavTree('LinkInterface_8cc_source.html',''); in
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="SigningController_8h.html">SigningController.h</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QtQml/QQmlEngine&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(LinkInterfaceLog, <span class="stringliteral">&quot;Comms.LinkInterface&quot;</span>)</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a55fe378b8d6087bbab9b97bb8278c922">   13</a></span><a class="code hl_class" href="classLinkInterface.html">LinkInterface</a>::<a class="code hl_class" href="classLinkInterface.html">LinkInterface</a>(<a class="code hl_typedef" href="LinkConfiguration_8h.html#a6aba49400b7520d5927fd2a5de190290">SharedLinkConfigurationPtr</a> &amp;<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>, QObject *parent)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    : QObject(parent)</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    , _config(<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    QQmlEngine::setObjectOwnership(<span class="keyword">this</span>, QQmlEngine::CppOwnership);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
-</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a1759ef09561244456715048ab00deb70">   20</a></span><a class="code hl_function" href="classLinkInterface.html#a1759ef09561244456715048ab00deb70">LinkInterface::~LinkInterface</a>()</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QtCore/QThread&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QtQml/QQmlEngine&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(LinkInterfaceLog, <span class="stringliteral">&quot;Comms.LinkInterface&quot;</span>)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>namespace {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span> WORKER_SHUTDOWN_TIMEOUT_MS = 3000;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a55fe378b8d6087bbab9b97bb8278c922">   18</a></span><a class="code hl_function" href="classLinkInterface.html#a55fe378b8d6087bbab9b97bb8278c922">LinkInterface::LinkInterface</a>(<a class="code hl_typedef" href="LinkConfiguration_8h.html#a6aba49400b7520d5927fd2a5de190290">SharedLinkConfigurationPtr</a> &amp;<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>, QObject *parent)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    : QObject(parent)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    , _config(<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">if</span> (_vehicleReferenceCount != 0) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        qCWarning(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;still have vehicle references:&quot;</span> &lt;&lt; _vehicleReferenceCount;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_variable" href="classLinkInterface.html#af9fb7d026b62cf6410dbe9900e06c63a">_config</a>.reset();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    QQmlEngine::setObjectOwnership(<span class="keyword">this</span>, QQmlEngine::CppOwnership);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
 </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a21d4864924f17c16d573810140ce8baa">   29</a></span>uint8_t <a class="code hl_function" href="classLinkInterface.html#a21d4864924f17c16d573810140ce8baa">LinkInterface::mavlinkChannel</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">mavlinkChannelIsSet</a>()) {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        qCWarning(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;mavlinkChannelIsSet() == false&quot;</span>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> _mavlinkChannel;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a1759ef09561244456715048ab00deb70">   25</a></span><a class="code hl_function" href="classLinkInterface.html#a1759ef09561244456715048ab00deb70">LinkInterface::~LinkInterface</a>()</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">if</span> (_vehicleReferenceCount != 0) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        qCWarning(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;still have vehicle references:&quot;</span> &lt;&lt; _vehicleReferenceCount;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_variable" href="classLinkInterface.html#af9fb7d026b62cf6410dbe9900e06c63a">_config</a>.reset();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
 </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">   38</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">LinkInterface::mavlinkChannelIsSet</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="classLinkManager.html#a8aa7176774682759df392d865f018ae0">LinkManager::invalidMavlinkChannel</a>() != _mavlinkChannel);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
-</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a91844e3e71ac7f456ac7d807f63bdaef">   43</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classLinkInterface.html#a91844e3e71ac7f456ac7d807f63bdaef">LinkInterface::_allocateMavlinkChannel</a>()</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    Q_ASSERT(!<a class="code hl_function" href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">mavlinkChannelIsSet</a>());</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">mavlinkChannelIsSet</a>()) {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        qCWarning(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;already have&quot;</span> &lt;&lt; _mavlinkChannel;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    _mavlinkChannel = <a class="code hl_function" href="classLinkManager.html#a703bb67f537e6092e2998a9aa8a91287">LinkManager::instance</a>()-&gt;<a class="code hl_function" href="classLinkManager.html#a4c175d30d0795529caa34c964c0ad13f">allocateMavlinkChannel</a>();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">mavlinkChannelIsSet</a>()) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        qCWarning(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;failed&quot;</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    qCDebug(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;_allocateMavlinkChannel&quot;</span> &lt;&lt; _mavlinkChannel;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a22e5fa08d27526eae24704914c53aadf">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLinkInterface.html#a22e5fa08d27526eae24704914c53aadf">LinkInterface::_shutdownWorkerThread</a>(QThread *thread, <span class="keyword">const</span> QLoggingCategory &amp;category, <span class="keywordtype">bool</span> allowTerminate)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (!thread) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">// Self-shutdown: wait() would fail and terminate() would kill the calling thread mid-destructor</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">if</span> (thread-&gt;isCurrentThread()) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        qCCritical(category) &lt;&lt; <span class="stringliteral">&quot;Shutdown called from worker thread itself, orphaning&quot;</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        thread-&gt;quit();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        _orphanWorkerThread(thread);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    thread-&gt;quit();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (thread-&gt;wait(WORKER_SHUTDOWN_TIMEOUT_MS)) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">if</span> (allowTerminate) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        qCWarning(category) &lt;&lt; <span class="stringliteral">&quot;Worker thread did not stop within timeout, terminating&quot;</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        thread-&gt;terminate();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">if</span> (thread-&gt;wait(WORKER_SHUTDOWN_TIMEOUT_MS)) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    mavlink_set_proto_version(_mavlinkChannel, MAVLINK_VERSION); <span class="comment">// We only support v2 protcol</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    _signingController = std::make_unique&lt;SigningController&gt;(<span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="MAVLinkMessageType_8h.html#a065a729dbe076ce959268df8fc951f90">mavlink_channel_t</a><span class="keyword">&gt;</span>(_mavlinkChannel));</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    _signingController-&gt;clearSigning();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">// Orphan the running thread — leaking it beats the ~QThread abort in deleteChildren()</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    qCCritical(category) &lt;&lt; <span class="stringliteral">&quot;Worker thread could not be stopped, leaking it to avoid abort&quot;</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    _orphanWorkerThread(thread);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
+</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    qCDebug(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;SigningController created for channel&quot;</span> &lt;&lt; _mavlinkChannel</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                              &lt;&lt; (<a class="code hl_function" href="classLinkInterface.html#ab3c754f7874ad386781df90f594d52f5">isSecureConnection</a>() ? <span class="stringliteral">&quot;(secure)&quot;</span> : <span class="stringliteral">&quot;(will auto-detect)&quot;</span>);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
-</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a2fd7eb362182bfbbac02e79a1c970e26">   72</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLinkInterface.html#a2fd7eb362182bfbbac02e79a1c970e26">LinkInterface::_freeMavlinkChannel</a>()</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    qCDebug(LinkInterfaceLog) &lt;&lt; _mavlinkChannel;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">mavlinkChannelIsSet</a>()) {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keywordtype">void</span> LinkInterface::_orphanWorkerThread(QThread *thread)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    thread-&gt;setParent(<span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">// Workers hold raw pointers into the configuration: keep it alive until the thread</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// finishes so a stalled worker that resumes can&#39;t dereference a destroyed config.</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    (void) QObject::connect(thread, &amp;QThread::finished, thread, [<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a> = <a class="code hl_variable" href="classLinkInterface.html#af9fb7d026b62cf6410dbe9900e06c63a">_config</a>]() { Q_UNUSED(<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>); });</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="comment">// Self-heal if the thread eventually exits: deleting the thread destroys the</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">// connection above, releasing the config. At app exit there is no main loop to</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="comment">// deliver this, so both leak — the intended last-resort behavior.</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    (void) QObject::connect(thread, &amp;QThread::finished, thread, &amp;QObject::deleteLater);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="comment">// Destroy the controller before freeing the channel so it can flush the final timestamp.</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    _signingController.reset();</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="comment">// mavlink_reset_channel_status only resets parse_state — null signing/streams explicitly to avoid dangling derefs.</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    mavlink_status_t* <span class="keyword">const</span> status = <a class="code hl_function" href="MAVLinkMessageType_8h.html#ada3ae8cdc964d419709c1a75a3ea941c">mavlink_get_channel_status</a>(_mavlinkChannel);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    status-&gt;signing = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    status-&gt;signing_streams = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    mavlink_reset_channel_status(_mavlinkChannel);</div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a21d4864924f17c16d573810140ce8baa">   80</a></span>uint8_t <a class="code hl_function" href="classLinkInterface.html#a21d4864924f17c16d573810140ce8baa">LinkInterface::mavlinkChannel</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">mavlinkChannelIsSet</a>()) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        qCWarning(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;mavlinkChannelIsSet() == false&quot;</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">return</span> _mavlinkChannel;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
+</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_function" href="classLinkManager.html#a703bb67f537e6092e2998a9aa8a91287">LinkManager::instance</a>()-&gt;<a class="code hl_function" href="classLinkManager.html#a7c1989a69a089c6a649c33c231b0f2c4">freeMavlinkChannel</a>(_mavlinkChannel);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    _mavlinkChannel = <a class="code hl_function" href="classLinkManager.html#a8aa7176774682759df392d865f018ae0">LinkManager::invalidMavlinkChannel</a>();</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">   89</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">LinkInterface::mavlinkChannelIsSet</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="classLinkManager.html#a8aa7176774682759df392d865f018ae0">LinkManager::invalidMavlinkChannel</a>() != _mavlinkChannel);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
 </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classLinkInterface.html#ae84ae374b1d7fcf733bbfa5083e46a40">   93</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLinkInterface.html#ae84ae374b1d7fcf733bbfa5083e46a40">LinkInterface::writeBytesThreadSafe</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *bytes, <span class="keywordtype">int</span> length)</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>{</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">const</span> QByteArray data(bytes, length);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    (void) QMetaObject::invokeMethod(<span class="keyword">this</span>, <span class="stringliteral">&quot;_writeBytes&quot;</span>, Qt::AutoConnection, data);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
-</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a60cd0f2fec9024e4d6980a9bda179207">   99</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLinkInterface.html#a60cd0f2fec9024e4d6980a9bda179207">LinkInterface::sendMessageThreadSafe</a>(<a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> &amp;message)</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>{</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">// Re-sign with a current timestamp; the cached-resend path (Vehicle::sendMessageMultiple) otherwise ships frozen</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="comment">// signed bytes whose timestamp drifts behind wall clock and gets OLD_TIMESTAMP-rejected. No-op when signing is</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// disabled or the message isn&#39;t outgoing-signed. The secret key stays in the signing layer.</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">if</span> (_signingController) {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        (void) _signingController-&gt;signOutgoing(message);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    uint8_t buffer[MAVLINK_MAX_PACKET_LEN];</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> len = mavlink_msg_to_send_buffer(buffer, &amp;message);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_function" href="classLinkInterface.html#ae84ae374b1d7fcf733bbfa5083e46a40">writeBytesThreadSafe</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(buffer), len);</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
-</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classLinkInterface.html#aaeb24d8e6bc5e1cdfbf283b3c39652c7">  113</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLinkInterface.html#aaeb24d8e6bc5e1cdfbf283b3c39652c7">LinkInterface::removeVehicleReference</a>()</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>{</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">if</span> (_vehicleReferenceCount != 0) {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        _vehicleReferenceCount--;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <a class="code hl_function" href="classLinkInterface.html#a826dfdd241228c3d06dc7cbc0ab91827">_connectionRemoved</a>();</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        qCWarning(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;called with no vehicle references&quot;</span>;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a91844e3e71ac7f456ac7d807f63bdaef">   94</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classLinkInterface.html#a91844e3e71ac7f456ac7d807f63bdaef">LinkInterface::_allocateMavlinkChannel</a>()</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    Q_ASSERT(!<a class="code hl_function" href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">mavlinkChannelIsSet</a>());</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">mavlinkChannelIsSet</a>()) {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        qCWarning(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;already have&quot;</span> &lt;&lt; _mavlinkChannel;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    _mavlinkChannel = <a class="code hl_function" href="classLinkManager.html#a703bb67f537e6092e2998a9aa8a91287">LinkManager::instance</a>()-&gt;<a class="code hl_function" href="classLinkManager.html#a4c175d30d0795529caa34c964c0ad13f">allocateMavlinkChannel</a>();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">mavlinkChannelIsSet</a>()) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        qCWarning(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;failed&quot;</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    qCDebug(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;_allocateMavlinkChannel&quot;</span> &lt;&lt; _mavlinkChannel;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    mavlink_set_proto_version(_mavlinkChannel, MAVLINK_VERSION); <span class="comment">// We only support v2 protcol</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    _signingController = std::make_unique&lt;SigningController&gt;(<span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="MAVLinkMessageType_8h.html#a065a729dbe076ce959268df8fc951f90">mavlink_channel_t</a><span class="keyword">&gt;</span>(_mavlinkChannel));</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    _signingController-&gt;clearSigning();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    qCDebug(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;SigningController created for channel&quot;</span> &lt;&lt; _mavlinkChannel</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                              &lt;&lt; (<a class="code hl_function" href="classLinkInterface.html#ab3c754f7874ad386781df90f594d52f5">isSecureConnection</a>() ? <span class="stringliteral">&quot;(secure)&quot;</span> : <span class="stringliteral">&quot;(will auto-detect)&quot;</span>);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
 </div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
 <div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a826dfdd241228c3d06dc7cbc0ab91827">  123</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLinkInterface.html#a826dfdd241228c3d06dc7cbc0ab91827">LinkInterface::_connectionRemoved</a>()</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a2fd7eb362182bfbbac02e79a1c970e26">  123</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLinkInterface.html#a2fd7eb362182bfbbac02e79a1c970e26">LinkInterface::_freeMavlinkChannel</a>()</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>{</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">if</span> (_vehicleReferenceCount == 0) {</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="comment">// Since there are no vehicles on the link we can disconnect it right now</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <a class="code hl_function" href="classLinkInterface.html#a5e977d7c29a15e275adf356b80625d13">disconnect</a>();</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="comment">// If there are still vehicles on this link we allow communication lost to trigger and don&#39;t automatically disconect until all the vehicles go away</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    qCDebug(LinkInterfaceLog) &lt;&lt; _mavlinkChannel;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">mavlinkChannelIsSet</a>()) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="comment">// Destroy the controller before freeing the channel so it can flush the final timestamp.</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    _signingController.reset();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="comment">// mavlink_reset_channel_status only resets parse_state — null signing/streams explicitly to avoid dangling derefs.</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    mavlink_status_t* <span class="keyword">const</span> status = <a class="code hl_function" href="MAVLinkMessageType_8h.html#ada3ae8cdc964d419709c1a75a3ea941c">mavlink_get_channel_status</a>(_mavlinkChannel);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    status-&gt;signing = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    status-&gt;signing_streams = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    mavlink_reset_channel_status(_mavlinkChannel);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_function" href="classLinkManager.html#a703bb67f537e6092e2998a9aa8a91287">LinkManager::instance</a>()-&gt;<a class="code hl_function" href="classLinkManager.html#a7c1989a69a089c6a649c33c231b0f2c4">freeMavlinkChannel</a>(_mavlinkChannel);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    _mavlinkChannel = <a class="code hl_function" href="classLinkManager.html#a8aa7176774682759df392d865f018ae0">LinkManager::invalidMavlinkChannel</a>();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>}</div>
 </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="foldopen" id="foldopen00133" data-start="{" data-end="}">
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a66ff79d564811ddba4ceb22a5e1a7dda">  133</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLinkInterface.html#a66ff79d564811ddba4ceb22a5e1a7dda">LinkInterface::reportMavlinkV1Traffic</a>()</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>{</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">if</span> (_mavlinkV1TrafficReported || _mavlinkV2TrafficSeen) {</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="comment">// Defer the warning: ArduPilot starts out sending v1 and upgrades to v2 once it sees v2</span></div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="comment">// traffic from QGC. Only warn if the link never produces v2 within the grace period.</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">if</span> (!_mavlinkV1FirstSeenTimer.isValid()) {</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        _mavlinkV1FirstSeenTimer.start();</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    }</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">if</span> (_mavlinkV1FirstSeenTimer.elapsed() &lt; _mavlinkV1TrafficGraceMsecs) {</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    _mavlinkV1TrafficReported = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classLinkInterface.html#ae84ae374b1d7fcf733bbfa5083e46a40">  144</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLinkInterface.html#ae84ae374b1d7fcf733bbfa5083e46a40">LinkInterface::writeBytesThreadSafe</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *bytes, <span class="keywordtype">int</span> length)</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>{</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keyword">const</span> QByteArray data(bytes, length);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    (void) QMetaObject::invokeMethod(<span class="keyword">this</span>, <span class="stringliteral">&quot;_writeBytes&quot;</span>, Qt::AutoConnection, data);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>}</div>
+</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="LinkConfiguration_8h.html#a6aba49400b7520d5927fd2a5de190290">SharedLinkConfigurationPtr</a> linkConfig = <a class="code hl_function" href="classLinkInterface.html#af5d914e328d2a09ad342d633232cbe7a">linkConfiguration</a>();</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keyword">const</span> QString linkName = linkConfig ? linkConfig-&gt;name() : QStringLiteral(<span class="stringliteral">&quot;unknown&quot;</span>);</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    qCWarning(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;MAVLink v1 traffic detected on link&quot;</span> &lt;&lt; linkName;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keyword">const</span> QString message = tr(<span class="stringliteral">&quot;MAVLink v1 traffic detected on link &#39;%1&#39;. &quot;</span></div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                               <span class="stringliteral">&quot;%2 only supports MAVLink v2. &quot;</span></div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                               <span class="stringliteral">&quot;Please ensure your vehicle is configured to use MAVLink v2.&quot;</span>)</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                                .arg(linkName).arg(<a class="code hl_define" href="QGCApplication_8h.html#abe2a07273da27b516191243d9e5afe46">qgcApp</a>()-&gt;applicationName());</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <a class="code hl_function" href="namespaceQGC.html#ae41a6cbf29b27a1b592d9d4cfde85975">QGC::showAppMessage</a>(message);</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>}</div>
+<div class="foldopen" id="foldopen00150" data-start="{" data-end="}">
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a60cd0f2fec9024e4d6980a9bda179207">  150</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLinkInterface.html#a60cd0f2fec9024e4d6980a9bda179207">LinkInterface::sendMessageThreadSafe</a>(<a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> &amp;message)</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>{</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="comment">// Re-sign with a current timestamp; the cached-resend path (Vehicle::sendMessageMultiple) otherwise ships frozen</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="comment">// signed bytes whose timestamp drifts behind wall clock and gets OLD_TIMESTAMP-rejected. No-op when signing is</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="comment">// disabled or the message isn&#39;t outgoing-signed. The secret key stays in the signing layer.</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordflow">if</span> (_signingController) {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        (void) _signingController-&gt;signOutgoing(message);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    uint8_t buffer[MAVLINK_MAX_PACKET_LEN];</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> len = mavlink_msg_to_send_buffer(buffer, &amp;message);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <a class="code hl_function" href="classLinkInterface.html#ae84ae374b1d7fcf733bbfa5083e46a40">writeBytesThreadSafe</a>(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(buffer), len);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>}</div>
+</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classLinkInterface.html#aaeb24d8e6bc5e1cdfbf283b3c39652c7">  164</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLinkInterface.html#aaeb24d8e6bc5e1cdfbf283b3c39652c7">LinkInterface::removeVehicleReference</a>()</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>{</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordflow">if</span> (_vehicleReferenceCount != 0) {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        _vehicleReferenceCount--;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <a class="code hl_function" href="classLinkInterface.html#a826dfdd241228c3d06dc7cbc0ab91827">_connectionRemoved</a>();</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        qCWarning(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;called with no vehicle references&quot;</span>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>}</div>
+</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="foldopen" id="foldopen00174" data-start="{" data-end="}">
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a826dfdd241228c3d06dc7cbc0ab91827">  174</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLinkInterface.html#a826dfdd241228c3d06dc7cbc0ab91827">LinkInterface::_connectionRemoved</a>()</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>{</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordflow">if</span> (_vehicleReferenceCount == 0) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="comment">// Since there are no vehicles on the link we can disconnect it right now</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <a class="code hl_function" href="classLinkInterface.html#a5e977d7c29a15e275adf356b80625d13">disconnect</a>();</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="comment">// If there are still vehicles on this link we allow communication lost to trigger and don&#39;t automatically disconect until all the vehicles go away</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>}</div>
+</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="foldopen" id="foldopen00184" data-start="{" data-end="}">
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a66ff79d564811ddba4ceb22a5e1a7dda">  184</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classLinkInterface.html#a66ff79d564811ddba4ceb22a5e1a7dda">LinkInterface::reportMavlinkV1Traffic</a>()</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>{</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keywordflow">if</span> (_mavlinkV1TrafficReported || _mavlinkV2TrafficSeen) {</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="comment">// Defer the warning: ArduPilot starts out sending v1 and upgrades to v2 once it sees v2</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="comment">// traffic from QGC. Only warn if the link never produces v2 within the grace period.</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordflow">if</span> (!_mavlinkV1FirstSeenTimer.isValid()) {</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        _mavlinkV1FirstSeenTimer.start();</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordflow">if</span> (_mavlinkV1FirstSeenTimer.elapsed() &lt; _mavlinkV1TrafficGraceMsecs) {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    }</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    _mavlinkV1TrafficReported = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="LinkConfiguration_8h.html#a6aba49400b7520d5927fd2a5de190290">SharedLinkConfigurationPtr</a> linkConfig = <a class="code hl_function" href="classLinkInterface.html#af5d914e328d2a09ad342d633232cbe7a">linkConfiguration</a>();</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keyword">const</span> QString linkName = linkConfig ? linkConfig-&gt;name() : QStringLiteral(<span class="stringliteral">&quot;unknown&quot;</span>);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    qCWarning(LinkInterfaceLog) &lt;&lt; <span class="stringliteral">&quot;MAVLink v1 traffic detected on link&quot;</span> &lt;&lt; linkName;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keyword">const</span> QString message = tr(<span class="stringliteral">&quot;MAVLink v1 traffic detected on link &#39;%1&#39;. &quot;</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                               <span class="stringliteral">&quot;%2 only supports MAVLink v2. &quot;</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                               <span class="stringliteral">&quot;Please ensure your vehicle is configured to use MAVLink v2.&quot;</span>)</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                                .arg(linkName).arg(<a class="code hl_define" href="QGCApplication_8h.html#abe2a07273da27b516191243d9e5afe46">qgcApp</a>()-&gt;applicationName());</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <a class="code hl_function" href="namespaceQGC.html#ae41a6cbf29b27a1b592d9d4cfde85975">QGC::showAppMessage</a>(message);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>}</div>
 </div>
 <div class="ttc" id="aAppMessages_8h_html"><div class="ttname"><a href="AppMessages_8h.html">AppMessages.h</a></div></div>
 <div class="ttc" id="aGstSourceFactory_8cc_html_a4a8dd3a2de125b72d4fe6251a0a271b5"><div class="ttname"><a href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a></div><div class="ttdeci">Config config</div><div class="ttdef"><b>Definition</b> <a href="GstSourceFactory_8cc_source.html#l00160">GstSourceFactory.cc:160</a></div></div>
@@ -292,21 +345,22 @@ $(document).ready(function(){initNavTree('LinkInterface_8cc_source.html',''); in
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
 <div class="ttc" id="aSigningController_8h_html"><div class="ttname"><a href="SigningController_8h.html">SigningController.h</a></div></div>
-<div class="ttc" id="aclassLinkInterface_html"><div class="ttname"><a href="classLinkInterface.html">LinkInterface</a></div><div class="ttdoc">The link interface defines the interface for all links used to communicate with the ground station ap...</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8h_source.html#l00016">LinkInterface.h:17</a></div></div>
-<div class="ttc" id="aclassLinkInterface_html_a1759ef09561244456715048ab00deb70"><div class="ttname"><a href="classLinkInterface.html#a1759ef09561244456715048ab00deb70">LinkInterface::~LinkInterface</a></div><div class="ttdeci">virtual ~LinkInterface()</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00020">LinkInterface.cc:20</a></div></div>
-<div class="ttc" id="aclassLinkInterface_html_a21d4864924f17c16d573810140ce8baa"><div class="ttname"><a href="classLinkInterface.html#a21d4864924f17c16d573810140ce8baa">LinkInterface::mavlinkChannel</a></div><div class="ttdeci">uint8_t mavlinkChannel() const</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00029">LinkInterface.cc:29</a></div></div>
-<div class="ttc" id="aclassLinkInterface_html_a2fd7eb362182bfbbac02e79a1c970e26"><div class="ttname"><a href="classLinkInterface.html#a2fd7eb362182bfbbac02e79a1c970e26">LinkInterface::_freeMavlinkChannel</a></div><div class="ttdeci">virtual void _freeMavlinkChannel()</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00072">LinkInterface.cc:72</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_a1759ef09561244456715048ab00deb70"><div class="ttname"><a href="classLinkInterface.html#a1759ef09561244456715048ab00deb70">LinkInterface::~LinkInterface</a></div><div class="ttdeci">virtual ~LinkInterface()</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00025">LinkInterface.cc:25</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_a21d4864924f17c16d573810140ce8baa"><div class="ttname"><a href="classLinkInterface.html#a21d4864924f17c16d573810140ce8baa">LinkInterface::mavlinkChannel</a></div><div class="ttdeci">uint8_t mavlinkChannel() const</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00080">LinkInterface.cc:80</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_a22e5fa08d27526eae24704914c53aadf"><div class="ttname"><a href="classLinkInterface.html#a22e5fa08d27526eae24704914c53aadf">LinkInterface::_shutdownWorkerThread</a></div><div class="ttdeci">void _shutdownWorkerThread(QThread *thread, const QLoggingCategory &amp;category, bool allowTerminate=true)</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00034">LinkInterface.cc:34</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_a2fd7eb362182bfbbac02e79a1c970e26"><div class="ttname"><a href="classLinkInterface.html#a2fd7eb362182bfbbac02e79a1c970e26">LinkInterface::_freeMavlinkChannel</a></div><div class="ttdeci">virtual void _freeMavlinkChannel()</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00123">LinkInterface.cc:123</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_a55fe378b8d6087bbab9b97bb8278c922"><div class="ttname"><a href="classLinkInterface.html#a55fe378b8d6087bbab9b97bb8278c922">LinkInterface::LinkInterface</a></div><div class="ttdeci">LinkInterface(SharedLinkConfigurationPtr &amp;config, QObject *parent=nullptr)</div><div class="ttdoc">Links are only created by LinkManager so constructor is not public.</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00018">LinkInterface.cc:18</a></div></div>
 <div class="ttc" id="aclassLinkInterface_html_a5e977d7c29a15e275adf356b80625d13"><div class="ttname"><a href="classLinkInterface.html#a5e977d7c29a15e275adf356b80625d13">LinkInterface::disconnect</a></div><div class="ttdeci">virtual Q_INVOKABLE void disconnect()=0</div></div>
-<div class="ttc" id="aclassLinkInterface_html_a60cd0f2fec9024e4d6980a9bda179207"><div class="ttname"><a href="classLinkInterface.html#a60cd0f2fec9024e4d6980a9bda179207">LinkInterface::sendMessageThreadSafe</a></div><div class="ttdeci">void sendMessageThreadSafe(mavlink_message_t &amp;message)</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00099">LinkInterface.cc:99</a></div></div>
-<div class="ttc" id="aclassLinkInterface_html_a66ff79d564811ddba4ceb22a5e1a7dda"><div class="ttname"><a href="classLinkInterface.html#a66ff79d564811ddba4ceb22a5e1a7dda">LinkInterface::reportMavlinkV1Traffic</a></div><div class="ttdeci">void reportMavlinkV1Traffic()</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00133">LinkInterface.cc:133</a></div></div>
-<div class="ttc" id="aclassLinkInterface_html_a826dfdd241228c3d06dc7cbc0ab91827"><div class="ttname"><a href="classLinkInterface.html#a826dfdd241228c3d06dc7cbc0ab91827">LinkInterface::_connectionRemoved</a></div><div class="ttdeci">void _connectionRemoved()</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00123">LinkInterface.cc:123</a></div></div>
-<div class="ttc" id="aclassLinkInterface_html_a886bb3b7b3e50646a78e4466a55995f0"><div class="ttname"><a href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">LinkInterface::mavlinkChannelIsSet</a></div><div class="ttdeci">bool mavlinkChannelIsSet() const</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00038">LinkInterface.cc:38</a></div></div>
-<div class="ttc" id="aclassLinkInterface_html_a91844e3e71ac7f456ac7d807f63bdaef"><div class="ttname"><a href="classLinkInterface.html#a91844e3e71ac7f456ac7d807f63bdaef">LinkInterface::_allocateMavlinkChannel</a></div><div class="ttdeci">virtual bool _allocateMavlinkChannel()</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00043">LinkInterface.cc:43</a></div></div>
-<div class="ttc" id="aclassLinkInterface_html_aaeb24d8e6bc5e1cdfbf283b3c39652c7"><div class="ttname"><a href="classLinkInterface.html#aaeb24d8e6bc5e1cdfbf283b3c39652c7">LinkInterface::removeVehicleReference</a></div><div class="ttdeci">void removeVehicleReference()</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00113">LinkInterface.cc:113</a></div></div>
-<div class="ttc" id="aclassLinkInterface_html_ab3c754f7874ad386781df90f594d52f5"><div class="ttname"><a href="classLinkInterface.html#ab3c754f7874ad386781df90f594d52f5">LinkInterface::isSecureConnection</a></div><div class="ttdeci">virtual bool isSecureConnection() const</div><div class="ttdoc">Returns true if the connection is secure (e.g. USB, wired ethernet)</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8h_source.html#l00030">LinkInterface.h:30</a></div></div>
-<div class="ttc" id="aclassLinkInterface_html_ae84ae374b1d7fcf733bbfa5083e46a40"><div class="ttname"><a href="classLinkInterface.html#ae84ae374b1d7fcf733bbfa5083e46a40">LinkInterface::writeBytesThreadSafe</a></div><div class="ttdeci">void writeBytesThreadSafe(const char *bytes, int length)</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00093">LinkInterface.cc:93</a></div></div>
-<div class="ttc" id="aclassLinkInterface_html_af5d914e328d2a09ad342d633232cbe7a"><div class="ttname"><a href="classLinkInterface.html#af5d914e328d2a09ad342d633232cbe7a">LinkInterface::linkConfiguration</a></div><div class="ttdeci">SharedLinkConfigurationPtr linkConfiguration()</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8h_source.html#l00032">LinkInterface.h:32</a></div></div>
-<div class="ttc" id="aclassLinkInterface_html_af9fb7d026b62cf6410dbe9900e06c63a"><div class="ttname"><a href="classLinkInterface.html#af9fb7d026b62cf6410dbe9900e06c63a">LinkInterface::_config</a></div><div class="ttdeci">SharedLinkConfigurationPtr _config</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8h_source.html#l00079">LinkInterface.h:79</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_a60cd0f2fec9024e4d6980a9bda179207"><div class="ttname"><a href="classLinkInterface.html#a60cd0f2fec9024e4d6980a9bda179207">LinkInterface::sendMessageThreadSafe</a></div><div class="ttdeci">void sendMessageThreadSafe(mavlink_message_t &amp;message)</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00150">LinkInterface.cc:150</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_a66ff79d564811ddba4ceb22a5e1a7dda"><div class="ttname"><a href="classLinkInterface.html#a66ff79d564811ddba4ceb22a5e1a7dda">LinkInterface::reportMavlinkV1Traffic</a></div><div class="ttdeci">void reportMavlinkV1Traffic()</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00184">LinkInterface.cc:184</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_a826dfdd241228c3d06dc7cbc0ab91827"><div class="ttname"><a href="classLinkInterface.html#a826dfdd241228c3d06dc7cbc0ab91827">LinkInterface::_connectionRemoved</a></div><div class="ttdeci">void _connectionRemoved()</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00174">LinkInterface.cc:174</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_a886bb3b7b3e50646a78e4466a55995f0"><div class="ttname"><a href="classLinkInterface.html#a886bb3b7b3e50646a78e4466a55995f0">LinkInterface::mavlinkChannelIsSet</a></div><div class="ttdeci">bool mavlinkChannelIsSet() const</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00089">LinkInterface.cc:89</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_a91844e3e71ac7f456ac7d807f63bdaef"><div class="ttname"><a href="classLinkInterface.html#a91844e3e71ac7f456ac7d807f63bdaef">LinkInterface::_allocateMavlinkChannel</a></div><div class="ttdeci">virtual bool _allocateMavlinkChannel()</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00094">LinkInterface.cc:94</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_aaeb24d8e6bc5e1cdfbf283b3c39652c7"><div class="ttname"><a href="classLinkInterface.html#aaeb24d8e6bc5e1cdfbf283b3c39652c7">LinkInterface::removeVehicleReference</a></div><div class="ttdeci">void removeVehicleReference()</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00164">LinkInterface.cc:164</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_ab3c754f7874ad386781df90f594d52f5"><div class="ttname"><a href="classLinkInterface.html#ab3c754f7874ad386781df90f594d52f5">LinkInterface::isSecureConnection</a></div><div class="ttdeci">virtual bool isSecureConnection() const</div><div class="ttdoc">Returns true if the connection is secure (e.g. USB, wired ethernet)</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8h_source.html#l00032">LinkInterface.h:32</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_ae84ae374b1d7fcf733bbfa5083e46a40"><div class="ttname"><a href="classLinkInterface.html#ae84ae374b1d7fcf733bbfa5083e46a40">LinkInterface::writeBytesThreadSafe</a></div><div class="ttdeci">void writeBytesThreadSafe(const char *bytes, int length)</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8cc_source.html#l00144">LinkInterface.cc:144</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_af5d914e328d2a09ad342d633232cbe7a"><div class="ttname"><a href="classLinkInterface.html#af5d914e328d2a09ad342d633232cbe7a">LinkInterface::linkConfiguration</a></div><div class="ttdeci">SharedLinkConfigurationPtr linkConfiguration()</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8h_source.html#l00034">LinkInterface.h:34</a></div></div>
+<div class="ttc" id="aclassLinkInterface_html_af9fb7d026b62cf6410dbe9900e06c63a"><div class="ttname"><a href="classLinkInterface.html#af9fb7d026b62cf6410dbe9900e06c63a">LinkInterface::_config</a></div><div class="ttdeci">SharedLinkConfigurationPtr _config</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8h_source.html#l00090">LinkInterface.h:90</a></div></div>
 <div class="ttc" id="aclassLinkManager_html_a4c175d30d0795529caa34c964c0ad13f"><div class="ttname"><a href="classLinkManager.html#a4c175d30d0795529caa34c964c0ad13f">LinkManager::allocateMavlinkChannel</a></div><div class="ttdeci">uint8_t allocateMavlinkChannel()</div><div class="ttdef"><b>Definition</b> <a href="LinkManager_8cc_source.html#l00715">LinkManager.cc:715</a></div></div>
 <div class="ttc" id="aclassLinkManager_html_a703bb67f537e6092e2998a9aa8a91287"><div class="ttname"><a href="classLinkManager.html#a703bb67f537e6092e2998a9aa8a91287">LinkManager::instance</a></div><div class="ttdeci">static LinkManager * instance()</div><div class="ttdef"><b>Definition</b> <a href="LinkManager_8cc_source.html#l00062">LinkManager.cc:62</a></div></div>
 <div class="ttc" id="aclassLinkManager_html_a7c1989a69a089c6a649c33c231b0f2c4"><div class="ttname"><a href="classLinkManager.html#a7c1989a69a089c6a649c33c231b0f2c4">LinkManager::freeMavlinkChannel</a></div><div class="ttdeci">void freeMavlinkChannel(uint8_t channel)</div><div class="ttdef"><b>Definition</b> <a href="LinkManager_8cc_source.html#l00734">LinkManager.cc:734</a></div></div>

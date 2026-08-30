@@ -5,6 +5,7 @@ var classLinkInterface =
     [ "_allocateMavlinkChannel", "classLinkInterface.html#a91844e3e71ac7f456ac7d807f63bdaef", null ],
     [ "_connectionRemoved", "classLinkInterface.html#a826dfdd241228c3d06dc7cbc0ab91827", null ],
     [ "_freeMavlinkChannel", "classLinkInterface.html#a2fd7eb362182bfbbac02e79a1c970e26", null ],
+    [ "_shutdownWorkerThread", "classLinkInterface.html#a22e5fa08d27526eae24704914c53aadf", null ],
     [ "addVehicleReference", "classLinkInterface.html#a2ad79171a621bcf5a9e666a953b013de", null ],
     [ "bytesReceived", "classLinkInterface.html#a09de1d004eb07755d96b3773d45804c2", null ],
     [ "bytesSent", "classLinkInterface.html#ac7cc83d8496bd2cae3e4f62953b1cc30", null ],

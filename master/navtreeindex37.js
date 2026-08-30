@@ -1,5 +1,13 @@
 var NAVTREEINDEX37 =
 {
+"classMapProvider.html#a2e602918d8e2f69c276ae1884ee9a678":[3,0,289,5],
+"classMapProvider.html#a3fc5c25e113fd96a2972bf7a25a4b8b3":[3,0,289,15],
+"classMapProvider.html#a5269d17f7a00e94a6ac5d9a1a1562f96":[3,0,289,8],
+"classMapProvider.html#a5681cb7a76404984574a78f55b584d7e":[3,0,289,9],
+"classMapProvider.html#a56982b3eafc88e7cb5aae967e16cbe8f":[3,0,289,22],
+"classMapProvider.html#a6ba09448623fe3e831c7ce8da691e62d":[3,0,289,23],
+"classMapProvider.html#a6ed30c5420336bad92ed3b89a926ab0a":[3,0,289,10],
+"classMapProvider.html#a76843d3923792c20101db13a0e4144c0":[3,0,289,11],
 "classMapProvider.html#a78e9a3b7faa4f47b041f722e17e7edda":[3,0,289,21],
 "classMapProvider.html#a7c53ac4633a74045b637cb202b755248":[3,0,289,2],
 "classMapProvider.html#a87c7db1ed3d1e3d6c6d2290f243180ba":[3,0,289,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX37 =
 "classMavlinkCameraControlInterface.html#ac1dda09686db22f4c3cb72a4572248fd":[3,0,299,66],
 "classMavlinkCameraControlInterface.html#ac3c95d9378c35700b68a5df8f66bd1f9":[3,0,299,61],
 "classMavlinkCameraControlInterface.html#ac4ce7f9cc982a66ee0f5aed8dfa6335b":[3,0,299,135],
-"classMavlinkCameraControlInterface.html#ac5979928b7169141bb13edad880da3f8":[3,0,299,55],
-"classMavlinkCameraControlInterface.html#ac6010b4a6fbc9839d92fa4a3df41acbe":[3,0,299,17],
-"classMavlinkCameraControlInterface.html#ac63631751fc93707e78a565cd42bc6df":[3,0,299,142],
-"classMavlinkCameraControlInterface.html#ac8b5930170c946de7b9d406f95342dba":[3,0,299,30],
-"classMavlinkCameraControlInterface.html#ac97451c1ffcb4eb89cd2b24732744bd7":[3,0,299,134],
-"classMavlinkCameraControlInterface.html#aca0c9ec03317d1cada8f3d1d456dcb5a":[3,0,299,131],
-"classMavlinkCameraControlInterface.html#aca463bad30239e82e552a294737e884e":[3,0,299,15],
-"classMavlinkCameraControlInterface.html#acc088ec3a53c9b69706cafd1b8862f74":[3,0,299,21],
-"classMavlinkCameraControlInterface.html#accbba20a70bb76a0f7ff3cd7d3eff564":[3,0,299,145]
+"classMavlinkCameraControlInterface.html#ac5979928b7169141bb13edad880da3f8":[3,0,299,55]
 };

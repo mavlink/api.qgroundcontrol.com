@@ -115,7 +115,7 @@ var searchData=
   ['ntripmountpointbrowser_2eqml_112',['NtripMountpointBrowser.qml',['../NtripMountpointBrowser_8qml.html',1,'']]],
   ['ntripmountpointlist_2eqml_113',['NTRIPMountpointList.qml',['../NTRIPMountpointList_8qml.html',1,'']]],
   ['ntripserversettings_2eqml_114',['NtripServerSettings.qml',['../NtripServerSettings_8qml.html',1,'']]],
-  ['ntripsettings_115',['ntripsettings',['../classNTRIPSettings.html#abf64538a63f34d71d6d304bd474ae59c',1,'NTRIPSettings::NTRIPSettings()'],['../classSettingsManager.html#af9e21c060537498940ccaa4b7e0657c1',1,'SettingsManager::ntripSettings()'],['../classNTRIPSettings.html',1,'NTRIPSettings']]],
+  ['ntripsettings_115',['ntripsettings',['../classSettingsManager.html#af9e21c060537498940ccaa4b7e0657c1',1,'SettingsManager::ntripSettings()'],['../classNTRIPSettings.html#abf64538a63f34d71d6d304bd474ae59c',1,'NTRIPSettings::NTRIPSettings()'],['../classNTRIPSettings.html',1,'NTRIPSettings']]],
   ['ntripsettings_2ecc_116',['NTRIPSettings.cc',['../NTRIPSettings_8cc.html',1,'']]],
   ['ntripsettings_2eh_117',['NTRIPSettings.h',['../NTRIPSettings_8h.html',1,'']]],
   ['ntripsourcetable_2ecc_118',['NTRIPSourceTable.cc',['../NTRIPSourceTable_8cc.html',1,'']]],

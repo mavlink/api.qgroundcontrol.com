@@ -1,6 +1,5 @@
 var NAVTREEINDEX65 =
 {
-"classVehicleObjectAvoidance.html#ad49d3a2b110378804afa010f336d257f":[3,0,625,9],
 "classVehicleObjectAvoidance.html#aebb4e31a5d264de712bb3a5fd0fad5aa":[3,0,625,4],
 "classVehicleObjectAvoidance.html#aef19c0fbfe854c4b22e381d33b443700":[3,0,625,3],
 "classVehicleRPMFactGroup.html":[3,0,626],
@@ -249,5 +248,6 @@ var NAVTREEINDEX65 =
 "classViewer3DCameraController.html#a7ef5a00a10f204f09d53375f6a79e951":[3,0,637,11],
 "classViewer3DCameraController.html#a816eaa65ed5b2ea4e2019d71bfdf7a1f":[3,0,637,29],
 "classViewer3DCameraController.html#a83ea95a5bebf4fa30950516741dab897":[3,0,637,27],
-"classViewer3DCameraController.html#a8516200627f6995421e22aa025bbc2f6":[3,0,637,9]
+"classViewer3DCameraController.html#a8516200627f6995421e22aa025bbc2f6":[3,0,637,9],
+"classViewer3DCameraController.html#a85af86d7cf0234619aca8aaad62a6e6e":[3,0,637,35]
 };
