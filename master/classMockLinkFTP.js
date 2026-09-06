@@ -23,6 +23,7 @@ var classMockLinkFTP =
     [ "setFileList", "classMockLinkFTP.html#a1ace461ae926a2dde4448a1656800feb", null ],
     [ "setListDirectoryWithTimeSupported", "classMockLinkFTP.html#a67069c5e7bb59b564d49a4cd78b38434", null ],
     [ "setLogFiles", "classMockLinkFTP.html#a3fe960b64330fb61b491d2573e5cf9ef", null ],
+    [ "setParamPckEnabled", "classMockLinkFTP.html#a0332f9c13f41ce67ecd9f7009396397a", null ],
     [ "terminateCommandReceived", "classMockLinkFTP.html#a30681befccb58f7e5afe073c26ea86dd", null ],
     [ "uploadedFileContents", "classMockLinkFTP.html#adc5a23b8a491bf9b211cd93e781fe07b", null ],
     [ "uploadedFiles", "classMockLinkFTP.html#ab2d640f4db4b4429d408a0c21da10232", null ],

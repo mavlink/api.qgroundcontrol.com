@@ -1,5 +1,13 @@
 var NAVTREEINDEX60 =
 {
+"classTransectStyleComplexItem.html":[3,0,597],
+"classTransectStyleComplexItem.html#a07295d76c7fdf7d118320eb385ece451":[3,0,597,15],
+"classTransectStyleComplexItem.html#a0935ecf9b1f6777f4ba99d8d195b3617":[3,0,597,101],
+"classTransectStyleComplexItem.html#a0a1c747177937f3a7f1cc9c9b7089121":[3,0,597,98],
+"classTransectStyleComplexItem.html#a0a3e8897abf575186f82b6cbe356e6d6":[3,0,597,117],
+"classTransectStyleComplexItem.html#a0b86c20d42122caed494698c6570d9f2":[3,0,597,107],
+"classTransectStyleComplexItem.html#a0d713f29d6533ed041b10ecae777adf8":[3,0,597,60],
+"classTransectStyleComplexItem.html#a0e38aef0db4888b435b95151e7e49791":[3,0,597,45],
 "classTransectStyleComplexItem.html#a10724699bef889ea712c704f75c76d1b":[3,0,597,70],
 "classTransectStyleComplexItem.html#a11928962bad5c978dd6da550f627e53d":[3,0,597,90],
 "classTransectStyleComplexItem.html#a134ceff95b3739eb635e0bccbb3f9cf8":[3,0,597,6],
@@ -241,13 +249,5 @@ var NAVTREEINDEX60 =
 "classUnitsSettings.html#a22c428defeb232b91194a5a9c173e037a44834fad54a5efbef18edee0f50cd1f2":[3,0,606,4,0],
 "classUnitsSettings.html#a22c428defeb232b91194a5a9c173e037acb2accea419eb1c704b08710ac409176":[3,0,606,4,1],
 "classUnitsSettings.html#a95a2666f950037415dd2acf84714c35e":[3,0,606,6],
-"classUnitsSettings.html#ab88fe16dd3ad9e6cf0933b873e46b46e":[3,0,606,2],
-"classUnitsSettings.html#ab88fe16dd3ad9e6cf0933b873e46b46ea0914694d12484c45a9bae1a76c14a34c":[3,0,606,2,3],
-"classUnitsSettings.html#ab88fe16dd3ad9e6cf0933b873e46b46ea5c4f3abff3a690813c9532f171ba5ea7":[3,0,606,2,0],
-"classUnitsSettings.html#ab88fe16dd3ad9e6cf0933b873e46b46ea89ca974f96b0a136f8918cceb76f26d6":[3,0,606,2,2],
-"classUnitsSettings.html#ab88fe16dd3ad9e6cf0933b873e46b46ead5ccbeef53627a2be6f141710943c094":[3,0,606,2,1],
-"classUnitsSettings.html#ab88fe16dd3ad9e6cf0933b873e46b46eadfe740cce3add2e410809e83005a47ab":[3,0,606,2,4],
-"classUnitsSettings.html#ac20f65142b912f441f0d035f51500c67":[3,0,606,5],
-"classUnitsSettings.html#ac20f65142b912f441f0d035f51500c67a165405f361f88edf41ae264059b8de1e":[3,0,606,5,0],
-"classUnitsSettings.html#ac20f65142b912f441f0d035f51500c67a28fe7554b0509502e6cae7ef60c1f61d":[3,0,606,5,2]
+"classUnitsSettings.html#ab88fe16dd3ad9e6cf0933b873e46b46e":[3,0,606,2]
 };

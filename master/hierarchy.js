@@ -636,7 +636,6 @@ var hierarchy =
         [ "VideoSettings", "classVideoSettings.html", null ],
         [ "Viewer3DSettings", "classViewer3DSettings.html", null ]
       ] ],
-      [ "SettingsManager", "classSettingsManager.html", null ],
       [ "ShapeFileHelper", "classShapeFileHelper.html", null ],
       [ "SignalHandler", "classSignalHandler.html", null ],
       [ "SigningController", "classSigningController.html", null ],
@@ -747,6 +746,9 @@ var hierarchy =
     ] ],
     [ "QPressureFilter", null, [
       [ "QGCSensors::QGCPressureFilter", "classQGCSensors_1_1QGCPressureFilter.html", null ]
+    ] ],
+    [ "QQmlPropertyMap", null, [
+      [ "SettingsManager", "classSettingsManager.html", null ]
     ] ],
     [ "QQuick3DGeometry", null, [
       [ "CityMapGeometry", "classCityMapGeometry.html", null ],

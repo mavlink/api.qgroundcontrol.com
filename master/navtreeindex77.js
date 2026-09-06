@@ -1,5 +1,13 @@
 var NAVTREEINDEX77 =
 {
+"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495a9aeafa16935344002c92d25d2c5f3ba1":[3,0,385,0,16],
+"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495aa0617597c9aaf4968b524dcb4f00557e":[3,0,385,0,21],
+"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495aaf923bf588f8b429d24c04d1197c7422":[3,0,385,0,8],
+"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495ab4523d87091d0fd88aceae0a34f79636":[3,0,385,0,10],
+"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495ac06957f069942923a1122de5044adad6":[3,0,385,0,20],
+"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495ac9130706c4ca620fca50a18dcd8e6526":[3,0,385,0,15],
+"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495aef67521a4e1b8cefb5121ac0077d3e4c":[3,0,385,0,1],
+"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495afab7385086a875fdbbf1ff1f41882f97":[3,0,385,0,0],
 "structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495afb49526b0eb37187b72e96dc74188fda":[3,0,385,0,12],
 "structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495afcc3bebd9c1ca4a5229dbd780484aafb":[3,0,385,0,6],
 "structParameter.html":[3,0,359],
@@ -241,13 +249,5 @@ var NAVTREEINDEX77 =
 "structSigningStatus.html#a535d89c670cce2658b049ab93c689406a521c36a31c2762741cf0f8890cbe05e3":[3,0,535,0,2],
 "structSigningStatus.html#a535d89c670cce2658b049ab93c689406ad15305d7a4e34e02489c74a5ef542f36":[3,0,535,0,0],
 "structSigningStatus.html#a535d89c670cce2658b049ab93c689406af4f1b39b317df9da8f8571cbc1538e70":[3,0,535,0,1],
-"structSigningStatus.html#a5a92e5041d5bc41d34c1c6fb437ae717":[3,0,535,2],
-"structSigningStatus.html#a5e3e056bcc041b85403e2b657e921589":[3,0,535,3],
-"structSigningStatus.html#ab6f63079bd43be978a7ce9e61c933a11":[3,0,535,4],
-"structSigningStatus.html#aec6ba2a9db6a2d86bef535ddbf9b5a44":[3,0,535,6],
-"structStandardModes_1_1Mode.html":[3,0,541,0],
-"structStandardModes_1_1Mode.html#a347477259cf82573482743ff969cb5f6":[3,0,541,0,3],
-"structStandardModes_1_1Mode.html#a66d4bddebcafbafffff268c3e3a264f1":[3,0,541,0,2],
-"structStandardModes_1_1Mode.html#aaeb71ea55332434fdb913baf66220656":[3,0,541,0,0],
-"structStandardModes_1_1Mode.html#af276bf6793e27024722a02206db48fee":[3,0,541,0,1]
+"structSigningStatus.html#a5a92e5041d5bc41d34c1c6fb437ae717":[3,0,535,2]
 };

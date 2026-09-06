@@ -1,5 +1,11 @@
 var NAVTREEINDEX48 =
 {
+"classQGCImageProvider.html#aae157971c466e8785bde4be0cdbf0a41":[3,0,431,1],
+"classQGCImageProvider.html#ad25c808609a8576c9e8218791882dc35":[3,0,431,3],
+"classQGCImportTileTask.html":[3,0,432],
+"classQGCImportTileTask.html#a1906f28c2dcf07a5ce25b6608e7b2112":[3,0,432,0],
+"classQGCImportTileTask.html#a2923dd5dc2eee4f7db5e44d1ca94e541":[3,0,432,7],
+"classQGCImportTileTask.html#a4adf46c3dba41bf9bca71a2157823669":[3,0,432,3],
 "classQGCImportTileTask.html#a7ef3f6ee891a84cfb76b018856b05eda":[3,0,432,6],
 "classQGCImportTileTask.html#a96574cf3076e0ec46a9a651f4e591062":[3,0,432,8],
 "classQGCImportTileTask.html#ab8cb865a3c0dcf878a932178cf78bbb5":[3,0,432,5],
@@ -243,11 +249,5 @@ var NAVTREEINDEX48 =
 "classQGCMapEngineManager.html#aef6332b9d40534a56a5984ef15fb6c7a":[3,0,438,4],
 "classQGCMapEngineManager.html#af334f45b81c4fced064ed63e07465e4d":[3,0,438,45],
 "classQGCMapEngineManager.html#af9923b81eeeca5b978d1633b327830fd":[3,0,438,7],
-"classQGCMapEngineManager.html#afb924d9fe2299e732542a593f89cc7a1":[3,0,438,3],
-"classQGCMapPalette.html":[3,0,439],
-"classQGCMapPalette.html#a52678c2d02da1ec6bd67e997337e07bf":[3,0,439,5],
-"classQGCMapPalette.html#a55a2a99b6009297482f8205e20326fcb":[3,0,439,0],
-"classQGCMapPalette.html#a56e3a11c5a72b7ec50177ff04bf72916":[3,0,439,4],
-"classQGCMapPalette.html#a577932dead4ac60708bc6361a8037580":[3,0,439,2],
-"classQGCMapPalette.html#a590921004c83cfed0c9336bfea6fcd4a":[3,0,439,3]
+"classQGCMapEngineManager.html#afb924d9fe2299e732542a593f89cc7a1":[3,0,438,3]
 };

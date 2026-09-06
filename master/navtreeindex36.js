@@ -1,5 +1,7 @@
 var NAVTREEINDEX36 =
 {
+"classMAVLinkChartController.html#a14a4bc4e83e242175e8867f800915142":[3,0,300,1],
+"classMAVLinkChartController.html#a1657b619cfaa6060cc230e5abb544655":[3,0,300,17],
 "classMAVLinkChartController.html#a2e05bf0d3fbe8296dec0c83be195cb2d":[3,0,300,11],
 "classMAVLinkChartController.html#a449af21262c2d44f1b6fa51583caea86":[3,0,300,20],
 "classMAVLinkChartController.html#a4e36603f8ccfa6f0e8673906b1ac6de4":[3,0,300,22],
@@ -247,7 +249,5 @@ var NAVTREEINDEX36 =
 "classMapPositionTracker.html#afa342d3367b5c6998986123463f33886":[3,0,288,10],
 "classMapPositionTracker.html#afa963b6792c83a3ec5fe3a84d419e70e":[3,0,288,4],
 "classMapProvider.html":[3,0,289],
-"classMapProvider.html#a2250266005b32cbdcc8f33c1d3c38982":[3,0,289,3],
-"classMapProvider.html#a287aa04c5343e9922957e7e9acc4aeb3":[3,0,289,28],
-"classMapProvider.html#a2d1cccd2e7161096dc22810d1398cc25":[3,0,289,14]
+"classMapProvider.html#a2250266005b32cbdcc8f33c1d3c38982":[3,0,289,3]
 };

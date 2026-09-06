@@ -24,6 +24,7 @@ var classSettingsManager =
     [ "ntripSettings", "classSettingsManager.html#af9e21c060537498940ccaa4b7e0657c1", null ],
     [ "offlineMapsSettings", "classSettingsManager.html#abb07ba3610db5cca642ccb4c6bc4d490", null ],
     [ "planViewSettings", "classSettingsManager.html#a2913c3a917bd013383ed20b521585e90", null ],
+    [ "registerCustomSettingsGroup", "classSettingsManager.html#a08e8f75179da7493fd3a09b2699aa8e0", null ],
     [ "remoteIDSettings", "classSettingsManager.html#ac7cc9fd6002efc472c7b1fab43cfc100", null ],
     [ "rtkSettings", "classSettingsManager.html#a3c2b08724a1364c5e313bb3e4897f8f1", null ],
     [ "unitsSettings", "classSettingsManager.html#a293f9ff7faa9dcb0419e51ccba2cdf5a", null ],

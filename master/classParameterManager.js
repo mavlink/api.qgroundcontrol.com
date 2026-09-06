@@ -12,6 +12,7 @@ var classParameterManager =
     [ "factAdded", "classParameterManager.html#a1a6b015ff013fdb74ac01081e8079291", null ],
     [ "factTypeToMavType", "classParameterManager.html#ac0e55793f7705f347a861ad311bebe06", null ],
     [ "getParameter", "classParameterManager.html#a143a6d0fdc173a194b1f4aa182bbeb5f", null ],
+    [ "initialParametersRequestFailed", "classParameterManager.html#a3c8ae4fa9779a126521741c63e645ddf", null ],
     [ "loadProgress", "classParameterManager.html#a44ceca5a0d58cf208fcfb20850d6b3b9", null ],
     [ "loadProgressChanged", "classParameterManager.html#aadd61247810f37dd4c55b234f0215bf5", null ],
     [ "mavlinkMessageReceived", "classParameterManager.html#a0e3d2f441f1188fdbc2d5ef73718e7f3", null ],

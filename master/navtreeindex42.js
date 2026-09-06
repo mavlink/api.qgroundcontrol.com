@@ -1,5 +1,9 @@
 var NAVTREEINDEX42 =
 {
+"classNTRIPManager.html#a2659402c7ac54376cf838907e6e7d784":[3,0,340,8],
+"classNTRIPManager.html#a2e62179e83b85c0ff85423696720cc71":[3,0,340,19],
+"classNTRIPManager.html#a319a46063df67ab6760a720ce2a9d2d1":[3,0,340,6],
+"classNTRIPManager.html#a3704f53114f16566a8674007c1368e57":[3,0,340,18],
 "classNTRIPManager.html#a3888b3fe42209a15af7eb8a895124e9a":[3,0,340,25],
 "classNTRIPManager.html#a40006373c9a6a14aaf93a09019e55061":[3,0,340,1],
 "classNTRIPManager.html#a40006373c9a6a14aaf93a09019e55061a2ec0d16e4ca169baedb9b2d50ec5c6d7":[3,0,340,1,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX42 =
 "classPX4FirmwarePlugin.html#a08b57ad841337ce33724c941de9bd2ce":[3,0,386,28],
 "classPX4FirmwarePlugin.html#a110ecabe119b711f88d51c29d380fb13":[3,0,386,6],
 "classPX4FirmwarePlugin.html#a15d885ec0733166b3b435d746bb33ce8":[3,0,386,43],
-"classPX4FirmwarePlugin.html#a1e110e268f32ae410209bdbffca45034":[3,0,386,15],
-"classPX4FirmwarePlugin.html#a21623e67125f2704eab46606c2fd3733":[3,0,386,47],
-"classPX4FirmwarePlugin.html#a21a7a34f1a67504e481e7855cc98fcd1":[3,0,386,20],
-"classPX4FirmwarePlugin.html#a2290417523808ad4db28db51ff8ddb38":[3,0,386,0],
-"classPX4FirmwarePlugin.html#a256a0aca661d1732e13c34b62871c40a":[3,0,386,11]
+"classPX4FirmwarePlugin.html#a1e110e268f32ae410209bdbffca45034":[3,0,386,15]
 };

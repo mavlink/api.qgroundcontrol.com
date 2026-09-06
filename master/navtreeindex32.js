@@ -1,5 +1,7 @@
 var NAVTREEINDEX32 =
 {
+"classHealthAndArmingCheckProblem.html#ac79f52d04e6b9274c3d935920527dd15":[3,0,227,5],
+"classHealthAndArmingCheckProblem.html#acaf3f888534557569a87c5b2cba11b07":[3,0,227,1],
 "classHealthAndArmingCheckProblem.html#ae81f168f5e2e8b1ed77fd1373bc77db6":[3,0,227,2],
 "classHealthAndArmingCheckProblem.html#aea8229b0df41949968ad404816621957":[3,0,227,4],
 "classHealthAndArmingCheckProblem.html#afdc45dc9469f80dac8fc58b810b92937":[3,0,227,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX32 =
 "classJoystick.html#a9d77097d2f52e5258b8e4cb3e688d409":[3,0,243,144],
 "classJoystick.html#a9ef73d8c2981aeaef643a2a90f9074f9":[3,0,243,115],
 "classJoystick.html#a9ff8ecfe4cf458fefe9007ab7ba994fb":[3,0,243,40],
-"classJoystick.html#aa0c37b7a596532a5e6d6d02ee20659e8":[3,0,243,52],
-"classJoystick.html#aa2ae20a26e6c7658a144761967c3426e":[3,0,243,22],
-"classJoystick.html#aa5995eb5ad225c7faac9e7c4becad0d9":[3,0,243,122]
+"classJoystick.html#aa0c37b7a596532a5e6d6d02ee20659e8":[3,0,243,52]
 };

@@ -1,5 +1,11 @@
 var NAVTREEINDEX52 =
 {
+"classQGroundControlQmlGlobal.html#ac212220a715df3478ab14f9867408817":[3,0,474,34],
+"classQGroundControlQmlGlobal.html#ac248b44759dc15adceedb29dc1eda482":[3,0,474,26],
+"classQGroundControlQmlGlobal.html#ac77b17feb1d3085684781cce8452b441":[3,0,474,5],
+"classQGroundControlQmlGlobal.html#ad18e3de0790b054a94412081fc5af87c":[3,0,474,39],
+"classQGroundControlQmlGlobal.html#ad1d2d0b74479688820028c2902968623":[3,0,474,55],
+"classQGroundControlQmlGlobal.html#ad871f11af9d5c0e411df478fac6cd81d":[3,0,474,60],
 "classQGroundControlQmlGlobal.html#ae1b6023975d5d493139ece3a04bf3d77":[3,0,474,6],
 "classQGroundControlQmlGlobal.html#ae3856db002d5e34fd1dc2fa3f6ec7ed3":[3,0,474,58],
 "classQGroundControlQmlGlobal.html#ae3f41b9a5efb3206e62169985a4775c1":[3,0,474,8],
@@ -243,11 +249,5 @@ var NAVTREEINDEX52 =
 "classQmlObjectTreeModel.html#a3fdce9da2dcd20db068e74cb57f0c7d3":[3,0,477,32],
 "classQmlObjectTreeModel.html#a49b5b9ea4b1b7eb95b11c250605b4efa":[3,0,477,13],
 "classQmlObjectTreeModel.html#a4b7f854c6e162cb8d07e007475450466":[3,0,477,12],
-"classQmlObjectTreeModel.html#a4f7692a803b5f8c8c458654805d36309":[3,0,477,25],
-"classQmlObjectTreeModel.html#a4fa576912a70781fa1a631fdc350cc05":[3,0,477,10],
-"classQmlObjectTreeModel.html#a589f1613a068cb2627b9595076b35d4f":[3,0,477,23],
-"classQmlObjectTreeModel.html#a601ae55e2ac5390b9629daad31f7579e":[3,0,477,26],
-"classQmlObjectTreeModel.html#a61a6d793b6524a1a7b1d67dad6277250":[3,0,477,24],
-"classQmlObjectTreeModel.html#a646abb636f68836ce1791bcd561ae027":[3,0,477,17],
-"classQmlObjectTreeModel.html#a665121240c995e023c77031c467d88e0":[3,0,477,5]
+"classQmlObjectTreeModel.html#a4f7692a803b5f8c8c458654805d36309":[3,0,477,25]
 };

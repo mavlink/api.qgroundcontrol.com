@@ -27,7 +27,7 @@ var searchData=
   ['offlinemapeditor_2eqml_24',['OfflineMapEditor.qml',['../OfflineMapEditor_8qml.html',1,'']]],
   ['offlinemapinfo_2eqml_25',['OfflineMapInfo.qml',['../OfflineMapInfo_8qml.html',1,'']]],
   ['offlinemapsettings_2eqml_26',['OfflineMapSettings.qml',['../OfflineMapSettings_8qml.html',1,'']]],
-  ['offlinemapssettings_27',['offlinemapssettings',['../classSettingsManager.html#abb07ba3610db5cca642ccb4c6bc4d490',1,'SettingsManager::offlineMapsSettings()'],['../classOfflineMapsSettings.html#a5c8ec887aff84f447f891744bcd69ad3',1,'OfflineMapsSettings::OfflineMapsSettings()'],['../classOfflineMapsSettings.html',1,'OfflineMapsSettings']]],
+  ['offlinemapssettings_27',['offlinemapssettings',['../classOfflineMapsSettings.html#a5c8ec887aff84f447f891744bcd69ad3',1,'OfflineMapsSettings::OfflineMapsSettings()'],['../classSettingsManager.html#abb07ba3610db5cca642ccb4c6bc4d490',1,'SettingsManager::offlineMapsSettings()'],['../classOfflineMapsSettings.html',1,'OfflineMapsSettings']]],
   ['offlinemapssettings_2ecc_28',['OfflineMapsSettings.cc',['../OfflineMapsSettings_8cc.html',1,'']]],
   ['offlinemapssettings_2eh_29',['OfflineMapsSettings.h',['../OfflineMapsSettings_8h.html',1,'']]],
   ['offset_30',['offset',['../classQGCMapPolygon.html#a6b88e69f7019cca199e5506c7910ef7b',1,'QGCMapPolygon']]],

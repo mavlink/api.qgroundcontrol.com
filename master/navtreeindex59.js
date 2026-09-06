@@ -1,5 +1,13 @@
 var NAVTREEINDEX59 =
 {
+"classTCPWorker.html#a1a68a3df5633f018909661b99d8492c3":[3,0,567,7],
+"classTCPWorker.html#a21cf38d48dddfdc36ccd2e5d573bf527":[3,0,567,8],
+"classTCPWorker.html#a39312eebd2d7f8ae1436f96d2011b3d5":[3,0,567,3],
+"classTCPWorker.html#a481b87bc983035c29aa62deecaa7edc1":[3,0,567,4],
+"classTCPWorker.html#a492b2b0002de867427f3748e3ff9622f":[3,0,567,5],
+"classTCPWorker.html#a99853e9d37878448ff1ffdffa9da1f86":[3,0,567,11],
+"classTCPWorker.html#a99b1f2b75bcfa15017be4e42d6567ce2":[3,0,567,0],
+"classTCPWorker.html#acb9a6c006037202a5a8e3254b8e081b3":[3,0,567,2],
 "classTCPWorker.html#af98c2d75c1c85a8360d2f1a8910615c7":[3,0,567,6],
 "classTakeoffMissionItem.html":[3,0,564],
 "classTakeoffMissionItem.html#a03abbd863da78f41685737a5709e510b":[3,0,564,4],
@@ -241,13 +249,5 @@ var NAVTREEINDEX59 =
 "classTrajectoryPoints.html#abad4752648769e98379d389785eca228":[3,0,596,0],
 "classTrajectoryPoints.html#ac3234633a01833db88defe627b47497a":[3,0,596,4],
 "classTrajectoryPoints.html#ae29069264956e4c16abc478cb05496ce":[3,0,596,2],
-"classTrajectoryPoints.html#af8efb2b839a66761789dc8098e765658":[3,0,596,5],
-"classTransectStyleComplexItem.html":[3,0,597],
-"classTransectStyleComplexItem.html#a07295d76c7fdf7d118320eb385ece451":[3,0,597,15],
-"classTransectStyleComplexItem.html#a0935ecf9b1f6777f4ba99d8d195b3617":[3,0,597,101],
-"classTransectStyleComplexItem.html#a0a1c747177937f3a7f1cc9c9b7089121":[3,0,597,98],
-"classTransectStyleComplexItem.html#a0a3e8897abf575186f82b6cbe356e6d6":[3,0,597,117],
-"classTransectStyleComplexItem.html#a0b86c20d42122caed494698c6570d9f2":[3,0,597,107],
-"classTransectStyleComplexItem.html#a0d713f29d6533ed041b10ecae777adf8":[3,0,597,60],
-"classTransectStyleComplexItem.html#a0e38aef0db4888b435b95151e7e49791":[3,0,597,45]
+"classTrajectoryPoints.html#af8efb2b839a66761789dc8098e765658":[3,0,596,5]
 };

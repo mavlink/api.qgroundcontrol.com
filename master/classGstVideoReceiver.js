@@ -16,5 +16,6 @@ var classGstVideoReceiver =
     [ "stop", "classGstVideoReceiver.html#ac934f9ae9c7c3faf18cf1f0f084c7ddc", null ],
     [ "stopDecoding", "classGstVideoReceiver.html#a0072ff33438281da5a71a3489fbe6abb", null ],
     [ "stopRecording", "classGstVideoReceiver.html#aba36ca7cf491d5aa8a0948d7b22c81a6", null ],
-    [ "takeScreenshot", "classGstVideoReceiver.html#a097c850e76fe2073276ac17db5b0b591", null ]
+    [ "takeScreenshot", "classGstVideoReceiver.html#a097c850e76fe2073276ac17db5b0b591", null ],
+    [ "GStreamerTest", "classGstVideoReceiver.html#a7f350450ab50aa79ca29bee6b98b193f", null ]
 ];

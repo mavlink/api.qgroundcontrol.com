@@ -1,5 +1,7 @@
 var NAVTREEINDEX35 =
 {
+"classLogFileParser.html#a1fd209b511a4a30b6829b32bbcc0ac87":[3,0,260,12],
+"classLogFileParser.html#a259b78bdc6ec165409155a72ac6af7d6":[3,0,260,13],
 "classLogFileParser.html#a3643f457bdc9bd830b370bd7da68bef7":[3,0,260,19],
 "classLogFileParser.html#a379c970b14aedf0cc6eccd586b00bf31":[3,0,260,22],
 "classLogFileParser.html#a37b3db5083b6c6cb372a1882cebb71c9":[3,0,260,48],
@@ -247,7 +249,5 @@ var NAVTREEINDEX35 =
 "classLoopState.html#a9f9b84b20eaecb224c90877c38307167":[3,0,275,6],
 "classLoopState.html#aa2d89196837fcedc8a399c96032eedf4":[3,0,275,2],
 "classLoopState.html#aae03a4541dc36e3e81022d29cba35fe8":[3,0,275,0],
-"classMAVLinkChartController.html":[3,0,300],
-"classMAVLinkChartController.html#a14a4bc4e83e242175e8867f800915142":[3,0,300,1],
-"classMAVLinkChartController.html#a1657b619cfaa6060cc230e5abb544655":[3,0,300,17]
+"classMAVLinkChartController.html":[3,0,300]
 };

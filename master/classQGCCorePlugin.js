@@ -36,6 +36,7 @@ var classQGCCorePlugin =
     [ "preLoadFromJson", "classQGCCorePlugin.html#a34ea38638ce16be51ed0fe0e0c509f9a", null ],
     [ "preSaveToJson", "classQGCCorePlugin.html#aa215ccc22e410578c894c4852e302986", null ],
     [ "preSaveToMissionJson", "classQGCCorePlugin.html#a45b5d6d65033bb2c1c2ec41ba4ef1002", null ],
+    [ "registerCustomSettings", "classQGCCorePlugin.html#ad9819c4b0fd82c7b4389940e01d34437", null ],
     [ "releaseVideoSink", "classQGCCorePlugin.html#abcabedca2a2373b804561871217e2e79", null ],
     [ "showAdvancedUI", "classQGCCorePlugin.html#a5e959c85c17f211aca371acf33917bd1", null ],
     [ "showAdvancedUIChanged", "classQGCCorePlugin.html#a562b487143777b128f2e8c29292adc1d", null ],

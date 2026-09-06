@@ -1,5 +1,13 @@
 var NAVTREEINDEX76 =
 {
+"structMappedFrame.html#a7e801de9803d493be8e8d47db467018aa54c82ef76ecbbd4c2293e09bae01b54e":[3,0,287,0,0],
+"structMappedFrame.html#a9d89a3d02e32f371ca74fb577cec2c5e":[3,0,287,2],
+"structMissionFlightStatus__t.html":[3,0,319],
+"structMissionFlightStatus__t.html#a05572862ff3b8ddb5bee9ccb45331da2":[3,0,319,5],
+"structMissionFlightStatus__t.html#a0834eacc0e389e9f708123776c774932":[3,0,319,7],
+"structMissionFlightStatus__t.html#a0a6eabd610a2d6664a9d0b8e3ecb7fa7":[3,0,319,21],
+"structMissionFlightStatus__t.html#a0e0695fc811274f86f44e04f1ae8d1c0":[3,0,319,18],
+"structMissionFlightStatus__t.html#a1ff3b40553b857358dd768c984e54b4e":[3,0,319,13],
 "structMissionFlightStatus__t.html#a26c542e163226419a819b4ad19c9db19":[3,0,319,6],
 "structMissionFlightStatus__t.html#a28d15bde1d53642b33c28b4c547e33b5":[3,0,319,1],
 "structMissionFlightStatus__t.html#a341a0a00217b27d4154ddbe6126bd2c5":[3,0,319,8],
@@ -241,13 +249,5 @@ var NAVTREEINDEX76 =
 "structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495a5d392387399f863b7c161585138c208e":[3,0,385,0,9],
 "structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495a62b85c9d3439f0914eb6b0e2c6c5eeb2":[3,0,385,0,7],
 "structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495a8572c47d591f0b691a4f9e000778a6c1":[3,0,385,0,11],
-"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495a990e48c0e7701e5a8dd90a4ee5aea1bd":[3,0,385,0,13],
-"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495a9aeafa16935344002c92d25d2c5f3ba1":[3,0,385,0,16],
-"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495aa0617597c9aaf4968b524dcb4f00557e":[3,0,385,0,21],
-"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495aaf923bf588f8b429d24c04d1197c7422":[3,0,385,0,8],
-"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495ab4523d87091d0fd88aceae0a34f79636":[3,0,385,0,10],
-"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495ac06957f069942923a1122de5044adad6":[3,0,385,0,20],
-"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495ac9130706c4ca620fca50a18dcd8e6526":[3,0,385,0,15],
-"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495aef67521a4e1b8cefb5121ac0077d3e4c":[3,0,385,0,1],
-"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495afab7385086a875fdbbf1ff1f41882f97":[3,0,385,0,0]
+"structPX4CustomMode.html#aecc2382684270f9807723fefbf4d5495a990e48c0e7701e5a8dd90a4ee5aea1bd":[3,0,385,0,13]
 };

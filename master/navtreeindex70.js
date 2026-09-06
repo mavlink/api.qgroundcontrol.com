@@ -1,5 +1,13 @@
 var NAVTREEINDEX70 =
 {
+"namespaceAndroidSerial.html#af0f104d22d3e6341fed058d4055480db":[2,0,5,42],
+"namespaceAndroidSerial.html#af1f18c13cf22baea82fa556776f124a8":[2,0,5,52],
+"namespaceAndroidSerial.html#afd71ec984dd1724cfefc41c976f53f9d":[2,0,5,40],
+"namespaceColors.html":[2,0,8],
+"namespaceColors.html#a0616200de50b0d89a78da9b09fbc6693":[2,0,8,9],
+"namespaceColors.html#a405dbd2d910aeee2db4417915f547f93":[2,0,8,6],
+"namespaceColors.html#a59b4ee879e9ea88998e572f5d82cd590":[2,0,8,5],
+"namespaceColors.html#a7a37e8eeabb1a8923aeaead271b40152":[2,0,8,0],
 "namespaceColors.html#a954a758c1d176360da6af5c0cb9c4d3e":[2,0,8,7],
 "namespaceColors.html#ab72d3f7f8fffe0d1f89e9b91556214f5":[2,0,8,4],
 "namespaceColors.html#ab7aead119f377470f758fc1dc2dc1eb0":[2,0,8,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX70 =
 "namespaceMAVLinkSigning.html#a8f553ad7fd7338adfe3e9725af8e43bd":[2,0,28,5],
 "namespaceMAVLinkSigning.html#a9e6d7dec3bfa8e9bdd9509974b26627d":[2,0,28,12],
 "namespaceMAVLinkSigning.html#aa05f8e69f58693e9a49324d3e66f2320":[2,0,28,11],
-"namespaceMAVLinkSigning.html#aa421bb0e45896a5a015924e7e6b758ef":[2,0,28,2],
-"namespaceMAVLinkSigning.html#aa421bb0e45896a5a015924e7e6b758efa2d13df6f8b5e4c5af9f87e0dc39df69d":[2,0,28,2,1],
-"namespaceMAVLinkSigning.html#aa421bb0e45896a5a015924e7e6b758efa2e979835dd62324f5bfe217449ba4974":[2,0,28,2,0],
-"namespaceMAVLinkSigning.html#aab0248df228a43ec97763e46c04406fa":[2,0,28,9],
-"namespaceMAVLinkSigning.html#ab73f36b820a6ef0df349b86a35a07a55":[2,0,28,3],
-"namespaceMAVLinkSigning.html#abbd217ba676a51f965345477354944fc":[2,0,28,10],
-"namespaceMAVLinkSigning.html#ad1ae7356b42d89cb83f0470751d1db23":[2,0,28,23],
-"namespaceMAVLinkSigning.html#adec48c77e1653d89b7f7975b42f699a7":[2,0,28,19],
-"namespaceMAVLinkSigning.html#adf7d082829b082f118c1551452426a2a":[2,0,28,14]
+"namespaceMAVLinkSigning.html#aa421bb0e45896a5a015924e7e6b758ef":[2,0,28,2]
 };

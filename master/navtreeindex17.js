@@ -203,7 +203,7 @@ var NAVTREEINDEX17 =
 "SplitIndicator_8qml.html":[4,0,0,11,0,12],
 "SplitIndicator_8qml_source.html":[4,0,0,11,0,12],
 "StandardModes_8cc.html":[4,0,0,30,24],
-"StandardModes_8cc.html#a32c79c28d1c9ec58f60489c6f759184a":[4,0,0,30,24,0],
+"StandardModes_8cc.html#a1762615d432954bc2ada3c6ad96c1d36":[4,0,0,30,24,0],
 "StandardModes_8cc_source.html":[4,0,0,30,24],
 "StandardModes_8h.html":[4,0,0,30,25],
 "StandardModes_8h_source.html":[4,0,0,30,25],

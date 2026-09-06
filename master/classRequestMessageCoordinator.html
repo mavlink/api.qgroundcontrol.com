@@ -131,6 +131,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:add51312d1ae55bf074b3db5d82e70781" id="r_add51312d1ae55bf074b3db5d82e70781"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRequestMessageCoordinator.html#add51312d1ae55bf074b3db5d82e70781">stop</a> ()</td></tr>
 <tr class="memdesc:add51312d1ae55bf074b3db5d82e70781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear pending state without firing callbacks (used during vehicle shutdown).  <br /></td></tr>
 <tr class="separator:add51312d1ae55bf074b3db5d82e70781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a807779b0c960e16460d10a3d445eab05" id="r_a807779b0c960e16460d10a3d445eab05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRequestMessageCoordinator.html#a807779b0c960e16460d10a3d445eab05">cancelRequests</a> (void *resultHandlerData)</td></tr>
+<tr class="separator:a807779b0c960e16460d10a3d445eab05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -229,6 +231,27 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a807779b0c960e16460d10a3d445eab05" name="a807779b0c960e16460d10a3d445eab05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a807779b0c960e16460d10a3d445eab05">&#9670;&#160;</a></span>cancelRequests()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RequestMessageCoordinator::cancelRequests </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>resultHandlerData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Neutralizes any outstanding requests owned by <em>resultHandlerData</em> so their result callback is never invoked. Call this when the callback's context is being destroyed while the vehicle (and this coordinator) keep running. </p>
+
+<p class="definition">Definition at line <a class="el" href="RequestMessageCoordinator_8cc_source.html#l00040">40</a> of file <a class="el" href="RequestMessageCoordinator_8cc_source.html">RequestMessageCoordinator.cc</a>.</p>
+
+</div>
+</div>
 <a id="a9501db60ad27428a1bc81c0fe7320130" name="a9501db60ad27428a1bc81c0fe7320130"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9501db60ad27428a1bc81c0fe7320130">&#9670;&#160;</a></span>failureCodeToString()</h2>
 
@@ -253,11 +276,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RequestMessageCoordinator_8cc_source.html#l00334">334</a> of file <a class="el" href="RequestMessageCoordinator_8cc_source.html">RequestMessageCoordinator.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RequestMessageCoordinator_8cc_source.html#l00362">362</a> of file <a class="el" href="RequestMessageCoordinator_8cc_source.html">RequestMessageCoordinator.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="VehicleTypes_8h_source.html#l00025">VehicleTypes::RequestMessageFailureCommandError</a>, <a class="el" href="VehicleTypes_8h_source.html#l00026">VehicleTypes::RequestMessageFailureCommandNotAcked</a>, <a class="el" href="VehicleTypes_8h_source.html#l00028">VehicleTypes::RequestMessageFailureDuplicate</a>, <a class="el" href="VehicleTypes_8h_source.html#l00027">VehicleTypes::RequestMessageFailureMessageNotReceived</a>, and <a class="el" href="VehicleTypes_8h_source.html#l00024">VehicleTypes::RequestMessageNoFailure</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l03344">Vehicle::requestMessageResultHandlerFailureCodeToString()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l03350">Vehicle::requestMessageResultHandlerFailureCodeToString()</a>.</p>
 
 </div>
 </div>
@@ -278,7 +301,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Called for every inbound mavlink message so the coordinator can correlate arrivals with outstanding requests and enforce per-request timeouts. </p>
 
-<p class="definition">Definition at line <a class="el" href="RequestMessageCoordinator_8cc_source.html#l00150">150</a> of file <a class="el" href="RequestMessageCoordinator_8cc_source.html">RequestMessageCoordinator.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RequestMessageCoordinator_8cc_source.html#l00179">179</a> of file <a class="el" href="RequestMessageCoordinator_8cc_source.html">RequestMessageCoordinator.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="VehicleTypes_8h_source.html#l00027">VehicleTypes::RequestMessageFailureMessageNotReceived</a>, <a class="el" href="VehicleTypes_8h_source.html#l00024">VehicleTypes::RequestMessageNoFailure</a>, and <a class="el" href="AppMessages_8cc_source.html#l00037">QGC::runningUnitTests()</a>.</p>
 
@@ -359,11 +382,11 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="RequestMessageCoordinator_8cc_source.html#l00281">281</a> of file <a class="el" href="RequestMessageCoordinator_8cc_source.html">RequestMessageCoordinator.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RequestMessageCoordinator_8cc_source.html#l00309">309</a> of file <a class="el" href="RequestMessageCoordinator_8cc_source.html">RequestMessageCoordinator.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="Vehicle_8h_source.html#l00433">Vehicle::compId()</a>, and <a class="el" href="VehicleTypes_8h_source.html#l00028">VehicleTypes::RequestMessageFailureDuplicate</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02249">Vehicle::requestMessage()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02255">Vehicle::requestMessage()</a>.</p>
 
 </div>
 </div>

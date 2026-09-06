@@ -22,6 +22,7 @@ var classMockLink =
     [ "~MockLink", "classMockLink.html#ab63be4c534cfb3d803583429526f1c2b", null ],
     [ "apmStaleFailedMagCalReportStreamingActive", "classMockLink.html#aa303364d4ffc51abe673f43e1a4084b1", null ],
     [ "armed", "classMockLink.html#a37a670d9cea9811c87b5d0b133afe9f8", null ],
+    [ "bumpAvailableModesMonitorSequence", "classMockLink.html#a808cb8fd608115dba37937799221e90b", null ],
     [ "clearReceivedMavCommandCounts", "classMockLink.html#a6a09438373136a61df9101c6fcda81ad", null ],
     [ "clearReceivedMavlinkMessageCounts", "classMockLink.html#aac758495043933da252f8aa44cec09d0", null ],
     [ "clearReceivedRequestMessageCounts", "classMockLink.html#a46a88c7c9d42f6085a2d1687bc1b034e", null ],

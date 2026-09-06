@@ -1,5 +1,13 @@
 var NAVTREEINDEX78 =
 {
+"structSigningStatus.html#a5e3e056bcc041b85403e2b657e921589":[3,0,535,3],
+"structSigningStatus.html#ab6f63079bd43be978a7ce9e61c933a11":[3,0,535,4],
+"structSigningStatus.html#aec6ba2a9db6a2d86bef535ddbf9b5a44":[3,0,535,6],
+"structStandardModes_1_1Mode.html":[3,0,541,0],
+"structStandardModes_1_1Mode.html#a347477259cf82573482743ff969cb5f6":[3,0,541,0,3],
+"structStandardModes_1_1Mode.html#a66d4bddebcafbafffff268c3e3a264f1":[3,0,541,0,2],
+"structStandardModes_1_1Mode.html#aaeb71ea55332434fdb913baf66220656":[3,0,541,0,0],
+"structStandardModes_1_1Mode.html#af276bf6793e27024722a02206db48fee":[3,0,541,0,1],
 "structStateHistoryRecorder_1_1HistoryEntry.html":[3,0,543,0],
 "structStateHistoryRecorder_1_1HistoryEntry.html#a179c5ed2e7776502ca2e2e7b77f6c2dc":[3,0,543,0,0],
 "structStateHistoryRecorder_1_1HistoryEntry.html#a22c163f248384bf580e1f601fe485cdf":[3,0,543,0,2],
@@ -241,13 +249,5 @@ var NAVTREEINDEX78 =
 "structsatellite__info__s.html#a8a211f6f542cd294c7d2f22e31485657":[3,0,508,3],
 "structsatellite__info__s.html#a8e5e9a78bcff69115dd488aa4426b243":[3,0,508,7],
 "structsatellite__info__s.html#a95231162e514d7a9213e62eca59e6d98":[3,0,508,2],
-"structsatellite__info__s.html#aa35d344db8c47ef27c4ddb6df370c019":[3,0,508,6],
-"structsensor__gnss__relative__s.html":[3,0,514],
-"structsensor__gnss__relative__s.html#a057d4d184fa77571093e6db9db43ea3e":[3,0,514,17],
-"structsensor__gnss__relative__s.html#a0839b617a72a95defc653e4ec263f88e":[3,0,514,14],
-"structsensor__gnss__relative__s.html#a12867fca316db9a86b5face062dc3331":[3,0,514,11],
-"structsensor__gnss__relative__s.html#a18ac2d68f6e76488a5384f6733048e48":[3,0,514,7],
-"structsensor__gnss__relative__s.html#a1fbd11b20b3d0bd73215c4f4d0c3b4df":[3,0,514,18],
-"structsensor__gnss__relative__s.html#a231435120403c181fca944da1c58db42":[3,0,514,19],
-"structsensor__gnss__relative__s.html#a25e5a11d87aefe26b991034635f17f40":[3,0,514,0]
+"structsatellite__info__s.html#aa35d344db8c47ef27c4ddb6df370c019":[3,0,508,6]
 };

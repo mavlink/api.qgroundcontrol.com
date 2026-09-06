@@ -1,5 +1,11 @@
 var NAVTREEINDEX49 =
 {
+"classQGCMapPalette.html":[3,0,439],
+"classQGCMapPalette.html#a52678c2d02da1ec6bd67e997337e07bf":[3,0,439,5],
+"classQGCMapPalette.html#a55a2a99b6009297482f8205e20326fcb":[3,0,439,0],
+"classQGCMapPalette.html#a56e3a11c5a72b7ec50177ff04bf72916":[3,0,439,4],
+"classQGCMapPalette.html#a577932dead4ac60708bc6361a8037580":[3,0,439,2],
+"classQGCMapPalette.html#a590921004c83cfed0c9336bfea6fcd4a":[3,0,439,3],
 "classQGCMapPalette.html#a686a3c8c811a10da7cd82f4b4c274b4a":[3,0,439,6],
 "classQGCMapPalette.html#ac96ab152b01eb43dc1dca26f3f5c2582":[3,0,439,1],
 "classQGCMapPolygon.html":[3,0,440],
@@ -243,11 +249,5 @@ var NAVTREEINDEX49 =
 "classQGCPositionManager.html#ab7dfa22ad24a9d79230b8e77d9179380":[3,0,451,15],
 "classQGCPositionManager.html#aca49291638155c871887b619066ad174":[3,0,451,1],
 "classQGCPositionManager.html#acec86b26931f4b0343ebd4118628621f":[3,0,451,7],
-"classQGCPositionManager.html#ad93e8af46e8c3db85cb0cdbd2a089195":[3,0,451,13],
-"classQGCPositionManager.html#ae361c0c41a7b54188a7d178c8f8a5258":[3,0,451,16],
-"classQGCPositionManager.html#afbfec5493567fe0de25a0ff2f4f4ae12":[3,0,451,3],
-"classQGCPositionManager.html#afdd8c95219980a44f97fad2020e1e44f":[3,0,451,0],
-"classQGCPruneCacheTask.html":[3,0,452],
-"classQGCPruneCacheTask.html#a19794ba45af45d66e64eea6eb3d3d429":[3,0,452,2],
-"classQGCPruneCacheTask.html#a3d4fa1c0e4a25a974dc81634c5fb3ef6":[3,0,452,4]
+"classQGCPositionManager.html#ad93e8af46e8c3db85cb0cdbd2a089195":[3,0,451,13]
 };

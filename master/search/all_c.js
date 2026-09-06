@@ -56,7 +56,7 @@ var searchData=
   ['joystickmanager_53',['joystickmanager',['../classJoystickManager.html',1,'JoystickManager'],['../classJoystickManager.html#a05ce7dd63d6b158e5830d50154f546fa',1,'JoystickManager::JoystickManager()'],['../classJoystick.html#ae5f76d41b5d8c22ca6a4a178f60fb159',1,'Joystick::JoystickManager']]],
   ['joystickmanager_2ecc_54',['JoystickManager.cc',['../JoystickManager_8cc.html',1,'']]],
   ['joystickmanager_2eh_55',['JoystickManager.h',['../JoystickManager_8h.html',1,'']]],
-  ['joystickmanagersettings_56',['joystickmanagersettings',['../classJoystickManagerSettings.html',1,'JoystickManagerSettings'],['../classSettingsManager.html#a11d664f820b2523de374626409a6cf7b',1,'SettingsManager::joystickManagerSettings()'],['../classJoystickManagerSettings.html#a981a4be016ed4c902ea4dbd785c3dbd5',1,'JoystickManagerSettings::JoystickManagerSettings()']]],
+  ['joystickmanagersettings_56',['joystickmanagersettings',['../classJoystickManagerSettings.html',1,'JoystickManagerSettings'],['../classJoystickManagerSettings.html#a981a4be016ed4c902ea4dbd785c3dbd5',1,'JoystickManagerSettings::JoystickManagerSettings()'],['../classSettingsManager.html#a11d664f820b2523de374626409a6cf7b',1,'SettingsManager::joystickManagerSettings()']]],
   ['joystickmanagersettings_2ecc_57',['JoystickManagerSettings.cc',['../JoystickManagerSettings_8cc.html',1,'']]],
   ['joystickmanagersettings_2eh_58',['JoystickManagerSettings.h',['../JoystickManagerSettings_8h.html',1,'']]],
   ['joystickmode_59',['joystickMode',['../classRemoteControlCalibrationController.html#a5dfed274e71b6900529a17de838eb394',1,'RemoteControlCalibrationController']]],

@@ -1,6 +1,14 @@
 var NAVTREEINDEX56 =
 {
-"classSettingsManager.html#ac7cc9fd6002efc472c7b1fab43cfc100":[3,0,526,24],
+"classSettingsManager.html#a67aad64779093a3a006d1293b74c539f":[3,0,526,10],
+"classSettingsManager.html#a70509f6304c076e2cceea0445951c324":[3,0,526,14],
+"classSettingsManager.html#a711c79ab5bd87f9b9d652249b0920223":[3,0,526,4],
+"classSettingsManager.html#a9e4f4c76329cc6b39c0ffa1c37540660":[3,0,526,16],
+"classSettingsManager.html#a9fa97cf665c8f35b224ba8edf33e8d2b":[3,0,526,28],
+"classSettingsManager.html#aa1930bc48a28bb5acd1d678d615af063":[3,0,526,2],
+"classSettingsManager.html#ab674f8beaaa671be59cc6624cda10f0a":[3,0,526,5],
+"classSettingsManager.html#abb07ba3610db5cca642ccb4c6bc4d490":[3,0,526,22],
+"classSettingsManager.html#ac7cc9fd6002efc472c7b1fab43cfc100":[3,0,526,25],
 "classSettingsManager.html#aca289d1044a6b39cc1e5e378f55fb9fc":[3,0,526,19],
 "classSettingsManager.html#adc3fe70caa6b16779cce1c0aa272776c":[3,0,526,11],
 "classSettingsManager.html#add6447a61cbfed55d713eb661da53fd0":[3,0,526,12],
@@ -241,13 +249,5 @@ var NAVTREEINDEX56 =
 "classSimulatedCameraControl.html#a7ac27e7e41481d9d5e5fafca39ac2385":[3,0,537,89],
 "classSimulatedCameraControl.html#a7b58c71b8608f1c79b4f586d5903a8b6":[3,0,537,46],
 "classSimulatedCameraControl.html#a7c9bf4b8d4b298b282db33ce373ddb3f":[3,0,537,79],
-"classSimulatedCameraControl.html#a803d5c81163e6a0e3574835d57c01bcf":[3,0,537,5],
-"classSimulatedCameraControl.html#a80d42b058240cad9f64ab0327f35f51c":[3,0,537,13],
-"classSimulatedCameraControl.html#a82e3a94cd39332c6f4f32780fe82e777":[3,0,537,18],
-"classSimulatedCameraControl.html#a86d00b2e56bc1ac2e8f12ae75e39d460":[3,0,537,12],
-"classSimulatedCameraControl.html#a89c5cbd84133471ae65e4c055282ef46":[3,0,537,85],
-"classSimulatedCameraControl.html#a8b0e754a6c4ceaba66af87e995305941":[3,0,537,3],
-"classSimulatedCameraControl.html#a903e4e259df9d9a7f88fdb8f8d321b18":[3,0,537,81],
-"classSimulatedCameraControl.html#a924d753b8a8a45f31d47a9c3f4b0a9a2":[3,0,537,26],
-"classSimulatedCameraControl.html#a92a46654590f85d822588b0b20f766bd":[3,0,537,98]
+"classSimulatedCameraControl.html#a803d5c81163e6a0e3574835d57c01bcf":[3,0,537,5]
 };
