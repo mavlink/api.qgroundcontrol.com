@@ -15,9 +15,9 @@ var classMavCommandQueue =
     [ "sendCommandWithHandler", "classMavCommandQueue.html#a57ad70f05a3ec36c5d0f124011d67131", null ],
     [ "sendCommandWithLambdaFallback", "classMavCommandQueue.html#ad3352717c96f788c601176a8d9b251e8", null ],
     [ "sendWorker", "classMavCommandQueue.html#a66266007757eff508afd7250ec7ab5a7", null ],
+    [ "setTestAckTimeoutOverride", "classMavCommandQueue.html#a5850169f1411fc786574d99d6c50f488", null ],
     [ "showCommandAckError", "classMavCommandQueue.html#aa8b567c1da5b54051303cb51144a4b22", null ],
     [ "stop", "classMavCommandQueue.html#abfb46cea9d348a3e807292ead92760a5", null ],
-    [ "kMaxRetryCount", "classMavCommandQueue.html#a57ed2b349708546bdf76e824dd23fa5c", null ],
-    [ "kTestAckTimeoutMs", "classMavCommandQueue.html#a0ed2ff009193094f2d443183686474eb", null ],
-    [ "kTestMaxWaitMs", "classMavCommandQueue.html#a56246324ffaee883f20c76cef4498672", null ]
+    [ "testAckTimeoutOverride", "classMavCommandQueue.html#a35e630f3c546e813c390c73e4f7301f7", null ],
+    [ "kMaxRetryCount", "classMavCommandQueue.html#a57ed2b349708546bdf76e824dd23fa5c", null ]
 ];

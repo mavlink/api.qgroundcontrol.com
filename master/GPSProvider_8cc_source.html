@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/GPS/GPSProvider.cc Source File</title>
+<title>QGroundControl: src/GPS/RTK/GPSProvider.cc Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,112 +100,114 @@ $(document).ready(function(){initNavTree('GPSProvider_8cc_source.html',''); init
 <div class="contents">
 <a href="GPSProvider_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="GPSProvider_8h.html">GPSProvider.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="GPSDriver_8h.html">GPSDriver.h</a>&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="RTCMMavlink_8h.html">RTCMMavlink.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="SerialGPSTransport_8h.html">SerialGPSTransport.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="GPSDriver_8h.html">GPSDriver.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="GPSTransport_8h.html">GPSTransport.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="RTCMMavlink_8h.html">RTCMMavlink.h</a>&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(GPSProviderLog, <span class="stringliteral">&quot;GPS.GPSProvider&quot;</span>)</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classGPSProvider.html#a5048e2f155ca26c23ac8ee8cb55c0539">   12</a></span><a class="code hl_class" href="classGPSProvider.html">GPSProvider</a>::<a class="code hl_class" href="classGPSProvider.html">GPSProvider</a>(const QString &amp;device, <a class="code hl_enumeration" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495">GPSType</a> type, const <a class="code hl_struct" href="structGPSReceiverConfig.html">GPSReceiverConfig</a> &amp;<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>, const std::atomic_bool &amp;requestStop, QObject *parent)</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    : QThread(parent)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    , _device(device)</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    , _type(type)</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    , _requestStop(requestStop)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    , _config(<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    qCDebug(GPSProviderLog) &lt;&lt; QStringLiteral(<span class="stringliteral">&quot;Survey in accuracy: %1 | duration: %2&quot;</span>).arg(_config.surveyInAccMeters).arg(_config.surveyInDurationSecs);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classGPSProvider.html#a089f6ae5a07631aaf2dd09cbd0b2bff2">   12</a></span><a class="code hl_class" href="classGPSProvider.html">GPSProvider</a>::<a class="code hl_class" href="classGPSProvider.html">GPSProvider</a>(<a class="code hl_typedef" href="classGPSProvider.html#ae2154739cd0112c9c89ffc8a339b6c93">TransportFactory</a> transportFactory, <a class="code hl_enumeration" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495">GPSType</a> type, const <a class="code hl_struct" href="structGPSReceiverConfig.html">GPSReceiverConfig</a>&amp; <a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>,</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>                         QObject* parent)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    : QThread(parent), _transportFactory(std::move(transportFactory)), _type(type), _config(<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    qCDebug(GPSProviderLog) &lt;&lt; QStringLiteral(<span class="stringliteral">&quot;Survey in accuracy: %1 | duration: %2&quot;</span>).arg(_config.surveyInAccMeters).arg(_config.surveyInDurationSecs);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
 </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span> GPSProvider::run()</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#ifdef SIMULATE_RTCM_OUTPUT</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_class" href="classRTCMMavlink.html">RTCMMavlink</a> rtcm;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    rtcm.<a class="code hl_function" href="classRTCMMavlink.html#a8d4beed7de05268f2af2956a924f097a">sendSimulatedData</a>(_requestStop);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_class" href="classSerialGPSTransport.html">SerialGPSTransport</a> transport(_device, _requestStop);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span> (!transport.open()) {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">if</span> (!_requestStop) {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            emit <a class="code hl_signal" href="classGPSProvider.html#a8efd9fe1a7610f00a86338fcd05f334b">connectionError</a>(<a class="code hl_enumvalue" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac">GPSConnectionError::OpenFailed</a>);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> gotData = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_struct" href="structGPSDriverSinks.html">GPSDriverSinks</a> sinks;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    sinks.<a class="code hl_variable" href="structGPSDriverSinks.html#a1c369ceca436517764cf7a90928c8677">onPosition</a> = [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code hl_struct" href="structsensor__gps__s.html">sensor_gps_s</a> &amp;message) { emit <a class="code hl_signal" href="classGPSProvider.html#a50d2653c8cc542f63d9bf52a9f29553a">sensorGpsUpdate</a>(message); };</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    sinks.<a class="code hl_variable" href="structGPSDriverSinks.html#a45313a645c20181d5014ca6340e631e7">onSatelliteInfo</a> = [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code hl_struct" href="structsatellite__info__s.html">satellite_info_s</a> &amp;message) { emit <a class="code hl_signal" href="classGPSProvider.html#a6be2ba00a806de6d3785fe6b706d809b">satelliteInfoUpdate</a>(message); };</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    sinks.<a class="code hl_variable" href="structGPSDriverSinks.html#af70653d3d9bb3acbba4ceaf00972e819">onRTCM</a> = [<span class="keyword">this</span>, &amp;gotData](<span class="keyword">const</span> QByteArray &amp;message) {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        gotData = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        emit <a class="code hl_signal" href="classGPSProvider.html#a10014d1f33a6fc40c6ce7215321c74a0">RTCMDataUpdate</a>(message);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    };</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    sinks.<a class="code hl_variable" href="structGPSDriverSinks.html#ac738dc6dc037aa4b914917e59432cb9f">onSurveyIn</a> = [<span class="keyword">this</span>, &amp;gotData](<span class="keyword">const</span> <a class="code hl_struct" href="structGPSSurveyInStatus.html">GPSSurveyInStatus</a> &amp;status) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        gotData = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        qCDebug(GPSProviderLog) &lt;&lt; QStringLiteral(<span class="stringliteral">&quot;Survey-in: %1s accuracy: %2mm valid: %3 active: %4&quot;</span>)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                                       .arg(status.durationSecs).arg(status.meanAccuracyMM).arg(status.valid).arg(status.active);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        emit <a class="code hl_signal" href="classGPSProvider.html#a81fc712332957fe2bc435c60e15a8c45">surveyInStatus</a>(status);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    };</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_class" href="classGPSDriver.html">GPSDriver</a> driver(_type, transport, _config, std::move(sinks));</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">bool</span> configErrorReported = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">while</span> (!_requestStop) {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">if</span> (!driver.configure()) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">if</span> (_requestStop) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                <span class="keywordflow">break</span>; <span class="comment">// disconnect aborted configure mid-flight; not a real failure</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">if</span> (!configErrorReported) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                emit <a class="code hl_signal" href="classGPSProvider.html#a8efd9fe1a7610f00a86338fcd05f334b">connectionError</a>(<a class="code hl_enumvalue" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64a5d9194716b6a125a6d16691e84afcdf2">GPSConnectionError::ConfigFailed</a>);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                configErrorReported = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            msleep(kConfigRetryDelayMs);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        configErrorReported = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        uint8_t idleCycles = 0;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">while</span> (!_requestStop &amp;&amp; (idleCycles &lt; kMaxIdleReceiveCycles)) {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            gotData = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keyword">const</span> <span class="keywordtype">int</span> ret = driver.receive(kGPSReceiveTimeout);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keyword">const</span> <span class="keywordtype">bool</span> progress = (ret &gt; 0) || gotData; <span class="comment">// position/sat (ret) or RTCM/survey-in (sinks)</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            idleCycles = progress ? 0 : (idleCycles + 1);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">if</span> (transport.fatalError()) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            emit <a class="code hl_signal" href="classGPSProvider.html#a8efd9fe1a7610f00a86338fcd05f334b">connectionError</a>(<a class="code hl_enumvalue" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a">GPSConnectionError::DeviceError</a>);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    qCDebug(GPSProviderLog) &lt;&lt; <span class="stringliteral">&quot;Exiting GPS thread&quot;</span>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> GPSProvider::run()</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// Keep factory captures alive until the transport is destroyed, including on early returns.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">auto</span> transportFactory = std::exchange(_transportFactory, {});</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span> (_requestStop) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#ifdef SIMULATE_RTCM_OUTPUT</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_class" href="classRTCMMavlink.html">RTCMMavlink</a> rtcm;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    rtcm.<a class="code hl_function" href="classRTCMMavlink.html#a8d4beed7de05268f2af2956a924f097a">sendSimulatedData</a>(_requestStop);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">auto</span> transport = transportFactory ? transportFactory(_requestStop) : nullptr;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">if</span> (_requestStop) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (!transport || !transport-&gt;open()) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">if</span> (!_requestStop) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            emit <a class="code hl_signal" href="classGPSProvider.html#a8efd9fe1a7610f00a86338fcd05f334b">connectionError</a>(<a class="code hl_enumvalue" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac">GPSConnectionError::OpenFailed</a>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span> (_requestStop) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">bool</span> gotData = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_struct" href="structGPSDriverSinks.html">GPSDriverSinks</a> sinks;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    sinks.<a class="code hl_variable" href="structGPSDriverSinks.html#a1c369ceca436517764cf7a90928c8677">onPosition</a> = [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code hl_struct" href="structsensor__gps__s.html">sensor_gps_s</a> &amp;message) { emit <a class="code hl_signal" href="classGPSProvider.html#a50d2653c8cc542f63d9bf52a9f29553a">sensorGpsUpdate</a>(message); };</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    sinks.<a class="code hl_variable" href="structGPSDriverSinks.html#a45313a645c20181d5014ca6340e631e7">onSatelliteInfo</a> = [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code hl_struct" href="structsatellite__info__s.html">satellite_info_s</a> &amp;message) { emit <a class="code hl_signal" href="classGPSProvider.html#a6be2ba00a806de6d3785fe6b706d809b">satelliteInfoUpdate</a>(message); };</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    sinks.<a class="code hl_variable" href="structGPSDriverSinks.html#af70653d3d9bb3acbba4ceaf00972e819">onRTCM</a> = [<span class="keyword">this</span>, &amp;gotData](<span class="keyword">const</span> QByteArray &amp;message) {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        gotData = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        emit <a class="code hl_signal" href="classGPSProvider.html#a10014d1f33a6fc40c6ce7215321c74a0">RTCMDataUpdate</a>(message);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    };</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    sinks.<a class="code hl_variable" href="structGPSDriverSinks.html#ac738dc6dc037aa4b914917e59432cb9f">onSurveyIn</a> = [<span class="keyword">this</span>, &amp;gotData](<span class="keyword">const</span> <a class="code hl_struct" href="structGPSSurveyInStatus.html">GPSSurveyInStatus</a> &amp;status) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        gotData = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        qCDebug(GPSProviderLog) &lt;&lt; QStringLiteral(<span class="stringliteral">&quot;Survey-in: %1s accuracy: %2mm valid: %3 active: %4&quot;</span>)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                                       .arg(status.durationSecs).arg(status.meanAccuracyMM).arg(status.valid).arg(status.active);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        emit <a class="code hl_signal" href="classGPSProvider.html#a81fc712332957fe2bc435c60e15a8c45">surveyInStatus</a>(status);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    };</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_class" href="classGPSDriver.html">GPSDriver</a> driver(_type, *transport, _config, std::move(sinks));</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> (!driver.configure()) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">if</span> (!_requestStop) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            emit <a class="code hl_signal" href="classGPSProvider.html#a8efd9fe1a7610f00a86338fcd05f334b">connectionError</a>(<a class="code hl_enumvalue" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64a5d9194716b6a125a6d16691e84afcdf2">GPSConnectionError::ConfigFailed</a>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">if</span> (_requestStop) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    emit <a class="code hl_signal" href="classGPSProvider.html#a436eb6bdab8d46d27e00191e9f7cad5b">receiverReady</a>();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    uint8_t idleCycles = 0;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">while</span> (!_requestStop &amp;&amp; !transport-&gt;fatalError() &amp;&amp; idleCycles &lt; kMaxIdleReceiveCycles) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        gotData = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> ret = driver.receive(kGPSReceiveTimeout);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> progress = (ret &gt; 0) || gotData;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        idleCycles = progress ? 0 : (idleCycles + 1);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">if</span> (!_requestStop) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        emit <a class="code hl_signal" href="classGPSProvider.html#a8efd9fe1a7610f00a86338fcd05f334b">connectionError</a>(<a class="code hl_enumvalue" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a">GPSConnectionError::DeviceError</a>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    qCDebug(GPSProviderLog) &lt;&lt; <span class="stringliteral">&quot;Exiting GPS thread&quot;</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
 <div class="ttc" id="aGPSDriver_8h_html"><div class="ttname"><a href="GPSDriver_8h.html">GPSDriver.h</a></div></div>
 <div class="ttc" id="aGPSProvider_8h_html"><div class="ttname"><a href="GPSProvider_8h.html">GPSProvider.h</a></div></div>
 <div class="ttc" id="aGPSProvider_8h_html_a1de10e4c2de4b8298b63910bb31fdb64a5d9194716b6a125a6d16691e84afcdf2"><div class="ttname"><a href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64a5d9194716b6a125a6d16691e84afcdf2">GPSConnectionError::ConfigFailed</a></div><div class="ttdeci">@ ConfigFailed</div><div class="ttdoc">receiver did not accept configuration</div></div>
-<div class="ttc" id="aGPSProvider_8h_html_a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a"><div class="ttname"><a href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a">GPSConnectionError::DeviceError</a></div><div class="ttdeci">@ DeviceError</div><div class="ttdoc">fatal serial error after a working connection</div></div>
-<div class="ttc" id="aGPSProvider_8h_html_a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac"><div class="ttname"><a href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac">GPSConnectionError::OpenFailed</a></div><div class="ttdeci">@ OpenFailed</div><div class="ttdoc">serial device could not be opened</div></div>
+<div class="ttc" id="aGPSProvider_8h_html_a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a"><div class="ttname"><a href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a">GPSConnectionError::DeviceError</a></div><div class="ttdeci">@ DeviceError</div><div class="ttdoc">fatal transport error after a working connection</div></div>
+<div class="ttc" id="aGPSProvider_8h_html_a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac"><div class="ttname"><a href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac">GPSConnectionError::OpenFailed</a></div><div class="ttdeci">@ OpenFailed</div><div class="ttdoc">receiver transport could not be opened</div></div>
+<div class="ttc" id="aGPSTransport_8h_html"><div class="ttname"><a href="GPSTransport_8h.html">GPSTransport.h</a></div></div>
 <div class="ttc" id="aGPSType_8h_html_a349895bbb08743795417b27e663e6495"><div class="ttname"><a href="GPSType_8h.html#a349895bbb08743795417b27e663e6495">GPSType</a></div><div class="ttdeci">GPSType</div><div class="ttdoc">Receiver families QGC can drive via the px4-gpsdrivers library.</div><div class="ttdef"><b>Definition</b> <a href="GPSType_8h_source.html#l00004">GPSType.h:5</a></div></div>
-<div class="ttc" id="aGstSourceFactory_8cc_html_a4a8dd3a2de125b72d4fe6251a0a271b5"><div class="ttname"><a href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a></div><div class="ttdeci">Config config</div><div class="ttdef"><b>Definition</b> <a href="GstSourceFactory_8cc_source.html#l00182">GstSourceFactory.cc:182</a></div></div>
+<div class="ttc" id="aGstSourceFactory_8cc_html_a4a8dd3a2de125b72d4fe6251a0a271b5"><div class="ttname"><a href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a></div><div class="ttdeci">Config config</div><div class="ttdef"><b>Definition</b> <a href="GstSourceFactory_8cc_source.html#l00183">GstSourceFactory.cc:183</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
 <div class="ttc" id="aRTCMMavlink_8h_html"><div class="ttname"><a href="RTCMMavlink_8h.html">RTCMMavlink.h</a></div></div>
-<div class="ttc" id="aSerialGPSTransport_8h_html"><div class="ttname"><a href="SerialGPSTransport_8h.html">SerialGPSTransport.h</a></div></div>
 <div class="ttc" id="aclassGPSDriver_html"><div class="ttname"><a href="classGPSDriver.html">GPSDriver</a></div><div class="ttdef"><b>Definition</b> <a href="GPSDriver_8h_source.html#l00056">GPSDriver.h:57</a></div></div>
-<div class="ttc" id="aclassGPSProvider_html"><div class="ttname"><a href="classGPSProvider.html">GPSProvider</a></div><div class="ttdef"><b>Definition</b> <a href="GPSProvider_8h_source.html#l00024">GPSProvider.h:25</a></div></div>
+<div class="ttc" id="aclassGPSProvider_html"><div class="ttname"><a href="classGPSProvider.html">GPSProvider</a></div><div class="ttdef"><b>Definition</b> <a href="GPSProvider_8h_source.html#l00028">GPSProvider.h:29</a></div></div>
 <div class="ttc" id="aclassGPSProvider_html_a10014d1f33a6fc40c6ce7215321c74a0"><div class="ttname"><a href="classGPSProvider.html#a10014d1f33a6fc40c6ce7215321c74a0">GPSProvider::RTCMDataUpdate</a></div><div class="ttdeci">void RTCMDataUpdate(const QByteArray &amp;message)</div></div>
+<div class="ttc" id="aclassGPSProvider_html_a436eb6bdab8d46d27e00191e9f7cad5b"><div class="ttname"><a href="classGPSProvider.html#a436eb6bdab8d46d27e00191e9f7cad5b">GPSProvider::receiverReady</a></div><div class="ttdeci">void receiverReady()</div></div>
 <div class="ttc" id="aclassGPSProvider_html_a50d2653c8cc542f63d9bf52a9f29553a"><div class="ttname"><a href="classGPSProvider.html#a50d2653c8cc542f63d9bf52a9f29553a">GPSProvider::sensorGpsUpdate</a></div><div class="ttdeci">void sensorGpsUpdate(const sensor_gps_s &amp;message)</div></div>
 <div class="ttc" id="aclassGPSProvider_html_a6be2ba00a806de6d3785fe6b706d809b"><div class="ttname"><a href="classGPSProvider.html#a6be2ba00a806de6d3785fe6b706d809b">GPSProvider::satelliteInfoUpdate</a></div><div class="ttdeci">void satelliteInfoUpdate(const satellite_info_s &amp;message)</div></div>
 <div class="ttc" id="aclassGPSProvider_html_a81fc712332957fe2bc435c60e15a8c45"><div class="ttname"><a href="classGPSProvider.html#a81fc712332957fe2bc435c60e15a8c45">GPSProvider::surveyInStatus</a></div><div class="ttdeci">void surveyInStatus(const GPSSurveyInStatus &amp;status)</div></div>
 <div class="ttc" id="aclassGPSProvider_html_a8efd9fe1a7610f00a86338fcd05f334b"><div class="ttname"><a href="classGPSProvider.html#a8efd9fe1a7610f00a86338fcd05f334b">GPSProvider::connectionError</a></div><div class="ttdeci">void connectionError(GPSConnectionError error)</div></div>
+<div class="ttc" id="aclassGPSProvider_html_ae2154739cd0112c9c89ffc8a339b6c93"><div class="ttname"><a href="classGPSProvider.html#ae2154739cd0112c9c89ffc8a339b6c93">GPSProvider::TransportFactory</a></div><div class="ttdeci">std::function&lt; std::unique_ptr&lt; GPSTransport &gt;(const std::atomic_bool &amp;)&gt; TransportFactory</div><div class="ttdoc">Consumed by run(), so transport construction, I/O and destruction share the worker thread.</div><div class="ttdef"><b>Definition</b> <a href="GPSProvider_8h_source.html#l00034">GPSProvider.h:34</a></div></div>
 <div class="ttc" id="aclassRTCMMavlink_html"><div class="ttname"><a href="classRTCMMavlink.html">RTCMMavlink</a></div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00021">RTCMMavlink.h:22</a></div></div>
 <div class="ttc" id="aclassRTCMMavlink_html_a8d4beed7de05268f2af2956a924f097a"><div class="ttname"><a href="classRTCMMavlink.html#a8d4beed7de05268f2af2956a924f097a">RTCMMavlink::sendSimulatedData</a></div><div class="ttdeci">void sendSimulatedData(const std::atomic_bool &amp;requestStop)</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00131">RTCMMavlink.cc:131</a></div></div>
-<div class="ttc" id="aclassSerialGPSTransport_html"><div class="ttname"><a href="classSerialGPSTransport.html">SerialGPSTransport</a></div><div class="ttdef"><b>Definition</b> <a href="SerialGPSTransport_8h_source.html#l00015">SerialGPSTransport.h:16</a></div></div>
 <div class="ttc" id="astructGPSDriverSinks_html"><div class="ttname"><a href="structGPSDriverSinks.html">GPSDriverSinks</a></div><div class="ttdef"><b>Definition</b> <a href="GPSDriver_8h_source.html#l00045">GPSDriver.h:46</a></div></div>
 <div class="ttc" id="astructGPSDriverSinks_html_a1c369ceca436517764cf7a90928c8677"><div class="ttname"><a href="structGPSDriverSinks.html#a1c369ceca436517764cf7a90928c8677">GPSDriverSinks::onPosition</a></div><div class="ttdeci">std::function&lt; void(const sensor_gps_s &amp;)&gt; onPosition</div><div class="ttdef"><b>Definition</b> <a href="GPSDriver_8h_source.html#l00047">GPSDriver.h:47</a></div></div>
 <div class="ttc" id="astructGPSDriverSinks_html_a45313a645c20181d5014ca6340e631e7"><div class="ttname"><a href="structGPSDriverSinks.html#a45313a645c20181d5014ca6340e631e7">GPSDriverSinks::onSatelliteInfo</a></div><div class="ttdeci">std::function&lt; void(const satellite_info_s &amp;)&gt; onSatelliteInfo</div><div class="ttdef"><b>Definition</b> <a href="GPSDriver_8h_source.html#l00048">GPSDriver.h:48</a></div></div>
@@ -220,7 +222,7 @@ $(document).ready(function(){initNavTree('GPSProvider_8cc_source.html',''); init
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="GPSProvider_8cc.html">GPSProvider.cc</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_8d4866ff461f1167fcadfb72cfc44f43.html">RTK</a></li><li class="navelem"><a class="el" href="GPSProvider_8cc.html">GPSProvider.cc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

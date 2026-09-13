@@ -6,7 +6,7 @@ var classLogManager =
     [ "captureIfEnabled", "classLogManager.html#ad4b6a242991b36bd843598859cfaa9b6", null ],
     [ "clearCapturedMessages", "classLogManager.html#a62dc9f95bab712b3e2c9a399952aaedf", null ],
     [ "clearError", "classLogManager.html#a5dcfec3103247fcef4fd3cb628b1afb4", null ],
-    [ "create", "classLogManager.html#a8bd74186e349b6408f7f91e8156fd5c1", null ],
+    [ "create", "classLogManager.html#ac4108d0979b32228d2227a9b71fa433a", null ],
     [ "flush", "classLogManager.html#a7cbeb6988ba84f336b39b237e5ecad95", null ],
     [ "hasCapturedCritical", "classLogManager.html#a7479abbb244242e0c44580457e7d757b", null ],
     [ "hasCapturedMessage", "classLogManager.html#a5dd899a3a64b3fcecc4d1caf645acf52", null ],

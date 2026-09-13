@@ -43,6 +43,7 @@ var classQGroundControlQmlGlobal =
     [ "qgcVersion", "classQGroundControlQmlGlobal.html#aae503ae9341c422e17462dbcd40a5f9f", null ],
     [ "saveBoolGlobalSetting", "classQGroundControlQmlGlobal.html#ac212220a715df3478ab14f9867408817", null ],
     [ "saveGlobalSetting", "classQGroundControlQmlGlobal.html#aec92e3da0b498637d409f1924aea27f4", null ],
+    [ "serialPortManager", "classQGroundControlQmlGlobal.html#a48bebda513e948a617906c19b77beeba", null ],
     [ "setFlightMapPosition", "classQGroundControlQmlGlobal.html#a041f5fda49f647eb589a3e6bfd117cfb", null ],
     [ "setFlightMapZoom", "classQGroundControlQmlGlobal.html#a179065cd76f89f3a24febab80cdf36e2", null ],
     [ "settingsManager", "classQGroundControlQmlGlobal.html#a42a6f5023842e0692fe4cc149009ce54", null ],

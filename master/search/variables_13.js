@@ -62,7 +62,7 @@ var searchData=
   ['skippedtriggers_59',['skippedTriggers',['../structCalibrationResult.html#abfc10931fe89b8bffaf789ac974c3ab2',1,'CalibrationResult']]],
   ['snr_60',['snr',['../structsatellite__info__s.html#a60ebea6871057bccb96ea3d985972fb2',1,'satellite_info_s']]],
   ['solution_61',['solution',['../structNTRIPMountpoint.html#a701a545851b907f49c69d927ae65a5d0',1,'NTRIPMountpoint']]],
-  ['source_62',['source',['../structPositionResult.html#adb4a666ef151f4c1b5474708259060e6',1,'PositionResult::source'],['../structMappedFrame.html#a9d89a3d02e32f371ca74fb577cec2c5e',1,'MappedFrame::source']]],
+  ['source_62',['source',['../structMappedFrame.html#a9d89a3d02e32f371ca74fb577cec2c5e',1,'MappedFrame::source'],['../structPositionResult.html#adb4a666ef151f4c1b5474708259060e6',1,'PositionResult::source']]],
   ['sourcetype_63',['sourceType',['../structLogParseResult.html#a7d424b059fcb1b2642921d1643eb1bea',1,'LogParseResult']]],
   ['spindirection_64',['spinDirection',['../structActuatorGeometry.html#a72754989f11161a94101ba6a123a24ae',1,'ActuatorGeometry']]],
   ['splitconcavepolygonsname_65',['splitConcavePolygonsName',['../classSurveyComplexItem.html#a8732831ca996a374de7c1b3b0965c8a5',1,'SurveyComplexItem']]],
@@ -107,5 +107,5 @@ var searchData=
   ['synccpuwaits_104',['syncCpuWaits',['../GstHwPathTelemetry_8cc.html#ada239b06c4c941c1b478adaf893827c6',1,'GstHwPathTelemetry.cc']]],
   ['syncgpuwaits_105',['syncGpuWaits',['../GstHwPathTelemetry_8cc.html#ab2e8e39b6f219a78c623afed9d29c06b',1,'GstHwPathTelemetry.cc']]],
   ['systemid_106',['systemId',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#aa7bf42a5401b5c4552db2b7e27178992',1,'QGCCommandLineParser::CommandLineParseResult']]],
-  ['systemlocation_107',['systemLocation',['../classQSerialPortPrivate.html#ae428bc4a4dc7680de709591ccfc0fcea',1,'QSerialPortPrivate']]]
+  ['systemlocation_107',['systemlocation',['../structSerialPortManager_1_1Reservation.html#a8a2e9096a716415dec22dff3645513f1',1,'SerialPortManager::Reservation::systemLocation'],['../structSerialPortManager_1_1Port.html#aa5fb71b952c96e92e1a8e4e26612984b',1,'SerialPortManager::Port::systemLocation'],['../classQSerialPortPrivate.html#ae428bc4a4dc7680de709591ccfc0fcea',1,'QSerialPortPrivate::systemLocation']]]
 ];

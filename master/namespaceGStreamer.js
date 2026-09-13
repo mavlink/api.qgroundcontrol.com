@@ -49,5 +49,6 @@ var namespaceGStreamer =
     [ "setDebugLevel", "namespaceGStreamer.html#a427dbea4be97a87f50ad05516aaf1b78", null ],
     [ "setupQVideoSinkElement", "namespaceGStreamer.html#ab4fc49b55a2f66362d91bdcacfd52aae", null ],
     [ "writePipelineDot", "namespaceGStreamer.html#aa35dd4bba8eaddc453df47bb56c2917f", null ],
-    [ "zeroCopyFamilyForApi", "namespaceGStreamer.html#a8ff71222613232f45e4df5dfca338687", null ]
+    [ "zeroCopyFamilyForApi", "namespaceGStreamer.html#a8ff71222613232f45e4df5dfca338687", null ],
+    [ "kDiagnosticDotGraphDetails", "namespaceGStreamer.html#aa99850ebf293420bf1609fc0844e9e35", null ]
 ];

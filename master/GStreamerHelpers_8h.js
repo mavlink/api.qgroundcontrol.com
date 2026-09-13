@@ -6,5 +6,6 @@ var GStreamerHelpers_8h =
     [ "isValidRtspUri", "GStreamerHelpers_8h.html#ad515edbe277ccb5d353862caa230ab46", null ],
     [ "setCodecPriorities", "GStreamerHelpers_8h.html#a460ec1598a3ff1da45620d4e291d241c", null ],
     [ "setCodecPriorities", "GStreamerHelpers_8h.html#a8fa5efb3bb1e31531b89b895c5970071", null ],
-    [ "writePipelineDot", "GStreamerHelpers_8h.html#aa35dd4bba8eaddc453df47bb56c2917f", null ]
+    [ "writePipelineDot", "GStreamerHelpers_8h.html#aa35dd4bba8eaddc453df47bb56c2917f", null ],
+    [ "kDiagnosticDotGraphDetails", "GStreamerHelpers_8h.html#aa99850ebf293420bf1609fc0844e9e35", null ]
 ];

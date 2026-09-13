@@ -202,6 +202,7 @@ Pipeline graph dumps (&lt;tt&gt;.dot&lt;/tt&gt; files)</h2>
 <div class="line">./QGroundControl</div>
 <div class="line">dot -Tpng /tmp/qgc-pipeline-dots/0.00.00.*-pipeline-started.dot -o pipeline.png</div>
 </div><!-- fragment --><p>When the env var is <b>unset</b>, <a class="el" href="namespaceQGC.html">QGC</a> still writes a rotating snapshot (≤10 files) to <code>&lt;CacheLocation&gt;/qgc-pipeline-dot/&lt;tag&gt;-&lt;ts&gt;.dot</code> on <code>ERROR</code> and on watchdog timeout, so field-bug-report bundles include the topology automatically. The <code>GstVideoReceiver::dumpPipelineGraph(tag)</code> slot (callable from QML) writes a snapshot on demand for use from a debug menu.</p>
+<p>Automatic CacheLocation snapshots include topology, caps, media types, and states while omitting element properties that can contain stream credentials. Native dumps explicitly enabled with <code>GST_DEBUG_DUMP_DOT_DIR</code> retain <a class="el" href="namespaceGStreamer.html">GStreamer</a>'s full <code>SHOW_ALL</code> detail for local debugging and can include credential-bearing source properties; handle those files as sensitive data.</p>
 <h2><a class="anchor" id="autotoc_md30"></a>
 Latency tracer</h2>
 <p>Per-element latency from source to sink:</p>

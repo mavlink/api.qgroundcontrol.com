@@ -18,10 +18,10 @@ var dir_2728a19ac4d342276b17ec9828d0d8ad =
     [ "QGCSerialPortInfo.h", "QGCSerialPortInfo_8h.html", "QGCSerialPortInfo_8h" ],
     [ "SerialLink.cc", "SerialLink_8cc.html", null ],
     [ "SerialLink.h", "SerialLink_8h.html", "SerialLink_8h" ],
+    [ "SerialPortManager.cc", "SerialPortManager_8cc.html", null ],
+    [ "SerialPortManager.h", "SerialPortManager_8h.html", "SerialPortManager_8h" ],
     [ "TCPLink.cc", "TCPLink_8cc.html", null ],
     [ "TCPLink.h", "TCPLink_8h.html", "TCPLink_8h" ],
-    [ "UdpIODevice.cc", "UdpIODevice_8cc.html", null ],
-    [ "UdpIODevice.h", "UdpIODevice_8h.html", "UdpIODevice_8h" ],
     [ "UDPLink.cc", "UDPLink_8cc.html", null ],
     [ "UDPLink.h", "UDPLink_8h.html", "UDPLink_8h" ]
 ];

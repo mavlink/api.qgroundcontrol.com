@@ -13,7 +13,7 @@ var classLoggingCategoryTreeModel =
     [ "forEachItem", "classLoggingCategoryTreeModel.html#a7d8a95d8a198e1634a29653ff462445d", null ],
     [ "hasChildren", "classLoggingCategoryTreeModel.html#a470b437b494ae178bc67f1b8970ed0a8", null ],
     [ "index", "classLoggingCategoryTreeModel.html#ad4672844a47ca5c5b4c0c3a5da1179a0", null ],
-    [ "insertCategory", "classLoggingCategoryTreeModel.html#ab7618cc3ebcb78d7a86982fe32643996", null ],
+    [ "insertCategory", "classLoggingCategoryTreeModel.html#aa8e70df11895fc4ee6ecebf87c9d3b69", null ],
     [ "parent", "classLoggingCategoryTreeModel.html#a503299eb9e561af5fd75a19f93080f15", null ],
     [ "roleNames", "classLoggingCategoryTreeModel.html#aad599784c7e7167289635e90049ba69c", null ],
     [ "rowCount", "classLoggingCategoryTreeModel.html#ae6e36c23ae52fb4e3652389cca5c811f", null ],

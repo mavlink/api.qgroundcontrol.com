@@ -379,7 +379,6 @@ var classVehicle =
     [ "_localPositionSetpointFactGroup", "classVehicle.html#a352d30ce6dd1f2e9d8e366a3280efad0", null ],
     [ "_localPositionSetpointFactGroupName", "classVehicle.html#acf19cc72de63b4f6d6d9314254bcc603", null ],
     [ "_lowestBatteryChargeStateAnnouncedMap", "classVehicle.html#aaa3f1ef7022a740165b18e7998c381ca", null ],
-    [ "_mavCommandMaxRetryCount", "classVehicle.html#ad6c4150f19d66278ab0612e7fc6c9219", null ],
     [ "_missionManager", "classVehicle.html#a34b58fef58c280336c661601ff609f30", null ],
     [ "_multirotor_speed_limits_available", "classVehicle.html#a0faa95d0b9b443db295cdd11fcf90f31", null ],
     [ "_radioStatusFactGroup", "classVehicle.html#ae204e2f9497b02b859969f019400af6d", null ],
@@ -406,8 +405,6 @@ var classVehicle =
     [ "_windFactGroup", "classVehicle.html#a7bb3e322274afe48da8082d3469d63b1", null ],
     [ "_windFactGroupName", "classVehicle.html#ae76c30a2a3b7b17012570d38e6be285c", null ],
     [ "kAuxRcOverrideChannelCount", "classVehicle.html#a9e4bd5ff3c70e2c9f4a824249604135a", null ],
-    [ "kTestMavCommandAckTimeoutMs", "classVehicle.html#aa2a56456276a9aef71cb78bb06afd0c9", null ],
-    [ "kTestMavCommandMaxWaitMs", "classVehicle.html#a8317bc998d107592b6002cfc0a5687b5", null ],
     [ "MAV_AUTOPILOT_TRACK", "classVehicle.html#a7f32634c218987a71ff6553d9879460f", null ],
     [ "MAV_TYPE_TRACK", "classVehicle.html#a84edce4883f6430e4f50a225db64f379", null ]
 ];

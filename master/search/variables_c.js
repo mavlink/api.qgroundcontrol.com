@@ -16,7 +16,7 @@ var searchData=
   ['lasthomepositiontime_13',['lastHomePositionTime',['../classAPMFirmwarePluginInstanceData.html#a428b00262bcf37ce1000e57c1e31e02b',1,'APMFirmwarePluginInstanceData']]],
   ['lat_5fint_14',['lat_int',['../structFollowMe_1_1GCSMotionReport.html#a0bc4c73a06b3ee19ae10924b63f77086',1,'FollowMe::GCSMotionReport']]],
   ['latencyms_15',['latencyms',['../GstSourceFactory_8cc.html#abf047988be20cdd77ef0b0f5e760eab3',1,'latencyMs:&#160;GstSourceFactory.cc'],['../structGStreamer_1_1SourceFactory_1_1Config.html#a6fae8808b67213d6fe242903147fc03d',1,'GStreamer::SourceFactory::Config::latencyMs']]],
-  ['latitude_16',['latitude',['../structNTRIPMountpoint.html#a2b58988fc5a7ddff95d9492bdba4e23b',1,'NTRIPMountpoint::latitude'],['../structGPSSurveyInStatus.html#a2f4f36919b79b2e0bb45f2db663bd359',1,'GPSSurveyInStatus::latitude']]],
+  ['latitude_16',['latitude',['../structGPSSurveyInStatus.html#a2f4f36919b79b2e0bb45f2db663bd359',1,'GPSSurveyInStatus::latitude'],['../structNTRIPMountpoint.html#a2b58988fc5a7ddff95d9492bdba4e23b',1,'NTRIPMountpoint::latitude']]],
   ['latitude_5fdeg_17',['latitude_deg',['../structsensor__gps__s.html#a1ed1be2f9b6f1efeef322408d22d43e3',1,'sensor_gps_s']]],
   ['layersname_18',['layersName',['../classStructureScanComplexItem.html#a711c313af2456da10df5d724ae0cf64b',1,'StructureScanComplexItem']]],
   ['length_19',['length',['../structAPMDataFlashUtility_1_1MessageFormat.html#a9aa3a9f622f65643de732597d79924fc',1,'APMDataFlashUtility::MessageFormat']]],
@@ -39,6 +39,6 @@ var searchData=
   ['loiterclockwisename_36',['loiterClockwiseName',['../classLandingComplexItem.html#ae45670e9cd7f2d0ac05249b1513c71a6',1,'LandingComplexItem']]],
   ['loiterradiusname_37',['loiterRadiusName',['../classLandingComplexItem.html#aaf8f7891419a23828e190c8bec636466',1,'LandingComplexItem']]],
   ['lon_5fint_38',['lon_int',['../structFollowMe_1_1GCSMotionReport.html#a5023d7b8a9191ef5189ae626588b5987',1,'FollowMe::GCSMotionReport']]],
-  ['longitude_39',['longitude',['../structGPSSurveyInStatus.html#a53f7d60fbf785d135591637be1400c31',1,'GPSSurveyInStatus::longitude'],['../structNTRIPMountpoint.html#a489422869d4e31c7b1ccb25a0b0abd13',1,'NTRIPMountpoint::longitude']]],
+  ['longitude_39',['longitude',['../structNTRIPMountpoint.html#a489422869d4e31c7b1ccb25a0b0abd13',1,'NTRIPMountpoint::longitude'],['../structGPSSurveyInStatus.html#a53f7d60fbf785d135591637be1400c31',1,'GPSSurveyInStatus::longitude']]],
   ['longitude_5fdeg_40',['longitude_deg',['../structsensor__gps__s.html#a4e84890f8c7af90a128466ec06ff0691',1,'sensor_gps_s']]]
 ];

@@ -163,77 +163,78 @@ $(document).ready(function(){initNavTree('SimpleItemMapVisual_8qml_source.html',
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        id: indicatorComponent</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        MissionItemIndicator {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            coordinate:     _missionItem.coordinate</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            visible:        _missionItem.specifiesCoordinate</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            z:              QGroundControl.zOrderMapItems</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            missionItem:    _missionItem</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            sequenceNumber: _missionItem.sequenceNumber</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            onClicked:      if(_root.interactive)  _root.clicked(_missionItem.sequenceNumber)</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            opacity:        _root.opacity</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    Component  {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        id: loiterComponent</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        MapQuickItem {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            id:                               loiterMapQuickItem</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            coordinate:                       _root._missionItem.coordinate</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            visible:                          _root.interactive &amp;&amp; _missionItem.isSimpleItem &amp;&amp; _missionItem.showLoiterRadius</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            property alias blockSignals:      loiterMapCircleVisuals.blockSignals</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            property alias radius:            _mapCircle.radius</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            property alias clockwiseRotation: _mapCircle.clockwiseRotation</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            function handleLoiterRadiusChange() {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                blockSignals = true</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                clockwiseRotation = _missionItem.loiterRadius&gt;= 0</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                blockSignals = false</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                radius.rawValue = Math.abs(_missionItem.loiterRadius)</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            }</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            function handleCoordinateChange() {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                coordinate = _missionItem.coordinate</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            onCoordinateChanged:              _mapCircle.center = coordinate</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            sourceItem: QGCMapCircleVisuals {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                id:                      loiterMapCircleVisuals</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                mapControl:              _root.map</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                mapCircle:               _mapCircle</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                centerDragHandleVisible: false</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                borderColor:             _missionItem.terrainCollision ? &quot;red&quot; : QGroundControl.globalPalette.mapMissionTrajectory</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                property bool blockSignals: false</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                function updateMissionItem() {</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                    _missionItem.loiterRadius = _mapCircle.clockwiseRotation ? _mapCircle.radius.rawValue : -_mapCircle.radius.rawValue</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                QGCMapCircle {</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                    id:                         _mapCircle</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                    center:                     loiterMapQuickItem.coordinate</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                    interactive:                _root.interactive &amp;&amp; _missionItem.isCurrentItem &amp;&amp; map.planView</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                    showRotation:               true</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                    onClockwiseRotationChanged: if(!blockSignals) loiterMapCircleVisuals.updateMissionItem()</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                }</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                Connections {</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                    target:            _mapCircle.radius</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                    function onRawValueChanged() {</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                        if(!blockSignals) loiterMapCircleVisuals.updateMissionItem()</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                    }</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                }</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            }</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            Component.onCompleted: {</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                handleLoiterRadiusChange()</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                handleCoordinateChange()</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>            }</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        }</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            coordinate:       _missionItem.coordinate</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            indicatorGroup:   _root.indicatorGroup</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            indicatorVisible: _missionItem.specifiesCoordinate</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            interactive:      _root.interactive</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            missionItem:      _missionItem</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            sequenceNumber:   _missionItem.sequenceNumber</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            onClicked:        _root.clicked(_missionItem.sequenceNumber)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            opacity:          _root.opacity</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    Component  {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        id: loiterComponent</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        MapQuickItem {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            id:                               loiterMapQuickItem</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            coordinate:                       _root._missionItem.coordinate</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            visible:                          _root.interactive &amp;&amp; _missionItem.isSimpleItem &amp;&amp; _missionItem.showLoiterRadius</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            property alias blockSignals:      loiterMapCircleVisuals.blockSignals</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            property alias radius:            _mapCircle.radius</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            property alias clockwiseRotation: _mapCircle.clockwiseRotation</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            function handleLoiterRadiusChange() {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                blockSignals = true</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                clockwiseRotation = _missionItem.loiterRadius&gt;= 0</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                blockSignals = false</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                radius.rawValue = Math.abs(_missionItem.loiterRadius)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            function handleCoordinateChange() {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                coordinate = _missionItem.coordinate</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            onCoordinateChanged:              _mapCircle.center = coordinate</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            sourceItem: QGCMapCircleVisuals {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                id:                      loiterMapCircleVisuals</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                mapControl:              _root.map</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                mapCircle:               _mapCircle</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                centerDragHandleVisible: false</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                borderColor:             _missionItem.terrainCollision ? &quot;red&quot; : QGroundControl.globalPalette.mapMissionTrajectory</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                property bool blockSignals: false</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                function updateMissionItem() {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                    _missionItem.loiterRadius = _mapCircle.clockwiseRotation ? _mapCircle.radius.rawValue : -_mapCircle.radius.rawValue</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                QGCMapCircle {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                    id:                         _mapCircle</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                    center:                     loiterMapQuickItem.coordinate</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                    interactive:                _root.interactive &amp;&amp; _missionItem.isCurrentItem &amp;&amp; map.planView</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                    showRotation:               true</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                    onClockwiseRotationChanged: if(!blockSignals) loiterMapCircleVisuals.updateMissionItem()</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                Connections {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                    target:            _mapCircle.radius</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>                    function onRawValueChanged() {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                        if(!blockSignals) loiterMapCircleVisuals.updateMissionItem()</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                    }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            Component.onCompleted: {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                handleLoiterRadiusChange()</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                handleCoordinateChange()</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

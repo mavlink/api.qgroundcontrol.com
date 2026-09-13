@@ -5,6 +5,7 @@ var structNTRIPTransportConfig =
     [ "isValid", "structNTRIPTransportConfig.html#aac04ef7cd8612e6f355c679b02ad73b9", null ],
     [ "operator==", "structNTRIPTransportConfig.html#af71b309c4495f646abf0aea73a97251b", null ],
     [ "parseWhitelist", "structNTRIPTransportConfig.html#afd2eab6ee13ec73988e94cd24f42ccfc", null ],
+    [ "streamValidationError", "structNTRIPTransportConfig.html#a20982c2be8a10d4ea25a48dfcbb053a6", null ],
     [ "transportDiffers", "structNTRIPTransportConfig.html#a928b11a39e9359887309fbc9826a8e09", null ],
     [ "udpForwardDiffers", "structNTRIPTransportConfig.html#ab4304389bb89db3562aa96f0d2008c9d", null ],
     [ "validationError", "structNTRIPTransportConfig.html#ad3bf717e66c2c1f021c80e05b4ea7698", null ],

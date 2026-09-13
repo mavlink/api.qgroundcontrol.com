@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/GPS/GPSProvider.h File Reference</title>
+<title>QGroundControl: src/GPS/RTK/GPSProvider.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,15 +96,17 @@ $(document).ready(function(){initNavTree('GPSProvider_8h.html',''); initResizabl
   <div class="headertitle"><div class="title">GPSProvider.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GPSType_8h_source.html">GPSType.h</a>&quot;</code><br />
-<code>#include &lt;QtCore/QByteArray&gt;</code><br />
+<div class="textblock"><code>#include &lt;QtCore/QByteArray&gt;</code><br />
 <code>#include &lt;QtCore/QMetaType&gt;</code><br />
 <code>#include &lt;QtCore/QObject&gt;</code><br />
 <code>#include &lt;QtCore/QString&gt;</code><br />
 <code>#include &lt;QtCore/QThread&gt;</code><br />
 <code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &quot;<a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSType_8h_source.html">GPSType.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for GPSProvider.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -158,15 +160,15 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1de10e4c2de4b8298b63910bb31fdb64a6adf97f83acf6453d4a6a4b1070f3754" name="a1de10e4c2de4b8298b63910bb31fdb64a6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac" name="a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac"></a>OpenFailed&#160;</td><td class="fielddoc"><p>serial device could not be opened </p>
+<tr><td class="fieldname"><a id="a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac" name="a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac"></a>OpenFailed&#160;</td><td class="fielddoc"><p>receiver transport could not be opened </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a1de10e4c2de4b8298b63910bb31fdb64a5d9194716b6a125a6d16691e84afcdf2" name="a1de10e4c2de4b8298b63910bb31fdb64a5d9194716b6a125a6d16691e84afcdf2"></a>ConfigFailed&#160;</td><td class="fielddoc"><p>receiver did not accept configuration </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a" name="a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a"></a>DeviceError&#160;</td><td class="fielddoc"><p>fatal serial error after a working connection </p>
+<tr><td class="fieldname"><a id="a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a" name="a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a"></a>DeviceError&#160;</td><td class="fielddoc"><p>fatal transport error after a working connection </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="GPSProvider_8h_source.html#l00015">15</a> of file <a class="el" href="GPSProvider_8h_source.html">GPSProvider.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSProvider_8h_source.html#l00019">19</a> of file <a class="el" href="GPSProvider_8h_source.html">GPSProvider.h</a>.</p>
 
 </div>
 </div>
@@ -175,7 +177,7 @@ Enumerations</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="GPSProvider_8h.html">GPSProvider.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_8d4866ff461f1167fcadfb72cfc44f43.html">RTK</a></li><li class="navelem"><a class="el" href="GPSProvider_8h.html">GPSProvider.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

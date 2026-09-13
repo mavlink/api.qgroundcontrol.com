@@ -21,7 +21,7 @@ var searchData=
   ['rctoparamdialog_2eqml_18',['RCToParamDialog.qml',['../RCToParamDialog_8qml.html',1,'']]],
   ['rctoparamdialogcontroller_2ecc_19',['RCToParamDialogController.cc',['../RCToParamDialogController_8cc.html',1,'']]],
   ['rctoparamdialogcontroller_2eh_20',['RCToParamDialogController.h',['../RCToParamDialogController_8h.html',1,'']]],
-  ['readme_2emd_21',['readme.md',['../VideoManager_2VideoReceiver_2GStreamer_2README_8md.html',1,'(Global Namespace)'],['../GeoMap_2README_8md.html',1,'(Global Namespace)']]],
+  ['readme_2emd_21',['readme.md',['../GeoMap_2README_8md.html',1,'(Global Namespace)'],['../VideoManager_2VideoReceiver_2GStreamer_2README_8md.html',1,'(Global Namespace)']]],
   ['remotecontrolcalibration_2eqml_22',['RemoteControlCalibration.qml',['../RemoteControlCalibration_8qml.html',1,'']]],
   ['remotecontrolcalibrationcontroller_2ecc_23',['RemoteControlCalibrationController.cc',['../RemoteControlCalibrationController_8cc.html',1,'']]],
   ['remotecontrolcalibrationcontroller_2eh_24',['RemoteControlCalibrationController.h',['../RemoteControlCalibrationController_8h.html',1,'']]],
@@ -55,9 +55,11 @@ var searchData=
   ['rtcmparser_2eh_52',['RTCMParser.h',['../RTCMParser_8h.html',1,'']]],
   ['rtcmudpinput_2ecc_53',['RTCMUdpInput.cc',['../RTCMUdpInput_8cc.html',1,'']]],
   ['rtcmudpinput_2eh_54',['RTCMUdpInput.h',['../RTCMUdpInput_8h.html',1,'']]],
-  ['rtkgpsindicator_2eqml_55',['RTKGPSIndicator.qml',['../RTKGPSIndicator_8qml.html',1,'']]],
-  ['rtksettings_2ecc_56',['RTKSettings.cc',['../RTKSettings_8cc.html',1,'']]],
-  ['rtksettings_2eh_57',['RTKSettings.h',['../RTKSettings_8h.html',1,'']]],
-  ['runguard_2ecc_58',['RunGuard.cc',['../RunGuard_8cc.html',1,'']]],
-  ['runguard_2eh_59',['RunGuard.h',['../RunGuard_8h.html',1,'']]]
+  ['rtkautoconnect_2ecc_55',['RTKAutoConnect.cc',['../RTKAutoConnect_8cc.html',1,'']]],
+  ['rtkautoconnect_2eh_56',['RTKAutoConnect.h',['../RTKAutoConnect_8h.html',1,'']]],
+  ['rtkgpsindicator_2eqml_57',['RTKGPSIndicator.qml',['../RTKGPSIndicator_8qml.html',1,'']]],
+  ['rtksettings_2ecc_58',['RTKSettings.cc',['../RTKSettings_8cc.html',1,'']]],
+  ['rtksettings_2eh_59',['RTKSettings.h',['../RTKSettings_8h.html',1,'']]],
+  ['runguard_2ecc_60',['RunGuard.cc',['../RunGuard_8cc.html',1,'']]],
+  ['runguard_2eh_61',['RunGuard.h',['../RunGuard_8h.html',1,'']]]
 ];

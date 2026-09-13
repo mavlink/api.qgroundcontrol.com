@@ -7,5 +7,7 @@ var dir_e8a21f717d86498f97452a78d688a292 =
     [ "QGCNetworkHelper.cc", "QGCNetworkHelper_8cc.html", "QGCNetworkHelper_8cc" ],
     [ "QGCNetworkHelper.h", "QGCNetworkHelper_8h.html", "QGCNetworkHelper_8h" ],
     [ "UdpForwarder.cc", "UdpForwarder_8cc.html", null ],
-    [ "UdpForwarder.h", "UdpForwarder_8h.html", "UdpForwarder_8h" ]
+    [ "UdpForwarder.h", "UdpForwarder_8h.html", "UdpForwarder_8h" ],
+    [ "UdpIODevice.cc", "UdpIODevice_8cc.html", null ],
+    [ "UdpIODevice.h", "UdpIODevice_8h.html", "UdpIODevice_8h" ]
 ];

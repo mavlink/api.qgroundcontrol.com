@@ -36,7 +36,6 @@ var dir_7de38425b809b3a4df656e2c956dc465 =
     [ "GeoMapSegmentArrow.qml", "GeoMapSegmentArrow_8qml.html", null ],
     [ "GeoMapSpriteLayer.cc", "GeoMapSpriteLayer_8cc.html", null ],
     [ "GeoMapSpriteLayer.h", "GeoMapSpriteLayer_8h.html", "GeoMapSpriteLayer_8h" ],
-    [ "GeoMapTestView.qml", "GeoMapTestView_8qml.html", null ],
     [ "GeoMapVehicleItem.qml", "GeoMapVehicleItem_8qml.html", null ],
     [ "GeoMapVTOLLandingPatternVisual.qml", "GeoMapVTOLLandingPatternVisual_8qml.html", null ],
     [ "GeoMapWaypointItem.qml", "GeoMapWaypointItem_8qml.html", null ],

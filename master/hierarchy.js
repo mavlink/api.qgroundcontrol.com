@@ -186,7 +186,9 @@ var hierarchy =
     [ "HwBuffers::PathStats", "structHwBuffers_1_1PathStats.html", null ],
     [ "PauseVehicleThenChangeAltData_t", "structPauseVehicleThenChangeAltData__t.html", null ],
     [ "GeoMapCamera::PickRay", "structGeoMapCamera_1_1PickRay.html", null ],
+    [ "MockLinkGimbal::PitchYawCommand", "structMockLinkGimbal_1_1PitchYawCommand.html", null ],
     [ "CpuVideoFramePool::PlaneLayout", "structCpuVideoFramePool_1_1PlaneLayout.html", null ],
+    [ "SerialPortManager::Port", "structSerialPortManager_1_1Port.html", null ],
     [ "PositionResult", "structPositionResult.html", null ],
     [ "px4_custom_mode", "unionpx4__custom__mode.html", null ],
     [ "PX4CustomMode", "structPX4CustomMode.html", null ],
@@ -508,6 +510,7 @@ var hierarchy =
       [ "NTRIPTransport", "classNTRIPTransport.html", [
         [ "NTRIPHttpTransport", "classNTRIPHttpTransport.html", null ]
       ] ],
+      [ "NmeaSourceManager", "classNmeaSourceManager.html", null ],
       [ "OnboardLogController", "classOnboardLogController.html", null ],
       [ "OsmParserThread", "classOsmParserThread.html", null ],
       [ "PX4AirframeLoader", "classPX4AirframeLoader.html", null ],
@@ -600,6 +603,7 @@ var hierarchy =
       [ "RCToParamDialogController", "classRCToParamDialogController.html", null ],
       [ "RTCMMavlink", "classRTCMMavlink.html", null ],
       [ "RTCMUdpInput", "classRTCMUdpInput.html", null ],
+      [ "RTKAutoConnect", "classRTKAutoConnect.html", null ],
       [ "RallyPoint", "classRallyPoint.html", null ],
       [ "RemoteIDManager", "classRemoteIDManager.html", null ],
       [ "RequestMessageCoordinator", "classRequestMessageCoordinator.html", null ],
@@ -608,6 +612,7 @@ var hierarchy =
         [ "CameraSection", "classCameraSection.html", null ],
         [ "SpeedSection", "classSpeedSection.html", null ]
       ] ],
+      [ "SerialPortManager", "classSerialPortManager.html", null ],
       [ "SerialWorker", "classSerialWorker.html", null ],
       [ "SettingsGroup", "classSettingsGroup.html", [
         [ "ADSBVehicleManagerSettings", "classADSBVehicleManagerSettings.html", null ],
@@ -854,6 +859,7 @@ var hierarchy =
     [ "ActuatorGeometry::RenderOptions", "structActuatorGeometry_1_1RenderOptions.html", null ],
     [ "SurfaceAnalysis::Report", "structSurfaceAnalysis_1_1Report.html", null ],
     [ "QGCNetworkHelper::RequestConfig", "structQGCNetworkHelper_1_1RequestConfig.html", null ],
+    [ "SerialPortManager::Reservation", "structSerialPortManager_1_1Reservation.html", null ],
     [ "QtAndroidPrivate::ResumePauseListener", null, [
       [ "AndroidEvents", "classAndroidEvents.html", null ]
     ] ],
@@ -868,6 +874,7 @@ var hierarchy =
     [ "SurfaceAnalysis::Seam", "structSurfaceAnalysis_1_1Seam.html", null ],
     [ "sensor_gnss_relative_s", "structsensor__gnss__relative__s.html", null ],
     [ "sensor_gps_s", "structsensor__gps__s.html", null ],
+    [ "MockLinkGimbal::SetAttitudeCommand", "structMockLinkGimbal_1_1SetAttitudeCommand.html", null ],
     [ "SetTotalsResult", "structSetTotalsResult.html", null ],
     [ "SigningChannel", "classSigningChannel.html", null ],
     [ "SigningFailure", "classSigningFailure.html", null ],

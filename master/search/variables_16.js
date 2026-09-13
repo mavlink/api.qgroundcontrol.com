@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['valid_0',['valid',['../structGPSSurveyInStatus.html#a5f2d114e7af8b51f28cd537b3e0150d3',1,'GPSSurveyInStatus::valid'],['../structAndroidSerial_1_1JniContext.html#a4c2851bd5c519654c751b5d757f24a33',1,'AndroidSerial::JniContext::valid'],['../structNTRIPHttpTransport_1_1HttpStatus.html#a5eaf68d2b646fb4a3addb0e78a6445a9',1,'NTRIPHttpTransport::HttpStatus::valid']]],
+  ['valid_0',['valid',['../structNTRIPHttpTransport_1_1HttpStatus.html#a5eaf68d2b646fb4a3addb0e78a6445a9',1,'NTRIPHttpTransport::HttpStatus::valid'],['../structAndroidSerial_1_1JniContext.html#a4c2851bd5c519654c751b5d757f24a33',1,'AndroidSerial::JniContext::valid'],['../structGPSSurveyInStatus.html#a5f2d114e7af8b51f28cd537b3e0150d3',1,'GPSSurveyInStatus::valid']]],
   ['validated_1',['validated',['../structHwResolvedPathCache.html#ad5cad1051e6f42e5067f5527b34b1ad0',1,'HwResolvedPathCache']]],
   ['value_2',['value',['../classQGCCameraOptionExclusion.html#a69f26d8f1e90117f92960a13809e6a64',1,'QGCCameraOptionExclusion::value'],['../classQGCCameraOptionRange.html#a5fb225a38c8c4af214ecedd06a44f5c9',1,'QGCCameraOptionRange::value'],['../structParameterMetaData_1_1ValueDescPair.html#a5ceac514e29b52d8c57cbd292b234015',1,'ParameterMetaData::ValueDescPair::value']]],
   ['values_3',['values',['../structMixer_1_1MixerParameter.html#a340b7f0ab82b08474b9f16160b04b6c4',1,'Mixer::MixerParameter::values'],['../structMixer_1_1ActuatorType.html#a260c1c20b573f80865f2de262715675a',1,'Mixer::ActuatorType::values']]],

@@ -7,6 +7,8 @@ var structMockLinkCamera_1_1CameraState =
     [ "image_interval", "structMockLinkCamera_1_1CameraState.html#a59e683a96956ca6d422fe9525157c962", null ],
     [ "image_status", "structMockLinkCamera_1_1CameraState.html#ae1b4bc7726e838419b1695724d505e46", null ],
     [ "imagesCaptured", "structMockLinkCamera_1_1CameraState.html#a93f671fba74617e9379d3e4b9695f1dd", null ],
+    [ "intervalLastCaptureMs", "structMockLinkCamera_1_1CameraState.html#a404a69548cdc878f92111f52ab6a184e", null ],
+    [ "intervalRemaining", "structMockLinkCamera_1_1CameraState.html#a19221715d39acccdff062be9038bef87", null ],
     [ "recording", "structMockLinkCamera_1_1CameraState.html#a535952af4e1d37ce2b0a51cb02d34309", null ],
     [ "singleShotStartMs", "structMockLinkCamera_1_1CameraState.html#a5b5c0352859dab2cd70a7373c539c06f", null ],
     [ "trackAnchorX", "structMockLinkCamera_1_1CameraState.html#a396382d60a0be3fb480837ebee9e2f49", null ],

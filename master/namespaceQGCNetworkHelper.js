@@ -69,6 +69,8 @@ var namespaceQGCNetworkHelper =
     [ "parseHttpMethod", "namespaceQGCNetworkHelper.html#a466b29cd828e60c4cd7bfa6641fc1697", null ],
     [ "parseJson", "namespaceQGCNetworkHelper.html#aa4f49676ef1ed4eef854ee503a3385f4", null ],
     [ "parseJsonReply", "namespaceQGCNetworkHelper.html#aac317692294c022dcba965f2987bf4ea", null ],
+    [ "redactedUrlForLogging", "namespaceQGCNetworkHelper.html#a9ca6df8b29a944437accb4bfee043f11", null ],
+    [ "redactedUrlForLogging", "namespaceQGCNetworkHelper.html#a77c9f71c4c29c985dc57ec5bb63ac70a", null ],
     [ "redirectUrl", "namespaceQGCNetworkHelper.html#a56042d1c16424f7780885a217963e49b", null ],
     [ "setBasicAuth", "namespaceQGCNetworkHelper.html#a87dfaebde8850d64fd299ea6c943acb8", null ],
     [ "setBasicAuth", "namespaceQGCNetworkHelper.html#a247e9fb3529bf8a9aca6b9121bad9d81", null ],

@@ -16,5 +16,6 @@ var classQGCPositionManager =
     [ "positionInfoUpdated", "classQGCPositionManager.html#ad93e8af46e8c3db85cb0cdbd2a089195", null ],
     [ "resetNmeaSourceDevice", "classQGCPositionManager.html#a254663d72bf73b46c432898d46d05746", null ],
     [ "setNmeaSourceDevice", "classQGCPositionManager.html#ab7dfa22ad24a9d79230b8e77d9179380", null ],
-    [ "updateInterval", "classQGCPositionManager.html#ae361c0c41a7b54188a7d178c8f8a5258", null ]
+    [ "updateInterval", "classQGCPositionManager.html#ae361c0c41a7b54188a7d178c8f8a5258", null ],
+    [ "PositionManagerTest", "classQGCPositionManager.html#ab45ac32aecac2bc376745278e825b153", null ]
 ];
