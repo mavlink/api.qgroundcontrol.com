@@ -24,5 +24,7 @@ var searchData=
   ['jsonparsing_2ecc_21',['JsonParsing.cc',['../JsonParsing_8cc.html',1,'']]],
   ['jsonparsing_2eh_22',['JsonParsing.h',['../JsonParsing_8h.html',1,'']]],
   ['jsonschemavalidator_2ecc_23',['JsonSchemaValidator.cc',['../JsonSchemaValidator_8cc.html',1,'']]],
-  ['jsonschemavalidator_2eh_24',['JsonSchemaValidator.h',['../JsonSchemaValidator_8h.html',1,'']]]
+  ['jsonschemavalidator_2eh_24',['JsonSchemaValidator.h',['../JsonSchemaValidator_8h.html',1,'']]],
+  ['jsonvalidation_2ecc_25',['JsonValidation.cc',['../JsonValidation_8cc.html',1,'']]],
+  ['jsonvalidation_2eh_26',['JsonValidation.h',['../JsonValidation_8h.html',1,'']]]
 ];

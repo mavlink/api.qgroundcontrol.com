@@ -12,9 +12,12 @@ var searchData=
   ['colorgroup_9',['ColorGroup',['../classQGCPalette.html#a4db59bf08b69b50a86d5aa3d2f7fab36',1,'QGCPalette']]],
   ['column_10',['Column',['../structLogEntry.html#aa9897dc0d2f69070e489858898264d5e',1,'LogEntry']]],
   ['commandsupportedresult_11',['CommandSupportedResult',['../classFirmwarePluginInstanceData.html#a1c6d665a4804c4eb92e66bc551581d08',1,'FirmwarePluginInstanceData']]],
-  ['compressionlevel_12',['CompressionLevel',['../namespaceQGCCompression.html#a5293269680acb2a4429884885795b1c3',1,'QGCCompression']]],
-  ['connectionstatus_13',['ConnectionStatus',['../classNTRIPManager.html#a40006373c9a6a14aaf93a09019e55061',1,'NTRIPManager']]],
-  ['connectiontype_14',['ConnectionType',['../namespaceQGCNetworkHelper.html#a3001d2002d17561f5767730045bdf9a3',1,'QGCNetworkHelper']]],
-  ['controlline_15',['ControlLine',['../namespaceAndroidSerial.html#aac2dd9b989ea453e709894cb17e95011',1,'AndroidSerial']]],
-  ['coordtype_16',['CoordType',['../classTransectStyleComplexItem.html#afcfa254bf8d7ddbdeadabd20ffe5d583',1,'TransectStyleComplexItem']]]
+  ['completion_12',['Completion',['../classGPSCorrectionRouter.html#ae7e914b4a3043ec1f86e20e9617cda8f',1,'GPSCorrectionRouter']]],
+  ['compressionlevel_13',['CompressionLevel',['../namespaceQGCCompression.html#a5293269680acb2a4429884885795b1c3',1,'QGCCompression']]],
+  ['connectionstatus_14',['ConnectionStatus',['../classNTRIPManager.html#a40006373c9a6a14aaf93a09019e55061',1,'NTRIPManager']]],
+  ['connectiontype_15',['ConnectionType',['../namespaceQGCNetworkHelper.html#a3001d2002d17561f5767730045bdf9a3',1,'QGCNetworkHelper']]],
+  ['controlline_16',['ControlLine',['../namespaceAndroidSerial.html#aac2dd9b989ea453e709894cb17e95011',1,'AndroidSerial']]],
+  ['coordtype_17',['CoordType',['../classTransectStyleComplexItem.html#afcfa254bf8d7ddbdeadabd20ffe5d583',1,'TransectStyleComplexItem']]],
+  ['correctionsource_18',['CorrectionSource',['../classGPSCorrectionSettings.html#a10df1de59a27306a927d50bfd58044c7',1,'GPSCorrectionSettings']]],
+  ['correctionuse_19',['CorrectionUse',['../structGPSIntegrityReport.html#adb1ce0121841bea8f74956280ad99d70',1,'GPSIntegrityReport']]]
 ];

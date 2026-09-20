@@ -8,6 +8,8 @@ var hierarchy =
     [ "ActuatorGeometry", "structActuatorGeometry.html", null ],
     [ "Mixer::MixerOption::ActuatorGroup", "structMixer_1_1MixerOption_1_1ActuatorGroup.html", null ],
     [ "Mixer::ActuatorType", "structMixer_1_1ActuatorType.html", null ],
+    [ "GPSCorrectionRouter::Admission", "structGPSCorrectionRouter_1_1Admission.html", null ],
+    [ "RTCMMavlink::Admission", "structRTCMMavlink_1_1Admission.html", null ],
     [ "AirframeComponentAirframes", "classAirframeComponentAirframes.html", null ],
     [ "AirframeComponentAirframes::AirframeInfo_t", "structAirframeComponentAirframes_1_1AirframeInfo__t.html", null ],
     [ "AirframeComponentAirframes::AirframeType_t", "structAirframeComponentAirframes_1_1AirframeType__t.html", null ],
@@ -29,12 +31,15 @@ var hierarchy =
     [ "CameraMetaData", "classCameraMetaData.html", null ],
     [ "MockLinkCamera::CameraState", "structMockLinkCamera_1_1CameraState.html", null ],
     [ "QGCCameraManager::CameraStruct", "structQGCCameraManager_1_1CameraStruct.html", null ],
+    [ "GPSPositionSourceSelector::Candidate", "structGPSPositionSourceSelector_1_1Candidate.html", null ],
     [ "TerrainAreaQuery::CarpetHeightInfo_t", "structTerrainAreaQuery_1_1CarpetHeightInfo__t.html", null ],
     [ "RemoteControlCalibrationController::ChannelInfo", "structRemoteControlCalibrationController_1_1ChannelInfo.html", null ],
     [ "QGCCommandLineParser::CommandLineParseResult", "structQGCCommandLineParser_1_1CommandLineParseResult.html", null ],
     [ "Condition", "classCondition.html", null ],
     [ "ActuatorActions::Config", "structActuatorActions_1_1Config.html", null ],
     [ "GStreamer::SourceFactory::Config", "structGStreamer_1_1SourceFactory_1_1Config.html", null ],
+    [ "GPSCorrectionSelector::Configuration", "structGPSCorrectionSelector_1_1Configuration.html", null ],
+    [ "NTRIPGgaProvider::Configuration", "structNTRIPGgaProvider_1_1Configuration.html", null ],
     [ "TransectStyleComplexItem::CoordInfo_t", "structTransectStyleComplexItem_1_1CoordInfo__t.html", null ],
     [ "CpuVideoFramePool", "classCpuVideoFramePool.html", null ],
     [ "DatabaseResult", "structDatabaseResult.html", null ],
@@ -43,6 +48,7 @@ var hierarchy =
       [ "ULogFullHandler", "classULogFullHandler.html", null ]
     ] ],
     [ "DataRateTracker", "classDataRateTracker.html", null ],
+    [ "GPSCorrectionLedger::Destination", "structGPSCorrectionLedger_1_1Destination.html", null ],
     [ "MAVLinkSigning::DetectSnapshot", "structMAVLinkSigning_1_1DetectSnapshot.html", null ],
     [ "QGCRhiCapture::DeviceSnapshot", "structQGCRhiCapture_1_1DeviceSnapshot.html", null ],
     [ "QGC::EdgeTriggeredCounter< CountT >", "classQGC_1_1EdgeTriggeredCounter.html", null ],
@@ -53,27 +59,59 @@ var hierarchy =
     [ "FirmwareFlightMode", "structFirmwareFlightMode.html", null ],
     [ "FirmwareUpgradeController::FirmwareIdentifier", "classFirmwareUpgradeController_1_1FirmwareIdentifier.html", null ],
     [ "FirmwareToUrlElement_t", "structFirmwareToUrlElement__t.html", null ],
+    [ "NMEA::Frame", "structNMEA_1_1Frame.html", null ],
     [ "FollowMe::GCSMotionReport", "structFollowMe_1_1GCSMotionReport.html", null ],
     [ "GeoTagData", "structGeoTagData.html", null ],
+    [ "NMEA::GGA", "structNMEA_1_1GGA.html", null ],
+    [ "GPSBaseStationConfig", "structGPSBaseStationConfig.html", null ],
+    [ "GPSCorrectionDelivery", "structGPSCorrectionDelivery.html", null ],
+    [ "GPSCorrectionEvent", "structGPSCorrectionEvent.html", null ],
+    [ "GPSCorrectionEventModelQml", "structGPSCorrectionEventModelQml.html", null ],
+    [ "GPSCorrectionFrame", "structGPSCorrectionFrame.html", null ],
+    [ "GPSCorrectionIngress", "classGPSCorrectionIngress.html", null ],
+    [ "GPSCorrectionLedger", "classGPSCorrectionLedger.html", null ],
+    [ "GPSCorrectionSelector", "classGPSCorrectionSelector.html", null ],
+    [ "GPSCorrectionSourceRegistration", "classGPSCorrectionSourceRegistration.html", null ],
+    [ "GPSCorrectionSourceToken", "classGPSCorrectionSourceToken.html", null ],
+    [ "GPSCorrectionSubmitResult", "structGPSCorrectionSubmitResult.html", null ],
     [ "GPSDriver", "classGPSDriver.html", null ],
     [ "GPSDriverSinks", "structGPSDriverSinks.html", null ],
+    [ "GPSIntegrityReport", "structGPSIntegrityReport.html", null ],
+    [ "GPSObservation", "structGPSObservation.html", null ],
+    [ "GPSOpenResult", "structGPSOpenResult.html", null ],
+    [ "GPSPositionReport", "structGPSPositionReport.html", null ],
+    [ "GPSPositionServiceQmlType", "structGPSPositionServiceQmlType.html", null ],
+    [ "GPSPositionSourceRegistration", "classGPSPositionSourceRegistration.html", null ],
+    [ "GPSPositionSourceSelector", "classGPSPositionSourceSelector.html", null ],
+    [ "GPSReadResult", "structGPSReadResult.html", null ],
+    [ "GPSReceiverCapabilities", "structGPSReceiverCapabilities.html", null ],
     [ "GPSReceiverConfig", "structGPSReceiverConfig.html", null ],
     [ "GpsRtcmPacket", "structGpsRtcmPacket.html", null ],
+    [ "GPSSatellite", "structGPSSatellite.html", null ],
+    [ "GPSSatelliteObservation", "structGPSSatelliteObservation.html", null ],
+    [ "GPSSatelliteProvenance", "structGPSSatelliteProvenance.html", null ],
+    [ "GPSSatelliteReport", "structGPSSatelliteReport.html", null ],
+    [ "GPSSourceHealthQmlType", "structGPSSourceHealthQmlType.html", null ],
     [ "GPSSurveyInStatus", "structGPSSurveyInStatus.html", null ],
+    [ "GPSSurveyReport", "structGPSSurveyReport.html", null ],
     [ "GPSTransport", "classGPSTransport.html", [
-      [ "SerialGPSTransport", "classSerialGPSTransport.html", null ]
+      [ "SerialGPSTransport", "classSerialGPSTransport.html", null ],
+      [ "TCPGPSTransport", "classTCPGPSTransport.html", null ],
+      [ "UDPGPSTransport", "classUDPGPSTransport.html", null ]
     ] ],
+    [ "GPSWriteResult", "structGPSWriteResult.html", null ],
     [ "ElevationTilePyramid::Grid", "structElevationTilePyramid_1_1Grid.html", null ],
+    [ "NMEA::GST", "structNMEA_1_1GST.html", null ],
     [ "GstHw::GstHwImportCache< Key, Resource, KeyHash >", "classGstHw_1_1GstHwImportCache.html", null ],
     [ "GStreamer::GstObjectDeleter", "structGStreamer_1_1GstObjectDeleter.html", null ],
     [ "GStreamer::GstQueryDeleter", "structGStreamer_1_1GstQueryDeleter.html", null ],
+    [ "NMEA::GSV", "structNMEA_1_1GSV.html", null ],
     [ "osmium::handler::Handler", null, [
       [ "OsmBuildingHandler", "classOsmBuildingHandler.html", null ]
     ] ],
     [ "StateHistoryRecorder::HistoryEntry", "structStateHistoryRecorder_1_1HistoryEntry.html", null ],
     [ "SurfaceAnalysis::Hole", "structSurfaceAnalysis_1_1Hole.html", null ],
     [ "NTRIPHttpTransport::HttpRequest", "structNTRIPHttpTransport_1_1HttpRequest.html", null ],
-    [ "NTRIPHttpTransport::HttpStatus", "structNTRIPHttpTransport_1_1HttpStatus.html", null ],
     [ "HwBuffers::HwBufferEnvConfig", "structHwBuffers_1_1HwBufferEnvConfig.html", null ],
     [ "HwResolvedPathCache", "structHwResolvedPathCache.html", null ],
     [ "HwVideoBufferContext", "structHwVideoBufferContext.html", null ],
@@ -175,11 +213,25 @@ var hierarchy =
     [ "QtAndroidPrivate::NewIntentListener", null, [
       [ "AndroidEvents", "classAndroidEvents.html", null ]
     ] ],
+    [ "NMEASentenceEnvelope", "classNMEASentenceEnvelope.html", null ],
+    [ "NMEASentenceProvider", "classNMEASentenceProvider.html", [
+      [ "NMEAStreamDevice", "classNMEAStreamDevice.html", null ]
+    ] ],
+    [ "NTRIPConfiguration", "structNTRIPConfiguration.html", null ],
+    [ "NTRIPConnectionConfig", "structNTRIPConnectionConfig.html", null ],
+    [ "NTRIPConnectionStatsQmlType", "structNTRIPConnectionStatsQmlType.html", null ],
+    [ "NTRIPFailure", "structNTRIPFailure.html", null ],
+    [ "NTRIPHttpDecoder", "classNTRIPHttpDecoder.html", null ],
     [ "NTRIPMountpoint", "structNTRIPMountpoint.html", null ],
-    [ "NTRIPTransportConfig", "structNTRIPTransportConfig.html", null ],
+    [ "NTRIPRtcmFilterConfig", "structNTRIPRtcmFilterConfig.html", null ],
+    [ "NTRIPSourceTableControllerQmlType", "structNTRIPSourceTableControllerQmlType.html", null ],
+    [ "NTRIPUdpForwardConfig", "structNTRIPUdpForwardConfig.html", null ],
     [ "OnboardLogDownloadData", "structOnboardLogDownloadData.html", null ],
+    [ "SerialAutoConnect::Options", "structSerialAutoConnect_1_1Options.html", null ],
+    [ "GPSCorrectionRouter::Output", "structGPSCorrectionRouter_1_1Output.html", null ],
+    [ "RTCMMavlink::Output", "structRTCMMavlink_1_1Output.html", null ],
     [ "Mixer::Mixers::OutputFunction", "structMixer_1_1Mixers_1_1OutputFunction.html", null ],
-    [ "RTCMMavlink::PackResult", "structRTCMMavlink_1_1PackResult.html", null ],
+    [ "RTCMMavlinkPacket::PackResult", "structRTCMMavlinkPacket_1_1PackResult.html", null ],
     [ "Parameter", "structParameter.html", null ],
     [ "SurfaceModel::Patch", "structSurfaceModel_1_1Patch.html", null ],
     [ "PatchSampler", "classPatchSampler.html", null ],
@@ -208,6 +260,7 @@ var hierarchy =
     ] ],
     [ "QAbstractListModel", null, [
       [ "FactValueSliderListModel", "classFactValueSliderListModel.html", null ],
+      [ "GPSCorrectionEventModel", "classGPSCorrectionEventModel.html", null ],
       [ "GeoTagImageModel", "classGeoTagImageModel.html", null ],
       [ "LoggingCategoryFlatModel", "classLoggingCategoryFlatModel.html", null ],
       [ "NTRIPSourceTableModel", "classNTRIPSourceTableModel.html", null ],
@@ -258,6 +311,7 @@ var hierarchy =
       [ "QGeoFileTileCacheQGC", "classQGeoFileTileCacheQGC.html", null ]
     ] ],
     [ "QGeoPositionInfoSource", null, [
+      [ "NMEAPositionSource", "classNMEAPositionSource.html", null ],
       [ "SimulatedPosition", "classSimulatedPosition.html", null ]
     ] ],
     [ "QGeoServiceProviderFactory", null, [
@@ -285,14 +339,19 @@ var hierarchy =
       [ "GstHwVideoBuffer", "classGstHwVideoBuffer.html", null ]
     ] ],
     [ "QIODevice", null, [
+      [ "NMEAStreamDevice", "classNMEAStreamDevice.html", null ],
       [ "QGCArchiveDeviceBase", "classQGCArchiveDeviceBase.html", [
         [ "QGCArchiveFile", "classQGCArchiveFile.html", null ],
         [ "QGCDecompressDevice", "classQGCDecompressDevice.html", null ]
       ] ],
-      [ "QSerialPort", "classQSerialPort.html", null ]
+      [ "QSerialPort", "classQSerialPort.html", null ],
+      [ "UdpIODevice", "classUdpIODevice.html", null ]
     ] ],
     [ "QIODevicePrivate", null, [
       [ "QSerialPortPrivate", "classQSerialPortPrivate.html", null ]
+    ] ],
+    [ "QNmeaPositionInfoSource", null, [
+      [ "NMEATimestampedPositionDecoder", "classNMEATimestampedPositionDecoder.html", null ]
     ] ],
     [ "QObject", null, [
       [ "ADSBTCPLink", "classADSBTCPLink.html", null ],
@@ -428,8 +487,17 @@ var hierarchy =
       [ "FirmwareUpgradeController", "classFirmwareUpgradeController.html", null ],
       [ "FlightPathSegment", "classFlightPathSegment.html", null ],
       [ "FollowMe", "classFollowMe.html", null ],
+      [ "GPSCorrectionManager", "classGPSCorrectionManager.html", null ],
+      [ "GPSCorrectionRouter", "classGPSCorrectionRouter.html", null ],
       [ "GPSManager", "classGPSManager.html", null ],
+      [ "GPSMavlinkOutput", "classGPSMavlinkOutput.html", null ],
+      [ "GPSPositionService", "classGPSPositionService.html", [
+        [ "QGCPositionManager", "classQGCPositionManager.html", null ]
+      ] ],
+      [ "GPSPositionSourceAdapter", "classGPSPositionSourceAdapter.html", null ],
       [ "GPSRtk", "classGPSRtk.html", null ],
+      [ "GPSSatelliteStore", "classGPSSatelliteStore.html", null ],
+      [ "GPSSourceHealth", "classGPSSourceHealth.html", null ],
       [ "GeoMapCamera", "classGeoMapCamera.html", null ],
       [ "GeoMapProjectedPath", "classGeoMapProjectedPath.html", null ],
       [ "GeoScene", "classGeoScene.html", null ],
@@ -503,6 +571,10 @@ var hierarchy =
       [ "MockLinkWorker", "classMockLinkWorker.html", null ],
       [ "MotorAssignment", "classMotorAssignment.html", null ],
       [ "MultiVehicleManager", "classMultiVehicleManager.html", null ],
+      [ "NMEADecoderSession", "classNMEADecoderSession.html", null ],
+      [ "NMEASatelliteAdapter", "classNMEASatelliteAdapter.html", null ],
+      [ "NMEASourceManager", "classNMEASourceManager.html", null ],
+      [ "NMEAStreamSplitter", "classNMEAStreamSplitter.html", null ],
       [ "NTRIPConnectionStats", "classNTRIPConnectionStats.html", null ],
       [ "NTRIPGgaProvider", "classNTRIPGgaProvider.html", null ],
       [ "NTRIPManager", "classNTRIPManager.html", null ],
@@ -510,7 +582,6 @@ var hierarchy =
       [ "NTRIPTransport", "classNTRIPTransport.html", [
         [ "NTRIPHttpTransport", "classNTRIPHttpTransport.html", null ]
       ] ],
-      [ "NmeaSourceManager", "classNmeaSourceManager.html", null ],
       [ "OnboardLogController", "classOnboardLogController.html", null ],
       [ "OsmParserThread", "classOsmParserThread.html", null ],
       [ "PX4AirframeLoader", "classPX4AirframeLoader.html", null ],
@@ -589,7 +660,6 @@ var hierarchy =
       [ "QGCOnboardLogEntry", "classQGCOnboardLogEntry.html", null ],
       [ "QGCOptions", "classQGCOptions.html", null ],
       [ "QGCPalette", "classQGCPalette.html", null ],
-      [ "QGCPositionManager", "classQGCPositionManager.html", null ],
       [ "QGCQGeoCoordinate", "classQGCQGeoCoordinate.html", null ],
       [ "QGCQVideoSinkController", "classQGCQVideoSinkController.html", null ],
       [ "QGCSensors::QGCAmbientTemperature", "classQGCSensors_1_1QGCAmbientTemperature.html", null ],
@@ -607,6 +677,9 @@ var hierarchy =
       [ "RallyPoint", "classRallyPoint.html", null ],
       [ "RemoteIDManager", "classRemoteIDManager.html", null ],
       [ "RequestMessageCoordinator", "classRequestMessageCoordinator.html", null ],
+      [ "RuntimeScheduler", "classRuntimeScheduler.html", [
+        [ "QtRuntimeScheduler", "classQtRuntimeScheduler.html", null ]
+      ] ],
       [ "ScreenToolsController", "classScreenToolsController.html", null ],
       [ "Section", "classSection.html", [
         [ "CameraSection", "classCameraSection.html", null ],
@@ -624,6 +697,7 @@ var hierarchy =
         [ "FlightMapSettings", "classFlightMapSettings.html", null ],
         [ "FlightModeSettings", "classFlightModeSettings.html", null ],
         [ "FlyViewSettings", "classFlyViewSettings.html", null ],
+        [ "GPSCorrectionSettings", "classGPSCorrectionSettings.html", null ],
         [ "GimbalControllerSettings", "classGimbalControllerSettings.html", null ],
         [ "JoystickManagerSettings", "classJoystickManagerSettings.html", null ],
         [ "JoystickSettings", "classJoystickSettings.html", null ],
@@ -848,42 +922,60 @@ var hierarchy =
       ] ],
       [ "QGCCacheWorker", "classQGCCacheWorker.html", null ]
     ] ],
-    [ "QUdpSocket", null, [
-      [ "UdpIODevice", "classUdpIODevice.html", null ]
-    ] ],
     [ "QVideoFrameTextures", null, [
       [ "GstHwFrameTexturesBase", "classGstHwFrameTexturesBase.html", [
         [ "GstGlFrameTextures", "classGstGlFrameTextures.html", null ]
       ] ]
     ] ],
+    [ "ReadTimestamp", "classReadTimestamp.html", [
+      [ "NMEAStreamDevice", "classNMEAStreamDevice.html", null ],
+      [ "UdpIODevice", "classUdpIODevice.html", null ]
+    ] ],
     [ "ActuatorGeometry::RenderOptions", "structActuatorGeometry_1_1RenderOptions.html", null ],
     [ "SurfaceAnalysis::Report", "structSurfaceAnalysis_1_1Report.html", null ],
     [ "QGCNetworkHelper::RequestConfig", "structQGCNetworkHelper_1_1RequestConfig.html", null ],
     [ "SerialPortManager::Reservation", "structSerialPortManager_1_1Reservation.html", null ],
+    [ "NTRIPHttpDecoder::Result", "structNTRIPHttpDecoder_1_1Result.html", null ],
+    [ "RTCMFrameDecoder::Result", "structRTCMFrameDecoder_1_1Result.html", null ],
     [ "QtAndroidPrivate::ResumePauseListener", null, [
       [ "AndroidEvents", "classAndroidEvents.html", null ]
     ] ],
-    [ "RTCMParser", "classRTCMParser.html", null ],
+    [ "RTCMFrameDecoder", "classRTCMFrameDecoder.html", null ],
+    [ "RTCMFramer", "classRTCMFramer.html", null ],
+    [ "RTCMMavlinkPacket", "classRTCMMavlinkPacket.html", null ],
     [ "Mixer::Rule", "structMixer_1_1Rule.html", null ],
     [ "Mixer::Rule::RuleItem", "structMixer_1_1Rule_1_1RuleItem.html", null ],
     [ "RunGuard", "classRunGuard.html", null ],
+    [ "GPSSatelliteReport::Satellite", "structGPSSatelliteReport_1_1Satellite.html", null ],
     [ "satellite_info_s", "structsatellite__info__s.html", null ],
+    [ "NMEA::SatelliteAssembler", "classNMEA_1_1SatelliteAssembler.html", null ],
     [ "GPSRtk::SatelliteCounts", "structGPSRtk_1_1SatelliteCounts.html", null ],
+    [ "NMEA::SatelliteData", "structNMEA_1_1SatelliteData.html", null ],
+    [ "NMEA::SatelliteSystem", "structNMEA_1_1SatelliteSystem.html", null ],
+    [ "ScheduledTask", "classScheduledTask.html", null ],
     [ "QGCSqlHelper::ScopedConnection", "classQGCSqlHelper_1_1ScopedConnection.html", null ],
     [ "GstHwPathTelemetry::ScopedMapTimer", "classGstHwPathTelemetry_1_1ScopedMapTimer.html", null ],
     [ "SurfaceAnalysis::Seam", "structSurfaceAnalysis_1_1Seam.html", null ],
     [ "sensor_gnss_relative_s", "structsensor__gnss__relative__s.html", null ],
     [ "sensor_gps_s", "structsensor__gps__s.html", null ],
+    [ "NMEA::Sentence", "structNMEA_1_1Sentence.html", null ],
+    [ "SerialAutoConnect", "classSerialAutoConnect.html", null ],
+    [ "SerialConnectionSettings", "structSerialConnectionSettings.html", null ],
     [ "MockLinkGimbal::SetAttitudeCommand", "structMockLinkGimbal_1_1SetAttitudeCommand.html", null ],
     [ "SetTotalsResult", "structSetTotalsResult.html", null ],
     [ "SigningChannel", "classSigningChannel.html", null ],
     [ "SigningFailure", "classSigningFailure.html", null ],
     [ "SigningStatus", "structSigningStatus.html", null ],
+    [ "GPSCorrectionSelector::Source", "structGPSCorrectionSelector_1_1Source.html", null ],
+    [ "GPSDriver::State", "structGPSDriver_1_1State.html", null ],
     [ "StateContext", "classStateContext.html", null ],
     [ "StateMachineProfiler::StateProfile", "structStateMachineProfiler_1_1StateProfile.html", null ],
+    [ "GPSCorrectionLedger::Statistics", "structGPSCorrectionLedger_1_1Statistics.html", null ],
+    [ "NTRIPHttpDecoder::Status", "structNTRIPHttpDecoder_1_1Status.html", null ],
     [ "StatusText", "classStatusText.html", null ],
     [ "SequenceState::Step", "structSequenceState_1_1Step.html", null ],
     [ "FallbackChainState::StrategyEntry", "structFallbackChainState_1_1StrategyEntry.html", null ],
+    [ "GPSCorrectionRouter::Submission", "structGPSCorrectionRouter_1_1Submission.html", null ],
     [ "SwitchListItem", "structSwitchListItem.html", null ],
     [ "TerrainPathHeightInfo", "structTerrainPathHeightInfo.html", null ],
     [ "TerrainTile", "classTerrainTile.html", [
@@ -896,6 +988,8 @@ var hierarchy =
     [ "TotalsResult", "structTotalsResult.html", null ],
     [ "QGCSqlHelper::Transaction", "classQGCSqlHelper_1_1Transaction.html", null ],
     [ "UDPClient", "structUDPClient.html", null ],
+    [ "UdpDrainBudget", "structUdpDrainBudget.html", null ],
+    [ "NMEA::SatelliteAssembler::Update", "structNMEA_1_1SatelliteAssembler_1_1Update.html", null ],
     [ "SurfaceModel::UpdateStats", "structSurfaceModel_1_1UpdateStats.html", null ],
     [ "UrlFactory", "classUrlFactory.html", null ],
     [ "GStreamer::Environment::ValidationResult", "structGStreamer_1_1Environment_1_1ValidationResult.html", null ],

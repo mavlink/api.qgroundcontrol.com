@@ -42,6 +42,8 @@ var classParameterManager =
     [ "ParameterEditorController", "classParameterManager.html#ac6da1f1899d68f64ce84ab5b650c14af", null ],
     [ "defaultComponentId", "classParameterManager.html#a709ce02118ed246e7dec788a6a6cff3f", null ],
     [ "kHashCheckTimeoutMs", "classParameterManager.html#a69e470c04cf4506f32d06012cd1c8b9f", null ],
+    [ "kIndexBatchMaxOutstanding", "classParameterManager.html#a9b30500375572cf41f955acfdacd0603", null ],
+    [ "kMaxInitialLoadRetrySingleParam", "classParameterManager.html#a36de88b6155b24101547b8b4949cad2c", null ],
     [ "kMaxInitialRequestListRetry", "classParameterManager.html#aab32277304de03547a434f1c8d97a214", null ],
     [ "kParamRequestListTimeoutMs", "classParameterManager.html#a1139b93313ee18c9bb3de115a8b55274", null ],
     [ "kParamRequestReadRetryCount", "classParameterManager.html#ac10d775f36649b5d2b8224b2270a73b8", null ],
@@ -49,5 +51,7 @@ var classParameterManager =
     [ "kTestHashCheckTimeoutMs", "classParameterManager.html#a7b1a620285382a7df5c4a929f0ff2330", null ],
     [ "kTestInitialRequestIntervalMs", "classParameterManager.html#a15b35f241c4cc8679dacc07fb6412327", null ],
     [ "kTestMaxInitialRequestTimeMs", "classParameterManager.html#af3ad70b9d5e0a269ce70b35f15a132c9", null ],
+    [ "kUnresponsiveMinOutstanding", "classParameterManager.html#aa86fdb0ac82485ced32af591db75b0e8", null ],
+    [ "kUnresponsiveSilentCycles", "classParameterManager.html#aecb6e39a7d2cb3693dc9c87deaea7826", null ],
     [ "kWaitForParamValueAckMs", "classParameterManager.html#a0aec0e3e838623c7b015812c8ccc1a37", null ]
 ];

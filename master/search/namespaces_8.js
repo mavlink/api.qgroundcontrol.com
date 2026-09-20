@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['logentryforeign_0',['LogEntryForeign',['../namespaceLogEntryForeign.html',1,'']]],
-  ['logformatter_1',['LogFormatter',['../namespaceLogFormatter.html',1,'']]]
+  ['littleendian_0',['LittleEndian',['../namespaceLittleEndian.html',1,'']]],
+  ['logentryforeign_1',['LogEntryForeign',['../namespaceLogEntryForeign.html',1,'']]],
+  ['logformatter_2',['LogFormatter',['../namespaceLogFormatter.html',1,'']]]
 ];

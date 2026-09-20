@@ -7,6 +7,5 @@ var QGCMath_8cc =
     [ "fuzzyCompare", "QGCMath_8cc.html#a16c8c40ec3cc4cb32d453e0363e524f2", null ],
     [ "fuzzyCompare", "QGCMath_8cc.html#afc84f04ae1e437c0d8aa478a9b522cf4", null ],
     [ "limitAngleToPMPId", "QGCMath_8cc.html#a40cc55b89c3252116cfdeb10923fcfb3", null ],
-    [ "limitAngleToPMPIf", "QGCMath_8cc.html#afad0f30adc8a4b62763f57ae9021e94c", null ],
-    [ "crctab", "QGCMath_8cc.html#aec50cfb7c95f1d61002e2851f18f887f", null ]
+    [ "limitAngleToPMPIf", "QGCMath_8cc.html#afad0f30adc8a4b62763f57ae9021e94c", null ]
 ];

@@ -137,8 +137,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab688ce5423bf005a00fbfa58d26dac97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b36b369c8eb4acabb2d59c64d2fc70c" id="r_a9b36b369c8eb4acabb2d59c64d2fc70c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTRIPConnectionStats.html#a9b36b369c8eb4acabb2d59c64d2fc70c">stop</a> ()</td></tr>
 <tr class="separator:a9b36b369c8eb4acabb2d59c64d2fc70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb99f9c1743f7e2ec55120eed703ac45" id="r_adb99f9c1743f7e2ec55120eed703ac45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTRIPConnectionStats.html#adb99f9c1743f7e2ec55120eed703ac45">recordMessage</a> (int bytes, int messageId=0)</td></tr>
-<tr class="separator:adb99f9c1743f7e2ec55120eed703ac45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5305ad103311de993b546de933368d6" id="r_aa5305ad103311de993b546de933368d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTRIPConnectionStats.html#aa5305ad103311de993b546de933368d6">recordMessage</a> (int bytes, int messageId=0, qint64 receivedAtMs=static_cast&lt; qint64 &gt;(<a class="el" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">MonotonicClock::nowUs</a>()/1000))</td></tr>
+<tr class="memdesc:aa5305ad103311de993b546de933368d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count every message; health uses the newest valid monotonic receipt.  <br /></td></tr>
+<tr class="separator:aa5305ad103311de993b546de933368d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a978fc9c4c5215fd1afce639984a002a9" id="r_a978fc9c4c5215fd1afce639984a002a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTRIPConnectionStats.html#a978fc9c4c5215fd1afce639984a002a9">reset</a> ()</td></tr>
 <tr class="separator:a978fc9c4c5215fd1afce639984a002a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c0b4e6a0b2d0a1ddc08ef0b1a54f1cf" id="r_a2c0b4e6a0b2d0a1ddc08ef0b1a54f1cf"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTRIPConnectionStats.html#a2c0b4e6a0b2d0a1ddc08ef0b1a54f1cf">bytesReceived</a> () const</td></tr>
@@ -183,9 +184,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Per-RTCM-message-ID counts since the current connection started. Returned as a list of [id, count] pairs sorted ascending by id so the QML Repeater can render deterministic chips without re-sorting. </p>
 
-<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00005">5</a> of file <a class="el" href="NTRIPConnectionStats_8cc_source.html">NTRIPConnectionStats.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00009">9</a> of file <a class="el" href="NTRIPConnectionStats_8cc_source.html">NTRIPConnectionStats.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="DataRateTracker_8h_source.html#l00026">DataRateTracker::bytesPerSec()</a>, <a class="el" href="classNTRIPConnectionStats.html#aade55926dc917873d94d83ee59ff8545">bytesReceivedChanged()</a>, <a class="el" href="classNTRIPConnectionStats.html#a7fc10faf56999e0d4e72eed6114c326a">correctionAgeChanged()</a>, <a class="el" href="classNTRIPConnectionStats.html#a7fa16d8c5bbda31aa54c1ba6de96bb1f">dataRateChanged()</a>, <a class="el" href="classNTRIPConnectionStats.html#a60187a27af9f3a401897b8f9aa140c46">dataStaleChanged()</a>, <a class="el" href="classNTRIPConnectionStats.html#a1d40b31b0bfa1d5907019a1d3fbada50">messageCountsByIdChanged()</a>, <a class="el" href="classNTRIPConnectionStats.html#a946b3145bdeb98f96ef6ea9b071f0144">messagesReceivedChanged()</a>, and <a class="el" href="DataRateTracker_8h_source.html#l00022">DataRateTracker::totalBytes()</a>.</p>
+<p class="reference">References <a class="el" href="MonotonicClock_8h_source.html#l00007">MonotonicClock::nowUs()</a>.</p>
 
 </div>
 </div>
@@ -213,7 +214,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8h_source.html#l00039">39</a> of file <a class="el" href="NTRIPConnectionStats_8h_source.html">NTRIPConnectionStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8h_source.html#l00037">37</a> of file <a class="el" href="NTRIPConnectionStats_8h_source.html">NTRIPConnectionStats.h</a>.</p>
 
 <p class="reference">References <a class="el" href="DataRateTracker_8h_source.html#l00022">DataRateTracker::totalBytes()</a>.</p>
 
@@ -242,7 +243,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00005">NTRIPConnectionStats()</a>, <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00054">recordMessage()</a>, <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00075">reset()</a>, and <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00043">stop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00071">recordMessage()</a>, <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00094">reset()</a>, and <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00042">stop()</a>.</p>
 
 </div>
 </div>
@@ -269,7 +270,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00005">NTRIPConnectionStats()</a>, and <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00075">reset()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00094">reset()</a>.</p>
 
 </div>
 </div>
@@ -278,9 +279,6 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">double NTRIPConnectionStats::correctionAgeSec </td>
@@ -289,14 +287,11 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8h_source.html#l00045">45</a> of file <a class="el" href="NTRIPConnectionStats_8h_source.html">NTRIPConnectionStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00053">53</a> of file <a class="el" href="NTRIPConnectionStats_8cc_source.html">NTRIPConnectionStats.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="MonotonicClock_8h_source.html#l00015">MonotonicClock::ageMilliseconds()</a>, and <a class="el" href="MonotonicClock_8h_source.html#l00007">MonotonicClock::nowUs()</a>.</p>
 
 </div>
 </div>
@@ -323,7 +318,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8h_source.html#l00043">43</a> of file <a class="el" href="NTRIPConnectionStats_8h_source.html">NTRIPConnectionStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8h_source.html#l00041">41</a> of file <a class="el" href="NTRIPConnectionStats_8h_source.html">NTRIPConnectionStats.h</a>.</p>
 
 <p class="reference">References <a class="el" href="DataRateTracker_8h_source.html#l00026">DataRateTracker::bytesPerSec()</a>.</p>
 
@@ -352,7 +347,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00005">NTRIPConnectionStats()</a>, <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00054">recordMessage()</a>, <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00075">reset()</a>, and <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00043">stop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00071">recordMessage()</a>, <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00094">reset()</a>, and <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00042">stop()</a>.</p>
 
 </div>
 </div>
@@ -379,7 +374,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8h_source.html#l00047">47</a> of file <a class="el" href="NTRIPConnectionStats_8h_source.html">NTRIPConnectionStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8h_source.html#l00045">45</a> of file <a class="el" href="NTRIPConnectionStats_8h_source.html">NTRIPConnectionStats.h</a>.</p>
 
 </div>
 </div>
@@ -406,7 +401,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00005">NTRIPConnectionStats()</a>, <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00054">recordMessage()</a>, and <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00075">reset()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00094">reset()</a>.</p>
 
 </div>
 </div>
@@ -425,7 +420,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00094">94</a> of file <a class="el" href="NTRIPConnectionStats_8cc_source.html">NTRIPConnectionStats.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00113">113</a> of file <a class="el" href="NTRIPConnectionStats_8cc_source.html">NTRIPConnectionStats.cc</a>.</p>
 
 </div>
 </div>
@@ -452,7 +447,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00005">NTRIPConnectionStats()</a>, and <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00075">reset()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00094">reset()</a>.</p>
 
 </div>
 </div>
@@ -479,7 +474,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8h_source.html#l00041">41</a> of file <a class="el" href="NTRIPConnectionStats_8h_source.html">NTRIPConnectionStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8h_source.html#l00039">39</a> of file <a class="el" href="NTRIPConnectionStats_8h_source.html">NTRIPConnectionStats.h</a>.</p>
 
 </div>
 </div>
@@ -506,12 +501,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00005">NTRIPConnectionStats()</a>, and <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00075">reset()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00094">reset()</a>.</p>
 
 </div>
 </div>
-<a id="adb99f9c1743f7e2ec55120eed703ac45" name="adb99f9c1743f7e2ec55120eed703ac45"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb99f9c1743f7e2ec55120eed703ac45">&#9670;&#160;</a></span>recordMessage()</h2>
+<a id="aa5305ad103311de993b546de933368d6" name="aa5305ad103311de993b546de933368d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5305ad103311de993b546de933368d6">&#9670;&#160;</a></span>recordMessage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -526,7 +521,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>messageId</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>messageId</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>receivedAtMs</em> = <code>static_cast&lt;qint64&gt;(<a class="el" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">MonotonicClock::nowUs</a>()&#160;/&#160;1000)</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -535,11 +536,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Record a received RTCM message. messageId = 0 is treated as "unknown/unparseable" and tracked under a distinct bucket so it still shows up in diagnostics. </p>
 
-<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00054">54</a> of file <a class="el" href="NTRIPConnectionStats_8cc_source.html">NTRIPConnectionStats.cc</a>.</p>
+<p>Count every message; health uses the newest valid monotonic receipt. </p>
 
-<p class="reference">References <a class="el" href="classNTRIPConnectionStats.html#aade55926dc917873d94d83ee59ff8545">bytesReceivedChanged()</a>, <a class="el" href="classNTRIPConnectionStats.html#a7fa16d8c5bbda31aa54c1ba6de96bb1f">dataRateChanged()</a>, <a class="el" href="classNTRIPConnectionStats.html#a60187a27af9f3a401897b8f9aa140c46">dataStaleChanged()</a>, <a class="el" href="DataRateTracker_8h_source.html#l00033">DataRateTracker::rateUpdated()</a>, <a class="el" href="DataRateTracker_8cc_source.html#l00008">DataRateTracker::recordBytes()</a>, and <a class="el" href="DataRateTracker_8h_source.html#l00022">DataRateTracker::totalBytes()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00071">71</a> of file <a class="el" href="NTRIPConnectionStats_8cc_source.html">NTRIPConnectionStats.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="classNTRIPConnectionStats.html#aade55926dc917873d94d83ee59ff8545">bytesReceivedChanged()</a>, <a class="el" href="classNTRIPConnectionStats.html#a7fa16d8c5bbda31aa54c1ba6de96bb1f">dataRateChanged()</a>, <a class="el" href="MonotonicClock_8h_source.html#l00007">MonotonicClock::nowUs()</a>, <a class="el" href="DataRateTracker_8h_source.html#l00033">DataRateTracker::rateUpdated()</a>, <a class="el" href="DataRateTracker_8cc_source.html#l00008">DataRateTracker::recordBytes()</a>, and <a class="el" href="DataRateTracker_8h_source.html#l00022">DataRateTracker::totalBytes()</a>.</p>
 
 </div>
 </div>
@@ -558,7 +560,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00075">75</a> of file <a class="el" href="NTRIPConnectionStats_8cc_source.html">NTRIPConnectionStats.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00094">94</a> of file <a class="el" href="NTRIPConnectionStats_8cc_source.html">NTRIPConnectionStats.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="classNTRIPConnectionStats.html#aade55926dc917873d94d83ee59ff8545">bytesReceivedChanged()</a>, <a class="el" href="classNTRIPConnectionStats.html#a7fc10faf56999e0d4e72eed6114c326a">correctionAgeChanged()</a>, <a class="el" href="classNTRIPConnectionStats.html#a7fa16d8c5bbda31aa54c1ba6de96bb1f">dataRateChanged()</a>, <a class="el" href="classNTRIPConnectionStats.html#a60187a27af9f3a401897b8f9aa140c46">dataStaleChanged()</a>, <a class="el" href="classNTRIPConnectionStats.html#a1d40b31b0bfa1d5907019a1d3fbada50">messageCountsByIdChanged()</a>, <a class="el" href="classNTRIPConnectionStats.html#a946b3145bdeb98f96ef6ea9b071f0144">messagesReceivedChanged()</a>, and <a class="el" href="DataRateTracker_8cc_source.html#l00024">DataRateTracker::reset()</a>.</p>
 
@@ -579,7 +581,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00038">38</a> of file <a class="el" href="NTRIPConnectionStats_8cc_source.html">NTRIPConnectionStats.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00037">37</a> of file <a class="el" href="NTRIPConnectionStats_8cc_source.html">NTRIPConnectionStats.cc</a>.</p>
 
 </div>
 </div>
@@ -598,7 +600,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00043">43</a> of file <a class="el" href="NTRIPConnectionStats_8cc_source.html">NTRIPConnectionStats.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00042">42</a> of file <a class="el" href="NTRIPConnectionStats_8cc_source.html">NTRIPConnectionStats.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="DataRateTracker_8h_source.html#l00026">DataRateTracker::bytesPerSec()</a>, <a class="el" href="classNTRIPConnectionStats.html#aade55926dc917873d94d83ee59ff8545">bytesReceivedChanged()</a>, <a class="el" href="classNTRIPConnectionStats.html#a7fa16d8c5bbda31aa54c1ba6de96bb1f">dataRateChanged()</a>, and <a class="el" href="DataRateTracker_8cc_source.html#l00024">DataRateTracker::reset()</a>.</p>
 

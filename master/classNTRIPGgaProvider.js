@@ -1,5 +1,6 @@
 var classNTRIPGgaProvider =
 [
+    [ "Configuration", "structNTRIPGgaProvider_1_1Configuration.html", "structNTRIPGgaProvider_1_1Configuration" ],
     [ "PositionProvider", "classNTRIPGgaProvider.html#aadbae1970d0b9ec853825e4828baa5d4", null ],
     [ "PositionSource", "classNTRIPGgaProvider.html#a27f3f7b3e9e0c133f222b873d59a955d", [
       [ "Auto", "classNTRIPGgaProvider.html#a27f3f7b3e9e0c133f222b873d59a955da06b9281e396db002010bde1de57262eb", null ],
@@ -9,8 +10,8 @@ var classNTRIPGgaProvider =
       [ "GCSPosition", "classNTRIPGgaProvider.html#a27f3f7b3e9e0c133f222b873d59a955da8d9baf93afe321aa673fa30cd94f4285", null ]
     ] ],
     [ "NTRIPGgaProvider", "classNTRIPGgaProvider.html#a7c3bc102d5e8287a0b3fec29dd2e5407", null ],
+    [ "configure", "classNTRIPGgaProvider.html#a48109631af46e7ca0cb8c10d912ba29e", null ],
     [ "currentSource", "classNTRIPGgaProvider.html#aab6d1efa38f75c4d4f7a71e259010732", null ],
-    [ "init", "classNTRIPGgaProvider.html#ad579e8ff134cd669ded24f90bcdb5a8b", null ],
     [ "setPositionProvider", "classNTRIPGgaProvider.html#af079db9ade192928607ba71e0bb59824", null ],
     [ "sourceChanged", "classNTRIPGgaProvider.html#a40c8bb8c275a957ce5370ee48931dd4a", null ],
     [ "start", "classNTRIPGgaProvider.html#ae5c8ff0ba11d473debb5ee323c39466b", null ],

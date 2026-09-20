@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/Utilities/Network/UdpIODevice.cc Source File</title>
+<title>QGroundControl: src/Utilities/Network/IO/UdpIODevice.cc Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,84 +99,295 @@ $(document).ready(function(){initNavTree('UdpIODevice_8cc_source.html',''); init
 </div><!--header-->
 <div class="contents">
 <a href="UdpIODevice_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="UdpIODevice_8h.html">UdpIODevice.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(UdpIODeviceLog, <span class="stringliteral">&quot;Comms.UdpIODevice&quot;</span>)</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classUdpIODevice.html#a3206f338a1807b73b41393252ef88ac0">    6</a></span><a class="code hl_class" href="classUdpIODevice.html">UdpIODevice</a>::<a class="code hl_class" href="classUdpIODevice.html">UdpIODevice</a>(QObject *parent)</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    : QUdpSocket(parent)</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">// qCDebug(UdpIODeviceLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; this;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    (void) connect(<span class="keyword">this</span>, &amp;QUdpSocket::readyRead, <span class="keyword">this</span>, &amp;UdpIODevice::_readAvailableData);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
-</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classUdpIODevice.html#ac5e0141b4e7678ae0338ec5db11edc15">   14</a></span><a class="code hl_function" href="classUdpIODevice.html#ac5e0141b4e7678ae0338ec5db11edc15">UdpIODevice::~UdpIODevice</a>()</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">// qCDebug(UdpIODeviceLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; this;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
-</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QtCore/QPointer&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QtCore/QScopeGuard&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QtNetwork/QNetworkDatagram&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="MonotonicClock_8h.html">MonotonicClock.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="UdpPeer_8h.html">UdpPeer.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(UdpIODeviceLog, <span class="stringliteral">&quot;Utilities.UdpIODevice&quot;</span>)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classUdpIODevice.html#a3206f338a1807b73b41393252ef88ac0">   15</a></span><a class="code hl_class" href="classUdpIODevice.html">UdpIODevice</a>::<a class="code hl_class" href="classUdpIODevice.html">UdpIODevice</a>(QObject* parent) : QIODevice(parent), _socket(this)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    qCDebug(UdpIODeviceLog) &lt;&lt; <span class="keyword">this</span>;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classUdpIODevice.html#ad0edf696c24e150913167a8bb6fa1d3a">   19</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classUdpIODevice.html#ad0edf696c24e150913167a8bb6fa1d3a">UdpIODevice::canReadLine</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">return</span> _buffer.contains(<span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    connect(&amp;_socket, &amp;QUdpSocket::readyRead, <span class="keyword">this</span>, &amp;UdpIODevice::_readAvailableData);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    connect(&amp;_socket, &amp;QUdpSocket::errorOccurred, <span class="keyword">this</span>, [<span class="keyword">this</span>]() { setErrorString(_socket.errorString()); });</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
 </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classUdpIODevice.html#a71be0d89d8167f1e7a1bad085a65be37">   24</a></span>qint64 <a class="code hl_function" href="classUdpIODevice.html#a71be0d89d8167f1e7a1bad085a65be37">UdpIODevice::readLineData</a>(<span class="keywordtype">char</span> *data, qint64 maxSize)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">const</span> qint64 newlinePos = _buffer.indexOf(<span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">if</span> (newlinePos &lt; 0) {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">const</span> qint64 length = std::min(newlinePos + 1, maxSize);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    (void) std::copy_n(_buffer.constData(), length, data);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    (void) _buffer.remove(0, length);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> length;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classUdpIODevice.html#ae2e4a549cd7900f8e211f675e2820e5b">   23</a></span><a class="code hl_function" href="classUdpIODevice.html#ae2e4a549cd7900f8e211f675e2820e5b">UdpIODevice::~UdpIODevice</a>()</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    qCDebug(UdpIODeviceLog) &lt;&lt; <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classUdpIODevice.html#ad87c386fca84485cf0abb217c37a8142">   38</a></span>qint64 <a class="code hl_function" href="classUdpIODevice.html#ad87c386fca84485cf0abb217c37a8142">UdpIODevice::readData</a>(<span class="keywordtype">char</span> *data, qint64 maxSize)</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">const</span> qint64 length = std::min&lt;qint64&gt;(_buffer.size(), maxSize);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    (void) std::copy_n(_buffer.constData(), length, data);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    (void) _buffer.remove(0, length);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">return</span> length;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classUdpIODevice.html#a0f2a947f04396eac2b514d6445f070fe">   28</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classUdpIODevice.html#a0f2a947f04396eac2b514d6445f070fe">UdpIODevice::bind</a>(<span class="keyword">const</span> QHostAddress&amp; address, quint16 port)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">const</span> QPointer&lt;UdpIODevice&gt; guard(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="classUdpIODevice.html#add4f7a2d70a0db8cdad358fcbfdbef1f">close</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (!guard) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">if</span> (!_socket.bind(address, port)) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        setErrorString(_socket.errorString());</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classUdpIODevice.html#a56eac57e717d6962f4bab1871884c894">open</a>(ReadOnly);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
 </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">void</span> UdpIODevice::_readAvailableData()</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">while</span> (hasPendingDatagrams()) {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keyword">const</span> qint64 size = pendingDatagramSize();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> oldSize = _buffer.size();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        _buffer.resize(oldSize + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(size));</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        (void) readDatagram(_buffer.data() + oldSize, size);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classUdpIODevice.html#a56eac57e717d6962f4bab1871884c894">   42</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classUdpIODevice.html#a56eac57e717d6962f4bab1871884c894">UdpIODevice::open</a>(OpenMode mode)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">if</span> (_socket.state() != QAbstractSocket::BoundState || !(mode &amp; ReadOnly) || (mode &amp; WriteOnly)) {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        setErrorString(tr(<span class="stringliteral">&quot;UDP stream requires a bound socket and read-only mode&quot;</span>));</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">return</span> QIODevice::open(mode);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>}</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classUdpIODevice.html#a1ea96f7bfda01fb9e36f2d78c5d5c084">   51</a></span>qint64 <a class="code hl_function" href="classUdpIODevice.html#a1ea96f7bfda01fb9e36f2d78c5d5c084">UdpIODevice::bytesAvailable</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// Native datagrams are not stream bytes until _readAvailableData() has copied them.</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> QIODevice::bytesAvailable() + _buffer.size();</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classUdpIODevice.html#ad0edf696c24e150913167a8bb6fa1d3a">   57</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classUdpIODevice.html#ad0edf696c24e150913167a8bb6fa1d3a">UdpIODevice::canReadLine</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">return</span> QIODevice::canReadLine() || _buffer.contains(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classUdpIODevice.html#a71be0d89d8167f1e7a1bad085a65be37">   62</a></span>qint64 <a class="code hl_function" href="classUdpIODevice.html#a71be0d89d8167f1e7a1bad085a65be37">UdpIODevice::readLineData</a>(<span class="keywordtype">char</span>* data, qint64 maxSize)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>{</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">const</span> qint64 newlinePos = _buffer.indexOf(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classUdpIODevice.html#ad87c386fca84485cf0abb217c37a8142">readData</a>(data, newlinePos &lt; 0 ? maxSize : std::min(newlinePos + 1, maxSize));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classUdpIODevice.html#ad87c386fca84485cf0abb217c37a8142">   68</a></span>qint64 <a class="code hl_function" href="classUdpIODevice.html#ad87c386fca84485cf0abb217c37a8142">UdpIODevice::readData</a>(<span class="keywordtype">char</span>* data, qint64 maxSize)</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    qint64 length = std::min&lt;qint64&gt;(_buffer.size(), maxSize);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span> (length &gt; 0 &amp;&amp; !_receipts.empty()) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        _lastReadTimestampUs = _receipts.front().timestampUs;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">if</span> (openMode().testFlag(Unbuffered)) {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            length = std::min&lt;qint64&gt;(length, _receipts.front().size);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    (void) std::copy_n(_buffer.constData(), length, data);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    (void) _buffer.remove(0, length);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    _consumeReceipts(length);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">return</span> length;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
+</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classUdpIODevice.html#add4f7a2d70a0db8cdad358fcbfdbef1f">   84</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classUdpIODevice.html#add4f7a2d70a0db8cdad358fcbfdbef1f">UdpIODevice::close</a>()</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    ++_generation;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    _drainScheduled = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    _selectedPeer.clear();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    _lastPeerDataUs = 0;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    _buffer.clear();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    _receipts.clear();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    _lastReadTimestampUs = 0;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    _discardUntilNewline = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    _socket.close();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    QIODevice::close();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keywordtype">void</span> UdpIODevice::_readAvailableData()</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>{</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span> (!isOpen() || _readingDatagrams) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    _readingDatagrams = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">const</span> QPointer&lt;UdpIODevice&gt; readingGuard(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keyword">const</span> <span class="keyword">auto</span> finishReading = qScopeGuard([readingGuard]() {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">if</span> (readingGuard) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            readingGuard-&gt;_readingDatagrams = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            readingGuard-&gt;_scheduleRead();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    });</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <a class="code hl_struct" href="structUdpDrainBudget.html">UdpDrainBudget</a> budget;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordtype">bool</span> receivedData = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">while</span> (_socket.hasPendingDatagrams() &amp;&amp; budget.available()) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keyword">const</span> QNetworkDatagram datagram = _socket.receiveDatagram();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">if</span> (!datagram.isValid()) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keyword">const</span> QByteArray data = datagram.data();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        budget.consume(data.size());</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">if</span> (data.isEmpty()) {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keyword">const</span> <span class="keyword">auto</span> receivedAtUs = <a class="code hl_function" href="classReadTimestamp.html#aaea2df162d39061d0aba76529522a304">ReadTimestamp::nowUs</a>();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">if</span> (_selectFirstPeer) {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="keyword">const</span> QString peer = <a class="code hl_function" href="UdpPeer_8h.html#abde76b2079384413e247e38335b2e19e">udpPeerKey</a>(datagram.senderAddress(), datagram.senderPort());</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">if</span> (_selectedPeer.isEmpty()) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                _selectedPeer = peer;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                qCDebug(UdpIODeviceLog) &lt;&lt; <span class="stringliteral">&quot;Selected UDP sender&quot;</span> &lt;&lt; peer;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_selectedPeer != peer) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                <span class="keyword">const</span> <span class="keyword">auto</span> idleMs = <a class="code hl_function" href="namespaceMonotonicClock.html#ae8fbdd3f89c4170b83177f50e8c49411">MonotonicClock::ageMilliseconds</a>(_lastPeerDataUs, receivedAtUs);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                <span class="keywordflow">if</span> (_peerIdleTimeout &lt;= std::chrono::milliseconds::zero() || idleMs &lt; _peerIdleTimeout.count()) {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                <span class="keyword">const</span> QString previousPeer = _selectedPeer;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                _selectedPeer = peer;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                _buffer.clear();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                _receipts.clear();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>                _lastReadTimestampUs = 0;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>                _discardUntilNewline = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>                <span class="keywordflow">if</span> (isTransactionStarted()) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>                    commitTransaction();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                <span class="comment">// Reset Qt&#39;s read/peek buffers without closing the listening socket.</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                QIODevice::open(openMode());</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                _drainScheduled = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                <span class="keyword">const</span> <span class="keyword">auto</span> generation = ++_generation;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                _lastPeerDataUs = receivedAtUs;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                qCDebug(UdpIODeviceLog) &lt;&lt; <span class="stringliteral">&quot;Replacing idle UDP sender&quot;</span> &lt;&lt; previousPeer &lt;&lt; <span class="stringliteral">&quot;with&quot;</span> &lt;&lt; peer;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                <span class="keyword">const</span> QPointer&lt;UdpIODevice&gt; guard(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                emit <a class="code hl_signal" href="classUdpIODevice.html#a9e032fa701a701b870748b5a78377b96">peerReplaced</a>(previousPeer, peer);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                <span class="keywordflow">if</span> (!guard || generation != _generation || !<a class="code hl_function" href="namespaceAndroidSerial.html#acc24ae6d84e04349cb77f2c2b4c72dd8">isOpen</a>()) {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            _lastPeerDataUs = receivedAtUs;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        qsizetype start = 0;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <span class="keywordflow">if</span> (_discardUntilNewline) {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="keyword">const</span> qsizetype newline = data.indexOf(<span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            <span class="keywordflow">if</span> (newline &lt; 0) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            start = newline + 1;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            _discardUntilNewline = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="comment">// QIODevice counts retained bytes before Text mode removes carriage returns.</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> textMode = isTextModeEnabled();</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        setTextModeEnabled(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keyword">const</span> <span class="keyword">auto</span> restoreTextMode = qScopeGuard([<span class="keyword">this</span>, textMode]() { setTextModeEnabled(textMode); });</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        qint64 transactionBytes = -1;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="keywordflow">if</span> (isTransactionStarted()) {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            <span class="comment">// Consumed transaction bytes are retained by Qt but excluded from</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <span class="comment">// bytesAvailable(). Restore them while checking the memory bound.</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            <span class="keyword">const</span> <span class="keyword">auto</span> unreadBytes = QIODevice::bytesAvailable();</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            rollbackTransaction();</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            transactionBytes = QIODevice::bytesAvailable() - unreadBytes;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        _buffer.append(data.constData() + start, data.size() - start);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">if</span> (data.size() &gt; start) {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            _receipts.push_back({data.size() - start, receivedAtUs});</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        }</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        receivedData |= data.size() &gt; start;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classUdpIODevice.html#a1ea96f7bfda01fb9e36f2d78c5d5c084">bytesAvailable</a>() &gt; kMaxBufferedBytes) {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            <span class="comment">// peek() and short reads retain a prefix in QIODevice. Include it in</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="comment">// the same overflow decision so dropped input cannot join two lines.</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            <span class="keyword">const</span> <span class="keyword">auto</span> bufferedBytes = QIODevice::bytesAvailable();</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            <span class="keywordflow">if</span> (bufferedBytes &gt; 0) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                <span class="keyword">const</span> <span class="keyword">auto</span> prefix = QIODevice::read(bufferedBytes);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                _buffer.prepend(prefix);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                <span class="keywordflow">if</span> (!prefix.isEmpty()) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                    _receipts.push_front({prefix.size(), _lastReadTimestampUs});</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>                }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            <span class="keyword">const</span> qsizetype newline = _buffer.indexOf(<span class="charliteral">&#39;\n&#39;</span>, _buffer.size() - kMaxBufferedBytes - 1);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>            <span class="keywordflow">if</span> (newline &lt; 0) {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                _buffer.clear();</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>                _receipts.clear();</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                _discardUntilNewline = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                _buffer.remove(0, newline + 1);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                _consumeReceipts(newline + 1);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (transactionBytes &gt;= 0) {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            startTransaction();</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            (void) skip(transactionBytes);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    }</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordflow">if</span> (receivedData &amp;&amp; <a class="code hl_function" href="classUdpIODevice.html#a1ea96f7bfda01fb9e36f2d78c5d5c084">bytesAvailable</a>() &gt; 0 &amp;&amp; !_emittingReadyRead) {</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        _emittingReadyRead = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <span class="keyword">const</span> QPointer&lt;UdpIODevice&gt; guard(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        emit readyRead();</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        <span class="keywordflow">if</span> (guard) {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            _emittingReadyRead = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        }</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    }</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>}</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="keywordtype">void</span> UdpIODevice::_consumeReceipts(qsizetype size)</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>{</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keywordflow">while</span> (size &gt; 0 &amp;&amp; !_receipts.empty()) {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <span class="keyword">auto</span>&amp; receipt = _receipts.front();</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        <span class="keyword">const</span> <span class="keyword">auto</span> consumed = std::min(size, receipt.size);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        receipt.size -= consumed;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        size -= consumed;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="keywordflow">if</span> (receipt.size == 0) {</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            _receipts.pop_front();</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        }</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    }</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>}</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="keywordtype">void</span> UdpIODevice::_scheduleRead()</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>{</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceAndroidSerial.html#acc24ae6d84e04349cb77f2c2b4c72dd8">isOpen</a>() &amp;&amp; _socket.hasPendingDatagrams() &amp;&amp; !_drainScheduled) {</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        _drainScheduled = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="keyword">const</span> <span class="keyword">auto</span> generation = _generation;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        QMetaObject::invokeMethod(</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            <span class="keyword">this</span>,</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            [<span class="keyword">this</span>, generation]() {</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                <span class="keywordflow">if</span> (generation == _generation) {</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                    _drainScheduled = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                    _readAvailableData();</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                }</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            },</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            Qt::QueuedConnection);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    }</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>}</div>
+<div class="ttc" id="aMonotonicClock_8h_html"><div class="ttname"><a href="MonotonicClock_8h.html">MonotonicClock.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
-<div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
+<div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>
 <div class="ttc" id="aUdpIODevice_8h_html"><div class="ttname"><a href="UdpIODevice_8h.html">UdpIODevice.h</a></div></div>
-<div class="ttc" id="aclassUdpIODevice_html"><div class="ttname"><a href="classUdpIODevice.html">UdpIODevice</a></div><div class="ttdoc">UdpIODevice provides a QIODevice interface over a QUdpSocket in server mode.</div><div class="ttdef"><b>Definition</b> <a href="UdpIODevice_8h_source.html#l00010">UdpIODevice.h:11</a></div></div>
-<div class="ttc" id="aclassUdpIODevice_html_a71be0d89d8167f1e7a1bad085a65be37"><div class="ttname"><a href="classUdpIODevice.html#a71be0d89d8167f1e7a1bad085a65be37">UdpIODevice::readLineData</a></div><div class="ttdeci">qint64 readLineData(char *data, qint64 maxSize) override</div><div class="ttdef"><b>Definition</b> <a href="UdpIODevice_8cc_source.html#l00024">UdpIODevice.cc:24</a></div></div>
-<div class="ttc" id="aclassUdpIODevice_html_ac5e0141b4e7678ae0338ec5db11edc15"><div class="ttname"><a href="classUdpIODevice.html#ac5e0141b4e7678ae0338ec5db11edc15">UdpIODevice::~UdpIODevice</a></div><div class="ttdeci">~UdpIODevice()</div><div class="ttdef"><b>Definition</b> <a href="UdpIODevice_8cc_source.html#l00014">UdpIODevice.cc:14</a></div></div>
-<div class="ttc" id="aclassUdpIODevice_html_ad0edf696c24e150913167a8bb6fa1d3a"><div class="ttname"><a href="classUdpIODevice.html#ad0edf696c24e150913167a8bb6fa1d3a">UdpIODevice::canReadLine</a></div><div class="ttdeci">bool canReadLine() const override</div><div class="ttdef"><b>Definition</b> <a href="UdpIODevice_8cc_source.html#l00019">UdpIODevice.cc:19</a></div></div>
-<div class="ttc" id="aclassUdpIODevice_html_ad87c386fca84485cf0abb217c37a8142"><div class="ttname"><a href="classUdpIODevice.html#ad87c386fca84485cf0abb217c37a8142">UdpIODevice::readData</a></div><div class="ttdeci">qint64 readData(char *data, qint64 maxSize) override</div><div class="ttdef"><b>Definition</b> <a href="UdpIODevice_8cc_source.html#l00038">UdpIODevice.cc:38</a></div></div>
+<div class="ttc" id="aUdpPeer_8h_html"><div class="ttname"><a href="UdpPeer_8h.html">UdpPeer.h</a></div></div>
+<div class="ttc" id="aUdpPeer_8h_html_abde76b2079384413e247e38335b2e19e"><div class="ttname"><a href="UdpPeer_8h.html#abde76b2079384413e247e38335b2e19e">udpPeerKey</a></div><div class="ttdeci">QString udpPeerKey(const QHostAddress &amp;address, quint16 port)</div><div class="ttdef"><b>Definition</b> <a href="UdpPeer_8h_source.html#l00006">UdpPeer.h:6</a></div></div>
+<div class="ttc" id="aclassReadTimestamp_html_aaea2df162d39061d0aba76529522a304"><div class="ttname"><a href="classReadTimestamp.html#aaea2df162d39061d0aba76529522a304">ReadTimestamp::nowUs</a></div><div class="ttdeci">static quint64 nowUs()</div><div class="ttdef"><b>Definition</b> <a href="ReadTimestamp_8h_source.html#l00011">ReadTimestamp.h:11</a></div></div>
+<div class="ttc" id="aclassUdpIODevice_html"><div class="ttname"><a href="classUdpIODevice.html">UdpIODevice</a></div><div class="ttdoc">UdpIODevice provides a QIODevice interface over a QUdpSocket in server mode.</div><div class="ttdef"><b>Definition</b> <a href="UdpIODevice_8h_source.html#l00017">UdpIODevice.h:18</a></div></div>
+<div class="ttc" id="aclassUdpIODevice_html_a0f2a947f04396eac2b514d6445f070fe"><div class="ttname"><a href="classUdpIODevice.html#a0f2a947f04396eac2b514d6445f070fe">UdpIODevice::bind</a></div><div class="ttdeci">bool bind(const QHostAddress &amp;address, quint16 port)</div><div class="ttdef"><b>Definition</b> <a href="UdpIODevice_8cc_source.html#l00028">UdpIODevice.cc:28</a></div></div>
+<div class="ttc" id="aclassUdpIODevice_html_a1ea96f7bfda01fb9e36f2d78c5d5c084"><div class="ttname"><a href="classUdpIODevice.html#a1ea96f7bfda01fb9e36f2d78c5d5c084">UdpIODevice::bytesAvailable</a></div><div class="ttdeci">qint64 bytesAvailable() const override</div><div class="ttdef"><b>Definition</b> <a href="UdpIODevice_8cc_source.html#l00051">UdpIODevice.cc:51</a></div></div>
+<div class="ttc" id="aclassUdpIODevice_html_a56eac57e717d6962f4bab1871884c894"><div class="ttname"><a href="classUdpIODevice.html#a56eac57e717d6962f4bab1871884c894">UdpIODevice::open</a></div><div class="ttdeci">bool open(OpenMode mode) override</div><div class="ttdef"><b>Definition</b> <a href="UdpIODevice_8cc_source.html#l00042">UdpIODevice.cc:42</a></div></div>
+<div class="ttc" id="aclassUdpIODevice_html_a71be0d89d8167f1e7a1bad085a65be37"><div class="ttname"><a href="classUdpIODevice.html#a71be0d89d8167f1e7a1bad085a65be37">UdpIODevice::readLineData</a></div><div class="ttdeci">qint64 readLineData(char *data, qint64 maxSize) override</div><div class="ttdef"><b>Definition</b> <a href="UdpIODevice_8cc_source.html#l00062">UdpIODevice.cc:62</a></div></div>
+<div class="ttc" id="aclassUdpIODevice_html_a9e032fa701a701b870748b5a78377b96"><div class="ttname"><a href="classUdpIODevice.html#a9e032fa701a701b870748b5a78377b96">UdpIODevice::peerReplaced</a></div><div class="ttdeci">void peerReplaced(const QString &amp;previousPeer, const QString &amp;peer)</div><div class="ttdoc">Emitted after discarding old stream bytes, before exposing the replacement sender's data.</div></div>
+<div class="ttc" id="aclassUdpIODevice_html_ad0edf696c24e150913167a8bb6fa1d3a"><div class="ttname"><a href="classUdpIODevice.html#ad0edf696c24e150913167a8bb6fa1d3a">UdpIODevice::canReadLine</a></div><div class="ttdeci">bool canReadLine() const override</div><div class="ttdef"><b>Definition</b> <a href="UdpIODevice_8cc_source.html#l00057">UdpIODevice.cc:57</a></div></div>
+<div class="ttc" id="aclassUdpIODevice_html_ad87c386fca84485cf0abb217c37a8142"><div class="ttname"><a href="classUdpIODevice.html#ad87c386fca84485cf0abb217c37a8142">UdpIODevice::readData</a></div><div class="ttdeci">qint64 readData(char *data, qint64 maxSize) override</div><div class="ttdef"><b>Definition</b> <a href="UdpIODevice_8cc_source.html#l00068">UdpIODevice.cc:68</a></div></div>
+<div class="ttc" id="aclassUdpIODevice_html_add4f7a2d70a0db8cdad358fcbfdbef1f"><div class="ttname"><a href="classUdpIODevice.html#add4f7a2d70a0db8cdad358fcbfdbef1f">UdpIODevice::close</a></div><div class="ttdeci">void close() override</div><div class="ttdef"><b>Definition</b> <a href="UdpIODevice_8cc_source.html#l00084">UdpIODevice.cc:84</a></div></div>
+<div class="ttc" id="aclassUdpIODevice_html_ae2e4a549cd7900f8e211f675e2820e5b"><div class="ttname"><a href="classUdpIODevice.html#ae2e4a549cd7900f8e211f675e2820e5b">UdpIODevice::~UdpIODevice</a></div><div class="ttdeci">~UdpIODevice() override</div><div class="ttdef"><b>Definition</b> <a href="UdpIODevice_8cc_source.html#l00023">UdpIODevice.cc:23</a></div></div>
+<div class="ttc" id="anamespaceAndroidSerial_html_acc24ae6d84e04349cb77f2c2b4c72dd8"><div class="ttname"><a href="namespaceAndroidSerial.html#acc24ae6d84e04349cb77f2c2b4c72dd8">AndroidSerial::isOpen</a></div><div class="ttdeci">bool isOpen(const QString &amp;portName)</div><div class="ttdef"><b>Definition</b> <a href="AndroidSerial_8cc_source.html#l00689">AndroidSerial.cc:689</a></div></div>
+<div class="ttc" id="anamespaceMonotonicClock_html_ae8fbdd3f89c4170b83177f50e8c49411"><div class="ttname"><a href="namespaceMonotonicClock.html#ae8fbdd3f89c4170b83177f50e8c49411">MonotonicClock::ageMilliseconds</a></div><div class="ttdeci">constexpr int64_t ageMilliseconds(uint64_t timestampUs, uint64_t nowUs)</div><div class="ttdoc">A missing or future timestamp has no valid age. Both arguments must share a clock domain.</div><div class="ttdef"><b>Definition</b> <a href="MonotonicClock_8h_source.html#l00015">MonotonicClock.h:15</a></div></div>
+<div class="ttc" id="astructUdpDrainBudget_html"><div class="ttname"><a href="structUdpDrainBudget.html">UdpDrainBudget</a></div><div class="ttdef"><b>Definition</b> <a href="UdpPeer_8h_source.html#l00011">UdpPeer.h:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ff383ddf1aa4eab0c4ce7910366d05a5.html">Utilities</a></li><li class="navelem"><a class="el" href="dir_e8a21f717d86498f97452a78d688a292.html">Network</a></li><li class="navelem"><a class="el" href="UdpIODevice_8cc.html">UdpIODevice.cc</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_ff383ddf1aa4eab0c4ce7910366d05a5.html">Utilities</a></li><li class="navelem"><a class="el" href="dir_e8a21f717d86498f97452a78d688a292.html">Network</a></li><li class="navelem"><a class="el" href="dir_423ba69221823d1cb7964a43ef2b0fe1.html">IO</a></li><li class="navelem"><a class="el" href="UdpIODevice_8cc.html">UdpIODevice.cc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

@@ -32,7 +32,8 @@ var searchData=
   ['flightpathsegment_29',['FlightPathSegment',['../classFlightPathSegment.html',1,'']]],
   ['flyviewsettings_30',['FlyViewSettings',['../classFlyViewSettings.html',1,'']]],
   ['followme_31',['FollowMe',['../classFollowMe.html',1,'']]],
-  ['ftpcontroller_32',['FTPController',['../classFTPController.html',1,'']]],
-  ['ftpmanager_33',['FTPManager',['../classFTPManager.html',1,'']]],
-  ['functionstate_34',['FunctionState',['../classFunctionState.html',1,'']]]
+  ['frame_32',['Frame',['../structNMEA_1_1Frame.html',1,'NMEA']]],
+  ['ftpcontroller_33',['FTPController',['../classFTPController.html',1,'']]],
+  ['ftpmanager_34',['FTPManager',['../classFTPManager.html',1,'']]],
+  ['functionstate_35',['FunctionState',['../classFunctionState.html',1,'']]]
 ];

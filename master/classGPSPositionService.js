@@ -1,0 +1,58 @@
+var classGPSPositionService =
+[
+    [ "SelectedSource", "classGPSPositionService.html#af0bbf80df1ea7add64b976c4423c5ec1", [
+      [ "None", "classGPSPositionService.html#af0bbf80df1ea7add64b976c4423c5ec1a6adf97f83acf6453d4a6a4b1070f3754", null ],
+      [ "Receiver", "classGPSPositionService.html#af0bbf80df1ea7add64b976c4423c5ec1aa9d093d11bc6e98b0c8e586ffa545c85", null ],
+      [ "Nmea", "classGPSPositionService.html#af0bbf80df1ea7add64b976c4423c5ec1a9b5e8bcb088ad32448368a921bc5cf29", null ],
+      [ "Internal", "classGPSPositionService.html#af0bbf80df1ea7add64b976c4423c5ec1aafbf0897a5a83fdd873dfb032ec695d3", null ],
+      [ "Simulated", "classGPSPositionService.html#af0bbf80df1ea7add64b976c4423c5ec1a82abd462f92fed638828a450a2ba1f2a", null ]
+    ] ],
+    [ "SourceMode", "classGPSPositionService.html#ae061d81f6548c20f57984211a7392d12", [
+      [ "LegacyPriority", "classGPSPositionService.html#ae061d81f6548c20f57984211a7392d12a48ca0d9d9b7c5f9d79fe4e2f913c7b66", null ],
+      [ "Automatic", "classGPSPositionService.html#ae061d81f6548c20f57984211a7392d12a086247a9b57fde6eefee2a0c4752242d", null ],
+      [ "ReceiverOnly", "classGPSPositionService.html#ae061d81f6548c20f57984211a7392d12af0e5f76eeb6ddcfac157103036866b60", null ],
+      [ "NmeaOnly", "classGPSPositionService.html#ae061d81f6548c20f57984211a7392d12ac25a1d107410d3ec625afe59b6c98fe3", null ],
+      [ "InternalOnly", "classGPSPositionService.html#ae061d81f6548c20f57984211a7392d12ae98970957edd7b5457ced1043ee8b1bb", null ]
+    ] ],
+    [ "SourceStatus", "classGPSPositionService.html#a81e185311270edc39110241d38c13fd6", [
+      [ "NoSource", "classGPSPositionService.html#a81e185311270edc39110241d38c13fd6aa40fec84ee446731c228e8ec9a7b6dd5", null ],
+      [ "PermissionRequired", "classGPSPositionService.html#a81e185311270edc39110241d38c13fd6a543424190900d91cc4d81962ffbaabc9", null ],
+      [ "PermissionDenied", "classGPSPositionService.html#a81e185311270edc39110241d38c13fd6a4b33a686be73bb172407d73b26356275", null ],
+      [ "BackendUnavailable", "classGPSPositionService.html#a81e185311270edc39110241d38c13fd6aaaec17a3bdca6f75c1e572f6c32e84b6", null ],
+      [ "WaitingForFix", "classGPSPositionService.html#a81e185311270edc39110241d38c13fd6a55698b751c17541718799b38c47433f9", null ],
+      [ "Active", "classGPSPositionService.html#a81e185311270edc39110241d38c13fd6a4d3d769b812b6faa6b76e1a8abaece2d", null ],
+      [ "Stale", "classGPSPositionService.html#a81e185311270edc39110241d38c13fd6af1ac273d3c6d8e6489bf332819a2f650", null ],
+      [ "InvalidFix", "classGPSPositionService.html#a81e185311270edc39110241d38c13fd6a6cb0fb435f83ae62db20afcd2dcfb86d", null ]
+    ] ],
+    [ "GPSPositionService", "classGPSPositionService.html#a34b7cfcdcc4e8aa292547240f308ecf1", null ],
+    [ "~GPSPositionService", "classGPSPositionService.html#a67f24e6a6f84a3fe92f9894f3e0a4b26", null ],
+    [ "acceptedObservation", "classGPSPositionService.html#ae522c6ed3fef0067517c458fc9b66f48", null ],
+    [ "gcsHeading", "classGPSPositionService.html#acb2f3f3d83418f44112eb1ccf1c13006", null ],
+    [ "gcsHeadingChanged", "classGPSPositionService.html#a391856bc2a6c87a9c60afd488739c7da", null ],
+    [ "gcsPosition", "classGPSPositionService.html#accd477c3a898adf3389e774a07721999", null ],
+    [ "gcsPositionChanged", "classGPSPositionService.html#a401ef3e9b1493030b4a91afcfcd5089f", null ],
+    [ "gcsPositionHorizontalAccuracy", "classGPSPositionService.html#aeddff74958025accf8f9c2a613504516", null ],
+    [ "gcsPositionHorizontalAccuracyChanged", "classGPSPositionService.html#a411b75546fd8e4719ba743feae84f9f5", null ],
+    [ "gcsPositioningError", "classGPSPositionService.html#a4fe7c6eb74550b697919b022f4900cb5", null ],
+    [ "gcsPositionTimestamp", "classGPSPositionService.html#a4f882b1822c10048745caee9954d6619", null ],
+    [ "geoPositionInfo", "classGPSPositionService.html#a0e60c5b1d573a5270a93c9f605db7cee", null ],
+    [ "positionInfoUpdated", "classGPSPositionService.html#aa90247ac17e6d3b9d8325f6a759d100c", null ],
+    [ "registerPositionSource", "classGPSPositionService.html#adda944467027fe4027b1d8a57e4d221c", null ],
+    [ "scheduler", "classGPSPositionService.html#a6c94ab6e3b4b1ce55333a8a8a568be0f", null ],
+    [ "selectedSource", "classGPSPositionService.html#ac9aab244488bc8fbe87aaf07097e4d2d", null ],
+    [ "selectedSourceName", "classGPSPositionService.html#af969d37ca502dc8fca4d959dc14bd7f5", null ],
+    [ "selectionChanged", "classGPSPositionService.html#a3bc509c68ebd1672bf8f71e5d493fcb7", null ],
+    [ "selectionReason", "classGPSPositionService.html#a3ac85ef047b1bf52199f7de991449061", null ],
+    [ "setInternalPositionSource", "classGPSPositionService.html#a5ca91ef6aa4d2a8116113b9bdc69f25c", null ],
+    [ "setInternalPositionStatus", "classGPSPositionService.html#a41dfed6dd5214b8d8c8c56830a160777", null ],
+    [ "setSimulatedPositionSource", "classGPSPositionService.html#aa48362b3ac6cf2adaf21e0627e84b735", null ],
+    [ "setSourceMode", "classGPSPositionService.html#ad7c11b7679ff0d27c62a09de73adbb94", null ],
+    [ "sourceHealth", "classGPSPositionService.html#ac04061095fe45378a10bb6b0d81f66d6", null ],
+    [ "sourceHealthChanged", "classGPSPositionService.html#a601a98026b79011c949b28681b730966", null ],
+    [ "sourceMode", "classGPSPositionService.html#a1d315c6996bf5939f9bf245b7f5ce41a", null ],
+    [ "sourceModeChanged", "classGPSPositionService.html#afac4bb937c4d2c1ea79a3ddbdc59101a", null ],
+    [ "sourceStatus", "classGPSPositionService.html#aea403fb09fe67c2fe4990e1ff3699255", null ],
+    [ "sourceStatusText", "classGPSPositionService.html#a2127958ad072045355ad3d9da4539a36", null ],
+    [ "updateInterval", "classGPSPositionService.html#a50e67539cc81e267fb80613507b96f6d", null ],
+    [ "GPSPositionSourceRegistration", "classGPSPositionService.html#a9fce2bfc832fb5addf23cfd5dbaf867e", null ]
+];

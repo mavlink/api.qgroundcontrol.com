@@ -5,6 +5,7 @@ var namespaceQGC =
     [ "bigSizeMBToString", "namespaceQGC.html#a82cf4b5caaac7bdf4c3fae62d71f96c3", null ],
     [ "bigSizeToString", "namespaceQGC.html#a2cfc8548640288f991aad0e97a467e87", null ],
     [ "crc32", "namespaceQGC.html#a2b96db87d5dfa9f6abd229d3156c07f6", null ],
+    [ "crc32Update", "namespaceQGC.html#ab94f5ef39d6225e9a75bd289e711dfd0", null ],
     [ "fuzzyCompare", "namespaceQGC.html#aa03f35b3e7b8aa775c70b17b2479d60a", null ],
     [ "fuzzyCompare", "namespaceQGC.html#a7887633568068ad06ca797ae0fb1c4c7", null ],
     [ "fuzzyCompare", "namespaceQGC.html#a16c8c40ec3cc4cb32d453e0363e524f2", null ],
@@ -20,5 +21,5 @@ var namespaceQGC =
     [ "showCriticalVehicleMessage", "namespaceQGC.html#ac387e51c15a6c5c8ad5c8ce0f86ceeca", null ],
     [ "showRebootAppMessage", "namespaceQGC.html#ac1160fca03370c03e04d55589c8f5f1b", null ],
     [ "showRebootVehicleMessage", "namespaceQGC.html#a6c9783d4b3f283a92270018efa290f46", null ],
-    [ "crctab", "namespaceQGC.html#aec50cfb7c95f1d61002e2851f18f887f", null ]
+    [ "CRC32_TABLE", "namespaceQGC.html#a4e0650bf6361b6738db4c485bad8985b", null ]
 ];

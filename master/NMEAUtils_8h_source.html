@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/GPS/NTRIP/NMEAUtils.h Source File</title>
+<title>QGroundControl: src/GPS/NMEA/NMEAUtils.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,27 +104,23 @@ $(document).ready(function(){initNavTree('NMEAUtils_8h_source.html',''); initRes
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QtPositioning/QGeoCoordinate&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceNMEAUtils.html">NMEAUtils</a> {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>quint8 <a class="code hl_function" href="namespaceNMEAUtils.html#af30a88410d33211b841d76293a27df0a">computeChecksum</a>(<span class="keyword">const</span> QByteArray&amp; body);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceNMEAUtils.html#a79c31e7165d495c45b573b68dfedf33b">verifyChecksum</a>(<span class="keyword">const</span> QByteArray&amp; sentence);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>QByteArray <a class="code hl_function" href="namespaceNMEAUtils.html#a029ecd9009e6c92272dfd7e2427cda7f">repairChecksum</a>(<span class="keyword">const</span> QByteArray&amp; sentence);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>QByteArray <a class="code hl_function" href="namespaceNMEAUtils.html#ae57cbe66d85740bfb8ed86e079769d3a">makeGGA</a>(<span class="keyword">const</span> QGeoCoordinate&amp; coord, <span class="keywordtype">double</span> altitudeMsl, <span class="keywordtype">int</span> fixQuality = 1, <span class="keywordtype">int</span> numSatellites = 12);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}  <span class="comment">// namespace NMEAUtils</span></div>
-<div class="ttc" id="anamespaceNMEAUtils_html"><div class="ttname"><a href="namespaceNMEAUtils.html">NMEAUtils</a></div><div class="ttdef"><b>Definition</b> <a href="NMEAUtils_8cc_source.html#l00005">NMEAUtils.cc:5</a></div></div>
-<div class="ttc" id="anamespaceNMEAUtils_html_a029ecd9009e6c92272dfd7e2427cda7f"><div class="ttname"><a href="namespaceNMEAUtils.html#a029ecd9009e6c92272dfd7e2427cda7f">NMEAUtils::repairChecksum</a></div><div class="ttdeci">QByteArray repairChecksum(const QByteArray &amp;sentence)</div><div class="ttdoc">Repair or append a valid NMEA checksum and ensure CRLF termination.</div><div class="ttdef"><b>Definition</b> <a href="NMEAUtils_8cc_source.html#l00031">NMEAUtils.cc:31</a></div></div>
-<div class="ttc" id="anamespaceNMEAUtils_html_a79c31e7165d495c45b573b68dfedf33b"><div class="ttname"><a href="namespaceNMEAUtils.html#a79c31e7165d495c45b573b68dfedf33b">NMEAUtils::verifyChecksum</a></div><div class="ttdeci">bool verifyChecksum(const QByteArray &amp;sentence)</div><div class="ttdef"><b>Definition</b> <a href="NMEAUtils_8cc_source.html#l00016">NMEAUtils.cc:16</a></div></div>
-<div class="ttc" id="anamespaceNMEAUtils_html_ae57cbe66d85740bfb8ed86e079769d3a"><div class="ttname"><a href="namespaceNMEAUtils.html#ae57cbe66d85740bfb8ed86e079769d3a">NMEAUtils::makeGGA</a></div><div class="ttdeci">QByteArray makeGGA(const QGeoCoordinate &amp;coord, double altitudeMsl, int fixQuality, int numSatellites)</div><div class="ttdoc">Build a GGA sentence from a coordinate and altitude.</div><div class="ttdef"><b>Definition</b> <a href="NMEAUtils_8cc_source.html#l00068">NMEAUtils.cc:68</a></div></div>
-<div class="ttc" id="anamespaceNMEAUtils_html_af30a88410d33211b841d76293a27df0a"><div class="ttname"><a href="namespaceNMEAUtils.html#af30a88410d33211b841d76293a27df0a">NMEAUtils::computeChecksum</a></div><div class="ttdeci">quint8 computeChecksum(const QByteArray &amp;body)</div><div class="ttdoc">Compute XOR checksum over NMEA body (between '$' and '*').</div><div class="ttdef"><b>Definition</b> <a href="NMEAUtils_8cc_source.html#l00007">NMEAUtils.cc:7</a></div></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceNMEAUtils.html#a79c31e7165d495c45b573b68dfedf33b">verifyChecksum</a>(<span class="keyword">const</span> QByteArray&amp; sentence);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>QByteArray <a class="code hl_function" href="namespaceNMEAUtils.html#a029ecd9009e6c92272dfd7e2427cda7f">repairChecksum</a>(<span class="keyword">const</span> QByteArray&amp; sentence);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>QByteArray <a class="code hl_function" href="namespaceNMEAUtils.html#ae57cbe66d85740bfb8ed86e079769d3a">makeGGA</a>(<span class="keyword">const</span> QGeoCoordinate&amp; coord, <span class="keywordtype">double</span> altitudeMsl, <span class="keywordtype">int</span> fixQuality = 1, <span class="keywordtype">int</span> numSatellites = 12);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}  <span class="comment">// namespace NMEAUtils</span></div>
+<div class="ttc" id="anamespaceNMEAUtils_html"><div class="ttname"><a href="namespaceNMEAUtils.html">NMEAUtils</a></div><div class="ttdef"><b>Definition</b> <a href="NMEAUtils_8cc_source.html#l00023">NMEAUtils.cc:23</a></div></div>
+<div class="ttc" id="anamespaceNMEAUtils_html_a029ecd9009e6c92272dfd7e2427cda7f"><div class="ttname"><a href="namespaceNMEAUtils.html#a029ecd9009e6c92272dfd7e2427cda7f">NMEAUtils::repairChecksum</a></div><div class="ttdeci">QByteArray repairChecksum(const QByteArray &amp;sentence)</div><div class="ttdoc">Rebuild a valid frame with its checksum and CRLF; short or malformed bodies are only terminated.</div><div class="ttdef"><b>Definition</b> <a href="NMEAUtils_8cc_source.html#l00030">NMEAUtils.cc:30</a></div></div>
+<div class="ttc" id="anamespaceNMEAUtils_html_a79c31e7165d495c45b573b68dfedf33b"><div class="ttname"><a href="namespaceNMEAUtils.html#a79c31e7165d495c45b573b68dfedf33b">NMEAUtils::verifyChecksum</a></div><div class="ttdeci">bool verifyChecksum(const QByteArray &amp;sentence)</div><div class="ttdef"><b>Definition</b> <a href="NMEAUtils_8cc_source.html#l00024">NMEAUtils.cc:24</a></div></div>
+<div class="ttc" id="anamespaceNMEAUtils_html_ae57cbe66d85740bfb8ed86e079769d3a"><div class="ttname"><a href="namespaceNMEAUtils.html#ae57cbe66d85740bfb8ed86e079769d3a">NMEAUtils::makeGGA</a></div><div class="ttdeci">QByteArray makeGGA(const QGeoCoordinate &amp;coord, double altitudeMsl, int fixQuality, int numSatellites)</div><div class="ttdoc">Build a GGA sentence from a coordinate and altitude.</div><div class="ttdef"><b>Definition</b> <a href="NMEAUtils_8cc_source.html#l00046">NMEAUtils.cc:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_0bd4555d491f4d14ccab59835439da5b.html">NTRIP</a></li><li class="navelem"><a class="el" href="NMEAUtils_8h.html">NMEAUtils.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_5275773357dfa04b7015cd1381fbacdf.html">NMEA</a></li><li class="navelem"><a class="el" href="NMEAUtils_8h.html">NMEAUtils.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

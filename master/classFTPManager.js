@@ -16,6 +16,9 @@ var classFTPManager =
     [ "upload", "classFTPManager.html#a526c77fd865a7336729213defc2607c0", null ],
     [ "uploadComplete", "classFTPManager.html#a7e8220db74a62804d9342068f2108415", null ],
     [ "Vehicle", "classFTPManager.html#a74c93d9d035fcad5381bfb57de0426a1", null ],
+    [ "kFullReadChunkSize", "classFTPManager.html#a54b0dbca049c9c7e62684e90c30874e4", null ],
+    [ "kMaxDownloadSessionReopens", "classFTPManager.html#a95df003adac4494031341a3f929b512a", null ],
+    [ "kRadioReadChunkSize", "classFTPManager.html#a4fc87c2d2d806df91df48f33ca1fd9a5", null ],
     [ "kTestAckTimeoutMs", "classFTPManager.html#a0f43ca3a5f089c1f709ccf55875fbd2f", null ],
     [ "kTestOperationMaxWaitMs", "classFTPManager.html#a9e6e4490b05e67fec6b0a9372fa824f5", null ],
     [ "mavlinkFTPScheme", "classFTPManager.html#a6aba45c648956730127b0216cde9bb1a", null ]

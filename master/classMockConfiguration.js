@@ -5,6 +5,10 @@ var classMockConfiguration =
       [ "FailParamNoResponseToRequestList", "classMockConfiguration.html#a4489829722113399b8ffb8e3adf57433af0c793d0d97e9bbe4b20ed20bb470627", null ],
       [ "FailMissingParamOnInitialRequest", "classMockConfiguration.html#a4489829722113399b8ffb8e3adf57433a4c786f3093d175368de3b697e7fee8b3", null ],
       [ "FailMissingParamOnAllRequests", "classMockConfiguration.html#a4489829722113399b8ffb8e3adf57433a4d5175646d1700f888b817c1ffd2e8d6", null ],
+      [ "FailMissingParamOnAllRequestsNonDefaultComponent", "classMockConfiguration.html#a4489829722113399b8ffb8e3adf57433a362827c101edf25b92367675a6300fe0", null ],
+      [ "FailMissingParamSharedIndexAcrossComponents", "classMockConfiguration.html#a4489829722113399b8ffb8e3adf57433aa13649c538d971fc002d755b9e4312d8", null ],
+      [ "FailNonDefaultComponentDead", "classMockConfiguration.html#a4489829722113399b8ffb8e3adf57433ae0c6cefbd1413a67d7f13538dbe0a3b0", null ],
+      [ "FailNonDefaultComponentLossy", "classMockConfiguration.html#a4489829722113399b8ffb8e3adf57433a5ce17e8019a61c008817d2d107564d2f", null ],
       [ "FailInitialConnectRequestMessageAutopilotVersionFailure", "classMockConfiguration.html#a4489829722113399b8ffb8e3adf57433acd1a1e16dbe9c32194bd23bd7e7238e2", null ],
       [ "FailInitialConnectRequestMessageAutopilotVersionLost", "classMockConfiguration.html#a4489829722113399b8ffb8e3adf57433a3b6efefb5da526c70b1f8439f1fbbace", null ]
     ] ],
@@ -17,7 +21,8 @@ var classMockConfiguration =
       [ "OptionPreloadMission", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fa055b8b064600af0ad2bd14112ceb1cfb", null ],
       [ "OptionStayMavlinkV1", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102faa2a5c1a3e1f897d28338e698afdd0465", null ],
       [ "OptionAPMStartFreshParams", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fa42c6072b9a5687de3a23f48fd4ecaf95", null ],
-      [ "OptionFtpCapability", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102faf99dc1a6b1117af4dd572431b4e5c859", null ]
+      [ "OptionFtpCapability", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102faf99dc1a6b1117af4dd572431b4e5c859", null ],
+      [ "OptionNoRadioStatus", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fadf735b948ea58fd1d17eb537c9567ac5", null ]
     ] ],
     [ "VideoStreamType", "classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afd", [
       [ "VideoStreamNone", "classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda2cd62834fbd84afc5807e080d9844e3d", null ],
@@ -85,6 +90,7 @@ var classMockConfiguration =
     [ "loadSettings", "classMockConfiguration.html#a50235f102ff3e166c83c6e818450f8ff", null ],
     [ "preloadMission", "classMockConfiguration.html#a04b9e98bd00f1ea8652750bf996c0dbc", null ],
     [ "saveSettings", "classMockConfiguration.html#a9949bfa6900f390a0f67846d326f62b7", null ],
+    [ "sendRadioStatus", "classMockConfiguration.html#acd46164f9a867cc75ce56213f3785fdf", null ],
     [ "sendStatusChanged", "classMockConfiguration.html#a68c88a89e5493c1a4a9de4048669e1de", null ],
     [ "sendStatusText", "classMockConfiguration.html#a5b609d6ce8749bf936f0cfeb95bf96ac", null ],
     [ "setApmStartFreshParams", "classMockConfiguration.html#a69af040c1020c66c4936525e449d26ce", null ],
@@ -115,6 +121,7 @@ var classMockConfiguration =
     [ "setGimbalHasYawLock", "classMockConfiguration.html#a8beba71ab1ec129006b26edbd28cf689", null ],
     [ "setIncrementVehicleId", "classMockConfiguration.html#a6ecd5f9d4a5f5f22593dd997776b85f8", null ],
     [ "setPreloadMission", "classMockConfiguration.html#afba4f071c5e9f6f1bd2bb215bb9e9829", null ],
+    [ "setSendRadioStatus", "classMockConfiguration.html#ae6af22752bb6f71b1e2b62018dc1ef04", null ],
     [ "setSendStatusText", "classMockConfiguration.html#a88f74895d284a49ac9bd3752c835f5d3", null ],
     [ "setStartArmed", "classMockConfiguration.html#a67fd9de8837e3131ac5f21541b78e879", null ],
     [ "setStayMavlinkV1", "classMockConfiguration.html#affbf31b6c0e9f6969686c8b6b219a5e7", null ],

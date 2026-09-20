@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['sdljoystick_0',['SDLJoystick',['../namespaceSDLJoystick.html',1,'']]],
-  ['sdlplatform_1',['SDLPlatform',['../namespaceSDLPlatform.html',1,'']]],
-  ['shpfilehelper_2',['SHPFileHelper',['../namespaceSHPFileHelper.html',1,'']]],
-  ['surfaceanalysis_3',['SurfaceAnalysis',['../namespaceSurfaceAnalysis.html',1,'']]]
+  ['rtcm_0',['RTCM',['../namespaceRTCM.html',1,'']]]
 ];

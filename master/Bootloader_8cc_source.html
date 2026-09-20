@@ -177,7 +177,7 @@ $(document).ready(function(){initNavTree('Bootloader_8cc_source.html',''); initR
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">if</span> (_inBootloaderMode) {</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            qCDebug(FirmwareUpgradeLog) &lt;&lt; <span class="stringliteral">&quot;Radio in bootloader mode already&quot;</span>;</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">if</span> (!_get3DRRadioBoardId(_boardID)) {</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keywordflow">goto</span> Error;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            }</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            qCDebug(FirmwareUpgradeLog) &lt;&lt; <span class="stringliteral">&quot;Radio in normal mode&quot;</span>;</div>
@@ -187,12 +187,12 @@ $(document).ready(function(){initNavTree('Bootloader_8cc_source.html',''); initR
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            _write(<span class="stringliteral">&quot;+++&quot;</span>);</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">if</span> (!_port.<a class="code hl_function" href="classQSerialPort.html#a5a274fca3c9315fb5536cc8e716e4d9a">waitForReadyRead</a>(2000)) {</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                _errorString = tr(<span class="stringliteral">&quot;Unable to put radio into command mode +++&quot;</span>);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                <span class="keywordflow">goto</span> Error;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            }</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            QByteArray bytes = _port.readAll();</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">if</span> (!bytes.contains(<span class="stringliteral">&quot;OK&quot;</span>)) {</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                _errorString = tr(<span class="stringliteral">&quot;Radio did not respond to command mode&quot;</span>);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                <span class="keywordflow">goto</span> Error;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            }</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="comment">// Use ATI2 command to get board id</span></div>
@@ -200,14 +200,14 @@ $(document).ready(function(){initNavTree('Bootloader_8cc_source.html',''); initR
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            QString echo = _getNextLine(2000);</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="keywordflow">if</span> (echo.isEmpty() || echo != <span class="stringliteral">&quot;ATI2&quot;</span>) {</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                _errorString = tr(<span class="stringliteral">&quot;Radio did not respond to ATI2 command&quot;</span>);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keywordflow">goto</span> Error;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            }</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            QString boardIdStr = _getNextLine(2000);</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            <span class="keywordtype">bool</span> ok = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            _boardID = boardIdStr.toInt(&amp;ok);</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordflow">if</span> (boardIdStr.isEmpty() || !ok) {</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                _errorString = tr(<span class="stringliteral">&quot;Radio did not return board id&quot;</span>);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                <span class="keywordflow">goto</span> Error;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            }</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        }</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        bootloaderVersion   = 0;</div>
@@ -217,21 +217,21 @@ $(document).ready(function(){initNavTree('Bootloader_8cc_source.html',''); initR
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">if</span> (!_sync()) {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordflow">goto</span> Error;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        }</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">if</span> (!_protoGetDevice(INFO_BL_REV, _bootloaderVersion)) {</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">goto</span> Error;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">if</span> (_bootloaderVersion &lt; BL_REV_MIN || _bootloaderVersion &gt; BL_REV_MAX) {</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            _errorString = tr(<span class="stringliteral">&quot;Found unsupported bootloader version: %1&quot;</span>).arg(_bootloaderVersion);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <span class="keywordflow">goto</span> Error;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        }</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">if</span> (!_protoGetDevice(INFO_BOARD_ID, _boardID)) {</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">goto</span> Error;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">if</span> (!_protoGetDevice(INFO_FLASH_SIZE, _boardFlashSize)) {</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            qWarning() &lt;&lt; _errorString;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            <span class="keywordflow">goto</span> Error;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        }</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="comment">// Older V2 boards have large flash space but silicon error which prevents it from being used. Bootloader v5 and above</span></div>
@@ -248,7 +248,7 @@ $(document).ready(function(){initNavTree('Bootloader_8cc_source.html',''); initR
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    }</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>Error:</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>:</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    qCDebug(FirmwareUpgradeLog) &lt;&lt; <span class="stringliteral">&quot;getBoardInfo failed:&quot;</span> &lt;&lt; _errorString;</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    _errorString.prepend(tr(<span class="stringliteral">&quot;Get Board Info: &quot;</span>));</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -413,18 +413,18 @@ $(document).ready(function(){initNavTree('Bootloader_8cc_source.html',''); initR
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    uint8_t buf[3] = { PROTO_GET_DEVICE, param, PROTO_EOC };</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    <span class="keywordflow">if</span> (!_write(buf, <span class="keyword">sizeof</span>(buf))) {</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        <span class="keywordflow">goto</span> <a class="code hl_enumeration" href="namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7">Error</a>;</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    }</div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <span class="keywordflow">if</span> (!_read((uint8_t*)&amp;value, <span class="keyword">sizeof</span>(value))) {</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        <span class="keywordflow">goto</span> <a class="code hl_enumeration" href="namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7">Error</a>;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    }</div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    <span class="keywordflow">if</span> (!_getCommandResponse()) {</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        <span class="keywordflow">goto</span> <a class="code hl_enumeration" href="namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7">Error</a>;</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    }</div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><a class="code hl_enumeration" href="namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7">Error</a>:</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>:</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    _errorString.prepend(tr(<span class="stringliteral">&quot;Get Device: &quot;</span>));</div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>}</div>
@@ -434,17 +434,17 @@ $(document).ready(function(){initNavTree('Bootloader_8cc_source.html',''); initR
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    uint8_t buf[2] = { cmd, PROTO_EOC };</div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    <span class="keywordflow">if</span> (!_write(buf, 2)) {</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        <span class="keywordflow">goto</span> <a class="code hl_enumeration" href="namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7">Error</a>;</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    }</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    _port.<a class="code hl_function" href="classQSerialPort.html#a7e97e0071618a7a0e70ab7d9f7aec5f4">flush</a>();</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <span class="keywordflow">if</span> (!_getCommandResponse(responseTimeout)) {</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        <span class="keywordflow">goto</span> <a class="code hl_enumeration" href="namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7">Error</a>;</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    }</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span> </div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span><a class="code hl_enumeration" href="namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7">Error</a>:</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span><a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>:</div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    _errorString.prepend(tr(<span class="stringliteral">&quot;Send Command: &quot;</span>));</div>
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>}</div>
@@ -834,15 +834,15 @@ $(document).ready(function(){initNavTree('Bootloader_8cc_source.html',''); initR
 <div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>    uint8_t buf[2] = { PROTO_GET_DEVICE, PROTO_EOC };</div>
 <div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span> </div>
 <div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>    <span class="keywordflow">if</span> (!_write(buf, <span class="keyword">sizeof</span>(buf))) {</div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>        <span class="keywordflow">goto</span> <a class="code hl_enumeration" href="namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7">Error</a>;</div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>        <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>    }</div>
 <div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>    _port.<a class="code hl_function" href="classQSerialPort.html#a7e97e0071618a7a0e70ab7d9f7aec5f4">flush</a>();</div>
 <div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span> </div>
 <div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>    <span class="keywordflow">if</span> (!_read((uint8_t*)buf, 2)) {</div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>        <span class="keywordflow">goto</span> <a class="code hl_enumeration" href="namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7">Error</a>;</div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>        <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>    }</div>
 <div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>    <span class="keywordflow">if</span> (!_getCommandResponse()) {</div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>        <span class="keywordflow">goto</span> <a class="code hl_enumeration" href="namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7">Error</a>;</div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>        <span class="keywordflow">goto</span> <a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>;</div>
 <div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>    }</div>
 <div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span> </div>
 <div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>    boardID = buf[0];</div>
@@ -852,14 +852,15 @@ $(document).ready(function(){initNavTree('Bootloader_8cc_source.html',''); initR
 <div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span> </div>
 <div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span> </div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span><a class="code hl_enumeration" href="namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7">Error</a>:</div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span><a class="code hl_enumvalue" href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>:</div>
 <div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>    _errorString.prepend(tr(<span class="stringliteral">&quot;Get Board Id: &quot;</span>));</div>
 <div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>}</div>
 <div class="ttc" id="aBootloader_8h_html"><div class="ttname"><a href="Bootloader_8h.html">Bootloader.h</a></div></div>
 <div class="ttc" id="aFirmwareImage_8h_html"><div class="ttname"><a href="FirmwareImage_8h.html">FirmwareImage.h</a></div></div>
+<div class="ttc" id="aGPSTransportResult_8h_html_a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd"><div class="ttname"><a href="GPSTransportResult_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">GPSOpenStatus::Error</a></div><div class="ttdeci">@ Error</div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
-<div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00007">QGCLoggingCategory.h:7</a></div></div>
+<div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>
 <div class="ttc" id="aQGCMath_8h_html"><div class="ttname"><a href="QGCMath_8h.html">QGCMath.h</a></div></div>
 <div class="ttc" id="aclassBootloader_html"><div class="ttname"><a href="classBootloader.html">Bootloader</a></div><div class="ttdoc">Bootloader Utility routines. Works with PX4 and 3DR Radio bootloaders.</div><div class="ttdef"><b>Definition</b> <a href="Bootloader_8h_source.html#l00015">Bootloader.h:16</a></div></div>
 <div class="ttc" id="aclassBootloader_html_a2b39911739e1d7d3f791be422581bfc1"><div class="ttname"><a href="classBootloader.html#a2b39911739e1d7d3f791be422581bfc1">Bootloader::program</a></div><div class="ttdeci">bool program(const FirmwareImage *image)</div><div class="ttdef"><b>Definition</b> <a href="Bootloader_8cc_source.html#l00189">Bootloader.cc:189</a></div></div>
@@ -894,8 +895,7 @@ $(document).ready(function(){initNavTree('Bootloader_8cc_source.html',''); initR
 <div class="ttc" id="aclassQSerialPort_html_ae442d0d31164ce57dd4469a415af586c"><div class="ttname"><a href="classQSerialPort.html#ae442d0d31164ce57dd4469a415af586c">QSerialPort::setParity</a></div><div class="ttdeci">bool setParity(Parity parity)</div><div class="ttdef"><b>Definition</b> <a href="qserialport_8cpp_source.html#l00611">qserialport.cpp:611</a></div></div>
 <div class="ttc" id="aclassQSerialPort_html_af8b1a4876916f4773bf13bae1fd05fb4"><div class="ttname"><a href="classQSerialPort.html#af8b1a4876916f4773bf13bae1fd05fb4">QSerialPort::bytesAvailable</a></div><div class="ttdeci">qint64 bytesAvailable() const override</div><div class="ttdoc">\reimp</div><div class="ttdef"><b>Definition</b> <a href="qserialport_8cpp_source.html#l01034">qserialport.cpp:1034</a></div></div>
 <div class="ttc" id="aclassQSerialPort_html_affad1e6880cbec6d516de4f33412053e"><div class="ttname"><a href="classQSerialPort.html#affad1e6880cbec6d516de4f33412053e">QSerialPort::setFlowControl</a></div><div class="ttdeci">bool setFlowControl(FlowControl flowControl)</div><div class="ttdef"><b>Definition</b> <a href="qserialport_8cpp_source.html#l00711">qserialport.cpp:711</a></div></div>
-<div class="ttc" id="anamespaceQGCCompression_html_aba889dcd77ddc556c71ad821a9a798e7"><div class="ttname"><a href="namespaceQGCCompression.html#aba889dcd77ddc556c71ad821a9a798e7">QGCCompression::Error</a></div><div class="ttdeci">Error</div><div class="ttdoc">Error codes for decompression operations.</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8h_source.html#l00023">QGCCompression.h:23</a></div></div>
-<div class="ttc" id="anamespaceQGC_html_a2b96db87d5dfa9f6abd229d3156c07f6"><div class="ttname"><a href="namespaceQGC.html#a2b96db87d5dfa9f6abd229d3156c07f6">QGC::crc32</a></div><div class="ttdeci">quint32 crc32(const quint8 *src, unsigned len, unsigned state)</div><div class="ttdef"><b>Definition</b> <a href="QGCMath_8cc_source.html#l00100">QGCMath.cc:100</a></div></div>
+<div class="ttc" id="anamespaceQGC_html_a2b96db87d5dfa9f6abd229d3156c07f6"><div class="ttname"><a href="namespaceQGC.html#a2b96db87d5dfa9f6abd229d3156c07f6">QGC::crc32</a></div><div class="ttdeci">quint32 crc32(const quint8 *src, unsigned len, unsigned state)</div><div class="ttdef"><b>Definition</b> <a href="QGCMath_8cc_source.html#l00066">QGCMath.cc:66</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -8,8 +8,7 @@ var searchData=
   ['hole_5',['Hole',['../structSurfaceAnalysis_1_1Hole.html',1,'SurfaceAnalysis']]],
   ['horizontalfactvaluegrid_6',['HorizontalFactValueGrid',['../classHorizontalFactValueGrid.html',1,'']]],
   ['httprequest_7',['HttpRequest',['../structNTRIPHttpTransport_1_1HttpRequest.html',1,'NTRIPHttpTransport']]],
-  ['httpstatus_8',['HttpStatus',['../structNTRIPHttpTransport_1_1HttpStatus.html',1,'NTRIPHttpTransport']]],
-  ['hwbufferenvconfig_9',['HwBufferEnvConfig',['../structHwBuffers_1_1HwBufferEnvConfig.html',1,'HwBuffers']]],
-  ['hwresolvedpathcache_10',['HwResolvedPathCache',['../structHwResolvedPathCache.html',1,'']]],
-  ['hwvideobuffercontext_11',['HwVideoBufferContext',['../structHwVideoBufferContext.html',1,'']]]
+  ['hwbufferenvconfig_8',['HwBufferEnvConfig',['../structHwBuffers_1_1HwBufferEnvConfig.html',1,'HwBuffers']]],
+  ['hwresolvedpathcache_9',['HwResolvedPathCache',['../structHwResolvedPathCache.html',1,'']]],
+  ['hwvideobuffercontext_10',['HwVideoBufferContext',['../structHwVideoBufferContext.html',1,'']]]
 ];

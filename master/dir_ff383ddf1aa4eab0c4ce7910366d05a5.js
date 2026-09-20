@@ -8,6 +8,7 @@ var dir_ff383ddf1aa4eab0c4ce7910366d05a5 =
     [ "FileSystem", "dir_85e1890ca05e11e88f2c538dc14ce807.html", "dir_85e1890ca05e11e88f2c538dc14ce807" ],
     [ "Format", "dir_0d2e0a8ae1ae2d6193bd4bcf0427c2c4.html", "dir_0d2e0a8ae1ae2d6193bd4bcf0427c2c4" ],
     [ "Geo", "dir_70d993a9f007d48d3cbe2296edb65e77.html", "dir_70d993a9f007d48d3cbe2296edb65e77" ],
+    [ "IO", "dir_e531cb869e83ac56478fdbdc77a1a97e.html", "dir_e531cb869e83ac56478fdbdc77a1a97e" ],
     [ "Logging", "dir_387619659fceb43882a735ce9a40a27b.html", "dir_387619659fceb43882a735ce9a40a27b" ],
     [ "Math", "dir_4a6229870a6bd1429bfc2de75cce75bc.html", "dir_4a6229870a6bd1429bfc2de75cce75bc" ],
     [ "Memory", "dir_21ddf0b5f18acd5e64826f246466c9e1.html", "dir_21ddf0b5f18acd5e64826f246466c9e1" ],
@@ -17,10 +18,9 @@ var dir_ff383ddf1aa4eab0c4ce7910366d05a5 =
     [ "SDL", "dir_623eb407f9b04ef72e2f9f5ceaae27d8.html", "dir_623eb407f9b04ef72e2f9f5ceaae27d8" ],
     [ "Sensors", "dir_76333b0b0b999a665b5ee59f5e8a0f6f.html", "dir_76333b0b0b999a665b5ee59f5e8a0f6f" ],
     [ "StateMachine", "dir_c89c7e63c8e532b29209ac3591a5c894.html", "dir_c89c7e63c8e532b29209ac3591a5c894" ],
+    [ "Timing", "dir_743472276c248d998ca25891822d274e.html", "dir_743472276c248d998ca25891822d274e" ],
     [ "AppMessages.cc", "AppMessages_8cc.html", "AppMessages_8cc" ],
     [ "AppMessages.h", "AppMessages_8h.html", "AppMessages_8h" ],
-    [ "DataRateTracker.cc", "DataRateTracker_8cc.html", null ],
-    [ "DataRateTracker.h", "DataRateTracker_8h.html", "DataRateTracker_8h" ],
     [ "QGCCommandLineParser.cc", "QGCCommandLineParser_8cc.html", "QGCCommandLineParser_8cc" ],
     [ "QGCCommandLineParser.h", "QGCCommandLineParser_8h.html", "QGCCommandLineParser_8h" ]
 ];

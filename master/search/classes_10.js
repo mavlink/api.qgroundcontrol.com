@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['packresult_0',['PackResult',['../structRTCMMavlink_1_1PackResult.html',1,'RTCMMavlink']]],
+  ['packresult_0',['PackResult',['../structRTCMMavlinkPacket_1_1PackResult.html',1,'RTCMMavlinkPacket']]],
   ['paperplanegeometry_1',['PaperPlaneGeometry',['../classPaperPlaneGeometry.html',1,'']]],
   ['parallelstate_2',['ParallelState',['../classParallelState.html',1,'']]],
   ['parameter_3',['Parameter',['../structParameter.html',1,'']]],

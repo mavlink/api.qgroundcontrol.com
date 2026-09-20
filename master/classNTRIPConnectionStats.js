@@ -13,7 +13,7 @@ var classNTRIPConnectionStats =
     [ "messageCountsByIdChanged", "classNTRIPConnectionStats.html#a1d40b31b0bfa1d5907019a1d3fbada50", null ],
     [ "messagesReceived", "classNTRIPConnectionStats.html#a254246ef562b0fafb1b77737bdbd42dc", null ],
     [ "messagesReceivedChanged", "classNTRIPConnectionStats.html#a946b3145bdeb98f96ef6ea9b071f0144", null ],
-    [ "recordMessage", "classNTRIPConnectionStats.html#adb99f9c1743f7e2ec55120eed703ac45", null ],
+    [ "recordMessage", "classNTRIPConnectionStats.html#aa5305ad103311de993b546de933368d6", null ],
     [ "reset", "classNTRIPConnectionStats.html#a978fc9c4c5215fd1afce639984a002a9", null ],
     [ "start", "classNTRIPConnectionStats.html#ab688ce5423bf005a00fbfa58d26dac97", null ],
     [ "stop", "classNTRIPConnectionStats.html#a9b36b369c8eb4acabb2d59c64d2fc70c", null ]

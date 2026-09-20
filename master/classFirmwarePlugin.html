@@ -132,6 +132,8 @@ Public Types</h2></td></tr>
 , <a class="el" href="classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18aea5aa4666a65eeccad6f5cb14ff6b320">ROIModeCapability</a> = 1 &lt;&lt; 5
 , <a class="el" href="classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18a10e8c486e9a19da6e8adad42028fd79e">ChangeHeadingCapability</a> = 1 &lt;&lt; 6
 , <a class="el" href="classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18a5a481cb56510ff8c711b445944148c6c">GuidedTakeoffCapability</a> = 1 &lt;&lt; 7
+, <br />
+&#160;&#160;<a class="el" href="classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18ae5e66d0baff04b16ddac09b6bf76db7f">VTOLMulticopterTakeoffCapability</a> = 1 &lt;&lt; 8
 <br />
  }</td></tr>
 <tr class="memdesc:a4014aa19969f59e109bf8fd5ab19ec18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of optional capabilites which firmware may support.  <a href="classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18">More...</a><br /></td></tr>
@@ -408,7 +410,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Maps from firmware major version number to remapParamNameMinorVersionRemapMap_t entry key: firmware major version value: remapParamNameMinorVersionRemapMap_t entry </p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00118">118</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00119">119</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 </div>
 </div>
@@ -427,7 +429,7 @@ Protected Attributes</h2></td></tr>
 <p>To bypass remapping (e.g. when checking parameterExists for a specific old or new name to decide which unit conversion to apply), prefix the name with "noremap.".</p>
 <p>Remap table entries map new_name -&gt; old_name for the version in which the rename occurred. For example: remapV4_0["TUNE_MIN"] = "TUNE_LOW" means TUNE_LOW was renamed to TUNE_MIN in 4.0. Maps from one parameter name to another (new_name -&gt; old_name for a given version) key: current (new) parameter name value: previous (old) parameter name </p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00108">108</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00109">109</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 </div>
 </div>
@@ -444,7 +446,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Maps from firmware minor version to remapParamNameMap_t entry key: firmware minor version in which the rename(s) occurred value: remapParamNameMap_t with new-&gt;old mappings for that version </p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00113">113</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00114">114</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 </div>
 </div>
@@ -478,6 +480,8 @@ Protected Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="a4014aa19969f59e109bf8fd5ab19ec18a10e8c486e9a19da6e8adad42028fd79e" name="a4014aa19969f59e109bf8fd5ab19ec18a10e8c486e9a19da6e8adad42028fd79e"></a>ChangeHeadingCapability&#160;</td><td class="fielddoc"><p><a class="el" href="classVehicle.html">Vehicle</a> supports changing heading at current location. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a4014aa19969f59e109bf8fd5ab19ec18a5a481cb56510ff8c711b445944148c6c" name="a4014aa19969f59e109bf8fd5ab19ec18a5a481cb56510ff8c711b445944148c6c"></a>GuidedTakeoffCapability&#160;</td><td class="fielddoc"><p><a class="el" href="classVehicle.html">Vehicle</a> supports guided takeoff. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4014aa19969f59e109bf8fd5ab19ec18ae5e66d0baff04b16ddac09b6bf76db7f" name="a4014aa19969f59e109bf8fd5ab19ec18ae5e66d0baff04b16ddac09b6bf76db7f"></a>VTOLMulticopterTakeoffCapability&#160;</td><td class="fielddoc"><p>VTOL supports MAV_CMD_NAV_TAKEOFF while remaining in multicopter mode. </p>
 </td></tr>
 </table>
 
@@ -566,11 +570,11 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00492">492</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00497">497</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00440">_flightModeList</a>, <a class="el" href="FirmwarePlugin_8h_source.html#l00054">FirmwareFlightMode::custom_mode</a>, and <a class="el" href="FirmwarePlugin_8h_source.html#l00052">FirmwareFlightMode::mode_name</a>.</p>
+<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00441">_flightModeList</a>, <a class="el" href="FirmwarePlugin_8h_source.html#l00054">FirmwareFlightMode::custom_mode</a>, and <a class="el" href="FirmwarePlugin_8h_source.html#l00052">FirmwareFlightMode::mode_name</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00477">_updateFlightModeList()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00482">_updateFlightModeList()</a>.</p>
 
 </div>
 </div>
@@ -603,7 +607,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="Vehicle_8h_source.html#l00456">Vehicle::armed()</a>, and <a class="el" href="Vehicle_8cc_source.html#l01439">Vehicle::setArmed()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01067">APMFirmwarePlugin::startMission()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00582">PX4FirmwarePlugin::startMission()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01047">APMFirmwarePlugin::startTakeoff()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00570">PX4FirmwarePlugin::startTakeoff()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01081">APMFirmwarePlugin::startMission()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00598">PX4FirmwarePlugin::startMission()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01061">APMFirmwarePlugin::startTakeoff()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00586">PX4FirmwarePlugin::startTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -632,9 +636,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#a7be2fff662da14ca8c52e21078747d85">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a5bd8a92698a254a23d8735f5aaae4c2b">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00417">417</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00418">418</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00537">_cachedParameterMetaDataFile()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00590">cacheParameterMetaDataFile()</a>, and <a class="el" href="FirmwarePlugin_8cc_source.html#l00518">loadParameterMetaData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00542">_cachedParameterMetaDataFile()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00595">cacheParameterMetaDataFile()</a>, and <a class="el" href="FirmwarePlugin_8cc_source.html#l00523">loadParameterMetaData()</a>.</p>
 
 </div>
 </div>
@@ -662,11 +666,11 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00537">537</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00542">542</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00417">_autopilotType()</a>, <a class="el" href="FirmwarePlugin_8h_source.html#l00416">_internalParameterMetaDataFile()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00508">_parameterMetaDataCacheDir()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00506">kCachedMetaDataFilePrefix</a>, <a class="el" href="AppMessages_8cc_source.html#l00037">QGC::runningUnitTests()</a>, <a class="el" href="ParameterMetaData_8cc_source.html#l00124">ParameterMetaData::versionFromFileName()</a>, and <a class="el" href="ParameterMetaData_8cc_source.html#l00112">ParameterMetaData::versionFromMetaDataFile()</a>.</p>
+<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00418">_autopilotType()</a>, <a class="el" href="FirmwarePlugin_8h_source.html#l00417">_internalParameterMetaDataFile()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00513">_parameterMetaDataCacheDir()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00511">kCachedMetaDataFilePrefix</a>, <a class="el" href="AppMessages_8cc_source.html#l00037">QGC::runningUnitTests()</a>, <a class="el" href="ParameterMetaData_8cc_source.html#l00124">ParameterMetaData::versionFromFileName()</a>, and <a class="el" href="ParameterMetaData_8cc_source.html#l00112">ParameterMetaData::versionFromMetaDataFile()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00518">loadParameterMetaData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00523">loadParameterMetaData()</a>.</p>
 
 </div>
 </div>
@@ -696,9 +700,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduCopterFirmwarePlugin.html#a3b4d6fb51f7082087e89e3c0225febbd">ArduCopterFirmwarePlugin</a>, <a class="el" href="classArduPlaneFirmwarePlugin.html#a588d50f2e320f33f89991fd0d47e5499">ArduPlaneFirmwarePlugin</a>, <a class="el" href="classArduRoverFirmwarePlugin.html#ac49d31c83969a91928dd82fcc30fc72e">ArduRoverFirmwarePlugin</a>, and <a class="el" href="classArduSubFirmwarePlugin.html#a1e49596640e9918f3c4b59d7f5f34858">ArduSubFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00434">434</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00435">435</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00664">APMFirmwarePlugin::guidedFlightMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00659">APMFirmwarePlugin::missionFlightMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00649">APMFirmwarePlugin::rtlFlightMode()</a>, and <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00654">APMFirmwarePlugin::smartRTLFlightMode()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00674">APMFirmwarePlugin::guidedFlightMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00669">APMFirmwarePlugin::missionFlightMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00659">APMFirmwarePlugin::rtlFlightMode()</a>, and <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00664">APMFirmwarePlugin::smartRTLFlightMode()</a>.</p>
 
 </div>
 </div>
@@ -727,9 +731,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classPX4FirmwarePlugin.html#a643e5a9945e95908f1ab3dd326fc45f3">PX4FirmwarePlugin</a>, and <a class="el" href="classAPMFirmwarePlugin.html#aa9713001f04cc6d08cb26d5a5d8dcb01">APMFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00418">418</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00419">419</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00518">loadParameterMetaData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00523">loadParameterMetaData()</a>.</p>
 
 </div>
 </div>
@@ -759,7 +763,7 @@ Protected Attributes</h2></td></tr>
 
 <p>returns url with latest firmware release information. </p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00422">422</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00423">423</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00344">checkIfIsLatestStable()</a>.</p>
 
@@ -791,9 +795,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#af085586f3f8fc8206b2e80e7b0bfd7f4">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a6037e21b7688e4d8980733b447846fb3">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00416">416</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00417">417</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00537">_cachedParameterMetaDataFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00542">_cachedParameterMetaDataFile()</a>.</p>
 
 </div>
 </div>
@@ -849,7 +853,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="Vehicle_8h_source.html#l00709">Vehicle::capabilityBits()</a>, <a class="el" href="Vehicle_8h_source.html#l00682">Vehicle::defaultComponentId()</a>, <a class="el" href="Vehicle_8cc_source.html#l02146">Vehicle::sendMavCommand()</a>, and <a class="el" href="Vehicle_8cc_source.html#l02175">Vehicle::sendMavCommandInt()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00179">guidedModeROI()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00556">PX4FirmwarePlugin::guidedModeROI()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00179">guidedModeROI()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00572">PX4FirmwarePlugin::guidedModeROI()</a>.</p>
 
 </div>
 </div>
@@ -892,7 +896,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="reference">References <a class="el" href="Vehicle_8cc_source.html#l01468">Vehicle::flightMode()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00047">flightMode()</a>, and <a class="el" href="Vehicle_8cc_source.html#l01478">Vehicle::setFlightMode()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00846">APMFirmwarePlugin::guidedModeChangeAltitude()</a>, <a class="el" href="ArduCopterFirmwarePlugin_8h_source.html#l00048">ArduCopterFirmwarePlugin::guidedModeLand()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00292">PX4FirmwarePlugin::guidedModeLand()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00841">APMFirmwarePlugin::guidedModeRTL()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00286">PX4FirmwarePlugin::guidedModeRTL()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00747">APMFirmwarePlugin::pauseVehicle()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00738">APMFirmwarePlugin::setGuidedMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00594">PX4FirmwarePlugin::setGuidedMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01067">APMFirmwarePlugin::startMission()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00582">PX4FirmwarePlugin::startMission()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01047">APMFirmwarePlugin::startTakeoff()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00570">PX4FirmwarePlugin::startTakeoff()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00856">APMFirmwarePlugin::guidedModeChangeAltitude()</a>, <a class="el" href="ArduCopterFirmwarePlugin_8h_source.html#l00048">ArduCopterFirmwarePlugin::guidedModeLand()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00296">PX4FirmwarePlugin::guidedModeLand()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00851">APMFirmwarePlugin::guidedModeRTL()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00290">PX4FirmwarePlugin::guidedModeRTL()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00757">APMFirmwarePlugin::pauseVehicle()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00748">APMFirmwarePlugin::setGuidedMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00610">PX4FirmwarePlugin::setGuidedMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01081">APMFirmwarePlugin::startMission()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00598">PX4FirmwarePlugin::startMission()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01061">APMFirmwarePlugin::startTakeoff()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00586">PX4FirmwarePlugin::startTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -920,11 +924,11 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00431">431</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00432">432</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00441">_modeEnumToString</a>.</p>
+<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00442">_modeEnumToString</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ArduCopterFirmwarePlugin_8cc_source.html#l00008">ArduCopterFirmwarePlugin::ArduCopterFirmwarePlugin()</a>, <a class="el" href="ArduPlaneFirmwarePlugin_8cc_source.html#l00007">ArduPlaneFirmwarePlugin::ArduPlaneFirmwarePlugin()</a>, <a class="el" href="ArduRoverFirmwarePlugin_8cc_source.html#l00008">ArduRoverFirmwarePlugin::ArduRoverFirmwarePlugin()</a>, <a class="el" href="ArduSubFirmwarePlugin_8cc_source.html#l00093">ArduSubFirmwarePlugin::ArduSubFirmwarePlugin()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00025">PX4FirmwarePlugin::PX4FirmwarePlugin()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ArduCopterFirmwarePlugin_8cc_source.html#l00008">ArduCopterFirmwarePlugin::ArduCopterFirmwarePlugin()</a>, <a class="el" href="ArduPlaneFirmwarePlugin_8cc_source.html#l00007">ArduPlaneFirmwarePlugin::ArduPlaneFirmwarePlugin()</a>, <a class="el" href="ArduRoverFirmwarePlugin_8cc_source.html#l00008">ArduRoverFirmwarePlugin::ArduRoverFirmwarePlugin()</a>, <a class="el" href="ArduSubFirmwarePlugin_8cc_source.html#l00095">ArduSubFirmwarePlugin::ArduSubFirmwarePlugin()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00026">PX4FirmwarePlugin::PX4FirmwarePlugin()</a>.</p>
 
 </div>
 </div>
@@ -952,11 +956,11 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00477">477</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00482">482</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="FirmwarePlugin_8cc_source.html#l00492">_addNewFlightMode()</a>, <a class="el" href="FirmwarePlugin_8h_source.html#l00440">_flightModeList</a>, <a class="el" href="FirmwarePlugin_8h_source.html#l00441">_modeEnumToString</a>, and <a class="el" href="FirmwarePlugin_8cc_source.html#l00047">flightMode()</a>.</p>
+<p class="reference">References <a class="el" href="FirmwarePlugin_8cc_source.html#l00497">_addNewFlightMode()</a>, <a class="el" href="FirmwarePlugin_8h_source.html#l00441">_flightModeList</a>, <a class="el" href="FirmwarePlugin_8h_source.html#l00442">_modeEnumToString</a>, and <a class="el" href="FirmwarePlugin_8cc_source.html#l00047">flightMode()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8h_source.html#l00396">updateAvailableFlightModes()</a>, <a class="el" href="ArduCopterFirmwarePlugin_8cc_source.html#l00207">ArduCopterFirmwarePlugin::updateAvailableFlightModes()</a>, <a class="el" href="ArduPlaneFirmwarePlugin_8cc_source.html#l00172">ArduPlaneFirmwarePlugin::updateAvailableFlightModes()</a>, <a class="el" href="ArduRoverFirmwarePlugin_8cc_source.html#l00093">ArduRoverFirmwarePlugin::updateAvailableFlightModes()</a>, <a class="el" href="ArduSubFirmwarePlugin_8cc_source.html#l00066">ArduSubFirmwarePlugin::updateAvailableFlightModes()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00777">PX4FirmwarePlugin::updateAvailableFlightModes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8h_source.html#l00397">updateAvailableFlightModes()</a>, <a class="el" href="ArduCopterFirmwarePlugin_8cc_source.html#l00207">ArduCopterFirmwarePlugin::updateAvailableFlightModes()</a>, <a class="el" href="ArduPlaneFirmwarePlugin_8cc_source.html#l00172">ArduPlaneFirmwarePlugin::updateAvailableFlightModes()</a>, <a class="el" href="ArduRoverFirmwarePlugin_8cc_source.html#l00093">ArduRoverFirmwarePlugin::updateAvailableFlightModes()</a>, <a class="el" href="ArduSubFirmwarePlugin_8cc_source.html#l00068">ArduSubFirmwarePlugin::updateAvailableFlightModes()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00795">PX4FirmwarePlugin::updateAvailableFlightModes()</a>.</p>
 
 </div>
 </div>
@@ -1004,7 +1008,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00369">369</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00428">_versionRegex()</a>, <a class="el" href="Vehicle_8h_source.html#l00661">Vehicle::firmwareMajorVersion()</a>, <a class="el" href="Vehicle_8h_source.html#l00662">Vehicle::firmwareMinorVersion()</a>, <a class="el" href="Vehicle_8h_source.html#l00663">Vehicle::firmwarePatchVersion()</a>, <a class="el" href="Vehicle_8h_source.html#l00664">Vehicle::firmwareVersionType()</a>, <a class="el" href="AppMessages_8cc_source.html#l00009">QGC::showAppMessage()</a>, and <a class="el" href="Vehicle_8cc_source.html#l02730">Vehicle::versionCompare()</a>.</p>
+<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00429">_versionRegex()</a>, <a class="el" href="Vehicle_8h_source.html#l00661">Vehicle::firmwareMajorVersion()</a>, <a class="el" href="Vehicle_8h_source.html#l00662">Vehicle::firmwareMinorVersion()</a>, <a class="el" href="Vehicle_8h_source.html#l00663">Vehicle::firmwarePatchVersion()</a>, <a class="el" href="Vehicle_8h_source.html#l00664">Vehicle::firmwareVersionType()</a>, <a class="el" href="AppMessages_8cc_source.html#l00009">QGC::showAppMessage()</a>, and <a class="el" href="Vehicle_8cc_source.html#l02730">Vehicle::versionCompare()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00344">checkIfIsLatestStable()</a>.</p>
 
@@ -1035,7 +1039,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Returns regex QString to extract version information from text. </p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00428">428</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00429">429</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00369">_versionFileDownloadFinished()</a>.</p>
 
@@ -1085,7 +1089,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#a836c96bd7159cb3852775bd776df49de">APMFirmwarePlugin</a>, <a class="el" href="classArduSubFirmwarePlugin.html#a91814f8c9fdc596294e1e3015d96a960">ArduSubFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a110ecabe119b711f88d51c29d380fb13">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00284">284</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00285">285</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 </div>
 </div>
@@ -1132,7 +1136,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduSubFirmwarePlugin.html#a30e8da6ff83771ebf4b12b9d8efbe943">ArduSubFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00384">384</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00385">385</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l00101">Vehicle::Vehicle()</a>.</p>
 
@@ -1184,7 +1188,7 @@ Protected Attributes</h2></td></tr>
 </pre> 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#aa1d6f9b9a9b9f8a2c23cb5f945ad1b7e">APMFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00295">295</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00296">296</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01392">Vehicle::sendMessageOnLinkThreadSafe()</a>.</p>
 
@@ -1216,7 +1220,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduCopterFirmwarePlugin.html#a8949bea9d5e6412700c0dcc48725abb3">ArduCopterFirmwarePlugin</a>, <a class="el" href="classArduPlaneFirmwarePlugin.html#aa3f79ea95399016014c749f827d09598">ArduPlaneFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a796db73e5bf367fab3a1bd3f99fbace9">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00361">361</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00362">362</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02601">Vehicle::autoDisarm()</a>.</p>
 
@@ -1311,7 +1315,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00317">317</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MissionFlightStatusCalculator_8cc_source.html#l00015">MissionFlightStatusCalculator::reset()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MissionFlightStatusCalculator_8cc_source.html#l00016">MissionFlightStatusCalculator::reset()</a>.</p>
 
 </div>
 </div>
@@ -1331,9 +1335,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00590">590</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00595">595</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00417">_autopilotType()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00508">_parameterMetaDataCacheDir()</a>, <a class="el" href="QGCFileHelper_8cc_source.html#l00188">QGCFileHelper::atomicWrite()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00506">kCachedMetaDataFilePrefix</a>, <a class="el" href="QGCCompression_8cc_source.html#l01004">QGCCompression::readFile()</a>, <a class="el" href="ParameterMetaData_8cc_source.html#l00124">ParameterMetaData::versionFromFileName()</a>, and <a class="el" href="ParameterMetaData_8cc_source.html#l00077">ParameterMetaData::versionFromJsonData()</a>.</p>
+<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00418">_autopilotType()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00513">_parameterMetaDataCacheDir()</a>, <a class="el" href="QGCFileHelper_8cc_source.html#l00188">QGCFileHelper::atomicWrite()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00511">kCachedMetaDataFilePrefix</a>, <a class="el" href="QGCCompression_8cc_source.html#l01004">QGCCompression::readFile()</a>, <a class="el" href="ParameterMetaData_8cc_source.html#l00124">ParameterMetaData::versionFromFileName()</a>, and <a class="el" href="ParameterMetaData_8cc_source.html#l00077">ParameterMetaData::versionFromJsonData()</a>.</p>
 
 </div>
 </div>
@@ -1365,7 +1369,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00344">344</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00422">_getLatestVersionFileUrl()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00369">_versionFileDownloadFinished()</a>, <a class="el" href="classQGCFileDownload.html#a194861966b594ff51f654c5ab3547b5f">QGCFileDownload::finished()</a>, <a class="el" href="AppMessages_8cc_source.html#l00037">QGC::runningUnitTests()</a>, and <a class="el" href="QGCFileDownload_8cc_source.html#l00069">QGCFileDownload::start()</a>.</p>
+<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00423">_getLatestVersionFileUrl()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00369">_versionFileDownloadFinished()</a>, <a class="el" href="classQGCFileDownload.html#a194861966b594ff51f654c5ab3547b5f">QGCFileDownload::finished()</a>, <a class="el" href="AppMessages_8cc_source.html#l00037">QGC::runningUnitTests()</a>, and <a class="el" href="QGCFileDownload_8cc_source.html#l00069">QGCFileDownload::start()</a>.</p>
 
 </div>
 </div>
@@ -1395,7 +1399,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Creates <a class="el" href="classAutotune.html">Autotune</a> object. </p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00472">472</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00477">477</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
 
 </div>
 </div>
@@ -1507,7 +1511,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduSubFirmwarePlugin.html#ac2df822206eacf3ac5175e8a312a75ab">ArduSubFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00255">255</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00256">256</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 </div>
 </div>
@@ -1547,7 +1551,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#a110b844d3987b3d697816096788fadb5">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a97b6567635e5d5a3e58747d4b6f67c50">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00338">338</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00339">339</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l03345">Vehicle::expandedToolbarIndicatorSource()</a>.</p>
 
@@ -1580,7 +1584,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduSubFirmwarePlugin.html#a11be8805da7f87742afe069ef81233ff">ArduSubFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00352">352</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00353">353</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 </div>
 </div>
@@ -1611,7 +1615,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#a4f327d225f4e01bdd25b1ee9ed0f83cf">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a70f33b7cb6cc000fdf7250d92f9fff16">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00228">228</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00229">229</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 </div>
 </div>
@@ -1660,9 +1664,9 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00047">47</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00441">_modeEnumToString</a>, and <a class="el" href="FirmwarePlugin_8cc_source.html#l00047">flightMode()</a>.</p>
+<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00442">_modeEnumToString</a>, and <a class="el" href="FirmwarePlugin_8cc_source.html#l00047">flightMode()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00286">_setFlightModeAndValidate()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00477">_updateFlightModeList()</a>, <a class="el" href="Vehicle_8cc_source.html#l01468">Vehicle::flightMode()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00047">flightMode()</a>, and <a class="el" href="FirmwarePlugin_8cc_source.html#l00083">setFlightMode()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00286">_setFlightModeAndValidate()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00482">_updateFlightModeList()</a>, <a class="el" href="Vehicle_8cc_source.html#l01468">Vehicle::flightMode()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00047">flightMode()</a>, and <a class="el" href="FirmwarePlugin_8cc_source.html#l00083">setFlightMode()</a>.</p>
 
 </div>
 </div>
@@ -1693,7 +1697,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#a7a6404fcc5c0ac1bfddd7eef85ea35de">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a93e8647fb28b40f6fbc2b427d3896b52">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00131">131</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00132">132</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01462">Vehicle::flightModes()</a>.</p>
 
@@ -1727,7 +1731,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduCopterFirmwarePlugin.html#a5beb2fced2cf962079ba8acd50345903">ArduCopterFirmwarePlugin</a>, <a class="el" href="classArduRoverFirmwarePlugin.html#a1712e0cbb4318b2030460b8be66b7422">ArduRoverFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#aa37e5f85956e45e43b4e83461d6ac87a">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00182">182</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00183">183</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02550">Vehicle::followFlightMode()</a>.</p>
 
@@ -1761,7 +1765,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#a3fbb6ec5948f62a5656f90feeb9463a8">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a94205cdfcfada3cb46aa23150e69f963">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00390">390</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00391">391</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02705">Vehicle::hobbsMeter()</a>.</p>
 
@@ -1795,7 +1799,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#afd191c6a28c2b66916ae1acca5cb6aba">APMFirmwarePlugin</a>, <a class="el" href="classArduCopterFirmwarePlugin.html#a6e5f8991fa2a4c2a61b2ffaaf887a483">ArduCopterFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a1e110e268f32ae410209bdbffca45034">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00179">179</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00180">180</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01823">Vehicle::gotoFlightMode()</a>.</p>
 
@@ -2298,7 +2302,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00325">325</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MissionController_8cc_source.html#l00487">MissionController::removeVisualItem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MissionController_8cc_source.html#l00506">MissionController::removeVisualItem()</a>.</p>
 
 </div>
 </div>
@@ -2329,7 +2333,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#a76a7bd287dc10b75c1d512d10dc8ba7c">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#ad7e4181542f8a526fd2520762297b649">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00222">222</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00223">223</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01877">Vehicle::hasGripper()</a>.</p>
 
@@ -2363,7 +2367,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classPX4FirmwarePlugin.html#a8c22a4728319eea4a4c1d5c19b8bd7a7">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00371">371</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00372">372</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 </div>
 </div>
@@ -2395,7 +2399,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#afca3d8a0d0d3c43e90da379f2eb07aa1">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a04ce514d538d6de8f4e821748d3b1e93">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00124">124</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00125">125</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l00101">Vehicle::Vehicle()</a>, and <a class="el" href="Vehicle_8cc_source.html#l00178">Vehicle::Vehicle()</a>.</p>
 
@@ -2438,9 +2442,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#ac17a38b54459fe07cb1c7ac8ce73c0ee">APMFirmwarePlugin</a>, <a class="el" href="classArduSubFirmwarePlugin.html#aa8f92a9356209679fd51eb184fe06057">ArduSubFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a08b57ad841337ce33724c941de9bd2ce">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00127">127</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00128">128</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VehicleSupports_8cc_source.html#l00085">VehicleSupports::changeHeading()</a>, <a class="el" href="Vehicle_8cc_source.html#l01457">Vehicle::flightModeSetAvailable()</a>, <a class="el" href="VehicleSupports_8cc_source.html#l00048">VehicleSupports::guidedMode()</a>, <a class="el" href="VehicleSupports_8cc_source.html#l00073">VehicleSupports::guidedTakeoffWithAltitude()</a>, <a class="el" href="VehicleSupports_8cc_source.html#l00078">VehicleSupports::guidedTakeoffWithoutAltitude()</a>, <a class="el" href="VehicleSupports_8cc_source.html#l00058">VehicleSupports::orbitMode()</a>, <a class="el" href="VehicleSupports_8cc_source.html#l00053">VehicleSupports::pauseVehicle()</a>, <a class="el" href="VehicleSupports_8cc_source.html#l00063">VehicleSupports::roiMode()</a>, and <a class="el" href="VehicleSupports_8cc_source.html#l00068">VehicleSupports::takeoffMissionCommand()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VehicleSupports_8cc_source.html#l00087">VehicleSupports::changeHeading()</a>, <a class="el" href="Vehicle_8cc_source.html#l01457">Vehicle::flightModeSetAvailable()</a>, <a class="el" href="VehicleSupports_8cc_source.html#l00050">VehicleSupports::guidedMode()</a>, <a class="el" href="VehicleSupports_8cc_source.html#l00075">VehicleSupports::guidedTakeoffWithAltitude()</a>, <a class="el" href="VehicleSupports_8cc_source.html#l00080">VehicleSupports::guidedTakeoffWithoutAltitude()</a>, <a class="el" href="TakeoffMissionItem_8cc_source.html#l00114">TakeoffMissionItem::isVTOLMulticopterTakeoff()</a>, <a class="el" href="VehicleSupports_8cc_source.html#l00060">VehicleSupports::orbitMode()</a>, <a class="el" href="VehicleSupports_8cc_source.html#l00055">VehicleSupports::pauseVehicle()</a>, <a class="el" href="VehicleSupports_8cc_source.html#l00065">VehicleSupports::roiMode()</a>, <a class="el" href="VehicleSupports_8cc_source.html#l00070">VehicleSupports::takeoffMissionCommand()</a>, and <a class="el" href="VehicleSupports_8cc_source.html#l00092">VehicleSupports::vtolMulticopterTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -2472,7 +2476,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#a0dc3395550778fc324041f4f08ba7b40">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a9443c1c3318f749203dea44d7e25bc18">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00176">176</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00177">177</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02065">Vehicle::guidedMode()</a>.</p>
 
@@ -2506,7 +2510,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduCopterFirmwarePlugin.html#a845f693fca199b0477fffbed0a83c1e2">ArduCopterFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a7b073e45e2d23266d088cc3cd21e0a72">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00161">161</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00162">162</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02540">Vehicle::landFlightMode()</a>.</p>
 
@@ -2528,9 +2532,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00518">518</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00523">523</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00417">_autopilotType()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00537">_cachedParameterMetaDataFile()</a>, <a class="el" href="FirmwarePlugin_8h_source.html#l00418">_createParameterMetaData()</a>, and <a class="el" href="ParameterMetaData_8cc_source.html#l00026">ParameterMetaData::loadParameterFactMetaDataFile()</a>.</p>
+<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00418">_autopilotType()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00542">_cachedParameterMetaDataFile()</a>, <a class="el" href="FirmwarePlugin_8h_source.html#l00419">_createParameterMetaData()</a>, and <a class="el" href="ParameterMetaData_8cc_source.html#l00026">ParameterMetaData::loadParameterFactMetaDataFile()</a>.</p>
 
 </div>
 </div>
@@ -2561,7 +2565,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#ada6a6504227c38775493cb434d70dca4">APMFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00144">144</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00145">145</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01478">Vehicle::setFlightMode()</a>.</p>
 
@@ -2594,9 +2598,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#ab0cd48572ab21adf0170283eebdafcc0">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#ac570bae3e9831f397a3466491ff2c4ab">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00216">216</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00217">217</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01866">Vehicle::maximumEquivalentAirspeed()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01243">APMFirmwarePlugin::maximumEquivalentAirspeed()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00351">PX4FirmwarePlugin::maximumEquivalentAirspeed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01866">Vehicle::maximumEquivalentAirspeed()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01257">APMFirmwarePlugin::maximumEquivalentAirspeed()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00359">PX4FirmwarePlugin::maximumEquivalentAirspeed()</a>.</p>
 
 </div>
 </div>
@@ -2627,9 +2631,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#abfa530e56ac92f50ce48f073a5d5c763">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a90759979bb3a3a8d383b57c1dc2cf9d0">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00213">213</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00214">214</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01860">Vehicle::maximumHorizontalSpeedMultirotorMetersSecond()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00900">APMFirmwarePlugin::maximumHorizontalSpeedMultirotorMetersSecond()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00340">PX4FirmwarePlugin::maximumHorizontalSpeedMultirotorMetersSecond()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01860">Vehicle::maximumHorizontalSpeedMultirotorMetersSecond()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00910">APMFirmwarePlugin::maximumHorizontalSpeedMultirotorMetersSecond()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00344">PX4FirmwarePlugin::maximumHorizontalSpeedMultirotorMetersSecond()</a>.</p>
 
 </div>
 </div>
@@ -2660,9 +2664,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#a9898889731575d54636b66fecf8b39a6">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a9ae745cf337d37deebd64fa8e052fc1a">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00219">219</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00220">220</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01872">Vehicle::minimumEquivalentAirspeed()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01254">APMFirmwarePlugin::minimumEquivalentAirspeed()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00362">PX4FirmwarePlugin::minimumEquivalentAirspeed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01872">Vehicle::minimumEquivalentAirspeed()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01272">APMFirmwarePlugin::minimumEquivalentAirspeed()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00374">PX4FirmwarePlugin::minimumEquivalentAirspeed()</a>.</p>
 
 </div>
 </div>
@@ -2693,9 +2697,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#a78dde3bc3915e851c01258f0f0a12f54">APMFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00210">210</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00211">211</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01855">Vehicle::minimumTakeoffAltitudeMeters()</a>, and <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00974">APMFirmwarePlugin::minimumTakeoffAltitudeMeters()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01855">Vehicle::minimumTakeoffAltitudeMeters()</a>, and <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00988">APMFirmwarePlugin::minimumTakeoffAltitudeMeters()</a>.</p>
 
 </div>
 </div>
@@ -2733,7 +2737,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00094">94</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCMAVLink_8h_source.html#l00030">QGCMAVLink::VehicleClassFixedWing</a>, <a class="el" href="QGCMAVLinkTypes_8h_source.html#l00013">QGCMAVLinkTypes::VehicleClassGeneric</a>, <a class="el" href="QGCMAVLink_8h_source.html#l00034">QGCMAVLink::VehicleClassMultiRotor</a>, <a class="el" href="QGCMAVLink_8h_source.html#l00031">QGCMAVLink::VehicleClassRoverBoat</a>, <a class="el" href="QGCMAVLink_8h_source.html#l00032">QGCMAVLink::VehicleClassSub</a>, and <a class="el" href="QGCMAVLink_8h_source.html#l00035">QGCMAVLink::VehicleClassVTOL</a>.</p>
+<p class="reference">References <a class="el" href="QGCMAVLink_8h_source.html#l00030">QGCMAVLink::VehicleClassFixedWing</a>, <a class="el" href="QGCMAVLinkTypes_8h_source.html#l00014">QGCMAVLinkTypes::VehicleClassGeneric</a>, <a class="el" href="QGCMAVLink_8h_source.html#l00034">QGCMAVLink::VehicleClassMultiRotor</a>, <a class="el" href="QGCMAVLink_8h_source.html#l00031">QGCMAVLink::VehicleClassRoverBoat</a>, <a class="el" href="QGCMAVLink_8h_source.html#l00032">QGCMAVLink::VehicleClassSub</a>, and <a class="el" href="QGCMAVLink_8h_source.html#l00035">QGCMAVLink::VehicleClassVTOL</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="MissionCommandTree_8cc_source.html#l00015">MissionCommandTree::MissionCommandTree()</a>.</p>
 
@@ -2767,7 +2771,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#ab0e5144fdc83fbd00c4e7006dca29c38">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a74c5383f10790e368dd77f21f12107d4">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00150">150</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00151">151</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02520">Vehicle::missionFlightMode()</a>.</p>
 
@@ -2800,7 +2804,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduSubFirmwarePlugin.html#ae7b714024ff5e6fb20c5275269c8b476">ArduSubFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00167">167</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00168">168</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02555">Vehicle::motorDetectionFlightMode()</a>.</p>
 
@@ -2833,7 +2837,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#ab613c2931c8d5fe63dd068f7df817ad6">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#aab778b1f78e4cad2a7a03293065c0c5f">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00225">225</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00226">226</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 </div>
 </div>
@@ -2864,7 +2868,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduCopterFirmwarePlugin.html#ad7c03bfd17c1f6f1710cfd816536ecba">ArduCopterFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00324">324</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00325">325</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01419">Vehicle::coaxialMotors()</a>.</p>
 
@@ -2897,7 +2901,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduCopterFirmwarePlugin.html#ab47985f843e92683745a95d1951a60a7">ArduCopterFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00327">327</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00328">328</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l01424">Vehicle::xConfigMotors()</a>.</p>
 
@@ -2931,9 +2935,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduCopterFirmwarePlugin.html#ac83bf89efa8aff73778bda6dd51b8e16">ArduCopterFirmwarePlugin</a>, <a class="el" href="classArduPlaneFirmwarePlugin.html#a7871142d8129ce451acce8819e8149c0">ArduPlaneFirmwarePlugin</a>, <a class="el" href="classArduRoverFirmwarePlugin.html#afaf27c5b42c09e33b3ff6b0af0aa7e9b">ArduRoverFirmwarePlugin</a>, <a class="el" href="classArduSubFirmwarePlugin.html#a8081f96c4669d9ce8a0046d203ea6b21">ArduSubFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a96bb8925e242658461996e84480bfeff">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00330">330</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00331">331</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00502">APMFirmwarePlugin::initializeVehicle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00512">APMFirmwarePlugin::initializeVehicle()</a>.</p>
 
 </div>
 </div>
@@ -2996,9 +3000,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduCopterFirmwarePlugin.html#abcf1a129c117a19e0875cdcc5cb4f3c0">ArduCopterFirmwarePlugin</a>, <a class="el" href="classArduPlaneFirmwarePlugin.html#a1fcc298417ccbedd68e1833b4d1305e5">ArduPlaneFirmwarePlugin</a>, <a class="el" href="classArduRoverFirmwarePlugin.html#a9bb44f6c18bc1ed82e67bd47a33f29c7">ArduRoverFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a2d5e3b36195776731d9c1f95fa4a2945">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00147">147</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00148">148</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00846">APMFirmwarePlugin::guidedModeChangeAltitude()</a>, <a class="el" href="Vehicle_8cc_source.html#l02525">Vehicle::pauseFlightMode()</a>, and <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00747">APMFirmwarePlugin::pauseVehicle()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00856">APMFirmwarePlugin::guidedModeChangeAltitude()</a>, <a class="el" href="Vehicle_8cc_source.html#l02525">Vehicle::pauseFlightMode()</a>, and <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00757">APMFirmwarePlugin::pauseVehicle()</a>.</p>
 
 </div>
 </div>
@@ -3064,7 +3068,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduCopterFirmwarePlugin.html#a82adf47006804fb1ca15fa6cee914528">ArduCopterFirmwarePlugin</a>, <a class="el" href="classArduPlaneFirmwarePlugin.html#a3643a6bdc4a7cd3181fe3790b7d52593">ArduPlaneFirmwarePlugin</a>, <a class="el" href="classArduRoverFirmwarePlugin.html#a9e656c8f752da4dfd071d73725eba319">ArduRoverFirmwarePlugin</a>, and <a class="el" href="classArduSubFirmwarePlugin.html#a46b6d0f3553b69b5ab1ee9618f38add0">ArduSubFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00321">321</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00322">322</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">References <a class="el" href="VehicleTypes_8h_source.html#l00031">VehicleTypes::versionNotSetValue</a>.</p>
 
@@ -3098,7 +3102,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#a2161637c5c656031bb7afb8767bda63a">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a7e9e968c55b0a8bf8f2baf1f1e17888b">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00153">153</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00154">154</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02530">Vehicle::rtlFlightMode()</a>.</p>
 
@@ -3181,9 +3185,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#a1915fe87b4f1d68effaa772588ddeb95">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a48510069495a88338cc5dfab9db79e9d">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00305">305</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00306">306</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PlanManager_8cc_source.html#l00376">PlanManager::_handleMissionItem()</a>, <a class="el" href="MissionController_8cc_source.html#l01729">MissionController::currentMissionIndex()</a>, <a class="el" href="MissionManager_8cc_source.html#l00069">MissionManager::generateResumeMission()</a>, <a class="el" href="MissionController_8cc_source.html#l01830">MissionController::resumeMission()</a>, <a class="el" href="MissionController_8cc_source.html#l01711">MissionController::resumeMissionIndex()</a>, <a class="el" href="Vehicle_8cc_source.html#l02111">Vehicle::setCurrentMissionSequence()</a>, and <a class="el" href="PlanManager_8cc_source.html#l00057">PlanManager::writeMissionItems()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PlanManager_8cc_source.html#l00378">PlanManager::_handleMissionItem()</a>, <a class="el" href="MissionController_8cc_source.html#l01753">MissionController::currentMissionIndex()</a>, <a class="el" href="MissionManager_8cc_source.html#l00071">MissionManager::generateResumeMission()</a>, <a class="el" href="MissionController_8cc_source.html#l01854">MissionController::resumeMission()</a>, <a class="el" href="MissionController_8cc_source.html#l01735">MissionController::resumeMissionIndex()</a>, <a class="el" href="Vehicle_8cc_source.html#l02111">Vehicle::setCurrentMissionSequence()</a>, and <a class="el" href="PlanManager_8cc_source.html#l00059">PlanManager::writeMissionItems()</a>.</p>
 
 </div>
 </div>
@@ -3317,7 +3321,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#aa999709f0222d3f6ccc4350fa510636a">APMFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00156">156</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00157">157</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02535">Vehicle::smartRTLFlightMode()</a>.</p>
 
@@ -3351,7 +3355,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduCopterFirmwarePlugin.html#aa5570fdf82bbf47562b369a181fbb504">ArduCopterFirmwarePlugin</a>, <a class="el" href="classArduPlaneFirmwarePlugin.html#a6a61c0893f566c612437732ea74f0a8c">ArduPlaneFirmwarePlugin</a>, <a class="el" href="classArduRoverFirmwarePlugin.html#aa557387e48f8a56418e1b763505004ff">ArduRoverFirmwarePlugin</a>, <a class="el" href="classArduSubFirmwarePlugin.html#a39db2d2ac0518139af73c922b7106eb9">ArduSubFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#acaccbff64c3bf540109004d8eb735ebb">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00170">170</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00171">171</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02560">Vehicle::stabilizedFlightMode()</a>.</p>
 
@@ -3457,9 +3461,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classAPMFirmwarePlugin.html#abd844a4dbb1a8bb39e778b5c46c644f8">APMFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a21623e67125f2704eab46606c2fd3733">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00308">308</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00309">309</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CameraSection_8cc_source.html#l00569">CameraSection::cameraModeSupported()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00197">MissionCommandTree::getCommandsForCategory()</a>, <a class="el" href="MissionController_8cc_source.html#l00381">MissionController::insertCancelROIMissionItem()</a>, and <a class="el" href="MissionController_8cc_source.html#l00370">MissionController::insertROIMissionItem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CameraSection_8cc_source.html#l00569">CameraSection::cameraModeSupported()</a>, <a class="el" href="MissionCommandTree_8cc_source.html#l00197">MissionCommandTree::getCommandsForCategory()</a>, <a class="el" href="MissionController_8cc_source.html#l00400">MissionController::insertCancelROIMissionItem()</a>, and <a class="el" href="MissionController_8cc_source.html#l00389">MissionController::insertROIMissionItem()</a>.</p>
 
 </div>
 </div>
@@ -3489,9 +3493,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduSubFirmwarePlugin.html#acdee7950438355c614a2a4fe6301365c">ArduSubFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00272">272</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00273">273</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VehicleSupports_8cc_source.html#l00023">VehicleSupports::jsButton()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VehicleSupports_8cc_source.html#l00025">VehicleSupports::jsButton()</a>.</p>
 
 </div>
 </div>
@@ -3521,9 +3525,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduSubFirmwarePlugin.html#a689dc63896bf93fb7d2161fe7846f1d6">ArduSubFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00276">276</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00277">277</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VehicleSupports_8cc_source.html#l00033">VehicleSupports::motorInterference()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VehicleSupports_8cc_source.html#l00035">VehicleSupports::motorInterference()</a>.</p>
 
 </div>
 </div>
@@ -3554,9 +3558,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduRoverFirmwarePlugin.html#a03868c45c3c5366649f1f2c9728903b6">ArduRoverFirmwarePlugin</a>, <a class="el" href="classArduSubFirmwarePlugin.html#a3cfe8a2d8122d1dcd9f741b77c723661">ArduSubFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#aaa12f69cf63d25ff1025eca2534bf62f">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00264">264</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00265">265</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VehicleSupports_8cc_source.html#l00018">VehicleSupports::negativeThrust()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VehicleSupports_8cc_source.html#l00020">VehicleSupports::negativeThrust()</a>.</p>
 
 </div>
 </div>
@@ -3586,9 +3590,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduSubFirmwarePlugin.html#a58e61b8b2bad1e6e2282bd8edb6291f2">ArduSubFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00268">268</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00269">269</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VehicleSupports_8cc_source.html#l00028">VehicleSupports::radio()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VehicleSupports_8cc_source.html#l00030">VehicleSupports::radio()</a>.</p>
 
 </div>
 </div>
@@ -3617,9 +3621,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduCopterFirmwarePlugin.html#a218bba3e11dbc48c2959dbbdd62d565a">ArduCopterFirmwarePlugin</a>, and <a class="el" href="classArduRoverFirmwarePlugin.html#ae968eccdb0c8f42ebc9b2c615e40f500">ArduRoverFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00158">158</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00159">159</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VehicleSupports_8cc_source.html#l00038">VehicleSupports::smartRTL()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VehicleSupports_8cc_source.html#l00040">VehicleSupports::smartRTL()</a>.</p>
 
 </div>
 </div>
@@ -3649,9 +3653,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduSubFirmwarePlugin.html#adf98f6dab58cced41e142188a4cd5290">ArduSubFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00260">260</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00261">261</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VehicleSupports_8cc_source.html#l00013">VehicleSupports::throttleModeCenterZero()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VehicleSupports_8cc_source.html#l00015">VehicleSupports::throttleModeCenterZero()</a>.</p>
 
 </div>
 </div>
@@ -3683,7 +3687,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduCopterFirmwarePlugin.html#afb3a6b138f108b23dce16f08843706f8">ArduCopterFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a688c7011b6660e5b372a5f03d5ae729b">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00173">173</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00174">174</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02545">Vehicle::takeControlFlightMode()</a>.</p>
 
@@ -3717,9 +3721,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduCopterFirmwarePlugin.html#a8f16806aa9c2c8aebfc8ad85d85b12c7">ArduCopterFirmwarePlugin</a>, <a class="el" href="classArduPlaneFirmwarePlugin.html#aefe6b1546015eba1f53b626e547647df">ArduPlaneFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a2c33618f647cbda255e0f5ad1405a757">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00164">164</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00165">165</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MAVLinkEventManager_8cc_source.html#l00055">MAVLinkEventManager::setMetadata()</a>, and <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01047">APMFirmwarePlugin::startTakeoff()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MAVLinkEventManager_8cc_source.html#l00055">MAVLinkEventManager::setMetadata()</a>, and <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01061">APMFirmwarePlugin::startTakeoff()</a>.</p>
 
 </div>
 </div>
@@ -3752,9 +3756,9 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8cc_source.html#l00237">237</a> of file <a class="el" href="FirmwarePlugin_8cc_source.html">FirmwarePlugin.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00443">_toolIndicatorList</a>.</p>
+<p class="reference">References <a class="el" href="FirmwarePlugin_8h_source.html#l00444">_toolIndicatorList</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02581">Vehicle::toolIndicators()</a>, and <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00631">APMFirmwarePlugin::toolIndicators()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02581">Vehicle::toolIndicators()</a>, and <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00641">APMFirmwarePlugin::toolIndicators()</a>.</p>
 
 </div>
 </div>
@@ -3811,11 +3815,11 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduCopterFirmwarePlugin.html#a598e30b4a695b603806b603ef65aee14">ArduCopterFirmwarePlugin</a>, <a class="el" href="classArduPlaneFirmwarePlugin.html#a49da51f70624c5321d95cdba74b1dfe0">ArduPlaneFirmwarePlugin</a>, <a class="el" href="classArduRoverFirmwarePlugin.html#a3664600d5c10dec2f5a504c3a55c0572">ArduRoverFirmwarePlugin</a>, <a class="el" href="classArduSubFirmwarePlugin.html#af4128cff13242f23d74b25d18b9b3cbc">ArduSubFirmwarePlugin</a>, and <a class="el" href="classPX4FirmwarePlugin.html#a5a3037cd350effc93b627160b5a374f9">PX4FirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00396">396</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00397">397</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">References <a class="el" href="FirmwarePlugin_8cc_source.html#l00477">_updateFlightModeList()</a>.</p>
+<p class="reference">References <a class="el" href="FirmwarePlugin_8cc_source.html#l00482">_updateFlightModeList()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="StandardModes_8cc_source.html#l00021">StandardModes::gotMessage()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="StandardModes_8cc_source.html#l00023">StandardModes::gotMessage()</a>.</p>
 
 </div>
 </div>
@@ -3847,7 +3851,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduSubFirmwarePlugin.html#a647b0ab063d5e931fc11233be78d56fe">ArduSubFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00333">333</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00334">334</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02565">Vehicle::vehicleImageOpaque()</a>.</p>
 
@@ -3881,7 +3885,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classArduSubFirmwarePlugin.html#a8b99b08e6995f7f719c50119b43ce337">ArduSubFirmwarePlugin</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00336">336</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00337">337</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Vehicle_8cc_source.html#l02573">Vehicle::vehicleImageOutline()</a>.</p>
 
@@ -3987,9 +3991,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00440">440</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00441">441</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00492">_addNewFlightMode()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00477">_updateFlightModeList()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00083">APMFirmwarePlugin::flightModes()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00113">PX4FirmwarePlugin::flightModes()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00105">APMFirmwarePlugin::setFlightMode()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00144">PX4FirmwarePlugin::setFlightMode()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00497">_addNewFlightMode()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00482">_updateFlightModeList()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00084">APMFirmwarePlugin::flightModes()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00114">PX4FirmwarePlugin::flightModes()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00106">APMFirmwarePlugin::setFlightMode()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00145">PX4FirmwarePlugin::setFlightMode()</a>.</p>
 
 </div>
 </div>
@@ -4013,9 +4017,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00441">441</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00442">442</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8h_source.html#l00431">_setModeEnumToModeStringMapping()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00477">_updateFlightModeList()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00047">flightMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00095">APMFirmwarePlugin::flightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00133">PX4FirmwarePlugin::flightMode()</a>, <a class="el" href="ArduCopterFirmwarePlugin_8cc_source.html#l00197">ArduCopterFirmwarePlugin::followFlightMode()</a>, <a class="el" href="ArduRoverFirmwarePlugin_8cc_source.html#l00088">ArduRoverFirmwarePlugin::followFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00633">PX4FirmwarePlugin::followFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00628">PX4FirmwarePlugin::gotoFlightMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00664">APMFirmwarePlugin::guidedFlightMode()</a>, <a class="el" href="ArduCopterFirmwarePlugin_8cc_source.html#l00187">ArduCopterFirmwarePlugin::landFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00618">PX4FirmwarePlugin::landFlightMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00659">APMFirmwarePlugin::missionFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00608">PX4FirmwarePlugin::missionFlightMode()</a>, <a class="el" href="ArduSubFirmwarePlugin_8cc_source.html#l00061">ArduSubFirmwarePlugin::motorDetectionFlightMode()</a>, <a class="el" href="ArduCopterFirmwarePlugin_8cc_source.html#l00182">ArduCopterFirmwarePlugin::pauseFlightMode()</a>, <a class="el" href="ArduPlaneFirmwarePlugin_8cc_source.html#l00167">ArduPlaneFirmwarePlugin::pauseFlightMode()</a>, <a class="el" href="ArduRoverFirmwarePlugin_8cc_source.html#l00083">ArduRoverFirmwarePlugin::pauseFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00603">PX4FirmwarePlugin::pauseFlightMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00649">APMFirmwarePlugin::rtlFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00613">PX4FirmwarePlugin::rtlFlightMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00654">APMFirmwarePlugin::smartRTLFlightMode()</a>, <a class="el" href="ArduCopterFirmwarePlugin_8cc_source.html#l00202">ArduCopterFirmwarePlugin::stabilizedFlightMode()</a>, <a class="el" href="ArduPlaneFirmwarePlugin_8cc_source.html#l00162">ArduPlaneFirmwarePlugin::stabilizedFlightMode()</a>, <a class="el" href="ArduRoverFirmwarePlugin_8cc_source.html#l00078">ArduRoverFirmwarePlugin::stabilizedFlightMode()</a>, <a class="el" href="ArduSubFirmwarePlugin_8cc_source.html#l00056">ArduSubFirmwarePlugin::stabilizedFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00643">PX4FirmwarePlugin::stabilizedFlightMode()</a>, <a class="el" href="ArduCopterFirmwarePlugin_8cc_source.html#l00192">ArduCopterFirmwarePlugin::takeControlFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00623">PX4FirmwarePlugin::takeControlFlightMode()</a>, <a class="el" href="ArduPlaneFirmwarePlugin_8cc_source.html#l00157">ArduPlaneFirmwarePlugin::takeOffFlightMode()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00638">PX4FirmwarePlugin::takeOffFlightMode()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8h_source.html#l00432">_setModeEnumToModeStringMapping()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00482">_updateFlightModeList()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00047">flightMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00096">APMFirmwarePlugin::flightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00134">PX4FirmwarePlugin::flightMode()</a>, <a class="el" href="ArduCopterFirmwarePlugin_8cc_source.html#l00197">ArduCopterFirmwarePlugin::followFlightMode()</a>, <a class="el" href="ArduRoverFirmwarePlugin_8cc_source.html#l00088">ArduRoverFirmwarePlugin::followFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00649">PX4FirmwarePlugin::followFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00644">PX4FirmwarePlugin::gotoFlightMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00674">APMFirmwarePlugin::guidedFlightMode()</a>, <a class="el" href="ArduCopterFirmwarePlugin_8cc_source.html#l00187">ArduCopterFirmwarePlugin::landFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00634">PX4FirmwarePlugin::landFlightMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00669">APMFirmwarePlugin::missionFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00624">PX4FirmwarePlugin::missionFlightMode()</a>, <a class="el" href="ArduSubFirmwarePlugin_8cc_source.html#l00063">ArduSubFirmwarePlugin::motorDetectionFlightMode()</a>, <a class="el" href="ArduCopterFirmwarePlugin_8cc_source.html#l00182">ArduCopterFirmwarePlugin::pauseFlightMode()</a>, <a class="el" href="ArduPlaneFirmwarePlugin_8cc_source.html#l00167">ArduPlaneFirmwarePlugin::pauseFlightMode()</a>, <a class="el" href="ArduRoverFirmwarePlugin_8cc_source.html#l00083">ArduRoverFirmwarePlugin::pauseFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00619">PX4FirmwarePlugin::pauseFlightMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00659">APMFirmwarePlugin::rtlFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00629">PX4FirmwarePlugin::rtlFlightMode()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00664">APMFirmwarePlugin::smartRTLFlightMode()</a>, <a class="el" href="ArduCopterFirmwarePlugin_8cc_source.html#l00202">ArduCopterFirmwarePlugin::stabilizedFlightMode()</a>, <a class="el" href="ArduPlaneFirmwarePlugin_8cc_source.html#l00162">ArduPlaneFirmwarePlugin::stabilizedFlightMode()</a>, <a class="el" href="ArduRoverFirmwarePlugin_8cc_source.html#l00078">ArduRoverFirmwarePlugin::stabilizedFlightMode()</a>, <a class="el" href="ArduSubFirmwarePlugin_8cc_source.html#l00058">ArduSubFirmwarePlugin::stabilizedFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00659">PX4FirmwarePlugin::stabilizedFlightMode()</a>, <a class="el" href="ArduCopterFirmwarePlugin_8cc_source.html#l00192">ArduCopterFirmwarePlugin::takeControlFlightMode()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00639">PX4FirmwarePlugin::takeControlFlightMode()</a>, <a class="el" href="ArduPlaneFirmwarePlugin_8cc_source.html#l00157">ArduPlaneFirmwarePlugin::takeOffFlightMode()</a>, and <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00654">PX4FirmwarePlugin::takeOffFlightMode()</a>.</p>
 
 </div>
 </div>
@@ -4039,7 +4043,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00444">444</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00445">445</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 </div>
 </div>
@@ -4063,7 +4067,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00443">443</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FirmwarePlugin_8h_source.html#l00444">444</a> of file <a class="el" href="FirmwarePlugin_8h_source.html">FirmwarePlugin.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00237">toolIndicators()</a>.</p>
 

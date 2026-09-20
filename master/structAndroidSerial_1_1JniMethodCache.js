@@ -2,6 +2,7 @@ var structAndroidSerial_1_1JniMethodCache =
 [
     [ "availableDevicesInfo", "structAndroidSerial_1_1JniMethodCache.html#a002234c3393146076b1587d149090e7c", null ],
     [ "close", "structAndroidSerial_1_1JniMethodCache.html#a5cc25a623d836f3943af8c0c60b53d93", null ],
+    [ "dataTerminalReadySupport", "structAndroidSerial_1_1JniMethodCache.html#af263265dabe6ffac2eafe8f704f02eca", null ],
     [ "getCarrierDetect", "structAndroidSerial_1_1JniMethodCache.html#a35b65e5d9ab4823299b703de1ec2ecef", null ],
     [ "getClearToSend", "structAndroidSerial_1_1JniMethodCache.html#a0f45766f803a921bcc4f127b141040e6", null ],
     [ "getControlLines", "structAndroidSerial_1_1JniMethodCache.html#ae99adb7ee3ada00034c37bee2668147e", null ],
@@ -17,6 +18,7 @@ var structAndroidSerial_1_1JniMethodCache =
     [ "open", "structAndroidSerial_1_1JniMethodCache.html#a172434cf0ed0f2779220ff661d9676f6", null ],
     [ "purgeBuffers", "structAndroidSerial_1_1JniMethodCache.html#af8042e1550230a0846feb31105c14989", null ],
     [ "read", "structAndroidSerial_1_1JniMethodCache.html#a5e28b4474547caab9c58f2177d5b178a", null ],
+    [ "requestToSendSupport", "structAndroidSerial_1_1JniMethodCache.html#a0683913c3b93f1e42fee8388c29454b0", null ],
     [ "setBreak", "structAndroidSerial_1_1JniMethodCache.html#a24eeea2f728e69ad89d4bec58cf7d1c5", null ],
     [ "setDataTerminalReady", "structAndroidSerial_1_1JniMethodCache.html#a28b2e5a7e599f83f152a28666e8f5980", null ],
     [ "setFlowControl", "structAndroidSerial_1_1JniMethodCache.html#a7a1e2de7badf483f732ff122b2c3be19", null ],

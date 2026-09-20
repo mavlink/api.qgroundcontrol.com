@@ -1,5 +1,6 @@
 var classGPSDriver =
 [
+    [ "State", "structGPSDriver_1_1State.html", "structGPSDriver_1_1State" ],
     [ "GPSDriver", "classGPSDriver.html#a67a1b38ccca7ecfa554af08617ef99a0", null ],
     [ "~GPSDriver", "classGPSDriver.html#acb4460f8bb040757d60477f0dbd36829", null ],
     [ "GPSDriver", "classGPSDriver.html#a283c3faec6a4e07d527620e108712b33", null ],

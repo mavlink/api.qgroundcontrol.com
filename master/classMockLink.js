@@ -38,6 +38,7 @@ var classMockLink =
     [ "mockLinkFTP", "classMockLink.html#a63027cc232c6a2681c03c9b202bf8ba8", null ],
     [ "mockLinkGimbal", "classMockLink.html#acfb2f4731a459c96eaf91e8d057aff91", null ],
     [ "outgoingMavlinkChannel", "classMockLink.html#a6138841ab570cfaf188d82a40dc698be", null ],
+    [ "paramRequestReadIndexLog", "classMockLink.html#a160bc7ae373e4c217a63f8cfdc140d06", null ],
     [ "paramValue", "classMockLink.html#a74ce6f3e568dbfaa8eaac130fd6c43bc", null ],
     [ "receivedMavCommandCount", "classMockLink.html#a20d4538d8b5f982b5d7c6b867b71a737", null ],
     [ "receivedMavCommandCount", "classMockLink.html#a862ea48617e71c4f8080a90d7932d6bf", null ],

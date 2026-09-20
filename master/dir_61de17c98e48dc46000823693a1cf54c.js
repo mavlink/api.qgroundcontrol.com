@@ -2,6 +2,8 @@ var dir_61de17c98e48dc46000823693a1cf54c =
 [
     [ "AppLogging.qml", "AppLogging_8qml.html", null ],
     [ "BluetoothSettings.qml", "BluetoothSettings_8qml.html", null ],
+    [ "CorrectionDiagnostics.qml", "CorrectionDiagnostics_8qml.html", null ],
+    [ "CorrectionRoutingSettings.qml", "CorrectionRoutingSettings_8qml.html", null ],
     [ "DebugWindow.qml", "DebugWindow_8qml.html", null ],
     [ "GcsPositionStatus.qml", "GcsPositionStatus_8qml.html", null ],
     [ "HelpSettings.qml", "HelpSettings_8qml.html", null ],

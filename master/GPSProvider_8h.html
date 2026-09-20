@@ -96,16 +96,18 @@ $(document).ready(function(){initNavTree('GPSProvider_8h.html',''); initResizabl
   <div class="headertitle"><div class="title">GPSProvider.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QtCore/QByteArray&gt;</code><br />
+<div class="textblock"><code>#include &lt;atomic&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;QtCore/QByteArray&gt;</code><br />
 <code>#include &lt;QtCore/QMetaType&gt;</code><br />
 <code>#include &lt;QtCore/QObject&gt;</code><br />
 <code>#include &lt;QtCore/QString&gt;</code><br />
 <code>#include &lt;QtCore/QThread&gt;</code><br />
-<code>#include &lt;atomic&gt;</code><br />
-<code>#include &lt;cstdint&gt;</code><br />
-<code>#include &lt;functional&gt;</code><br />
-<code>#include &lt;memory&gt;</code><br />
-<code>#include &quot;<a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSDriverReports_8h_source.html">GPSDriverReports.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSSurveyInStatus_8h_source.html">GPSSurveyInStatus.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GPSType_8h_source.html">GPSType.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for GPSProvider.h:</div>
@@ -131,10 +133,10 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a1de10e4c2de4b8298b63910bb31fdb64" id="r_a1de10e4c2de4b8298b63910bb31fdb64"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64">GPSConnectionError</a> { <a class="el" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64a6adf97f83acf6453d4a6a4b1070f3754">None</a>
-, <a class="el" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac">OpenFailed</a>
-, <a class="el" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64a5d9194716b6a125a6d16691e84afcdf2">ConfigFailed</a>
-, <a class="el" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a">DeviceError</a>
+<tr class="memitem:a1de10e4c2de4b8298b63910bb31fdb64" id="r_a1de10e4c2de4b8298b63910bb31fdb64"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64">GPSConnectionError</a> { <a class="el" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64a6adf97f83acf6453d4a6a4b1070f3754">None</a> = 0
+, <a class="el" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac">OpenFailed</a> = 1
+, <a class="el" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64a5d9194716b6a125a6d16691e84afcdf2">ConfigFailed</a> = 2
+, <a class="el" href="GPSProvider_8h.html#a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a">DeviceError</a> = 3
  }</td></tr>
 <tr class="separator:a1de10e4c2de4b8298b63910bb31fdb64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -160,15 +162,12 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1de10e4c2de4b8298b63910bb31fdb64a6adf97f83acf6453d4a6a4b1070f3754" name="a1de10e4c2de4b8298b63910bb31fdb64a6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac" name="a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac"></a>OpenFailed&#160;</td><td class="fielddoc"><p>receiver transport could not be opened </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a1de10e4c2de4b8298b63910bb31fdb64a5d9194716b6a125a6d16691e84afcdf2" name="a1de10e4c2de4b8298b63910bb31fdb64a5d9194716b6a125a6d16691e84afcdf2"></a>ConfigFailed&#160;</td><td class="fielddoc"><p>receiver did not accept configuration </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a" name="a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a"></a>DeviceError&#160;</td><td class="fielddoc"><p>fatal transport error after a working connection </p>
-</td></tr>
+<tr><td class="fieldname"><a id="a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac" name="a1de10e4c2de4b8298b63910bb31fdb64ac60b10c14b43d15f91424c6addfc31ac"></a>OpenFailed&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1de10e4c2de4b8298b63910bb31fdb64a5d9194716b6a125a6d16691e84afcdf2" name="a1de10e4c2de4b8298b63910bb31fdb64a5d9194716b6a125a6d16691e84afcdf2"></a>ConfigFailed&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a" name="a1de10e4c2de4b8298b63910bb31fdb64abe252e5b290c865b4d033fe4c4f88e9a"></a>DeviceError&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="GPSProvider_8h_source.html#l00019">19</a> of file <a class="el" href="GPSProvider_8h_source.html">GPSProvider.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSProvider_8h_source.html#l00024">24</a> of file <a class="el" href="GPSProvider_8h_source.html">GPSProvider.h</a>.</p>
 
 </div>
 </div>

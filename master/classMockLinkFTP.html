@@ -171,6 +171,34 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0332f9c13f41ce67ecd9f7009396397a" id="r_a0332f9c13f41ce67ecd9f7009396397a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#a0332f9c13f41ce67ecd9f7009396397a">setParamPckEnabled</a> (bool enabled)</td></tr>
 <tr class="memdesc:a0332f9c13f41ce67ecd9f7009396397a"><td class="mdescLeft">&#160;</td><td class="mdescRight">When false, OpenFileRO of @PARAM/param.pck NAKs errno ENOENT, as PX4 without the virtual file does.  <br /></td></tr>
 <tr class="separator:a0332f9c13f41ce67ecd9f7009396397a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ed09887a3e74084cfab7507f6c53c26" id="r_a5ed09887a3e74084cfab7507f6c53c26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#a5ed09887a3e74084cfab7507f6c53c26">setSingleSessionEnforced</a> (bool enforced)</td></tr>
+<tr class="memdesc:a5ed09887a3e74084cfab7507f6c53c26"><td class="mdescLeft">&#160;</td><td class="mdescRight">When true, OpenFileRO NAKs kErrNoSessionsAvailable while a read session is already open, as PX4 (single session) does.  <br /></td></tr>
+<tr class="separator:a5ed09887a3e74084cfab7507f6c53c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a403265531f8fb659266b03795d821b52" id="r_a403265531f8fb659266b03795d821b52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#a403265531f8fb659266b03795d821b52">openStaleSessionForTest</a> ()</td></tr>
+<tr class="memdesc:a403265531f8fb659266b03795d821b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a read session server-side without any client request, simulating a session left behind by a crashed GCS.  <br /></td></tr>
+<tr class="separator:a403265531f8fb659266b03795d821b52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8cc3f680951d9ab0c055f14166b70c3" id="r_ab8cc3f680951d9ab0c055f14166b70c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#ab8cc3f680951d9ab0c055f14166b70c3">setIgnoreResetSessions</a> (bool ignore)</td></tr>
+<tr class="memdesc:ab8cc3f680951d9ab0c055f14166b70c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">When true, ResetSessions requests get no reply.  <br /></td></tr>
+<tr class="separator:ab8cc3f680951d9ab0c055f14166b70c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a635f3d44898588bc8af36e7503b9048e" id="r_a635f3d44898588bc8af36e7503b9048e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#a635f3d44898588bc8af36e7503b9048e">setExpireSessionAfterBursts</a> (int burstCount)</td></tr>
+<tr class="separator:a635f3d44898588bc8af36e7503b9048e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55a10661ba186e1ce43118b639c00b84" id="r_a55a10661ba186e1ce43118b639c00b84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#a55a10661ba186e1ce43118b639c00b84">setDropBurstPacketOnce</a> (uint32_t offset)</td></tr>
+<tr class="memdesc:a55a10661ba186e1ce43118b639c00b84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops the burst data packet at the given file offset, once, to force a hole the client must fill.  <br /></td></tr>
+<tr class="separator:a55a10661ba186e1ce43118b639c00b84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3051e6e544161d07636bda7a9238583b" id="r_a3051e6e544161d07636bda7a9238583b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#a3051e6e544161d07636bda7a9238583b">setReorderBurstPacketOnce</a> (uint32_t offset)</td></tr>
+<tr class="separator:a3051e6e544161d07636bda7a9238583b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0c7e8ec38d0b88b3468489abdaa84e3" id="r_ae0c7e8ec38d0b88b3468489abdaa84e3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#ae0c7e8ec38d0b88b3468489abdaa84e3">openFileROCount</a> () const</td></tr>
+<tr class="memdesc:ae0c7e8ec38d0b88b3468489abdaa84e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of OpenFileRO requests acked since construction.  <br /></td></tr>
+<tr class="separator:ae0c7e8ec38d0b88b3468489abdaa84e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98700be33d3534953d553c4535b901c9" id="r_a98700be33d3534953d553c4535b901c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#a98700be33d3534953d553c4535b901c9">readFileCount</a> () const</td></tr>
+<tr class="memdesc:a98700be33d3534953d553c4535b901c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of ReadFile (non-burst) requests received since construction.  <br /></td></tr>
+<tr class="separator:a98700be33d3534953d553c4535b901c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc29e0ca64db6a8b3ca8ba6a4f1c8c22" id="r_abc29e0ca64db6a8b3ca8ba6a4f1c8c22"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#abc29e0ca64db6a8b3ca8ba6a4f1c8c22">lastBurstReadRequestSize</a> () const</td></tr>
+<tr class="memdesc:abc29e0ca64db6a8b3ca8ba6a4f1c8c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">hdr.size of the most recent BurstReadFile request, -1 if none received yet.  <br /></td></tr>
+<tr class="separator:abc29e0ca64db6a8b3ca8ba6a4f1c8c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af811d31fef9afe10af0e937daec5a131" id="r_af811d31fef9afe10af0e937daec5a131"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#af811d31fef9afe10af0e937daec5a131">lastReadFileRequestSize</a> () const</td></tr>
+<tr class="memdesc:af811d31fef9afe10af0e937daec5a131"><td class="mdescLeft">&#160;</td><td class="mdescRight">hdr.size of the most recent ReadFile request, -1 if none received yet.  <br /></td></tr>
+<tr class="separator:af811d31fef9afe10af0e937daec5a131"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d5842bf524b2f8cf60d57e70b7f3546" id="r_a7d5842bf524b2f8cf60d57e70b7f3546"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#a7d5842bf524b2f8cf60d57e70b7f3546">mavlinkMessageReceived</a> (const <a class="el" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> &amp;message)</td></tr>
 <tr class="memdesc:a7d5842bf524b2f8cf60d57e70b7f3546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to handle an FTP message.  <br /></td></tr>
 <tr class="separator:a7d5842bf524b2f8cf60d57e70b7f3546"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -238,7 +266,7 @@ Static Public Attributes</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00067">67</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00099">99</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -324,7 +352,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>Clears the stored uploaded file contents. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00064">64</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00096">96</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -352,7 +380,65 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00055">55</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00087">87</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+
+</div>
+</div>
+<a id="abc29e0ca64db6a8b3ca8ba6a4f1c8c22" name="abc29e0ca64db6a8b3ca8ba6a4f1c8c22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc29e0ca64db6a8b3ca8ba6a4f1c8c22">&#9670;&#160;</a></span>lastBurstReadRequestSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MockLinkFTP::lastBurstReadRequestSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>hdr.size of the most recent BurstReadFile request, -1 if none received yet. </p>
+
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00079">79</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+
+</div>
+</div>
+<a id="af811d31fef9afe10af0e937daec5a131" name="af811d31fef9afe10af0e937daec5a131"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af811d31fef9afe10af0e937daec5a131">&#9670;&#160;</a></span>lastReadFileRequestSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MockLinkFTP::lastReadFileRequestSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>hdr.size of the most recent ReadFile request, -1 if none received yet. </p>
+
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00082">82</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -373,7 +459,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Returns the deterministic contents served for the named @MAV_LOG log file. Empty if the name is unknown. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8cc_source.html#l00651">651</a> of file <a class="el" href="MockLinkFTP_8cc_source.html">MockLinkFTP.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8cc_source.html#l00717">717</a> of file <a class="el" href="MockLinkFTP_8cc_source.html">MockLinkFTP.cc</a>.</p>
 
 </div>
 </div>
@@ -404,7 +490,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00039">39</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MockLinkFTP_8cc_source.html#l00671">setLogFiles()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MockLinkFTP_8cc_source.html#l00737">setLogFiles()</a>.</p>
 
 </div>
 </div>
@@ -426,9 +512,88 @@ Static Public Attributes</h2></td></tr>
 
 <p>Called to handle an FTP message. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8cc_source.html#l00460">460</a> of file <a class="el" href="MockLinkFTP_8cc_source.html">MockLinkFTP.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8cc_source.html#l00526">526</a> of file <a class="el" href="MockLinkFTP_8cc_source.html">MockLinkFTP.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="MockLinkFTP_8h_source.html#l00070">errModeNakResponse</a>, <a class="el" href="MockLinkFTP_8h_source.html#l00069">errModeNoResponse</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00054">MavlinkFTP::kCmdBurstReadFile</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00045">MavlinkFTP::kCmdCreateFile</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00042">MavlinkFTP::kCmdListDirectory</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00055">MavlinkFTP::kCmdListDirectoryWithTime</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00039">MavlinkFTP::kCmdNone</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00043">MavlinkFTP::kCmdOpenFileRO</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00050">MavlinkFTP::kCmdOpenFileWO</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00044">MavlinkFTP::kCmdReadFile</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00047">MavlinkFTP::kCmdRemoveFile</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00041">MavlinkFTP::kCmdResetSessions</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00040">MavlinkFTP::kCmdTerminateSession</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00046">MavlinkFTP::kCmdWriteFile</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00064">MavlinkFTP::kErrFail</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00070">MavlinkFTP::kErrUnknownCommand</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00057">MavlinkFTP::kRspAck</a>, and <a class="el" href="MockLink_8cc_source.html#l01066">MockLink::respondWithMavlinkMessage()</a>.</p>
+<p class="reference">References <a class="el" href="MockLinkFTP_8h_source.html#l00102">errModeNakResponse</a>, <a class="el" href="MockLinkFTP_8h_source.html#l00101">errModeNoResponse</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00054">MavlinkFTP::kCmdBurstReadFile</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00045">MavlinkFTP::kCmdCreateFile</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00042">MavlinkFTP::kCmdListDirectory</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00055">MavlinkFTP::kCmdListDirectoryWithTime</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00039">MavlinkFTP::kCmdNone</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00043">MavlinkFTP::kCmdOpenFileRO</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00050">MavlinkFTP::kCmdOpenFileWO</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00044">MavlinkFTP::kCmdReadFile</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00047">MavlinkFTP::kCmdRemoveFile</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00041">MavlinkFTP::kCmdResetSessions</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00040">MavlinkFTP::kCmdTerminateSession</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00046">MavlinkFTP::kCmdWriteFile</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00064">MavlinkFTP::kErrFail</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00070">MavlinkFTP::kErrUnknownCommand</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00057">MavlinkFTP::kRspAck</a>, and <a class="el" href="MockLink_8cc_source.html#l01088">MockLink::respondWithMavlinkMessage()</a>.</p>
+
+</div>
+</div>
+<a id="ae0c7e8ec38d0b88b3468489abdaa84e3" name="ae0c7e8ec38d0b88b3468489abdaa84e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0c7e8ec38d0b88b3468489abdaa84e3">&#9670;&#160;</a></span>openFileROCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MockLinkFTP::openFileROCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of OpenFileRO requests acked since construction. </p>
+
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00073">73</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+
+</div>
+</div>
+<a id="a403265531f8fb659266b03795d821b52" name="a403265531f8fb659266b03795d821b52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a403265531f8fb659266b03795d821b52">&#9670;&#160;</a></span>openStaleSessionForTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MockLinkFTP::openStaleSessionForTest </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Opens a read session server-side without any client request, simulating a session left behind by a crashed GCS. </p>
+
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8cc_source.html#l00451">451</a> of file <a class="el" href="MockLinkFTP_8cc_source.html">MockLinkFTP.cc</a>.</p>
+
+</div>
+</div>
+<a id="a98700be33d3534953d553c4535b901c9" name="a98700be33d3534953d553c4535b901c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98700be33d3534953d553c4535b901c9">&#9670;&#160;</a></span>readFileCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MockLinkFTP::readFileCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Number of ReadFile (non-burst) requests received since construction. </p>
+
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00076">76</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -488,6 +653,36 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a55a10661ba186e1ce43118b639c00b84" name="a55a10661ba186e1ce43118b639c00b84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55a10661ba186e1ce43118b639c00b84">&#9670;&#160;</a></span>setDropBurstPacketOnce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MockLinkFTP::setDropBurstPacketOnce </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Drops the burst data packet at the given file offset, once, to force a hole the client must fill. </p>
+
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00066">66</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+
+</div>
+</div>
 <a id="aceabb4cca15b5f3f84c94234b8d60db4" name="aceabb4cca15b5f3f84c94234b8d60db4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aceabb4cca15b5f3f84c94234b8d60db4">&#9670;&#160;</a></span>setErrorMode()</h2>
 
@@ -514,7 +709,36 @@ Static Public Attributes</h2></td></tr>
 
 <p>Sets the error mode for command responses. This allows you to simulate various server errors. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00078">78</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00110">110</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+
+</div>
+</div>
+<a id="a635f3d44898588bc8af36e7503b9048e" name="a635f3d44898588bc8af36e7503b9048e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a635f3d44898588bc8af36e7503b9048e">&#9670;&#160;</a></span>setExpireSessionAfterBursts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MockLinkFTP::setExpireSessionAfterBursts </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>burstCount</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Closes the read session server-side once burstCount burst responses have been served, as PX4's idle timer does mid-transfer. Subsequent reads NAK kErrInvalidSession until the client re-opens. One-shot; 0 disables. </p>
+
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00063">63</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -547,6 +771,36 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ab8cc3f680951d9ab0c055f14166b70c3" name="ab8cc3f680951d9ab0c055f14166b70c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8cc3f680951d9ab0c055f14166b70c3">&#9670;&#160;</a></span>setIgnoreResetSessions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MockLinkFTP::setIgnoreResetSessions </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>ignore</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>When true, ResetSessions requests get no reply. </p>
+
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00059">59</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+
+</div>
+</div>
 <a id="a67069c5e7bb59b564d49a4cd78b38434" name="a67069c5e7bb59b564d49a4cd78b38434"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a67069c5e7bb59b564d49a4cd78b38434">&#9670;&#160;</a></span>setListDirectoryWithTimeSupported()</h2>
 
@@ -572,7 +826,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Controls whether the server implements the kCmdListDirectoryWithTime command. When false the server Naks it with kErrUnknownCommand so the client fallback to kCmdListDirectory can be tested. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00082">82</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00114">114</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -593,7 +847,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Sets the log files listed in and downloadable from the @MAV_LOG virtual directory. Removes any temp files cached for the previous log set. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8cc_source.html#l00671">671</a> of file <a class="el" href="MockLinkFTP_8cc_source.html">MockLinkFTP.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8cc_source.html#l00737">737</a> of file <a class="el" href="MockLinkFTP_8cc_source.html">MockLinkFTP.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="MockLinkFTP_8h_source.html#l00039">logFiles()</a>.</p>
 
@@ -626,6 +880,65 @@ Static Public Attributes</h2></td></tr>
 <p>When false, OpenFileRO of @PARAM/param.pck NAKs errno ENOENT, as PX4 without the virtual file does. </p>
 
 <p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00050">50</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+
+</div>
+</div>
+<a id="a3051e6e544161d07636bda7a9238583b" name="a3051e6e544161d07636bda7a9238583b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3051e6e544161d07636bda7a9238583b">&#9670;&#160;</a></span>setReorderBurstPacketOnce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MockLinkFTP::setReorderBurstPacketOnce </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>offset</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sends the burst data packet at the given file offset after the rest of its burst, once, keeping its original sequence number, as a late packet from an earlier burst arrives on a real link. </p>
+
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00070">70</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+
+</div>
+</div>
+<a id="a5ed09887a3e74084cfab7507f6c53c26" name="a5ed09887a3e74084cfab7507f6c53c26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ed09887a3e74084cfab7507f6c53c26">&#9670;&#160;</a></span>setSingleSessionEnforced()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MockLinkFTP::setSingleSessionEnforced </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enforced</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>When true, OpenFileRO NAKs kErrNoSessionsAvailable while a read session is already open, as PX4 (single session) does. </p>
+
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00053">53</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -682,7 +995,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>Returns the contents of an uploaded file. Empty if the path is unknown. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00061">61</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00093">93</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -711,7 +1024,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>Returns the list of remote paths which have been uploaded in this session. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00058">58</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00090">90</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -738,7 +1051,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>The number of ErrorModes in the rgFailureModes array. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00096">96</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00128">128</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -763,7 +1076,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Base modification time (seconds since UNIX epoch UTC) reported by the kCmdListDirectoryWithTime mock listing. Entry N reports kMockModificationTime + N. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00102">102</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00134">134</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -793,14 +1106,14 @@ Static Public Attributes</h2></td></tr>
 <div class="line">        <a class="code hl_enumvalue" href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2a51d37ea4aefe7d5ce26802c3883d6939">errModeNakSecondResponse</a>,</div>
 <div class="line">        <a class="code hl_enumvalue" href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2a026751013b9dc8e087cafc0803b97539">errModeBadSequence</a>,</div>
 <div class="line">    }</div>
-<div class="ttc" id="aclassMockLinkFTP_html_aa1f714a0d5ee3151c827bfa8bb6541b2a026751013b9dc8e087cafc0803b97539"><div class="ttname"><a href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2a026751013b9dc8e087cafc0803b97539">MockLinkFTP::errModeBadSequence</a></div><div class="ttdeci">@ errModeBadSequence</div><div class="ttdoc">Return response with bad sequence number.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkFTP_8h_source.html#l00075">MockLinkFTP.h:74</a></div></div>
-<div class="ttc" id="aclassMockLinkFTP_html_aa1f714a0d5ee3151c827bfa8bb6541b2a51d37ea4aefe7d5ce26802c3883d6939"><div class="ttname"><a href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2a51d37ea4aefe7d5ce26802c3883d6939">MockLinkFTP::errModeNakSecondResponse</a></div><div class="ttdeci">@ errModeNakSecondResponse</div><div class="ttdoc">Nak subsequent request to initial command.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkFTP_8h_source.html#l00073">MockLinkFTP.h:73</a></div></div>
-<div class="ttc" id="aclassMockLinkFTP_html_aa1f714a0d5ee3151c827bfa8bb6541b2a83194c812e097ff66f69752069c505d6"><div class="ttname"><a href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2a83194c812e097ff66f69752069c505d6">MockLinkFTP::errModeNoResponse</a></div><div class="ttdeci">@ errModeNoResponse</div><div class="ttdoc">No response to any request, client should eventually time out with no Ack.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkFTP_8h_source.html#l00069">MockLinkFTP.h:69</a></div></div>
-<div class="ttc" id="aclassMockLinkFTP_html_aa1f714a0d5ee3151c827bfa8bb6541b2abd6587523eb9a3da272c3ace102999fa"><div class="ttname"><a href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2abd6587523eb9a3da272c3ace102999fa">MockLinkFTP::errModeNoSecondResponse</a></div><div class="ttdeci">@ errModeNoSecondResponse</div><div class="ttdoc">No response to subsequent request to initial command.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkFTP_8h_source.html#l00071">MockLinkFTP.h:71</a></div></div>
-<div class="ttc" id="aclassMockLinkFTP_html_aa1f714a0d5ee3151c827bfa8bb6541b2ac99f2afed3669297e9270e3a8addd930"><div class="ttname"><a href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2ac99f2afed3669297e9270e3a8addd930">MockLinkFTP::errModeNakResponse</a></div><div class="ttdeci">@ errModeNakResponse</div><div class="ttdoc">Nak all requests.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkFTP_8h_source.html#l00070">MockLinkFTP.h:70</a></div></div>
+<div class="ttc" id="aclassMockLinkFTP_html_aa1f714a0d5ee3151c827bfa8bb6541b2a026751013b9dc8e087cafc0803b97539"><div class="ttname"><a href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2a026751013b9dc8e087cafc0803b97539">MockLinkFTP::errModeBadSequence</a></div><div class="ttdeci">@ errModeBadSequence</div><div class="ttdoc">Return response with bad sequence number.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkFTP_8h_source.html#l00107">MockLinkFTP.h:106</a></div></div>
+<div class="ttc" id="aclassMockLinkFTP_html_aa1f714a0d5ee3151c827bfa8bb6541b2a51d37ea4aefe7d5ce26802c3883d6939"><div class="ttname"><a href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2a51d37ea4aefe7d5ce26802c3883d6939">MockLinkFTP::errModeNakSecondResponse</a></div><div class="ttdeci">@ errModeNakSecondResponse</div><div class="ttdoc">Nak subsequent request to initial command.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkFTP_8h_source.html#l00105">MockLinkFTP.h:105</a></div></div>
+<div class="ttc" id="aclassMockLinkFTP_html_aa1f714a0d5ee3151c827bfa8bb6541b2a83194c812e097ff66f69752069c505d6"><div class="ttname"><a href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2a83194c812e097ff66f69752069c505d6">MockLinkFTP::errModeNoResponse</a></div><div class="ttdeci">@ errModeNoResponse</div><div class="ttdoc">No response to any request, client should eventually time out with no Ack.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkFTP_8h_source.html#l00101">MockLinkFTP.h:101</a></div></div>
+<div class="ttc" id="aclassMockLinkFTP_html_aa1f714a0d5ee3151c827bfa8bb6541b2abd6587523eb9a3da272c3ace102999fa"><div class="ttname"><a href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2abd6587523eb9a3da272c3ace102999fa">MockLinkFTP::errModeNoSecondResponse</a></div><div class="ttdeci">@ errModeNoSecondResponse</div><div class="ttdoc">No response to subsequent request to initial command.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkFTP_8h_source.html#l00103">MockLinkFTP.h:103</a></div></div>
+<div class="ttc" id="aclassMockLinkFTP_html_aa1f714a0d5ee3151c827bfa8bb6541b2ac99f2afed3669297e9270e3a8addd930"><div class="ttname"><a href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2ac99f2afed3669297e9270e3a8addd930">MockLinkFTP::errModeNakResponse</a></div><div class="ttdeci">@ errModeNakResponse</div><div class="ttdoc">Nak all requests.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkFTP_8h_source.html#l00102">MockLinkFTP.h:102</a></div></div>
 </div><!-- fragment --><p>Array of failure modes you can cycle through for testing. By looping through this array you can avoid hardcoding the specific error modes in your unit test. This way when new error modes are added your unit test code may not need to be modified. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00087">87</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00119">119</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -824,7 +1137,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00098">98</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00130">130</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>

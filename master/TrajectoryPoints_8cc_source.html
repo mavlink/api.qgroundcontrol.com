@@ -145,20 +145,20 @@ $(document).ready(function(){initNavTree('TrajectoryPoints_8cc_source.html','');
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">if</span> (_lastDirection.isNull() || QVector3D::dotProduct(newDirection, _lastDirection) &lt; colinearDotThreshold) {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                <span class="comment">// The new position IS NOT colinear with the last segment. Append the new position to the list.</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                _lastDirection = newDirection;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                _lastPoint = coordinate;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                _lastPoint = <a class="code hl_function" href="namespaceNMEA.html#a47dea32c9d196dbc964ab73c97cebfd7">coordinate</a>;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                _points.append(QVariant::fromValue(coordinate));</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                emit <a class="code hl_signal" href="classTrajectoryPoints.html#a584ecb030547a6b41a9cbf7c72b23d46">pointAdded</a>(coordinate);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                <span class="comment">// The new position IS colinear with the last segment. Don&#39;t add a new point, just update</span></div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                <span class="comment">// the last point to be the new position.</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                _lastPoint = coordinate;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                _lastPoint = <a class="code hl_function" href="namespaceNMEA.html#a47dea32c9d196dbc964ab73c97cebfd7">coordinate</a>;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                _points[_points.count() - 1] = QVariant::fromValue(coordinate);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                emit <a class="code hl_signal" href="classTrajectoryPoints.html#a618080de6513944ca5cf1af95e6a8bf5">updateLastPoint</a>(coordinate);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            }</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="comment">// Add the very first trajectory point to the list</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        _lastPoint = coordinate;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        _lastPoint = <a class="code hl_function" href="namespaceNMEA.html#a47dea32c9d196dbc964ab73c97cebfd7">coordinate</a>;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        _points.append(QVariant::fromValue(coordinate));</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        emit <a class="code hl_signal" href="classTrajectoryPoints.html#a584ecb030547a6b41a9cbf7c72b23d46">pointAdded</a>(coordinate);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
@@ -200,6 +200,7 @@ $(document).ready(function(){initNavTree('TrajectoryPoints_8cc_source.html','');
 <div class="ttc" id="aclassVehicle_html"><div class="ttname"><a href="classVehicle.html">Vehicle</a></div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00086">Vehicle.h:87</a></div></div>
 <div class="ttc" id="aclassVehicle_html_a6ee34bff80044420b85875a5eacdef92"><div class="ttname"><a href="classVehicle.html#a6ee34bff80044420b85875a5eacdef92">Vehicle::coordinateChanged</a></div><div class="ttdeci">void coordinateChanged(QGeoCoordinate coordinate)</div></div>
 <div class="ttc" id="aclassVehicle_html_a73855927a487cd3b0ab54c4c4080bbe9"><div class="ttname"><a href="classVehicle.html#a73855927a487cd3b0ab54c4c4080bbe9">Vehicle::updateFlightDistance</a></div><div class="ttdeci">void updateFlightDistance(double distance)</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8cc_source.html#l02903">Vehicle.cc:2903</a></div></div>
+<div class="ttc" id="anamespaceNMEA_html_a47dea32c9d196dbc964ab73c97cebfd7"><div class="ttname"><a href="namespaceNMEA.html#a47dea32c9d196dbc964ab73c97cebfd7">NMEA::coordinate</a></div><div class="ttdeci">std::optional&lt; double &gt; coordinate(std::string_view field, std::string_view hemisphere, bool latitude)</div><div class="ttdef"><b>Definition</b> <a href="NMEASentence_8cc_source.html#l00082">NMEASentence.cc:82</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -13,6 +13,7 @@ var classSettingsManager =
     [ "flightModeSettings", "classSettingsManager.html#a67aad64779093a3a006d1293b74c539f", null ],
     [ "flyViewSettings", "classSettingsManager.html#adc3fe70caa6b16779cce1c0aa272776c", null ],
     [ "gimbalControllerSettings", "classSettingsManager.html#add6447a61cbfed55d713eb661da53fd0", null ],
+    [ "gpsCorrectionSettings", "classSettingsManager.html#ac18ab8abefe70f93ba7291a38d650d17", null ],
     [ "init", "classSettingsManager.html#a04ed8c1d8f7b306c49fa647e551a5459", null ],
     [ "instance", "classSettingsManager.html#a70509f6304c076e2cceea0445951c324", null ],
     [ "joystickManagerSettings", "classSettingsManager.html#a11d664f820b2523de374626409a6cf7b", null ],

@@ -42,6 +42,7 @@ var classMissionController =
     [ "insertROIMissionItem", "classMissionController.html#a8e795a90211c13bec528cca739d34895", null ],
     [ "insertSimpleMissionItem", "classMissionController.html#a9ec1e4edec6806a4a28a9eec0c8400a1", null ],
     [ "insertTakeoffItem", "classMissionController.html#a3b4dc4856a79e2d39531033ae1ce7d6e", null ],
+    [ "insertVTOLMulticopterTakeoffItem", "classMissionController.html#a595a6ac213aee0edc5c04f915e7a5fa4", null ],
     [ "isEmpty", "classMissionController.html#a94752928efa540e4bf1f9a5d46bdc85d", null ],
     [ "isFirstLandingComplexItem", "classMissionController.html#aa463df6d8f1cd26ad66f352e79a260dc", null ],
     [ "isInsertTakeoffValid", "classMissionController.html#ad56738f8d2fac59b648786a5ef6f72fd", null ],

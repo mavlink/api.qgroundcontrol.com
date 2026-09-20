@@ -11,7 +11,8 @@ var classFirmwarePlugin =
       [ "TakeoffVehicleCapability", "classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18abbdcaeaec83d88a0923112b3fb0fe353", null ],
       [ "ROIModeCapability", "classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18aea5aa4666a65eeccad6f5cb14ff6b320", null ],
       [ "ChangeHeadingCapability", "classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18a10e8c486e9a19da6e8adad42028fd79e", null ],
-      [ "GuidedTakeoffCapability", "classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18a5a481cb56510ff8c711b445944148c6c", null ]
+      [ "GuidedTakeoffCapability", "classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18a5a481cb56510ff8c711b445944148c6c", null ],
+      [ "VTOLMulticopterTakeoffCapability", "classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18ae5e66d0baff04b16ddac09b6bf76db7f", null ]
     ] ],
     [ "FirmwarePlugin", "classFirmwarePlugin.html#af440c8f54f4d7618178ef33e4bfd19d1", null ],
     [ "~FirmwarePlugin", "classFirmwarePlugin.html#a3c2e30d11c0b544ca6e86923c313c4ce", null ],

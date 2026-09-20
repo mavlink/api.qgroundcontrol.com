@@ -8,6 +8,6 @@ var APMDataFlashUtility_8cc =
     [ "iterateMessages", "APMDataFlashUtility_8cc.html#ae1334aeb3e8c15123a31d9fef16db273", null ],
     [ "parseFmtMessages", "APMDataFlashUtility_8cc.html#ac7e5a54b1595a7b029c7265dcfaf9113", null ],
     [ "parseFmtPayload", "APMDataFlashUtility_8cc.html#afbc0c915cd1fc96a85eb1ae63853e78a", null ],
-    [ "parseMessage", "APMDataFlashUtility_8cc.html#a035e7c4f4a0b3e0e435fcf8af5415a0e", null ],
-    [ "parseValue", "APMDataFlashUtility_8cc.html#aedd510969b753706befc4ab94eba3246", null ]
+    [ "parseMessage", "APMDataFlashUtility_8cc.html#af6560e19db8f4808e6e030df8a7eb48d", null ],
+    [ "parseValue", "APMDataFlashUtility_8cc.html#aa1b9f257ba550ba0d22bf7c2bc011c45", null ]
 ];

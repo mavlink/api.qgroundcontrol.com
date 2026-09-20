@@ -1,7 +1,8 @@
 var classSerialWorker =
 [
-    [ "SerialWorker", "classSerialWorker.html#a46b47fd5ec68f896b7a7164c092f94de", null ],
+    [ "SerialWorker", "classSerialWorker.html#acf3145c1ed1a47591db2f864ce60176b", null ],
     [ "~SerialWorker", "classSerialWorker.html#ae818adb9815abb369009111efe016b65", null ],
+    [ "checkPortAvailability", "classSerialWorker.html#a4614c8774c7948336b2d49ed9a0c921b", null ],
     [ "connected", "classSerialWorker.html#a38b6f785ef2c9b5c05d70d9d68706837", null ],
     [ "connectToPort", "classSerialWorker.html#a1d0294bac7434a18f4ee270ac3ed2e5f", null ],
     [ "dataReceived", "classSerialWorker.html#a207ce2c9c5ff6d70d47aaa94e8f2b76a", null ],

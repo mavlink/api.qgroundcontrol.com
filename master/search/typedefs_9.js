@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loghandler_0',['LogHandler',['../classStateMachineLogger.html#a21d630691df277847c5c47a36f253eb1',1,'StateMachineLogger']]]
+  ['joystickbackend_0',['JoystickBackend',['../JoystickManager_8cc.html#ac37635ba51bf14c38c157d497b65c87b',1,'JoystickManager.cc']]]
 ];

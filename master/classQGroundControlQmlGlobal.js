@@ -23,6 +23,7 @@ var classQGroundControlQmlGlobal =
     [ "flightMapPositionChanged", "classQGroundControlQmlGlobal.html#a33e009fe6814a34b5e9b40a4bb418b51", null ],
     [ "flightMapZoom", "classQGroundControlQmlGlobal.html#a18203c5d38f1df9af2c6711f511b861c", null ],
     [ "flightMapZoomChanged", "classQGroundControlQmlGlobal.html#a9a61f1f267359735d33808a546eda35d", null ],
+    [ "gpsManager", "classQGroundControlQmlGlobal.html#a7d1fc73b7a2bbf19c4f4f64b50d25a67", null ],
     [ "gpsRtkFactGroup", "classQGroundControlQmlGlobal.html#a4802d9330bc1a6ca01c7c3b2b8eb8ec7", null ],
     [ "isMultiplexingEnabledChanged", "classQGroundControlQmlGlobal.html#a90dacd08fbce881e61d188db01047cc6", null ],
     [ "linesIntersect", "classQGroundControlQmlGlobal.html#ac17a55a64fefb1afb1956e9320b843ea", null ],

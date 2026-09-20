@@ -16,5 +16,7 @@ var classVehicleSupports =
     [ "takeoffMissionCommand", "classVehicleSupports.html#ad827398cc4b3e2b0de2faa805cc9221e", null ],
     [ "terrainFrame", "classVehicleSupports.html#acf587450c1204061239f4c29e20057bb", null ],
     [ "terrainFrameChanged", "classVehicleSupports.html#a084e15b67da6bd1255c97bb25087159a", null ],
-    [ "throttleModeCenterZero", "classVehicleSupports.html#ab18909395908c5f800459ff3bcf6da51", null ]
+    [ "throttleModeCenterZero", "classVehicleSupports.html#ab18909395908c5f800459ff3bcf6da51", null ],
+    [ "vtolMulticopterTakeoff", "classVehicleSupports.html#afb9ef374d19f20418e5080b9fc332e34", null ],
+    [ "vtolMulticopterTakeoffChanged", "classVehicleSupports.html#a479d5c99a760cbacf88191f6fc591d02", null ]
 ];

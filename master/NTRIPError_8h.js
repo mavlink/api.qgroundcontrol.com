@@ -1,5 +1,6 @@
 var NTRIPError_8h =
 [
+    [ "NTRIPFailure", "structNTRIPFailure.html", "structNTRIPFailure" ],
     [ "NTRIPError", "NTRIPError_8h.html#ab146aa01fdf3b7cdc1e4e1b712175103", null ],
     [ "NTRIPError", "NTRIPError_8h.html#ab3a74ce3b95766f53d1e1a5a33a22d17", [
       [ "ConnectionTimeout", "NTRIPError_8h.html#ab3a74ce3b95766f53d1e1a5a33a22d17a10682640c96d005f79a5662874e893b7", null ],

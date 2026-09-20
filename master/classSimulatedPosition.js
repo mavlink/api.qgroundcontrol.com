@@ -1,7 +1,7 @@
 var classSimulatedPosition =
 [
-    [ "SimulatedPosition", "classSimulatedPosition.html#a9cf2c0d201036f3e997bea23cb5fee0b", null ],
-    [ "~SimulatedPosition", "classSimulatedPosition.html#a294da80dfd22502076b011113687618e", null ],
+    [ "SimulatedPosition", "classSimulatedPosition.html#a415b5b6d7b26999efb47a29b88abe95e", null ],
+    [ "~SimulatedPosition", "classSimulatedPosition.html#aa557a644419fb347fe9aa65c6bd34bea", null ],
     [ "error", "classSimulatedPosition.html#a296a4a5932b8e3dbd3464369de1fc896", null ],
     [ "lastKnownPosition", "classSimulatedPosition.html#a80f21f4dd8aa5e4dcf7f8849a3430667", null ],
     [ "minimumUpdateInterval", "classSimulatedPosition.html#a0a681080e8f26216b13eb39ea10d644c", null ],

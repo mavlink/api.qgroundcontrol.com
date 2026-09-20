@@ -111,94 +111,121 @@ $(document).ready(function(){initNavTree('NmeaGpsSettings_8qml_source.html','');
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    visible: root._autoConnectSettings.nmeaSource.userVisible &amp;&amp; root._autoConnectSettings.autoConnectNmeaBaud.userVisible</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    readonly property var  _autoConnectSettings: QGroundControl.settingsManager.autoConnectSettings</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    readonly property var _serialPortManager: QGroundControl.serialPortManager</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    readonly property var _serialPorts: _serialPortManager ? _serialPortManager.serialPorts : []</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    readonly property var _serialBaudRates: _serialPortManager ? _serialPortManager.serialBaudRates : []</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    readonly property bool _serialSource: root._autoConnectSettings.nmeaSource.rawValue === AutoConnectSettings.NmeaSourceSerial</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    LabelledFactComboBox {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        label: qsTr(&quot;Source&quot;)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        fact: root._autoConnectSettings.nmeaSource</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    LabelledComboBox {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        id: nmeaPortCombo</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        objectName: &quot;nmeaPortCombo&quot;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        visible: root._serialSource</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        label: qsTr(&quot;Device&quot;)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        model: root._serialPorts.length &gt; 0 ? root._serialPorts : [qsTr(&quot;&lt;none available&gt;&quot;)]</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        currentIndex: root._serialPorts.length &gt; 0</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                      ? root._serialPorts.indexOf(root._autoConnectSettings.autoConnectNmeaPort.valueString) : 0</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        enabled: root._serialPorts.length &gt; 0</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        onActivated: (index) =&gt; {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            if (index &gt;= 0 &amp;&amp; index &lt; root._serialPorts.length) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                root._autoConnectSettings.autoConnectNmeaPort.value = root._serialPorts[index]</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    LabelledComboBox {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        id: nmeaBaudCombo</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        objectName: &quot;nmeaBaudCombo&quot;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        visible: root._serialSource</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        label: qsTr(&quot;Baudrate&quot;)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        readonly property string _customLabel:  qsTr(&quot;Custom&quot;)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        readonly property bool   isCustomBaud:  currentText === _customLabel</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        onActivated: (index) =&gt; {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            if (index !== -1 &amp;&amp; !isCustomBaud) {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                QGroundControl.settingsManager.autoConnectSettings.autoConnectNmeaBaud.value = parseInt(comboBox.textAt(index));</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            }</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        Component.onCompleted: {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            var rates = root._serialBaudRates.slice()</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            rates.push(_customLabel)</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            nmeaBaudCombo.model = rates</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            var baud = root._autoConnectSettings.autoConnectNmeaBaud.valueString</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            const index = nmeaBaudCombo.comboBox.find(baud);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            if (index === -1) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                nmeaBaudCombo.currentIndex = nmeaBaudCombo.comboBox.count - 1</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                customNmeaBaudField.text = baud</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            } else {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                nmeaBaudCombo.currentIndex = index;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            }</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    RowLayout {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        visible: nmeaBaudCombo.visible &amp;&amp; nmeaBaudCombo.isCustomBaud</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        spacing: ScreenTools.defaultFontPixelWidth</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        QGCLabel {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            text:               qsTr(&quot;Custom Baud Rate&quot;)</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            Layout.fillWidth:   true</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        QGCTextField {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            id:                 customNmeaBaudField</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            objectName:         &quot;customNmeaBaudField&quot;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            numericValuesOnly:  true</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            validator:          IntValidator { bottom: 1 }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            onEditingFinished: {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                if (!nmeaBaudCombo.isCustomBaud) return</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                var baud = parseInt(text)</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                if (baud &gt; 0) {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                    root._autoConnectSettings.autoConnectNmeaBaud.value = baud</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        }</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    LabelledFactTextField {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        visible: root._autoConnectSettings.nmeaSource.rawValue === AutoConnectSettings.NmeaSourceUdp</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        label: qsTr(&quot;NMEA stream UDP port&quot;)</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        fact: root._autoConnectSettings.nmeaUdpPort</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    readonly property var _positionManager: QGroundControl.qgcPositionManger</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    readonly property var _health: root._positionManager.nmeaHealth</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    readonly property var _serialPortManager: QGroundControl.serialPortManager</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    readonly property var _serialPorts: _serialPortManager ? _serialPortManager.serialPorts : []</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    readonly property var _serialBaudRates: _serialPortManager ? _serialPortManager.serialBaudRates : []</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    readonly property bool _serialSource: root._autoConnectSettings.nmeaSource.rawValue === AutoConnectSettings.NmeaSourceSerial</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    LabelledFactComboBox {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        label: qsTr(&quot;Source&quot;)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        fact: root._autoConnectSettings.nmeaSource</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    LabelledComboBox {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        id: nmeaPortCombo</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        objectName: &quot;nmeaPortCombo&quot;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        visible: root._serialSource</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        label: qsTr(&quot;Device&quot;)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        model: root._serialPorts.length &gt; 0 ? root._serialPorts : [qsTr(&quot;&lt;none available&gt;&quot;)]</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        currentIndex: root._serialPorts.length &gt; 0</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                      ? root._serialPorts.indexOf(root._autoConnectSettings.autoConnectNmeaPort.valueString) : 0</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        enabled: root._serialPorts.length &gt; 0</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        onActivated: (index) =&gt; {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            if (index &gt;= 0 &amp;&amp; index &lt; root._serialPorts.length) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                root._autoConnectSettings.autoConnectNmeaPort.value = root._serialPorts[index]</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    LabelledComboBox {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        id: nmeaBaudCombo</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        objectName: &quot;nmeaBaudCombo&quot;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        visible: root._serialSource</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        label: qsTr(&quot;Baudrate&quot;)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        readonly property string _customLabel:  qsTr(&quot;Custom&quot;)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        readonly property bool   isCustomBaud:  currentText === _customLabel</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        onActivated: (index) =&gt; {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            if (index !== -1 &amp;&amp; !isCustomBaud) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                QGroundControl.settingsManager.autoConnectSettings.autoConnectNmeaBaud.value = parseInt(comboBox.textAt(index));</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        Component.onCompleted: {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            var rates = root._serialBaudRates.slice()</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            rates.push(_customLabel)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            nmeaBaudCombo.model = rates</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            var baud = root._autoConnectSettings.autoConnectNmeaBaud.valueString</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            const index = nmeaBaudCombo.comboBox.find(baud);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            if (index === -1) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                nmeaBaudCombo.currentIndex = nmeaBaudCombo.comboBox.count - 1</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                customNmeaBaudField.text = baud</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            } else {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                nmeaBaudCombo.currentIndex = index;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    RowLayout {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        visible: nmeaBaudCombo.visible &amp;&amp; nmeaBaudCombo.isCustomBaud</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        spacing: ScreenTools.defaultFontPixelWidth</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        QGCLabel {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            text:               qsTr(&quot;Custom Baud Rate&quot;)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            Layout.fillWidth:   true</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        QGCTextField {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            id:                 customNmeaBaudField</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            objectName:         &quot;customNmeaBaudField&quot;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            numericValuesOnly:  true</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            validator:          IntValidator { bottom: 1 }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            onEditingFinished: {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                if (!nmeaBaudCombo.isCustomBaud) return</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                var baud = parseInt(text)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                if (baud &gt; 0) {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                    root._autoConnectSettings.autoConnectNmeaBaud.value = baud</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    LabelledFactTextField {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        visible: root._autoConnectSettings.nmeaSource.rawValue === AutoConnectSettings.NmeaSourceUdp</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        label: qsTr(&quot;NMEA stream UDP port&quot;)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        fact: root._autoConnectSettings.nmeaUdpPort</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    QGCLabel {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        visible: root._health !== null</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        Layout.fillWidth: true</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        wrapMode: Text.WordWrap</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        text: root._positionManager.nmeaReceiving ? qsTr(&quot;Receiving NMEA data&quot;)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>              : root._positionManager.nmeaHasData ? qsTr(&quot;NMEA stream idle&quot;)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>              : root._serialSource ? qsTr(&quot;Waiting for NMEA data&quot;) : qsTr(&quot;Listening for NMEA UDP data&quot;)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    QGCLabel {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        visible: root._health !== null</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        Layout.fillWidth: true</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        wrapMode: Text.WordWrap</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        text: root._health &amp;&amp; root._health.usable ? qsTr(&quot;Position usable&quot;) : qsTr(&quot;Waiting for a usable fix&quot;)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    QGCLabel {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        visible: root._health !== null</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        Layout.fillWidth: true</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        wrapMode: Text.WordWrap</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        text: qsTr(&quot;Satellites: %1 in use, %2 in view&quot;)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            .arg(root._health &amp;&amp; root._health.satellitesInUseCount &gt;= 0 ? root._health.satellitesInUseCount : qsTr(&quot;Unknown&quot;))</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            .arg(root._health &amp;&amp; root._health.satellitesInViewCount &gt;= 0 ? root._health.satellitesInViewCount : qsTr(&quot;Unknown&quot;))</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
