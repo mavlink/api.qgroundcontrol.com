@@ -10,6 +10,7 @@ var structGPSPositionReport =
       [ "RTKFixed", "structGPSPositionReport.html#adb7c8c82acc11d7a712efbc58d2b11bcaf0dbc34719fd78c631e96c80f0a34335", null ],
       [ "Extrapolated", "structGPSPositionReport.html#adb7c8c82acc11d7a712efbc58d2b11bca94e6a82e363b2f395cbe9321cbc445e7", null ]
     ] ],
+    [ "fixTypeFromValue", "structGPSPositionReport.html#af969dfaa4c58cde9adda101f219f3961", null ],
     [ "altitudeEllipsoidMeters", "structGPSPositionReport.html#a609ad05e28a56d9e802f9ae3663d9852", null ],
     [ "altitudeMslMeters", "structGPSPositionReport.html#ab94c77627ff90ba6eddaeea15b4f29d2", null ],
     [ "courseRadians", "structGPSPositionReport.html#a1789f92290f0f84f1fa2767e200c041c", null ],

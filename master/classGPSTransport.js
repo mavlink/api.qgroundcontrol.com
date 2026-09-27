@@ -11,7 +11,7 @@ var classGPSTransport =
     [ "read", "classGPSTransport.html#a5cba42661b309bca8f61aee7390a80a9", null ],
     [ "serialCorrectionWriteTimeout", "classGPSTransport.html#a0f0ce6e1795bbb9c8e13a39ca90cf796", null ],
     [ "setBaudrate", "classGPSTransport.html#a2b472a245344804b7a656abfe7780ac7", null ],
-    [ "write", "classGPSTransport.html#a494fb7d69a3c50ab40053b1374b4af2b", null ],
     [ "writeBounded", "classGPSTransport.html#a68dc0243c818159f21661b546e435ca0", null ],
+    [ "writeConfiguration", "classGPSTransport.html#aec90164cee3f8a6e088a15f5aabf9450", null ],
     [ "kCancellationPollMs", "classGPSTransport.html#ac6e2d006816d838d1f9dc02753b3ef28", null ]
 ];

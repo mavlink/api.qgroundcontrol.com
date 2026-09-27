@@ -251,10 +251,10 @@ $(document).ready(function(){initNavTree('SurfaceModel_8cc_source.html',''); ini
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            _addsDeferred = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        PatchData data;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        data.heights = _field-&gt;<a class="code hl_function" href="classHeightField.html#a68f4d578d3b4d2dd4a1fab5725dec686">samplePatch</a>(key, <a class="code hl_variable" href="classSurfaceModel.html#a68bbf88bdc24815cef83b039af96544f">kGridSize</a>);</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        data.maxHeight = maxHeightOf(data.heights);</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        _patches.insert(key, std::move(data));</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        PatchData <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.heights = _field-&gt;<a class="code hl_function" href="classHeightField.html#a68f4d578d3b4d2dd4a1fab5725dec686">samplePatch</a>(key, <a class="code hl_variable" href="classSurfaceModel.html#a68bbf88bdc24815cef83b039af96544f">kGridSize</a>);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.maxHeight = maxHeightOf(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.heights);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        _patches.insert(key, std::move(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>));</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        churnRects.append(patchRect(key));</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        _heightSource-&gt;<a class="code hl_function" href="classHeightSource.html#a720fbf6a41354a110ef6236395a34ed6">requestTile</a>(key);</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        emit <a class="code hl_signal" href="classSurfaceModel.html#ad8d80ca7a1abe9dfc2f4524674d3bd50">patchAdded</a>(key);</div>
@@ -470,8 +470,8 @@ $(document).ready(function(){initNavTree('SurfaceModel_8cc_source.html',''); ini
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span><span class="keywordtype">double</span> SurfaceModel::_maxTerrainZ()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>    <span class="keywordtype">float</span> maxHeight = 0.0f;</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> PatchData&amp; data : _patches) {</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        maxHeight = std::max(maxHeight, data.maxHeight);</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> PatchData&amp; <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a> : _patches) {</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        maxHeight = std::max(maxHeight, <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.maxHeight);</div>
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>    }</div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>    <span class="keywordflow">if</span> (maxHeight &lt;= 0.0f) {</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>        <span class="keywordflow">return</span> 0.0;</div>
@@ -567,9 +567,9 @@ $(document).ready(function(){initNavTree('SurfaceModel_8cc_source.html',''); ini
 <div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>        <span class="keywordflow">if</span> (!patchTouchesRegion(it.key(), worldRect)) {</div>
 <div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>        }</div>
-<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>        PatchData&amp; data = it.value();</div>
-<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>        data.heights = _field-&gt;<a class="code hl_function" href="classHeightField.html#a68f4d578d3b4d2dd4a1fab5725dec686">samplePatch</a>(it.key(), <a class="code hl_variable" href="classSurfaceModel.html#a68bbf88bdc24815cef83b039af96544f">kGridSize</a>);</div>
-<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span>        data.maxHeight = maxHeightOf(data.heights);</div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>        PatchData&amp; <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a> = it.value();</div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>        <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.heights = _field-&gt;<a class="code hl_function" href="classHeightField.html#a68f4d578d3b4d2dd4a1fab5725dec686">samplePatch</a>(it.key(), <a class="code hl_variable" href="classSurfaceModel.html#a68bbf88bdc24815cef83b039af96544f">kGridSize</a>);</div>
+<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span>        <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.maxHeight = maxHeightOf(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.heights);</div>
 <div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span>        emit <a class="code hl_signal" href="classSurfaceModel.html#af233b2f91b7ab948a6cae5a3a9a5aef5">patchMeshChanged</a>(it.key());</div>
 <div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span>        remeshed++;</div>
 <div class="line"><a id="l00482" name="l00482"></a><span class="lineno">  482</span>    }</div>
@@ -582,6 +582,7 @@ $(document).ready(function(){initNavTree('SurfaceModel_8cc_source.html',''); ini
 <div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>        _scheduleUpdate();</div>
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>    }</div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>}</div>
+<div class="ttc" id="aFemtoMessages_8h_html_a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc"><div class="ttname"><a href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">FemtoDecodeState::data</a></div><div class="ttdeci">@ data</div></div>
 <div class="ttc" id="aGeoMapCamera_8h_html"><div class="ttname"><a href="GeoMapCamera_8h.html">GeoMapCamera.h</a></div></div>
 <div class="ttc" id="aHeightField_8h_html"><div class="ttname"><a href="HeightField_8h.html">HeightField.h</a></div></div>
 <div class="ttc" id="aHeightSource_8h_html"><div class="ttname"><a href="HeightSource_8h.html">HeightSource.h</a></div></div>

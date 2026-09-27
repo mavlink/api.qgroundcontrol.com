@@ -32,13 +32,15 @@ var searchData=
   ['condition_29',['Condition',['../classCondition.html',1,'']]],
   ['conditionalstate_30',['ConditionalState',['../classConditionalState.html',1,'']]],
   ['config_31',['config',['../structActuatorActions_1_1Config.html',1,'ActuatorActions::Config'],['../structGStreamer_1_1SourceFactory_1_1Config.html',1,'GStreamer::SourceFactory::Config']]],
-  ['configparameter_32',['configparameter',['../classActuatorOutputs_1_1ConfigParameter.html',1,'ActuatorOutputs::ConfigParameter'],['../classMixer_1_1ConfigParameter.html',1,'Mixer::ConfigParameter']]],
+  ['configparameter_32',['configparameter',['../classMixer_1_1ConfigParameter.html',1,'Mixer::ConfigParameter'],['../classActuatorOutputs_1_1ConfigParameter.html',1,'ActuatorOutputs::ConfigParameter']]],
   ['configuration_33',['configuration',['../structGPSCorrectionSelector_1_1Configuration.html',1,'GPSCorrectionSelector::Configuration'],['../structNTRIPGgaProvider_1_1Configuration.html',1,'NTRIPGgaProvider::Configuration']]],
-  ['coordinfo_5ft_34',['CoordInfo_t',['../structTransectStyleComplexItem_1_1CoordInfo__t.html',1,'TransectStyleComplexItem']]],
-  ['copernicuselevationprovider_35',['CopernicusElevationProvider',['../classCopernicusElevationProvider.html',1,'']]],
-  ['corridorscancomplexitem_36',['CorridorScanComplexItem',['../classCorridorScanComplexItem.html',1,'']]],
-  ['corridorscanplancreator_37',['CorridorScanPlanCreator',['../classCorridorScanPlanCreator.html',1,'']]],
-  ['cpuvideoframepool_38',['CpuVideoFramePool',['../classCpuVideoFramePool.html',1,'']]],
-  ['customurlmapprovider_39',['CustomURLMapProvider',['../classCustomURLMapProvider.html',1,'']]],
-  ['cyberjapanmapprovider_40',['CyberJapanMapProvider',['../classCyberJapanMapProvider.html',1,'']]]
+  ['configurationvalues_34',['ConfigurationValues',['../structUBX_1_1ConfigurationValues.html',1,'UBX']]],
+  ['coordinfo_5ft_35',['CoordInfo_t',['../structTransectStyleComplexItem_1_1CoordInfo__t.html',1,'TransectStyleComplexItem']]],
+  ['copernicuselevationprovider_36',['CopernicusElevationProvider',['../classCopernicusElevationProvider.html',1,'']]],
+  ['corridorscancomplexitem_37',['CorridorScanComplexItem',['../classCorridorScanComplexItem.html',1,'']]],
+  ['corridorscanplancreator_38',['CorridorScanPlanCreator',['../classCorridorScanPlanCreator.html',1,'']]],
+  ['cpuvideoframepool_39',['CpuVideoFramePool',['../classCpuVideoFramePool.html',1,'']]],
+  ['cursor_40',['Cursor',['../classNMEAFields_1_1Cursor.html',1,'NMEAFields']]],
+  ['customurlmapprovider_41',['CustomURLMapProvider',['../classCustomURLMapProvider.html',1,'']]],
+  ['cyberjapanmapprovider_42',['CyberJapanMapProvider',['../classCyberJapanMapProvider.html',1,'']]]
 ];

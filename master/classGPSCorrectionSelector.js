@@ -2,6 +2,7 @@ var classGPSCorrectionSelector =
 [
     [ "Configuration", "structGPSCorrectionSelector_1_1Configuration.html", "structGPSCorrectionSelector_1_1Configuration" ],
     [ "Source", "structGPSCorrectionSelector_1_1Source.html", "structGPSCorrectionSelector_1_1Source" ],
+    [ "SourceIdentity", "structGPSCorrectionSelector_1_1SourceIdentity.html", "structGPSCorrectionSelector_1_1SourceIdentity" ],
     [ "Policy", "classGPSCorrectionSelector.html#a7850d688b6ce204f861525ff57290607", [
       [ "Automatic", "classGPSCorrectionSelector.html#a7850d688b6ce204f861525ff57290607a086247a9b57fde6eefee2a0c4752242d", null ],
       [ "Manual", "classGPSCorrectionSelector.html#a7850d688b6ce204f861525ff57290607ae1ba155a9f2e8c3be94020eef32a0301", null ],
@@ -14,7 +15,6 @@ var classGPSCorrectionSelector =
     [ "clear", "classGPSCorrectionSelector.html#a5a173a24a4639a62465e20d4ba02f664", null ],
     [ "configuration", "classGPSCorrectionSelector.html#af3b5e82e9750f05cbd1c8fe0d74b6463", null ],
     [ "configure", "classGPSCorrectionSelector.html#a1bd7ac4c683ed9e6292d2ad8a8c4f6f1", null ],
-    [ "key", "classGPSCorrectionSelector.html#a1ed7d37efe27ca0dd442b34043c75af0", null ],
     [ "observe", "classGPSCorrectionSelector.html#aa4b7a4d9b7222d07ce562cd3090327b2", null ],
     [ "retire", "classGPSCorrectionSelector.html#a9618876ea680ff362267b381a52c1b01", null ],
     [ "selected", "classGPSCorrectionSelector.html#a01c658ac13b860d492ebe3cf42cf1bbe", null ],

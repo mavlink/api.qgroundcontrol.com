@@ -13,7 +13,11 @@ var GPSReceiverConfig_8h =
       [ "UnsupportedDynamicModel", "GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfad37bcc64d6122263332883bb5f4175a3", null ],
       [ "InvalidDynamicModel", "GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfaabf4f6b0b7ee99ca4b1bb4915d576477", null ],
       [ "UnsupportedHeadingOffset", "GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfaf61e027abd62720c120a568598a9f8b0", null ],
-      [ "InvalidHeadingOffset", "GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa4433272e412ee121cfb6a54446686df4", null ]
+      [ "InvalidHeadingOffset", "GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa4433272e412ee121cfb6a54446686df4", null ],
+      [ "UnsupportedBaseMode", "GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfabd50b77bbf600a5162e6944b2fe781e7", null ],
+      [ "InvalidReceiverAveraging", "GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfafaab98db55a6e6dc13a7395dac31d360", null ],
+      [ "InvalidBaudRate", "GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa44211ce9c1600eacf46eaf49dae34fdb", null ],
+      [ "UnsupportedPersistentConfiguration", "GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfade5393e16aba8775e05213e6447ace82", null ]
     ] ],
     [ "gpsValidateBaseStationConfig", "GPSReceiverConfig_8h.html#a9c8345e9ecafef79713cf115afd5cd6b", null ],
     [ "gpsValidateReceiverConfig", "GPSReceiverConfig_8h.html#ad1ed6ec244efcbd5448bad26e15bb691", null ]

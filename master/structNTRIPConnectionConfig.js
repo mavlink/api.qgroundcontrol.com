@@ -1,6 +1,5 @@
 var structNTRIPConnectionConfig =
 [
-    [ "casterIdentity", "structNTRIPConnectionConfig.html#a95a5e211a993ea7805e91613226d19a8", null ],
     [ "isValid", "structNTRIPConnectionConfig.html#a0213d94e1d4ec2f76225ee030e838eee", null ],
     [ "operator==", "structNTRIPConnectionConfig.html#adeb4f6eba8dd8a7a8d40a683b72fee97", null ],
     [ "streamValidationError", "structNTRIPConnectionConfig.html#a0d8204a9ad4b2654c7e239ade3a45b10", null ],

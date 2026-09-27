@@ -6,5 +6,6 @@ var classGPSManager =
     [ "gpsRtk", "classGPSManager.html#a2289f39036e27e72c5eb6215499f00d5", null ],
     [ "init", "classGPSManager.html#ad958f0ee76392f1fc9802da6cce7c3e3", null ],
     [ "instance", "classGPSManager.html#ac8a0e30682daae971ee4d95b5aa3d21c", null ],
-    [ "shutdown", "classGPSManager.html#a8209ae06b103ef77187a06cc15467934", null ]
+    [ "shutdown", "classGPSManager.html#a8209ae06b103ef77187a06cc15467934", null ],
+    [ "RTKAutoConnectTest", "classGPSManager.html#aa3de0206b9272f935fab53dee77951bc", null ]
 ];

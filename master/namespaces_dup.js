@@ -239,6 +239,11 @@ var namespaces_dup =
       [ "writeGpsRef", "namespaceExifUtility.html#ad86528c861633f5e20daa6734e8b52b2", null ],
       [ "writeRational", "namespaceExifUtility.html#a5e781c107fc2d78a8695a79ce935deef", null ]
     ] ],
+    [ "Femto", "namespaceFemto.html", [
+      [ "GPS_PAYLOAD_SIZE", "namespaceFemto.html#a19f33d2f94e54be2002fbcf2a18d929f", null ],
+      [ "HEADER_SIZE", "namespaceFemto.html#ad339f8962268a1093f5e951ef0909b13", null ],
+      [ "STATUS_HEADER_SIZE", "namespaceFemto.html#ab4d124cde11165ba47077c61164e7986", null ]
+    ] ],
     [ "GeoJsonHelper", "namespaceGeoJsonHelper.html", [
       [ "_extractShapeValues", "namespaceGeoJsonHelper.html#a487d612096a806b98b5708eed7c4bd69", null ],
       [ "_extractShapeValuesRecursive", "namespaceGeoJsonHelper.html#afabea51f8938342b2cef6e79f3763154", null ],
@@ -261,27 +266,7 @@ var namespaces_dup =
     [ "GeoTagCalibrator", "namespaceGeoTagCalibrator.html", [
       [ "calibrate", "namespaceGeoTagCalibrator.html#a56084f8bcd0394c49fbe0ea590f840f0", null ]
     ] ],
-    [ "GPSPx4Data", "namespaceGPSPx4Data.html", [
-      [ "initialize", "namespaceGPSPx4Data.html#a6237a10d3ace796fa0fa78a6ecdf5ff5", null ],
-      [ "position", "namespaceGPSPx4Data.html#a83302025e2517265d63a4458c01da554", null ],
-      [ "satellites", "namespaceGPSPx4Data.html#a877ad585d9bc7f3b29f53884c837a0cc", null ]
-    ] ],
-    [ "GPSSatelliteIds", "namespaceGPSSatelliteIds.html", [
-      [ "BEIDOU_EXTENDED_FIRST_NMEA_ID", "namespaceGPSSatelliteIds.html#a2e9ea9878a5d34288dde2cb8712444c3", null ],
-      [ "BEIDOU_EXTENDED_LAST_NMEA_ID", "namespaceGPSSatelliteIds.html#a82fb0feabb78515430626b342679e04f", null ],
-      [ "BEIDOU_LEGACY_FIRST_NMEA_ID", "namespaceGPSSatelliteIds.html#a4f9a3a6a35b903f1cf6214ac6fdbd371", null ],
-      [ "BEIDOU_LEGACY_LAST_NMEA_ID", "namespaceGPSSatelliteIds.html#a11f47acaf6b6f2f92dd3f12c8030e835", null ],
-      [ "FIRST_LOCAL_ID", "namespaceGPSSatelliteIds.html#ae993f456ca42e83c8a85ccf8e273c268", null ],
-      [ "GALILEO_FIRST_NMEA_ID", "namespaceGPSSatelliteIds.html#a68c67182a3ca813f235d71aa61b2ebaf", null ],
-      [ "GALILEO_LAST_NMEA_ID", "namespaceGPSSatelliteIds.html#a887f12128a3d10b6256d6f108fd016af", null ],
-      [ "GLONASS_FIRST_NMEA_ID", "namespaceGPSSatelliteIds.html#ae3d93fc756c15bcf196aa91617125cbf", null ],
-      [ "GLONASS_LAST_NMEA_ID", "namespaceGPSSatelliteIds.html#afe66c7b719230445a2cbd5c6db9616f3", null ],
-      [ "QZSS_FIRST_NMEA_ID", "namespaceGPSSatelliteIds.html#a0fb93f2a7f9089b50e6b8ef8169a38d0", null ],
-      [ "QZSS_LAST_NMEA_ID", "namespaceGPSSatelliteIds.html#ac9410a5b9e35fa7af8f33cd74eeb35f0", null ],
-      [ "SBAS_FIRST_NMEA_ID", "namespaceGPSSatelliteIds.html#add5213b3779feb7b4d39c488da448fc7", null ],
-      [ "SBAS_FIRST_PRN", "namespaceGPSSatelliteIds.html#a0e9b8019ed997b89307946d83206b578", null ],
-      [ "SBAS_LAST_NMEA_ID", "namespaceGPSSatelliteIds.html#a10eaab76fe6f5f62c179a1e96753787b", null ]
-    ] ],
+    [ "GPSNativeData", "namespaceGPSNativeData.html", "namespaceGPSNativeData" ],
     [ "GPSStreamWrite", "namespaceGPSStreamWrite.html", [
       [ "writeBounded", "namespaceGPSStreamWrite.html#abe1125c4d67cfaa2dd43f441831e7a87", null ]
     ] ],
@@ -340,8 +325,9 @@ var namespaces_dup =
       [ "remaining", "namespaceMonotonicClock.html#af7352f82baaa1b63643dd9b89ad0c204", null ]
     ] ],
     [ "NMEA", "namespaceNMEA.html", "namespaceNMEA" ],
+    [ "NMEAFields", "namespaceNMEAFields.html", "namespaceNMEAFields" ],
     [ "NMEAUtils", "namespaceNMEAUtils.html", [
-      [ "makeGGA", "namespaceNMEAUtils.html#ae57cbe66d85740bfb8ed86e079769d3a", null ],
+      [ "makeGGA", "namespaceNMEAUtils.html#a04957c52d8dca0f564bc603cad60e58f", null ],
       [ "repairChecksum", "namespaceNMEAUtils.html#a029ecd9009e6c92272dfd7e2427cda7f", null ],
       [ "verifyChecksum", "namespaceNMEAUtils.html#a79c31e7165d495c45b573b68dfedf33b", null ]
     ] ],
@@ -361,6 +347,9 @@ var namespaces_dup =
         [ "InvalidConfig", "namespaceNTRIPErrors.html#ab3a74ce3b95766f53d1e1a5a33a22d17a636bc5ca1e0ceb3e4c67067618d7ae09", null ],
         [ "Unknown", "namespaceNTRIPErrors.html#ab3a74ce3b95766f53d1e1a5a33a22d17a88183b946cc5f0e8c96b2e66e1c74a7e", null ]
       ] ]
+    ] ],
+    [ "NTRIPTlsPolicy", "namespaceNTRIPTlsPolicy.html", [
+      [ "isSelfSignedOnly", "namespaceNTRIPTlsPolicy.html#a73c04ae0fe0305de2af0ed2d8624dc44", null ]
     ] ],
     [ "Platform", "namespacePlatform.html", [
       [ "checkSingleInstance", "namespacePlatform.html#a46580111c8b49c9f9ce7e495f637ae11", null ],
@@ -432,9 +421,7 @@ var namespaces_dup =
     [ "QT_BEGIN_NAMESPACE", "namespaceQT__BEGIN__NAMESPACE.html", [
       [ "baudRateToSpeed", "namespaceQT__BEGIN__NAMESPACE.html#aacd7ed17991aba4a8a298304417387d9", null ]
     ] ],
-    [ "RTCM", "namespaceRTCM.html", [
-      [ "isValidFrame", "namespaceRTCM.html#a876b51d93ca17715ea26135e0ca59572", null ]
-    ] ],
+    [ "QuectelCodec", "namespaceQuectelCodec.html", "namespaceQuectelCodec" ],
     [ "SDLJoystick", "namespaceSDLJoystick.html", "namespaceSDLJoystick" ],
     [ "SDLPlatform", "namespaceSDLPlatform.html", [
       [ "AndroidStorageState", "namespaceSDLPlatform.html#aec61a1bb4831d2d46a4c9fecb37fe1fd", [
@@ -491,6 +478,7 @@ var namespaces_dup =
       ] ]
     ] ],
     [ "TileMath", "namespaceTileMath.html", "namespaceTileMath" ],
+    [ "UBX", "namespaceUBX.html", "namespaceUBX" ],
     [ "ULogParser", "namespaceULogParser.html", [
       [ "getTagsFromLog", "namespaceULogParser.html#aad41777b045b559d4234a2e5664cd9b0", null ],
       [ "getTagsFromLog", "namespaceULogParser.html#adc26a791bb2ee621d2c62c7464f90dba", null ],

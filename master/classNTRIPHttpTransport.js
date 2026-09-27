@@ -1,9 +1,7 @@
 var classNTRIPHttpTransport =
 [
-    [ "HttpRequest", "structNTRIPHttpTransport_1_1HttpRequest.html", "structNTRIPHttpTransport_1_1HttpRequest" ],
     [ "NTRIPHttpTransport", "classNTRIPHttpTransport.html#a33b825e545ac0745af91af0bf210fc35", null ],
     [ "~NTRIPHttpTransport", "classNTRIPHttpTransport.html#a92a8598bb98bd23cb71339bf1659463a", null ],
-    [ "buildHttpRequest", "classNTRIPHttpTransport.html#a27c96b5be6695d3db455f09054bd7000", null ],
     [ "config", "classNTRIPHttpTransport.html#a279792d07c68b0ad3bc460dc5665201a", null ],
     [ "sendNMEA", "classNTRIPHttpTransport.html#a21247150df5272e52ae6c72ed5ce8669", null ],
     [ "setRtcmWhitelist", "classNTRIPHttpTransport.html#a938d6e95f8af2112a25f9b355df1d59f", null ],

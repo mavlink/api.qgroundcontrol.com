@@ -8,7 +8,8 @@ var classVehicleGPSAggregateFactGroup =
       [ "AUTH_DISABLED", "classVehicleGPSAggregateFactGroup.html#a6b6c588da6f088e1a61178e1d8e35cbea9e264360986409f6b89fd77fc6b40b15", null ],
       [ "AUTH_INVALID", "classVehicleGPSAggregateFactGroup.html#a6b6c588da6f088e1a61178e1d8e35cbea88248477dcce526676bcbacb15ec9d9c", null ]
     ] ],
-    [ "VehicleGPSAggregateFactGroup", "classVehicleGPSAggregateFactGroup.html#a3cea5b4187b0cb52ed72b230d24be277", null ],
+    [ "VehicleGPSAggregateFactGroup", "classVehicleGPSAggregateFactGroup.html#a1465c4f921af629105036e3415693741", null ],
+    [ "~VehicleGPSAggregateFactGroup", "classVehicleGPSAggregateFactGroup.html#a726b500b3a4438679f068e5f11c08270", null ],
     [ "authenticationState", "classVehicleGPSAggregateFactGroup.html#a4d018aa5b5fc9f2645464ec86fa7f525", null ],
     [ "bindToGps", "classVehicleGPSAggregateFactGroup.html#a7aa7e507e4fb69b7d2f5948127718b62", null ],
     [ "isStale", "classVehicleGPSAggregateFactGroup.html#a5dac0bfcfd73bdafa0d0e1895081a52e", null ],

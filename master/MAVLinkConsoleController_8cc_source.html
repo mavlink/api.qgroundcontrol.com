@@ -195,7 +195,7 @@ $(document).ready(function(){initNavTree('MAVLinkConsoleController_8cc_source.ht
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keywordtype">void</span> MAVLinkConsoleController::_receiveData(uint8_t device, uint8_t flags, uint16_t timeout, uint32_t baudrate,</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                                            <span class="keyword">const</span> QByteArray&amp; data)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                                            <span class="keyword">const</span> QByteArray&amp; <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>)</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>{</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    Q_UNUSED(flags);</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    Q_UNUSED(timeout);</div>
@@ -206,7 +206,7 @@ $(document).ready(function(){initNavTree('MAVLinkConsoleController_8cc_source.ht
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="comment">// Append incoming data and parse for ANSI codes</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    (void) _incomingBuffer.append(data);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    (void) _incomingBuffer.append(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>);</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">while</span> (!_incomingBuffer.isEmpty()) {</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordtype">bool</span> newline = <span class="keyword">false</span>;</div>
@@ -240,7 +240,7 @@ $(document).ready(function(){initNavTree('MAVLinkConsoleController_8cc_source.ht
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keywordtype">void</span> MAVLinkConsoleController::_sendSerialData(<span class="keyword">const</span> QByteArray&amp; data, <span class="keywordtype">bool</span> close)</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keywordtype">void</span> MAVLinkConsoleController::_sendSerialData(<span class="keyword">const</span> QByteArray&amp; <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>, <span class="keywordtype">bool</span> close)</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>{</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">if</span> (!_vehicle) {</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        qCWarning(MAVLinkConsoleControllerLog) &lt;&lt; <span class="stringliteral">&quot;_sendSerialData called with no active vehicle&quot;</span>;</div>
@@ -253,7 +253,7 @@ $(document).ready(function(){initNavTree('MAVLinkConsoleController_8cc_source.ht
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    }</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="comment">// Send maximum sized chunks until the complete buffer is transmitted</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    QByteArray output(data);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    QByteArray output(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>);</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">while</span> (output.size()) {</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        QByteArray chunk(output.left(MAVLINK_MSG_SERIAL_CONTROL_FIELD_DATA_LEN));</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> dataSize = chunk.size();</div>
@@ -306,7 +306,7 @@ $(document).ready(function(){initNavTree('MAVLinkConsoleController_8cc_source.ht
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                <span class="comment">// Erase the current line to the end</span></div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                <span class="keywordflow">if</span> (_cursorY &lt; rowCount()) {</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                    <span class="keyword">const</span> QModelIndex idx = index(_cursorY);</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                    QString updated = data(idx, Qt::DisplayRole).toString();</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                    QString updated = <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>(idx, Qt::DisplayRole).toString();</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                    <span class="keyword">const</span> <span class="keywordtype">int</span> eraseIdx = _cursorX + i;</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                    <span class="keywordflow">if</span> (eraseIdx &lt; updated.length()) {</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                        (void) setData(idx, updated.remove(eraseIdx, updated.length()));</div>
@@ -363,11 +363,11 @@ $(document).ready(function(){initNavTree('MAVLinkConsoleController_8cc_source.ht
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    QString ret;</div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordflow">if</span> (rowCount() &gt; 0) {</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        ret = _transformLineForRichText(data(index(0), Qt::DisplayRole).toString());</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        ret = _transformLineForRichText(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>(index(0), Qt::DisplayRole).toString());</div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    }</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; rowCount(); ++i) {</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        ret += (<span class="stringliteral">&quot;&lt;br&gt;&quot;</span> + _transformLineForRichText(data(index(i), Qt::DisplayRole).toString()));</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        ret += (<span class="stringliteral">&quot;&lt;br&gt;&quot;</span> + _transformLineForRichText(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>(index(i), Qt::DisplayRole).toString()));</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    }</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="keywordflow">return</span> ret;</div>
@@ -392,7 +392,7 @@ $(document).ready(function(){initNavTree('MAVLinkConsoleController_8cc_source.ht
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    }</div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <span class="keyword">const</span> QModelIndex idx = index(line);</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    QString updated = data(idx, Qt::DisplayRole).toString();</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    QString updated = <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>(idx, Qt::DisplayRole).toString();</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    (void) updated.replace(_cursorX, text.size(), text);</div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    (void) setData(idx, updated);</div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    _cursorX += text.size();</div>
@@ -440,6 +440,7 @@ $(document).ready(function(){initNavTree('MAVLinkConsoleController_8cc_source.ht
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    <span class="keywordflow">return</span> QStringLiteral(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>}</div>
+<div class="ttc" id="aFemtoMessages_8h_html_a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc"><div class="ttname"><a href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">FemtoDecodeState::data</a></div><div class="ttdeci">@ data</div></div>
 <div class="ttc" id="aLinkInterface_8h_html_a06fa8dcc2f950057f6a5ae85ec96cee2"><div class="ttname"><a href="LinkInterface_8h.html#a06fa8dcc2f950057f6a5ae85ec96cee2">SharedLinkInterfacePtr</a></div><div class="ttdeci">std::shared_ptr&lt; LinkInterface &gt; SharedLinkInterfacePtr</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8h_source.html#l00119">LinkInterface.h:119</a></div></div>
 <div class="ttc" id="aMAVLinkConsoleController_8h_html"><div class="ttname"><a href="MAVLinkConsoleController_8h.html">MAVLinkConsoleController.h</a></div></div>
 <div class="ttc" id="aMAVLinkLib_8h_html"><div class="ttname"><a href="MAVLinkLib_8h.html">MAVLinkLib.h</a></div></div>

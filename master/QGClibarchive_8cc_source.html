@@ -1412,9 +1412,9 @@ $(document).ready(function(){initNavTree('QGClibarchive_8cc_source.html',''); in
 </div>
 <div class="line"><a id="l01290" name="l01290"></a><span class="lineno"> 1290</span> </div>
 <div class="foldopen" id="foldopen01291" data-start="{" data-end="}">
-<div class="line"><a id="l01291" name="l01291"></a><span class="lineno"><a class="line" href="namespaceQGClibarchive.html#a89d0aa516147a0e44a3b61d2ceaeaa05"> 1291</a></span>QByteArray <a class="code hl_function" href="namespaceQGClibarchive.html#a89d0aa516147a0e44a3b61d2ceaeaa05">decompressDataFromMemory</a>(<span class="keyword">const</span> QByteArray&amp; data, qint64 maxBytes)</div>
+<div class="line"><a id="l01291" name="l01291"></a><span class="lineno"><a class="line" href="namespaceQGClibarchive.html#a89d0aa516147a0e44a3b61d2ceaeaa05"> 1291</a></span>QByteArray <a class="code hl_function" href="namespaceQGClibarchive.html#a89d0aa516147a0e44a3b61d2ceaeaa05">decompressDataFromMemory</a>(<span class="keyword">const</span> QByteArray&amp; <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>, qint64 maxBytes)</div>
 <div class="line"><a id="l01292" name="l01292"></a><span class="lineno"> 1292</span>{</div>
-<div class="line"><a id="l01293" name="l01293"></a><span class="lineno"> 1293</span>    <span class="keywordflow">if</span> (data.isEmpty()) {</div>
+<div class="line"><a id="l01293" name="l01293"></a><span class="lineno"> 1293</span>    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.isEmpty()) {</div>
 <div class="line"><a id="l01294" name="l01294"></a><span class="lineno"> 1294</span>        qCWarning(QGClibarchiveLog) &lt;&lt; <span class="stringliteral">&quot;Cannot decompress empty data&quot;</span>;</div>
 <div class="line"><a id="l01295" name="l01295"></a><span class="lineno"> 1295</span>        <span class="keywordflow">return</span> {};</div>
 <div class="line"><a id="l01296" name="l01296"></a><span class="lineno"> 1296</span>    }</div>
@@ -1428,7 +1428,7 @@ $(document).ready(function(){initNavTree('QGClibarchive_8cc_source.html',''); in
 <div class="line"><a id="l01304" name="l01304"></a><span class="lineno"> 1304</span>    archive_read_support_filter_all(a);</div>
 <div class="line"><a id="l01305" name="l01305"></a><span class="lineno"> 1305</span>    archive_read_support_format_raw(a);</div>
 <div class="line"><a id="l01306" name="l01306"></a><span class="lineno"> 1306</span> </div>
-<div class="line"><a id="l01307" name="l01307"></a><span class="lineno"> 1307</span>    <span class="keywordflow">if</span> (archive_read_open_memory(a, data.constData(), <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(data.size())) != ARCHIVE_OK) {</div>
+<div class="line"><a id="l01307" name="l01307"></a><span class="lineno"> 1307</span>    <span class="keywordflow">if</span> (archive_read_open_memory(a, <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.constData(), <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.size())) != ARCHIVE_OK) {</div>
 <div class="line"><a id="l01308" name="l01308"></a><span class="lineno"> 1308</span>        qCWarning(QGClibarchiveLog) &lt;&lt; <span class="stringliteral">&quot;Failed to open compressed data:&quot;</span> &lt;&lt; archive_error_string(a);</div>
 <div class="line"><a id="l01309" name="l01309"></a><span class="lineno"> 1309</span>        archive_read_free(a);</div>
 <div class="line"><a id="l01310" name="l01310"></a><span class="lineno"> 1310</span>        <span class="keywordflow">return</span> {};</div>
@@ -1445,7 +1445,7 @@ $(document).ready(function(){initNavTree('QGClibarchive_8cc_source.html',''); in
 <div class="line"><a id="l01321" name="l01321"></a><span class="lineno"> 1321</span> </div>
 <div class="line"><a id="l01322" name="l01322"></a><span class="lineno"> 1322</span>    QByteArray result = readArchiveToMemory(a, 0, maxBytes);</div>
 <div class="line"><a id="l01323" name="l01323"></a><span class="lineno"> 1323</span>    archive_read_free(a);</div>
-<div class="line"><a id="l01324" name="l01324"></a><span class="lineno"> 1324</span>    qCDebug(QGClibarchiveLog) &lt;&lt; <span class="stringliteral">&quot;Decompressed&quot;</span> &lt;&lt; data.size() &lt;&lt; <span class="stringliteral">&quot;bytes to&quot;</span> &lt;&lt; result.size() &lt;&lt; <span class="stringliteral">&quot;bytes&quot;</span>;</div>
+<div class="line"><a id="l01324" name="l01324"></a><span class="lineno"> 1324</span>    qCDebug(QGClibarchiveLog) &lt;&lt; <span class="stringliteral">&quot;Decompressed&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.size() &lt;&lt; <span class="stringliteral">&quot;bytes to&quot;</span> &lt;&lt; result.size() &lt;&lt; <span class="stringliteral">&quot;bytes&quot;</span>;</div>
 <div class="line"><a id="l01325" name="l01325"></a><span class="lineno"> 1325</span>    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l01326" name="l01326"></a><span class="lineno"> 1326</span>}</div>
 </div>
@@ -1551,6 +1551,7 @@ $(document).ready(function(){initNavTree('QGClibarchive_8cc_source.html',''); in
 </div>
 <div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span> </div>
 <div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span>}  <span class="comment">// namespace QGClibarchive</span></div>
+<div class="ttc" id="aFemtoMessages_8h_html_a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc"><div class="ttname"><a href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">FemtoDecodeState::data</a></div><div class="ttdeci">@ data</div></div>
 <div class="ttc" id="aQGCCompression_8cc_html_a0561c0c06ce30c42eda3256f2bce4f17"><div class="ttname"><a href="QGCCompression_8cc.html#a0561c0c06ce30c42eda3256f2bce4f17">formatName</a></div><div class="ttdeci">QString formatName</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00116">QGCCompression.cc:116</a></div></div>
 <div class="ttc" id="aQGCCompression_8cc_html_ab7396c1f0a53d8d89423c46142d9ad61"><div class="ttname"><a href="QGCCompression_8cc.html#ab7396c1f0a53d8d89423c46142d9ad61">filterName</a></div><div class="ttdeci">QString filterName</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00117">QGCCompression.cc:117</a></div></div>
 <div class="ttc" id="aQGCFileHelper_8h_html"><div class="ttname"><a href="QGCFileHelper_8h.html">QGCFileHelper.h</a></div></div>

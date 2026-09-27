@@ -29,5 +29,6 @@ var classNTRIPSourceTableModel =
     [ "roleNames", "classNTRIPSourceTableModel.html#a19ebc87a44bb9e2afb2db2335ccfcc9a", null ],
     [ "rowCount", "classNTRIPSourceTableModel.html#af4216d1989a6a06ebc2a30de29cab1ec", null ],
     [ "sortByDistance", "classNTRIPSourceTableModel.html#ac631f9bc27f2c13fd29e1a532b1e9cb2", null ],
-    [ "updateDistances", "classNTRIPSourceTableModel.html#a483671ebcc1f67bfaf9c3f7d31553b50", null ]
+    [ "updateDistances", "classNTRIPSourceTableModel.html#a483671ebcc1f67bfaf9c3f7d31553b50", null ],
+    [ "NTRIPSourceTableController", "classNTRIPSourceTableModel.html#a6c43d825f7884de454a01e52b5779bf0", null ]
 ];

@@ -107,13 +107,14 @@ $(document).ready(function(){initNavTree('structGPSReceiverConfig.html',''); ini
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structGPSReceiverConfig__coll__graph.svg" width="178" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="structGPSReceiverConfig__coll__graph.svg" width="183" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a9894a1c727fb477ff236db56881ebdb7" id="r_a9894a1c727fb477ff236db56881ebdb7"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSReceiverConfig.html#a9894a1c727fb477ff236db56881ebdb7">Role</a> { <a class="el" href="structGPSReceiverConfig.html#a9894a1c727fb477ff236db56881ebdb7a3fe85cb3983a5ba78fbdb7f585efe241">RTKBase</a>
 , <a class="el" href="structGPSReceiverConfig.html#a9894a1c727fb477ff236db56881ebdb7a52f5e0bc3859bc5f5e25130b6c7e8881">Position</a>
+, <a class="el" href="structGPSReceiverConfig.html#a9894a1c727fb477ff236db56881ebdb7af80bc338b6146b566004a046f8137c85">Passive</a>
  }</td></tr>
 <tr class="separator:a9894a1c727fb477ff236db56881ebdb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -127,11 +128,17 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a921c9bf519a47fea0b33ffd6966268e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zero retains receiver defaults. Bits: GPS=1, SBAS=2, Galileo=4, BeiDou=8, GLONASS=16.  <br /></td></tr>
 <tr class="separator:a921c9bf519a47fea0b33ffd6966268e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d38abc3acb18dfbbd2e59cf56fdf16b" id="r_a0d38abc3acb18dfbbd2e59cf56fdf16b"><td class="memItemLeft" align="right" valign="top">std::optional&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSReceiverConfig.html#a0d38abc3acb18dfbbd2e59cf56fdf16b">dynamicModel</a> {}</td></tr>
-<tr class="memdesc:a0d38abc3acb18dfbbd2e59cf56fdf16b"><td class="mdescLeft">&#160;</td><td class="mdescRight">UBX models 0 and 2..8; an explicit zero is distinct from an absent request.  <br /></td></tr>
+<tr class="memdesc:a0d38abc3acb18dfbbd2e59cf56fdf16b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceUBX.html">UBX</a> models 0 and 2..8; an explicit zero is distinct from an absent request.  <br /></td></tr>
 <tr class="separator:a0d38abc3acb18dfbbd2e59cf56fdf16b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76b19ad8a4d81ac3f28e097cd560597a" id="r_a76b19ad8a4d81ac3f28e097cd560597a"><td class="memItemLeft" align="right" valign="top">std::optional&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSReceiverConfig.html#a76b19ad8a4d81ac3f28e097cd560597a">headingOffsetRadians</a> {}</td></tr>
 <tr class="memdesc:a76b19ad8a4d81ac3f28e097cd560597a"><td class="mdescLeft">&#160;</td><td class="mdescRight">No currently supported role accepts heading offsets.  <br /></td></tr>
 <tr class="separator:a76b19ad8a4d81ac3f28e097cd560597a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9307970da7fd30275f67a5760c1220" id="r_afd9307970da7fd30275f67a5760c1220"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSReceiverConfig.html#afd9307970da7fd30275f67a5760c1220">baudRate</a> = 0</td></tr>
+<tr class="memdesc:afd9307970da7fd30275f67a5760c1220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zero selects managed-driver baud detection; passive serial input requires an explicit rate.  <br /></td></tr>
+<tr class="separator:afd9307970da7fd30275f67a5760c1220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28b356509d02766cb8d32d4b623267ad" id="r_a28b356509d02766cb8d32d4b623267ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSReceiverConfig.html#a28b356509d02766cb8d32d4b623267ad">allowPersistentChanges</a> = false</td></tr>
+<tr class="memdesc:a28b356509d02766cb8d32d4b623267ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-connection consent to persistent receiver settings and the required restart.  <br /></td></tr>
+<tr class="separator:a28b356509d02766cb8d32d4b623267ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Receiver requests supported by the wrapper; absent options retain wrapper defaults. </p>
@@ -159,7 +166,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9894a1c727fb477ff236db56881ebdb7a3fe85cb3983a5ba78fbdb7f585efe241" name="a9894a1c727fb477ff236db56881ebdb7a3fe85cb3983a5ba78fbdb7f585efe241"></a>RTKBase&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9894a1c727fb477ff236db56881ebdb7a52f5e0bc3859bc5f5e25130b6c7e8881" name="a9894a1c727fb477ff236db56881ebdb7a52f5e0bc3859bc5f5e25130b6c7e8881"></a>Position&#160;</td><td class="fielddoc"><p>Currently supported only by u-blox; other backends cannot safely leave base mode. </p>
+<tr><td class="fieldname"><a id="a9894a1c727fb477ff236db56881ebdb7a52f5e0bc3859bc5f5e25130b6c7e8881" name="a9894a1c727fb477ff236db56881ebdb7a52f5e0bc3859bc5f5e25130b6c7e8881"></a>Position&#160;</td><td class="fielddoc"><p>Only receivers with a verified base-to-rover transition support this role. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a9894a1c727fb477ff236db56881ebdb7af80bc338b6146b566004a046f8137c85" name="a9894a1c727fb477ff236db56881ebdb7af80bc338b6146b566004a046f8137c85"></a>Passive&#160;</td><td class="fielddoc"><p>Receive NMEA/RTCM without issuing receiver configuration commands. </p>
 </td></tr>
 </table>
 
@@ -168,6 +177,26 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a28b356509d02766cb8d32d4b623267ad" name="a28b356509d02766cb8d32d4b623267ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28b356509d02766cb8d32d4b623267ad">&#9670;&#160;</a></span>allowPersistentChanges</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GPSReceiverConfig::allowPersistentChanges = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Per-connection consent to persistent receiver settings and the required restart. </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8h_source.html#l00032">32</a> of file <a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
+
+</div>
+</div>
 <a id="abf9e4b2682cd65cf28c6491a8c2ff94f" name="abf9e4b2682cd65cf28c6491a8c2ff94f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf9e4b2682cd65cf28c6491a8c2ff94f">&#9670;&#160;</a></span>base</h2>
 
@@ -180,9 +209,29 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8h_source.html#l00020">20</a> of file <a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8h_source.html#l00022">22</a> of file <a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00047">GPSDriver::configure()</a>, and <a class="el" href="GPSRtk_8cc_source.html#l00141">GPSRtk::connectReceiver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
+
+</div>
+</div>
+<a id="afd9307970da7fd30275f67a5760c1220" name="afd9307970da7fd30275f67a5760c1220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9307970da7fd30275f67a5760c1220">&#9670;&#160;</a></span>baudRate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t GPSReceiverConfig::baudRate = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Zero selects managed-driver baud detection; passive serial input requires an explicit rate. </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8h_source.html#l00030">30</a> of file <a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
 
 </div>
 </div>
@@ -200,9 +249,9 @@ Public Attributes</h2></td></tr>
 
 <p>Zero retains receiver defaults. Bits: GPS=1, SBAS=2, Galileo=4, BeiDou=8, GLONASS=16. </p>
 
-<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8h_source.html#l00022">22</a> of file <a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8h_source.html#l00024">24</a> of file <a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00047">GPSDriver::configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
 
 </div>
 </div>
@@ -218,11 +267,11 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>UBX models 0 and 2..8; an explicit zero is distinct from an absent request. </p>
+<p><a class="el" href="namespaceUBX.html">UBX</a> models 0 and 2..8; an explicit zero is distinct from an absent request. </p>
 
-<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8h_source.html#l00024">24</a> of file <a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8h_source.html#l00026">26</a> of file <a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00047">GPSDriver::configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
 
 </div>
 </div>
@@ -240,9 +289,7 @@ Public Attributes</h2></td></tr>
 
 <p>No currently supported role accepts heading offsets. </p>
 
-<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8h_source.html#l00026">26</a> of file <a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00047">GPSDriver::configure()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8h_source.html#l00028">28</a> of file <a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>.</p>
 
 </div>
 </div>
@@ -258,9 +305,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8h_source.html#l00019">19</a> of file <a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8h_source.html#l00021">21</a> of file <a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00047">GPSDriver::configure()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
 
 </div>
 </div>

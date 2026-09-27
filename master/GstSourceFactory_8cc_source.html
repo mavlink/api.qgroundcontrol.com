@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('GstSourceFactory_8cc_source.html','');
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">void</span> configureAutopluggedParser([[maybe_unused]] GstBin* bin, [[maybe_unused]] GstBin* subBin, <a class="code hl_typedef" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* element,</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                                [[maybe_unused]] gpointer data)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                                [[maybe_unused]] gpointer <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>)</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    configureH26xParser(element);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
@@ -142,7 +142,7 @@ $(document).ready(function(){initNavTree('GstSourceFactory_8cc_source.html','');
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">// Older Linux/system GStreamer needs an autoplug-query caps filter to keep parsebin on byte-stream output.</span></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#if defined(QGC_GST_ENABLE_LEGACY_PARSEBIN_CAPS_FILTER)</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>gboolean filterParserCaps([[maybe_unused]] <a class="code hl_typedef" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* bin, [[maybe_unused]] GstPad* pad,</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                          [[maybe_unused]] <a class="code hl_typedef" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* element, GstQuery* query, [[maybe_unused]] gpointer data)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                          [[maybe_unused]] <a class="code hl_typedef" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* element, GstQuery* query, [[maybe_unused]] gpointer <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>)</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span> (GST_QUERY_TYPE(query) != GST_QUERY_CAPS) {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span> FALSE;</div>
@@ -181,7 +181,7 @@ $(document).ready(function(){initNavTree('GstSourceFactory_8cc_source.html','');
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keywordtype">void</span> wrapWithGhostPad(<a class="code hl_typedef" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* element, GstPad* pad, [[maybe_unused]] gpointer data)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keywordtype">void</span> wrapWithGhostPad(<a class="code hl_typedef" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* element, GstPad* pad, [[maybe_unused]] gpointer <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>)</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    gchar* name = gst_pad_get_name(pad);</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">if</span> (!name) {</div>
@@ -286,9 +286,9 @@ $(document).ready(function(){initNavTree('GstSourceFactory_8cc_source.html','');
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="GstSourceFactory_8cc.html#a7bccd5c1c02be8839bad65ae8b0e5004">  185</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="GstSourceFactory_8cc.html#a7bccd5c1c02be8839bad65ae8b0e5004">allowJitterBuffer</a>;  <span class="comment">// false for RTSP (rtspsrc has its own internal jitterbuffer)</span></div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>};</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="keywordtype">void</span> linkPad(<a class="code hl_typedef" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* element, GstPad* pad, gpointer data)</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="keywordtype">void</span> linkPad(<a class="code hl_typedef" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* element, GstPad* pad, gpointer <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>)</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>{</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keyword">const</span> <span class="keyword">auto</span>* ctx = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>DynamicLinkContext*<span class="keyword">&gt;</span>(data);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keyword">const</span> <span class="keyword">auto</span>* ctx = <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>DynamicLinkContext*<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>);</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="comment">// tsdemux fires pad-added for audio/data pads too; only link video src pads so non-video</span></div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="comment">// pads don&#39;t trigger a spurious CRITICAL cascade on the expected link failure.</span></div>
@@ -772,6 +772,7 @@ $(document).ready(function(){initNavTree('GstSourceFactory_8cc_source.html','');
 <div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span> </div>
 <div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>}  <span class="comment">// namespace GStreamer::SourceFactory</span></div>
 </div>
+<div class="ttc" id="aFemtoMessages_8h_html_a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc"><div class="ttname"><a href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">FemtoDecodeState::data</a></div><div class="ttdeci">@ data</div></div>
 <div class="ttc" id="aGStreamerHelpers_8h_html"><div class="ttname"><a href="GStreamerHelpers_8h.html">GStreamerHelpers.h</a></div></div>
 <div class="ttc" id="aGstSourceFactory_8cc_html_a4a8dd3a2de125b72d4fe6251a0a271b5"><div class="ttname"><a href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a></div><div class="ttdeci">Config config</div><div class="ttdef"><b>Definition</b> <a href="GstSourceFactory_8cc_source.html#l00183">GstSourceFactory.cc:183</a></div></div>
 <div class="ttc" id="aGstSourceFactory_8cc_html_a7bccd5c1c02be8839bad65ae8b0e5004"><div class="ttname"><a href="GstSourceFactory_8cc.html#a7bccd5c1c02be8839bad65ae8b0e5004">allowJitterBuffer</a></div><div class="ttdeci">bool allowJitterBuffer</div><div class="ttdef"><b>Definition</b> <a href="GstSourceFactory_8cc_source.html#l00185">GstSourceFactory.cc:185</a></div></div>

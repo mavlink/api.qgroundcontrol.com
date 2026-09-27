@@ -103,13 +103,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a029ecd9009e6c92272dfd7e2427cda7f" id="r_a029ecd9009e6c92272dfd7e2427cda7f"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEAUtils.html#a029ecd9009e6c92272dfd7e2427cda7f">repairChecksum</a> (const QByteArray &amp;sentence)</td></tr>
 <tr class="memdesc:a029ecd9009e6c92272dfd7e2427cda7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuild a valid frame with its checksum and CRLF; short or malformed bodies are only terminated.  <br /></td></tr>
 <tr class="separator:a029ecd9009e6c92272dfd7e2427cda7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae57cbe66d85740bfb8ed86e079769d3a" id="r_ae57cbe66d85740bfb8ed86e079769d3a"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEAUtils.html#ae57cbe66d85740bfb8ed86e079769d3a">makeGGA</a> (const QGeoCoordinate &amp;coord, double altitudeMsl, int fixQuality=1, int numSatellites=12)</td></tr>
-<tr class="memdesc:ae57cbe66d85740bfb8ed86e079769d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a GGA sentence from a coordinate and altitude.  <br /></td></tr>
-<tr class="separator:ae57cbe66d85740bfb8ed86e079769d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04957c52d8dca0f564bc603cad60e58f" id="r_a04957c52d8dca0f564bc603cad60e58f"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEAUtils.html#a04957c52d8dca0f564bc603cad60e58f">makeGGA</a> (const <a class="el" href="structNMEA_1_1GGA.html">NMEA::GGA</a> &amp;fix, const QTime &amp;utc)</td></tr>
+<tr class="separator:a04957c52d8dca0f564bc603cad60e58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae57cbe66d85740bfb8ed86e079769d3a" name="ae57cbe66d85740bfb8ed86e079769d3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae57cbe66d85740bfb8ed86e079769d3a">&#9670;&#160;</a></span>makeGGA()</h2>
+<a id="a04957c52d8dca0f564bc603cad60e58f" name="a04957c52d8dca0f564bc603cad60e58f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04957c52d8dca0f564bc603cad60e58f">&#9670;&#160;</a></span>makeGGA()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -117,26 +116,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">QByteArray NMEAUtils::makeGGA </td>
           <td>(</td>
-          <td class="paramtype">const QGeoCoordinate &amp;&#160;</td>
-          <td class="paramname"><em>coord</em>, </td>
+          <td class="paramtype">const <a class="el" href="structNMEA_1_1GGA.html">NMEA::GGA</a> &amp;&#160;</td>
+          <td class="paramname"><em>fix</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>altitudeMsl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>fixQuality</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>numSatellites</em>&#160;</td>
+          <td class="paramtype">const QTime &amp;&#160;</td>
+          <td class="paramname"><em>utc</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -145,12 +132,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Build GPGGA from explicit fix fields and UTC, truncated to whole seconds. NaN altitude/geoid separation/HDOP and absent satellite count produce empty fields, not defaults. Returns empty for invalid UTC, out-of-range/nonfinite coordinates, infinite measurements, negative HDOP, or quality above the protocol maximum. Altitude is MSL; geoid separation is signed. </p>
 
-<p>Build a GGA sentence from a coordinate and altitude. </p>
+<p class="definition">Definition at line <a class="el" href="NMEAUtils_8cc_source.html#l00047">47</a> of file <a class="el" href="NMEAUtils_8cc_source.html">NMEAUtils.cc</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="NMEAUtils_8cc_source.html#l00046">46</a> of file <a class="el" href="NMEAUtils_8cc_source.html">NMEAUtils.cc</a>.</p>
-
-<p class="reference">References <a class="el" href="NMEASentence_8h_source.html#l00014">NMEA::DECIMAL_BASE</a>, and <a class="el" href="NMEASentence_8h_source.html#l00017">NMEA::MINUTES_PER_DEGREE</a>.</p>
+<p class="reference">References <a class="el" href="NMEASentence_8h_source.html#l00148">NMEA::GGA::altitude</a>, <a class="el" href="NMEASentence_8h_source.html#l00015">NMEA::DECIMAL_BASE</a>, <a class="el" href="NMEASentence_8h_source.html#l00149">NMEA::GGA::geoidSeparation</a>, <a class="el" href="NMEASentence_8h_source.html#l00150">NMEA::GGA::hdop</a>, <a class="el" href="NMEASentence_8h_source.html#l00146">NMEA::GGA::latitude</a>, <a class="el" href="NMEASentence_8h_source.html#l00147">NMEA::GGA::longitude</a>, <a class="el" href="NMEASentence_8h_source.html#l00057">NMEA::GgaQuality::MAX_VALUE</a>, <a class="el" href="NMEASentence_8h_source.html#l00018">NMEA::MINUTES_PER_DEGREE</a>, <a class="el" href="NMEASentence_8h_source.html#l00151">NMEA::GGA::quality</a>, and <a class="el" href="NMEASentence_8h_source.html#l00152">NMEA::GGA::satellitesUsed</a>.</p>
 
 </div>
 </div>
@@ -172,11 +158,11 @@ Functions</h2></td></tr>
 
 <p>Rebuild a valid frame with its checksum and CRLF; short or malformed bodies are only terminated. </p>
 
-<p class="definition">Definition at line <a class="el" href="NMEAUtils_8cc_source.html#l00030">30</a> of file <a class="el" href="NMEAUtils_8cc_source.html">NMEAUtils.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NMEAUtils_8cc_source.html#l00031">31</a> of file <a class="el" href="NMEAUtils_8cc_source.html">NMEAUtils.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="NMEASentence_8cc_source.html#l00040">NMEA::frame()</a>, and <a class="el" href="NMEASentence_8h_source.html#l00104">NMEA::Sentence::PREFIX_LENGTH</a>.</p>
+<p class="reference">References <a class="el" href="NMEASentence_8cc_source.html#l00056">NMEA::frame()</a>, and <a class="el" href="NMEASentence_8h_source.html#l00105">NMEA::Sentence::PREFIX_LENGTH</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="NTRIPHttpTransport_8cc_source.html#l00438">NTRIPHttpTransport::sendNMEA()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NTRIPHttpTransport_8cc_source.html#l00386">NTRIPHttpTransport::sendNMEA()</a>.</p>
 
 </div>
 </div>
@@ -197,9 +183,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Validate an <a class="el" href="namespaceNMEA.html">NMEA</a> sentence's checksum. Accepts sentences of the form <code>$BODY*XX</code> (with no terminator, LF, or CRLF). Returns false if the sentence is malformed or the checksum does not match. </p>
 
-<p class="definition">Definition at line <a class="el" href="NMEAUtils_8cc_source.html#l00024">24</a> of file <a class="el" href="NMEAUtils_8cc_source.html">NMEAUtils.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NMEAUtils_8cc_source.html#l00025">25</a> of file <a class="el" href="NMEAUtils_8cc_source.html">NMEAUtils.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="NMEASentence_8cc_source.html#l00040">NMEA::frame()</a>.</p>
+<p class="reference">References <a class="el" href="NMEASentence_8cc_source.html#l00056">NMEA::frame()</a>.</p>
 
 </div>
 </div>

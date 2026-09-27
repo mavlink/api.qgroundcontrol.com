@@ -114,17 +114,17 @@ $(document).ready(function(){initNavTree('SecureMemory_8h_source.html',''); init
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceQGC.html">QGC</a> {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceQGC.html#a436dcae64ff0a1225424e40bd799b4bb">   19</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceQGC.html#a436dcae64ff0a1225424e40bd799b4bb">secureZero</a>(<span class="keywordtype">void</span>* data, <span class="keywordtype">size_t</span> size)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceQGC.html#a436dcae64ff0a1225424e40bd799b4bb">   19</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceQGC.html#a436dcae64ff0a1225424e40bd799b4bb">secureZero</a>(<span class="keywordtype">void</span>* <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>, <span class="keywordtype">size_t</span> size)</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">if</span> (data == <span class="keyword">nullptr</span> || size == 0) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a> == <span class="keyword">nullptr</span> || size == 0) {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#if defined(_WIN32)</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    SecureZeroMemory(data, size);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    SecureZeroMemory(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>, size);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#elif (defined(__linux__) &amp;&amp; !defined(__ANDROID__)) || defined(__FreeBSD__)</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    explicit_bzero(data, size);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    explicit_bzero(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>, size);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">volatile</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* p = <span class="keyword">static_cast&lt;</span><span class="keyword">volatile </span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(data);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">volatile</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* p = <span class="keyword">static_cast&lt;</span><span class="keyword">volatile </span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; size; ++i) {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        p[i] = 0;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
@@ -135,12 +135,12 @@ $(document).ready(function(){initNavTree('SecureMemory_8h_source.html',''); init
 </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespaceQGC.html#ae2675b73e9804fe919ee1b3a01bb7ae0">   40</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceQGC.html#a436dcae64ff0a1225424e40bd799b4bb">secureZero</a>(QByteArray&amp; data)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespaceQGC.html#ae2675b73e9804fe919ee1b3a01bb7ae0">   40</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceQGC.html#a436dcae64ff0a1225424e40bd799b4bb">secureZero</a>(QByteArray&amp; <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>)</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span> (!data.isEmpty()) {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <a class="code hl_function" href="namespaceQGC.html#a436dcae64ff0a1225424e40bd799b4bb">secureZero</a>(data.data(), <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(data.size()));</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span> (!<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.isEmpty()) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <a class="code hl_function" href="namespaceQGC.html#a436dcae64ff0a1225424e40bd799b4bb">secureZero</a>(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.data(), <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.size()));</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    data.clear();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.clear();</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
 </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
@@ -153,6 +153,7 @@ $(document).ready(function(){initNavTree('SecureMemory_8h_source.html',''); init
 </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}  <span class="comment">// namespace QGC</span></div>
+<div class="ttc" id="aFemtoMessages_8h_html_a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc"><div class="ttname"><a href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">FemtoDecodeState::data</a></div><div class="ttdeci">@ data</div></div>
 <div class="ttc" id="anamespaceQGC_html"><div class="ttname"><a href="namespaceQGC.html">QGC</a></div><div class="ttdef"><b>Definition</b> <a href="AppMessages_8cc_source.html#l00007">AppMessages.cc:7</a></div></div>
 <div class="ttc" id="anamespaceQGC_html_a436dcae64ff0a1225424e40bd799b4bb"><div class="ttname"><a href="namespaceQGC.html#a436dcae64ff0a1225424e40bd799b4bb">QGC::secureZero</a></div><div class="ttdeci">void secureZero(void *data, size_t size)</div><div class="ttdef"><b>Definition</b> <a href="SecureMemory_8h_source.html#l00019">SecureMemory.h:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

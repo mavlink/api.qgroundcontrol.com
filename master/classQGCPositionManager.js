@@ -9,6 +9,8 @@ var classQGCPositionManager =
     [ "nmeaHealth", "classQGCPositionManager.html#add0ec90cbd6674a53f12cb1fa0934c22", null ],
     [ "nmeaReceiving", "classQGCPositionManager.html#abe4d677214d1803f7c635c3b576c357d", null ],
     [ "nmeaSourceChanged", "classQGCPositionManager.html#a7aa3cbf072dbaeeea117b174d1f21faf", null ],
+    [ "nmeaSourceDevice", "classQGCPositionManager.html#a65ba7c9b3bc95eccee60fa397b362e17", null ],
     [ "resetNmeaSourceDevice", "classQGCPositionManager.html#a254663d72bf73b46c432898d46d05746", null ],
+    [ "resetNmeaSourceDevice", "classQGCPositionManager.html#a8caaabe45a4839c19dbb3295b3d89531", null ],
     [ "setNmeaSourceDevice", "classQGCPositionManager.html#ab7dfa22ad24a9d79230b8e77d9179380", null ]
 ];

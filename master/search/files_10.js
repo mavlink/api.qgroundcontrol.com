@@ -207,5 +207,8 @@ var searchData=
   ['qtruntimescheduler_2ecc_204',['QtRuntimeScheduler.cc',['../QtRuntimeScheduler_8cc.html',1,'']]],
   ['qtruntimescheduler_2eh_205',['QtRuntimeScheduler.h',['../QtRuntimeScheduler_8h.html',1,'']]],
   ['qtserialportexports_2eh_206',['qtserialportexports.h',['../qtserialportexports_8h.html',1,'']]],
-  ['qtserialportversion_2eh_207',['qtserialportversion.h',['../qtserialportversion_8h.html',1,'']]]
+  ['qtserialportversion_2eh_207',['qtserialportversion.h',['../qtserialportversion_8h.html',1,'']]],
+  ['quectelcodec_2ecc_208',['QuectelCodec.cc',['../QuectelCodec_8cc.html',1,'']]],
+  ['quectelcodec_5fp_2eh_209',['QuectelCodec_p.h',['../QuectelCodec__p_8h.html',1,'']]],
+  ['quecteldecoder_2ecc_210',['QuectelDecoder.cc',['../QuectelDecoder_8cc.html',1,'']]]
 ];

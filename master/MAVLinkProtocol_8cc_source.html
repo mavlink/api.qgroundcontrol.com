@@ -188,7 +188,7 @@ $(document).ready(function(){initNavTree('MAVLinkProtocol_8cc_source.html',''); 
 </div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
 <div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classMAVLinkProtocol.html#aa7c707d5d1644a22aa35bcddf10ce9d3">   78</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="classMAVLinkProtocol.html#aa7c707d5d1644a22aa35bcddf10ce9d3">MAVLinkProtocol::logSentBytes</a>(<span class="keyword">const</span> <a class="code hl_class" href="classLinkInterface.html">LinkInterface</a>* link, <span class="keyword">const</span> QByteArray&amp; data)</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classMAVLinkProtocol.html#aa7c707d5d1644a22aa35bcddf10ce9d3">   78</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="classMAVLinkProtocol.html#aa7c707d5d1644a22aa35bcddf10ce9d3">MAVLinkProtocol::logSentBytes</a>(<span class="keyword">const</span> <a class="code hl_class" href="classLinkInterface.html">LinkInterface</a>* link, <span class="keyword">const</span> QByteArray&amp; <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>)</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    Q_UNUSED(link);</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
@@ -200,7 +200,7 @@ $(document).ready(function(){initNavTree('MAVLinkProtocol_8cc_source.html',''); 
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    uint8_t bytes_time[<span class="keyword">sizeof</span>(quint64)]{};</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    qToBigEndian(time, bytes_time);</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    QByteArray logData = data;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    QByteArray logData = <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>;</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    QByteArray timeData = QByteArray::fromRawData(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(bytes_time), <span class="keyword">sizeof</span>(bytes_time));</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    (void)logData.prepend(timeData);</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">if</span> (_tempLogFile-&gt;write(logData) != logData.length()) {</div>
@@ -214,15 +214,15 @@ $(document).ready(function(){initNavTree('MAVLinkProtocol_8cc_source.html',''); 
 </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
 <div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classMAVLinkProtocol.html#a0dcfa4ab4c6266ce891bda1b7ca31d36">  102</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="classMAVLinkProtocol.html#a0dcfa4ab4c6266ce891bda1b7ca31d36">MAVLinkProtocol::receiveBytes</a>(<a class="code hl_class" href="classLinkInterface.html">LinkInterface</a>* link, <span class="keyword">const</span> QByteArray&amp; data)</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classMAVLinkProtocol.html#a0dcfa4ab4c6266ce891bda1b7ca31d36">  102</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="classMAVLinkProtocol.html#a0dcfa4ab4c6266ce891bda1b7ca31d36">MAVLinkProtocol::receiveBytes</a>(<a class="code hl_class" href="classLinkInterface.html">LinkInterface</a>* link, <span class="keyword">const</span> QByteArray&amp; <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>)</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>{</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="LinkInterface_8h.html#a06fa8dcc2f950057f6a5ae85ec96cee2">SharedLinkInterfacePtr</a> linkPtr = <a class="code hl_function" href="classLinkManager.html#a703bb67f537e6092e2998a9aa8a91287">LinkManager::instance</a>()-&gt;<a class="code hl_function" href="classLinkManager.html#a21cd17211b7272dc303f7e2d1780abf6">sharedLinkInterfacePointerForLink</a>(link);</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">if</span> (!linkPtr) {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        qCDebug(MAVLinkProtocolLog) &lt;&lt; <span class="stringliteral">&quot;receiveBytes: link gone!&quot;</span> &lt;&lt; data.size() &lt;&lt; <span class="stringliteral">&quot;bytes arrived too late&quot;</span>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        qCDebug(MAVLinkProtocolLog) &lt;&lt; <span class="stringliteral">&quot;receiveBytes: link gone!&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.size() &lt;&lt; <span class="stringliteral">&quot;bytes arrived too late&quot;</span>;</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">for</span> (uint8_t <span class="keywordtype">byte</span> : data) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">for</span> (uint8_t <span class="keywordtype">byte</span> : <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>) {</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keyword">const</span> uint8_t mavlinkChannel = link-&gt;<a class="code hl_function" href="classLinkInterface.html#a21d4864924f17c16d573810140ce8baa">mavlinkChannel</a>();</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> message{};</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        mavlink_status_t status{};</div>
@@ -655,6 +655,7 @@ $(document).ready(function(){initNavTree('MAVLinkProtocol_8cc_source.html',''); 
 </div>
 <div class="ttc" id="aAppMessages_8h_html"><div class="ttname"><a href="AppMessages_8h.html">AppMessages.h</a></div></div>
 <div class="ttc" id="aAppSettings_8h_html"><div class="ttname"><a href="AppSettings_8h.html">AppSettings.h</a></div></div>
+<div class="ttc" id="aFemtoMessages_8h_html_a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc"><div class="ttname"><a href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">FemtoDecodeState::data</a></div><div class="ttdeci">@ data</div></div>
 <div class="ttc" id="aLinkInterface_8h_html"><div class="ttname"><a href="LinkInterface_8h.html">LinkInterface.h</a></div></div>
 <div class="ttc" id="aLinkInterface_8h_html_a06fa8dcc2f950057f6a5ae85ec96cee2"><div class="ttname"><a href="LinkInterface_8h.html#a06fa8dcc2f950057f6a5ae85ec96cee2">SharedLinkInterfacePtr</a></div><div class="ttdeci">std::shared_ptr&lt; LinkInterface &gt; SharedLinkInterfacePtr</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8h_source.html#l00119">LinkInterface.h:119</a></div></div>
 <div class="ttc" id="aLinkManager_8h_html"><div class="ttname"><a href="LinkManager_8h.html">LinkManager.h</a></div></div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/GPS/RTCM/RTCMMavlink.cc Source File</title>
+<title>QGroundControl: src/GPS/Corrections/MAVLink/RTCMMavlink.cc Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -134,102 +134,91 @@ $(document).ready(function(){initNavTree('RTCMMavlink_8cc_source.html',''); init
 </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classRTCMMavlink.html#a12c5ea3984761f40cf70f3010b0ea95d">   30</a></span>quint64 <a class="code hl_function" href="classRTCMMavlink.html#a12c5ea3984761f40cf70f3010b0ea95d">RTCMMavlink::submit</a>(QByteArrayView data)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classRTCMMavlink.html#afbf45fc5240ee627eeddbc2a0420bf5e">   30</a></span>QList&lt;RTCMMavlink::Admission&gt; <a class="code hl_function" href="classRTCMMavlink.html#afbf45fc5240ee627eeddbc2a0420bf5e">RTCMMavlink::submitToOutputs</a>(QByteArrayView <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>)</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    quint64 bytes = 0;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; admission : <a class="code hl_function" href="classRTCMMavlink.html#afbf45fc5240ee627eeddbc2a0420bf5e">submitToOutputs</a>(data)) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        bytes += admission.queuedBytes;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    QList&lt;Admission&gt; admissions;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.isEmpty() || _submitting) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">return</span> admissions;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> bytes;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">const</span> QPointer&lt;RTCMMavlink&gt; guard(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">const</span> quint64 revision = _outputRevision;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    _submitting = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> <span class="keyword">auto</span> clearSubmitting = qScopeGuard([guard]() {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">if</span> (guard) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            guard-&gt;_submitting = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    });</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">const</span> <span class="keyword">auto</span> current = [<span class="keyword">this</span>, guard, revision]() { <span class="keywordflow">return</span> guard &amp;&amp; revision == _outputRevision; };</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">const</span> <span class="keyword">auto</span> provider = _outputProvider;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    _rateTracker.<a class="code hl_function" href="classDataRateTracker.html#a732fef26dd29410a43c00eb2eff25c69">recordBytes</a>(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.size());</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span> (_rateTracker.<a class="code hl_function" href="classDataRateTracker.html#aaf6d7604c81cca0a68e9a70b4b986aa2">rateUpdated</a>()) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        qCDebug(RTCMMavlinkLog) &lt;&lt; QStringLiteral(<span class="stringliteral">&quot;RTCM bandwidth: %1 kB/s&quot;</span>).arg(_rateTracker.<a class="code hl_function" href="classDataRateTracker.html#a51b9380b0e3f511c0d5843784a102231">kBps</a>(), 0, <span class="charliteral">&#39;f&#39;</span>, 3);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        emit <a class="code hl_signal" href="classRTCMMavlink.html#a61bb903c5c511b626ee8fe852d447d08">bandwidthChanged</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span> (!current()) {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordflow">return</span> admissions;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">const</span> <span class="keyword">auto</span> packed = <a class="code hl_function" href="classRTCMMavlinkPacket.html#ae41a07241844e453af3761fd6aa79f7b">RTCMMavlinkPacket::pack</a>(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>, _sequenceId);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    _sequenceId = packed.nextSequenceId;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">const</span> <span class="keyword">auto</span> outputs = provider ? provider() : QList&lt;Output&gt;();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">if</span> (!current()) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">return</span> admissions;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    QSet&lt;QString&gt; seen;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; output : outputs) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">if</span> (output.id.isEmpty() || !output.submit || seen.contains(output.id)) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        seen.insert(output.id);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <a class="code hl_struct" href="structRTCMMavlink_1_1Admission.html">Admission</a> admission{output.<a class="code hl_variable" href="structRTCMMavlink_1_1Admission.html#a56b16fe26fbfc888407f802ecd4e45ba">id</a>, output.session, 0, <span class="keyword">true</span>};</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; packet : packed.packets) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">if</span> (!current()) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                admission.complete = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keyword">const</span> <span class="keywordtype">bool</span> accepted = output.submit(packet);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="keywordflow">if</span> (accepted) {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                admission.queuedBytes += packet.data.size();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">if</span> (!accepted) {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                admission.complete = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        admissions.append(admission);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">if</span> (!current()) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">if</span> (!guard) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">return</span> admissions;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    quint64 submitted = 0;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; admission : admissions) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        submitted += admission.queuedBytes;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">if</span> (submitted &gt; 0) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        _submittedBytes += submitted;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        emit <a class="code hl_signal" href="classRTCMMavlink.html#a41b499dce658364861c50bc0e5049e18">deliveryStatsChanged</a>();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">return</span> admissions;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
 </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classRTCMMavlink.html#afbf45fc5240ee627eeddbc2a0420bf5e">   39</a></span>QList&lt;RTCMMavlink::Admission&gt; <a class="code hl_function" href="classRTCMMavlink.html#afbf45fc5240ee627eeddbc2a0420bf5e">RTCMMavlink::submitToOutputs</a>(QByteArrayView data)</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    QList&lt;Admission&gt; admissions;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">if</span> (data.isEmpty() || _submitting) {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">return</span> admissions;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">const</span> QPointer&lt;RTCMMavlink&gt; guard(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">const</span> quint64 revision = _outputRevision;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    _submitting = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">const</span> <span class="keyword">auto</span> clearSubmitting = qScopeGuard([guard]() {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">if</span> (guard) {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            guard-&gt;_submitting = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    });</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">const</span> <span class="keyword">auto</span> current = [<span class="keyword">this</span>, guard, revision]() { <span class="keywordflow">return</span> guard &amp;&amp; revision == _outputRevision; };</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">const</span> <span class="keyword">auto</span> provider = _outputProvider;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    _rateTracker.<a class="code hl_function" href="classDataRateTracker.html#a732fef26dd29410a43c00eb2eff25c69">recordBytes</a>(data.size());</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">if</span> (_rateTracker.<a class="code hl_function" href="classDataRateTracker.html#aaf6d7604c81cca0a68e9a70b4b986aa2">rateUpdated</a>()) {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        qCDebug(RTCMMavlinkLog) &lt;&lt; QStringLiteral(<span class="stringliteral">&quot;RTCM bandwidth: %1 kB/s&quot;</span>).arg(_rateTracker.<a class="code hl_function" href="classDataRateTracker.html#a51b9380b0e3f511c0d5843784a102231">kBps</a>(), 0, <span class="charliteral">&#39;f&#39;</span>, 3);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        emit <a class="code hl_signal" href="classRTCMMavlink.html#a61bb903c5c511b626ee8fe852d447d08">bandwidthChanged</a>();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">if</span> (!current()) {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">return</span> admissions;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">const</span> <span class="keyword">auto</span> packed = <a class="code hl_function" href="classRTCMMavlink.html#a270eee1a0039f24ed2266866af0c212c">pack</a>(data, _sequenceId);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    _sequenceId = packed.nextSequenceId;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">const</span> <span class="keyword">auto</span> outputs = provider ? provider() : QList&lt;Output&gt;();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">if</span> (!current()) {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">return</span> admissions;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    QSet&lt;QString&gt; seen;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; output : outputs) {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">if</span> (output.id.isEmpty() || !output.submit || seen.contains(output.id)) {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        seen.insert(output.id);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <a class="code hl_struct" href="structRTCMMavlink_1_1Admission.html">Admission</a> admission{output.<a class="code hl_variable" href="structRTCMMavlink_1_1Admission.html#a56b16fe26fbfc888407f802ecd4e45ba">id</a>, output.session, 0, <span class="keyword">true</span>};</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; packet : packed.packets) {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            <span class="keywordflow">if</span> (!current()) {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                admission.complete = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keyword">const</span> <span class="keywordtype">bool</span> accepted = output.submit(packet);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keywordflow">if</span> (accepted) {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                admission.queuedBytes += packet.data.size();</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="keywordflow">if</span> (!accepted) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                admission.complete = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        admissions.append(admission);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">if</span> (!current()) {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        }</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (!guard) {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span> admissions;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    quint64 submitted = 0;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; admission : admissions) {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        submitted += admission.queuedBytes;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">if</span> (submitted &gt; 0) {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        _submittedBytes += submitted;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        emit <a class="code hl_signal" href="classRTCMMavlink.html#a41b499dce658364861c50bc0e5049e18">deliveryStatsChanged</a>();</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">return</span> admissions;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
-</div>
+<div class="ttc" id="aFemtoMessages_8h_html_a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc"><div class="ttname"><a href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">FemtoDecodeState::data</a></div><div class="ttdeci">@ data</div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>
 <div class="ttc" id="aRTCMMavlink_8h_html"><div class="ttname"><a href="RTCMMavlink_8h.html">RTCMMavlink.h</a></div></div>
-<div class="ttc" id="aclassDataRateTracker_html_a51b9380b0e3f511c0d5843784a102231"><div class="ttname"><a href="classDataRateTracker.html#a51b9380b0e3f511c0d5843784a102231">DataRateTracker::kBps</a></div><div class="ttdeci">double kBps() const</div><div class="ttdoc">Current data rate in KB/s.</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8h_source.html#l00029">DataRateTracker.h:29</a></div></div>
-<div class="ttc" id="aclassDataRateTracker_html_a732fef26dd29410a43c00eb2eff25c69"><div class="ttname"><a href="classDataRateTracker.html#a732fef26dd29410a43c00eb2eff25c69">DataRateTracker::recordBytes</a></div><div class="ttdeci">void recordBytes(qsizetype bytes)</div><div class="ttdoc">Record incoming/outgoing bytes. Call whenever data passes through.</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8cc_source.html#l00008">DataRateTracker.cc:8</a></div></div>
-<div class="ttc" id="aclassDataRateTracker_html_aaf6d7604c81cca0a68e9a70b4b986aa2"><div class="ttname"><a href="classDataRateTracker.html#aaf6d7604c81cca0a68e9a70b4b986aa2">DataRateTracker::rateUpdated</a></div><div class="ttdeci">bool rateUpdated() const</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8h_source.html#l00033">DataRateTracker.h:33</a></div></div>
+<div class="ttc" id="aclassDataRateTracker_html_a51b9380b0e3f511c0d5843784a102231"><div class="ttname"><a href="classDataRateTracker.html#a51b9380b0e3f511c0d5843784a102231">DataRateTracker::kBps</a></div><div class="ttdeci">double kBps() const</div><div class="ttdoc">Current data rate in KB/s.</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8h_source.html#l00036">DataRateTracker.h:36</a></div></div>
+<div class="ttc" id="aclassDataRateTracker_html_a732fef26dd29410a43c00eb2eff25c69"><div class="ttname"><a href="classDataRateTracker.html#a732fef26dd29410a43c00eb2eff25c69">DataRateTracker::recordBytes</a></div><div class="ttdeci">void recordBytes(qsizetype bytes)</div><div class="ttdoc">Record incoming/outgoing bytes. Call whenever data passes through.</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8cc_source.html#l00011">DataRateTracker.cc:11</a></div></div>
+<div class="ttc" id="aclassDataRateTracker_html_aaf6d7604c81cca0a68e9a70b4b986aa2"><div class="ttname"><a href="classDataRateTracker.html#aaf6d7604c81cca0a68e9a70b4b986aa2">DataRateTracker::rateUpdated</a></div><div class="ttdeci">bool rateUpdated() const</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8h_source.html#l00040">DataRateTracker.h:40</a></div></div>
+<div class="ttc" id="aclassRTCMMavlinkPacket_html_ae41a07241844e453af3761fd6aa79f7b"><div class="ttname"><a href="classRTCMMavlinkPacket.html#ae41a07241844e453af3761fd6aa79f7b">RTCMMavlinkPacket::pack</a></div><div class="ttdeci">static PackResult pack(QByteArrayView data, uint8_t sequenceId)</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlinkPacket_8cc_source.html#l00016">RTCMMavlinkPacket.cc:16</a></div></div>
 <div class="ttc" id="aclassRTCMMavlink_html"><div class="ttname"><a href="classRTCMMavlink.html">RTCMMavlink</a></div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00012">RTCMMavlink.h:13</a></div></div>
-<div class="ttc" id="aclassRTCMMavlink_html_a12c5ea3984761f40cf70f3010b0ea95d"><div class="ttname"><a href="classRTCMMavlink.html#a12c5ea3984761f40cf70f3010b0ea95d">RTCMMavlink::submit</a></div><div class="ttdeci">quint64 submit(QByteArrayView data)</div><div class="ttdoc">Compatibility aggregate; diagnostics should consume individual output admissions.</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00030">RTCMMavlink.cc:30</a></div></div>
-<div class="ttc" id="aclassRTCMMavlink_html_a270eee1a0039f24ed2266866af0c212c"><div class="ttname"><a href="classRTCMMavlink.html#a270eee1a0039f24ed2266866af0c212c">RTCMMavlink::pack</a></div><div class="ttdeci">static PackResult pack(QByteArrayView data, uint8_t sequenceId)</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00058">RTCMMavlink.h:58</a></div></div>
 <div class="ttc" id="aclassRTCMMavlink_html_a303f8d987c9f26d6b2c6b24eaa74355c"><div class="ttname"><a href="classRTCMMavlink.html#a303f8d987c9f26d6b2c6b24eaa74355c">RTCMMavlink::OutputProvider</a></div><div class="ttdeci">std::function&lt; QList&lt; Output &gt;()&gt; OutputProvider</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00038">RTCMMavlink.h:38</a></div></div>
 <div class="ttc" id="aclassRTCMMavlink_html_a41b499dce658364861c50bc0e5049e18"><div class="ttname"><a href="classRTCMMavlink.html#a41b499dce658364861c50bc0e5049e18">RTCMMavlink::deliveryStatsChanged</a></div><div class="ttdeci">void deliveryStatsChanged()</div></div>
 <div class="ttc" id="aclassRTCMMavlink_html_a43759c71a3cfaca5176a7c206153b171"><div class="ttname"><a href="classRTCMMavlink.html#a43759c71a3cfaca5176a7c206153b171">RTCMMavlink::~RTCMMavlink</a></div><div class="ttdeci">~RTCMMavlink() override</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00019">RTCMMavlink.cc:19</a></div></div>
 <div class="ttc" id="aclassRTCMMavlink_html_a61bb903c5c511b626ee8fe852d447d08"><div class="ttname"><a href="classRTCMMavlink.html#a61bb903c5c511b626ee8fe852d447d08">RTCMMavlink::bandwidthChanged</a></div><div class="ttdeci">void bandwidthChanged()</div></div>
 <div class="ttc" id="aclassRTCMMavlink_html_a85fe418761c672839d28b1ceb9a29cf8"><div class="ttname"><a href="classRTCMMavlink.html#a85fe418761c672839d28b1ceb9a29cf8">RTCMMavlink::setOutputProvider</a></div><div class="ttdeci">void setOutputProvider(OutputProvider provider)</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00024">RTCMMavlink.cc:24</a></div></div>
-<div class="ttc" id="aclassRTCMMavlink_html_afbf45fc5240ee627eeddbc2a0420bf5e"><div class="ttname"><a href="classRTCMMavlink.html#afbf45fc5240ee627eeddbc2a0420bf5e">RTCMMavlink::submitToOutputs</a></div><div class="ttdeci">QList&lt; Admission &gt; submitToOutputs(QByteArrayView data)</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00039">RTCMMavlink.cc:39</a></div></div>
+<div class="ttc" id="aclassRTCMMavlink_html_afbf45fc5240ee627eeddbc2a0420bf5e"><div class="ttname"><a href="classRTCMMavlink.html#afbf45fc5240ee627eeddbc2a0420bf5e">RTCMMavlink::submitToOutputs</a></div><div class="ttdeci">QList&lt; Admission &gt; submitToOutputs(QByteArrayView data)</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8cc_source.html#l00030">RTCMMavlink.cc:30</a></div></div>
 <div class="ttc" id="astructRTCMMavlink_1_1Admission_html"><div class="ttname"><a href="structRTCMMavlink_1_1Admission.html">RTCMMavlink::Admission</a></div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00029">RTCMMavlink.h:30</a></div></div>
 <div class="ttc" id="astructRTCMMavlink_1_1Admission_html_a56b16fe26fbfc888407f802ecd4e45ba"><div class="ttname"><a href="structRTCMMavlink_1_1Admission.html#a56b16fe26fbfc888407f802ecd4e45ba">RTCMMavlink::Admission::id</a></div><div class="ttdeci">QString id</div><div class="ttdef"><b>Definition</b> <a href="RTCMMavlink_8h_source.html#l00031">RTCMMavlink.h:31</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -237,7 +226,7 @@ $(document).ready(function(){initNavTree('RTCMMavlink_8cc_source.html',''); init
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_ba8651a8b7edf1fc9d26f81079a874a0.html">RTCM</a></li><li class="navelem"><a class="el" href="RTCMMavlink_8cc.html">RTCMMavlink.cc</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_69f852026f4ab612cfc1eb10c5a8a853.html">Corrections</a></li><li class="navelem"><a class="el" href="dir_2e24725a5ada6a4791ce3e5798565dfe.html">MAVLink</a></li><li class="navelem"><a class="el" href="RTCMMavlink_8cc.html">RTCMMavlink.cc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

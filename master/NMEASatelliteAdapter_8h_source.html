@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/GPS/NMEA/NMEASatelliteAdapter.h Source File</title>
+<title>QGroundControl: src/GPS/Positioning/NMEA/NMEASatelliteAdapter.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -127,12 +127,12 @@ $(document).ready(function(){initNavTree('NMEASatelliteAdapter_8h_source.html','
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> _flush();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> _deliver();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> _queue(<a class="code hl_typedef" href="namespaceNMEA.html#a7c253de47c32050ad5969d433f9426bd">NMEA::SatelliteEpoch</a> epoch);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    QPointer&lt;RuntimeScheduler&gt; _scheduler;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_class" href="classScheduledTask.html">ScheduledTask</a> _idleTask;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_class" href="classScheduledTask.html">ScheduledTask</a> _batchTask;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> _scheduleFlush();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> _deliver();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> _queue(<a class="code hl_typedef" href="namespaceNMEA.html#a7c253de47c32050ad5969d433f9426bd">NMEA::SatelliteEpoch</a> epoch);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    QPointer&lt;RuntimeScheduler&gt; _scheduler;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_class" href="classScheduledTask.html">ScheduledTask</a> _flushTask;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="classScheduledTask.html">ScheduledTask</a> _deliveryTask;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_class" href="classNMEA_1_1SatelliteAssembler.html">NMEA::SatelliteAssembler</a> _assembler;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    QList&lt;GPSSatelliteObservation&gt; _pending;</div>
@@ -146,9 +146,9 @@ $(document).ready(function(){initNavTree('NMEASatelliteAdapter_8h_source.html','
 <div class="ttc" id="aScheduledTask_8h_html"><div class="ttname"><a href="ScheduledTask_8h.html">ScheduledTask.h</a></div></div>
 <div class="ttc" id="aclassNMEASatelliteAdapter_html"><div class="ttname"><a href="classNMEASatelliteAdapter.html">NMEASatelliteAdapter</a></div><div class="ttdoc">Assembles multipart/multisignal NMEA satellite epochs into independent constellation reports.</div><div class="ttdef"><b>Definition</b> <a href="NMEASatelliteAdapter_8h_source.html#l00013">NMEASatelliteAdapter.h:14</a></div></div>
 <div class="ttc" id="aclassNMEASatelliteAdapter_html_a10a0011e79de6805ddaef4175249e269"><div class="ttname"><a href="classNMEASatelliteAdapter.html#a10a0011e79de6805ddaef4175249e269">NMEASatelliteAdapter::isOpen</a></div><div class="ttdeci">bool isOpen() const</div><div class="ttdef"><b>Definition</b> <a href="NMEASatelliteAdapter_8h_source.html#l00023">NMEASatelliteAdapter.h:23</a></div></div>
-<div class="ttc" id="aclassNMEASatelliteAdapter_html_a43c27931f14f9f908e5349eda5cedbac"><div class="ttname"><a href="classNMEASatelliteAdapter.html#a43c27931f14f9f908e5349eda5cedbac">NMEASatelliteAdapter::ingest</a></div><div class="ttdeci">void ingest(const NMEASentenceEnvelope &amp;sentence)</div><div class="ttdef"><b>Definition</b> <a href="NMEASatelliteAdapter_8cc_source.html#l00042">NMEASatelliteAdapter.cc:42</a></div></div>
-<div class="ttc" id="aclassNMEASatelliteAdapter_html_a958695bde0ac90f202f54dda634f770e"><div class="ttname"><a href="classNMEASatelliteAdapter.html#a958695bde0ac90f202f54dda634f770e">NMEASatelliteAdapter::close</a></div><div class="ttdeci">void close()</div><div class="ttdef"><b>Definition</b> <a href="NMEASatelliteAdapter_8cc_source.html#l00032">NMEASatelliteAdapter.cc:32</a></div></div>
-<div class="ttc" id="aclassNMEASatelliteAdapter_html_ad07bdcf927536de320f81b51102dc1c8"><div class="ttname"><a href="classNMEASatelliteAdapter.html#ad07bdcf927536de320f81b51102dc1c8">NMEASatelliteAdapter::~NMEASatelliteAdapter</a></div><div class="ttdeci">~NMEASatelliteAdapter() override</div><div class="ttdef"><b>Definition</b> <a href="NMEASatelliteAdapter_8cc_source.html#l00026">NMEASatelliteAdapter.cc:26</a></div></div>
+<div class="ttc" id="aclassNMEASatelliteAdapter_html_a43c27931f14f9f908e5349eda5cedbac"><div class="ttname"><a href="classNMEASatelliteAdapter.html#a43c27931f14f9f908e5349eda5cedbac">NMEASatelliteAdapter::ingest</a></div><div class="ttdeci">void ingest(const NMEASentenceEnvelope &amp;sentence)</div><div class="ttdef"><b>Definition</b> <a href="NMEASatelliteAdapter_8cc_source.html#l00039">NMEASatelliteAdapter.cc:39</a></div></div>
+<div class="ttc" id="aclassNMEASatelliteAdapter_html_a958695bde0ac90f202f54dda634f770e"><div class="ttname"><a href="classNMEASatelliteAdapter.html#a958695bde0ac90f202f54dda634f770e">NMEASatelliteAdapter::close</a></div><div class="ttdeci">void close()</div><div class="ttdef"><b>Definition</b> <a href="NMEASatelliteAdapter_8cc_source.html#l00029">NMEASatelliteAdapter.cc:29</a></div></div>
+<div class="ttc" id="aclassNMEASatelliteAdapter_html_ad07bdcf927536de320f81b51102dc1c8"><div class="ttname"><a href="classNMEASatelliteAdapter.html#ad07bdcf927536de320f81b51102dc1c8">NMEASatelliteAdapter::~NMEASatelliteAdapter</a></div><div class="ttdeci">~NMEASatelliteAdapter() override</div><div class="ttdef"><b>Definition</b> <a href="NMEASatelliteAdapter_8cc_source.html#l00023">NMEASatelliteAdapter.cc:23</a></div></div>
 <div class="ttc" id="aclassNMEASatelliteAdapter_html_af09613d0eb0a178be140a9b4dafc6139"><div class="ttname"><a href="classNMEASatelliteAdapter.html#af09613d0eb0a178be140a9b4dafc6139">NMEASatelliteAdapter::observationReceived</a></div><div class="ttdeci">void observationReceived(const GPSSatelliteObservation &amp;observation)</div></div>
 <div class="ttc" id="aclassNMEASentenceEnvelope_html"><div class="ttname"><a href="classNMEASentenceEnvelope.html">NMEASentenceEnvelope</a></div><div class="ttdoc">Parsed views share ownership of their immutable sentence bytes across queued consumers.</div><div class="ttdef"><b>Definition</b> <a href="NMEASentenceEnvelope_8h_source.html#l00012">NMEASentenceEnvelope.h:13</a></div></div>
 <div class="ttc" id="aclassNMEA_1_1SatelliteAssembler_html"><div class="ttname"><a href="classNMEA_1_1SatelliteAssembler.html">NMEA::SatelliteAssembler</a></div><div class="ttdoc">Bounded multipart/multisignal assembly; scheduling and delivery remain with the caller.</div><div class="ttdef"><b>Definition</b> <a href="NMEASatelliteEpoch_8h_source.html#l00049">NMEASatelliteEpoch.h:50</a></div></div>
@@ -161,7 +161,7 @@ $(document).ready(function(){initNavTree('NMEASatelliteAdapter_8h_source.html','
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_5275773357dfa04b7015cd1381fbacdf.html">NMEA</a></li><li class="navelem"><a class="el" href="NMEASatelliteAdapter_8h.html">NMEASatelliteAdapter.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_51b7931505a89aa9ba0ff98082e5306f.html">Positioning</a></li><li class="navelem"><a class="el" href="dir_cbafabd93d8a23e6274c1b72754b2dcf.html">NMEA</a></li><li class="navelem"><a class="el" href="NMEASatelliteAdapter_8h.html">NMEASatelliteAdapter.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

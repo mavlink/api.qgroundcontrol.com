@@ -50,7 +50,7 @@ var searchData=
   ['rollbackstate_2ecc_47',['RollbackState.cc',['../RollbackState_8cc.html',1,'']]],
   ['rollbackstate_2eh_48',['RollbackState.h',['../RollbackState_8h.html',1,'']]],
   ['roverchecklist_2eqml_49',['RoverChecklist.qml',['../RoverChecklist_8qml.html',1,'']]],
-  ['rtcmframe_2eh_50',['RTCMFrame.h',['../RTCMFrame_8h.html',1,'']]],
+  ['rtcmdecodedframe_2eh_50',['RTCMDecodedFrame.h',['../RTCMDecodedFrame_8h.html',1,'']]],
   ['rtcmframedecoder_2ecc_51',['RTCMFrameDecoder.cc',['../RTCMFrameDecoder_8cc.html',1,'']]],
   ['rtcmframedecoder_2eh_52',['RTCMFrameDecoder.h',['../RTCMFrameDecoder_8h.html',1,'']]],
   ['rtcmframer_2eh_53',['RTCMFramer.h',['../RTCMFramer_8h.html',1,'']]],

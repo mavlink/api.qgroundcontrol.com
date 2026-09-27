@@ -5,6 +5,7 @@ var classRTCMFramer =
     [ "crc24q", "classRTCMFramer.html#aa0b36edcc17fe5083922234041d2771a", null ],
     [ "frame", "classRTCMFramer.html#a31ac880b8417f1e4b8c60ab0bfab2e3d", null ],
     [ "hasPartialFrame", "classRTCMFramer.html#a5eb559864968c277c49434eac57eecec", null ],
+    [ "isValidFrame", "classRTCMFramer.html#ae8a7b34e4b08b05721c0be420aa981f1", null ],
     [ "isValidFrame", "classRTCMFramer.html#ac54718c2e60d05706afa89e0272df9f3", null ],
     [ "messageId", "classRTCMFramer.html#a1d0483780af2b8740a9b3ba118d4f4d0", null ],
     [ "nextFrame", "classRTCMFramer.html#a45df42c7934936b314b55d6ecdaf8232", null ],

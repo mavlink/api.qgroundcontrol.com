@@ -36,7 +36,6 @@ var classNTRIPManager =
     [ "ggaSourceChanged", "classNTRIPManager.html#a7a0817d769567c4aa8ee69424f82f151", null ],
     [ "init", "classNTRIPManager.html#a7983c6f9445738b767a77219eec53451", null ],
     [ "instance", "classNTRIPManager.html#a696ac7ed46ce71ee228fc0005009ec98", null ],
-    [ "rtcmMavlink", "classNTRIPManager.html#a8c3f8e0c7b717d1276515ed76959e091", null ],
     [ "securityWarning", "classNTRIPManager.html#a5f73c92c1d59700580f50e6cd7b7f91e", null ],
     [ "securityWarningChanged", "classNTRIPManager.html#aa8bd2cc4b6cda646470a64a923a06621", null ],
     [ "selectMountpoint", "classNTRIPManager.html#a3704f53114f16566a8674007c1368e57", null ],

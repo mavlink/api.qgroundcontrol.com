@@ -1,0 +1,38 @@
+var SBFMessages_8h =
+[
+    [ "sbf_payload_pvt_geodetic_t", "structsbf__payload__pvt__geodetic__t.html", "structsbf__payload__pvt__geodetic__t" ],
+    [ "sbf_payload_vel_cov_geodetic_t", "structsbf__payload__vel__cov__geodetic__t.html", "structsbf__payload__vel__cov__geodetic__t" ],
+    [ "sbf_payload_dop_t", "structsbf__payload__dop__t.html", "structsbf__payload__dop__t" ],
+    [ "sbf_payload_channel_state_info_t", "structsbf__payload__channel__state__info__t.html", "structsbf__payload__channel__state__info__t" ],
+    [ "sbf_payload_att_euler", "structsbf__payload__att__euler.html", "structsbf__payload__att__euler" ],
+    [ "sbf_payload_att_cov_euler", "structsbf__payload__att__cov__euler.html", "structsbf__payload__att__cov__euler" ],
+    [ "sbf_buf_t", "structsbf__buf__t.html", "structsbf__buf__t" ],
+    [ "SBF_CONFIG", "SBFMessages_8h.html#aeb2e46f230e35e2b1c4baaca252b4bca", null ],
+    [ "SBF_CONFIG_ATTITUDE_OFFSET", "SBFMessages_8h.html#a19b623e13d91bda17be02b476b8b9494", null ],
+    [ "SBF_CONFIG_BAUDRATE", "SBFMessages_8h.html#af548178623ab14952c5327425614f7e5", null ],
+    [ "SBF_CONFIG_DISABLE_OUTPUT", "SBFMessages_8h.html#a455b5ef279fd93bf8a59cbfb2ede14f2", null ],
+    [ "SBF_CONFIG_FORCE_INPUT", "SBFMessages_8h.html#a8b07b7d1a5c8ebd964bafd4d361ee226", null ],
+    [ "SBF_CONFIG_OUTPUT_RTCM3", "SBFMessages_8h.html#a231dc971824ad68d6f28e2eae2aca1d0", null ],
+    [ "SBF_CONFIG_RECEIVER_DYNAMICS", "SBFMessages_8h.html#a83ba6923052889ff748db99d21ddef25", null ],
+    [ "SBF_CONFIG_RESET", "SBFMessages_8h.html#adebbdf9821d10489d36b4a137d91c6c1", null ],
+    [ "SBF_CONFIG_RTCM_STATIC1", "SBFMessages_8h.html#a89147cc81a2190b020442625346ff851", null ],
+    [ "SBF_CONFIG_RTCM_STATIC2", "SBFMessages_8h.html#a9c22c072b27b2f4d1396265a9a905f23", null ],
+    [ "SBF_CONFIG_RTCM_STATIC_COORDINATES", "SBFMessages_8h.html#a346127c2415112dfb5bd426c01b02fab", null ],
+    [ "SBF_CONFIG_RTCM_STATIC_OFFSET", "SBFMessages_8h.html#a9e6fbd4a81e62cb180725ce015d38d29", null ],
+    [ "SBF_CONFIG_RTCM_STATUS", "SBFMessages_8h.html#a4e599508a827dc21872888cac44daad5", null ],
+    [ "SBF_CONFIG_RTCM_SURVEY_IN", "SBFMessages_8h.html#a5ea2dd568d287ee51db446cf34affc8f", null ],
+    [ "SBF_DATA_IO", "SBFMessages_8h.html#aa95818f4641231cc1e8e7a6f4e3fb544", null ],
+    [ "SBF_ID_AttCovEuler", "SBFMessages_8h.html#a242a8840f4730f8d45606501ad938411", null ],
+    [ "SBF_ID_AttEuler", "SBFMessages_8h.html#a1309ed985baefd8926f19603f0b65707", null ],
+    [ "SBF_ID_DOP", "SBFMessages_8h.html#a21026e8d3fad24dd530ebe62625c8e8e", null ],
+    [ "SBF_ID_PVTGeodetic", "SBFMessages_8h.html#af50e1242f3dc615175b2624f347fd4ac", null ],
+    [ "SBF_ID_VelCovGeodetic", "SBFMessages_8h.html#a2e5e060ed7607258a9b41deb5a328ba8", null ],
+    [ "SBF_SYNC1", "SBFMessages_8h.html#afaba879ed821c53afdd756e638bb8fe4", null ],
+    [ "SBF_SYNC2", "SBFMessages_8h.html#ac0cc518c6dc18dde52b347265deed98f", null ],
+    [ "SBF_TX_CFG_PRT_BAUDRATE", "SBFMessages_8h.html#ab73f5002b3c901dd5ab5035a4e0739e6", null ],
+    [ "sbf_decode_state_t", "SBFMessages_8h.html#af5c4de9ad53d7be2b04987302461a1b3", [
+      [ "SBF_DECODE_SYNC1", "SBFMessages_8h.html#af5c4de9ad53d7be2b04987302461a1b3ada124b52cbc067ba719e44671735aa5b", null ],
+      [ "SBF_DECODE_SYNC2", "SBFMessages_8h.html#af5c4de9ad53d7be2b04987302461a1b3ace0e2ae1065557b396b37cc9bea1cf4d", null ],
+      [ "SBF_DECODE_PAYLOAD", "SBFMessages_8h.html#af5c4de9ad53d7be2b04987302461a1b3a53e0832b60c3c07768e907fcd7eba2c6", null ]
+    ] ]
+];

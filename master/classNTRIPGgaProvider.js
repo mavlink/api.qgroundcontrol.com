@@ -16,6 +16,7 @@ var classNTRIPGgaProvider =
     [ "sourceChanged", "classNTRIPGgaProvider.html#a40c8bb8c275a957ce5370ee48931dd4a", null ],
     [ "start", "classNTRIPGgaProvider.html#ae5c8ff0ba11d473debb5ee323c39466b", null ],
     [ "stop", "classNTRIPGgaProvider.html#ae6aa50838764ef1a7643f8deedc6daa7", null ],
+    [ "NTRIPReentrancyTest", "classNTRIPGgaProvider.html#a62f5f71361a5ee334803c95b96139b5e", null ],
     [ "kDefaultInterval", "classNTRIPGgaProvider.html#a310ad15ea2fa5f8cd127133602b16ccb", null ],
     [ "kFastRetryInterval", "classNTRIPGgaProvider.html#ac14671ad41cb342aaaed9c9d001569f4", null ]
 ];

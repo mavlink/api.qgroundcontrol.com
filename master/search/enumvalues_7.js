@@ -7,7 +7,7 @@ var searchData=
   ['gga_4',['Gga',['../structGPSObservation.html#aeda3b3fb9df64b33b49554326f46079fa9a5850c4e2f5aa52f3682a4415df35de',1,'GPSObservation']]],
   ['glmemory_5',['GlMemory',['../GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbafe5a5431c838ce97b43a39101e22968d',1,'GstHwVideoBufferFactory.h']]],
   ['glonass_6',['GLONASS',['../GPSConstellation_8h.html#a43579d1af08197c81deb36670a1c50d0a48549df6f41418cb94b963fe84894cd6',1,'GPSConstellation.h']]],
-  ['gps_7',['GPS',['../GPSConstellation_8h.html#a43579d1af08197c81deb36670a1c50d0a8c578de37278ada488d763ea86c5cf20',1,'GPSConstellation.h']]],
+  ['gps_7',['gps',['../classGPSProtocol.html#a16cc0d639cda8f781e1db16a6b7f41e9a8c578de37278ada488d763ea86c5cf20',1,'GPSProtocol::GPS'],['../GPSConstellation_8h.html#a43579d1af08197c81deb36670a1c50d0a8c578de37278ada488d763ea86c5cf20',1,'GPS:&#160;GPSConstellation.h']]],
   ['gps_5fdisable_8',['GPS_DISABLE',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a6ed0dc4ada0eabe3ec16ca2132588b1c',1,'APM']]],
   ['gps_5fdisable_5fyaw_9',['GPS_DISABLE_YAW',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a9b74646b202bfcb34c13b7ee5a590d1e',1,'APM']]],
   ['gpu_10',['Gpu',['../structMappedFrame.html#a7e801de9803d493be8e8d47db467018aa3432ca64f06615abf07ab44c10cada38',1,'MappedFrame']]],

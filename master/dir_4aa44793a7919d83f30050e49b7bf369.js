@@ -5,6 +5,7 @@ var dir_4aa44793a7919d83f30050e49b7bf369 =
     [ "GPSObservation.h", "GPSObservation_8h.html", "GPSObservation_8h" ],
     [ "GPSSatelliteObservation.cc", "GPSSatelliteObservation_8cc.html", null ],
     [ "GPSSatelliteObservation.h", "GPSSatelliteObservation_8h.html", "GPSSatelliteObservation_8h" ],
+    [ "GPSSatelliteState.h", "GPSSatelliteState_8h.html", "GPSSatelliteState_8h" ],
     [ "GPSSatelliteStore.cc", "GPSSatelliteStore_8cc.html", null ],
     [ "GPSSatelliteStore.h", "GPSSatelliteStore_8h.html", "GPSSatelliteStore_8h" ],
     [ "GPSSourceHealth.cc", "GPSSourceHealth_8cc.html", null ],

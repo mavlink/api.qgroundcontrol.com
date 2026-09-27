@@ -1,5 +1,6 @@
 var dir_43c0dbc65b1d26c09ae70f5d133fbaa4 =
 [
+    [ "GPSIOStatus.h", "GPSIOStatus_8h.html", "GPSIOStatus_8h" ],
     [ "GPSSocketWait.cc", "GPSSocketWait_8cc.html", "GPSSocketWait_8cc" ],
     [ "GPSSocketWait_p.h", "GPSSocketWait__p_8h.html", "GPSSocketWait__p_8h" ],
     [ "GPSStreamWrite_p.h", "GPSStreamWrite__p_8h.html", "GPSStreamWrite__p_8h" ],

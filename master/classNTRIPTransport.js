@@ -2,7 +2,7 @@ var classNTRIPTransport =
 [
     [ "NTRIPTransport", "classNTRIPTransport.html#a46b91aa46e14e11919f5956513a800f3", null ],
     [ "connected", "classNTRIPTransport.html#ad3b8852868fea9c9560c287c8b20f322", null ],
-    [ "correctionFrameReceived", "classNTRIPTransport.html#aa98cbd4eea599c78ef59247f1a2d7abc", null ],
+    [ "correctionFrameReceived", "classNTRIPTransport.html#a1648cb8362522f725bb81186e6a01d3b", null ],
     [ "error", "classNTRIPTransport.html#adcf81c8344b22e767019d5a282d6e4a2", null ],
     [ "plaintextCredentialsWarning", "classNTRIPTransport.html#a5313a5c6e533d4065f0975d9bd8675bf", null ],
     [ "sendNMEA", "classNTRIPTransport.html#a0fb32adb440d0ab56e26d3e8fc4def91", null ],

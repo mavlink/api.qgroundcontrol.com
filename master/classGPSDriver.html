@@ -93,10 +93,14 @@ $(document).ready(function(){initNavTree('classGPSDriver.html',''); initResizabl
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classGPSDriver-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">GPSDriver Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Selects a native receiver protocol and adapts its decoded events to public reports.  
+ <a href="classGPSDriver.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>&gt;</code></p>
 <table class="memberdecls">
@@ -116,17 +120,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1e26572eeab7be4e0f16b355c09d5300" id="r_a1e26572eeab7be4e0f16b355c09d5300"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGPSDriver.html">GPSDriver</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSDriver.html#a1e26572eeab7be4e0f16b355c09d5300">operator=</a> (const <a class="el" href="classGPSDriver.html">GPSDriver</a> &amp;)=delete</td></tr>
 <tr class="separator:a1e26572eeab7be4e0f16b355c09d5300"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace6797b810b6259467a33d3882b401c2" id="r_ace6797b810b6259467a33d3882b401c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSDriver.html#ace6797b810b6259467a33d3882b401c2">configure</a> ()</td></tr>
-<tr class="memdesc:ace6797b810b6259467a33d3882b401c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and configure the underlying driver. Returns false on failure.  <br /></td></tr>
+<tr class="memdesc:ace6797b810b6259467a33d3882b401c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and configure the underlying driver. Reentrant calls fail without replacing the active driver.  <br /></td></tr>
 <tr class="separator:ace6797b810b6259467a33d3882b401c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac7bc31ffc6505fce7928007ae6d5085" id="r_aac7bc31ffc6505fce7928007ae6d5085"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSDriver.html#aac7bc31ffc6505fce7928007ae6d5085">receive</a> (unsigned timeoutMs)</td></tr>
-<tr class="separator:aac7bc31ffc6505fce7928007ae6d5085"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0c346cdc6802992ace66a32fa297734" id="r_ae0c346cdc6802992ace66a32fa297734"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSDriver.html#ae0c346cdc6802992ace66a32fa297734">handleCallback</a> (int type, void *data1, int data2)</td></tr>
-<tr class="separator:ae0c346cdc6802992ace66a32fa297734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdac817dc08667b5ec754b417ec02a29" id="r_afdac817dc08667b5ec754b417ec02a29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGPSReceiveResult.html">GPSReceiveResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSDriver.html#afdac817dc08667b5ec754b417ec02a29">receiveOutcome</a> (unsigned timeoutMs)</td></tr>
+<tr class="separator:afdac817dc08667b5ec754b417ec02a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae80486b3f4d82fa91c02229a5c89e175" id="r_ae80486b3f4d82fa91c02229a5c89e175"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="structGPSConfigurationEvidence.html">GPSConfigurationEvidence</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSDriver.html#ae80486b3f4d82fa91c02229a5c89e175">configurationEvidence</a> () const</td></tr>
+<tr class="memdesc:ae80486b3f4d82fa91c02229a5c89e175"><td class="mdescLeft">&#160;</td><td class="mdescRight">Latest non-reentrant <a class="el" href="classGPSDriver.html#ace6797b810b6259467a33d3882b401c2" title="Create and configure the underlying driver. Reentrant calls fail without replacing the active driver.">configure()</a> attempt; remains available after failure. Caller-thread access only.  <br /></td></tr>
+<tr class="separator:ae80486b3f4d82fa91c02229a5c89e175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b5c6c61fdcb3147fe28f4989c18a743" id="r_a7b5c6c61fdcb3147fe28f4989c18a743"><td class="memItemLeft" align="right" valign="top">const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSDriver.html#a7b5c6c61fdcb3147fe28f4989c18a743">configurationError</a> () const</td></tr>
+<tr class="memdesc:a7b5c6c61fdcb3147fe28f4989c18a743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diagnostic from the latest <a class="el" href="classGPSDriver.html#ace6797b810b6259467a33d3882b401c2" title="Create and configure the underlying driver. Reentrant calls fail without replacing the active driver.">configure()</a> failure; cleared when a new attempt starts.  <br /></td></tr>
+<tr class="separator:a7b5c6c61fdcb3147fe28f4989c18a743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aee6ace950dee5b9daff087016ee47c90" id="r_aee6ace950dee5b9daff087016ee47c90"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSDriver.html#aee6ace950dee5b9daff087016ee47c90">supportsType</a> (<a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495">GPSType</a> type)</td></tr>
+<tr class="memdesc:aee6ace950dee5b9daff087016ee47c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this build contains the requested native protocol implementation.  <br /></td></tr>
+<tr class="separator:aee6ace950dee5b9daff087016ee47c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Facade over the px4-gpsdrivers library: selects and configures the receiver driver, bridges its callbacks to a <a class="el" href="classGPSTransport.html">GPSTransport</a> plus the supplied sinks, and pumps its receive loop. Keeps all px4 headers and types out of callers. </p>
+<div class="textblock"><p>Selects a native receiver protocol and adapts its decoded events to public reports. </p>
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00028">28</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00059">59</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a67a1b38ccca7ecfa554af08617ef99a0" name="a67a1b38ccca7ecfa554af08617ef99a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a67a1b38ccca7ecfa554af08617ef99a0">&#9670;&#160;</a></span>GPSDriver() <span class="overload">[1/2]</span></h2>
@@ -166,7 +180,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8cc_source.html#l00037">37</a> of file <a class="el" href="GPSDriver_8cc_source.html">GPSDriver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8cc_source.html#l00106">106</a> of file <a class="el" href="GPSDriver_8cc_source.html">GPSDriver.cc</a>.</p>
 
 </div>
 </div>
@@ -222,6 +236,48 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7b5c6c61fdcb3147fe28f4989c18a743" name="a7b5c6c61fdcb3147fe28f4989c18a743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b5c6c61fdcb3147fe28f4989c18a743">&#9670;&#160;</a></span>configurationError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString &amp; GPSDriver::configurationError </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Diagnostic from the latest <a class="el" href="classGPSDriver.html#ace6797b810b6259467a33d3882b401c2" title="Create and configure the underlying driver. Reentrant calls fail without replacing the active driver.">configure()</a> failure; cleared when a new attempt starts. </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8cc_source.html#l00126">126</a> of file <a class="el" href="GPSDriver_8cc_source.html">GPSDriver.cc</a>.</p>
+
+</div>
+</div>
+<a id="ae80486b3f4d82fa91c02229a5c89e175" name="ae80486b3f4d82fa91c02229a5c89e175"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae80486b3f4d82fa91c02229a5c89e175">&#9670;&#160;</a></span>configurationEvidence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="structGPSConfigurationEvidence.html">GPSConfigurationEvidence</a> &gt; &amp; GPSDriver::configurationEvidence </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Latest non-reentrant <a class="el" href="classGPSDriver.html#ace6797b810b6259467a33d3882b401c2" title="Create and configure the underlying driver. Reentrant calls fail without replacing the active driver.">configure()</a> attempt; remains available after failure. Caller-thread access only. </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8cc_source.html#l00121">121</a> of file <a class="el" href="GPSDriver_8cc_source.html">GPSDriver.cc</a>.</p>
+
+</div>
+</div>
 <a id="ace6797b810b6259467a33d3882b401c2" name="ace6797b810b6259467a33d3882b401c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ace6797b810b6259467a33d3882b401c2">&#9670;&#160;</a></span>configure()</h2>
 
@@ -237,50 +293,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create and configure the underlying driver. Returns false on failure. </p>
+<p>Create and configure the underlying driver. Reentrant calls fail without replacing the active driver. </p>
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8cc_source.html#l00047">47</a> of file <a class="el" href="GPSDriver_8cc_source.html">GPSDriver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8cc_source.html#l00131">131</a> of file <a class="el" href="GPSDriver_8cc_source.html">GPSDriver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GPSReceiverConfig_8h_source.html#l00020">GPSReceiverConfig::base</a>, <a class="el" href="GPSReceiverConfig_8h_source.html#l00022">GPSReceiverConfig::constellationMask</a>, <a class="el" href="GPSReceiverConfig_8h_source.html#l00024">GPSReceiverConfig::dynamicModel</a>, <a class="el" href="QGCCompression_8cc_source.html#l00114">error</a>, <a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495ade06ed8dfc218126aa1bfbb9385f612e">femto</a>, <a class="el" href="GPSTransport_8h_source.html#l00031">GPSTransport::fixedBaudrate()</a>, <a class="el" href="GPSReceiverConfigValidation_8cc_source.html#l00047">gpsReceiverConfigError()</a>, <a class="el" href="GPSReceiverConfig_8h_source.html#l00026">GPSReceiverConfig::headingOffsetRadians</a>, <a class="el" href="GPSPx4Data_8cc_source.html#l00011">GPSPx4Data::initialize()</a>, <a class="el" href="GPSReceiverConfig_8h_source.html#l00019">GPSReceiverConfig::role</a>, <a class="el" href="structGPSReceiverConfig.html#a9894a1c727fb477ff236db56881ebdb7a3fe85cb3983a5ba78fbdb7f585efe241">GPSReceiverConfig::RTKBase</a>, <a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495a84a05512636cdb77b5333b6bd82b1ede">septentrio</a>, <a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495a59b883e1049cd7ac71c6c4feb715942c">trimble</a>, and <a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495aff994f303c142c19027e81161018329e">ublox</a>.</p>
-
-</div>
-</div>
-<a id="ae0c346cdc6802992ace66a32fa297734" name="ae0c346cdc6802992ace66a32fa297734"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0c346cdc6802992ace66a32fa297734">&#9670;&#160;</a></span>handleCallback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int GPSDriver::handleCallback </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>data1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>data2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Trampoline target for the px4 callback; <code>type</code> is a GPSCallbackType value. Public only so the file-local C callback can reach it — not for callers. </p>
-
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8cc_source.html#l00143">143</a> of file <a class="el" href="GPSDriver_8cc_source.html">GPSDriver.cc</a>.</p>
-
-<p class="reference">References <a class="el" href="GPSDriverReports_8h_source.html#l00103">GPSSurveyReport::active</a>, <a class="el" href="GPSDriverReports_8h_source.html#l00099">GPSSurveyReport::altitudeEllipsoidMeters</a>, <a class="el" href="GPSTransportResult_8h_source.html#l00044">GPSReadResult::bytesRead</a>, <a class="el" href="GPSTransportResult_8h.html#a604169add88d503c26deb25634162910a07ca5050e697392c9ed47e6453f1453f">Completed</a>, <a class="el" href="GPSTransportResult_8h.html#ab2634ce88dc52655449e319b328926adaf6068daa29dbb05a7ead1e3b5a48bbee">Data</a>, <a class="el" href="GPSDriverReports_8h_source.html#l00101">GPSSurveyReport::duration</a>, <a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495ade06ed8dfc218126aa1bfbb9385f612e">femto</a>, <a class="el" href="GPSDriverReports_8h_source.html#l00097">GPSSurveyReport::latitudeDegrees</a>, <a class="el" href="GPSDriverReports_8h_source.html#l00098">GPSSurveyReport::longitudeDegrees</a>, <a class="el" href="GPSDriverReports_8h_source.html#l00100">GPSSurveyReport::meanAccuracyMeters</a>, <a class="el" href="GPSDriver_8h_source.html#l00021">GPSDriverSinks::onRTCM</a>, <a class="el" href="GPSDriver_8h_source.html#l00022">GPSDriverSinks::onSurveyIn</a>, <a class="el" href="classGPSTransport.html#a5cba42661b309bca8f61aee7390a80a9">GPSTransport::read()</a>, <a class="el" href="classGPSTransport.html#a2b472a245344804b7a656abfe7780ac7">GPSTransport::setBaudrate()</a>, <a class="el" href="GPSTransportResult_8h_source.html#l00050">GPSWriteResult::status</a>, <a class="el" href="GPSTransportResult_8h.html#ab2634ce88dc52655449e319b328926ada9541eb2348d883dd8e32ae0420274c4c">TimedOut</a>, <a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495a59b883e1049cd7ac71c6c4feb715942c">trimble</a>, <a class="el" href="GPSDriverReports_8h_source.html#l00102">GPSSurveyReport::valid</a>, and <a class="el" href="GPSTransport_8cc_source.html#l00040">GPSTransport::write()</a>.</p>
+<p class="reference">References <a class="el" href="GPSReceiverConfig_8h_source.html#l00032">GPSReceiverConfig::allowPersistentChanges</a>, <a class="el" href="GPSProtocol_8h_source.html#l00099">GPSProtocol::GPSConfig::base</a>, <a class="el" href="GPSReceiverConfig_8h_source.html#l00022">GPSReceiverConfig::base</a>, <a class="el" href="GPSReceiverConfig_8h_source.html#l00030">GPSReceiverConfig::baudRate</a>, <a class="el" href="GPSIOStatus_8h.html#a604169add88d503c26deb25634162910aa149e85a44aeec9140e92733d9ed694e">Cancelled</a>, <a class="el" href="GPSProtocolIO_8h_source.html#l00031">GPSProtocolIO::commandFinished</a>, <a class="el" href="GstSourceFactory_8cc_source.html#l00183">config</a>, <a class="el" href="GPSIOStatus_8h.html#a45f1b6972723b99f763c1f4c25fd43d4a61aa63eb3ac1c3408640463ee5fe8aa3">Configured</a>, <a class="el" href="GPSReceiverConfig_8h_source.html#l00024">GPSReceiverConfig::constellationMask</a>, <a class="el" href="GPSIOStatus_8h.html#ab2634ce88dc52655449e319b328926adaf6068daa29dbb05a7ead1e3b5a48bbee">Data</a>, <a class="el" href="GPSProtocolIO_8h.html#aaf13a02684cad6c69c5864a52854384aaa603905470e2a5b8c13e96b579ef0dba">Debug</a>, <a class="el" href="GPSProtocolIO_8h_source.html#l00030">GPSProtocolIO::decoded</a>, <a class="el" href="GPSReceiverConfig_8h_source.html#l00026">GPSReceiverConfig::dynamicModel</a>, <a class="el" href="GPSIOStatus_8h.html#a45f1b6972723b99f763c1f4c25fd43d4a902b0d55fddef6f8d651fe1035b7d4bd">Error</a>, <a class="el" href="QGCCompression_8cc_source.html#l00114">error</a>, <a class="el" href="GPSTransport_8h_source.html#l00031">GPSTransport::fixedBaudrate()</a>, <a class="el" href="classGPSProtocol.html#a16cc0d639cda8f781e1db16a6b7f41e9a8c578de37278ada488d763ea86c5cf20">GPSProtocol::GPS</a>, <a class="el" href="GPSReceiverConfigValidation_8cc_source.html#l00059">gpsReceiverConfigError()</a>, <a class="el" href="GPSTransport_8h_source.html#l00028">GPSTransport::isCancelled()</a>, <a class="el" href="GPSProtocolIO_8h_source.html#l00028">GPSProtocolIO::log</a>, <a class="el" href="GPSProtocolIO_8h_source.html#l00035">GPSProtocolIO::nowUs</a>, <a class="el" href="MonotonicClock_8h_source.html#l00007">MonotonicClock::nowUs()</a>, <a class="el" href="GPSDriver_8h_source.html#l00023">GPSDriverSinks::onPosition</a>, <a class="el" href="GPSDriver_8h_source.html#l00026">GPSDriverSinks::onRTCM</a>, <a class="el" href="GPSDriver_8h_source.html#l00024">GPSDriverSinks::onSatelliteInfo</a>, <a class="el" href="GPSDriver_8h_source.html#l00029">GPSDriverSinks::onSatelliteUsage</a>, <a class="el" href="GPSDriver_8h_source.html#l00027">GPSDriverSinks::onSurveyIn</a>, <a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495a831996cebc6c9bf7687e922c3437be69">passive</a>, <a class="el" href="GPSNativeData_8cc_source.html#l00027">GPSNativeData::position()</a>, <a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495ae417f14ac41a36a838f7682f5309c640">quectel</a>, <a class="el" href="GPSProtocolIO_8h_source.html#l00032">GPSProtocolIO::read</a>, <a class="el" href="classGPSTransport.html#a5cba42661b309bca8f61aee7390a80a9">GPSTransport::read()</a>, <a class="el" href="GPSReceiverConfig_8h_source.html#l00021">GPSReceiverConfig::role</a>, <a class="el" href="classGPSProtocol.html#a16cc0d639cda8f781e1db16a6b7f41e9a287e22a062d3ee40c4ab7c326686a243">GPSProtocol::RTCM</a>, <a class="el" href="structGPSReceiverConfig.html#a9894a1c727fb477ff236db56881ebdb7a3fe85cb3983a5ba78fbdb7f585efe241">GPSReceiverConfig::RTKBase</a>, <a class="el" href="GPSProtocolIO_8h_source.html#l00034">GPSProtocolIO::setBaudrate</a>, <a class="el" href="classGPSTransport.html#a2b472a245344804b7a656abfe7780ac7">GPSTransport::setBaudrate()</a>, <a class="el" href="GPSNativeData_8cc_source.html#l00070">GPSNativeData::survey()</a>, <a class="el" href="GPSIOStatus_8h.html#a604169add88d503c26deb25634162910a9541eb2348d883dd8e32ae0420274c4c">TimedOut</a>, <a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495a59b883e1049cd7ac71c6c4feb715942c">trimble</a>, <a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495a771f7ba75beec6aaa5044922c27e1293">unicore</a>, <a class="el" href="GPSProtocolIO_8h_source.html#l00036">GPSProtocolIO::wait</a>, <a class="el" href="GPSProtocolIO_8h_source.html#l00033">GPSProtocolIO::write</a>, and <a class="el" href="GPSTransport_8cc_source.html#l00040">GPSTransport::writeConfiguration()</a>.</p>
 
 </div>
 </div>
@@ -310,14 +327,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aac7bc31ffc6505fce7928007ae6d5085" name="aac7bc31ffc6505fce7928007ae6d5085"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac7bc31ffc6505fce7928007ae6d5085">&#9670;&#160;</a></span>receive()</h2>
+<a id="afdac817dc08667b5ec754b417ec02a29" name="afdac817dc08667b5ec754b417ec02a29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdac817dc08667b5ec754b417ec02a29">&#9670;&#160;</a></span>receiveOutcome()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int GPSDriver::receive </td>
+          <td class="memname"><a class="el" href="structGPSReceiveResult.html">GPSReceiveResult</a> GPSDriver::receiveOutcome </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>timeoutMs</em></td><td>)</td>
@@ -325,11 +342,41 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Pump one receive cycle, invoking the position/satellite sinks as data arrives. Returns the px4 bitset (&lt;0 error, bit0 position, bit1 satellite), or &lt;0 if not configured. </p>
+<p>Useful reports are Data even without a registered sink. Diagnostics/partial input are Activity, never proof of navigation liveness. Terminal failures take precedence over reports in the same cycle. Reentrant calls return Busy without touching the transport or active decoder. </p>
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8cc_source.html#l00123">123</a> of file <a class="el" href="GPSDriver_8cc_source.html">GPSDriver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8cc_source.html#l00284">284</a> of file <a class="el" href="GPSDriver_8cc_source.html">GPSDriver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GPSDriver_8h_source.html#l00018">GPSDriverSinks::onPosition</a>, <a class="el" href="GPSDriver_8h_source.html#l00019">GPSDriverSinks::onSatelliteInfo</a>, <a class="el" href="GPSPx4Data_8cc_source.html#l00024">GPSPx4Data::position()</a>, and <a class="el" href="GPSPx4Data_8cc_source.html#l00120">GPSPx4Data::satellites()</a>.</p>
+<p class="reference">References <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633faecfc2dffe568c10a67dbc6d3724cfde2">Activity</a>, <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633fad8a942ef2b04672adfafef0ad817a407">Busy</a>, <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633faa149e85a44aeec9140e92733d9ed694e">Cancelled</a>, <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633faf6068daa29dbb05a7ead1e3b5a48bbee">Data</a>, <a class="el" href="QGCCompression_8cc_source.html#l00114">error</a>, <a class="el" href="classGPSTransport.html#a223b49ad2995b3f0586baf0387c1f7e0">GPSTransport::fatalError()</a>, <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633fae599161956d626eda4cb0a5ffb85271c">Idle</a>, <a class="el" href="GPSTransport_8h_source.html#l00028">GPSTransport::isCancelled()</a>, <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633fa52c1415ae26d69e91093beaac88e0815">NotConfigured</a>, <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633faca3da8f495e4e628912a7798655da6c2">ProtocolError</a>, and <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633faa6bc95be5848e897dbc439dd4dc5f465">TransportError</a>.</p>
+
+</div>
+</div>
+<a id="aee6ace950dee5b9daff087016ee47c90" name="aee6ace950dee5b9daff087016ee47c90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee6ace950dee5b9daff087016ee47c90">&#9670;&#160;</a></span>supportsType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GPSDriver::supportsType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495">GPSType</a>&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether this build contains the requested native protocol implementation. </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8cc_source.html#l00116">116</a> of file <a class="el" href="GPSDriver_8cc_source.html">GPSDriver.cc</a>.</p>
 
 </div>
 </div>

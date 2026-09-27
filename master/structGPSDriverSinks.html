@@ -110,11 +110,14 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aa0f1e3a27ffbf0b7b64db241d11fd724"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab624db9787b828a71bb5761660ae8711" id="r_ab624db9787b828a71bb5761660ae8711"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(const <a class="el" href="structGPSSurveyReport.html">GPSSurveyReport</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSDriverSinks.html#ab624db9787b828a71bb5761660ae8711">onSurveyIn</a></td></tr>
 <tr class="separator:ab624db9787b828a71bb5761660ae8711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedd6adb17cbd56fbcc64b357958d6ee7" id="r_aedd6adb17cbd56fbcc64b357958d6ee7"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(const <a class="el" href="structGPSSatelliteUsageReport.html">GPSSatelliteUsageReport</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSDriverSinks.html#aedd6adb17cbd56fbcc64b357958d6ee7">onSatelliteUsage</a></td></tr>
+<tr class="memdesc:aedd6adb17cbd56fbcc64b357958d6ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count-only observations do not imply a list of satellites in view.  <br /></td></tr>
+<tr class="separator:aedd6adb17cbd56fbcc64b357958d6ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Sinks the driver pushes decoded data into, invoked on the caller thread from within configure()/receive(). </p>
+<div class="textblock"><p>Sinks the driver pushes decoded data into, invoked on the caller thread from within configure()/receiveOutcome(). Recursive operations are rejected; the caller must keep the driver alive until the enclosing operation returns. </p>
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00016">16</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00021">21</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a440d6d7dac6688fbd2ea89d83b5e18d1" name="a440d6d7dac6688fbd2ea89d83b5e18d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a440d6d7dac6688fbd2ea89d83b5e18d1">&#9670;&#160;</a></span>onPosition</h2>
@@ -128,9 +131,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00018">18</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00023">23</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00123">GPSDriver::receive()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
 
 </div>
 </div>
@@ -148,9 +151,9 @@ Public Attributes</h2></td></tr>
 
 <p>Borrowed until the synchronous callback returns. </p>
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00021">21</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00026">26</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00143">GPSDriver::handleCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
 
 </div>
 </div>
@@ -166,9 +169,29 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00019">19</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00024">24</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00123">GPSDriver::receive()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
+
+</div>
+</div>
+<a id="aedd6adb17cbd56fbcc64b357958d6ee7" name="aedd6adb17cbd56fbcc64b357958d6ee7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedd6adb17cbd56fbcc64b357958d6ee7">&#9670;&#160;</a></span>onSatelliteUsage</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void(const <a class="el" href="structGPSSatelliteUsageReport.html">GPSSatelliteUsageReport</a>&amp;)&gt; GPSDriverSinks::onSatelliteUsage</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Count-only observations do not imply a list of satellites in view. </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00029">29</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
 
 </div>
 </div>
@@ -184,9 +207,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00022">22</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00027">27</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00143">GPSDriver::handleCallback()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
 
 </div>
 </div>

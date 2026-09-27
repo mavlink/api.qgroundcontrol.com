@@ -1,6 +1,5 @@
 var GPSCorrectionDiagnostics_8h =
 [
-    [ "GPSCorrectionSubmitResult", "structGPSCorrectionSubmitResult.html", "structGPSCorrectionSubmitResult" ],
     [ "GPSCorrectionDelivery", "structGPSCorrectionDelivery.html", "structGPSCorrectionDelivery" ],
     [ "GPSCorrectionEvent", "structGPSCorrectionEvent.html", "structGPSCorrectionEvent" ],
     [ "GPSCorrectionOutcome", "GPSCorrectionDiagnostics_8h.html#a2c86a313c467b6dbcbb2b632234791bb", [

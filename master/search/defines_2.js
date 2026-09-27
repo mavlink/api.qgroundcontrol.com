@@ -10,5 +10,7 @@ var searchData=
   ['default_5flon_7',['DEFAULT_LON',['../Vehicle_8cc.html#ab87c8b8601f29acb17d27198806499fc',1,'Vehicle.cc']]],
   ['define_5fqgc_5fcolor_8',['DEFINE_QGC_COLOR',['../QGCPalette_8h.html#acccc1e682bb8802142320dc832973280',1,'QGCPalette.h']]],
   ['define_5fsetting_5fname_5fgroup_9',['DEFINE_SETTING_NAME_GROUP',['../SettingsGroup_8h.html#a346f8fadeabf1da9514fdb6b162c7c26',1,'SettingsGroup.h']]],
-  ['define_5fsettingfact_10',['DEFINE_SETTINGFACT',['../SettingsGroup_8h.html#ae940f76631471963fba28ec5b3a392eb',1,'SettingsGroup.h']]]
+  ['define_5fsettingfact_10',['DEFINE_SETTINGFACT',['../SettingsGroup_8h.html#ae940f76631471963fba28ec5b3a392eb',1,'SettingsGroup.h']]],
+  ['disable_5fmsg_5finterval_11',['DISABLE_MSG_INTERVAL',['../UBXMessages_8h.html#a9ec1a03bcc707787af3ecdedb5710389',1,'UBXMessages.h']]],
+  ['dnu_12',['DNU',['../SBFPrivate_8h.html#a800d907f74ef9813a98b99e7bc9bdc2f',1,'SBFPrivate.h']]]
 ];

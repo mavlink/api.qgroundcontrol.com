@@ -139,8 +139,8 @@ $(document).ready(function(){initNavTree('ComponentInformationCache_8cc_source.h
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classComponentInformationCache.html#ad2328d93fe3521a81807dfc2482f243d">   34</a></span>QString <a class="code hl_function" href="classComponentInformationCache.html#ad2328d93fe3521a81807dfc2482f243d">ComponentInformationCache::access</a>(<span class="keyword">const</span> QString &amp;fileTag)</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    QFile meta(metaFileName(fileTag));</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    QFile data(dataFileName(fileTag));</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span> (!meta.exists() || !data.exists()) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    QFile <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>(dataFileName(fileTag));</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span> (!meta.exists() || !<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.exists()) {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        qCDebug(ComponentInformationCacheLog) &lt;&lt; <span class="stringliteral">&quot;Cache miss for&quot;</span> &lt;&lt; fileTag;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
@@ -170,7 +170,7 @@ $(document).ready(function(){initNavTree('ComponentInformationCache_8cc_source.h
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    _cachedFiles[_nextAccessCounter] = fileTag;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    ++_nextAccessCounter;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">return</span> data.fileName();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.fileName();</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
 </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
@@ -178,19 +178,19 @@ $(document).ready(function(){initNavTree('ComponentInformationCache_8cc_source.h
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classComponentInformationCache.html#a9b77f78e3498a3f5914ddc6da5b35877">   71</a></span>QString <a class="code hl_function" href="classComponentInformationCache.html#a9b77f78e3498a3f5914ddc6da5b35877">ComponentInformationCache::insert</a>(<span class="keyword">const</span> QString &amp;fileTag, <span class="keyword">const</span> QString &amp;fileName)</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    QFile meta(metaFileName(fileTag));</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    QFile data(dataFileName(fileTag));</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    QFile <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>(dataFileName(fileTag));</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    QFile fileToCache(fileName);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">if</span> (meta.exists() || data.exists()) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">if</span> (meta.exists() || <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.exists()) {</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        qCDebug(ComponentInformationCacheLog) &lt;&lt; <span class="stringliteral">&quot;Not inserting, entry already exists&quot;</span> &lt;&lt; fileTag;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        fileToCache.remove();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">return</span> data.fileName();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.fileName();</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="comment">// move the file to the cache location (fall back to copy+remove for cross-device)</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">if</span> (!fileToCache.rename(data.fileName())) {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        qCDebug(ComponentInformationCacheLog) &lt;&lt; <span class="stringliteral">&quot;File rename failed from:to&quot;</span> &lt;&lt; fileName &lt;&lt; data.fileName() &lt;&lt; fileToCache.errorString();</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">if</span> (!fileToCache.copy(data.fileName())) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            qCWarning(ComponentInformationCacheLog) &lt;&lt; <span class="stringliteral">&quot;File copy failed from:to&quot;</span> &lt;&lt; fileName &lt;&lt; data.fileName() &lt;&lt; fileToCache.errorString();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">if</span> (!fileToCache.rename(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.fileName())) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        qCDebug(ComponentInformationCacheLog) &lt;&lt; <span class="stringliteral">&quot;File rename failed from:to&quot;</span> &lt;&lt; fileName &lt;&lt; <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.fileName() &lt;&lt; fileToCache.errorString();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">if</span> (!fileToCache.copy(<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.fileName())) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            qCWarning(ComponentInformationCacheLog) &lt;&lt; <span class="stringliteral">&quot;File copy failed from:to&quot;</span> &lt;&lt; fileName &lt;&lt; <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.fileName() &lt;&lt; fileToCache.errorString();</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">if</span> (!fileToCache.remove()) {</div>
@@ -215,7 +215,7 @@ $(document).ready(function(){initNavTree('ComponentInformationCache_8cc_source.h
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    ++_numFiles;</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    removeOldEntries();</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">return</span> data.fileName();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.fileName();</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
 </div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
@@ -232,9 +232,9 @@ $(document).ready(function(){initNavTree('ComponentInformationCache_8cc_source.h
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">if</span> (path.endsWith(_metaExtension)) {</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            QFile meta(path);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            QFile data(path.mid(0, path.length()-strlen(_metaExtension))+_cacheExtension);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            QFile <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>(path.mid(0, path.length()-strlen(_metaExtension))+_cacheExtension);</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            <span class="keywordtype">bool</span> validationFailed = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">if</span> (!data.exists()) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">if</span> (!<a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.exists()) {</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                validationFailed = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            }</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
@@ -258,7 +258,7 @@ $(document).ready(function(){initNavTree('ComponentInformationCache_8cc_source.h
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            <span class="keywordflow">if</span> (validationFailed) {</div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                qCWarning(ComponentInformationCacheLog) &lt;&lt; <span class="stringliteral">&quot;Validation failed, removing cache files&quot;</span> &lt;&lt; path;</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                meta.remove();</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                data.remove();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.remove();</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                <span class="comment">// extract the tag</span></div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                QString tag = it.fileName();</div>
@@ -285,16 +285,17 @@ $(document).ready(function(){initNavTree('ComponentInformationCache_8cc_source.h
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">while</span> (_numFiles &gt; _maxNumFiles) {</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <span class="keyword">auto</span> iter = _cachedFiles.begin();</div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        QFile meta(metaFileName(iter.value()));</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        QFile data(dataFileName(iter.value()));</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        QFile <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>(dataFileName(iter.value()));</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        qCDebug(ComponentInformationCacheLog) &lt;&lt; <span class="stringliteral">&quot;Removing cache entry num:counter:file&quot;</span> &lt;&lt; _numFiles &lt;&lt; iter.key() &lt;&lt; iter.value();</div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        meta.remove();</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        data.remove();</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.remove();</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        _cachedFiles.erase(iter);</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        --_numFiles;</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    }</div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>}</div>
 <div class="ttc" id="aComponentInformationCache_8h_html"><div class="ttname"><a href="ComponentInformationCache_8h.html">ComponentInformationCache.h</a></div></div>
+<div class="ttc" id="aFemtoMessages_8h_html_a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc"><div class="ttname"><a href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">FemtoDecodeState::data</a></div><div class="ttdeci">@ data</div></div>
 <div class="ttc" id="aQGCFileHelper_8h_html"><div class="ttname"><a href="QGCFileHelper_8h.html">QGCFileHelper.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>

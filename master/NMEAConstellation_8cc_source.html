@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/GPS/NMEA/NMEAConstellation.cc Source File</title>
+<title>QGroundControl: src/GPS/Driver/Protocols/NMEA/NMEAConstellation.cc Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,10 +104,10 @@ $(document).ready(function(){initNavTree('NMEAConstellation_8cc_source.html','')
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="namespaceNMEA.html">    3</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceNMEA.html">NMEA</a> {</div>
 <div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="namespaceNMEA.html#a3a38b5e996f5ac02d7d89a638ae1654b">    4</a></span><a class="code hl_enumeration" href="GPSConstellation_8h.html#a43579d1af08197c81deb36670a1c50d0">GPSConstellation</a> <a class="code hl_function" href="namespaceNMEA.html#a3a38b5e996f5ac02d7d89a638ae1654b">satelliteConstellation</a>(std::string_view talker, std::optional&lt;int&gt; systemId,</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>                                        std::optional&lt;int&gt; satelliteId)</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>                                        std::optional&lt;int&gt; <a class="code hl_function" href="namespaceNMEA.html#aaba60e27dab7693bd3bdf37ece9b0a76">satelliteId</a>)</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="keyword">using </span>Constellation = <a class="code hl_enumeration" href="GPSConstellation_8h.html#a43579d1af08197c81deb36670a1c50d0">GPSConstellation</a>;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">namespace </span>Id = <a class="code hl_namespace" href="namespaceGPSSatelliteIds.html">GPSSatelliteIds</a>;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">namespace </span>Id = SatelliteIds;</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span> GPS_SYSTEM_ID = 1;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span> GLONASS_SYSTEM_ID = 2;</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span> GALILEO_SYSTEM_ID = 3;</div>
@@ -119,9 +119,9 @@ $(document).ready(function(){initNavTree('NMEAConstellation_8cc_source.html','')
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span> QZSS_LEGACY_LAST_NMEA_ID = 200;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span> BEIDOU_UNAMBIGUOUS_FIRST_NMEA_ID = Id::QZSS_LAST_NMEA_ID + 1;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> ((talker == <span class="stringliteral">&quot;GP&quot;</span> || (talker == <span class="stringliteral">&quot;GN&quot;</span> &amp;&amp; (!systemId || *systemId == GPS_SYSTEM_ID))) &amp;&amp; satelliteId &amp;&amp;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        ((*satelliteId &gt;= Id::SBAS_FIRST_NMEA_ID &amp;&amp; *satelliteId &lt;= Id::SBAS_LAST_NMEA_ID) ||</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>         (*satelliteId &gt;= Id::SBAS_FIRST_PRN &amp;&amp; *satelliteId &lt;= SBAS_LAST_PRN)))</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> ((talker == <span class="stringliteral">&quot;GP&quot;</span> || (talker == <span class="stringliteral">&quot;GN&quot;</span> &amp;&amp; (!systemId || *systemId == GPS_SYSTEM_ID))) &amp;&amp; <a class="code hl_function" href="namespaceNMEA.html#aaba60e27dab7693bd3bdf37ece9b0a76">satelliteId</a> &amp;&amp;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        ((*<a class="code hl_function" href="namespaceNMEA.html#aaba60e27dab7693bd3bdf37ece9b0a76">satelliteId</a> &gt;= Id::SBAS_FIRST_NMEA_ID &amp;&amp; *<a class="code hl_function" href="namespaceNMEA.html#aaba60e27dab7693bd3bdf37ece9b0a76">satelliteId</a> &lt;= Id::SBAS_LAST_NMEA_ID) ||</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>         (*<a class="code hl_function" href="namespaceNMEA.html#aaba60e27dab7693bd3bdf37ece9b0a76">satelliteId</a> &gt;= Id::SBAS_FIRST_PRN &amp;&amp; *<a class="code hl_function" href="namespaceNMEA.html#aaba60e27dab7693bd3bdf37ece9b0a76">satelliteId</a> &lt;= SBAS_LAST_PRN)))</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">return</span> Constellation::SBAS;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (talker == <span class="stringliteral">&quot;GP&quot;</span>)</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> Constellation::GPS;</div>
@@ -155,10 +155,10 @@ $(document).ready(function(){initNavTree('NMEAConstellation_8cc_source.html','')
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                <span class="keywordflow">return</span> Constellation::Unknown;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        }</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">if</span> (!satelliteId) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceNMEA.html#aaba60e27dab7693bd3bdf37ece9b0a76">satelliteId</a>) {</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">return</span> Constellation::Unknown;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span> = *satelliteId;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span> = *<a class="code hl_function" href="namespaceNMEA.html#aaba60e27dab7693bd3bdf37ece9b0a76">satelliteId</a>;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">// Keep the established GP bucket for GPS/SBAS, matching constellation-specific GSA/GSV.</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> ((<span class="keywordtype">id</span> &gt;= Id::FIRST_LOCAL_ID &amp;&amp; <span class="keywordtype">id</span> &lt;= Id::SBAS_LAST_NMEA_ID) ||</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        (<span class="keywordtype">id</span> &gt;= LEGACY_SBAS_FIRST_PRN &amp;&amp; <span class="keywordtype">id</span> &lt;= SBAS_LAST_PRN))</div>
@@ -181,15 +181,15 @@ $(document).ready(function(){initNavTree('NMEAConstellation_8cc_source.html','')
 </div>
 <div class="ttc" id="aGPSConstellation_8h_html_a43579d1af08197c81deb36670a1c50d0"><div class="ttname"><a href="GPSConstellation_8h.html#a43579d1af08197c81deb36670a1c50d0">GPSConstellation</a></div><div class="ttdeci">GPSConstellation</div><div class="ttdef"><b>Definition</b> <a href="GPSConstellation_8h_source.html#l00003">GPSConstellation.h:4</a></div></div>
 <div class="ttc" id="aNMEAConstellation_8h_html"><div class="ttname"><a href="NMEAConstellation_8h.html">NMEAConstellation.h</a></div></div>
-<div class="ttc" id="anamespaceGPSSatelliteIds_html"><div class="ttname"><a href="namespaceGPSSatelliteIds.html">GPSSatelliteIds</a></div><div class="ttdef"><b>Definition</b> <a href="GPSConstellation_8h_source.html#l00015">GPSConstellation.h:15</a></div></div>
 <div class="ttc" id="anamespaceNMEA_html"><div class="ttname"><a href="namespaceNMEA.html">NMEA</a></div><div class="ttdef"><b>Definition</b> <a href="NMEAConstellation_8cc_source.html#l00003">NMEAConstellation.cc:3</a></div></div>
 <div class="ttc" id="anamespaceNMEA_html_a3a38b5e996f5ac02d7d89a638ae1654b"><div class="ttname"><a href="namespaceNMEA.html#a3a38b5e996f5ac02d7d89a638ae1654b">NMEA::satelliteConstellation</a></div><div class="ttdeci">GPSConstellation satelliteConstellation(std::string_view talker, std::optional&lt; int &gt; systemId, std::optional&lt; int &gt; satelliteId)</div><div class="ttdef"><b>Definition</b> <a href="NMEAConstellation_8cc_source.html#l00004">NMEAConstellation.cc:4</a></div></div>
+<div class="ttc" id="anamespaceNMEA_html_aaba60e27dab7693bd3bdf37ece9b0a76"><div class="ttname"><a href="namespaceNMEA.html#aaba60e27dab7693bd3bdf37ece9b0a76">NMEA::satelliteId</a></div><div class="ttdeci">int satelliteId(GPSConstellation constellation, int wireId)</div><div class="ttdoc">Canonical constellation-local identifier; preserve unknown/vendor ranges unchanged.</div><div class="ttdef"><b>Definition</b> <a href="NMEAConstellation_8h_source.html#l00027">NMEAConstellation.h:27</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_5275773357dfa04b7015cd1381fbacdf.html">NMEA</a></li><li class="navelem"><a class="el" href="NMEAConstellation_8cc.html">NMEAConstellation.cc</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_38cd3ecbc1efe502063aa758009bff68.html">Driver</a></li><li class="navelem"><a class="el" href="dir_c73a9e24d6a209aaceba1ac47ebd8c76.html">Protocols</a></li><li class="navelem"><a class="el" href="dir_d5707200feca93765ba79eeffaf410ab.html">NMEA</a></li><li class="navelem"><a class="el" href="NMEAConstellation_8cc.html">NMEAConstellation.cc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

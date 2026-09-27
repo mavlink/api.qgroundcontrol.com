@@ -5,5 +5,6 @@ var searchData=
   ['signingcontroller_2',['SigningController',['../classSigningChannel.html#a432d46f39f3bf8fa4ea0ac970f4bfde0',1,'SigningChannel']]],
   ['signingtest_3',['SigningTest',['../classMAVLinkSigningKeys.html#a94ad48e2e9e359faf0187245648b37f9',1,'MAVLinkSigningKeys']]],
   ['simplemissionitem_4',['SimpleMissionItem',['../classMissionItem.html#ae60c97df3f04f180f6ee2cd23e7939b3',1,'MissionItem']]],
-  ['surveycomplexitem_5',['SurveyComplexItem',['../classMissionItem.html#a278cbb9810767525b31bff76b1dda769',1,'MissionItem']]]
+  ['standardmodestest_5',['StandardModesTest',['../classMockLink.html#ab0bd3e56c2791ad608d7f9bf91108b0c',1,'MockLink']]],
+  ['surveycomplexitem_6',['SurveyComplexItem',['../classMissionItem.html#a278cbb9810767525b31bff76b1dda769',1,'MissionItem']]]
 ];

@@ -100,45 +100,59 @@ $(document).ready(function(){initNavTree('DataRateTracker_8cc_source.html',''); 
 <div class="contents">
 <a href="DataRateTracker_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="DataRateTracker_8h.html">DataRateTracker.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="foldopen" id="foldopen00003" data-start="{" data-end="}">
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="classDataRateTracker.html#a78602d89b34c9e4601907b3d8b9b1785">    3</a></span><a class="code hl_function" href="classDataRateTracker.html#a78602d89b34c9e4601907b3d8b9b1785">DataRateTracker::DataRateTracker</a>()</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>{</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>    _timer.start();</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>}</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="classDataRateTracker.html#a3f668b7eb6f092971d844d6592e2035f">    5</a></span><a class="code hl_function" href="classDataRateTracker.html#a3f668b7eb6f092971d844d6592e2035f">DataRateTracker::DataRateTracker</a>(<a class="code hl_typedef" href="classDataRateTracker.html#a4e4a41e83e9903e9c27edee83cced6c0">Clock</a> clock)</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    : _clock(clock ? std::move(clock) : <a class="code hl_typedef" href="classDataRateTracker.html#a4e4a41e83e9903e9c27edee83cced6c0">Clock</a>{<a class="code hl_namespace" href="namespaceMonotonicClock.html">MonotonicClock</a>::nowUs})</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    _windowStartedUs = _clock();</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
 </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classDataRateTracker.html#a732fef26dd29410a43c00eb2eff25c69">    8</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDataRateTracker.html#a732fef26dd29410a43c00eb2eff25c69">DataRateTracker::recordBytes</a>(qsizetype bytes)</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    _windowBytes += bytes;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    _totalBytes += <span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(bytes);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">const</span> qint64 elapsed = _timer.elapsed();</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordflow">if</span> (elapsed &gt;= kWindowMs) {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        _currentRate = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(_windowBytes) / <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(elapsed) * 1000.0;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        _windowBytes = 0;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        _rateUpdated = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        (void) _timer.restart();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        _rateUpdated = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classDataRateTracker.html#a732fef26dd29410a43c00eb2eff25c69">   11</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDataRateTracker.html#a732fef26dd29410a43c00eb2eff25c69">DataRateTracker::recordBytes</a>(qsizetype bytes)</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    _windowBytes += bytes;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    _totalBytes += <span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(bytes);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_function" href="classDataRateTracker.html#a8f14d1f0ba41614a4e5bfd60732ff94e">refresh</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
 </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classDataRateTracker.html#a385d2b12c330bd8d86d2ed9f7ade88c8">   24</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDataRateTracker.html#a385d2b12c330bd8d86d2ed9f7ade88c8">DataRateTracker::reset</a>()</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    _totalBytes = 0;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    _windowBytes = 0;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    _currentRate = 0.0;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    _rateUpdated = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    _timer.restart();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classDataRateTracker.html#a8f14d1f0ba41614a4e5bfd60732ff94e">   19</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDataRateTracker.html#a8f14d1f0ba41614a4e5bfd60732ff94e">DataRateTracker::refresh</a>()</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">const</span> quint64 now = _clock();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">const</span> quint64 elapsed = now &gt;= _windowStartedUs ? now - _windowStartedUs : 0;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span> (elapsed &gt;= kWindowUs) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        _currentRate = <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(_windowBytes) / <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(elapsed) * 1000000.0;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        _windowBytes = 0;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        _rateUpdated = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        _windowStartedUs = now;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        _rateUpdated = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classDataRateTracker.html#a385d2b12c330bd8d86d2ed9f7ade88c8">   33</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classDataRateTracker.html#a385d2b12c330bd8d86d2ed9f7ade88c8">DataRateTracker::reset</a>()</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    _totalBytes = 0;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    _windowBytes = 0;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    _currentRate = 0.0;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    _rateUpdated = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    _windowStartedUs = _clock();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+</div>
 <div class="ttc" id="aDataRateTracker_8h_html"><div class="ttname"><a href="DataRateTracker_8h.html">DataRateTracker.h</a></div></div>
-<div class="ttc" id="aclassDataRateTracker_html_a385d2b12c330bd8d86d2ed9f7ade88c8"><div class="ttname"><a href="classDataRateTracker.html#a385d2b12c330bd8d86d2ed9f7ade88c8">DataRateTracker::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Reset all counters and restart the elapsed timer.</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8cc_source.html#l00024">DataRateTracker.cc:24</a></div></div>
-<div class="ttc" id="aclassDataRateTracker_html_a732fef26dd29410a43c00eb2eff25c69"><div class="ttname"><a href="classDataRateTracker.html#a732fef26dd29410a43c00eb2eff25c69">DataRateTracker::recordBytes</a></div><div class="ttdeci">void recordBytes(qsizetype bytes)</div><div class="ttdoc">Record incoming/outgoing bytes. Call whenever data passes through.</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8cc_source.html#l00008">DataRateTracker.cc:8</a></div></div>
-<div class="ttc" id="aclassDataRateTracker_html_a78602d89b34c9e4601907b3d8b9b1785"><div class="ttname"><a href="classDataRateTracker.html#a78602d89b34c9e4601907b3d8b9b1785">DataRateTracker::DataRateTracker</a></div><div class="ttdeci">DataRateTracker()</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8cc_source.html#l00003">DataRateTracker.cc:3</a></div></div>
+<div class="ttc" id="aclassDataRateTracker_html_a385d2b12c330bd8d86d2ed9f7ade88c8"><div class="ttname"><a href="classDataRateTracker.html#a385d2b12c330bd8d86d2ed9f7ade88c8">DataRateTracker::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Reset all counters and restart the rate window.</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8cc_source.html#l00033">DataRateTracker.cc:33</a></div></div>
+<div class="ttc" id="aclassDataRateTracker_html_a3f668b7eb6f092971d844d6592e2035f"><div class="ttname"><a href="classDataRateTracker.html#a3f668b7eb6f092971d844d6592e2035f">DataRateTracker::DataRateTracker</a></div><div class="ttdeci">DataRateTracker(Clock clock=MonotonicClock::nowUs)</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8cc_source.html#l00005">DataRateTracker.cc:5</a></div></div>
+<div class="ttc" id="aclassDataRateTracker_html_a4e4a41e83e9903e9c27edee83cced6c0"><div class="ttname"><a href="classDataRateTracker.html#a4e4a41e83e9903e9c27edee83cced6c0">DataRateTracker::Clock</a></div><div class="ttdeci">std::function&lt; quint64()&gt; Clock</div><div class="ttdoc">Monotonic microseconds, injectable for deterministic window tests.</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8h_source.html#l00020">DataRateTracker.h:20</a></div></div>
+<div class="ttc" id="aclassDataRateTracker_html_a732fef26dd29410a43c00eb2eff25c69"><div class="ttname"><a href="classDataRateTracker.html#a732fef26dd29410a43c00eb2eff25c69">DataRateTracker::recordBytes</a></div><div class="ttdeci">void recordBytes(qsizetype bytes)</div><div class="ttdoc">Record incoming/outgoing bytes. Call whenever data passes through.</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8cc_source.html#l00011">DataRateTracker.cc:11</a></div></div>
+<div class="ttc" id="aclassDataRateTracker_html_a8f14d1f0ba41614a4e5bfd60732ff94e"><div class="ttname"><a href="classDataRateTracker.html#a8f14d1f0ba41614a4e5bfd60732ff94e">DataRateTracker::refresh</a></div><div class="ttdeci">void refresh()</div><div class="ttdoc">Advance the rate window without changing cumulative bytes.</div><div class="ttdef"><b>Definition</b> <a href="DataRateTracker_8cc_source.html#l00019">DataRateTracker.cc:19</a></div></div>
+<div class="ttc" id="anamespaceMonotonicClock_html"><div class="ttname"><a href="namespaceMonotonicClock.html">MonotonicClock</a></div><div class="ttdef"><b>Definition</b> <a href="MonotonicClock_8h_source.html#l00006">MonotonicClock.h:6</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

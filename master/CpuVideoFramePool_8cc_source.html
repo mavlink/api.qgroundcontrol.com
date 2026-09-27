@@ -138,15 +138,15 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">if</span> (mode == QVideoFrame::NotMapped) {</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordflow">return</span> {};</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        MapData data;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        data.planeCount = _layout.planeCount;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        MapData <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.planeCount = _layout.planeCount;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        uchar* base = <span class="keyword">reinterpret_cast&lt;</span>uchar*<span class="keyword">&gt;</span>(_backing.data());</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _layout.planeCount; ++i) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            data.data[i] = base + _layout.planeOffset[i];</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            data.bytesPerLine[i] = _layout.bytesPerLine[i];</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            data.dataSize[i] = <span class="keyword">static_cast&lt;</span>qsizetype<span class="keyword">&gt;</span>(_layout.bytesPerLine[i]) * _layout.height[i];</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.data[i] = base + _layout.planeOffset[i];</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.bytesPerLine[i] = _layout.bytesPerLine[i];</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.dataSize[i] = <span class="keyword">static_cast&lt;</span>qsizetype<span class="keyword">&gt;</span>(_layout.bytesPerLine[i]) * _layout.height[i];</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span> data;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    QVideoFrameFormat <a class="code hl_function" href="namespaceLogFormatter.html#a8ee6aabd40509c19c84a3cad40dca45e">format</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> _format; }</div>
@@ -217,15 +217,15 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            }</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            _mapped = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        }</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        MapData data;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        data.planeCount = GST_VIDEO_FRAME_N_PLANES(&amp;_frame);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; data.planeCount; ++i) {</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            data.data[i] = <span class="keyword">static_cast&lt;</span>uchar*<span class="keyword">&gt;</span>(GST_VIDEO_FRAME_PLANE_DATA(&amp;_frame, i));</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            data.bytesPerLine[i] = GST_VIDEO_FRAME_PLANE_STRIDE(&amp;_frame, i);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            data.dataSize[i] = <span class="keyword">static_cast&lt;</span>qsizetype<span class="keyword">&gt;</span>(GST_VIDEO_FRAME_PLANE_STRIDE(&amp;_frame, i)) *</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        MapData <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.planeCount = GST_VIDEO_FRAME_N_PLANES(&amp;_frame);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.planeCount; ++i) {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.data[i] = <span class="keyword">static_cast&lt;</span>uchar*<span class="keyword">&gt;</span>(GST_VIDEO_FRAME_PLANE_DATA(&amp;_frame, i));</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.bytesPerLine[i] = GST_VIDEO_FRAME_PLANE_STRIDE(&amp;_frame, i);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.dataSize[i] = <span class="keyword">static_cast&lt;</span>qsizetype<span class="keyword">&gt;</span>(GST_VIDEO_FRAME_PLANE_STRIDE(&amp;_frame, i)) *</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                               GST_VIDEO_FRAME_COMP_HEIGHT(&amp;_frame, i);</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">return</span> data;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>;</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordtype">void</span> unmap()<span class="keyword"> override</span></div>
@@ -440,6 +440,7 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>}</div>
 </div>
 <div class="ttc" id="aCpuVideoFramePool_8h_html"><div class="ttname"><a href="CpuVideoFramePool_8h.html">CpuVideoFramePool.h</a></div></div>
+<div class="ttc" id="aFemtoMessages_8h_html_a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc"><div class="ttname"><a href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">FemtoDecodeState::data</a></div><div class="ttdeci">@ data</div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>
 <div class="ttc" id="aQGCRhiCapture_8h_html"><div class="ttname"><a href="QGCRhiCapture_8h.html">QGCRhiCapture.h</a></div></div>

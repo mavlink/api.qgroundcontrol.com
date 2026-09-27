@@ -1,6 +1,6 @@
 var classVehicleGPSFactGroup =
 [
-    [ "VehicleGPSFactGroup", "classVehicleGPSFactGroup.html#a5fc335c08016c88a8060b4a106f70379", null ],
+    [ "VehicleGPSFactGroup", "classVehicleGPSFactGroup.html#a8b7783416e0e7a3cadbf622310175cb1", null ],
     [ "_handleGnssIntegrity", "classVehicleGPSFactGroup.html#abfb1a1950a8b01c984d8b63e43cb1be5", null ],
     [ "_handleGpsRawInt", "classVehicleGPSFactGroup.html#abb2793d4c4fd5533308621f4270c374c", null ],
     [ "_handleHighLatency", "classVehicleGPSFactGroup.html#a5eb8ada9fc067054a5a9ac43c61dd7c8", null ],
@@ -10,6 +10,7 @@ var classVehicleGPSFactGroup =
     [ "count", "classVehicleGPSFactGroup.html#a628f09e9cd5a080e45adac8ef911fd65", null ],
     [ "courseOverGround", "classVehicleGPSFactGroup.html#acf3f4b5031631817346d0a09fd470514", null ],
     [ "gnssIntegrityReceived", "classVehicleGPSFactGroup.html#acbd17d9cfebdad5d69674440239c6265", null ],
+    [ "gnssIntegrityTimestampUs", "classVehicleGPSFactGroup.html#a9e2e214cc7f72d2427860fc13b0c7ca1", null ],
     [ "gnssSignalQuality", "classVehicleGPSFactGroup.html#a74580fb1e5d2c45e00fdf24d75c75e31", null ],
     [ "handleMessage", "classVehicleGPSFactGroup.html#a5445e8f885a73d521d293f67a4fdae0c", null ],
     [ "hdop", "classVehicleGPSFactGroup.html#aaaa6c92f49b2842649b3f1f375b5c650", null ],

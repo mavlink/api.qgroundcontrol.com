@@ -17,12 +17,20 @@ var structGPSIntegrityReport =
       [ "Indicated", "structGPSIntegrityReport.html#a10836bc376e65f4eec2b96037cd10723acd54288fe00beb6ce0baf8e54040e1a8", null ],
       [ "Multiple", "structGPSIntegrityReport.html#a10836bc376e65f4eec2b96037cd10723aa0bf169f2539e893e00d7b1296bc4d8e", null ]
     ] ],
+    [ "correctionUseFromValue", "structGPSIntegrityReport.html#a52c81e7baa96f38b6ca0b561ad05a3eb", null ],
+    [ "freshAt", "structGPSIntegrityReport.html#a36c010866cdd929440e9e7fdc81df0b5", null ],
+    [ "jammingStateFromValue", "structGPSIntegrityReport.html#a5823fcf98139760bee70c98ce0e7be17", null ],
+    [ "spoofingStateFromValue", "structGPSIntegrityReport.html#a464a8feb4fd56ac4b4a5650dff73ea77", null ],
     [ "automaticGainControl", "structGPSIntegrityReport.html#aceb7078e7049ffd89f61cfc299c2c935", null ],
     [ "correctionCrcFailed", "structGPSIntegrityReport.html#adf77af42a041313fc4701aa13d573d8a", null ],
+    [ "correctionTimestampUs", "structGPSIntegrityReport.html#ade4fc838229fd40f51eb031ff03997d5", null ],
     [ "correctionUse", "structGPSIntegrityReport.html#a835f583f5072f9920e6d895282ce2880", null ],
     [ "jamming", "structGPSIntegrityReport.html#ad05ff7a77a796377e86eeadd38d40546", null ],
     [ "jammingIndicator", "structGPSIntegrityReport.html#a4231471d1020bf68b43403c34345cfab", null ],
+    [ "jammingTimestampUs", "structGPSIntegrityReport.html#afe6ce8e027c25dbfadabf26aa842209a", null ],
     [ "noisePerMillisecond", "structGPSIntegrityReport.html#acf4a79fb06006b69414dd1c4e5e852d2", null ],
+    [ "rfTimestampUs", "structGPSIntegrityReport.html#af888b2f00a20a37a21cd9cb98e88876a", null ],
     [ "spoofing", "structGPSIntegrityReport.html#a93d31febef3b423f22673400144ab8a3", null ],
+    [ "spoofingTimestampUs", "structGPSIntegrityReport.html#afee6e5c592efe67a3c859ebda2928d54", null ],
     [ "timestampUs", "structGPSIntegrityReport.html#a68d54c93bda13072f90d738401fbfa62", null ]
 ];

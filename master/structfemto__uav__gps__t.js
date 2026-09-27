@@ -1,0 +1,27 @@
+var structfemto__uav__gps__t =
+[
+    [ "alt", "structfemto__uav__gps__t.html#a26cdd565a8f989b7af45fb3c30e6bb4e", null ],
+    [ "alt_ellipsoid", "structfemto__uav__gps__t.html#a57e39939af918dbdeaf63c51166de9f9", null ],
+    [ "c_variance_rad", "structfemto__uav__gps__t.html#af5fe0404017b03e6802687e44082820c", null ],
+    [ "cog_rad", "structfemto__uav__gps__t.html#a72ec9c965c9fd66093dad64260f1c559", null ],
+    [ "eph", "structfemto__uav__gps__t.html#a10d828e3d3e654afea75994d464903f3", null ],
+    [ "epv", "structfemto__uav__gps__t.html#a80da93da496306df850139de173b7e43", null ],
+    [ "fix_type", "structfemto__uav__gps__t.html#af82e0de20ee89786d6c9017e83c6e536", null ],
+    [ "hdop", "structfemto__uav__gps__t.html#af9fc8cf9c35a24ca13310a2e5b71bd23", null ],
+    [ "heading", "structfemto__uav__gps__t.html#af7334c351dd8f3e0d3ea6ad704a704a6", null ],
+    [ "heading_type", "structfemto__uav__gps__t.html#aab0f8c9743832f597c170b135686d87b", null ],
+    [ "jamming_indicator", "structfemto__uav__gps__t.html#aabd44faef861bbe602b4cf0e399c9b54", null ],
+    [ "lat", "structfemto__uav__gps__t.html#a893f785c1b7036d01ba26777d5089482", null ],
+    [ "lon", "structfemto__uav__gps__t.html#a2e397d04d34beda480d273e81242b13d", null ],
+    [ "noise_per_ms", "structfemto__uav__gps__t.html#a4dfdd29d57723989eebee79022c2f0a9", null ],
+    [ "s_variance_m_s", "structfemto__uav__gps__t.html#a5a52b79776ef710ecb8a023510fffa03", null ],
+    [ "satellites_used", "structfemto__uav__gps__t.html#ae0d51a8e4a4a617ffef21e789f9024f5", null ],
+    [ "time_utc_usec", "structfemto__uav__gps__t.html#a282e011e08f75388f4e91ba42db8addf", null ],
+    [ "timestamp_time_relative", "structfemto__uav__gps__t.html#aaceb78ff52cc733627b25c2ae6f09d27", null ],
+    [ "vdop", "structfemto__uav__gps__t.html#a5224d68d6fe1eedfb2561825e1dd7b7f", null ],
+    [ "vel_d_m_s", "structfemto__uav__gps__t.html#ad009b3f3f11ed258fb892d6f6f0dc9dc", null ],
+    [ "vel_e_m_s", "structfemto__uav__gps__t.html#a1c5e34c0fae0c77d470b0c1f5359dbda", null ],
+    [ "vel_m_s", "structfemto__uav__gps__t.html#a924e218770d72fa7b0f40ce668c3bd04", null ],
+    [ "vel_n_m_s", "structfemto__uav__gps__t.html#a06a8589a9f09b0d79248fa1bc9cf2ded", null ],
+    [ "vel_ned_valid", "structfemto__uav__gps__t.html#ad2c4b7cfd70167a0e467f45bd355efaf", null ]
+];
