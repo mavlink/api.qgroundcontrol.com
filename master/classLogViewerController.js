@@ -22,6 +22,8 @@ var classLogViewerController =
     [ "openBinLog", "classLogViewerController.html#a2993d3f717f05a3442d0d4dbca623ae4", null ],
     [ "openTLog", "classLogViewerController.html#a153693d1958a57909d9c4d91d968056c", null ],
     [ "openULogFile", "classLogViewerController.html#ae25cdea0eeffe30f3c8a871c17e2d16e", null ],
+    [ "plottableFields", "classLogViewerController.html#a22f6d5d72eeaca3746c65afdb83a4db2", null ],
+    [ "plottableFieldsChanged", "classLogViewerController.html#a0e6cef4eb8a1372edf2ebcd6770dd5cd", null ],
     [ "selectedFields", "classLogViewerController.html#ad4ddb19e4b7185734502eb202a52283d", null ],
     [ "selectedFieldsChanged", "classLogViewerController.html#af1af6c5a36dbdbac0e4d446cde334901", null ],
     [ "setFieldSelected", "classLogViewerController.html#ad33e5bdf9ebc46f52c0beb13b9b21c84", null ],

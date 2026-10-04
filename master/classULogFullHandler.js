@@ -6,6 +6,7 @@ var classULogFullHandler =
     [ "data", "classULogFullHandler.html#a887f562a8490eb8360b1ebb2e792d706", null ],
     [ "dropout", "classULogFullHandler.html#abccbf60148db8c6a071403405f2633d8", null ],
     [ "error", "classULogFullHandler.html#a5aeb26dc1742a5c712d7f0c9a0b1543f", null ],
+    [ "fileHeader", "classULogFullHandler.html#a0abdac6c874eeeeb9a911d3f396d7433", null ],
     [ "finalize", "classULogFullHandler.html#a0c9f1c5ddcf64e53c78ffc2f66476535", null ],
     [ "hadFatalError", "classULogFullHandler.html#a74d2ef582fb5908c14203eb04f9aac2f", null ],
     [ "headerComplete", "classULogFullHandler.html#aedb529166109ae3e31c094fd3f819db7", null ],

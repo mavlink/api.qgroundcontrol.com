@@ -1,7 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"GPSCorrectionDiagnostics_8h.html#a897face36650335d2a8aedc6f3eeb278":[5,0,0,16,1,2,6],
-"GPSCorrectionDiagnostics_8h_source.html":[5,0,0,16,1,2],
 "GPSCorrectionEventModel_8cc.html":[5,0,0,16,1,3],
 "GPSCorrectionEventModel_8cc_source.html":[5,0,0,16,1,3],
 "GPSCorrectionEventModel_8h.html":[5,0,0,16,1,4],
@@ -119,10 +117,10 @@ var NAVTREEINDEX6 =
 "GPSIOStatus_8h.html#ab2634ce88dc52655449e319b328926adaa149e85a44aeec9140e92733d9ed694e":[5,0,0,16,7,0,2,2],
 "GPSIOStatus_8h.html#ab2634ce88dc52655449e319b328926adaf6068daa29dbb05a7ead1e3b5a48bbee":[5,0,0,16,7,0,2,0],
 "GPSIOStatus_8h_source.html":[5,0,0,16,7,0],
-"GPSIndicatorPage_8qml.html":[5,0,0,27,11],
-"GPSIndicatorPage_8qml_source.html":[5,0,0,27,11],
-"GPSIndicator_8qml.html":[5,0,0,27,10],
-"GPSIndicator_8qml_source.html":[5,0,0,27,10],
+"GPSIndicatorPage_8qml.html":[5,0,0,27,10],
+"GPSIndicatorPage_8qml_source.html":[5,0,0,27,10],
+"GPSIndicator_8qml.html":[5,0,0,27,9],
+"GPSIndicator_8qml_source.html":[5,0,0,27,9],
 "GPSManager_8cc.html":[5,0,0,16,9],
 "GPSManager_8cc.html#a9e966d873c029fd25efef719acc525ee":[5,0,0,16,9,0],
 "GPSManager_8cc_source.html":[5,0,0,16,9],
@@ -249,5 +247,7 @@ var NAVTREEINDEX6 =
 "GPSReceiverConfig_8h.html#a9c8345e9ecafef79713cf115afd5cd6b":[5,0,0,16,5,6,2],
 "GPSReceiverConfig_8h.html#ad1ed6ec244efcbd5448bad26e15bb691":[5,0,0,16,5,6,3],
 "GPSReceiverConfig_8h_source.html":[5,0,0,16,5,6],
-"GPSReceiverDescriptor_8cc.html":[5,0,0,16,5,7]
+"GPSReceiverDescriptor_8cc.html":[5,0,0,16,5,7],
+"GPSReceiverDescriptor_8cc.html#a1845998bacaa8bcc9693609c1ad61ffc":[5,0,0,16,5,7,1],
+"GPSReceiverDescriptor_8cc.html#a1de19f9f9ec00355067095555897afe4":[5,0,0,16,5,7,2]
 };

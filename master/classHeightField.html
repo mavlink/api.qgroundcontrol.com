@@ -130,8 +130,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a45420d6ca039e68ad3ef6db5a4981a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93c08455035929e201c4743a32005e8f" id="r_a93c08455035929e201c4743a32005e8f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeightField.html#a93c08455035929e201c4743a32005e8f">heightAt</a> (const QPointF &amp;world) const</td></tr>
 <tr class="separator:a93c08455035929e201c4743a32005e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68f4d578d3b4d2dd4a1fab5725dec686" id="r_a68f4d578d3b4d2dd4a1fab5725dec686"><td class="memItemLeft" align="right" valign="top">QList&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeightField.html#a68f4d578d3b4d2dd4a1fab5725dec686">samplePatch</a> (const <a class="el" href="structTileMath_1_1TileKey.html">TileMath::TileKey</a> &amp;key, int gridSize) const</td></tr>
-<tr class="separator:a68f4d578d3b4d2dd4a1fab5725dec686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f696b8885f125333bce701cd462e42d" id="r_a3f696b8885f125333bce701cd462e42d"><td class="memItemLeft" align="right" valign="top">QList&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeightField.html#a3f696b8885f125333bce701cd462e42d">samplePatch</a> (const <a class="el" href="structTileMath_1_1TileKey.html">TileMath::TileKey</a> &amp;key, int gridSize, <a class="el" href="structPatchSampler_1_1EdgeStep.html">PatchSampler::EdgeStep</a> *edgeStep=nullptr) const</td></tr>
+<tr class="separator:a3f696b8885f125333bce701cd462e42d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a571d449045f14a157c51a2f4f91b51e8" id="r_a571d449045f14a157c51a2f4f91b51e8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeightField.html#a571d449045f14a157c51a2f4f91b51e8">tileCount</a> () const</td></tr>
 <tr class="separator:a571d449045f14a157c51a2f4f91b51e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a569f1c8cada8ceacbc756d8a0a0d312e" id="r_a569f1c8cada8ceacbc756d8a0a0d312e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHeightField.html#a569f1c8cada8ceacbc756d8a0a0d312e">hasTile</a> (const <a class="el" href="structTileMath_1_1TileKey.html">TileMath::TileKey</a> &amp;key) const</td></tr>
@@ -153,7 +153,7 @@ Static Public Attributes</h2></td></tr>
 <p>Heights are sampled bilinearly between grid sample centers (pixel-center convention, clamped at tile edges), matching the terrarium tile layout.</p>
 <p>Not thread-safe: confine to one thread or synchronize externally. This includes the const sampling methods — they mutate an internal memo cache, so even concurrent reads race. </p>
 
-<p class="definition">Definition at line <a class="el" href="HeightField_8h_source.html#l00034">34</a> of file <a class="el" href="HeightField_8h_source.html">HeightField.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HeightField_8h_source.html#l00035">35</a> of file <a class="el" href="HeightField_8h_source.html">HeightField.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6949eaeea089e392be8e6a9395df10c4" name="a6949eaeea089e392be8e6a9395df10c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6949eaeea089e392be8e6a9395df10c4">&#9670;&#160;</a></span>HeightField()</h2>
@@ -209,7 +209,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Stored tile that backs samples for <em>key</em> (the tile itself when present, else its nearest stored ancestor); invalid when nothing covers it </p>
 
-<p class="definition">Definition at line <a class="el" href="HeightField_8h_source.html#l00077">77</a> of file <a class="el" href="HeightField_8h_source.html">HeightField.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HeightField_8h_source.html#l00080">80</a> of file <a class="el" href="HeightField_8h_source.html">HeightField.h</a>.</p>
 
 <p class="reference">References <a class="el" href="ElevationTilePyramid_8cc_source.html#l00086">ElevationTilePyramid::bestTileFor()</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00060">ElevationTilePyramid::View::isValid()</a>, and <a class="el" href="ElevationTilePyramid_8h_source.html#l00057">ElevationTilePyramid::View::key</a>.</p>
 
@@ -241,11 +241,11 @@ Static Public Attributes</h2></td></tr>
 
 <p>True when the backing pyramid holds this exact tile. </p>
 
-<p class="definition">Definition at line <a class="el" href="HeightField_8h_source.html#l00073">73</a> of file <a class="el" href="HeightField_8h_source.html">HeightField.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HeightField_8h_source.html#l00076">76</a> of file <a class="el" href="HeightField_8h_source.html">HeightField.h</a>.</p>
 
 <p class="reference">References <a class="el" href="ElevationTilePyramid_8h_source.html#l00068">ElevationTilePyramid::hasTile()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HeightSource_8cc_source.html#l00056">ProceduralHeightSource::requestTile()</a>, and <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00173">TerrariumTileFetcher::requestTile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HeightSource_8cc_source.html#l00056">ProceduralHeightSource::requestTile()</a>, and <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00201">TerrariumTileFetcher::requestTile()</a>.</p>
 
 </div>
 </div>
@@ -268,9 +268,9 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HeightField_8cc_source.html#l00049">49</a> of file <a class="el" href="HeightField_8cc_source.html">HeightField.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="ElevationTilePyramid_8cc_source.html#l00086">ElevationTilePyramid::bestTileFor()</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00056">ElevationTilePyramid::View::grid</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00083">ElevationTilePyramid::hasDescendant()</a>, <a class="el" href="PatchSampler_8cc_source.html#l00016">PatchSampler::heightAtUV()</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00060">ElevationTilePyramid::View::isValid()</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00057">ElevationTilePyramid::View::key</a>, <a class="el" href="TileMath_8h_source.html#l00031">TileMath::kMaxZoom</a>, <a class="el" href="TileMath_8cc_source.html#l00067">TileMath::tileForWorld()</a>, <a class="el" href="TileMath_8cc_source.html#l00058">TileMath::tileMinCorner()</a>, <a class="el" href="TileMath_8cc_source.html#l00053">TileMath::tileSpanAtZoom()</a>, <a class="el" href="TileMath_8h_source.html#l00036">TileMath::TileKey::x</a>, <a class="el" href="TileMath_8h_source.html#l00037">TileMath::TileKey::y</a>, and <a class="el" href="TileMath_8h_source.html#l00038">TileMath::TileKey::zoom</a>.</p>
+<p class="reference">References <a class="el" href="ElevationTilePyramid_8cc_source.html#l00086">ElevationTilePyramid::bestTileFor()</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00056">ElevationTilePyramid::View::grid</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00083">ElevationTilePyramid::hasDescendant()</a>, <a class="el" href="PatchSampler_8cc_source.html#l00017">PatchSampler::heightAtUV()</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00060">ElevationTilePyramid::View::isValid()</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00057">ElevationTilePyramid::View::key</a>, <a class="el" href="TileMath_8h_source.html#l00031">TileMath::kMaxZoom</a>, <a class="el" href="TileMath_8cc_source.html#l00067">TileMath::tileForWorld()</a>, <a class="el" href="TileMath_8cc_source.html#l00058">TileMath::tileMinCorner()</a>, <a class="el" href="TileMath_8cc_source.html#l00053">TileMath::tileSpanAtZoom()</a>, <a class="el" href="TileMath_8h_source.html#l00036">TileMath::TileKey::x</a>, <a class="el" href="TileMath_8h_source.html#l00037">TileMath::TileKey::y</a>, and <a class="el" href="TileMath_8h_source.html#l00038">TileMath::TileKey::zoom</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SurfacePatchModel_8cc_source.html#l00328">SurfacePatchModel::surfaceCoordinateAtScreenPoint()</a>, and <a class="el" href="SurfacePatchModel_8cc_source.html#l00319">SurfacePatchModel::terrainHeightAt()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SurfacePatchModel_8cc_source.html#l00340">SurfacePatchModel::segmentBelowTerrain()</a>, and <a class="el" href="SurfacePatchModel_8cc_source.html#l00332">SurfacePatchModel::terrainDataHeightAt()</a>.</p>
 
 </div>
 </div>
@@ -331,7 +331,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Perf instrumentation: pyramid resolutions performed so far (memoized sampling keeps this far below one per sampled vertex). Test hook, not API — semantics track the resolution strategy. </p>
 
-<p class="definition">Definition at line <a class="el" href="HeightField_8h_source.html#l00086">86</a> of file <a class="el" href="HeightField_8h_source.html">HeightField.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HeightField_8h_source.html#l00089">89</a> of file <a class="el" href="HeightField_8h_source.html">HeightField.h</a>.</p>
 
 <p class="reference">References <a class="el" href="ElevationTilePyramid_8h_source.html#l00087">ElevationTilePyramid::lookupCountForTest()</a>.</p>
 
@@ -362,12 +362,12 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Best-estimate heights changed within this rect (<a class="el" href="namespaceTileMath.html">TileMath</a> world meters, y north; min-corner + positive spans — don't use top()/bottom()). The rect is closed: patch edge vertices exactly on its boundary sample the new data, but QRectF::intersects() is false for edge-only contact, so inflate the patch rect (e.g. marginsAdded) before testing </p>
 
-<p class="reference">Referenced by <a class="el" href="HeightField_8cc_source.html#l00022">insertTile()</a>, and <a class="el" href="SurfaceModel_8cc_source.html#l00055">SurfaceModel::SurfaceModel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HeightField_8cc_source.html#l00022">insertTile()</a>, and <a class="el" href="SurfaceModel_8cc_source.html#l00072">SurfaceModel::SurfaceModel()</a>.</p>
 
 </div>
 </div>
-<a id="a68f4d578d3b4d2dd4a1fab5725dec686" name="a68f4d578d3b4d2dd4a1fab5725dec686"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68f4d578d3b4d2dd4a1fab5725dec686">&#9670;&#160;</a></span>samplePatch()</h2>
+<a id="a3f696b8885f125333bce701cd462e42d" name="a3f696b8885f125333bce701cd462e42d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f696b8885f125333bce701cd462e42d">&#9670;&#160;</a></span>samplePatch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -382,7 +382,13 @@ Static Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>gridSize</em>&#160;</td>
+          <td class="paramname"><em>gridSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPatchSampler_1_1EdgeStep.html">PatchSampler::EdgeStep</a> *&#160;</td>
+          <td class="paramname"><em>edgeStep</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -391,13 +397,13 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The (gridSize+1)^2 vertex heights of a patch, row-major from the NW corner. Empty for invalid keys or gridSize outside [1, kMaxGridSize]. gridSize must be a power of two: vertex UVs are then exact dyadic doubles, which the bit-identity guarantee below relies on. Boundary vertices resolve by canonical world position rather than the patch's own backing view, so coincident vertices of neighboring patches sample bit-identical heights even across different backing tiles — patch edges never crack where data exists. </p>
+<p>The (gridSize+1)^2 vertex heights of a patch, row-major from the NW corner. Empty for invalid keys or gridSize outside [1, kMaxGridSize]. gridSize must be a power of two: vertex UVs are then exact dyadic doubles, which the bit-identity guarantee below relies on. Boundary vertices resolve by canonical world position rather than the patch's own backing view, so coincident vertices of neighboring patches sample bit-identical heights even across different backing tiles — patch edges never crack where data exists. <em>edgeStep</em>, when set, receives the resulting in-patch step (see <a class="el" href="structPatchSampler_1_1EdgeStep.html">PatchSampler::EdgeStep</a>). </p>
 
 <p class="definition">Definition at line <a class="el" href="HeightField_8cc_source.html#l00090">90</a> of file <a class="el" href="HeightField_8cc_source.html">HeightField.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="TileMath_8cc_source.html#l00044">TileMath::isValidKey()</a>, <a class="el" href="HeightField_8h_source.html#l00044">kMaxGridSize</a>, and <a class="el" href="PatchSampler_8cc_source.html#l00030">PatchSampler::sample()</a>.</p>
+<p class="reference">References <a class="el" href="TileMath_8cc_source.html#l00044">TileMath::isValidKey()</a>, <a class="el" href="HeightField_8h_source.html#l00045">kMaxGridSize</a>, and <a class="el" href="PatchSampler_8cc_source.html#l00033">PatchSampler::sample()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PatchGeometry_8cc_source.html#l00071">PatchGeometry::sampleFromField()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PatchGeometry_8cc_source.html#l00072">PatchGeometry::sampleFromField()</a>.</p>
 
 </div>
 </div>
@@ -426,7 +432,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Tiles that must not be evicted because they back rendered patches (or resolve them as ancestors); see <a class="el" href="classElevationTilePyramid.html#a84eb05612348174b58d90bf841e05247">ElevationTilePyramid::setPinnedKeys</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="HeightField_8h_source.html#l00054">54</a> of file <a class="el" href="HeightField_8h_source.html">HeightField.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HeightField_8h_source.html#l00055">55</a> of file <a class="el" href="HeightField_8h_source.html">HeightField.h</a>.</p>
 
 <p class="reference">References <a class="el" href="ElevationTilePyramid_8h_source.html#l00079">ElevationTilePyramid::setPinnedKeys()</a>.</p>
 
@@ -455,7 +461,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="HeightField_8h_source.html#l00070">70</a> of file <a class="el" href="HeightField_8h_source.html">HeightField.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HeightField_8h_source.html#l00073">73</a> of file <a class="el" href="HeightField_8h_source.html">HeightField.h</a>.</p>
 
 <p class="reference">References <a class="el" href="ElevationTilePyramid_8h_source.html#l00074">ElevationTilePyramid::tileCount()</a>.</p>
 
@@ -484,7 +490,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>Sanity cap on patch density: rejects absurd sizes before allocation. </p>
 
-<p class="definition">Definition at line <a class="el" href="HeightField_8h_source.html#l00044">44</a> of file <a class="el" href="HeightField_8h_source.html">HeightField.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HeightField_8h_source.html#l00045">45</a> of file <a class="el" href="HeightField_8h_source.html">HeightField.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HeightField_8cc_source.html#l00090">samplePatch()</a>.</p>
 

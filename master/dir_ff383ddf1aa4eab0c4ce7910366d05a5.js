@@ -22,5 +22,7 @@ var dir_ff383ddf1aa4eab0c4ce7910366d05a5 =
     [ "AppMessages.cc", "AppMessages_8cc.html", "AppMessages_8cc" ],
     [ "AppMessages.h", "AppMessages_8h.html", "AppMessages_8h" ],
     [ "QGCCommandLineParser.cc", "QGCCommandLineParser_8cc.html", "QGCCommandLineParser_8cc" ],
-    [ "QGCCommandLineParser.h", "QGCCommandLineParser_8h.html", "QGCCommandLineParser_8h" ]
+    [ "QGCCommandLineParser.h", "QGCCommandLineParser_8h.html", "QGCCommandLineParser_8h" ],
+    [ "QGCVersionCheck.cc", "QGCVersionCheck_8cc.html", "QGCVersionCheck_8cc" ],
+    [ "QGCVersionCheck.h", "QGCVersionCheck_8h.html", "QGCVersionCheck_8h" ]
 ];

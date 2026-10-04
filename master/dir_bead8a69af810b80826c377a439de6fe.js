@@ -7,7 +7,6 @@ var dir_bead8a69af810b80826c377a439de6fe =
     [ "APMFirmwarePluginFactory.cc", "APMFirmwarePluginFactory_8cc.html", "APMFirmwarePluginFactory_8cc" ],
     [ "APMFirmwarePluginFactory.h", "APMFirmwarePluginFactory_8h.html", "APMFirmwarePluginFactory_8h" ],
     [ "APMFlightModeIndicator.qml", "APMFlightModeIndicator_8qml.html", null ],
-    [ "APMMainStatusIndicator.qml", "APMMainStatusIndicator_8qml.html", null ],
     [ "APMParameterMetaData.cc", "APMParameterMetaData_8cc.html", null ],
     [ "APMParameterMetaData.h", "APMParameterMetaData_8h.html", "APMParameterMetaData_8h" ],
     [ "APMSupportForwardingIndicator.qml", "APMSupportForwardingIndicator_8qml.html", null ],

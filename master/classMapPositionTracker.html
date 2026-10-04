@@ -180,7 +180,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a41b44a47ec3b427fadcc1664504cd9ea" id="r_a41b44a47ec3b427fadcc1664504cd9ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapPositionTracker.html#a41b44a47ec3b427fadcc1664504cd9ea">setUserInteracting</a> (bool interacting)</td></tr>
 <tr class="separator:a41b44a47ec3b427fadcc1664504cd9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25ec88d9c5a9b4ffb839b0c5e6aea452" id="r_a25ec88d9c5a9b4ffb839b0c5e6aea452"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapPositionTracker.html#a25ec88d9c5a9b4ffb839b0c5e6aea452">animating</a> () const</td></tr>
-<tr class="memdesc:a25ec88d9c5a9b4ffb839b0c5e6aea452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consumer's recenter animation is running: inset evaluation is skipped.  <br /></td></tr>
+<tr class="memdesc:a25ec88d9c5a9b4ffb839b0c5e6aea452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consumer's recenter animation is running: occluder evaluation is skipped.  <br /></td></tr>
 <tr class="separator:a25ec88d9c5a9b4ffb839b0c5e6aea452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac01aa3197a0b5f7ce55110b4ec461639" id="r_ac01aa3197a0b5f7ce55110b4ec461639"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapPositionTracker.html#ac01aa3197a0b5f7ce55110b4ec461639">setAnimating</a> (bool <a class="el" href="classMapPositionTracker.html#a25ec88d9c5a9b4ffb839b0c5e6aea452">animating</a>)</td></tr>
 <tr class="separator:ac01aa3197a0b5f7ce55110b4ec461639"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,8 +188,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0bfb7b4bf5615c8075de5e029702f23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cc1087f62668949eb35a502e8915792" id="r_a0cc1087f62668949eb35a502e8915792"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapPositionTracker.html#a0cc1087f62668949eb35a502e8915792">setFirstVehiclePositionReceived</a> (bool received)</td></tr>
 <tr class="separator:a0cc1087f62668949eb35a502e8915792"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4429ec5d1904270b23f9c77b1344cf63" id="r_a4429ec5d1904270b23f9c77b1344cf63"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapPositionTracker.html#a4429ec5d1904270b23f9c77b1344cf63">evaluateInsetFollow</a> (const QPointF &amp;vehicleScreenPoint, const QRectF &amp;centerRect, const QVariantList &amp;cornerRects)</td></tr>
-<tr class="separator:a4429ec5d1904270b23f9c77b1344cf63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a576bda5e7c07f3fca3a036ee188a8ce2" id="r_a576bda5e7c07f3fca3a036ee188a8ce2"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapPositionTracker.html#a576bda5e7c07f3fca3a036ee188a8ce2">evaluateOccluderFollow</a> (const QPointF &amp;vehicleScreenPoint, const QRectF &amp;viewportRect, const QVariantList &amp;occluderRects)</td></tr>
+<tr class="separator:a576bda5e7c07f3fca3a036ee188a8ce2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -201,7 +201,7 @@ Static Public Attributes</h2></td></tr>
 <div class="textblock"><p>Map auto-centering policy shared by the map engines (FlightMap/QtLocation and GeoMap). Owns the decisions of when and where to center:</p><ul>
 <li>one-time centering on the first valid vehicle or GCS position</li>
 <li>continuous vehicle following (keepVehicleCentered)</li>
-<li>inset-rect following: recenter when the vehicle drifts outside the unobstructed center area of the viewport (evaluateInsetFollow) Following pauses while the user interacts with the map and resumes after a cooldown. The consumer owns everything engine-specific: coordinate/screen projection, camera movement and recenter animation. </li>
+<li>occluder following: recenter when the vehicle leaves the viewport or moves under a UI element covering the map (evaluateOccluderFollow) Following pauses while the user interacts with the map and resumes after a cooldown. The consumer owns everything engine-specific: coordinate/screen projection, camera movement and recenter animation. </li>
 </ul>
 
 <p class="definition">Definition at line <a class="el" href="MapPositionTracker_8h_source.html#l00032">32</a> of file <a class="el" href="MapPositionTracker_8h_source.html">MapPositionTracker.h</a>.</p>
@@ -422,7 +422,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Consumer's recenter animation is running: inset evaluation is skipped. </p>
+<p>Consumer's recenter animation is running: occluder evaluation is skipped. </p>
 
 <p class="definition">Definition at line <a class="el" href="MapPositionTracker_8h_source.html#l00095">95</a> of file <a class="el" href="MapPositionTracker_8h_source.html">MapPositionTracker.h</a>.</p>
 
@@ -551,14 +551,14 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a4429ec5d1904270b23f9c77b1344cf63" name="a4429ec5d1904270b23f9c77b1344cf63"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4429ec5d1904270b23f9c77b1344cf63">&#9670;&#160;</a></span>evaluateInsetFollow()</h2>
+<a id="a576bda5e7c07f3fca3a036ee188a8ce2" name="a576bda5e7c07f3fca3a036ee188a8ce2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a576bda5e7c07f3fca3a036ee188a8ce2">&#9670;&#160;</a></span>evaluateOccluderFollow()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void MapPositionTracker::evaluateInsetFollow </td>
+          <td class="memname">void MapPositionTracker::evaluateOccluderFollow </td>
           <td>(</td>
           <td class="paramtype">const QPointF &amp;&#160;</td>
           <td class="paramname"><em>vehicleScreenPoint</em>, </td>
@@ -567,13 +567,13 @@ Static Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const QRectF &amp;&#160;</td>
-          <td class="paramname"><em>centerRect</em>, </td>
+          <td class="paramname"><em>viewportRect</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const QVariantList &amp;&#160;</td>
-          <td class="paramname"><em>cornerRects</em>&#160;</td>
+          <td class="paramname"><em>occluderRects</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -582,7 +582,7 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Inset-follow evaluation, called periodically by the consumer with the vehicle's current screen position, the unobstructed center rect and the (possibly empty) list of corner rects covered by UI elements. Emits recenterVehicleTo(centerRect.center()) when the vehicle is outside the center rect or under a corner rect. </p>
+<p>Occluder-follow evaluation, called periodically by the consumer with the vehicle's current screen position, the viewport rect and the (possibly empty) list of rects covered by UI elements. Emits recenterVehicleTo(viewportRect.center()) when the vehicle is outside the viewport or under an occluder. </p>
 
 <p class="definition">Definition at line <a class="el" href="MapPositionTracker_8cc_source.html#l00178">178</a> of file <a class="el" href="MapPositionTracker_8cc_source.html">MapPositionTracker.cc</a>.</p>
 
@@ -779,7 +779,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>Consumer moves the map (animated) so the vehicle lands at screenPoint. </p>
 
-<p class="reference">Referenced by <a class="el" href="MapPositionTracker_8cc_source.html#l00178">evaluateInsetFollow()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MapPositionTracker_8cc_source.html#l00178">evaluateOccluderFollow()</a>.</p>
 
 </div>
 </div>

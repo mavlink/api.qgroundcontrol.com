@@ -1,6 +1,5 @@
 var dir_822770e7d964c31c7859332655fbe74d =
 [
-    [ "ArmedIndicator.qml", "ArmedIndicator_8qml.html", null ],
     [ "BatteryIndicator.qml", "BatteryIndicator_8qml.html", null ],
     [ "EscIndicator.qml", "EscIndicator_8qml.html", null ],
     [ "EscIndicatorPage.qml", "EscIndicatorPage_8qml.html", null ],

@@ -32,6 +32,7 @@ var classLinkConfiguration =
     [ "noteConnected", "classLinkConfiguration.html#aea97ce9468e8c81e4d86d19f098a5e64", null ],
     [ "noteDisconnected", "classLinkConfiguration.html#a7e58d77570865be8a7c30cea3d8ddb9b", null ],
     [ "noteReconnectAttempt", "classLinkConfiguration.html#acaef4df58c61bacaaa4f4047f4fc01e4", null ],
+    [ "reconnectAttempts", "classLinkConfiguration.html#a2186af21c3df013a4f8b341130d3cd48", null ],
     [ "reconnectReady", "classLinkConfiguration.html#afe09d38d148ab189d3d0a0fd08e5c82a", null ],
     [ "resetReconnectBackoff", "classLinkConfiguration.html#aa91212e6eda1c725b2c21195fbd4b8cc", null ],
     [ "saveSettings", "classLinkConfiguration.html#a54ad5c6bc97a79e656559d0bc7b1a42c", null ],

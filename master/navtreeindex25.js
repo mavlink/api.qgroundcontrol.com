@@ -1,5 +1,17 @@
 var NAVTREEINDEX25 =
 {
+"classAPMFirmwarePlugin.html#a0dc3395550778fc324041f4f08ba7b40":[4,0,59,28],
+"classAPMFirmwarePlugin.html#a110b844d3987b3d697816096788fadb5":[4,0,59,10],
+"classAPMFirmwarePlugin.html#a18b9b83dbb6000b5f8570fb4f7b65c7c":[4,0,59,42],
+"classAPMFirmwarePlugin.html#a1915fe87b4f1d68effaa772588ddeb95":[4,0,59,40],
+"classAPMFirmwarePlugin.html#a1adc5b276060859f08656a6b0e4850ce":[4,0,59,12],
+"classAPMFirmwarePlugin.html#a2161637c5c656031bb7afb8767bda63a":[4,0,59,38],
+"classAPMFirmwarePlugin.html#a26d054e8ba20951e7ce6d1f769f7ceed":[4,0,59,41],
+"classAPMFirmwarePlugin.html#a369fa931b60f3ae46f7e27a21a1ae2f7":[4,0,59,9],
+"classAPMFirmwarePlugin.html#a3fbb6ec5948f62a5656f90feeb9463a8":[4,0,59,14],
+"classAPMFirmwarePlugin.html#a485edc360ce275b6663bd3407aa2b755":[4,0,59,39],
+"classAPMFirmwarePlugin.html#a4f327d225f4e01bdd25b1ee9ed0f83cf":[4,0,59,11],
+"classAPMFirmwarePlugin.html#a53aa433c2ddf97d2a6c65f9d92a4a20a":[4,0,59,21],
 "classAPMFirmwarePlugin.html#a549a8eae0be89c9de4a6b4182504bcf2":[4,0,59,45],
 "classAPMFirmwarePlugin.html#a597d14a32f43e796dba3c5bdac67ca6f":[4,0,59,43],
 "classAPMFirmwarePlugin.html#a5a414c7b5542ce08354fe6976d25f796":[4,0,59,46],
@@ -237,17 +249,5 @@ var NAVTREEINDEX25 =
 "classAPMSensorsComponent.html#a662c7981d2f447481a278f9d841ddeef":[4,0,81,7],
 "classAPMSensorsComponent.html#a6efe0cf685f03309610fdd8de46a726e":[4,0,81,10],
 "classAPMSensorsComponent.html#a80932b83308b54d4d270cc3d9a5f3ae0":[4,0,81,9],
-"classAPMSensorsComponent.html#aa6a89027a411ce9fa318fe00d7520195":[4,0,81,1],
-"classAPMSensorsComponent.html#ab5cce50b4dbe967de440c0883ad0bf0b":[4,0,81,2],
-"classAPMSensorsComponent.html#abebdbe1b16ce21564f808546917b82df":[4,0,81,6],
-"classAPMSensorsComponent.html#acb656c8f3d65c3289c26a6b0d9239910":[4,0,81,5],
-"classAPMSensorsComponent.html#ad48ed11ad1b312f4e0b328fab35a0c42":[4,0,81,3],
-"classAPMSensorsComponent.html#ae893903d3a83bae516a1b3f5addf83d7":[4,0,81,8],
-"classAPMSensorsComponentController.html":[4,0,82],
-"classAPMSensorsComponentController.html#a0216046f1552716f1491e03621e6fc4a":[4,0,82,5],
-"classAPMSensorsComponentController.html#a097d64459a2321db29beaa5d66aec48b":[4,0,82,21],
-"classAPMSensorsComponentController.html#a1a78f9ec072a35f5350a5ec1ce411a52":[4,0,82,38],
-"classAPMSensorsComponentController.html#a241a3b43415b364d746f62f094a286e0":[4,0,82,22],
-"classAPMSensorsComponentController.html#a2cb568f29a218d9f7cd2c42cb1a84ed9":[4,0,82,14],
-"classAPMSensorsComponentController.html#a3871b89d94cf7ea00443bee76c75d3a8":[4,0,82,27]
+"classAPMSensorsComponent.html#aa6a89027a411ce9fa318fe00d7520195":[4,0,81,1]
 };

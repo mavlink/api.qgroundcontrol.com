@@ -29,6 +29,7 @@ var classMockLinkFTP =
     [ "setExpireSessionAfterBursts", "classMockLinkFTP.html#a635f3d44898588bc8af36e7503b9048e", null ],
     [ "setFileList", "classMockLinkFTP.html#a1ace461ae926a2dde4448a1656800feb", null ],
     [ "setIgnoreResetSessions", "classMockLinkFTP.html#ab8cc3f680951d9ab0c055f14166b70c3", null ],
+    [ "setListDirectoryWithTimeNakError", "classMockLinkFTP.html#ad7507a2f3c3fee9a0d5cbc4de30084cf", null ],
     [ "setListDirectoryWithTimeSupported", "classMockLinkFTP.html#a67069c5e7bb59b564d49a4cd78b38434", null ],
     [ "setLogDirDotEntries", "classMockLinkFTP.html#a08aa9f84f027fa568ada6531ba4fa2a9", null ],
     [ "setLogDirEntriesWithTime", "classMockLinkFTP.html#acb7acc5990a7c2f0644a72d09dececf3", null ],

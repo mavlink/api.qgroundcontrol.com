@@ -12,6 +12,8 @@ var classSurfaceModel =
     [ "patchMeshChanged", "classSurfaceModel.html#af233b2f91b7ab948a6cae5a3a9a5aef5", null ],
     [ "patchRemoved", "classSurfaceModel.html#aabc252bca7f765b29a170188666e5506", null ],
     [ "pendingCount", "classSurfaceModel.html#aba9b50c1f08aa7d74776f34870d1877a", null ],
+    [ "renderedHeightAt", "classSurfaceModel.html#a92296ef844e195610d48f701a3c85d72", null ],
+    [ "surfaceHeightsChanged", "classSurfaceModel.html#a4011b8d6c7f614ca668d6ead322bb1d1", null ],
     [ "takeUpdateStats", "classSurfaceModel.html#afbda5faaefc4f69f571843ca8ff0a20b", null ],
     [ "update", "classSurfaceModel.html#ae77ffc926fa58aebde64140541d21c08", null ],
     [ "updateSettled", "classSurfaceModel.html#a7fd1792deca4dd07524345b6492547e8", null ],

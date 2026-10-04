@@ -3,6 +3,7 @@ var SurfaceAnalysis_8h =
     [ "SurfaceAnalysis::Seam", "structSurfaceAnalysis_1_1Seam.html", "structSurfaceAnalysis_1_1Seam" ],
     [ "SurfaceAnalysis::Hole", "structSurfaceAnalysis_1_1Hole.html", "structSurfaceAnalysis_1_1Hole" ],
     [ "SurfaceAnalysis::BadHeights", "structSurfaceAnalysis_1_1BadHeights.html", "structSurfaceAnalysis_1_1BadHeights" ],
+    [ "SurfaceAnalysis::InPatchStep", "structSurfaceAnalysis_1_1InPatchStep.html", "structSurfaceAnalysis_1_1InPatchStep" ],
     [ "SurfaceAnalysis::ViewState", "structSurfaceAnalysis_1_1ViewState.html", "structSurfaceAnalysis_1_1ViewState" ],
     [ "SurfaceAnalysis::Report", "structSurfaceAnalysis_1_1Report.html", "structSurfaceAnalysis_1_1Report" ],
     [ "HoleCause", "SurfaceAnalysis_8h.html#a09d8ac52384bf353985f4f18125c598b", [

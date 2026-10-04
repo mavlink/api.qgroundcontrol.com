@@ -38,12 +38,13 @@ var searchData=
   ['bootloader_35',['bootloader',['../structSerialConnectionSettings.html#ae26f7c2cb9d7e778bc39e28996051d24',1,'SerialConnectionSettings::bootloader'],['../structSerialPortManager_1_1Port.html#ad48693b763641aa262f6fb0cffc041ca',1,'SerialPortManager::Port::bootloader']]],
   ['bottomrightlat_36',['bottomRightLat',['../structTileSetRecord.html#ae37f8cad8dbc9f776a1007e93d2c8706',1,'TileSetRecord']]],
   ['bottomrightlon_37',['bottomRightLon',['../structTileSetRecord.html#a3c3897b9cfffd8d9870fc470aaae7c5a',1,'TileSetRecord']]],
-  ['brand_38',['brand',['../classCameraMetaData.html#a24a1e0a71a04263ddb72d1d8ea452b4b',1,'CameraMetaData']]],
-  ['buildings_39',['buildings',['../classOsmBuildingHandler.html#a523f80080a0ec655f85f560bc1195c99',1,'OsmBuildingHandler']]],
-  ['buttonelapsedtimer_40',['buttonElapsedTimer',['../classAssignedButtonAction.html#ad5b2ffceb459754ff4f6c2065475250b',1,'AssignedButtonAction']]],
-  ['bytes_41',['bytes',['../structUdpDrainBudget.html#ac45b53a1a88345537e99d9e18266f7ad',1,'UdpDrainBudget::bytes'],['../structNTRIPHttpRequest.html#a59dc9f73b3767cf57b8c5e8f8fff92f6',1,'NTRIPHttpRequest::bytes'],['../structGPSRTCMReport.html#a25a2faf3a6a015de3c077392a0e8ad43',1,'GPSRTCMReport::bytes'],['../structGPSCorrectionEvent.html#a66ae34ca64cab4624b4cc08860062fa4',1,'GPSCorrectionEvent::bytes']]],
-  ['bytesconsumed_42',['bytesConsumed',['../structGPSDecodeResult.html#a08c70e176e0b86e1d47ebf2392152721',1,'GPSDecodeResult']]],
-  ['bytesize_43',['byteSize',['../structCpuVideoFramePool_1_1PlaneLayout.html#aa9f8fddad8dae07da75d73e81287d798',1,'CpuVideoFramePool::PlaneLayout']]],
-  ['bytesperline_44',['bytesPerLine',['../structCpuVideoFramePool_1_1PlaneLayout.html#a779183c21da94c29b680303fbfb20d40',1,'CpuVideoFramePool::PlaneLayout']]],
-  ['bytesread_45',['bytesRead',['../structGPSReadResult.html#a847b4c65391fbefb7241b7abd332a448',1,'GPSReadResult']]]
+  ['boundaryzoom_38',['boundaryZoom',['../structPatchSampler_1_1EdgeStep.html#a536a8fcb7514726c5c17b55433868ff8',1,'PatchSampler::EdgeStep']]],
+  ['brand_39',['brand',['../classCameraMetaData.html#a24a1e0a71a04263ddb72d1d8ea452b4b',1,'CameraMetaData']]],
+  ['buildings_40',['buildings',['../classOsmBuildingHandler.html#a523f80080a0ec655f85f560bc1195c99',1,'OsmBuildingHandler']]],
+  ['buttonelapsedtimer_41',['buttonElapsedTimer',['../classAssignedButtonAction.html#ad5b2ffceb459754ff4f6c2065475250b',1,'AssignedButtonAction']]],
+  ['bytes_42',['bytes',['../structUdpDrainBudget.html#ac45b53a1a88345537e99d9e18266f7ad',1,'UdpDrainBudget::bytes'],['../structNTRIPHttpRequest.html#a59dc9f73b3767cf57b8c5e8f8fff92f6',1,'NTRIPHttpRequest::bytes'],['../structGPSRTCMReport.html#a25a2faf3a6a015de3c077392a0e8ad43',1,'GPSRTCMReport::bytes'],['../structGPSCorrectionEvent.html#a66ae34ca64cab4624b4cc08860062fa4',1,'GPSCorrectionEvent::bytes']]],
+  ['bytesconsumed_43',['bytesConsumed',['../structGPSDecodeResult.html#a08c70e176e0b86e1d47ebf2392152721',1,'GPSDecodeResult']]],
+  ['bytesize_44',['byteSize',['../structCpuVideoFramePool_1_1PlaneLayout.html#aa9f8fddad8dae07da75d73e81287d798',1,'CpuVideoFramePool::PlaneLayout']]],
+  ['bytesperline_45',['bytesPerLine',['../structCpuVideoFramePool_1_1PlaneLayout.html#a779183c21da94c29b680303fbfb20d40',1,'CpuVideoFramePool::PlaneLayout']]],
+  ['bytesread_46',['bytesRead',['../structGPSReadResult.html#a847b4c65391fbefb7241b7abd332a448',1,'GPSReadResult']]]
 ];

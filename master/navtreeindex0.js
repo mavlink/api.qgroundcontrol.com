@@ -235,8 +235,6 @@ var NAVTREEINDEX0 =
 "APMLoggingComponent_8cc_source.html":[5,0,0,5,0,56],
 "APMLoggingComponent_8h.html":[5,0,0,5,0,57],
 "APMLoggingComponent_8h_source.html":[5,0,0,5,0,57],
-"APMMainStatusIndicator_8qml.html":[5,0,0,9,0,7],
-"APMMainStatusIndicator_8qml_source.html":[5,0,0,9,0,7],
 "APMMavlinkStreamRateSettings_8cc.html":[5,0,0,25,2],
 "APMMavlinkStreamRateSettings_8cc.html#a0fbee5f5644da93574f39b4599d297d2":[5,0,0,25,2,0],
 "APMMavlinkStreamRateSettings_8cc_source.html":[5,0,0,25,2],
@@ -249,5 +247,7 @@ var NAVTREEINDEX0 =
 "APMMotorComponent_8qml.html":[5,0,0,5,0,60],
 "APMMotorComponent_8qml_source.html":[5,0,0,5,0,60],
 "APMNotSupported_8qml.html":[5,0,0,5,0,61],
-"APMNotSupported_8qml_source.html":[5,0,0,5,0,61]
+"APMNotSupported_8qml_source.html":[5,0,0,5,0,61],
+"APMParameterMetaData_8cc.html":[5,0,0,9,0,7],
+"APMParameterMetaData_8cc_source.html":[5,0,0,9,0,7]
 };

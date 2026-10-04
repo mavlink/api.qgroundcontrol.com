@@ -7,6 +7,7 @@ var dir_2fdead82b382f0c5798408a3d7c9a4d5 =
     [ "MissionItemIndicator.qml", "MissionItemIndicator_8qml.html", null ],
     [ "MissionItemIndicatorDrag.qml", "MissionItemIndicatorDrag_8qml.html", null ],
     [ "MissionItemIndicatorGroup.qml", "MissionItemIndicatorGroup_8qml.html", null ],
+    [ "MissionItemSelectionPanel.qml", "MissionItemSelectionPanel_8qml.html", null ],
     [ "MissionLineView.qml", "MissionLineView_8qml.html", null ],
     [ "PlanMapItems.qml", "PlanMapItems_8qml.html", null ],
     [ "ProximityRadarMapView.qml", "ProximityRadarMapView_8qml.html", null ],

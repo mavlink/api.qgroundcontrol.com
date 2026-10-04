@@ -22,5 +22,6 @@ var classGimbalController =
     [ "setActiveGimbal", "classGimbalController.html#aab3cb61601df168271df2bab4e5e0ecf", null ],
     [ "setGimbalRetract", "classGimbalController.html#ac55b7d4a2b2a9d950eafe028df4f35a0", null ],
     [ "setGimbalYawLock", "classGimbalController.html#a10efc3bcf4dcf9fdff41d7f9b5338d11", null ],
-    [ "showAcquireGimbalControlPopup", "classGimbalController.html#ac9665784cc04a96986676a9080910bef", null ]
+    [ "showAcquireGimbalControlPopup", "classGimbalController.html#ac9665784cc04a96986676a9080910bef", null ],
+    [ "GimbalControllerDiscoveryTest", "classGimbalController.html#a98b2ec09b916d5598eee6251361c2c89", null ]
 ];

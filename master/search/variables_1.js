@@ -57,7 +57,7 @@ var searchData=
   ['applyidentifiers_54',['applyIdentifiers',['../structMixer_1_1Rule.html#a8ef4ca9c49663b783e7c06128ea0dd82',1,'Mixer::Rule']]],
   ['assembleepochs_55',['assembleEpochs',['../structGPSNativeUBX_1_1DecodeContext.html#a8d74c0ab6add434eed397844c3aba1d5',1,'GPSNativeUBX::DecodeContext']]],
   ['astatus_56',['astatus',['../structubx__payload__rx__mon__hw__ubx6__t.html#ab6a07ea3261a3991daeb044cf5e4e489',1,'ubx_payload_rx_mon_hw_ubx6_t::aStatus'],['../structubx__payload__rx__mon__hw__ubx7__t.html#af5d852699e4e85e90c092429dfbb0940',1,'ubx_payload_rx_mon_hw_ubx7_t::aStatus']]],
-  ['at_57',['at',['../structSurfaceAnalysis_1_1Hole.html#aeaae1081e657ced1d0387f1b9a25542b',1,'SurfaceAnalysis::Hole']]],
+  ['at_57',['at',['../structSurfaceAnalysis_1_1Hole.html#aeaae1081e657ced1d0387f1b9a25542b',1,'SurfaceAnalysis::Hole::at'],['../structSurfaceAnalysis_1_1InPatchStep.html#a8e8989905b0486c61ebb9af1d4593d9c',1,'SurfaceAnalysis::InPatchStep::at']]],
   ['attitude_58',['attitude',['../structGeoTagData.html#a9574fe41ee6c7cfafc7c8efa5917db4b',1,'GeoTagData']]],
   ['authentication_59',['authentication',['../structNTRIPMountpoint.html#a8db63ad90c63ff5888fdee6386fdccdd',1,'NTRIPMountpoint']]],
   ['autoconnect_60',['autoConnect',['../structSerialConnectionSettings.html#abc789a821434e3399c36129570c4a99c',1,'SerialConnectionSettings']]],

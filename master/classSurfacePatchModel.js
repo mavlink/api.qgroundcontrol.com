@@ -35,6 +35,7 @@ var classSurfacePatchModel =
     [ "rowCount", "classSurfacePatchModel.html#a4357f2e1b1c84246f3b917961948a65f", null ],
     [ "scene", "classSurfacePatchModel.html#ab3bc8344b8936a2710d553a071519441", null ],
     [ "sceneChanged", "classSurfacePatchModel.html#a994f693b651ee21e4624a05cbff92368", null ],
+    [ "segmentBelowTerrain", "classSurfacePatchModel.html#a849c1e899c18e46bff1378b49cf3454b", null ],
     [ "setDebugHills", "classSurfacePatchModel.html#a421761f2f73dab500e88e9a46bc3ff36", null ],
     [ "setMapType", "classSurfacePatchModel.html#ad5177c3b8e353b85292aae16c28ed375", null ],
     [ "setScene", "classSurfacePatchModel.html#a9a753d55d0511bcbf07775f1d682a695", null ],
@@ -51,6 +52,8 @@ var classSurfacePatchModel =
     [ "surfaceCoordinateAtScreenPoint", "classSurfacePatchModel.html#a64b5c0ace2b67b88f0df9e4bbc79dc2b", null ],
     [ "terrain", "classSurfacePatchModel.html#ad520cf1a3073f417a7bbf2ed48b75557", null ],
     [ "terrainChanged", "classSurfacePatchModel.html#a69b17fb177776d28bf3633add4bcf3b5", null ],
+    [ "terrainDataChanged", "classSurfacePatchModel.html#a08fa5121312bd68f2bc2300e4a02334e", null ],
+    [ "terrainDataHeightAt", "classSurfacePatchModel.html#a46e15f76aa3cd5a5d11dbda736acfa71", null ],
     [ "terrainHeightAt", "classSurfacePatchModel.html#aebba686a35ebee1bcef3cd7491efb48b", null ],
     [ "terrainHeightsChanged", "classSurfacePatchModel.html#a6299ac12e78436fc69be76abb3008d00", null ]
 ];

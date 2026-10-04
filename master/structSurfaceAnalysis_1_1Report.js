@@ -7,6 +7,7 @@ var structSurfaceAnalysis_1_1Report =
     [ "cameraHeight", "structSurfaceAnalysis_1_1Report.html#af3d00788205de11fdecb4e65dc6c9514", null ],
     [ "degraded", "structSurfaceAnalysis_1_1Report.html#a34273905db7fd40e19cd846520028b5c", null ],
     [ "holes", "structSurfaceAnalysis_1_1Report.html#a73efcded836b5ce95a47699529203652", null ],
+    [ "inPatchSteps", "structSurfaceAnalysis_1_1Report.html#ac5e6fb94ddda2fe35b9276d68afb1517", null ],
     [ "maxSurfaceNearCamera", "structSurfaceAnalysis_1_1Report.html#ab32c0ed131522f49865cb131e653547b", null ],
     [ "minStep", "structSurfaceAnalysis_1_1Report.html#ade3fc71cf6fe89a06f5dfd8e4c311d86", null ],
     [ "pending", "structSurfaceAnalysis_1_1Report.html#a50fee97afd6be9d5d27a463b798ad118", null ],

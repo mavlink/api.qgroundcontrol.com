@@ -149,135 +149,131 @@ $(document).ready(function(){initNavTree('LogViewerAltChart_8qml_source.html',''
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    Component.onCompleted: {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        _altSeries = _altSeriesComp.createObject(_base.graphsView, {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            axisX: _base.xAxis,</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            axisY: _base.yAxis</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        })</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        _base.graphsView.addSeries(_altSeries)</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    function _refreshSeries() {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        const fieldName = control.altFieldName</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        if (!logParser.parseComplete || fieldName.length === 0 || !_altSeries) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            if (_altSeries) _altSeries.clear()</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            return</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        _altSeries = _altSeriesComp.createObject(_base.graphsView)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        _base.graphsView.addSeries(_altSeries)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    function _refreshSeries() {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        const fieldName = control.altFieldName</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        if (!logParser.parseComplete || fieldName.length === 0 || !_altSeries) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            if (_altSeries) _altSeries.clear()</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            return</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        const pixelWidth = Math.max(1, Math.floor(_base.graphsView.plotArea.width))</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        const points = logParser.fieldSamplesFiltered(fieldName, _base.zoomMinX, _base.zoomMaxX, pixelWidth)</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        const pixelWidth = Math.max(1, Math.floor(_base.graphsView.plotArea.width))</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        const points = logParser.fieldSamplesFiltered(fieldName, _base.zoomMinX, _base.zoomMaxX, pixelWidth)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        _altSeries.clear()</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        if (!points || points.length === 0) return</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        _altSeries.clear()</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        if (!points || points.length === 0) return</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        let minY = Number.MAX_VALUE</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        let maxY = -Number.MAX_VALUE</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        for (let i = 0; i &lt; points.length; i++) {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            _altSeries.append(points[i].x, points[i].y)</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            if (points[i].y &lt; minY) minY = points[i].y</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            if (points[i].y &gt; maxY) maxY = points[i].y</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        // Track full-dataset min/max (not just visible window)</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        const fr = logParser.fieldMinMax(fieldName)</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        if (fr &amp;&amp; fr.min !== undefined &amp;&amp; fr.min &lt;= fr.max) {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            _altMin = fr.min</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            _altMax = fr.max</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            _hasAltRange = true</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        } else {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            _hasAltRange = false</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        const pad = Math.max(1, (maxY - minY) * 0.05)</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        _base.yAxis.min = minY - pad</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        _base.yAxis.max = maxY + pad</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        if (_base.markerVisible) {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            _markerAltValue = logParser.fieldValueAt(control.altFieldName, _base.markerXValue)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    // -------------------------------------------------------------------------</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    // Cursor helpers</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    // -------------------------------------------------------------------------</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    function _initCursor() {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        if (!logParser.parseComplete || _base.xAxis.max &lt;= _base.xAxis.min) return</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        const mid = (_base.xAxis.min + _base.xAxis.max) / 2</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        _base.setCursor(mid)</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        control.markerChanged(mid)</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    // -------------------------------------------------------------------------</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    // Connections</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    // -------------------------------------------------------------------------</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    Connections {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        target: logParser</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        function onParseCompleteChanged() {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            if (!logParser.parseComplete) {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                if (_altSeries) _altSeries.clear()</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                _hasAltRange = false</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                control.markerCleared()</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                return</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            }</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            const hasRange = logParser.minTimestamp &gt;= 0 &amp;&amp; logParser.maxTimestamp &gt; logParser.minTimestamp</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>            _base.initRange(hasRange ? logParser.minTimestamp : 0,</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                            hasRange ? logParser.maxTimestamp : 1)</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            Qt.callLater(control._initCursor)</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        }</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    Connections {</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        target: _base</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        function onZoomRangeSet(minX, maxX) { Qt.callLater(_refreshSeries) }</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        function onCursorPositionSet(t)     { _markerAltValue = logParser.fieldValueAt(altFieldName, t) }</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        function onCursorMoved(t)           { control.markerChanged(t) }</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        function onZoomApplied(minX, maxX)  { control.zoomApplied(minX, maxX) }</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    onVisibleChanged: {</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        if (visible &amp;&amp; logParser.parseComplete &amp;&amp; !_base.markerVisible) {</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>            Qt.callLater(_initCursor)</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        }</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    // -------------------------------------------------------------------------</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    // Base chart</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    // -------------------------------------------------------------------------</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    LogViewerBaseChart {</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        id: _base</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        anchors.fill: parent</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        logParser: control.logParser</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        xAxisShowLocalTime: control.xAxisShowLocalTime</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        yAxisTitle: qsTr(&quot;Alt (m)&quot;)</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        popupYOffset: ScreenTools.defaultFontPixelHeight * 0.4</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        // ---- Chart-specific popup rows ----</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        QGCLabel {</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            text: altFieldName</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            font.bold: true</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            elide: Text.ElideMiddle</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            width: _base.popupWidth - (ScreenTools.defaultFontPixelWidth * 2)</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        let minY = Number.MAX_VALUE</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        let maxY = -Number.MAX_VALUE</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        for (let i = 0; i &lt; points.length; i++) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            _altSeries.append(points[i].x, points[i].y)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            if (points[i].y &lt; minY) minY = points[i].y</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            if (points[i].y &gt; maxY) maxY = points[i].y</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        // Track full-dataset min/max (not just visible window)</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        const fr = logParser.fieldMinMax(fieldName)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        if (fr &amp;&amp; fr.min !== undefined &amp;&amp; fr.min &lt;= fr.max) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            _altMin = fr.min</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            _altMax = fr.max</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            _hasAltRange = true</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        } else {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            _hasAltRange = false</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        const pad = Math.max(1, (maxY - minY) * 0.05)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        _base.yAxis.min = minY - pad</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        _base.yAxis.max = maxY + pad</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        if (_base.markerVisible) {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            _markerAltValue = logParser.fieldValueAt(control.altFieldName, _base.markerXValue)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    // -------------------------------------------------------------------------</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    // Cursor helpers</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    // -------------------------------------------------------------------------</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    function _initCursor() {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        if (!logParser.parseComplete || _base.xAxis.max &lt;= _base.xAxis.min) return</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        const mid = (_base.xAxis.min + _base.xAxis.max) / 2</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        _base.setCursor(mid)</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        control.markerChanged(mid)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    // -------------------------------------------------------------------------</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    // Connections</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    // -------------------------------------------------------------------------</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    Connections {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        target: logParser</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        function onParseCompleteChanged() {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            if (!logParser.parseComplete) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                if (_altSeries) _altSeries.clear()</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                _hasAltRange = false</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                control.markerCleared()</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                return</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            const hasRange = logParser.minTimestamp &gt;= 0 &amp;&amp; logParser.maxTimestamp &gt; logParser.minTimestamp</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            _base.initRange(hasRange ? logParser.minTimestamp : 0,</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                            hasRange ? logParser.maxTimestamp : 1)</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            Qt.callLater(control._initCursor)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    Connections {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        target: _base</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        function onZoomRangeSet(minX, maxX) { Qt.callLater(_refreshSeries) }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        function onCursorPositionSet(t)     { _markerAltValue = logParser.fieldValueAt(altFieldName, t) }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        function onCursorMoved(t)           { control.markerChanged(t) }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        function onZoomApplied(minX, maxX)  { control.zoomApplied(minX, maxX) }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    onVisibleChanged: {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        if (visible &amp;&amp; logParser.parseComplete &amp;&amp; !_base.markerVisible) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            Qt.callLater(_initCursor)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    // -------------------------------------------------------------------------</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    // Base chart</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    // -------------------------------------------------------------------------</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    LogViewerBaseChart {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        id: _base</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        anchors.fill: parent</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        logParser: control.logParser</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        xAxisShowLocalTime: control.xAxisShowLocalTime</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        yAxisTitle: qsTr(&quot;Alt (m)&quot;)</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        popupYOffset: ScreenTools.defaultFontPixelHeight * 0.4</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        // ---- Chart-specific popup rows ----</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        QGCLabel {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            text: altFieldName</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            font.bold: true</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            elide: Text.ElideMiddle</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            width: _base.popupWidth - (ScreenTools.defaultFontPixelWidth * 2)</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        RowLayout {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            spacing: ScreenTools.defaultFontPixelWidth * 0.3</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        RowLayout {</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            spacing: ScreenTools.defaultFontPixelWidth * 0.3</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            QGCLabel { text: qsTr(&quot;Current&quot;) }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>            QGCLabel { text: isNaN(_markerAltValue) ? &quot;—&quot; : _markerAltValue.toFixed(1) + &quot; m&quot;; font.bold: true }</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            QGCLabel { text: qsTr(&quot;Current&quot;) }</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            QGCLabel { text: isNaN(_markerAltValue) ? &quot;—&quot; : _markerAltValue.toFixed(1) + &quot; m&quot;; font.bold: true }</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            Item { visible: _hasAltRange; width: ScreenTools.defaultFontPixelWidth * 0.5 }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            Item { visible: _hasAltRange; width: ScreenTools.defaultFontPixelWidth * 0.5 }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            QGCLabel { visible: _hasAltRange; text: qsTr(&quot;Min&quot;) }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            QGCLabel { visible: _hasAltRange; text: _altMin.toFixed(1) + &quot; m&quot;; font.bold: true }</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            QGCLabel { visible: _hasAltRange; text: qsTr(&quot;Min&quot;) }</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            QGCLabel { visible: _hasAltRange; text: _altMin.toFixed(1) + &quot; m&quot;; font.bold: true }</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            Item { visible: _hasAltRange; width: ScreenTools.defaultFontPixelWidth * 0.5 }</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            QGCLabel { visible: _hasAltRange; text: qsTr(&quot;Max&quot;) }</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            QGCLabel { visible: _hasAltRange; text: _altMax.toFixed(1) + &quot; m&quot;; font.bold: true }</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        }</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>}</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            Item { visible: _hasAltRange; width: ScreenTools.defaultFontPixelWidth * 0.5 }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            QGCLabel { visible: _hasAltRange; text: qsTr(&quot;Max&quot;) }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            QGCLabel { visible: _hasAltRange; text: _altMax.toFixed(1) + &quot; m&quot;; font.bold: true }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

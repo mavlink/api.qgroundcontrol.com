@@ -35,6 +35,8 @@ var classQGroundControlQmlGlobal =
     [ "mavlinkSystemIDChanged", "classQGroundControlQmlGlobal.html#a738d91ed36590bb49d820dd747281b70", null ],
     [ "missionCommandTree", "classQGroundControlQmlGlobal.html#a2fce76638ca82bbd5da016b416910c1d", null ],
     [ "multiVehicleManager", "classQGroundControlQmlGlobal.html#ac248b44759dc15adceedb29dc1eda482", null ],
+    [ "newStableVersion", "classQGroundControlQmlGlobal.html#a4239dd64310c559a104e2627a99d84cb", null ],
+    [ "newStableVersionChanged", "classQGroundControlQmlGlobal.html#aa535e665ace4bdec3d96ba8c81ad5e4a", null ],
     [ "ntripManager", "classQGroundControlQmlGlobal.html#ae639513186ed283c6cc05156e813a8e0", null ],
     [ "parameterFileExtension", "classQGroundControlQmlGlobal.html#ac0bda5b0c6fe6e26f6f8ab1261f886a7", null ],
     [ "px4ProFirmwareSupported", "classQGroundControlQmlGlobal.html#a75032472b1daef5cc4ae94276517f8cc", null ],

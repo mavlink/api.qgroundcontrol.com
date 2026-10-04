@@ -139,6 +139,7 @@ var annotated_dup =
     [ "SurfaceAnalysis", "namespaceSurfaceAnalysis.html", [
       [ "BadHeights", "structSurfaceAnalysis_1_1BadHeights.html", "structSurfaceAnalysis_1_1BadHeights" ],
       [ "Hole", "structSurfaceAnalysis_1_1Hole.html", "structSurfaceAnalysis_1_1Hole" ],
+      [ "InPatchStep", "structSurfaceAnalysis_1_1InPatchStep.html", "structSurfaceAnalysis_1_1InPatchStep" ],
       [ "Report", "structSurfaceAnalysis_1_1Report.html", "structSurfaceAnalysis_1_1Report" ],
       [ "Seam", "structSurfaceAnalysis_1_1Seam.html", "structSurfaceAnalysis_1_1Seam" ],
       [ "ViewState", "structSurfaceAnalysis_1_1ViewState.html", "structSurfaceAnalysis_1_1ViewState" ]
@@ -489,6 +490,7 @@ var annotated_dup =
     [ "MapboxSatelliteMapProvider", "classMapboxSatelliteMapProvider.html", "classMapboxSatelliteMapProvider" ],
     [ "MapboxStreetMapProvider", "classMapboxStreetMapProvider.html", "classMapboxStreetMapProvider" ],
     [ "MapboxStreetsBasicMapProvider", "classMapboxStreetsBasicMapProvider.html", "classMapboxStreetsBasicMapProvider" ],
+    [ "MapMarkerGrouping", "classMapMarkerGrouping.html", "classMapMarkerGrouping" ],
     [ "MappedFrame", "structMappedFrame.html", "structMappedFrame" ],
     [ "MapPositionTracker", "classMapPositionTracker.html", "classMapPositionTracker" ],
     [ "MapProvider", "classMapProvider.html", "classMapProvider" ],
@@ -686,6 +688,7 @@ var annotated_dup =
     [ "QGCTileCacheDatabase", "classQGCTileCacheDatabase.html", "classQGCTileCacheDatabase" ],
     [ "QGCTileSet", "structQGCTileSet.html", "structQGCTileSet" ],
     [ "QGCUpdateTileDownloadStateTask", "classQGCUpdateTileDownloadStateTask.html", "classQGCUpdateTileDownloadStateTask" ],
+    [ "QGCVersionCheck", "classQGCVersionCheck.html", "classQGCVersionCheck" ],
     [ "QGCVideoStreamInfo", "classQGCVideoStreamInfo.html", "classQGCVideoStreamInfo" ],
     [ "QGeoFileTileCacheQGC", "classQGeoFileTileCacheQGC.html", "classQGeoFileTileCacheQGC" ],
     [ "QGeoServiceProviderFactoryQGC", "classQGeoServiceProviderFactoryQGC.html", "classQGeoServiceProviderFactoryQGC" ],

@@ -9,7 +9,7 @@ var classFlightPathGeometry =
     [ "pointCountChanged", "classFlightPathGeometry.html#af95c900d8e86e629c8c612816e5679ce", null ],
     [ "scene", "classFlightPathGeometry.html#a1fe7f61857305186ec7653466ae0ef9e", null ],
     [ "sceneChanged", "classFlightPathGeometry.html#a4bb95c358c99f3172a4f17c71da3196a", null ],
-    [ "setPath", "classFlightPathGeometry.html#abb1cbd84bf92afa85b079a59ccd123d0", null ],
+    [ "setPath", "classFlightPathGeometry.html#a84aed1360278dc2f2610f21bd336c844", null ],
     [ "setScene", "classFlightPathGeometry.html#a7b73d70a1edee7bd1ae4ff4230f1729d", null ],
     [ "updateLastPoint", "classFlightPathGeometry.html#af157113d6f3e8781665e4038a99df17b", null ],
     [ "kFloatsPerVertex", "classFlightPathGeometry.html#a0367c9c4c71da3e0a904005f2aef128e", null ]

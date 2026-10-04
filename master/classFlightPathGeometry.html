@@ -136,9 +136,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acf3bd72c5ba838c6bccc21c26728e897"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14b7e3967e14f507b226fd991d112325" id="r_a14b7e3967e14f507b226fd991d112325"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightPathGeometry.html#a14b7e3967e14f507b226fd991d112325">pointCount</a> () const</td></tr>
 <tr class="separator:a14b7e3967e14f507b226fd991d112325"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb1cbd84bf92afa85b079a59ccd123d0" id="r_abb1cbd84bf92afa85b079a59ccd123d0"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightPathGeometry.html#abb1cbd84bf92afa85b079a59ccd123d0">setPath</a> (const QVariantList &amp;coordinates)</td></tr>
-<tr class="memdesc:abb1cbd84bf92afa85b079a59ccd123d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replace the whole path (QGeoCoordinate variants, <a class="el" href="classTrajectoryPoints.html#ae29069264956e4c16abc478cb05496ce">TrajectoryPoints::list()</a> format)  <br /></td></tr>
-<tr class="separator:abb1cbd84bf92afa85b079a59ccd123d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84aed1360278dc2f2610f21bd336c844" id="r_a84aed1360278dc2f2610f21bd336c844"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightPathGeometry.html#a84aed1360278dc2f2610f21bd336c844">setPath</a> (const QVariantList &amp;coordinates, const QVariantList &amp;highlights=QVariantList())</td></tr>
+<tr class="separator:a84aed1360278dc2f2610f21bd336c844"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad91240de9cf4828f29245f64b4ecbbb8" id="r_ad91240de9cf4828f29245f64b4ecbbb8"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightPathGeometry.html#ad91240de9cf4828f29245f64b4ecbbb8">appendPoint</a> (const QGeoCoordinate &amp;coordinate)</td></tr>
 <tr class="separator:ad91240de9cf4828f29245f64b4ecbbb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af157113d6f3e8781665e4038a99df17b" id="r_af157113d6f3e8781665e4038a99df17b"><td class="memItemLeft" align="right" valign="top">Q_INVOKABLE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightPathGeometry.html#af157113d6f3e8781665e4038a99df17b">updateLastPoint</a> (const QGeoCoordinate &amp;coordinate)</td></tr>
@@ -150,15 +149,15 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a0367c9c4c71da3e0a904005f2aef128e" id="r_a0367c9c4c71da3e0a904005f2aef128e"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlightPathGeometry.html#a0367c9c4c71da3e0a904005f2aef128e">kFloatsPerVertex</a> = 8</td></tr>
-<tr class="memdesc:a0367c9c4c71da3e0a904005f2aef128e"><td class="mdescLeft">&#160;</td><td class="mdescRight">position 3, tangent 3, side flag 2  <br /></td></tr>
+<tr class="memdesc:a0367c9c4c71da3e0a904005f2aef128e"><td class="mdescLeft">&#160;</td><td class="mdescRight">position 3, tangent 3, side flag, highlight flag  <br /></td></tr>
 <tr class="separator:a0367c9c4c71da3e0a904005f2aef128e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Flight-path trail ribbon for the GeoMap 3D scene: a triangle strip along the vehicle's trajectory, depth-tested against terrain (hills hide it). Each trail point yields two centerline vertices carrying the path's unit 3D tangent (normal slot) and a side flag (texcoord0.x, -1 left / +1 right); the ribbon has zero width until a vertex shader expands each vertex perpendicular to both the tangent and the view direction (billboarding), keeping the width constant in screen pixels for any segment orientation — including straight vertical climbs.</p>
+<div class="textblock"><p>Flight-path trail ribbon for the GeoMap 3D scene: a triangle strip along the vehicle's trajectory, depth-tested against terrain (hills hide it). Each trail point yields two centerline vertices carrying the path's unit 3D tangent (normal slot), a side flag (texcoord0.x, -1 left / +1 right) and a highlight flag (texcoord0.y, 0 or 1, for the fragment shader's highlight color); the ribbon has zero width until a vertex shader expands each vertex perpendicular to both the tangent and the view direction (billboarding), keeping the width constant in screen pixels for any segment orientation — including straight vertical climbs.</p>
 <p>Positions are scene-unit offsets relative to anchorCoordinate (the first path point), so the buffer is immune to scene-origin re-anchors and to any constant altitude bias applied at the anchor. z offsets are pre-scaled by the scene's verticalScale but NOT terrainScale: parent the model under a node whose z-scale tracks <a class="el" href="classGeoScene.html#a4965bc279e50aae776a1c79f533421ba">GeoScene::terrainScale</a>.</p>
 <p>appendPoint/updateLastPoint update the vertex buffer incrementally (only the last two vertex pairs change); setPath and scene re-anchors rebuild it. </p>
 
-<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8h_source.html#l00041">41</a> of file <a class="el" href="FlightPathGeometry_8h_source.html">FlightPathGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8h_source.html#l00042">42</a> of file <a class="el" href="FlightPathGeometry_8h_source.html">FlightPathGeometry.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a467b344150b8b02a7aa7567c7b638840" name="a467b344150b8b02a7aa7567c7b638840"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a467b344150b8b02a7aa7567c7b638840">&#9670;&#160;</a></span>FlightPathGeometry()</h2>
@@ -213,7 +212,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>First path point (invalid while the path is empty). Place the ribbon's node at this coordinate; altitude offsets in the buffer are relative to its altitude. </p>
 
-<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8h_source.html#l00061">61</a> of file <a class="el" href="FlightPathGeometry_8h_source.html">FlightPathGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8h_source.html#l00062">62</a> of file <a class="el" href="FlightPathGeometry_8h_source.html">FlightPathGeometry.h</a>.</p>
 
 </div>
 </div>
@@ -240,7 +239,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="FlightPathGeometry_8cc_source.html#l00065">appendPoint()</a>, <a class="el" href="FlightPathGeometry_8cc_source.html#l00121">clearPath()</a>, <a class="el" href="FlightPathGeometry_8cc_source.html#l00050">setPath()</a>, and <a class="el" href="FlightPathGeometry_8cc_source.html#l00093">updateLastPoint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FlightPathGeometry_8cc_source.html#l00068">appendPoint()</a>, <a class="el" href="FlightPathGeometry_8cc_source.html#l00125">clearPath()</a>, <a class="el" href="FlightPathGeometry_8cc_source.html#l00050">setPath()</a>, and <a class="el" href="FlightPathGeometry_8cc_source.html#l00097">updateLastPoint()</a>.</p>
 
 </div>
 </div>
@@ -260,9 +259,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8cc_source.html#l00065">65</a> of file <a class="el" href="FlightPathGeometry_8cc_source.html">FlightPathGeometry.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8cc_source.html#l00068">68</a> of file <a class="el" href="FlightPathGeometry_8cc_source.html">FlightPathGeometry.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="classFlightPathGeometry.html#ac3f2caefe1eec61fb04140bc65223d52">anchorCoordinateChanged()</a>, <a class="el" href="FlightPathGeometry_8h_source.html#l00052">kFloatsPerVertex</a>, and <a class="el" href="classFlightPathGeometry.html#af95c900d8e86e629c8c612816e5679ce">pointCountChanged()</a>.</p>
+<p class="reference">References <a class="el" href="classFlightPathGeometry.html#ac3f2caefe1eec61fb04140bc65223d52">anchorCoordinateChanged()</a>, <a class="el" href="FlightPathGeometry_8h_source.html#l00053">kFloatsPerVertex</a>, and <a class="el" href="classFlightPathGeometry.html#af95c900d8e86e629c8c612816e5679ce">pointCountChanged()</a>.</p>
 
 </div>
 </div>
@@ -281,7 +280,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8cc_source.html#l00121">121</a> of file <a class="el" href="FlightPathGeometry_8cc_source.html">FlightPathGeometry.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8cc_source.html#l00125">125</a> of file <a class="el" href="FlightPathGeometry_8cc_source.html">FlightPathGeometry.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="classFlightPathGeometry.html#ac3f2caefe1eec61fb04140bc65223d52">anchorCoordinateChanged()</a>, and <a class="el" href="classFlightPathGeometry.html#af95c900d8e86e629c8c612816e5679ce">pointCountChanged()</a>.</p>
 
@@ -310,7 +309,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8h_source.html#l00063">63</a> of file <a class="el" href="FlightPathGeometry_8h_source.html">FlightPathGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8h_source.html#l00064">64</a> of file <a class="el" href="FlightPathGeometry_8h_source.html">FlightPathGeometry.h</a>.</p>
 
 </div>
 </div>
@@ -337,7 +336,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="FlightPathGeometry_8cc_source.html#l00065">appendPoint()</a>, <a class="el" href="FlightPathGeometry_8cc_source.html#l00121">clearPath()</a>, and <a class="el" href="FlightPathGeometry_8cc_source.html#l00050">setPath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FlightPathGeometry_8cc_source.html#l00068">appendPoint()</a>, <a class="el" href="FlightPathGeometry_8cc_source.html#l00125">clearPath()</a>, and <a class="el" href="FlightPathGeometry_8cc_source.html#l00050">setPath()</a>.</p>
 
 </div>
 </div>
@@ -364,7 +363,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8h_source.html#l00054">54</a> of file <a class="el" href="FlightPathGeometry_8h_source.html">FlightPathGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8h_source.html#l00055">55</a> of file <a class="el" href="FlightPathGeometry_8h_source.html">FlightPathGeometry.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FlightPathGeometry_8cc_source.html#l00028">setScene()</a>.</p>
 
@@ -397,8 +396,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="abb1cbd84bf92afa85b079a59ccd123d0" name="abb1cbd84bf92afa85b079a59ccd123d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb1cbd84bf92afa85b079a59ccd123d0">&#9670;&#160;</a></span>setPath()</h2>
+<a id="a84aed1360278dc2f2610f21bd336c844" name="a84aed1360278dc2f2610f21bd336c844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84aed1360278dc2f2610f21bd336c844">&#9670;&#160;</a></span>setPath()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -407,13 +406,22 @@ Static Public Attributes</h2></td></tr>
           <td class="memname">void FlightPathGeometry::setPath </td>
           <td>(</td>
           <td class="paramtype">const QVariantList &amp;&#160;</td>
-          <td class="paramname"><em>coordinates</em></td><td>)</td>
+          <td class="paramname"><em>coordinates</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QVariantList &amp;&#160;</td>
+          <td class="paramname"><em>highlights</em> = <code>QVariantList()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Replace the whole path (QGeoCoordinate variants, <a class="el" href="classTrajectoryPoints.html#ae29069264956e4c16abc478cb05496ce">TrajectoryPoints::list()</a> format) </p>
+<p>Replace the whole path (QGeoCoordinate variants, <a class="el" href="classTrajectoryPoints.html#ae29069264956e4c16abc478cb05496ce">TrajectoryPoints::list()</a> format). highlights[i] (bool) highlights point i; missing entries are false. A segment between differently highlighted points blends along its length. </p>
 
 <p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8cc_source.html#l00050">50</a> of file <a class="el" href="FlightPathGeometry_8cc_source.html">FlightPathGeometry.cc</a>.</p>
 
@@ -439,7 +447,7 @@ Static Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8cc_source.html#l00028">28</a> of file <a class="el" href="FlightPathGeometry_8cc_source.html">FlightPathGeometry.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="FlightPathGeometry_8h_source.html#l00054">scene()</a>, <a class="el" href="classFlightPathGeometry.html#a4bb95c358c99f3172a4f17c71da3196a">sceneChanged()</a>, and <a class="el" href="classGeoScene.html#a4351823f0f3b6274d81eb4fc457661c3">GeoScene::sceneOriginChanged()</a>.</p>
+<p class="reference">References <a class="el" href="FlightPathGeometry_8h_source.html#l00055">scene()</a>, <a class="el" href="classFlightPathGeometry.html#a4bb95c358c99f3172a4f17c71da3196a">sceneChanged()</a>, and <a class="el" href="classGeoScene.html#a4351823f0f3b6274d81eb4fc457661c3">GeoScene::sceneOriginChanged()</a>.</p>
 
 </div>
 </div>
@@ -461,9 +469,9 @@ Static Public Attributes</h2></td></tr>
 
 <p>Replace the last point (<a class="el" href="classTrajectoryPoints.html">TrajectoryPoints</a> emits this for colinear motion) </p>
 
-<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8cc_source.html#l00093">93</a> of file <a class="el" href="FlightPathGeometry_8cc_source.html">FlightPathGeometry.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8cc_source.html#l00097">97</a> of file <a class="el" href="FlightPathGeometry_8cc_source.html">FlightPathGeometry.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="classFlightPathGeometry.html#ac3f2caefe1eec61fb04140bc65223d52">anchorCoordinateChanged()</a>, and <a class="el" href="FlightPathGeometry_8h_source.html#l00052">kFloatsPerVertex</a>.</p>
+<p class="reference">References <a class="el" href="classFlightPathGeometry.html#ac3f2caefe1eec61fb04140bc65223d52">anchorCoordinateChanged()</a>, and <a class="el" href="FlightPathGeometry_8h_source.html#l00053">kFloatsPerVertex</a>.</p>
 
 </div>
 </div>
@@ -488,11 +496,11 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>position 3, tangent 3, side flag 2 </p>
+<p>position 3, tangent 3, side flag, highlight flag </p>
 
-<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8h_source.html#l00052">52</a> of file <a class="el" href="FlightPathGeometry_8h_source.html">FlightPathGeometry.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FlightPathGeometry_8h_source.html#l00053">53</a> of file <a class="el" href="FlightPathGeometry_8h_source.html">FlightPathGeometry.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FlightPathGeometry_8cc_source.html#l00065">appendPoint()</a>, and <a class="el" href="FlightPathGeometry_8cc_source.html#l00093">updateLastPoint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FlightPathGeometry_8cc_source.html#l00068">appendPoint()</a>, and <a class="el" href="FlightPathGeometry_8cc_source.html#l00097">updateLastPoint()</a>.</p>
 
 </div>
 </div>

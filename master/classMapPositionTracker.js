@@ -12,7 +12,7 @@ var classMapPositionTracker =
     [ "centerGCSWhenVehicleValid", "classMapPositionTracker.html#a1b3677d5dc5cee3f763631e77e779413", null ],
     [ "centerGCSWhenVehicleValidChanged", "classMapPositionTracker.html#afa342d3367b5c6998986123463f33886", null ],
     [ "centerMap", "classMapPositionTracker.html#af7532599659215c5186e2179bb90c591", null ],
-    [ "evaluateInsetFollow", "classMapPositionTracker.html#a4429ec5d1904270b23f9c77b1344cf63", null ],
+    [ "evaluateOccluderFollow", "classMapPositionTracker.html#a576bda5e7c07f3fca3a036ee188a8ce2", null ],
     [ "firstVehiclePositionReceived", "classMapPositionTracker.html#a0bfb7b4bf5615c8075de5e029702f23a", null ],
     [ "firstVehiclePositionReceivedChanged", "classMapPositionTracker.html#a9b0fc7747f04800d0176831eefa2eb15", null ],
     [ "gcsPosition", "classMapPositionTracker.html#a56ad0ef41b65e1b58505be7f9e5743a8", null ],

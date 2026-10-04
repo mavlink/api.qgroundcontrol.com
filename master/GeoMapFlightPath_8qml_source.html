@@ -156,7 +156,7 @@ $(document).ready(function(){initNavTree('GeoMapFlightPath_8qml_source.html','')
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    function _updateHomeTerrainBias() {</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        if (surfaceModel &amp;&amp; vehicle &amp;&amp; vehicle.homePosition.isValid &amp;&amp; !isNaN(vehicle.homePosition.altitude)) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            _homeTerrainBias = surfaceModel.terrainHeightAt(vehicle.homePosition) - vehicle.homePosition.altitude</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            _homeTerrainBias = surfaceModel.terrainDataHeightAt(vehicle.homePosition) - vehicle.homePosition.altitude</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        } else {</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            _homeTerrainBias = 0</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
@@ -197,44 +197,46 @@ $(document).ready(function(){initNavTree('GeoMapFlightPath_8qml_source.html','')
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                    property real lineWidth: root.lineWidth</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                    property real screenFactor: root._screenFactor</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                    property color pathColor: root.lineColor</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    // Ramps in as the terrain flattens, effectively disabling</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                    // depth testing in 2D mode (see flightpath.vert)</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                    property real depthPull: root.scene ? 0.5 * (1.0 - root.scene.terrainScale) : 0.0</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                }</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                Component.onCompleted: {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                    root._geometry = pathGeometry</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                    root._reloadPath()</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                }</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                Component.onDestruction: root._geometry = null</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            }</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            Connections {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                target: root.vehicle ? root.vehicle.trajectoryPoints : null</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                function onPointAdded(coordinate) { pathGeometry.appendPoint(coordinate) }</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                function onUpdateLastPoint(coordinate) { pathGeometry.updateLastPoint(coordinate) }</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                function onPointsCleared() { pathGeometry.clearPath() }</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            }</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        }</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    Connections {</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        target: root.surfaceModel</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        function onTerrainHeightsChanged() {</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            root._updateHomeTerrainBias()</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    Connections {</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        target: root.vehicle</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        function onHomePositionChanged() {</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            root._updateHomeTerrainBias()</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        }</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>}</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    // Required by flightpath.frag; the trail never highlights</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                    property color highlightColor: root.lineColor</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                    // Ramps in as the terrain flattens, effectively disabling</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                    // depth testing in 2D mode (see flightpath.vert)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                    property real depthPull: root.scene ? 0.5 * (1.0 - root.scene.terrainScale) : 0.0</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                Component.onCompleted: {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                    root._geometry = pathGeometry</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                    root._reloadPath()</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                Component.onDestruction: root._geometry = null</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            Connections {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                target: root.vehicle ? root.vehicle.trajectoryPoints : null</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                function onPointAdded(coordinate) { pathGeometry.appendPoint(coordinate) }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                function onUpdateLastPoint(coordinate) { pathGeometry.updateLastPoint(coordinate) }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                function onPointsCleared() { pathGeometry.clearPath() }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    Connections {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        target: root.surfaceModel</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        function onTerrainDataChanged() {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            root._updateHomeTerrainBias()</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    Connections {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        target: root.vehicle</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        function onHomePositionChanged() {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            root._updateHomeTerrainBias()</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

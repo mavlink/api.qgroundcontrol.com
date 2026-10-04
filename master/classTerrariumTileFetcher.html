@@ -143,6 +143,8 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a7748acc27309ec05a2da09a5fc8d484a" id="r_a7748acc27309ec05a2da09a5fc8d484a"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTerrariumTileFetcher.html#a7748acc27309ec05a2da09a5fc8d484a">kMaxTileZoom</a> = 15</td></tr>
 <tr class="memdesc:a7748acc27309ec05a2da09a5fc8d484a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Highest zoom the terrarium dataset serves (deeper patches sample the ancestor)  <br /></td></tr>
 <tr class="separator:a7748acc27309ec05a2da09a5fc8d484a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0080215dc263af31fe012f44daa2ae67" id="r_a0080215dc263af31fe012f44daa2ae67"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTerrariumTileFetcher.html#a0080215dc263af31fe012f44daa2ae67">kAnchorZoom</a> = 10</td></tr>
+<tr class="separator:a0080215dc263af31fe012f44daa2ae67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a014f3a22fba4c17fe5253c59a558e0a8" id="r_a014f3a22fba4c17fe5253c59a558e0a8"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTerrariumTileFetcher.html#a014f3a22fba4c17fe5253c59a558e0a8">kMaxGridSize</a> = 256</td></tr>
 <tr class="memdesc:a014f3a22fba4c17fe5253c59a558e0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Largest supported patch grid (matches <a class="el" href="classPatchGeometry.html#aabef366f8bad3a875777e81728a7ea58">PatchGeometry::kMaxGridSize</a>)  <br /></td></tr>
 <tr class="separator:a014f3a22fba4c17fe5253c59a558e0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,7 +171,7 @@ Additional Inherited Members</h2></td></tr>
 <p>A tile at z/x/y maps to the terrarium tile at the same z/x/y, so fetch cost is constant across the LOD range — no flat floor or blend band like the fixed resolution Copernicus pipeline needed. Above the dataset's top zoom the z15 ancestor tile is fetched instead.</p>
 <p>The legacy per-patch <a class="el" href="classHeightSource.html">HeightSource</a> API (bilinear vertex-grid sampling with edge clamp) remains until <a class="el" href="classSurfaceModel.html">SurfaceModel</a> switches to sampling the field. </p>
 
-<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8h_source.html#l00040">40</a> of file <a class="el" href="TerrariumTileFetcher_8h_source.html">TerrariumTileFetcher.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8h_source.html#l00041">41</a> of file <a class="el" href="TerrariumTileFetcher_8h_source.html">TerrariumTileFetcher.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aac6a91bcd4ff4c370607eae62171c5f6" name="aac6a91bcd4ff4c370607eae62171c5f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac6a91bcd4ff4c370607eae62171c5f6">&#9670;&#160;</a></span>TerrariumTileFetcher()</h2>
@@ -207,7 +209,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p><em>networkManager</em> overrides the internally created one (test injection seam) </p>
 
-<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00116">116</a> of file <a class="el" href="TerrariumTileFetcher_8cc_source.html">TerrariumTileFetcher.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00144">144</a> of file <a class="el" href="TerrariumTileFetcher_8cc_source.html">TerrariumTileFetcher.cc</a>.</p>
 
 </div>
 </div>
@@ -240,7 +242,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classHeightSource.html#a1b6bd6a13617cef34ebc97cf9f3768ae">HeightSource</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00251">251</a> of file <a class="el" href="TerrariumTileFetcher_8cc_source.html">TerrariumTileFetcher.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00285">285</a> of file <a class="el" href="TerrariumTileFetcher_8cc_source.html">TerrariumTileFetcher.cc</a>.</p>
 
 </div>
 </div>
@@ -268,7 +270,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>Tile key submitted by the most recent fetch (test observability for the deep-zoom ancestor path) </p>
 
-<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8h_source.html#l00067">67</a> of file <a class="el" href="TerrariumTileFetcher_8h_source.html">TerrariumTileFetcher.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8h_source.html#l00073">73</a> of file <a class="el" href="TerrariumTileFetcher_8h_source.html">TerrariumTileFetcher.h</a>.</p>
 
 </div>
 </div>
@@ -295,7 +297,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8h_source.html#l00063">63</a> of file <a class="el" href="TerrariumTileFetcher_8h_source.html">TerrariumTileFetcher.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8h_source.html#l00069">69</a> of file <a class="el" href="TerrariumTileFetcher_8h_source.html">TerrariumTileFetcher.h</a>.</p>
 
 </div>
 </div>
@@ -332,13 +334,13 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Request the vertex height grid for a patch. Returns a request id (&gt; 0). gridSize must be a power of two (see <a class="el" href="classHeightField.html#a68f4d578d3b4d2dd4a1fab5725dec686">HeightField::samplePatch</a>). </p>
+<p>Request the vertex height grid for a patch. Returns a request id (&gt; 0). gridSize must be a power of two (see <a class="el" href="classHeightField.html#a3f696b8885f125333bce701cd462e42d">HeightField::samplePatch</a>). </p>
 
 <p>Implements <a class="el" href="classHeightSource.html#a3d7ac5cf92e9ae5f98218ad40b15992e">HeightSource</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00122">122</a> of file <a class="el" href="TerrariumTileFetcher_8cc_source.html">TerrariumTileFetcher.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00150">150</a> of file <a class="el" href="TerrariumTileFetcher_8cc_source.html">TerrariumTileFetcher.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="HeightSource_8cc_source.html#l00012">HeightSource::_nextRequestId()</a>, <a class="el" href="TileMath_8cc_source.html#l00044">TileMath::isValidKey()</a>, <a class="el" href="TerrariumTileFetcher_8h_source.html#l00052">kMaxGridSize</a>, <a class="el" href="TerrariumTileFetcher_8h_source.html#l00049">kMaxTileZoom</a>, <a class="el" href="TileMath_8h_source.html#l00036">TileMath::TileKey::x</a>, <a class="el" href="TileMath_8h_source.html#l00037">TileMath::TileKey::y</a>, and <a class="el" href="TileMath_8h_source.html#l00038">TileMath::TileKey::zoom</a>.</p>
+<p class="reference">References <a class="el" href="HeightSource_8cc_source.html#l00012">HeightSource::_nextRequestId()</a>, <a class="el" href="TileMath_8cc_source.html#l00044">TileMath::isValidKey()</a>, <a class="el" href="TerrariumTileFetcher_8h_source.html#l00058">kMaxGridSize</a>, <a class="el" href="TerrariumTileFetcher_8h_source.html#l00050">kMaxTileZoom</a>, <a class="el" href="TileMath_8h_source.html#l00036">TileMath::TileKey::x</a>, <a class="el" href="TileMath_8h_source.html#l00037">TileMath::TileKey::y</a>, and <a class="el" href="TileMath_8h_source.html#l00038">TileMath::TileKey::zoom</a>.</p>
 
 </div>
 </div>
@@ -365,17 +367,44 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Ensures the attached field holds this tile (clamped to the z15 ancestor above kMaxTileZoom). Returns false when no field is attached, the key is invalid, or the fetch could not start; true when the tile is already held, already in flight, or a fetch was started. </p>
+<p>Ensures the attached field holds this tile (clamped to the z15 ancestor above kMaxTileZoom), plus the kAnchorZoom ancestors of it and its neighbors. Returns false when no field is attached, the key is invalid, or the fetch could not start; true when the tile is already held, already in flight, or a fetch was started. </p>
 
 <p>Reimplemented from <a class="el" href="classHeightSource.html#a720fbf6a41354a110ef6236395a34ed6">HeightSource</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00173">173</a> of file <a class="el" href="TerrariumTileFetcher_8cc_source.html">TerrariumTileFetcher.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00201">201</a> of file <a class="el" href="TerrariumTileFetcher_8cc_source.html">TerrariumTileFetcher.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="HeightSource_8h_source.html#l00062">HeightSource::_heightField</a>, <a class="el" href="HeightField_8h_source.html#l00073">HeightField::hasTile()</a>, and <a class="el" href="TileMath_8cc_source.html#l00044">TileMath::isValidKey()</a>.</p>
+<p class="reference">References <a class="el" href="HeightSource_8h_source.html#l00062">HeightSource::_heightField</a>, <a class="el" href="HeightField_8h_source.html#l00076">HeightField::hasTile()</a>, <a class="el" href="TileMath_8cc_source.html#l00044">TileMath::isValidKey()</a>, and <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00201">requestTile()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00201">requestTile()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a0080215dc263af31fe012f44daa2ae67" name="a0080215dc263af31fe012f44daa2ae67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0080215dc263af31fe012f44daa2ae67">&#9670;&#160;</a></span>kAnchorZoom</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int TerrariumTileFetcher::kAnchorZoom = 10</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Coarse ancestor zoom fetched alongside every finer tile, for the tile and its neighbors; finer tiles wait for all of them so no region ever has fine data next to no data at all (a cliff to 0 m). A failed anchor stops blocking. </p>
+
+<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8h_source.html#l00055">55</a> of file <a class="el" href="TerrariumTileFetcher_8h_source.html">TerrariumTileFetcher.h</a>.</p>
+
+</div>
+</div>
 <a id="a014f3a22fba4c17fe5253c59a558e0a8" name="a014f3a22fba4c17fe5253c59a558e0a8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a014f3a22fba4c17fe5253c59a558e0a8">&#9670;&#160;</a></span>kMaxGridSize</h2>
 
@@ -398,9 +427,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Largest supported patch grid (matches <a class="el" href="classPatchGeometry.html#aabef366f8bad3a875777e81728a7ea58">PatchGeometry::kMaxGridSize</a>) </p>
 
-<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8h_source.html#l00052">52</a> of file <a class="el" href="TerrariumTileFetcher_8h_source.html">TerrariumTileFetcher.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8h_source.html#l00058">58</a> of file <a class="el" href="TerrariumTileFetcher_8h_source.html">TerrariumTileFetcher.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00122">requestPatchHeights()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00150">requestPatchHeights()</a>.</p>
 
 </div>
 </div>
@@ -426,9 +455,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Highest zoom the terrarium dataset serves (deeper patches sample the ancestor) </p>
 
-<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8h_source.html#l00049">49</a> of file <a class="el" href="TerrariumTileFetcher_8h_source.html">TerrariumTileFetcher.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TerrariumTileFetcher_8h_source.html#l00050">50</a> of file <a class="el" href="TerrariumTileFetcher_8h_source.html">TerrariumTileFetcher.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00122">requestPatchHeights()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TerrariumTileFetcher_8cc_source.html#l00150">requestPatchHeights()</a>.</p>
 
 </div>
 </div>

@@ -1146,341 +1146,344 @@ $(document).ready(function(){initNavTree('FTPManager_8cc_source.html',''); initR
 <div class="line"><a id="l01032" name="l01032"></a><span class="lineno"> 1032</span>                }</div>
 <div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span>                _advanceStateMachine();</div>
 <div class="line"><a id="l01034" name="l01034"></a><span class="lineno"> 1034</span>            }</div>
-<div class="line"><a id="l01035" name="l01035"></a><span class="lineno"> 1035</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (errorCode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72aea4e7710957ef7ed7be0104d6591a1551d">MavlinkFTP::kErrUnknownCommand</a> &amp;&amp; _listDirectoryState.opCode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6a6566e18023865ff9a31be7ee91af986d">MavlinkFTP::kCmdListDirectoryWithTime</a>) {</div>
-<div class="line"><a id="l01036" name="l01036"></a><span class="lineno"> 1036</span>            <span class="comment">// Server doesn&#39;t implement kCmdListDirectoryWithTime. Remember that, fall back to the</span></div>
-<div class="line"><a id="l01037" name="l01037"></a><span class="lineno"> 1037</span>            <span class="comment">// plain listing and restart from the beginning. The UnknownCommand Nak is a definitive</span></div>
-<div class="line"><a id="l01038" name="l01038"></a><span class="lineno"> 1038</span>            <span class="comment">// capability statement so we act on it without a strict sequence check; the restart is</span></div>
-<div class="line"><a id="l01039" name="l01039"></a><span class="lineno"> 1039</span>            <span class="comment">// idempotent (offset and accumulated entries are reset).</span></div>
-<div class="line"><a id="l01040" name="l01040"></a><span class="lineno"> 1040</span>            qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_listDirectoryAckOrNak: kCmdListDirectoryWithTime unsupported, falling back to kCmdListDirectory&quot;</span>;</div>
-<div class="line"><a id="l01041" name="l01041"></a><span class="lineno"> 1041</span>            _listDirWithTimeSupport             = WithTimeSupport_t::Unsupported;</div>
-<div class="line"><a id="l01042" name="l01042"></a><span class="lineno"> 1042</span>            _listDirectoryState.opCode          = <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ae4403980237ab58ce7b5958cdaae046c">MavlinkFTP::kCmdListDirectory</a>;</div>
-<div class="line"><a id="l01043" name="l01043"></a><span class="lineno"> 1043</span>            _listDirectoryState.expectedOffset  = 0;</div>
-<div class="line"><a id="l01044" name="l01044"></a><span class="lineno"> 1044</span>            _listDirectoryState.rgDirectoryList.clear();</div>
-<div class="line"><a id="l01045" name="l01045"></a><span class="lineno"> 1045</span>            _expectedIncomingSeqNumber          = ackOrNak-&gt;hdr.seqNumber;</div>
-<div class="line"><a id="l01046" name="l01046"></a><span class="lineno"> 1046</span>            _listDirectoryWorker(<span class="keyword">true</span> <span class="comment">/* firstRequest */</span>);</div>
-<div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span>        } <span class="keywordflow">else</span> { <span class="comment">/* Don&#39;t care is this is out of sequence */</span></div>
-<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span>            qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_listDirectoryAckOrNak: Nak -&quot;</span> &lt;&lt; _errorMsgFromNak(ackOrNak);</div>
-<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>            _listDirectoryComplete(tr(<span class="stringliteral">&quot;List directory failed&quot;</span>));</div>
-<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span>        }</div>
-<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span>    }</div>
-<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>}</div>
-<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span> </div>
-<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span><span class="keywordtype">void</span> FTPManager::_listDirectoryTimeout(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>{</div>
-<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>    <span class="keywordflow">if</span> (++_listDirectoryState.retryCount &gt; _maxRetry) {</div>
-<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>        qCDebug(FTPManagerLog) &lt;&lt; QString(<span class="stringliteral">&quot;_listDirectoryTimeout retries exceeded&quot;</span>);</div>
-<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>        _listDirectoryComplete(tr(<span class="stringliteral">&quot;List directory failed&quot;</span>));</div>
-<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>        <span class="comment">// Try again</span></div>
-<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span>        qCDebug(FTPManagerLog) &lt;&lt; QString(<span class="stringliteral">&quot;_listDirectoryTimeout: retrying - retryCount(%1) offset(%2)&quot;</span>).arg(_listDirectoryState.retryCount).arg(_listDirectoryState.expectedOffset);</div>
-<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>        _listDirectoryWorker(<span class="keyword">false</span> <span class="comment">/* firstReqeust */</span>);</div>
-<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>    }</div>
-<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>}</div>
-<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span> </div>
-<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span><span class="keywordtype">void</span> FTPManager::_fillMissingBlocksWorker(<span class="keywordtype">bool</span> firstRequest)</div>
-<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>{</div>
-<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>    <span class="keywordflow">if</span> (_downloadState.rgMissingData.count()) {</div>
-<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>        MavlinkFTP::Request request{};</div>
-<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>        MissingData_t&amp;      missingData = _downloadState.rgMissingData.first();</div>
-<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span> </div>
-<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>        uint32_t cBytesToRead = qMin(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(_readChunkSize()), missingData.cBytesMissing);</div>
-<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span> </div>
-<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksBegin: offset:cBytesToRead&quot;</span> &lt;&lt; missingData.offset &lt;&lt; cBytesToRead;</div>
-<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span> </div>
-<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>        request.hdr.session                 = _downloadState.sessionId;</div>
-<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>        request.hdr.opcode                  = <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6a8ec4b88e445a9d4231973ff013d7bcec">MavlinkFTP::kCmdReadFile</a>;</div>
-<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>        request.hdr.offset                  = missingData.offset;</div>
-<div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>        request.hdr.size                    = cBytesToRead;</div>
-<div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span> </div>
-<div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span>        <span class="keywordflow">if</span> (firstRequest) {</div>
-<div class="line"><a id="l01082" name="l01082"></a><span class="lineno"> 1082</span>            _downloadState.retryCount = 0;</div>
-<div class="line"><a id="l01083" name="l01083"></a><span class="lineno"> 1083</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01084" name="l01084"></a><span class="lineno"> 1084</span>            <span class="comment">// Must used same sequence number as previous request</span></div>
-<div class="line"><a id="l01085" name="l01085"></a><span class="lineno"> 1085</span>            _expectedIncomingSeqNumber -= 2;</div>
-<div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span>        }</div>
-<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>        _downloadState.expectedOffset = request.hdr.offset;</div>
-<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span> </div>
-<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>        _sendRequestExpectAck(&amp;request);</div>
-<div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span>        <span class="comment">// We should have the full file now</span></div>
-<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span>        <span class="keywordflow">if</span> (_downloadState.checksize == <span class="keyword">false</span> || _downloadState.bytesWritten == _downloadState.fileSize) {</div>
-<div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span>            _advanceStateMachine();</div>
-<div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span>            qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksWorker: no missing blocks but file still incomplete - bytesWritten:fileSize&quot;</span> &lt;&lt; _downloadState.bytesWritten &lt;&lt; _downloadState.fileSize;</div>
-<div class="line"><a id="l01096" name="l01096"></a><span class="lineno"> 1096</span>            _downloadComplete(tr(<span class="stringliteral">&quot;Download failed&quot;</span>));</div>
-<div class="line"><a id="l01097" name="l01097"></a><span class="lineno"> 1097</span>        }</div>
-<div class="line"><a id="l01098" name="l01098"></a><span class="lineno"> 1098</span>    }</div>
-<div class="line"><a id="l01099" name="l01099"></a><span class="lineno"> 1099</span>}</div>
-<div class="line"><a id="l01100" name="l01100"></a><span class="lineno"> 1100</span> </div>
-<div class="line"><a id="l01101" name="l01101"></a><span class="lineno"> 1101</span><span class="keywordtype">void</span> FTPManager::_fillMissingBlocksBegin(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l01102" name="l01102"></a><span class="lineno"> 1102</span>{</div>
-<div class="line"><a id="l01103" name="l01103"></a><span class="lineno"> 1103</span>    _fillMissingBlocksWorker(<span class="keyword">true</span> <span class="comment">/* firstRequest */</span>);</div>
-<div class="line"><a id="l01104" name="l01104"></a><span class="lineno"> 1104</span>}</div>
-<div class="line"><a id="l01105" name="l01105"></a><span class="lineno"> 1105</span> </div>
-<div class="line"><a id="l01106" name="l01106"></a><span class="lineno"> 1106</span><span class="keywordtype">void</span> FTPManager::_fillMissingBlocksAckOrNak(<span class="keyword">const</span> MavlinkFTP::Request* ackOrNak)</div>
-<div class="line"><a id="l01107" name="l01107"></a><span class="lineno"> 1107</span>{</div>
-<div class="line"><a id="l01108" name="l01108"></a><span class="lineno"> 1108</span>    <a class="code hl_enumeration" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6">MavlinkFTP::OpCode_t</a> requestOpCode = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6">MavlinkFTP::OpCode_t</a><span class="keyword">&gt;</span>(ackOrNak-&gt;hdr.req_opcode);</div>
-<div class="line"><a id="l01109" name="l01109"></a><span class="lineno"> 1109</span> </div>
-<div class="line"><a id="l01110" name="l01110"></a><span class="lineno"> 1110</span>    <span class="keywordflow">if</span> (requestOpCode != <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6a8ec4b88e445a9d4231973ff013d7bcec">MavlinkFTP::kCmdReadFile</a>) {</div>
-<div class="line"><a id="l01111" name="l01111"></a><span class="lineno"> 1111</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: Disregarding due to incorrect requestOpCode&quot;</span> &lt;&lt; <a class="code hl_function" href="classMavlinkFTP.html#ae7c83504710fe0da9b7aeb69f68cf55c">MavlinkFTP::opCodeToString</a>(requestOpCode);</div>
-<div class="line"><a id="l01112" name="l01112"></a><span class="lineno"> 1112</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01113" name="l01113"></a><span class="lineno"> 1113</span>    }</div>
-<div class="line"><a id="l01114" name="l01114"></a><span class="lineno"> 1114</span>    <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.seqNumber != _expectedIncomingSeqNumber) {</div>
-<div class="line"><a id="l01115" name="l01115"></a><span class="lineno"> 1115</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: Disregarding due to incorrect sequence actual:expected&quot;</span> &lt;&lt; ackOrNak-&gt;hdr.seqNumber &lt;&lt; _expectedIncomingSeqNumber;</div>
-<div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span>    }</div>
-<div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span>    <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.session != _downloadState.sessionId) {</div>
-<div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: Disregarding due to incorrect session id actual:expected&quot;</span> &lt;&lt; ackOrNak-&gt;hdr.session &lt;&lt; _downloadState.sessionId;</div>
-<div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span>    }</div>
-<div class="line"><a id="l01122" name="l01122"></a><span class="lineno"> 1122</span> </div>
-<div class="line"><a id="l01123" name="l01123"></a><span class="lineno"> 1123</span>    _ackOrNakTimeoutTimer.stop();</div>
-<div class="line"><a id="l01124" name="l01124"></a><span class="lineno"> 1124</span> </div>
-<div class="line"><a id="l01125" name="l01125"></a><span class="lineno"> 1125</span>    <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.opcode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ab5fa78f43fb90c08b344e8419459338f">MavlinkFTP::kRspAck</a>) {</div>
-<div class="line"><a id="l01126" name="l01126"></a><span class="lineno"> 1126</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: Ack offset:size&quot;</span> &lt;&lt; ackOrNak-&gt;hdr.offset &lt;&lt; ackOrNak-&gt;hdr.size;</div>
+<div class="line"><a id="l01035" name="l01035"></a><span class="lineno"> 1035</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_listDirectoryState.opCode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6a6566e18023865ff9a31be7ee91af986d">MavlinkFTP::kCmdListDirectoryWithTime</a> &amp;&amp;</div>
+<div class="line"><a id="l01036" name="l01036"></a><span class="lineno"> 1036</span>                   (errorCode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72aea4e7710957ef7ed7be0104d6591a1551d">MavlinkFTP::kErrUnknownCommand</a> ||</div>
+<div class="line"><a id="l01037" name="l01037"></a><span class="lineno"> 1037</span>                    (errorCode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72aea1fb9e6b2d70958bd978aadd9ddda2841">MavlinkFTP::kErrFail</a> &amp;&amp; _listDirWithTimeSupport == WithTimeSupport_t::Unknown))) {</div>
+<div class="line"><a id="l01038" name="l01038"></a><span class="lineno"> 1038</span>            <span class="comment">// Server doesn&#39;t implement kCmdListDirectoryWithTime. Remember that, fall back to the</span></div>
+<div class="line"><a id="l01039" name="l01039"></a><span class="lineno"> 1039</span>            <span class="comment">// plain listing and restart from the beginning. ArduPilot Naks unknown opcodes with a</span></div>
+<div class="line"><a id="l01040" name="l01040"></a><span class="lineno"> 1040</span>            <span class="comment">// generic kErrFail rather than kErrUnknownCommand, so kErrFail is also treated as</span></div>
+<div class="line"><a id="l01041" name="l01041"></a><span class="lineno"> 1041</span>            <span class="comment">// unsupported while probing. We act on it without a strict sequence check; the restart</span></div>
+<div class="line"><a id="l01042" name="l01042"></a><span class="lineno"> 1042</span>            <span class="comment">// is idempotent (offset and accumulated entries are reset).</span></div>
+<div class="line"><a id="l01043" name="l01043"></a><span class="lineno"> 1043</span>            qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_listDirectoryAckOrNak: kCmdListDirectoryWithTime unsupported, falling back to kCmdListDirectory&quot;</span>;</div>
+<div class="line"><a id="l01044" name="l01044"></a><span class="lineno"> 1044</span>            _listDirWithTimeSupport             = WithTimeSupport_t::Unsupported;</div>
+<div class="line"><a id="l01045" name="l01045"></a><span class="lineno"> 1045</span>            _listDirectoryState.opCode          = <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ae4403980237ab58ce7b5958cdaae046c">MavlinkFTP::kCmdListDirectory</a>;</div>
+<div class="line"><a id="l01046" name="l01046"></a><span class="lineno"> 1046</span>            _listDirectoryState.expectedOffset  = 0;</div>
+<div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span>            _listDirectoryState.rgDirectoryList.clear();</div>
+<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span>            _expectedIncomingSeqNumber          = ackOrNak-&gt;hdr.seqNumber;</div>
+<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>            _listDirectoryWorker(<span class="keyword">true</span> <span class="comment">/* firstRequest */</span>);</div>
+<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span>        } <span class="keywordflow">else</span> { <span class="comment">/* Don&#39;t care is this is out of sequence */</span></div>
+<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span>            qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_listDirectoryAckOrNak: Nak -&quot;</span> &lt;&lt; _errorMsgFromNak(ackOrNak);</div>
+<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>            _listDirectoryComplete(tr(<span class="stringliteral">&quot;List directory failed&quot;</span>));</div>
+<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>        }</div>
+<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>    }</div>
+<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>}</div>
+<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span> </div>
+<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span><span class="keywordtype">void</span> FTPManager::_listDirectoryTimeout(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>{</div>
+<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>    <span class="keywordflow">if</span> (++_listDirectoryState.retryCount &gt; _maxRetry) {</div>
+<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>        qCDebug(FTPManagerLog) &lt;&lt; QString(<span class="stringliteral">&quot;_listDirectoryTimeout retries exceeded&quot;</span>);</div>
+<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span>        _listDirectoryComplete(tr(<span class="stringliteral">&quot;List directory failed&quot;</span>));</div>
+<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>        <span class="comment">// Try again</span></div>
+<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>        qCDebug(FTPManagerLog) &lt;&lt; QString(<span class="stringliteral">&quot;_listDirectoryTimeout: retrying - retryCount(%1) offset(%2)&quot;</span>).arg(_listDirectoryState.retryCount).arg(_listDirectoryState.expectedOffset);</div>
+<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span>        _listDirectoryWorker(<span class="keyword">false</span> <span class="comment">/* firstReqeust */</span>);</div>
+<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>    }</div>
+<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>}</div>
+<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span> </div>
+<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span><span class="keywordtype">void</span> FTPManager::_fillMissingBlocksWorker(<span class="keywordtype">bool</span> firstRequest)</div>
+<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>{</div>
+<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>    <span class="keywordflow">if</span> (_downloadState.rgMissingData.count()) {</div>
+<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>        MavlinkFTP::Request request{};</div>
+<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>        MissingData_t&amp;      missingData = _downloadState.rgMissingData.first();</div>
+<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span> </div>
+<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>        uint32_t cBytesToRead = qMin(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(_readChunkSize()), missingData.cBytesMissing);</div>
+<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span> </div>
+<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksBegin: offset:cBytesToRead&quot;</span> &lt;&lt; missingData.offset &lt;&lt; cBytesToRead;</div>
+<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span> </div>
+<div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>        request.hdr.session                 = _downloadState.sessionId;</div>
+<div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span>        request.hdr.opcode                  = <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6a8ec4b88e445a9d4231973ff013d7bcec">MavlinkFTP::kCmdReadFile</a>;</div>
+<div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span>        request.hdr.offset                  = missingData.offset;</div>
+<div class="line"><a id="l01082" name="l01082"></a><span class="lineno"> 1082</span>        request.hdr.size                    = cBytesToRead;</div>
+<div class="line"><a id="l01083" name="l01083"></a><span class="lineno"> 1083</span> </div>
+<div class="line"><a id="l01084" name="l01084"></a><span class="lineno"> 1084</span>        <span class="keywordflow">if</span> (firstRequest) {</div>
+<div class="line"><a id="l01085" name="l01085"></a><span class="lineno"> 1085</span>            _downloadState.retryCount = 0;</div>
+<div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>            <span class="comment">// Must used same sequence number as previous request</span></div>
+<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>            _expectedIncomingSeqNumber -= 2;</div>
+<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>        }</div>
+<div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span>        _downloadState.expectedOffset = request.hdr.offset;</div>
+<div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span> </div>
+<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span>        _sendRequestExpectAck(&amp;request);</div>
+<div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span>        <span class="comment">// We should have the full file now</span></div>
+<div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span>        <span class="keywordflow">if</span> (_downloadState.checksize == <span class="keyword">false</span> || _downloadState.bytesWritten == _downloadState.fileSize) {</div>
+<div class="line"><a id="l01096" name="l01096"></a><span class="lineno"> 1096</span>            _advanceStateMachine();</div>
+<div class="line"><a id="l01097" name="l01097"></a><span class="lineno"> 1097</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01098" name="l01098"></a><span class="lineno"> 1098</span>            qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksWorker: no missing blocks but file still incomplete - bytesWritten:fileSize&quot;</span> &lt;&lt; _downloadState.bytesWritten &lt;&lt; _downloadState.fileSize;</div>
+<div class="line"><a id="l01099" name="l01099"></a><span class="lineno"> 1099</span>            _downloadComplete(tr(<span class="stringliteral">&quot;Download failed&quot;</span>));</div>
+<div class="line"><a id="l01100" name="l01100"></a><span class="lineno"> 1100</span>        }</div>
+<div class="line"><a id="l01101" name="l01101"></a><span class="lineno"> 1101</span>    }</div>
+<div class="line"><a id="l01102" name="l01102"></a><span class="lineno"> 1102</span>}</div>
+<div class="line"><a id="l01103" name="l01103"></a><span class="lineno"> 1103</span> </div>
+<div class="line"><a id="l01104" name="l01104"></a><span class="lineno"> 1104</span><span class="keywordtype">void</span> FTPManager::_fillMissingBlocksBegin(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l01105" name="l01105"></a><span class="lineno"> 1105</span>{</div>
+<div class="line"><a id="l01106" name="l01106"></a><span class="lineno"> 1106</span>    _fillMissingBlocksWorker(<span class="keyword">true</span> <span class="comment">/* firstRequest */</span>);</div>
+<div class="line"><a id="l01107" name="l01107"></a><span class="lineno"> 1107</span>}</div>
+<div class="line"><a id="l01108" name="l01108"></a><span class="lineno"> 1108</span> </div>
+<div class="line"><a id="l01109" name="l01109"></a><span class="lineno"> 1109</span><span class="keywordtype">void</span> FTPManager::_fillMissingBlocksAckOrNak(<span class="keyword">const</span> MavlinkFTP::Request* ackOrNak)</div>
+<div class="line"><a id="l01110" name="l01110"></a><span class="lineno"> 1110</span>{</div>
+<div class="line"><a id="l01111" name="l01111"></a><span class="lineno"> 1111</span>    <a class="code hl_enumeration" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6">MavlinkFTP::OpCode_t</a> requestOpCode = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6">MavlinkFTP::OpCode_t</a><span class="keyword">&gt;</span>(ackOrNak-&gt;hdr.req_opcode);</div>
+<div class="line"><a id="l01112" name="l01112"></a><span class="lineno"> 1112</span> </div>
+<div class="line"><a id="l01113" name="l01113"></a><span class="lineno"> 1113</span>    <span class="keywordflow">if</span> (requestOpCode != <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6a8ec4b88e445a9d4231973ff013d7bcec">MavlinkFTP::kCmdReadFile</a>) {</div>
+<div class="line"><a id="l01114" name="l01114"></a><span class="lineno"> 1114</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: Disregarding due to incorrect requestOpCode&quot;</span> &lt;&lt; <a class="code hl_function" href="classMavlinkFTP.html#ae7c83504710fe0da9b7aeb69f68cf55c">MavlinkFTP::opCodeToString</a>(requestOpCode);</div>
+<div class="line"><a id="l01115" name="l01115"></a><span class="lineno"> 1115</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span>    }</div>
+<div class="line"><a id="l01117" name="l01117"></a><span class="lineno"> 1117</span>    <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.seqNumber != _expectedIncomingSeqNumber) {</div>
+<div class="line"><a id="l01118" name="l01118"></a><span class="lineno"> 1118</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: Disregarding due to incorrect sequence actual:expected&quot;</span> &lt;&lt; ackOrNak-&gt;hdr.seqNumber &lt;&lt; _expectedIncomingSeqNumber;</div>
+<div class="line"><a id="l01119" name="l01119"></a><span class="lineno"> 1119</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01120" name="l01120"></a><span class="lineno"> 1120</span>    }</div>
+<div class="line"><a id="l01121" name="l01121"></a><span class="lineno"> 1121</span>    <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.session != _downloadState.sessionId) {</div>
+<div class="line"><a id="l01122" name="l01122"></a><span class="lineno"> 1122</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: Disregarding due to incorrect session id actual:expected&quot;</span> &lt;&lt; ackOrNak-&gt;hdr.session &lt;&lt; _downloadState.sessionId;</div>
+<div class="line"><a id="l01123" name="l01123"></a><span class="lineno"> 1123</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01124" name="l01124"></a><span class="lineno"> 1124</span>    }</div>
+<div class="line"><a id="l01125" name="l01125"></a><span class="lineno"> 1125</span> </div>
+<div class="line"><a id="l01126" name="l01126"></a><span class="lineno"> 1126</span>    _ackOrNakTimeoutTimer.stop();</div>
 <div class="line"><a id="l01127" name="l01127"></a><span class="lineno"> 1127</span> </div>
-<div class="line"><a id="l01128" name="l01128"></a><span class="lineno"> 1128</span>        <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.offset != _downloadState.expectedOffset) {</div>
-<div class="line"><a id="l01129" name="l01129"></a><span class="lineno"> 1129</span>            <span class="keywordflow">if</span> (++_downloadState.retryCount &gt; _maxRetry) {</div>
-<div class="line"><a id="l01130" name="l01130"></a><span class="lineno"> 1130</span>                qCDebug(FTPManagerLog) &lt;&lt; QString(<span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: offset mismatch, retries exceeded&quot;</span>);</div>
-<div class="line"><a id="l01131" name="l01131"></a><span class="lineno"> 1131</span>                _downloadComplete(tr(<span class="stringliteral">&quot;Download failed&quot;</span>));</div>
-<div class="line"><a id="l01132" name="l01132"></a><span class="lineno"> 1132</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01133" name="l01133"></a><span class="lineno"> 1133</span>            }</div>
-<div class="line"><a id="l01134" name="l01134"></a><span class="lineno"> 1134</span> </div>
-<div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span>            <span class="comment">// Ask for current offset again</span></div>
-<div class="line"><a id="l01136" name="l01136"></a><span class="lineno"> 1136</span>            qCDebug(FTPManagerLog) &lt;&lt; QString(<span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: Ack offset mismatch retry, retryCount(%1) offset(%2)&quot;</span>).arg(_downloadState.retryCount).arg(_downloadState.expectedOffset);</div>
-<div class="line"><a id="l01137" name="l01137"></a><span class="lineno"> 1137</span>            _fillMissingBlocksWorker(<span class="keyword">false</span> <span class="comment">/* firstReqeust */</span>);</div>
-<div class="line"><a id="l01138" name="l01138"></a><span class="lineno"> 1138</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01139" name="l01139"></a><span class="lineno"> 1139</span>        }</div>
-<div class="line"><a id="l01140" name="l01140"></a><span class="lineno"> 1140</span> </div>
-<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span>        _downloadState.file.seek(ackOrNak-&gt;hdr.offset);</div>
-<div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span>        <span class="keywordtype">int</span> bytesWritten = _downloadState.file.write((<span class="keyword">const</span> <span class="keywordtype">char</span>*)ackOrNak-&gt;data, ackOrNak-&gt;hdr.size);</div>
-<div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span>        <span class="keywordflow">if</span> (bytesWritten != ackOrNak-&gt;hdr.size) {</div>
-<div class="line"><a id="l01144" name="l01144"></a><span class="lineno"> 1144</span>            _downloadComplete(tr(<span class="stringliteral">&quot;Download failed: Error saving file&quot;</span>));</div>
-<div class="line"><a id="l01145" name="l01145"></a><span class="lineno"> 1145</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01146" name="l01146"></a><span class="lineno"> 1146</span>        }</div>
-<div class="line"><a id="l01147" name="l01147"></a><span class="lineno"> 1147</span>        _downloadState.bytesWritten += ackOrNak-&gt;hdr.size;</div>
-<div class="line"><a id="l01148" name="l01148"></a><span class="lineno"> 1148</span> </div>
-<div class="line"><a id="l01149" name="l01149"></a><span class="lineno"> 1149</span>        MissingData_t&amp; missingData = _downloadState.rgMissingData.first();</div>
-<div class="line"><a id="l01150" name="l01150"></a><span class="lineno"> 1150</span>        missingData.offset += ackOrNak-&gt;hdr.size;</div>
-<div class="line"><a id="l01151" name="l01151"></a><span class="lineno"> 1151</span>        missingData.cBytesMissing -= ackOrNak-&gt;hdr.size;</div>
-<div class="line"><a id="l01152" name="l01152"></a><span class="lineno"> 1152</span>        <span class="keywordflow">if</span> (missingData.cBytesMissing == 0) {</div>
-<div class="line"><a id="l01153" name="l01153"></a><span class="lineno"> 1153</span>            <span class="comment">// This block is finished, remove it</span></div>
-<div class="line"><a id="l01154" name="l01154"></a><span class="lineno"> 1154</span>            _downloadState.rgMissingData.takeFirst();</div>
-<div class="line"><a id="l01155" name="l01155"></a><span class="lineno"> 1155</span>        }</div>
-<div class="line"><a id="l01156" name="l01156"></a><span class="lineno"> 1156</span> </div>
-<div class="line"><a id="l01157" name="l01157"></a><span class="lineno"> 1157</span>        <span class="comment">// Move on to fill in possible next hole</span></div>
-<div class="line"><a id="l01158" name="l01158"></a><span class="lineno"> 1158</span>        _fillMissingBlocksWorker(<span class="keyword">true</span> <span class="comment">/* firstReqeust */</span>);</div>
+<div class="line"><a id="l01128" name="l01128"></a><span class="lineno"> 1128</span>    <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.opcode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ab5fa78f43fb90c08b344e8419459338f">MavlinkFTP::kRspAck</a>) {</div>
+<div class="line"><a id="l01129" name="l01129"></a><span class="lineno"> 1129</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: Ack offset:size&quot;</span> &lt;&lt; ackOrNak-&gt;hdr.offset &lt;&lt; ackOrNak-&gt;hdr.size;</div>
+<div class="line"><a id="l01130" name="l01130"></a><span class="lineno"> 1130</span> </div>
+<div class="line"><a id="l01131" name="l01131"></a><span class="lineno"> 1131</span>        <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.offset != _downloadState.expectedOffset) {</div>
+<div class="line"><a id="l01132" name="l01132"></a><span class="lineno"> 1132</span>            <span class="keywordflow">if</span> (++_downloadState.retryCount &gt; _maxRetry) {</div>
+<div class="line"><a id="l01133" name="l01133"></a><span class="lineno"> 1133</span>                qCDebug(FTPManagerLog) &lt;&lt; QString(<span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: offset mismatch, retries exceeded&quot;</span>);</div>
+<div class="line"><a id="l01134" name="l01134"></a><span class="lineno"> 1134</span>                _downloadComplete(tr(<span class="stringliteral">&quot;Download failed&quot;</span>));</div>
+<div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01136" name="l01136"></a><span class="lineno"> 1136</span>            }</div>
+<div class="line"><a id="l01137" name="l01137"></a><span class="lineno"> 1137</span> </div>
+<div class="line"><a id="l01138" name="l01138"></a><span class="lineno"> 1138</span>            <span class="comment">// Ask for current offset again</span></div>
+<div class="line"><a id="l01139" name="l01139"></a><span class="lineno"> 1139</span>            qCDebug(FTPManagerLog) &lt;&lt; QString(<span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: Ack offset mismatch retry, retryCount(%1) offset(%2)&quot;</span>).arg(_downloadState.retryCount).arg(_downloadState.expectedOffset);</div>
+<div class="line"><a id="l01140" name="l01140"></a><span class="lineno"> 1140</span>            _fillMissingBlocksWorker(<span class="keyword">false</span> <span class="comment">/* firstReqeust */</span>);</div>
+<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span>        }</div>
+<div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span> </div>
+<div class="line"><a id="l01144" name="l01144"></a><span class="lineno"> 1144</span>        _downloadState.file.seek(ackOrNak-&gt;hdr.offset);</div>
+<div class="line"><a id="l01145" name="l01145"></a><span class="lineno"> 1145</span>        <span class="keywordtype">int</span> bytesWritten = _downloadState.file.write((<span class="keyword">const</span> <span class="keywordtype">char</span>*)ackOrNak-&gt;data, ackOrNak-&gt;hdr.size);</div>
+<div class="line"><a id="l01146" name="l01146"></a><span class="lineno"> 1146</span>        <span class="keywordflow">if</span> (bytesWritten != ackOrNak-&gt;hdr.size) {</div>
+<div class="line"><a id="l01147" name="l01147"></a><span class="lineno"> 1147</span>            _downloadComplete(tr(<span class="stringliteral">&quot;Download failed: Error saving file&quot;</span>));</div>
+<div class="line"><a id="l01148" name="l01148"></a><span class="lineno"> 1148</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01149" name="l01149"></a><span class="lineno"> 1149</span>        }</div>
+<div class="line"><a id="l01150" name="l01150"></a><span class="lineno"> 1150</span>        _downloadState.bytesWritten += ackOrNak-&gt;hdr.size;</div>
+<div class="line"><a id="l01151" name="l01151"></a><span class="lineno"> 1151</span> </div>
+<div class="line"><a id="l01152" name="l01152"></a><span class="lineno"> 1152</span>        MissingData_t&amp; missingData = _downloadState.rgMissingData.first();</div>
+<div class="line"><a id="l01153" name="l01153"></a><span class="lineno"> 1153</span>        missingData.offset += ackOrNak-&gt;hdr.size;</div>
+<div class="line"><a id="l01154" name="l01154"></a><span class="lineno"> 1154</span>        missingData.cBytesMissing -= ackOrNak-&gt;hdr.size;</div>
+<div class="line"><a id="l01155" name="l01155"></a><span class="lineno"> 1155</span>        <span class="keywordflow">if</span> (missingData.cBytesMissing == 0) {</div>
+<div class="line"><a id="l01156" name="l01156"></a><span class="lineno"> 1156</span>            <span class="comment">// This block is finished, remove it</span></div>
+<div class="line"><a id="l01157" name="l01157"></a><span class="lineno"> 1157</span>            _downloadState.rgMissingData.takeFirst();</div>
+<div class="line"><a id="l01158" name="l01158"></a><span class="lineno"> 1158</span>        }</div>
 <div class="line"><a id="l01159" name="l01159"></a><span class="lineno"> 1159</span> </div>
-<div class="line"><a id="l01160" name="l01160"></a><span class="lineno"> 1160</span>        <span class="comment">// Emit progress last, as cancel could be called in there</span></div>
-<div class="line"><a id="l01161" name="l01161"></a><span class="lineno"> 1161</span>        <span class="keywordflow">if</span> (_downloadState.fileSize != 0) {</div>
-<div class="line"><a id="l01162" name="l01162"></a><span class="lineno"> 1162</span>            emit <a class="code hl_signal" href="classFTPManager.html#aa3e5f09bc64dee8aa6db265c5659f1e2">commandProgress</a>((<span class="keywordtype">float</span>)(_downloadState.bytesWritten) / (<span class="keywordtype">float</span>)_downloadState.fileSize);</div>
-<div class="line"><a id="l01163" name="l01163"></a><span class="lineno"> 1163</span>        }</div>
-<div class="line"><a id="l01164" name="l01164"></a><span class="lineno"> 1164</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.opcode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ae43f0c43517b9d27766398115ba9d499">MavlinkFTP::kRspNak</a>) {</div>
-<div class="line"><a id="l01165" name="l01165"></a><span class="lineno"> 1165</span>        <a class="code hl_enumeration" href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72ae">MavlinkFTP::ErrorCode_t</a> errorCode = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72ae">MavlinkFTP::ErrorCode_t</a><span class="keyword">&gt;</span>(ackOrNak-&gt;data[0]);</div>
-<div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span> </div>
-<div class="line"><a id="l01167" name="l01167"></a><span class="lineno"> 1167</span>        <span class="keywordflow">if</span> (errorCode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72aea4e73fe7bb075bc259789c8339ff965ea">MavlinkFTP::kErrEOF</a>) {</div>
-<div class="line"><a id="l01168" name="l01168"></a><span class="lineno"> 1168</span>            qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksAckOrNak EOF&quot;</span>;</div>
-<div class="line"><a id="l01169" name="l01169"></a><span class="lineno"> 1169</span>            <span class="keywordflow">if</span> (_downloadState.checksize == <span class="keyword">false</span> || _downloadState.bytesWritten == _downloadState.fileSize) {</div>
-<div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span>                <span class="comment">// We&#39;ve successfully complete filling in all missing blocks</span></div>
-<div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span>                _advanceStateMachine();</div>
-<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span>            }</div>
-<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (errorCode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72aeaaacafcd530e35fec149c6a912978090b">MavlinkFTP::kErrInvalidSession</a>) {</div>
-<div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>            _downloadSessionLost();</div>
-<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span>        }</div>
-<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span> </div>
-<div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: Nak -&quot;</span> &lt;&lt; _errorMsgFromNak(ackOrNak);</div>
-<div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span>        _downloadComplete(tr(<span class="stringliteral">&quot;Download failed&quot;</span>));</div>
-<div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span>    }</div>
-<div class="line"><a id="l01182" name="l01182"></a><span class="lineno"> 1182</span>}</div>
-<div class="line"><a id="l01183" name="l01183"></a><span class="lineno"> 1183</span> </div>
-<div class="line"><a id="l01184" name="l01184"></a><span class="lineno"> 1184</span><span class="keywordtype">void</span> FTPManager::_fillMissingBlocksTimeout(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span>{</div>
-<div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span>    <span class="keywordflow">if</span> (++_downloadState.retryCount &gt; _maxRetry) {</div>
-<div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span>        qCDebug(FTPManagerLog) &lt;&lt; QString(<span class="stringliteral">&quot;_fillMissingBlocksTimeout retries exceeded&quot;</span>);</div>
-<div class="line"><a id="l01188" name="l01188"></a><span class="lineno"> 1188</span>        _downloadComplete(tr(<span class="stringliteral">&quot;Download failed&quot;</span>));</div>
-<div class="line"><a id="l01189" name="l01189"></a><span class="lineno"> 1189</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span>        <span class="comment">// Ask for current offset again</span></div>
-<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>        qCDebug(FTPManagerLog) &lt;&lt; QString(<span class="stringliteral">&quot;_fillMissingBlocksTimeout: retrying - retryCount(%1) offset(%2)&quot;</span>).arg(_downloadState.retryCount).arg(_downloadState.expectedOffset);</div>
-<div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>        _fillMissingBlocksWorker(<span class="keyword">false</span> <span class="comment">/* firstReqeust */</span>);</div>
-<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>    }</div>
-<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>}</div>
-<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span> </div>
-<div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span><span class="keywordtype">void</span> FTPManager::_resetSessionsBegin(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>{</div>
-<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>    MavlinkFTP::Request request{};</div>
-<div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span>    request.hdr.opcode  = <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6aa54c48e204282d44aa173bd4f4b1739c">MavlinkFTP::kCmdResetSessions</a>;</div>
-<div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>    request.hdr.size    = 0;</div>
-<div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>    _sendRequestExpectAck(&amp;request);</div>
-<div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span>}</div>
-<div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span> </div>
-<div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span><span class="keywordtype">void</span> FTPManager::_resetSessionsAckOrNak(<span class="keyword">const</span> MavlinkFTP::Request* ackOrNak)</div>
-<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>{</div>
-<div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>    <a class="code hl_enumeration" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6">MavlinkFTP::OpCode_t</a> requestOpCode = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6">MavlinkFTP::OpCode_t</a><span class="keyword">&gt;</span>(ackOrNak-&gt;hdr.req_opcode);</div>
-<div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span> </div>
-<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>    <span class="keywordflow">if</span> (requestOpCode != <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6aa54c48e204282d44aa173bd4f4b1739c">MavlinkFTP::kCmdResetSessions</a>) {</div>
-<div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: Disregarding due to incorrect requestOpCode&quot;</span> &lt;&lt; <a class="code hl_function" href="classMavlinkFTP.html#ae7c83504710fe0da9b7aeb69f68cf55c">MavlinkFTP::opCodeToString</a>(requestOpCode);</div>
-<div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>    }</div>
-<div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>    <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.seqNumber != _expectedIncomingSeqNumber) {</div>
-<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_resetSessionsAckOrNak: Disregarding due to incorrect sequence actual:expected&quot;</span> &lt;&lt; ackOrNak-&gt;hdr.seqNumber &lt;&lt; _expectedIncomingSeqNumber;</div>
-<div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span>    }</div>
-<div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span> </div>
-<div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span>    _ackOrNakTimeoutTimer.stop();</div>
-<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span> </div>
-<div class="line"><a id="l01219" name="l01219"></a><span class="lineno"> 1219</span>    <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.opcode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ab5fa78f43fb90c08b344e8419459338f">MavlinkFTP::kRspAck</a>) {</div>
-<div class="line"><a id="l01220" name="l01220"></a><span class="lineno"> 1220</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_resetSessionsAckOrNak: Ack&quot;</span>;</div>
-<div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span>        _advanceStateMachine();</div>
-<div class="line"><a id="l01222" name="l01222"></a><span class="lineno"> 1222</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.opcode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ae43f0c43517b9d27766398115ba9d499">MavlinkFTP::kRspNak</a>) {</div>
-<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_resetSessionsAckOrNak: Nak -&quot;</span> &lt;&lt; _errorMsgFromNak(ackOrNak);</div>
-<div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span>        _downloadComplete(QString());</div>
-<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>    }</div>
-<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span>}</div>
-<div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span> </div>
-<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span><span class="keywordtype">void</span> FTPManager::_resetSessionsTimeout(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span>{</div>
-<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span>    qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_resetSessionsTimeout&quot;</span>;</div>
-<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span>    _downloadComplete(QString());</div>
-<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span>}</div>
-<div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span> </div>
-<div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span><span class="keywordtype">void</span> FTPManager::_setStateMachine(<span class="keyword">const</span> StateFunctions_t* rgStates, <span class="keywordtype">size_t</span> cStates)</div>
-<div class="line"><a id="l01235" name="l01235"></a><span class="lineno"> 1235</span>{</div>
-<div class="line"><a id="l01236" name="l01236"></a><span class="lineno"> 1236</span>    _rgStateMachine.append({ &amp;FTPManager::_clearStaleSessionsBegin, &amp;FTPManager::_clearStaleSessionsAckOrNak, &amp;FTPManager::_clearStaleSessionsTimeout });</div>
-<div class="line"><a id="l01237" name="l01237"></a><span class="lineno"> 1237</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; cStates; i++) {</div>
-<div class="line"><a id="l01238" name="l01238"></a><span class="lineno"> 1238</span>        _rgStateMachine.append(rgStates[i]);</div>
-<div class="line"><a id="l01239" name="l01239"></a><span class="lineno"> 1239</span>    }</div>
-<div class="line"><a id="l01240" name="l01240"></a><span class="lineno"> 1240</span>}</div>
-<div class="line"><a id="l01241" name="l01241"></a><span class="lineno"> 1241</span> </div>
-<div class="line"><a id="l01242" name="l01242"></a><span class="lineno"> 1242</span><span class="keywordtype">void</span> FTPManager::_clearStaleSessionsBegin(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l01243" name="l01243"></a><span class="lineno"> 1243</span>{</div>
-<div class="line"><a id="l01244" name="l01244"></a><span class="lineno"> 1244</span>    _clearStaleSessionsRetryCount = 0;</div>
-<div class="line"><a id="l01245" name="l01245"></a><span class="lineno"> 1245</span>    _resetSessionsBegin();</div>
-<div class="line"><a id="l01246" name="l01246"></a><span class="lineno"> 1246</span>}</div>
-<div class="line"><a id="l01247" name="l01247"></a><span class="lineno"> 1247</span> </div>
-<div class="line"><a id="l01248" name="l01248"></a><span class="lineno"> 1248</span><span class="keywordtype">void</span> FTPManager::_clearStaleSessionsAckOrNak(<span class="keyword">const</span> MavlinkFTP::Request* ackOrNak)</div>
-<div class="line"><a id="l01249" name="l01249"></a><span class="lineno"> 1249</span>{</div>
-<div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span>    <span class="keyword">const</span> <a class="code hl_enumeration" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6">MavlinkFTP::OpCode_t</a> requestOpCode = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6">MavlinkFTP::OpCode_t</a><span class="keyword">&gt;</span>(ackOrNak-&gt;hdr.req_opcode);</div>
-<div class="line"><a id="l01251" name="l01251"></a><span class="lineno"> 1251</span>    <span class="keywordflow">if</span> (requestOpCode != <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6aa54c48e204282d44aa173bd4f4b1739c">MavlinkFTP::kCmdResetSessions</a>) {</div>
-<div class="line"><a id="l01252" name="l01252"></a><span class="lineno"> 1252</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_clearStaleSessionsAckOrNak: Disregarding due to incorrect requestOpCode&quot;</span> &lt;&lt; <a class="code hl_function" href="classMavlinkFTP.html#ae7c83504710fe0da9b7aeb69f68cf55c">MavlinkFTP::opCodeToString</a>(requestOpCode);</div>
-<div class="line"><a id="l01253" name="l01253"></a><span class="lineno"> 1253</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01254" name="l01254"></a><span class="lineno"> 1254</span>    }</div>
-<div class="line"><a id="l01255" name="l01255"></a><span class="lineno"> 1255</span>    <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.seqNumber != _expectedIncomingSeqNumber) {</div>
-<div class="line"><a id="l01256" name="l01256"></a><span class="lineno"> 1256</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_clearStaleSessionsAckOrNak: Disregarding due to incorrect sequence actual:expected&quot;</span> &lt;&lt; ackOrNak-&gt;hdr.seqNumber &lt;&lt; _expectedIncomingSeqNumber;</div>
-<div class="line"><a id="l01257" name="l01257"></a><span class="lineno"> 1257</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01258" name="l01258"></a><span class="lineno"> 1258</span>    }</div>
-<div class="line"><a id="l01259" name="l01259"></a><span class="lineno"> 1259</span> </div>
-<div class="line"><a id="l01260" name="l01260"></a><span class="lineno"> 1260</span>    _ackOrNakTimeoutTimer.stop();</div>
-<div class="line"><a id="l01261" name="l01261"></a><span class="lineno"> 1261</span>    <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.opcode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ae43f0c43517b9d27766398115ba9d499">MavlinkFTP::kRspNak</a>) {</div>
-<div class="line"><a id="l01262" name="l01262"></a><span class="lineno"> 1262</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_clearStaleSessionsAckOrNak: Nak -&quot;</span> &lt;&lt; _errorMsgFromNak(ackOrNak) &lt;&lt; <span class="stringliteral">&quot;- continuing anyway&quot;</span>;</div>
-<div class="line"><a id="l01263" name="l01263"></a><span class="lineno"> 1263</span>    }</div>
-<div class="line"><a id="l01264" name="l01264"></a><span class="lineno"> 1264</span>    _advanceStateMachine();</div>
-<div class="line"><a id="l01265" name="l01265"></a><span class="lineno"> 1265</span>}</div>
-<div class="line"><a id="l01266" name="l01266"></a><span class="lineno"> 1266</span> </div>
-<div class="line"><a id="l01267" name="l01267"></a><span class="lineno"> 1267</span><span class="keywordtype">void</span> FTPManager::_clearStaleSessionsTimeout(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l01268" name="l01268"></a><span class="lineno"> 1268</span>{</div>
-<div class="line"><a id="l01269" name="l01269"></a><span class="lineno"> 1269</span>    <span class="keywordflow">if</span> (++_clearStaleSessionsRetryCount &lt;= 1) {</div>
-<div class="line"><a id="l01270" name="l01270"></a><span class="lineno"> 1270</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_clearStaleSessionsTimeout: retrying&quot;</span>;</div>
-<div class="line"><a id="l01271" name="l01271"></a><span class="lineno"> 1271</span>        _resetSessionsBegin();</div>
-<div class="line"><a id="l01272" name="l01272"></a><span class="lineno"> 1272</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01273" name="l01273"></a><span class="lineno"> 1273</span>    }</div>
-<div class="line"><a id="l01274" name="l01274"></a><span class="lineno"> 1274</span>    qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_clearStaleSessionsTimeout: no reply, continuing anyway&quot;</span>;</div>
-<div class="line"><a id="l01275" name="l01275"></a><span class="lineno"> 1275</span>    _advanceStateMachine();</div>
-<div class="line"><a id="l01276" name="l01276"></a><span class="lineno"> 1276</span>}</div>
-<div class="line"><a id="l01277" name="l01277"></a><span class="lineno"> 1277</span> </div>
-<div class="line"><a id="l01278" name="l01278"></a><span class="lineno"> 1278</span><span class="keywordtype">void</span> FTPManager::_sendResetSessionsNoAck(<span class="keywordtype">void</span>)</div>
-<div class="line"><a id="l01279" name="l01279"></a><span class="lineno"> 1279</span>{</div>
-<div class="line"><a id="l01280" name="l01280"></a><span class="lineno"> 1280</span>    <a class="code hl_typedef" href="LinkInterface_8h.html#a06fa8dcc2f950057f6a5ae85ec96cee2">SharedLinkInterfacePtr</a> sharedLink = _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a49c0f82c46858483d699df6b615b3f02">vehicleLinkManager</a>()-&gt;<a class="code hl_function" href="classVehicleLinkManager.html#a46e03af5d8cf9aa9620b080468bbe7b6">primaryLink</a>().lock();</div>
-<div class="line"><a id="l01281" name="l01281"></a><span class="lineno"> 1281</span>    <span class="keywordflow">if</span> (!sharedLink) {</div>
-<div class="line"><a id="l01282" name="l01282"></a><span class="lineno"> 1282</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01283" name="l01283"></a><span class="lineno"> 1283</span>    }</div>
-<div class="line"><a id="l01284" name="l01284"></a><span class="lineno"> 1284</span> </div>
-<div class="line"><a id="l01285" name="l01285"></a><span class="lineno"> 1285</span>    MavlinkFTP::Request request{};</div>
-<div class="line"><a id="l01286" name="l01286"></a><span class="lineno"> 1286</span>    request.hdr.opcode  = <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6aa54c48e204282d44aa173bd4f4b1739c">MavlinkFTP::kCmdResetSessions</a>;</div>
-<div class="line"><a id="l01287" name="l01287"></a><span class="lineno"> 1287</span>    request.hdr.size    = 0;</div>
-<div class="line"><a id="l01288" name="l01288"></a><span class="lineno"> 1288</span>    request.hdr.seqNumber = _expectedIncomingSeqNumber + 1;</div>
-<div class="line"><a id="l01289" name="l01289"></a><span class="lineno"> 1289</span>    _expectedIncomingSeqNumber += 2;</div>
-<div class="line"><a id="l01290" name="l01290"></a><span class="lineno"> 1290</span> </div>
-<div class="line"><a id="l01291" name="l01291"></a><span class="lineno"> 1291</span>    qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_sendResetSessionsNoAck seqNumber:&quot;</span> &lt;&lt; request.hdr.seqNumber;</div>
-<div class="line"><a id="l01292" name="l01292"></a><span class="lineno"> 1292</span> </div>
-<div class="line"><a id="l01293" name="l01293"></a><span class="lineno"> 1293</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> message;</div>
-<div class="line"><a id="l01294" name="l01294"></a><span class="lineno"> 1294</span>    mavlink_msg_file_transfer_protocol_pack_chan(<a class="code hl_function" href="classMAVLinkProtocol.html#aa7efddf9f80781eb204442eb265b3fa5">MAVLinkProtocol::instance</a>()-&gt;getSystemId(),</div>
-<div class="line"><a id="l01295" name="l01295"></a><span class="lineno"> 1295</span>                                                 <a class="code hl_function" href="classMAVLinkProtocol.html#a2999b6e6d6ac482d0b7c1aaf91c015e7">MAVLinkProtocol::getComponentId</a>(),</div>
-<div class="line"><a id="l01296" name="l01296"></a><span class="lineno"> 1296</span>                                                 sharedLink-&gt;mavlinkChannel(),</div>
-<div class="line"><a id="l01297" name="l01297"></a><span class="lineno"> 1297</span>                                                 &amp;message,</div>
-<div class="line"><a id="l01298" name="l01298"></a><span class="lineno"> 1298</span>                                                 0,</div>
-<div class="line"><a id="l01299" name="l01299"></a><span class="lineno"> 1299</span>                                                 _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a74829d3d2c320cad6530de1bb8bee8bf">id</a>(),</div>
-<div class="line"><a id="l01300" name="l01300"></a><span class="lineno"> 1300</span>                                                 _ftpCompId,</div>
-<div class="line"><a id="l01301" name="l01301"></a><span class="lineno"> 1301</span>                                                 (uint8_t*)&amp;request);</div>
-<div class="line"><a id="l01302" name="l01302"></a><span class="lineno"> 1302</span>    _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a7b661e2cf877e915aebabc8c8ac2f57b">sendMessageOnLinkThreadSafe</a>(sharedLink.get(), message);</div>
-<div class="line"><a id="l01303" name="l01303"></a><span class="lineno"> 1303</span>}</div>
-<div class="line"><a id="l01304" name="l01304"></a><span class="lineno"> 1304</span> </div>
-<div class="line"><a id="l01305" name="l01305"></a><span class="lineno"> 1305</span><span class="keywordtype">void</span> FTPManager::_sendRequestExpectAck(MavlinkFTP::Request* request)</div>
-<div class="line"><a id="l01306" name="l01306"></a><span class="lineno"> 1306</span>{</div>
-<div class="line"><a id="l01307" name="l01307"></a><span class="lineno"> 1307</span>    _ackOrNakTimeoutTimer.start();</div>
-<div class="line"><a id="l01308" name="l01308"></a><span class="lineno"> 1308</span> </div>
-<div class="line"><a id="l01309" name="l01309"></a><span class="lineno"> 1309</span>    <a class="code hl_typedef" href="LinkInterface_8h.html#a06fa8dcc2f950057f6a5ae85ec96cee2">SharedLinkInterfacePtr</a> sharedLink = _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a49c0f82c46858483d699df6b615b3f02">vehicleLinkManager</a>()-&gt;<a class="code hl_function" href="classVehicleLinkManager.html#a46e03af5d8cf9aa9620b080468bbe7b6">primaryLink</a>().lock();</div>
-<div class="line"><a id="l01310" name="l01310"></a><span class="lineno"> 1310</span>    <span class="keywordflow">if</span> (sharedLink) {</div>
-<div class="line"><a id="l01311" name="l01311"></a><span class="lineno"> 1311</span>        request-&gt;hdr.seqNumber = _expectedIncomingSeqNumber + 1;    <span class="comment">// Outgoing is 1 past last incoming</span></div>
-<div class="line"><a id="l01312" name="l01312"></a><span class="lineno"> 1312</span>        _expectedIncomingSeqNumber += 2;</div>
-<div class="line"><a id="l01313" name="l01313"></a><span class="lineno"> 1313</span> </div>
-<div class="line"><a id="l01314" name="l01314"></a><span class="lineno"> 1314</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_sendRequestExpectAck opcode:&quot;</span> &lt;&lt; <a class="code hl_function" href="classMavlinkFTP.html#ae7c83504710fe0da9b7aeb69f68cf55c">MavlinkFTP::opCodeToString</a>(<span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6">MavlinkFTP::OpCode_t</a><span class="keyword">&gt;</span>(request-&gt;hdr.opcode)) &lt;&lt; <span class="stringliteral">&quot;seqNumber:&quot;</span> &lt;&lt; request-&gt;hdr.seqNumber;</div>
-<div class="line"><a id="l01315" name="l01315"></a><span class="lineno"> 1315</span> </div>
-<div class="line"><a id="l01316" name="l01316"></a><span class="lineno"> 1316</span>        <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> message;</div>
-<div class="line"><a id="l01317" name="l01317"></a><span class="lineno"> 1317</span>        mavlink_msg_file_transfer_protocol_pack_chan(<a class="code hl_function" href="classMAVLinkProtocol.html#aa7efddf9f80781eb204442eb265b3fa5">MAVLinkProtocol::instance</a>()-&gt;getSystemId(),</div>
-<div class="line"><a id="l01318" name="l01318"></a><span class="lineno"> 1318</span>                                                     <a class="code hl_function" href="classMAVLinkProtocol.html#a2999b6e6d6ac482d0b7c1aaf91c015e7">MAVLinkProtocol::getComponentId</a>(),</div>
-<div class="line"><a id="l01319" name="l01319"></a><span class="lineno"> 1319</span>                                                     sharedLink-&gt;mavlinkChannel(),</div>
-<div class="line"><a id="l01320" name="l01320"></a><span class="lineno"> 1320</span>                                                     &amp;message,</div>
-<div class="line"><a id="l01321" name="l01321"></a><span class="lineno"> 1321</span>                                                     0,                                                     <span class="comment">// Target network, 0=broadcast?</span></div>
-<div class="line"><a id="l01322" name="l01322"></a><span class="lineno"> 1322</span>                                                     _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a74829d3d2c320cad6530de1bb8bee8bf">id</a>(),</div>
-<div class="line"><a id="l01323" name="l01323"></a><span class="lineno"> 1323</span>                                                     _ftpCompId,</div>
-<div class="line"><a id="l01324" name="l01324"></a><span class="lineno"> 1324</span>                                                     (uint8_t*)request);                                    <span class="comment">// Payload</span></div>
-<div class="line"><a id="l01325" name="l01325"></a><span class="lineno"> 1325</span>        _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a7b661e2cf877e915aebabc8c8ac2f57b">sendMessageOnLinkThreadSafe</a>(sharedLink.get(), message);</div>
-<div class="line"><a id="l01326" name="l01326"></a><span class="lineno"> 1326</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01327" name="l01327"></a><span class="lineno"> 1327</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_sendRequestExpectAck No primary link. Allowing timeout to fail sequence.&quot;</span>;</div>
-<div class="line"><a id="l01328" name="l01328"></a><span class="lineno"> 1328</span>    }</div>
-<div class="line"><a id="l01329" name="l01329"></a><span class="lineno"> 1329</span>}</div>
-<div class="line"><a id="l01330" name="l01330"></a><span class="lineno"> 1330</span> </div>
-<div class="line"><a id="l01331" name="l01331"></a><span class="lineno"> 1331</span><span class="keywordtype">bool</span> FTPManager::_parseURI(uint8_t fromCompId, <span class="keyword">const</span> QString&amp; uri, QString&amp; parsedURI, uint8_t&amp; compId)</div>
-<div class="line"><a id="l01332" name="l01332"></a><span class="lineno"> 1332</span>{</div>
-<div class="line"><a id="l01333" name="l01333"></a><span class="lineno"> 1333</span>    parsedURI   = uri;</div>
-<div class="line"><a id="l01334" name="l01334"></a><span class="lineno"> 1334</span>    compId      = (fromCompId == MAV_COMP_ID_ALL) ? (uint8_t)MAV_COMP_ID_AUTOPILOT1 : fromCompId;</div>
-<div class="line"><a id="l01335" name="l01335"></a><span class="lineno"> 1335</span> </div>
-<div class="line"><a id="l01336" name="l01336"></a><span class="lineno"> 1336</span>    <span class="comment">// Pull scheme off the front if there</span></div>
-<div class="line"><a id="l01337" name="l01337"></a><span class="lineno"> 1337</span>    QString ftpPrefix(QStringLiteral(<span class="stringliteral">&quot;%1://&quot;</span>).arg(<a class="code hl_variable" href="classFTPManager.html#a6aba45c648956730127b0216cde9bb1a">mavlinkFTPScheme</a>));</div>
-<div class="line"><a id="l01338" name="l01338"></a><span class="lineno"> 1338</span>    <span class="keywordflow">if</span> (parsedURI.startsWith(ftpPrefix, Qt::CaseInsensitive)) {</div>
-<div class="line"><a id="l01339" name="l01339"></a><span class="lineno"> 1339</span>        parsedURI = parsedURI.right(parsedURI.length() - ftpPrefix.length() + 1);</div>
-<div class="line"><a id="l01340" name="l01340"></a><span class="lineno"> 1340</span>    }</div>
-<div class="line"><a id="l01341" name="l01341"></a><span class="lineno"> 1341</span>    <span class="keywordflow">if</span> (parsedURI.contains(<span class="stringliteral">&quot;://&quot;</span>)) {</div>
-<div class="line"><a id="l01342" name="l01342"></a><span class="lineno"> 1342</span>        qCWarning(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;Incorrect uri scheme or format&quot;</span> &lt;&lt; uri;</div>
-<div class="line"><a id="l01343" name="l01343"></a><span class="lineno"> 1343</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01344" name="l01344"></a><span class="lineno"> 1344</span>    }</div>
-<div class="line"><a id="l01345" name="l01345"></a><span class="lineno"> 1345</span> </div>
-<div class="line"><a id="l01346" name="l01346"></a><span class="lineno"> 1346</span>    <span class="comment">// Pull component id off the front if there</span></div>
-<div class="line"><a id="l01347" name="l01347"></a><span class="lineno"> 1347</span>    QRegularExpression      regEx(<span class="stringliteral">&quot;^/??\\[\\;comp\\=(\\d+)\\]&quot;</span>);</div>
-<div class="line"><a id="l01348" name="l01348"></a><span class="lineno"> 1348</span>    QRegularExpressionMatch match = regEx.match(parsedURI);</div>
-<div class="line"><a id="l01349" name="l01349"></a><span class="lineno"> 1349</span>    <span class="keywordflow">if</span> (match.hasMatch()) {</div>
-<div class="line"><a id="l01350" name="l01350"></a><span class="lineno"> 1350</span>        <span class="keywordtype">bool</span> ok;</div>
-<div class="line"><a id="l01351" name="l01351"></a><span class="lineno"> 1351</span>        compId = match.captured(1).toUInt(&amp;ok);</div>
-<div class="line"><a id="l01352" name="l01352"></a><span class="lineno"> 1352</span>        <span class="keywordflow">if</span> (!ok) {</div>
-<div class="line"><a id="l01353" name="l01353"></a><span class="lineno"> 1353</span>            qCWarning(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;Incorrect format for component id&quot;</span> &lt;&lt; uri;</div>
-<div class="line"><a id="l01354" name="l01354"></a><span class="lineno"> 1354</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01355" name="l01355"></a><span class="lineno"> 1355</span>        }</div>
-<div class="line"><a id="l01356" name="l01356"></a><span class="lineno"> 1356</span> </div>
-<div class="line"><a id="l01357" name="l01357"></a><span class="lineno"> 1357</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;Found compId in MAVLink FTP URI: &quot;</span> &lt;&lt; compId;</div>
-<div class="line"><a id="l01358" name="l01358"></a><span class="lineno"> 1358</span>        parsedURI.replace(QRegularExpression(<span class="stringliteral">&quot;\\[\\;comp\\=\\d+\\]&quot;</span>), <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l01359" name="l01359"></a><span class="lineno"> 1359</span>    }</div>
-<div class="line"><a id="l01360" name="l01360"></a><span class="lineno"> 1360</span> </div>
-<div class="line"><a id="l01361" name="l01361"></a><span class="lineno"> 1361</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01362" name="l01362"></a><span class="lineno"> 1362</span>}</div>
+<div class="line"><a id="l01160" name="l01160"></a><span class="lineno"> 1160</span>        <span class="comment">// Move on to fill in possible next hole</span></div>
+<div class="line"><a id="l01161" name="l01161"></a><span class="lineno"> 1161</span>        _fillMissingBlocksWorker(<span class="keyword">true</span> <span class="comment">/* firstReqeust */</span>);</div>
+<div class="line"><a id="l01162" name="l01162"></a><span class="lineno"> 1162</span> </div>
+<div class="line"><a id="l01163" name="l01163"></a><span class="lineno"> 1163</span>        <span class="comment">// Emit progress last, as cancel could be called in there</span></div>
+<div class="line"><a id="l01164" name="l01164"></a><span class="lineno"> 1164</span>        <span class="keywordflow">if</span> (_downloadState.fileSize != 0) {</div>
+<div class="line"><a id="l01165" name="l01165"></a><span class="lineno"> 1165</span>            emit <a class="code hl_signal" href="classFTPManager.html#aa3e5f09bc64dee8aa6db265c5659f1e2">commandProgress</a>((<span class="keywordtype">float</span>)(_downloadState.bytesWritten) / (<span class="keywordtype">float</span>)_downloadState.fileSize);</div>
+<div class="line"><a id="l01166" name="l01166"></a><span class="lineno"> 1166</span>        }</div>
+<div class="line"><a id="l01167" name="l01167"></a><span class="lineno"> 1167</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.opcode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ae43f0c43517b9d27766398115ba9d499">MavlinkFTP::kRspNak</a>) {</div>
+<div class="line"><a id="l01168" name="l01168"></a><span class="lineno"> 1168</span>        <a class="code hl_enumeration" href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72ae">MavlinkFTP::ErrorCode_t</a> errorCode = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72ae">MavlinkFTP::ErrorCode_t</a><span class="keyword">&gt;</span>(ackOrNak-&gt;data[0]);</div>
+<div class="line"><a id="l01169" name="l01169"></a><span class="lineno"> 1169</span> </div>
+<div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span>        <span class="keywordflow">if</span> (errorCode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72aea4e73fe7bb075bc259789c8339ff965ea">MavlinkFTP::kErrEOF</a>) {</div>
+<div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span>            qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksAckOrNak EOF&quot;</span>;</div>
+<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>            <span class="keywordflow">if</span> (_downloadState.checksize == <span class="keyword">false</span> || _downloadState.bytesWritten == _downloadState.fileSize) {</div>
+<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span>                <span class="comment">// We&#39;ve successfully complete filling in all missing blocks</span></div>
+<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span>                _advanceStateMachine();</div>
+<div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span>            }</div>
+<div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (errorCode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72aeaaacafcd530e35fec149c6a912978090b">MavlinkFTP::kErrInvalidSession</a>) {</div>
+<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"> 1178</span>            _downloadSessionLost();</div>
+<div class="line"><a id="l01179" name="l01179"></a><span class="lineno"> 1179</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span>        }</div>
+<div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span> </div>
+<div class="line"><a id="l01182" name="l01182"></a><span class="lineno"> 1182</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: Nak -&quot;</span> &lt;&lt; _errorMsgFromNak(ackOrNak);</div>
+<div class="line"><a id="l01183" name="l01183"></a><span class="lineno"> 1183</span>        _downloadComplete(tr(<span class="stringliteral">&quot;Download failed&quot;</span>));</div>
+<div class="line"><a id="l01184" name="l01184"></a><span class="lineno"> 1184</span>    }</div>
+<div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span>}</div>
+<div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span> </div>
+<div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span><span class="keywordtype">void</span> FTPManager::_fillMissingBlocksTimeout(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l01188" name="l01188"></a><span class="lineno"> 1188</span>{</div>
+<div class="line"><a id="l01189" name="l01189"></a><span class="lineno"> 1189</span>    <span class="keywordflow">if</span> (++_downloadState.retryCount &gt; _maxRetry) {</div>
+<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span>        qCDebug(FTPManagerLog) &lt;&lt; QString(<span class="stringliteral">&quot;_fillMissingBlocksTimeout retries exceeded&quot;</span>);</div>
+<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>        _downloadComplete(tr(<span class="stringliteral">&quot;Download failed&quot;</span>));</div>
+<div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>        <span class="comment">// Ask for current offset again</span></div>
+<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>        qCDebug(FTPManagerLog) &lt;&lt; QString(<span class="stringliteral">&quot;_fillMissingBlocksTimeout: retrying - retryCount(%1) offset(%2)&quot;</span>).arg(_downloadState.retryCount).arg(_downloadState.expectedOffset);</div>
+<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>        _fillMissingBlocksWorker(<span class="keyword">false</span> <span class="comment">/* firstReqeust */</span>);</div>
+<div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span>    }</div>
+<div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>}</div>
+<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span> </div>
+<div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span><span class="keywordtype">void</span> FTPManager::_resetSessionsBegin(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>{</div>
+<div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>    MavlinkFTP::Request request{};</div>
+<div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span>    request.hdr.opcode  = <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6aa54c48e204282d44aa173bd4f4b1739c">MavlinkFTP::kCmdResetSessions</a>;</div>
+<div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span>    request.hdr.size    = 0;</div>
+<div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span>    _sendRequestExpectAck(&amp;request);</div>
+<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>}</div>
+<div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span> </div>
+<div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span><span class="keywordtype">void</span> FTPManager::_resetSessionsAckOrNak(<span class="keyword">const</span> MavlinkFTP::Request* ackOrNak)</div>
+<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>{</div>
+<div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>    <a class="code hl_enumeration" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6">MavlinkFTP::OpCode_t</a> requestOpCode = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6">MavlinkFTP::OpCode_t</a><span class="keyword">&gt;</span>(ackOrNak-&gt;hdr.req_opcode);</div>
+<div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span> </div>
+<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>    <span class="keywordflow">if</span> (requestOpCode != <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6aa54c48e204282d44aa173bd4f4b1739c">MavlinkFTP::kCmdResetSessions</a>) {</div>
+<div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_fillMissingBlocksAckOrNak: Disregarding due to incorrect requestOpCode&quot;</span> &lt;&lt; <a class="code hl_function" href="classMavlinkFTP.html#ae7c83504710fe0da9b7aeb69f68cf55c">MavlinkFTP::opCodeToString</a>(requestOpCode);</div>
+<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>    }</div>
+<div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span>    <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.seqNumber != _expectedIncomingSeqNumber) {</div>
+<div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_resetSessionsAckOrNak: Disregarding due to incorrect sequence actual:expected&quot;</span> &lt;&lt; ackOrNak-&gt;hdr.seqNumber &lt;&lt; _expectedIncomingSeqNumber;</div>
+<div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span>    }</div>
+<div class="line"><a id="l01219" name="l01219"></a><span class="lineno"> 1219</span> </div>
+<div class="line"><a id="l01220" name="l01220"></a><span class="lineno"> 1220</span>    _ackOrNakTimeoutTimer.stop();</div>
+<div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span> </div>
+<div class="line"><a id="l01222" name="l01222"></a><span class="lineno"> 1222</span>    <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.opcode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ab5fa78f43fb90c08b344e8419459338f">MavlinkFTP::kRspAck</a>) {</div>
+<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_resetSessionsAckOrNak: Ack&quot;</span>;</div>
+<div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span>        _advanceStateMachine();</div>
+<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.opcode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ae43f0c43517b9d27766398115ba9d499">MavlinkFTP::kRspNak</a>) {</div>
+<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_resetSessionsAckOrNak: Nak -&quot;</span> &lt;&lt; _errorMsgFromNak(ackOrNak);</div>
+<div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span>        _downloadComplete(QString());</div>
+<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span>    }</div>
+<div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span>}</div>
+<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span> </div>
+<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span><span class="keywordtype">void</span> FTPManager::_resetSessionsTimeout(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span>{</div>
+<div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span>    qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_resetSessionsTimeout&quot;</span>;</div>
+<div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span>    _downloadComplete(QString());</div>
+<div class="line"><a id="l01235" name="l01235"></a><span class="lineno"> 1235</span>}</div>
+<div class="line"><a id="l01236" name="l01236"></a><span class="lineno"> 1236</span> </div>
+<div class="line"><a id="l01237" name="l01237"></a><span class="lineno"> 1237</span><span class="keywordtype">void</span> FTPManager::_setStateMachine(<span class="keyword">const</span> StateFunctions_t* rgStates, <span class="keywordtype">size_t</span> cStates)</div>
+<div class="line"><a id="l01238" name="l01238"></a><span class="lineno"> 1238</span>{</div>
+<div class="line"><a id="l01239" name="l01239"></a><span class="lineno"> 1239</span>    _rgStateMachine.append({ &amp;FTPManager::_clearStaleSessionsBegin, &amp;FTPManager::_clearStaleSessionsAckOrNak, &amp;FTPManager::_clearStaleSessionsTimeout });</div>
+<div class="line"><a id="l01240" name="l01240"></a><span class="lineno"> 1240</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; cStates; i++) {</div>
+<div class="line"><a id="l01241" name="l01241"></a><span class="lineno"> 1241</span>        _rgStateMachine.append(rgStates[i]);</div>
+<div class="line"><a id="l01242" name="l01242"></a><span class="lineno"> 1242</span>    }</div>
+<div class="line"><a id="l01243" name="l01243"></a><span class="lineno"> 1243</span>}</div>
+<div class="line"><a id="l01244" name="l01244"></a><span class="lineno"> 1244</span> </div>
+<div class="line"><a id="l01245" name="l01245"></a><span class="lineno"> 1245</span><span class="keywordtype">void</span> FTPManager::_clearStaleSessionsBegin(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l01246" name="l01246"></a><span class="lineno"> 1246</span>{</div>
+<div class="line"><a id="l01247" name="l01247"></a><span class="lineno"> 1247</span>    _clearStaleSessionsRetryCount = 0;</div>
+<div class="line"><a id="l01248" name="l01248"></a><span class="lineno"> 1248</span>    _resetSessionsBegin();</div>
+<div class="line"><a id="l01249" name="l01249"></a><span class="lineno"> 1249</span>}</div>
+<div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span> </div>
+<div class="line"><a id="l01251" name="l01251"></a><span class="lineno"> 1251</span><span class="keywordtype">void</span> FTPManager::_clearStaleSessionsAckOrNak(<span class="keyword">const</span> MavlinkFTP::Request* ackOrNak)</div>
+<div class="line"><a id="l01252" name="l01252"></a><span class="lineno"> 1252</span>{</div>
+<div class="line"><a id="l01253" name="l01253"></a><span class="lineno"> 1253</span>    <span class="keyword">const</span> <a class="code hl_enumeration" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6">MavlinkFTP::OpCode_t</a> requestOpCode = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6">MavlinkFTP::OpCode_t</a><span class="keyword">&gt;</span>(ackOrNak-&gt;hdr.req_opcode);</div>
+<div class="line"><a id="l01254" name="l01254"></a><span class="lineno"> 1254</span>    <span class="keywordflow">if</span> (requestOpCode != <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6aa54c48e204282d44aa173bd4f4b1739c">MavlinkFTP::kCmdResetSessions</a>) {</div>
+<div class="line"><a id="l01255" name="l01255"></a><span class="lineno"> 1255</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_clearStaleSessionsAckOrNak: Disregarding due to incorrect requestOpCode&quot;</span> &lt;&lt; <a class="code hl_function" href="classMavlinkFTP.html#ae7c83504710fe0da9b7aeb69f68cf55c">MavlinkFTP::opCodeToString</a>(requestOpCode);</div>
+<div class="line"><a id="l01256" name="l01256"></a><span class="lineno"> 1256</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01257" name="l01257"></a><span class="lineno"> 1257</span>    }</div>
+<div class="line"><a id="l01258" name="l01258"></a><span class="lineno"> 1258</span>    <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.seqNumber != _expectedIncomingSeqNumber) {</div>
+<div class="line"><a id="l01259" name="l01259"></a><span class="lineno"> 1259</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_clearStaleSessionsAckOrNak: Disregarding due to incorrect sequence actual:expected&quot;</span> &lt;&lt; ackOrNak-&gt;hdr.seqNumber &lt;&lt; _expectedIncomingSeqNumber;</div>
+<div class="line"><a id="l01260" name="l01260"></a><span class="lineno"> 1260</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01261" name="l01261"></a><span class="lineno"> 1261</span>    }</div>
+<div class="line"><a id="l01262" name="l01262"></a><span class="lineno"> 1262</span> </div>
+<div class="line"><a id="l01263" name="l01263"></a><span class="lineno"> 1263</span>    _ackOrNakTimeoutTimer.stop();</div>
+<div class="line"><a id="l01264" name="l01264"></a><span class="lineno"> 1264</span>    <span class="keywordflow">if</span> (ackOrNak-&gt;hdr.opcode == <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6ae43f0c43517b9d27766398115ba9d499">MavlinkFTP::kRspNak</a>) {</div>
+<div class="line"><a id="l01265" name="l01265"></a><span class="lineno"> 1265</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_clearStaleSessionsAckOrNak: Nak -&quot;</span> &lt;&lt; _errorMsgFromNak(ackOrNak) &lt;&lt; <span class="stringliteral">&quot;- continuing anyway&quot;</span>;</div>
+<div class="line"><a id="l01266" name="l01266"></a><span class="lineno"> 1266</span>    }</div>
+<div class="line"><a id="l01267" name="l01267"></a><span class="lineno"> 1267</span>    _advanceStateMachine();</div>
+<div class="line"><a id="l01268" name="l01268"></a><span class="lineno"> 1268</span>}</div>
+<div class="line"><a id="l01269" name="l01269"></a><span class="lineno"> 1269</span> </div>
+<div class="line"><a id="l01270" name="l01270"></a><span class="lineno"> 1270</span><span class="keywordtype">void</span> FTPManager::_clearStaleSessionsTimeout(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l01271" name="l01271"></a><span class="lineno"> 1271</span>{</div>
+<div class="line"><a id="l01272" name="l01272"></a><span class="lineno"> 1272</span>    <span class="keywordflow">if</span> (++_clearStaleSessionsRetryCount &lt;= 1) {</div>
+<div class="line"><a id="l01273" name="l01273"></a><span class="lineno"> 1273</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_clearStaleSessionsTimeout: retrying&quot;</span>;</div>
+<div class="line"><a id="l01274" name="l01274"></a><span class="lineno"> 1274</span>        _resetSessionsBegin();</div>
+<div class="line"><a id="l01275" name="l01275"></a><span class="lineno"> 1275</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01276" name="l01276"></a><span class="lineno"> 1276</span>    }</div>
+<div class="line"><a id="l01277" name="l01277"></a><span class="lineno"> 1277</span>    qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_clearStaleSessionsTimeout: no reply, continuing anyway&quot;</span>;</div>
+<div class="line"><a id="l01278" name="l01278"></a><span class="lineno"> 1278</span>    _advanceStateMachine();</div>
+<div class="line"><a id="l01279" name="l01279"></a><span class="lineno"> 1279</span>}</div>
+<div class="line"><a id="l01280" name="l01280"></a><span class="lineno"> 1280</span> </div>
+<div class="line"><a id="l01281" name="l01281"></a><span class="lineno"> 1281</span><span class="keywordtype">void</span> FTPManager::_sendResetSessionsNoAck(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l01282" name="l01282"></a><span class="lineno"> 1282</span>{</div>
+<div class="line"><a id="l01283" name="l01283"></a><span class="lineno"> 1283</span>    <a class="code hl_typedef" href="LinkInterface_8h.html#a06fa8dcc2f950057f6a5ae85ec96cee2">SharedLinkInterfacePtr</a> sharedLink = _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a49c0f82c46858483d699df6b615b3f02">vehicleLinkManager</a>()-&gt;<a class="code hl_function" href="classVehicleLinkManager.html#a46e03af5d8cf9aa9620b080468bbe7b6">primaryLink</a>().lock();</div>
+<div class="line"><a id="l01284" name="l01284"></a><span class="lineno"> 1284</span>    <span class="keywordflow">if</span> (!sharedLink) {</div>
+<div class="line"><a id="l01285" name="l01285"></a><span class="lineno"> 1285</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01286" name="l01286"></a><span class="lineno"> 1286</span>    }</div>
+<div class="line"><a id="l01287" name="l01287"></a><span class="lineno"> 1287</span> </div>
+<div class="line"><a id="l01288" name="l01288"></a><span class="lineno"> 1288</span>    MavlinkFTP::Request request{};</div>
+<div class="line"><a id="l01289" name="l01289"></a><span class="lineno"> 1289</span>    request.hdr.opcode  = <a class="code hl_enumvalue" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6aa54c48e204282d44aa173bd4f4b1739c">MavlinkFTP::kCmdResetSessions</a>;</div>
+<div class="line"><a id="l01290" name="l01290"></a><span class="lineno"> 1290</span>    request.hdr.size    = 0;</div>
+<div class="line"><a id="l01291" name="l01291"></a><span class="lineno"> 1291</span>    request.hdr.seqNumber = _expectedIncomingSeqNumber + 1;</div>
+<div class="line"><a id="l01292" name="l01292"></a><span class="lineno"> 1292</span>    _expectedIncomingSeqNumber += 2;</div>
+<div class="line"><a id="l01293" name="l01293"></a><span class="lineno"> 1293</span> </div>
+<div class="line"><a id="l01294" name="l01294"></a><span class="lineno"> 1294</span>    qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_sendResetSessionsNoAck seqNumber:&quot;</span> &lt;&lt; request.hdr.seqNumber;</div>
+<div class="line"><a id="l01295" name="l01295"></a><span class="lineno"> 1295</span> </div>
+<div class="line"><a id="l01296" name="l01296"></a><span class="lineno"> 1296</span>    <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> message;</div>
+<div class="line"><a id="l01297" name="l01297"></a><span class="lineno"> 1297</span>    mavlink_msg_file_transfer_protocol_pack_chan(<a class="code hl_function" href="classMAVLinkProtocol.html#aa7efddf9f80781eb204442eb265b3fa5">MAVLinkProtocol::instance</a>()-&gt;getSystemId(),</div>
+<div class="line"><a id="l01298" name="l01298"></a><span class="lineno"> 1298</span>                                                 <a class="code hl_function" href="classMAVLinkProtocol.html#a2999b6e6d6ac482d0b7c1aaf91c015e7">MAVLinkProtocol::getComponentId</a>(),</div>
+<div class="line"><a id="l01299" name="l01299"></a><span class="lineno"> 1299</span>                                                 sharedLink-&gt;mavlinkChannel(),</div>
+<div class="line"><a id="l01300" name="l01300"></a><span class="lineno"> 1300</span>                                                 &amp;message,</div>
+<div class="line"><a id="l01301" name="l01301"></a><span class="lineno"> 1301</span>                                                 0,</div>
+<div class="line"><a id="l01302" name="l01302"></a><span class="lineno"> 1302</span>                                                 _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a74829d3d2c320cad6530de1bb8bee8bf">id</a>(),</div>
+<div class="line"><a id="l01303" name="l01303"></a><span class="lineno"> 1303</span>                                                 _ftpCompId,</div>
+<div class="line"><a id="l01304" name="l01304"></a><span class="lineno"> 1304</span>                                                 (uint8_t*)&amp;request);</div>
+<div class="line"><a id="l01305" name="l01305"></a><span class="lineno"> 1305</span>    _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a7b661e2cf877e915aebabc8c8ac2f57b">sendMessageOnLinkThreadSafe</a>(sharedLink.get(), message);</div>
+<div class="line"><a id="l01306" name="l01306"></a><span class="lineno"> 1306</span>}</div>
+<div class="line"><a id="l01307" name="l01307"></a><span class="lineno"> 1307</span> </div>
+<div class="line"><a id="l01308" name="l01308"></a><span class="lineno"> 1308</span><span class="keywordtype">void</span> FTPManager::_sendRequestExpectAck(MavlinkFTP::Request* request)</div>
+<div class="line"><a id="l01309" name="l01309"></a><span class="lineno"> 1309</span>{</div>
+<div class="line"><a id="l01310" name="l01310"></a><span class="lineno"> 1310</span>    _ackOrNakTimeoutTimer.start();</div>
+<div class="line"><a id="l01311" name="l01311"></a><span class="lineno"> 1311</span> </div>
+<div class="line"><a id="l01312" name="l01312"></a><span class="lineno"> 1312</span>    <a class="code hl_typedef" href="LinkInterface_8h.html#a06fa8dcc2f950057f6a5ae85ec96cee2">SharedLinkInterfacePtr</a> sharedLink = _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a49c0f82c46858483d699df6b615b3f02">vehicleLinkManager</a>()-&gt;<a class="code hl_function" href="classVehicleLinkManager.html#a46e03af5d8cf9aa9620b080468bbe7b6">primaryLink</a>().lock();</div>
+<div class="line"><a id="l01313" name="l01313"></a><span class="lineno"> 1313</span>    <span class="keywordflow">if</span> (sharedLink) {</div>
+<div class="line"><a id="l01314" name="l01314"></a><span class="lineno"> 1314</span>        request-&gt;hdr.seqNumber = _expectedIncomingSeqNumber + 1;    <span class="comment">// Outgoing is 1 past last incoming</span></div>
+<div class="line"><a id="l01315" name="l01315"></a><span class="lineno"> 1315</span>        _expectedIncomingSeqNumber += 2;</div>
+<div class="line"><a id="l01316" name="l01316"></a><span class="lineno"> 1316</span> </div>
+<div class="line"><a id="l01317" name="l01317"></a><span class="lineno"> 1317</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_sendRequestExpectAck opcode:&quot;</span> &lt;&lt; <a class="code hl_function" href="classMavlinkFTP.html#ae7c83504710fe0da9b7aeb69f68cf55c">MavlinkFTP::opCodeToString</a>(<span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="classMavlinkFTP.html#ad5ac1c62facd88dcc768aca23a4bdcf6">MavlinkFTP::OpCode_t</a><span class="keyword">&gt;</span>(request-&gt;hdr.opcode)) &lt;&lt; <span class="stringliteral">&quot;seqNumber:&quot;</span> &lt;&lt; request-&gt;hdr.seqNumber;</div>
+<div class="line"><a id="l01318" name="l01318"></a><span class="lineno"> 1318</span> </div>
+<div class="line"><a id="l01319" name="l01319"></a><span class="lineno"> 1319</span>        <a class="code hl_typedef" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> message;</div>
+<div class="line"><a id="l01320" name="l01320"></a><span class="lineno"> 1320</span>        mavlink_msg_file_transfer_protocol_pack_chan(<a class="code hl_function" href="classMAVLinkProtocol.html#aa7efddf9f80781eb204442eb265b3fa5">MAVLinkProtocol::instance</a>()-&gt;getSystemId(),</div>
+<div class="line"><a id="l01321" name="l01321"></a><span class="lineno"> 1321</span>                                                     <a class="code hl_function" href="classMAVLinkProtocol.html#a2999b6e6d6ac482d0b7c1aaf91c015e7">MAVLinkProtocol::getComponentId</a>(),</div>
+<div class="line"><a id="l01322" name="l01322"></a><span class="lineno"> 1322</span>                                                     sharedLink-&gt;mavlinkChannel(),</div>
+<div class="line"><a id="l01323" name="l01323"></a><span class="lineno"> 1323</span>                                                     &amp;message,</div>
+<div class="line"><a id="l01324" name="l01324"></a><span class="lineno"> 1324</span>                                                     0,                                                     <span class="comment">// Target network, 0=broadcast?</span></div>
+<div class="line"><a id="l01325" name="l01325"></a><span class="lineno"> 1325</span>                                                     _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a74829d3d2c320cad6530de1bb8bee8bf">id</a>(),</div>
+<div class="line"><a id="l01326" name="l01326"></a><span class="lineno"> 1326</span>                                                     _ftpCompId,</div>
+<div class="line"><a id="l01327" name="l01327"></a><span class="lineno"> 1327</span>                                                     (uint8_t*)request);                                    <span class="comment">// Payload</span></div>
+<div class="line"><a id="l01328" name="l01328"></a><span class="lineno"> 1328</span>        _vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a7b661e2cf877e915aebabc8c8ac2f57b">sendMessageOnLinkThreadSafe</a>(sharedLink.get(), message);</div>
+<div class="line"><a id="l01329" name="l01329"></a><span class="lineno"> 1329</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01330" name="l01330"></a><span class="lineno"> 1330</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;_sendRequestExpectAck No primary link. Allowing timeout to fail sequence.&quot;</span>;</div>
+<div class="line"><a id="l01331" name="l01331"></a><span class="lineno"> 1331</span>    }</div>
+<div class="line"><a id="l01332" name="l01332"></a><span class="lineno"> 1332</span>}</div>
+<div class="line"><a id="l01333" name="l01333"></a><span class="lineno"> 1333</span> </div>
+<div class="line"><a id="l01334" name="l01334"></a><span class="lineno"> 1334</span><span class="keywordtype">bool</span> FTPManager::_parseURI(uint8_t fromCompId, <span class="keyword">const</span> QString&amp; uri, QString&amp; parsedURI, uint8_t&amp; compId)</div>
+<div class="line"><a id="l01335" name="l01335"></a><span class="lineno"> 1335</span>{</div>
+<div class="line"><a id="l01336" name="l01336"></a><span class="lineno"> 1336</span>    parsedURI   = uri;</div>
+<div class="line"><a id="l01337" name="l01337"></a><span class="lineno"> 1337</span>    compId      = (fromCompId == MAV_COMP_ID_ALL) ? (uint8_t)MAV_COMP_ID_AUTOPILOT1 : fromCompId;</div>
+<div class="line"><a id="l01338" name="l01338"></a><span class="lineno"> 1338</span> </div>
+<div class="line"><a id="l01339" name="l01339"></a><span class="lineno"> 1339</span>    <span class="comment">// Pull scheme off the front if there</span></div>
+<div class="line"><a id="l01340" name="l01340"></a><span class="lineno"> 1340</span>    QString ftpPrefix(QStringLiteral(<span class="stringliteral">&quot;%1://&quot;</span>).arg(<a class="code hl_variable" href="classFTPManager.html#a6aba45c648956730127b0216cde9bb1a">mavlinkFTPScheme</a>));</div>
+<div class="line"><a id="l01341" name="l01341"></a><span class="lineno"> 1341</span>    <span class="keywordflow">if</span> (parsedURI.startsWith(ftpPrefix, Qt::CaseInsensitive)) {</div>
+<div class="line"><a id="l01342" name="l01342"></a><span class="lineno"> 1342</span>        parsedURI = parsedURI.mid(ftpPrefix.length());</div>
+<div class="line"><a id="l01343" name="l01343"></a><span class="lineno"> 1343</span>    }</div>
+<div class="line"><a id="l01344" name="l01344"></a><span class="lineno"> 1344</span>    <span class="keywordflow">if</span> (parsedURI.contains(<span class="stringliteral">&quot;://&quot;</span>)) {</div>
+<div class="line"><a id="l01345" name="l01345"></a><span class="lineno"> 1345</span>        qCWarning(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;Incorrect uri scheme or format&quot;</span> &lt;&lt; uri;</div>
+<div class="line"><a id="l01346" name="l01346"></a><span class="lineno"> 1346</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01347" name="l01347"></a><span class="lineno"> 1347</span>    }</div>
+<div class="line"><a id="l01348" name="l01348"></a><span class="lineno"> 1348</span> </div>
+<div class="line"><a id="l01349" name="l01349"></a><span class="lineno"> 1349</span>    <span class="comment">// Pull component id off the front if there</span></div>
+<div class="line"><a id="l01350" name="l01350"></a><span class="lineno"> 1350</span>    QRegularExpression      regEx(<span class="stringliteral">&quot;^/??\\[\\;comp\\=(\\d+)\\]&quot;</span>);</div>
+<div class="line"><a id="l01351" name="l01351"></a><span class="lineno"> 1351</span>    QRegularExpressionMatch match = regEx.match(parsedURI);</div>
+<div class="line"><a id="l01352" name="l01352"></a><span class="lineno"> 1352</span>    <span class="keywordflow">if</span> (match.hasMatch()) {</div>
+<div class="line"><a id="l01353" name="l01353"></a><span class="lineno"> 1353</span>        <span class="keywordtype">bool</span> ok;</div>
+<div class="line"><a id="l01354" name="l01354"></a><span class="lineno"> 1354</span>        compId = match.captured(1).toUInt(&amp;ok);</div>
+<div class="line"><a id="l01355" name="l01355"></a><span class="lineno"> 1355</span>        <span class="keywordflow">if</span> (!ok) {</div>
+<div class="line"><a id="l01356" name="l01356"></a><span class="lineno"> 1356</span>            qCWarning(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;Incorrect format for component id&quot;</span> &lt;&lt; uri;</div>
+<div class="line"><a id="l01357" name="l01357"></a><span class="lineno"> 1357</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01358" name="l01358"></a><span class="lineno"> 1358</span>        }</div>
+<div class="line"><a id="l01359" name="l01359"></a><span class="lineno"> 1359</span> </div>
+<div class="line"><a id="l01360" name="l01360"></a><span class="lineno"> 1360</span>        qCDebug(FTPManagerLog) &lt;&lt; <span class="stringliteral">&quot;Found compId in MAVLink FTP URI: &quot;</span> &lt;&lt; compId;</div>
+<div class="line"><a id="l01361" name="l01361"></a><span class="lineno"> 1361</span>        parsedURI.replace(QRegularExpression(<span class="stringliteral">&quot;\\[\\;comp\\=\\d+\\]&quot;</span>), <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l01362" name="l01362"></a><span class="lineno"> 1362</span>    }</div>
+<div class="line"><a id="l01363" name="l01363"></a><span class="lineno"> 1363</span> </div>
+<div class="line"><a id="l01364" name="l01364"></a><span class="lineno"> 1364</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01365" name="l01365"></a><span class="lineno"> 1365</span>}</div>
 <div class="ttc" id="aAppMessages_8h_html"><div class="ttname"><a href="AppMessages_8h.html">AppMessages.h</a></div></div>
 <div class="ttc" id="aFTPManager_8h_html"><div class="ttname"><a href="FTPManager_8h.html">FTPManager.h</a></div></div>
 <div class="ttc" id="aFemtoMessages_8h_html_a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc"><div class="ttname"><a href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">FemtoDecodeState::data</a></div><div class="ttdeci">@ data</div></div>
 <div class="ttc" id="aLinkInterface_8h_html_a06fa8dcc2f950057f6a5ae85ec96cee2"><div class="ttname"><a href="LinkInterface_8h.html#a06fa8dcc2f950057f6a5ae85ec96cee2">SharedLinkInterfacePtr</a></div><div class="ttdeci">std::shared_ptr&lt; LinkInterface &gt; SharedLinkInterfacePtr</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8h_source.html#l00119">LinkInterface.h:119</a></div></div>
 <div class="ttc" id="aMAVLinkProtocol_8h_html"><div class="ttname"><a href="MAVLinkProtocol_8h.html">MAVLinkProtocol.h</a></div></div>
 <div class="ttc" id="aQGCCompression_8cc_html_a5e7e27258e59f4c4a80e5fb757024a2d"><div class="ttname"><a href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a></div><div class="ttdeci">Error error</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00114">QGCCompression.cc:114</a></div></div>
-<div class="ttc" id="aQGCCorePlugin_8h_html_a2c54d7cd4caccb07d328e60c00f6147c"><div class="ttname"><a href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a></div><div class="ttdeci">struct __mavlink_message mavlink_message_t</div><div class="ttdef"><b>Definition</b> <a href="QGCCorePlugin_8h_source.html#l00025">QGCCorePlugin.h:25</a></div></div>
+<div class="ttc" id="aQGCCorePlugin_8h_html_a2c54d7cd4caccb07d328e60c00f6147c"><div class="ttname"><a href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a></div><div class="ttdeci">struct __mavlink_message mavlink_message_t</div><div class="ttdef"><b>Definition</b> <a href="QGCCorePlugin_8h_source.html#l00026">QGCCorePlugin.h:26</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>
 <div class="ttc" id="aVehicleLinkManager_8h_html"><div class="ttname"><a href="VehicleLinkManager_8h.html">VehicleLinkManager.h</a></div></div>
@@ -1507,6 +1510,7 @@ $(document).ready(function(){initNavTree('FTPManager_8cc_source.html',''); initR
 <div class="ttc" id="aclassMAVLinkProtocol_html_aa7efddf9f80781eb204442eb265b3fa5"><div class="ttname"><a href="classMAVLinkProtocol.html#aa7efddf9f80781eb204442eb265b3fa5">MAVLinkProtocol::instance</a></div><div class="ttdeci">static MAVLinkProtocol * instance()</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkProtocol_8cc_source.html#l00043">MAVLinkProtocol.cc:43</a></div></div>
 <div class="ttc" id="aclassMAVLinkProtocol_html_ab519c8771c8ab289d2924bcb762f1cd7"><div class="ttname"><a href="classMAVLinkProtocol.html#ab519c8771c8ab289d2924bcb762f1cd7">MAVLinkProtocol::getSystemId</a></div><div class="ttdeci">int getSystemId() const</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkProtocol_8cc_source.html#l00530">MAVLinkProtocol.cc:530</a></div></div>
 <div class="ttc" id="aclassMavlinkFTP_html_a8a6fe6a718f078a5b2cd5d2249fa72ae"><div class="ttname"><a href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72ae">MavlinkFTP::ErrorCode_t</a></div><div class="ttdeci">ErrorCode_t</div><div class="ttdoc">Error codes returned in Nak response PayloadHeader.data[0].</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkFTP_8h_source.html#l00062">MAVLinkFTP.h:62</a></div></div>
+<div class="ttc" id="aclassMavlinkFTP_html_a8a6fe6a718f078a5b2cd5d2249fa72aea1fb9e6b2d70958bd978aadd9ddda2841"><div class="ttname"><a href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72aea1fb9e6b2d70958bd978aadd9ddda2841">MavlinkFTP::kErrFail</a></div><div class="ttdeci">@ kErrFail</div><div class="ttdoc">Unknown failure.</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkFTP_8h_source.html#l00064">MAVLinkFTP.h:64</a></div></div>
 <div class="ttc" id="aclassMavlinkFTP_html_a8a6fe6a718f078a5b2cd5d2249fa72aea4e73fe7bb075bc259789c8339ff965ea"><div class="ttname"><a href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72aea4e73fe7bb075bc259789c8339ff965ea">MavlinkFTP::kErrEOF</a></div><div class="ttdeci">@ kErrEOF</div><div class="ttdoc">Offset past end of file for List and Read commands.</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkFTP_8h_source.html#l00069">MAVLinkFTP.h:69</a></div></div>
 <div class="ttc" id="aclassMavlinkFTP_html_a8a6fe6a718f078a5b2cd5d2249fa72aea4e7710957ef7ed7be0104d6591a1551d"><div class="ttname"><a href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72aea4e7710957ef7ed7be0104d6591a1551d">MavlinkFTP::kErrUnknownCommand</a></div><div class="ttdeci">@ kErrUnknownCommand</div><div class="ttdoc">Unknown command opcode.</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkFTP_8h_source.html#l00070">MAVLinkFTP.h:70</a></div></div>
 <div class="ttc" id="aclassMavlinkFTP_html_a8a6fe6a718f078a5b2cd5d2249fa72aea8592f555fe443031b8b45e9d2c4991d0"><div class="ttname"><a href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72aea8592f555fe443031b8b45e9d2c4991d0">MavlinkFTP::kErrFailErrno</a></div><div class="ttdeci">@ kErrFailErrno</div><div class="ttdoc">errno sent back in PayloadHeader.data[1]</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkFTP_8h_source.html#l00065">MAVLinkFTP.h:65</a></div></div>

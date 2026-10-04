@@ -101,10 +101,16 @@ $(document).ready(function(){initNavTree('classPatchSampler.html',''); initResiz
 
 <p><code>#include &lt;<a class="el" href="PatchSampler_8h_source.html">PatchSampler.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPatchSampler_1_1EdgeStep.html">EdgeStep</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acdb41e30349353330cea0a431b790063" id="r_acdb41e30349353330cea0a431b790063"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPatchSampler.html#acdb41e30349353330cea0a431b790063">PatchSampler</a> (const <a class="el" href="classElevationTilePyramid.html">ElevationTilePyramid</a> &amp;pyramid, const <a class="el" href="structTileMath_1_1TileKey.html">TileMath::TileKey</a> &amp;key, int gridSize)</td></tr>
-<tr class="separator:acdb41e30349353330cea0a431b790063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afce7952c8bacb884a84ac644d337a3f8" id="r_afce7952c8bacb884a84ac644d337a3f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPatchSampler.html#afce7952c8bacb884a84ac644d337a3f8">PatchSampler</a> (const <a class="el" href="classElevationTilePyramid.html">ElevationTilePyramid</a> &amp;pyramid, const <a class="el" href="structTileMath_1_1TileKey.html">TileMath::TileKey</a> &amp;key, int gridSize, <a class="el" href="structPatchSampler_1_1EdgeStep.html">EdgeStep</a> *edgeStep=nullptr)</td></tr>
+<tr class="memdesc:afce7952c8bacb884a84ac644d337a3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><em>edgeStep</em>, when set, receives the patch's largest <a class="el" href="structPatchSampler_1_1EdgeStep.html">EdgeStep</a>  <br /></td></tr>
+<tr class="separator:afce7952c8bacb884a84ac644d337a3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e8d81cceeee0349b83d7ca0c3a8022e" id="r_a9e8d81cceeee0349b83d7ca0c3a8022e"><td class="memItemLeft" align="right" valign="top">QList&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPatchSampler.html#a9e8d81cceeee0349b83d7ca0c3a8022e">sample</a> ()</td></tr>
 <tr class="memdesc:a9e8d81cceeee0349b83d7ca0c3a8022e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The (gridSize+1)^2 vertex heights, row-major from the NW corner.  <br /></td></tr>
 <tr class="separator:a9e8d81cceeee0349b83d7ca0c3a8022e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,12 +121,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ad238caacb50d8ce0ed32ccd285bc84f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Canonical vertex-height resolution for one patch: interior vertices sample the patch's own backing view; boundary vertices resolve by position so every patch sharing the vertex samples bit-identical heights (see <a class="el" href="classHeightField.html#a68f4d578d3b4d2dd4a1fab5725dec686">HeightField::samplePatch</a>). gridSize must be a power of two so vertex UVs are exact dyadic doubles. Single-use: construct, <a class="el" href="classPatchSampler.html#a9e8d81cceeee0349b83d7ca0c3a8022e" title="The (gridSize+1)^2 vertex heights, row-major from the NW corner.">sample()</a> once. </p>
+<div class="textblock"><p>Canonical vertex-height resolution for one patch: interior vertices sample the patch's own backing view; boundary vertices resolve by position so every patch sharing the vertex samples bit-identical heights (see <a class="el" href="classHeightField.html#a3f696b8885f125333bce701cd462e42d">HeightField::samplePatch</a>). Where a boundary vertex resolves to other data than the patch's own view, the mismatch is spread across the interior so it ramps in instead of dropping in the last cell (a cliff). gridSize must be a power of two so vertex UVs are exact dyadic doubles. Single-use: construct, <a class="el" href="classPatchSampler.html#a9e8d81cceeee0349b83d7ca0c3a8022e" title="The (gridSize+1)^2 vertex heights, row-major from the NW corner.">sample()</a> once. </p>
 
-<p class="definition">Definition at line <a class="el" href="PatchSampler_8h_source.html#l00023">23</a> of file <a class="el" href="PatchSampler_8h_source.html">PatchSampler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PatchSampler_8h_source.html#l00026">26</a> of file <a class="el" href="PatchSampler_8h_source.html">PatchSampler.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="acdb41e30349353330cea0a431b790063" name="acdb41e30349353330cea0a431b790063"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdb41e30349353330cea0a431b790063">&#9670;&#160;</a></span>PatchSampler()</h2>
+<a id="afce7952c8bacb884a84ac644d337a3f8" name="afce7952c8bacb884a84ac644d337a3f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afce7952c8bacb884a84ac644d337a3f8">&#9670;&#160;</a></span>PatchSampler()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -141,7 +147,13 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>gridSize</em>&#160;</td>
+          <td class="paramname"><em>gridSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPatchSampler_1_1EdgeStep.html">EdgeStep</a> *&#160;</td>
+          <td class="paramname"><em>edgeStep</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -151,7 +163,9 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PatchSampler_8cc_source.html#l00022">22</a> of file <a class="el" href="PatchSampler_8cc_source.html">PatchSampler.cc</a>.</p>
+<p><em>edgeStep</em>, when set, receives the patch's largest <a class="el" href="structPatchSampler_1_1EdgeStep.html">EdgeStep</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="PatchSampler_8cc_source.html#l00023">23</a> of file <a class="el" href="PatchSampler_8cc_source.html">PatchSampler.cc</a>.</p>
 
 </div>
 </div>
@@ -197,7 +211,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Bilinear height at a unit-UV position within a grid (origin NW corner), sample-center convention, clamped at grid edges (see <a class="el" href="BilinearUV_8h.html">BilinearUV.h</a>) </p>
 
-<p class="definition">Definition at line <a class="el" href="PatchSampler_8cc_source.html#l00016">16</a> of file <a class="el" href="PatchSampler_8cc_source.html">PatchSampler.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PatchSampler_8cc_source.html#l00017">17</a> of file <a class="el" href="PatchSampler_8cc_source.html">PatchSampler.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="BilinearUV_8h_source.html#l00024">bilinearAtUV()</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00046">ElevationTilePyramid::Grid::height</a>, <a class="el" href="ElevationTilePyramid_8h_source.html#l00047">ElevationTilePyramid::Grid::heights</a>, and <a class="el" href="ElevationTilePyramid_8h_source.html#l00045">ElevationTilePyramid::Grid::width</a>.</p>
 
@@ -222,7 +236,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>The (gridSize+1)^2 vertex heights, row-major from the NW corner. </p>
 
-<p class="definition">Definition at line <a class="el" href="PatchSampler_8cc_source.html#l00030">30</a> of file <a class="el" href="PatchSampler_8cc_source.html">PatchSampler.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="PatchSampler_8cc_source.html#l00033">33</a> of file <a class="el" href="PatchSampler_8cc_source.html">PatchSampler.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="ElevationTilePyramid_8h_source.html#l00060">ElevationTilePyramid::View::isValid()</a>, <a class="el" href="TileMath_8h_source.html#l00036">TileMath::TileKey::x</a>, and <a class="el" href="TileMath_8h_source.html#l00037">TileMath::TileKey::y</a>.</p>
 

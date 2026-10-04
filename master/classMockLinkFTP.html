@@ -218,6 +218,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aceabb4cca15b5f3f84c94234b8d60db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67069c5e7bb59b564d49a4cd78b38434" id="r_a67069c5e7bb59b564d49a4cd78b38434"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#a67069c5e7bb59b564d49a4cd78b38434">setListDirectoryWithTimeSupported</a> (bool supported)</td></tr>
 <tr class="separator:a67069c5e7bb59b564d49a4cd78b38434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7507a2f3c3fee9a0d5cbc4de30084cf" id="r_ad7507a2f3c3fee9a0d5cbc4de30084cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#ad7507a2f3c3fee9a0d5cbc4de30084cf">setListDirectoryWithTimeNakError</a> (<a class="el" href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72ae">MavlinkFTP::ErrorCode_t</a> <a class="el" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>)</td></tr>
+<tr class="separator:ad7507a2f3c3fee9a0d5cbc4de30084cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb7acc5990a7c2f0644a72d09dececf3" id="r_acb7acc5990a7c2f0644a72d09dececf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMockLinkFTP.html#acb7acc5990a7c2f0644a72d09dececf3">setLogDirEntriesWithTime</a> (bool enabled)</td></tr>
 <tr class="memdesc:acb7acc5990a7c2f0644a72d09dececf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">When true, kCmdListDirectoryWithTime directory entries under @MAV_LOG carry "\t0\t&lt;mtime&gt;", as MAVSDK sends.  <br /></td></tr>
 <tr class="separator:acb7acc5990a7c2f0644a72d09dececf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -807,6 +809,37 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ad7507a2f3c3fee9a0d5cbc4de30084cf" name="ad7507a2f3c3fee9a0d5cbc4de30084cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7507a2f3c3fee9a0d5cbc4de30084cf">&#9670;&#160;</a></span>setListDirectoryWithTimeNakError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MockLinkFTP::setListDirectoryWithTimeNakError </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMavlinkFTP.html#a8a6fe6a718f078a5b2cd5d2249fa72ae">MavlinkFTP::ErrorCode_t</a>&#160;</td>
+          <td class="paramname"><em>error</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Error code used to Nak kCmdListDirectoryWithTime when unsupported. PX4 replies kErrUnknownCommand, ArduPilot replies kErrFail. </p>
+
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00120">120</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00114">error</a>.</p>
+
+</div>
+</div>
 <a id="a67069c5e7bb59b564d49a4cd78b38434" name="a67069c5e7bb59b564d49a4cd78b38434"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a67069c5e7bb59b564d49a4cd78b38434">&#9670;&#160;</a></span>setListDirectoryWithTimeSupported()</h2>
 
@@ -830,7 +863,7 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Controls whether the server implements the kCmdListDirectoryWithTime command. When false the server Naks it with kErrUnknownCommand so the client fallback to kCmdListDirectory can be tested. </p>
+<p>Controls whether the server implements the kCmdListDirectoryWithTime command. When false the server Naks it (see setListDirectoryWithTimeNakError) so the client fallback to kCmdListDirectory can be tested. </p>
 
 <p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00116">116</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
@@ -862,7 +895,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>When true, @MAV_LOG listings start with "D." and "D.." entries, as ArduPilot sends. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00122">122</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00126">126</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -892,7 +925,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>When true, kCmdListDirectoryWithTime directory entries under @MAV_LOG carry "\t0\t&lt;mtime&gt;", as MAVSDK sends. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00119">119</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00123">123</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -1117,7 +1150,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>The number of ErrorModes in the rgFailureModes array. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00136">136</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00140">140</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -1142,7 +1175,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Base modification time (seconds since UNIX epoch UTC) reported by the kCmdListDirectoryWithTime mock listing. Entry N reports kMockModificationTime + N. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00142">142</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00146">146</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -1179,7 +1212,7 @@ Static Public Attributes</h2></td></tr>
 <div class="ttc" id="aclassMockLinkFTP_html_aa1f714a0d5ee3151c827bfa8bb6541b2ac99f2afed3669297e9270e3a8addd930"><div class="ttname"><a href="classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2ac99f2afed3669297e9270e3a8addd930">MockLinkFTP::errModeNakResponse</a></div><div class="ttdeci">@ errModeNakResponse</div><div class="ttdoc">Nak all requests.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkFTP_8h_source.html#l00104">MockLinkFTP.h:104</a></div></div>
 </div><!-- fragment --><p>Array of failure modes you can cycle through for testing. By looping through this array you can avoid hardcoding the specific error modes in your unit test. This way when new error modes are added your unit test code may not need to be modified. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00127">127</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00131">131</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>
@@ -1203,7 +1236,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00138">138</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkFTP_8h_source.html#l00142">142</a> of file <a class="el" href="MockLinkFTP_8h_source.html">MockLinkFTP.h</a>.</p>
 
 </div>
 </div>

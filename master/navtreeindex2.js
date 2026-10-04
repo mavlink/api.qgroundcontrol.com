@@ -1,7 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"APM_8h.html#a38eecba0679940625d1b2985ac1a1c03afe1abb92dbfdd1cb10e88dd17a69267a":[5,0,0,9,0,0,0,155],
-"APM_8h_source.html":[5,0,0,9,0,0],
 "ActuatorActions_8cc.html":[5,0,0,29,0,0],
 "ActuatorActions_8cc_source.html":[5,0,0,29,0,0],
 "ActuatorActions_8h.html":[5,0,0,29,0,1],
@@ -247,7 +245,9 @@ var NAVTREEINDEX2 =
 "AppSettings_8h_source.html":[5,0,0,25,5],
 "AppSettings_8qml.html":[5,0,0,23,3],
 "AppSettings_8qml_source.html":[5,0,0,23,3],
-"ArduCopterFirmwarePlugin_8cc.html":[5,0,0,9,0,11],
-"ArduCopterFirmwarePlugin_8cc_source.html":[5,0,0,9,0,11],
-"ArduCopterFirmwarePlugin_8h.html":[5,0,0,9,0,12]
+"ArduCopterFirmwarePlugin_8cc.html":[5,0,0,9,0,10],
+"ArduCopterFirmwarePlugin_8cc_source.html":[5,0,0,9,0,10],
+"ArduCopterFirmwarePlugin_8h.html":[5,0,0,9,0,11],
+"ArduCopterFirmwarePlugin_8h_source.html":[5,0,0,9,0,11],
+"ArduPlaneFirmwarePlugin_8cc.html":[5,0,0,9,0,12]
 };

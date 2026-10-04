@@ -26,5 +26,6 @@ var searchData=
   ['output_5fmode_23',['output_mode',['../structGPSProtocol_1_1GPSConfig.html#aaba4528d7db4ff558d410fd08f7b7622',1,'GPSProtocol::GPSConfig']]],
   ['output_5fports_24',['OUTPUT_PORTS',['../namespaceUBX.html#a84cc147f65e44c49a1be8188dc0e66b0',1,'UBX']]],
   ['outputbaudrate_25',['outputBaudRate',['../classQSerialPortPrivate.html#a73f4dd2ffc81e55c66364a6902edc9f2',1,'QSerialPortPrivate']]],
-  ['overrunerrs_26',['overrunErrs',['../structubx__payload__rx__mon__comms__port__t.html#a46972d7060f0888df815bba045a4b209',1,'ubx_payload_rx_mon_comms_port_t']]]
+  ['overrunerrs_26',['overrunErrs',['../structubx__payload__rx__mon__comms__port__t.html#a46972d7060f0888df815bba045a4b209',1,'ubx_payload_rx_mon_comms_port_t']]],
+  ['ownzoom_27',['ownZoom',['../structPatchSampler_1_1EdgeStep.html#abd45c0b063dc8f1221d87c29a9727761',1,'PatchSampler::EdgeStep']]]
 ];

@@ -351,6 +351,11 @@ var namespaces_dup =
     [ "NTRIPTlsPolicy", "namespaceNTRIPTlsPolicy.html", [
       [ "isSelfSignedOnly", "namespaceNTRIPTlsPolicy.html#a73c04ae0fe0305de2af0ed2d8624dc44", null ]
     ] ],
+    [ "PatchMesh", "namespacePatchMesh.html", [
+      [ "LodDeltas", "namespacePatchMesh.html#a39ead0b7e144ea0fa5511bf9e6ead9b2", null ],
+      [ "surfaceHeight", "namespacePatchMesh.html#a5394223f92030204e882c4fb35ba9ca9", null ],
+      [ "vertexHeight", "namespacePatchMesh.html#adde85b6cc6935a4eacf71f1c910b33af", null ]
+    ] ],
     [ "Platform", "namespacePlatform.html", [
       [ "checkSingleInstance", "namespacePlatform.html#a46580111c8b49c9f9ce7e495f637ae11", null ],
       [ "initialize", "namespacePlatform.html#a7a8cdd24323060a25af6d64764743c8c", null ],

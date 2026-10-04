@@ -23,6 +23,7 @@ var classGeoMapCamera =
     [ "distanceForZoomLevel", "classGeoMapCamera.html#ad0d69ac4a5130aef3436c85109ce3e3d", null ],
     [ "fieldOfView", "classGeoMapCamera.html#a1f0f2239a282e783e758d88cc3c46d8d", null ],
     [ "fieldOfViewChanged", "classGeoMapCamera.html#a6f547001b5cc062158e41512ce9cb3d7", null ],
+    [ "fitToRegion", "classGeoMapCamera.html#a37716e1ad89957f4df290d0ff7bbf967", null ],
     [ "goTo2D", "classGeoMapCamera.html#a1e0e6b30517459803a536fb0bee88104", null ],
     [ "goTo3D", "classGeoMapCamera.html#a8fc1f44511bbbc9253cc5d890617b1ea", null ],
     [ "groundPointCapped", "classGeoMapCamera.html#ac9fa33a846c9acdc1addebcb282b6196", null ],

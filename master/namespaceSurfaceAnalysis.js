@@ -2,6 +2,7 @@ var namespaceSurfaceAnalysis =
 [
     [ "BadHeights", "structSurfaceAnalysis_1_1BadHeights.html", "structSurfaceAnalysis_1_1BadHeights" ],
     [ "Hole", "structSurfaceAnalysis_1_1Hole.html", "structSurfaceAnalysis_1_1Hole" ],
+    [ "InPatchStep", "structSurfaceAnalysis_1_1InPatchStep.html", "structSurfaceAnalysis_1_1InPatchStep" ],
     [ "Report", "structSurfaceAnalysis_1_1Report.html", "structSurfaceAnalysis_1_1Report" ],
     [ "Seam", "structSurfaceAnalysis_1_1Seam.html", "structSurfaceAnalysis_1_1Seam" ],
     [ "ViewState", "structSurfaceAnalysis_1_1ViewState.html", "structSurfaceAnalysis_1_1ViewState" ],

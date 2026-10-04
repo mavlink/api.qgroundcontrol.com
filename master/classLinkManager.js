@@ -8,6 +8,7 @@ var classLinkManager =
     [ "commPortsChanged", "classLinkManager.html#aaf035b98b8a3a3b8c698e71817b8116d", null ],
     [ "commPortStringsChanged", "classLinkManager.html#a05027d4f86fc230d48edac25da7c1c48", null ],
     [ "connectionsSuspended", "classLinkManager.html#a49b181ff409a20e4746352f9f849fcf8", null ],
+    [ "containsConfiguration", "classLinkManager.html#a2e5057555e82309a923d1d19d62cb455", null ],
     [ "containsLink", "classLinkManager.html#ae35c7e54123a7f7c527da2aa8d6ad840", null ],
     [ "createConfiguration", "classLinkManager.html#a526f0b7825e53208dc56fb63c849134b", null ],
     [ "createConnectedLink", "classLinkManager.html#a0c6f3a0e055e01e4779cfd4caad42aac", null ],

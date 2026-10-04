@@ -7,7 +7,7 @@ var classHeightField =
     [ "insertTile", "classHeightField.html#a3cbe6eb0a13722255dc79b27a265f906", null ],
     [ "lookupCountForTest", "classHeightField.html#a4820c16bbd0bf46b5d529ad4867bb8af", null ],
     [ "regionChanged", "classHeightField.html#ac60ca2b8531ff398b017ce98e5b3ed97", null ],
-    [ "samplePatch", "classHeightField.html#a68f4d578d3b4d2dd4a1fab5725dec686", null ],
+    [ "samplePatch", "classHeightField.html#a3f696b8885f125333bce701cd462e42d", null ],
     [ "setPinnedKeys", "classHeightField.html#a45420d6ca039e68ad3ef6db5a4981a26", null ],
     [ "tileCount", "classHeightField.html#a571d449045f14a157c51a2f4f91b51e8", null ],
     [ "kMaxGridSize", "classHeightField.html#aa22d48a44d859b6d3b43c12f86b3654d", null ]
