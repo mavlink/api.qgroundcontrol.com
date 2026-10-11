@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('structGPSDeadline.html',''); initResiz
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structGPSDeadline-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">GPSDeadline Struct Reference</div></div>
@@ -102,11 +103,15 @@ $(document).ready(function(){initNavTree('structGPSDeadline.html',''); initResiz
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa25749bd247256c20c16c0e81dc928da" id="r_aa25749bd247256c20c16c0e81dc928da"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSDeadline.html#aa25749bd247256c20c16c0e81dc928da">remainingMilliseconds</a> (uint64_t nowUs) const</td></tr>
-<tr class="separator:aa25749bd247256c20c16c0e81dc928da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d186d7dcdf85211ca140a752d6e9167" id="r_a1d186d7dcdf85211ca140a752d6e9167"><td class="memItemLeft" align="right" valign="top">QDeadlineTimer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSDeadline.html#a1d186d7dcdf85211ca140a752d6e9167">toQDeadlineTimer</a> () const</td></tr>
-<tr class="memdesc:a1d186d7dcdf85211ca140a752d6e9167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Live I/O only: untilUs must use the steady-clock epoch, not an injected test clock.  <br /></td></tr>
-<tr class="separator:a1d186d7dcdf85211ca140a752d6e9167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf305b01766d7e1044a188125562c592" id="r_aaf305b01766d7e1044a188125562c592"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSDeadline.html#aaf305b01766d7e1044a188125562c592">remaining</a> (uint64_t nowUs) const</td></tr>
+<tr class="memdesc:aaf305b01766d7e1044a188125562c592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rounded up to whole milliseconds and capped at INT32_MAX milliseconds.  <br /></td></tr>
+<tr class="separator:aaf305b01766d7e1044a188125562c592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a968193c5d0f051ec435d5727a18ef580" id="r_a968193c5d0f051ec435d5727a18ef580"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structGPSDeadline.html">GPSDeadline</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSDeadline.html#a968193c5d0f051ec435d5727a18ef580">after</a> (uint64_t nowUs, std::chrono::microseconds timeout)</td></tr>
+<tr class="memdesc:a968193c5d0f051ec435d5727a18ef580"><td class="mdescLeft">&#160;</td><td class="mdescRight">A negative <em>timeout</em> is already due at <em>nowUs</em>.  <br /></td></tr>
+<tr class="separator:a968193c5d0f051ec435d5727a18ef580"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -114,11 +119,12 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aaa43e7203f05075eb2624de70ef213a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
+<div class="textblock"><p>An absolute deadline on the session's <a class="el" href="structGPSClock.html" title="The monotonic clock receiver sessions run on: the steady clock unless tests inject a virtual one.">GPSClock</a>, which may be virtual. Only <a class="el" href="classGPSDriver.html">GPSDriver</a>'s I/O adapter converts it to the QDeadlineTimer the transports wait on. </p>
+
 <p class="definition">Definition at line <a class="el" href="GPSDeadline_8h_source.html#l00009">9</a> of file <a class="el" href="GPSDeadline_8h_source.html">GPSDeadline.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa25749bd247256c20c16c0e81dc928da" name="aa25749bd247256c20c16c0e81dc928da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa25749bd247256c20c16c0e81dc928da">&#9670;&#160;</a></span>remainingMilliseconds()</h2>
+<a id="a968193c5d0f051ec435d5727a18ef580" name="a968193c5d0f051ec435d5727a18ef580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a968193c5d0f051ec435d5727a18ef580">&#9670;&#160;</a></span>after()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +133,49 @@ Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int GPSDeadline::remainingMilliseconds </td>
+          <td class="memname">static <a class="el" href="structGPSDeadline.html">GPSDeadline</a> GPSDeadline::after </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>nowUs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::chrono::microseconds&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A negative <em>timeout</em> is already due at <em>nowUs</em>. </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSDeadline_8h_source.html#l00014">14</a> of file <a class="el" href="GPSDeadline_8h_source.html">GPSDeadline.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GPSCommandChannel_8cc_source.html#l00134">GPSCommandChannel::beginCommand()</a>, <a class="el" href="GPSReceiverDetector_8cc_source.html#l00105">GPSReceiverDetector::detect()</a>, <a class="el" href="GPSCommandChannel_8cc_source.html#l00166">GPSCommandChannel::read()</a>, <a class="el" href="GPSCommandChannel_8cc_source.html#l00474">GPSCommandChannel::receiveFor()</a>, and <a class="el" href="GPSCommandChannel_8cc_source.html#l00485">GPSCommandChannel::receiveUntil()</a>.</p>
+
+</div>
+</div>
+<a id="aaf305b01766d7e1044a188125562c592" name="aaf305b01766d7e1044a188125562c592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf305b01766d7e1044a188125562c592">&#9670;&#160;</a></span>remaining()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::chrono::milliseconds GPSDeadline::remaining </td>
           <td>(</td>
           <td class="paramtype">uint64_t&#160;</td>
           <td class="paramname"><em>nowUs</em></td><td>)</td>
@@ -141,42 +189,13 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GPSDeadline_8h_source.html#l00013">13</a> of file <a class="el" href="GPSDeadline_8h_source.html">GPSDeadline.h</a>.</p>
+<p>Rounded up to whole milliseconds and capped at INT32_MAX milliseconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSDeadline_8h_source.html#l00020">20</a> of file <a class="el" href="GPSDeadline_8h_source.html">GPSDeadline.h</a>.</p>
 
 <p class="reference">References <a class="el" href="GPSDeadline_8h_source.html#l00011">untilUs</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GPSProtocol_8h_source.html#l00222">GPSProtocol::remainingMilliseconds()</a>.</p>
-
-</div>
-</div>
-<a id="a1d186d7dcdf85211ca140a752d6e9167" name="a1d186d7dcdf85211ca140a752d6e9167"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d186d7dcdf85211ca140a752d6e9167">&#9670;&#160;</a></span>toQDeadlineTimer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QDeadlineTimer GPSDeadline::toQDeadlineTimer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Live I/O only: untilUs must use the steady-clock epoch, not an injected test clock. </p>
-
-<p class="definition">Definition at line <a class="el" href="GPSDeadline_8h_source.html#l00021">21</a> of file <a class="el" href="GPSDeadline_8h_source.html">GPSDeadline.h</a>.</p>
-
-<p class="reference">References <a class="el" href="GPSDeadline_8h_source.html#l00011">untilUs</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GPSCommandChannel_8cc_source.html#l00304">GPSCommandChannel::awaitReply()</a>, <a class="el" href="GPSReceiverDetector_8cc_source.html#l00105">GPSReceiverDetector::detect()</a>, <a class="el" href="GPSNMEAStream_8cc_source.html#l00133">GPSNMEAStream::limitReceiveTimeout()</a>, <a class="el" href="GPSCommandChannel_8cc_source.html#l00474">GPSCommandChannel::receiveFor()</a>, and <a class="el" href="GPSCommandChannel_8cc_source.html#l00485">GPSCommandChannel::receiveUntil()</a>.</p>
 
 </div>
 </div>
@@ -195,12 +214,12 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GPSDeadline_8h_source.html#l00011">11</a> of file <a class="el" href="GPSDeadline_8h_source.html">GPSDeadline.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GPSProtocol_8cc_source.html#l00145">GPSProtocol::awaitCommand()</a>, <a class="el" href="GPSProtocol_8h_source.html#l00155">GPSProtocol::Operation::Operation()</a>, <a class="el" href="GPSProtocol_8h_source.html#l00233">GPSProtocol::read()</a>, <a class="el" href="GPSProtocol_8cc_source.html#l00198">GPSProtocol::receiveDecoded()</a>, <a class="el" href="GPSDeadline_8h_source.html#l00013">remainingMilliseconds()</a>, <a class="el" href="GPSDeadline_8h_source.html#l00021">toQDeadlineTimer()</a>, and <a class="el" href="GPSProtocol_8h_source.html#l00185">GPSProtocol::waitFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GPSCommandChannel_8cc_source.html#l00304">GPSCommandChannel::awaitReply()</a>, <a class="el" href="GPSCommandChannel_8cc_source.html#l00134">GPSCommandChannel::beginCommand()</a>, <a class="el" href="GPSReceiverDetector_8cc_source.html#l00105">GPSReceiverDetector::detect()</a>, <a class="el" href="GPSCommandChannel_8cc_source.html#l00031">GPSDeadlineScope::GPSDeadlineScope()</a>, <a class="el" href="GPSCommandChannel_8cc_source.html#l00166">GPSCommandChannel::read()</a>, <a class="el" href="GPSCommandChannel_8cc_source.html#l00450">GPSCommandChannel::receiveCycle()</a>, <a class="el" href="GPSCommandChannel_8cc_source.html#l00474">GPSCommandChannel::receiveFor()</a>, <a class="el" href="GPSCommandChannel_8cc_source.html#l00485">GPSCommandChannel::receiveUntil()</a>, <a class="el" href="GPSDeadline_8h_source.html#l00020">remaining()</a>, <a class="el" href="GPSCommandChannel_8cc_source.html#l00283">GPSCommandChannel::wait()</a>, and <a class="el" href="GPSCommandChannel_8cc_source.html#l00200">GPSCommandChannel::write()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/GPS/Driver/Protocols/Contracts/<a class="el" href="GPSDeadline_8h_source.html">GPSDeadline.h</a></li>
+<li>src/GPS/Core/Protocols/<a class="el" href="GPSDeadline_8h_source.html">GPSDeadline.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

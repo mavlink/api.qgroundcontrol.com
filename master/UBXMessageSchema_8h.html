@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/GPS/Driver/Protocols/UBX/UBXMessageSchema.h File Reference</title>
+<title>QGroundControl: src/GPS/Core/Protocols/UBX/UBXMessageSchema.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,54 +99,163 @@ $(document).ready(function(){initNavTree('UBXMessageSchema_8h.html',''); initRes
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;array&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;span&gt;</code><br />
-<code>#include &quot;<a class="el" href="UBXMessages_8h_source.html">UBXMessages.h</a>&quot;</code><br />
+<code>#include &lt;tuple&gt;</code><br />
+<code>#include &quot;<a class="el" href="GPSProtocolMath_8h_source.html">GPSProtocolMath.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="UBXFrame_8h_source.html">UBX/UBXFrame.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="WireFields_8h_source.html">WireFields.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for UBXMessageSchema.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="UBXMessageSchema_8h__incl.svg" width="643" height="271"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="UBXMessageSchema_8h__incl.svg" width="100%" height="558"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="UBXMessageSchema_8h__dep__incl.svg" width="422" height="227"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="UBXMessageSchema_8h__dep__incl.svg" width="462" height="315"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="UBXMessageSchema_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1NavHpposllh.html">UBX::NavHpposllh</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1NavDop.html">UBX::NavDop</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1NavPvt.html">UBX::NavPvt</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1NavStatus.html">UBX::NavStatus</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1NavSvin.html">UBX::NavSvin</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1NavSat.html">UBX::NavSat</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1NavSatSatellite.html">UBX::NavSatSatellite</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1NavSvinfo.html">UBX::NavSvinfo</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1NavSvinfoChannel.html">UBX::NavSvinfoChannel</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1MonHw.html">UBX::MonHw</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">MON-HW of u-blox 7 and later; protocol 27 deprecates it for MON-RF.  <a href="structUBX_1_1MonHw.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1MonRfBlock.html">UBX::MonRfBlock</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1MonRf.html">UBX::MonRf</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">MON-RF with its first RF block; F9P reports two blocks and X20 three.  <a href="structUBX_1_1MonRf.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1SecSig.html">UBX::SecSig</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">SEC-SIG header: v2 and v3 flags, or v1 jamFlags; the per-band groups that follow are not read.  <a href="structUBX_1_1SecSig.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1MonVer.html">UBX::MonVer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1MonVerExtension.html">UBX::MonVerExtension</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1Ack.html">UBX::Ack</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ACK-ACK and ACK-NAK.  <a href="structUBX_1_1Ack.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1CfgPrt.html">UBX::CfgPrt</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1CfgRate.html">UBX::CfgRate</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1CfgNav5.html">UBX::CfgNav5</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1CfgMsg.html">UBX::CfgMsg</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1CfgMsgRates.html">UBX::CfgMsgRates</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A CFG-MSG poll reply: the message's output rate on each I/O port.  <a href="structUBX_1_1CfgMsgRates.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1CfgTmode3.html">UBX::CfgTmode3</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1NavHpposllh_01_4.html">Wire::Layout&lt; UBX::NavHpposllh &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1NavDop_01_4.html">Wire::Layout&lt; UBX::NavDop &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1NavPvt_01_4.html">Wire::Layout&lt; UBX::NavPvt &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1NavStatus_01_4.html">Wire::Layout&lt; UBX::NavStatus &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1NavSvin_01_4.html">Wire::Layout&lt; UBX::NavSvin &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1NavSat_01_4.html">Wire::Layout&lt; UBX::NavSat &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1NavSatSatellite_01_4.html">Wire::Layout&lt; UBX::NavSatSatellite &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1NavSvinfo_01_4.html">Wire::Layout&lt; UBX::NavSvinfo &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1NavSvinfoChannel_01_4.html">Wire::Layout&lt; UBX::NavSvinfoChannel &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1MonHw_01_4.html">Wire::Layout&lt; UBX::MonHw &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1MonRfBlock_01_4.html">Wire::Layout&lt; UBX::MonRfBlock &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1MonRf_01_4.html">Wire::Layout&lt; UBX::MonRf &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1SecSig_01_4.html">Wire::Layout&lt; UBX::SecSig &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1MonVer_01_4.html">Wire::Layout&lt; UBX::MonVer &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1MonVerExtension_01_4.html">Wire::Layout&lt; UBX::MonVerExtension &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1Ack_01_4.html">Wire::Layout&lt; UBX::Ack &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1CfgPrt_01_4.html">Wire::Layout&lt; UBX::CfgPrt &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1CfgRate_01_4.html">Wire::Layout&lt; UBX::CfgRate &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1CfgNav5_01_4.html">Wire::Layout&lt; UBX::CfgNav5 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1CfgMsg_01_4.html">Wire::Layout&lt; UBX::CfgMsg &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1CfgMsgRates_01_4.html">Wire::Layout&lt; UBX::CfgMsgRates &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWire_1_1Layout_3_01UBX_1_1CfgTmode3_01_4.html">Wire::Layout&lt; UBX::CfgTmode3 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1MessageSchema.html">UBX::MessageSchema</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceUBX" id="r_namespaceUBX"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html">UBX</a></td></tr>
+<tr class="memdesc:namespaceUBX"><td class="mdescLeft">&#160;</td><td class="mdescRight">u-blox receivers over <a class="el" href="namespaceUBX.html" title="u-blox receivers over UBX: CFG-VALSET configuration from protocol 27, CFG-MSG and CFG-TMODE3 before i...">UBX</a>: CFG-VALSET configuration from protocol 27, CFG-MSG and CFG-TMODE3 before it. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceWire" id="r_namespaceWire"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceWire.html">Wire</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ab25de4e767c64fc45e070494cc5adb57" id="r_ab25de4e767c64fc45e070494cc5adb57"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#ab25de4e767c64fc45e070494cc5adb57">UBX::coordinateDegrees</a> (int32_t value, int64_t limitDegrees)</td></tr>
+<tr class="separator:ab25de4e767c64fc45e070494cc5adb57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7755e58a71183a2dede3c082129e4284" id="r_a7755e58a71183a2dede3c082129e4284"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#a7755e58a71183a2dede3c082129e4284">UBX::latitudeDegrees</a> (int32_t value)</td></tr>
+<tr class="separator:a7755e58a71183a2dede3c082129e4284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c295d079b8658a648c91a525f16ea72" id="r_a4c295d079b8658a648c91a525f16ea72"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#a4c295d079b8658a648c91a525f16ea72">UBX::longitudeDegrees</a> (int32_t value)</td></tr>
+<tr class="separator:a4c295d079b8658a648c91a525f16ea72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7fbdd2e008246435895599d2551d28a" id="r_ab7fbdd2e008246435895599d2551d28a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab7fbdd2e008246435895599d2551d28a"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structUBX_1_1MessageSchema.html">MessageSchema</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#ab7fbdd2e008246435895599d2551d28a">UBX::fixedSchema</a> (int towOffset=-1)</td></tr>
+<tr class="separator:ab7fbdd2e008246435895599d2551d28a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a238b3bef1016e68ef4972a23bc4fda" id="r_a6a238b3bef1016e68ef4972a23bc4fda"><td class="memTemplParams" colspan="2">template&lt;typename Header , typename Block &gt; </td></tr>
+<tr class="memitem:a6a238b3bef1016e68ef4972a23bc4fda"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="structUBX_1_1MessageSchema.html">MessageSchema</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#a6a238b3bef1016e68ef4972a23bc4fda">UBX::repeatedSchema</a> (<a class="el" href="structUBX_1_1MessageId.html">MessageId</a> message, size_t maximumBlocks)</td></tr>
+<tr class="separator:a6a238b3bef1016e68ef4972a23bc4fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d00b081ddfbcfaa3e4b997df31059a2" id="r_a2d00b081ddfbcfaa3e4b997df31059a2"><td class="memItemLeft" align="right" valign="top">constexpr const <a class="el" href="structUBX_1_1MessageSchema.html">MessageSchema</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#a2d00b081ddfbcfaa3e4b997df31059a2">UBX::messageSchema</a> (uint16_t message)</td></tr>
 <tr class="separator:a2d00b081ddfbcfaa3e4b997df31059a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99628301446f0ab1d67bc8a2af01195f" id="r_a99628301446f0ab1d67bc8a2af01195f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#a99628301446f0ab1d67bc8a2af01195f">UBX::validPayload</a> (uint16_t message, std::span&lt; const uint8_t &gt; payload)</td></tr>
-<tr class="separator:a99628301446f0ab1d67bc8a2af01195f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33444f65200faf40b644a7a3ee20a99b" id="r_a33444f65200faf40b644a7a3ee20a99b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#a33444f65200faf40b644a7a3ee20a99b">UBX::validPayload</a> (uint16_t message, std::span&lt; const uint8_t &gt; payload, const <a class="el" href="structUBX_1_1MessageSchema.html">MessageSchema</a> *schema)</td></tr>
+<tr class="separator:a33444f65200faf40b644a7a3ee20a99b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a467128e617bc878f5814e2a82f706e1a" id="r_a467128e617bc878f5814e2a82f706e1a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="conceptWire_1_1Record.html">Wire::Record</a> T&gt; </td></tr>
+<tr class="memitem:a467128e617bc878f5814e2a82f706e1a"><td class="memTemplItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#a467128e617bc878f5814e2a82f706e1a">UBX::WIRE_SIZE</a> = <a class="el" href="namespaceWire.html#af7098fd83b3ff966dc50056547dd0823">Wire::SIZE</a>&lt;T&gt;</td></tr>
+<tr class="separator:a467128e617bc878f5814e2a82f706e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95925c8a3908b4d613e67690db5700ec" id="r_a95925c8a3908b4d613e67690db5700ec"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#a95925c8a3908b4d613e67690db5700ec">UBX::MAX_CONTROL_PAYLOAD_SIZE</a> = 328</td></tr>
 <tr class="separator:a95925c8a3908b4d613e67690db5700ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86893273714e7482854ac7e150ceab5b" id="r_a86893273714e7482854ac7e150ceab5b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#a86893273714e7482854ac7e150ceab5b">UBX::MON_HW_DEPRECATED_SIZE</a> = 56</td></tr>
-<tr class="separator:a86893273714e7482854ac7e150ceab5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeed57bd788d1c5a98e5b1762db491fcf" id="r_aeed57bd788d1c5a98e5b1762db491fcf"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#aeed57bd788d1c5a98e5b1762db491fcf">UBX::NAV_EOE</a> = 0x6101</td></tr>
-<tr class="separator:aeed57bd788d1c5a98e5b1762db491fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea6390bf787b9ecb478de1860436193c" id="r_aea6390bf787b9ecb478de1860436193c"><td class="memItemLeft" align="right" valign="top">constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#aea6390bf787b9ecb478de1860436193c">UBX::NAV_EOE_MSGOUT_I2C</a> = 0x2091015f</td></tr>
-<tr class="separator:aea6390bf787b9ecb478de1860436193c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbdcd13d8116d6de99609ffa102aed90" id="r_abbdcd13d8116d6de99609ffa102aed90"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#abbdcd13d8116d6de99609ffa102aed90">UBX::DEGREES_PER_COORDINATE</a> = 1e-7</td></tr>
-<tr class="separator:abbdcd13d8116d6de99609ffa102aed90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abae556609f50b4f0f8409e9e1092363b" id="r_abae556609f50b4f0f8409e9e1092363b"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#abae556609f50b4f0f8409e9e1092363b">UBX::DOP_PER_UNIT</a> = 0.01f</td></tr>
 <tr class="separator:abae556609f50b4f0f8409e9e1092363b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ea9dfed9bd81367596c8fe37124eb71" id="r_a7ea9dfed9bd81367596c8fe37124eb71"><td class="memItemLeft" align="right" valign="top">constexpr std::array&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html#a7ea9dfed9bd81367596c8fe37124eb71">UBX::MESSAGE_SCHEMAS</a></td></tr>
@@ -157,7 +266,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_38cd3ecbc1efe502063aa758009bff68.html">Driver</a></li><li class="navelem"><a class="el" href="dir_c73a9e24d6a209aaceba1ac47ebd8c76.html">Protocols</a></li><li class="navelem"><a class="el" href="dir_56b0e563e1db3669eb7818aeed5291c8.html">UBX</a></li><li class="navelem"><a class="el" href="UBXMessageSchema_8h.html">UBXMessageSchema.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_4aa44793a7919d83f30050e49b7bf369.html">Core</a></li><li class="navelem"><a class="el" href="dir_2ea4f975d67d756f851fa6c567618cf5.html">Protocols</a></li><li class="navelem"><a class="el" href="dir_b136a70f7c46ae19dccad782a08bdc6c.html">UBX</a></li><li class="navelem"><a class="el" href="UBXMessageSchema_8h.html">UBXMessageSchema.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

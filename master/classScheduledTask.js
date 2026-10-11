@@ -4,5 +4,6 @@ var classScheduledTask =
     [ "~ScheduledTask", "classScheduledTask.html#a8243bb6a72b5c7cd08dacabe5f0d6fdb", null ],
     [ "active", "classScheduledTask.html#a92629e7dfca8c68d6ef8cd7c7433e07f", null ],
     [ "cancel", "classScheduledTask.html#ae293e0f2515afa7a5fb6d46e16f3332b", null ],
-    [ "schedule", "classScheduledTask.html#a804e06de614496e6ca044499ccba7dad", null ]
+    [ "schedule", "classScheduledTask.html#a804e06de614496e6ca044499ccba7dad", null ],
+    [ "scheduleRepeating", "classScheduledTask.html#a7a221007de8af33bf63c56ebeb3bdb8b", null ]
 ];

@@ -100,37 +100,66 @@ $(document).ready(function(){initNavTree('GPSCorrectionSettings_8cc_source.html'
 <div class="contents">
 <a href="GPSCorrectionSettings_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="GPSCorrectionSettings_8h.html">GPSCorrectionSettings.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(GPSCorrectionSettingsLog, <span class="stringliteral">&quot;GPS.Settings.GPSCorrectionSettings&quot;</span>)</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QtCore/QSettings&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Preserve persisted keys and custom setting overrides.</span></div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="GPSCorrectionSettings_8cc.html#a5c365c5fdbe432cf68f67811e39a7fd3">    8</a></span><a class="code hl_define" href="SettingsGroup_8h.html#abe10d6e5a582a5f5e4c5036bf99146fa">DECLARE_SETTINGGROUP</a>(GPSCorrection, &quot;NTRIP&quot;)</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    qCDebug(GPSCorrectionSettingsLog) &lt;&lt; <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(GPSCorrectionSettingsLog, <span class="stringliteral">&quot;GPS.Settings.GPSCorrectionSettings&quot;</span>)</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// Preserve persisted keys and custom setting overrides.</span></div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="GPSCorrectionSettings_8cc.html#a5c365c5fdbe432cf68f67811e39a7fd3">   12</a></span><a class="code hl_define" href="SettingsGroup_8h.html#abe10d6e5a582a5f5e4c5036bf99146fa">DECLARE_SETTINGGROUP</a>(GPSCorrection, &quot;NTRIP&quot;)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    qCDebug(GPSCorrectionSettingsLog) &lt;&lt; <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">// UDP forwarding moved from NTRIP-only to the selected stream, and its keys with it.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    QSettings settings;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    settings.beginGroup(settingsGroup);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [legacy, current] : {std::pair{<span class="stringliteral">&quot;ntripUdpForwardEnabled&quot;</span>, rtcmUdpOutputEnabledName},</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                                          std::pair{<span class="stringliteral">&quot;ntripUdpTargetAddress&quot;</span>, rtcmUdpOutputAddressName},</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>                                          std::pair{<span class="stringliteral">&quot;ntripUdpTargetPort&quot;</span>, rtcmUdpOutputPortName}}) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">const</span> QString legacyKey = QLatin1String(legacy);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">if</span> (settings.contains(legacyKey)) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keywordflow">if</span> (!settings.contains(current)) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                settings.setValue(current, settings.value(legacyKey));</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            settings.remove(legacyKey);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// UDP input is always validated.</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    settings.remove(QStringLiteral(<span class="stringliteral">&quot;rtcmUdpValidate&quot;</span>));</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// &quot;All sources&quot; (4) was removed; fall back to the default highest-priority selection.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">if</span> (settings.value(correctionSourceName).toUInt() == 4) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        settings.remove(correctionSourceName);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">// Sources are chosen by category only.</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    settings.remove(QStringLiteral(<span class="stringliteral">&quot;correctionSourceInstance&quot;</span>));</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    settings.endGroup();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
 </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classGPSCorrectionSettings.html#a7c9e7483257338269320b1bdf5bd691e">   13</a></span><a class="code hl_function" href="classGPSCorrectionSettings.html#a7c9e7483257338269320b1bdf5bd691e">GPSCorrectionSettings::~GPSCorrectionSettings</a>()</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    qCDebug(GPSCorrectionSettingsLog) &lt;&lt; <span class="keyword">this</span>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classGPSCorrectionSettings.html#a7c9e7483257338269320b1bdf5bd691e">   41</a></span><a class="code hl_function" href="classGPSCorrectionSettings.html#a7c9e7483257338269320b1bdf5bd691e">GPSCorrectionSettings::~GPSCorrectionSettings</a>()</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    qCDebug(GPSCorrectionSettingsLog) &lt;&lt; <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
 </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classGPSCorrectionSettings.html">GPSCorrectionSettings</a>, rtcmUdpInputEnabled)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classGPSCorrectionSettings.html">GPSCorrectionSettings</a>, rtcmUdpInputPort)</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classGPSCorrectionSettings.html">GPSCorrectionSettings</a>, rtcmUdpValidate)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classGPSCorrectionSettings.html">GPSCorrectionSettings</a>, correctionSource)</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classGPSCorrectionSettings.html">GPSCorrectionSettings</a>, correctionSourceInstance)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classGPSCorrectionSettings.html">GPSCorrectionSettings</a>, rtcmUdpInputEnabled)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classGPSCorrectionSettings.html">GPSCorrectionSettings</a>, rtcmUdpInputPort)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classGPSCorrectionSettings.html">GPSCorrectionSettings</a>, rtcmUdpOutputEnabled)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classGPSCorrectionSettings.html">GPSCorrectionSettings</a>, rtcmUdpOutputAddress)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classGPSCorrectionSettings.html">GPSCorrectionSettings</a>, rtcmUdpOutputPort)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><a class="code hl_define" href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a>(<a class="code hl_class" href="classGPSCorrectionSettings.html">GPSCorrectionSettings</a>, correctionSource)</div>
 <div class="ttc" id="aGPSCorrectionSettings_8h_html"><div class="ttname"><a href="GPSCorrectionSettings_8h.html">GPSCorrectionSettings.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>
 <div class="ttc" id="aSettingsGroup_8h_html_a8d7b3fa9e351fa62a2f32ae6043c6cff"><div class="ttname"><a href="SettingsGroup_8h.html#a8d7b3fa9e351fa62a2f32ae6043c6cff">DECLARE_SETTINGSFACT</a></div><div class="ttdeci">#define DECLARE_SETTINGSFACT(CLASS, NAME)</div><div class="ttdef"><b>Definition</b> <a href="SettingsGroup_8h_source.html#l00017">SettingsGroup.h:17</a></div></div>
 <div class="ttc" id="aSettingsGroup_8h_html_abe10d6e5a582a5f5e4c5036bf99146fa"><div class="ttname"><a href="SettingsGroup_8h.html#abe10d6e5a582a5f5e4c5036bf99146fa">DECLARE_SETTINGGROUP</a></div><div class="ttdeci">#define DECLARE_SETTINGGROUP(NAME, GROUP)</div><div class="ttdef"><b>Definition</b> <a href="SettingsGroup_8h_source.html#l00011">SettingsGroup.h:11</a></div></div>
 <div class="ttc" id="aclassGPSCorrectionSettings_html"><div class="ttname"><a href="classGPSCorrectionSettings.html">GPSCorrectionSettings</a></div><div class="ttdef"><b>Definition</b> <a href="GPSCorrectionSettings_8h_source.html#l00007">GPSCorrectionSettings.h:8</a></div></div>
-<div class="ttc" id="aclassGPSCorrectionSettings_html_a7c9e7483257338269320b1bdf5bd691e"><div class="ttname"><a href="classGPSCorrectionSettings.html#a7c9e7483257338269320b1bdf5bd691e">GPSCorrectionSettings::~GPSCorrectionSettings</a></div><div class="ttdeci">~GPSCorrectionSettings() override</div><div class="ttdef"><b>Definition</b> <a href="GPSCorrectionSettings_8cc_source.html#l00013">GPSCorrectionSettings.cc:13</a></div></div>
+<div class="ttc" id="aclassGPSCorrectionSettings_html_a7c9e7483257338269320b1bdf5bd691e"><div class="ttname"><a href="classGPSCorrectionSettings.html#a7c9e7483257338269320b1bdf5bd691e">GPSCorrectionSettings::~GPSCorrectionSettings</a></div><div class="ttdeci">~GPSCorrectionSettings() override</div><div class="ttdef"><b>Definition</b> <a href="GPSCorrectionSettings_8cc_source.html#l00041">GPSCorrectionSettings.cc:41</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

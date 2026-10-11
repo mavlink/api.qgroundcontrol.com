@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/GPS/Driver/GPSDriver.h File Reference</title>
+<title>QGroundControl: src/GPS/Core/Protocols/GPSDriver.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,29 +96,32 @@ $(document).ready(function(){initNavTree('GPSDriver_8h.html',''); initResizable(
   <div class="headertitle"><div class="title">GPSDriver.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<div class="textblock"><code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
-<code>#include &lt;span&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;QtCore/QByteArray&gt;</code><br />
 <code>#include &lt;QtCore/QString&gt;</code><br />
-<code>#include &quot;<a class="el" href="GPSConfigurationEvidence_8h_source.html">GPSConfigurationEvidence.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GPSDriverReports_8h_source.html">GPSDriverReports.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSClock_8h_source.html">GPSClock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSCommand_8h_source.html">GPSCommand.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSProtocolEvent_8h_source.html">GPSProtocolEvent.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSReceiverReports_8h_source.html">GPSReceiverReports.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GPSType_8h_source.html">GPSType.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for GPSDriver.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="GPSDriver_8h__incl.svg" width="100%" height="547"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="GPSDriver_8h__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="GPSDriver_8h__dep__incl.svg" width="635" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="GPSDriver_8h__dep__incl.svg" width="486" height="227"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="GPSDriver_8h_source.html">Go to the source code of this file.</a></p>
@@ -130,28 +133,20 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSReceiveResult.html">GPSReceiveResult</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSDriver.html">GPSDriver</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects a native receiver protocol and adapts its decoded events to public reports.  <a href="classGPSDriver.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a56b3bb578c468f3163bbef0c30a9633f" id="r_a56b3bb578c468f3163bbef0c30a9633f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633f">GPSReceiveStatus</a> { <br />
-&#160;&#160;<a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633faf6068daa29dbb05a7ead1e3b5a48bbee">Data</a>
-, <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633faecfc2dffe568c10a67dbc6d3724cfde2">Activity</a>
-, <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633fae599161956d626eda4cb0a5ffb85271c">Idle</a>
-, <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633faa149e85a44aeec9140e92733d9ed694e">Cancelled</a>
-, <br />
-&#160;&#160;<a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633faca3da8f495e4e628912a7798655da6c2">ProtocolError</a>
-, <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633faa6bc95be5848e897dbc439dd4dc5f465">TransportError</a>
-, <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633fa52c1415ae26d69e91093beaac88e0815">NotConfigured</a>
-, <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633fad8a942ef2b04672adfafef0ad817a407">Busy</a>
-<br />
+<tr class="memitem:a86fdc02d9d86521b92c2d00763b2ee0a" id="r_a86fdc02d9d86521b92c2d00763b2ee0a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSDriver_8h.html#a86fdc02d9d86521b92c2d00763b2ee0a">GPSReceiveLiveness</a> { <a class="el" href="GPSDriver_8h.html#a86fdc02d9d86521b92c2d00763b2ee0aae599161956d626eda4cb0a5ffb85271c">Idle</a>
+, <a class="el" href="GPSDriver_8h.html#a86fdc02d9d86521b92c2d00763b2ee0aaecfc2dffe568c10a67dbc6d3724cfde2">Activity</a>
+, <a class="el" href="GPSDriver_8h.html#a86fdc02d9d86521b92c2d00763b2ee0aaf6068daa29dbb05a7ead1e3b5a48bbee">Data</a>
  }</td></tr>
-<tr class="separator:a56b3bb578c468f3163bbef0c30a9633f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a86fdc02d9d86521b92c2d00763b2ee0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">What one receive cycle heard from the receiver.  <a href="GPSDriver_8h.html#a86fdc02d9d86521b92c2d00763b2ee0a">More...</a><br /></td></tr>
+<tr class="separator:a86fdc02d9d86521b92c2d00763b2ee0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a56b3bb578c468f3163bbef0c30a9633f" name="a56b3bb578c468f3163bbef0c30a9633f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56b3bb578c468f3163bbef0c30a9633f">&#9670;&#160;</a></span>GPSReceiveStatus</h2>
+<a id="a86fdc02d9d86521b92c2d00763b2ee0a" name="a86fdc02d9d86521b92c2d00763b2ee0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86fdc02d9d86521b92c2d00763b2ee0a">&#9670;&#160;</a></span>GPSReceiveLiveness</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,7 +155,7 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="GPSDriver_8h.html#a56b3bb578c468f3163bbef0c30a9633f">GPSReceiveStatus</a></td>
+          <td class="memname">enum class <a class="el" href="GPSDriver_8h.html#a86fdc02d9d86521b92c2d00763b2ee0a">GPSReceiveLiveness</a></td>
         </tr>
       </table>
   </td>
@@ -169,18 +164,17 @@ Enumerations</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>What one receive cycle heard from the receiver. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a56b3bb578c468f3163bbef0c30a9633faf6068daa29dbb05a7ead1e3b5a48bbee" name="a56b3bb578c468f3163bbef0c30a9633faf6068daa29dbb05a7ead1e3b5a48bbee"></a>Data&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a56b3bb578c468f3163bbef0c30a9633faecfc2dffe568c10a67dbc6d3724cfde2" name="a56b3bb578c468f3163bbef0c30a9633faecfc2dffe568c10a67dbc6d3724cfde2"></a>Activity&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a56b3bb578c468f3163bbef0c30a9633fae599161956d626eda4cb0a5ffb85271c" name="a56b3bb578c468f3163bbef0c30a9633fae599161956d626eda4cb0a5ffb85271c"></a>Idle&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a56b3bb578c468f3163bbef0c30a9633faa149e85a44aeec9140e92733d9ed694e" name="a56b3bb578c468f3163bbef0c30a9633faa149e85a44aeec9140e92733d9ed694e"></a>Cancelled&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a56b3bb578c468f3163bbef0c30a9633faca3da8f495e4e628912a7798655da6c2" name="a56b3bb578c468f3163bbef0c30a9633faca3da8f495e4e628912a7798655da6c2"></a>ProtocolError&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a56b3bb578c468f3163bbef0c30a9633faa6bc95be5848e897dbc439dd4dc5f465" name="a56b3bb578c468f3163bbef0c30a9633faa6bc95be5848e897dbc439dd4dc5f465"></a>TransportError&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a56b3bb578c468f3163bbef0c30a9633fa52c1415ae26d69e91093beaac88e0815" name="a56b3bb578c468f3163bbef0c30a9633fa52c1415ae26d69e91093beaac88e0815"></a>NotConfigured&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a56b3bb578c468f3163bbef0c30a9633fad8a942ef2b04672adfafef0ad817a407" name="a56b3bb578c468f3163bbef0c30a9633fad8a942ef2b04672adfafef0ad817a407"></a>Busy&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a86fdc02d9d86521b92c2d00763b2ee0aae599161956d626eda4cb0a5ffb85271c" name="a86fdc02d9d86521b92c2d00763b2ee0aae599161956d626eda4cb0a5ffb85271c"></a>Idle&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a86fdc02d9d86521b92c2d00763b2ee0aaecfc2dffe568c10a67dbc6d3724cfde2" name="a86fdc02d9d86521b92c2d00763b2ee0aaecfc2dffe568c10a67dbc6d3724cfde2"></a>Activity&#160;</td><td class="fielddoc"><p>Diagnostics or partial input, never proof of navigation liveness. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a86fdc02d9d86521b92c2d00763b2ee0aaf6068daa29dbb05a7ead1e3b5a48bbee" name="a86fdc02d9d86521b92c2d00763b2ee0aaf6068daa29dbb05a7ead1e3b5a48bbee"></a>Data&#160;</td><td class="fielddoc"><p>Useful reports, even without a registered sink. </p>
+</td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00032">32</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00041">41</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
 
 </div>
 </div>
@@ -189,7 +183,7 @@ Enumerations</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_38cd3ecbc1efe502063aa758009bff68.html">Driver</a></li><li class="navelem"><a class="el" href="GPSDriver_8h.html">GPSDriver.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_4aa44793a7919d83f30050e49b7bf369.html">Core</a></li><li class="navelem"><a class="el" href="dir_2ea4f975d67d756f851fa6c567618cf5.html">Protocols</a></li><li class="navelem"><a class="el" href="GPSDriver_8h.html">GPSDriver.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

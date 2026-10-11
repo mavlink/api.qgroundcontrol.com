@@ -82,6 +82,7 @@ var namespaceAndroidSerial =
     [ "unregisterPointer", "namespaceAndroidSerial.html#a54eadf6cca2ca4f696375d56caee683a", null ],
     [ "usePosixSerial", "namespaceAndroidSerial.html#a5d3f91cc27b4c62c9acd4e8e59458ed0", null ],
     [ "write", "namespaceAndroidSerial.html#a771b5b8a3d56153c575c6eb95b44a8c4", null ],
+    [ "writeWithProgress", "namespaceAndroidSerial.html#a4e2bee7701dbe944af61e1100af29089", null ],
     [ "CHAR_XOFF", "namespaceAndroidSerial.html#af1f18c13cf22baea82fa556776f124a8", null ],
     [ "CHAR_XON", "namespaceAndroidSerial.html#aebcf54e4c0e3c2813428eb9bf0c49833", null ],
     [ "kJniUsbSerialManagerClassName", "namespaceAndroidSerial.html#a36f84eaf08ab3e5739cc49ea18cb6caf", null ],

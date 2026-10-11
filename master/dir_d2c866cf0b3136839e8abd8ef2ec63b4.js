@@ -1,14 +1,14 @@
 var dir_d2c866cf0b3136839e8abd8ef2ec63b4 =
 [
-    [ "GPSBaseStationConfig.h", "GPSBaseStationConfig_8h.html", "GPSBaseStationConfig_8h" ],
-    [ "GPSConfigurationEvidence.h", "GPSConfigurationEvidence_8h.html", "GPSConfigurationEvidence_8h" ],
-    [ "GPSDriverReports.h", "GPSDriverReports_8h.html", "GPSDriverReports_8h" ],
-    [ "GPSEllipsoidPosition.h", "GPSEllipsoidPosition_8h.html", "GPSEllipsoidPosition_8h" ],
-    [ "GPSReceiverCapabilities.h", "GPSReceiverCapabilities_8h.html", "GPSReceiverCapabilities_8h" ],
-    [ "GPSReceiverConfig.cc", "GPSReceiverConfig_8cc.html", "GPSReceiverConfig_8cc" ],
-    [ "GPSReceiverConfig.h", "GPSReceiverConfig_8h.html", "GPSReceiverConfig_8h" ],
-    [ "GPSReceiverDescriptor.cc", "GPSReceiverDescriptor_8cc.html", "GPSReceiverDescriptor_8cc" ],
-    [ "GPSReceiverDescriptor.h", "GPSReceiverDescriptor_8h.html", "GPSReceiverDescriptor_8h" ],
-    [ "GPSSatelliteUsageReport.h", "GPSSatelliteUsageReport_8h.html", "GPSSatelliteUsageReport_8h" ],
-    [ "GPSType.h", "GPSType_8h.html", "GPSType_8h" ]
+    [ "GPSReceiver.cc", "GPSReceiver_8cc.html", null ],
+    [ "GPSReceiver.h", "GPSReceiver_8h.html", "GPSReceiver_8h" ],
+    [ "GPSReceiverConnectionPolicy.cc", "GPSReceiverConnectionPolicy_8cc.html", null ],
+    [ "GPSReceiverConnectionPolicy.h", "GPSReceiverConnectionPolicy_8h.html", "GPSReceiverConnectionPolicy_8h" ],
+    [ "GPSReceiverConnector.h", "GPSReceiverConnector_8h.html", "GPSReceiverConnector_8h" ],
+    [ "GPSReceiverFactGroup.cc", "GPSReceiverFactGroup_8cc.html", null ],
+    [ "GPSReceiverFactGroup.h", "GPSReceiverFactGroup_8h.html", "GPSReceiverFactGroup_8h" ],
+    [ "GPSReceiverMessages.cc", "GPSReceiverMessages_8cc.html", "GPSReceiverMessages_8cc" ],
+    [ "GPSReceiverMessages.h", "GPSReceiverMessages_8h.html", "GPSReceiverMessages_8h" ],
+    [ "GPSReceiverSession.cc", "GPSReceiverSession_8cc.html", "GPSReceiverSession_8cc" ],
+    [ "GPSReceiverSession.h", "GPSReceiverSession_8h.html", "GPSReceiverSession_8h" ]
 ];

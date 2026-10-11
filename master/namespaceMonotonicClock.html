@@ -100,16 +100,71 @@ $(document).ready(function(){initNavTree('namespaceMonotonicClock.html',''); ini
 Functions</h2></td></tr>
 <tr class="memitem:ad062a186e3ee54be0ddf067f1f4fcd78" id="r_ad062a186e3ee54be0ddf067f1f4fcd78"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a> ()</td></tr>
 <tr class="separator:ad062a186e3ee54be0ddf067f1f4fcd78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8fbdd3f89c4170b83177f50e8c49411" id="r_ae8fbdd3f89c4170b83177f50e8c49411"><td class="memItemLeft" align="right" valign="top">constexpr int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMonotonicClock.html#ae8fbdd3f89c4170b83177f50e8c49411">ageMilliseconds</a> (uint64_t timestampUs, uint64_t <a class="el" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>)</td></tr>
-<tr class="memdesc:ae8fbdd3f89c4170b83177f50e8c49411"><td class="mdescLeft">&#160;</td><td class="mdescRight">A missing or future timestamp has no valid age. Both arguments must share a clock domain.  <br /></td></tr>
-<tr class="separator:ae8fbdd3f89c4170b83177f50e8c49411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5383972bd71b734459a49ada9b814d45" id="r_a5383972bd71b734459a49ada9b814d45"><td class="memTemplParams" colspan="2">template&lt;typename Rep , typename Period &gt; </td></tr>
+<tr class="memitem:a5383972bd71b734459a49ada9b814d45"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::optional&lt; std::chrono::duration&lt; Rep, Period &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMonotonicClock.html#a5383972bd71b734459a49ada9b814d45">age</a> (std::chrono::duration&lt; Rep, Period &gt; timestamp, std::chrono::duration&lt; Rep, Period &gt; now)</td></tr>
+<tr class="memdesc:a5383972bd71b734459a49ada9b814d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Age of <em>timestamp</em> at <em>now</em>, both in the same unit; empty for a missing or future timestamp.  <br /></td></tr>
+<tr class="separator:a5383972bd71b734459a49ada9b814d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ca1e3a88a9bcbd647129c4729a9fb60" id="r_a3ca1e3a88a9bcbd647129c4729a9fb60"><td class="memItemLeft" align="right" valign="top">constexpr std::optional&lt; std::chrono::microseconds &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMonotonicClock.html#a3ca1e3a88a9bcbd647129c4729a9fb60">age</a> (uint64_t timestampUs, uint64_t <a class="el" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>)</td></tr>
+<tr class="separator:a3ca1e3a88a9bcbd647129c4729a9fb60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7352f82baaa1b63643dd9b89ad0c204" id="r_af7352f82baaa1b63643dd9b89ad0c204"><td class="memItemLeft" align="right" valign="top">constexpr std::chrono::microseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMonotonicClock.html#af7352f82baaa1b63643dd9b89ad0c204">remaining</a> (uint64_t timestampUs, uint64_t <a class="el" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>, std::chrono::microseconds lifetime)</td></tr>
-<tr class="memdesc:af7352f82baaa1b63643dd9b89ad0c204"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid or expired receipts never acquire a new lifetime.  <br /></td></tr>
+<tr class="memdesc:af7352f82baaa1b63643dd9b89ad0c204"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time left before a receipt reaches <em>lifetime</em>; zero for a missing, future or expired one.  <br /></td></tr>
 <tr class="separator:af7352f82baaa1b63643dd9b89ad0c204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab998615902ae9d363431a3579f765dad" id="r_ab998615902ae9d363431a3579f765dad"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMonotonicClock.html#ab998615902ae9d363431a3579f765dad">fresh</a> (uint64_t timestampUs, uint64_t <a class="el" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>, std::chrono::microseconds lifetime)</td></tr>
+<tr class="memdesc:ab998615902ae9d363431a3579f765dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a receipt is younger than <em>lifetime</em>.  <br /></td></tr>
+<tr class="separator:ab998615902ae9d363431a3579f765dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a552733fbbcf50c40117e8d573c6c55a9" id="r_a552733fbbcf50c40117e8d573c6c55a9"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMonotonicClock.html#a552733fbbcf50c40117e8d573c6c55a9">withinAge</a> (uint64_t timestampUs, uint64_t <a class="el" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>, std::chrono::microseconds maximumAge)</td></tr>
+<tr class="memdesc:a552733fbbcf50c40117e8d573c6c55a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a receipt is at most <em>maximumAge</em> old, its limit included.  <br /></td></tr>
+<tr class="separator:a552733fbbcf50c40117e8d573c6c55a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ae8fbdd3f89c4170b83177f50e8c49411" name="ae8fbdd3f89c4170b83177f50e8c49411"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8fbdd3f89c4170b83177f50e8c49411">&#9670;&#160;</a></span>ageMilliseconds()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Timestamps from one monotonic clock domain. A zero (or negative) timestamp means "never", and a timestamp later than now has no age. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a5383972bd71b734459a49ada9b814d45" name="a5383972bd71b734459a49ada9b814d45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5383972bd71b734459a49ada9b814d45">&#9670;&#160;</a></span>age() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Rep , typename Period &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::optional&lt; std::chrono::duration&lt; Rep, Period &gt; &gt; MonotonicClock::age </td>
+          <td>(</td>
+          <td class="paramtype">std::chrono::duration&lt; Rep, Period &gt;&#160;</td>
+          <td class="paramname"><em>timestamp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::chrono::duration&lt; Rep, Period &gt;&#160;</td>
+          <td class="paramname"><em>now</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Age of <em>timestamp</em> at <em>now</em>, both in the same unit; empty for a missing or future timestamp. </p>
+
+<p class="definition">Definition at line <a class="el" href="MonotonicClock_8h_source.html#l00019">19</a> of file <a class="el" href="MonotonicClock_8h_source.html">MonotonicClock.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="MonotonicClock_8h_source.html#l00028">age()</a>, <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00044">NTRIPConnectionStats::correctionAgeSec()</a>, <a class="el" href="NTRIPSourceTableController_8cc_source.html#l00046">NTRIPSourceTableController::fetch()</a>, <a class="el" href="MonotonicClock_8h_source.html#l00034">remaining()</a>, <a class="el" href="GPSCorrectionSelector_8cc_source.html#l00087">GPSCorrectionSelector::submit()</a>, and <a class="el" href="MonotonicClock_8h_source.html#l00050">withinAge()</a>.</p>
+
+</div>
+</div>
+<a id="a3ca1e3a88a9bcbd647129c4729a9fb60" name="a3ca1e3a88a9bcbd647129c4729a9fb60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ca1e3a88a9bcbd647129c4729a9fb60">&#9670;&#160;</a></span>age() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,7 +173,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int64_t MonotonicClock::ageMilliseconds </td>
+          <td class="memname">constexpr std::optional&lt; std::chrono::microseconds &gt; MonotonicClock::age </td>
           <td>(</td>
           <td class="paramtype">uint64_t&#160;</td>
           <td class="paramname"><em>timestampUs</em>, </td>
@@ -142,13 +197,59 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A missing or future timestamp has no valid age. Both arguments must share a clock domain. </p>
+<p class="definition">Definition at line <a class="el" href="MonotonicClock_8h_source.html#l00028">28</a> of file <a class="el" href="MonotonicClock_8h_source.html">MonotonicClock.h</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="MonotonicClock_8h_source.html#l00015">15</a> of file <a class="el" href="MonotonicClock_8h_source.html">MonotonicClock.h</a>.</p>
+<p class="reference">References <a class="el" href="MonotonicClock_8h_source.html#l00019">age()</a>, and <a class="el" href="MonotonicClock_8h_source.html#l00010">nowUs()</a>.</p>
 
-<p class="reference">References <a class="el" href="MonotonicClock_8h_source.html#l00007">nowUs()</a>.</p>
+</div>
+</div>
+<a id="ab998615902ae9d363431a3579f765dad" name="ab998615902ae9d363431a3579f765dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab998615902ae9d363431a3579f765dad">&#9670;&#160;</a></span>fresh()</h2>
 
-<p class="reference">Referenced by <a class="el" href="GPSCorrectionFrame_8h_source.html#l00035">GPSCorrectionFrame::ageMs()</a>, and <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00055">NTRIPConnectionStats::correctionAgeSec()</a>.</p>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool MonotonicClock::fresh </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>timestampUs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>nowUs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::chrono::microseconds&#160;</td>
+          <td class="paramname"><em>lifetime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether a receipt is younger than <em>lifetime</em>. </p>
+
+<p class="definition">Definition at line <a class="el" href="MonotonicClock_8h_source.html#l00044">44</a> of file <a class="el" href="MonotonicClock_8h_source.html">MonotonicClock.h</a>.</p>
+
+<p class="reference">References <a class="el" href="MonotonicClock_8h_source.html#l00010">nowUs()</a>, and <a class="el" href="MonotonicClock_8h_source.html#l00034">remaining()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="NTRIPSourceTableController_8cc_source.html#l00046">NTRIPSourceTableController::fetch()</a>, <a class="el" href="GPSReceiverReports_8h_source.html#l00123">GPSIntegrityReport::freshAt()</a>, and <a class="el" href="GPSInputMonitor_8h_source.html#l00021">GPSInputMonitor::update()</a>.</p>
 
 </div>
 </div>
@@ -175,9 +276,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MonotonicClock_8h_source.html#l00007">7</a> of file <a class="el" href="MonotonicClock_8h_source.html">MonotonicClock.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MonotonicClock_8h_source.html#l00010">10</a> of file <a class="el" href="MonotonicClock_8h_source.html">MonotonicClock.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="MonotonicClock_8h_source.html#l00015">ageMilliseconds()</a>, <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>, <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00055">NTRIPConnectionStats::correctionAgeSec()</a>, <a class="el" href="GPSProtocol_8cc_source.html#l00053">GPSProtocol::GPSProtocol()</a>, <a class="el" href="GPSCorrectionFrame_8h_source.html#l00033">GPSCorrectionFrame::monotonicNowMs()</a>, <a class="el" href="ReadTimestamp_8h_source.html#l00011">ReadTimestamp::nowUs()</a>, <a class="el" href="QtRuntimeScheduler_8cc_source.html#l00023">QtRuntimeScheduler::nowUs()</a>, <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00009">NTRIPConnectionStats::NTRIPConnectionStats()</a>, <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00073">NTRIPConnectionStats::recordMessage()</a>, and <a class="el" href="MonotonicClock_8h_source.html#l00021">remaining()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="MonotonicClock_8h_source.html#l00028">age()</a>, <a class="el" href="MonotonicClock_8h_source.html#l00044">fresh()</a>, <a class="el" href="ReadTimestamp_8h_source.html#l00011">ReadTimestamp::nowUs()</a>, <a class="el" href="QtRuntimeScheduler_8cc_source.html#l00023">QtRuntimeScheduler::nowUs()</a>, <a class="el" href="MonotonicClock_8h_source.html#l00034">remaining()</a>, <a class="el" href="SerialAutoConnect_8cc_source.html#l00026">SerialAutoConnect::update()</a>, and <a class="el" href="MonotonicClock_8h_source.html#l00050">withinAge()</a>.</p>
 
 </div>
 </div>
@@ -221,11 +322,63 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Invalid or expired receipts never acquire a new lifetime. </p>
+<p>Time left before a receipt reaches <em>lifetime</em>; zero for a missing, future or expired one. </p>
 
-<p class="definition">Definition at line <a class="el" href="MonotonicClock_8h_source.html#l00021">21</a> of file <a class="el" href="MonotonicClock_8h_source.html">MonotonicClock.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MonotonicClock_8h_source.html#l00034">34</a> of file <a class="el" href="MonotonicClock_8h_source.html">MonotonicClock.h</a>.</p>
 
-<p class="reference">References <a class="el" href="MonotonicClock_8h_source.html#l00007">nowUs()</a>.</p>
+<p class="reference">References <a class="el" href="MonotonicClock_8h_source.html#l00019">age()</a>, and <a class="el" href="MonotonicClock_8h_source.html#l00010">nowUs()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="MonotonicClock_8h_source.html#l00044">fresh()</a>.</p>
+
+</div>
+</div>
+<a id="a552733fbbcf50c40117e8d573c6c55a9" name="a552733fbbcf50c40117e8d573c6c55a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a552733fbbcf50c40117e8d573c6c55a9">&#9670;&#160;</a></span>withinAge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool MonotonicClock::withinAge </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>timestampUs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>nowUs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::chrono::microseconds&#160;</td>
+          <td class="paramname"><em>maximumAge</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether a receipt is at most <em>maximumAge</em> old, its limit included. </p>
+
+<p class="definition">Definition at line <a class="el" href="MonotonicClock_8h_source.html#l00050">50</a> of file <a class="el" href="MonotonicClock_8h_source.html">MonotonicClock.h</a>.</p>
+
+<p class="reference">References <a class="el" href="MonotonicClock_8h_source.html#l00019">age()</a>, and <a class="el" href="MonotonicClock_8h_source.html#l00010">nowUs()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="NMEANavigationEpoch_8cc_source.html#l00071">NMEA::NavigationEpochAssembler::expireUntimedMetadata()</a>.</p>
 
 </div>
 </div>

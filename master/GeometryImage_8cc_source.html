@@ -265,11 +265,11 @@ $(document).ready(function(){initNavTree('GeometryImage_8cc_source.html',''); in
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    _imageSize = requestedSize;</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordtype">int</span> width = requestedSize.width();</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordtype">int</span> height = requestedSize.height();</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="UBXPlan_8cc.html#a5d8006e753a3e76ff637a4e092bbed71">height</a> = requestedSize.height();</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordflow">if</span> (size)</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        *size = QSize(width, height);</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        *size = QSize(width, <a class="code hl_variable" href="UBXPlan_8cc.html#a5d8006e753a3e76ff637a4e092bbed71">height</a>);</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    QPixmap pixmap(width, height);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    QPixmap pixmap(width, <a class="code hl_variable" href="UBXPlan_8cc.html#a5d8006e753a3e76ff637a4e092bbed71">height</a>);</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    pixmap.fill(Qt::transparent);</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    _actuatorImagePositions.clear();</div>
@@ -326,10 +326,10 @@ $(document).ready(function(){initNavTree('GeometryImage_8cc_source.html',''); in
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="comment">// scaling &amp; center offset</span></div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="keywordtype">float</span> usableWidth = width - 2.f * margin;</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keywordtype">float</span> usableHeight = height - 2.f * margin;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keywordtype">float</span> usableHeight = <a class="code hl_variable" href="UBXPlan_8cc.html#a5d8006e753a3e76ff637a4e092bbed71">height</a> - 2.f * margin;</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordtype">float</span> extraOffsetX = 0.f;</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="comment">// if there&#39;s not enough space on the left for the axis to ensure there&#39;s no overlap, reduce the usable size</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keywordflow">if</span> (width &lt; height + axisIndicatorSize * 4.f) {</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keywordflow">if</span> (width &lt; <a class="code hl_variable" href="UBXPlan_8cc.html#a5d8006e753a3e76ff637a4e092bbed71">height</a> + axisIndicatorSize * 4.f) {</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        usableWidth -= axisIndicatorSize;</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        usableHeight -= axisIndicatorSize;</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        extraOffsetX = axisIndicatorSize;</div>
@@ -390,7 +390,7 @@ $(document).ready(function(){initNavTree('GeometryImage_8cc_source.html',''); in
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    };</div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    p.drawConvexPolygon(arrow, <span class="keyword">sizeof</span>(arrow) / <span class="keyword">sizeof</span>(arrow[0]));</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <a class="code hl_function" href="classGeometryImage_1_1VehicleGeometryImageProvider.html#a1af7e6617444ffb65057f39f1d809c9d">drawAxisIndicator</a>(p, QPointF{axisIndicatorSize / 2.f, height - axisIndicatorSize / 2.f}, axisIndicatorSize, fontColor);</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <a class="code hl_function" href="classGeometryImage_1_1VehicleGeometryImageProvider.html#a1af7e6617444ffb65057f39f1d809c9d">drawAxisIndicator</a>(p, QPointF{axisIndicatorSize / 2.f, <a class="code hl_variable" href="UBXPlan_8cc.html#a5d8006e753a3e76ff637a4e092bbed71">height</a> - axisIndicatorSize / 2.f}, axisIndicatorSize, fontColor);</div>
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="keyword">auto</span> drawMotor = [&amp;](<span class="keyword">const</span> <a class="code hl_struct" href="structActuatorGeometry.html">ActuatorGeometry</a>&amp; actuator, QPointF pos, <span class="keywordtype">float</span> yPosOffset, <span class="keywordtype">bool</span> labelAtBottom) {</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        p.setPen(Qt::NoPen);</div>
@@ -543,6 +543,7 @@ $(document).ready(function(){initNavTree('GeometryImage_8cc_source.html',''); in
 </div>
 <div class="ttc" id="aGeometryImage_8cc_html_a1cb59b446baaf5f6c2bf00514260860e"><div class="ttname"><a href="GeometryImage_8cc.html#a1cb59b446baaf5f6c2bf00514260860e">generateTestGeometries</a></div><div class="ttdeci">static void generateTestGeometries(VehicleGeometryImageProvider &amp;provider)</div><div class="ttdef"><b>Definition</b> <a href="GeometryImage_8cc_source.html#l00009">GeometryImage.cc:9</a></div></div>
 <div class="ttc" id="aGeometryImage_8h_html"><div class="ttname"><a href="GeometryImage_8h.html">GeometryImage.h</a></div></div>
+<div class="ttc" id="aUBXPlan_8cc_html_a5d8006e753a3e76ff637a4e092bbed71"><div class="ttname"><a href="UBXPlan_8cc.html#a5d8006e753a3e76ff637a4e092bbed71">height</a></div><div class="ttdeci">int32_t height</div><div class="ttdef"><b>Definition</b> <a href="UBXPlan_8cc_source.html#l00044">UBXPlan.cc:44</a></div></div>
 <div class="ttc" id="aclassGeometryImage_1_1VehicleGeometryImageProvider_html"><div class="ttname"><a href="classGeometryImage_1_1VehicleGeometryImageProvider.html">GeometryImage::VehicleGeometryImageProvider</a></div><div class="ttdef"><b>Definition</b> <a href="GeometryImage_8h_source.html#l00017">GeometryImage.h:18</a></div></div>
 <div class="ttc" id="aclassGeometryImage_1_1VehicleGeometryImageProvider_html_a154adb41af6bc9e4f79a0e1b9ca6d962"><div class="ttname"><a href="classGeometryImage_1_1VehicleGeometryImageProvider.html#a154adb41af6bc9e4f79a0e1b9ca6d962">GeometryImage::VehicleGeometryImageProvider::requestPixmap</a></div><div class="ttdeci">QPixmap requestPixmap(const QString &amp;id, QSize *size, const QSize &amp;requestedSize) override</div><div class="ttdef"><b>Definition</b> <a href="GeometryImage_8cc_source.html#l00156">GeometryImage.cc:156</a></div></div>
 <div class="ttc" id="aclassGeometryImage_1_1VehicleGeometryImageProvider_html_a1af7e6617444ffb65057f39f1d809c9d"><div class="ttname"><a href="classGeometryImage_1_1VehicleGeometryImageProvider.html#a1af7e6617444ffb65057f39f1d809c9d">GeometryImage::VehicleGeometryImageProvider::drawAxisIndicator</a></div><div class="ttdeci">void drawAxisIndicator(QPainter &amp;p, const QPointF &amp;origin, float fontSize, const QColor &amp;color)</div><div class="ttdef"><b>Definition</b> <a href="GeometryImage_8cc_source.html#l00102">GeometryImage.cc:102</a></div></div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/GPS/Receiver/GPSReceiverConfig.cc File Reference</title>
+<title>QGroundControl: src/GPS/Core/Common/GPSReceiverConfig.cc File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -98,48 +98,90 @@ $(document).ready(function(){initNavTree('GPSReceiverConfig_8cc.html',''); initR
 <div class="textblock"><code>#include &quot;<a class="el" href="GPSReceiverConfig_8h_source.html">GPSReceiverConfig.h</a>&quot;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
-<code>#include &lt;numbers&gt;</code><br />
-<code>#include &quot;<a class="el" href="GPSReceiverCapabilities_8h_source.html">GPSReceiverCapabilities.h</a>&quot;</code><br />
+<code>#include &lt;QtCore/QCoreApplication&gt;</code><br />
+<code>#include &quot;<a class="el" href="GPSProtocolMath_8h_source.html">GPSProtocolMath.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GPSReceiverDescriptor_8h_source.html">GPSReceiverDescriptor.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for GPSReceiverConfig.cc:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="GPSReceiverConfig_8cc__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="GPSReceiverConfig_8cc__incl.svg" width="100%" height="558"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="GPSReceiverConfig_8cc_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a381bdfd32211648a1e2bcf013f00ec80" id="r_a381bdfd32211648a1e2bcf013f00ec80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGPSReceiverCapabilities.html">GPSReceiverCapabilities</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSReceiverConfig_8cc.html#a381bdfd32211648a1e2bcf013f00ec80">gpsReceiverCapabilities</a> (<a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495">GPSType</a> type, <a class="el" href="structGPSReceiverConfig.html#a9894a1c727fb477ff236db56881ebdb7">GPSReceiverConfig::Role</a> role)</td></tr>
-<tr class="memdesc:a381bdfd32211648a1e2bcf013f00ec80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unknown receiver families or roles return no capabilities; known families may not support the requested role.  <br /></td></tr>
-<tr class="separator:a381bdfd32211648a1e2bcf013f00ec80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c8345e9ecafef79713cf115afd5cd6b" id="r_a9c8345e9ecafef79713cf115afd5cd6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddf">GPSReceiverConfigError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSReceiverConfig_8cc.html#a9c8345e9ecafef79713cf115afd5cd6b">gpsValidateBaseStationConfig</a> (const <a class="el" href="structGPSBaseStationConfig.html">GPSBaseStationConfig</a> &amp;<a class="el" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</td></tr>
 <tr class="memdesc:a9c8345e9ecafef79713cf115afd5cd6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the selected base mode against the existing receiver wire-unit limits.  <br /></td></tr>
 <tr class="separator:a9c8345e9ecafef79713cf115afd5cd6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1ed6ec244efcbd5448bad26e15bb691" id="r_ad1ed6ec244efcbd5448bad26e15bb691"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddf">GPSReceiverConfigError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSReceiverConfig_8cc.html#ad1ed6ec244efcbd5448bad26e15bb691">gpsValidateReceiverConfig</a> (<a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495">GPSType</a> type, const <a class="el" href="structGPSReceiverConfig.html">GPSReceiverConfig</a> &amp;<a class="el" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</td></tr>
+<tr class="memitem:ad1ed6ec244efcbd5448bad26e15bb691" id="r_ad1ed6ec244efcbd5448bad26e15bb691"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddf">GPSReceiverConfigError</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSReceiverConfig_8cc.html#ad1ed6ec244efcbd5448bad26e15bb691">gpsValidateReceiverConfig</a> (<a class="el" href="namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80">GPSType</a> type, const <a class="el" href="structGPSReceiverConfig.html">GPSReceiverConfig</a> &amp;<a class="el" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</td></tr>
+<tr class="memdesc:ad1ed6ec244efcbd5448bad26e15bb691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Precedence: recognized receiver, persistent permission, base mode, baud rate.  <br /></td></tr>
 <tr class="separator:ad1ed6ec244efcbd5448bad26e15bb691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad90dc38df24c136ad4f0290642ca8bcf" id="r_ad90dc38df24c136ad4f0290642ca8bcf"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSReceiverConfig_8cc.html#ad90dc38df24c136ad4f0290642ca8bcf">gpsReceiverConfigErrorText</a> (<a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddf">GPSReceiverConfigError</a> <a class="el" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>)</td></tr>
+<tr class="memdesc:ad90dc38df24c136ad4f0290642ca8bcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translated diagnostic; empty for <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa6adf97f83acf6453d4a6a4b1070f3754">GPSReceiverConfigError::None</a>.  <br /></td></tr>
+<tr class="separator:ad90dc38df24c136ad4f0290642ca8bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af07c9c05c06fb9b85aa150c3951af081" id="r_af07c9c05c06fb9b85aa150c3951af081"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSReceiverConfig_8cc.html#af07c9c05c06fb9b85aa150c3951af081">gpsReceiverConfigError</a> (<a class="el" href="namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80">GPSType</a> type, const <a class="el" href="structGPSReceiverConfig.html">GPSReceiverConfig</a> &amp;<a class="el" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</td></tr>
+<tr class="memdesc:af07c9c05c06fb9b85aa150c3951af081"><td class="mdescLeft">&#160;</td><td class="mdescRight">An empty diagnostic means the receiver supports the role and all supplied settings.  <br /></td></tr>
+<tr class="separator:af07c9c05c06fb9b85aa150c3951af081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0459907875d10c846e70b8e34710398d" id="r_a0459907875d10c846e70b8e34710398d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGPSReceiverConfig.html">GPSReceiverConfig</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSReceiverConfig_8cc.html#a0459907875d10c846e70b8e34710398d">gpsReceiverConfigForDetected</a> (<a class="el" href="namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80">GPSType</a> detected, <a class="el" href="structGPSReceiverConfig.html">GPSReceiverConfig</a> <a class="el" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>, bool *compactFallback)</td></tr>
+<tr class="separator:a0459907875d10c846e70b8e34710398d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad60a9eb21ff4a340befcdb4a7aecaa77" id="r_ad60a9eb21ff4a340befcdb4a7aecaa77"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSReceiverConfig_8cc.html#ad60a9eb21ff4a340befcdb4a7aecaa77">gpsDetectedReceiverConfigError</a> (<a class="el" href="namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80">GPSType</a> detected, const <a class="el" href="structGPSReceiverConfig.html">GPSReceiverConfig</a> &amp;<a class="el" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</td></tr>
+<tr class="separator:ad60a9eb21ff4a340befcdb4a7aecaa77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a381bdfd32211648a1e2bcf013f00ec80" name="a381bdfd32211648a1e2bcf013f00ec80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a381bdfd32211648a1e2bcf013f00ec80">&#9670;&#160;</a></span>gpsReceiverCapabilities()</h2>
+<a id="ad60a9eb21ff4a340befcdb4a7aecaa77" name="ad60a9eb21ff4a340befcdb4a7aecaa77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad60a9eb21ff4a340befcdb4a7aecaa77">&#9670;&#160;</a></span>gpsDetectedReceiverConfigError()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structGPSReceiverCapabilities.html">GPSReceiverCapabilities</a> gpsReceiverCapabilities </td>
+          <td class="memname">QString gpsDetectedReceiverConfigError </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495">GPSType</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80">GPSType</a>&#160;</td>
+          <td class="paramname"><em>detected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structGPSReceiverConfig.html">GPSReceiverConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Why the <em>detected</em> family cannot perform <em>config</em>, naming the family and the option, such as "Detected
+Septentrio receiver does not support receiver-managed averaging"; empty when it can. </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8cc_source.html#l00133">133</a> of file <a class="el" href="GPSReceiverConfig_8cc_source.html">GPSReceiverConfig.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="GstSourceFactory_8cc_source.html#l00183">config</a>, <a class="el" href="QGCCompression_8cc_source.html#l00114">error</a>, <a class="el" href="GPSReceiverConfig_8cc_source.html#l00084">gpsReceiverConfigErrorText()</a>, <a class="el" href="GPSReceiverDescriptor_8cc_source.html#l00108">gpsReceiverName()</a>, <a class="el" href="GPSReceiverConfig_8cc_source.html#l00075">gpsValidateReceiverConfig()</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa6adf97f83acf6453d4a6a4b1070f3754">None</a>, and <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfabd50b77bbf600a5162e6944b2fe781e7">UnsupportedBaseMode</a>.</p>
+
+</div>
+</div>
+<a id="af07c9c05c06fb9b85aa150c3951af081" name="af07c9c05c06fb9b85aa150c3951af081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af07c9c05c06fb9b85aa150c3951af081">&#9670;&#160;</a></span>gpsReceiverConfigError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString gpsReceiverConfigError </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80">GPSType</a>&#160;</td>
           <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structGPSReceiverConfig.html#a9894a1c727fb477ff236db56881ebdb7">GPSReceiverConfig::Role</a>&#160;</td>
-          <td class="paramname"><em>role</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="structGPSReceiverConfig.html">GPSReceiverConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -149,13 +191,78 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Unknown receiver families or roles return no capabilities; known families may not support the requested role. </p>
+<p>An empty diagnostic means the receiver supports the role and all supplied settings. </p>
 
-<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8cc_source.html#l00010">10</a> of file <a class="el" href="GPSReceiverConfig_8cc_source.html">GPSReceiverConfig.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8cc_source.html#l00114">114</a> of file <a class="el" href="GPSReceiverConfig_8cc_source.html">GPSReceiverConfig.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GPSReceiverDescriptor_8cc_source.html#l00082">gpsReceiverDescriptor()</a>, <a class="el" href="structGPSReceiverConfig.html#a9894a1c727fb477ff236db56881ebdb7af80bc338b6146b566004a046f8137c85">GPSReceiverConfig::Passive</a>, <a class="el" href="structGPSReceiverConfig.html#a9894a1c727fb477ff236db56881ebdb7a52f5e0bc3859bc5f5e25130b6c7e8881">GPSReceiverConfig::Position</a>, and <a class="el" href="structGPSReceiverConfig.html#a9894a1c727fb477ff236db56881ebdb7a3fe85cb3983a5ba78fbdb7f585efe241">GPSReceiverConfig::RTKBase</a>.</p>
+<p class="reference">References <a class="el" href="GstSourceFactory_8cc_source.html#l00183">config</a>, <a class="el" href="GPSReceiverConfig_8cc_source.html#l00084">gpsReceiverConfigErrorText()</a>, and <a class="el" href="GPSReceiverConfig_8cc_source.html#l00075">gpsValidateReceiverConfig()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GPSReceiverConfig_8cc_source.html#l00062">gpsValidateReceiverConfig()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00096">GPSDriver::configure()</a>, and <a class="el" href="GPSReceiverSession_8cc_source.html#l00030">gpsReceiverConfigFor()</a>.</p>
+
+</div>
+</div>
+<a id="ad90dc38df24c136ad4f0290642ca8bcf" name="ad90dc38df24c136ad4f0290642ca8bcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad90dc38df24c136ad4f0290642ca8bcf">&#9670;&#160;</a></span>gpsReceiverConfigErrorText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString gpsReceiverConfigErrorText </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddf">GPSReceiverConfigError</a>&#160;</td>
+          <td class="paramname"><em>error</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Translated diagnostic; empty for <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa6adf97f83acf6453d4a6a4b1070f3754">GPSReceiverConfigError::None</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8cc_source.html#l00084">84</a> of file <a class="el" href="GPSReceiverConfig_8cc_source.html">GPSReceiverConfig.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="QGCCompression_8cc_source.html#l00114">error</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa44211ce9c1600eacf46eaf49dae34fdb">InvalidBaudRate</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa45ca235ba0d34df0a9a5b2e596c4c8f8">InvalidFixedBase</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfafaab98db55a6e6dc13a7395dac31d360">InvalidReceiverAveraging</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa6afc7b305b0bf9efbc51b265113c5b03">InvalidSurveyIn</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa0d4a662b4c7b84ce1c4a03739d91a996">UnknownReceiver</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfabd50b77bbf600a5162e6944b2fe781e7">UnsupportedBaseMode</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfab4b9dd2d0811af84ae049abca54d0745">UnsupportedCompactObservations</a>, and <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfade5393e16aba8775e05213e6447ace82">UnsupportedPersistentConfiguration</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GPSReceiverConfig_8cc_source.html#l00133">gpsDetectedReceiverConfigError()</a>, and <a class="el" href="GPSReceiverConfig_8cc_source.html#l00114">gpsReceiverConfigError()</a>.</p>
+
+</div>
+</div>
+<a id="a0459907875d10c846e70b8e34710398d" name="a0459907875d10c846e70b8e34710398d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0459907875d10c846e70b8e34710398d">&#9670;&#160;</a></span>gpsReceiverConfigForDetected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structGPSReceiverConfig.html">GPSReceiverConfig</a> gpsReceiverConfigForDetected </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80">GPSType</a>&#160;</td>
+          <td class="paramname"><em>detected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGPSReceiverConfig.html">GPSReceiverConfig</a>&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>compactFallback</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Fits a GPSType::automatic request to the family detection found. Consent to persistent changes is a permission, so it lapses where the family has no persistent configuration; a compact-observation request lapses where the family has no compact option, which then sends its standard observations, and <em>compactFallback</em>, when given, reports that. Any other option the family lacks is kept, for <a class="el" href="GPSReceiverConfig_8h.html#ad60a9eb21ff4a340befcdb4a7aecaa77">gpsDetectedReceiverConfigError()</a> to report. </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8cc_source.html#l00119">119</a> of file <a class="el" href="GPSReceiverConfig_8cc_source.html">GPSReceiverConfig.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="GPSReceiverDescriptor_8h_source.html#l00021">GPSReceiverCapabilities::compactObservations</a>, <a class="el" href="GstSourceFactory_8cc_source.html#l00183">config</a>, <a class="el" href="GPSReceiverDescriptor_8cc_source.html#l00147">gpsReceiverCapabilities()</a>, and <a class="el" href="GPSReceiverDescriptor_8h_source.html#l00020">GPSReceiverCapabilities::persistentConfiguration</a>.</p>
 
 </div>
 </div>
@@ -177,11 +284,9 @@ Functions</h2></td></tr>
 
 <p>Check the selected base mode against the existing receiver wire-unit limits. </p>
 
-<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8cc_source.html#l00026">26</a> of file <a class="el" href="GPSReceiverConfig_8cc_source.html">GPSReceiverConfig.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8cc_source.html#l00011">11</a> of file <a class="el" href="GPSReceiverConfig_8cc_source.html">GPSReceiverConfig.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="structGPSBaseStationConfig.html#a4531bf8ac4b54a6c85373ac25959bb31a8781fcacc46d862c6cd6212b381462ea">GPSBaseStationConfig::AccuracyControlled</a>, <a class="el" href="GstSourceFactory_8cc_source.html#l00183">config</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa45ca235ba0d34df0a9a5b2e596c4c8f8">InvalidFixedBase</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfafaab98db55a6e6dc13a7395dac31d360">InvalidReceiverAveraging</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa6afc7b305b0bf9efbc51b265113c5b03">InvalidSurveyIn</a>, <a class="el" href="GPSDriverReports_8h_source.html#l00125">GPSPositionReport::latitudeDegrees</a>, <a class="el" href="GPSDriverReports_8h_source.html#l00126">GPSPositionReport::longitudeDegrees</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a class="el" href="structGPSBaseStationConfig.html#a4531bf8ac4b54a6c85373ac25959bb31aa97bc6377ad4fdb7a0299c078a484d6a">GPSBaseStationConfig::ReceiverManaged</a>, and <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfabd50b77bbf600a5162e6944b2fe781e7">UnsupportedBaseMode</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="GPSRTKFactGroup_8cc_source.html#l00039">GPSRTKFactGroup::canSaveCurrentBasePosition()</a>, <a class="el" href="GPSReceiverConfigValidation_8cc_source.html#l00054">gpsBaseStationConfigError()</a>, <a class="el" href="GPSReceiverConfig_8cc_source.html#l00062">gpsValidateReceiverConfig()</a>, and <a class="el" href="GPSProtocol_8cc_source.html#l00067">GPSProtocol::validateConfiguration()</a>.</p>
+<p class="reference">References <a class="el" href="GstSourceFactory_8cc_source.html#l00183">config</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa45ca235ba0d34df0a9a5b2e596c4c8f8">InvalidFixedBase</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfafaab98db55a6e6dc13a7395dac31d360">InvalidReceiverAveraging</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa6afc7b305b0bf9efbc51b265113c5b03">InvalidSurveyIn</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa6adf97f83acf6453d4a6a4b1070f3754">None</a>, and <a class="el" href="GPSProtocolMath_8h_source.html#l00040">GPSProtocolMath::tenthMillimeters()</a>.</p>
 
 </div>
 </div>
@@ -194,7 +299,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddf">GPSReceiverConfigError</a> gpsValidateReceiverConfig </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="GPSType_8h.html#a349895bbb08743795417b27e663e6495">GPSType</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80">GPSType</a>&#160;</td>
           <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
@@ -210,13 +315,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Precedence: valid role, recognized receiver, supported role, RTK base, constellations, dynamic model, heading offset. For each optional request, unsupported takes precedence over an invalid value. </p>
 
-<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8cc_source.html#l00062">62</a> of file <a class="el" href="GPSReceiverConfig_8cc_source.html">GPSReceiverConfig.cc</a>.</p>
+<p>Precedence: recognized receiver, persistent permission, base mode, baud rate. </p>
 
-<p class="reference">References <a class="el" href="structGPSBaseStationConfig.html#a4531bf8ac4b54a6c85373ac25959bb31a8781fcacc46d862c6cd6212b381462ea">GPSBaseStationConfig::AccuracyControlled</a>, <a class="el" href="GstSourceFactory_8cc_source.html#l00183">config</a>, <a class="el" href="GPSReceiverCapabilities_8h_source.html#l00014">GPSReceiverCapabilities::constellationMask</a>, <a class="el" href="GPSReceiverCapabilities_8h_source.html#l00015">GPSReceiverCapabilities::dynamicModel</a>, <a class="el" href="QGCCompression_8cc_source.html#l00114">error</a>, <a class="el" href="GPSReceiverConfig_8cc_source.html#l00010">gpsReceiverCapabilities()</a>, <a class="el" href="GPSReceiverConfig_8cc_source.html#l00026">gpsValidateBaseStationConfig()</a>, <a class="el" href="GPSReceiverCapabilities_8h_source.html#l00016">GPSReceiverCapabilities::headingOffset</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa44211ce9c1600eacf46eaf49dae34fdb">InvalidBaudRate</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfadebd313f5f2105f0bc406aa9b70ed0ec">InvalidConstellations</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfaabf4f6b0b7ee99ca4b1bb4915d576477">InvalidDynamicModel</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa4433272e412ee121cfb6a54446686df4">InvalidHeadingOffset</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa4a840550394ebdf200a4f4c090e6a03e">InvalidRole</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a class="el" href="GPSReceiverCapabilities_8h_source.html#l00019">GPSReceiverCapabilities::passive</a>, <a class="el" href="structGPSReceiverConfig.html#a9894a1c727fb477ff236db56881ebdb7af80bc338b6146b566004a046f8137c85">GPSReceiverConfig::Passive</a>, <a class="el" href="GPSReceiverCapabilities_8h_source.html#l00020">GPSReceiverCapabilities::persistentConfiguration</a>, <a class="el" href="GPSReceiverCapabilities_8h_source.html#l00012">GPSReceiverCapabilities::position</a>, <a class="el" href="structGPSReceiverConfig.html#a9894a1c727fb477ff236db56881ebdb7a52f5e0bc3859bc5f5e25130b6c7e8881">GPSReceiverConfig::Position</a>, <a class="el" href="GPSReceiverCapabilities_8h_source.html#l00018">GPSReceiverCapabilities::receiverAveraging</a>, <a class="el" href="structGPSBaseStationConfig.html#a4531bf8ac4b54a6c85373ac25959bb31aa97bc6377ad4fdb7a0299c078a484d6a">GPSBaseStationConfig::ReceiverManaged</a>, <a class="el" href="GPSReceiverCapabilities_8h_source.html#l00011">GPSReceiverCapabilities::recognized</a>, <a class="el" href="GPSReceiverCapabilities_8h_source.html#l00013">GPSReceiverCapabilities::rtkBase</a>, <a class="el" href="structGPSReceiverConfig.html#a9894a1c727fb477ff236db56881ebdb7a3fe85cb3983a5ba78fbdb7f585efe241">GPSReceiverConfig::RTKBase</a>, <a class="el" href="GPSReceiverCapabilities_8h_source.html#l00017">GPSReceiverCapabilities::surveyIn</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa0d4a662b4c7b84ce1c4a03739d91a996">UnknownReceiver</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfabd50b77bbf600a5162e6944b2fe781e7">UnsupportedBaseMode</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa73418a8ef0969e397025f7226a5629ca">UnsupportedConstellations</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfad37bcc64d6122263332883bb5f4175a3">UnsupportedDynamicModel</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfaf61e027abd62720c120a568598a9f8b0">UnsupportedHeadingOffset</a>, <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfade5393e16aba8775e05213e6447ace82">UnsupportedPersistentConfiguration</a>, and <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfaf0f3f6c9aff3c4c7b50add7d2b43e863">UnsupportedRole</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSReceiverConfig_8cc_source.html#l00075">75</a> of file <a class="el" href="GPSReceiverConfig_8cc_source.html">GPSReceiverConfig.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GPSReceiverConfigValidation_8cc_source.html#l00059">gpsReceiverConfigError()</a>.</p>
+<p class="reference">References <a class="el" href="GstSourceFactory_8cc_source.html#l00183">config</a>, <a class="el" href="GPSReceiverDescriptor_8cc_source.html#l00147">gpsReceiverCapabilities()</a>, <a class="el" href="GPSReceiverDescriptor_8h_source.html#l00015">GPSReceiverCapabilities::recognized</a>, and <a class="el" href="GPSReceiverConfig_8h.html#a5ca94608ed2f78aed398885e8c4edddfa0d4a662b4c7b84ce1c4a03739d91a996">UnknownReceiver</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GPSReceiverConfig_8cc_source.html#l00133">gpsDetectedReceiverConfigError()</a>, and <a class="el" href="GPSReceiverConfig_8cc_source.html#l00114">gpsReceiverConfigError()</a>.</p>
 
 </div>
 </div>
@@ -225,7 +331,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_d2c866cf0b3136839e8abd8ef2ec63b4.html">Receiver</a></li><li class="navelem"><a class="el" href="GPSReceiverConfig_8cc.html">GPSReceiverConfig.cc</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_4aa44793a7919d83f30050e49b7bf369.html">Core</a></li><li class="navelem"><a class="el" href="dir_9f2dd04bad87b02626ae7ef888325794.html">Common</a></li><li class="navelem"><a class="el" href="GPSReceiverConfig_8cc.html">GPSReceiverConfig.cc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

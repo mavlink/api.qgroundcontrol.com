@@ -102,42 +102,71 @@ $(document).ready(function(){initNavTree('MonotonicClock_8h_source.html',''); in
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespaceMonotonicClock.html">    6</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceMonotonicClock.html">MonotonicClock</a> {</div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">    7</a></span><span class="keyword">inline</span> uint64_t <a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>()</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(std::chrono::steady_clock::now().time_since_epoch())</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>            .count());</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="namespaceMonotonicClock.html">    9</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceMonotonicClock.html">MonotonicClock</a> {</div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">   10</a></span><span class="keyword">inline</span> uint64_t <a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>()</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(std::chrono::steady_clock::now().time_since_epoch())</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>            .count());</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
 </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespaceMonotonicClock.html#ae8fbdd3f89c4170b83177f50e8c49411">   15</a></span><span class="keyword">constexpr</span> int64_t <a class="code hl_function" href="namespaceMonotonicClock.html#ae8fbdd3f89c4170b83177f50e8c49411">ageMilliseconds</a>(uint64_t timestampUs, uint64_t <a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>)</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordflow">return</span> timestampUs == 0 || timestampUs &gt; <a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a> ? -1 : <span class="keyword">static_cast&lt;</span>int64_t<span class="keyword">&gt;</span>((<a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a> - timestampUs) / 1000);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceMonotonicClock.html#a5383972bd71b734459a49ada9b814d45">   19</a></span><span class="keyword">constexpr</span> std::optional&lt;std::chrono::duration&lt;Rep, Period&gt;&gt; <a class="code hl_function" href="namespaceMonotonicClock.html#a5383972bd71b734459a49ada9b814d45">age</a>(std::chrono::duration&lt;Rep, Period&gt; timestamp,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>                                                                std::chrono::duration&lt;Rep, Period&gt; now)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">if</span> (timestamp &lt;= timestamp.zero() || timestamp &gt; now) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> now - timestamp;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
 </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespaceMonotonicClock.html#af7352f82baaa1b63643dd9b89ad0c204">   21</a></span><span class="keyword">constexpr</span> std::chrono::microseconds <a class="code hl_function" href="namespaceMonotonicClock.html#af7352f82baaa1b63643dd9b89ad0c204">remaining</a>(uint64_t timestampUs, uint64_t <a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>, std::chrono::microseconds lifetime)</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span> (!timestampUs || timestampUs &gt; <a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a> || lifetime.count() &lt;= 0) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span> std::chrono::microseconds::zero();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">const</span> uint64_t ageUs = <a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a> - timestampUs;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> ageUs &gt;= <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(lifetime.count()) ? std::chrono::microseconds::zero()</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                                                            : lifetime - std::chrono::microseconds(ageUs);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespaceMonotonicClock.html#a3ca1e3a88a9bcbd647129c4729a9fb60">   28</a></span><span class="keyword">constexpr</span> std::optional&lt;std::chrono::microseconds&gt; <a class="code hl_function" href="namespaceMonotonicClock.html#a5383972bd71b734459a49ada9b814d45">age</a>(uint64_t timestampUs, uint64_t <a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceMonotonicClock.html#a5383972bd71b734459a49ada9b814d45">age</a>(std::chrono::microseconds(timestampUs), std::chrono::microseconds(<a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>));</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}  <span class="comment">// namespace MonotonicClock</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespaceMonotonicClock.html#af7352f82baaa1b63643dd9b89ad0c204">   34</a></span><span class="keyword">constexpr</span> std::chrono::microseconds <a class="code hl_function" href="namespaceMonotonicClock.html#af7352f82baaa1b63643dd9b89ad0c204">remaining</a>(uint64_t timestampUs, uint64_t <a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>, std::chrono::microseconds lifetime)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">const</span> <span class="keyword">auto</span> receiptAge = <a class="code hl_function" href="namespaceMonotonicClock.html#a5383972bd71b734459a49ada9b814d45">age</a>(timestampUs, <a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (!receiptAge || *receiptAge &gt;= lifetime) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span> std::chrono::microseconds::zero();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">return</span> lifetime - *receiptAge;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
 </div>
-<div class="ttc" id="anamespaceMonotonicClock_html"><div class="ttname"><a href="namespaceMonotonicClock.html">MonotonicClock</a></div><div class="ttdef"><b>Definition</b> <a href="MonotonicClock_8h_source.html#l00006">MonotonicClock.h:6</a></div></div>
-<div class="ttc" id="anamespaceMonotonicClock_html_ad062a186e3ee54be0ddf067f1f4fcd78"><div class="ttname"><a href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">MonotonicClock::nowUs</a></div><div class="ttdeci">uint64_t nowUs()</div><div class="ttdef"><b>Definition</b> <a href="MonotonicClock_8h_source.html#l00007">MonotonicClock.h:7</a></div></div>
-<div class="ttc" id="anamespaceMonotonicClock_html_ae8fbdd3f89c4170b83177f50e8c49411"><div class="ttname"><a href="namespaceMonotonicClock.html#ae8fbdd3f89c4170b83177f50e8c49411">MonotonicClock::ageMilliseconds</a></div><div class="ttdeci">constexpr int64_t ageMilliseconds(uint64_t timestampUs, uint64_t nowUs)</div><div class="ttdoc">A missing or future timestamp has no valid age. Both arguments must share a clock domain.</div><div class="ttdef"><b>Definition</b> <a href="MonotonicClock_8h_source.html#l00015">MonotonicClock.h:15</a></div></div>
-<div class="ttc" id="anamespaceMonotonicClock_html_af7352f82baaa1b63643dd9b89ad0c204"><div class="ttname"><a href="namespaceMonotonicClock.html#af7352f82baaa1b63643dd9b89ad0c204">MonotonicClock::remaining</a></div><div class="ttdeci">constexpr std::chrono::microseconds remaining(uint64_t timestampUs, uint64_t nowUs, std::chrono::microseconds lifetime)</div><div class="ttdoc">Invalid or expired receipts never acquire a new lifetime.</div><div class="ttdef"><b>Definition</b> <a href="MonotonicClock_8h_source.html#l00021">MonotonicClock.h:21</a></div></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="namespaceMonotonicClock.html#ab998615902ae9d363431a3579f765dad">   44</a></span><span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceMonotonicClock.html#ab998615902ae9d363431a3579f765dad">fresh</a>(uint64_t timestampUs, uint64_t <a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>, std::chrono::microseconds lifetime)</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceMonotonicClock.html#af7352f82baaa1b63643dd9b89ad0c204">remaining</a>(timestampUs, <a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>, lifetime) &gt; std::chrono::microseconds::zero();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="namespaceMonotonicClock.html#a552733fbbcf50c40117e8d573c6c55a9">   50</a></span><span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceMonotonicClock.html#a552733fbbcf50c40117e8d573c6c55a9">withinAge</a>(uint64_t timestampUs, uint64_t <a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>, std::chrono::microseconds maximumAge)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">const</span> <span class="keyword">auto</span> receiptAge = <a class="code hl_function" href="namespaceMonotonicClock.html#a5383972bd71b734459a49ada9b814d45">age</a>(timestampUs, <a class="code hl_function" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">return</span> receiptAge &amp;&amp; *receiptAge &lt;= maximumAge;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}  <span class="comment">// namespace MonotonicClock</span></div>
+</div>
+<div class="ttc" id="anamespaceMonotonicClock_html"><div class="ttname"><a href="namespaceMonotonicClock.html">MonotonicClock</a></div><div class="ttdef"><b>Definition</b> <a href="MonotonicClock_8h_source.html#l00009">MonotonicClock.h:9</a></div></div>
+<div class="ttc" id="anamespaceMonotonicClock_html_a5383972bd71b734459a49ada9b814d45"><div class="ttname"><a href="namespaceMonotonicClock.html#a5383972bd71b734459a49ada9b814d45">MonotonicClock::age</a></div><div class="ttdeci">constexpr std::optional&lt; std::chrono::duration&lt; Rep, Period &gt; &gt; age(std::chrono::duration&lt; Rep, Period &gt; timestamp, std::chrono::duration&lt; Rep, Period &gt; now)</div><div class="ttdoc">Age of timestamp at now, both in the same unit; empty for a missing or future timestamp.</div><div class="ttdef"><b>Definition</b> <a href="MonotonicClock_8h_source.html#l00019">MonotonicClock.h:19</a></div></div>
+<div class="ttc" id="anamespaceMonotonicClock_html_a552733fbbcf50c40117e8d573c6c55a9"><div class="ttname"><a href="namespaceMonotonicClock.html#a552733fbbcf50c40117e8d573c6c55a9">MonotonicClock::withinAge</a></div><div class="ttdeci">constexpr bool withinAge(uint64_t timestampUs, uint64_t nowUs, std::chrono::microseconds maximumAge)</div><div class="ttdoc">Whether a receipt is at most maximumAge old, its limit included.</div><div class="ttdef"><b>Definition</b> <a href="MonotonicClock_8h_source.html#l00050">MonotonicClock.h:50</a></div></div>
+<div class="ttc" id="anamespaceMonotonicClock_html_ab998615902ae9d363431a3579f765dad"><div class="ttname"><a href="namespaceMonotonicClock.html#ab998615902ae9d363431a3579f765dad">MonotonicClock::fresh</a></div><div class="ttdeci">constexpr bool fresh(uint64_t timestampUs, uint64_t nowUs, std::chrono::microseconds lifetime)</div><div class="ttdoc">Whether a receipt is younger than lifetime.</div><div class="ttdef"><b>Definition</b> <a href="MonotonicClock_8h_source.html#l00044">MonotonicClock.h:44</a></div></div>
+<div class="ttc" id="anamespaceMonotonicClock_html_ad062a186e3ee54be0ddf067f1f4fcd78"><div class="ttname"><a href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">MonotonicClock::nowUs</a></div><div class="ttdeci">uint64_t nowUs()</div><div class="ttdef"><b>Definition</b> <a href="MonotonicClock_8h_source.html#l00010">MonotonicClock.h:10</a></div></div>
+<div class="ttc" id="anamespaceMonotonicClock_html_af7352f82baaa1b63643dd9b89ad0c204"><div class="ttname"><a href="namespaceMonotonicClock.html#af7352f82baaa1b63643dd9b89ad0c204">MonotonicClock::remaining</a></div><div class="ttdeci">constexpr std::chrono::microseconds remaining(uint64_t timestampUs, uint64_t nowUs, std::chrono::microseconds lifetime)</div><div class="ttdoc">Time left before a receipt reaches lifetime; zero for a missing, future or expired one.</div><div class="ttdef"><b>Definition</b> <a href="MonotonicClock_8h_source.html#l00034">MonotonicClock.h:34</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

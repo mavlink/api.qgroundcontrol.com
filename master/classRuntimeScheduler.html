@@ -93,15 +93,13 @@ $(document).ready(function(){initNavTree('classRuntimeScheduler.html',''); initR
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classRuntimeScheduler-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">RuntimeScheduler Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>One-thread monotonic clock and deferred callbacks, shared by production controllers and deterministic replay.  
- <a href="classRuntimeScheduler.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="RuntimeScheduler_8h_source.html">RuntimeScheduler.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -142,6 +140,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af591b524855e916a8118fc7b3ab5c698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancellation from another thread is ignored. All other access and destruction must occur on the owner thread.  <br /></td></tr>
 <tr class="separator:af591b524855e916a8118fc7b3ab5c698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ae6450f1e1ce4d1cca7a5ddcdaf23f544" id="r_ae6450f1e1ce4d1cca7a5ddcdaf23f544"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classRuntimeScheduler.html">RuntimeScheduler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRuntimeScheduler.html#ae6450f1e1ce4d1cca7a5ddcdaf23f544">orDefault</a> (<a class="el" href="classRuntimeScheduler.html">RuntimeScheduler</a> *scheduler, QObject *owner)</td></tr>
+<tr class="memdesc:ae6450f1e1ce4d1cca7a5ddcdaf23f544"><td class="mdescLeft">&#160;</td><td class="mdescRight"><em>scheduler</em>, or a <a class="el" href="classQtRuntimeScheduler.html" title="Qt event-loop implementation; no callback runs inside schedule().">QtRuntimeScheduler</a> owned by <em>owner</em> when it is null.  <br /></td></tr>
+<tr class="separator:ae6450f1e1ce4d1cca7a5ddcdaf23f544"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a1e365e364f94f586cb7386340182411b" id="r_a1e365e364f94f586cb7386340182411b"><td class="memItemLeft" align="right" valign="top">static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRuntimeScheduler.html#a1e365e364f94f586cb7386340182411b">MAX_DELAY</a></td></tr>
@@ -155,9 +159,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a358f840ceb6a68e41fd6b66e19158a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>One-thread monotonic clock and deferred callbacks, shared by production controllers and deterministic replay. </p>
+<div class="textblock"><p>One-thread monotonic clock and deferred callbacks, shared by production controllers and deterministic replay. Classes that accept an injected scheduler create their own when none is supplied; an injected scheduler must share the owner's thread and outlive it. </p>
 
-<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8h_source.html#l00009">9</a> of file <a class="el" href="RuntimeScheduler_8h_source.html">RuntimeScheduler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8h_source.html#l00011">11</a> of file <a class="el" href="RuntimeScheduler_8h_source.html">RuntimeScheduler.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a8556c69c4f0101d279ed6d10f749adf2" name="a8556c69c4f0101d279ed6d10f749adf2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8556c69c4f0101d279ed6d10f749adf2">&#9670;&#160;</a></span>Callback</h2>
@@ -171,7 +175,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8h_source.html#l00014">14</a> of file <a class="el" href="RuntimeScheduler_8h_source.html">RuntimeScheduler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8h_source.html#l00016">16</a> of file <a class="el" href="RuntimeScheduler_8h_source.html">RuntimeScheduler.h</a>.</p>
 
 </div>
 </div>
@@ -187,7 +191,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8h_source.html#l00013">13</a> of file <a class="el" href="RuntimeScheduler_8h_source.html">RuntimeScheduler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8h_source.html#l00015">15</a> of file <a class="el" href="RuntimeScheduler_8h_source.html">RuntimeScheduler.h</a>.</p>
 
 </div>
 </div>
@@ -216,7 +220,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8cc_source.html#l00009">9</a> of file <a class="el" href="RuntimeScheduler_8cc_source.html">RuntimeScheduler.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8cc_source.html#l00015">15</a> of file <a class="el" href="RuntimeScheduler_8cc_source.html">RuntimeScheduler.cc</a>.</p>
 
 </div>
 </div>
@@ -243,7 +247,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8cc_source.html#l00014">14</a> of file <a class="el" href="RuntimeScheduler_8cc_source.html">RuntimeScheduler.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8cc_source.html#l00020">20</a> of file <a class="el" href="RuntimeScheduler_8cc_source.html">RuntimeScheduler.cc</a>.</p>
 
 </div>
 </div>
@@ -288,9 +292,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8cc_source.html#l00024">24</a> of file <a class="el" href="RuntimeScheduler_8cc_source.html">RuntimeScheduler.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8cc_source.html#l00030">30</a> of file <a class="el" href="RuntimeScheduler_8cc_source.html">RuntimeScheduler.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="RuntimeScheduler_8cc_source.html#l00019">_isCurrentThread()</a>, and <a class="el" href="RuntimeScheduler_8h_source.html#l00015">MAX_DELAY</a>.</p>
+<p class="reference">References <a class="el" href="RuntimeScheduler_8cc_source.html#l00025">_isCurrentThread()</a>, and <a class="el" href="RuntimeScheduler_8h_source.html#l00017">MAX_DELAY</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QtRuntimeScheduler_8cc_source.html#l00028">QtRuntimeScheduler::schedule()</a>.</p>
 
@@ -319,9 +323,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8cc_source.html#l00019">19</a> of file <a class="el" href="RuntimeScheduler_8cc_source.html">RuntimeScheduler.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8cc_source.html#l00025">25</a> of file <a class="el" href="RuntimeScheduler_8cc_source.html">RuntimeScheduler.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RuntimeScheduler_8cc_source.html#l00024">_canSchedule()</a>, and <a class="el" href="QtRuntimeScheduler_8cc_source.html#l00058">QtRuntimeScheduler::cancel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RuntimeScheduler_8cc_source.html#l00030">_canSchedule()</a>, and <a class="el" href="QtRuntimeScheduler_8cc_source.html#l00045">QtRuntimeScheduler::cancel()</a>.</p>
 
 </div>
 </div>
@@ -378,9 +382,11 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8h_source.html#l00022">22</a> of file <a class="el" href="RuntimeScheduler_8h_source.html">RuntimeScheduler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8h_source.html#l00028">28</a> of file <a class="el" href="RuntimeScheduler_8h_source.html">RuntimeScheduler.h</a>.</p>
 
 <p class="reference">References <a class="el" href="classRuntimeScheduler.html#a5c84ed039eaf565f88846fa8e508a39a">nowUs()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="NTRIPConnectionStats_8cc_source.html#l00044">NTRIPConnectionStats::correctionAgeSec()</a>, and <a class="el" href="GPSCorrectionManager_8cc_source.html#l00093">GPSCorrectionManager::setConfiguration()</a>.</p>
 
 </div>
 </div>
@@ -409,7 +415,47 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implemented in <a class="el" href="classQtRuntimeScheduler.html#afdd400b2e063d97816dc454b223aed0e">QtRuntimeScheduler</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RuntimeScheduler_8h_source.html#l00022">nowMs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="NTRIPSourceTableController_8cc_source.html#l00046">NTRIPSourceTableController::fetch()</a>, <a class="el" href="GPSCorrectionManager_8cc_source.html#l00058">GPSCorrectionManager::GPSCorrectionManager()</a>, <a class="el" href="RuntimeScheduler_8h_source.html#l00028">nowMs()</a>, and <a class="el" href="NTRIPVehicleGgaSource_8cc_source.html#l00089">NTRIPVehicleGgaSource::setVehicle()</a>.</p>
+
+</div>
+</div>
+<a id="ae6450f1e1ce4d1cca7a5ddcdaf23f544" name="ae6450f1e1ce4d1cca7a5ddcdaf23f544"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6450f1e1ce4d1cca7a5ddcdaf23f544">&#9670;&#160;</a></span>orDefault()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRuntimeScheduler.html">RuntimeScheduler</a> * RuntimeScheduler::orDefault </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classRuntimeScheduler.html">RuntimeScheduler</a> *&#160;</td>
+          <td class="paramname"><em>scheduler</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>owner</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><em>scheduler</em>, or a <a class="el" href="classQtRuntimeScheduler.html" title="Qt event-loop implementation; no callback runs inside schedule().">QtRuntimeScheduler</a> owned by <em>owner</em> when it is null. </p>
+
+<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8cc_source.html#l00010">10</a> of file <a class="el" href="RuntimeScheduler_8cc_source.html">RuntimeScheduler.cc</a>.</p>
 
 </div>
 </div>
@@ -481,9 +527,9 @@ Protected Member Functions</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">        std::chrono::duration_cast&lt;std::chrono::microseconds&gt;((std::chrono::nanoseconds::max) ())</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8h_source.html#l00015">15</a> of file <a class="el" href="RuntimeScheduler_8h_source.html">RuntimeScheduler.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RuntimeScheduler_8h_source.html#l00017">17</a> of file <a class="el" href="RuntimeScheduler_8h_source.html">RuntimeScheduler.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RuntimeScheduler_8cc_source.html#l00024">_canSchedule()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RuntimeScheduler_8cc_source.html#l00030">_canSchedule()</a>.</p>
 
 </div>
 </div>

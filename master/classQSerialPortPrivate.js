@@ -5,6 +5,7 @@ var classQSerialPortPrivate =
     [ "close", "classQSerialPortPrivate.html#a23f2d0d5f984445ab6225f9a7ec5632c", null ],
     [ "exceptionArrived", "classQSerialPortPrivate.html#a8e79078895a2761382edd5942f3f0a6c", null ],
     [ "flush", "classQSerialPortPrivate.html#a7d5a73c968e745da87315da4842a01b8", null ],
+    [ "flushBeforeClose", "classQSerialPortPrivate.html#aeb1c2a4a2d158ad8589f7817df097b9c", null ],
     [ "newDataArrived", "classQSerialPortPrivate.html#abeea7cacdef87d811e5f8c84c0cebf6c", null ],
     [ "open", "classQSerialPortPrivate.html#a6067d72046ae802cd95f501ff96a2322", null ],
     [ "pinoutSignals", "classQSerialPortPrivate.html#a4aa7b8d15e9660d3dc125b57ca408ef7", null ],

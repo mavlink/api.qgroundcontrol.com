@@ -105,6 +105,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classQGC_1_1EdgeTriggeredCounter.html">EdgeTriggeredCounter</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structQGC_1_1Fletcher8.html">Fletcher8</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">8-bit Fletcher checksum: two running byte sums modulo 256.  <a href="structQGC_1_1Fletcher8.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -116,9 +119,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ac1160fca03370c03e04d55589c8f5f1b" id="r_ac1160fca03370c03e04d55589c8f5f1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#ac1160fca03370c03e04d55589c8f5f1b">showRebootAppMessage</a> (const QString &amp;message, const QString &amp;title=QString())</td></tr>
 <tr class="memdesc:ac1160fca03370c03e04d55589c8f5f1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modal reboot-required message. Debounced within 2 minutes.  <br /></td></tr>
 <tr class="separator:ac1160fca03370c03e04d55589c8f5f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c9783d4b3f283a92270018efa290f46" id="r_a6c9783d4b3f283a92270018efa290f46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a6c9783d4b3f283a92270018efa290f46">showRebootVehicleMessage</a> (const QString &amp;message, const QString &amp;title=QString())</td></tr>
-<tr class="memdesc:a6c9783d4b3f283a92270018efa290f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modal vehicle-reboot-required message with a reboot button. Debounced within 2 minutes.  <br /></td></tr>
-<tr class="separator:a6c9783d4b3f283a92270018efa290f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f3f3b566af17170d0554bf503695719" id="r_a3f3f3b566af17170d0554bf503695719"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a3f3f3b566af17170d0554bf503695719">runningUnitTests</a> ()</td></tr>
 <tr class="separator:a3f3f3b566af17170d0554bf503695719"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12c9356746e284627baac24785d9c8e8" id="r_a12c9356746e284627baac24785d9c8e8"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a12c9356746e284627baac24785d9c8e8">numberToString</a> (quint64 number)</td></tr>
@@ -130,9 +130,21 @@ Functions</h2></td></tr>
 <tr class="memitem:a82cf4b5caaac7bdf4c3fae62d71f96c3" id="r_a82cf4b5caaac7bdf4c3fae62d71f96c3"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a82cf4b5caaac7bdf4c3fae62d71f96c3">bigSizeMBToString</a> (quint64 sizeMB)</td></tr>
 <tr class="memdesc:a82cf4b5caaac7bdf4c3fae62d71f96c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">MB-scaled size, output in MB/GB/TB. Input is in MB.  <br /></td></tr>
 <tr class="separator:a82cf4b5caaac7bdf4c3fae62d71f96c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab94f5ef39d6225e9a75bd289e711dfd0" id="r_ab94f5ef39d6225e9a75bd289e711dfd0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#ab94f5ef39d6225e9a75bd289e711dfd0">crc32Update</a> (std::span&lt; const uint8_t &gt; bytes, uint32_t state=0)</td></tr>
-<tr class="memdesc:ab94f5ef39d6225e9a75bd289e711dfd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reflected CRC-32 update; the caller supplies the initial state and final complement policy.  <br /></td></tr>
-<tr class="separator:ab94f5ef39d6225e9a75bd289e711dfd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9681dfd2c71b457f7aac770b802f06c0" id="r_a9681dfd2c71b457f7aac770b802f06c0"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structQGC_1_1Fletcher8.html">Fletcher8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a9681dfd2c71b457f7aac770b802f06c0">fletcher8</a> (std::span&lt; const uint8_t &gt; bytes, <a class="el" href="structQGC_1_1Fletcher8.html">Fletcher8</a> state={})</td></tr>
+<tr class="memdesc:a9681dfd2c71b457f7aac770b802f06c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Continues <em>state</em> over <em>bytes</em>, so a frame checksummed in parts matches the contiguous result.  <br /></td></tr>
+<tr class="separator:a9681dfd2c71b457f7aac770b802f06c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea541deaf144f84b9b5cbaed621f548" id="r_a7ea541deaf144f84b9b5cbaed621f548"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a7ea541deaf144f84b9b5cbaed621f548">crc16Xmodem</a> (std::span&lt; const uint8_t &gt; bytes)</td></tr>
+<tr class="memdesc:a7ea541deaf144f84b9b5cbaed621f548"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-16/XMODEM: polynomial 0x1021, initial value 0, no reflection and no final XOR.  <br /></td></tr>
+<tr class="separator:a7ea541deaf144f84b9b5cbaed621f548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a270c27ccc3e4e93ee33541462b973277" id="r_a270c27ccc3e4e93ee33541462b973277"><td class="memItemLeft" align="right" valign="top">constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a270c27ccc3e4e93ee33541462b973277">crc24q</a> (std::span&lt; const uint8_t &gt; bytes)</td></tr>
+<tr class="memdesc:a270c27ccc3e4e93ee33541462b973277"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-24Q: polynomial 0x1864CFB, initial value 0, no reflection and no final XOR.  <br /></td></tr>
+<tr class="separator:a270c27ccc3e4e93ee33541462b973277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a741372f41642df2137198c1baa4d89c1" id="r_a741372f41642df2137198c1baa4d89c1"><td class="memItemLeft" align="right" valign="top">constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a741372f41642df2137198c1baa4d89c1">nmeaChecksum</a> (std::span&lt; const uint8_t &gt; body)</td></tr>
+<tr class="memdesc:a741372f41642df2137198c1baa4d89c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">XOR of all bytes, the checksum <a class="el" href="namespaceNMEA.html">NMEA</a> 0183 sentences carry over their body.  <br /></td></tr>
+<tr class="separator:a741372f41642df2137198c1baa4d89c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add1cccdd70e5b45639e29fdcb84b93c0" id="r_add1cccdd70e5b45639e29fdcb84b93c0"><td class="memItemLeft" align="right" valign="top">constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#add1cccdd70e5b45639e29fdcb84b93c0">crc32Update</a> (std::span&lt; const uint8_t &gt; bytes, uint32_t state=0)</td></tr>
+<tr class="memdesc:add1cccdd70e5b45639e29fdcb84b93c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reflected CRC-32 update; the caller supplies the initial state and final complement policy.  <br /></td></tr>
+<tr class="separator:add1cccdd70e5b45639e29fdcb84b93c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afad0f30adc8a4b62763f57ae9021e94c" id="r_afad0f30adc8a4b62763f57ae9021e94c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#afad0f30adc8a4b62763f57ae9021e94c">limitAngleToPMPIf</a> (double angle)</td></tr>
 <tr class="separator:afad0f30adc8a4b62763f57ae9021e94c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40cc55b89c3252116cfdeb10923fcfb3" id="r_a40cc55b89c3252116cfdeb10923fcfb3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a40cc55b89c3252116cfdeb10923fcfb3">limitAngleToPMPId</a> (double angle)</td></tr>
@@ -148,9 +160,9 @@ Functions</h2></td></tr>
 <tr class="separator:a16c8c40ec3cc4cb32d453e0363e524f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc84f04ae1e437c0d8aa478a9b522cf4" id="r_afc84f04ae1e437c0d8aa478a9b522cf4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#afc84f04ae1e437c0d8aa478a9b522cf4">fuzzyCompare</a> (float value1, float value2, float tolerance)</td></tr>
 <tr class="separator:afc84f04ae1e437c0d8aa478a9b522cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a436dcae64ff0a1225424e40bd799b4bb" id="r_a436dcae64ff0a1225424e40bd799b4bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a436dcae64ff0a1225424e40bd799b4bb">secureZero</a> (void *<a class="el" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>, size_t size)</td></tr>
+<tr class="memitem:a436dcae64ff0a1225424e40bd799b4bb" id="r_a436dcae64ff0a1225424e40bd799b4bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#a436dcae64ff0a1225424e40bd799b4bb">secureZero</a> (void *data, size_t size)</td></tr>
 <tr class="separator:a436dcae64ff0a1225424e40bd799b4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2675b73e9804fe919ee1b3a01bb7ae0" id="r_ae2675b73e9804fe919ee1b3a01bb7ae0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#ae2675b73e9804fe919ee1b3a01bb7ae0">secureZero</a> (QByteArray &amp;<a class="el" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>)</td></tr>
+<tr class="memitem:ae2675b73e9804fe919ee1b3a01bb7ae0" id="r_ae2675b73e9804fe919ee1b3a01bb7ae0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#ae2675b73e9804fe919ee1b3a01bb7ae0">secureZero</a> (QByteArray &amp;data)</td></tr>
 <tr class="separator:ae2675b73e9804fe919ee1b3a01bb7ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4ffb6bb37fa26116f9d748e98d41404" id="r_aa4ffb6bb37fa26116f9d748e98d41404"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
 <tr class="memitem:aa4ffb6bb37fa26116f9d748e98d41404"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceQGC.html#aa4ffb6bb37fa26116f9d748e98d41404">secureZero</a> (std::array&lt; T, N &gt; &amp;arr)</td></tr>
@@ -206,7 +218,71 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="QGCFormat_8cc_source.html#l00020">20</a> of file <a class="el" href="QGCFormat_8cc_source.html">QGCFormat.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCachedTileSet_8cpp_source.html#l00331">QGCCachedTileSet::savedTileSizeStr()</a>, <a class="el" href="OnboardLogEntry_8cc_source.html#l00064">QGCOnboardLogEntry::sizeStr()</a>, <a class="el" href="QGCMapEngineManager_8cc_source.html#l00089">QGCMapEngineManager::tileSizeStr()</a>, <a class="el" href="QGCCachedTileSet_8cpp_source.html#l00311">QGCCachedTileSet::totalTilesSizeStr()</a>, and <a class="el" href="QGCCachedTileSet_8cpp_source.html#l00316">QGCCachedTileSet::uniqueTileSizeStr()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00186">QGroundControlQmlGlobal::bigSizeToString()</a>, <a class="el" href="QGCCachedTileSet_8cpp_source.html#l00331">QGCCachedTileSet::savedTileSizeStr()</a>, <a class="el" href="OnboardLogEntry_8cc_source.html#l00064">QGCOnboardLogEntry::sizeStr()</a>, <a class="el" href="QGCMapEngineManager_8cc_source.html#l00089">QGCMapEngineManager::tileSizeStr()</a>, <a class="el" href="QGCCachedTileSet_8cpp_source.html#l00311">QGCCachedTileSet::totalTilesSizeStr()</a>, and <a class="el" href="QGCCachedTileSet_8cpp_source.html#l00316">QGCCachedTileSet::uniqueTileSizeStr()</a>.</p>
+
+</div>
+</div>
+<a id="a7ea541deaf144f84b9b5cbaed621f548" name="a7ea541deaf144f84b9b5cbaed621f548"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ea541deaf144f84b9b5cbaed621f548">&#9670;&#160;</a></span>crc16Xmodem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint16_t QGC::crc16Xmodem </td>
+          <td>(</td>
+          <td class="paramtype">std::span&lt; const uint8_t &gt;&#160;</td>
+          <td class="paramname"><em>bytes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>CRC-16/XMODEM: polynomial 0x1021, initial value 0, no reflection and no final XOR. </p>
+
+<p class="definition">Definition at line <a class="el" href="Checksums_8h_source.html#l00028">28</a> of file <a class="el" href="Checksums_8h_source.html">Checksums.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="SBFBlocks_8h_source.html#l00097">SBF::checkedHeader()</a>.</p>
+
+</div>
+</div>
+<a id="a270c27ccc3e4e93ee33541462b973277" name="a270c27ccc3e4e93ee33541462b973277"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a270c27ccc3e4e93ee33541462b973277">&#9670;&#160;</a></span>crc24q()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint32_t QGC::crc24q </td>
+          <td>(</td>
+          <td class="paramtype">std::span&lt; const uint8_t &gt;&#160;</td>
+          <td class="paramname"><em>bytes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>CRC-24Q: polynomial 0x1864CFB, initial value 0, no reflection and no final XOR. </p>
+
+<p class="definition">Definition at line <a class="el" href="Checksums_8h_source.html#l00040">40</a> of file <a class="el" href="Checksums_8h_source.html">Checksums.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="RTCMFramer_8h_source.html#l00063">RTCMFramer::isValidFrame()</a>.</p>
 
 </div>
 </div>
@@ -248,8 +324,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ab94f5ef39d6225e9a75bd289e711dfd0" name="ab94f5ef39d6225e9a75bd289e711dfd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab94f5ef39d6225e9a75bd289e711dfd0">&#9670;&#160;</a></span>crc32Update()</h2>
+<a id="add1cccdd70e5b45639e29fdcb84b93c0" name="add1cccdd70e5b45639e29fdcb84b93c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add1cccdd70e5b45639e29fdcb84b93c0">&#9670;&#160;</a></span>crc32Update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,7 +334,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t QGC::crc32Update </td>
+          <td class="memname">constexpr uint32_t QGC::crc32Update </td>
           <td>(</td>
           <td class="paramtype">std::span&lt; const uint8_t &gt;&#160;</td>
           <td class="paramname"><em>bytes</em>, </td>
@@ -277,7 +353,7 @@ Variables</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -288,7 +364,49 @@ Variables</h2></td></tr>
 
 <p class="reference">References <a class="el" href="CRC32_8h_source.html#l00007">CRC32_TABLE</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCMath_8cc_source.html#l00066">crc32()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCMath_8cc_source.html#l00066">crc32()</a>, and <a class="el" href="GPSASCIILog_8h_source.html#l00021">gpsASCIILog()</a>.</p>
+
+</div>
+</div>
+<a id="a9681dfd2c71b457f7aac770b802f06c0" name="a9681dfd2c71b457f7aac770b802f06c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9681dfd2c71b457f7aac770b802f06c0">&#9670;&#160;</a></span>fletcher8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="structQGC_1_1Fletcher8.html">Fletcher8</a> QGC::fletcher8 </td>
+          <td>(</td>
+          <td class="paramtype">std::span&lt; const uint8_t &gt;&#160;</td>
+          <td class="paramname"><em>bytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structQGC_1_1Fletcher8.html">Fletcher8</a>&#160;</td>
+          <td class="paramname"><em>state</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Continues <em>state</em> over <em>bytes</em>, so a frame checksummed in parts matches the contiguous result. </p>
+
+<p class="definition">Definition at line <a class="el" href="Checksums_8h_source.html#l00018">18</a> of file <a class="el" href="Checksums_8h_source.html">Checksums.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="UBXFrame_8h_source.html#l00170">UBX::FrameDecoder::consume()</a>, and <a class="el" href="UBXFrame_8h_source.html#l00130">UBX::encodeFrame()</a>.</p>
 
 </div>
 </div>
@@ -322,7 +440,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="QGCMath_8cc_source.html#l00071">71</a> of file <a class="el" href="QGCMath_8cc_source.html">QGCMath.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VisualMissionItem_8cc_source.html#l00098">VisualMissionItem::setAltDifference()</a>, <a class="el" href="VisualMissionItem_8cc_source.html#l00106">VisualMissionItem::setAltPercent()</a>, <a class="el" href="VisualMissionItem_8cc_source.html#l00130">VisualMissionItem::setAzimuth()</a>, <a class="el" href="FlightPathSegment_8cc_source.html#l00047">FlightPathSegment::setCoord1AMSLAlt()</a>, <a class="el" href="FlightPathSegment_8cc_source.html#l00056">FlightPathSegment::setCoord2AMSLAlt()</a>, <a class="el" href="VisualMissionItem_8cc_source.html#l00082">VisualMissionItem::setDistance()</a>, <a class="el" href="VisualMissionItem_8cc_source.html#l00090">VisualMissionItem::setDistanceFromStart()</a>, <a class="el" href="VisualMissionItem_8cc_source.html#l00138">VisualMissionItem::setMissionFlightStatus()</a>, <a class="el" href="SimpleMissionItem_8cc_source.html#l01053">SimpleMissionItem::setMissionFlightStatus()</a>, <a class="el" href="StructureScanComplexItem_8cc_source.html#l00450">StructureScanComplexItem::setMissionFlightStatus()</a>, <a class="el" href="TransectStyleComplexItem_8cc_source.html#l00351">TransectStyleComplexItem::setMissionFlightStatus()</a>, <a class="el" href="VisualMissionItem_8cc_source.html#l00150">VisualMissionItem::setMissionVehicleYaw()</a>, <a class="el" href="VisualMissionItem_8cc_source.html#l00114">VisualMissionItem::setTerrainPercent()</a>, <a class="el" href="ADSBVehicle_8cc_source.html#l00023">ADSBVehicle::update()</a>, and <a class="el" href="VTOLLandingComplexItem_8cc_source.html#l00016">VTOLLandingComplexItem::VTOLLandingComplexItem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VisualMissionItem_8cc_source.html#l00098">VisualMissionItem::setAltDifference()</a>, <a class="el" href="VisualMissionItem_8cc_source.html#l00106">VisualMissionItem::setAltPercent()</a>, <a class="el" href="VisualMissionItem_8cc_source.html#l00130">VisualMissionItem::setAzimuth()</a>, <a class="el" href="FlightPathSegment_8cc_source.html#l00047">FlightPathSegment::setCoord1AMSLAlt()</a>, <a class="el" href="FlightPathSegment_8cc_source.html#l00056">FlightPathSegment::setCoord2AMSLAlt()</a>, <a class="el" href="VisualMissionItem_8cc_source.html#l00082">VisualMissionItem::setDistance()</a>, <a class="el" href="VisualMissionItem_8cc_source.html#l00090">VisualMissionItem::setDistanceFromStart()</a>, <a class="el" href="VisualMissionItem_8cc_source.html#l00138">VisualMissionItem::setMissionFlightStatus()</a>, <a class="el" href="SimpleMissionItem_8cc_source.html#l01061">SimpleMissionItem::setMissionFlightStatus()</a>, <a class="el" href="StructureScanComplexItem_8cc_source.html#l00450">StructureScanComplexItem::setMissionFlightStatus()</a>, <a class="el" href="TransectStyleComplexItem_8cc_source.html#l00351">TransectStyleComplexItem::setMissionFlightStatus()</a>, <a class="el" href="VisualMissionItem_8cc_source.html#l00150">VisualMissionItem::setMissionVehicleYaw()</a>, <a class="el" href="VisualMissionItem_8cc_source.html#l00114">VisualMissionItem::setTerrainPercent()</a>, <a class="el" href="ADSBVehicle_8cc_source.html#l00023">ADSBVehicle::update()</a>, and <a class="el" href="VTOLLandingComplexItem_8cc_source.html#l00016">VTOLLandingComplexItem::VTOLLandingComplexItem()</a>.</p>
 
 </div>
 </div>
@@ -468,6 +586,38 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a741372f41642df2137198c1baa4d89c1" name="a741372f41642df2137198c1baa4d89c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a741372f41642df2137198c1baa4d89c1">&#9670;&#160;</a></span>nmeaChecksum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint8_t QGC::nmeaChecksum </td>
+          <td>(</td>
+          <td class="paramtype">std::span&lt; const uint8_t &gt;&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>XOR of all bytes, the checksum <a class="el" href="namespaceNMEA.html">NMEA</a> 0183 sentences carry over their body. </p>
+
+<p class="definition">Definition at line <a class="el" href="Checksums_8h_source.html#l00056">56</a> of file <a class="el" href="Checksums_8h_source.html">Checksums.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="NMEASentence_8cc_source.html#l00055">NMEA::checksum()</a>.</p>
+
+</div>
+</div>
 <a id="a12c9356746e284627baac24785d9c8e8" name="a12c9356746e284627baac24785d9c8e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a12c9356746e284627baac24785d9c8e8">&#9670;&#160;</a></span>numberToString()</h2>
 
@@ -507,11 +657,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AppMessages_8cc_source.html#l00037">37</a> of file <a class="el" href="AppMessages_8cc_source.html">AppMessages.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="AppMessages_8cc_source.html#l00030">30</a> of file <a class="el" href="AppMessages_8cc_source.html">AppMessages.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="QGCApplication_8h_source.html#l00035">qgcApp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00542">FirmwarePlugin::_cachedParameterMetaDataFile()</a>, <a class="el" href="PlanManager_8cc_source.html#l00244">PlanManager::_startAckTimeout()</a>, <a class="el" href="SettingsManager_8cc_source.html#l00241">SettingsManager::adjustSettingMetaData()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00344">FirmwarePlugin::checkIfIsLatestStable()</a>, <a class="el" href="AppSettings_8cc_source.html#l00061">DECLARE_SETTINGGROUP()</a>, <a class="el" href="VideoBackend_8cc_source.html#l00084">VideoBackend::disabledForUnitTests()</a>, <a class="el" href="Fact_8cc_source.html#l00042">Fact::Fact()</a>, <a class="el" href="FTPManager_8cc_source.html#l00017">FTPManager::FTPManager()</a>, <a class="el" href="RequestMessageCoordinator_8cc_source.html#l00179">RequestMessageCoordinator::handleReceivedMessage()</a>, <a class="el" href="LinkManager_8cc_source.html#l00067">LinkManager::init()</a>, <a class="el" href="GPSManager_8cc_source.html#l00133">GPSManager::init()</a>, <a class="el" href="PositionManager_8cpp_source.html#l00040">QGCPositionManager::init()</a>, <a class="el" href="AudioOutput_8cc_source.html#l00082">AudioOutput::init()</a>, <a class="el" href="PX4AirframeLoader_8cc_source.html#l00034">PX4AirframeLoader::loadAirframeMetaData()</a>, <a class="el" href="ParameterManager_8cc_source.html#l00038">ParameterManager::ParameterManager()</a>, <a class="el" href="MockLink_8cc_source.html#l00455">MockLink::run10HzTasks()</a>, <a class="el" href="MockLink_8cc_source.html#l00403">MockLink::run1HzTasks()</a>, <a class="el" href="MockLink_8cc_source.html#l00489">MockLink::run500HzTasks()</a>, <a class="el" href="AudioOutput_8cc_source.html#l00225">AudioOutput::say()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00201">MavCommandQueue::setTestAckTimeoutOverride()</a>, <a class="el" href="SettingsFact_8cc_source.html#l00017">SettingsFact::SettingsFact()</a>, <a class="el" href="TransectStyleComplexItem_8cc_source.html#l00021">TransectStyleComplexItem::TransectStyleComplexItem()</a>, <a class="el" href="Vehicle_8cc_source.html#l00101">Vehicle::Vehicle()</a>, and <a class="el" href="VehicleLinkManager_8cc_source.html#l00016">VehicleLinkManager::VehicleLinkManager()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FirmwarePlugin_8cc_source.html#l00568">FirmwarePlugin::_cachedParameterMetaDataFile()</a>, <a class="el" href="PlanManager_8cc_source.html#l00244">PlanManager::_startAckTimeout()</a>, <a class="el" href="SettingsManager_8cc_source.html#l00241">SettingsManager::adjustSettingMetaData()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00345">FirmwarePlugin::checkIfIsLatestStable()</a>, <a class="el" href="AppSettings_8cc_source.html#l00061">DECLARE_SETTINGGROUP()</a>, <a class="el" href="VideoBackend_8cc_source.html#l00084">VideoBackend::disabledForUnitTests()</a>, <a class="el" href="Fact_8cc_source.html#l00041">Fact::Fact()</a>, <a class="el" href="FTPManager_8cc_source.html#l00017">FTPManager::FTPManager()</a>, <a class="el" href="RequestMessageCoordinator_8cc_source.html#l00179">RequestMessageCoordinator::handleReceivedMessage()</a>, <a class="el" href="LinkManager_8cc_source.html#l00067">LinkManager::init()</a>, <a class="el" href="AudioOutput_8cc_source.html#l00082">AudioOutput::init()</a>, <a class="el" href="PX4AirframeLoader_8cc_source.html#l00034">PX4AirframeLoader::loadAirframeMetaData()</a>, <a class="el" href="ParameterManager_8cc_source.html#l00038">ParameterManager::ParameterManager()</a>, <a class="el" href="MockLink_8cc_source.html#l00457">MockLink::run10HzTasks()</a>, <a class="el" href="MockLink_8cc_source.html#l00403">MockLink::run1HzTasks()</a>, <a class="el" href="MockLink_8cc_source.html#l00491">MockLink::run500HzTasks()</a>, <a class="el" href="AudioOutput_8cc_source.html#l00225">AudioOutput::say()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00212">MavCommandQueue::setTestAckTimeoutOverride()</a>, <a class="el" href="SettingsFact_8cc_source.html#l00017">SettingsFact::SettingsFact()</a>, <a class="el" href="TransectStyleComplexItem_8cc_source.html#l00021">TransectStyleComplexItem::TransectStyleComplexItem()</a>, <a class="el" href="Vehicle_8cc_source.html#l00102">Vehicle::Vehicle()</a>, and <a class="el" href="VehicleLinkManager_8cc_source.html#l00016">VehicleLinkManager::VehicleLinkManager()</a>.</p>
 
 </div>
 </div>
@@ -538,11 +688,11 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Reliable wipe only when this is the sole owner; <a class="el" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data()</a> detaches a shared buffer, leaving the original copy intact. Prefer std::array for secrets. </p>
+<p>Reliable wipe only when this is the sole owner; data() detaches a shared buffer, leaving the original copy intact. Prefer std::array for secrets. </p>
 
 <p class="definition">Definition at line <a class="el" href="SecureMemory_8h_source.html#l00040">40</a> of file <a class="el" href="SecureMemory_8h_source.html">SecureMemory.h</a>.</p>
 
-<p class="reference">References <a class="el" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>, and <a class="el" href="SecureMemory_8h_source.html#l00019">secureZero()</a>.</p>
+<p class="reference">References <a class="el" href="SecureMemory_8h_source.html#l00019">secureZero()</a>.</p>
 
 </div>
 </div>
@@ -615,8 +765,6 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="SecureMemory_8h_source.html#l00019">19</a> of file <a class="el" href="SecureMemory_8h_source.html">SecureMemory.h</a>.</p>
 
-<p class="reference">References <a class="el" href="FemtoMessages_8h.html#a46e244067cc091a8e4670b9f2f413d88a8d777f385d3dfec8815d20f7496026dc">data</a>.</p>
-
 <p class="reference">Referenced by <a class="el" href="MAVLinkSigningKeys_8cc_source.html#l00147">MAVLinkSigningKeys::addKey()</a>, <a class="el" href="VehicleSigningController_8cc_source.html#l00234">VehicleSigningController::disable()</a>, <a class="el" href="VehicleSigningController_8cc_source.html#l00199">VehicleSigningController::enable()</a>, <a class="el" href="SigningChannel_8cc_source.html#l00012">SigningChannel::init()</a>, <a class="el" href="MAVLinkSigningKeys_8cc_source.html#l00206">MAVLinkSigningKeys::keyHexByName()</a>, <a class="el" href="SecureMemory_8h_source.html#l00040">secureZero()</a>, <a class="el" href="SecureMemory_8h_source.html#l00049">secureZero()</a>, <a class="el" href="MAVLinkSigningKeys_8cc_source.html#l00031">MAVLinkSigningKey::~MAVLinkSigningKey()</a>, and <a class="el" href="SigningController_8cc_source.html#l00033">SigningController::~SigningController()</a>.</p>
 
 </div>
@@ -653,7 +801,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p class="reference">References <a class="el" href="QGCApplication_8h_source.html#l00035">qgcApp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00465">PX4FirmwarePlugin::_changeAltAfterPause()</a>, <a class="el" href="LandingComplexItem_8cc_source.html#l00729">LandingComplexItem::_load()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00369">FirmwarePlugin::_versionFileDownloadFinished()</a>, <a class="el" href="ParameterEditorController_8cc_source.html#l00434">ParameterEditorController::buildDiffFromFile()</a>, <a class="el" href="AirframeComponentController_8cc_source.html#l00073">AirframeComponentController::changeAutostart()</a>, <a class="el" href="AppSettings_8cc_source.html#l00061">DECLARE_SETTINGGROUP()</a>, <a class="el" href="MavlinkActionsSettings_8cc_source.html#l00007">DECLARE_SETTINGGROUP()</a>, <a class="el" href="ComplexMissionItem_8cc_source.html#l00053">ComplexMissionItem::deletePreset()</a>, <a class="el" href="MissionManager_8cc_source.html#l00071">MissionManager::generateResumeMission()</a>, <a class="el" href="Vehicle_8cc_source.html#l01914">Vehicle::guidedModeChangeAltitude()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00157">FirmwarePlugin::guidedModeChangeAltitude()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00856">APMFirmwarePlugin::guidedModeChangeAltitude()</a>, <a class="el" href="ArduRoverFirmwarePlugin_8cc_source.html#l00073">ArduRoverFirmwarePlugin::guidedModeChangeAltitude()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00486">PX4FirmwarePlugin::guidedModeChangeAltitude()</a>, <a class="el" href="Vehicle_8cc_source.html#l01934">Vehicle::guidedModeChangeEquivalentAirspeedMetersSecond()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00168">FirmwarePlugin::guidedModeChangeEquivalentAirspeedMetersSecond()</a>, <a class="el" href="Vehicle_8cc_source.html#l01924">Vehicle::guidedModeChangeGroundSpeedMetersSecond()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00163">FirmwarePlugin::guidedModeChangeGroundSpeedMetersSecond()</a>, <a class="el" href="Vehicle_8cc_source.html#l02037">Vehicle::guidedModeChangeHeading()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00173">FirmwarePlugin::guidedModeChangeHeading()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00947">APMFirmwarePlugin::guidedModeChangeHeading()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00551">PX4FirmwarePlugin::guidedModeChangeHeading()</a>, <a class="el" href="Vehicle_8cc_source.html#l01893">Vehicle::guidedModeGotoLocation()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00785">APMFirmwarePlugin::guidedModeGotoLocation()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00400">PX4FirmwarePlugin::guidedModeGotoLocation()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00148">FirmwarePlugin::guidedModeGotoLocation()</a>, <a class="el" href="Vehicle_8cc_source.html#l01837">Vehicle::guidedModeLand()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00135">FirmwarePlugin::guidedModeLand()</a>, <a class="el" href="Vehicle_8cc_source.html#l01943">Vehicle::guidedModeOrbit()</a>, <a class="el" href="Vehicle_8cc_source.html#l01975">Vehicle::guidedModeROI()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00572">PX4FirmwarePlugin::guidedModeROI()</a>, <a class="el" href="Vehicle_8cc_source.html#l01828">Vehicle::guidedModeRTL()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00128">FirmwarePlugin::guidedModeRTL()</a>, <a class="el" href="Vehicle_8cc_source.html#l01846">Vehicle::guidedModeTakeoff()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00141">FirmwarePlugin::guidedModeTakeoff()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00322">PX4FirmwarePlugin::guidedModeTakeoff()</a>, <a class="el" href="PlanMasterController_8cc_source.html#l00343">PlanMasterController::loadFromFile()</a>, <a class="el" href="PlanMasterController_8cc_source.html#l00203">PlanMasterController::loadFromVehicle()</a>, <a class="el" href="QGCMapPolygon_8cc_source.html#l00571">QGCMapPolygon::loadKMLOrSHPFile()</a>, <a class="el" href="QGCMapPolyline_8cc_source.html#l00376">QGCMapPolyline::loadKMLOrSHPFile()</a>, <a class="el" href="APMAirframeComponentController_8cc_source.html#l00098">APMAirframeComponentController::loadParameters()</a>, <a class="el" href="ComplexMissionItem_8cc_source.html#l00041">ComplexMissionItem::loadPreset()</a>, <a class="el" href="CorridorScanComplexItem_8cc_source.html#l00079">CorridorScanComplexItem::loadPreset()</a>, <a class="el" href="SurveyComplexItem_8cc_source.html#l00092">SurveyComplexItem::loadPreset()</a>, <a class="el" href="MAVLinkProtocol_8cc_source.html#l00078">MAVLinkProtocol::logSentBytes()</a>, <a class="el" href="RemoteControlCalibrationController_8cc_source.html#l00473">RemoteControlCalibrationController::nextButtonClicked()</a>, <a class="el" href="AutoPilotPlugin_8cc_source.html#l00045">AutoPilotPlugin::parametersReadyPreChecks()</a>, <a class="el" href="PX4AutoPilotPlugin_8cc_source.html#l00159">PX4AutoPilotPlugin::parametersReadyPreChecks()</a>, <a class="el" href="Vehicle_8cc_source.html#l02047">Vehicle::pauseVehicle()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00122">FirmwarePlugin::pauseVehicle()</a>, <a class="el" href="LinkInterface_8cc_source.html#l00192">LinkInterface::reportMavlinkV1Traffic()</a>, <a class="el" href="ComplexMissionItem_8cc_source.html#l00047">ComplexMissionItem::savePreset()</a>, <a class="el" href="PlanMasterController_8cc_source.html#l00449">PlanMasterController::saveToFile()</a>, <a class="el" href="ParameterEditorController_8cc_source.html#l00340">ParameterEditorController::saveToFile()</a>, <a class="el" href="PlanMasterController_8cc_source.html#l00482">PlanMasterController::saveToKml()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01183">APMFirmwarePlugin::sendGCSMotionReport()</a>, <a class="el" href="PlanMasterController_8cc_source.html#l00319">PlanMasterController::sendToVehicle()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00280">MavCommandQueue::sendWorker()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00115">FirmwarePlugin::setGuidedMode()</a>, <a class="el" href="ShowAppMessageState_8cc_source.html#l00004">ShowAppMessageState::ShowAppMessageState()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00480">MavCommandQueue::showCommandAckError()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00225">FirmwarePlugin::startMission()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01080">APMFirmwarePlugin::startMission()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00598">PX4FirmwarePlugin::startMission()</a>, <a class="el" href="VideoManager_8cc_source.html#l00353">VideoManager::startRecording()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00219">FirmwarePlugin::startTakeoff()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01061">APMFirmwarePlugin::startTakeoff()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00586">PX4FirmwarePlugin::startTakeoff()</a>, <a class="el" href="Vehicle_8cc_source.html#l02003">Vehicle::stopGuidedModeROI()</a>, <a class="el" href="SimulatedCameraControl_8cc_source.html#l00127">SimulatedCameraControl::takePhoto()</a>, and <a class="el" href="VehicleCameraControl_8cc_source.html#l00440">VehicleCameraControl::takePhoto()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00465">PX4FirmwarePlugin::_changeAltAfterPause()</a>, <a class="el" href="LandingComplexItem_8cc_source.html#l00729">LandingComplexItem::_load()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00370">FirmwarePlugin::_versionFileDownloadFinished()</a>, <a class="el" href="ParameterEditorController_8cc_source.html#l00434">ParameterEditorController::buildDiffFromFile()</a>, <a class="el" href="AirframeComponentController_8cc_source.html#l00073">AirframeComponentController::changeAutostart()</a>, <a class="el" href="AppSettings_8cc_source.html#l00061">DECLARE_SETTINGGROUP()</a>, <a class="el" href="MavlinkActionsSettings_8cc_source.html#l00007">DECLARE_SETTINGGROUP()</a>, <a class="el" href="ComplexMissionItem_8cc_source.html#l00053">ComplexMissionItem::deletePreset()</a>, <a class="el" href="MissionManager_8cc_source.html#l00071">MissionManager::generateResumeMission()</a>, <a class="el" href="Vehicle_8cc_source.html#l01941">Vehicle::guidedModeChangeAltitude()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00160">FirmwarePlugin::guidedModeChangeAltitude()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00856">APMFirmwarePlugin::guidedModeChangeAltitude()</a>, <a class="el" href="ArduRoverFirmwarePlugin_8cc_source.html#l00073">ArduRoverFirmwarePlugin::guidedModeChangeAltitude()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00486">PX4FirmwarePlugin::guidedModeChangeAltitude()</a>, <a class="el" href="Vehicle_8cc_source.html#l01961">Vehicle::guidedModeChangeEquivalentAirspeedMetersSecond()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00171">FirmwarePlugin::guidedModeChangeEquivalentAirspeedMetersSecond()</a>, <a class="el" href="Vehicle_8cc_source.html#l01951">Vehicle::guidedModeChangeGroundSpeedMetersSecond()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00166">FirmwarePlugin::guidedModeChangeGroundSpeedMetersSecond()</a>, <a class="el" href="Vehicle_8cc_source.html#l02064">Vehicle::guidedModeChangeHeading()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00176">FirmwarePlugin::guidedModeChangeHeading()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00947">APMFirmwarePlugin::guidedModeChangeHeading()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00551">PX4FirmwarePlugin::guidedModeChangeHeading()</a>, <a class="el" href="Vehicle_8cc_source.html#l01920">Vehicle::guidedModeGotoLocation()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l00785">APMFirmwarePlugin::guidedModeGotoLocation()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00400">PX4FirmwarePlugin::guidedModeGotoLocation()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00151">FirmwarePlugin::guidedModeGotoLocation()</a>, <a class="el" href="Vehicle_8cc_source.html#l01864">Vehicle::guidedModeLand()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00138">FirmwarePlugin::guidedModeLand()</a>, <a class="el" href="Vehicle_8cc_source.html#l01970">Vehicle::guidedModeOrbit()</a>, <a class="el" href="Vehicle_8cc_source.html#l02002">Vehicle::guidedModeROI()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00572">PX4FirmwarePlugin::guidedModeROI()</a>, <a class="el" href="Vehicle_8cc_source.html#l01855">Vehicle::guidedModeRTL()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00131">FirmwarePlugin::guidedModeRTL()</a>, <a class="el" href="Vehicle_8cc_source.html#l01873">Vehicle::guidedModeTakeoff()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00144">FirmwarePlugin::guidedModeTakeoff()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00322">PX4FirmwarePlugin::guidedModeTakeoff()</a>, <a class="el" href="PlanMasterController_8cc_source.html#l00343">PlanMasterController::loadFromFile()</a>, <a class="el" href="PlanMasterController_8cc_source.html#l00203">PlanMasterController::loadFromVehicle()</a>, <a class="el" href="QGCMapPolygon_8cc_source.html#l00571">QGCMapPolygon::loadKMLOrSHPFile()</a>, <a class="el" href="QGCMapPolyline_8cc_source.html#l00376">QGCMapPolyline::loadKMLOrSHPFile()</a>, <a class="el" href="APMAirframeComponentController_8cc_source.html#l00098">APMAirframeComponentController::loadParameters()</a>, <a class="el" href="ComplexMissionItem_8cc_source.html#l00041">ComplexMissionItem::loadPreset()</a>, <a class="el" href="CorridorScanComplexItem_8cc_source.html#l00079">CorridorScanComplexItem::loadPreset()</a>, <a class="el" href="SurveyComplexItem_8cc_source.html#l00092">SurveyComplexItem::loadPreset()</a>, <a class="el" href="MAVLinkProtocol_8cc_source.html#l00078">MAVLinkProtocol::logSentBytes()</a>, <a class="el" href="RemoteControlCalibrationController_8cc_source.html#l00473">RemoteControlCalibrationController::nextButtonClicked()</a>, <a class="el" href="AutoPilotPlugin_8cc_source.html#l00045">AutoPilotPlugin::parametersReadyPreChecks()</a>, <a class="el" href="PX4AutoPilotPlugin_8cc_source.html#l00159">PX4AutoPilotPlugin::parametersReadyPreChecks()</a>, <a class="el" href="Vehicle_8cc_source.html#l02074">Vehicle::pauseVehicle()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00125">FirmwarePlugin::pauseVehicle()</a>, <a class="el" href="LinkInterface_8cc_source.html#l00192">LinkInterface::reportMavlinkV1Traffic()</a>, <a class="el" href="ComplexMissionItem_8cc_source.html#l00047">ComplexMissionItem::savePreset()</a>, <a class="el" href="PlanMasterController_8cc_source.html#l00449">PlanMasterController::saveToFile()</a>, <a class="el" href="ParameterEditorController_8cc_source.html#l00340">ParameterEditorController::saveToFile()</a>, <a class="el" href="PlanMasterController_8cc_source.html#l00482">PlanMasterController::saveToKml()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01183">APMFirmwarePlugin::sendGCSMotionReport()</a>, <a class="el" href="PlanMasterController_8cc_source.html#l00319">PlanMasterController::sendToVehicle()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00291">MavCommandQueue::sendWorker()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00118">FirmwarePlugin::setGuidedMode()</a>, <a class="el" href="ShowAppMessageState_8cc_source.html#l00004">ShowAppMessageState::ShowAppMessageState()</a>, <a class="el" href="MavCommandQueue_8cc_source.html#l00491">MavCommandQueue::showCommandAckError()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00228">FirmwarePlugin::startMission()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01080">APMFirmwarePlugin::startMission()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00598">PX4FirmwarePlugin::startMission()</a>, <a class="el" href="VideoManager_8cc_source.html#l00353">VideoManager::startRecording()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00222">FirmwarePlugin::startTakeoff()</a>, <a class="el" href="APMFirmwarePlugin_8cc_source.html#l01061">APMFirmwarePlugin::startTakeoff()</a>, <a class="el" href="PX4FirmwarePlugin_8cc_source.html#l00586">PX4FirmwarePlugin::startTakeoff()</a>, <a class="el" href="Vehicle_8cc_source.html#l02030">Vehicle::stopGuidedModeROI()</a>, <a class="el" href="SimulatedCameraControl_8cc_source.html#l00127">SimulatedCameraControl::takePhoto()</a>, and <a class="el" href="VehicleCameraControl_8cc_source.html#l00440">VehicleCameraControl::takePhoto()</a>.</p>
 
 </div>
 </div>
@@ -709,40 +857,6 @@ template&lt;typename T , size_t N&gt; </div>
 <p>Modal reboot-required message. Debounced within 2 minutes. </p>
 
 <p class="definition">Definition at line <a class="el" href="AppMessages_8cc_source.html#l00023">23</a> of file <a class="el" href="AppMessages_8cc_source.html">AppMessages.cc</a>.</p>
-
-<p class="reference">References <a class="el" href="QGCApplication_8h_source.html#l00035">qgcApp</a>.</p>
-
-</div>
-</div>
-<a id="a6c9783d4b3f283a92270018efa290f46" name="a6c9783d4b3f283a92270018efa290f46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c9783d4b3f283a92270018efa290f46">&#9670;&#160;</a></span>showRebootVehicleMessage()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QGC::showRebootVehicleMessage </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>message</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>title</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Modal vehicle-reboot-required message with a reboot button. Debounced within 2 minutes. </p>
-
-<p class="definition">Definition at line <a class="el" href="AppMessages_8cc_source.html#l00030">30</a> of file <a class="el" href="AppMessages_8cc_source.html">AppMessages.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="QGCApplication_8h_source.html#l00035">qgcApp</a>.</p>
 

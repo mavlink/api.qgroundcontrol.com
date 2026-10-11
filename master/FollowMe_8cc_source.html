@@ -98,217 +98,221 @@ $(document).ready(function(){initNavTree('FollowMe_8cc_source.html',''); initRes
   <div class="headertitle"><div class="title">FollowMe.cc</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="FollowMe_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="QmlObjectListModel_8h.html">QmlObjectListModel.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="FollowMe_8h.html">FollowMe.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="MultiVehicleManager_8h.html">MultiVehicleManager.h</a>&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="FirmwarePlugin_8h.html">FirmwarePlugin.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Vehicle_8h.html">Vehicle.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="PositionManager_8h.html">PositionManager.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="SettingsManager_8h.html">SettingsManager.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="AppSettings_8h.html">AppSettings.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QtPositioning/QGeoPositionInfo&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(FollowMeLog, <span class="stringliteral">&quot;API.FollowMe&quot;</span>)</div>
+<a href="FollowMe_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="FollowMe_8h.html">FollowMe.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QtPositioning/QGeoPositionInfo&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="AppSettings_8h.html">AppSettings.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="FirmwarePlugin_8h.html">FirmwarePlugin.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="GPSManager_8h.html">GPSManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="MultiVehicleManager_8h.html">MultiVehicleManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="PositionManager_8h.html">PositionManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="QmlObjectListModel_8h.html">QmlObjectListModel.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="SettingsManager_8h.html">SettingsManager.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="Vehicle_8h.html">Vehicle.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="FollowMe_8cc.html#a7f38554b517f61c9a4aa329aa48d63b6">   15</a></span><a class="code hl_function" href="FollowMe_8cc.html#a7f38554b517f61c9a4aa329aa48d63b6">Q_APPLICATION_STATIC</a>(<a class="code hl_class" href="classFollowMe.html">FollowMe</a>, _followMeInstance);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(FollowMeLog, <span class="stringliteral">&quot;API.FollowMe&quot;</span>)</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classFollowMe.html#ab087d377778c4c8354e81f44a8425de2">   17</a></span><a class="code hl_class" href="classFollowMe.html">FollowMe</a>::<a class="code hl_class" href="classFollowMe.html">FollowMe</a>(QObject *parent)</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    : QObject(parent)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    , _gcsMotionReportTimer(new QTimer(this))</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// qCDebug(FollowMeLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; this;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    _gcsMotionReportTimer-&gt;setSingleShot(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// We set the update interval to a fixed amount of time.</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// Even if the device can&#39;t update this quickly we&#39;ll pick up a new value on the next time around.</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// We can&#39;t trust the value for update interval which comes from the actual device.</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    _gcsMotionReportTimer-&gt;setInterval(kMotionUpdateInterval);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="FollowMe_8cc.html#a7f38554b517f61c9a4aa329aa48d63b6">   17</a></span><a class="code hl_function" href="FollowMe_8cc.html#a7f38554b517f61c9a4aa329aa48d63b6">Q_APPLICATION_STATIC</a>(<a class="code hl_class" href="classFollowMe.html">FollowMe</a>, _followMeInstance);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classFollowMe.html#ab087d377778c4c8354e81f44a8425de2">   19</a></span><a class="code hl_class" href="classFollowMe.html">FollowMe</a>::<a class="code hl_class" href="classFollowMe.html">FollowMe</a>(QObject *parent)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    : QObject(parent)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    , _gcsMotionReportTimer(new QTimer(this))</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// qCDebug(FollowMeLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; this;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    _gcsMotionReportTimer-&gt;setSingleShot(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// We set the update interval to a fixed amount of time.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// Even if the device can&#39;t update this quickly we&#39;ll pick up a new value on the next time around.</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// We can&#39;t trust the value for update interval which comes from the actual device.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    _gcsMotionReportTimer-&gt;setInterval(kMotionUpdateInterval);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classFollowMe.html#adf13f4eb46b8a36ebc2be2b33788883b">   30</a></span><a class="code hl_function" href="classFollowMe.html#adf13f4eb46b8a36ebc2be2b33788883b">FollowMe::~FollowMe</a>()</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// qCDebug(FollowMeLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; this;</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classFollowMe.html#adf13f4eb46b8a36ebc2be2b33788883b">   32</a></span><a class="code hl_function" href="classFollowMe.html#adf13f4eb46b8a36ebc2be2b33788883b">FollowMe::~FollowMe</a>()</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// qCDebug(FollowMeLog) &lt;&lt; Q_FUNC_INFO &lt;&lt; this;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
 </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classFollowMe.html#a09e44069fb2aca5145bda43ef057a91a">   35</a></span><a class="code hl_class" href="classFollowMe.html">FollowMe</a> *<a class="code hl_function" href="classFollowMe.html#a09e44069fb2aca5145bda43ef057a91a">FollowMe::instance</a>()</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> _followMeInstance();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classFollowMe.html#a09e44069fb2aca5145bda43ef057a91a">   37</a></span><a class="code hl_class" href="classFollowMe.html">FollowMe</a> *<a class="code hl_function" href="classFollowMe.html#a09e44069fb2aca5145bda43ef057a91a">FollowMe::instance</a>()</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">return</span> _followMeInstance();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
 </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classFollowMe.html#ae817f4a0714cf7dec6f10a1a9dd51317">   40</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classFollowMe.html#ae817f4a0714cf7dec6f10a1a9dd51317">FollowMe::init</a>()</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> once = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">if</span> (!once) {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        (void) connect(_gcsMotionReportTimer, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;FollowMe::_sendGCSMotionReport);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        (void) connect(<a class="code hl_function" href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a>()-&gt;<a class="code hl_function" href="classSettingsManager.html#ab674f8beaaa671be59cc6624cda10f0a">appSettings</a>()-&gt;followTarget(), &amp;<a class="code hl_signal" href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged</a>, <span class="keyword">this</span>, &amp;FollowMe::_settingsChanged);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        _settingsChanged(<a class="code hl_function" href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a>()-&gt;appSettings()-&gt;followTarget()-&gt;rawValue());</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    once = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classFollowMe.html#ae817f4a0714cf7dec6f10a1a9dd51317">   42</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classFollowMe.html#ae817f4a0714cf7dec6f10a1a9dd51317">FollowMe::init</a>()</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> once = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> (!once) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        (void) connect(_gcsMotionReportTimer, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;FollowMe::_sendGCSMotionReport);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        (void) connect(<a class="code hl_function" href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a>()-&gt;<a class="code hl_function" href="classSettingsManager.html#ab674f8beaaa671be59cc6624cda10f0a">appSettings</a>()-&gt;followTarget(), &amp;<a class="code hl_signal" href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged</a>, <span class="keyword">this</span>, &amp;FollowMe::_settingsChanged);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        _settingsChanged(<a class="code hl_function" href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a>()-&gt;appSettings()-&gt;followTarget()-&gt;rawValue());</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    once = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keywordtype">void</span> FollowMe::_settingsChanged(QVariant value)</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    _currentMode = <span class="keyword">static_cast&lt;</span>FollowMode<span class="keyword">&gt;</span>(value.toUInt());</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">switch</span> (_currentMode) {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">case</span> MODE_NEVER:</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        (void) disconnect(<a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>(), &amp;<a class="code hl_signal" href="classMultiVehicleManager.html#a3ac209c58648425c25ae3d2b82a54a49">MultiVehicleManager::vehicleAdded</a>, <span class="keyword">this</span>, &amp;FollowMe::_vehicleAdded);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        (void) disconnect(<a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>(), &amp;<a class="code hl_signal" href="classMultiVehicleManager.html#a646fdd7258f62f0ee1142296630fa721">MultiVehicleManager::vehicleRemoved</a>, <span class="keyword">this</span>, &amp;FollowMe::_vehicleRemoved);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        _disableFollowSend();</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">case</span> MODE_ALWAYS:</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        (void) connect(<a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>(), &amp;<a class="code hl_signal" href="classMultiVehicleManager.html#a3ac209c58648425c25ae3d2b82a54a49">MultiVehicleManager::vehicleAdded</a>, <span class="keyword">this</span>, &amp;FollowMe::_vehicleAdded);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        (void) connect(<a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>(), &amp;<a class="code hl_signal" href="classMultiVehicleManager.html#a646fdd7258f62f0ee1142296630fa721">MultiVehicleManager::vehicleRemoved</a>, <span class="keyword">this</span>, &amp;FollowMe::_vehicleRemoved);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        _enableFollowSend();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">case</span> MODE_FOLLOWME:</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        (void) connect(<a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>(), &amp;<a class="code hl_signal" href="classMultiVehicleManager.html#a3ac209c58648425c25ae3d2b82a54a49">MultiVehicleManager::vehicleAdded</a>, <span class="keyword">this</span>, &amp;FollowMe::_vehicleAdded);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        (void) connect(<a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>(), &amp;<a class="code hl_signal" href="classMultiVehicleManager.html#a646fdd7258f62f0ee1142296630fa721">MultiVehicleManager::vehicleRemoved</a>, <span class="keyword">this</span>, &amp;FollowMe::_vehicleRemoved);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        _enableIfVehicleInFollow();</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keywordtype">void</span> FollowMe::_enableFollowSend()</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">if</span> (!_gcsMotionReportTimer-&gt;isActive()) {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        _gcsMotionReportTimer-&gt;start();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keywordtype">void</span> FollowMe::_disableFollowSend()</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>{</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">if</span> (_gcsMotionReportTimer-&gt;isActive()) {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        _gcsMotionReportTimer-&gt;stop();</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keywordtype">void</span> FollowMe::_sendGCSMotionReport()</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>{</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">const</span> <span class="keyword">auto</span> observation = <a class="code hl_function" href="classQGCPositionManager.html#a2cdbb4c1cc305a6a276260597f4c90fb">QGCPositionManager::instance</a>()-&gt;<a class="code hl_function" href="classGPSPositionService.html#ae522c6ed3fef0067517c458fc9b66f48">acceptedObservation</a>(<a class="code hl_enumvalue" href="structGPSObservation.html#aeda3b3fb9df64b33b49554326f46079fa8226588f03da49b857e5ddf8c508dd2d">GPSObservation::PositionUse::Motion</a>);</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">if</span> (!observation) {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; geoPositionInfo = observation-&gt;position;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keyword">const</span> QGeoCoordinate gcsCoordinate = geoPositionInfo.coordinate();</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">// First check to see if any vehicles need follow me updates</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">bool</span> needFollowMe = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span> (_currentMode == MODE_ALWAYS) {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        needFollowMe = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_currentMode == MODE_FOLLOWME) {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a>* <span class="keyword">const</span> vehicles = <a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>()-&gt;<a class="code hl_function" href="classMultiVehicleManager.html#a409947c265f2c4b6bd5f9b1c1a73bd65">vehicles</a>();</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#ab39a055cf0624b6933e058d18847c275">count</a>(); i++) {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keyword">const</span> <a class="code hl_class" href="classVehicle.html">Vehicle</a>* <span class="keyword">const</span> vehicle = vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#a1d73b0ecea7da95bc40116bb49fb8d00">value</a>&lt;<span class="keyword">const</span> <a class="code hl_class" href="classVehicle.html">Vehicle</a>*&gt;(i);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keywordflow">if</span> (vehicle &amp;&amp; _isFollowFlightMode(vehicle, vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a27f56346aa2bc42895d947d8d06c0f05">flightMode</a>())) {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                needFollowMe = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            }</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        }</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">if</span> (!needFollowMe) {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keywordtype">void</span> FollowMe::_settingsChanged(QVariant value)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    _currentMode = <span class="keyword">static_cast&lt;</span>FollowMode<span class="keyword">&gt;</span>(value.toUInt());</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">switch</span> (_currentMode) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">case</span> MODE_NEVER:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        (void) disconnect(<a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>(), &amp;<a class="code hl_signal" href="classMultiVehicleManager.html#a3ac209c58648425c25ae3d2b82a54a49">MultiVehicleManager::vehicleAdded</a>, <span class="keyword">this</span>, &amp;FollowMe::_vehicleAdded);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        (void) disconnect(<a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>(), &amp;<a class="code hl_signal" href="classMultiVehicleManager.html#a646fdd7258f62f0ee1142296630fa721">MultiVehicleManager::vehicleRemoved</a>, <span class="keyword">this</span>, &amp;FollowMe::_vehicleRemoved);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        _disableFollowSend();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">case</span> MODE_ALWAYS:</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        (void) connect(<a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>(), &amp;<a class="code hl_signal" href="classMultiVehicleManager.html#a3ac209c58648425c25ae3d2b82a54a49">MultiVehicleManager::vehicleAdded</a>, <span class="keyword">this</span>, &amp;FollowMe::_vehicleAdded);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        (void) connect(<a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>(), &amp;<a class="code hl_signal" href="classMultiVehicleManager.html#a646fdd7258f62f0ee1142296630fa721">MultiVehicleManager::vehicleRemoved</a>, <span class="keyword">this</span>, &amp;FollowMe::_vehicleRemoved);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        _enableFollowSend();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">case</span> MODE_FOLLOWME:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        (void) connect(<a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>(), &amp;<a class="code hl_signal" href="classMultiVehicleManager.html#a3ac209c58648425c25ae3d2b82a54a49">MultiVehicleManager::vehicleAdded</a>, <span class="keyword">this</span>, &amp;FollowMe::_vehicleAdded);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        (void) connect(<a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>(), &amp;<a class="code hl_signal" href="classMultiVehicleManager.html#a646fdd7258f62f0ee1142296630fa721">MultiVehicleManager::vehicleRemoved</a>, <span class="keyword">this</span>, &amp;FollowMe::_vehicleRemoved);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        _enableIfVehicleInFollow();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keywordtype">void</span> FollowMe::_enableFollowSend()</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>{</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">if</span> (!_gcsMotionReportTimer-&gt;isActive()) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        _gcsMotionReportTimer-&gt;start();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keywordtype">void</span> FollowMe::_disableFollowSend()</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">if</span> (_gcsMotionReportTimer-&gt;isActive()) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        _gcsMotionReportTimer-&gt;stop();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keywordtype">void</span> FollowMe::_sendGCSMotionReport()</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>{</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keyword">const</span> <span class="keyword">auto</span> observation =</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <a class="code hl_function" href="classGPSManager.html#ac8a0e30682daae971ee4d95b5aa3d21c">GPSManager::instance</a>()-&gt;<a class="code hl_function" href="classGPSManager.html#ae363f7b5659d5745ab2eb98eee8c560e">positionManager</a>()-&gt;<a class="code hl_function" href="classPositionManager.html#a5ac2e54ee33a4e0929b1b6709b9d19d0">acceptedObservation</a>(<a class="code hl_enumvalue" href="structGPSObservation.html#aeda3b3fb9df64b33b49554326f46079fa8226588f03da49b857e5ddf8c508dd2d">GPSObservation::PositionUse::Motion</a>);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (!observation) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; geoPositionInfo = observation-&gt;position;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">const</span> QGeoCoordinate gcsCoordinate = geoPositionInfo.coordinate();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="comment">// First check to see if any vehicles need follow me updates</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">bool</span> needFollowMe = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">if</span> (_currentMode == MODE_ALWAYS) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        needFollowMe = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_currentMode == MODE_FOLLOWME) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a>* <span class="keyword">const</span> vehicles = <a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>()-&gt;<a class="code hl_function" href="classMultiVehicleManager.html#a409947c265f2c4b6bd5f9b1c1a73bd65">vehicles</a>();</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#ab39a055cf0624b6933e058d18847c275">count</a>(); i++) {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="keyword">const</span> <a class="code hl_class" href="classVehicle.html">Vehicle</a>* <span class="keyword">const</span> vehicle = vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#a1d73b0ecea7da95bc40116bb49fb8d00">value</a>&lt;<span class="keyword">const</span> <a class="code hl_class" href="classVehicle.html">Vehicle</a>*&gt;(i);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordflow">if</span> (vehicle &amp;&amp; _isFollowFlightMode(vehicle, vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a27f56346aa2bc42895d947d8d06c0f05">flightMode</a>())) {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>                needFollowMe = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        }</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    GCSMotionReport motionReport{};</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    uint8_t estimationCapabilities = 0;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">if</span> (!needFollowMe) {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    }</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    motionReport.lat_int = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(gcsCoordinate.latitude() * 1e7);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    motionReport.lon_int = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(gcsCoordinate.longitude() * 1e7);</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    motionReport.altMetersAMSL = gcsCoordinate.altitude();</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    estimationCapabilities |= (1 &lt;&lt; <a class="code hl_enumvalue" href="classFollowMe.html#af598b44e05e7f61221e88c5d0455c591ae7dea1b5110243bfb1f958d5330eb12b">POS</a>);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">if</span> (geoPositionInfo.hasAttribute(QGeoPositionInfo::Direction)) {</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        estimationCapabilities |= (1 &lt;&lt; <a class="code hl_enumvalue" href="classFollowMe.html#af598b44e05e7f61221e88c5d0455c591aadc25d3be75cb6681ced95f021ecda0f">HEADING</a>);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        motionReport.headingDegrees = geoPositionInfo.attribute(QGeoPositionInfo::Direction);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    }</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">if</span> (geoPositionInfo.hasAttribute(QGeoPositionInfo::HorizontalAccuracy)) {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        motionReport.pos_std_dev[0] = motionReport.pos_std_dev[1] = geoPositionInfo.attribute(QGeoPositionInfo::HorizontalAccuracy);</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">if</span> (geoPositionInfo.hasAttribute(QGeoPositionInfo::VerticalAccuracy)) {</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        motionReport.pos_std_dev[2] = geoPositionInfo.attribute(QGeoPositionInfo::VerticalAccuracy);</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">if</span> (geoPositionInfo.hasAttribute(QGeoPositionInfo::VerticalSpeed)) {</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        motionReport.vzMetersPerSec = geoPositionInfo.attribute(QGeoPositionInfo::VerticalSpeed);</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordflow">if</span> (geoPositionInfo.hasAttribute(QGeoPositionInfo::Direction) &amp;&amp; geoPositionInfo.hasAttribute(QGeoPositionInfo::GroundSpeed)) {</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        estimationCapabilities |= (1 &lt;&lt; <a class="code hl_enumvalue" href="classFollowMe.html#af598b44e05e7f61221e88c5d0455c591a5ea9c09e69ab7a394a906cb871358daf">VEL</a>);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    GCSMotionReport motionReport{};</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    uint8_t estimationCapabilities = 0;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    motionReport.lat_int = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(gcsCoordinate.latitude() * 1e7);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    motionReport.lon_int = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(gcsCoordinate.longitude() * 1e7);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    motionReport.altMetersAMSL = gcsCoordinate.altitude();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    estimationCapabilities |= (1 &lt;&lt; <a class="code hl_enumvalue" href="classFollowMe.html#af598b44e05e7f61221e88c5d0455c591ae7dea1b5110243bfb1f958d5330eb12b">POS</a>);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">if</span> (geoPositionInfo.hasAttribute(QGeoPositionInfo::Direction)) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        estimationCapabilities |= (1 &lt;&lt; <a class="code hl_enumvalue" href="classFollowMe.html#af598b44e05e7f61221e88c5d0455c591aadc25d3be75cb6681ced95f021ecda0f">HEADING</a>);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        motionReport.headingDegrees = geoPositionInfo.attribute(QGeoPositionInfo::Direction);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordflow">if</span> (geoPositionInfo.hasAttribute(QGeoPositionInfo::HorizontalAccuracy)) {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        motionReport.pos_std_dev[0] = motionReport.pos_std_dev[1] = geoPositionInfo.attribute(QGeoPositionInfo::HorizontalAccuracy);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">if</span> (geoPositionInfo.hasAttribute(QGeoPositionInfo::VerticalAccuracy)) {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        motionReport.pos_std_dev[2] = geoPositionInfo.attribute(QGeoPositionInfo::VerticalAccuracy);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">if</span> (geoPositionInfo.hasAttribute(QGeoPositionInfo::VerticalSpeed)) {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        motionReport.vzMetersPerSec = geoPositionInfo.attribute(QGeoPositionInfo::VerticalSpeed);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }</div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <span class="keyword">const</span> qreal direction = qDegreesToRadians(geoPositionInfo.attribute(QGeoPositionInfo::Direction));</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keyword">const</span> qreal velocity = geoPositionInfo.attribute(QGeoPositionInfo::GroundSpeed);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordflow">if</span> (geoPositionInfo.hasAttribute(QGeoPositionInfo::Direction) &amp;&amp; geoPositionInfo.hasAttribute(QGeoPositionInfo::GroundSpeed)) {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        estimationCapabilities |= (1 &lt;&lt; <a class="code hl_enumvalue" href="classFollowMe.html#af598b44e05e7f61221e88c5d0455c591a5ea9c09e69ab7a394a906cb871358daf">VEL</a>);</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        motionReport.vxMetersPerSec = cos(direction) * velocity;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        motionReport.vyMetersPerSec = sin(direction) * velocity;</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        motionReport.vxMetersPerSec = 0;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        motionReport.vyMetersPerSec = 0;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a>* <span class="keyword">const</span> vehicles = <a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>()-&gt;<a class="code hl_function" href="classMultiVehicleManager.html#a409947c265f2c4b6bd5f9b1c1a73bd65">vehicles</a>();</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#ab39a055cf0624b6933e058d18847c275">count</a>(); i++) {</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <a class="code hl_class" href="classVehicle.html">Vehicle</a>* <span class="keyword">const</span> vehicle = vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#a1d73b0ecea7da95bc40116bb49fb8d00">value</a>&lt;<a class="code hl_class" href="classVehicle.html">Vehicle</a>*&gt;(i);</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">if</span> (vehicle &amp;&amp; ((_currentMode == MODE_ALWAYS) || (_isFollowFlightMode(vehicle, vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a27f56346aa2bc42895d947d8d06c0f05">flightMode</a>())))) {</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            qCDebug(FollowMeLog) &lt;&lt; <span class="stringliteral">&quot;sendGCSMotionReport latInt:lonInt:altMetersAMSL&quot;</span> &lt;&lt; motionReport.lat_int &lt;&lt; motionReport.lon_int &lt;&lt; motionReport.altMetersAMSL;</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a56529fa0d722f6d13aab4d693157609f">firmwarePlugin</a>()-&gt;<a class="code hl_function" href="classFirmwarePlugin.html#ae0d698b91f95d722be84ae20431258d3">sendGCSMotionReport</a>(vehicle, motionReport, estimationCapabilities);</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        }</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>}</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="keywordtype">void</span> FollowMe::_vehicleAdded(<a class="code hl_class" href="classVehicle.html">Vehicle</a> *vehicle)</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>{</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    (void) connect(vehicle, &amp;<a class="code hl_signal" href="classVehicle.html#ab56d31b0164d88862f7e1cf70acc691e">Vehicle::flightModeChanged</a>, <span class="keyword">this</span>, &amp;FollowMe::_enableIfVehicleInFollow);</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    _enableIfVehicleInFollow();</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>}</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="keywordtype">void</span> FollowMe::_vehicleRemoved(<a class="code hl_class" href="classVehicle.html">Vehicle</a> *vehicle)</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>{</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    (void) disconnect(vehicle, &amp;<a class="code hl_signal" href="classVehicle.html#ab56d31b0164d88862f7e1cf70acc691e">Vehicle::flightModeChanged</a>, <span class="keyword">this</span>, &amp;FollowMe::_enableIfVehicleInFollow);</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    _enableIfVehicleInFollow();</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>}</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="keywordtype">void</span> FollowMe::_enableIfVehicleInFollow()</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>{</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordflow">if</span> (_currentMode == MODE_ALWAYS) {</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    }</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="comment">// Any vehicle in follow mode will enable the system</span></div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a>* <span class="keyword">const</span> vehicles = <a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>()-&gt;<a class="code hl_function" href="classMultiVehicleManager.html#a409947c265f2c4b6bd5f9b1c1a73bd65">vehicles</a>();</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keyword">const</span> qreal direction = qDegreesToRadians(geoPositionInfo.attribute(QGeoPositionInfo::Direction));</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keyword">const</span> qreal velocity = geoPositionInfo.attribute(QGeoPositionInfo::GroundSpeed);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        motionReport.vxMetersPerSec = cos(direction) * velocity;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        motionReport.vyMetersPerSec = sin(direction) * velocity;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        motionReport.vxMetersPerSec = 0;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        motionReport.vyMetersPerSec = 0;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a>* <span class="keyword">const</span> vehicles = <a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>()-&gt;<a class="code hl_function" href="classMultiVehicleManager.html#a409947c265f2c4b6bd5f9b1c1a73bd65">vehicles</a>();</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#ab39a055cf0624b6933e058d18847c275">count</a>(); i++) {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <a class="code hl_class" href="classVehicle.html">Vehicle</a>* <span class="keyword">const</span> vehicle = vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#a1d73b0ecea7da95bc40116bb49fb8d00">value</a>&lt;<a class="code hl_class" href="classVehicle.html">Vehicle</a>*&gt;(i);</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">if</span> (vehicle &amp;&amp; ((_currentMode == MODE_ALWAYS) || (_isFollowFlightMode(vehicle, vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a27f56346aa2bc42895d947d8d06c0f05">flightMode</a>())))) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            qCDebug(FollowMeLog) &lt;&lt; <span class="stringliteral">&quot;sendGCSMotionReport latInt:lonInt:altMetersAMSL&quot;</span> &lt;&lt; motionReport.lat_int &lt;&lt; motionReport.lon_int &lt;&lt; motionReport.altMetersAMSL;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a56529fa0d722f6d13aab4d693157609f">firmwarePlugin</a>()-&gt;<a class="code hl_function" href="classFirmwarePlugin.html#ae0d698b91f95d722be84ae20431258d3">sendGCSMotionReport</a>(vehicle, motionReport, estimationCapabilities);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>}</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="keywordtype">void</span> FollowMe::_vehicleAdded(<a class="code hl_class" href="classVehicle.html">Vehicle</a> *vehicle)</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>{</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    (void) connect(vehicle, &amp;<a class="code hl_signal" href="classVehicle.html#ab56d31b0164d88862f7e1cf70acc691e">Vehicle::flightModeChanged</a>, <span class="keyword">this</span>, &amp;FollowMe::_enableIfVehicleInFollow);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    _enableIfVehicleInFollow();</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>}</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="keywordtype">void</span> FollowMe::_vehicleRemoved(<a class="code hl_class" href="classVehicle.html">Vehicle</a> *vehicle)</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>{</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    (void) disconnect(vehicle, &amp;<a class="code hl_signal" href="classVehicle.html#ab56d31b0164d88862f7e1cf70acc691e">Vehicle::flightModeChanged</a>, <span class="keyword">this</span>, &amp;FollowMe::_enableIfVehicleInFollow);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    _enableIfVehicleInFollow();</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>}</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="keywordtype">void</span> FollowMe::_enableIfVehicleInFollow()</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>{</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordflow">if</span> (_currentMode == MODE_ALWAYS) {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    }</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#ab39a055cf0624b6933e058d18847c275">count</a>(); i++) {</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="keyword">const</span> <a class="code hl_class" href="classVehicle.html">Vehicle</a>* <span class="keyword">const</span> vehicle = vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#a1d73b0ecea7da95bc40116bb49fb8d00">value</a>&lt;<span class="keyword">const</span> <a class="code hl_class" href="classVehicle.html">Vehicle</a>*&gt;(i);</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keywordflow">if</span> (_isFollowFlightMode(vehicle, vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a27f56346aa2bc42895d947d8d06c0f05">flightMode</a>())) {</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            _enableFollowSend();</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        }</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    }</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    _disableFollowSend();</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>}</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="comment">// Any vehicle in follow mode will enable the system</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <a class="code hl_class" href="classQmlObjectListModel.html">QmlObjectListModel</a>* <span class="keyword">const</span> vehicles = <a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>()-&gt;<a class="code hl_function" href="classMultiVehicleManager.html#a409947c265f2c4b6bd5f9b1c1a73bd65">vehicles</a>();</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#ab39a055cf0624b6933e058d18847c275">count</a>(); i++) {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="keyword">const</span> <a class="code hl_class" href="classVehicle.html">Vehicle</a>* <span class="keyword">const</span> vehicle = vehicles-&gt;<a class="code hl_function" href="classQmlObjectListModel.html#a1d73b0ecea7da95bc40116bb49fb8d00">value</a>&lt;<span class="keyword">const</span> <a class="code hl_class" href="classVehicle.html">Vehicle</a>*&gt;(i);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="keywordflow">if</span> (_isFollowFlightMode(vehicle, vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a27f56346aa2bc42895d947d8d06c0f05">flightMode</a>())) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            _enableFollowSend();</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    }</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="keywordtype">bool</span> FollowMe::_isFollowFlightMode(<span class="keyword">const</span> <a class="code hl_class" href="classVehicle.html">Vehicle</a> *vehicle, <span class="keyword">const</span> QString &amp;flightMode)</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>{</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordflow">return</span> (flightMode.compare(vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a85fa1107ce67eec2cdf88227a064e78c">followFlightMode</a>()) == 0);</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>}</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    _disableFollowSend();</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>}</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="keywordtype">bool</span> FollowMe::_isFollowFlightMode(<span class="keyword">const</span> <a class="code hl_class" href="classVehicle.html">Vehicle</a> *vehicle, <span class="keyword">const</span> QString &amp;flightMode)</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>{</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordflow">return</span> (flightMode.compare(vehicle-&gt;<a class="code hl_function" href="classVehicle.html#a85fa1107ce67eec2cdf88227a064e78c">followFlightMode</a>()) == 0);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}</div>
 <div class="ttc" id="aAppSettings_8h_html"><div class="ttname"><a href="AppSettings_8h.html">AppSettings.h</a></div></div>
 <div class="ttc" id="aFirmwarePlugin_8h_html"><div class="ttname"><a href="FirmwarePlugin_8h.html">FirmwarePlugin.h</a></div></div>
 <div class="ttc" id="aFollowMe_8cc_html_a7f38554b517f61c9a4aa329aa48d63b6"><div class="ttname"><a href="FollowMe_8cc.html#a7f38554b517f61c9a4aa329aa48d63b6">Q_APPLICATION_STATIC</a></div><div class="ttdeci">Q_APPLICATION_STATIC(FollowMe, _followMeInstance)</div></div>
 <div class="ttc" id="aFollowMe_8h_html"><div class="ttname"><a href="FollowMe_8h.html">FollowMe.h</a></div></div>
+<div class="ttc" id="aGPSManager_8h_html"><div class="ttname"><a href="GPSManager_8h.html">GPSManager.h</a></div></div>
 <div class="ttc" id="aMultiVehicleManager_8h_html"><div class="ttname"><a href="MultiVehicleManager_8h.html">MultiVehicleManager.h</a></div></div>
 <div class="ttc" id="aPositionManager_8h_html"><div class="ttname"><a href="PositionManager_8h.html">PositionManager.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
@@ -317,29 +321,30 @@ $(document).ready(function(){initNavTree('FollowMe_8cc_source.html',''); initRes
 <div class="ttc" id="aSettingsManager_8h_html"><div class="ttname"><a href="SettingsManager_8h.html">SettingsManager.h</a></div></div>
 <div class="ttc" id="aVehicle_8h_html"><div class="ttname"><a href="Vehicle_8h.html">Vehicle.h</a></div></div>
 <div class="ttc" id="aclassFact_html_a832a24b1e80771c8bf76dc9fbf699fad"><div class="ttname"><a href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged</a></div><div class="ttdeci">void rawValueChanged(const QVariant &amp;value)</div></div>
-<div class="ttc" id="aclassFirmwarePlugin_html_ae0d698b91f95d722be84ae20431258d3"><div class="ttname"><a href="classFirmwarePlugin.html#ae0d698b91f95d722be84ae20431258d3">FirmwarePlugin::sendGCSMotionReport</a></div><div class="ttdeci">virtual void sendGCSMotionReport(Vehicle *vehicle, const FollowMe::GCSMotionReport &amp;motionReport, uint8_t estimationCapabilities) const</div><div class="ttdoc">Sends the appropriate mavlink message for follow me support.</div><div class="ttdef"><b>Definition</b> <a href="FirmwarePlugin_8cc_source.html#l00441">FirmwarePlugin.cc:441</a></div></div>
+<div class="ttc" id="aclassFirmwarePlugin_html_ae0d698b91f95d722be84ae20431258d3"><div class="ttname"><a href="classFirmwarePlugin.html#ae0d698b91f95d722be84ae20431258d3">FirmwarePlugin::sendGCSMotionReport</a></div><div class="ttdeci">virtual void sendGCSMotionReport(Vehicle *vehicle, const FollowMe::GCSMotionReport &amp;motionReport, uint8_t estimationCapabilities) const</div><div class="ttdoc">Sends the appropriate mavlink message for follow me support.</div><div class="ttdef"><b>Definition</b> <a href="FirmwarePlugin_8cc_source.html#l00467">FirmwarePlugin.cc:467</a></div></div>
 <div class="ttc" id="aclassFollowMe_html"><div class="ttname"><a href="classFollowMe.html">FollowMe</a></div><div class="ttdef"><b>Definition</b> <a href="FollowMe_8h_source.html#l00009">FollowMe.h:10</a></div></div>
-<div class="ttc" id="aclassFollowMe_html_a09e44069fb2aca5145bda43ef057a91a"><div class="ttname"><a href="classFollowMe.html#a09e44069fb2aca5145bda43ef057a91a">FollowMe::instance</a></div><div class="ttdeci">static FollowMe * instance()</div><div class="ttdef"><b>Definition</b> <a href="FollowMe_8cc_source.html#l00035">FollowMe.cc:35</a></div></div>
-<div class="ttc" id="aclassFollowMe_html_adf13f4eb46b8a36ebc2be2b33788883b"><div class="ttname"><a href="classFollowMe.html#adf13f4eb46b8a36ebc2be2b33788883b">FollowMe::~FollowMe</a></div><div class="ttdeci">~FollowMe()</div><div class="ttdef"><b>Definition</b> <a href="FollowMe_8cc_source.html#l00030">FollowMe.cc:30</a></div></div>
-<div class="ttc" id="aclassFollowMe_html_ae817f4a0714cf7dec6f10a1a9dd51317"><div class="ttname"><a href="classFollowMe.html#ae817f4a0714cf7dec6f10a1a9dd51317">FollowMe::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition</b> <a href="FollowMe_8cc_source.html#l00040">FollowMe.cc:40</a></div></div>
+<div class="ttc" id="aclassFollowMe_html_a09e44069fb2aca5145bda43ef057a91a"><div class="ttname"><a href="classFollowMe.html#a09e44069fb2aca5145bda43ef057a91a">FollowMe::instance</a></div><div class="ttdeci">static FollowMe * instance()</div><div class="ttdef"><b>Definition</b> <a href="FollowMe_8cc_source.html#l00037">FollowMe.cc:37</a></div></div>
+<div class="ttc" id="aclassFollowMe_html_adf13f4eb46b8a36ebc2be2b33788883b"><div class="ttname"><a href="classFollowMe.html#adf13f4eb46b8a36ebc2be2b33788883b">FollowMe::~FollowMe</a></div><div class="ttdeci">~FollowMe()</div><div class="ttdef"><b>Definition</b> <a href="FollowMe_8cc_source.html#l00032">FollowMe.cc:32</a></div></div>
+<div class="ttc" id="aclassFollowMe_html_ae817f4a0714cf7dec6f10a1a9dd51317"><div class="ttname"><a href="classFollowMe.html#ae817f4a0714cf7dec6f10a1a9dd51317">FollowMe::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition</b> <a href="FollowMe_8cc_source.html#l00042">FollowMe.cc:42</a></div></div>
 <div class="ttc" id="aclassFollowMe_html_af598b44e05e7f61221e88c5d0455c591a5ea9c09e69ab7a394a906cb871358daf"><div class="ttname"><a href="classFollowMe.html#af598b44e05e7f61221e88c5d0455c591a5ea9c09e69ab7a394a906cb871358daf">FollowMe::VEL</a></div><div class="ttdeci">@ VEL</div><div class="ttdef"><b>Definition</b> <a href="FollowMe_8h_source.html#l00035">FollowMe.h:35</a></div></div>
 <div class="ttc" id="aclassFollowMe_html_af598b44e05e7f61221e88c5d0455c591aadc25d3be75cb6681ced95f021ecda0f"><div class="ttname"><a href="classFollowMe.html#af598b44e05e7f61221e88c5d0455c591aadc25d3be75cb6681ced95f021ecda0f">FollowMe::HEADING</a></div><div class="ttdeci">@ HEADING</div><div class="ttdef"><b>Definition</b> <a href="FollowMe_8h_source.html#l00039">FollowMe.h:38</a></div></div>
 <div class="ttc" id="aclassFollowMe_html_af598b44e05e7f61221e88c5d0455c591ae7dea1b5110243bfb1f958d5330eb12b"><div class="ttname"><a href="classFollowMe.html#af598b44e05e7f61221e88c5d0455c591ae7dea1b5110243bfb1f958d5330eb12b">FollowMe::POS</a></div><div class="ttdeci">@ POS</div><div class="ttdef"><b>Definition</b> <a href="FollowMe_8h_source.html#l00034">FollowMe.h:34</a></div></div>
-<div class="ttc" id="aclassGPSPositionService_html_ae522c6ed3fef0067517c458fc9b66f48"><div class="ttname"><a href="classGPSPositionService.html#ae522c6ed3fef0067517c458fc9b66f48">GPSPositionService::acceptedObservation</a></div><div class="ttdeci">std::optional&lt; GPSObservation &gt; acceptedObservation(GPSObservation::PositionUse use=GPSObservation::PositionUse::GroundStation, std::optional&lt; std::chrono::milliseconds &gt; maximumAge=std::nullopt) const</div><div class="ttdef"><b>Definition</b> <a href="GPSPositionService_8cc_source.html#l00433">GPSPositionService.cc:433</a></div></div>
+<div class="ttc" id="aclassGPSManager_html_ac8a0e30682daae971ee4d95b5aa3d21c"><div class="ttname"><a href="classGPSManager.html#ac8a0e30682daae971ee4d95b5aa3d21c">GPSManager::instance</a></div><div class="ttdeci">static GPSManager * instance()</div><div class="ttdef"><b>Definition</b> <a href="GPSManager_8cc_source.html#l00067">GPSManager.cc:67</a></div></div>
+<div class="ttc" id="aclassGPSManager_html_ae363f7b5659d5745ab2eb98eee8c560e"><div class="ttname"><a href="classGPSManager.html#ae363f7b5659d5745ab2eb98eee8c560e">GPSManager::positionManager</a></div><div class="ttdeci">PositionManager * positionManager() const</div><div class="ttdef"><b>Definition</b> <a href="GPSManager_8h_source.html#l00056">GPSManager.h:56</a></div></div>
 <div class="ttc" id="aclassMultiVehicleManager_html_a108a726e04f21697e28ed785cd57f307"><div class="ttname"><a href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a></div><div class="ttdeci">static MultiVehicleManager * instance()</div><div class="ttdef"><b>Definition</b> <a href="MultiVehicleManager_8cc_source.html#l00045">MultiVehicleManager.cc:45</a></div></div>
 <div class="ttc" id="aclassMultiVehicleManager_html_a3ac209c58648425c25ae3d2b82a54a49"><div class="ttname"><a href="classMultiVehicleManager.html#a3ac209c58648425c25ae3d2b82a54a49">MultiVehicleManager::vehicleAdded</a></div><div class="ttdeci">void vehicleAdded(Vehicle *vehicle)</div></div>
 <div class="ttc" id="aclassMultiVehicleManager_html_a409947c265f2c4b6bd5f9b1c1a73bd65"><div class="ttname"><a href="classMultiVehicleManager.html#a409947c265f2c4b6bd5f9b1c1a73bd65">MultiVehicleManager::vehicles</a></div><div class="ttdeci">QmlObjectListModel * vehicles() const</div><div class="ttdef"><b>Definition</b> <a href="MultiVehicleManager_8h_source.html#l00037">MultiVehicleManager.h:37</a></div></div>
 <div class="ttc" id="aclassMultiVehicleManager_html_a646fdd7258f62f0ee1142296630fa721"><div class="ttname"><a href="classMultiVehicleManager.html#a646fdd7258f62f0ee1142296630fa721">MultiVehicleManager::vehicleRemoved</a></div><div class="ttdeci">void vehicleRemoved(Vehicle *vehicle)</div></div>
-<div class="ttc" id="aclassQGCPositionManager_html_a2cdbb4c1cc305a6a276260597f4c90fb"><div class="ttname"><a href="classQGCPositionManager.html#a2cdbb4c1cc305a6a276260597f4c90fb">QGCPositionManager::instance</a></div><div class="ttdeci">static QGCPositionManager * instance()</div><div class="ttdef"><b>Definition</b> <a href="PositionManager_8cpp_source.html#l00035">PositionManager.cpp:35</a></div></div>
+<div class="ttc" id="aclassPositionManager_html_a5ac2e54ee33a4e0929b1b6709b9d19d0"><div class="ttname"><a href="classPositionManager.html#a5ac2e54ee33a4e0929b1b6709b9d19d0">PositionManager::acceptedObservation</a></div><div class="ttdeci">std::optional&lt; GPSObservation &gt; acceptedObservation(GPSObservation::PositionUse use=GPSObservation::PositionUse::GroundStation, std::optional&lt; std::chrono::milliseconds &gt; maximumAge=std::nullopt) const</div><div class="ttdef"><b>Definition</b> <a href="PositionManager_8cc_source.html#l00428">PositionManager.cc:428</a></div></div>
 <div class="ttc" id="aclassQmlObjectListModel_html"><div class="ttname"><a href="classQmlObjectListModel.html">QmlObjectListModel</a></div><div class="ttdef"><b>Definition</b> <a href="QmlObjectListModel_8h_source.html#l00005">QmlObjectListModel.h:6</a></div></div>
 <div class="ttc" id="aclassQmlObjectListModel_html_a1d73b0ecea7da95bc40116bb49fb8d00"><div class="ttname"><a href="classQmlObjectListModel.html#a1d73b0ecea7da95bc40116bb49fb8d00">QmlObjectListModel::value</a></div><div class="ttdeci">T value(int index) const</div><div class="ttdef"><b>Definition</b> <a href="QmlObjectListModel_8h_source.html#l00035">QmlObjectListModel.h:35</a></div></div>
-<div class="ttc" id="aclassQmlObjectListModel_html_ab39a055cf0624b6933e058d18847c275"><div class="ttname"><a href="classQmlObjectListModel.html#ab39a055cf0624b6933e058d18847c275">QmlObjectListModel::count</a></div><div class="ttdeci">int count() const override final</div><div class="ttdef"><b>Definition</b> <a href="QmlObjectListModel_8cc_source.html#l00258">QmlObjectListModel.cc:258</a></div></div>
+<div class="ttc" id="aclassQmlObjectListModel_html_ab39a055cf0624b6933e058d18847c275"><div class="ttname"><a href="classQmlObjectListModel.html#ab39a055cf0624b6933e058d18847c275">QmlObjectListModel::count</a></div><div class="ttdeci">int count() const override final</div><div class="ttdef"><b>Definition</b> <a href="QmlObjectListModel_8cc_source.html#l00273">QmlObjectListModel.cc:273</a></div></div>
 <div class="ttc" id="aclassSettingsManager_html_a70509f6304c076e2cceea0445951c324"><div class="ttname"><a href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a></div><div class="ttdeci">static SettingsManager * instance()</div><div class="ttdef"><b>Definition</b> <a href="SettingsManager_8cc_source.html#l00052">SettingsManager.cc:52</a></div></div>
 <div class="ttc" id="aclassSettingsManager_html_ab674f8beaaa671be59cc6624cda10f0a"><div class="ttname"><a href="classSettingsManager.html#ab674f8beaaa671be59cc6624cda10f0a">SettingsManager::appSettings</a></div><div class="ttdeci">AppSettings * appSettings() const</div><div class="ttdef"><b>Definition</b> <a href="SettingsManager_8cc_source.html#l00121">SettingsManager.cc:121</a></div></div>
-<div class="ttc" id="aclassVehicle_html"><div class="ttname"><a href="classVehicle.html">Vehicle</a></div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00086">Vehicle.h:87</a></div></div>
-<div class="ttc" id="aclassVehicle_html_a27f56346aa2bc42895d947d8d06c0f05"><div class="ttname"><a href="classVehicle.html#a27f56346aa2bc42895d947d8d06c0f05">Vehicle::flightMode</a></div><div class="ttdeci">QString flightMode() const</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8cc_source.html#l01468">Vehicle.cc:1468</a></div></div>
-<div class="ttc" id="aclassVehicle_html_a56529fa0d722f6d13aab4d693157609f"><div class="ttname"><a href="classVehicle.html#a56529fa0d722f6d13aab4d693157609f">Vehicle::firmwarePlugin</a></div><div class="ttdeci">FirmwarePlugin * firmwarePlugin()</div><div class="ttdoc">Provides access to the Firmware Plugin for this Vehicle.</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00451">Vehicle.h:451</a></div></div>
-<div class="ttc" id="aclassVehicle_html_a85fa1107ce67eec2cdf88227a064e78c"><div class="ttname"><a href="classVehicle.html#a85fa1107ce67eec2cdf88227a064e78c">Vehicle::followFlightMode</a></div><div class="ttdeci">QString followFlightMode() const</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8cc_source.html#l02550">Vehicle.cc:2550</a></div></div>
+<div class="ttc" id="aclassVehicle_html"><div class="ttname"><a href="classVehicle.html">Vehicle</a></div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00084">Vehicle.h:85</a></div></div>
+<div class="ttc" id="aclassVehicle_html_a27f56346aa2bc42895d947d8d06c0f05"><div class="ttname"><a href="classVehicle.html#a27f56346aa2bc42895d947d8d06c0f05">Vehicle::flightMode</a></div><div class="ttdeci">QString flightMode() const</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8cc_source.html#l01485">Vehicle.cc:1485</a></div></div>
+<div class="ttc" id="aclassVehicle_html_a56529fa0d722f6d13aab4d693157609f"><div class="ttname"><a href="classVehicle.html#a56529fa0d722f6d13aab4d693157609f">Vehicle::firmwarePlugin</a></div><div class="ttdeci">FirmwarePlugin * firmwarePlugin()</div><div class="ttdoc">Provides access to the Firmware Plugin for this Vehicle.</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8h_source.html#l00462">Vehicle.h:462</a></div></div>
+<div class="ttc" id="aclassVehicle_html_a85fa1107ce67eec2cdf88227a064e78c"><div class="ttname"><a href="classVehicle.html#a85fa1107ce67eec2cdf88227a064e78c">Vehicle::followFlightMode</a></div><div class="ttdeci">QString followFlightMode() const</div><div class="ttdef"><b>Definition</b> <a href="Vehicle_8cc_source.html#l02630">Vehicle.cc:2630</a></div></div>
 <div class="ttc" id="aclassVehicle_html_ab56d31b0164d88862f7e1cf70acc691e"><div class="ttname"><a href="classVehicle.html#ab56d31b0164d88862f7e1cf70acc691e">Vehicle::flightModeChanged</a></div><div class="ttdeci">void flightModeChanged(const QString &amp;flightMode)</div></div>
 <div class="ttc" id="astructGPSObservation_html_aeda3b3fb9df64b33b49554326f46079fa8226588f03da49b857e5ddf8c508dd2d"><div class="ttname"><a href="structGPSObservation.html#aeda3b3fb9df64b33b49554326f46079fa8226588f03da49b857e5ddf8c508dd2d">GPSObservation::PositionUse::Motion</a></div><div class="ttdeci">@ Motion</div></div>
 </div><!-- fragment --></div><!-- contents -->

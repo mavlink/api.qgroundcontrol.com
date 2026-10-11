@@ -132,6 +132,7 @@ var dir_57fd63fe491ef075147d1cb32299e674 =
     [ "QmlObjectListModel.h", "QmlObjectListModel_8h.html", "QmlObjectListModel_8h" ],
     [ "QmlObjectTreeModel.cc", "QmlObjectTreeModel_8cc.html", null ],
     [ "QmlObjectTreeModel.h", "QmlObjectTreeModel_8h.html", "QmlObjectTreeModel_8h" ],
+    [ "QmlUnitsConversion.cc", "QmlUnitsConversion_8cc.html", null ],
     [ "QmlUnitsConversion.h", "QmlUnitsConversion_8h.html", "QmlUnitsConversion_8h" ],
     [ "RCChannelMonitor.qml", "RCChannelMonitor_8qml.html", null ],
     [ "RCChannelMonitorController.cc", "RCChannelMonitorController_8cc.html", null ],

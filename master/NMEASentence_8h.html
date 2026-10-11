@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/GPS/Driver/Protocols/NMEA/NMEASentence.h File Reference</title>
+<title>QGroundControl: src/GPS/Core/NMEA/NMEASentence.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -101,26 +101,28 @@ $(document).ready(function(){initNavTree('NMEASentence_8h.html',''); initResizab
 <div class="textblock"><code>#include &lt;array&gt;</code><br />
 <code>#include &lt;charconv&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
-<code>#include &lt;locale&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;span&gt;</code><br />
-<code>#include &lt;sstream&gt;</code><br />
-<code>#include &lt;string&gt;</code><br />
 <code>#include &lt;string_view&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;QtCore/QByteArray&gt;</code><br />
+<code>#include &lt;QtCore/QByteArrayView&gt;</code><br />
+<code>#include &lt;QtCore/QTime&gt;</code><br />
+<code>#include &quot;<a class="el" href="GPSReceiverReports_8h_source.html">GPSReceiverReports.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for NMEASentence.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="NMEASentence_8h__incl.svg" width="100%" height="393"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="NMEASentence_8h__incl.svg" width="100%" height="547"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="NMEASentence_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="NMEASentence_8h__dep__incl.svg" width="100%" height="591"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="NMEASentence_8h_source.html">Go to the source code of this file.</a></p>
@@ -133,6 +135,18 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Views into a single wire frame; the caller owns the backing bytes.  <a href="structNMEA_1_1Frame.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNMEA_1_1GGA.html">NMEA::GGA</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNMEA_1_1UtcDate.html">NMEA::UtcDate</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNMEA_1_1RMC.html">NMEA::RMC</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNMEA_1_1GLL.html">NMEA::GLL</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNMEA_1_1VTG.html">NMEA::VTG</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNMEA_1_1ZDA.html">NMEA::ZDA</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNMEA_1_1NavigationStatus.html">NMEA::NavigationStatus</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structNMEA_1_1GST.html">NMEA::GST</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,14 +161,27 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceNMEA_1_1FixDimension" id="r_namespaceNMEA_1_1FixDimension"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1FixDimension.html">NMEA::FixDimension</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceNMEAUtils" id="r_namespaceNMEAUtils"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEAUtils.html">NMEAUtils</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a52913c2a7bcb2425407c6dcbbe408556" id="r_a52913c2a7bcb2425407c6dcbbe408556"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748">GPSFixQuality</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#a52913c2a7bcb2425407c6dcbbe408556">NMEA::fixQuality</a> (unsigned quality, <a class="el" href="namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748">GPSFixQuality</a> autonomous)</td></tr>
+<tr class="memdesc:a52913c2a7bcb2425407c6dcbbe408556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Autonomous <a class="el" href="structNMEA_1_1GGA.html">GGA</a> does not distinguish 2D/3D; the caller supplies its independently resolved quality.  <br /></td></tr>
+<tr class="separator:a52913c2a7bcb2425407c6dcbbe408556"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e58e3d05d544c245b53dc113863c1a8" id="r_a1e58e3d05d544c245b53dc113863c1a8"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a1e58e3d05d544c245b53dc113863c1a8"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#a1e58e3d05d544c245b53dc113863c1a8">NMEA::number</a> (std::string_view field, int base=<a class="el" href="namespaceNMEA.html#a5a21822b594df78a9d10c5f44938525b">DECIMAL_BASE</a>)</td></tr>
 <tr class="separator:a1e58e3d05d544c245b53dc113863c1a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdf04cb47a0905c618473a0609c7f78b" id="r_abdf04cb47a0905c618473a0609c7f78b"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#abdf04cb47a0905c618473a0609c7f78b">NMEA::checksum</a> (std::string_view body)</td></tr>
 <tr class="separator:abdf04cb47a0905c618473a0609c7f78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b1ce16b20a54b1a5a0bb9b1de90b7c" id="r_ad8b1ce16b20a54b1a5a0bb9b1de90b7c"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#ad8b1ce16b20a54b1a5a0bb9b1de90b7c">NMEA::isAsciiDigit</a> (char ch)</td></tr>
+<tr class="memdesc:ad8b1ce16b20a54b1a5a0bb9b1de90b7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locale-independent ASCII character classes for receiver text.  <br /></td></tr>
+<tr class="separator:ad8b1ce16b20a54b1a5a0bb9b1de90b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a722eeaff5b4076228ea0b9ca3404839e" id="r_a722eeaff5b4076228ea0b9ca3404839e"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#a722eeaff5b4076228ea0b9ca3404839e">NMEA::isAsciiUpper</a> (char ch)</td></tr>
+<tr class="separator:a722eeaff5b4076228ea0b9ca3404839e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1500c3366a33d1d9cabeb1042d4e86a" id="r_ab1500c3366a33d1d9cabeb1042d4e86a"><td class="memItemLeft" align="right" valign="top">std::optional&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#ab1500c3366a33d1d9cabeb1042d4e86a">NMEA::hexNumber</a> (std::string_view digits)</td></tr>
+<tr class="memdesc:ab1500c3366a33d1d9cabeb1042d4e86a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value of <em>digits</em> when every one is a hexadecimal digit, with no sign or prefix; nullopt otherwise.  <br /></td></tr>
+<tr class="separator:ab1500c3366a33d1d9cabeb1042d4e86a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc53552f644dff9eabd6ac13fb7c2c37" id="r_afc53552f644dff9eabd6ac13fb7c2c37"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#afc53552f644dff9eabd6ac13fb7c2c37">NMEA::splitFields</a> (std::string_view text, std::span&lt; std::string_view &gt; fields)</td></tr>
 <tr class="memdesc:afc53552f644dff9eabd6ac13fb7c2c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preserve empty fields, including the final field. Return zero on storage overflow.  <br /></td></tr>
 <tr class="separator:afc53552f644dff9eabd6ac13fb7c2c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,17 +189,41 @@ Functions</h2></td></tr>
 <tr class="separator:afe7ef79d79065bc4179d66cc2eef247d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4133f24038f6486ff5cdec2e5797191f" id="r_a4133f24038f6486ff5cdec2e5797191f"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structNMEA_1_1Sentence.html">Sentence</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#a4133f24038f6486ff5cdec2e5797191f">NMEA::sentence</a> (std::string_view text)</td></tr>
 <tr class="separator:a4133f24038f6486ff5cdec2e5797191f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af58682ba5f8ebfeed8d08c822ebce67a" id="r_af58682ba5f8ebfeed8d08c822ebce67a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#af58682ba5f8ebfeed8d08c822ebce67a">NMEA::isStandardSentence</a> (std::string_view text)</td></tr>
+<tr class="memdesc:af58682ba5f8ebfeed8d08c822ebce67a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A checked sentence from a standard talker, not a proprietary $P... sentence.  <br /></td></tr>
+<tr class="separator:af58682ba5f8ebfeed8d08c822ebce67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b5e326d55b4f360e1d3d472deb5ac86" id="r_a9b5e326d55b4f360e1d3d472deb5ac86"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#a9b5e326d55b4f360e1d3d472deb5ac86">NMEA::degreesFromDegreesMinutes</a> (double ddmm)</td></tr>
 <tr class="memdesc:a9b5e326d55b4f360e1d3d472deb5ac86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a signed ddmm.mmmm (or dddmm.mmmm) value; invalid values return NaN.  <br /></td></tr>
 <tr class="separator:a9b5e326d55b4f360e1d3d472deb5ac86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47dea32c9d196dbc964ab73c97cebfd7" id="r_a47dea32c9d196dbc964ab73c97cebfd7"><td class="memItemLeft" align="right" valign="top">std::optional&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#a47dea32c9d196dbc964ab73c97cebfd7">NMEA::coordinate</a> (std::string_view field, std::string_view hemisphere, bool latitude)</td></tr>
+<tr class="memitem:a47dea32c9d196dbc964ab73c97cebfd7" id="r_a47dea32c9d196dbc964ab73c97cebfd7"><td class="memItemLeft" align="right" valign="top">std::optional&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#a47dea32c9d196dbc964ab73c97cebfd7">NMEA::coordinate</a> (std::string_view field, std::string_view hemisphere, bool <a class="el" href="UBXPlan_8cc.html#ad2a7363ca4d97bbf55432296fb1a448b">latitude</a>)</td></tr>
 <tr class="separator:a47dea32c9d196dbc964ab73c97cebfd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6ebc662542c222da635347fffa0c6e9" id="r_ad6ebc662542c222da635347fffa0c6e9"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structNMEA_1_1GGA.html">GGA</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#ad6ebc662542c222da635347fffa0c6e9">NMEA::gga</a> (const <a class="el" href="structNMEA_1_1Sentence.html">Sentence</a> &amp;input)</td></tr>
+<tr class="memdesc:ad6ebc662542c222da635347fffa0c6e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quality zero is a valid fix-loss observation with empty coordinates and optional hemisphere fields.  <br /></td></tr>
 <tr class="separator:ad6ebc662542c222da635347fffa0c6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74311dec8ddfc47083cfafe1d9be7d3a" id="r_a74311dec8ddfc47083cfafe1d9be7d3a"><td class="memItemLeft" align="right" valign="top">std::optional&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#a74311dec8ddfc47083cfafe1d9be7d3a">NMEA::utcMilliseconds</a> (std::string_view field)</td></tr>
 <tr class="separator:a74311dec8ddfc47083cfafe1d9be7d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51172f79a7d1b7460360e71a7df9d25e" id="r_a51172f79a7d1b7460360e71a7df9d25e"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structNMEA_1_1UtcDate.html">UtcDate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#a51172f79a7d1b7460360e71a7df9d25e">NMEA::rmcDate</a> (std::string_view field)</td></tr>
+<tr class="separator:a51172f79a7d1b7460360e71a7df9d25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85e233695cba33c1670fc21571023e78" id="r_a85e233695cba33c1670fc21571023e78"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structNMEA_1_1RMC.html">RMC</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#a85e233695cba33c1670fc21571023e78">NMEA::rmc</a> (const <a class="el" href="structNMEA_1_1Sentence.html">Sentence</a> &amp;input)</td></tr>
+<tr class="separator:a85e233695cba33c1670fc21571023e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bd142518e4e31038a09a8ec9e0d37e4" id="r_a8bd142518e4e31038a09a8ec9e0d37e4"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structNMEA_1_1GLL.html">GLL</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#a8bd142518e4e31038a09a8ec9e0d37e4">NMEA::gll</a> (const <a class="el" href="structNMEA_1_1Sentence.html">Sentence</a> &amp;input)</td></tr>
+<tr class="separator:a8bd142518e4e31038a09a8ec9e0d37e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad87f24add929d784f577dbba1bf2ab13" id="r_ad87f24add929d784f577dbba1bf2ab13"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structNMEA_1_1VTG.html">VTG</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#ad87f24add929d784f577dbba1bf2ab13">NMEA::vtg</a> (const <a class="el" href="structNMEA_1_1Sentence.html">Sentence</a> &amp;input)</td></tr>
+<tr class="separator:ad87f24add929d784f577dbba1bf2ab13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b5837b7e93453f1b1bf2176684117df" id="r_a0b5837b7e93453f1b1bf2176684117df"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structNMEA_1_1ZDA.html">ZDA</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#a0b5837b7e93453f1b1bf2176684117df">NMEA::zda</a> (const <a class="el" href="structNMEA_1_1Sentence.html">Sentence</a> &amp;input)</td></tr>
+<tr class="separator:a0b5837b7e93453f1b1bf2176684117df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adff2e7eafd93dfb435cd4c1226700e1a" id="r_adff2e7eafd93dfb435cd4c1226700e1a"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structNMEA_1_1NavigationStatus.html">NavigationStatus</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#adff2e7eafd93dfb435cd4c1226700e1a">NMEA::navigationStatus</a> (const <a class="el" href="structNMEA_1_1Sentence.html">Sentence</a> &amp;input)</td></tr>
+<tr class="separator:adff2e7eafd93dfb435cd4c1226700e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae05d0ab634cc24ef8fe8b9effb7dfd67" id="r_ae05d0ab634cc24ef8fe8b9effb7dfd67"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structNMEA_1_1GST.html">GST</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA.html#ae05d0ab634cc24ef8fe8b9effb7dfd67">NMEA::gst</a> (const <a class="el" href="structNMEA_1_1Sentence.html">Sentence</a> &amp;input)</td></tr>
 <tr class="separator:ae05d0ab634cc24ef8fe8b9effb7dfd67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed4283de7d9bc9648d201a305abfde7f" id="r_aed4283de7d9bc9648d201a305abfde7f"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEAUtils.html#aed4283de7d9bc9648d201a305abfde7f">NMEAUtils::frame</a> (QByteArrayView body)</td></tr>
+<tr class="memdesc:aed4283de7d9bc9648d201a305abfde7f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><em>body</em> as one "$&lt;body&gt;*hh\r\n" sentence, with uppercase checksum digits.  <br /></td></tr>
+<tr class="separator:aed4283de7d9bc9648d201a305abfde7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a029ecd9009e6c92272dfd7e2427cda7f" id="r_a029ecd9009e6c92272dfd7e2427cda7f"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEAUtils.html#a029ecd9009e6c92272dfd7e2427cda7f">NMEAUtils::repairChecksum</a> (const QByteArray &amp;sentence)</td></tr>
+<tr class="memdesc:a029ecd9009e6c92272dfd7e2427cda7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuild a valid frame with its checksum and CRLF; short or malformed bodies are only terminated.  <br /></td></tr>
+<tr class="separator:a029ecd9009e6c92272dfd7e2427cda7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04957c52d8dca0f564bc603cad60e58f" id="r_a04957c52d8dca0f564bc603cad60e58f"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEAUtils.html#a04957c52d8dca0f564bc603cad60e58f">NMEAUtils::makeGGA</a> (const <a class="el" href="structNMEA_1_1GGA.html">NMEA::GGA</a> &amp;fix, const QTime &amp;utc)</td></tr>
+<tr class="separator:a04957c52d8dca0f564bc603cad60e58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -212,10 +263,36 @@ Variables</h2></td></tr>
 <tr class="separator:aeed7406b51e8f7184cb1102e04bd1ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad00ddfaf70f4ba63d262f96a7dcbe053" id="r_ad00ddfaf70f4ba63d262f96a7dcbe053"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#ad00ddfaf70f4ba63d262f96a7dcbe053">NMEA::Field::RMC_STATUS</a> = 2</td></tr>
 <tr class="separator:ad00ddfaf70f4ba63d262f96a7dcbe053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad42dfb4359bd16f7a3a0a5257039ffe2" id="r_ad42dfb4359bd16f7a3a0a5257039ffe2"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#ad42dfb4359bd16f7a3a0a5257039ffe2">NMEA::Field::RMC_LATITUDE</a> = 3</td></tr>
+<tr class="separator:ad42dfb4359bd16f7a3a0a5257039ffe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af070d74b273173dbc862c1890a187d71" id="r_af070d74b273173dbc862c1890a187d71"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#af070d74b273173dbc862c1890a187d71">NMEA::Field::RMC_LATITUDE_HEMISPHERE</a> = 4</td></tr>
+<tr class="separator:af070d74b273173dbc862c1890a187d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a479ea6b4ae0f8102abac141370d555d8" id="r_a479ea6b4ae0f8102abac141370d555d8"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a479ea6b4ae0f8102abac141370d555d8">NMEA::Field::RMC_LONGITUDE</a> = 5</td></tr>
+<tr class="separator:a479ea6b4ae0f8102abac141370d555d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5227d4fa245bc97f3220691dad5601ff" id="r_a5227d4fa245bc97f3220691dad5601ff"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a5227d4fa245bc97f3220691dad5601ff">NMEA::Field::RMC_LONGITUDE_HEMISPHERE</a> = 6</td></tr>
+<tr class="separator:a5227d4fa245bc97f3220691dad5601ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20cb4e0f7566598a8f10651536651735" id="r_a20cb4e0f7566598a8f10651536651735"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a20cb4e0f7566598a8f10651536651735">NMEA::Field::RMC_SPEED_KNOTS</a> = 7</td></tr>
+<tr class="separator:a20cb4e0f7566598a8f10651536651735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f923c9f8ca5638312b0f0572292d157" id="r_a7f923c9f8ca5638312b0f0572292d157"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a7f923c9f8ca5638312b0f0572292d157">NMEA::Field::RMC_COURSE</a> = 8</td></tr>
+<tr class="separator:a7f923c9f8ca5638312b0f0572292d157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40b191366c2c2716fe9e4e2bfe230367" id="r_a40b191366c2c2716fe9e4e2bfe230367"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a40b191366c2c2716fe9e4e2bfe230367">NMEA::Field::RMC_DATE</a> = 9</td></tr>
+<tr class="separator:a40b191366c2c2716fe9e4e2bfe230367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e505f307412aa3e80ec61234590722b" id="r_a1e505f307412aa3e80ec61234590722b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a1e505f307412aa3e80ec61234590722b">NMEA::Field::RMC_MIN_FIELDS</a> = <a class="el" href="namespaceNMEA_1_1Field.html#a40b191366c2c2716fe9e4e2bfe230367">RMC_DATE</a> + 1</td></tr>
+<tr class="separator:a1e505f307412aa3e80ec61234590722b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3f8105a6a14ee0a117fc889d1b6db66" id="r_af3f8105a6a14ee0a117fc889d1b6db66"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#af3f8105a6a14ee0a117fc889d1b6db66">NMEA::Field::GLL_LATITUDE</a> = 1</td></tr>
+<tr class="separator:af3f8105a6a14ee0a117fc889d1b6db66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a918d976b319a2230f8f6a203336ace12" id="r_a918d976b319a2230f8f6a203336ace12"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a918d976b319a2230f8f6a203336ace12">NMEA::Field::GLL_LATITUDE_HEMISPHERE</a> = 2</td></tr>
+<tr class="separator:a918d976b319a2230f8f6a203336ace12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad77f5418025d37e8692706f486de6728" id="r_ad77f5418025d37e8692706f486de6728"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#ad77f5418025d37e8692706f486de6728">NMEA::Field::GLL_LONGITUDE</a> = 3</td></tr>
+<tr class="separator:ad77f5418025d37e8692706f486de6728"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c9411a378c469de5c6b600f4b9d3d79" id="r_a2c9411a378c469de5c6b600f4b9d3d79"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a2c9411a378c469de5c6b600f4b9d3d79">NMEA::Field::GLL_LONGITUDE_HEMISPHERE</a> = 4</td></tr>
+<tr class="separator:a2c9411a378c469de5c6b600f4b9d3d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a911050899c9899c7600bee6a3b922916" id="r_a911050899c9899c7600bee6a3b922916"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a911050899c9899c7600bee6a3b922916">NMEA::Field::GLL_TIME</a> = 5</td></tr>
 <tr class="separator:a911050899c9899c7600bee6a3b922916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f44d7a2efc6582592aa2686231f7ee5" id="r_a0f44d7a2efc6582592aa2686231f7ee5"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a0f44d7a2efc6582592aa2686231f7ee5">NMEA::Field::GLL_STATUS</a> = 6</td></tr>
 <tr class="separator:a0f44d7a2efc6582592aa2686231f7ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a886616e4d47b1c339d3af6243a3ebf78" id="r_a886616e4d47b1c339d3af6243a3ebf78"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a886616e4d47b1c339d3af6243a3ebf78">NMEA::Field::GLL_MIN_FIELDS</a> = <a class="el" href="namespaceNMEA_1_1Field.html#a0f44d7a2efc6582592aa2686231f7ee5">GLL_STATUS</a> + 1</td></tr>
+<tr class="separator:a886616e4d47b1c339d3af6243a3ebf78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1441b946bbc5741b744de50d8eea832a" id="r_a1441b946bbc5741b744de50d8eea832a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a1441b946bbc5741b744de50d8eea832a">NMEA::Field::GSA_DIMENSION</a> = 2</td></tr>
 <tr class="separator:a1441b946bbc5741b744de50d8eea832a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa258d64301a1a0e37d5e8ce40690cb6b" id="r_aa258d64301a1a0e37d5e8ce40690cb6b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#aa258d64301a1a0e37d5e8ce40690cb6b">NMEA::Field::GSA_FIRST_SATELLITE</a> = 3</td></tr>
@@ -230,14 +307,28 @@ Variables</h2></td></tr>
 <tr class="separator:a494013e3f37ed90980a7ad222dcbde33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77825b444ff0a2fe3d1516de3cd2d72c" id="r_a77825b444ff0a2fe3d1516de3cd2d72c"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a77825b444ff0a2fe3d1516de3cd2d72c">NMEA::Field::GSA_SYSTEM_ID</a> = <a class="el" href="namespaceNMEA_1_1Field.html#a494013e3f37ed90980a7ad222dcbde33">GSA_MIN_FIELDS</a></td></tr>
 <tr class="separator:a77825b444ff0a2fe3d1516de3cd2d72c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa105e409f3df554cd9148e1b4d2909c5" id="r_aa105e409f3df554cd9148e1b4d2909c5"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#aa105e409f3df554cd9148e1b4d2909c5">NMEA::Field::VTG_TRUE_COURSE</a> = 1</td></tr>
+<tr class="separator:aa105e409f3df554cd9148e1b4d2909c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5103c4b4b2dd553484dfd1e885e7ec" id="r_a0a5103c4b4b2dd553484dfd1e885e7ec"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a0a5103c4b4b2dd553484dfd1e885e7ec">NMEA::Field::VTG_SPEED_KNOTS</a> = 5</td></tr>
+<tr class="separator:a0a5103c4b4b2dd553484dfd1e885e7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae89a75cd0f0ab7b28114023918270bb6" id="r_ae89a75cd0f0ab7b28114023918270bb6"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#ae89a75cd0f0ab7b28114023918270bb6">NMEA::Field::VTG_SPEED_KMH</a> = 7</td></tr>
+<tr class="separator:ae89a75cd0f0ab7b28114023918270bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dffd66c79d7fac4dc8b6fee8a454d10" id="r_a4dffd66c79d7fac4dc8b6fee8a454d10"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a4dffd66c79d7fac4dc8b6fee8a454d10">NMEA::Field::VTG_MIN_FIELDS</a> = <a class="el" href="namespaceNMEA_1_1Field.html#ae89a75cd0f0ab7b28114023918270bb6">VTG_SPEED_KMH</a> + 1</td></tr>
+<tr class="separator:a4dffd66c79d7fac4dc8b6fee8a454d10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a146b1b430b440ee8334b50622834511d" id="r_a146b1b430b440ee8334b50622834511d"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a146b1b430b440ee8334b50622834511d">NMEA::Field::ZDA_DAY</a> = 2</td></tr>
+<tr class="separator:a146b1b430b440ee8334b50622834511d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fdd0edce21e7903ede40fa0ceb586a4" id="r_a6fdd0edce21e7903ede40fa0ceb586a4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a6fdd0edce21e7903ede40fa0ceb586a4">NMEA::Field::ZDA_MONTH</a> = 3</td></tr>
+<tr class="separator:a6fdd0edce21e7903ede40fa0ceb586a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdff3e74ffc0ee17eec3f9985710b31b" id="r_abdff3e74ffc0ee17eec3f9985710b31b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#abdff3e74ffc0ee17eec3f9985710b31b">NMEA::Field::ZDA_YEAR</a> = 4</td></tr>
+<tr class="separator:abdff3e74ffc0ee17eec3f9985710b31b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a744584ff8ef16674e6e88473b0bae8a9" id="r_a744584ff8ef16674e6e88473b0bae8a9"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a744584ff8ef16674e6e88473b0bae8a9">NMEA::Field::ZDA_MIN_FIELDS</a> = <a class="el" href="namespaceNMEA_1_1Field.html#abdff3e74ffc0ee17eec3f9985710b31b">ZDA_YEAR</a> + 1</td></tr>
+<tr class="separator:a744584ff8ef16674e6e88473b0bae8a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc04e788308ac88c541e0eec18356576" id="r_adc04e788308ac88c541e0eec18356576"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#adc04e788308ac88c541e0eec18356576">NMEA::Field::GST_LATITUDE_ERROR</a> = 6</td></tr>
 <tr class="separator:adc04e788308ac88c541e0eec18356576"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b27b79abb82dd82f6074d8c8e02ea12" id="r_a0b27b79abb82dd82f6074d8c8e02ea12"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a0b27b79abb82dd82f6074d8c8e02ea12">NMEA::Field::GST_LONGITUDE_ERROR</a> = 7</td></tr>
 <tr class="separator:a0b27b79abb82dd82f6074d8c8e02ea12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa528f5a74d2e0c715f84a0daa05ea5ad" id="r_aa528f5a74d2e0c715f84a0daa05ea5ad"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#aa528f5a74d2e0c715f84a0daa05ea5ad">NMEA::Field::GST_ALTITUDE_ERROR</a> = 8</td></tr>
 <tr class="separator:aa528f5a74d2e0c715f84a0daa05ea5ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6626fd53e900a10d28868ba8dbc6f399" id="r_a6626fd53e900a10d28868ba8dbc6f399"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1Field.html#a6626fd53e900a10d28868ba8dbc6f399">NMEA::Field::GST_FIELDS</a> = <a class="el" href="namespaceNMEA_1_1Field.html#aa528f5a74d2e0c715f84a0daa05ea5ad">GST_ALTITUDE_ERROR</a> + 1</td></tr>
-<tr class="separator:a6626fd53e900a10d28868ba8dbc6f399"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af30464fe47d12cd9344bd5b2ba512572" id="r_af30464fe47d12cd9344bd5b2ba512572"><td class="memItemLeft" align="right" valign="top">constexpr unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1GgaQuality.html#af30464fe47d12cd9344bd5b2ba512572">NMEA::GgaQuality::INVALID</a> = 0</td></tr>
 <tr class="separator:af30464fe47d12cd9344bd5b2ba512572"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace7d9d7dfa45a2cbb37c7746ddb2bbea" id="r_ace7d9d7dfa45a2cbb37c7746ddb2bbea"><td class="memItemLeft" align="right" valign="top">constexpr unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1GgaQuality.html#ace7d9d7dfa45a2cbb37c7746ddb2bbea">NMEA::GgaQuality::GPS</a> = 1</td></tr>
@@ -250,12 +341,13 @@ Variables</h2></td></tr>
 <tr class="separator:a1ab45162aa82416608193edcde6ebedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47817836103327cd6859a3bb05d737b3" id="r_a47817836103327cd6859a3bb05d737b3"><td class="memItemLeft" align="right" valign="top">constexpr unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1GgaQuality.html#a47817836103327cd6859a3bb05d737b3">NMEA::GgaQuality::ESTIMATED</a> = 6</td></tr>
 <tr class="separator:a47817836103327cd6859a3bb05d737b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a386e982aefaf6699b67d985912387ee7" id="r_a386e982aefaf6699b67d985912387ee7"><td class="memItemLeft" align="right" valign="top">constexpr unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1GgaQuality.html#a386e982aefaf6699b67d985912387ee7">NMEA::GgaQuality::MANUAL</a> = 7</td></tr>
+<tr class="memdesc:a386e982aefaf6699b67d985912387ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manual input: the position a base station was fixed at.  <br /></td></tr>
+<tr class="separator:a386e982aefaf6699b67d985912387ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12b875f92158d07f5fb1db455078e300" id="r_a12b875f92158d07f5fb1db455078e300"><td class="memItemLeft" align="right" valign="top">constexpr unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1GgaQuality.html#a12b875f92158d07f5fb1db455078e300">NMEA::GgaQuality::MAX_VALUE</a> = 8</td></tr>
 <tr class="separator:a12b875f92158d07f5fb1db455078e300"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75dcb5a5b0091e5d7a107f3d4385d61a" id="r_a75dcb5a5b0091e5d7a107f3d4385d61a"><td class="memItemLeft" align="right" valign="top">constexpr unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1FixDimension.html#a75dcb5a5b0091e5d7a107f3d4385d61a">NMEA::FixDimension::NO_FIX</a> = 1</td></tr>
 <tr class="separator:a75dcb5a5b0091e5d7a107f3d4385d61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad80666c7df7d6bdf506d0a79e51943d8" id="r_ad80666c7df7d6bdf506d0a79e51943d8"><td class="memItemLeft" align="right" valign="top">constexpr unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1FixDimension.html#ad80666c7df7d6bdf506d0a79e51943d8">NMEA::FixDimension::TWO_D</a> = 2</td></tr>
-<tr class="separator:ad80666c7df7d6bdf506d0a79e51943d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0cec79284de740d7eb05aa768d198ecd" id="r_a0cec79284de740d7eb05aa768d198ecd"><td class="memItemLeft" align="right" valign="top">constexpr unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceNMEA_1_1FixDimension.html#a0cec79284de740d7eb05aa768d198ecd">NMEA::FixDimension::THREE_D</a> = 3</td></tr>
 <tr class="separator:a0cec79284de740d7eb05aa768d198ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -264,7 +356,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_38cd3ecbc1efe502063aa758009bff68.html">Driver</a></li><li class="navelem"><a class="el" href="dir_c73a9e24d6a209aaceba1ac47ebd8c76.html">Protocols</a></li><li class="navelem"><a class="el" href="dir_d5707200feca93765ba79eeffaf410ab.html">NMEA</a></li><li class="navelem"><a class="el" href="NMEASentence_8h.html">NMEASentence.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_4aa44793a7919d83f30050e49b7bf369.html">Core</a></li><li class="navelem"><a class="el" href="dir_7305104983952f10fc14d040f745d406.html">NMEA</a></li><li class="navelem"><a class="el" href="NMEASentence_8h.html">NMEASentence.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

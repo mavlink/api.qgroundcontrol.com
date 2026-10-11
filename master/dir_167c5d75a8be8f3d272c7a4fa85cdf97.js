@@ -13,8 +13,6 @@ var dir_167c5d75a8be8f3d272c7a4fa85cdf97 =
     [ "FactTextFieldGrid.qml", "FactTextFieldGrid_8qml.html", null ],
     [ "FactTextFieldRow.qml", "FactTextFieldRow_8qml.html", null ],
     [ "FactTextFieldSlider.qml", "FactTextFieldSlider_8qml.html", null ],
-    [ "FactTextFieldSlider2.qml", "FactTextFieldSlider2_8qml.html", null ],
-    [ "FactValueSlider.qml", "FactValueSlider_8qml.html", null ],
     [ "LabelledFactBrowse.qml", "LabelledFactBrowse_8qml.html", null ],
     [ "LabelledFactComboBox.qml", "LabelledFactComboBox_8qml.html", null ],
     [ "LabelledFactIncrementer.qml", "LabelledFactIncrementer_8qml.html", null ],

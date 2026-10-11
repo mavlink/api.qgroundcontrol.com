@@ -105,19 +105,18 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a440d6d7dac6688fbd2ea89d83b5e18d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fe8224153f0d66142881618dd5d9938" id="r_a1fe8224153f0d66142881618dd5d9938"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(const <a class="el" href="structGPSSatelliteReport.html">GPSSatelliteReport</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSDriverSinks.html#a1fe8224153f0d66142881618dd5d9938">onSatelliteInfo</a></td></tr>
 <tr class="separator:a1fe8224153f0d66142881618dd5d9938"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0f1e3a27ffbf0b7b64db241d11fd724" id="r_aa0f1e3a27ffbf0b7b64db241d11fd724"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(std::span&lt; const uint8_t &gt;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSDriverSinks.html#aa0f1e3a27ffbf0b7b64db241d11fd724">onRTCM</a></td></tr>
-<tr class="memdesc:aa0f1e3a27ffbf0b7b64db241d11fd724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Borrowed until the synchronous callback returns.  <br /></td></tr>
-<tr class="separator:aa0f1e3a27ffbf0b7b64db241d11fd724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf7dbe088f874eb6d6d22e6c7f9663c7" id="r_adf7dbe088f874eb6d6d22e6c7f9663c7"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(const QByteArray &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSDriverSinks.html#adf7dbe088f874eb6d6d22e6c7f9663c7">onRTCM</a></td></tr>
+<tr class="memdesc:adf7dbe088f874eb6d6d22e6c7f9663c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">One complete frame; copying it shares the receiver's buffer.  <br /></td></tr>
+<tr class="separator:adf7dbe088f874eb6d6d22e6c7f9663c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab624db9787b828a71bb5761660ae8711" id="r_ab624db9787b828a71bb5761660ae8711"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(const <a class="el" href="structGPSSurveyReport.html">GPSSurveyReport</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSDriverSinks.html#ab624db9787b828a71bb5761660ae8711">onSurveyIn</a></td></tr>
 <tr class="separator:ab624db9787b828a71bb5761660ae8711"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedd6adb17cbd56fbcc64b357958d6ee7" id="r_aedd6adb17cbd56fbcc64b357958d6ee7"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(const <a class="el" href="structGPSSatelliteUsageReport.html">GPSSatelliteUsageReport</a> &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSDriverSinks.html#aedd6adb17cbd56fbcc64b357958d6ee7">onSatelliteUsage</a></td></tr>
-<tr class="memdesc:aedd6adb17cbd56fbcc64b357958d6ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count-only observations do not imply a list of satellites in view.  <br /></td></tr>
-<tr class="separator:aedd6adb17cbd56fbcc64b357958d6ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af95c0e34625d292275d3bc3ad7b0c8ca" id="r_af95c0e34625d292275d3bc3ad7b0c8ca"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(<a class="el" href="namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80">GPSType</a>)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSDriverSinks.html#af95c0e34625d292275d3bc3ad7b0c8ca">onReceiverDetected</a></td></tr>
+<tr class="separator:af95c0e34625d292275d3bc3ad7b0c8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Sinks the driver pushes decoded data into, invoked on the caller thread from within configure()/receiveOutcome(). Recursive operations are rejected; the caller must keep the driver alive until the enclosing operation returns. </p>
+<div class="textblock"><p>Sinks the driver pushes decoded data into, invoked on the caller thread from within configure()/receiveOutcome(). Sinks must not call back into the driver. </p>
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00021">21</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00027">27</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a440d6d7dac6688fbd2ea89d83b5e18d1" name="a440d6d7dac6688fbd2ea89d83b5e18d1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a440d6d7dac6688fbd2ea89d83b5e18d1">&#9670;&#160;</a></span>onPosition</h2>
@@ -131,29 +130,42 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00023">23</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00029">29</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
 
 </div>
 </div>
-<a id="aa0f1e3a27ffbf0b7b64db241d11fd724" name="aa0f1e3a27ffbf0b7b64db241d11fd724"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0f1e3a27ffbf0b7b64db241d11fd724">&#9670;&#160;</a></span>onRTCM</h2>
+<a id="af95c0e34625d292275d3bc3ad7b0c8ca" name="af95c0e34625d292275d3bc3ad7b0c8ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af95c0e34625d292275d3bc3ad7b0c8ca">&#9670;&#160;</a></span>onReceiverDetected</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::function&lt;void(std::span&lt;const uint8_t&gt;)&gt; GPSDriverSinks::onRTCM</td>
+          <td class="memname">std::function&lt;void(<a class="el" href="namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80">GPSType</a>)&gt; GPSDriverSinks::onReceiverDetected</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The family a GPSType::automatic driver detected, before it configures the receiver. A passive driver reports the protocol its input carries once identified and whenever it changes: the family whose native protocol it decodes, or GPSType::passive for standard <a class="el" href="namespaceNMEA.html">NMEA</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00037">37</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
+
+</div>
+</div>
+<a id="adf7dbe088f874eb6d6d22e6c7f9663c7" name="adf7dbe088f874eb6d6d22e6c7f9663c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf7dbe088f874eb6d6d22e6c7f9663c7">&#9670;&#160;</a></span>onRTCM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::function&lt;void(const QByteArray&amp;)&gt; GPSDriverSinks::onRTCM</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Borrowed until the synchronous callback returns. </p>
+<p>One complete frame; copying it shares the receiver's buffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00026">26</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00032">32</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
 
 </div>
 </div>
@@ -169,29 +181,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00024">24</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
-
-</div>
-</div>
-<a id="aedd6adb17cbd56fbcc64b357958d6ee7" name="aedd6adb17cbd56fbcc64b357958d6ee7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedd6adb17cbd56fbcc64b357958d6ee7">&#9670;&#160;</a></span>onSatelliteUsage</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::function&lt;void(const <a class="el" href="structGPSSatelliteUsageReport.html">GPSSatelliteUsageReport</a>&amp;)&gt; GPSDriverSinks::onSatelliteUsage</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Count-only observations do not imply a list of satellites in view. </p>
-
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00029">29</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00030">30</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
 
 </div>
 </div>
@@ -207,14 +197,12 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00027">27</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="GPSDriver_8cc_source.html#l00131">GPSDriver::configure()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GPSDriver_8h_source.html#l00033">33</a> of file <a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/GPS/Driver/<a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a></li>
+<li>src/GPS/Core/Protocols/<a class="el" href="GPSDriver_8h_source.html">GPSDriver.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

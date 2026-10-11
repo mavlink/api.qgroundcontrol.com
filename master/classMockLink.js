@@ -31,6 +31,7 @@ var classMockLink =
     [ "getFirmwareType", "classMockLink.html#a728b80b8bdcda5de8b9036700fe3ba91", null ],
     [ "hashCheckRequestCount", "classMockLink.html#a033d03d9e9b1977df4c350640689f925", null ],
     [ "highLatencyTransmissionEnabledChanged", "classMockLink.html#ad20d757e767a98bb0ce5d5c753eab585", null ],
+    [ "homeCoordinate", "classMockLink.html#a1db26d8c2928c1c12bac3ac5c409dd0b", null ],
     [ "isConnected", "classMockLink.html#add043271502e59cbd9a7a52fa74eec38", null ],
     [ "lastReceivedMavlinkMessage", "classMockLink.html#a1e31797e5cba6f274a6ff07b79f13eb1", null ],
     [ "loadSimpleMultirotorMission", "classMockLink.html#a1579ea44960346ed1c70ef2da484e2ae", null ],

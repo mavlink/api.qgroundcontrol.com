@@ -26,7 +26,6 @@ var classQGCApplication =
     [ "showAppMessage", "classQGCApplication.html#ad73877340322568eb48000c62eea5bae", null ],
     [ "showCriticalVehicleMessage", "classQGCApplication.html#a861ad60a0d73252d6cf1edf7423775c2", null ],
     [ "showRebootAppMessage", "classQGCApplication.html#a186905fa3c690e3cbf487a91ad5424eb", null ],
-    [ "showRebootVehicleMessage", "classQGCApplication.html#ada6304a716e0d69eb5a79c468738b7d0", null ],
     [ "shutdown", "classQGCApplication.html#a415f88f68f70a9762ab1132c7ae6c850", null ],
     [ "simpleBootTest", "classQGCApplication.html#ace78e2c561837f9b38ec6b1b5ca113ec", null ],
     [ "UnitTest", "classQGCApplication.html#a832b4d233efee1a32feb0f4190b30d39", null ]

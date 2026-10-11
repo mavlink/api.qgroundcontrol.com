@@ -1,20 +1,17 @@
 var classNTRIPConnectionStats =
 [
-    [ "NTRIPConnectionStats", "classNTRIPConnectionStats.html#a1461b7c13753249279060363df03439e", null ],
+    [ "NTRIPConnectionStats", "classNTRIPConnectionStats.html#a0a20ca8eaeee4ea7ac69075dfea900e4", null ],
     [ "bytesReceived", "classNTRIPConnectionStats.html#a2c0b4e6a0b2d0a1ddc08ef0b1a54f1cf", null ],
-    [ "bytesReceivedChanged", "classNTRIPConnectionStats.html#aade55926dc917873d94d83ee59ff8545", null ],
-    [ "correctionAgeChanged", "classNTRIPConnectionStats.html#a7fc10faf56999e0d4e72eed6114c326a", null ],
     [ "correctionAgeSec", "classNTRIPConnectionStats.html#a08c717417d2a3d195c58851ff2c87277", null ],
     [ "dataRateBytesPerSec", "classNTRIPConnectionStats.html#a64979111c5cb5eabf9441a9d3e0df26b", null ],
-    [ "dataRateChanged", "classNTRIPConnectionStats.html#a7fa16d8c5bbda31aa54c1ba6de96bb1f", null ],
     [ "dataStale", "classNTRIPConnectionStats.html#a88ac753ba4503432cda8df89361ae071", null ],
-    [ "dataStaleChanged", "classNTRIPConnectionStats.html#a60187a27af9f3a401897b8f9aa140c46", null ],
-    [ "messageCountsById", "classNTRIPConnectionStats.html#ab20dcb24c06a57129b3c39d7044f2bfb", null ],
-    [ "messageCountsByIdChanged", "classNTRIPConnectionStats.html#a1d40b31b0bfa1d5907019a1d3fbada50", null ],
+    [ "dataUsageHigh", "classNTRIPConnectionStats.html#a219e99d44b5249d2453fb9f83948daae", null ],
+    [ "messageCountsById", "classNTRIPConnectionStats.html#ac9ff83d9e0d40c250ca54d6e278cb2af", null ],
     [ "messagesReceived", "classNTRIPConnectionStats.html#a254246ef562b0fafb1b77737bdbd42dc", null ],
-    [ "messagesReceivedChanged", "classNTRIPConnectionStats.html#a946b3145bdeb98f96ef6ea9b071f0144", null ],
-    [ "recordMessage", "classNTRIPConnectionStats.html#aa5305ad103311de993b546de933368d6", null ],
+    [ "recordMessage", "classNTRIPConnectionStats.html#a05f02ce946336eecc8fc024bbbba5c5a", null ],
     [ "reset", "classNTRIPConnectionStats.html#a978fc9c4c5215fd1afce639984a002a9", null ],
     [ "start", "classNTRIPConnectionStats.html#ab688ce5423bf005a00fbfa58d26dac97", null ],
-    [ "stop", "classNTRIPConnectionStats.html#a9b36b369c8eb4acabb2d59c64d2fc70c", null ]
+    [ "statsChanged", "classNTRIPConnectionStats.html#a1901364a7e9dae05ea91434ad54c6a24", null ],
+    [ "stop", "classNTRIPConnectionStats.html#a9b36b369c8eb4acabb2d59c64d2fc70c", null ],
+    [ "DATA_USAGE_WARNING_BYTES", "classNTRIPConnectionStats.html#a9ed755b38dbe05996f4b6123f6b0cb7f", null ]
 ];

@@ -30,6 +30,7 @@ var classFact =
     [ "cookedUserMin", "classFact.html#a901fb655cc1045a4384078e55cb5b1bf", null ],
     [ "cookedUserMinString", "classFact.html#a77a3c19e40540ddd2d551143b4cf6e18", null ],
     [ "cookedValue", "classFact.html#a3e9d5ceef2e73c8d71bc24b3fd873e67", null ],
+    [ "cookedValuesChanged", "classFact.html#aa6c1a7fbd9a83e2c6d5026f8a60ecdcd", null ],
     [ "cookedValueString", "classFact.html#aa367b59430aa816f2fa12d300da18220", null ],
     [ "decimalPlaces", "classFact.html#aa11853bbdd90867c799c3c473925d834", null ],
     [ "defaultValueAvailable", "classFact.html#a9abdd72e46e3cb9760a0dfea45ffedc9", null ],
@@ -87,7 +88,6 @@ var classFact =
     [ "valueChanged", "classFact.html#afa7388d8e1658154fc474e09b3a803d1", null ],
     [ "valueEqualsDefault", "classFact.html#a693aa1e7dbfd9959b743f34f0b1228a6", null ],
     [ "valueIndex", "classFact.html#a104c9463efab09d285256d04a0015ee9", null ],
-    [ "valueSliderModel", "classFact.html#a108b020d10d5f8bf78be3283c41e103d", null ],
     [ "vehicleRebootRequired", "classFact.html#af8fed359b54d089f9f99592e9c1348c8", null ],
     [ "vehicleUpdated", "classFact.html#af661ea32e72590bb7df81b93cefd8806", null ],
     [ "volatileValue", "classFact.html#a9c88db2fc9015b22d361961a490506ea", null ],
@@ -100,6 +100,5 @@ var classFact =
     [ "_rawValueMutex", "classFact.html#a8517b4261a33e2acd44d234b45f0195a", null ],
     [ "_sendValueChangedSignals", "classFact.html#a00e06bd771dbe47984ebe6d105368103", null ],
     [ "_type", "classFact.html#a6ee724ca86d4f9d993abc8824562d1e0", null ],
-    [ "_valueSliderModel", "classFact.html#ac2658123ba1f43b8abe03d7344959a30", null ],
     [ "kMissingMetadata", "classFact.html#a8a02f35db2f62c982548e96eb429225f", null ]
 ];

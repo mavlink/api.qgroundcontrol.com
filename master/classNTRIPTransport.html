@@ -121,11 +121,11 @@ Signals</h2></td></tr>
 <tr class="memitem:adcf81c8344b22e767019d5a282d6e4a2" id="r_adcf81c8344b22e767019d5a282d6e4a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTRIPTransport.html#adcf81c8344b22e767019d5a282d6e4a2">error</a> (const <a class="el" href="structNTRIPFailure.html">NTRIPFailure</a> &amp;failure)</td></tr>
 <tr class="separator:adcf81c8344b22e767019d5a282d6e4a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1648cb8362522f725bb81186e6a01d3b" id="r_a1648cb8362522f725bb81186e6a01d3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTRIPTransport.html#a1648cb8362522f725bb81186e6a01d3b">correctionFrameReceived</a> (const <a class="el" href="structRTCMDecodedFrame.html">RTCMDecodedFrame</a> &amp;frame)</td></tr>
-<tr class="memdesc:a1648cb8362522f725bb81186e6a01d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Includes invalid and filtered candidates.  <br /></td></tr>
+<tr class="memdesc:a1648cb8362522f725bb81186e6a01d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A valid frame of a whitelisted message.  <br /></td></tr>
 <tr class="separator:a1648cb8362522f725bb81186e6a01d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5313a5c6e533d4065f0975d9bd8675bf" id="r_a5313a5c6e533d4065f0975d9bd8675bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTRIPTransport.html#a5313a5c6e533d4065f0975d9bd8675bf">plaintextCredentialsWarning</a> ()</td></tr>
-<tr class="memdesc:a5313a5c6e533d4065f0975d9bd8675bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Warns before admitting a plaintext credential write; observers may cancel.  <br /></td></tr>
-<tr class="separator:a5313a5c6e533d4065f0975d9bd8675bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ebeaad26f499ea0864274550c09905a" id="r_a7ebeaad26f499ea0864274550c09905a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTRIPTransport.html#a7ebeaad26f499ea0864274550c09905a">certificatePinned</a> (const QString &amp;pin)</td></tr>
+<tr class="memdesc:a7ebeaad26f499ea0864274550c09905a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A self-signed caster certificate was trusted on first use; the owner persists the pin.  <br /></td></tr>
+<tr class="separator:a7ebeaad26f499ea0864274550c09905a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -137,12 +137,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af5312fb62ea39019f7307fa504bff4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fb32adb440d0ab56e26d3e8fc4def91" id="r_a0fb32adb440d0ab56e26d3e8fc4def91"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTRIPTransport.html#a0fb32adb440d0ab56e26d3e8fc4def91">sendNMEA</a> (const QByteArray &amp;nmea)=0</td></tr>
 <tr class="separator:a0fb32adb440d0ab56e26d3e8fc4def91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a465858a5b395ff41ee586a41a5eac891" id="r_a465858a5b395ff41ee586a41a5eac891"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTRIPTransport.html#a465858a5b395ff41ee586a41a5eac891">setRtcmWhitelist</a> (const QVector&lt; int &gt; &amp;)</td></tr>
-<tr class="separator:a465858a5b395ff41ee586a41a5eac891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa36ae25ff2d7d22a0c7b795d09be2f28" id="r_aa36ae25ff2d7d22a0c7b795d09be2f28"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNTRIPTransport.html#aa36ae25ff2d7d22a0c7b795d09be2f28">setRtcmWhitelist</a> (const QVector&lt; int &gt; &amp;messageIds)=0</td></tr>
+<tr class="memdesc:aa36ae25ff2d7d22a0c7b795d09be2f28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Live-apply the RTCM whitelist without tearing down the connection.  <br /></td></tr>
+<tr class="separator:aa36ae25ff2d7d22a0c7b795d09be2f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="NTRIPTransport_8h_source.html#l00010">10</a> of file <a class="el" href="NTRIPTransport_8h_source.html">NTRIPTransport.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NTRIPTransport_8h_source.html#l00009">9</a> of file <a class="el" href="NTRIPTransport_8h_source.html">NTRIPTransport.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a46b91aa46e14e11919f5956513a800f3" name="a46b91aa46e14e11919f5956513a800f3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a46b91aa46e14e11919f5956513a800f3">&#9670;&#160;</a></span>NTRIPTransport()</h2>
@@ -168,11 +169,39 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="NTRIPTransport_8h_source.html#l00015">15</a> of file <a class="el" href="NTRIPTransport_8h_source.html">NTRIPTransport.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="NTRIPTransport_8h_source.html#l00014">14</a> of file <a class="el" href="NTRIPTransport_8h_source.html">NTRIPTransport.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7ebeaad26f499ea0864274550c09905a" name="a7ebeaad26f499ea0864274550c09905a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ebeaad26f499ea0864274550c09905a">&#9670;&#160;</a></span>certificatePinned</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NTRIPTransport::certificatePinned </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A self-signed caster certificate was trusted on first use; the owner persists the pin. </p>
+
+</div>
+</div>
 <a id="ad3b8852868fea9c9560c287c8b20f322" name="ad3b8852868fea9c9560c287c8b20f322"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3b8852868fea9c9560c287c8b20f322">&#9670;&#160;</a></span>connected</h2>
 
@@ -222,7 +251,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Includes invalid and filtered candidates. </p>
+<p>A valid frame of a whitelisted message. </p>
 
 </div>
 </div>
@@ -249,33 +278,6 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5313a5c6e533d4065f0975d9bd8675bf" name="a5313a5c6e533d4065f0975d9bd8675bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5313a5c6e533d4065f0975d9bd8675bf">&#9670;&#160;</a></span>plaintextCredentialsWarning</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void NTRIPTransport::plaintextCredentialsWarning </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Warns before admitting a plaintext credential write; observers may cancel. </p>
 
 </div>
 </div>
@@ -307,8 +309,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a465858a5b395ff41ee586a41a5eac891" name="a465858a5b395ff41ee586a41a5eac891"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a465858a5b395ff41ee586a41a5eac891">&#9670;&#160;</a></span>setRtcmWhitelist()</h2>
+<a id="aa36ae25ff2d7d22a0c7b795d09be2f28" name="aa36ae25ff2d7d22a0c7b795d09be2f28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa36ae25ff2d7d22a0c7b795d09be2f28">&#9670;&#160;</a></span>setRtcmWhitelist()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,21 +322,20 @@ Public Member Functions</h2></td></tr>
           <td class="memname">virtual void NTRIPTransport::setRtcmWhitelist </td>
           <td>(</td>
           <td class="paramtype">const QVector&lt; int &gt; &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>messageIds</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Live-apply the RTCM whitelist without tearing down the connection. Default no-op for transports that don't filter. </p>
 
-<p>Reimplemented in <a class="el" href="classNTRIPHttpTransport.html#a938d6e95f8af2112a25f9b355df1d59f">NTRIPHttpTransport</a>.</p>
+<p>Live-apply the RTCM whitelist without tearing down the connection. </p>
 
-<p class="definition">Definition at line <a class="el" href="NTRIPTransport_8h_source.html#l00026">26</a> of file <a class="el" href="NTRIPTransport_8h_source.html">NTRIPTransport.h</a>.</p>
+<p>Implemented in <a class="el" href="classNTRIPHttpTransport.html#a938d6e95f8af2112a25f9b355df1d59f">NTRIPHttpTransport</a>.</p>
 
 </div>
 </div>

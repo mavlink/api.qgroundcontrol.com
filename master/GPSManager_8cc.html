@@ -96,28 +96,24 @@ $(document).ready(function(){initNavTree('GPSManager_8cc.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="GPSManager_8h_source.html">GPSManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="AppMessages_8h_source.html">AppMessages.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Fact_8h_source.html">Fact.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="FactGroup_8h_source.html">FactGroup.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GPSCorrectionManager_8h_source.html">GPSCorrectionManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GPSMavlinkOutput_8h_source.html">GPSMavlinkOutput.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GPSObservation_8h_source.html">GPSObservation.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GPSRTKFactGroup_8h_source.html">GPSRTKFactGroup.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GPSRtk_8h_source.html">GPSRtk.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LinkManager_8h_source.html">LinkManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="MultiVehicleManager_8h_source.html">MultiVehicleManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NMEASourceManager_8h_source.html">NMEASourceManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NTRIPGgaProvider_8h_source.html">NTRIPGgaProvider.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NTRIPManager_8h_source.html">NTRIPManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="PositionManager_8h_source.html">PositionManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="QGCLoggingCategory_8h_source.html">QGCLoggingCategory.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SettingsManager_8h_source.html">SettingsManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Vehicle_8h_source.html">Vehicle.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="VehicleLinkManager_8h_source.html">VehicleLinkManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="RTKAutoConnect_8h_source.html">RTKAutoConnect.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>&quot;</code><br />
 <code>#include &lt;QtCore/QApplicationStatic&gt;</code><br />
-<code>#include &lt;QtCore/QTimer&gt;</code><br />
+<code>#include &lt;QtCore/QPointer&gt;</code><br />
+<code>#include &quot;<a class="el" href="GPSCorrectionManager_8h_source.html">GPSCorrectionManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSReceiver_8h_source.html">GPSReceiver.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSReceiverFactGroup_8h_source.html">GPSReceiverFactGroup.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSSettingsBindings_8h_source.html">GPSSettingsBindings.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LinkManager_8h_source.html">LinkManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NTRIPGgaReporter_8h_source.html">NTRIPGgaReporter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NTRIPManager_8h_source.html">NTRIPManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NTRIPVehicleGgaSource_8h_source.html">NTRIPVehicleGgaSource.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="PositionManager_8h_source.html">PositionManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="QGCCorePlugin_8h_source.html">QGCCorePlugin.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="QGCLoggingCategory_8h_source.html">QGCLoggingCategory.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="QGCNetworkAvailabilityMonitor_8h_source.html">QGCNetworkAvailabilityMonitor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="RTKSettings_8h_source.html">RTKSettings.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="RuntimeScheduler_8h_source.html">RuntimeScheduler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SettingsManager_8h_source.html">SettingsManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for GPSManager.cc:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -160,7 +156,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="VehicleLinkManager_8h_source.html#l00042">VehicleLinkManager::communicationLost()</a>, <a class="el" href="MultiVehicleManager_8cc_source.html#l00045">MultiVehicleManager::instance()</a>, <a class="el" href="Vehicle_8h_source.html#l00517">Vehicle::isOfflineEditingVehicle()</a>, <a class="el" href="GPSAltitudeDatum_8h.html#a72601fb4dec022168ddbdf3c59e305e6a3a28d7c9d4942c211564852347eef45f">MeanSeaLevel</a>, and <a class="el" href="Vehicle_8h_source.html#l00579">Vehicle::vehicleLinkManager()</a>.</p>
+<p class="reference">References <a class="el" href="GPSReceiver_8h_source.html#l00034">GPSReceiverDependencies::corrections</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00019">SerialPortManager::instance()</a>.</p>
 
 </div>
 </div>

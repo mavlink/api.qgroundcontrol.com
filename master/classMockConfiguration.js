@@ -12,6 +12,11 @@ var classMockConfiguration =
       [ "FailInitialConnectRequestMessageAutopilotVersionFailure", "classMockConfiguration.html#a4489829722113399b8ffb8e3adf57433acd1a1e16dbe9c32194bd23bd7e7238e2", null ],
       [ "FailInitialConnectRequestMessageAutopilotVersionLost", "classMockConfiguration.html#a4489829722113399b8ffb8e3adf57433a3b6efefb5da526c70b1f8439f1fbbace", null ]
     ] ],
+    [ "HomeLocation", "classMockConfiguration.html#a353e6dfa5c6d994005b17984d9926c3c", [
+      [ "HomeLocationPX4SITL", "classMockConfiguration.html#a353e6dfa5c6d994005b17984d9926c3ca4004ecfdeddfe3fcfd14797b7268a2be", null ],
+      [ "HomeLocationArduPilotSITL", "classMockConfiguration.html#a353e6dfa5c6d994005b17984d9926c3ca6ef9159969207688ce7e6d0a5a963f62", null ],
+      [ "HomeLocationTerrainTest", "classMockConfiguration.html#a353e6dfa5c6d994005b17984d9926c3cad4fb99c79f0c6813daa2fb09b341a727", null ]
+    ] ],
     [ "Option", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102f", [
       [ "OptionNone", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fa10baeb0ff0dba28dbb9f233c4afbb5e9", null ],
       [ "OptionSendStatusText", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fafe0089c2d2ab6dfa908a08bec844bef6", null ],
@@ -58,6 +63,8 @@ var classMockConfiguration =
     [ "cameraHasVideoStream", "classMockConfiguration.html#aaee862ee03eff2d6e18190e1f58852b4", null ],
     [ "cameraHasVideoStreamChanged", "classMockConfiguration.html#aa6435fa3eddf399148341c8319238933", null ],
     [ "copyFrom", "classMockConfiguration.html#a5f18a8ff7878c858551e924174cd0861", null ],
+    [ "enableADSB", "classMockConfiguration.html#a7da8bba2ae1407da6423c36ac93138a9", null ],
+    [ "enableADSBChanged", "classMockConfiguration.html#acfe2ae54b5ab56b902352e73ff4c94da", null ],
     [ "enableCamera", "classMockConfiguration.html#a56626c2bcc2587158221d3adf5f949b8", null ],
     [ "enableCameraChanged", "classMockConfiguration.html#a3b120318c52e952cc1acfcb3c0cf2797", null ],
     [ "enableGimbal", "classMockConfiguration.html#a147fd507fa0e85110199df1bf0116f16", null ],
@@ -85,6 +92,11 @@ var classMockConfiguration =
     [ "gimbalHasYawFollowChanged", "classMockConfiguration.html#ae98655ba806c7b8dee422c86688c29de", null ],
     [ "gimbalHasYawLock", "classMockConfiguration.html#ab940f90d9a89efd4b6a1882891fb371c", null ],
     [ "gimbalHasYawLockChanged", "classMockConfiguration.html#aaac61b7fc77cd0a96a4094b9d7450590", null ],
+    [ "homeCoordinate", "classMockConfiguration.html#af1843f8fed51678865aea1b490d0cebd", null ],
+    [ "homeLocation", "classMockConfiguration.html#a766d3e451b8bc0d22f9bf959b4956167", null ],
+    [ "homeLocationChanged", "classMockConfiguration.html#ad077c43266afe5ae211b88364e13471f", null ],
+    [ "homeLocationEnum", "classMockConfiguration.html#a36c3021bbe82ff0121fc36549c99c0eb", null ],
+    [ "homeLocationFromInt", "classMockConfiguration.html#a47360fe819119b12eba4153677e9966a", null ],
     [ "incrementVehicleId", "classMockConfiguration.html#aac0d9815ead0de8ae536be1cb5397901", null ],
     [ "incrementVehicleIdChanged", "classMockConfiguration.html#adb6b17663d24f0b33b8ceb1ae64ffce4", null ],
     [ "loadSettings", "classMockConfiguration.html#a50235f102ff3e166c83c6e818450f8ff", null ],
@@ -104,6 +116,7 @@ var classMockConfiguration =
     [ "setCameraHasTrackingPoint", "classMockConfiguration.html#aa80fda9ea42376e78582f45cd87261d7", null ],
     [ "setCameraHasTrackingRectangle", "classMockConfiguration.html#a166c1702d8d7dd05cccd6826fe284201", null ],
     [ "setCameraHasVideoStream", "classMockConfiguration.html#a6d2c47ff689d97077c4ff915c9100bee", null ],
+    [ "setEnableADSB", "classMockConfiguration.html#a601251e3c4284f7ad7fd672701ff5261", null ],
     [ "setEnableCamera", "classMockConfiguration.html#a71e91fe0f30ad328717cceb4dbff3071", null ],
     [ "setEnableGimbal", "classMockConfiguration.html#a838cab57d3fa2165785492027bf2512f", null ],
     [ "setEnableProximity", "classMockConfiguration.html#a53e6202e71e3212ae033808c11a696d7", null ],
@@ -119,6 +132,7 @@ var classMockConfiguration =
     [ "setGimbalHasYawAxis", "classMockConfiguration.html#a8fb57902f05d492485cdaae2dcc52f6d", null ],
     [ "setGimbalHasYawFollow", "classMockConfiguration.html#ab9830e363fe5dc581895a917d6c3944d", null ],
     [ "setGimbalHasYawLock", "classMockConfiguration.html#a8beba71ab1ec129006b26edbd28cf689", null ],
+    [ "setHomeLocation", "classMockConfiguration.html#a3ef1784a86bd8bf625270e6eb7ba1a5c", null ],
     [ "setIncrementVehicleId", "classMockConfiguration.html#a6ecd5f9d4a5f5f22593dd997776b85f8", null ],
     [ "setPreloadMission", "classMockConfiguration.html#afba4f071c5e9f6f1bd2bb215bb9e9829", null ],
     [ "setSendRadioStatus", "classMockConfiguration.html#ae6af22752bb6f71b1e2b62018dc1ef04", null ],

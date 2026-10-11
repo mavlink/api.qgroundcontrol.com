@@ -97,12 +97,13 @@ $(document).ready(function(){initNavTree('qserialport__p_8h.html',''); initResiz
   <div class="headertitle"><div class="title">qserialport_p.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QtCore/QLoggingCategory&gt;</code><br />
+<div class="textblock"><code>#include &lt;atomic&gt;</code><br />
+<code>#include &lt;QtCore/QDeadlineTimer&gt;</code><br />
+<code>#include &lt;QtCore/QLoggingCategory&gt;</code><br />
 <code>#include &lt;QtCore/QMutex&gt;</code><br />
 <code>#include &lt;QtCore/QWaitCondition&gt;</code><br />
 <code>#include &lt;QtCore/private/qiodevice_p.h&gt;</code><br />
 <code>#include &lt;QtCore/private/qproperty_p.h&gt;</code><br />
-<code>#include &lt;atomic&gt;</code><br />
 <code>#include &quot;<a class="el" href="AndroidSerial_8h_source.html">AndroidSerial.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="qserialport_8h_source.html">qserialport.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -148,6 +149,8 @@ Variables</h2></td></tr>
 <tr class="separator:a06957f9fcd4df3c180c2fd90f779ca73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea224d88ae995c3a58abdc3b39607e8d" id="r_aea224d88ae995c3a58abdc3b39607e8d"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qserialport__p_8h.html#aea224d88ae995c3a58abdc3b39607e8d">DEFAULT_WRITE_TIMEOUT</a> = 5000</td></tr>
 <tr class="separator:aea224d88ae995c3a58abdc3b39607e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa28fb6039269c0c2e127760a43a94f88" id="r_aa28fb6039269c0c2e127760a43a94f88"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qserialport__p_8h.html#aa28fb6039269c0c2e127760a43a94f88">CLOSE_WRITE_TIMEOUT</a> = 100</td></tr>
+<tr class="separator:aa28fb6039269c0c2e127760a43a94f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42b9f3f9edddc7234eca9dda9b3c6e29" id="r_a42b9f3f9edddc7234eca9dda9b3c6e29"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qserialport__p_8h.html#a42b9f3f9edddc7234eca9dda9b3c6e29">DEFAULT_READ_TIMEOUT</a> = 0</td></tr>
 <tr class="separator:a42b9f3f9edddc7234eca9dda9b3c6e29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a50e3fe50e0af18bd0fd84e71117cb891" id="r_a50e3fe50e0af18bd0fd84e71117cb891"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="qserialport__p_8h.html#a50e3fe50e0af18bd0fd84e71117cb891">EMIT_THRESHOLD</a> = 64</td></tr>
@@ -166,11 +169,37 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00040">40</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00043">43</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="aa28fb6039269c0c2e127760a43a94f88" name="aa28fb6039269c0c2e127760a43a94f88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa28fb6039269c0c2e127760a43a94f88">&#9670;&#160;</a></span>CLOSE_WRITE_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int CLOSE_WRITE_TIMEOUT = 100</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00038">38</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="qserialport__p_8h_source.html#l00073">QSerialPortPrivate::flushBeforeClose()</a>.</p>
+
+</div>
+</div>
 <a id="a8fa9ef05999491fa3e0b64ba1bff4479" name="a8fa9ef05999491fa3e0b64ba1bff4479"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8fa9ef05999491fa3e0b64ba1bff4479">&#9670;&#160;</a></span>DEFAULT_READ_BUFFER_SIZE</h2>
 
@@ -191,7 +220,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00033">33</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00034">34</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
 
 </div>
 </div>
@@ -215,7 +244,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00036">36</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00039">39</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
 
 </div>
 </div>
@@ -239,7 +268,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00034">34</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00035">35</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
 
 </div>
 </div>
@@ -263,7 +292,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00035">35</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00036">36</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
 
 </div>
 </div>
@@ -287,7 +316,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00037">37</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00040">40</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
 
 </div>
 </div>
@@ -311,9 +340,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00030">30</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00031">31</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="AndroidSerial_8cc_source.html#l00540">AndroidSerial::availableDevices()</a>, <a class="el" href="qserialport__android_8cpp_source.html#l00070">QSerialPortPrivate::close()</a>, <a class="el" href="AndroidSerial_8cc_source.html#l00642">AndroidSerial::open()</a>, and <a class="el" href="qserialport__android_8cpp_source.html#l00014">QSerialPortPrivate::open()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="AndroidSerial_8cc_source.html#l00542">AndroidSerial::availableDevices()</a>, <a class="el" href="qserialport__android_8cpp_source.html#l00073">QSerialPortPrivate::close()</a>, <a class="el" href="AndroidSerial_8cc_source.html#l00644">AndroidSerial::open()</a>, and <a class="el" href="qserialport__android_8cpp_source.html#l00017">QSerialPortPrivate::open()</a>.</p>
 
 </div>
 </div>
@@ -337,9 +366,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00032">32</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00033">33</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="AndroidSerial_8cc_source.html#l00419">AndroidSerial::jniDeviceNewData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="AndroidSerial_8cc_source.html#l00421">AndroidSerial::jniDeviceNewData()</a>.</p>
 
 </div>
 </div>
@@ -363,7 +392,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00031">31</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qserialport__p_8h_source.html#l00032">32</a> of file <a class="el" href="qserialport__p_8h_source.html">qserialport_p.h</a>.</p>
 
 </div>
 </div>

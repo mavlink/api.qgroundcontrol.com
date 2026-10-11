@@ -6,6 +6,8 @@ var dir_e8a21f717d86498f97452a78d688a292 =
     [ "QGCCachedFileDownload.h", "QGCCachedFileDownload_8h.html", "QGCCachedFileDownload_8h" ],
     [ "QGCFileDownload.cc", "QGCFileDownload_8cc.html", null ],
     [ "QGCFileDownload.h", "QGCFileDownload_8h.html", "QGCFileDownload_8h" ],
+    [ "QGCNetworkAvailabilityMonitor.cc", "QGCNetworkAvailabilityMonitor_8cc.html", null ],
+    [ "QGCNetworkAvailabilityMonitor.h", "QGCNetworkAvailabilityMonitor_8h.html", "QGCNetworkAvailabilityMonitor_8h" ],
     [ "QGCNetworkHelper.cc", "QGCNetworkHelper_8cc.html", "QGCNetworkHelper_8cc" ],
     [ "QGCNetworkHelper.h", "QGCNetworkHelper_8h.html", "QGCNetworkHelper_8h" ]
 ];

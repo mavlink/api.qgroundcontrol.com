@@ -177,7 +177,7 @@ $(document).ready(function(){initNavTree('TerrainStatus_8qml_source.html',''); i
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                axisX: ValueAxis {</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    id:                         axisX</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                    min:                        0</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                    max:                        _unitsConversion.metersToAppSettingsHorizontalDistanceUnits(_missionTotalDistance)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                    max:                        _axisXMax()</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                    lineVisible:                true</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                    tickInterval:               max &gt; 0 ? max / 4 : 1</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                    labelDecimals:              1</div>
@@ -185,8 +185,8 @@ $(document).ready(function(){initNavTree('TerrainStatus_8qml_source.html',''); i
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                axisY: ValueAxis {</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                    id:                         axisY</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                    min:                        _unitsConversion.metersToAppSettingsVerticalDistanceUnits(_minAMSLAltitude)</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                    max:                        _unitsConversion.metersToAppSettingsVerticalDistanceUnits(_maxAMSLAltitude)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                    min:                        _axisYMin()</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                    max:                        _axisYMax()</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                    lineVisible:                true</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                    tickInterval:               (max - min) &gt; 0 ? (max - min) / 3 : 1</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                    labelDecimals:              1</div>
@@ -326,7 +326,32 @@ $(document).ready(function(){initNavTree('TerrainStatus_8qml_source.html',''); i
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    function applyOpacity(colorIn, opacity){</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        return Qt.rgba(colorIn.r, colorIn.g, colorIn.b, opacity)</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    }</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>}</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    function _axisXMax() {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        return _unitsConversion.metersToAppSettingsHorizontalDistanceUnits(_missionTotalDistance)</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    }</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    function _axisYMin() {</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        return _unitsConversion.metersToAppSettingsVerticalDistanceUnits(_minAMSLAltitude)</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    }</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    function _axisYMax() {</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        return _unitsConversion.metersToAppSettingsVerticalDistanceUnits(_maxAMSLAltitude)</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    }</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    Connections {</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        target: _unitsConversion</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        function onUnitsChanged() {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            axisX.max = Qt.binding(_axisXMax)</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            axisY.min = Qt.binding(_axisYMin)</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            axisY.max = Qt.binding(_axisYMax)</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            terrainProfile.horizontalScale = _unitsConversion.metersToAppSettingsHorizontalDistanceUnits(1)</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            terrainProfile.verticalScale = _unitsConversion.metersToAppSettingsVerticalDistanceUnits(1)</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            terrainProfile.updateSeries(terrainSeries, flightSeries, missingSeries, collisionSeries)</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        }</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

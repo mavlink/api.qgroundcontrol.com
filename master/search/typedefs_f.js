@@ -8,7 +8,5 @@ var searchData=
   ['reservationptr_5',['ReservationPtr',['../classSerialPortManager.html#a0b6410beb42668b5cbe773efd9e8c9dc',1,'SerialPortManager']]],
   ['retryaction_6',['RetryAction',['../classRetryTransition.html#a8a693a2e00c7f7385accb1eaed8b7cd3',1,'RetryTransition']]],
   ['rollbackaction_7',['RollbackAction',['../classRollbackState.html#ae5dc5089ced27a75afe9ddc2693ad508',1,'RollbackState']]],
-  ['routingconfiguration_8',['RoutingConfiguration',['../classGPSCorrectionManager.html#a6f1431a81f97003e14889e8ca5348184',1,'GPSCorrectionManager']]],
-  ['routingpolicy_9',['RoutingPolicy',['../classGPSCorrectionManager.html#af72f10b0162557f91c981ff1e6beb49f',1,'GPSCorrectionManager']]],
-  ['rules_10',['Rules',['../namespaceMixer.html#a6db84602ee26ac053aa6d33c561130d2',1,'Mixer']]]
+  ['rules_8',['Rules',['../namespaceMixer.html#a6db84602ee26ac053aa6d33c561130d2',1,'Mixer']]]
 ];

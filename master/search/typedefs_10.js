@@ -12,12 +12,10 @@ var searchData=
   ['sharedlinkinterfaceptr_9',['SharedLinkInterfacePtr',['../LinkInterface_8h.html#a06fa8dcc2f950057f6a5ae85ec96cee2',1,'LinkInterface.h']]],
   ['sharedmapprovider_10',['SharedMapProvider',['../QGCMapUrlEngine_8h.html#af832193a053bfc43c1594f8ddfb27c69',1,'QGCMapUrlEngine.h']]],
   ['signingkey_11',['SigningKey',['../namespaceMAVLinkSigning.html#a3526c4c60d6e57d98634f51770c397ad',1,'MAVLinkSigning']]],
-  ['sink_12',['Sink',['../classGPSCorrectionRouter.html#aaa8e1d0fe0bb010ff708bb2d880c2ac7',1,'GPSCorrectionRouter']]],
-  ['skipaction_13',['SkipAction',['../classSkippableAsyncState.html#a08acfd95ff9203fc2d4c9f8a025853ea',1,'SkippableAsyncState']]],
-  ['skippredicate_14',['skippredicate',['../classSkippableAsyncState.html#a813b54acb4f55d80026f7cad55741805',1,'SkippableAsyncState::SkipPredicate'],['../classRetryableRequestMessageState.html#a0d0235de4de432aeaaa11706295449c4',1,'RetryableRequestMessageState::SkipPredicate']]],
-  ['source_15',['Source',['../classGPSCorrectionRouter.html#a9b5140e71a2678db33cb6aa5c10cf279',1,'GPSCorrectionRouter']]],
-  ['state_16',['State',['../classSigningController.html#a27552430017fe145379e0c71177ff404',1,'SigningController']]],
-  ['statistics_17',['Statistics',['../classGPSCorrectionRouter.html#a9c672f6695661d0e2d021718b0f6b2de',1,'GPSCorrectionRouter']]],
-  ['stepaction_18',['StepAction',['../classSequenceState.html#a27b204187ba2feb18a8ae72384e90019',1,'SequenceState']]],
-  ['strategy_19',['Strategy',['../classFallbackChainState.html#a0b2e76c10489831b91e8c387106a3816',1,'FallbackChainState']]]
+  ['skipaction_12',['SkipAction',['../classSkippableAsyncState.html#a08acfd95ff9203fc2d4c9f8a025853ea',1,'SkippableAsyncState']]],
+  ['skippredicate_13',['skippredicate',['../classSkippableAsyncState.html#a813b54acb4f55d80026f7cad55741805',1,'SkippableAsyncState::SkipPredicate'],['../classRetryableRequestMessageState.html#a0d0235de4de432aeaaa11706295449c4',1,'RetryableRequestMessageState::SkipPredicate']]],
+  ['sourcefactory_14',['SourceFactory',['../classPositionManager.html#ac3dcd95600cee3183a9f61e700e6b007',1,'PositionManager']]],
+  ['state_15',['State',['../classSigningController.html#a27552430017fe145379e0c71177ff404',1,'SigningController']]],
+  ['stepaction_16',['StepAction',['../classSequenceState.html#a27b204187ba2feb18a8ae72384e90019',1,'SequenceState']]],
+  ['strategy_17',['Strategy',['../classFallbackChainState.html#a0b2e76c10489831b91e8c387106a3816',1,'FallbackChainState']]]
 ];

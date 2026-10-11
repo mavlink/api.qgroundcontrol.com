@@ -1,17 +1,26 @@
 var classUBX_1_1ReceiverController =
 [
     [ "accept", "classUBX_1_1ReceiverController.html#a6ce7274d856ed8773f643245231d1db9", null ],
-    [ "accept", "classUBX_1_1ReceiverController.html#ac762d97bd9d961a2e2cff6cce7598537", null ],
+    [ "accept", "classUBX_1_1ReceiverController.html#a97559c3f5726de0fedbdb1f16eeab45d", null ],
+    [ "accept", "classUBX_1_1ReceiverController.html#a52f3cda912cac12521c9edd0afa1eb78", null ],
     [ "acknowledgement", "classUBX_1_1ReceiverController.html#a74aaf343cd89f4a8291787a527a5a6ea", null ],
     [ "awaitingAcknowledgement", "classUBX_1_1ReceiverController.html#ab9947af969cc63e605ee9d99a4e046b5", null ],
     [ "beginAcknowledgement", "classUBX_1_1ReceiverController.html#a1ce2d0a96ed68ebc5006e5ea52d20a8e", null ],
+    [ "beginRatePoll", "classUBX_1_1ReceiverController.html#ae77f12c45130ef513c9871a8bdc38b22", null ],
     [ "beginReadback", "classUBX_1_1ReceiverController.html#a8e8122e807d490d2e454816a59419e5c", null ],
     [ "configurationReadbackRequired", "classUBX_1_1ReceiverController.html#a3be773b8db99625bd1342769a622a53d", null ],
     [ "finishAcknowledgement", "classUBX_1_1ReceiverController.html#a8f853e7f666d31c7af72b27c0a3c649d", null ],
+    [ "finishRatePoll", "classUBX_1_1ReceiverController.html#ac68b9c5965cea3834a8711f9e8c30599", null ],
     [ "finishReadback", "classUBX_1_1ReceiverController.html#a30342232f56bc0ee550cef2904ef2bd3", null ],
     [ "lateRejection", "classUBX_1_1ReceiverController.html#a644dc8b3567e8fd22f769cd0d405a7ea", null ],
+    [ "polledRates", "classUBX_1_1ReceiverController.html#a4a3092ee5ca99d35073327d0ca01fdf6", null ],
+    [ "ratePollPending", "classUBX_1_1ReceiverController.html#adf7c3b5aa51a9d848e3f1107d95ccf4e", null ],
+    [ "ratePollRejected", "classUBX_1_1ReceiverController.html#a61fb3da9edce80cedb09cfb1b6efc0f5", null ],
+    [ "ratePollSettled", "classUBX_1_1ReceiverController.html#a95f5a7a430bfc494773d77aa3fed156d", null ],
     [ "readback", "classUBX_1_1ReceiverController.html#affca78be533fbb41efae464b67b10267", null ],
     [ "readbackPending", "classUBX_1_1ReceiverController.html#ab50c5a88287a5d25bb916ff2cb9b61cc", null ],
     [ "readbackReady", "classUBX_1_1ReceiverController.html#a671056aeacf9edfdbda7242f5aed2438", null ],
+    [ "readbackRejected", "classUBX_1_1ReceiverController.html#a178ecde7fbdbca57379876c687bd5c51", null ],
+    [ "readbackReplyOutstanding", "classUBX_1_1ReceiverController.html#a40ab2215607e9adf8f9389eab636fc11", null ],
     [ "requireConfigurationReadback", "classUBX_1_1ReceiverController.html#a901ea99c3be471ad9e523548a37ef8ca", null ]
 ];

@@ -3,6 +3,7 @@ var qserialport__p_8h =
     [ "QSerialPortErrorInfo", "classQSerialPortErrorInfo.html", "classQSerialPortErrorInfo" ],
     [ "QSerialPortPrivate", "classQSerialPortPrivate.html", "classQSerialPortPrivate" ],
     [ "QSERIALPORT_BUFFERSIZE", "qserialport__p_8h.html#ae1b4751289288690313ace58fee5f9c8", null ],
+    [ "CLOSE_WRITE_TIMEOUT", "qserialport__p_8h.html#aa28fb6039269c0c2e127760a43a94f88", null ],
     [ "DEFAULT_READ_BUFFER_SIZE", "qserialport__p_8h.html#a8fa9ef05999491fa3e0b64ba1bff4479", null ],
     [ "DEFAULT_READ_TIMEOUT", "qserialport__p_8h.html#a42b9f3f9edddc7234eca9dda9b3c6e29", null ],
     [ "DEFAULT_WRITE_BUFFER_SIZE", "qserialport__p_8h.html#a06957f9fcd4df3c180c2fd90f779ca73", null ],

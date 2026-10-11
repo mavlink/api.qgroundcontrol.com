@@ -1,7 +1,6 @@
 var GPSCorrectionSelector_8h =
 [
+    [ "GPSCorrectionStream", "structGPSCorrectionStream.html", "structGPSCorrectionStream" ],
     [ "GPSCorrectionSelector", "classGPSCorrectionSelector.html", "classGPSCorrectionSelector" ],
-    [ "GPSCorrectionSelector::Configuration", "structGPSCorrectionSelector_1_1Configuration.html", "structGPSCorrectionSelector_1_1Configuration" ],
-    [ "GPSCorrectionSelector::SourceIdentity", "structGPSCorrectionSelector_1_1SourceIdentity.html", "structGPSCorrectionSelector_1_1SourceIdentity" ],
-    [ "GPSCorrectionSelector::Source", "structGPSCorrectionSelector_1_1Source.html", "structGPSCorrectionSelector_1_1Source" ]
+    [ "GPS_CORRECTION_SOURCE_COUNT", "GPSCorrectionSelector_8h.html#a2ad988a057f5343410cc90f55f207b71", null ]
 ];

@@ -50,6 +50,7 @@ var AndroidSerial_8cc =
     [ "unregisterPointer", "AndroidSerial_8cc.html#a54eadf6cca2ca4f696375d56caee683a", null ],
     [ "usePosixSerial", "AndroidSerial_8cc.html#a5d3f91cc27b4c62c9acd4e8e59458ed0", null ],
     [ "write", "AndroidSerial_8cc.html#a771b5b8a3d56153c575c6eb95b44a8c4", null ],
+    [ "writeWithProgress", "AndroidSerial_8cc.html#a4e2bee7701dbe944af61e1100af29089", null ],
     [ "s_cacheLock", "AndroidSerial_8cc.html#a4b5935113ab99d088ed821ab4fe7065f", null ],
     [ "s_methods", "AndroidSerial_8cc.html#a5ac2739e6c3796afc59deb2f7fa29e15", null ],
     [ "s_methodsCached", "AndroidSerial_8cc.html#a16275f2d0fd960b73066c2c14260c942", null ],

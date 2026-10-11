@@ -8,5 +8,6 @@ var classDataRateTracker =
     [ "recordBytes", "classDataRateTracker.html#a732fef26dd29410a43c00eb2eff25c69", null ],
     [ "refresh", "classDataRateTracker.html#a8f14d1f0ba41614a4e5bfd60732ff94e", null ],
     [ "reset", "classDataRateTracker.html#a385d2b12c330bd8d86d2ed9f7ade88c8", null ],
+    [ "resetRate", "classDataRateTracker.html#a92bd7b6e418a831605b1814c7eaf5da4", null ],
     [ "totalBytes", "classDataRateTracker.html#ae39907b00ae939910948055842ee9ab7", null ]
 ];

@@ -97,36 +97,41 @@ $(document).ready(function(){initNavTree('structUBX_1_1Frame.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="UBXFrameDecoder_8h_source.html">UBXFrameDecoder.h</a>&gt;</code></p>
+<p>A received frame. Its views borrow the decoder's storage until the next consume().  
+ <a href="structUBX_1_1Frame.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="UBXFrame_8h_source.html">UBXFrame.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a76d7cc46b6e63a8d68b6c1320a019be1" id="r_a76d7cc46b6e63a8d68b6c1320a019be1"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1Frame.html#a76d7cc46b6e63a8d68b6c1320a019be1">message</a> = 0</td></tr>
 <tr class="separator:a76d7cc46b6e63a8d68b6c1320a019be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad43274ffa6079fe6c65ef07e65a3128b" id="r_ad43274ffa6079fe6c65ef07e65a3128b"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1Frame.html#ad43274ffa6079fe6c65ef07e65a3128b">length</a> = 0</td></tr>
-<tr class="separator:ad43274ffa6079fe6c65ef07e65a3128b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a991235123724413a4b728a3ff663bedf" id="r_a991235123724413a4b728a3ff663bedf"><td class="memItemLeft" align="right" valign="top">std::array&lt; uint8_t, 4096 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1Frame.html#a991235123724413a4b728a3ff663bedf">payload</a> {}</td></tr>
-<tr class="separator:a991235123724413a4b728a3ff663bedf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08ed99f38d3d5fbb8388fb9abd32625d" id="r_a08ed99f38d3d5fbb8388fb9abd32625d"><td class="memItemLeft" align="right" valign="top">std::span&lt; const uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1Frame.html#a08ed99f38d3d5fbb8388fb9abd32625d">bytes</a></td></tr>
+<tr class="memdesc:a08ed99f38d3d5fbb8388fb9abd32625d"><td class="mdescLeft">&#160;</td><td class="mdescRight">From the sync bytes to the checksum.  <br /></td></tr>
+<tr class="separator:a08ed99f38d3d5fbb8388fb9abd32625d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcc79037ecbc8248a30d642c7e2e6fd9" id="r_afcc79037ecbc8248a30d642c7e2e6fd9"><td class="memItemLeft" align="right" valign="top">std::span&lt; const uint8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structUBX_1_1Frame.html#afcc79037ecbc8248a30d642c7e2e6fd9">payload</a></td></tr>
+<tr class="separator:afcc79037ecbc8248a30d642c7e2e6fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="UBXFrameDecoder_8h_source.html#l00008">8</a> of file <a class="el" href="UBXFrameDecoder_8h_source.html">UBXFrameDecoder.h</a>.</p>
+<div class="textblock"><p>A received frame. Its views borrow the decoder's storage until the next consume(). </p>
+
+<p class="definition">Definition at line <a class="el" href="UBXFrame_8h_source.html#l00151">151</a> of file <a class="el" href="UBXFrame_8h_source.html">UBXFrame.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="ad43274ffa6079fe6c65ef07e65a3128b" name="ad43274ffa6079fe6c65ef07e65a3128b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad43274ffa6079fe6c65ef07e65a3128b">&#9670;&#160;</a></span>length</h2>
+<a id="a08ed99f38d3d5fbb8388fb9abd32625d" name="a08ed99f38d3d5fbb8388fb9abd32625d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08ed99f38d3d5fbb8388fb9abd32625d">&#9670;&#160;</a></span>bytes</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t UBX::Frame::length = 0</td>
+          <td class="memname">std::span&lt;const uint8_t&gt; UBX::Frame::bytes</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UBXFrameDecoder_8h_source.html#l00011">11</a> of file <a class="el" href="UBXFrameDecoder_8h_source.html">UBXFrameDecoder.h</a>.</p>
+<p>From the sync bytes to the checksum. </p>
 
-<p class="reference">Referenced by <a class="el" href="UBXFrameDecoder_8h_source.html#l00028">UBX::FrameDecoder::consume()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UBXFrame_8h_source.html#l00155">155</a> of file <a class="el" href="UBXFrame_8h_source.html">UBXFrame.h</a>.</p>
 
 </div>
 </div>
@@ -142,32 +147,28 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UBXFrameDecoder_8h_source.html#l00010">10</a> of file <a class="el" href="UBXFrameDecoder_8h_source.html">UBXFrameDecoder.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="UBXFrameDecoder_8h_source.html#l00028">UBX::FrameDecoder::consume()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UBXFrame_8h_source.html#l00153">153</a> of file <a class="el" href="UBXFrame_8h_source.html">UBXFrame.h</a>.</p>
 
 </div>
 </div>
-<a id="a991235123724413a4b728a3ff663bedf" name="a991235123724413a4b728a3ff663bedf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a991235123724413a4b728a3ff663bedf">&#9670;&#160;</a></span>payload</h2>
+<a id="afcc79037ecbc8248a30d642c7e2e6fd9" name="afcc79037ecbc8248a30d642c7e2e6fd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcc79037ecbc8248a30d642c7e2e6fd9">&#9670;&#160;</a></span>payload</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;uint8_t, 4096&gt; UBX::Frame::payload {}</td>
+          <td class="memname">std::span&lt;const uint8_t&gt; UBX::Frame::payload</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="UBXFrameDecoder_8h_source.html#l00012">12</a> of file <a class="el" href="UBXFrameDecoder_8h_source.html">UBXFrameDecoder.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="UBXFrameDecoder_8h_source.html#l00028">UBX::FrameDecoder::consume()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UBXFrame_8h_source.html#l00156">156</a> of file <a class="el" href="UBXFrame_8h_source.html">UBXFrame.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/GPS/Driver/Protocols/UBX/<a class="el" href="UBXFrameDecoder_8h_source.html">UBXFrameDecoder.h</a></li>
+<li>src/GPS/Core/Protocols/UBX/<a class="el" href="UBXFrame_8h_source.html">UBXFrame.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

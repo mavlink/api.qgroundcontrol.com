@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/GPS/Driver/Protocols/UBX/UBXDecoder.cc File Reference</title>
+<title>QGroundControl: src/GPS/Core/Protocols/UBX/UBXDecoder.cc File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,12 +90,25 @@ $(document).ready(function(){initNavTree('UBXDecoder_8cc.html',''); initResizabl
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle"><div class="title">UBXDecoder.cc File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;string_view&gt;</code><br />
-<code>#include &quot;<a class="el" href="UBXMessageCodec_8h_source.html">UBXMessageCodec.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="UBXPrivate_8h_source.html">UBXPrivate.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;array&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
+<code>#include &lt;QtCore/QByteArrayView&gt;</code><br />
+<code>#include &lt;QtCore/QString&gt;</code><br />
+<code>#include &quot;<a class="el" href="GPSFamilyProtocol_8h_source.html">GPSFamilyProtocol.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSProtocolMath_8h_source.html">GPSProtocolMath.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSReceiverFamilies_8h_source.html">GPSReceiverFamilies.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSStreamDemux_8h_source.html">GPSStreamDemux.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GPSTime_8h_source.html">GPSTime.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MonotonicClock_8h_source.html">MonotonicClock.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="NMEASentence_8h_source.html">NMEASentence.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="UBXMessageSchema_8h_source.html">UBX/UBXMessageSchema.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="UBXProtocol_8h_source.html">UBX/UBXProtocol.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for UBXDecoder.cc:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -105,12 +118,19 @@ $(document).ready(function(){initNavTree('UBXDecoder_8cc.html',''); initResizabl
 </div>
 </div>
 <p><a href="UBXDecoder_8cc_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceUBX" id="r_namespaceUBX"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceUBX.html">UBX</a></td></tr>
+<tr class="memdesc:namespaceUBX"><td class="mdescLeft">&#160;</td><td class="mdescRight">u-blox receivers over <a class="el" href="namespaceUBX.html" title="u-blox receivers over UBX: CFG-VALSET configuration from protocol 27, CFG-MSG and CFG-TMODE3 before i...">UBX</a>: CFG-VALSET configuration from protocol 27, CFG-MSG and CFG-TMODE3 before it. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_38cd3ecbc1efe502063aa758009bff68.html">Driver</a></li><li class="navelem"><a class="el" href="dir_c73a9e24d6a209aaceba1ac47ebd8c76.html">Protocols</a></li><li class="navelem"><a class="el" href="dir_56b0e563e1db3669eb7818aeed5291c8.html">UBX</a></li><li class="navelem"><a class="el" href="UBXDecoder_8cc.html">UBXDecoder.cc</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_4aa44793a7919d83f30050e49b7bf369.html">Core</a></li><li class="navelem"><a class="el" href="dir_2ea4f975d67d756f851fa6c567618cf5.html">Protocols</a></li><li class="navelem"><a class="el" href="dir_b136a70f7c46ae19dccad782a08bdc6c.html">UBX</a></li><li class="navelem"><a class="el" href="UBXDecoder_8cc.html">UBXDecoder.cc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

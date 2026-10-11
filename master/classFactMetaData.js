@@ -33,6 +33,7 @@ var classFactMetaData =
     [ "appSettingsHorizontalDistanceUnitsToMeters", "classFactMetaData.html#acb5fd5443b86030ad7ad2763d2420db9", null ],
     [ "appSettingsSpeedUnitsString", "classFactMetaData.html#afdf2053b323cfd147a79733d8360a218", null ],
     [ "appSettingsSpeedUnitsToMetersSecond", "classFactMetaData.html#ae07a3cc2c517a0076c20bfb66cbba448", null ],
+    [ "appSettingsUnitsChanged", "classFactMetaData.html#a3b88f840539d6659b9c377da68b8d3f3", null ],
     [ "appSettingsVerticalDistanceUnitsString", "classFactMetaData.html#a67fec6094e223b1e6e75d3d6259e03e6", null ],
     [ "appSettingsVerticalDistanceUnitsToMeters", "classFactMetaData.html#abd9cacfef4f6e68c5ec9678dea73d5bb", null ],
     [ "appSettingsWeightUnitsString", "classFactMetaData.html#a7c156dcb4f3511ff6d573d62c62a999f", null ],

@@ -1,6 +1,6 @@
 var structGPSDeadline =
 [
-    [ "remainingMilliseconds", "structGPSDeadline.html#aa25749bd247256c20c16c0e81dc928da", null ],
-    [ "toQDeadlineTimer", "structGPSDeadline.html#a1d186d7dcdf85211ca140a752d6e9167", null ],
+    [ "after", "structGPSDeadline.html#a968193c5d0f051ec435d5727a18ef580", null ],
+    [ "remaining", "structGPSDeadline.html#aaf305b01766d7e1044a188125562c592", null ],
     [ "untilUs", "structGPSDeadline.html#aaa43e7203f05075eb2624de70ef213a5", null ]
 ];

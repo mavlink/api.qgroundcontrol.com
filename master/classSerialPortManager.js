@@ -14,10 +14,13 @@ var classSerialPortManager =
     [ "instance", "classSerialPortManager.html#a09162723dc11b2f4ae1ef7bd9fce717c", null ],
     [ "isAutoConnectExcluded", "classSerialPortManager.html#a2bb6860b76ea5e442f5fda8d5bd0fa39", null ],
     [ "isPortReserved", "classSerialPortManager.html#a54f2cb992ce470000ac3d3d6de468f19", null ],
+    [ "isPrimaryInterface", "classSerialPortManager.html#a8b707e16081a117c11c87906b4e7e28b", null ],
     [ "portsEnumerated", "classSerialPortManager.html#ad026a52a79a8743f234d7fdf4671ea9a", null ],
+    [ "rescan", "classSerialPortManager.html#add4f3d102d8ce1e0dc57899b9fa8d8d8", null ],
     [ "reservePort", "classSerialPortManager.html#ad94cd422066f6355a1c8308c2242a282", null ],
     [ "serialPorts", "classSerialPortManager.html#ae893d9ad265e1c3fc47ce7b4e2b415f6", null ],
     [ "serialPortsChanged", "classSerialPortManager.html#a5408f1430780631ffd537e924d514eaf", null ],
     [ "setSinglePortOnly", "classSerialPortManager.html#afa68308eece586a4a753585b77a3de52", null ],
-    [ "supportedBaudRates", "classSerialPortManager.html#a12ee56d5034670ee8f9e9950be98885a", null ]
+    [ "supportedBaudRates", "classSerialPortManager.html#a12ee56d5034670ee8f9e9950be98885a", null ],
+    [ "NEW_PORT_SETTLE_DELAY", "classSerialPortManager.html#a9d8c737b0c4d9e277e4409585a040f2a", null ]
 ];

@@ -190,6 +190,7 @@ var namespaces_dup =
       ] ]
     ] ],
     [ "APMDataFlashUtility", "namespaceAPMDataFlashUtility.html", "namespaceAPMDataFlashUtility" ],
+    [ "Ashtech", "namespaceAshtech.html", "namespaceAshtech" ],
     [ "Colors", "namespaceColors.html", [
       [ "Blue", "namespaceColors.html#a7a37e8eeabb1a8923aeaead271b40152", null ],
       [ "BoldRed", "namespaceColors.html#ab7aead119f377470f758fc1dc2dc1eb0", null ],
@@ -239,11 +240,7 @@ var namespaces_dup =
       [ "writeGpsRef", "namespaceExifUtility.html#ad86528c861633f5e20daa6734e8b52b2", null ],
       [ "writeRational", "namespaceExifUtility.html#a5e781c107fc2d78a8695a79ce935deef", null ]
     ] ],
-    [ "Femto", "namespaceFemto.html", [
-      [ "GPS_PAYLOAD_SIZE", "namespaceFemto.html#a19f33d2f94e54be2002fbcf2a18d929f", null ],
-      [ "HEADER_SIZE", "namespaceFemto.html#ad339f8962268a1093f5e951ef0909b13", null ],
-      [ "STATUS_HEADER_SIZE", "namespaceFemto.html#ab4d124cde11165ba47077c61164e7986", null ]
-    ] ],
+    [ "Femto", "namespaceFemto.html", "namespaceFemto" ],
     [ "GeoJsonHelper", "namespaceGeoJsonHelper.html", [
       [ "_extractShapeValues", "namespaceGeoJsonHelper.html#a487d612096a806b98b5708eed7c4bd69", null ],
       [ "_extractShapeValuesRecursive", "namespaceGeoJsonHelper.html#afabea51f8938342b2cef6e79f3763154", null ],
@@ -266,9 +263,55 @@ var namespaces_dup =
     [ "GeoTagCalibrator", "namespaceGeoTagCalibrator.html", [
       [ "calibrate", "namespaceGeoTagCalibrator.html#a56084f8bcd0394c49fbe0ea590f840f0", null ]
     ] ],
-    [ "GPSNativeData", "namespaceGPSNativeData.html", "namespaceGPSNativeData" ],
-    [ "GPSStreamWrite", "namespaceGPSStreamWrite.html", [
-      [ "writeBounded", "namespaceGPSStreamWrite.html#abe1125c4d67cfaa2dd43f441831e7a87", null ]
+    [ "GPSConnectionErrors", "namespaceGPSConnectionErrors.html", [
+      [ "GPSConnectionError", "namespaceGPSConnectionErrors.html#afbe09a1852be468fdef6c9a8a2cfb6f1", [
+        [ "None", "namespaceGPSConnectionErrors.html#afbe09a1852be468fdef6c9a8a2cfb6f1a6adf97f83acf6453d4a6a4b1070f3754", null ],
+        [ "OpenFailed", "namespaceGPSConnectionErrors.html#afbe09a1852be468fdef6c9a8a2cfb6f1ac60b10c14b43d15f91424c6addfc31ac", null ],
+        [ "ConfigFailed", "namespaceGPSConnectionErrors.html#afbe09a1852be468fdef6c9a8a2cfb6f1a5d9194716b6a125a6d16691e84afcdf2", null ],
+        [ "DeviceError", "namespaceGPSConnectionErrors.html#afbe09a1852be468fdef6c9a8a2cfb6f1abe252e5b290c865b4d033fe4c4f88e9a", null ],
+        [ "ConsentRequired", "namespaceGPSConnectionErrors.html#afbe09a1852be468fdef6c9a8a2cfb6f1ab1839cb131ea1059ee39ad00441accdb", null ],
+        [ "ProtocolError", "namespaceGPSConnectionErrors.html#afbe09a1852be468fdef6c9a8a2cfb6f1aca3da8f495e4e628912a7798655da6c2", null ]
+      ] ],
+      [ "GPSInputProblem", "namespaceGPSConnectionErrors.html#a2ff0fc1851f78a580d11991e4de40168", [
+        [ "None", "namespaceGPSConnectionErrors.html#a2ff0fc1851f78a580d11991e4de40168a6adf97f83acf6453d4a6a4b1070f3754", null ],
+        [ "NoData", "namespaceGPSConnectionErrors.html#a2ff0fc1851f78a580d11991e4de40168acbf169aecd4365561eb6b245659f55d8", null ],
+        [ "NotGNSS", "namespaceGPSConnectionErrors.html#a2ff0fc1851f78a580d11991e4de40168a804cd73a5af77ae29abd005bcbea6d1d", null ],
+        [ "NoPositions", "namespaceGPSConnectionErrors.html#a2ff0fc1851f78a580d11991e4de40168a40dfbfe31ead45c7916740b8c847b3ec", null ],
+        [ "CorrectionsOnly", "namespaceGPSConnectionErrors.html#a2ff0fc1851f78a580d11991e4de40168af4bcd1a9d91d7dd1eb0e1c02b43cc0bf", null ]
+      ] ]
+    ] ],
+    [ "GPSDecodedData", "namespaceGPSDecodedData.html", "namespaceGPSDecodedData" ],
+    [ "GPSFixQualities", "namespaceGPSFixQualities.html", [
+      [ "GPSFixQuality", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748", [
+        [ "Unknown", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748a88183b946cc5f0e8c96b2e66e1c74a7e", null ],
+        [ "NoFix", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748a7458f6cf09e53df9495d3ee0d11868c4", null ],
+        [ "Fix2D", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748ad6800eded02a7eaceb638929dbd9ea55", null ],
+        [ "Fix3D", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748ad791aa90d108c9b0c76ec28cd4dfbb0f", null ],
+        [ "Differential", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748a1c2eaa5d56340808f2a94368501e5496", null ],
+        [ "RTKFloat", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748a54ae0c22a519fdddb751088d57c6b7dd", null ],
+        [ "RTKFixed", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748af0dbc34719fd78c631e96c80f0a34335", null ],
+        [ "Extrapolated", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748a94e6a82e363b2f395cbe9321cbc445e7", null ]
+      ] ]
+    ] ],
+    [ "GPSFixQualityForeign", "namespaceGPSFixQualityForeign.html", null ],
+    [ "GPSProtocolMath", "namespaceGPSProtocolMath.html", "namespaceGPSProtocolMath" ],
+    [ "GPSReceiverMessages", "namespaceGPSReceiverMessages.html", "namespaceGPSReceiverMessages" ],
+    [ "GPSTime", "namespaceGPSTime.html", [
+      [ "epochMs", "namespaceGPSTime.html#a9eecc854a91409f517475785cdd55dce", null ],
+      [ "towAdvances", "namespaceGPSTime.html#abf0103f14b8d829282224c97cf9fc5c3", null ],
+      [ "WEEK_MS", "namespaceGPSTime.html#ad56da33ad6cf17be85a902bf6c17f519", null ]
+    ] ],
+    [ "GPSTypes", "namespaceGPSTypes.html", [
+      [ "GPSType", "namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80", [
+        [ "ublox", "namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80aff994f303c142c19027e81161018329e", null ],
+        [ "trimble", "namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80a59b883e1049cd7ac71c6c4feb715942c", null ],
+        [ "septentrio", "namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80a84a05512636cdb77b5333b6bd82b1ede", null ],
+        [ "femto", "namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80ade06ed8dfc218126aa1bfbb9385f612e", null ],
+        [ "unicore", "namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80a771f7ba75beec6aaa5044922c27e1293", null ],
+        [ "quectel", "namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80ae417f14ac41a36a838f7682f5309c640", null ],
+        [ "passive", "namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80a831996cebc6c9bf7687e922c3437be69", null ],
+        [ "automatic", "namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80a2bd9c0ed00116be1258e0cc66617d7c8", null ]
+      ] ]
     ] ],
     [ "GraphicsSetup", "namespaceGraphicsSetup.html", [
       [ "configureMainWindow", "namespaceGraphicsSetup.html#a76b888fc245743668299f88ebefac4c1", null ]
@@ -320,16 +363,18 @@ var namespaces_dup =
     [ "MAVLinkSigning", "namespaceMAVLinkSigning.html", "namespaceMAVLinkSigning" ],
     [ "Mixer", "namespaceMixer.html", "namespaceMixer" ],
     [ "MonotonicClock", "namespaceMonotonicClock.html", [
-      [ "ageMilliseconds", "namespaceMonotonicClock.html#ae8fbdd3f89c4170b83177f50e8c49411", null ],
+      [ "age", "namespaceMonotonicClock.html#a5383972bd71b734459a49ada9b814d45", null ],
+      [ "age", "namespaceMonotonicClock.html#a3ca1e3a88a9bcbd647129c4729a9fb60", null ],
+      [ "fresh", "namespaceMonotonicClock.html#ab998615902ae9d363431a3579f765dad", null ],
       [ "nowUs", "namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78", null ],
-      [ "remaining", "namespaceMonotonicClock.html#af7352f82baaa1b63643dd9b89ad0c204", null ]
+      [ "remaining", "namespaceMonotonicClock.html#af7352f82baaa1b63643dd9b89ad0c204", null ],
+      [ "withinAge", "namespaceMonotonicClock.html#a552733fbbcf50c40117e8d573c6c55a9", null ]
     ] ],
     [ "NMEA", "namespaceNMEA.html", "namespaceNMEA" ],
-    [ "NMEAFields", "namespaceNMEAFields.html", "namespaceNMEAFields" ],
     [ "NMEAUtils", "namespaceNMEAUtils.html", [
+      [ "frame", "namespaceNMEAUtils.html#aed4283de7d9bc9648d201a305abfde7f", null ],
       [ "makeGGA", "namespaceNMEAUtils.html#a04957c52d8dca0f564bc603cad60e58f", null ],
-      [ "repairChecksum", "namespaceNMEAUtils.html#a029ecd9009e6c92272dfd7e2427cda7f", null ],
-      [ "verifyChecksum", "namespaceNMEAUtils.html#a79c31e7165d495c45b573b68dfedf33b", null ]
+      [ "repairChecksum", "namespaceNMEAUtils.html#a029ecd9009e6c92272dfd7e2427cda7f", null ]
     ] ],
     [ "NTRIPErrors", "namespaceNTRIPErrors.html", [
       [ "NTRIPError", "namespaceNTRIPErrors.html#ab3a74ce3b95766f53d1e1a5a33a22d17", [
@@ -341,15 +386,19 @@ var namespaces_dup =
         [ "ServerDisconnected", "namespaceNTRIPErrors.html#ab3a74ce3b95766f53d1e1a5a33a22d17a1e4fdfae64abbc2300951bc4a8952afe", null ],
         [ "InvalidHttpResponse", "namespaceNTRIPErrors.html#ab3a74ce3b95766f53d1e1a5a33a22d17a5ee75f7690a5b5cb7ea0b9961766ab47", null ],
         [ "HttpError", "namespaceNTRIPErrors.html#ab3a74ce3b95766f53d1e1a5a33a22d17a2feb6ea3db3fd8eb9ec285f21f1ef868", null ],
+        [ "RequestRejected", "namespaceNTRIPErrors.html#ab3a74ce3b95766f53d1e1a5a33a22d17a59f2fed28cb9b7fd88389e11c1c76e11", null ],
         [ "HeaderTooLarge", "namespaceNTRIPErrors.html#ab3a74ce3b95766f53d1e1a5a33a22d17a4288d611b2248085168553e28116556a", null ],
         [ "InvalidMountpoint", "namespaceNTRIPErrors.html#ab3a74ce3b95766f53d1e1a5a33a22d17a271318cfb86545f2816bf0dee039990a", null ],
-        [ "NoLocation", "namespaceNTRIPErrors.html#ab3a74ce3b95766f53d1e1a5a33a22d17a0f999b8986404e4f66de15e69cf3d7fa", null ],
         [ "InvalidConfig", "namespaceNTRIPErrors.html#ab3a74ce3b95766f53d1e1a5a33a22d17a636bc5ca1e0ceb3e4c67067618d7ae09", null ],
         [ "Unknown", "namespaceNTRIPErrors.html#ab3a74ce3b95766f53d1e1a5a33a22d17a88183b946cc5f0e8c96b2e66e1c74a7e", null ]
       ] ]
     ] ],
     [ "NTRIPTlsPolicy", "namespaceNTRIPTlsPolicy.html", [
+      [ "certificatePin", "namespaceNTRIPTlsPolicy.html#a11a31c260a316cb27e8e31f12216d979", null ],
       [ "isSelfSignedOnly", "namespaceNTRIPTlsPolicy.html#a73c04ae0fe0305de2af0ed2d8624dc44", null ]
+    ] ],
+    [ "Passive", "namespacePassive.html", [
+      [ "FAMILY", "namespacePassive.html#a0e9553a8acdab2d6614e716faa18e984", null ]
     ] ],
     [ "PatchMesh", "namespacePatchMesh.html", [
       [ "LodDeltas", "namespacePatchMesh.html#a39ead0b7e144ea0fa5511bf9e6ead9b2", null ],
@@ -426,7 +475,9 @@ var namespaces_dup =
     [ "QT_BEGIN_NAMESPACE", "namespaceQT__BEGIN__NAMESPACE.html", [
       [ "baudRateToSpeed", "namespaceQT__BEGIN__NAMESPACE.html#aacd7ed17991aba4a8a298304417387d9", null ]
     ] ],
+    [ "Quectel", "namespaceQuectel.html", "namespaceQuectel" ],
     [ "QuectelCodec", "namespaceQuectelCodec.html", "namespaceQuectelCodec" ],
+    [ "SBF", "namespaceSBF.html", "namespaceSBF" ],
     [ "SDLJoystick", "namespaceSDLJoystick.html", "namespaceSDLJoystick" ],
     [ "SDLPlatform", "namespaceSDLPlatform.html", [
       [ "AndroidStorageState", "namespaceSDLPlatform.html#aec61a1bb4831d2d46a4c9fecb37fe1fd", [
@@ -490,5 +541,7 @@ var namespaces_dup =
       [ "parseFile", "namespaceULogParser.html#ae879d2456fe782c95e4e1bd18a64cfb0", null ],
       [ "parseGeoTagData", "namespaceULogParser.html#a918d2fe41d1621d82ae289ef48b17c36", null ]
     ] ],
-    [ "VideoBackend", "namespaceVideoBackend.html", "namespaceVideoBackend" ]
+    [ "Unicore", "namespaceUnicore.html", "namespaceUnicore" ],
+    [ "VideoBackend", "namespaceVideoBackend.html", "namespaceVideoBackend" ],
+    [ "Wire", "namespaceWire.html", "namespaceWire" ]
 ];

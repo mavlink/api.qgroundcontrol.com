@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/GPS/Transport/GPSTransport.h File Reference</title>
+<title>QGroundControl: src/GPS/Core/Transport/GPSTransport.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,43 +91,181 @@ $(document).ready(function(){initNavTree('GPSTransport_8h.html',''); initResizab
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">GPSTransport.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;atomic&gt;</code><br />
-<code>#include &lt;chrono&gt;</code><br />
+<div class="textblock"><code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;span&gt;</code><br />
+<code>#include &lt;QtCore/QByteArrayView&gt;</code><br />
 <code>#include &lt;QtCore/QDeadlineTimer&gt;</code><br />
-<code>#include &quot;<a class="el" href="GPSTransportResult_8h_source.html">GPSTransportResult.h</a>&quot;</code><br />
+<code>#include &lt;QtCore/QString&gt;</code><br />
+<code>#include &quot;<a class="el" href="GPSCancellation_8h_source.html">GPSCancellation.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for GPSTransport.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="GPSTransport_8h__incl.svg" width="100%" height="437"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="GPSTransport_8h__incl.svg" width="100%" height="448"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="GPSTransport_8h__dep__incl.svg" width="100%" height="459"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="GPSTransport_8h__dep__incl.svg" width="100%" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="GPSTransport_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSOpenResult.html">GPSOpenResult</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSReadResult.html">GPSReadResult</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGPSWriteResult.html">GPSWriteResult</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGPSTransport.html">GPSTransport</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a7b6cdd8e5b9776c34b8c4d57cb30384f" id="r_a7b6cdd8e5b9776c34b8c4d57cb30384f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSTransport_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384f">GPSOpenStatus</a> { <br />
+&#160;&#160;<a class="el" href="GPSTransport_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa1a11b1adc359c03db0ca798a00e2632c">Opened</a>
+, <a class="el" href="GPSTransport_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa9541eb2348d883dd8e32ae0420274c4c">TimedOut</a>
+, <a class="el" href="GPSTransport_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384faa149e85a44aeec9140e92733d9ed694e">Cancelled</a>
+, <a class="el" href="GPSTransport_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd">Error</a>
+, <br />
+&#160;&#160;<a class="el" href="GPSTransport_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384fab4080bdf74febf04d578ff105cce9d3f">Unsupported</a>
+<br />
+ }</td></tr>
+<tr class="separator:a7b6cdd8e5b9776c34b8c4d57cb30384f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2634ce88dc52655449e319b328926ad" id="r_ab2634ce88dc52655449e319b328926ad"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSTransport_8h.html#ab2634ce88dc52655449e319b328926ad">GPSReadStatus</a> { <br />
+&#160;&#160;<a class="el" href="GPSTransport_8h.html#ab2634ce88dc52655449e319b328926adaf6068daa29dbb05a7ead1e3b5a48bbee">Data</a>
+, <a class="el" href="GPSTransport_8h.html#ab2634ce88dc52655449e319b328926ada9541eb2348d883dd8e32ae0420274c4c">TimedOut</a>
+, <a class="el" href="GPSTransport_8h.html#ab2634ce88dc52655449e319b328926adaa149e85a44aeec9140e92733d9ed694e">Cancelled</a>
+, <a class="el" href="GPSTransport_8h.html#ab2634ce88dc52655449e319b328926ada03f4a47830f97377a35321051685071e">Closed</a>
+, <br />
+&#160;&#160;<a class="el" href="GPSTransport_8h.html#ab2634ce88dc52655449e319b328926ada902b0d55fddef6f8d651fe1035b7d4bd">Error</a>
+, <a class="el" href="GPSTransport_8h.html#ab2634ce88dc52655449e319b328926ada129e8109f319870e328cc7a1d5b5cae3">Overflow</a>
+<br />
+ }</td></tr>
+<tr class="separator:ab2634ce88dc52655449e319b328926ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a604169add88d503c26deb25634162910" id="r_a604169add88d503c26deb25634162910"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GPSTransport_8h.html#a604169add88d503c26deb25634162910">GPSWriteStatus</a> { <br />
+&#160;&#160;<a class="el" href="GPSTransport_8h.html#a604169add88d503c26deb25634162910a07ca5050e697392c9ed47e6453f1453f">Completed</a>
+, <a class="el" href="GPSTransport_8h.html#a604169add88d503c26deb25634162910a9541eb2348d883dd8e32ae0420274c4c">TimedOut</a>
+, <a class="el" href="GPSTransport_8h.html#a604169add88d503c26deb25634162910aa149e85a44aeec9140e92733d9ed694e">Cancelled</a>
+, <a class="el" href="GPSTransport_8h.html#a604169add88d503c26deb25634162910a902b0d55fddef6f8d651fe1035b7d4bd">Error</a>
+, <br />
+&#160;&#160;<a class="el" href="GPSTransport_8h.html#a604169add88d503c26deb25634162910ab4080bdf74febf04d578ff105cce9d3f">Unsupported</a>
+<br />
+ }</td></tr>
+<tr class="separator:a604169add88d503c26deb25634162910"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a7b6cdd8e5b9776c34b8c4d57cb30384f" name="a7b6cdd8e5b9776c34b8c4d57cb30384f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b6cdd8e5b9776c34b8c4d57cb30384f">&#9670;&#160;</a></span>GPSOpenStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="GPSTransport_8h.html#a7b6cdd8e5b9776c34b8c4d57cb30384f">GPSOpenStatus</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7b6cdd8e5b9776c34b8c4d57cb30384fa1a11b1adc359c03db0ca798a00e2632c" name="a7b6cdd8e5b9776c34b8c4d57cb30384fa1a11b1adc359c03db0ca798a00e2632c"></a>Opened&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b6cdd8e5b9776c34b8c4d57cb30384fa9541eb2348d883dd8e32ae0420274c4c" name="a7b6cdd8e5b9776c34b8c4d57cb30384fa9541eb2348d883dd8e32ae0420274c4c"></a>TimedOut&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b6cdd8e5b9776c34b8c4d57cb30384faa149e85a44aeec9140e92733d9ed694e" name="a7b6cdd8e5b9776c34b8c4d57cb30384faa149e85a44aeec9140e92733d9ed694e"></a>Cancelled&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd" name="a7b6cdd8e5b9776c34b8c4d57cb30384fa902b0d55fddef6f8d651fe1035b7d4bd"></a>Error&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b6cdd8e5b9776c34b8c4d57cb30384fab4080bdf74febf04d578ff105cce9d3f" name="a7b6cdd8e5b9776c34b8c4d57cb30384fab4080bdf74febf04d578ff105cce9d3f"></a>Unsupported&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="GPSTransport_8h_source.html#l00013">13</a> of file <a class="el" href="GPSTransport_8h_source.html">GPSTransport.h</a>.</p>
+
+</div>
+</div>
+<a id="ab2634ce88dc52655449e319b328926ad" name="ab2634ce88dc52655449e319b328926ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2634ce88dc52655449e319b328926ad">&#9670;&#160;</a></span>GPSReadStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="GPSTransport_8h.html#ab2634ce88dc52655449e319b328926ad">GPSReadStatus</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab2634ce88dc52655449e319b328926adaf6068daa29dbb05a7ead1e3b5a48bbee" name="ab2634ce88dc52655449e319b328926adaf6068daa29dbb05a7ead1e3b5a48bbee"></a>Data&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab2634ce88dc52655449e319b328926ada9541eb2348d883dd8e32ae0420274c4c" name="ab2634ce88dc52655449e319b328926ada9541eb2348d883dd8e32ae0420274c4c"></a>TimedOut&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab2634ce88dc52655449e319b328926adaa149e85a44aeec9140e92733d9ed694e" name="ab2634ce88dc52655449e319b328926adaa149e85a44aeec9140e92733d9ed694e"></a>Cancelled&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab2634ce88dc52655449e319b328926ada03f4a47830f97377a35321051685071e" name="ab2634ce88dc52655449e319b328926ada03f4a47830f97377a35321051685071e"></a>Closed&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab2634ce88dc52655449e319b328926ada902b0d55fddef6f8d651fe1035b7d4bd" name="ab2634ce88dc52655449e319b328926ada902b0d55fddef6f8d651fe1035b7d4bd"></a>Error&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab2634ce88dc52655449e319b328926ada129e8109f319870e328cc7a1d5b5cae3" name="ab2634ce88dc52655449e319b328926ada129e8109f319870e328cc7a1d5b5cae3"></a>Overflow&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="GPSTransport_8h_source.html#l00022">22</a> of file <a class="el" href="GPSTransport_8h_source.html">GPSTransport.h</a>.</p>
+
+</div>
+</div>
+<a id="a604169add88d503c26deb25634162910" name="a604169add88d503c26deb25634162910"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a604169add88d503c26deb25634162910">&#9670;&#160;</a></span>GPSWriteStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="GPSTransport_8h.html#a604169add88d503c26deb25634162910">GPSWriteStatus</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a604169add88d503c26deb25634162910a07ca5050e697392c9ed47e6453f1453f" name="a604169add88d503c26deb25634162910a07ca5050e697392c9ed47e6453f1453f"></a>Completed&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a604169add88d503c26deb25634162910a9541eb2348d883dd8e32ae0420274c4c" name="a604169add88d503c26deb25634162910a9541eb2348d883dd8e32ae0420274c4c"></a>TimedOut&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a604169add88d503c26deb25634162910aa149e85a44aeec9140e92733d9ed694e" name="a604169add88d503c26deb25634162910aa149e85a44aeec9140e92733d9ed694e"></a>Cancelled&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a604169add88d503c26deb25634162910a902b0d55fddef6f8d651fe1035b7d4bd" name="a604169add88d503c26deb25634162910a902b0d55fddef6f8d651fe1035b7d4bd"></a>Error&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a604169add88d503c26deb25634162910ab4080bdf74febf04d578ff105cce9d3f" name="a604169add88d503c26deb25634162910ab4080bdf74febf04d578ff105cce9d3f"></a>Unsupported&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="GPSTransport_8h_source.html#l00032">32</a> of file <a class="el" href="GPSTransport_8h_source.html">GPSTransport.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_43c0dbc65b1d26c09ae70f5d133fbaa4.html">Transport</a></li><li class="navelem"><a class="el" href="GPSTransport_8h.html">GPSTransport.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_43f56a1598361543d7a95c3972bc4b20.html">GPS</a></li><li class="navelem"><a class="el" href="dir_4aa44793a7919d83f30050e49b7bf369.html">Core</a></li><li class="navelem"><a class="el" href="dir_f3f34d48a3802503ca12c7ecf1659714.html">Transport</a></li><li class="navelem"><a class="el" href="GPSTransport_8h.html">GPSTransport.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

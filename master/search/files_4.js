@@ -31,5 +31,6 @@ var searchData=
   ['exifparser_2ecc_28',['ExifParser.cc',['../ExifParser_8cc.html',1,'']]],
   ['exifparser_2eh_29',['ExifParser.h',['../ExifParser_8h.html',1,'']]],
   ['exifutility_2ecc_30',['ExifUtility.cc',['../ExifUtility_8cc.html',1,'']]],
-  ['exifutility_2eh_31',['ExifUtility.h',['../ExifUtility_8h.html',1,'']]]
+  ['exifutility_2eh_31',['ExifUtility.h',['../ExifUtility_8h.html',1,'']]],
+  ['exponentialbackoff_2eh_32',['ExponentialBackoff.h',['../ExponentialBackoff_8h.html',1,'']]]
 ];

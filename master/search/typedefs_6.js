@@ -1,11 +1,23 @@
 var searchData=
 [
-  ['gpscommandoutcome_0',['GPSCommandOutcome',['../GPSCommandTransaction_8h.html#a7ea8e3d3b5adf18ad9dafe2227c9720e',1,'GPSCommandTransaction.h']]],
-  ['gpsdecodedevent_1',['GPSDecodedEvent',['../GPSDecodedBatch_8h.html#adac72d7cecf31120e0f3741f3a8884ef',1,'GPSDecodedBatch.h']]],
-  ['gstelement_2',['gstelement',['../GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3',1,'GstElement:&#160;GstVideoReceiver.h'],['../MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3',1,'GstElement:&#160;MockVideoStreamServer.h']]],
-  ['gstfactoryptr_3',['GstFactoryPtr',['../namespaceGStreamer.html#a52b9487a93b747cf73dbe9e5c69d4d49',1,'GStreamer']]],
-  ['gstfeatureptr_4',['GstFeaturePtr',['../namespaceGStreamer.html#af94763ecd1276f0bcb7e7d4959611474',1,'GStreamer']]],
-  ['gstobjectptr_5',['GstObjectPtr',['../namespaceGStreamer.html#a87eb199c95c743f5a5c3d804124cd0a8',1,'GStreamer']]],
-  ['gstqueryptr_6',['GstQueryPtr',['../namespaceGStreamer.html#afcf42ed49ba0c585867b858df74ea14f',1,'GStreamer']]],
-  ['guard_7',['guard',['../classGuardedTransition.html#a6b723d1624374c8615ae99a6298e6f65',1,'GuardedTransition::Guard'],['../classMachineEventTransition.html#ab334921a71004977df7b057d3dae2d00',1,'MachineEventTransition::Guard'],['../classQGCEventTransition.html#ae7509f9bd8e8b6825dd6d9fe38e313c7',1,'QGCEventTransition::Guard'],['../classSignalDataTransition.html#ae8e1fa4255bf2113d1b27a7ad2f87c3e',1,'SignalDataTransition::Guard']]]
+  ['gpsbaudprobefunction_0',['GPSBaudProbeFunction',['../GPSCommandChannel_8h.html#a72540ef0196eb46c652af1bc9f8f8d79',1,'GPSCommandChannel.h']]],
+  ['gpsconnectionerror_1',['GPSConnectionError',['../GPSConnectionErrors_8h.html#aca5b5a56cfef16776f3875a1daf2a349',1,'GPSConnectionErrors.h']]],
+  ['gpsfixquality_2',['GPSFixQuality',['../GPSReceiverReports_8h.html#a0b6d72538ba0f5e8472130dd818016a0',1,'GPSReceiverReports.h']]],
+  ['gpsframematcher_3',['GPSFrameMatcher',['../GPSCommand_8h.html#a0d399f23c4b0c8cd3f63d3526347538f',1,'GPSCommand.h']]],
+  ['gpsinputproblem_4',['GPSInputProblem',['../GPSConnectionErrors_8h.html#ab078155f3df492ac7337d86d5e49f685',1,'GPSConnectionErrors.h']]],
+  ['gpslogcategory_5',['GPSLogCategory',['../GPSFamilyProtocol_8h.html#a5cc975bbcbe460da978bf0f4a06fc4fe',1,'GPSFamilyProtocol.h']]],
+  ['gpspositionsourceregistration_6',['GPSPositionSourceRegistration',['../PositionManager_8h.html#accec7bc8961c84c231429c6627b3942c',1,'PositionManager.h']]],
+  ['gpsprotocolevent_7',['GPSProtocolEvent',['../GPSProtocolEvent_8h.html#a691333aaf12d42edab91dd6885b4d156',1,'GPSProtocolEvent.h']]],
+  ['gpsreceiverworkerfactory_8',['GPSReceiverWorkerFactory',['../GPSReceiverConnector_8h.html#a346e83c773c55ae2fd7d6d37d9406172',1,'GPSReceiverConnector.h']]],
+  ['gpsreplypoll_9',['GPSReplyPoll',['../GPSCommand_8h.html#a15b99b25071fb2eca82bb1fe8e753b3d',1,'GPSCommand.h']]],
+  ['gpsserialclaim_10',['GPSSerialClaim',['../GPSReceiverConnector_8h.html#a635e7f492a09fb870a32882cd9b22daa',1,'GPSReceiverConnector.h']]],
+  ['gpssignaturefunction_11',['GPSSignatureFunction',['../GPSFamilyProtocol_8h.html#a049b244999b4277ffe6efd85c899cd12',1,'GPSFamilyProtocol.h']]],
+  ['gpstextmatcher_12',['GPSTextMatcher',['../GPSCommand_8h.html#af8b8f2bc61f231706259886dfa2909f7',1,'GPSCommand.h']]],
+  ['gpstype_13',['GPSType',['../GPSType_8h.html#a72ce9d935de5eb7c515c22dedaa6719a',1,'GPSType.h']]],
+  ['gstelement_14',['gstelement',['../MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3',1,'GstElement:&#160;MockVideoStreamServer.h'],['../GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3',1,'GstElement:&#160;GstVideoReceiver.h']]],
+  ['gstfactoryptr_15',['GstFactoryPtr',['../namespaceGStreamer.html#a52b9487a93b747cf73dbe9e5c69d4d49',1,'GStreamer']]],
+  ['gstfeatureptr_16',['GstFeaturePtr',['../namespaceGStreamer.html#af94763ecd1276f0bcb7e7d4959611474',1,'GStreamer']]],
+  ['gstobjectptr_17',['GstObjectPtr',['../namespaceGStreamer.html#a87eb199c95c743f5a5c3d804124cd0a8',1,'GStreamer']]],
+  ['gstqueryptr_18',['GstQueryPtr',['../namespaceGStreamer.html#afcf42ed49ba0c585867b858df74ea14f',1,'GStreamer']]],
+  ['guard_19',['guard',['../classSignalDataTransition.html#ae8e1fa4255bf2113d1b27a7ad2f87c3e',1,'SignalDataTransition::Guard'],['../classQGCEventTransition.html#ae7509f9bd8e8b6825dd6d9fe38e313c7',1,'QGCEventTransition::Guard'],['../classMachineEventTransition.html#ab334921a71004977df7b057d3dae2d00',1,'MachineEventTransition::Guard'],['../classGuardedTransition.html#a6b723d1624374c8615ae99a6298e6f65',1,'GuardedTransition::Guard']]]
 ];

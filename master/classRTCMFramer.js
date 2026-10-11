@@ -2,8 +2,8 @@ var classRTCMFramer =
 [
     [ "addByte", "classRTCMFramer.html#ae72a445e9356ce138b6255b8ab1053a8", null ],
     [ "bufferedSize", "classRTCMFramer.html#a491d2170da58d64d7949db8b4aa0a087", null ],
-    [ "crc24q", "classRTCMFramer.html#aa0b36edcc17fe5083922234041d2771a", null ],
     [ "frame", "classRTCMFramer.html#a31ac880b8417f1e4b8c60ab0bfab2e3d", null ],
+    [ "frameMessageId", "classRTCMFramer.html#ab8d990b1499fd8e1c72f845cb4ab628c", null ],
     [ "hasPartialFrame", "classRTCMFramer.html#a5eb559864968c277c49434eac57eecec", null ],
     [ "isValidFrame", "classRTCMFramer.html#ae8a7b34e4b08b05721c0be420aa981f1", null ],
     [ "isValidFrame", "classRTCMFramer.html#ac54718c2e60d05706afa89e0272df9f3", null ],

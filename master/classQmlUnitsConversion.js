@@ -20,5 +20,6 @@ var classQmlUnitsConversion =
     [ "metersToAppSettingsVerticalDistanceUnits", "classQmlUnitsConversion.html#ac207bfc81a2b654113faef976298ec5b", null ],
     [ "metersToAppSettingsVerticalDistanceUnitsString", "classQmlUnitsConversion.html#aeaf88bf19527738da7f95143b6cca734", null ],
     [ "radiansToDegrees", "classQmlUnitsConversion.html#a9e4fc9977249e744bf7ba519ddbe823e", null ],
-    [ "squareMetersToAppSettingsAreaUnits", "classQmlUnitsConversion.html#a12bb00113c52899c28dfcd574fd53f3c", null ]
+    [ "squareMetersToAppSettingsAreaUnits", "classQmlUnitsConversion.html#a12bb00113c52899c28dfcd574fd53f3c", null ],
+    [ "unitsChanged", "classQmlUnitsConversion.html#a547221b66a83b89227049d03e8739bfd", null ]
 ];

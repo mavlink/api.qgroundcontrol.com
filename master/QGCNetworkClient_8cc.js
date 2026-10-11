@@ -3,6 +3,8 @@ var QGCNetworkClient_8cc =
     [ "configureProxy", "QGCNetworkClient_8cc.html#a1fd4672d05e7364c84d24d090472882b", null ],
     [ "createBasicAuthCredentials", "QGCNetworkClient_8cc.html#a8876e9991bd3572703f6ee487b5223f2", null ],
     [ "createNetworkManager", "QGCNetworkClient_8cc.html#a2b646f410d502f482e98871ef163fcc6", null ],
+    [ "createSslConfig", "QGCNetworkClient_8cc.html#a0d500c7d18a4607d737caa511d7b03ea", null ],
+    [ "defaultUserAgent", "QGCNetworkClient_8cc.html#a83eb1ac0e2713edadbc2f5bc69c4bf8f", null ],
     [ "setBasicAuth", "QGCNetworkClient_8cc.html#a87dfaebde8850d64fd299ea6c943acb8", null ],
     [ "setBasicAuth", "QGCNetworkClient_8cc.html#a247e9fb3529bf8a9aca6b9121bad9d81", null ],
     [ "setBearerToken", "QGCNetworkClient_8cc.html#aa6ab994c699f1129135883cfe1d2e9d3", null ]

@@ -8,5 +8,6 @@ var searchData=
   ['tilestate_5',['TileState',['../structQGCTile.html#a9e47ec1e89debdca4ec927e2c4461940',1,'QGCTile']]],
   ['transactiontype_5ft_6',['TransactionType_t',['../classPlanManager.html#aae587787ec6b603649e9e922a049fa79',1,'PlanManager']]],
   ['transitionreason_7',['TransitionReason',['../classStateHistoryRecorder.html#aab67d02c9b0dfc3cf3b0dcf278a511fd',1,'StateHistoryRecorder']]],
-  ['type_8',['type',['../structActuatorActions_1_1Config.html#a8e9187acc813ed0131a212a99427445a',1,'ActuatorActions::Config::Type'],['../structActuatorGeometry.html#af7841751ef9e6ac838cc523e3ca76339',1,'ActuatorGeometry::Type']]]
+  ['trigger_8',['Trigger',['../structNMEA_1_1NavigationUpdate.html#a803b511ec2d60dbd136826a7482d3057',1,'NMEA::NavigationUpdate']]],
+  ['type_9',['type',['../structNMEA_1_1NavigationUpdate.html#ac8a65b8e91b29dcadebcf23db85b8967',1,'NMEA::NavigationUpdate::Type'],['../structActuatorActions_1_1Config.html#a8e9187acc813ed0131a212a99427445a',1,'ActuatorActions::Config::Type'],['../structActuatorGeometry.html#af7841751ef9e6ac838cc523e3ca76339',1,'ActuatorGeometry::Type']]]
 ];

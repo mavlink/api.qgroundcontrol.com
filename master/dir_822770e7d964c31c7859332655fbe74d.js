@@ -11,8 +11,6 @@ var dir_822770e7d964c31c7859332655fbe74d =
     [ "GimbalIndicator.qml", "GimbalIndicator_8qml.html", null ],
     [ "GPSIndicator.qml", "GPSIndicator_8qml.html", null ],
     [ "GPSIndicatorPage.qml", "GPSIndicatorPage_8qml.html", null ],
-    [ "GPSReceiverSettings.qml", "GPSReceiverSettings_8qml.html", null ],
-    [ "GPSResilienceIndicator.qml", "GPSResilienceIndicator_8qml.html", null ],
     [ "JoystickIndicator.qml", "JoystickIndicator_8qml.html", null ],
     [ "MainStatusIndicator.qml", "MainStatusIndicator_8qml.html", null ],
     [ "MainStatusIndicatorOfflinePage.qml", "MainStatusIndicatorOfflinePage_8qml.html", null ],
@@ -23,10 +21,8 @@ var dir_822770e7d964c31c7859332655fbe74d =
     [ "RCRSSIIndicator.qml", "RCRSSIIndicator_8qml.html", null ],
     [ "RemoteIDIndicator.qml", "RemoteIDIndicator_8qml.html", null ],
     [ "RemoteIDIndicatorPage.qml", "RemoteIDIndicatorPage_8qml.html", null ],
-    [ "RTKGPSIndicator.qml", "RTKGPSIndicator_8qml.html", null ],
     [ "SelectViewDropdown.qml", "SelectViewDropdown_8qml.html", null ],
     [ "SignalStrength.qml", "SignalStrength_8qml.html", null ],
     [ "TelemetryRSSIIndicator.qml", "TelemetryRSSIIndicator_8qml.html", null ],
-    [ "VehicleGPSIndicator.qml", "VehicleGPSIndicator_8qml.html", null ],
     [ "VehicleMessageList.qml", "VehicleMessageList_8qml.html", null ]
 ];

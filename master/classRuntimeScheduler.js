@@ -9,6 +9,7 @@ var classRuntimeScheduler =
     [ "cancel", "classRuntimeScheduler.html#af591b524855e916a8118fc7b3ab5c698", null ],
     [ "nowMs", "classRuntimeScheduler.html#a70391186eea668b40770da2b2d17550d", null ],
     [ "nowUs", "classRuntimeScheduler.html#a5c84ed039eaf565f88846fa8e508a39a", null ],
+    [ "orDefault", "classRuntimeScheduler.html#ae6450f1e1ce4d1cca7a5ddcdaf23f544", null ],
     [ "schedule", "classRuntimeScheduler.html#a8d259de0c550f63b448c0253ef79f848", null ],
     [ "MAX_DELAY", "classRuntimeScheduler.html#a1e365e364f94f586cb7386340182411b", null ]
 ];

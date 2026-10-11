@@ -11,9 +11,9 @@ var NTRIPError_8h =
       [ "ServerDisconnected", "NTRIPError_8h.html#ab3a74ce3b95766f53d1e1a5a33a22d17a1e4fdfae64abbc2300951bc4a8952afe", null ],
       [ "InvalidHttpResponse", "NTRIPError_8h.html#ab3a74ce3b95766f53d1e1a5a33a22d17a5ee75f7690a5b5cb7ea0b9961766ab47", null ],
       [ "HttpError", "NTRIPError_8h.html#ab3a74ce3b95766f53d1e1a5a33a22d17a2feb6ea3db3fd8eb9ec285f21f1ef868", null ],
+      [ "RequestRejected", "NTRIPError_8h.html#ab3a74ce3b95766f53d1e1a5a33a22d17a59f2fed28cb9b7fd88389e11c1c76e11", null ],
       [ "HeaderTooLarge", "NTRIPError_8h.html#ab3a74ce3b95766f53d1e1a5a33a22d17a4288d611b2248085168553e28116556a", null ],
       [ "InvalidMountpoint", "NTRIPError_8h.html#ab3a74ce3b95766f53d1e1a5a33a22d17a271318cfb86545f2816bf0dee039990a", null ],
-      [ "NoLocation", "NTRIPError_8h.html#ab3a74ce3b95766f53d1e1a5a33a22d17a0f999b8986404e4f66de15e69cf3d7fa", null ],
       [ "InvalidConfig", "NTRIPError_8h.html#ab3a74ce3b95766f53d1e1a5a33a22d17a636bc5ca1e0ceb3e4c67067618d7ae09", null ],
       [ "Unknown", "NTRIPError_8h.html#ab3a74ce3b95766f53d1e1a5a33a22d17a88183b946cc5f0e8c96b2e66e1c74a7e", null ]
     ] ]

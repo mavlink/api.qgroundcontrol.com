@@ -1,12 +1,5 @@
 var NAVTREEINDEX9 =
 {
-"GstHwVideoBufferFactory_8cc.html":[5,0,0,30,0,0,1,2,15],
-"GstHwVideoBufferFactory_8cc.html#a74d923ff508ae33cc5c47f131e0d28e3":[5,0,0,30,0,0,1,2,15,0],
-"GstHwVideoBufferFactory_8cc_source.html":[5,0,0,30,0,0,1,2,15],
-"GstHwVideoBufferFactory_8h.html":[5,0,0,30,0,0,1,2,16],
-"GstHwVideoBufferFactory_8h.html#a0edebf87550a882d9a0748c5778e2b6c":[5,0,0,30,0,0,1,2,16,3],
-"GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb":[5,0,0,30,0,0,1,2,16,2],
-"GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba148b36231bc88654c6fef5759826f7fd":[5,0,0,30,0,0,1,2,16,2,5],
 "GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba38625270231b647116c80bcbc4f9d1d8":[5,0,0,30,0,0,1,2,16,2,7],
 "GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754":[5,0,0,30,0,0,1,2,16,2,0],
 "GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba966e13d8aabbff3966a5cd28d67b4846":[5,0,0,30,0,0,1,2,16,2,1],
@@ -116,8 +109,8 @@ var NAVTREEINDEX9 =
 "HeightSource_8cc_source.html":[5,0,0,14,44],
 "HeightSource_8h.html":[5,0,0,14,45],
 "HeightSource_8h_source.html":[5,0,0,14,45],
-"HelpSettings_8qml.html":[5,0,0,4,6],
-"HelpSettings_8qml_source.html":[5,0,0,4,6],
+"HelpSettings_8qml.html":[5,0,0,4,3],
+"HelpSettings_8qml_source.html":[5,0,0,4,3],
 "HomePositionMapVisual_8qml.html":[5,0,0,22,9],
 "HomePositionMapVisual_8qml_source.html":[5,0,0,22,9],
 "HorizontalCompassAttitude_8qml.html":[5,0,0,11,1,4],
@@ -200,8 +193,8 @@ var NAVTREEINDEX9 =
 "JoystickConfigController_8cc_source.html":[5,0,0,29,3,11],
 "JoystickConfigController_8h.html":[5,0,0,29,3,12],
 "JoystickConfigController_8h_source.html":[5,0,0,29,3,12],
-"JoystickIndicator_8qml.html":[5,0,0,27,13],
-"JoystickIndicator_8qml_source.html":[5,0,0,27,13],
+"JoystickIndicator_8qml.html":[5,0,0,27,11],
+"JoystickIndicator_8qml_source.html":[5,0,0,27,11],
 "JoystickManagerSettings_8cc.html":[5,0,0,25,22],
 "JoystickManagerSettings_8cc.html#a42256aa13581d6b34c5d91eba8a0c464":[5,0,0,25,22,0],
 "JoystickManagerSettings_8cc_source.html":[5,0,0,25,22],
@@ -249,5 +242,12 @@ var NAVTREEINDEX9 =
 "JsonParsing_8h.html#a3d0d7d05e0c5f0978d7d582473991e25":[5,0,0,28,13,2,1,7],
 "JsonParsing_8h.html#a9835bf5a2c8e57c435a6f216dcd4fd52":[5,0,0,28,13,2,1,0],
 "JsonParsing_8h.html#aa1c62aa1c3fe9b6d971620e1d9c44592":[5,0,0,28,13,2,1,8],
-"JsonParsing_8h.html#aa4926e2821e2e072504a56c734beaf9f":[5,0,0,28,13,2,1,2]
+"JsonParsing_8h.html#aa4926e2821e2e072504a56c734beaf9f":[5,0,0,28,13,2,1,2],
+"JsonParsing_8h.html#ab375d257b250d16931527eab915e7d56":[5,0,0,28,13,2,1,3],
+"JsonParsing_8h.html#ae006a885f4ca066dd05c90b97afff846":[5,0,0,28,13,2,1,4],
+"JsonParsing_8h.html#aee4a5cd83f1f1dea162224b7a2284304":[5,0,0,28,13,2,1,5],
+"JsonParsing_8h.html#af984a2314a00790e8d50fd24af083959":[5,0,0,28,13,2,1,9],
+"JsonParsing_8h_source.html":[5,0,0,28,13,2,1],
+"JsonSchemaValidator_8cc.html":[5,0,0,28,13,2,2],
+"JsonSchemaValidator_8cc.html#a72c7d2d8682c3393c8d6680303f6769d":[5,0,0,28,13,2,2,0]
 };

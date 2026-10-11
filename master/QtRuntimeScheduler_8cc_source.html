@@ -100,10 +100,10 @@ $(document).ready(function(){initNavTree('QtRuntimeScheduler_8cc_source.html',''
 <div class="contents">
 <a href="QtRuntimeScheduler_8cc.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="QtRuntimeScheduler_8h.html">QtRuntimeScheduler.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QtCore/QChronoTimer&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QtCore/QTimerEvent&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="MonotonicClock_8h.html">MonotonicClock.h</a>&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
@@ -138,60 +138,69 @@ $(document).ready(function(){initNavTree('QtRuntimeScheduler_8cc_source.html',''
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classRuntimeScheduler.html#a134124e9477c27f65630902181b4d8ac">_canSchedule</a>(context, delay, callback)) {</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <span class="keywordtype">id</span> = ++_nextTask;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">auto</span>* timer = <span class="keyword">new</span> QChronoTimer(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    timer-&gt;setSingleShot(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    timer-&gt;setTimerType(Qt::PreciseTimer);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    _tasks.insert(<span class="keywordtype">id</span>, timer);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> QPointer&lt;QObject&gt; guard(context);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">const</span> QPointer&lt;QtRuntimeScheduler&gt; scheduler(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    connect(context, &amp;QObject::destroyed, timer, [scheduler, <span class="keywordtype">id</span>]() {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">if</span> (scheduler) {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            scheduler-&gt;cancel(<span class="keywordtype">id</span>);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    });</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    connect(timer, &amp;QChronoTimer::timeout, <span class="keyword">this</span>, [<span class="keyword">this</span>, <span class="keywordtype">id</span>, timer, guard, callback = std::move(callback)]() {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        _tasks.remove(<span class="keywordtype">id</span>);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        timer-&gt;deleteLater();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">if</span> (guard) {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            callback();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    });</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    timer-&gt;setInterval((std::max) (delay, std::chrono::microseconds::zero()));</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    timer-&gt;start();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> id;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> timer = startTimer((std::max) (delay, std::chrono::microseconds::zero()), Qt::PreciseTimer);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">if</span> (timer == 0) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">const</span> <span class="keyword">auto</span> <span class="keywordtype">id</span> = ++_nextTask;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> <span class="keyword">auto</span> contextDestroyed = connect(context, &amp;QObject::destroyed, <span class="keyword">this</span>, [<span class="keyword">this</span>, <span class="keywordtype">id</span>]() { <a class="code hl_function" href="classQtRuntimeScheduler.html#a3cb0db4d82c6491924933dd4021c4008">cancel</a>(<span class="keywordtype">id</span>); });</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    _tasks.insert(timer, {id, context, std::move(callback), contextDestroyed});</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    _timers.insert(<span class="keywordtype">id</span>, timer);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> id;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classQtRuntimeScheduler.html#a3cb0db4d82c6491924933dd4021c4008">   58</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQtRuntimeScheduler.html#a3cb0db4d82c6491924933dd4021c4008">QtRuntimeScheduler::cancel</a>(<a class="code hl_typedef" href="classRuntimeScheduler.html#a2616066f50e360f88863bbde389d729a">TaskId</a> task)</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classRuntimeScheduler.html#a358f840ceb6a68e41fd6b66e19158a95">_isCurrentThread</a>()) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">const</span> <span class="keyword">auto</span> timer = _tasks.take(task);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">if</span> (timer) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        timer-&gt;stop();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        timer-&gt;disconnect();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        timer-&gt;deleteLater();</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classQtRuntimeScheduler.html#a3cb0db4d82c6491924933dd4021c4008">   45</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQtRuntimeScheduler.html#a3cb0db4d82c6491924933dd4021c4008">QtRuntimeScheduler::cancel</a>(<a class="code hl_typedef" href="classRuntimeScheduler.html#a2616066f50e360f88863bbde389d729a">TaskId</a> task)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classRuntimeScheduler.html#a358f840ceb6a68e41fd6b66e19158a95">_isCurrentThread</a>()) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">const</span> <span class="keyword">auto</span> timer = _timers.find(task);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> (timer == _timers.end()) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    killTimer(*timer);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    disconnect(_tasks.take(*timer).contextDestroyed);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    _timers.erase(timer);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
 </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classQtRuntimeScheduler.html#a6dbfaa93cd9ac6a4fa3d08b2996a660c">   59</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQtRuntimeScheduler.html#a6dbfaa93cd9ac6a4fa3d08b2996a660c">QtRuntimeScheduler::timerEvent</a>(QTimerEvent* event)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>{</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">const</span> <span class="keyword">auto</span> found = _tasks.find(event-&gt;timerId());</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">if</span> (found == _tasks.end()) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        RuntimeScheduler::timerEvent(event);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    killTimer(found.key());</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_typedef" href="GstVideoReceiver_8h.html#a58387fff25c2437df9bda5c120373eca">Task</a> task = std::move(*found);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    _tasks.erase(found);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    _timers.remove(task.id);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    disconnect(task.contextDestroyed);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span> (task.context) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        task.callback();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
+</div>
+<div class="ttc" id="aGstVideoReceiver_8h_html_a58387fff25c2437df9bda5c120373eca"><div class="ttname"><a href="GstVideoReceiver_8h.html#a58387fff25c2437df9bda5c120373eca">Task</a></div><div class="ttdeci">std::function&lt; void()&gt; Task</div><div class="ttdef"><b>Definition</b> <a href="GstVideoReceiver_8h_source.html#l00017">GstVideoReceiver.h:17</a></div></div>
 <div class="ttc" id="aMonotonicClock_8h_html"><div class="ttname"><a href="MonotonicClock_8h.html">MonotonicClock.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>
 <div class="ttc" id="aQtRuntimeScheduler_8h_html"><div class="ttname"><a href="QtRuntimeScheduler_8h.html">QtRuntimeScheduler.h</a></div></div>
-<div class="ttc" id="aclassQtRuntimeScheduler_html"><div class="ttname"><a href="classQtRuntimeScheduler.html">QtRuntimeScheduler</a></div><div class="ttdoc">Qt event-loop implementation; no callback runs inside schedule().</div><div class="ttdef"><b>Definition</b> <a href="QtRuntimeScheduler_8h_source.html#l00011">QtRuntimeScheduler.h:12</a></div></div>
-<div class="ttc" id="aclassQtRuntimeScheduler_html_a3cb0db4d82c6491924933dd4021c4008"><div class="ttname"><a href="classQtRuntimeScheduler.html#a3cb0db4d82c6491924933dd4021c4008">QtRuntimeScheduler::cancel</a></div><div class="ttdeci">void cancel(TaskId task) override</div><div class="ttdoc">Cancellation from another thread is ignored. All other access and destruction must occur on the owner...</div><div class="ttdef"><b>Definition</b> <a href="QtRuntimeScheduler_8cc_source.html#l00058">QtRuntimeScheduler.cc:58</a></div></div>
+<div class="ttc" id="aclassQtRuntimeScheduler_html"><div class="ttname"><a href="classQtRuntimeScheduler.html">QtRuntimeScheduler</a></div><div class="ttdoc">Qt event-loop implementation; no callback runs inside schedule().</div><div class="ttdef"><b>Definition</b> <a href="QtRuntimeScheduler_8h_source.html#l00009">QtRuntimeScheduler.h:10</a></div></div>
+<div class="ttc" id="aclassQtRuntimeScheduler_html_a3cb0db4d82c6491924933dd4021c4008"><div class="ttname"><a href="classQtRuntimeScheduler.html#a3cb0db4d82c6491924933dd4021c4008">QtRuntimeScheduler::cancel</a></div><div class="ttdeci">void cancel(TaskId task) override</div><div class="ttdoc">Cancellation from another thread is ignored. All other access and destruction must occur on the owner...</div><div class="ttdef"><b>Definition</b> <a href="QtRuntimeScheduler_8cc_source.html#l00045">QtRuntimeScheduler.cc:45</a></div></div>
 <div class="ttc" id="aclassQtRuntimeScheduler_html_a50665148cf9cea46b6355d1946edab8d"><div class="ttname"><a href="classQtRuntimeScheduler.html#a50665148cf9cea46b6355d1946edab8d">QtRuntimeScheduler::~QtRuntimeScheduler</a></div><div class="ttdeci">~QtRuntimeScheduler() override</div><div class="ttdef"><b>Definition</b> <a href="QtRuntimeScheduler_8cc_source.html#l00018">QtRuntimeScheduler.cc:18</a></div></div>
+<div class="ttc" id="aclassQtRuntimeScheduler_html_a6dbfaa93cd9ac6a4fa3d08b2996a660c"><div class="ttname"><a href="classQtRuntimeScheduler.html#a6dbfaa93cd9ac6a4fa3d08b2996a660c">QtRuntimeScheduler::timerEvent</a></div><div class="ttdeci">void timerEvent(QTimerEvent *event) override</div><div class="ttdef"><b>Definition</b> <a href="QtRuntimeScheduler_8cc_source.html#l00059">QtRuntimeScheduler.cc:59</a></div></div>
 <div class="ttc" id="aclassQtRuntimeScheduler_html_ae34f6b629ae7cfde0486cbb1affd4146"><div class="ttname"><a href="classQtRuntimeScheduler.html#ae34f6b629ae7cfde0486cbb1affd4146">QtRuntimeScheduler::schedule</a></div><div class="ttdeci">TaskId schedule(QObject *context, std::chrono::microseconds delay, Callback callback) override</div><div class="ttdef"><b>Definition</b> <a href="QtRuntimeScheduler_8cc_source.html#l00028">QtRuntimeScheduler.cc:28</a></div></div>
 <div class="ttc" id="aclassQtRuntimeScheduler_html_afdd400b2e063d97816dc454b223aed0e"><div class="ttname"><a href="classQtRuntimeScheduler.html#afdd400b2e063d97816dc454b223aed0e">QtRuntimeScheduler::nowUs</a></div><div class="ttdeci">quint64 nowUs() const override</div><div class="ttdef"><b>Definition</b> <a href="QtRuntimeScheduler_8cc_source.html#l00023">QtRuntimeScheduler.cc:23</a></div></div>
-<div class="ttc" id="aclassRuntimeScheduler_html"><div class="ttname"><a href="classRuntimeScheduler.html">RuntimeScheduler</a></div><div class="ttdoc">One-thread monotonic clock and deferred callbacks, shared by production controllers and deterministic...</div><div class="ttdef"><b>Definition</b> <a href="RuntimeScheduler_8h_source.html#l00009">RuntimeScheduler.h:10</a></div></div>
-<div class="ttc" id="aclassRuntimeScheduler_html_a134124e9477c27f65630902181b4d8ac"><div class="ttname"><a href="classRuntimeScheduler.html#a134124e9477c27f65630902181b4d8ac">RuntimeScheduler::_canSchedule</a></div><div class="ttdeci">bool _canSchedule(QObject *context, std::chrono::microseconds delay, const Callback &amp;callback) const</div><div class="ttdef"><b>Definition</b> <a href="RuntimeScheduler_8cc_source.html#l00024">RuntimeScheduler.cc:24</a></div></div>
-<div class="ttc" id="aclassRuntimeScheduler_html_a2616066f50e360f88863bbde389d729a"><div class="ttname"><a href="classRuntimeScheduler.html#a2616066f50e360f88863bbde389d729a">RuntimeScheduler::TaskId</a></div><div class="ttdeci">quint64 TaskId</div><div class="ttdef"><b>Definition</b> <a href="RuntimeScheduler_8h_source.html#l00013">RuntimeScheduler.h:13</a></div></div>
-<div class="ttc" id="aclassRuntimeScheduler_html_a358f840ceb6a68e41fd6b66e19158a95"><div class="ttname"><a href="classRuntimeScheduler.html#a358f840ceb6a68e41fd6b66e19158a95">RuntimeScheduler::_isCurrentThread</a></div><div class="ttdeci">bool _isCurrentThread() const</div><div class="ttdef"><b>Definition</b> <a href="RuntimeScheduler_8cc_source.html#l00019">RuntimeScheduler.cc:19</a></div></div>
-<div class="ttc" id="aclassRuntimeScheduler_html_a8556c69c4f0101d279ed6d10f749adf2"><div class="ttname"><a href="classRuntimeScheduler.html#a8556c69c4f0101d279ed6d10f749adf2">RuntimeScheduler::Callback</a></div><div class="ttdeci">std::function&lt; void()&gt; Callback</div><div class="ttdef"><b>Definition</b> <a href="RuntimeScheduler_8h_source.html#l00014">RuntimeScheduler.h:14</a></div></div>
-<div class="ttc" id="anamespaceMonotonicClock_html_ad062a186e3ee54be0ddf067f1f4fcd78"><div class="ttname"><a href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">MonotonicClock::nowUs</a></div><div class="ttdeci">uint64_t nowUs()</div><div class="ttdef"><b>Definition</b> <a href="MonotonicClock_8h_source.html#l00007">MonotonicClock.h:7</a></div></div>
+<div class="ttc" id="aclassRuntimeScheduler_html"><div class="ttname"><a href="classRuntimeScheduler.html">RuntimeScheduler</a></div><div class="ttdef"><b>Definition</b> <a href="RuntimeScheduler_8h_source.html#l00011">RuntimeScheduler.h:12</a></div></div>
+<div class="ttc" id="aclassRuntimeScheduler_html_a134124e9477c27f65630902181b4d8ac"><div class="ttname"><a href="classRuntimeScheduler.html#a134124e9477c27f65630902181b4d8ac">RuntimeScheduler::_canSchedule</a></div><div class="ttdeci">bool _canSchedule(QObject *context, std::chrono::microseconds delay, const Callback &amp;callback) const</div><div class="ttdef"><b>Definition</b> <a href="RuntimeScheduler_8cc_source.html#l00030">RuntimeScheduler.cc:30</a></div></div>
+<div class="ttc" id="aclassRuntimeScheduler_html_a2616066f50e360f88863bbde389d729a"><div class="ttname"><a href="classRuntimeScheduler.html#a2616066f50e360f88863bbde389d729a">RuntimeScheduler::TaskId</a></div><div class="ttdeci">quint64 TaskId</div><div class="ttdef"><b>Definition</b> <a href="RuntimeScheduler_8h_source.html#l00015">RuntimeScheduler.h:15</a></div></div>
+<div class="ttc" id="aclassRuntimeScheduler_html_a358f840ceb6a68e41fd6b66e19158a95"><div class="ttname"><a href="classRuntimeScheduler.html#a358f840ceb6a68e41fd6b66e19158a95">RuntimeScheduler::_isCurrentThread</a></div><div class="ttdeci">bool _isCurrentThread() const</div><div class="ttdef"><b>Definition</b> <a href="RuntimeScheduler_8cc_source.html#l00025">RuntimeScheduler.cc:25</a></div></div>
+<div class="ttc" id="aclassRuntimeScheduler_html_a8556c69c4f0101d279ed6d10f749adf2"><div class="ttname"><a href="classRuntimeScheduler.html#a8556c69c4f0101d279ed6d10f749adf2">RuntimeScheduler::Callback</a></div><div class="ttdeci">std::function&lt; void()&gt; Callback</div><div class="ttdef"><b>Definition</b> <a href="RuntimeScheduler_8h_source.html#l00016">RuntimeScheduler.h:16</a></div></div>
+<div class="ttc" id="anamespaceMonotonicClock_html_ad062a186e3ee54be0ddf067f1f4fcd78"><div class="ttname"><a href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">MonotonicClock::nowUs</a></div><div class="ttdeci">uint64_t nowUs()</div><div class="ttdef"><b>Definition</b> <a href="MonotonicClock_8h_source.html#l00010">MonotonicClock.h:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

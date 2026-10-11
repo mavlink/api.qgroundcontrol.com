@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('classRTCMFrameDecoder.html',''); initR
 <p>Frames RTCM bytes while retaining the first fragment's monotonic receipt time.  
  <a href="classRTCMFrameDecoder.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="RTCMFrameDecoder_8h_source.html">RTCMFrameDecoder.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="RTCMFramer_8h_source.html">RTCMFramer.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -115,13 +115,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9e5d4081d2b8c8c310a694c398d9465c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f38e29fa5b762393ac55e7f60a7ea78" id="r_a8f38e29fa5b762393ac55e7f60a7ea78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTCMFrameDecoder.html#a8f38e29fa5b762393ac55e7f60a7ea78">reset</a> ()</td></tr>
 <tr class="separator:a8f38e29fa5b762393ac55e7f60a7ea78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae017c4af23d149596a0a0aab86496ca7" id="r_ae017c4af23d149596a0a0aab86496ca7"><td class="memTemplParams" colspan="2">template&lt;typename Deliver &gt; </td></tr>
+<tr class="memitem:ae017c4af23d149596a0a0aab86496ca7"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classRTCMFrameDecoder.html#ae017c4af23d149596a0a0aab86496ca7">feed</a> (QByteArrayView bytes, qint64 receivedAtMs, Deliver &amp;&amp;deliver)</td></tr>
+<tr class="separator:ae017c4af23d149596a0a0aab86496ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a534c51c0f107351f0620229d82150713" id="r_a534c51c0f107351f0620229d82150713"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRTCMFrameDecoder.html#a534c51c0f107351f0620229d82150713">setWhitelist</a> (const QVector&lt; int &gt; &amp;ids)</td></tr>
 <tr class="separator:a534c51c0f107351f0620229d82150713"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Frames RTCM bytes while retaining the first fragment's monotonic receipt time. </p>
 
-<p class="definition">Definition at line <a class="el" href="RTCMFrameDecoder_8h_source.html#l00013">13</a> of file <a class="el" href="RTCMFrameDecoder_8h_source.html">RTCMFrameDecoder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMFramer_8h_source.html#l00101">101</a> of file <a class="el" href="RTCMFramer_8h_source.html">RTCMFramer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aeefb0ca93441f67c8ced1b051c1e114d" name="aeefb0ca93441f67c8ced1b051c1e114d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeefb0ca93441f67c8ced1b051c1e114d">&#9670;&#160;</a></span>RTCMFrameDecoder()</h2>
@@ -138,7 +141,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RTCMFrameDecoder_8cc_source.html#l00009">9</a> of file <a class="el" href="RTCMFrameDecoder_8cc_source.html">RTCMFrameDecoder.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMFramer_8cc_source.html#l00011">11</a> of file <a class="el" href="RTCMFramer_8cc_source.html">RTCMFramer.cc</a>.</p>
 
 </div>
 </div>
@@ -157,7 +160,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RTCMFrameDecoder_8cc_source.html#l00014">14</a> of file <a class="el" href="RTCMFrameDecoder_8cc_source.html">RTCMFrameDecoder.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMFramer_8cc_source.html#l00016">16</a> of file <a class="el" href="RTCMFramer_8cc_source.html">RTCMFramer.cc</a>.</p>
 
 </div>
 </div>
@@ -188,9 +191,60 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RTCMFrameDecoder_8cc_source.html#l00019">19</a> of file <a class="el" href="RTCMFrameDecoder_8cc_source.html">RTCMFrameDecoder.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMFramer_8cc_source.html#l00120">120</a> of file <a class="el" href="RTCMFramer_8cc_source.html">RTCMFramer.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="RTCMFramer_8h_source.html#l00031">RTCMFramer::addByte()</a>.</p>
+<p class="reference">References <a class="el" href="RTCMFramer_8cc_source.html#l00021">RTCMFramer::addByte()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="RTCMFramer_8h_source.html#l00115">feed()</a>.</p>
+
+</div>
+</div>
+<a id="ae017c4af23d149596a0a0aab86496ca7" name="ae017c4af23d149596a0a0aab86496ca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae017c4af23d149596a0a0aab86496ca7">&#9670;&#160;</a></span>feed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Deliver &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RTCMFrameDecoder::feed </td>
+          <td>(</td>
+          <td class="paramtype">QByteArrayView&#160;</td>
+          <td class="paramname"><em>bytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qint64&#160;</td>
+          <td class="paramname"><em>receivedAtMs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Deliver &amp;&amp;&#160;</td>
+          <td class="paramname"><em>deliver</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Frames <em>bytes</em>, delivering each completed frame. A delivery that returns false, because it ended the stream or retired its owner, stops framing at once; <a class="el" href="classRTCMFrameDecoder.html#ae017c4af23d149596a0a0aab86496ca7">feed()</a> then returns false. </p>
+
+<p class="definition">Definition at line <a class="el" href="RTCMFramer_8h_source.html#l00115">115</a> of file <a class="el" href="RTCMFramer_8h_source.html">RTCMFramer.h</a>.</p>
+
+<p class="reference">References <a class="el" href="RTCMFramer_8cc_source.html#l00120">addByte()</a>, and <a class="el" href="RTCMFramer_8cc_source.html#l00130">nextFrame()</a>.</p>
 
 </div>
 </div>
@@ -211,9 +265,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Drain after <a class="el" href="classRTCMFrameDecoder.html#afd1fad21b21e64e0711fefdddecae2da">addByte()</a> returns a result, before feeding more bytes. </p>
 
-<p class="definition">Definition at line <a class="el" href="RTCMFrameDecoder_8cc_source.html#l00029">29</a> of file <a class="el" href="RTCMFrameDecoder_8cc_source.html">RTCMFrameDecoder.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMFramer_8cc_source.html#l00130">130</a> of file <a class="el" href="RTCMFramer_8cc_source.html">RTCMFramer.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="RTCMFramer_8h_source.html#l00041">RTCMFramer::nextFrame()</a>.</p>
+<p class="reference">References <a class="el" href="RTCMFramer_8cc_source.html#l00031">RTCMFramer::nextFrame()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="RTCMFramer_8h_source.html#l00115">feed()</a>.</p>
 
 </div>
 </div>
@@ -232,9 +288,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RTCMFrameDecoder_8cc_source.html#l00048">48</a> of file <a class="el" href="RTCMFrameDecoder_8cc_source.html">RTCMFrameDecoder.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMFramer_8cc_source.html#l00149">149</a> of file <a class="el" href="RTCMFramer_8cc_source.html">RTCMFramer.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="RTCMFramer_8h_source.html#l00022">RTCMFramer::reset()</a>.</p>
+<p class="reference">References <a class="el" href="RTCMFramer_8h_source.html#l00027">RTCMFramer::reset()</a>.</p>
 
 </div>
 </div>
@@ -262,13 +318,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RTCMFrameDecoder_8h_source.html#l00023">23</a> of file <a class="el" href="RTCMFrameDecoder_8h_source.html">RTCMFrameDecoder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RTCMFramer_8h_source.html#l00127">127</a> of file <a class="el" href="RTCMFramer_8h_source.html">RTCMFramer.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="NTRIPHttpTransport_8h_source.html#l00033">NTRIPHttpTransport::setRtcmWhitelist()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/GPS/Driver/Protocols/RTCM/<a class="el" href="RTCMFrameDecoder_8h_source.html">RTCMFrameDecoder.h</a></li>
-<li>src/GPS/Driver/Protocols/RTCM/<a class="el" href="RTCMFrameDecoder_8cc_source.html">RTCMFrameDecoder.cc</a></li>
+<li>src/GPS/Core/RTCM/<a class="el" href="RTCMFramer_8h_source.html">RTCMFramer.h</a></li>
+<li>src/GPS/Core/RTCM/<a class="el" href="RTCMFramer_8cc_source.html">RTCMFramer.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

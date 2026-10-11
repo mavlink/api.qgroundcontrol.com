@@ -27,5 +27,6 @@ var structAndroidSerial_1_1JniMethodCache =
     [ "startIoManager", "structAndroidSerial_1_1JniMethodCache.html#a83b3d6b6de079713c7d37dea642ee295", null ],
     [ "stopIoManager", "structAndroidSerial_1_1JniMethodCache.html#a3f820e34aabd36c5d13f044bc3378570", null ],
     [ "write", "structAndroidSerial_1_1JniMethodCache.html#acea65f0bc55f054d5ce8ddfc222cc50a", null ],
-    [ "writeAsync", "structAndroidSerial_1_1JniMethodCache.html#a3f14a52c264211178d566a7b13413330", null ]
+    [ "writeAsync", "structAndroidSerial_1_1JniMethodCache.html#a3f14a52c264211178d566a7b13413330", null ],
+    [ "writeWithProgress", "structAndroidSerial_1_1JniMethodCache.html#a0fb206be3c670a5ed3ca218bb245d215", null ]
 ];

@@ -98,12 +98,13 @@ $(document).ready(function(){initNavTree('MonotonicClock_8h.html',''); initResiz
 <div class="contents">
 <div class="textblock"><code>#include &lt;chrono&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;optional&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for MonotonicClock.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="MonotonicClock_8h__incl.svg" width="194" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="MonotonicClock_8h__incl.svg" width="267" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
@@ -124,12 +125,21 @@ Namespaces</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ad062a186e3ee54be0ddf067f1f4fcd78" id="r_ad062a186e3ee54be0ddf067f1f4fcd78"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">MonotonicClock::nowUs</a> ()</td></tr>
 <tr class="separator:ad062a186e3ee54be0ddf067f1f4fcd78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8fbdd3f89c4170b83177f50e8c49411" id="r_ae8fbdd3f89c4170b83177f50e8c49411"><td class="memItemLeft" align="right" valign="top">constexpr int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMonotonicClock.html#ae8fbdd3f89c4170b83177f50e8c49411">MonotonicClock::ageMilliseconds</a> (uint64_t timestampUs, uint64_t <a class="el" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>)</td></tr>
-<tr class="memdesc:ae8fbdd3f89c4170b83177f50e8c49411"><td class="mdescLeft">&#160;</td><td class="mdescRight">A missing or future timestamp has no valid age. Both arguments must share a clock domain.  <br /></td></tr>
-<tr class="separator:ae8fbdd3f89c4170b83177f50e8c49411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5383972bd71b734459a49ada9b814d45" id="r_a5383972bd71b734459a49ada9b814d45"><td class="memTemplParams" colspan="2">template&lt;typename Rep , typename Period &gt; </td></tr>
+<tr class="memitem:a5383972bd71b734459a49ada9b814d45"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::optional&lt; std::chrono::duration&lt; Rep, Period &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMonotonicClock.html#a5383972bd71b734459a49ada9b814d45">MonotonicClock::age</a> (std::chrono::duration&lt; Rep, Period &gt; timestamp, std::chrono::duration&lt; Rep, Period &gt; now)</td></tr>
+<tr class="memdesc:a5383972bd71b734459a49ada9b814d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Age of <em>timestamp</em> at <em>now</em>, both in the same unit; empty for a missing or future timestamp.  <br /></td></tr>
+<tr class="separator:a5383972bd71b734459a49ada9b814d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ca1e3a88a9bcbd647129c4729a9fb60" id="r_a3ca1e3a88a9bcbd647129c4729a9fb60"><td class="memItemLeft" align="right" valign="top">constexpr std::optional&lt; std::chrono::microseconds &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMonotonicClock.html#a3ca1e3a88a9bcbd647129c4729a9fb60">MonotonicClock::age</a> (uint64_t timestampUs, uint64_t <a class="el" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>)</td></tr>
+<tr class="separator:a3ca1e3a88a9bcbd647129c4729a9fb60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7352f82baaa1b63643dd9b89ad0c204" id="r_af7352f82baaa1b63643dd9b89ad0c204"><td class="memItemLeft" align="right" valign="top">constexpr std::chrono::microseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMonotonicClock.html#af7352f82baaa1b63643dd9b89ad0c204">MonotonicClock::remaining</a> (uint64_t timestampUs, uint64_t <a class="el" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>, std::chrono::microseconds lifetime)</td></tr>
-<tr class="memdesc:af7352f82baaa1b63643dd9b89ad0c204"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid or expired receipts never acquire a new lifetime.  <br /></td></tr>
+<tr class="memdesc:af7352f82baaa1b63643dd9b89ad0c204"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time left before a receipt reaches <em>lifetime</em>; zero for a missing, future or expired one.  <br /></td></tr>
 <tr class="separator:af7352f82baaa1b63643dd9b89ad0c204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab998615902ae9d363431a3579f765dad" id="r_ab998615902ae9d363431a3579f765dad"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMonotonicClock.html#ab998615902ae9d363431a3579f765dad">MonotonicClock::fresh</a> (uint64_t timestampUs, uint64_t <a class="el" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>, std::chrono::microseconds lifetime)</td></tr>
+<tr class="memdesc:ab998615902ae9d363431a3579f765dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a receipt is younger than <em>lifetime</em>.  <br /></td></tr>
+<tr class="separator:ab998615902ae9d363431a3579f765dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a552733fbbcf50c40117e8d573c6c55a9" id="r_a552733fbbcf50c40117e8d573c6c55a9"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMonotonicClock.html#a552733fbbcf50c40117e8d573c6c55a9">MonotonicClock::withinAge</a> (uint64_t timestampUs, uint64_t <a class="el" href="namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78">nowUs</a>, std::chrono::microseconds maximumAge)</td></tr>
+<tr class="memdesc:a552733fbbcf50c40117e8d573c6c55a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a receipt is at most <em>maximumAge</em> old, its limit included.  <br /></td></tr>
+<tr class="separator:a552733fbbcf50c40117e8d573c6c55a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
