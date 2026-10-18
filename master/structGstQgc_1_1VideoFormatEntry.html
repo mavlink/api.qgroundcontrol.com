@@ -108,11 +108,14 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a660e6420be29a505054c22296275a5a0" id="r_a660e6420be29a505054c22296275a5a0"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGstQgc_1_1VideoFormatEntry.html#a660e6420be29a505054c22296275a5a0">capsToken</a></td></tr>
 <tr class="memdesc:a660e6420be29a505054c22296275a5a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">non-null: advertised in negotiation caps; null: accepted-only (defensive map).  <br /></td></tr>
 <tr class="separator:a660e6420be29a505054c22296275a5a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15f1da5ae8026298980d6bc38a3ecfc7" id="r_a15f1da5ae8026298980d6bc38a3ecfc7"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGstQgc_1_1VideoFormatEntry.html#a15f1da5ae8026298980d6bc38a3ecfc7">offers</a> = 0</td></tr>
+<tr class="memdesc:a15f1da5ae8026298980d6bc38a3ecfc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">kOffer* flags; meaningful for advertised entries only.  <br /></td></tr>
+<tr class="separator:a15f1da5ae8026298980d6bc38a3ecfc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Single source of truth linking a <a class="el" href="namespaceGStreamer.html">GStreamer</a> video format to its Qt pixel format and (optionally) its negotiation caps token. Both the advertised caps string (GstQgcCaps) and <a class="el" href="GStreamerFrameMap_8cc.html#a0da55b7985ca865fde5f164b07bd12e1">toQtPixelFormat()</a> (GStreamerFrameMap) derive from this table, so a format can never be advertised without a Qt mapping, nor mapped-and-renderable without being offered. </p>
+<div class="textblock"><p>Single source of truth linking a <a class="el" href="namespaceGStreamer.html">GStreamer</a> video format to its Qt pixel format and (optionally) its negotiation caps token. Every advertised caps format list (GstQgcCaps) and <a class="el" href="GstQgcFrameMap_8cc.html#a0da55b7985ca865fde5f164b07bd12e1">toQtPixelFormat()</a> (GstQgcFrameMap) derive from this table, so a format can never be advertised without a Qt mapping, nor mapped-and-renderable without being offered. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstQgcVideoFormats_8h_source.html#l00013">13</a> of file <a class="el" href="GstQgcVideoFormats_8h_source.html">GstQgcVideoFormats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcVideoFormats_8h_source.html#l00023">23</a> of file <a class="el" href="GstQgcVideoFormats_8h_source.html">GstQgcVideoFormats.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a660e6420be29a505054c22296275a5a0" name="a660e6420be29a505054c22296275a5a0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a660e6420be29a505054c22296275a5a0">&#9670;&#160;</a></span>capsToken</h2>
@@ -128,9 +131,9 @@ Public Attributes</h2></td></tr>
 
 <p>non-null: advertised in negotiation caps; null: accepted-only (defensive map). </p>
 
-<p class="definition">Definition at line <a class="el" href="GstQgcVideoFormats_8h_source.html#l00017">17</a> of file <a class="el" href="GstQgcVideoFormats_8h_source.html">GstQgcVideoFormats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcVideoFormats_8h_source.html#l00027">27</a> of file <a class="el" href="GstQgcVideoFormats_8h_source.html">GstQgcVideoFormats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstQgcVideoFormats_8h_source.html#l00047">GstQgc::advertisedFormatList()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstQgcVideoFormats_8h_source.html#l00071">GstQgc::advertisedFormatList()</a>.</p>
 
 </div>
 </div>
@@ -146,7 +149,25 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstQgcVideoFormats_8h_source.html#l00015">15</a> of file <a class="el" href="GstQgcVideoFormats_8h_source.html">GstQgcVideoFormats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcVideoFormats_8h_source.html#l00025">25</a> of file <a class="el" href="GstQgcVideoFormats_8h_source.html">GstQgcVideoFormats.h</a>.</p>
+
+</div>
+</div>
+<a id="a15f1da5ae8026298980d6bc38a3ecfc7" name="a15f1da5ae8026298980d6bc38a3ecfc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15f1da5ae8026298980d6bc38a3ecfc7">&#9670;&#160;</a></span>offers</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned GstQgc::VideoFormatEntry::offers = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>kOffer* flags; meaningful for advertised entries only. </p>
+
+<p class="definition">Definition at line <a class="el" href="GstQgcVideoFormats_8h_source.html#l00028">28</a> of file <a class="el" href="GstQgcVideoFormats_8h_source.html">GstQgcVideoFormats.h</a>.</p>
 
 </div>
 </div>
@@ -162,7 +183,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstQgcVideoFormats_8h_source.html#l00016">16</a> of file <a class="el" href="GstQgcVideoFormats_8h_source.html">GstQgcVideoFormats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcVideoFormats_8h_source.html#l00026">26</a> of file <a class="el" href="GstQgcVideoFormats_8h_source.html">GstQgcVideoFormats.h</a>.</p>
 
 </div>
 </div>

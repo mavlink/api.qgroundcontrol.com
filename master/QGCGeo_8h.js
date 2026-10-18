@@ -1,5 +1,8 @@
 var QGCGeo_8h =
 [
+    [ "convertDegreesToDMS", "QGCGeo_8h.html#aec10f88430227d3c67a98487db2a2baa", null ],
+    [ "convertDMSToDegrees", "QGCGeo_8h.html#a4b8e42f45f37a74caae7aac753e9da42", null ],
+    [ "convertDMSToGeo", "QGCGeo_8h.html#a7bc94a6749163302783e0dfd135e8c12", null ],
     [ "convertEcefToEnu", "QGCGeo_8h.html#a037ec1f4c3b9d04b4cd64c34960afd2d", null ],
     [ "convertEcefToGeodetic", "QGCGeo_8h.html#a59b154f060e798e816856d80af91e330", null ],
     [ "convertEnuToEcef", "QGCGeo_8h.html#a84a0fe2e84e26b3cc70b0bfbeef0f1be", null ],

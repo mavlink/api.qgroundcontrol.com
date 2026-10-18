@@ -4,5 +4,6 @@ var dir_f85c3baaca5db5ced6424567291f311c =
     [ "QtMultimedia", "dir_3cd552f9ad3b78514b6914c631e33f85.html", "dir_3cd552f9ad3b78514b6914c631e33f85" ],
     [ "VideoBackend.cc", "VideoBackend_8cc.html", null ],
     [ "VideoBackend.h", "VideoBackend_8h.html", "VideoBackend_8h" ],
+    [ "VideoReceiver.cc", "VideoReceiver_8cc.html", null ],
     [ "VideoReceiver.h", "VideoReceiver_8h.html", "VideoReceiver_8h" ]
 ];

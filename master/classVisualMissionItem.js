@@ -124,6 +124,7 @@ var classVisualMissionItem =
     [ "terrainPercentChanged", "classVisualMissionItem.html#affd6d73b89784a33d4f664b210468408", null ],
     [ "terrainQueryFailed", "classVisualMissionItem.html#a4b4ccbc06b2ff88d036ba5e3b3d12534", null ],
     [ "terrainQueryFailedChanged", "classVisualMissionItem.html#afd16cbb0f62e31b21bf7b82e16064afb", null ],
+    [ "usesAltitudeFrame", "classVisualMissionItem.html#a33887414e8b4fc538e6f92bf56701fe9", null ],
     [ "wizardMode", "classVisualMissionItem.html#aa5308d8a79bece05190f943b37a95d27", null ],
     [ "wizardModeChanged", "classVisualMissionItem.html#ae3b90fd6d5f7d478b21340d92692781c", null ],
     [ "_altDifference", "classVisualMissionItem.html#a86b3d2262501c3e0ed253633dc8984aa", null ],

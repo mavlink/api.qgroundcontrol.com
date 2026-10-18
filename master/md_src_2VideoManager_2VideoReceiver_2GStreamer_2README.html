@@ -102,13 +102,21 @@ Source Code Architecture</h1>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Component   </th><th class="markdownTableHeadNone">Role    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code><a class="el" href="classGstVideoReceiver.html">GstVideoReceiver</a></code>   </td><td class="markdownTableBodyNone">Pipeline owner: builds/starts/stops the receiver pipeline, recording, watchdog, and <code>.dot</code> dumps. Exposes decoder/telemetry as <code>Q_PROPERTY</code>s to QML.    </td></tr>
+<td class="markdownTableBodyNone"><code><a class="el" href="classGstVideoReceiver.html" title="Shared by GstVideoReceiver and its components.">GstVideoReceiver</a></code>   </td><td class="markdownTableBodyNone">The <code><a class="el" href="classVideoReceiver.html">VideoReceiver</a></code> the app uses: runs the pipeline (source → tee → the branches below) and its only bus consumer on its own worker thread, and is the only component that reconnects (with backoff) after a stream failure. The components below are plain classes it owns; each header states which thread calls what.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code><a class="el" href="classDecodingBranch.html" title="The display branch behind GstVideoReceiver&#39;s tee: leaky queue ! valve [! decodebin3 !...">DecodingBranch</a></code>   </td><td class="markdownTableBodyNone">Display branch behind the tee: inserts <code>decodebin3</code> once the source streams and reports decoding, the decoder name and the video size.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code><a class="el" href="classRecordingBranch.html" title="The recording branch behind GstVideoReceiver&#39;s tee: queue ! valve [! parser ! splitmuxsink].">RecordingBranch</a></code>   </td><td class="markdownTableBodyNone">Recording branch behind the tee: one <code>splitmuxsink</code> file per recording, started at a keyframe and, for MP4/MOV, muxed so a crash leaves a playable file; <code><a class="el" href="classRecordingFinalizer.html">RecordingFinalizer</a></code> tells when the file is closed.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code><a class="el" href="classStreamWatchdog.html">StreamWatchdog</a></code>   </td><td class="markdownTableBodyNone">Notices stalled source or decoder output on a monotonic clock, and paces reconnects with exponential backoff.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code><a class="el" href="classPipelineDotDumper.html">PipelineDotDumper</a></code>   </td><td class="markdownTableBodyNone">Writes the pipeline's <code>.dot</code> graphs; see Pipeline Observability.    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>GstSourceFactory</code>   </td><td class="markdownTableBodyNone">Constructs the source element from the stream URI and applies RTP jitter-buffer policy for <code>application/x-rtp</code> sources.    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>GStreamerEnvironment</code>   </td><td class="markdownTableBodyNone">Process-wide environment setup (plugin/scanner/helper/GIO paths, env hygiene) run before <code>gst_init()</code>. See Runtime Environment Setup.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>GStreamerHelpers</code>   </td><td class="markdownTableBodyNone">Small utilities (element-rank overrides, etc.).    </td></tr>
+<td class="markdownTableBodyNone"><code>GStreamerHelpers</code>   </td><td class="markdownTableBodyNone">Small utilities: decoder classification and rank overrides, tee branch heads, and taking a child element out of a running bin.    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>GStreamerLogging</code>   </td><td class="markdownTableBodyNone">Routes <a class="el" href="namespaceGStreamer.html">GStreamer</a>'s log output through <a class="el" href="namespaceQGC.html">QGC</a>'s logging and applies the persisted debug level.    </td></tr>
 <tr class="markdownTableRowEven">
@@ -118,36 +126,49 @@ Source Code Architecture</h1>
 &lt;tt&gt;gstqgc&lt;/tt&gt; — custom GStreamer plugin</h2>
 <p>A QGC-owned plugin (<code>gstqgc/</code>) bridging the pipeline into Qt:</p>
 <ul>
-<li>**<code>qgcqvideosink</code>** — a <code>GstVideoSink</code> that pushes decoded frames into a Qt <code>QVideoSink</code>.</li>
+<li>**<code>qgcqvideosink</code>** — a <code>GstVideoSink</code> that pushes decoded frames into a Qt <code>QVideoSink</code>. Delivery keeps only the latest frame, so a stalled GUI thread never holds more than one undelivered frame (or the decoder buffer behind it). Its construct-only <code>gpu-zerocopy</code> property (passed down by the bin) enables zero-copy import of GPU memory, and its <code>frame-stats</code> property reports that sink's own frame counts per delivery path (<code><a class="el" href="namespaceGstQgc.html#a97dd5facaa5d0231845b63b6ef677f31">GstQgc::formatSinkStats</a></code> formats them); GstBaseSink's standard <code>stats</code> property is left as is.</li>
 <li>**<code>qgcvideosinkbin</code>** — a bin wrapping a format-restriction capsfilter plus <code>qgcqvideosink</code>.</li>
-<li>**<code><a class="el" href="classQGCQVideoSinkController.html">QGCQVideoSinkController</a></code>** — GUI-thread companion that mirrors negotiation/telemetry from the sink into <a class="el" href="namespaceQGC.html">QGC</a>.</li>
+<li>**<code><a class="el" href="classQGCQVideoSinkController.html">QGCQVideoSinkController</a></code>** — GUI-thread companion that mirrors negotiation/telemetry from the sink into <a class="el" href="namespaceQGC.html">QGC</a>, and clears the frame its <code>QVideoSink</code> displays when the sink leaves the pipeline.</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md14"></a>
-&lt;tt&gt;HwBuffers&lt;/tt&gt; — zero-copy GPU paths</h2>
-<p>Per-platform zero-copy import of decoded GPU frames, all sharing <code><a class="el" href="classGstHwFrameTexturesBase.html" title="Common base for per-platform FrameTextures : QVideoFrameTextures from *VideoBuffer::mapTextures().">GstHwFrameTexturesBase</a> : QVideoFrameTextures</code>:</p>
+&lt;tt&gt;HwBuffers&lt;/tt&gt; — GPU paths</h2>
+<p>Per-platform import of decoded GPU frames without a copy, all sharing <code><a class="el" href="classGstHwFrameTexturesBase.html">GstHwFrameTexturesBase</a> : QVideoFrameTextures</code>:</p>
 <ul>
 <li><b>Platforms</b>: <code>dmabuf</code> (Linux/VA-API), <code>gl</code>, <code>vulkan</code>, <code>d3d</code> (D3D11/D3D12), <code>cuda</code>, <code>apple</code> (IOSurface), <code>android</code> (AHardwareBuffer).</li>
-<li>**<code>GstContextBridgeRegistry</code>** fans <code>GstBus</code> sync messages out to every compiled context bridge for cross-thread GPU-context handoff.</li>
-<li>**<code><a class="el" href="namespaceGstHwPathTelemetry.html">GstHwPathTelemetry</a></code>** tracks per-format/per-path counters (map failures, reuse hits, sync waits) for fallback diagnostics.</li>
+<li>**<code>HwPathDescriptor</code>**: each backend describes its path once (memory match, buffer construction, cache reset, pool proposal, context bridge). <code>GstHwPathRegistry</code> lists the compiled ones in a constant array. The factory selects the first path whose descriptor matches a frame's memory, and the facade loops over the list for bus messages, context queries, restarts and resets.</li>
+<li>**<code>GstContextBridgeBase</code>**: GL, Vulkan, D3D11 and D3D12 bridges hand Qt's GPU device to <a class="el" href="namespaceGStreamer.html">GStreamer</a> elements through <code>NEED_CONTEXT</code> and context queries.</li>
+<li>**<code><a class="el" href="namespaceGstHwPathTelemetry.html">GstHwPathTelemetry</a></code>** tracks process-wide render-time counters (map failures, reuse hits, sync waits) for fallback diagnostics. A receiver's <code>GPU path stats</code> debug line pairs its own sink's <code>frame-stats</code> with them.</li>
 <li>**<code><a class="el" href="classCpuVideoFramePool.html" title="Recycles CPU-backed QVideoFrame storage keyed by (size, pixelFormat) to avoid per-frame malloc churn.">CpuVideoFramePool</a></code>** recycles CPU-backed <code>QVideoFrame</code> storage (WebRTC-style slab) for the software-fallback path, avoiding per-frame allocation.</li>
+<li><b>Build options</b>: <code>HwBuffers/CMakeLists.txt</code> probes one table row per path; the <code>QGC_GST_ENABLE_&lt;PATH&gt;</code> switches that compile a path out are listed in <a href="../../../../cmake/README.md#gstreamer"><code>cmake/README.md</code></a>. Configure lists compiled paths that the sink can't reach at runtime: Android's glupload bin offers only GLMemory caps, and no bin advertises CUDAMemory or VulkanImage caps. Linux builds with gst-gl and DMABuf compile both GPU bins; see GPU bin selection.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md15"></a>
 Build Configuration</h1>
 <ul>
-<li><b>Enable/disable</b>: Set <code>QGC_ENABLE_GST_VIDEOSTREAMING</code> CMake option to <code>ON</code>/<code>OFF</code></li>
-<li><b>Version &amp; URLs</b>: Defined in <a href="../../../../.github/build-config.json"><code>.github/build-config.json</code></a>, parsed by <a href="../../../../cmake/BuildConfig.cmake"><code>cmake/BuildConfig.cmake</code></a></li>
-<li><b>SDK discovery &amp; auto-download</b>: <a href="../../../../cmake/GStreamer/Orchestrator.cmake"><code>cmake/GStreamer/Orchestrator.cmake</code></a></li>
-<li><b>Plugin allowlist</b>: <code>gstreamer.plugins</code> in <a href="../../../../.github/build-config.json"><code>.github/build-config.json</code></a> — controls both static linking (mobile) and dynamic install (desktop)</li>
-<li><b>Install helpers</b>: <a href="../../../../cmake/GStreamer/Helpers.cmake"><code>cmake/GStreamer/Helpers.cmake</code></a> (aggregator), with focused submodules in <a href="../../../../cmake/GStreamer/"><code>cmake/GStreamer/</code></a></li>
+<li><b>Enable/disable</b>: Set the <code>QGC_ENABLE_GST_VIDEOSTREAMING</code> CMake option to <code>ON</code>/<code>OFF</code>.</li>
+<li><b>Versions, checksums and plugins</b>: <code>gstreamer.version.&lt;platform&gt;</code>, <code>gstreamer.checksums</code>, <code>gstreamer.plugins</code> and the iOS CA-bundle pin live in <a href="../../../../.github/build-config.json"><code>.github/build-config.json</code></a>, read through <code>qgc_config_read</code> (<a href="../../../../cmake/modules/BuildConfigReader.cmake"><code>cmake/modules/BuildConfigReader.cmake</code></a>). The download URLs (upstream, with the <a class="el" href="namespaceQGC.html">QGC</a> S3 mirror as fallback) are templated from the version in <a href="../../../../cmake/GStreamer/Download.cmake"><code>cmake/GStreamer/Download.cmake</code></a>; a package is verified against its checksum whichever host serves it. Linux uses the system <a class="el" href="namespaceGStreamer.html">GStreamer</a> and treats <code>gstreamer.version.minimum</code> as its floor.</li>
+<li><b>Configure options</b>:<ul>
+<li><code>GStreamer_ROOT_DIR</code>: the SDK to use. Configure never writes it; the SDK it selected is recorded as <code>QGC_GST_RESOLVED_ROOT</code> in <code>CMakeCache.txt</code>.</li>
+<li><code>QGC_GST_VERSION</code>: overrides the build-config version (the minimum on Linux, the SDK to download elsewhere), as <code>&lt;major&gt;.&lt;minor&gt;.&lt;micro&gt;</code>.</li>
+<li><code>GStreamer_USE_STATIC_LIBS</code> / <code>GStreamer_USE_FRAMEWORK</code>: layout preferences with per-platform defaults; discovery overrides them for the SDK it finds.</li>
+<li><code>QGC_GST_BUNDLE_PLUGINS</code> (Linux, default <code>ON</code>): installs and AppImages bundle the system's plugins, plugin scanner and GIO modules (see Linux), and the app points <a class="el" href="namespaceGStreamer.html">GStreamer</a> at them. Distribution packages set it <code>OFF</code>: the install then carries nothing of <a class="el" href="namespaceGStreamer.html">GStreamer</a>, the app uses the system's plugins as they are, and the package must depend on the distribution's plugin packages. The Arch package then adds <code>gst-plugins-good</code>, <code>gst-plugins-bad-libs</code> and <code>gst-libav</code>; the DEB and RPM dependency scans do not see plugins, so their packagers list them. <code>OFF</code> requires <code>QGC_CREATE_APPIMAGE=OFF</code>.</li>
+<li><code>QGC_GST_USE_HOMEBREW</code> (macOS, default <code>OFF</code>): builds against Homebrew's <a class="el" href="namespaceGStreamer.html">GStreamer</a> instead of the official SDK; such builds cannot be installed or packaged (see macOS / Windows / iOS).</li>
+<li><code>QGC_GST_CUDA_STUB_DIR</code> (Linux): a directory with a <code>cuda.h</code>, such as gst-plugins-bad's <code>gst-libs/gst/cuda/stub</code>, for building the CUDA GPU path without the CUDA Toolkit.</li>
+<li><code>GStreamer_REQUIRE_CHECKSUM</code> and <code>QGC_GST_DOWNLOAD_TIMEOUT</code> (the SDK download's wall-clock cap, default 1200 s; its other limits are the shared <code>QGC_DOWNLOAD_*</code> ones) control downloads; <code>GStreamer_DEBUG</code> traces target creation. <code>GStreamer_REQUIRE_CHECKSUM=OFF</code> lets an unpinned SDK version be checked against upstream's <code>.sha256sum</code> sidecar, or not at all; the Windows SDK installer still runs only when its checksum is pinned.</li>
+</ul>
+</li>
+<li><b>Plugin allowlist</b>: <code>gstreamer.plugins</code> (<code>common</code> plus the platform's key) decides what is registered and bundled. Android links the requested plugins that have a static archive; iOS registers only the requested plugins found in its merged archive, so the archive's other plugins (some GPL) stay out of the app; desktop static SDKs register the requested plugins that have a pkg-config module; desktop installs bundle the allowlisted plugins found in the SDK and check after install that those and the runtime-required ones arrived. Debug mobile builds add the <a class="el" href="classMockLink.html">MockLink</a> test-stream encoders. A missing runtime-required plugin fails a mobile configure. Configure warns once about allowlist names the SDK or system does not ship as plugins (misspelled, not built for the platform, or not installed) and once about shipped ones a static build cannot link; missing hardware-specific or alternative decoders (<code>GSTREAMER_OPTIONAL_PLUGINS</code> in <code>PluginPolicy.cmake</code>, e.g. <code>qsv</code>, <code>va</code>, <code>libav</code>, <code>dav1d</code>) only appear in a status line, as do optional components (<code>RtspServer</code>, <code>Gl</code>, ...) that were not found.</li>
+<li><b>License notice</b>: configure writes <code>LGPL-2.1.txt</code> and a <code>NOTICE.txt</code> naming the <a class="el" href="namespaceGStreamer.html">GStreamer</a> version, its source code and, for an auto-downloaded SDK, the official packages and their SHA-256 (<code>Notice.cmake</code>). They ship in <code>share/licenses/gstreamer/</code> of desktop installs (macOS: <code>QGroundControl.app/Contents/Resources/licenses/gstreamer/</code>) and under <code>licenses/gstreamer/</code> in the Android APK assets and the iOS app bundle. The dependency SBOM CI attaches to each package (<a href="../../../../.github/scripts/generate_cpm_sbom.py"><code>generate_cpm_sbom.py</code></a>) lists <a class="el" href="namespaceGStreamer.html">GStreamer</a> from the same <code>QGC_GST_RESOLVED_*</code> cache entries.</li>
+<li><b>CMake modules</b> (<a href="../../../../cmake/GStreamer/"><code>cmake/GStreamer/</code></a>): <code>Orchestrator.cmake</code> is the entry point this directory's <code>CMakeLists.txt</code> includes; its header lists inputs and outputs. <code>platform/&lt;platform&gt;.cmake</code> discovers each platform's SDK. The other modules are the helpers it includes, each described in its header. <code>tests/</code> holds script tests and a fake-SDK configure fixture, run with <code>ctest -L <a class="el" href="namespaceGStreamer.html">GStreamer</a></code>.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md16"></a>
 Runtime Environment Setup</h1>
 <p><a class="el" href="namespaceQGC.html">QGC</a> configures <a class="el" href="namespaceGStreamer.html">GStreamer</a> runtime paths before <code>gst_init()</code>:</p>
 <ul>
-<li><b>Desktop (Linux/macOS/Windows)</b>: <code><a class="el" href="namespaceGStreamer.html#af5effb79c9a6f58830a2065652d3a06d">GStreamer::prepareEnvironment()</a></code> sets plugin paths, scanner/helper paths, and GIO module paths when bundled runtimes are detected.</li>
-<li><b>Linux AppImage</b>: <a href="../../../../deploy/linux/AppRun"><code>deploy/linux/AppRun</code></a> exports <code>GST_PLUGIN_*</code>, <code>GST_PLUGIN_SCANNER*</code>, and <code>GST_PTP_HELPER*</code> only when bundled paths are valid.</li>
+<li><b>Desktop (Linux/macOS/Windows)</b>: <code><a class="el" href="namespaceGStreamer.html#af5effb79c9a6f58830a2065652d3a06d">GStreamer::prepareEnvironment()</a></code> sets plugin paths, scanner/helper paths, and GIO module paths when bundled runtimes are detected (never in a Linux build with <code>QGC_GST_BUNDLE_PLUGINS=OFF</code>). A bundled runtime also gets its own plugin registry, <code>gstreamer-&lt;runtime version&gt;-&lt;arch&gt;.bin</code> in the app's cache directory (<code>QStandardPaths::CacheLocation</code>), unless <code>GST_REGISTRY</code> or <code>GST_REGISTRY_1_0</code> is set, so it does not share the default per-user registry with the system <a class="el" href="namespaceGStreamer.html">GStreamer</a>.</li>
+<li><b>Linux AppImage</b>: the same Linux bundle detection applies to the AppImage's <code>usr/lib</code>; it is skipped when the user already set a <code>GST_PLUGIN_PATH*</code> or <code>GST_PLUGIN_SYSTEM_PATH*</code> variable. <a href="../../../../deploy/linux/AppRun"><code>deploy/linux/AppRun</code></a> only sets the library, GIO and Qt environment.</li>
 <li><b>Environment hygiene</b>: Python virtualenv/conda variables are cleared for scanner stability (<code>PYTHONHOME</code>, <code>PYTHONPATH</code>, <code>VIRTUAL_ENV</code>, <code>CONDA_*</code>), and <code>PYTHONNOUSERSITE=1</code> is set.</li>
-<li><b>Validation</b>: If bundled plugin directories are present but <code>gst-plugin-scanner</code> is missing or non-executable, <a class="el" href="namespaceQGC.html">QGC</a> fails initialization early with a clear error instead of running with a broken plugin loader.</li>
+<li><b>Plugin search path</b>: The bundled plugin directory is set as <code>GST_PLUGIN_SYSTEM_PATH*</code>, which replaces <a class="el" href="namespaceGStreamer.html">GStreamer</a>'s default system and user plugin directories. <code>GST_PLUGIN_PATH*</code> is cleared, because it would only rescan the same directory.</li>
+<li><b>Validation</b>: A macOS app that ships <code>GStreamer.framework</code> without its plugin directory fails initialization with a clear error. A missing or non-executable bundled <code>gst-plugin-scanner</code> only logs a warning: <a class="el" href="namespaceQGC.html">QGC</a> sets <code>GST_REGISTRY_FORK=no</code>, so <a class="el" href="namespaceGStreamer.html">GStreamer</a> scans plugins in-process.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md17"></a>
 Platform Setup</h1>
@@ -155,66 +176,101 @@ Platform Setup</h1>
 Linux</h2>
 <p>Use <code>python3 -m tools.setup.install_dependencies</code>, or manually:</p>
 <div class="fragment"><div class="line">sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev python3-gi python3-gst-1.0</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md19"></a>
+</div><!-- fragment --><p>Debug builds also use <code>libgstrtspserver-1.0-dev</code>, when present, for <a class="el" href="classMockLink.html">MockLink</a>'s RTSP test stream and the RTSP receiver tests.</p>
+<p>Unless <code>QGC_GST_BUNDLE_PLUGINS</code> is <code>OFF</code>, installs and AppImages bundle the system's allowlisted plugins, the plugin scanner and only the GIO modules for TLS and proxies (<code>libgiognutls</code>, <code>libgiolibproxy</code>, <code>libgiognomeproxy</code>, <code>libdconfsettings</code>). The VFS modules stay out: the AppImage, and a bundle on GLib 2.76+, run GIO with <code>GIO_USE_VFS=local</code>.</p>
+<h3><a class="anchor" id="autotoc_md19"></a>
+GPU bin selection</h3>
+<p>When gst-gl and DMABuf are both compiled, <code>qgcvideosinkbin</code>'s GPU branch comes in two variants. <code>QGC_GST_GPU_BIN</code> (case-insensitive, read once per process) picks one:</p>
+<ul>
+<li><code>glupload</code> (default): glupload → glcolorconvert → GLMemory. gst-gl imports LINEAR and vendor-tiled DMABuf, at the cost of its own copy/convert.</li>
+<li><code>dmabuf</code>: DMABuf and DMA_DRM go straight to <a class="el" href="namespaceQGC.html">QGC</a>'s EGLImage importer, skipping gst-gl. It binds LINEAR buffers only, so it suits LINEAR producers (V4L2, Mali, V3D); a driver that exports only tiled surfaces, such as Intel iHD, can fail to negotiate.</li>
+</ul>
+<p>An unknown value logs a warning and keeps the default. Builds with only one variant ignore the variable: Android always uses glupload, Linux without gst-gl always imports DMABuf directly. The choice is logged once under <code>Video.GStreamer.HwBuffers.Config</code>.</p>
+<h3><a class="anchor" id="autotoc_md20"></a>
 DMABuf zero-copy diagnostics</h3>
 <p>Linux DMABuf zero-copy normally tries the single-EGLImage importer for shared-fd multi-plane formats such as NV12/P010, matching the common VA-API exporter layout. To force CPU fallback or per-plane import during driver triage, disable that importer before launching <a class="el" href="namespaceQGC.html">QGC</a>:</p>
 <div class="fragment"><div class="line">export QGC_GST_DMABUF_SINGLE_EGLIMAGE=0</div>
 </div><!-- fragment --><p>Unset the variable, or set it to <code>1</code>, to restore the default behavior.</p>
-<h2><a class="anchor" id="autotoc_md20"></a>
-macOS / Windows / iOS</h2>
-<p><a class="el" href="namespaceGStreamer.html">GStreamer</a> SDKs are auto-downloaded during CMake configure. To use a local installation instead, set <code>GStreamer_ROOT_DIR</code>.</p>
+<p><a class="el" href="namespaceQGC.html">QGC</a> also switches to per-plane import on its own when the single-EGLImage importer fails with <code>EGL_BAD_MATCH</code>. It disables DMABuf zero-copy for the session only when per-plane import fails the same way.</p>
+<p><code>QGC_GST_DMABUF_CACHE=1</code> keeps each pooled buffer's EGLImages across frames instead of importing them every frame. It is off by default because no test or CI host exercises the direct DMABuf importer.</p>
 <h2><a class="anchor" id="autotoc_md21"></a>
+macOS / Windows / iOS</h2>
+<p><a class="el" href="namespaceGStreamer.html">GStreamer</a> SDKs are auto-downloaded during CMake configure. To use a local installation instead, set <code>GStreamer_ROOT_DIR</code> (on iOS, a <code>GStreamer.xcframework</code> or <code>GStreamer.framework</code>, or a directory containing one).</p>
+<p>On macOS, configure uses, in this order: <code>GStreamer_ROOT_DIR</code>; Homebrew's <a class="el" href="namespaceGStreamer.html">GStreamer</a> when <code>QGC_GST_USE_HOMEBREW</code> is <code>ON</code>; the SDK an earlier configure downloaded; <code>/Library/Frameworks/GStreamer.framework</code>; a new download. Homebrew's <a class="el" href="namespaceGStreamer.html">GStreamer</a> (<code>brew install gstreamer pkgconf</code>) is also used when <code>GStreamer_ROOT_DIR</code> is a Homebrew prefix (<code>$(brew --prefix)</code>) or one of its <code>opt/gstreamer</code> or <code>Cellar/gstreamer/&lt;version&gt;</code> directories. Its pkg-config modules, and GLib's, are read with Homebrew's own <code>pkg-config</code>, which also finds the macOS system libraries' modules; <code>gstreamer.version.macos</code> (or <code>QGC_GST_VERSION</code>) is its minimum version. Such a build only runs from the build tree: Homebrew's libraries and plugins load each other by absolute paths under its prefix, so <code>cmake --install</code> and packaging fail with an error instead of bundling them.</p>
+<p>On iOS only the <code>GStreamerMobile</code> framework links the SDK's merged static archive; <code>GStreamer::GStreamer</code> carries just its headers, defines and system-framework links. The app takes every <a class="el" href="namespaceGStreamer.html">GStreamer</a> function from the framework, which exports those its registered plugins use plus <code>QGC_GST_IOS_APP_CORE_SYMBOLS</code> (<code>platform/IOS.cmake</code>). A new core call that no plugin uses therefore fails the app's link with an undefined-symbol error naming it: add the symbol to that list. A post-build check (<code>IOSSingleCoreCheck.cmake</code>) fails if the app still ends up defining core symbols.</p>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Android</h2>
-<p>Auto-downloaded during CMake configure. No manual setup required.</p>
+<p>Auto-downloaded during CMake configure. No manual setup required. Each ABI build extracts only its own tree from the universal SDK tarball. Windows and macOS hosts query it with the pkg-config the SDK bundles for them (<code>share/gst-android/ndk-build/tools/&lt;host&gt;/</code>); Linux hosts use their own.</p>
+<p>The plugins' Java sources and <a class="el" href="namespaceGStreamer.html">GStreamer</a>'s fonts and CA bundle are staged in the build directory (<code>extra_java_sources/</code>, <code>extra_assets/</code>), which <a href="../../../../android/build.gradle"><code>android/build.gradle</code></a> adds to the APK.</p>
 <blockquote class="doxtable">
 <p>&zwj;<b>Windows users building for Android</b>: Enable Developer Mode (Settings &gt; System &gt; For developers) to support symbolic links during the build. </p>
 </blockquote>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Caching downloaded SDKs</h2>
-<p>Auto-downloaded SDK archives are cached to <code>${CPM_SOURCE_CACHE}/gstreamer-*</code> when <code>CPM_SOURCE_CACHE</code> is set, otherwise to <code>${CMAKE_BINARY_DIR}/_deps/gstreamer-*</code> (lost on <code>rm -rf build</code>). Set <code>CPM_SOURCE_CACHE</code> to a stable location (e.g. <code>~/.cache/CPM</code>) to avoid re-downloading the 200-700 MB archives on every clean build:</p>
+<p>Auto-downloaded SDK archives are cached to <code>${CPM_SOURCE_CACHE}/gstreamer-*</code>. <code>CPM_SOURCE_CACHE</code> defaults to <code>.cache/CPM</code> in the source tree; set it to a location shared by your checkouts (e.g. <code>~/.cache/CPM</code>) to download the archives only once (<a class="el" href="namespaceGStreamer.html">GStreamer</a> 1.28.4: 0.3-1 GB per platform, e.g. ~1 GB for Android and 880 MB for Windows x64):</p>
 <div class="fragment"><div class="line">export CPM_SOURCE_CACHE=$HOME/.cache/CPM</div>
-</div><!-- fragment --><p>Cached archives are checksum-verified against the upstream <code>.sha256</code> on every hit.</p>
-<h1><a class="anchor" id="autotoc_md23"></a>
+</div><!-- fragment --><p>Cached archives are verified on every hit against the checksum pinned in <code>.github/build-config.json</code>, or the upstream <code>.sha256sum</code> sidecar for an unpinned version; an auto-downloaded SDK is fetched again when its <code>gstreamer.version.&lt;platform&gt;</code> changes, and cached <a class="el" href="namespaceGStreamer.html">GStreamer</a> probe results are recomputed whenever the SDK changes. Each archive is extracted once into a directory beside it that is stamped with the archive hashes, and a tree stamped with the pinned checksums is used without downloading or even keeping its archives (CI caches only the trees); configures sharing the cache take a lock instead of downloading or extracting over each other. The Windows SDK installer runs in its portable mode, so it leaves no <code>GSTREAMER_1_0_ROOT_*</code> environment variable, registry key or uninstall entry behind.</p>
+<h1><a class="anchor" id="autotoc_md24"></a>
 Testing Pipelines</h1>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 Sending test video (h.264 over UDP)</h2>
 <div class="fragment"><div class="line">gst-launch-1.0 videotestsrc pattern=ball ! video/x-raw,width=640,height=480 ! x264enc ! rtph264pay ! udpsink host=127.0.0.1 port=5600</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md25"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md26"></a>
 Receiving test video</h2>
 <div class="fragment"><div class="line">gst-launch-1.0 udpsrc port=5600 caps=&#39;application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)H264&#39; ! rtpjitterbuffer ! rtph264depay ! h264parse ! avdec_h264 ! autovideosink sync=false</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md26"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md27"></a>
 Supported protocols</h2>
-<p>UDP RTP, RTSP, TCP-MPEG2, MPEG-TS.</p>
-<h1><a class="anchor" id="autotoc_md27"></a>
+<p><code>GstSourceFactory</code> accepts these URI schemes:</p>
+<ul>
+<li><code>rtsp://</code>, <code>rtspt://</code>: RTSP (the video stream only).</li>
+<li><code>udp://</code>: H.264 over RTP/UDP; <code>udp265://</code>: H.265 over RTP/UDP.</li>
+<li><code>mpegts://</code>: MPEG-TS over UDP; <code>tcp://</code>: MPEG-TS over TCP.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md28"></a>
+Automated tests</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Test   </th><th class="markdownTableHeadNone">Label   </th><th class="markdownTableHeadNone">Covers    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>GStreamerTest</code>   </td><td class="markdownTableBodyNone">Integration   </td><td class="markdownTableBodyNone">Helpers, the source factory, the <code>gstqgc</code> sink and the <code><a class="el" href="namespaceHwBuffers.html">HwBuffers</a></code> paths.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>GstVideoReceiverComponentsTest</code>   </td><td class="markdownTableBodyNone">Unit   </td><td class="markdownTableBodyNone">The receiver's components without a stream: reconnect backoff, stall detection, recording finalization by ancestry, pipeline and <code>.dot</code> file names.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>GstVideoReceiverTest</code>   </td><td class="markdownTableBodyNone">Integration   </td><td class="markdownTableBodyNone"><code><a class="el" href="classGstVideoReceiver.html" title="Shared by GstVideoReceiver and its components.">GstVideoReceiver</a></code> end to end against a live H.264 RTP stream it sends itself on loopback.   </td></tr>
+</table>
+<p>Each test skips, rather than fails, when <a class="el" href="namespaceGStreamer.html">GStreamer</a> or a plugin it needs is missing (<code>GstVideoReceiverTest</code> needs <code>x264enc</code> among others).</p>
+<div class="fragment"><div class="line">cd build &amp;&amp; ctest -R &#39;^(GStreamerTest|GstVideoReceiverComponentsTest|GstVideoReceiverTest)$&#39; --output-on-failure</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md29"></a>
 GStreamer Logging</h1>
 <ul>
 <li>In-app: Use QGroundControl's logging settings</li>
 <li>Environment variables: See <a href="https://gstreamer.freedesktop.org/documentation/gstreamer/running.html">https://gstreamer.freedesktop.org/documentation/gstreamer/running.html</a></li>
 <li>Command line options: <code>--gst-debug-level</code>, <code>--gst-debug</code>, <code>--gst-debug-help</code>, etc.</li>
+<li>Receiver flow (starts, stops, reconnects, the decoder chosen, pipeline latency, GPU path statistics): enable the <code>Video.GStreamer.GstVideoReceiver</code> category. Failures are logged as warnings even with it off.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md28"></a>
+<h1><a class="anchor" id="autotoc_md30"></a>
 Pipeline Observability</h1>
 <p><a class="el" href="namespaceQGC.html">QGC</a> supports the standard <a class="el" href="namespaceGStreamer.html">GStreamer</a> observability env vars. Set them before launching <a class="el" href="namespaceQGC.html">QGC</a>.</p>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md31"></a>
 Pipeline graph dumps (&lt;tt&gt;.dot&lt;/tt&gt; files)</h2>
-<p>When <code>GST_DEBUG_DUMP_DOT_DIR</code> is set, <a class="el" href="namespaceQGC.html">QGC</a> writes the receiver pipeline graph at key transitions (<code>pipeline-initial</code>, <code>pipeline-started</code>, <code>pipeline-with-videosink</code>, <code>pipeline-error</code>, <code>pipeline-watchdog-timeout</code>, <code>pipeline-recording-stopped</code>, …):</p>
+<p>When <code>GST_DEBUG_DUMP_DOT_DIR</code> is set, <a class="el" href="namespaceQGC.html">QGC</a> writes each receiver's pipeline graph there at key transitions as <code>receiver-&lt;stream&gt;-&lt;tag&gt;.dot</code>. <code>&lt;stream&gt;</code> is the receiver's name (<code>videoContent</code>, <code>thermalVideo</code>), so the two receivers don't overwrite each other's files, and <code>&lt;tag&gt;</code> names the transition (<code>pipeline-initial</code>, <code>pipeline-started</code>, <code>pipeline-with-videosink</code>, <code>pipeline-error</code>, <code>pipeline-watchdog-timeout</code>, <code>pipeline-recording-stopped</code>, …). A transition's next dump overwrites its last one.</p>
 <div class="fragment"><div class="line">export GST_DEBUG_DUMP_DOT_DIR=/tmp/qgc-pipeline-dots</div>
 <div class="line">./QGroundControl</div>
-<div class="line">dot -Tpng /tmp/qgc-pipeline-dots/0.00.00.*-pipeline-started.dot -o pipeline.png</div>
-</div><!-- fragment --><p>When the env var is <b>unset</b>, <a class="el" href="namespaceQGC.html">QGC</a> still writes a rotating snapshot (≤10 files) to <code>&lt;CacheLocation&gt;/qgc-pipeline-dot/&lt;tag&gt;-&lt;ts&gt;.dot</code> on <code>ERROR</code> and on watchdog timeout, so field-bug-report bundles include the topology automatically. The <code>GstVideoReceiver::dumpPipelineGraph(tag)</code> slot (callable from QML) writes a snapshot on demand for use from a debug menu.</p>
-<p>Automatic CacheLocation snapshots include topology, caps, media types, and states while omitting element properties that can contain stream credentials. Native dumps explicitly enabled with <code>GST_DEBUG_DUMP_DOT_DIR</code> retain <a class="el" href="namespaceGStreamer.html">GStreamer</a>'s full <code>SHOW_ALL</code> detail for local debugging and can include credential-bearing source properties; handle those files as sensitive data.</p>
-<h2><a class="anchor" id="autotoc_md30"></a>
+<div class="line">dot -Tpng /tmp/qgc-pipeline-dots/receiver-videoContent-pipeline-started.dot -o pipeline.png</div>
+</div><!-- fragment --><p>When the env var is <b>unset</b>, <a class="el" href="namespaceQGC.html">QGC</a> instead writes a snapshot to <code>&lt;CacheLocation&gt;/qgc-pipeline-dot/receiver-&lt;stream&gt;-&lt;tag&gt;-&lt;UTC timestamp&gt;.dot</code> on a pipeline <code>ERROR</code> and on a watchdog timeout, keeping the 10 newest, so field-bug-report bundles include the topology automatically. <code>GstVideoReceiver::dumpPipelineGraph(tag)</code> (<code>Q_INVOKABLE</code>, so callable from QML) writes the same snapshot on demand for use from a debug menu.</p>
+<p>Every dump shows topology, caps, media types and states, but leaves out element properties, which can hold stream credentials (such as <code>rtspsrc</code>'s <code>user-id</code> and <code>user-pw</code>).</p>
+<h2><a class="anchor" id="autotoc_md32"></a>
 Latency tracer</h2>
 <p>Per-element latency from source to sink:</p>
 <div class="fragment"><div class="line">GST_TRACERS=&quot;latency(flags=pipeline+element)&quot; GST_DEBUG=GST_TRACER:7 ./QGroundControl 2&gt; latency.log</div>
 </div><!-- fragment --><p>Plot the resulting <code>element-latency</code> / <code>latency</code> log lines with any of the <a class="el" href="namespaceGStreamer.html">GStreamer</a> community tools (e.g. <code>gst-stats</code>, GStreamerLatencyPlotter).</p>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Live pipeline visualizer (&lt;tt&gt;gst-dots-viewer&lt;/tt&gt;, GStreamer ≥ 1.26)</h2>
 <div class="fragment"><div class="line">GST_TRACERS=dots ./QGroundControl &amp;</div>
 <div class="line">gst-dots-viewer</div>
 <div class="line"># open http://localhost:3000</div>
 </div><!-- fragment --><p>The viewer streams the live pipeline graph over WebSocket and exposes a snapshot button — no <code>xdot</code> viewer needed.</p>
-<h2><a class="anchor" id="autotoc_md32"></a>
+<h2><a class="anchor" id="autotoc_md34"></a>
 Leak / lifetime debugging</h2>
 <div class="fragment"><div class="line">GST_TRACERS=leaks GST_DEBUG=GST_TRACER:7 ./QGroundControl</div>
 </div><!-- fragment --><p>Logs every <code>GstObject</code> / <code>GstMiniObject</code> that wasn't released by exit. Useful when triaging pad-leak regressions in the source factory or sink bin. </p>

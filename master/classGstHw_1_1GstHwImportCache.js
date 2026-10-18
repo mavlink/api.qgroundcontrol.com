@@ -1,14 +1,20 @@
 var classGstHw_1_1GstHwImportCache =
 [
-    [ "Deleter", "classGstHw_1_1GstHwImportCache.html#a2f8f3f527b6c620d4b205cf6db79d7d7", null ],
-    [ "GstHwImportCache", "classGstHw_1_1GstHwImportCache.html#a5b92fb6f1638fea6b8875b28346ff87c", null ],
-    [ "~GstHwImportCache", "classGstHw_1_1GstHwImportCache.html#ae21fe6f3f3996991b2ac6029a54c543e", null ],
-    [ "GstHwImportCache", "classGstHw_1_1GstHwImportCache.html#a7f6ce1ca0d49e7753712f71662472589", null ],
-    [ "clear", "classGstHw_1_1GstHwImportCache.html#a571cfe031a97ec18d483207be9b5d92e", null ],
-    [ "empty", "classGstHw_1_1GstHwImportCache.html#a55879845213c31e2eba1f14608fcf764", null ],
-    [ "eraseIf", "classGstHw_1_1GstHwImportCache.html#afb409664f6ae04d6d85352c36da9c15d", null ],
-    [ "find", "classGstHw_1_1GstHwImportCache.html#afb666ddfa430dc50383e9a5b9120354f", null ],
-    [ "insert", "classGstHw_1_1GstHwImportCache.html#a015ba0bd7b0ede36e7ca6d342b4b040b", null ],
-    [ "operator=", "classGstHw_1_1GstHwImportCache.html#ac084cc4c3c05bf6e3f12195bf422952c", null ],
-    [ "size", "classGstHw_1_1GstHwImportCache.html#a08b187aad382f33dbd08bfbc0233f836", null ]
+    [ "Hit", "structGstHw_1_1GstHwImportCache_1_1Hit.html", "structGstHw_1_1GstHwImportCache_1_1Hit" ],
+    [ "CanDestroyFn", "classGstHw_1_1GstHwImportCache.html#a21fe9b88a65fc0fbce71de60b89c2dd1", null ],
+    [ "DestroyFn", "classGstHw_1_1GstHwImportCache.html#a44dc2a39c1efe6003f6db068d121d53c", null ],
+    [ "EntryId", "classGstHw_1_1GstHwImportCache.html#aca9a7bb2ec0f0352b649a81be330acd2", null ],
+    [ "GstHwImportCache", "classGstHw_1_1GstHwImportCache.html#abee85ddf4e7cf174f426bc5929781e16", null ],
+    [ "~GstHwImportCache", "classGstHw_1_1GstHwImportCache.html#a5cd42ff3d87517d0c17d640286a7600c", null ],
+    [ "GstHwImportCache", "classGstHw_1_1GstHwImportCache.html#a181fcf4e71f475520988c17275f8d25b", null ],
+    [ "clear", "classGstHw_1_1GstHwImportCache.html#a14f926b163be20362c9c16ed5951973f", null ],
+    [ "drainDeferred", "classGstHw_1_1GstHwImportCache.html#a7ffa8e71056bb6060f66cf262f12391f", null ],
+    [ "eraseIf", "classGstHw_1_1GstHwImportCache.html#ad54adb825cb1c5aa11d743fb10e662fd", null ],
+    [ "find", "classGstHw_1_1GstHwImportCache.html#abc580a758c8325d7da49585bcf1f09c8", null ],
+    [ "insert", "classGstHw_1_1GstHwImportCache.html#a63e9062f855634b8bc52cc8946246832", null ],
+    [ "operator=", "classGstHw_1_1GstHwImportCache.html#ad83c7c1b11664eb84be71422c398073b", null ],
+    [ "parkedCount", "classGstHw_1_1GstHwImportCache.html#aca01b4fd0135b0f2c679b6dfb64d11fe", null ],
+    [ "pin", "classGstHw_1_1GstHwImportCache.html#a81d2903aa1c5bcfecdef1b78afb86c24", null ],
+    [ "size", "classGstHw_1_1GstHwImportCache.html#a7be71b7f3e8ae0ea2fe604615061c8cb", null ],
+    [ "unpin", "classGstHw_1_1GstHwImportCache.html#a5603d411667dcc74730d1b75e6257606", null ]
 ];

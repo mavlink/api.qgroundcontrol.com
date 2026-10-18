@@ -10,7 +10,7 @@ var classQGCQVideoSinkController =
     [ "negotiatedResolution", "classQGCQVideoSinkController.html#a4c349d3ba4ab73e5a0a49bb28c2a764f", null ],
     [ "negotiationChanged", "classQGCQVideoSinkController.html#a31e575e5ba57cd668997b633dec71c36", null ],
     [ "prepareForRelease", "classQGCQVideoSinkController.html#a9a65d41c73452a472da474b28fb1846f", null ],
-    [ "refreshLatency", "classQGCQVideoSinkController.html#af8f2fd0be990260bcd44e239a9ab0525", null ],
+    [ "releaseFrame", "classQGCQVideoSinkController.html#a18dfb378f53c34005af71fff7e3e5c38", null ],
     [ "setActive", "classQGCQVideoSinkController.html#a718ae976ccbd74ba4ea1693beaf4e540", null ],
     [ "setVideoSink", "classQGCQVideoSinkController.html#a7a2b6419984efd9077af4a93a4a3bcfd", null ],
     [ "syncActiveToWindowVisibility", "classQGCQVideoSinkController.html#ac36261c0f7655473dcb8f7ed2b9f359a", null ],

@@ -90,6 +90,7 @@ var classTransectStyleComplexItem =
     [ "triggerCamera", "classTransectStyleComplexItem.html#a91c79d6b7e05538e55d373cb7ddfa93f", null ],
     [ "triggerDistance", "classTransectStyleComplexItem.html#ad20f0e4dc2abdb46d9af74c111e199f2", null ],
     [ "turnAroundDistance", "classTransectStyleComplexItem.html#ac6f3d5185dc54820f1cb84cba07bb941", null ],
+    [ "usesAltitudeFrame", "classTransectStyleComplexItem.html#a0733d63ea9310c6a9dd3e5a750572824", null ],
     [ "visualTransectPoints", "classTransectStyleComplexItem.html#acf822ba96abb30ccd0b264eb61914929", null ],
     [ "visualTransectPointsChanged", "classTransectStyleComplexItem.html#ae6b327edfbd64022447b3b80849c09d1", null ],
     [ "_cameraCalc", "classTransectStyleComplexItem.html#afb78ffe5bc1d038e89252eb72f585a48", null ],

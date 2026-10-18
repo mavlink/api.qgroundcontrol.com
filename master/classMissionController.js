@@ -13,6 +13,8 @@ var classMissionController =
     [ "_recalcMissionFlightStatusSignal", "classMissionController.html#a795782089c05902d468d4c820ca0e155", null ],
     [ "addMissionToKML", "classMissionController.html#a7222170e62f24d4f6299b22dd2d03cf6", null ],
     [ "applyDefaultMissionAltitude", "classMissionController.html#ad9ebcf9b0e25fbcdc144676772675f93", null ],
+    [ "applyDefaultMissionAltitudeAvailable", "classMissionController.html#a6982584e6e4316208c50ecf36c47db8c", null ],
+    [ "applyDefaultMissionAltitudeAvailableChanged", "classMissionController.html#a8b9d167c29fe3e8286c28a7035b2216e", null ],
     [ "batteriesRequired", "classMissionController.html#a7e9fcf007a30e5505d93f93f1ca0b5d2", null ],
     [ "batteriesRequiredChanged", "classMissionController.html#a28c391caddfffb8f1c6104d3c341ed0a", null ],
     [ "batteryChangePoint", "classMissionController.html#a8c6beceab6fb73133e451e5dc7aa8486", null ],

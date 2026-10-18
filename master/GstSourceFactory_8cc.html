@@ -97,11 +97,13 @@ $(document).ready(function(){initNavTree('GstSourceFactory_8cc.html',''); initRe
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="GstSourceFactory_8h_source.html">GstSourceFactory.h</a>&quot;</code><br />
-<code>#include &lt;QtCore/QFile&gt;</code><br />
-<code>#include &lt;QtCore/QUrl&gt;</code><br />
 <code>#include &lt;gst/gst.h&gt;</code><br />
 <code>#include &lt;gst/rtsp/gstrtsptransport.h&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;QtCore/QFile&gt;</code><br />
+<code>#include &lt;QtCore/QUrl&gt;</code><br />
 <code>#include &quot;<a class="el" href="GStreamerHelpers_8h_source.html">GStreamerHelpers.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GstScoped_8h_source.html">GstScoped.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="QGCLoggingCategory_8h_source.html">QGCLoggingCategory.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="QGCNetworkHelper_8h_source.html">QGCNetworkHelper.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -123,26 +125,12 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2df831b5f903a7a96dd233cb09798853" id="r_a2df831b5f903a7a96dd233cb09798853"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1SourceFactory.html#a2df831b5f903a7a96dd233cb09798853">GStreamer::SourceFactory::create</a> (const QString &amp;uri, const <a class="el" href="structGStreamer_1_1SourceFactory_1_1Config.html">Config</a> &amp;<a class="el" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</td></tr>
+<tr class="memitem:a2df831b5f903a7a96dd233cb09798853" id="r_a2df831b5f903a7a96dd233cb09798853"><td class="memItemLeft" align="right" valign="top"><a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1SourceFactory.html#a2df831b5f903a7a96dd233cb09798853">GStreamer::SourceFactory::create</a> (const QString &amp;uri, const <a class="el" href="structGStreamer_1_1SourceFactory_1_1Config.html">Config</a> &amp;config)</td></tr>
 <tr class="separator:a2df831b5f903a7a96dd233cb09798853"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75654df9a64b8bed21ab6495e5f055e7" id="r_a75654df9a64b8bed21ab6495e5f055e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1SourceFactory.html#a75654df9a64b8bed21ab6495e5f055e7">GStreamer::SourceFactory::gateOnParameterSets</a> (GstPad *depayloaderSrc, bool h265)</td></tr>
+<tr class="separator:a75654df9a64b8bed21ab6495e5f055e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a7bccd5c1c02be8839bad65ae8b0e5004" name="a7bccd5c1c02be8839bad65ae8b0e5004"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bccd5c1c02be8839bad65ae8b0e5004">&#9670;&#160;</a></span>allowJitterBuffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool allowJitterBuffer</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="GstSourceFactory_8cc_source.html#l00185">185</a> of file <a class="el" href="GstSourceFactory_8cc_source.html">GstSourceFactory.cc</a>.</p>
-
-</div>
-</div>
 <a id="afae1f4606cfaa6b5381c2712ed1fc942" name="afae1f4606cfaa6b5381c2712ed1fc942"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afae1f4606cfaa6b5381c2712ed1fc942">&#9670;&#160;</a></span>binParser</h2>
 
@@ -150,32 +138,30 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="GstVideoReceiver_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* binParser</td>
+          <td class="memname"><a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* binParser</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstSourceFactory_8cc_source.html#l00182">182</a> of file <a class="el" href="GstSourceFactory_8cc_source.html">GstSourceFactory.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstSourceFactory_8cc_source.html#l00362">362</a> of file <a class="el" href="GstSourceFactory_8cc_source.html">GstSourceFactory.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstSourceFactory_8cc_source.html#l00516">GStreamer::SourceFactory::create()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstSourceFactory_8cc_source.html#l00649">GStreamer::SourceFactory::create()</a>.</p>
 
 </div>
 </div>
-<a id="a4a8dd3a2de125b72d4fe6251a0a271b5" name="a4a8dd3a2de125b72d4fe6251a0a271b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a8dd3a2de125b72d4fe6251a0a271b5">&#9670;&#160;</a></span>config</h2>
+<a id="af80847770d821722526c8f673da76012" name="af80847770d821722526c8f673da76012"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af80847770d821722526c8f673da76012">&#9670;&#160;</a></span>insertJitterBuffer</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Config config</td>
+          <td class="memname">bool insertJitterBuffer</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstSourceFactory_8cc_source.html#l00183">183</a> of file <a class="el" href="GstSourceFactory_8cc_source.html">GstSourceFactory.cc</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="LinkManager_8cc_source.html#l00752">LinkManager::addConfiguration()</a>, <a class="el" href="QGCNetworkHelper_8cc_source.html#l00610">QGCNetworkHelper::applySslConfig()</a>, <a class="el" href="GPSProtocolRuntime_8cc_source.html#l00101">GPSProtocolRuntime::armDecodeOnly()</a>, <a class="el" href="GPSFamilyProtocol_8h_source.html#l00229">GPSFamilyProtocol::armDecodeOnly()</a>, <a class="el" href="UBXDecoder_8cc_source.html#l00130">UBX::Protocol::armDecodeOnly()</a>, <a class="el" href="NTRIPHttpCodec_8cc_source.html#l00065">NTRIPHttpRequest::build()</a>, <a class="el" href="LinkManager_8h_source.html#l00054">LinkManager::cancelConfigurationEditing()</a>, <a class="el" href="GPSProtocolRuntime_8cc_source.html#l00059">GPSProtocolRuntime::configure()</a>, <a class="el" href="UBXConfigurator_8cc_source.html#l00040">UBX::Protocol::configure()</a>, <a class="el" href="GraphicsSetup_8cc_source.html#l00200">GraphicsSetup::configureMainWindow()</a>, <a class="el" href="QGCNetworkHelper_8cc_source.html#l00479">QGCNetworkHelper::configureRequest()</a>, <a class="el" href="LinkManager_8cc_source.html#l00760">LinkManager::containsConfiguration()</a>, <a class="el" href="BluetoothWorker_8cc_source.html#l00052">BluetoothWorker::create()</a>, <a class="el" href="GstSourceFactory_8cc_source.html#l00516">GStreamer::SourceFactory::create()</a>, <a class="el" href="LinkManager_8cc_source.html#l00102">LinkManager::createConnectedLink()</a>, <a class="el" href="LinkManager_8cc_source.html#l00140">LinkManager::createConnectedLink()</a>, <a class="el" href="QGCNetworkHelper_8cc_source.html#l00603">QGCNetworkHelper::createInsecureSslConfig()</a>, <a class="el" href="LinkManager_8cc_source.html#l00692">LinkManager::createMavlinkForwardingSupportLink()</a>, <a class="el" href="QGCNetworkHelper_8cc_source.html#l00540">QGCNetworkHelper::createRequest()</a>, <a class="el" href="LinkConfiguration_8cc_source.html#l00059">LinkConfiguration::createSettings()</a>, <a class="el" href="VideoBackend_8cc_source.html#l00055">VideoBackend::createSink()</a>, <a class="el" href="QGCNetworkClient_8cc_source.html#l00043">QGCNetworkHelper::createSslConfig()</a>, <a class="el" href="GStreamer_8cc_source.html#l00276">GStreamer::createVideoSink()</a>, <a class="el" href="LinkManager_8cc_source.html#l00113">LinkManager::disconnectLink()</a>, <a class="el" href="LinkManager_8cc_source.html#l00127">LinkManager::disconnectLinkConfiguration()</a>, <a class="el" href="LinkManager_8cc_source.html#l00624">LinkManager::endConfigurationEditing()</a>, <a class="el" href="LinkManager_8cc_source.html#l00638">LinkManager::endCreateConfiguration()</a>, <a class="el" href="NTRIPSourceTableController_8cc_source.html#l00046">NTRIPSourceTableController::fetch()</a>, <a class="el" href="GPSReceiverSession_8cc_source.html#l00046">gpsBaseStationStateFor()</a>, <a class="el" href="GPSReceiverConfig_8cc_source.html#l00133">gpsDetectedReceiverConfigError()</a>, <a class="el" href="GPSReceiverConfig_8cc_source.html#l00114">gpsReceiverConfigError()</a>, <a class="el" href="GPSReceiverSession_8cc_source.html#l00030">gpsReceiverConfigFor()</a>, <a class="el" href="GPSReceiverConfig_8cc_source.html#l00119">gpsReceiverConfigForDetected()</a>, <a class="el" href="GPSStreamDemux_8cc_source.html#l00277">GPSStreamDemux::GPSStreamDemux()</a>, <a class="el" href="GPSReceiverConfig_8cc_source.html#l00011">gpsValidateBaseStationConfig()</a>, <a class="el" href="GPSReceiverConfig_8cc_source.html#l00075">gpsValidateReceiverConfig()</a>, <a class="el" href="LinkManager_8cc_source.html#l00067">LinkManager::init()</a>, <a class="el" href="LinkManager_8cc_source.html#l00821">LinkManager::isLinkUSBDirect()</a>, <a class="el" href="NTRIPHttpSession_8cc_source.html#l00026">NTRIPHttpSession::open()</a>, <a class="el" href="LinkManager_8cc_source.html#l00676">LinkManager::removeConfiguration()</a>, <a class="el" href="QGCFileDownload_8cc_source.html#l00069">QGCFileDownload::start()</a>, <a class="el" href="QGCFileDownload_8cc_source.html#l00077">QGCFileDownload::start()</a>, <a class="el" href="LinkManager_8cc_source.html#l00660">LinkManager::startConfigurationEditing()</a>, and <a class="el" href="SerialAutoConnect_8cc_source.html#l00026">SerialAutoConnect::update()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstSourceFactory_8cc_source.html#l00364">364</a> of file <a class="el" href="GstSourceFactory_8cc_source.html">GstSourceFactory.cc</a>.</p>
 
 </div>
 </div>
@@ -191,9 +177,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstSourceFactory_8cc_source.html#l00184">184</a> of file <a class="el" href="GstSourceFactory_8cc_source.html">GstSourceFactory.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstSourceFactory_8cc_source.html#l00363">363</a> of file <a class="el" href="GstSourceFactory_8cc_source.html">GstSourceFactory.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstSourceFactory_8cc_source.html#l00516">GStreamer::SourceFactory::create()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstSourceFactory_8cc_source.html#l00649">GStreamer::SourceFactory::create()</a>.</p>
 
 </div>
 </div>

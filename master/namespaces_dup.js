@@ -314,7 +314,8 @@ var namespaces_dup =
       ] ]
     ] ],
     [ "GraphicsSetup", "namespaceGraphicsSetup.html", [
-      [ "configureMainWindow", "namespaceGraphicsSetup.html#a76b888fc245743668299f88ebefac4c1", null ]
+      [ "configureMainWindow", "namespaceGraphicsSetup.html#a76b888fc245743668299f88ebefac4c1", null ],
+      [ "configureMainWindowOnCreation", "namespaceGraphicsSetup.html#a86275c835e91fbf953675c93dd472358", null ]
     ] ],
     [ "GstHw", "namespaceGstHw.html", "namespaceGstHw" ],
     [ "GstHwPathTelemetry", "namespaceGstHwPathTelemetry.html", "namespaceGstHwPathTelemetry" ],
@@ -446,6 +447,9 @@ var namespaces_dup =
       [ "kDefaultHashAlgorithm", "namespaceQGCFileHelper.html#a720333aa48962c7252ab044fe4e4f109", null ]
     ] ],
     [ "QGCGeo", "namespaceQGCGeo.html", [
+      [ "convertDegreesToDMS", "namespaceQGCGeo.html#aec10f88430227d3c67a98487db2a2baa", null ],
+      [ "convertDMSToDegrees", "namespaceQGCGeo.html#a4b8e42f45f37a74caae7aac753e9da42", null ],
+      [ "convertDMSToGeo", "namespaceQGCGeo.html#a7bc94a6749163302783e0dfd135e8c12", null ],
       [ "convertEcefToEnu", "namespaceQGCGeo.html#a037ec1f4c3b9d04b4cd64c34960afd2d", null ],
       [ "convertEcefToGeodetic", "namespaceQGCGeo.html#a59b154f060e798e816856d80af91e330", null ],
       [ "convertEnuToEcef", "namespaceQGCGeo.html#a84a0fe2e84e26b3cc70b0bfbeef0f1be", null ],

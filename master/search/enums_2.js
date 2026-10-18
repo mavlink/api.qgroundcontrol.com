@@ -16,6 +16,8 @@ var searchData=
   ['connectionstatus_13',['ConnectionStatus',['../classNTRIPManager.html#a40006373c9a6a14aaf93a09019e55061',1,'NTRIPManager']]],
   ['connectiontype_14',['connectiontype',['../classRTKSettings.html#a01696e528141f0dd0d997c8dfe759fd6',1,'RTKSettings::ConnectionType'],['../namespaceQGCNetworkHelper.html#a3001d2002d17561f5767730045bdf9a3',1,'QGCNetworkHelper::ConnectionType']]],
   ['controlline_15',['ControlLine',['../namespaceAndroidSerial.html#aac2dd9b989ea453e709894cb17e95011',1,'AndroidSerial']]],
-  ['coordtype_16',['CoordType',['../classTransectStyleComplexItem.html#afcfa254bf8d7ddbdeadabd20ffe5d583',1,'TransectStyleComplexItem']]],
-  ['correctionsource_17',['CorrectionSource',['../classGPSCorrectionSettings.html#ae260d66a573e00741f9b72ec40a6a403',1,'GPSCorrectionSettings']]]
+  ['coordinateformat_16',['CoordinateFormat',['../classUnitsSettings.html#a2294fcb3926f584af75d12e55ca32bc4',1,'UnitsSettings']]],
+  ['coordtype_17',['CoordType',['../classTransectStyleComplexItem.html#afcfa254bf8d7ddbdeadabd20ffe5d583',1,'TransectStyleComplexItem']]],
+  ['correctionsource_18',['CorrectionSource',['../classGPSCorrectionSettings.html#ae260d66a573e00741f9b72ec40a6a403',1,'GPSCorrectionSettings']]],
+  ['counter_19',['Counter',['../namespaceGstHwPathTelemetry.html#a16e9937fb520a82225bf0cebd6ca3857',1,'GstHwPathTelemetry']]]
 ];

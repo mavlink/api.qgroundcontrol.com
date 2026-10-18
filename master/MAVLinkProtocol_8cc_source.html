@@ -604,54 +604,55 @@ $(document).ready(function(){initNavTree('MAVLinkProtocol_8cc_source.html',''); 
 <div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>            }</div>
 <div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>        }</div>
 <div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span> </div>
-<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>        <span class="keywordflow">if</span> (!out.commit()) {</div>
-<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>            <span class="keyword">const</span> QString <a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a> =</div>
-<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>                tr(<span class="stringliteral">&quot;Unable to finalize telemetry log &#39;%1&#39;: &#39;%2&#39;.&quot;</span>).arg(saveFilePath, out.errorString());</div>
-<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>            <a class="code hl_function" href="namespaceQGC.html#ae41a6cbf29b27a1b592d9d4cfde85975">QGC::showAppMessage</a>(<a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>);</div>
-<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>            (void)QFile::remove(tempLogfile);</div>
-<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>        }</div>
-<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span> </div>
-<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>        <span class="keyword">constexpr</span> QFileDevice::Permissions perms =</div>
-<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>            QFileDevice::ReadOwner | QFileDevice::WriteOwner | QFileDevice::ReadGroup | QFileDevice::ReadOther;</div>
-<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>        (void)out.setPermissions(perms);</div>
-<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>    }</div>
-<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span> </div>
-<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>    (void)QFile::remove(tempLogfile);</div>
-<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>}</div>
-<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span> </div>
-<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span><span class="keywordtype">bool</span> MAVLinkProtocol::_checkTelemetrySavePath()</div>
-<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>{</div>
-<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>    <span class="keyword">const</span> QString saveDirPath = <a class="code hl_function" href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a>()-&gt;<a class="code hl_function" href="classSettingsManager.html#ab674f8beaaa671be59cc6624cda10f0a">appSettings</a>()-&gt;<a class="code hl_function" href="classAppSettings.html#a3175e0ab4ff4958d2d4e7585445281d6">telemetrySavePath</a>();</div>
-<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>    <span class="keywordflow">if</span> (saveDirPath.isEmpty()) {</div>
-<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>        <span class="keyword">const</span> QString <a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a> = tr(<span class="stringliteral">&quot;Unable to save telemetry log. Application save directory is not set.&quot;</span>);</div>
-<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>        <a class="code hl_function" href="namespaceQGC.html#ae41a6cbf29b27a1b592d9d4cfde85975">QGC::showAppMessage</a>(<a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>);</div>
-<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>    }</div>
-<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span> </div>
-<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>    <span class="keyword">const</span> QDir saveDir(saveDirPath);</div>
-<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>    <span class="keywordflow">if</span> (!saveDir.exists()) {</div>
-<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>        <span class="keyword">const</span> QString <a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a> =</div>
-<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>            tr(<span class="stringliteral">&quot;Unable to save telemetry log. Telemetry save directory \&quot;%1\&quot; does not exist.&quot;</span>).arg(saveDirPath);</div>
-<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>        <a class="code hl_function" href="namespaceQGC.html#ae41a6cbf29b27a1b592d9d4cfde85975">QGC::showAppMessage</a>(<a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>);</div>
-<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>    }</div>
-<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span> </div>
-<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>}</div>
-<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span> </div>
-<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span><span class="keywordtype">void</span> MAVLinkProtocol::_vehicleCountChanged()</div>
-<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>{</div>
-<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>()-&gt;vehicles()-&gt;count() == 0) {</div>
-<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>        _stopLogging();</div>
-<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>    }</div>
-<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>}</div>
-<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span> </div>
-<div class="foldopen" id="foldopen00530" data-start="{" data-end="}">
-<div class="line"><a id="l00530" name="l00530"></a><span class="lineno"><a class="line" href="classMAVLinkProtocol.html#ab519c8771c8ab289d2924bcb762f1cd7">  530</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classMAVLinkProtocol.html#ab519c8771c8ab289d2924bcb762f1cd7">MAVLinkProtocol::getSystemId</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a>()-&gt;<a class="code hl_function" href="classSettingsManager.html#af3602e293b6f386993ce253e488803bd">mavlinkSettings</a>()-&gt;gcsMavlinkSystemID()-&gt;rawValue().toInt();</div>
-<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>}</div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>        <span class="comment">// QSaveFile applies permissions during commit().</span></div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>        <span class="keyword">constexpr</span> QFileDevice::Permissions perms =</div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>            QFileDevice::ReadOwner | QFileDevice::WriteOwner | QFileDevice::ReadGroup | QFileDevice::ReadOther;</div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>        (void) out.setPermissions(perms);</div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span> </div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>        <span class="keywordflow">if</span> (!out.commit()) {</div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>            <span class="keyword">const</span> QString <a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a> =</div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>                tr(<span class="stringliteral">&quot;Unable to finalize telemetry log &#39;%1&#39;: &#39;%2&#39;.&quot;</span>).arg(saveFilePath, out.errorString());</div>
+<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>            <a class="code hl_function" href="namespaceQGC.html#ae41a6cbf29b27a1b592d9d4cfde85975">QGC::showAppMessage</a>(<a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>);</div>
+<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>            (void)QFile::remove(tempLogfile);</div>
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>        }</div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>    }</div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span> </div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>    (void)QFile::remove(tempLogfile);</div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>}</div>
+<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span> </div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span><span class="keywordtype">bool</span> MAVLinkProtocol::_checkTelemetrySavePath()</div>
+<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>{</div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>    <span class="keyword">const</span> QString saveDirPath = <a class="code hl_function" href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a>()-&gt;<a class="code hl_function" href="classSettingsManager.html#ab674f8beaaa671be59cc6624cda10f0a">appSettings</a>()-&gt;<a class="code hl_function" href="classAppSettings.html#a3175e0ab4ff4958d2d4e7585445281d6">telemetrySavePath</a>();</div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>    <span class="keywordflow">if</span> (saveDirPath.isEmpty()) {</div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>        <span class="keyword">const</span> QString <a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a> = tr(<span class="stringliteral">&quot;Unable to save telemetry log. Application save directory is not set.&quot;</span>);</div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>        <a class="code hl_function" href="namespaceQGC.html#ae41a6cbf29b27a1b592d9d4cfde85975">QGC::showAppMessage</a>(<a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>);</div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>    }</div>
+<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span> </div>
+<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>    <span class="keyword">const</span> QDir saveDir(saveDirPath);</div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>    <span class="keywordflow">if</span> (!saveDir.exists()) {</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>        <span class="keyword">const</span> QString <a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a> =</div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>            tr(<span class="stringliteral">&quot;Unable to save telemetry log. Telemetry save directory \&quot;%1\&quot; does not exist.&quot;</span>).arg(saveDirPath);</div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>        <a class="code hl_function" href="namespaceQGC.html#ae41a6cbf29b27a1b592d9d4cfde85975">QGC::showAppMessage</a>(<a class="code hl_variable" href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a>);</div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>    }</div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span> </div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>}</div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span> </div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span><span class="keywordtype">void</span> MAVLinkProtocol::_vehicleCountChanged()</div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>{</div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classMultiVehicleManager.html#a108a726e04f21697e28ed785cd57f307">MultiVehicleManager::instance</a>()-&gt;vehicles()-&gt;count() == 0) {</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>        _stopLogging();</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>    }</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>}</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span> </div>
+<div class="foldopen" id="foldopen00531" data-start="{" data-end="}">
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno"><a class="line" href="classMAVLinkProtocol.html#ab519c8771c8ab289d2924bcb762f1cd7">  531</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classMAVLinkProtocol.html#ab519c8771c8ab289d2924bcb762f1cd7">MAVLinkProtocol::getSystemId</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classSettingsManager.html#a70509f6304c076e2cceea0445951c324">SettingsManager::instance</a>()-&gt;<a class="code hl_function" href="classSettingsManager.html#af3602e293b6f386993ce253e488803bd">mavlinkSettings</a>()-&gt;gcsMavlinkSystemID()-&gt;rawValue().toInt();</div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>}</div>
 </div>
 <div class="ttc" id="aAppMessages_8h_html"><div class="ttname"><a href="AppMessages_8h.html">AppMessages.h</a></div></div>
 <div class="ttc" id="aAppSettings_8h_html"><div class="ttname"><a href="AppSettings_8h.html">AppSettings.h</a></div></div>
@@ -697,7 +698,7 @@ $(document).ready(function(){initNavTree('MAVLinkProtocol_8cc_source.html',''); 
 <div class="ttc" id="aclassMAVLinkProtocol_html_a850a2e2aaeb5b20a732bc5fd587e2d33"><div class="ttname"><a href="classMAVLinkProtocol.html#a850a2e2aaeb5b20a732bc5fd587e2d33">MAVLinkProtocol::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkProtocol_8cc_source.html#l00048">MAVLinkProtocol.cc:48</a></div></div>
 <div class="ttc" id="aclassMAVLinkProtocol_html_aa7c707d5d1644a22aa35bcddf10ce9d3"><div class="ttname"><a href="classMAVLinkProtocol.html#aa7c707d5d1644a22aa35bcddf10ce9d3">MAVLinkProtocol::logSentBytes</a></div><div class="ttdeci">void logSentBytes(const LinkInterface *link, const QByteArray &amp;data)</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkProtocol_8cc_source.html#l00078">MAVLinkProtocol.cc:78</a></div></div>
 <div class="ttc" id="aclassMAVLinkProtocol_html_aa7efddf9f80781eb204442eb265b3fa5"><div class="ttname"><a href="classMAVLinkProtocol.html#aa7efddf9f80781eb204442eb265b3fa5">MAVLinkProtocol::instance</a></div><div class="ttdeci">static MAVLinkProtocol * instance()</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkProtocol_8cc_source.html#l00043">MAVLinkProtocol.cc:43</a></div></div>
-<div class="ttc" id="aclassMAVLinkProtocol_html_ab519c8771c8ab289d2924bcb762f1cd7"><div class="ttname"><a href="classMAVLinkProtocol.html#ab519c8771c8ab289d2924bcb762f1cd7">MAVLinkProtocol::getSystemId</a></div><div class="ttdeci">int getSystemId() const</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkProtocol_8cc_source.html#l00530">MAVLinkProtocol.cc:530</a></div></div>
+<div class="ttc" id="aclassMAVLinkProtocol_html_ab519c8771c8ab289d2924bcb762f1cd7"><div class="ttname"><a href="classMAVLinkProtocol.html#ab519c8771c8ab289d2924bcb762f1cd7">MAVLinkProtocol::getSystemId</a></div><div class="ttdeci">int getSystemId() const</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkProtocol_8cc_source.html#l00531">MAVLinkProtocol.cc:531</a></div></div>
 <div class="ttc" id="aclassMAVLinkProtocol_html_aba275d7ed76b84a88abdc6f1df064bba"><div class="ttname"><a href="classMAVLinkProtocol.html#aba275d7ed76b84a88abdc6f1df064bba">MAVLinkProtocol::resetMetadataForLink</a></div><div class="ttdeci">void resetMetadataForLink(LinkInterface *link)</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkProtocol_8cc_source.html#l00060">MAVLinkProtocol.cc:60</a></div></div>
 <div class="ttc" id="aclassMAVLinkProtocol_html_abd4f153e456e299a031b00c930b1fbd4"><div class="ttname"><a href="classMAVLinkProtocol.html#abd4f153e456e299a031b00c930b1fbd4">MAVLinkProtocol::~MAVLinkProtocol</a></div><div class="ttdeci">~MAVLinkProtocol()</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkProtocol_8cc_source.html#l00036">MAVLinkProtocol.cc:36</a></div></div>
 <div class="ttc" id="aclassMAVLinkProtocol_html_aef4fba5a9dd075960b046c0cf0f1336f"><div class="ttname"><a href="classMAVLinkProtocol.html#aef4fba5a9dd075960b046c0cf0f1336f">MAVLinkProtocol::getName</a></div><div class="ttdeci">static QString getName()</div><div class="ttdef"><b>Definition</b> <a href="MAVLinkProtocol_8h_source.html#l00030">MAVLinkProtocol.h:30</a></div></div>

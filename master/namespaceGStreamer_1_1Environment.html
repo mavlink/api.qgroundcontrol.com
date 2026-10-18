@@ -106,6 +106,8 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a1553f1ae8440e21d89245623b2b23abc" id="r_a1553f1ae8440e21d89245623b2b23abc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGStreamer_1_1Environment_1_1ValidationResult.html">ValidationResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1Environment.html#a1553f1ae8440e21d89245623b2b23abc">prepareEnvironment</a> ()</td></tr>
 <tr class="separator:a1553f1ae8440e21d89245623b2b23abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc38b88e3f2074664432ad9567c6688c" id="r_afc38b88e3f2074664432ad9567c6688c"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1Environment.html#afc38b88e3f2074664432ad9567c6688c">usePrivateRegistry</a> (const QString &amp;cacheDir)</td></tr>
+<tr class="separator:afc38b88e3f2074664432ad9567c6688c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1761b17a581d5c93c1bed1e08d9b4170" id="r_a1761b17a581d5c93c1bed1e08d9b4170"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1Environment.html#a1761b17a581d5c93c1bed1e08d9b4170">logDiagnostics</a> ()</td></tr>
 <tr class="separator:a1761b17a581d5c93c1bed1e08d9b4170"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -126,9 +128,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Dump the GST_PLUGIN_*&zwj;/GST_REGISTRY_* vars managed by this layer to the log at critical level. Called from plugin-verification failure paths so a stripped registry shows how the loader was configured. </p>
+<p>Dump the GST_PLUGIN_*&zwj;/GST_REGISTRY* vars managed by this layer to the log at critical level. Called from plugin-verification failure paths so a stripped registry shows how the loader was configured. </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamerEnvironment_8cc_source.html#l00563">563</a> of file <a class="el" href="GStreamerEnvironment_8cc_source.html">GStreamerEnvironment.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamerEnvironment_8cc_source.html#l00540">540</a> of file <a class="el" href="GStreamerEnvironment_8cc_source.html">GStreamerEnvironment.cc</a>.</p>
 
 </div>
 </div>
@@ -148,9 +150,30 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Apply all <a class="el" href="namespaceGStreamer.html">GStreamer</a> env vars for this process from bundled-paths discovery + platform validation. Idempotent: clears prior managed vars first so a retry starts clean. Returns the validation outcome by value (threaded explicitly to <a class="el" href="namespaceGStreamer.html#a85132ba33027c40c6eb1010030f566d8">initialize()</a>, not a cross-thread global). </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamerEnvironment_8cc_source.html#l00551">551</a> of file <a class="el" href="GStreamerEnvironment_8cc_source.html">GStreamerEnvironment.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamerEnvironment_8cc_source.html#l00523">523</a> of file <a class="el" href="GStreamerEnvironment_8cc_source.html">GStreamerEnvironment.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00159">GStreamer::prepareEnvironment()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00136">GStreamer::prepareEnvironment()</a>.</p>
+
+</div>
+</div>
+<a id="afc38b88e3f2074664432ad9567c6688c" name="afc38b88e3f2074664432ad9567c6688c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc38b88e3f2074664432ad9567c6688c">&#9670;&#160;</a></span>usePrivateRegistry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString GStreamer::Environment::usePrivateRegistry </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>cacheDir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Point GST_REGISTRY at gstreamer-&lt;runtime version&gt;-&lt;arch&gt;.bin in <code>cacheDir</code>, creating the directory, unless GST_REGISTRY or GST_REGISTRY_1_0 is already set or <code>cacheDir</code> is empty. <a class="el" href="namespaceGStreamer_1_1Environment.html#a1553f1ae8440e21d89245623b2b23abc">prepareEnvironment()</a> does this with the app's cache location for a bundled desktop runtime. Returns the registry it set, else an empty string. </p>
+
+<p class="definition">Definition at line <a class="el" href="GStreamerEnvironment_8cc_source.html#l00534">534</a> of file <a class="el" href="GStreamerEnvironment_8cc_source.html">GStreamerEnvironment.cc</a>.</p>
 
 </div>
 </div>

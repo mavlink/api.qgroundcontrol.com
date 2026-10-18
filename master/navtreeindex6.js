@@ -1,5 +1,17 @@
 var NAVTREEINDEX6 =
 {
+"GPSConnectionErrors_8h.html#a2ff0fc1851f78a580d11991e4de40168a804cd73a5af77ae29abd005bcbea6d1d":[5,0,0,16,0,0,1,3,2],
+"GPSConnectionErrors_8h.html#a2ff0fc1851f78a580d11991e4de40168acbf169aecd4365561eb6b245659f55d8":[5,0,0,16,0,0,1,3,1],
+"GPSConnectionErrors_8h.html#a2ff0fc1851f78a580d11991e4de40168af4bcd1a9d91d7dd1eb0e1c02b43cc0bf":[5,0,0,16,0,0,1,3,4],
+"GPSConnectionErrors_8h.html#ab078155f3df492ac7337d86d5e49f685":[5,0,0,16,0,0,1,1],
+"GPSConnectionErrors_8h.html#aca5b5a56cfef16776f3875a1daf2a349":[5,0,0,16,0,0,1,0],
+"GPSConnectionErrors_8h.html#afbe09a1852be468fdef6c9a8a2cfb6f1":[5,0,0,16,0,0,1,2],
+"GPSConnectionErrors_8h.html#afbe09a1852be468fdef6c9a8a2cfb6f1a5d9194716b6a125a6d16691e84afcdf2":[5,0,0,16,0,0,1,2,2],
+"GPSConnectionErrors_8h.html#afbe09a1852be468fdef6c9a8a2cfb6f1a6adf97f83acf6453d4a6a4b1070f3754":[5,0,0,16,0,0,1,2,0],
+"GPSConnectionErrors_8h.html#afbe09a1852be468fdef6c9a8a2cfb6f1ab1839cb131ea1059ee39ad00441accdb":[5,0,0,16,0,0,1,2,4],
+"GPSConnectionErrors_8h.html#afbe09a1852be468fdef6c9a8a2cfb6f1abe252e5b290c865b4d033fe4c4f88e9a":[5,0,0,16,0,0,1,2,3],
+"GPSConnectionErrors_8h.html#afbe09a1852be468fdef6c9a8a2cfb6f1ac60b10c14b43d15f91424c6addfc31ac":[5,0,0,16,0,0,1,2,1],
+"GPSConnectionErrors_8h.html#afbe09a1852be468fdef6c9a8a2cfb6f1aca3da8f495e4e628912a7798655da6c2":[5,0,0,16,0,0,1,2,5],
 "GPSConnectionErrors_8h_source.html":[5,0,0,16,0,0,1],
 "GPSCorrectionManager_8cc.html":[5,0,0,16,1,0],
 "GPSCorrectionManager_8cc_source.html":[5,0,0,16,1,0],
@@ -237,17 +249,5 @@ var NAVTREEINDEX6 =
 "GPSReceiverSession_8cc_source.html":[5,0,0,16,5,9],
 "GPSReceiverSession_8h.html":[5,0,0,16,5,10],
 "GPSReceiverSession_8h.html#a3aee17b489394226e221824c41249fd4":[5,0,0,16,5,10,3],
-"GPSReceiverSession_8h.html#ad024ed1fdbd0eaed14e7dc3c366a338c":[5,0,0,16,5,10,4],
-"GPSReceiverSession_8h_source.html":[5,0,0,16,5,10],
-"GPSReceiverSettings_8qml.html":[5,0,0,16,4,6],
-"GPSReceiverSettings_8qml_source.html":[5,0,0,16,4,6],
-"GPSReceiverStatus_8qml.html":[5,0,0,16,4,7],
-"GPSReceiverStatus_8qml_source.html":[5,0,0,16,4,7],
-"GPSReceiverWorker_8cc.html":[5,0,0,16,0,6],
-"GPSReceiverWorker_8cc_source.html":[5,0,0,16,0,6],
-"GPSReceiverWorker_8h.html":[5,0,0,16,0,7],
-"GPSReceiverWorker_8h_source.html":[5,0,0,16,0,7],
-"GPSReceiver_8cc.html":[5,0,0,16,5,0],
-"GPSReceiver_8cc_source.html":[5,0,0,16,5,0],
-"GPSReceiver_8h.html":[5,0,0,16,5,1]
+"GPSReceiverSession_8h.html#ad024ed1fdbd0eaed14e7dc3c366a338c":[5,0,0,16,5,10,4]
 };

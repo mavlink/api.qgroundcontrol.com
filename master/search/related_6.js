@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['linkmanager_0',['LinkManager',['../classLinkInterface.html#a209d207af87c1b7828cee00c53729e72',1,'LinkInterface']]],
-  ['linkmanagertest_1',['linkmanagertest',['../classLinkManager.html#a87260222c92771ce06df4c4f915b1c4c',1,'LinkManager::LinkManagerTest'],['../classSerialAutoConnect.html#a87260222c92771ce06df4c4f915b1c4c',1,'SerialAutoConnect::LinkManagerTest'],['../classSerialPortSettleTracker.html#a87260222c92771ce06df4c4f915b1c4c',1,'SerialPortSettleTracker::LinkManagerTest']]]
+  ['joystickconfigcontroller_0',['JoystickConfigController',['../classJoystick.html#a901f7ec250e8ad259c9e9d8426208159',1,'Joystick']]],
+  ['joystickmanager_1',['JoystickManager',['../classJoystick.html#ae5f76d41b5d8c22ca6a4a178f60fb159',1,'Joystick']]],
+  ['jsonresourceaudittest_2',['JsonResourceAuditTest',['../classQGCSerialPortInfo.html#ac15ce9c09627b8a5794e8a740dc5f167',1,'QGCSerialPortInfo']]]
 ];

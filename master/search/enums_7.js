@@ -6,5 +6,5 @@ var searchData=
   ['horizontaldistanceunits_3',['HorizontalDistanceUnits',['../classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1',1,'UnitsSettings']]],
   ['httpstatusclass_4',['HttpStatusClass',['../namespaceQGCNetworkHelper.html#a0bd978c4a2b5e0a18415f9ea65a94c13',1,'QGCNetworkHelper']]],
   ['hwfallbackreason_5',['HwFallbackReason',['../namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeaf',1,'GstHwPathTelemetry']]],
-  ['hwvideobufferpath_6',['HwVideoBufferPath',['../GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb',1,'GstHwVideoBufferFactory.h']]]
+  ['hwvideobufferpath_6',['HwVideoBufferPath',['../GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb',1,'GstHwTypes.h']]]
 ];

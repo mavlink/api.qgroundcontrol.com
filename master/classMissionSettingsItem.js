@@ -42,5 +42,6 @@ var classMissionSettingsItem =
     [ "specifiesCoordinate", "classMissionSettingsItem.html#af9736587ffe75353ccc3b8034304544c", null ],
     [ "specifyMissionFlightSpeedChanged", "classMissionSettingsItem.html#a9222277927f222b1a5d26ad6673ba35c", null ],
     [ "speedSection", "classMissionSettingsItem.html#afb590556ccbf2030477937aa3fd08ea0", null ],
-    [ "terrainCollision", "classMissionSettingsItem.html#a034297f5968bf5ee78f60dcae735e2a6", null ]
+    [ "terrainCollision", "classMissionSettingsItem.html#a034297f5968bf5ee78f60dcae735e2a6", null ],
+    [ "usesAltitudeFrame", "classMissionSettingsItem.html#a899a015e5a8da35d33684a83e2e5653f", null ]
 ];

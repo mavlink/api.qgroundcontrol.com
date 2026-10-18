@@ -2,6 +2,8 @@ var dir_a43dccabaefb15a4c021017d49b7e301 =
 [
     [ "gstqgc", "dir_294c8e2e70698160bcc8c0b858334204.html", "dir_294c8e2e70698160bcc8c0b858334204" ],
     [ "HwBuffers", "dir_5028bd29f419a81b9a32eb55ebcd9926.html", "dir_5028bd29f419a81b9a32eb55ebcd9926" ],
+    [ "DecodingBranch.cc", "DecodingBranch_8cc.html", null ],
+    [ "DecodingBranch.h", "DecodingBranch_8h.html", "DecodingBranch_8h" ],
     [ "GStreamer.cc", "GStreamer_8cc.html", "GStreamer_8cc" ],
     [ "GStreamer.h", "GStreamer_8h.html", "GStreamer_8h" ],
     [ "GStreamerEnvironment.cc", "GStreamerEnvironment_8cc.html", "GStreamerEnvironment_8cc" ],
@@ -17,6 +19,14 @@ var dir_a43dccabaefb15a4c021017d49b7e301 =
     [ "GstVideoReceiver.h", "GstVideoReceiver_8h.html", "GstVideoReceiver_8h" ],
     [ "MockVideoStreamServer.cc", "MockVideoStreamServer_8cc.html", null ],
     [ "MockVideoStreamServer.h", "MockVideoStreamServer_8h.html", "MockVideoStreamServer_8h" ],
+    [ "PipelineDotDumper.cc", "PipelineDotDumper_8cc.html", null ],
+    [ "PipelineDotDumper.h", "PipelineDotDumper_8h.html", "PipelineDotDumper_8h" ],
     [ "QGCQVideoSinkController.cc", "QGCQVideoSinkController_8cc.html", null ],
-    [ "QGCQVideoSinkController.h", "QGCQVideoSinkController_8h.html", "QGCQVideoSinkController_8h" ]
+    [ "QGCQVideoSinkController.h", "QGCQVideoSinkController_8h.html", "QGCQVideoSinkController_8h" ],
+    [ "RecordingBranch.cc", "RecordingBranch_8cc.html", null ],
+    [ "RecordingBranch.h", "RecordingBranch_8h.html", "RecordingBranch_8h" ],
+    [ "RecordingFinalizer.cc", "RecordingFinalizer_8cc.html", null ],
+    [ "RecordingFinalizer.h", "RecordingFinalizer_8h.html", "RecordingFinalizer_8h" ],
+    [ "StreamWatchdog.cc", "StreamWatchdog_8cc.html", null ],
+    [ "StreamWatchdog.h", "StreamWatchdog_8h.html", "StreamWatchdog_8h" ]
 ];

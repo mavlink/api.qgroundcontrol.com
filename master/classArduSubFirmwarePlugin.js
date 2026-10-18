@@ -13,6 +13,7 @@ var classArduSubFirmwarePlugin =
     [ "offlineEditingParamFile", "classArduSubFirmwarePlugin.html#a8081f96c4669d9ce8a0046d203ea6b21", null ],
     [ "paramNameRemapMajorVersionMap", "classArduSubFirmwarePlugin.html#a2b759a00e3d04fc6d8807decb8025272", null ],
     [ "remapParamNameHigestMinorVersionNumber", "classArduSubFirmwarePlugin.html#a46b6d0f3553b69b5ab1ee9618f38add0", null ],
+    [ "rtlFlightMode", "classArduSubFirmwarePlugin.html#ae815ffdd22fb566bae0ce96aa391eda3", null ],
     [ "stabilizedFlightMode", "classArduSubFirmwarePlugin.html#a39db2d2ac0518139af73c922b7106eb9", null ],
     [ "supportsJSButton", "classArduSubFirmwarePlugin.html#acdee7950438355c614a2a4fe6301365c", null ],
     [ "supportsMotorInterference", "classArduSubFirmwarePlugin.html#a689dc63896bf93fb7d2161fe7846f1d6", null ],

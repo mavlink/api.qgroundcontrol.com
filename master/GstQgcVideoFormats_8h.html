@@ -98,22 +98,23 @@ $(document).ready(function(){initNavTree('GstQgcVideoFormats_8h.html',''); initR
   <div class="headertitle"><div class="title">GstQgcVideoFormats.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QtMultimedia/QVideoFrameFormat&gt;</code><br />
-<code>#include &lt;gst/video/video-format.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;gst/video/video-format.h&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;QtMultimedia/QVideoFrameFormat&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for GstQgcVideoFormats.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="GstQgcVideoFormats_8h__incl.svg" width="504" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="GstQgcVideoFormats_8h__incl.svg" width="592" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="GstQgcVideoFormats_8h__dep__incl.svg" width="584" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="GstQgcVideoFormats_8h__dep__incl.svg" width="560" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="GstQgcVideoFormats_8h_source.html">Go to the source code of this file.</a></p>
@@ -126,16 +127,23 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceGstQgc" id="r_namespaceGstQgc"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstQgc.html">GstQgc</a></td></tr>
+<tr class="memdesc:namespaceGstQgc"><td class="mdescLeft">&#160;</td><td class="mdescRight">GstVideoSink that pushes decoded frames into a Qt QVideoSink; sole sink in qgcvideosinkbin. Streaming-thread vfuncs MUST NOT touch QObject members directly (thread-affinity asserts) — hand off via QMetaObject::invokeMethod / bus messages. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2d92403a87f47f0c289b29996332a8d6" id="r_a2d92403a87f47f0c289b29996332a8d6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstQgc.html#a2d92403a87f47f0c289b29996332a8d6">GstQgc::advertisedFormatList</a> ()</td></tr>
-<tr class="memdesc:a2d92403a87f47f0c289b29996332a8d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">"{ NV12, NV21, ... }" — the advertised format list for a caps string. Built once at caps setup.  <br /></td></tr>
-<tr class="separator:a2d92403a87f47f0c289b29996332a8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a889444e0d20a99b3aa02dbef716e0b64" id="r_a889444e0d20a99b3aa02dbef716e0b64"><td class="memItemLeft" align="right" valign="top">std::vector&lt; GstVideoFormat &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstQgc.html#a889444e0d20a99b3aa02dbef716e0b64">GstQgc::advertisedFormats</a> (unsigned requiredOffers=0)</td></tr>
+<tr class="memdesc:a889444e0d20a99b3aa02dbef716e0b64"><td class="mdescLeft">&#160;</td><td class="mdescRight">The advertised formats carrying every flag in <code>requiredOffers</code>, in table order.  <br /></td></tr>
+<tr class="separator:a889444e0d20a99b3aa02dbef716e0b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa579365fc613b12bc374f5a749d4a25b" id="r_aa579365fc613b12bc374f5a749d4a25b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstQgc.html#aa579365fc613b12bc374f5a749d4a25b">GstQgc::advertisedFormatList</a> (unsigned requiredOffers=0)</td></tr>
+<tr class="separator:aa579365fc613b12bc374f5a749d4a25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a61a9a1edb57806efa894115d1615de32" id="r_a61a9a1edb57806efa894115d1615de32"><td class="memItemLeft" align="right" valign="top">constexpr unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstQgc.html#a61a9a1edb57806efa894115d1615de32">GstQgc::kOfferGlUpload</a> = 1u &lt;&lt; 0</td></tr>
+<tr class="separator:a61a9a1edb57806efa894115d1615de32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42350f34e0e3479c39f098ad7a5c6239" id="r_a42350f34e0e3479c39f098ad7a5c6239"><td class="memItemLeft" align="right" valign="top">constexpr unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstQgc.html#a42350f34e0e3479c39f098ad7a5c6239">GstQgc::kOfferLinearDmaDrm</a> = 1u &lt;&lt; 1</td></tr>
+<tr class="separator:a42350f34e0e3479c39f098ad7a5c6239"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf1b437a2b5aa5ec9db4a4eac23cf5d9" id="r_adf1b437a2b5aa5ec9db4a4eac23cf5d9"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structGstQgc_1_1VideoFormatEntry.html">VideoFormatEntry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstQgc.html#adf1b437a2b5aa5ec9db4a4eac23cf5d9">GstQgc::kVideoFormatTable</a> []</td></tr>
 <tr class="separator:adf1b437a2b5aa5ec9db4a4eac23cf5d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

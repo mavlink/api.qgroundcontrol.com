@@ -92,8 +92,10 @@ $(document).ready(function(){initNavTree('classCpuVideoFramePool.html',''); init
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classCpuVideoFramePool-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">CpuVideoFramePool Class Reference</div></div>
 </div><!--header-->
@@ -106,19 +108,22 @@ $(document).ready(function(){initNavTree('classCpuVideoFramePool.html',''); init
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpuVideoFramePool_1_1FrameMapping.html">FrameMapping</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCpuVideoFramePool_1_1PlaneLayout.html">PlaneLayout</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a285998ae9f4f5206a9c7df6640b659e2" id="r_a285998ae9f4f5206a9c7df6640b659e2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpuVideoFramePool.html#a285998ae9f4f5206a9c7df6640b659e2">PinnedFrameCounter</a> = std::shared_ptr&lt; std::atomic&lt; int &gt; &gt;</td></tr>
+<tr class="memdesc:a285998ae9f4f5206a9c7df6640b659e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Live zero-copy frames of one sink; shared so frames Qt still holds after the sink is gone can release it.  <br /></td></tr>
+<tr class="separator:a285998ae9f4f5206a9c7df6640b659e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abf9daee644f860851ce7287eda93c8dd" id="r_abf9daee644f860851ce7287eda93c8dd"><td class="memItemLeft" align="right" valign="top">QVideoFrame&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpuVideoFramePool.html#abf9daee644f860851ce7287eda93c8dd">acquireFrame</a> (const QVideoFrameFormat &amp;format, const GstVideoInfo &amp;info)</td></tr>
 <tr class="memdesc:abf9daee644f860851ce7287eda93c8dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pool-backed frame sized to <code>info</code>, or freshly allocates on a pool miss; invalid if unsupported.  <br /></td></tr>
 <tr class="separator:abf9daee644f860851ce7287eda93c8dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae78b391d81de6012734538bccc8199c8" id="r_ae78b391d81de6012734538bccc8199c8"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpuVideoFramePool.html#ae78b391d81de6012734538bccc8199c8">hitCount</a> () const noexcept</td></tr>
-<tr class="memdesc:ae78b391d81de6012734538bccc8199c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Telemetry: total <a class="el" href="classCpuVideoFramePool.html#abf9daee644f860851ce7287eda93c8dd" title="Returns a pool-backed frame sized to info, or freshly allocates on a pool miss; invalid if unsupporte...">acquireFrame()</a> calls satisfied from the pool vs. fresh alloc.  <br /></td></tr>
-<tr class="separator:ae78b391d81de6012734538bccc8199c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a676b0b0a83d87a5a54386736f22c43f4" id="r_a676b0b0a83d87a5a54386736f22c43f4"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpuVideoFramePool.html#a676b0b0a83d87a5a54386736f22c43f4">missCount</a> () const noexcept</td></tr>
-<tr class="separator:a676b0b0a83d87a5a54386736f22c43f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7266098dcbddf40abf6e4fc123e2eab5" id="r_a7266098dcbddf40abf6e4fc123e2eab5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpuVideoFramePool.html#a7266098dcbddf40abf6e4fc123e2eab5">releaseBacking</a> (QSize size, QVideoFrameFormat::PixelFormat format, QByteArray &amp;&amp;backing)</td></tr>
 <tr class="memdesc:a7266098dcbddf40abf6e4fc123e2eab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a backing array to the pool; called by PooledCpuVideoBuffer's destructor only.  <br /></td></tr>
 <tr class="separator:a7266098dcbddf40abf6e4fc123e2eab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,20 +132,47 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a2cd7872c303f835198a2fc525784a785" id="r_a2cd7872c303f835198a2fc525784a785"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classCpuVideoFramePool.html">CpuVideoFramePool</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpuVideoFramePool.html#a2cd7872c303f835198a2fc525784a785">instance</a> ()</td></tr>
 <tr class="separator:a2cd7872c303f835198a2fc525784a785"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac500883767864fb2a0aea2ddc1409b91" id="r_ac500883767864fb2a0aea2ddc1409b91"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; QAbstractVideoBuffer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpuVideoFramePool.html#ac500883767864fb2a0aea2ddc1409b91">wrapZeroCopy</a> (GstBuffer *buffer, const GstVideoInfo &amp;info, const QVideoFrameFormat &amp;format)</td></tr>
-<tr class="separator:ac500883767864fb2a0aea2ddc1409b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e26efcb638ec597665e5d9ab6eb0548" id="r_a0e26efcb638ec597665e5d9ab6eb0548"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; QAbstractVideoBuffer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpuVideoFramePool.html#a0e26efcb638ec597665e5d9ab6eb0548">wrapZeroCopy</a> (GstBuffer *buffer, const GstVideoInfo &amp;info, const QVideoFrameFormat &amp;format, const <a class="el" href="classCpuVideoFramePool.html#a285998ae9f4f5206a9c7df6640b659e2">PinnedFrameCounter</a> &amp;pinned)</td></tr>
+<tr class="separator:a0e26efcb638ec597665e5d9ab6eb0548"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a918db495ed0fc6059fbb719c3e3f6260" id="r_a918db495ed0fc6059fbb719c3e3f6260"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structCpuVideoFramePool_1_1PlaneLayout.html">PlaneLayout</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpuVideoFramePool.html#a918db495ed0fc6059fbb719c3e3f6260">computeLayout</a> (const GstVideoInfo &amp;info)</td></tr>
 <tr class="memdesc:a918db495ed0fc6059fbb719c3e3f6260"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destination plane layout mirroring <code>info</code> (strides/offsets from the decoder). planeCount==0 means unsupported.  <br /></td></tr>
 <tr class="separator:a918db495ed0fc6059fbb719c3e3f6260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add7a00ce90c42c427a48654fd8121fa7" id="r_add7a00ce90c42c427a48654fd8121fa7"><td class="memItemLeft" align="right" valign="top">static QAbstractVideoBuffer::MapData&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpuVideoFramePool.html#add7a00ce90c42c427a48654fd8121fa7">mapDataFor</a> (const GstVideoFrame &amp;frame)</td></tr>
+<tr class="memdesc:add7a00ce90c42c427a48654fd8121fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Qt map data for a frame mapped with gst_video_frame_map, each plane sized by its own row count.  <br /></td></tr>
+<tr class="separator:add7a00ce90c42c427a48654fd8121fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a582dcc72f7c4db07bd186f67241d0e31" id="r_a582dcc72f7c4db07bd186f67241d0e31"><td class="memItemLeft" align="right" valign="top">static QVideoFrame&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpuVideoFramePool.html#a582dcc72f7c4db07bd186f67241d0e31">copyFromBuffer</a> (GstBuffer *buffer, const GstVideoInfo &amp;videoInfo, const QVideoFrameFormat &amp;format)</td></tr>
 <tr class="memdesc:a582dcc72f7c4db07bd186f67241d0e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy <code>buffer's</code> planes into a pool-allocated QVideoFrame; invalid on stride overflow or unsupported format.  <br /></td></tr>
 <tr class="separator:a582dcc72f7c4db07bd186f67241d0e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a70cb5c77d3e0433d15a8e11496582900" id="r_a70cb5c77d3e0433d15a8e11496582900"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCpuVideoFramePool.html#a70cb5c77d3e0433d15a8e11496582900">kMaxPinnedFrames</a> = 4</td></tr>
+<tr class="separator:a70cb5c77d3e0433d15a8e11496582900"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Recycles CPU-backed QVideoFrame storage keyed by (size, pixelFormat) to avoid per-frame malloc churn. </p>
 
-<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8h_source.html#l00017">17</a> of file <a class="el" href="CpuVideoFramePool_8h_source.html">CpuVideoFramePool.h</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8h_source.html#l00018">18</a> of file <a class="el" href="CpuVideoFramePool_8h_source.html">CpuVideoFramePool.h</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a285998ae9f4f5206a9c7df6640b659e2" name="a285998ae9f4f5206a9c7df6640b659e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a285998ae9f4f5206a9c7df6640b659e2">&#9670;&#160;</a></span>PinnedFrameCounter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classCpuVideoFramePool.html#a285998ae9f4f5206a9c7df6640b659e2">CpuVideoFramePool::PinnedFrameCounter</a> =  std::shared_ptr&lt;std::atomic&lt;int&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Live zero-copy frames of one sink; shared so frames Qt still holds after the sink is gone can release it. </p>
+
+<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8h_source.html#l00033">33</a> of file <a class="el" href="CpuVideoFramePool_8h_source.html">CpuVideoFramePool.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="abf9daee644f860851ce7287eda93c8dd" name="abf9daee644f860851ce7287eda93c8dd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf9daee644f860851ce7287eda93c8dd">&#9670;&#160;</a></span>acquireFrame()</h2>
 
@@ -169,11 +201,11 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns a pool-backed frame sized to <code>info</code>, or freshly allocates on a pool miss; invalid if unsupported. </p>
 
-<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8cc_source.html#l00230">230</a> of file <a class="el" href="CpuVideoFramePool_8cc_source.html">CpuVideoFramePool.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8cc_source.html#l00224">224</a> of file <a class="el" href="CpuVideoFramePool_8cc_source.html">CpuVideoFramePool.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="CpuVideoFramePool_8h_source.html#l00041">CpuVideoFramePool::PlaneLayout::byteSize</a>, <a class="el" href="CpuVideoFramePool_8cc_source.html#l00157">computeLayout()</a>, and <a class="el" href="CpuVideoFramePool_8h_source.html#l00037">CpuVideoFramePool::PlaneLayout::planeCount</a>.</p>
+<p class="reference">References <a class="el" href="CpuVideoFramePool_8h_source.html#l00048">CpuVideoFramePool::PlaneLayout::byteSize</a>, <a class="el" href="CpuVideoFramePool_8cc_source.html#l00116">computeLayout()</a>, and <a class="el" href="CpuVideoFramePool_8h_source.html#l00044">CpuVideoFramePool::PlaneLayout::planeCount</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CpuVideoFramePool_8cc_source.html#l00260">copyFromBuffer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CpuVideoFramePool_8cc_source.html#l00257">copyFromBuffer()</a>.</p>
 
 </div>
 </div>
@@ -203,11 +235,11 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Destination plane layout mirroring <code>info</code> (strides/offsets from the decoder). planeCount==0 means unsupported. </p>
 
-<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8cc_source.html#l00157">157</a> of file <a class="el" href="CpuVideoFramePool_8cc_source.html">CpuVideoFramePool.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8cc_source.html#l00116">116</a> of file <a class="el" href="CpuVideoFramePool_8cc_source.html">CpuVideoFramePool.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="CpuVideoFramePool_8h_source.html#l00041">CpuVideoFramePool::PlaneLayout::byteSize</a>, <a class="el" href="CpuVideoFramePool_8h_source.html#l00038">CpuVideoFramePool::PlaneLayout::bytesPerLine</a>, <a class="el" href="CpuVideoFramePool_8h_source.html#l00039">CpuVideoFramePool::PlaneLayout::height</a>, <a class="el" href="CpuVideoFramePool_8h_source.html#l00037">CpuVideoFramePool::PlaneLayout::planeCount</a>, and <a class="el" href="CpuVideoFramePool_8h_source.html#l00040">CpuVideoFramePool::PlaneLayout::planeOffset</a>.</p>
+<p class="reference">References <a class="el" href="CpuVideoFramePool_8h_source.html#l00048">CpuVideoFramePool::PlaneLayout::byteSize</a>, <a class="el" href="CpuVideoFramePool_8h_source.html#l00045">CpuVideoFramePool::PlaneLayout::bytesPerLine</a>, <a class="el" href="CpuVideoFramePool_8h_source.html#l00046">CpuVideoFramePool::PlaneLayout::height</a>, <a class="el" href="CpuVideoFramePool_8h_source.html#l00044">CpuVideoFramePool::PlaneLayout::planeCount</a>, <a class="el" href="GstHwVideoInfo_8cc_source.html#l00046">GstHw::planeHeight()</a>, and <a class="el" href="CpuVideoFramePool_8h_source.html#l00047">CpuVideoFramePool::PlaneLayout::planeOffset</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CpuVideoFramePool_8cc_source.html#l00230">acquireFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CpuVideoFramePool_8cc_source.html#l00224">acquireFrame()</a>.</p>
 
 </div>
 </div>
@@ -253,40 +285,11 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Copy <code>buffer's</code> planes into a pool-allocated QVideoFrame; invalid on stride overflow or unsupported format. </p>
 
-<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8cc_source.html#l00260">260</a> of file <a class="el" href="CpuVideoFramePool_8cc_source.html">CpuVideoFramePool.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8cc_source.html#l00257">257</a> of file <a class="el" href="CpuVideoFramePool_8cc_source.html">CpuVideoFramePool.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="CpuVideoFramePool_8cc_source.html#l00230">acquireFrame()</a>, and <a class="el" href="CpuVideoFramePool_8cc_source.html#l00151">instance()</a>.</p>
+<p class="reference">References <a class="el" href="CpuVideoFramePool_8cc_source.html#l00224">acquireFrame()</a>, <a class="el" href="CpuVideoFramePool_8h_source.html#l00073">CpuVideoFramePool::FrameMapping::frame()</a>, <a class="el" href="CpuVideoFramePool_8cc_source.html#l00110">instance()</a>, <a class="el" href="CpuVideoFramePool_8cc_source.html#l00146">CpuVideoFramePool::FrameMapping::mapFrame()</a>, <a class="el" href="GstHwVideoInfo_8cc_source.html#l00046">GstHw::planeHeight()</a>, and <a class="el" href="GstHwVideoInfo_8cc_source.html#l00055">GstHw::planeRowBytes()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamerFrameMap_8cc_source.html#l00219">mapSampleToFrame()</a>.</p>
-
-</div>
-</div>
-<a id="ae78b391d81de6012734538bccc8199c8" name="ae78b391d81de6012734538bccc8199c8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae78b391d81de6012734538bccc8199c8">&#9670;&#160;</a></span>hitCount()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">quint64 CpuVideoFramePool::hitCount </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Telemetry: total <a class="el" href="classCpuVideoFramePool.html#abf9daee644f860851ce7287eda93c8dd" title="Returns a pool-backed frame sized to info, or freshly allocates on a pool miss; invalid if unsupporte...">acquireFrame()</a> calls satisfied from the pool vs. fresh alloc. </p>
-
-<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8h_source.html#l00031">31</a> of file <a class="el" href="CpuVideoFramePool_8h_source.html">CpuVideoFramePool.h</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstQgcFrameMap_8cc_source.html#l00224">mapSampleToFrame()</a>.</p>
 
 </div>
 </div>
@@ -313,14 +316,14 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8cc_source.html#l00151">151</a> of file <a class="el" href="CpuVideoFramePool_8cc_source.html">CpuVideoFramePool.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8cc_source.html#l00110">110</a> of file <a class="el" href="CpuVideoFramePool_8cc_source.html">CpuVideoFramePool.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CpuVideoFramePool_8cc_source.html#l00260">copyFromBuffer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CpuVideoFramePool_8cc_source.html#l00257">copyFromBuffer()</a>.</p>
 
 </div>
 </div>
-<a id="a676b0b0a83d87a5a54386736f22c43f4" name="a676b0b0a83d87a5a54386736f22c43f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a676b0b0a83d87a5a54386736f22c43f4">&#9670;&#160;</a></span>missCount()</h2>
+<a id="add7a00ce90c42c427a48654fd8121fa7" name="add7a00ce90c42c427a48654fd8121fa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add7a00ce90c42c427a48654fd8121fa7">&#9670;&#160;</a></span>mapDataFor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -329,20 +332,27 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">quint64 CpuVideoFramePool::missCount </td>
+          <td class="memname">QAbstractVideoBuffer::MapData CpuVideoFramePool::mapDataFor </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const GstVideoFrame &amp;&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8h_source.html#l00033">33</a> of file <a class="el" href="CpuVideoFramePool_8h_source.html">CpuVideoFramePool.h</a>.</p>
+<p>Qt map data for a frame mapped with gst_video_frame_map, each plane sized by its own row count. </p>
+
+<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8cc_source.html#l00133">133</a> of file <a class="el" href="CpuVideoFramePool_8cc_source.html">CpuVideoFramePool.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="CpuVideoFramePool_8h_source.html#l00044">CpuVideoFramePool::PlaneLayout::planeCount</a>, and <a class="el" href="GstHwVideoInfo_8cc_source.html#l00046">GstHw::planeHeight()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="CpuVideoFramePool_8cc_source.html#l00154">CpuVideoFramePool::FrameMapping::map()</a>.</p>
 
 </div>
 </div>
@@ -380,12 +390,12 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Return a backing array to the pool; called by PooledCpuVideoBuffer's destructor only. </p>
 
-<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8cc_source.html#l00198">198</a> of file <a class="el" href="CpuVideoFramePool_8cc_source.html">CpuVideoFramePool.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8cc_source.html#l00192">192</a> of file <a class="el" href="CpuVideoFramePool_8cc_source.html">CpuVideoFramePool.cc</a>.</p>
 
 </div>
 </div>
-<a id="ac500883767864fb2a0aea2ddc1409b91" name="ac500883767864fb2a0aea2ddc1409b91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac500883767864fb2a0aea2ddc1409b91">&#9670;&#160;</a></span>wrapZeroCopy()</h2>
+<a id="a0e26efcb638ec597665e5d9ab6eb0548" name="a0e26efcb638ec597665e5d9ab6eb0548"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e26efcb638ec597665e5d9ab6eb0548">&#9670;&#160;</a></span>wrapZeroCopy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -409,7 +419,13 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const QVideoFrameFormat &amp;&#160;</td>
-          <td class="paramname"><em>format</em>&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classCpuVideoFramePool.html#a285998ae9f4f5206a9c7df6640b659e2">PinnedFrameCounter</a> &amp;&#160;</td>
+          <td class="paramname"><em>pinned</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -423,11 +439,37 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Zero-copy CPU frame: wraps <code>buffer</code> and maps its system memory through to Qt. nullptr if not CPU-mappable (caller copies instead). Pins the decoder buffer for the frame's lifetime. </p>
+<p>Zero-copy CPU frame: wraps <code>buffer</code> and maps its system memory through to Qt. nullptr if not CPU-mappable or <code>pinned</code> already counts kMaxPinnedFrames (caller copies instead). Pins the decoder buffer for the frame's lifetime. </p>
 
-<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8cc_source.html#l00241">241</a> of file <a class="el" href="CpuVideoFramePool_8cc_source.html">CpuVideoFramePool.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8cc_source.html#l00235">235</a> of file <a class="el" href="CpuVideoFramePool_8cc_source.html">CpuVideoFramePool.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamerFrameMap_8cc_source.html#l00219">mapSampleToFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstQgcFrameMap_8cc_source.html#l00224">mapSampleToFrame()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a70cb5c77d3e0433d15a8e11496582900" name="a70cb5c77d3e0433d15a8e11496582900"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70cb5c77d3e0433d15a8e11496582900">&#9670;&#160;</a></span>kMaxPinnedFrames</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int CpuVideoFramePool::kMaxPinnedFrames = 4</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Upper bound on decoder buffers one sink holds downstream at once, zero-copy CPU and GPU frames alike: the frame being mapped in show_frame, one pending GUI delivery (latest-frame-only), the frame Qt displays, and the previous frame, whose texture bundle keeps its sample until Qt reuses that in-flight slot (QRhi FramesInFlight is 2 on the common backends). </p>
+
+<p class="definition">Definition at line <a class="el" href="CpuVideoFramePool_8h_source.html#l00030">30</a> of file <a class="el" href="CpuVideoFramePool_8h_source.html">CpuVideoFramePool.h</a>.</p>
 
 </div>
 </div>

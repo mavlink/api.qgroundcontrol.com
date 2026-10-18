@@ -9,6 +9,7 @@ var classPX4AutoPilotPlugin =
     [ "_airframeComponent", "classPX4AutoPilotPlugin.html#a5119a84288233622838dddc57f76d378", null ],
     [ "_airframeFacts", "classPX4AutoPilotPlugin.html#abeccdfa41625351baaa430d7a7a20c8b", null ],
     [ "_esp8266Component", "classPX4AutoPilotPlugin.html#aa89c70da858486103fb01161d173997c", null ],
+    [ "_failureInjectionComponent", "classPX4AutoPilotPlugin.html#a2b99d0be49234f637067f79ecb07db5d", null ],
     [ "_flightBehavior", "classPX4AutoPilotPlugin.html#a91443dd2b30b74b407fec411f7d0cf57", null ],
     [ "_flightModesComponent", "classPX4AutoPilotPlugin.html#aeb0fee46212b99ac57fcdaa1aa24931c", null ],
     [ "_incorrectParameterVersion", "classPX4AutoPilotPlugin.html#a3a609edf038336900f30c73005b0b307", null ],

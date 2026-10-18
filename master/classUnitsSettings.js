@@ -8,6 +8,12 @@ var classUnitsSettings =
       [ "AreaUnitsAcres", "classUnitsSettings.html#aca83aeb9f913ebabedfa6c496d060b7aa51f1fec0cccc2d55e9985bf336b98a4f", null ],
       [ "AreaUnitsSquareMiles", "classUnitsSettings.html#aca83aeb9f913ebabedfa6c496d060b7aa58e5c45acd5328dd7171d7e32646d5d1", null ]
     ] ],
+    [ "CoordinateFormat", "classUnitsSettings.html#a2294fcb3926f584af75d12e55ca32bc4", [
+      [ "CoordinateFormatDecimal", "classUnitsSettings.html#a2294fcb3926f584af75d12e55ca32bc4a65cd1441e987ea0dce91b11b121a3a95", null ],
+      [ "CoordinateFormatDMS", "classUnitsSettings.html#a2294fcb3926f584af75d12e55ca32bc4ae10a0fc4545299b14d4912179c23089e", null ],
+      [ "CoordinateFormatUTM", "classUnitsSettings.html#a2294fcb3926f584af75d12e55ca32bc4a99260c1d8e8df63f13d9f71ada532486", null ],
+      [ "CoordinateFormatMGRS", "classUnitsSettings.html#a2294fcb3926f584af75d12e55ca32bc4a12ba0979c59c0f5fdab3bc2e61b660cc", null ]
+    ] ],
     [ "HorizontalDistanceUnits", "classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1", [
       [ "HorizontalDistanceUnitsFeet", "classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1a3d129896f5fe9a1911b4df07092e2cf1", null ],
       [ "HorizontalDistanceUnitsMeters", "classUnitsSettings.html#ace2361f4e36a835e4ddbe3ffee9bebe1a4df12cbe00884399b8cfd66642230a12", null ]

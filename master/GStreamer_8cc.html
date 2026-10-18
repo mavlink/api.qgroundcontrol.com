@@ -97,27 +97,18 @@ $(document).ready(function(){initNavTree('GStreamer_8cc.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="GStreamer_8h_source.html">GStreamer.h</a>&quot;</code><br />
-<code>#include &lt;QtCore/QCoreApplication&gt;</code><br />
-<code>#include &lt;QtCore/QDir&gt;</code><br />
-<code>#include &lt;QtCore/QFile&gt;</code><br />
-<code>#include &lt;QtCore/QFileInfo&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
+<code>#include &lt;QtCore/QByteArrayList&gt;</code><br />
 <code>#include &lt;QtCore/QList&gt;</code><br />
-<code>#include &lt;QtCore/QMutex&gt;</code><br />
 <code>#include &lt;QtCore/QPointer&gt;</code><br />
-<code>#include &lt;QtCore/QStandardPaths&gt;</code><br />
 <code>#include &lt;QtCore/QStringList&gt;</code><br />
-<code>#include &lt;QtGui/QGuiApplication&gt;</code><br />
-<code>#include &lt;QtGui/QScreen&gt;</code><br />
-<code>#include &lt;QtGui/QWindow&gt;</code><br />
+<code>#include &lt;QtCore/QVarLengthArray&gt;</code><br />
 <code>#include &lt;QtMultimedia/QVideoSink&gt;</code><br />
 <code>#include &lt;QtMultimediaQuick/private/qquickvideooutput_p.h&gt;</code><br />
 <code>#include &lt;QtQuick/QQuickItem&gt;</code><br />
 <code>#include &lt;QtQuick/QQuickWindow&gt;</code><br />
 <code>#include &lt;QtQuick/QSGRendererInterface&gt;</code><br />
-<code>#include &lt;array&gt;</code><br />
-<code>#include &lt;memory&gt;</code><br />
-<code>#include &lt;mutex&gt;</code><br />
-<code>#include &lt;utility&gt;</code><br />
 <code>#include &quot;<a class="el" href="Fact_8h_source.html">Fact.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GStreamerEnvironment_8h_source.html">GStreamerEnvironment.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GStreamerHelpers_8h_source.html">GStreamerHelpers.h</a>&quot;</code><br />
@@ -127,7 +118,6 @@ $(document).ready(function(){initNavTree('GStreamer_8cc.html',''); initResizable
 <code>#include &quot;<a class="el" href="HwBuffers_8h_source.html">HwBuffers/common/HwBuffers.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="QGCLoggingCategory_8h_source.html">QGCLoggingCategory.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="QGCQVideoSinkController_8h_source.html">QGCQVideoSinkController.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="gstqgcqvideosink_8h_source.html">gstqgc/gstqgcqvideosink.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="gstqgcvideosinkbin_8h_source.html">gstqgc/gstqgcvideosinkbin.h</a>&quot;</code><br />
 <code>#include &lt;gst/gst.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -155,7 +145,7 @@ Functions</h2></td></tr>
 <tr class="separator:a71ff21ae8d70082b4d3da0e5e04e9659"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85132ba33027c40c6eb1010030f566d8" id="r_a85132ba33027c40c6eb1010030f566d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer.html#a85132ba33027c40c6eb1010030f566d8">GStreamer::initialize</a> (const QStringList &amp;arguments, const <a class="el" href="structGStreamer_1_1Environment_1_1ValidationResult.html">Environment::ValidationResult</a> &amp;envResult)</td></tr>
 <tr class="separator:a85132ba33027c40c6eb1010030f566d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78a7811c72ccb67484b560f26a8c0ab6" id="r_a78a7811c72ccb67484b560f26a8c0ab6"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer.html#a78a7811c72ccb67484b560f26a8c0ab6">GStreamer::createVideoSink</a> (const <a class="el" href="structGStreamer_1_1VideoSinkConfig.html">VideoSinkConfig</a> &amp;<a class="el" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</td></tr>
+<tr class="memitem:a78a7811c72ccb67484b560f26a8c0ab6" id="r_a78a7811c72ccb67484b560f26a8c0ab6"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer.html#a78a7811c72ccb67484b560f26a8c0ab6">GStreamer::createVideoSink</a> (const <a class="el" href="structGStreamer_1_1VideoSinkConfig.html">VideoSinkConfig</a> &amp;config)</td></tr>
 <tr class="separator:a78a7811c72ccb67484b560f26a8c0ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a668a7521fce6db761dd0f6987f05c51b" id="r_a668a7521fce6db761dd0f6987f05c51b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer.html#a668a7521fce6db761dd0f6987f05c51b">GStreamer::releaseVideoSink</a> (void *sink)</td></tr>
 <tr class="separator:a668a7521fce6db761dd0f6987f05c51b"><td class="memSeparator" colspan="2">&#160;</td></tr>

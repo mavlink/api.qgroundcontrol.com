@@ -161,8 +161,11 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a54b0dbca049c9c7e62684e90c30874e4" id="r_a54b0dbca049c9c7e62684e90c30874e4"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFTPManager.html#a54b0dbca049c9c7e62684e90c30874e4">kFullReadChunkSize</a> = sizeof(MavlinkFTP::Request::data)</td></tr>
 <tr class="memdesc:a54b0dbca049c9c7e62684e90c30874e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bytes requested per ReadFile/BurstReadFile chunk on non-radio links: the full FTP payload.  <br /></td></tr>
 <tr class="separator:a54b0dbca049c9c7e62684e90c30874e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4fc87c2d2d806df91df48f33ca1fd9a5" id="r_a4fc87c2d2d806df91df48f33ca1fd9a5"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFTPManager.html#a4fc87c2d2d806df91df48f33ca1fd9a5">kRadioReadChunkSize</a> = 110</td></tr>
+<tr class="memitem:a4fc87c2d2d806df91df48f33ca1fd9a5" id="r_a4fc87c2d2d806df91df48f33ca1fd9a5"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFTPManager.html#a4fc87c2d2d806df91df48f33ca1fd9a5">kRadioReadChunkSize</a> = 91</td></tr>
 <tr class="separator:a4fc87c2d2d806df91df48f33ca1fd9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bbe5a22f8b3287f0039f40f72a9bf11" id="r_a0bbe5a22f8b3287f0039f40f72a9bf11"><td class="memItemLeft" align="right" valign="top">static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFTPManager.html#a0bbe5a22f8b3287f0039f40f72a9bf11">kRadioReadChunkSizeSigned</a> = <a class="el" href="classFTPManager.html#a4fc87c2d2d806df91df48f33ca1fd9a5">kRadioReadChunkSize</a> - 13</td></tr>
+<tr class="memdesc:a0bbe5a22f8b3287f0039f40f72a9bf11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chunk size on a signed radio link, where every packet carries a 13 byte signature.  <br /></td></tr>
+<tr class="separator:a0bbe5a22f8b3287f0039f40f72a9bf11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95df003adac4494031341a3f929b512a" id="r_a95df003adac4494031341a3f929b512a"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFTPManager.html#a95df003adac4494031341a3f929b512a">kMaxDownloadSessionReopens</a> = 2</td></tr>
 <tr class="memdesc:a95df003adac4494031341a3f929b512a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max times a download re-opens after the server expires the session (PX4 idle timer fires mid-burst)  <br /></td></tr>
 <tr class="separator:a95df003adac4494031341a3f929b512a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,7 +201,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00017">17</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00018">18</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="AppMessages_8cc_source.html#l00030">QGC::runningUnitTests()</a>.</p>
 
@@ -221,7 +224,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Cancel the delete operation if running. This will emit <a class="el" href="classFTPManager.html#ab4b1be037e21ca88ed6c6427ff8061b1">deleteComplete()</a> with an error string when finished. </p>
 
-<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00264">264</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00265">265</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FTPController_8cc_source.html#l00176">FTPController::cancelActiveOperation()</a>.</p>
 
@@ -243,7 +246,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Cancel the download operation This will emit <a class="el" href="classFTPManager.html#aa8e6c2937c9d37e64fc6c3082d2f12dd">downloadComplete()</a> when done, and if there's currently a download in progress </p>
 
-<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00215">215</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00216">216</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="OnboardLogController_8cc_source.html#l00547">OnboardLogController::cancel()</a>, and <a class="el" href="FTPController_8cc_source.html#l00176">FTPController::cancelActiveOperation()</a>.</p>
 
@@ -265,7 +268,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Cancel the list directory operation if running. This will emit <a class="el" href="classFTPManager.html#add5bf179084a7e652cb639fc9e931a19">listDirectoryComplete()</a> with an error string when finished. </p>
 
-<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00226">226</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00227">227</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="OnboardLogController_8cc_source.html#l00547">OnboardLogController::cancel()</a>, and <a class="el" href="FTPController_8cc_source.html#l00176">FTPController::cancelActiveOperation()</a>.</p>
 
@@ -287,7 +290,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>Cancel the upload operation This will emit <a class="el" href="classFTPManager.html#a7e8220db74a62804d9342068f2108415">uploadComplete()</a> when done, and if there's currently an upload in progress </p>
 
-<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00239">239</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00240">240</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FTPController_8cc_source.html#l00176">FTPController::cancelActiveOperation()</a>.</p>
 
@@ -399,7 +402,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true: process has started, false: error Signals deleteComplete </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00186">186</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00187">187</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FTPController_8cc_source.html#l00149">FTPController::deleteFile()</a>.</p>
 
@@ -460,7 +463,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true: download has started, false: error, no download Signals downloadComplete, commandProgress </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00032">32</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00033">33</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FTPController_8cc_source.html#l00068">FTPController::downloadFile()</a>.</p>
 
@@ -538,7 +541,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true: process has started, false: error Signals listDirectoryComplete </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00144">144</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00145">145</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="MAVLinkFTP_8h_source.html#l00042">MavlinkFTP::kCmdListDirectory</a>, <a class="el" href="MAVLinkFTP_8h_source.html#l00055">MavlinkFTP::kCmdListDirectoryWithTime</a>, and <a class="el" href="MAVLinkFTP_8cc_source.html#l00003">MavlinkFTP::opCodeToString()</a>.</p>
 
@@ -654,7 +657,7 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true: upload started, false: error, no upload Signals uploadComplete, commandProgress </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00089">89</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FTPManager_8cc_source.html#l00090">90</a> of file <a class="el" href="FTPManager_8cc_source.html">FTPManager.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="FTPController_8cc_source.html#l00109">FTPController::uploadFile()</a>.</p>
 
@@ -772,7 +775,7 @@ Friends</h2></td></tr>
 
 <p>Max times a download re-opens after the server expires the session (PX4 idle timer fires mid-burst) </p>
 
-<p class="definition">Definition at line <a class="el" href="FTPManager_8h_source.html#l00291">291</a> of file <a class="el" href="FTPManager_8h_source.html">FTPManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FTPManager_8h_source.html#l00293">293</a> of file <a class="el" href="FTPManager_8h_source.html">FTPManager.h</a>.</p>
 
 </div>
 </div>
@@ -786,7 +789,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr uint8_t FTPManager::kRadioReadChunkSize = 110</td>
+          <td class="memname">constexpr uint8_t FTPManager::kRadioReadChunkSize = 91</td>
         </tr>
       </table>
   </td>
@@ -795,9 +798,35 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Chunk size on SiK/RFD radio links. Keeps each FTP packet inside one ~252 byte air frame; a full payload spans two frames and is lost if either is. On the wire: 12 MAVLink v2 + 15 FTP fixed + 110 = 137 bytes (150 signed), leaving room for the radio to coalesce a telemetry packet into the same frame. </p>
+<p>Chunk size on SiK/RFD radio links, so each FTP packet fits in one radio packet. A SiK radio's limit (max_data_packet_length, reported by ATI6) is 250 bytes, but only 118 with error correction enabled, which we cannot detect. On the wire: 12 MAVLink v2 + 15 FTP fixed + 91 = 118 bytes. </p>
 
 <p class="definition">Definition at line <a class="el" href="FTPManager_8h_source.html#l00289">289</a> of file <a class="el" href="FTPManager_8h_source.html">FTPManager.h</a>.</p>
+
+</div>
+</div>
+<a id="a0bbe5a22f8b3287f0039f40f72a9bf11" name="a0bbe5a22f8b3287f0039f40f72a9bf11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bbe5a22f8b3287f0039f40f72a9bf11">&#9670;&#160;</a></span>kRadioReadChunkSizeSigned</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr uint8_t FTPManager::kRadioReadChunkSizeSigned = <a class="el" href="classFTPManager.html#a4fc87c2d2d806df91df48f33ca1fd9a5">kRadioReadChunkSize</a> - 13</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Chunk size on a signed radio link, where every packet carries a 13 byte signature. </p>
+
+<p class="definition">Definition at line <a class="el" href="FTPManager_8h_source.html#l00291">291</a> of file <a class="el" href="FTPManager_8h_source.html">FTPManager.h</a>.</p>
 
 </div>
 </div>
@@ -823,7 +852,7 @@ Friends</h2></td></tr>
 
 <p>Ack timeout used in unit tests (much shorter for faster tests) </p>
 
-<p class="definition">Definition at line <a class="el" href="FTPManager_8h_source.html#l00293">293</a> of file <a class="el" href="FTPManager_8h_source.html">FTPManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FTPManager_8h_source.html#l00295">295</a> of file <a class="el" href="FTPManager_8h_source.html">FTPManager.h</a>.</p>
 
 </div>
 </div>
@@ -849,7 +878,7 @@ Friends</h2></td></tr>
 
 <p>Maximum wait time for FTP operations in unit tests (generous for multi-packet transfers) </p>
 
-<p class="definition">Definition at line <a class="el" href="FTPManager_8h_source.html#l00295">295</a> of file <a class="el" href="FTPManager_8h_source.html">FTPManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FTPManager_8h_source.html#l00297">297</a> of file <a class="el" href="FTPManager_8h_source.html">FTPManager.h</a>.</p>
 
 </div>
 </div>

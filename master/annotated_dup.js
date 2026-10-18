@@ -60,6 +60,9 @@ var annotated_dup =
       [ "ScopedMapTimer", "classGstHwPathTelemetry_1_1ScopedMapTimer.html", "classGstHwPathTelemetry_1_1ScopedMapTimer" ]
     ] ],
     [ "GstQgc", "namespaceGstQgc.html", [
+      [ "BinChain", "classGstQgc_1_1BinChain.html", "classGstQgc_1_1BinChain" ],
+      [ "CapsInfo", "structGstQgc_1_1CapsInfo.html", "structGstQgc_1_1CapsInfo" ],
+      [ "PathStats", "structGstQgc_1_1PathStats.html", "structGstQgc_1_1PathStats" ],
       [ "VideoFormatEntry", "structGstQgc_1_1VideoFormatEntry.html", "structGstQgc_1_1VideoFormatEntry" ]
     ] ],
     [ "GStreamer", "namespaceGStreamer.html", [
@@ -69,13 +72,21 @@ var annotated_dup =
       [ "SourceFactory", "namespaceGStreamer_1_1SourceFactory.html", [
         [ "Config", "structGStreamer_1_1SourceFactory_1_1Config.html", "structGStreamer_1_1SourceFactory_1_1Config" ]
       ] ],
+      [ "GErrorDeleter", "structGStreamer_1_1GErrorDeleter.html", "structGStreamer_1_1GErrorDeleter" ],
+      [ "GFreeDeleter", "structGStreamer_1_1GFreeDeleter.html", "structGStreamer_1_1GFreeDeleter" ],
+      [ "GstCapsDeleter", "structGStreamer_1_1GstCapsDeleter.html", "structGStreamer_1_1GstCapsDeleter" ],
+      [ "GstContextDeleter", "structGStreamer_1_1GstContextDeleter.html", "structGStreamer_1_1GstContextDeleter" ],
+      [ "GstEventDeleter", "structGStreamer_1_1GstEventDeleter.html", "structGStreamer_1_1GstEventDeleter" ],
+      [ "GstMessageDeleter", "structGStreamer_1_1GstMessageDeleter.html", "structGStreamer_1_1GstMessageDeleter" ],
       [ "GstObjectDeleter", "structGStreamer_1_1GstObjectDeleter.html", "structGStreamer_1_1GstObjectDeleter" ],
       [ "GstQueryDeleter", "structGStreamer_1_1GstQueryDeleter.html", "structGStreamer_1_1GstQueryDeleter" ],
+      [ "GstStructureDeleter", "structGStreamer_1_1GstStructureDeleter.html", "structGStreamer_1_1GstStructureDeleter" ],
+      [ "PadProbe", "classGStreamer_1_1PadProbe.html", "classGStreamer_1_1PadProbe" ],
+      [ "TeeBranch", "structGStreamer_1_1TeeBranch.html", "structGStreamer_1_1TeeBranch" ],
       [ "VideoSinkConfig", "structGStreamer_1_1VideoSinkConfig.html", "structGStreamer_1_1VideoSinkConfig" ]
     ] ],
     [ "HwBuffers", "namespaceHwBuffers.html", [
-      [ "HwBufferEnvConfig", "structHwBuffers_1_1HwBufferEnvConfig.html", "structHwBuffers_1_1HwBufferEnvConfig" ],
-      [ "PathStats", "structHwBuffers_1_1PathStats.html", "structHwBuffers_1_1PathStats" ]
+      [ "HwBufferEnvConfig", "structHwBuffers_1_1HwBufferEnvConfig.html", "structHwBuffers_1_1HwBufferEnvConfig" ]
     ] ],
     [ "JsonParsing", "namespaceJsonParsing.html", [
       [ "KeyValidateInfo", "structJsonParsing_1_1KeyValidateInfo.html", "structJsonParsing_1_1KeyValidateInfo" ]
@@ -384,6 +395,7 @@ var annotated_dup =
     [ "DatabaseResult", "structDatabaseResult.html", "structDatabaseResult" ],
     [ "DataRateTracker", "classDataRateTracker.html", "classDataRateTracker" ],
     [ "DebugHeightSource", "classDebugHeightSource.html", "classDebugHeightSource" ],
+    [ "DecodingBranch", "classDecodingBranch.html", "classDecodingBranch" ],
     [ "DelayState", "classDelayState.html", "classDelayState" ],
     [ "ElevationProvider", "classElevationProvider.html", "classElevationProvider" ],
     [ "ElevationTilePyramid", "classElevationTilePyramid.html", "classElevationTilePyramid" ],
@@ -410,6 +422,8 @@ var annotated_dup =
     [ "FactMetaData", "classFactMetaData.html", "classFactMetaData" ],
     [ "FactPanelController", "classFactPanelController.html", "classFactPanelController" ],
     [ "FactValueGrid", "classFactValueGrid.html", "classFactValueGrid" ],
+    [ "FailureInjection", "classFailureInjection.html", "classFailureInjection" ],
+    [ "FailureInjectionComponent", "classFailureInjectionComponent.html", "classFailureInjectionComponent" ],
     [ "FallbackChainState", "classFallbackChainState.html", "classFallbackChainState" ],
     [ "FenceWallGeometry", "classFenceWallGeometry.html", "classFenceWallGeometry" ],
     [ "FirmwareFlightMode", "structFirmwareFlightMode.html", "structFirmwareFlightMode" ],
@@ -534,9 +548,9 @@ var annotated_dup =
     [ "GPSWriteResult", "structGPSWriteResult.html", "structGPSWriteResult" ],
     [ "GstGlFrameTextures", "classGstGlFrameTextures.html", "classGstGlFrameTextures" ],
     [ "GstHwFrameTexturesBase", "classGstHwFrameTexturesBase.html", "classGstHwFrameTexturesBase" ],
+    [ "GstHwMapTail", "structGstHwMapTail.html", "structGstHwMapTail" ],
     [ "GstHwVideoBuffer", "classGstHwVideoBuffer.html", "classGstHwVideoBuffer" ],
     [ "GstVideoReceiver", "classGstVideoReceiver.html", "classGstVideoReceiver" ],
-    [ "GstVideoWorker", "classGstVideoWorker.html", "classGstVideoWorker" ],
     [ "GuardedTransition", "classGuardedTransition.html", "classGuardedTransition" ],
     [ "HealthAndArmingCheckProblem", "classHealthAndArmingCheckProblem.html", "classHealthAndArmingCheckProblem" ],
     [ "HealthAndArmingCheckReport", "classHealthAndArmingCheckReport.html", "classHealthAndArmingCheckReport" ],
@@ -691,6 +705,7 @@ var annotated_dup =
     [ "PatchSampler", "classPatchSampler.html", "classPatchSampler" ],
     [ "PatchTextureData", "classPatchTextureData.html", "classPatchTextureData" ],
     [ "PauseVehicleThenChangeAltData_t", "structPauseVehicleThenChangeAltData__t.html", "structPauseVehicleThenChangeAltData__t" ],
+    [ "PipelineDotDumper", "classPipelineDotDumper.html", "classPipelineDotDumper" ],
     [ "PlanCreator", "classPlanCreator.html", "classPlanCreator" ],
     [ "PlanElementController", "classPlanElementController.html", "classPlanElementController" ],
     [ "PlanManager", "classPlanManager.html", "classPlanManager" ],
@@ -815,6 +830,8 @@ var annotated_dup =
     [ "RCChannelMonitorController", "classRCChannelMonitorController.html", "classRCChannelMonitorController" ],
     [ "RCToParamDialogController", "classRCToParamDialogController.html", "classRCToParamDialogController" ],
     [ "ReadTimestamp", "classReadTimestamp.html", "classReadTimestamp" ],
+    [ "RecordingBranch", "classRecordingBranch.html", "classRecordingBranch" ],
+    [ "RecordingFinalizer", "classRecordingFinalizer.html", "classRecordingFinalizer" ],
     [ "RemoteControlCalibrationController", "classRemoteControlCalibrationController.html", "classRemoteControlCalibrationController" ],
     [ "RemoteIDManager", "classRemoteIDManager.html", "classRemoteIDManager" ],
     [ "RemoteIDSettings", "classRemoteIDSettings.html", "classRemoteIDSettings" ],
@@ -881,6 +898,7 @@ var annotated_dup =
     [ "StatkartTopoMapProvider", "classStatkartTopoMapProvider.html", "classStatkartTopoMapProvider" ],
     [ "StatusText", "classStatusText.html", "classStatusText" ],
     [ "StatusTextHandler", "classStatusTextHandler.html", "classStatusTextHandler" ],
+    [ "StreamWatchdog", "classStreamWatchdog.html", "classStreamWatchdog" ],
     [ "StructureScanComplexItem", "classStructureScanComplexItem.html", "classStructureScanComplexItem" ],
     [ "StructureScanPlanCreator", "classStructureScanPlanCreator.html", "classStructureScanPlanCreator" ],
     [ "SubMachineState", "classSubMachineState.html", "classSubMachineState" ],

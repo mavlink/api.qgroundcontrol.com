@@ -93,14 +93,12 @@ $(document).ready(function(){initNavTree('classGstHwFrameTexturesBase.html','');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classGstHwFrameTexturesBase-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">GstHwFrameTexturesBase Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Common base for per-platform <code>FrameTextures : QVideoFrameTextures</code> from <code>*VideoBuffer::mapTextures()</code>.  
- <a href="classGstHwFrameTexturesBase.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -122,25 +120,37 @@ $(document).ready(function(){initNavTree('classGstHwFrameTexturesBase.html','');
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9591736affd91b732273b8aeee9066ec" id="r_a9591736affd91b732273b8aeee9066ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHwFrameTexturesBase.html#a9591736affd91b732273b8aeee9066ec">~GstHwFrameTexturesBase</a> () override</td></tr>
 <tr class="separator:a9591736affd91b732273b8aeee9066ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada469d4dd3e0e8f0c7ef42fbb74e86d7" id="r_ada469d4dd3e0e8f0c7ef42fbb74e86d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHwFrameTexturesBase.html#ada469d4dd3e0e8f0c7ef42fbb74e86d7">onFrameEndInvoked</a> () override</td></tr>
-<tr class="separator:ada469d4dd3e0e8f0c7ef42fbb74e86d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59acb0c686b8636013db345e7539ad01" id="r_a59acb0c686b8636013db345e7539ad01"><td class="memItemLeft" align="right" valign="top">QRhiTexture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHwFrameTexturesBase.html#a59acb0c686b8636013db345e7539ad01">texture</a> (uint plane) const override</td></tr>
 <tr class="separator:a59acb0c686b8636013db345e7539ad01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ea8de76a974abc3917fbdefd9a937c9" id="r_a2ea8de76a974abc3917fbdefd9a937c9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHwFrameTexturesBase.html#a2ea8de76a974abc3917fbdefd9a937c9">sourcePath</a> () const</td></tr>
-<tr class="memdesc:a2ea8de76a974abc3917fbdefd9a937c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPU path that produced this bundle; used after a type-safe downcast to decide path-local reuse.  <br /></td></tr>
-<tr class="separator:a2ea8de76a974abc3917fbdefd9a937c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0b64c1abeef88ec81760a6d80c1432d" id="r_ac0b64c1abeef88ec81760a6d80c1432d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHwFrameTexturesBase.html#ac0b64c1abeef88ec81760a6d80c1432d">allPlanesValid</a> () const noexcept</td></tr>
+<tr class="memdesc:ac0b64c1abeef88ec81760a6d80c1432d"><td class="mdescLeft">&#160;</td><td class="mdescRight">True when the bundle has planes and every one of them wrapped its native handle.  <br /></td></tr>
+<tr class="separator:ac0b64c1abeef88ec81760a6d80c1432d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91a49911c071a9dbabfd94b5bddaa577" id="r_a91a49911c071a9dbabfd94b5bddaa577"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHwFrameTexturesBase.html#a91a49911c071a9dbabfd94b5bddaa577">setSourceSample</a> (GstSample *s) noexcept</td></tr>
 <tr class="memdesc:a91a49911c071a9dbabfd94b5bddaa577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfers a ref into the bundle. Caller must have a fresh ref.  <br /></td></tr>
 <tr class="separator:a91a49911c071a9dbabfd94b5bddaa577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f761101a7501f147d1eaf64a19915a6" id="r_a1f761101a7501f147d1eaf64a19915a6"><td class="memTemplParams" colspan="2">template&lt;class Handles &gt; </td></tr>
+<tr class="memitem:a1f761101a7501f147d1eaf64a19915a6"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGstHwFrameTexturesBase.html#a1f761101a7501f147d1eaf64a19915a6">matchesImport</a> (const QRhi *rhi, QSize size, QVideoFrameFormat::PixelFormat pixelFormat, const Handles &amp;handles) const noexcept</td></tr>
+<tr class="separator:a1f761101a7501f147d1eaf64a19915a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a02a3a564247da72d14aa4327e407cb87" id="r_a02a3a564247da72d14aa4327e407cb87"><td class="memTemplParams" colspan="2">template&lt;class FT &gt; </td></tr>
-<tr class="memitem:a02a3a564247da72d14aa4327e407cb87"><td class="memTemplItemLeft" align="right" valign="top">static FT *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGstHwFrameTexturesBase.html#a02a3a564247da72d14aa4327e407cb87">reusableBundle</a> (QVideoFrameTexturesUPtr &amp;old, <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> p)</td></tr>
-<tr class="separator:a02a3a564247da72d14aa4327e407cb87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac621fbd8c6108864ff92dfbc807b5fc1" id="r_ac621fbd8c6108864ff92dfbc807b5fc1"><td class="memTemplParams" colspan="2">template&lt;class FT &gt; </td></tr>
+<tr class="memitem:ac621fbd8c6108864ff92dfbc807b5fc1"><td class="memTemplItemLeft" align="right" valign="top">static FT *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGstHwFrameTexturesBase.html#ac621fbd8c6108864ff92dfbc807b5fc1">reusableBundle</a> (QVideoFrameTexturesUPtr &amp;old)</td></tr>
+<tr class="separator:ac621fbd8c6108864ff92dfbc807b5fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa44a3c1db9fe2a48d5338cb89ff18a76" id="r_aa44a3c1db9fe2a48d5338cb89ff18a76"><td class="memTemplParams" colspan="2">template&lt;class FT , class Reuse , class Make &gt; </td></tr>
+<tr class="memitem:aa44a3c1db9fe2a48d5338cb89ff18a76"><td class="memTemplItemLeft" align="right" valign="top">static QVideoFrameTexturesUPtr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGstHwFrameTexturesBase.html#aa44a3c1db9fe2a48d5338cb89ff18a76">finishMap</a> (<a class="el" href="classGstHwVideoBuffer.html">GstHwVideoBuffer</a> &amp;source, QRhi &amp;rhi, QVideoFrameTexturesUPtr &amp;old, const <a class="el" href="structGstHwMapTail.html">GstHwMapTail</a> &amp;tail, Reuse &amp;&amp;reuse, Make &amp;&amp;make)</td></tr>
+<tr class="separator:aa44a3c1db9fe2a48d5338cb89ff18a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a0a761213d508524bcba9afb5b17c5a24" id="r_a0a761213d508524bcba9afb5b17c5a24"><td class="memTemplParams" colspan="2">template&lt;class Handles &gt; </td></tr>
+<tr class="memitem:a0a761213d508524bcba9afb5b17c5a24"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classGstHwFrameTexturesBase.html#a0a761213d508524bcba9afb5b17c5a24">wrapPlanes</a> (QRhi *rhi, QSize size, QVideoFrameFormat::PixelFormat pixelFormat, const Handles &amp;handles, int layout=0, QRhiTexture::Flags flags={})</td></tr>
+<tr class="separator:a0a761213d508524bcba9afb5b17c5a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a8a7e1c3b30cb5f87bcfc2a582a6968d3" id="r_a8a7e1c3b30cb5f87bcfc2a582a6968d3"><td class="memItemLeft" align="right" valign="top">QRhi *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHwFrameTexturesBase.html#a8a7e1c3b30cb5f87bcfc2a582a6968d3">_rhi</a> = nullptr</td></tr>
+<tr class="separator:a8a7e1c3b30cb5f87bcfc2a582a6968d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9d4a8e6850210d8ce0260df2e32fc6e" id="r_af9d4a8e6850210d8ce0260df2e32fc6e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHwFrameTexturesBase.html#af9d4a8e6850210d8ce0260df2e32fc6e">_count</a> = 0</td></tr>
 <tr class="separator:af9d4a8e6850210d8ce0260df2e32fc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa36ca5eaf22312b0100c47d740d4dfa0" id="r_aa36ca5eaf22312b0100c47d740d4dfa0"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; QRhiTexture &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHwFrameTexturesBase.html#aa36ca5eaf22312b0100c47d740d4dfa0">_textures</a> [<a class="el" href="namespaceGstHw.html#aac8d539ade26d72465e993b20175a309">GstHw::kMaxPlanes</a>]</td></tr>
@@ -149,9 +159,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:ade118f7f2147e0f8fe03215c65c4751f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Common base for per-platform <code>FrameTextures : QVideoFrameTextures</code> from <code>*VideoBuffer::mapTextures()</code>. </p>
+<div class="textblock"><p>Common base for per-platform <code>FrameTextures : QVideoFrameTextures</code> from <code>*VideoBuffer::mapTextures()</code>. Qt invokes onFrameEndInvoked() on the current bundle after every window frame and keeps sampling it until its pool slot is reused, so the source sample and every native resource must live until destruction — never release them from onFrameEndInvoked(). </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00014">14</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00044">44</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9591736affd91b732273b8aeee9066ec" name="a9591736affd91b732273b8aeee9066ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9591736affd91b732273b8aeee9066ec">&#9670;&#160;</a></span>~GstHwFrameTexturesBase()</h2>
@@ -176,15 +186,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00017">17</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00047">47</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00047">_srcSample</a>.</p>
+<p class="reference">References <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00166">_srcSample</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ada469d4dd3e0e8f0c7ef42fbb74e86d7" name="ada469d4dd3e0e8f0c7ef42fbb74e86d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada469d4dd3e0e8f0c7ef42fbb74e86d7">&#9670;&#160;</a></span>onFrameEndInvoked()</h2>
+<a id="ac0b64c1abeef88ec81760a6d80c1432d" name="ac0b64c1abeef88ec81760a6d80c1432d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0b64c1abeef88ec81760a6d80c1432d">&#9670;&#160;</a></span>allPlanesValid()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,47 +203,75 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void GstHwFrameTexturesBase::onFrameEndInvoked </td>
+          <td class="memname">bool GstHwFrameTexturesBase::allPlanesValid </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00019">19</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
+<p>True when the bundle has planes and every one of them wrapped its native handle. </p>
 
-<p class="reference">References <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00047">_srcSample</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00055">55</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00164">_count</a>, and <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00165">_textures</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00070">matchesImport()</a>.</p>
 
 </div>
 </div>
-<a id="a02a3a564247da72d14aa4327e407cb87" name="a02a3a564247da72d14aa4327e407cb87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02a3a564247da72d14aa4327e407cb87">&#9670;&#160;</a></span>reusableBundle()</h2>
+<a id="aa44a3c1db9fe2a48d5338cb89ff18a76" name="aa44a3c1db9fe2a48d5338cb89ff18a76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa44a3c1db9fe2a48d5338cb89ff18a76">&#9670;&#160;</a></span>finishMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class FT &gt; </div>
+template&lt;class FT , class Reuse , class Make &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static FT * GstHwFrameTexturesBase::reusableBundle </td>
+          <td class="memname">static QVideoFrameTexturesUPtr GstHwFrameTexturesBase::finishMap </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="classGstHwVideoBuffer.html">GstHwVideoBuffer</a> &amp;&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QRhi &amp;&#160;</td>
+          <td class="paramname"><em>rhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">QVideoFrameTexturesUPtr &amp;&#160;</td>
           <td class="paramname"><em>old</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a>&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="structGstHwMapTail.html">GstHwMapTail</a> &amp;&#160;</td>
+          <td class="paramname"><em>tail</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Reuse &amp;&amp;&#160;</td>
+          <td class="paramname"><em>reuse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Make &amp;&amp;&#160;</td>
+          <td class="paramname"><em>make</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -247,9 +285,97 @@ template&lt;class FT &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Reuse probe: <code>old</code> downcasts to <code>FT</code> iff it is one of our bundles and came from path <code>p</code>. Qt 6.10's texture pool can pass CPU-fallback or Qt-owned texture bundles here, so the base cast must be checked before consulting <a class="el" href="classGstHwFrameTexturesBase.html#a2ea8de76a974abc3917fbdefd9a937c9" title="GPU path that produced this bundle; used after a type-safe downcast to decide path-local reuse.">sourcePath()</a>. Caller still runs FT::matches() — the equality predicate differs per path. </p>
+<p>Shared mapTextures() tail: hands <code>source's</code> sample to <code>old</code> when it is an <code>FT</code> bundle that <code>reuse</code> accepts (typically through <a class="el" href="classGstHwFrameTexturesBase.html#a1f761101a7501f147d1eaf64a19915a6">matchesImport()</a>; reuse may refresh per-frame state on it; pass nullptr for paths without reuse). Otherwise preflights the format, builds a bundle with <code>make</code> and keeps it only when every plane wrapped. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00038">38</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00098">98</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00033">GstHwMapTail::diag</a>, <a class="el" href="GstHwVideoBuffer_8cc_source.html#l00007">GstHwPathTelemetry::fail()</a>, <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00028">GstHwMapTail::frameSize</a>, <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00032">GstHwMapTail::log</a>, <a class="el" href="GstHwVideoBuffer_8h_source.html#l00025">GstHw::MapDiagnostics::loggedFirstSuccess</a>, <a class="el" href="GstHwVideoBuffer_8h_source.html#l00030">GstHw::MapDiagnostics::loggedTextureCreateFail</a>, <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa14335fc308a018e6718209cf0f1c7960">GstHwPathTelemetry::MapFailed</a>, <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00027">GstHwMapTail::path</a>, <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00029">GstHwMapTail::pixelFormat</a>, <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00035">GstHwMapTail::preflight</a>, <a class="el" href="GstHwVideoBuffer_8h_source.html#l00043">QGC_HW_WARN_ONCE</a>, <a class="el" href="GstHwPathTelemetry_8cc_source.html#l00020">GstHwPathTelemetry::record()</a>, <a class="el" href="GstHwPathTelemetry_8cc_source.html#l00055">GstHwPathTelemetry::recordFallbackReason()</a>, <a class="el" href="GstHwVideoBuffer_8h_source.html#l00072">GstHwVideoBuffer::refSample()</a>, <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00037">GstHwMapTail::successTag</a>, <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00030">GstHwMapTail::textureFlags</a>, and <a class="el" href="namespaceGstHwPathTelemetry.html#a16e9937fb520a82225bf0cebd6ca3857ad7eaceb77ce426c0c6de8a95182ef449">GstHwPathTelemetry::TextureReuse</a>.</p>
+
+</div>
+</div>
+<a id="a1f761101a7501f147d1eaf64a19915a6" name="a1f761101a7501f147d1eaf64a19915a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f761101a7501f147d1eaf64a19915a6">&#9670;&#160;</a></span>matchesImport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Handles &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GstHwFrameTexturesBase::matchesImport </td>
+          <td>(</td>
+          <td class="paramtype">const QRhi *&#160;</td>
+          <td class="paramname"><em>rhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QSize&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QVideoFrameFormat::PixelFormat&#160;</td>
+          <td class="paramname"><em>pixelFormat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Handles &amp;&#160;</td>
+          <td class="paramname"><em>handles</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>True when this bundle wrapped <code>handles</code> for the same QRhi, size and format and every plane wrapped: its QRhiTexture views then sample a recycled native resource's new contents unchanged. </p>
+
+<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00070">70</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
+
+<p class="reference">References <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00164">_count</a>, <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00163">_rhi</a>, and <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00055">allPlanesValid()</a>.</p>
+
+</div>
+</div>
+<a id="ac621fbd8c6108864ff92dfbc807b5fc1" name="ac621fbd8c6108864ff92dfbc807b5fc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac621fbd8c6108864ff92dfbc807b5fc1">&#9670;&#160;</a></span>reusableBundle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class FT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static FT * GstHwFrameTexturesBase::reusableBundle </td>
+          <td>(</td>
+          <td class="paramtype">QVideoFrameTexturesUPtr &amp;&#160;</td>
+          <td class="paramname"><em>old</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><code>old</code> as an <code>FT</code> bundle, else nullptr. Each path's bundle type is distinct, and Qt's texture pool can also pass CPU-fallback or Qt-owned bundles here. </p>
+
+<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00088">88</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
 
 </div>
 </div>
@@ -279,40 +405,9 @@ template&lt;class FT &gt; </div>
 
 <p>Transfers a ref into the bundle. Caller must have a fresh ref. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00027">27</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00061">61</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00047">_srcSample</a>.</p>
-
-</div>
-</div>
-<a id="a2ea8de76a974abc3917fbdefd9a937c9" name="a2ea8de76a974abc3917fbdefd9a937c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ea8de76a974abc3917fbdefd9a937c9">&#9670;&#160;</a></span>sourcePath()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> GstHwFrameTexturesBase::sourcePath </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>GPU path that produced this bundle; used after a type-safe downcast to decide path-local reuse. </p>
-
-<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00024">24</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
-
-<p class="reference">References <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">None</a>.</p>
+<p class="reference">References <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00166">_srcSample</a>.</p>
 
 </div>
 </div>
@@ -340,9 +435,76 @@ template&lt;class FT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00021">21</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00049">49</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
 
-<p class="reference">References <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00045">_count</a>, and <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00046">_textures</a>.</p>
+<p class="reference">References <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00164">_count</a>, and <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00165">_textures</a>.</p>
+
+</div>
+</div>
+<a id="a0a761213d508524bcba9afb5b17c5a24" name="a0a761213d508524bcba9afb5b17c5a24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a761213d508524bcba9afb5b17c5a24">&#9670;&#160;</a></span>wrapPlanes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Handles &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GstHwFrameTexturesBase::wrapPlanes </td>
+          <td>(</td>
+          <td class="paramtype">QRhi *&#160;</td>
+          <td class="paramname"><em>rhi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QSize&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QVideoFrameFormat::PixelFormat&#160;</td>
+          <td class="paramname"><em>pixelFormat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Handles &amp;&#160;</td>
+          <td class="paramname"><em>handles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>layout</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QRhiTexture::Flags&#160;</td>
+          <td class="paramname"><em>flags</em> = <code>{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Wraps one native handle per plane (GL name, VkImage, ID3D1x resource, MTLTexture) as a QRhiTexture and records the import for <a class="el" href="classGstHwFrameTexturesBase.html#a1f761101a7501f147d1eaf64a19915a6">matchesImport()</a>. Fallback formats are disabled: a substituted format would misread the native layout. Planes QRhi rejects stay null, as do zero handles (a plane the source never produced), whatever the QRhi backend's createFrom() accepts. </p>
+
+<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00135">135</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GstGlFrameTextures_8h_source.html#l00018">GstGlFrameTextures::GstGlFrameTextures()</a>.</p>
 
 </div>
 </div>
@@ -367,9 +529,35 @@ template&lt;class FT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00045">45</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00164">164</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstGlFrameTextures_8h_source.html#l00019">GstGlFrameTextures::GstGlFrameTextures()</a>, and <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00021">texture()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00055">allPlanesValid()</a>, <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00070">matchesImport()</a>, and <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00049">texture()</a>.</p>
+
+</div>
+</div>
+<a id="a8a7e1c3b30cb5f87bcfc2a582a6968d3" name="a8a7e1c3b30cb5f87bcfc2a582a6968d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a7e1c3b30cb5f87bcfc2a582a6968d3">&#9670;&#160;</a></span>_rhi</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QRhi* GstHwFrameTexturesBase::_rhi = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00163">163</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00070">matchesImport()</a>.</p>
 
 </div>
 </div>
@@ -393,9 +581,9 @@ template&lt;class FT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00047">47</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00166">166</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00019">onFrameEndInvoked()</a>, <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00027">setSourceSample()</a>, and <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00017">~GstHwFrameTexturesBase()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00061">setSourceSample()</a>, and <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00047">~GstHwFrameTexturesBase()</a>.</p>
 
 </div>
 </div>
@@ -419,9 +607,9 @@ template&lt;class FT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00046">46</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00165">165</a> of file <a class="el" href="GstHwFrameTexturesBase_8h_source.html">GstHwFrameTexturesBase.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstGlFrameTextures_8h_source.html#l00019">GstGlFrameTextures::GstGlFrameTextures()</a>, and <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00021">texture()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00055">allPlanesValid()</a>, and <a class="el" href="GstHwFrameTexturesBase_8h_source.html#l00049">texture()</a>.</p>
 
 </div>
 </div>

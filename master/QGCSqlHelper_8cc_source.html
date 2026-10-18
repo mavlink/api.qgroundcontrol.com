@@ -169,13 +169,13 @@ $(document).ready(function(){initNavTree('QGCSqlHelper_8cc_source.html',''); ini
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>std::atomic&lt;int&gt; ScopedConnection::s_connId{0};</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
 <div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classQGCSqlHelper_1_1ScopedConnection.html#af7b502b9f1ea04aff26ef7a31c12beb0">   60</a></span><a class="code hl_function" href="classQGCSqlHelper_1_1ScopedConnection.html#af7b502b9f1ea04aff26ef7a31c12beb0">ScopedConnection::ScopedConnection</a>(<span class="keyword">const</span> QString&amp; dbPath, <span class="keywordtype">bool</span> readOnly, <span class="keyword">const</span> QString&amp; prefix)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classQGCSqlHelper_1_1ScopedConnection.html#af7b502b9f1ea04aff26ef7a31c12beb0">   60</a></span><a class="code hl_function" href="classQGCSqlHelper_1_1ScopedConnection.html#af7b502b9f1ea04aff26ef7a31c12beb0">ScopedConnection::ScopedConnection</a>(<span class="keyword">const</span> QString&amp; dbPath, <span class="keywordtype">bool</span> readOnly, <span class="keyword">const</span> QString&amp; <a class="code hl_variable" href="GStreamerHelpers_8cc.html#a5b41c5ae4505891e6c53e26df197e02b">prefix</a>)</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">if</span> (dbPath.isEmpty()) {</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    _connName = QStringLiteral(<span class="stringliteral">&quot;%1_%2&quot;</span>).arg(prefix).arg(s_connId.fetch_add(1));</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    _connName = QStringLiteral(<span class="stringliteral">&quot;%1_%2&quot;</span>).arg(<a class="code hl_variable" href="GStreamerHelpers_8cc.html#a5b41c5ae4505891e6c53e26df197e02b">prefix</a>).arg(s_connId.fetch_add(1));</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    QSqlDatabase db = QSqlDatabase::addDatabase(QStringLiteral(<span class="stringliteral">&quot;QSQLITE&quot;</span>), _connName);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    db.setDatabaseName(dbPath);</div>
@@ -246,6 +246,7 @@ $(document).ready(function(){initNavTree('QGCSqlHelper_8cc_source.html',''); ini
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>} <span class="comment">// namespace QGCSqlHelper</span></div>
 </div>
+<div class="ttc" id="aGStreamerHelpers_8cc_html_a5b41c5ae4505891e6c53e26df197e02b"><div class="ttname"><a href="GStreamerHelpers_8cc.html#a5b41c5ae4505891e6c53e26df197e02b">prefix</a></div><div class="ttdeci">const char * prefix</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00133">GStreamerHelpers.cc:133</a></div></div>
 <div class="ttc" id="aQGCSqlHelper_8h_html"><div class="ttname"><a href="QGCSqlHelper_8h.html">QGCSqlHelper.h</a></div></div>
 <div class="ttc" id="aclassQGCSqlHelper_1_1ScopedConnection_html_a7f98f2d655abdcd45c486fa723cea46b"><div class="ttname"><a href="classQGCSqlHelper_1_1ScopedConnection.html#a7f98f2d655abdcd45c486fa723cea46b">QGCSqlHelper::ScopedConnection::~ScopedConnection</a></div><div class="ttdeci">~ScopedConnection()</div><div class="ttdef"><b>Definition</b> <a href="QGCSqlHelper_8cc_source.html#l00080">QGCSqlHelper.cc:80</a></div></div>
 <div class="ttc" id="aclassQGCSqlHelper_1_1ScopedConnection_html_ae446b82fa8591a6fb2a7e6fe7c625afe"><div class="ttname"><a href="classQGCSqlHelper_1_1ScopedConnection.html#ae446b82fa8591a6fb2a7e6fe7c625afe">QGCSqlHelper::ScopedConnection::database</a></div><div class="ttdeci">QSqlDatabase database() const</div><div class="ttdef"><b>Definition</b> <a href="QGCSqlHelper_8cc_source.html#l00093">QGCSqlHelper.cc:93</a></div></div>

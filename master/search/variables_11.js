@@ -9,8 +9,8 @@ var searchData=
   ['qt_5fbegin_5fnamespace_6',['QT_BEGIN_NAMESPACE',['../qserialportinfo_8cpp.html#a6533d62fa642e868e6be8ea6c69c7dee',1,'qserialportinfo.cpp']]],
   ['qualified_5ffirmware_7',['QUALIFIED_FIRMWARE',['../namespaceQuectel_1_1Plan.html#a694cc3cbc0637f63af48c56090428c57',1,'Quectel::Plan']]],
   ['quality_8',['quality',['../structNMEA_1_1GGA.html#a6516ff213633217c21e55eff8bce0600',1,'NMEA::GGA']]],
-  ['quietwindowsasserts_9',['quietWindowsAsserts',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#a21b64d61fc67ec670d6df42ebe939911',1,'QGCCommandLineParser::CommandLineParseResult']]],
-  ['qvideosink_10',['qvideosink',['../struct__GstQgcQVideoSink.html#a1b5db84fae338bfc819ff7f7a2eeff4b',1,'_GstQgcQVideoSink']]],
+  ['queue_9',['queue',['../structGStreamer_1_1TeeBranch.html#ae8d1b15af6723fce185d374fbf9cbda4',1,'GStreamer::TeeBranch']]],
+  ['quietwindowsasserts_10',['quietWindowsAsserts',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#a21b64d61fc67ec670d6df42ebe939911',1,'QGCCommandLineParser::CommandLineParseResult']]],
   ['qzss_5ffirst_5fnmea_5fid_11',['QZSS_FIRST_NMEA_ID',['../namespaceNMEA_1_1SatelliteIds.html#a1000f7a56b33cbcadf32840cc2bee0a4',1,'NMEA::SatelliteIds']]],
   ['qzss_5flast_5fnmea_5fid_12',['QZSS_LAST_NMEA_ID',['../namespaceNMEA_1_1SatelliteIds.html#a1f520926663b8d3acbecb07262499bef',1,'NMEA::SatelliteIds']]]
 ];

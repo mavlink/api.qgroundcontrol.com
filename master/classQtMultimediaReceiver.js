@@ -11,7 +11,6 @@ var classQtMultimediaReceiver =
     [ "stop", "classQtMultimediaReceiver.html#aace82af7cc3f450dd923623157ee0494", null ],
     [ "stopDecoding", "classQtMultimediaReceiver.html#a4cf78c70101d8773fd6bc93e19d4b4e9", null ],
     [ "stopRecording", "classQtMultimediaReceiver.html#a5bb026309da800320bb88a6478202fbf", null ],
-    [ "takeScreenshot", "classQtMultimediaReceiver.html#a3bbfdaf8d4fd280ec431deb069f114be", null ],
     [ "_captureSession", "classQtMultimediaReceiver.html#a65b4363450bc2e8b2180fd0686b97d28", null ],
     [ "_frameTimer", "classQtMultimediaReceiver.html#abb175dda82ead66b09a630b042015e72", null ],
     [ "_mediaPlayer", "classQtMultimediaReceiver.html#a0ec60a7e14f6c32e0f51e4efbe7ea7a6", null ],

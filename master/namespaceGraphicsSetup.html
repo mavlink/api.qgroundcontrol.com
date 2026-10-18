@@ -100,6 +100,8 @@ $(document).ready(function(){initNavTree('namespaceGraphicsSetup.html',''); init
 Functions</h2></td></tr>
 <tr class="memitem:a76b888fc245743668299f88ebefac4c1" id="r_a76b888fc245743668299f88ebefac4c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGraphicsSetup.html#a76b888fc245743668299f88ebefac4c1">configureMainWindow</a> (QQuickWindow *window)</td></tr>
 <tr class="separator:a76b888fc245743668299f88ebefac4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86275c835e91fbf953675c93dd472358" id="r_a86275c835e91fbf953675c93dd472358"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGraphicsSetup.html#a86275c835e91fbf953675c93dd472358">configureMainWindowOnCreation</a> ()</td></tr>
+<tr class="separator:a86275c835e91fbf953675c93dd472358"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Low-level RHI / scene-graph configuration for the main QQuickWindow. Call before the first scene graph initialization. Environment variables: QGC_RHI_DEBUG - enable RHI debug layer, debug markers and GPU timestamps QGC_RHI_PIPELINE_CACHE - "0" disables the on-disk pipeline cache (default on) QGC_HDR_OUTPUT - request HDR display output (diagnostic; see note in .cc) QGC_FORCE_VIDEO_GPU - "low:high" LUID hex pair to force a specific D3D adapter (Windows only) </p>
@@ -120,11 +122,35 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GraphicsSetup_8cc_source.html#l00200">200</a> of file <a class="el" href="GraphicsSetup_8cc_source.html">GraphicsSetup.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GraphicsSetup_8cc_source.html#l00224">224</a> of file <a class="el" href="GraphicsSetup_8cc_source.html">GraphicsSetup.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GstSourceFactory_8cc_source.html#l00183">config</a>, and <a class="el" href="GraphicsSetup_8cc_source.html#l00200">configureMainWindow()</a>.</p>
+<p class="reference">References <a class="el" href="GraphicsSetup_8cc_source.html#l00224">configureMainWindow()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GraphicsSetup_8cc_source.html#l00200">configureMainWindow()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GraphicsSetup_8cc_source.html#l00224">configureMainWindow()</a>.</p>
+
+</div>
+</div>
+<a id="a86275c835e91fbf953675c93dd472358" name="a86275c835e91fbf953675c93dd472358"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86275c835e91fbf953675c93dd472358">&#9670;&#160;</a></span>configureMainWindowOnCreation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphicsSetup::configureMainWindowOnCreation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Applies <a class="el" href="namespaceGraphicsSetup.html#a76b888fc245743668299f88ebefac4c1">configureMainWindow()</a> to the next QQuickWindow as soon as its native surface is created, before it can be exposed. Showing a window during QML loading can initialize its scene graph at once (Android exposes synchronously), so call this before loading the root window. </p>
+
+<p class="definition">Definition at line <a class="el" href="GraphicsSetup_8cc_source.html#l00275">275</a> of file <a class="el" href="GraphicsSetup_8cc_source.html">GraphicsSetup.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="GraphicsSetup_8cc_source.html#l00275">configureMainWindowOnCreation()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GraphicsSetup_8cc_source.html#l00275">configureMainWindowOnCreation()</a>.</p>
 
 </div>
 </div>

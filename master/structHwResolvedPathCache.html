@@ -101,34 +101,20 @@ $(document).ready(function(){initNavTree('structHwResolvedPathCache.html',''); i
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:af7497e4e8f15fff60e6b0575669b44fa" id="r_af7497e4e8f15fff60e6b0575669b44fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHwResolvedPathCache.html#af7497e4e8f15fff60e6b0575669b44fa">path</a> = <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a></td></tr>
+<tr class="memitem:af7497e4e8f15fff60e6b0575669b44fa" id="r_af7497e4e8f15fff60e6b0575669b44fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHwResolvedPathCache.html#af7497e4e8f15fff60e6b0575669b44fa">path</a> = <a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a></td></tr>
 <tr class="separator:af7497e4e8f15fff60e6b0575669b44fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5cad1051e6f42e5067f5527b34b1ad0" id="r_ad5cad1051e6f42e5067f5527b34b1ad0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHwResolvedPathCache.html#ad5cad1051e6f42e5067f5527b34b1ad0">validated</a> = false</td></tr>
 <tr class="separator:ad5cad1051e6f42e5067f5527b34b1ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4847eb49e131ed7ebd47559fcefdfc4f" id="r_a4847eb49e131ed7ebd47559fcefdfc4f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHwResolvedPathCache.html#a4847eb49e131ed7ebd47559fcefdfc4f">demotionRecorded</a> = false</td></tr>
-<tr class="separator:a4847eb49e131ed7ebd47559fcefdfc4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d51d5959a757122d27a2488804560a2" id="r_a0d51d5959a757122d27a2488804560a2"><td class="memItemLeft" align="right" valign="top">GType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHwResolvedPathCache.html#a0d51d5959a757122d27a2488804560a2">unmatchedAllocator</a> = G_TYPE_INVALID</td></tr>
+<tr class="separator:a0d51d5959a757122d27a2488804560a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6560bc30945c1b13f68fed1c0e541935" id="r_a6560bc30945c1b13f68fed1c0e541935"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHwResolvedPathCache.html#a6560bc30945c1b13f68fed1c0e541935">validationFailureLogged</a> = false</td></tr>
+<tr class="separator:a6560bc30945c1b13f68fed1c0e541935"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Per-stream GPU path cache, keyed to a caps epoch. Lets <a class="el" href="GstHwVideoBufferFactory_8cc.html#a74d923ff508ae33cc5c47f131e0d28e3">makeHwVideoBuffer()</a> skip the predicate ladder once a path has been resolved by a validated sample. Reset on set_caps. </p>
+<div class="textblock"><p>Per-stream GPU path cache, keyed to a caps epoch. Once a sample validated on a path, <a class="el" href="GstHwVideoBufferFactory_8cc.html#ab59ed558493835b496c533f71cd1771c">makeHwVideoBuffer()</a> tries that path's descriptors first; an allocator no path imports skips GPU selection altogether. Reset on set_caps. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwVideoBufferFactory_8h_source.html#l00030">30</a> of file <a class="el" href="GstHwVideoBufferFactory_8h_source.html">GstHwVideoBufferFactory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwVideoBufferFactory_8h_source.html#l00016">16</a> of file <a class="el" href="GstHwVideoBufferFactory_8h_source.html">GstHwVideoBufferFactory.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
-<a id="a4847eb49e131ed7ebd47559fcefdfc4f" name="a4847eb49e131ed7ebd47559fcefdfc4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4847eb49e131ed7ebd47559fcefdfc4f">&#9670;&#160;</a></span>demotionRecorded</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool HwResolvedPathCache::demotionRecorded = false</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="GstHwVideoBufferFactory_8h_source.html#l00034">34</a> of file <a class="el" href="GstHwVideoBufferFactory_8h_source.html">GstHwVideoBufferFactory.h</a>.</p>
-
-</div>
-</div>
 <a id="af7497e4e8f15fff60e6b0575669b44fa" name="af7497e4e8f15fff60e6b0575669b44fa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af7497e4e8f15fff60e6b0575669b44fa">&#9670;&#160;</a></span>path</h2>
 
@@ -136,14 +122,28 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> HwResolvedPathCache::path = <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a></td>
+          <td class="memname"><a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> HwResolvedPathCache::path = <a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwVideoBufferFactory_8h_source.html#l00032">32</a> of file <a class="el" href="GstHwVideoBufferFactory_8h_source.html">GstHwVideoBufferFactory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwVideoBufferFactory_8h_source.html#l00018">18</a> of file <a class="el" href="GstHwVideoBufferFactory_8h_source.html">GstHwVideoBufferFactory.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstHwVideoBufferFactory_8cc_source.html#l00210">makeHwVideoBuffer()</a>.</p>
+</div>
+</div>
+<a id="a0d51d5959a757122d27a2488804560a2" name="a0d51d5959a757122d27a2488804560a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d51d5959a757122d27a2488804560a2">&#9670;&#160;</a></span>unmatchedAllocator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GType HwResolvedPathCache::unmatchedAllocator = G_TYPE_INVALID</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GstHwVideoBufferFactory_8h_source.html#l00020">20</a> of file <a class="el" href="GstHwVideoBufferFactory_8h_source.html">GstHwVideoBufferFactory.h</a>.</p>
 
 </div>
 </div>
@@ -159,9 +159,23 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwVideoBufferFactory_8h_source.html#l00033">33</a> of file <a class="el" href="GstHwVideoBufferFactory_8h_source.html">GstHwVideoBufferFactory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwVideoBufferFactory_8h_source.html#l00019">19</a> of file <a class="el" href="GstHwVideoBufferFactory_8h_source.html">GstHwVideoBufferFactory.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstHwVideoBufferFactory_8cc_source.html#l00210">makeHwVideoBuffer()</a>.</p>
+</div>
+</div>
+<a id="a6560bc30945c1b13f68fed1c0e541935" name="a6560bc30945c1b13f68fed1c0e541935"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6560bc30945c1b13f68fed1c0e541935">&#9670;&#160;</a></span>validationFailureLogged</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HwResolvedPathCache::validationFailureLogged = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="GstHwVideoBufferFactory_8h_source.html#l00021">21</a> of file <a class="el" href="GstHwVideoBufferFactory_8h_source.html">GstHwVideoBufferFactory.h</a>.</p>
 
 </div>
 </div>

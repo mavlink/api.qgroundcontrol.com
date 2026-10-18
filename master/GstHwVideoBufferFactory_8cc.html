@@ -96,12 +96,11 @@ $(document).ready(function(){initNavTree('GstHwVideoBufferFactory_8cc.html','');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="GstHwVideoBufferFactory_8h_source.html">GstHwVideoBufferFactory.h</a>&quot;</code><br />
-<code>#include &lt;QtCore/QMutex&gt;</code><br />
-<code>#include &lt;QtCore/QMutexLocker&gt;</code><br />
-<code>#include &lt;QtCore/QSet&gt;</code><br />
-<code>#include &lt;QtCore/QString&gt;</code><br />
 <code>#include &lt;private/qhwvideobuffer_p.h&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &quot;<a class="el" href="GstHwPathRegistry_8h_source.html">GstHwPathRegistry.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GstHwPathTelemetry_8h_source.html">GstHwPathTelemetry.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GstHwVideoBuffer_8h_source.html">GstHwVideoBuffer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="QGCLoggingCategory_8h_source.html">QGCLoggingCategory.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for GstHwVideoBufferFactory.cc:</div>
@@ -115,12 +114,12 @@ $(document).ready(function(){initNavTree('GstHwVideoBufferFactory_8cc.html','');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a74d923ff508ae33cc5c47f131e0d28e3" id="r_a74d923ff508ae33cc5c47f131e0d28e3"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; QHwVideoBuffer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GstHwVideoBufferFactory_8cc.html#a74d923ff508ae33cc5c47f131e0d28e3">makeHwVideoBuffer</a> (GstSample *sample, const GstVideoInfo &amp;info, QVideoFrameFormat format, const <a class="el" href="structHwVideoBufferContext.html">HwVideoBufferContext</a> &amp;context, <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> &amp;matchedPath, <a class="el" href="structHwResolvedPathCache.html">HwResolvedPathCache</a> *cache)</td></tr>
-<tr class="separator:a74d923ff508ae33cc5c47f131e0d28e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab59ed558493835b496c533f71cd1771c" id="r_ab59ed558493835b496c533f71cd1771c"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; QHwVideoBuffer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="GstHwVideoBufferFactory_8cc.html#ab59ed558493835b496c533f71cd1771c">makeHwVideoBuffer</a> (GstBuffer *buffer, GstCaps *caps, const GstVideoInfo &amp;info, QVideoFrameFormat format, const <a class="el" href="structHwVideoBufferContext.html">HwVideoBufferContext</a> &amp;context, <a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> &amp;matchedPath, <a class="el" href="structHwResolvedPathCache.html">HwResolvedPathCache</a> *cache)</td></tr>
+<tr class="separator:ab59ed558493835b496c533f71cd1771c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a74d923ff508ae33cc5c47f131e0d28e3" name="a74d923ff508ae33cc5c47f131e0d28e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74d923ff508ae33cc5c47f131e0d28e3">&#9670;&#160;</a></span>makeHwVideoBuffer()</h2>
+<a id="ab59ed558493835b496c533f71cd1771c" name="ab59ed558493835b496c533f71cd1771c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab59ed558493835b496c533f71cd1771c">&#9670;&#160;</a></span>makeHwVideoBuffer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -128,8 +127,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">std::unique_ptr&lt; QHwVideoBuffer &gt; makeHwVideoBuffer </td>
           <td>(</td>
-          <td class="paramtype">GstSample *&#160;</td>
-          <td class="paramname"><em>sample</em>, </td>
+          <td class="paramtype">GstBuffer *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GstCaps *&#160;</td>
+          <td class="paramname"><em>caps</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -152,7 +157,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> &amp;&#160;</td>
           <td class="paramname"><em>matchedPath</em>, </td>
         </tr>
         <tr>
@@ -168,13 +173,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Selects the zero-copy QHwVideoBuffer for a GstSample; returns nullptr when no GPU path matches (CPU memcpy fallback). </p>
+<p>Selects the zero-copy QHwVideoBuffer for <code>buffer</code>; returns nullptr when no GPU path matches (CPU fallback). The GstSample the buffer holds is only created once a path matches. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwVideoBufferFactory_8cc_source.html#l00210">210</a> of file <a class="el" href="GstHwVideoBufferFactory_8cc_source.html">GstHwVideoBufferFactory.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwVideoBufferFactory_8cc_source.html#l00142">142</a> of file <a class="el" href="GstHwVideoBufferFactory_8cc_source.html">GstHwVideoBufferFactory.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbafb29ac97549c55d0cf103d865b01b4cc">AHardwareBuffer</a>, <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbad51c33ce106109ecd1596d83a11632a5">D3D11</a>, <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbafac777d230cd7175697748a8c5260df6">D3D12</a>, <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba966e13d8aabbff3966a5cd28d67b4846">DmaBuf</a>, <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbafe5a5431c838ce97b43a39101e22968d">GlMemory</a>, <a class="el" href="GstHwVideoBufferFactory_8h_source.html#l00040">HwVideoBufferContext::gpuEnabled</a>, <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa4aa02d4b768781ae5b883e8f5337231f">GstHwPathTelemetry::ImportUnsupported</a>, <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba148b36231bc88654c6fef5759826f7fd">IOSurface</a>, <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafaf59f07edfa950dcaae336d6cb6b197b0">GstHwPathTelemetry::NoExt</a>, <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">None</a>, <a class="el" href="GstHwVideoBufferFactory_8h_source.html#l00032">HwResolvedPathCache::path</a>, <a class="el" href="GstHwPathTelemetry_8cc_source.html#l00180">GstHwPathTelemetry::recordFallbackReason()</a>, <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa5cf2164b961918b38d26cb03c045c4f5">GstHwPathTelemetry::UnknownMemType</a>, <a class="el" href="GstHwVideoBufferFactory_8h_source.html#l00033">HwResolvedPathCache::validated</a>, <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa2676124b3e52c860757784ee4aad8ed0">GstHwPathTelemetry::ValidateFailed</a>, and <a class="el" href="GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba38625270231b647116c80bcbc4f9d1d8">Vulkan</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="GStreamerFrameMap_8cc_source.html#l00219">mapSampleToFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstQgcFrameMap_8cc_source.html#l00224">mapSampleToFrame()</a>.</p>
 
 </div>
 </div>

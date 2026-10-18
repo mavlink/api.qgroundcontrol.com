@@ -91,63 +91,50 @@ $(document).ready(function(){initNavTree('structMappedFrame.html',''); initResiz
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structMappedFrame-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">MappedFrame Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="GStreamerFrameMap_8h_source.html">GStreamerFrameMap.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a7e801de9803d493be8e8d47db467018a" id="r_a7e801de9803d493be8e8d47db467018a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMappedFrame.html#a7e801de9803d493be8e8d47db467018a">Source</a> { <a class="el" href="structMappedFrame.html#a7e801de9803d493be8e8d47db467018aa54c82ef76ecbbd4c2293e09bae01b54e">Cpu</a>
-, <a class="el" href="structMappedFrame.html#a7e801de9803d493be8e8d47db467018aa3432ca64f06615abf07ab44c10cada38">Gpu</a>
- }</td></tr>
-<tr class="separator:a7e801de9803d493be8e8d47db467018a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a53085e4c9f5223cec3b7e17fe658f011" id="r_a53085e4c9f5223cec3b7e17fe658f011"><td class="memItemLeft" align="right" valign="top">QVideoFrame&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMappedFrame.html#a53085e4c9f5223cec3b7e17fe658f011">frame</a></td></tr>
 <tr class="separator:a53085e4c9f5223cec3b7e17fe658f011"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d89a3d02e32f371ca74fb577cec2c5e" id="r_a9d89a3d02e32f371ca74fb577cec2c5e"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="structMappedFrame.html#a7e801de9803d493be8e8d47db467018a">MappedFrame::Source</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMappedFrame.html#a9d89a3d02e32f371ca74fb577cec2c5e">source</a> = <a class="el" href="structMappedFrame.html#a7e801de9803d493be8e8d47db467018aa54c82ef76ecbbd4c2293e09bae01b54e">Source::Cpu</a></td></tr>
-<tr class="separator:a9d89a3d02e32f371ca74fb577cec2c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3091375e8c30fba00e061152bc694ecf" id="r_a3091375e8c30fba00e061152bc694ecf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMappedFrame.html#a3091375e8c30fba00e061152bc694ecf">gpuPath</a> = <a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a></td></tr>
+<tr class="memdesc:a3091375e8c30fba00e061152bc694ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">None for a CPU frame.  <br /></td></tr>
+<tr class="separator:a3091375e8c30fba00e061152bc694ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd6578d6a329d2f7d4b4e6f399343c5" id="r_a4cd6578d6a329d2f7d4b4e6f399343c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMappedFrame.html#a4cd6578d6a329d2f7d4b4e6f399343c5">demoted</a> = false</td></tr>
+<tr class="memdesc:a4cd6578d6a329d2f7d4b4e6f399343c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A GPU path was requested for this stream but this frame fell back to CPU.  <br /></td></tr>
+<tr class="separator:a4cd6578d6a329d2f7d4b4e6f399343c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Sample-to-frame result (GPU wins when it can, CPU fallback). <a class="el" href="GStreamerFrameMap_8cc.html#aa0079887c2ae8067524974ea21f86936">mapSampleToFrame()</a> does NOT ref <code>buffer</code> — GPU wraps it in a transient GstSample (own ref), CPU copies; caller keeps <code>buffer/<code>caps</code>.</code> </p>
+<div class="textblock"><p>Sample-to-frame result (GPU wins when it can, CPU fallback). <a class="el" href="GstQgcFrameMap_8cc.html#ac474695c15d1b7677107b37fcddbe093">mapSampleToFrame()</a> does NOT take the caller's refs on <code>buffer/<code>caps:</code> a</code> GPU frame holds its own GstSample, a zero-copy CPU frame its own buffer ref. </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamerFrameMap_8h_source.html#l00034">34</a> of file <a class="el" href="GStreamerFrameMap_8h_source.html">GStreamerFrameMap.h</a>.</p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="a7e801de9803d493be8e8d47db467018a" name="a7e801de9803d493be8e8d47db467018a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e801de9803d493be8e8d47db467018a">&#9670;&#160;</a></span>Source</h2>
+<p class="definition">Definition at line <a class="el" href="GstQgcFrameMap_8h_source.html#l00036">36</a> of file <a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4cd6578d6a329d2f7d4b4e6f399343c5" name="a4cd6578d6a329d2f7d4b4e6f399343c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cd6578d6a329d2f7d4b4e6f399343c5">&#9670;&#160;</a></span>demoted</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum class <a class="el" href="structMappedFrame.html#a7e801de9803d493be8e8d47db467018a">MappedFrame::Source</a></td>
+          <td class="memname">bool MappedFrame::demoted = false</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7e801de9803d493be8e8d47db467018aa54c82ef76ecbbd4c2293e09bae01b54e" name="a7e801de9803d493be8e8d47db467018aa54c82ef76ecbbd4c2293e09bae01b54e"></a>Cpu&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7e801de9803d493be8e8d47db467018aa3432ca64f06615abf07ab44c10cada38" name="a7e801de9803d493be8e8d47db467018aa3432ca64f06615abf07ab44c10cada38"></a>Gpu&#160;</td><td class="fielddoc"></td></tr>
-</table>
 
-<p class="definition">Definition at line <a class="el" href="GStreamerFrameMap_8h_source.html#l00037">37</a> of file <a class="el" href="GStreamerFrameMap_8h_source.html">GStreamerFrameMap.h</a>.</p>
+<p>A GPU path was requested for this stream but this frame fell back to CPU. </p>
+
+<p class="definition">Definition at line <a class="el" href="GstQgcFrameMap_8h_source.html#l00040">40</a> of file <a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00392">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="GstQgcFrameMap_8cc_source.html#l00224">mapSampleToFrame()</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
 <a id="a53085e4c9f5223cec3b7e17fe658f011" name="a53085e4c9f5223cec3b7e17fe658f011"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a53085e4c9f5223cec3b7e17fe658f011">&#9670;&#160;</a></span>frame</h2>
 
@@ -160,30 +147,34 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GStreamerFrameMap_8h_source.html#l00036">36</a> of file <a class="el" href="GStreamerFrameMap_8h_source.html">GStreamerFrameMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcFrameMap_8h_source.html#l00038">38</a> of file <a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00290">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="GStreamerFrameMap_8cc_source.html#l00219">mapSampleToFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00392">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="GstQgcFrameMap_8cc_source.html#l00224">mapSampleToFrame()</a>.</p>
 
 </div>
 </div>
-<a id="a9d89a3d02e32f371ca74fb577cec2c5e" name="a9d89a3d02e32f371ca74fb577cec2c5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d89a3d02e32f371ca74fb577cec2c5e">&#9670;&#160;</a></span>source</h2>
+<a id="a3091375e8c30fba00e061152bc694ecf" name="a3091375e8c30fba00e061152bc694ecf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3091375e8c30fba00e061152bc694ecf">&#9670;&#160;</a></span>gpuPath</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="structMappedFrame.html#a7e801de9803d493be8e8d47db467018a">MappedFrame::Source</a> MappedFrame::source = <a class="el" href="structMappedFrame.html#a7e801de9803d493be8e8d47db467018aa54c82ef76ecbbd4c2293e09bae01b54e">Source::Cpu</a></td>
+          <td class="memname"><a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> MappedFrame::gpuPath = <a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00290">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="GStreamerFrameMap_8cc_source.html#l00219">mapSampleToFrame()</a>.</p>
+<p>None for a CPU frame. </p>
+
+<p class="definition">Definition at line <a class="el" href="GstQgcFrameMap_8h_source.html#l00039">39</a> of file <a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00392">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="GstQgcFrameMap_8cc_source.html#l00224">mapSampleToFrame()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/VideoManager/VideoReceiver/GStreamer/gstqgc/<a class="el" href="GStreamerFrameMap_8h_source.html">GStreamerFrameMap.h</a></li>
+<li>src/VideoManager/VideoReceiver/GStreamer/gstqgc/<a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

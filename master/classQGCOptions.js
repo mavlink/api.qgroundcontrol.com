@@ -18,7 +18,6 @@ var classQGCOptions =
     [ "missionWaypointsOnlyChanged", "classQGCOptions.html#a8adb3ac7573f69b591550abd528101d6", null ],
     [ "multiVehicleEnabled", "classQGCOptions.html#a14664999d22094372725792d34e9aa06", null ],
     [ "multiVehicleEnabledChanged", "classQGCOptions.html#a0af966d9279ea29182b17b66c1487d9d", null ],
-    [ "preFlightChecklistUrl", "classQGCOptions.html#a0e623c3f140b6d6db759b129fc476672", null ],
     [ "sensorsHaveFixedOrientation", "classQGCOptions.html#af4f4c8bb00f29313df439e99209fc2f6", null ],
     [ "showFirmwareUpgrade", "classQGCOptions.html#af170182f7349882c8026c9a0319135cb", null ],
     [ "showFirmwareUpgradeChanged", "classQGCOptions.html#ac38fa2ec47f296468e33585c5dc7215a", null ],

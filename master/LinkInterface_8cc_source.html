@@ -116,9 +116,9 @@ $(document).ready(function(){initNavTree('LinkInterface_8cc_source.html',''); in
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a55fe378b8d6087bbab9b97bb8278c922">   18</a></span><a class="code hl_function" href="classLinkInterface.html#a55fe378b8d6087bbab9b97bb8278c922">LinkInterface::LinkInterface</a>(<a class="code hl_typedef" href="LinkConfiguration_8h.html#a6aba49400b7520d5927fd2a5de190290">SharedLinkConfigurationPtr</a> &amp;<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>, QObject *parent)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classLinkInterface.html#a55fe378b8d6087bbab9b97bb8278c922">   18</a></span><a class="code hl_function" href="classLinkInterface.html#a55fe378b8d6087bbab9b97bb8278c922">LinkInterface::LinkInterface</a>(<a class="code hl_typedef" href="LinkConfiguration_8h.html#a6aba49400b7520d5927fd2a5de190290">SharedLinkConfigurationPtr</a> &amp;config, QObject *parent)</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    : QObject(parent)</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    , _config(<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    , _config(config)</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    QQmlEngine::setObjectOwnership(<span class="keyword">this</span>, QQmlEngine::CppOwnership);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('LinkInterface_8cc_source.html',''); in
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">// Workers hold raw pointers into the configuration: keep it alive until the thread</span></div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// finishes so a stalled worker that resumes can&#39;t dereference a destroyed config.</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    (void) QObject::connect(thread, &amp;QThread::finished, thread, [<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a> = <a class="code hl_variable" href="classLinkInterface.html#af9fb7d026b62cf6410dbe9900e06c63a">_config</a>]() { Q_UNUSED(<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>); });</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    (void) QObject::connect(thread, &amp;QThread::finished, thread, [config = <a class="code hl_variable" href="classLinkInterface.html#af9fb7d026b62cf6410dbe9900e06c63a">_config</a>]() { Q_UNUSED(config); });</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="comment">// Self-heal if the thread eventually exits: deleting the thread destroys the</span></div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">// connection above, releasing the config. At app exit there is no main loop to</span></div>
@@ -342,7 +342,6 @@ $(document).ready(function(){initNavTree('LinkInterface_8cc_source.html',''); in
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>}</div>
 </div>
 <div class="ttc" id="aAppMessages_8h_html"><div class="ttname"><a href="AppMessages_8h.html">AppMessages.h</a></div></div>
-<div class="ttc" id="aGstSourceFactory_8cc_html_a4a8dd3a2de125b72d4fe6251a0a271b5"><div class="ttname"><a href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a></div><div class="ttdeci">Config config</div><div class="ttdef"><b>Definition</b> <a href="GstSourceFactory_8cc_source.html#l00183">GstSourceFactory.cc:183</a></div></div>
 <div class="ttc" id="aLinkConfiguration_8h_html_a6aba49400b7520d5927fd2a5de190290"><div class="ttname"><a href="LinkConfiguration_8h.html#a6aba49400b7520d5927fd2a5de190290">SharedLinkConfigurationPtr</a></div><div class="ttdeci">std::shared_ptr&lt; LinkConfiguration &gt; SharedLinkConfigurationPtr</div><div class="ttdef"><b>Definition</b> <a href="LinkConfiguration_8h_source.html#l00181">LinkConfiguration.h:181</a></div></div>
 <div class="ttc" id="aLinkInterface_8h_html"><div class="ttname"><a href="LinkInterface_8h.html">LinkInterface.h</a></div></div>
 <div class="ttc" id="aLinkManager_8h_html"><div class="ttname"><a href="LinkManager_8h.html">LinkManager.h</a></div></div>

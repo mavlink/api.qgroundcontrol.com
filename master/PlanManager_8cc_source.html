@@ -827,13 +827,13 @@ $(document).ready(function(){initNavTree('PlanManager_8cc_source.html',''); init
 <div class="foldopen" id="foldopen00696" data-start="{" data-end="}">
 <div class="line"><a id="l00696" name="l00696"></a><span class="lineno"><a class="line" href="classPlanManager.html#a5682ac31d7194c874de8ded10034a539">  696</a></span>QString <a class="code hl_function" href="classPlanManager.html#a5682ac31d7194c874de8ded10034a539">PlanManager::_lastMissionReqestString</a>(MAV_MISSION_RESULT result)</div>
 <div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>{</div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>    QString prefix;</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>    QString <a class="code hl_variable" href="GStreamerHelpers_8cc.html#a5b41c5ae4505891e6c53e26df197e02b">prefix</a>;</div>
 <div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>    QString postfix;</div>
 <div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span> </div>
 <div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classPlanManager.html#a1daa557bd4931b7f22685410e39cef2b">_lastMissionRequest</a> &gt;= 0 &amp;&amp; <a class="code hl_variable" href="classPlanManager.html#a1daa557bd4931b7f22685410e39cef2b">_lastMissionRequest</a> &lt; <a class="code hl_variable" href="classPlanManager.html#abac12912a00f4e3270c9ceca70453da4">_writeMissionItems</a>.count()) {</div>
 <div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>        <a class="code hl_class" href="classMissionItem.html">MissionItem</a>* item = <a class="code hl_variable" href="classPlanManager.html#abac12912a00f4e3270c9ceca70453da4">_writeMissionItems</a>[<a class="code hl_variable" href="classPlanManager.html#a1daa557bd4931b7f22685410e39cef2b">_lastMissionRequest</a>];</div>
 <div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span> </div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>        prefix = tr(<span class="stringliteral">&quot;Item #%1 Command: %2&quot;</span>).arg(<a class="code hl_variable" href="classPlanManager.html#a1daa557bd4931b7f22685410e39cef2b">_lastMissionRequest</a>).arg(<a class="code hl_function" href="classMissionCommandTree.html#a6adf2ec556ea4751320405693dc78099">MissionCommandTree::instance</a>()-&gt;friendlyName(item-&gt;<a class="code hl_function" href="classMissionItem.html#a079d690bd4d8d54c48abd0165142ac52">command</a>()));</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>        <a class="code hl_variable" href="GStreamerHelpers_8cc.html#a5b41c5ae4505891e6c53e26df197e02b">prefix</a> = tr(<span class="stringliteral">&quot;Item #%1 Command: %2&quot;</span>).arg(<a class="code hl_variable" href="classPlanManager.html#a1daa557bd4931b7f22685410e39cef2b">_lastMissionRequest</a>).arg(<a class="code hl_function" href="classMissionCommandTree.html#a6adf2ec556ea4751320405693dc78099">MissionCommandTree::instance</a>()-&gt;friendlyName(item-&gt;<a class="code hl_function" href="classMissionItem.html#a079d690bd4d8d54c48abd0165142ac52">command</a>()));</div>
 <div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span> </div>
 <div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>        <span class="keywordflow">switch</span> (result) {</div>
 <div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>        <span class="keywordflow">case</span> MAV_MISSION_UNSUPPORTED_FRAME:</div>
@@ -871,7 +871,7 @@ $(document).ready(function(){initNavTree('PlanManager_8cc_source.html',''); init
 <div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>        }</div>
 <div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>    }</div>
 <div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span> </div>
-<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>    <span class="keywordflow">return</span> prefix + (postfix.isEmpty() ? QStringLiteral(<span class="stringliteral">&quot;&quot;</span>) : QStringLiteral(<span class="stringliteral">&quot; &quot;</span>)) + postfix;</div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="GStreamerHelpers_8cc.html#a5b41c5ae4505891e6c53e26df197e02b">prefix</a> + (postfix.isEmpty() ? QStringLiteral(<span class="stringliteral">&quot;&quot;</span>) : QStringLiteral(<span class="stringliteral">&quot; &quot;</span>)) + postfix;</div>
 <div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>}</div>
 </div>
 <div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span> </div>
@@ -1125,6 +1125,7 @@ $(document).ready(function(){initNavTree('PlanManager_8cc_source.html',''); init
 <div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span>}</div>
 <div class="ttc" id="aAppMessages_8h_html"><div class="ttname"><a href="AppMessages_8h.html">AppMessages.h</a></div></div>
 <div class="ttc" id="aFirmwarePlugin_8h_html"><div class="ttname"><a href="FirmwarePlugin_8h.html">FirmwarePlugin.h</a></div></div>
+<div class="ttc" id="aGStreamerHelpers_8cc_html_a5b41c5ae4505891e6c53e26df197e02b"><div class="ttname"><a href="GStreamerHelpers_8cc.html#a5b41c5ae4505891e6c53e26df197e02b">prefix</a></div><div class="ttdeci">const char * prefix</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00133">GStreamerHelpers.cc:133</a></div></div>
 <div class="ttc" id="aLinkInterface_8h_html_a06fa8dcc2f950057f6a5ae85ec96cee2"><div class="ttname"><a href="LinkInterface_8h.html#a06fa8dcc2f950057f6a5ae85ec96cee2">SharedLinkInterfacePtr</a></div><div class="ttdeci">std::shared_ptr&lt; LinkInterface &gt; SharedLinkInterfacePtr</div><div class="ttdef"><b>Definition</b> <a href="LinkInterface_8h_source.html#l00119">LinkInterface.h:119</a></div></div>
 <div class="ttc" id="aMAVLinkLib_8h_html"><div class="ttname"><a href="MAVLinkLib_8h.html">MAVLinkLib.h</a></div></div>
 <div class="ttc" id="aMAVLinkProtocol_8h_html"><div class="ttname"><a href="MAVLinkProtocol_8h.html">MAVLinkProtocol.h</a></div></div>

@@ -206,7 +206,7 @@ $(document).ready(function(){initNavTree('RTCMUdpInput_8cc_source.html',''); ini
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keyword">const</span> <span class="keyword">auto</span> peer = _parserForPeer(sender, datagram.senderPort());</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordtype">int</span> framesFound = 0;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordtype">int</span> framesDropped = 0;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="GstHwPathTelemetry_8cc.html#a2dc212c0734f9849eea4d4af110c5060">delivered</a> = peer-&gt;decoder.feed(data, receivedAtMs, [&amp;](<span class="keyword">const</span> <a class="code hl_struct" href="structRTCMDecodedFrame.html">RTCMDecodedFrame</a>&amp; decoded) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> delivered = peer-&gt;decoder.feed(data, receivedAtMs, [&amp;](<span class="keyword">const</span> <a class="code hl_struct" href="structRTCMDecodedFrame.html">RTCMDecodedFrame</a>&amp; decoded) {</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <span class="keywordflow">if</span> (!decoded.<a class="code hl_variable" href="structRTCMDecodedFrame.html#a49d19a926fe6829ff6c1a7c4d5c81571">valid</a>) {</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                ++framesDropped;</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                return current();</div>
@@ -215,7 +215,7 @@ $(document).ready(function(){initNavTree('RTCMUdpInput_8cc_source.html',''); ini
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            emit <a class="code hl_signal" href="classRTCMUdpInput.html#a0fb03b1f8652af01b87b928365480cab">frameReceived</a>(instance, decoded.<a class="code hl_variable" href="structRTCMDecodedFrame.html#a29964b132b6cc31b0566d3f4b68f4d88">data</a>, decoded.<a class="code hl_variable" href="structRTCMDecodedFrame.html#aed7bad3aafa22fb743ed561c7362b894">receivedAtMs</a>);</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordflow">return</span> current();</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        });</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="GstHwPathTelemetry_8cc.html#a2dc212c0734f9849eea4d4af110c5060">delivered</a>) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordflow">if</span> (!delivered) {</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        }</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
@@ -273,7 +273,6 @@ $(document).ready(function(){initNavTree('RTCMUdpInput_8cc_source.html',''); ini
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    peer-&gt;lastReceivedMs = now;</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordflow">return</span> peer;</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>}</div>
-<div class="ttc" id="aGstHwPathTelemetry_8cc_html_a2dc212c0734f9849eea4d4af110c5060"><div class="ttname"><a href="GstHwPathTelemetry_8cc.html#a2dc212c0734f9849eea4d4af110c5060">delivered</a></div><div class="ttdeci">std::atomic&lt; quint64 &gt; delivered</div><div class="ttdef"><b>Definition</b> <a href="GstHwPathTelemetry_8cc_source.html#l00020">GstHwPathTelemetry.cc:20</a></div></div>
 <div class="ttc" id="aMonotonicClock_8h_html"><div class="ttname"><a href="MonotonicClock_8h.html">MonotonicClock.h</a></div></div>
 <div class="ttc" id="aQGCCompression_8cc_html_a09cce169e65d8066c742ebfe55010cfb"><div class="ttname"><a href="QGCCompression_8cc.html#a09cce169e65d8066c742ebfe55010cfb">errorString</a></div><div class="ttdeci">QString errorString</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00115">QGCCompression.cc:115</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>

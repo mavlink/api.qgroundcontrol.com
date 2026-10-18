@@ -22,7 +22,9 @@ var dir_822770e7d964c31c7859332655fbe74d =
     [ "RemoteIDIndicator.qml", "RemoteIDIndicator_8qml.html", null ],
     [ "RemoteIDIndicatorPage.qml", "RemoteIDIndicatorPage_8qml.html", null ],
     [ "SelectViewDropdown.qml", "SelectViewDropdown_8qml.html", null ],
+    [ "SeverityPill.qml", "SeverityPill_8qml.html", null ],
     [ "SignalStrength.qml", "SignalStrength_8qml.html", null ],
+    [ "StatusPill.qml", "StatusPill_8qml.html", null ],
     [ "TelemetryRSSIIndicator.qml", "TelemetryRSSIIndicator_8qml.html", null ],
     [ "VehicleMessageList.qml", "VehicleMessageList_8qml.html", null ]
 ];

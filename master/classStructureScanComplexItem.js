@@ -56,6 +56,7 @@ var classStructureScanComplexItem =
     [ "timeBetweenShotsChanged", "classStructureScanComplexItem.html#a6047ce6770b954fe4b82bec6572109b4", null ],
     [ "topFlightAlt", "classStructureScanComplexItem.html#a1c3146fdd1f939f9e113e32e7e230996", null ],
     [ "topFlightAltChanged", "classStructureScanComplexItem.html#a76d2d3df91b5753fdfa43b0124a7f501", null ],
+    [ "usesAltitudeFrame", "classStructureScanComplexItem.html#a3c4de4daa2f5d55d7a785901e33977c4", null ],
     [ "canonicalName", "classStructureScanComplexItem.html#a24850a9be45163e7e3dfbc4ffbf1097b", null ],
     [ "gimbalPitchName", "classStructureScanComplexItem.html#a93aa58ed90c9b186798bfe1e6e405507", null ],
     [ "jsonComplexItemTypeValue", "classStructureScanComplexItem.html#a7619796ec3c5b54ab347290aff903590", null ],

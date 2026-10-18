@@ -97,21 +97,60 @@ $(document).ready(function(){initNavTree('structHwVideoBufferContext.html',''); 
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="namespacePlatform.html">Platform</a> context for the factory; encapsulates EGL handles so callers don't need path-specific ifdefs.  
- <a href="structHwVideoBufferContext.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="GstHwVideoBufferFactory_8h_source.html">GstHwVideoBufferFactory.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a2f6849d729316d64f759314fef0ebee8" id="r_a2f6849d729316d64f759314fef0ebee8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHwVideoBufferContext.html#a2f6849d729316d64f759314fef0ebee8">gpuEnabled</a> = false</td></tr>
 <tr class="separator:a2f6849d729316d64f759314fef0ebee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a356a1c9016d44fec15a72bd7c0aa6f17" id="r_a356a1c9016d44fec15a72bd7c0aa6f17"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHwVideoBufferContext.html#a356a1c9016d44fec15a72bd7c0aa6f17">dmaBufEglDisplay</a> = nullptr</td></tr>
+<tr class="memdesc:a356a1c9016d44fec15a72bd7c0aa6f17"><td class="mdescLeft">&#160;</td><td class="mdescRight">EGLDisplay for the DMABuf path.  <br /></td></tr>
+<tr class="separator:a356a1c9016d44fec15a72bd7c0aa6f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1798e3195bac01540b72619aa35a944" id="r_ae1798e3195bac01540b72619aa35a944"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structHwVideoBufferContext.html#ae1798e3195bac01540b72619aa35a944">ahbEglDisplay</a> = nullptr</td></tr>
+<tr class="memdesc:ae1798e3195bac01540b72619aa35a944"><td class="mdescLeft">&#160;</td><td class="mdescRight">EGLDisplay for the AHardwareBuffer path.  <br /></td></tr>
+<tr class="separator:ae1798e3195bac01540b72619aa35a944"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="namespacePlatform.html">Platform</a> context for the factory; encapsulates EGL handles so callers don't need path-specific ifdefs. </p>
+<div class="textblock"><p>Inputs the factory needs to build a GPU buffer. The layout is the same in every build: EGL displays are stored as void* (EGLDisplay is a void* typedef, EGL_NO_DISPLAY is null), so no EGL header or QGC_HAS_* define is needed here. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwVideoBufferFactory_8h_source.html#l00038">38</a> of file <a class="el" href="GstHwVideoBufferFactory_8h_source.html">GstHwVideoBufferFactory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00021">21</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae1798e3195bac01540b72619aa35a944" name="ae1798e3195bac01540b72619aa35a944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1798e3195bac01540b72619aa35a944">&#9670;&#160;</a></span>ahbEglDisplay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* HwVideoBufferContext::ahbEglDisplay = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>EGLDisplay for the AHardwareBuffer path. </p>
+
+<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00025">25</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
+
+</div>
+</div>
+<a id="a356a1c9016d44fec15a72bd7c0aa6f17" name="a356a1c9016d44fec15a72bd7c0aa6f17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a356a1c9016d44fec15a72bd7c0aa6f17">&#9670;&#160;</a></span>dmaBufEglDisplay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* HwVideoBufferContext::dmaBufEglDisplay = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>EGLDisplay for the DMABuf path. </p>
+
+<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00024">24</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
+
+</div>
+</div>
 <a id="a2f6849d729316d64f759314fef0ebee8" name="a2f6849d729316d64f759314fef0ebee8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f6849d729316d64f759314fef0ebee8">&#9670;&#160;</a></span>gpuEnabled</h2>
 
@@ -124,14 +163,14 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwVideoBufferFactory_8h_source.html#l00040">40</a> of file <a class="el" href="GstHwVideoBufferFactory_8h_source.html">GstHwVideoBufferFactory.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00023">23</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstHwVideoBufferFactory_8cc_source.html#l00210">makeHwVideoBuffer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00392">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="HwBuffers_8cc_source.html#l00223">HwBuffers::makeAdapterContext()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/VideoManager/VideoReceiver/GStreamer/HwBuffers/common/<a class="el" href="GstHwVideoBufferFactory_8h_source.html">GstHwVideoBufferFactory.h</a></li>
+<li>src/VideoManager/VideoReceiver/GStreamer/HwBuffers/common/<a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

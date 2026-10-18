@@ -44,6 +44,6 @@ var searchData=
   ['visodom_5falign_41',['VISODOM_ALIGN',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a65691f253eb2058e97bc9d11b5c597a9',1,'APM']]],
   ['vtolmulticoptertakeoffcapability_42',['VTOLMulticopterTakeoffCapability',['../classFirmwarePlugin.html#a4014aa19969f59e109bf8fd5ab19ec18ae5e66d0baff04b16ddac09b6bf76db7f',1,'FirmwarePlugin']]],
   ['vtx_5fpower_43',['VTX_POWER',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a6172078625d6c0b2f9854dcc0f26aac8',1,'APM']]],
-  ['vulkan_44',['Vulkan',['../GstHwVideoBufferFactory_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba38625270231b647116c80bcbc4f9d1d8',1,'GstHwVideoBufferFactory.h']]],
+  ['vulkan_44',['Vulkan',['../GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba38625270231b647116c80bcbc4f9d1d8',1,'GstHwTypes.h']]],
   ['vulkannosync_45',['VulkanNoSync',['../namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa3d3cd09d7403cd4d764353cf67f77289',1,'GstHwPathTelemetry']]]
 ];

@@ -19,6 +19,7 @@ var classFTPManager =
     [ "kFullReadChunkSize", "classFTPManager.html#a54b0dbca049c9c7e62684e90c30874e4", null ],
     [ "kMaxDownloadSessionReopens", "classFTPManager.html#a95df003adac4494031341a3f929b512a", null ],
     [ "kRadioReadChunkSize", "classFTPManager.html#a4fc87c2d2d806df91df48f33ca1fd9a5", null ],
+    [ "kRadioReadChunkSizeSigned", "classFTPManager.html#a0bbe5a22f8b3287f0039f40f72a9bf11", null ],
     [ "kTestAckTimeoutMs", "classFTPManager.html#a0f43ca3a5f089c1f709ccf55875fbd2f", null ],
     [ "kTestOperationMaxWaitMs", "classFTPManager.html#a9e6e4490b05e67fec6b0a9372fa824f5", null ],
     [ "mavlinkFTPScheme", "classFTPManager.html#a6aba45c648956730127b0216cde9bb1a", null ]

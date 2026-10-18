@@ -1,6 +1,5 @@
 var GstDmaDrmCaps_8cc =
 [
-    [ "buildLinearDmaDrmCaps", "GstDmaDrmCaps_8cc.html#a7877676d823d4a6e6d20254a289590db", null ],
-    [ "buildSupportedDmaDrmCaps", "GstDmaDrmCaps_8cc.html#a857a803078c84d02aca2230540acc65a", null ],
-    [ "dmaDrmAwareVideoInfo", "GstDmaDrmCaps_8cc.html#a7b369eb7fffc5d5a6bdc360f12529928", null ]
+    [ "buildLinearDmaDrmCaps", "GstDmaDrmCaps_8cc.html#a39ce6853d375fe86976e047a628da420", null ],
+    [ "buildSupportedDmaDrmCaps", "GstDmaDrmCaps_8cc.html#af331dd2fd29a5e284a7a5202d89c3267", null ]
 ];

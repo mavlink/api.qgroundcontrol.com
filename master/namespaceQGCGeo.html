@@ -122,6 +122,12 @@ Functions</h2></td></tr>
 <tr class="separator:a5bc73f2111eab7c3f6fc7e8007e72192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af39da97735cecf0fe2466ea6a65899a0" id="r_af39da97735cecf0fe2466ea6a65899a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCGeo.html#af39da97735cecf0fe2466ea6a65899a0">convertMGRSToGeo</a> (const QString &amp;mgrs, QGeoCoordinate &amp;coord)</td></tr>
 <tr class="separator:af39da97735cecf0fe2466ea6a65899a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec10f88430227d3c67a98487db2a2baa" id="r_aec10f88430227d3c67a98487db2a2baa"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCGeo.html#aec10f88430227d3c67a98487db2a2baa">convertDegreesToDMS</a> (double value, bool isLatitude)</td></tr>
+<tr class="separator:aec10f88430227d3c67a98487db2a2baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b8e42f45f37a74caae7aac753e9da42" id="r_a4b8e42f45f37a74caae7aac753e9da42"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCGeo.html#a4b8e42f45f37a74caae7aac753e9da42">convertDMSToDegrees</a> (const QString &amp;text, bool isLatitude, bool *ok)</td></tr>
+<tr class="separator:a4b8e42f45f37a74caae7aac753e9da42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bc94a6749163302783e0dfd135e8c12" id="r_a7bc94a6749163302783e0dfd135e8c12"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCGeo.html#a7bc94a6749163302783e0dfd135e8c12">convertDMSToGeo</a> (const QString &amp;<a class="el" href="UBXPlan_8cc.html#ad2a7363ca4d97bbf55432296fb1a448b">latitude</a>, const QString &amp;<a class="el" href="UBXPlan_8cc.html#affaa89c8c5bcaf3f03054d63bb6629b1">longitude</a>, QGeoCoordinate &amp;coord)</td></tr>
+<tr class="separator:a7bc94a6749163302783e0dfd135e8c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a750c457327961a4c9931584f3e1ed99a" id="r_a750c457327961a4c9931584f3e1ed99a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCGeo.html#a750c457327961a4c9931584f3e1ed99a">geodesicDistance</a> (const QGeoCoordinate &amp;from, const QGeoCoordinate &amp;to)</td></tr>
 <tr class="separator:a750c457327961a4c9931584f3e1ed99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c8524eef74d1a76b548eadff189954d" id="r_a1c8524eef74d1a76b548eadff189954d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceQGCGeo.html#a1c8524eef74d1a76b548eadff189954d">geodesicAzimuth</a> (const QGeoCoordinate &amp;from, const QGeoCoordinate &amp;to)</td></tr>
@@ -140,6 +146,146 @@ Functions</h2></td></tr>
 <tr class="separator:aef843f4826acab595730866577f1c32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aec10f88430227d3c67a98487db2a2baa" name="aec10f88430227d3c67a98487db2a2baa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec10f88430227d3c67a98487db2a2baa">&#9670;&#160;</a></span>convertDegreesToDMS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString QGCGeo::convertDegreesToDMS </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isLatitude</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Format a latitude or longitude as degrees, minutes, seconds with hemisphere. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Angle in decimal degrees (negative = south/west). </td></tr>
+    <tr><td class="paramname">isLatitude</td><td>True for latitude (N/S), false for longitude (E/W). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String such as "34° 44' 17.60\" N". Seconds are rounded to 0.01. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00231">231</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00231">convertDegreesToDMS()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00231">convertDegreesToDMS()</a>, and <a class="el" href="TransformPositionController_8cc_source.html#l00079">TransformPositionController::initValues()</a>.</p>
+
+</div>
+</div>
+<a id="a4b8e42f45f37a74caae7aac753e9da42" name="a4b8e42f45f37a74caae7aac753e9da42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b8e42f45f37a74caae7aac753e9da42">&#9670;&#160;</a></span>convertDMSToDegrees()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double QGCGeo::convertDMSToDegrees </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isLatitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>ok</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Parse a latitude or longitude typed in any common notation. Accepts degrees-minutes-seconds ("34 44 17.6 N", "34°44'17.6\"N"), degrees-decimal-minutes ("34 44.293 N") and decimal degrees ("34.7382", "-86.6017"). The hemisphere letter (N/S for latitude, E/W for longitude, either case) may lead or trail; without one a leading '-' means S/W. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">text</td><td>Text to parse. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">isLatitude</td><td>True for latitude (N/S, +/-90), false for longitude (E/W, +/-180). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ok</td><td>Set to false for malformed input, a hemisphere letter of the other axis, '-' together with a hemisphere letter, minutes/seconds &gt;= 60, or an out of range value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Signed decimal degrees, or 0 on failure. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00245">245</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00245">convertDMSToDegrees()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00245">convertDMSToDegrees()</a>, and <a class="el" href="QGCGeo_8cc_source.html#l00318">convertDMSToGeo()</a>.</p>
+
+</div>
+</div>
+<a id="a7bc94a6749163302783e0dfd135e8c12" name="a7bc94a6749163302783e0dfd135e8c12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bc94a6749163302783e0dfd135e8c12">&#9670;&#160;</a></span>convertDMSToGeo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool QGCGeo::convertDMSToGeo </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>latitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>longitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QGeoCoordinate &amp;&#160;</td>
+          <td class="paramname"><em>coord</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convert a latitude/longitude pair in any notation accepted by <a class="el" href="namespaceQGCGeo.html#a4b8e42f45f37a74caae7aac753e9da42">convertDMSToDegrees()</a> to a coordinate. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">latitude</td><td>Latitude text. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">longitude</td><td>Longitude text. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">coord</td><td>Latitude and longitude are set on success; altitude is left unchanged. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True on success, false if either value fails to parse. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00318">318</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00245">convertDMSToDegrees()</a>, <a class="el" href="QGCGeo_8cc_source.html#l00318">convertDMSToGeo()</a>, <a class="el" href="UBXPlan_8cc_source.html#l00040">latitude</a>, and <a class="el" href="UBXPlan_8cc_source.html#l00042">longitude</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00318">convertDMSToGeo()</a>, and <a class="el" href="TransformPositionController_8cc_source.html#l00113">TransformPositionController::setFromDMS()</a>.</p>
+
+</div>
+</div>
 <a id="a037ec1f4c3b9d04b4cd64c34960afd2d" name="a037ec1f4c3b9d04b4cd64c34960afd2d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a037ec1f4c3b9d04b4cd64c34960afd2d">&#9670;&#160;</a></span>convertEcefToEnu()</h2>
 
@@ -174,11 +320,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ENU vector in meters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00116">116</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00118">118</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00116">convertEcefToEnu()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00118">convertEcefToEnu()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00116">convertEcefToEnu()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00118">convertEcefToEnu()</a>.</p>
 
 </div>
 </div>
@@ -205,11 +351,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Geodetic coordinate (lat/lon/alt). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00109">109</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00111">111</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00109">convertEcefToGeodetic()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00111">convertEcefToGeodetic()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00109">convertEcefToGeodetic()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00111">convertEcefToGeodetic()</a>.</p>
 
 </div>
 </div>
@@ -247,11 +393,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ECEF vector in meters. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00130">130</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00132">132</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00130">convertEnuToEcef()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00132">convertEnuToEcef()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00130">convertEnuToEcef()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00132">convertEnuToEcef()</a>.</p>
 
 </div>
 </div>
@@ -289,11 +435,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Geodetic coordinate. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00089">89</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00091">91</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00089">convertEnuToGps()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00091">convertEnuToGps()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00089">convertEnuToGps()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00091">convertEnuToGps()</a>.</p>
 
 </div>
 </div>
@@ -321,11 +467,11 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>ECEF vector in meters. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Uses float precision (QVector3D). Large coordinates may lose precision. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00102">102</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00104">104</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00102">convertGeodeticToEcef()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00104">convertGeodeticToEcef()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00102">convertGeodeticToEcef()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00104">convertGeodeticToEcef()</a>.</p>
 
 </div>
 </div>
@@ -352,11 +498,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>MGRS string (e.g., "32TMT 65886 47092"), or empty string on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00179">179</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00181">181</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00179">convertGeoToMGRS()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00181">convertGeoToMGRS()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00179">convertGeoToMGRS()</a>, and <a class="el" href="TransformPositionController_8cc_source.html#l00073">TransformPositionController::initValues()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00181">convertGeoToMGRS()</a>, and <a class="el" href="TransformPositionController_8cc_source.html#l00079">TransformPositionController::initValues()</a>.</p>
 
 </div>
 </div>
@@ -415,11 +561,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>NaN altitudes are treated as 0.0 (sea level). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00034">34</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00036">36</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00034">convertGeoToNed()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00036">convertGeoToNed()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00034">convertGeoToNed()</a>, <a class="el" href="QGCMapPolygon_8cc_source.html#l00493">QGCMapPolygon::nedPolygon()</a>, and <a class="el" href="QGCMapPolyline_8cc_source.html#l00296">QGCMapPolyline::nedPolyline()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00036">convertGeoToNed()</a>, <a class="el" href="QGCMapPolygon_8cc_source.html#l00493">QGCMapPolygon::nedPolygon()</a>, and <a class="el" href="QGCMapPolyline_8cc_source.html#l00296">QGCMapPolyline::nedPolyline()</a>.</p>
 
 </div>
 </div>
@@ -464,11 +610,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>UTM zone (1-60), or 0 on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00148">148</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00150">150</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00148">convertGeoToUTM()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00150">convertGeoToUTM()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00148">convertGeoToUTM()</a>, and <a class="el" href="TransformPositionController_8cc_source.html#l00073">TransformPositionController::initValues()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00150">convertGeoToUTM()</a>, and <a class="el" href="TransformPositionController_8cc_source.html#l00079">TransformPositionController::initValues()</a>.</p>
 
 </div>
 </div>
@@ -507,11 +653,11 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>ENU vector in meters (x=East, y=North, z=Up). </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Uses float precision (QVector3D). For high precision, use NED functions. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00080">80</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00082">82</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00080">convertGpsToEnu()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00082">convertGpsToEnu()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00080">convertGpsToEnu()</a>, and <a class="el" href="OsmParserThread_8cc_source.html#l00052">OsmBuildingHandler::way()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00082">convertGpsToEnu()</a>, and <a class="el" href="OsmParserThread_8cc_source.html#l00052">OsmBuildingHandler::way()</a>.</p>
 
 </div>
 </div>
@@ -549,11 +695,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True on success, false on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00205">205</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00207">207</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00205">convertMGRSToGeo()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00207">convertMGRSToGeo()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00205">convertMGRSToGeo()</a>, and <a class="el" href="TransformPositionController_8cc_source.html#l00117">TransformPositionController::setFromMGRS()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00207">convertMGRSToGeo()</a>, and <a class="el" href="TransformPositionController_8cc_source.html#l00139">TransformPositionController::setFromMGRS()</a>.</p>
 
 </div>
 </div>
@@ -611,11 +757,11 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00056">56</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00058">58</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00056">convertNedToGeo()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00058">convertNedToGeo()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00056">convertNedToGeo()</a>, <a class="el" href="QGCMapPolygon_8cc_source.html#l00517">QGCMapPolygon::offset()</a>, and <a class="el" href="QGCMapPolyline_8cc_source.html#l00319">QGCMapPolyline::offsetPolyline()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00058">convertNedToGeo()</a>, <a class="el" href="QGCMapPolygon_8cc_source.html#l00517">QGCMapPolygon::offset()</a>, and <a class="el" href="QGCMapPolyline_8cc_source.html#l00319">QGCMapPolyline::offsetPolyline()</a>.</p>
 
 </div>
 </div>
@@ -674,11 +820,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True on success, false on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00161">161</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00163">163</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00161">convertUTMToGeo()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00163">convertUTMToGeo()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00161">convertUTMToGeo()</a>, <a class="el" href="SHPFileHelper_8cc_source.html#l00501">SHPFileHelper::loadPointsFromFile()</a>, <a class="el" href="SHPFileHelper_8cc_source.html#l00295">SHPFileHelper::loadPolygonsFromFile()</a>, <a class="el" href="SHPFileHelper_8cc_source.html#l00408">SHPFileHelper::loadPolylinesFromFile()</a>, and <a class="el" href="TransformPositionController_8cc_source.html#l00105">TransformPositionController::setFromUTM()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00163">convertUTMToGeo()</a>, <a class="el" href="SHPFileHelper_8cc_source.html#l00501">SHPFileHelper::loadPointsFromFile()</a>, <a class="el" href="SHPFileHelper_8cc_source.html#l00295">SHPFileHelper::loadPolygonsFromFile()</a>, <a class="el" href="SHPFileHelper_8cc_source.html#l00408">SHPFileHelper::loadPolylinesFromFile()</a>, and <a class="el" href="TransformPositionController_8cc_source.html#l00125">TransformPositionController::setFromUTM()</a>.</p>
 
 </div>
 </div>
@@ -717,11 +863,11 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Forward azimuth in degrees [0, 360), clockwise from north. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>More accurate than QGeoCoordinate::azimuthTo() which uses spherical approximation. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00237">237</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00345">345</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00237">geodesicAzimuth()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00345">geodesicAzimuth()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00237">geodesicAzimuth()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00345">geodesicAzimuth()</a>.</p>
 
 </div>
 </div>
@@ -766,11 +912,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Destination coordinate (altitude copied from start). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00250">250</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00358">358</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00250">geodesicDestination()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00358">geodesicDestination()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00250">geodesicDestination()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00358">geodesicDestination()</a>.</p>
 
 </div>
 </div>
@@ -809,11 +955,11 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Distance in meters. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>More accurate than QGeoCoordinate::distanceTo() which uses spherical approximation. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00229">229</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00337">337</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00229">geodesicDistance()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00337">geodesicDistance()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00229">geodesicDistance()</a>, and <a class="el" href="QGCGeo_8cc_source.html#l00261">pathLength()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00337">geodesicDistance()</a>, and <a class="el" href="QGCGeo_8cc_source.html#l00369">pathLength()</a>.</p>
 
 </div>
 </div>
@@ -859,11 +1005,11 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Coordinate at the specified distance along the geodesic. Altitude is linearly interpolated. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Useful for midpoint: interpolateAtDistance(from, to, geodesicDistance(from, to) / 2) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00349">349</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00457">457</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00349">interpolateAtDistance()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00457">interpolateAtDistance()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00349">interpolateAtDistance()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00457">interpolateAtDistance()</a>.</p>
 
 </div>
 </div>
@@ -909,11 +1055,11 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>List of coordinates including start and end points, evenly spaced along the geodesic. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Uses GeodesicLine internally for efficiency. Altitude is linearly interpolated. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00308">308</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00416">416</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00308">interpolatePath()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00416">interpolatePath()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00308">interpolatePath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00416">interpolatePath()</a>.</p>
 
 </div>
 </div>
@@ -940,11 +1086,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Total path length in meters, or 0 if fewer than 2 points. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00261">261</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00369">369</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00229">geodesicDistance()</a>, and <a class="el" href="QGCGeo_8cc_source.html#l00261">pathLength()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00337">geodesicDistance()</a>, and <a class="el" href="QGCGeo_8cc_source.html#l00369">pathLength()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00261">pathLength()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00369">pathLength()</a>.</p>
 
 </div>
 </div>
@@ -972,11 +1118,11 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Absolute area in square meters, or 0 if fewer than 3 points. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>More accurate than planar projection methods, especially for large polygons. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00274">274</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00382">382</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00274">polygonArea()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00382">polygonArea()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00274">polygonArea()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00382">polygonArea()</a>.</p>
 
 </div>
 </div>
@@ -1003,11 +1149,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Perimeter in meters, or 0 if fewer than 2 points. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00292">292</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCGeo_8cc_source.html#l00400">400</a> of file <a class="el" href="QGCGeo_8cc_source.html">QGCGeo.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00292">polygonPerimeter()</a>.</p>
+<p class="reference">References <a class="el" href="QGCGeo_8cc_source.html#l00400">polygonPerimeter()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00292">polygonPerimeter()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QGCGeo_8cc_source.html#l00400">polygonPerimeter()</a>.</p>
 
 </div>
 </div>

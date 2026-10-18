@@ -159,11 +159,11 @@ $(document).ready(function(){initNavTree('SerialAutoConnect_8cc_source.html','')
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            !_ports.<a class="code hl_function" href="classSerialPortManager.html#a65a0169410d3988313956c96d2c8d694">canAutoConnectPort</a>(port.systemLocation)) {</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keyword">auto</span> <a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a> = _configs.value(port.systemLocation);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>-&gt;link() &amp;&amp; !<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>-&gt;suppressAutoReconnect() &amp;&amp; <a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>-&gt;reconnectReady()) {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                <a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>-&gt;noteReconnectAttempt();</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                _connect(<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keyword">auto</span> config = _configs.value(port.systemLocation);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">if</span> (config) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordflow">if</span> (!config-&gt;link() &amp;&amp; !config-&gt;suppressAutoReconnect() &amp;&amp; config-&gt;reconnectReady()) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                config-&gt;noteReconnectAttempt();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                _connect(config);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            }</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        }</div>
@@ -179,10 +179,10 @@ $(document).ready(function(){initNavTree('SerialAutoConnect_8cc_source.html','')
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        serialConfig-&gt;setDynamic(<span class="keyword">true</span>);</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        serialConfig-&gt;setPortName(port.systemLocation);</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        serialConfig-&gt;setAutoConnect(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>.reset(serialConfig);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        _configs.insert(port.systemLocation, <a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>-&gt;noteReconnectAttempt();</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        _connect(<a class="code hl_variable" href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a>);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        config.reset(serialConfig);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        _configs.insert(port.systemLocation, config);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        config-&gt;noteReconnectAttempt();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        _connect(config);</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
 </div>
@@ -200,7 +200,6 @@ $(document).ready(function(){initNavTree('SerialAutoConnect_8cc_source.html','')
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
-<div class="ttc" id="aGstSourceFactory_8cc_html_a4a8dd3a2de125b72d4fe6251a0a271b5"><div class="ttname"><a href="GstSourceFactory_8cc.html#a4a8dd3a2de125b72d4fe6251a0a271b5">config</a></div><div class="ttdeci">Config config</div><div class="ttdef"><b>Definition</b> <a href="GstSourceFactory_8cc_source.html#l00183">GstSourceFactory.cc:183</a></div></div>
 <div class="ttc" id="aMonotonicClock_8h_html"><div class="ttname"><a href="MonotonicClock_8h.html">MonotonicClock.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>

@@ -27,7 +27,8 @@ var classMockConfiguration =
       [ "OptionStayMavlinkV1", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102faa2a5c1a3e1f897d28338e698afdd0465", null ],
       [ "OptionAPMStartFreshParams", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fa42c6072b9a5687de3a23f48fd4ecaf95", null ],
       [ "OptionFtpCapability", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102faf99dc1a6b1117af4dd572431b4e5c859", null ],
-      [ "OptionNoRadioStatus", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fadf735b948ea58fd1d17eb537c9567ac5", null ]
+      [ "OptionNoRadioStatus", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fadf735b948ea58fd1d17eb537c9567ac5", null ],
+      [ "OptionCompanionParams", "classMockConfiguration.html#aed01fab8477da26e57515f4538ff102fa256b04bacc23354ad431a3ee3d0451a4", null ]
     ] ],
     [ "VideoStreamType", "classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afd", [
       [ "VideoStreamNone", "classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afda2cd62834fbd84afc5807e080d9844e3d", null ],
@@ -62,6 +63,7 @@ var classMockConfiguration =
     [ "cameraHasTrackingRectangleChanged", "classMockConfiguration.html#af01f11ddf669ff0721f50f80200b4265", null ],
     [ "cameraHasVideoStream", "classMockConfiguration.html#aaee862ee03eff2d6e18190e1f58852b4", null ],
     [ "cameraHasVideoStreamChanged", "classMockConfiguration.html#aa6435fa3eddf399148341c8319238933", null ],
+    [ "companionParams", "classMockConfiguration.html#aa6ffed9e6ae6bbf5b320c9e153e1895f", null ],
     [ "copyFrom", "classMockConfiguration.html#a5f18a8ff7878c858551e924174cd0861", null ],
     [ "enableADSB", "classMockConfiguration.html#a7da8bba2ae1407da6423c36ac93138a9", null ],
     [ "enableADSBChanged", "classMockConfiguration.html#acfe2ae54b5ab56b902352e73ff4c94da", null ],
@@ -116,6 +118,7 @@ var classMockConfiguration =
     [ "setCameraHasTrackingPoint", "classMockConfiguration.html#aa80fda9ea42376e78582f45cd87261d7", null ],
     [ "setCameraHasTrackingRectangle", "classMockConfiguration.html#a166c1702d8d7dd05cccd6826fe284201", null ],
     [ "setCameraHasVideoStream", "classMockConfiguration.html#a6d2c47ff689d97077c4ff915c9100bee", null ],
+    [ "setCompanionParams", "classMockConfiguration.html#a8ddfff141202b95f4fc85d6930cb4ff7", null ],
     [ "setEnableADSB", "classMockConfiguration.html#a601251e3c4284f7ad7fd672701ff5261", null ],
     [ "setEnableCamera", "classMockConfiguration.html#a71e91fe0f30ad328717cceb4dbff3071", null ],
     [ "setEnableGimbal", "classMockConfiguration.html#a838cab57d3fa2165785492027bf2512f", null ],

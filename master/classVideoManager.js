@@ -43,5 +43,7 @@ var classVideoManager =
     [ "videoSize", "classVideoManager.html#ac9c77bd19c9f25f3a01eb01058c70e97", null ],
     [ "videoSizeChanged", "classVideoManager.html#ad64790fefdfcb036c6d306c918dce030", null ],
     [ "waitForVideoBackendReady", "classVideoManager.html#a472944e570cc45cd0948e210ba0d80cb", null ],
-    [ "VideoManagerInitTest", "classVideoManager.html#ab11818990e755115bb5eb519b2714707", null ]
+    [ "VideoManagerInitTest", "classVideoManager.html#ab11818990e755115bb5eb519b2714707", null ],
+    [ "VideoManagerRestartTest", "classVideoManager.html#a0b87710030b763f008258e838e9cec36", null ],
+    [ "VideoManagerTest", "classVideoManager.html#a7280235664cbda3c37b2c2fda0b9e3c0", null ]
 ];

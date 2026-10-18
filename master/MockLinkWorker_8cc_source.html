@@ -131,87 +131,103 @@ $(document).ready(function(){initNavTree('MockLinkWorker_8cc_source.html',''); i
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    _timer10Hz = <span class="keyword">new</span> QTimer(<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    _timer500Hz = <span class="keyword">new</span> QTimer(<span class="keyword">this</span>);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    _timerStatusText = <span class="keyword">new</span> QTimer(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    (void) connect(_timer1Hz, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;MockLinkWorker::run1HzTasks);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    (void) connect(_timer10Hz, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;MockLinkWorker::run10HzTasks);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    (void) connect(_timer500Hz, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;MockLinkWorker::run500HzTasks);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    (void) connect(_timerStatusText, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;MockLinkWorker::sendStatusTextMessages);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    _timer1Hz-&gt;start(<a class="code hl_variable" href="classMockLinkWorker.html#a6811c7939fabe23f566b546f763a654f">kTimer1HzIntervalMs</a>);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    _timer10Hz-&gt;start(<a class="code hl_variable" href="classMockLinkWorker.html#ab2f74bc2e8979299ee711e2001efe15a">kTimer10HzIntervalMs</a>);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    _timer500Hz-&gt;start(<a class="code hl_variable" href="classMockLinkWorker.html#a99ae0bffba3f7f456352c8b4d560fb1b">kTimer500HzIntervalMs</a>);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">if</span> (_mockLink &amp;&amp; _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a54c5e54b6a85c500afa40de7a7529704">shouldSendStatusText</a>()) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        _timerStatusText-&gt;setSingleShot(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        _timerStatusText-&gt;start(<a class="code hl_variable" href="classMockLinkWorker.html#ad4ee32ab77f338cfc5daebb713077dc7">kStatusTextDelayMs</a>);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    run1HzTasks();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    run10HzTasks();</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    run500HzTasks();</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    _timerBootStatusText = <span class="keyword">new</span> QTimer(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    (void) connect(_timer1Hz, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;MockLinkWorker::run1HzTasks);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    (void) connect(_timer10Hz, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;MockLinkWorker::run10HzTasks);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    (void) connect(_timer500Hz, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;MockLinkWorker::run500HzTasks);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    (void) connect(_timerStatusText, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;MockLinkWorker::sendStatusTextMessages);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    (void) connect(_timerBootStatusText, &amp;QTimer::timeout, <span class="keyword">this</span>, &amp;MockLinkWorker::sendBootStatusTextMessages);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    _timer1Hz-&gt;start(<a class="code hl_variable" href="classMockLinkWorker.html#a6811c7939fabe23f566b546f763a654f">kTimer1HzIntervalMs</a>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    _timer10Hz-&gt;start(<a class="code hl_variable" href="classMockLinkWorker.html#ab2f74bc2e8979299ee711e2001efe15a">kTimer10HzIntervalMs</a>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    _timer500Hz-&gt;start(<a class="code hl_variable" href="classMockLinkWorker.html#a99ae0bffba3f7f456352c8b4d560fb1b">kTimer500HzIntervalMs</a>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">if</span> (_mockLink &amp;&amp; _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a54c5e54b6a85c500afa40de7a7529704">shouldSendStatusText</a>()) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        _timerBootStatusText-&gt;setSingleShot(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        _timerBootStatusText-&gt;start(<a class="code hl_variable" href="classMockLinkWorker.html#a69e2ec148bf48bab401f84bf6fd5cf30">kBootStatusTextDelayMs</a>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        _timerStatusText-&gt;setSingleShot(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        _timerStatusText-&gt;start(<a class="code hl_variable" href="classMockLinkWorker.html#ad4ee32ab77f338cfc5daebb713077dc7">kStatusTextDelayMs</a>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    run1HzTasks();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    run10HzTasks();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    run500HzTasks();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
 </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classMockLinkWorker.html#aef13e574acda88d699cfb8a455a04304">   49</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="classMockLinkWorker.html#aef13e574acda88d699cfb8a455a04304">MockLinkWorker::stopWork</a>()</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> (_timer1Hz) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        _timer1Hz-&gt;stop();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span> (_timer10Hz) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        _timer10Hz-&gt;stop();</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">if</span> (_timer500Hz) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        _timer500Hz-&gt;stop();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (_timerStatusText) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        _timerStatusText-&gt;stop();</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
-</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">void</span> MockLinkWorker::run1HzTasks()</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (_mockLink) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#af40d589debe1b8bb3f71fef234801908">run1HzTasks</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classMockLinkWorker.html#aef13e574acda88d699cfb8a455a04304">   53</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="classMockLinkWorker.html#aef13e574acda88d699cfb8a455a04304">MockLinkWorker::stopWork</a>()</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">if</span> (_timer1Hz) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        _timer1Hz-&gt;stop();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">if</span> (_timer10Hz) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        _timer10Hz-&gt;stop();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> (_timer500Hz) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        _timer500Hz-&gt;stop();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">if</span> (_timerStatusText) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        _timerStatusText-&gt;stop();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> (_timerBootStatusText) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        _timerBootStatusText-&gt;stop();</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> MockLinkWorker::run10HzTasks()</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> MockLinkWorker::run1HzTasks()</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">if</span> (_mockLink) {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a34cfe91913377387a295d9a82c27c09e">run10HzTasks</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#af40d589debe1b8bb3f71fef234801908">run1HzTasks</a>();</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keywordtype">void</span> MockLinkWorker::run500HzTasks()</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keywordtype">void</span> MockLinkWorker::run10HzTasks()</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>{</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">if</span> (_mockLink) {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a94630d7aac53b1ba17c5d730b09ca7ac">run500HzTasks</a>();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a34cfe91913377387a295d9a82c27c09e">run10HzTasks</a>();</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keywordtype">void</span> MockLinkWorker::sendStatusTextMessages()</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keywordtype">void</span> MockLinkWorker::run500HzTasks()</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> (_mockLink) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#ada66da5b1664af60f5b32103d0ec3454">sendStatusTextMessages</a>();</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a94630d7aac53b1ba17c5d730b09ca7ac">run500HzTasks</a>();</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keywordtype">void</span> MockLinkWorker::sendStatusTextMessages()</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>{</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (_mockLink) {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#ada66da5b1664af60f5b32103d0ec3454">sendStatusTextMessages</a>();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keywordtype">void</span> MockLinkWorker::sendBootStatusTextMessages()</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>{</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">if</span> (_mockLink) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        _mockLink-&gt;<a class="code hl_function" href="classMockLink.html#a108f2c3c8196b1627c5d75934b55950e">sendBootStatusTextMessages</a>();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
 <div class="ttc" id="aMockLinkWorker_8h_html"><div class="ttname"><a href="MockLinkWorker_8h.html">MockLinkWorker.h</a></div></div>
 <div class="ttc" id="aMockLink_8h_html"><div class="ttname"><a href="MockLink_8h.html">MockLink.h</a></div></div>
 <div class="ttc" id="aclassMockLinkWorker_html_a4672cbebd875aa4a82301a2f4f73828b"><div class="ttname"><a href="classMockLinkWorker.html#a4672cbebd875aa4a82301a2f4f73828b">MockLinkWorker::MockLinkWorker</a></div><div class="ttdeci">MockLinkWorker(MockLink *link, QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="MockLinkWorker_8cc_source.html#l00006">MockLinkWorker.cc:6</a></div></div>
 <div class="ttc" id="aclassMockLinkWorker_html_a6811c7939fabe23f566b546f763a654f"><div class="ttname"><a href="classMockLinkWorker.html#a6811c7939fabe23f566b546f763a654f">MockLinkWorker::kTimer1HzIntervalMs</a></div><div class="ttdeci">static constexpr int kTimer1HzIntervalMs</div><div class="ttdoc">Timer intervals in milliseconds.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkWorker_8h_source.html#l00021">MockLinkWorker.h:21</a></div></div>
+<div class="ttc" id="aclassMockLinkWorker_html_a69e2ec148bf48bab401f84bf6fd5cf30"><div class="ttname"><a href="classMockLinkWorker.html#a69e2ec148bf48bab401f84bf6fd5cf30">MockLinkWorker::kBootStatusTextDelayMs</a></div><div class="ttdeci">static constexpr int kBootStatusTextDelayMs</div><div class="ttdoc">Delay before sending the non-critical status text messages.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkWorker_8h_source.html#l00024">MockLinkWorker.h:24</a></div></div>
 <div class="ttc" id="aclassMockLinkWorker_html_a99ae0bffba3f7f456352c8b4d560fb1b"><div class="ttname"><a href="classMockLinkWorker.html#a99ae0bffba3f7f456352c8b4d560fb1b">MockLinkWorker::kTimer500HzIntervalMs</a></div><div class="ttdeci">static constexpr int kTimer500HzIntervalMs</div><div class="ttdoc">500 Hz tasks (param list, log download)</div><div class="ttdef"><b>Definition</b> <a href="MockLinkWorker_8h_source.html#l00023">MockLinkWorker.h:23</a></div></div>
 <div class="ttc" id="aclassMockLinkWorker_html_ab2f74bc2e8979299ee711e2001efe15a"><div class="ttname"><a href="classMockLinkWorker.html#ab2f74bc2e8979299ee711e2001efe15a">MockLinkWorker::kTimer10HzIntervalMs</a></div><div class="ttdeci">static constexpr int kTimer10HzIntervalMs</div><div class="ttdoc">10 Hz tasks (heartbeat, GPS, position)</div><div class="ttdef"><b>Definition</b> <a href="MockLinkWorker_8h_source.html#l00022">MockLinkWorker.h:22</a></div></div>
 <div class="ttc" id="aclassMockLinkWorker_html_ac532a11bc9ca79e03b1ab53cd4c5eb01"><div class="ttname"><a href="classMockLinkWorker.html#ac532a11bc9ca79e03b1ab53cd4c5eb01">MockLinkWorker::startWork</a></div><div class="ttdeci">void startWork()</div><div class="ttdef"><b>Definition</b> <a href="MockLinkWorker_8cc_source.html#l00018">MockLinkWorker.cc:18</a></div></div>
-<div class="ttc" id="aclassMockLinkWorker_html_ad4ee32ab77f338cfc5daebb713077dc7"><div class="ttname"><a href="classMockLinkWorker.html#ad4ee32ab77f338cfc5daebb713077dc7">MockLinkWorker::kStatusTextDelayMs</a></div><div class="ttdeci">static constexpr int kStatusTextDelayMs</div><div class="ttdoc">Delay before sending status text messages.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkWorker_8h_source.html#l00024">MockLinkWorker.h:24</a></div></div>
+<div class="ttc" id="aclassMockLinkWorker_html_ad4ee32ab77f338cfc5daebb713077dc7"><div class="ttname"><a href="classMockLinkWorker.html#ad4ee32ab77f338cfc5daebb713077dc7">MockLinkWorker::kStatusTextDelayMs</a></div><div class="ttdeci">static constexpr int kStatusTextDelayMs</div><div class="ttdoc">Delay before sending status text messages.</div><div class="ttdef"><b>Definition</b> <a href="MockLinkWorker_8h_source.html#l00025">MockLinkWorker.h:25</a></div></div>
 <div class="ttc" id="aclassMockLinkWorker_html_ae5e70d606069a8e9bc8e93b3345d581a"><div class="ttname"><a href="classMockLinkWorker.html#ae5e70d606069a8e9bc8e93b3345d581a">MockLinkWorker::~MockLinkWorker</a></div><div class="ttdeci">~MockLinkWorker()</div><div class="ttdef"><b>Definition</b> <a href="MockLinkWorker_8cc_source.html#l00013">MockLinkWorker.cc:13</a></div></div>
-<div class="ttc" id="aclassMockLinkWorker_html_aef13e574acda88d699cfb8a455a04304"><div class="ttname"><a href="classMockLinkWorker.html#aef13e574acda88d699cfb8a455a04304">MockLinkWorker::stopWork</a></div><div class="ttdeci">void stopWork()</div><div class="ttdef"><b>Definition</b> <a href="MockLinkWorker_8cc_source.html#l00049">MockLinkWorker.cc:49</a></div></div>
+<div class="ttc" id="aclassMockLinkWorker_html_aef13e574acda88d699cfb8a455a04304"><div class="ttname"><a href="classMockLinkWorker.html#aef13e574acda88d699cfb8a455a04304">MockLinkWorker::stopWork</a></div><div class="ttdeci">void stopWork()</div><div class="ttdef"><b>Definition</b> <a href="MockLinkWorker_8cc_source.html#l00053">MockLinkWorker.cc:53</a></div></div>
 <div class="ttc" id="aclassMockLink_html"><div class="ttname"><a href="classMockLink.html">MockLink</a></div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00030">MockLink.h:31</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a34cfe91913377387a295d9a82c27c09e"><div class="ttname"><a href="classMockLink.html#a34cfe91913377387a295d9a82c27c09e">MockLink::run10HzTasks</a></div><div class="ttdeci">void run10HzTasks()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00457">MockLink.cc:457</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a54c5e54b6a85c500afa40de7a7529704"><div class="ttname"><a href="classMockLink.html#a54c5e54b6a85c500afa40de7a7529704">MockLink::shouldSendStatusText</a></div><div class="ttdeci">bool shouldSendStatusText() const</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00045">MockLink.h:45</a></div></div>
-<div class="ttc" id="aclassMockLink_html_a94630d7aac53b1ba17c5d730b09ca7ac"><div class="ttname"><a href="classMockLink.html#a94630d7aac53b1ba17c5d730b09ca7ac">MockLink::run500HzTasks</a></div><div class="ttdeci">void run500HzTasks()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00491">MockLink.cc:491</a></div></div>
-<div class="ttc" id="aclassMockLink_html_ada66da5b1664af60f5b32103d0ec3454"><div class="ttname"><a href="classMockLink.html#ada66da5b1664af60f5b32103d0ec3454">MockLink::sendStatusTextMessages</a></div><div class="ttdeci">void sendStatusTextMessages()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00513">MockLink.cc:513</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a108f2c3c8196b1627c5d75934b55950e"><div class="ttname"><a href="classMockLink.html#a108f2c3c8196b1627c5d75934b55950e">MockLink::sendBootStatusTextMessages</a></div><div class="ttdeci">void sendBootStatusTextMessages()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00521">MockLink.cc:521</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a34cfe91913377387a295d9a82c27c09e"><div class="ttname"><a href="classMockLink.html#a34cfe91913377387a295d9a82c27c09e">MockLink::run10HzTasks</a></div><div class="ttdeci">void run10HzTasks()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00460">MockLink.cc:460</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a54c5e54b6a85c500afa40de7a7529704"><div class="ttname"><a href="classMockLink.html#a54c5e54b6a85c500afa40de7a7529704">MockLink::shouldSendStatusText</a></div><div class="ttdeci">bool shouldSendStatusText() const</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8h_source.html#l00046">MockLink.h:46</a></div></div>
+<div class="ttc" id="aclassMockLink_html_a94630d7aac53b1ba17c5d730b09ca7ac"><div class="ttname"><a href="classMockLink.html#a94630d7aac53b1ba17c5d730b09ca7ac">MockLink::run500HzTasks</a></div><div class="ttdeci">void run500HzTasks()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00494">MockLink.cc:494</a></div></div>
+<div class="ttc" id="aclassMockLink_html_ada66da5b1664af60f5b32103d0ec3454"><div class="ttname"><a href="classMockLink.html#ada66da5b1664af60f5b32103d0ec3454">MockLink::sendStatusTextMessages</a></div><div class="ttdeci">void sendStatusTextMessages()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00516">MockLink.cc:516</a></div></div>
 <div class="ttc" id="aclassMockLink_html_af40d589debe1b8bb3f71fef234801908"><div class="ttname"><a href="classMockLink.html#af40d589debe1b8bb3f71fef234801908">MockLink::run1HzTasks</a></div><div class="ttdeci">void run1HzTasks()</div><div class="ttdef"><b>Definition</b> <a href="MockLink_8cc_source.html#l00403">MockLink.cc:403</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

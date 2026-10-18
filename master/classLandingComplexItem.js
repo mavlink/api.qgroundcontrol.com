@@ -98,6 +98,7 @@ var classLandingComplexItem =
     [ "useDoChangeSpeed", "classLandingComplexItem.html#a7f212bf177ae4b9df3f87dc6a9a9f241", null ],
     [ "useLoiterToAlt", "classLandingComplexItem.html#aec44e71db96e4ee96c2838013fcfe0a2", null ],
     [ "useLoiterToAlt", "classLandingComplexItem.html#abf4e8a6ab03e0bb66160cc6436a59328", null ],
+    [ "usesAltitudeFrame", "classLandingComplexItem.html#a606407499210ea348375640f2708f2db", null ],
     [ "_altitudesAreRelative", "classLandingComplexItem.html#a0ec2c326a5adc2984a7aa115c4447af0", null ],
     [ "_dirty", "classLandingComplexItem.html#a4b29d1c4ce9d43815cdb430d4646ec63", null ],
     [ "_finalApproachCoordinate", "classLandingComplexItem.html#a3df2f5bc704e367773876b2794675c2d", null ],

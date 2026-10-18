@@ -19,5 +19,6 @@ var searchData=
   ['gpsreceiversessionoutcome_16',['GPSReceiverSessionOutcome',['../GPSReceiverConnectionPolicy_8h.html#a3b0f378392025fb531598d03ed922a3e',1,'GPSReceiverConnectionPolicy.h']]],
   ['gpsreceiveupdate_17',['GPSReceiveUpdate',['../GPSProtocolEvent_8h.html#aed79e9b8cbec231849c89efbb7a40c3d',1,'GPSProtocolEvent.h']]],
   ['gpstype_18',['GPSType',['../namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80',1,'GPSTypes']]],
-  ['gpswritestatus_19',['GPSWriteStatus',['../GPSTransport_8h.html#a604169add88d503c26deb25634162910',1,'GPSTransport.h']]]
+  ['gpswritestatus_19',['GPSWriteStatus',['../GPSTransport_8h.html#a604169add88d503c26deb25634162910',1,'GPSTransport.h']]],
+  ['gpubinmode_20',['GpuBinMode',['../namespaceHwBuffers.html#a3ca53fb4b508fa4314284ba48f0ac98a',1,'HwBuffers']]]
 ];
