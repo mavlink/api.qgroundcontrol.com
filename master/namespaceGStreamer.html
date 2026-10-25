@@ -217,6 +217,8 @@ Functions</h2></td></tr>
 <tr class="separator:ad515edbe277ccb5d353862caa230ab46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0644c93e797b9aec44a1bb617ca200d7" id="r_a0644c93e797b9aec44a1bb617ca200d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer.html#a0644c93e797b9aec44a1bb617ca200d7">disposeChild</a> (<a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *element)</td></tr>
 <tr class="separator:a0644c93e797b9aec44a1bb617ca200d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6db975b3b9b3ee7c34fd72b151aa276" id="r_ae6db975b3b9b3ee7c34fd72b151aa276"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer.html#ae6db975b3b9b3ee7c34fd72b151aa276">flushAndDisposeChild</a> (<a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *element)</td></tr>
+<tr class="separator:ae6db975b3b9b3ee7c34fd72b151aa276"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61024c3d15d02f6b1ad8a664add1d973" id="r_a61024c3d15d02f6b1ad8a664add1d973"><td class="memItemLeft" align="right" valign="top"><a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer.html#a61024c3d15d02f6b1ad8a664add1d973">addToBin</a> (<a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *bin, <a class="el" href="namespaceGStreamer.html#ae839d799e9288392da348a95bcd02d88">GstElementPtr</a> element, const char *what)</td></tr>
 <tr class="separator:a61024c3d15d02f6b1ad8a664add1d973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b67e0d1819d85e4f56c0c6fe8de4d35" id="r_a1b67e0d1819d85e4f56c0c6fe8de4d35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGStreamer_1_1TeeBranch.html">TeeBranch</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer.html#a1b67e0d1819d85e4f56c0c6fe8de4d35">addTeeBranch</a> (<a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *pipeline, <a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *tee, const char *what)</td></tr>
@@ -571,11 +573,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00072">72</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00095">95</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00072">addTeeBranch()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00062">addToBin()</a>, <a class="el" href="GstScoped_8h_source.html#l00078">adoptElement()</a>, and <a class="el" href="GStreamerHelpers_8h_source.html#l00029">GStreamer::TeeBranch::queue</a>.</p>
+<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00095">addTeeBranch()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00085">addToBin()</a>, <a class="el" href="GstScoped_8h_source.html#l00078">adoptElement()</a>, and <a class="el" href="GStreamerHelpers_8h_source.html#l00033">GStreamer::TeeBranch::queue</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00072">addTeeBranch()</a>, <a class="el" href="DecodingBranch_8cc_source.html#l00022">DecodingBranch::build()</a>, and <a class="el" href="RecordingBranch_8cc_source.html#l00209">RecordingBranch::build()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00095">addTeeBranch()</a>, <a class="el" href="DecodingBranch_8cc_source.html#l00022">DecodingBranch::build()</a>, and <a class="el" href="RecordingBranch_8cc_source.html#l00228">RecordingBranch::build()</a>.</p>
 
 </div>
 </div>
@@ -612,11 +614,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Adds <code>element</code> to <code>bin</code>. gst_bin_add consumes a floating element even when it fails, so ownership always moves. Returns the borrowed (bin-owned) element, or null if the bin rejected it; <code>what</code> names it in the warning. </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00062">62</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00085">85</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00062">addToBin()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00085">addToBin()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00072">addTeeBranch()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00062">addToBin()</a>, <a class="el" href="GstSourceFactory_8cc_source.html#l00649">GStreamer::SourceFactory::create()</a>, and <a class="el" href="RecordingBranch_8cc_source.html#l00057">RecordingBranch::makeFileSink()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00095">addTeeBranch()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00085">addToBin()</a>, <a class="el" href="GstSourceFactory_8cc_source.html#l00659">GStreamer::SourceFactory::create()</a>, and <a class="el" href="RecordingBranch_8cc_source.html#l00075">RecordingBranch::makeFileSink()</a>.</p>
 
 </div>
 </div>
@@ -674,7 +676,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GstScoped_8h_source.html#l00108">108</a> of file <a class="el" href="GstScoped_8h_source.html">GstScoped.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00228">gst_qgc_video_sink_bin_setup()</a>, <a class="el" href="RecordingBranch_8cc_source.html#l00238">RecordingBranch::start()</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00193">wireCpuPath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00228">gst_qgc_video_sink_bin_setup()</a>, <a class="el" href="RecordingBranch_8cc_source.html#l00257">RecordingBranch::start()</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00193">wireCpuPath()</a>.</p>
 
 </div>
 </div>
@@ -732,7 +734,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GstScoped_8h_source.html#l00078">78</a> of file <a class="el" href="GstScoped_8h_source.html">GstScoped.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00072">addTeeBranch()</a>, <a class="el" href="RecordingFinalizer_8cc_source.html#l00008">RecordingFinalizer::arm()</a>, <a class="el" href="GstSourceFactory_8cc_source.html#l00649">GStreamer::SourceFactory::create()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00047">disposeChild()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00677">GstQgc::frameStats()</a>, <a class="el" href="RecordingBranch_8cc_source.html#l00057">RecordingBranch::makeFileSink()</a>, and <a class="el" href="DecodingBranch_8cc_source.html#l00053">DecodingBranch::start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00095">addTeeBranch()</a>, <a class="el" href="RecordingFinalizer_8cc_source.html#l00008">RecordingFinalizer::arm()</a>, <a class="el" href="GstSourceFactory_8cc_source.html#l00659">GStreamer::SourceFactory::create()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00677">GstQgc::frameStats()</a>, <a class="el" href="RecordingBranch_8cc_source.html#l00075">RecordingBranch::makeFileSink()</a>, and <a class="el" href="DecodingBranch_8cc_source.html#l00053">DecodingBranch::start()</a>.</p>
 
 </div>
 </div>
@@ -820,7 +822,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GstScoped_8h_source.html#l00093">93</a> of file <a class="el" href="GstScoped_8h_source.html">GstScoped.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00251">createVideoSink()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00306">createVideoSink()</a>.</p>
 
 </div>
 </div>
@@ -850,7 +852,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GstScoped_8h_source.html#l00098">98</a> of file <a class="el" href="GstScoped_8h_source.html">GstScoped.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00232">changeFeatureRank()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00255">changeFeatureRank()</a>.</p>
 
 </div>
 </div>
@@ -880,7 +882,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GstScoped_8h_source.html#l00133">133</a> of file <a class="el" href="GstScoped_8h_source.html">GstScoped.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00182">isHardwareDecoderFactory()</a>, <a class="el" href="GStreamerLogging_8cc_source.html#l00089">qtGstLog()</a>, and <a class="el" href="PipelineDotDumper_8cc_source.html#l00029">PipelineDotDumper::writePipelineDot()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00205">isHardwareDecoderFactory()</a>, <a class="el" href="GStreamerLogging_8cc_source.html#l00089">qtGstLog()</a>, and <a class="el" href="PipelineDotDumper_8cc_source.html#l00029">PipelineDotDumper::writePipelineDot()</a>.</p>
 
 </div>
 </div>
@@ -910,7 +912,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GstScoped_8h_source.html#l00113">113</a> of file <a class="el" href="GstScoped_8h_source.html">GstScoped.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RecordingBranch_8cc_source.html#l00387">RecordingBranch::onBusElement()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RecordingBranch_8cc_source.html#l00422">RecordingBranch::onBusElement()</a>.</p>
 
 </div>
 </div>
@@ -940,7 +942,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GstScoped_8h_source.html#l00073">73</a> of file <a class="el" href="GstScoped_8h_source.html">GstScoped.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00209">describeDecoderFactory()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00047">disposeChild()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00232">describeDecoderFactory()</a>.</p>
 
 </div>
 </div>
@@ -970,7 +972,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GstScoped_8h_source.html#l00083">83</a> of file <a class="el" href="GstScoped_8h_source.html">GstScoped.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstScoped_8h_source.html#l00156">GStreamer::PadProbe::add()</a>, <a class="el" href="RecordingBranch_8cc_source.html#l00350">RecordingBranch::finishForTeardown()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00091">firstSrcPad()</a>, <a class="el" href="RecordingBranch_8cc_source.html#l00057">RecordingBranch::makeFileSink()</a>, <a class="el" href="RecordingBranch_8cc_source.html#l00238">RecordingBranch::start()</a>, and <a class="el" href="DecodingBranch_8cc_source.html#l00053">DecodingBranch::start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstScoped_8h_source.html#l00156">GStreamer::PadProbe::add()</a>, <a class="el" href="RecordingBranch_8cc_source.html#l00370">RecordingBranch::finishForTeardown()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00114">firstSrcPad()</a>, <a class="el" href="RecordingBranch_8cc_source.html#l00075">RecordingBranch::makeFileSink()</a>, <a class="el" href="RecordingBranch_8cc_source.html#l00257">RecordingBranch::start()</a>, and <a class="el" href="DecodingBranch_8cc_source.html#l00053">DecodingBranch::start()</a>.</p>
 
 </div>
 </div>
@@ -1028,7 +1030,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GstScoped_8h_source.html#l00128">128</a> of file <a class="el" href="GstScoped_8h_source.html">GstScoped.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00677">GstQgc::frameStats()</a>, and <a class="el" href="RecordingBranch_8cc_source.html#l00057">RecordingBranch::makeFileSink()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00677">GstQgc::frameStats()</a>, and <a class="el" href="RecordingBranch_8cc_source.html#l00075">RecordingBranch::makeFileSink()</a>.</p>
 
 </div>
 </div>
@@ -1064,9 +1066,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00333">333</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00388">388</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamer_8cc_source.html#l00292">setupQVideoSinkElement()</a>, and <a class="el" href="QGCQVideoSinkController_8cc_source.html#l00038">QGCQVideoSinkController::syncActiveToWindowVisibility()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamer_8cc_source.html#l00347">setupQVideoSinkElement()</a>, and <a class="el" href="QGCQVideoSinkController_8cc_source.html#l00038">QGCQVideoSinkController::syncActiveToWindowVisibility()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="VideoBackend_8cc_source.html#l00138">VideoBackend::attachSink()</a>.</p>
 
@@ -1088,9 +1090,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Hardware decoder families currently present in the <a class="el" href="namespaceGStreamer.html">GStreamer</a> registry, as VideoDecoderOptions values (always omits ForceVideoDecoderDefault/Software). Lets the settings layer validate a persisted ForceVideoDecoder* choice against what the running build can actually provide. </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00437">437</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00492">492</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00172">decoderFamilyForFactory()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00134">family</a>, <a class="el" href="GStreamer_8h_source.html#l00019">ForceVideoDecoderDefault</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00118">forEachVideoDecoderFactory()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00195">decoderFamilyForFactory()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00157">family</a>, <a class="el" href="GStreamer_8h_source.html#l00019">ForceVideoDecoderDefault</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00141">forEachVideoDecoderFactory()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="VideoSettings_8cc_source.html#l00328">VideoSettings::pruneUnavailableDecoders()</a>.</p>
 
@@ -1122,7 +1124,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00353">353</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00408">408</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged()</a>, and <a class="el" href="GStreamerLogging_8cc_source.html#l00146">setDebugLevel()</a>.</p>
 
@@ -1163,11 +1165,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Look up <code>featureName</code> in <code>registry</code> and set its autoplug rank to <code>rank</code>, releasing the transfer-full feature ref. Returns false when the registry/name is null or the feature is absent. </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00232">232</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00255">255</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GstScoped_8h_source.html#l00098">adoptFeature()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00232">changeFeatureRank()</a>.</p>
+<p class="reference">References <a class="el" href="GstScoped_8h_source.html#l00098">adoptFeature()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00255">changeFeatureRank()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00232">changeFeatureRank()</a>, and <a class="el" href="GStreamer_8cc_source.html#l00178">completeInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00255">changeFeatureRank()</a>, and <a class="el" href="GStreamer_8cc_source.html#l00231">completeInit()</a>.</p>
 
 </div>
 </div>
@@ -1186,11 +1188,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00178">178</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00231">231</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00232">changeFeatureRank()</a>, <a class="el" href="GStreamerLogging_8cc_source.html#l00128">configureDebugLogging()</a>, <a class="el" href="GStreamerLogging_8cc_source.html#l00077">didExternalPluginLoaderFail()</a>, and <a class="el" href="GStreamerLogging_8cc_source.html#l00156">logDecoderRanks()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00255">changeFeatureRank()</a>, <a class="el" href="GStreamerLogging_8cc_source.html#l00128">configureDebugLogging()</a>, <a class="el" href="GStreamerLogging_8cc_source.html#l00077">didExternalPluginLoaderFail()</a>, and <a class="el" href="GStreamerLogging_8cc_source.html#l00156">logDecoderRanks()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00232">initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00287">initialize()</a>.</p>
 
 </div>
 </div>
@@ -1213,7 +1215,7 @@ Functions</h2></td></tr>
 
 <p class="reference">References <a class="el" href="GStreamerLogging_8cc_source.html#l00089">qtGstLog()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00178">completeInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00231">completeInit()</a>.</p>
 
 </div>
 </div>
@@ -1233,7 +1235,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00287">287</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00342">342</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="VideoBackend_8cc_source.html#l00046">VideoBackend::createReceiver()</a>.</p>
 
@@ -1255,7 +1257,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00251">251</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00306">306</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="GstScoped_8h_source.html#l00093">adoptFactory()</a>, <a class="el" href="GStreamer_8h_source.html#l00034">GStreamer::VideoSinkConfig::conversionElement</a>, <a class="el" href="GStreamer_8h_source.html#l00035">GStreamer::VideoSinkConfig::disablePixelAspectRatio</a>, and <a class="el" href="GStreamer_8h_source.html#l00036">GStreamer::VideoSinkConfig::gpuZeroCopy</a>.</p>
 
@@ -1280,11 +1282,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>ForceVideoDecoder* family that claims decoder factory <code>factoryName</code> by name prefix, or ForceVideoDecoderDefault when it belongs to no user-selectable hardware family. </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00172">172</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00195">195</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00172">decoderFamilyForFactory()</a>, and <a class="el" href="GStreamer_8h_source.html#l00019">ForceVideoDecoderDefault</a>.</p>
+<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00195">decoderFamilyForFactory()</a>, and <a class="el" href="GStreamer_8h_source.html#l00019">ForceVideoDecoderDefault</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00437">availableDecoderFamilies()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00172">decoderFamilyForFactory()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00492">availableDecoderFamilies()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00195">decoderFamilyForFactory()</a>.</p>
 
 </div>
 </div>
@@ -1306,11 +1308,11 @@ Functions</h2></td></tr>
 
 <p>"[HW|SW] &lt;plugin&gt;/&lt;factory&gt; rank=&lt;rank&gt; (&lt;klass&gt;)" for decoder logs. </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00209">209</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00232">232</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GstScoped_8h_source.html#l00073">adoptObject()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00209">describeDecoderFactory()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00182">isHardwareDecoderFactory()</a>.</p>
+<p class="reference">References <a class="el" href="GstScoped_8h_source.html#l00073">adoptObject()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00232">describeDecoderFactory()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00205">isHardwareDecoderFactory()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00209">describeDecoderFactory()</a>, and <a class="el" href="GStreamerLogging_8cc_source.html#l00156">logDecoderRanks()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00232">describeDecoderFactory()</a>, and <a class="el" href="GStreamerLogging_8cc_source.html#l00156">logDecoderRanks()</a>.</p>
 
 </div>
 </div>
@@ -1331,7 +1333,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GStreamerLogging_8cc_source.html#l00077">77</a> of file <a class="el" href="GStreamerLogging_8cc_source.html">GStreamerLogging.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00178">completeInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00231">completeInit()</a>.</p>
 
 </div>
 </div>
@@ -1352,11 +1354,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Takes <code>element</code> out of its parent bin, then sets it to NULL. Removed first, so the bin can't bring it back up and nothing it posts while stopping reaches the bin's bus. No-op when <code>element</code> has no parent. The caller's refs on <code>element</code>, if any, stay valid. </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00047">47</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00075">75</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GstScoped_8h_source.html#l00078">adoptElement()</a>, <a class="el" href="GstScoped_8h_source.html#l00073">adoptObject()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00047">disposeChild()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00075">disposeChild()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00047">disposeChild()</a>, and <a class="el" href="RecordingBranch_8cc_source.html#l00238">RecordingBranch::start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00075">disposeChild()</a>, and <a class="el" href="RecordingBranch_8cc_source.html#l00257">RecordingBranch::start()</a>.</p>
 
 </div>
 </div>
@@ -1378,11 +1380,36 @@ Functions</h2></td></tr>
 
 <p><code>element's</code> first src pad, or null when it has none (yet). </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00091">91</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00114">114</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GstScoped_8h_source.html#l00083">adoptPad()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00091">firstSrcPad()</a>.</p>
+<p class="reference">References <a class="el" href="GstScoped_8h_source.html#l00083">adoptPad()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00114">firstSrcPad()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00091">firstSrcPad()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00114">firstSrcPad()</a>.</p>
+
+</div>
+</div>
+<a id="ae6db975b3b9b3ee7c34fd72b151aa276" name="ae6db975b3b9b3ee7c34fd72b151aa276"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6db975b3b9b3ee7c34fd72b151aa276">&#9670;&#160;</a></span>flushAndDisposeChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GStreamer::flushAndDisposeChild </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *&#160;</td>
+          <td class="paramname"><em>element</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>As <a class="el" href="namespaceGStreamer.html#a0644c93e797b9aec44a1bb617ca200d7">disposeChild()</a>, but sends a FLUSH_START into <code>element's</code> sink pads before setting it to NULL. The flush wakes streaming threads parked inside <code>element</code>, which going NULL would otherwise wait on. </p>
+
+<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00080">80</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00080">flushAndDisposeChild()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00080">flushAndDisposeChild()</a>.</p>
 
 </div>
 </div>
@@ -1413,11 +1440,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Walk every plugin in the <a class="el" href="namespaceGStreamer.html">GStreamer</a> registry, invoking <code>visitor</code> for each; frees the GList internally. The plugin pointer is valid only for the duration of the call (don't ref it). </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00105">105</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00128">128</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00105">forEachPlugin()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00128">forEachPlugin()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00105">forEachPlugin()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00128">forEachPlugin()</a>.</p>
 
 </div>
 </div>
@@ -1448,11 +1475,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Invokes <code>visitor</code> for every video decoder factory of at least <code>minRank</code> in the default registry. The factory is valid only for the duration of the call. </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00118">118</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00141">141</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00118">forEachVideoDecoderFactory()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00141">forEachVideoDecoderFactory()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00437">availableDecoderFamilies()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00118">forEachVideoDecoderFactory()</a>, and <a class="el" href="GStreamerLogging_8cc_source.html#l00156">logDecoderRanks()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00492">availableDecoderFamilies()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00141">forEachVideoDecoderFactory()</a>, and <a class="el" href="GStreamerLogging_8cc_source.html#l00156">logDecoderRanks()</a>.</p>
 
 </div>
 </div>
@@ -1480,9 +1507,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00361">361</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00416">416</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00415">onMainWindowReady()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00470">onMainWindowReady()</a>.</p>
 
 </div>
 </div>
@@ -1512,9 +1539,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00232">232</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00287">287</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamer_8cc_source.html#l00178">completeInit()</a>, <a class="el" href="GStreamerLogging_8cc_source.html#l00082">redirectGLibLogging()</a>, and <a class="el" href="GStreamerLogging_8cc_source.html#l00072">resetExternalPluginLoaderFailure()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamer_8cc_source.html#l00231">completeInit()</a>, <a class="el" href="GStreamerLogging_8cc_source.html#l00082">redirectGLibLogging()</a>, and <a class="el" href="GStreamerLogging_8cc_source.html#l00072">resetExternalPluginLoaderFailure()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="VideoBackend_8cc_source.html#l00099">VideoBackend::initialize()</a>.</p>
 
@@ -1536,11 +1563,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00182">182</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00205">205</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GstScoped_8h_source.html#l00133">adoptGChar()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00182">isHardwareDecoderFactory()</a>.</p>
+<p class="reference">References <a class="el" href="GstScoped_8h_source.html#l00133">adoptGChar()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00205">isHardwareDecoderFactory()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00209">describeDecoderFactory()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00182">isHardwareDecoderFactory()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamerHelpers_8cc_source.html#l00232">describeDecoderFactory()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00205">isHardwareDecoderFactory()</a>.</p>
 
 </div>
 </div>
@@ -1585,9 +1612,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GStreamerLogging_8cc_source.html#l00156">156</a> of file <a class="el" href="GStreamerLogging_8cc_source.html">GStreamerLogging.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00209">describeDecoderFactory()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00118">forEachVideoDecoderFactory()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00232">describeDecoderFactory()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00141">forEachVideoDecoderFactory()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00178">completeInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00231">completeInit()</a>.</p>
 
 </div>
 </div>
@@ -1607,9 +1634,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00415">415</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00470">470</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCRhiCapture_8cc_source.html#l00098">QGCRhiCapture::cachedRhi()</a>, <a class="el" href="HwBuffers_8cc_source.html#l00214">HwBuffers::connectMainWindow()</a>, <a class="el" href="GStreamer_8cc_source.html#l00361">graphicsApiName()</a>, and <a class="el" href="GStreamer_8cc_source.html#l00382">zeroCopyFamilyForApi()</a>.</p>
+<p class="reference">References <a class="el" href="QGCRhiCapture_8cc_source.html#l00098">QGCRhiCapture::cachedRhi()</a>, <a class="el" href="HwBuffers_8cc_source.html#l00214">HwBuffers::connectMainWindow()</a>, <a class="el" href="GStreamer_8cc_source.html#l00416">graphicsApiName()</a>, and <a class="el" href="GStreamer_8cc_source.html#l00437">zeroCopyFamilyForApi()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="VideoBackend_8cc_source.html#l00119">VideoBackend::onMainWindowReady()</a>.</p>
 
@@ -1630,7 +1657,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00136">136</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00189">189</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="GStreamerEnvironment_8cc_source.html#l00523">GStreamer::Environment::prepareEnvironment()</a>.</p>
 
@@ -1725,7 +1752,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GStreamerLogging_8cc_source.html#l00082">82</a> of file <a class="el" href="GStreamerLogging_8cc_source.html">GStreamerLogging.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00232">initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00287">initialize()</a>.</p>
 
 </div>
 </div>
@@ -1745,7 +1772,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00279">279</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00334">334</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="VideoBackend_8cc_source.html#l00075">VideoBackend::releaseSink()</a>.</p>
 
@@ -1768,7 +1795,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GStreamerLogging_8cc_source.html#l00072">72</a> of file <a class="el" href="GStreamerLogging_8cc_source.html">GStreamerLogging.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00232">initialize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00287">initialize()</a>.</p>
 
 </div>
 </div>
@@ -1790,11 +1817,11 @@ Functions</h2></td></tr>
 
 <p>Overload taking the raw forceVideoDecoder setting value; the cast/range-check lives in the impl. </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00377">377</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00400">400</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamer_8h_source.html#l00019">ForceVideoDecoderDefault</a>, <a class="el" href="GStreamer_8h_source.html#l00027">ForceVideoDecoderHardware</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00377">setCodecPriorities()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamer_8h_source.html#l00019">ForceVideoDecoderDefault</a>, <a class="el" href="GStreamer_8h_source.html#l00027">ForceVideoDecoderHardware</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00400">setCodecPriorities()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoBackend_8cc_source.html#l00110">VideoBackend::applyDecoderPriorities()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00377">setCodecPriorities()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00387">setCodecPriorities()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoBackend_8cc_source.html#l00110">VideoBackend::applyDecoderPriorities()</a>, <a class="el" href="GStreamerHelpers_8cc_source.html#l00400">setCodecPriorities()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00410">setCodecPriorities()</a>.</p>
 
 </div>
 </div>
@@ -1815,9 +1842,9 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Apply decoder rank overrides for <code>option</code> to the global <a class="el" href="namespaceGStreamer.html">GStreamer</a> registry. Defined here alongside the decoder-rank table it drives; re-exported through the <a class="el" href="namespaceGStreamer.html">GStreamer</a> facade. </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00387">387</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamerHelpers_8cc_source.html#l00410">410</a> of file <a class="el" href="GStreamerHelpers_8cc_source.html">GStreamerHelpers.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamer_8h_source.html#l00019">ForceVideoDecoderDefault</a>, <a class="el" href="GStreamer_8h_source.html#l00023">ForceVideoDecoderDirectX3D</a>, <a class="el" href="GStreamer_8h_source.html#l00027">ForceVideoDecoderHardware</a>, <a class="el" href="GStreamer_8h_source.html#l00025">ForceVideoDecoderIntel</a>, <a class="el" href="GStreamer_8h_source.html#l00021">ForceVideoDecoderNVIDIA</a>, <a class="el" href="GStreamer_8h_source.html#l00020">ForceVideoDecoderSoftware</a>, <a class="el" href="GStreamer_8h_source.html#l00022">ForceVideoDecoderVAAPI</a>, <a class="el" href="GStreamer_8h_source.html#l00024">ForceVideoDecoderVideoToolbox</a>, <a class="el" href="GStreamer_8h_source.html#l00026">ForceVideoDecoderVulkan</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00377">setCodecPriorities()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamer_8h_source.html#l00019">ForceVideoDecoderDefault</a>, <a class="el" href="GStreamer_8h_source.html#l00023">ForceVideoDecoderDirectX3D</a>, <a class="el" href="GStreamer_8h_source.html#l00027">ForceVideoDecoderHardware</a>, <a class="el" href="GStreamer_8h_source.html#l00025">ForceVideoDecoderIntel</a>, <a class="el" href="GStreamer_8h_source.html#l00021">ForceVideoDecoderNVIDIA</a>, <a class="el" href="GStreamer_8h_source.html#l00020">ForceVideoDecoderSoftware</a>, <a class="el" href="GStreamer_8h_source.html#l00022">ForceVideoDecoderVAAPI</a>, <a class="el" href="GStreamer_8h_source.html#l00024">ForceVideoDecoderVideoToolbox</a>, <a class="el" href="GStreamer_8h_source.html#l00026">ForceVideoDecoderVulkan</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00400">setCodecPriorities()</a>.</p>
 
 </div>
 </div>
@@ -1839,7 +1866,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GStreamerLogging_8cc_source.html#l00146">146</a> of file <a class="el" href="GStreamerLogging_8cc_source.html">GStreamerLogging.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00353">bindDebugLevelFact()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00408">bindDebugLevelFact()</a>.</p>
 
 </div>
 </div>
@@ -1876,11 +1903,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p><a class="el" href="namespaceWire.html">Wire</a> <code>videoSink</code> into the qgcqvideosink element inside <code>sinkBin</code> and create a <a class="el" href="classQGCQVideoSinkController.html">QGCQVideoSinkController</a> child of <code>controllerParent</code>. Idempotent: prior controllers under the same parent are torn down first. Returns true on success. </p>
 
-<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00292">292</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00347">347</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="QGCQVideoSinkController_8cc_source.html#l00032">QGCQVideoSinkController::controllersOf()</a>, <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00385">gst_qgc_video_sink_bin_get_qvideosink()</a>, and <a class="el" href="HwBuffers_8cc_source.html#l00186">HwBuffers::onPipelineRestart()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00333">attachAppSink()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00388">attachAppSink()</a>.</p>
 
 </div>
 </div>
@@ -1908,9 +1935,9 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00382">382</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GStreamer_8cc_source.html#l00437">437</a> of file <a class="el" href="GStreamer_8cc_source.html">GStreamer.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00415">onMainWindowReady()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GStreamer_8cc_source.html#l00470">onMainWindowReady()</a>.</p>
 
 </div>
 </div>

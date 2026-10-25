@@ -7,7 +7,7 @@ var classMAVLinkInspectorController =
     [ "rangeList", "classMAVLinkInspectorController.html#ac415d5e65e583a9fa18b6395c1b77dba", null ],
     [ "rangeListChanged", "classMAVLinkInspectorController.html#a362da67a2c407b5b01948dca8b525e54", null ],
     [ "rangeSt", "classMAVLinkInspectorController.html#a7d9733bfc560468553609eafcb41a71f", null ],
-    [ "setActiveSystem", "classMAVLinkInspectorController.html#a03bbe74633f99c451c20b262967eaa52", null ],
+    [ "setActiveSystem", "classMAVLinkInspectorController.html#aaf7f76b3b4ed32fc1c85a72f7ae9e661", null ],
     [ "setMessageInterval", "classMAVLinkInspectorController.html#ab5fc70d1c6566335a6e7a38ac732c7a8", null ],
     [ "systemNames", "classMAVLinkInspectorController.html#a305e657fcb2713b1959ba92f174e1cff", null ],
     [ "systems", "classMAVLinkInspectorController.html#a5c23977670f2ee10d95256e40d9e24c1", null ],

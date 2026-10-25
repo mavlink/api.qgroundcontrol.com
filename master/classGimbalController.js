@@ -23,5 +23,9 @@ var classGimbalController =
     [ "setGimbalRetract", "classGimbalController.html#ac55b7d4a2b2a9d950eafe028df4f35a0", null ],
     [ "setGimbalYawLock", "classGimbalController.html#a10efc3bcf4dcf9fdff41d7f9b5338d11", null ],
     [ "showAcquireGimbalControlPopup", "classGimbalController.html#ac9665784cc04a96986676a9080910bef", null ],
-    [ "GimbalControllerDiscoveryTest", "classGimbalController.html#a98b2ec09b916d5598eee6251361c2c89", null ]
+    [ "GimbalControllerDiscoveryTest", "classGimbalController.html#a98b2ec09b916d5598eee6251361c2c89", null ],
+    [ "kRateResendIntervalMs", "classGimbalController.html#a5790944db94530c95ff34218a19f20db", null ],
+    [ "kStatusRequestSpacingMs", "classGimbalController.html#ac0d2d93f9fb454d80dc495b84b4b6811", null ],
+    [ "kTestRateResendIntervalMs", "classGimbalController.html#a05381b0506c4d37fdf1c5911a066542e", null ],
+    [ "kTestStatusRequestSpacingMs", "classGimbalController.html#a695693787c14d4fd1984f1e4aa712c87", null ]
 ];

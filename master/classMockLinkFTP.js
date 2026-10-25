@@ -10,7 +10,7 @@ var classMockLinkFTP =
       [ "errModeNakSecondResponse", "classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2a51d37ea4aefe7d5ce26802c3883d6939", null ],
       [ "errModeBadSequence", "classMockLinkFTP.html#aa1f714a0d5ee3151c827bfa8bb6541b2a026751013b9dc8e087cafc0803b97539", null ]
     ] ],
-    [ "MockLinkFTP", "classMockLinkFTP.html#a50b111502c59daf5ed668dc5e0a77bf1", null ],
+    [ "MockLinkFTP", "classMockLinkFTP.html#a52a5c0d5aea2b954c598d41fc077d76d", null ],
     [ "~MockLinkFTP", "classMockLinkFTP.html#a5e87d3c591eacdb80eece4710e8f04fe", null ],
     [ "clearUploadedFiles", "classMockLinkFTP.html#ac5dea658c300fa8b5412f17b2add33c4", null ],
     [ "enableRandomDrops", "classMockLinkFTP.html#a1992bfadad12872167624bbe7dac4c55", null ],
@@ -36,6 +36,7 @@ var classMockLinkFTP =
     [ "setLogFiles", "classMockLinkFTP.html#a3fe960b64330fb61b491d2573e5cf9ef", null ],
     [ "setParamPckEnabled", "classMockLinkFTP.html#a0332f9c13f41ce67ecd9f7009396397a", null ],
     [ "setReorderBurstPacketOnce", "classMockLinkFTP.html#a3051e6e544161d07636bda7a9238583b", null ],
+    [ "setResponseDelayMs", "classMockLinkFTP.html#a6ac5d8fd6ca27408c1ef5756359c05d0", null ],
     [ "setSingleSessionEnforced", "classMockLinkFTP.html#a5ed09887a3e74084cfab7507f6c53c26", null ],
     [ "terminateCommandReceived", "classMockLinkFTP.html#a30681befccb58f7e5afe073c26ea86dd", null ],
     [ "uploadedFileContents", "classMockLinkFTP.html#adc5a23b8a491bf9b211cd93e781fe07b", null ],

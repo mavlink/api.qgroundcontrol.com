@@ -7,11 +7,12 @@ var searchData=
   ['qgcgeo_4',['QGCGeo',['../namespaceQGCGeo.html',1,'']]],
   ['qgclibarchive_5',['QGClibarchive',['../namespaceQGClibarchive.html',1,'']]],
   ['qgcnetworkhelper_6',['QGCNetworkHelper',['../namespaceQGCNetworkHelper.html',1,'']]],
-  ['qgcrhicapture_7',['QGCRhiCapture',['../namespaceQGCRhiCapture.html',1,'']]],
-  ['qgcsensors_8',['QGCSensors',['../namespaceQGCSensors.html',1,'']]],
-  ['qgcsqlhelper_9',['QGCSqlHelper',['../namespaceQGCSqlHelper.html',1,'']]],
-  ['qt_5fbegin_5fnamespace_10',['QT_BEGIN_NAMESPACE',['../namespaceQT__BEGIN__NAMESPACE.html',1,'']]],
-  ['quectel_11',['Quectel',['../namespaceQuectel.html',1,'']]],
-  ['quectel_3a_3aplan_12',['Plan',['../namespaceQuectel_1_1Plan.html',1,'Quectel']]],
-  ['quectelcodec_13',['QuectelCodec',['../namespaceQuectelCodec.html',1,'']]]
+  ['qgcplanargeometry_7',['QGCPlanarGeometry',['../namespaceQGCPlanarGeometry.html',1,'']]],
+  ['qgcrhicapture_8',['QGCRhiCapture',['../namespaceQGCRhiCapture.html',1,'']]],
+  ['qgcsensors_9',['QGCSensors',['../namespaceQGCSensors.html',1,'']]],
+  ['qgcsqlhelper_10',['QGCSqlHelper',['../namespaceQGCSqlHelper.html',1,'']]],
+  ['qt_5fbegin_5fnamespace_11',['QT_BEGIN_NAMESPACE',['../namespaceQT__BEGIN__NAMESPACE.html',1,'']]],
+  ['quectel_12',['Quectel',['../namespaceQuectel.html',1,'']]],
+  ['quectel_3a_3aplan_13',['Plan',['../namespaceQuectel_1_1Plan.html',1,'Quectel']]],
+  ['quectelcodec_14',['QuectelCodec',['../namespaceQuectelCodec.html',1,'']]]
 ];

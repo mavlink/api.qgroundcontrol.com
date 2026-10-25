@@ -117,11 +117,11 @@ $(document).ready(function(){initNavTree('AppLogging_8qml_source.html',''); init
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    function _levelColor(lvl) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        switch (lvl) {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        case LogEntry.Debug:    return qgcPal.colorGrey</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        case LogEntry.Info:     return qgcPal.text</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        case LogEntry.Info:     return qgcPal.textPrimary</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        case LogEntry.Warning:  return qgcPal.colorOrange</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        case LogEntry.Critical: return qgcPal.colorRed</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        case LogEntry.Fatal:    return qgcPal.colorRed</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        default:                return qgcPal.text</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        default:                return qgcPal.textPrimary</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        }</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
@@ -146,7 +146,7 @@ $(document).ready(function(){initNavTree('AppLogging_8qml_source.html',''); init
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            delegate: Rectangle {</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                required property var display</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                color: qgcPal.windowShade</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                color: qgcPal.windowCard</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                implicitHeight: headerLabel.contentHeight + ScreenTools.defaultFontPixelHeight * 0.4</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                implicitWidth: headerLabel.contentWidth + ScreenTools.defaultFontPixelWidth * 2</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
@@ -164,14 +164,14 @@ $(document).ready(function(){initNavTree('AppLogging_8qml_source.html',''); init
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                Rectangle {</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                    anchors.bottom: parent.bottom</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                    color: qgcPal.groupBorder</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                    color: qgcPal.borderSubtle</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                    height: 1</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                    width: parent.width</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                }</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                Rectangle {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                    anchors.right: parent.right</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                    color: qgcPal.groupBorder</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                    color: qgcPal.borderSubtle</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                    height: parent.height</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                    width: 1</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                }</div>
@@ -265,7 +265,7 @@ $(document).ready(function(){initNavTree('AppLogging_8qml_source.html',''); init
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                required property int level</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                required property int row</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                color: row % 2 === 0 ? qgcPal.window : qgcPal.windowShade</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                color: row % 2 === 0 ? qgcPal.window : qgcPal.windowCard</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                implicitHeight: _rowHeight</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                Rectangle {</div>
@@ -324,14 +324,14 @@ $(document).ready(function(){initNavTree('AppLogging_8qml_source.html',''); init
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        Rectangle {</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            Layout.fillWidth: true</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            Layout.preferredHeight: 1</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            color: qgcPal.groupBorder</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            color: qgcPal.borderSubtle</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        }</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        // ── Filter bar ────────────────────────────────────────────</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        Rectangle {</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            Layout.fillWidth: true</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            Layout.preferredHeight: filterRow.implicitHeight + _margin</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            color: qgcPal.windowShade</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            color: qgcPal.windowCard</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            QGCFlickable {</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                id: filterFlickable</div>

@@ -165,66 +165,85 @@ $(document).ready(function(){initNavTree('QGCMapEngine_8cpp_source.html',''); in
 </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
 <div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classQGCMapEngine.html#a4c05692a1c0bacd3e5079e9b16ec0e53">   59</a></span><a class="code hl_class" href="classQGCMapEngine.html">QGCMapEngine</a> *<a class="code hl_function" href="classQGCMapEngine.html#a4c05692a1c0bacd3e5079e9b16ec0e53">QGCMapEngine::instance</a>()</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classQGCMapEngine.html#a50f3516e544f608cbe21676c0c8e6066">   59</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCMapEngine.html#a50f3516e544f608cbe21676c0c8e6066">QGCMapEngine::close</a>()</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>{</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">return</span> _mapEngine();</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    m_closed = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_function" href="classQGCMapEngine.html#a395dcf1e94b7d7b552b97527d5d1e4dc">shutdown</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
 </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classQGCMapEngine.html#ad8eb032ef892a536ac052224a159a48e">   64</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCMapEngine.html#ad8eb032ef892a536ac052224a159a48e">QGCMapEngine::init</a>(<span class="keyword">const</span> QString &amp;databasePath)</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>{</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">if</span> (m_initialized) {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    m_initialized = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    m_worker = <span class="keyword">new</span> <a class="code hl_class" href="classQGCCacheWorker.html">QGCCacheWorker</a>(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    m_worker-&gt;<a class="code hl_function" href="classQGCCacheWorker.html#af3cd9c0d56d766f4966a386e01b78e97">setDatabaseFile</a>(databasePath);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    (void) connect(m_worker, &amp;<a class="code hl_signal" href="classQGCCacheWorker.html#ab803ddf6fe83fa94824c22b084acc419">QGCCacheWorker::updateTotals</a>, <span class="keyword">this</span>, &amp;QGCMapEngine::_updateTotals);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_class" href="classQGCMapTask.html">QGCMapTask</a> *task = <span class="keyword">new</span> <a class="code hl_class" href="classQGCMapTask.html">QGCMapTask</a>(<a class="code hl_enumvalue" href="classQGCMapTask.html#a69ac69d198c7e296bd46daf594702f31a6a70b03fe15be4f743e6fbf8034e5115">QGCMapTask::TaskType::taskInit</a>);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classQGCMapEngine.html#a5985a9ce7493da1d3a6c65d1639affd9">addTask</a>(task)) {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        task-&gt;deleteLater();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        m_initialized = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classQGCMapEngine.html#a28171ae62ebe00cd08b0c58e94e93e26">   65</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCMapEngine.html#a28171ae62ebe00cd08b0c58e94e93e26">QGCMapEngine::closeInstance</a>()</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="comment">// The application static is destroyed only after QCoreApplication, too late for the worker&#39;s</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">// database teardown; don&#39;t create the engine just to close it.</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">if</span> (_mapEngine.exists()) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        _mapEngine()-&gt;close();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
 </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="classQGCMapEngine.html#a5985a9ce7493da1d3a6c65d1639affd9">   83</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCMapEngine.html#a5985a9ce7493da1d3a6c65d1639affd9">QGCMapEngine::addTask</a>(<a class="code hl_class" href="classQGCMapTask.html">QGCMapTask</a> *task)</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">if</span> (!m_worker) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">// DirectConnection is intentional: the worker thread uses a custom loop (not</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">// an event loop), so queued connections would never be delivered. The queue</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">// is mutex-protected in enqueueTask, so calling from the main thread is safe.</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    (void) QMetaObject::invokeMethod(m_worker, &amp;<a class="code hl_slot" href="classQGCCacheWorker.html#a7c1c833d7cd002631f38fcfb974272e2">QGCCacheWorker::enqueueTask</a>, Qt::DirectConnection, qReturnArg(result), task);</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classQGCMapEngine.html#a4c05692a1c0bacd3e5079e9b16ec0e53">   74</a></span><a class="code hl_class" href="classQGCMapEngine.html">QGCMapEngine</a> *<a class="code hl_function" href="classQGCMapEngine.html#a4c05692a1c0bacd3e5079e9b16ec0e53">QGCMapEngine::instance</a>()</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>{</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">return</span> _mapEngine();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
 </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keywordtype">void</span> QGCMapEngine::_updateTotals(quint32 totaltiles, quint64 totalsize, quint32 defaulttiles, quint64 defaultsize)</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    emit <a class="code hl_signal" href="classQGCMapEngine.html#a82d914994f8e90ebcbffda78a02603c1">updateTotals</a>(totaltiles, totalsize, defaulttiles, defaultsize);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keyword">const</span> quint64 maxSize = <span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(<a class="code hl_function" href="classQGeoFileTileCacheQGC.html#a63453b415cbba87201e6d3c067610bfd">QGeoFileTileCacheQGC::getMaxDiskCacheSetting</a>()) * qPow(1024, 2);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">if</span> (!m_pruning &amp;&amp; (defaultsize &gt; maxSize)) {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        m_pruning = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keyword">const</span> quint64 amountToPrune = defaultsize - maxSize;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <a class="code hl_class" href="classQGCPruneCacheTask.html">QGCPruneCacheTask</a> *task = <span class="keyword">new</span> <a class="code hl_class" href="classQGCPruneCacheTask.html">QGCPruneCacheTask</a>(amountToPrune);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        (void) connect(task, &amp;<a class="code hl_signal" href="classQGCPruneCacheTask.html#ace4563a030b0efc95a6d7f20d45ab88e">QGCPruneCacheTask::pruned</a>, <span class="keyword">this</span>, &amp;QGCMapEngine::_pruned);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="classQGCMapEngine.html#a5985a9ce7493da1d3a6c65d1639affd9">addTask</a>(task)) {</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            task-&gt;deleteLater();</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            m_pruning = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classQGCMapEngine.html#ad8eb032ef892a536ac052224a159a48e">   79</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCMapEngine.html#ad8eb032ef892a536ac052224a159a48e">QGCMapEngine::init</a>(<span class="keyword">const</span> QString &amp;databasePath)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>{</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">if</span> (m_initialized || m_closed) {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    m_initialized = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    m_worker = <span class="keyword">new</span> <a class="code hl_class" href="classQGCCacheWorker.html">QGCCacheWorker</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    m_worker-&gt;<a class="code hl_function" href="classQGCCacheWorker.html#af3cd9c0d56d766f4966a386e01b78e97">setDatabaseFile</a>(databasePath);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    (void) connect(m_worker, &amp;<a class="code hl_signal" href="classQGCCacheWorker.html#ab803ddf6fe83fa94824c22b084acc419">QGCCacheWorker::updateTotals</a>, <span class="keyword">this</span>, &amp;QGCMapEngine::_updateTotals);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_class" href="classQGCMapTask.html">QGCMapTask</a> *task = <span class="keyword">new</span> <a class="code hl_class" href="classQGCMapTask.html">QGCMapTask</a>(<a class="code hl_enumvalue" href="classQGCMapTask.html#a69ac69d198c7e296bd46daf594702f31a6a70b03fe15be4f743e6fbf8034e5115">QGCMapTask::TaskType::taskInit</a>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classQGCMapEngine.html#a5985a9ce7493da1d3a6c65d1639affd9">addTask</a>(task)) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        task-&gt;deleteLater();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        m_initialized = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classQGCMapEngine.html#a5985a9ce7493da1d3a6c65d1639affd9">   98</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classQGCMapEngine.html#a5985a9ce7493da1d3a6c65d1639affd9">QGCMapEngine::addTask</a>(<a class="code hl_class" href="classQGCMapTask.html">QGCMapTask</a> *task)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>{</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span> (!m_worker) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="comment">// DirectConnection is intentional: the worker thread uses a custom loop (not</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="comment">// an event loop), so queued connections would never be delivered. The queue</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="comment">// is mutex-protected in enqueueTask, so calling from the main thread is safe.</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">bool</span> result = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    (void) QMetaObject::invokeMethod(m_worker, &amp;<a class="code hl_slot" href="classQGCCacheWorker.html#a7c1c833d7cd002631f38fcfb974272e2">QGCCacheWorker::enqueueTask</a>, Qt::DirectConnection, qReturnArg(result), task);</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keywordtype">void</span> QGCMapEngine::_updateTotals(quint32 totaltiles, quint64 totalsize, quint32 defaulttiles, quint64 defaultsize)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>{</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    emit <a class="code hl_signal" href="classQGCMapEngine.html#a82d914994f8e90ebcbffda78a02603c1">updateTotals</a>(totaltiles, totalsize, defaulttiles, defaultsize);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keyword">const</span> quint64 maxSize = <span class="keyword">static_cast&lt;</span>quint64<span class="keyword">&gt;</span>(<a class="code hl_function" href="classQGeoFileTileCacheQGC.html#a63453b415cbba87201e6d3c067610bfd">QGeoFileTileCacheQGC::getMaxDiskCacheSetting</a>()) * qPow(1024, 2);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">if</span> (!m_pruning &amp;&amp; (defaultsize &gt; maxSize)) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        m_pruning = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keyword">const</span> quint64 amountToPrune = defaultsize - maxSize;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <a class="code hl_class" href="classQGCPruneCacheTask.html">QGCPruneCacheTask</a> *task = <span class="keyword">new</span> <a class="code hl_class" href="classQGCPruneCacheTask.html">QGCPruneCacheTask</a>(amountToPrune);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        (void) connect(task, &amp;<a class="code hl_signal" href="classQGCPruneCacheTask.html#ace4563a030b0efc95a6d7f20d45ab88e">QGCPruneCacheTask::pruned</a>, <span class="keyword">this</span>, &amp;QGCMapEngine::_pruned);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="classQGCMapEngine.html#a5985a9ce7493da1d3a6c65d1639affd9">addTask</a>(task)) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>            task-&gt;deleteLater();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            m_pruning = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}</div>
 <div class="ttc" id="aQGCCacheTile_8h_html"><div class="ttname"><a href="QGCCacheTile_8h.html">QGCCacheTile.h</a></div></div>
 <div class="ttc" id="aQGCCachedTileSet_8h_html"><div class="ttname"><a href="QGCCachedTileSet_8h.html">QGCCachedTileSet.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
@@ -244,12 +263,14 @@ $(document).ready(function(){initNavTree('QGCMapEngine_8cpp_source.html',''); in
 <div class="ttc" id="aclassQGCCacheWorker_html_af3cd9c0d56d766f4966a386e01b78e97"><div class="ttname"><a href="classQGCCacheWorker.html#af3cd9c0d56d766f4966a386e01b78e97">QGCCacheWorker::setDatabaseFile</a></div><div class="ttdeci">void setDatabaseFile(const QString &amp;path)</div><div class="ttdef"><b>Definition</b> <a href="QGCTileCacheWorker_8h_source.html#l00031">QGCTileCacheWorker.h:31</a></div></div>
 <div class="ttc" id="aclassQGCMapEngine_html"><div class="ttname"><a href="classQGCMapEngine.html">QGCMapEngine</a></div><div class="ttdef"><b>Definition</b> <a href="QGCMapEngine_8h_source.html#l00009">QGCMapEngine.h:10</a></div></div>
 <div class="ttc" id="aclassQGCMapEngine_html_a0f2ab96b058df71852efcfd7ec2d7a71"><div class="ttname"><a href="classQGCMapEngine.html#a0f2ab96b058df71852efcfd7ec2d7a71">QGCMapEngine::QGCMapEngine</a></div><div class="ttdeci">QGCMapEngine(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="QGCMapEngine_8cpp_source.html#l00023">QGCMapEngine.cpp:23</a></div></div>
+<div class="ttc" id="aclassQGCMapEngine_html_a28171ae62ebe00cd08b0c58e94e93e26"><div class="ttname"><a href="classQGCMapEngine.html#a28171ae62ebe00cd08b0c58e94e93e26">QGCMapEngine::closeInstance</a></div><div class="ttdeci">static void closeInstance()</div><div class="ttdoc">close() on the application's engine, if one was created.</div><div class="ttdef"><b>Definition</b> <a href="QGCMapEngine_8cpp_source.html#l00065">QGCMapEngine.cpp:65</a></div></div>
 <div class="ttc" id="aclassQGCMapEngine_html_a395dcf1e94b7d7b552b97527d5d1e4dc"><div class="ttname"><a href="classQGCMapEngine.html#a395dcf1e94b7d7b552b97527d5d1e4dc">QGCMapEngine::shutdown</a></div><div class="ttdeci">void shutdown()</div><div class="ttdef"><b>Definition</b> <a href="QGCMapEngine_8cpp_source.html#l00045">QGCMapEngine.cpp:45</a></div></div>
 <div class="ttc" id="aclassQGCMapEngine_html_a3a22c257cf914f268b1855d1fa4d5a87"><div class="ttname"><a href="classQGCMapEngine.html#a3a22c257cf914f268b1855d1fa4d5a87">QGCMapEngine::~QGCMapEngine</a></div><div class="ttdeci">~QGCMapEngine()</div><div class="ttdef"><b>Definition</b> <a href="QGCMapEngine_8cpp_source.html#l00038">QGCMapEngine.cpp:38</a></div></div>
-<div class="ttc" id="aclassQGCMapEngine_html_a4c05692a1c0bacd3e5079e9b16ec0e53"><div class="ttname"><a href="classQGCMapEngine.html#a4c05692a1c0bacd3e5079e9b16ec0e53">QGCMapEngine::instance</a></div><div class="ttdeci">static QGCMapEngine * instance()</div><div class="ttdef"><b>Definition</b> <a href="QGCMapEngine_8cpp_source.html#l00059">QGCMapEngine.cpp:59</a></div></div>
-<div class="ttc" id="aclassQGCMapEngine_html_a5985a9ce7493da1d3a6c65d1639affd9"><div class="ttname"><a href="classQGCMapEngine.html#a5985a9ce7493da1d3a6c65d1639affd9">QGCMapEngine::addTask</a></div><div class="ttdeci">bool addTask(QGCMapTask *task)</div><div class="ttdef"><b>Definition</b> <a href="QGCMapEngine_8cpp_source.html#l00083">QGCMapEngine.cpp:83</a></div></div>
+<div class="ttc" id="aclassQGCMapEngine_html_a4c05692a1c0bacd3e5079e9b16ec0e53"><div class="ttname"><a href="classQGCMapEngine.html#a4c05692a1c0bacd3e5079e9b16ec0e53">QGCMapEngine::instance</a></div><div class="ttdeci">static QGCMapEngine * instance()</div><div class="ttdef"><b>Definition</b> <a href="QGCMapEngine_8cpp_source.html#l00074">QGCMapEngine.cpp:74</a></div></div>
+<div class="ttc" id="aclassQGCMapEngine_html_a50f3516e544f608cbe21676c0c8e6066"><div class="ttname"><a href="classQGCMapEngine.html#a50f3516e544f608cbe21676c0c8e6066">QGCMapEngine::close</a></div><div class="ttdeci">void close()</div><div class="ttdef"><b>Definition</b> <a href="QGCMapEngine_8cpp_source.html#l00059">QGCMapEngine.cpp:59</a></div></div>
+<div class="ttc" id="aclassQGCMapEngine_html_a5985a9ce7493da1d3a6c65d1639affd9"><div class="ttname"><a href="classQGCMapEngine.html#a5985a9ce7493da1d3a6c65d1639affd9">QGCMapEngine::addTask</a></div><div class="ttdeci">bool addTask(QGCMapTask *task)</div><div class="ttdef"><b>Definition</b> <a href="QGCMapEngine_8cpp_source.html#l00098">QGCMapEngine.cpp:98</a></div></div>
 <div class="ttc" id="aclassQGCMapEngine_html_a82d914994f8e90ebcbffda78a02603c1"><div class="ttname"><a href="classQGCMapEngine.html#a82d914994f8e90ebcbffda78a02603c1">QGCMapEngine::updateTotals</a></div><div class="ttdeci">void updateTotals(quint32 totaltiles, quint64 totalsize, quint32 defaulttiles, quint64 defaultsize)</div></div>
-<div class="ttc" id="aclassQGCMapEngine_html_ad8eb032ef892a536ac052224a159a48e"><div class="ttname"><a href="classQGCMapEngine.html#ad8eb032ef892a536ac052224a159a48e">QGCMapEngine::init</a></div><div class="ttdeci">void init(const QString &amp;databasePath)</div><div class="ttdef"><b>Definition</b> <a href="QGCMapEngine_8cpp_source.html#l00064">QGCMapEngine.cpp:64</a></div></div>
+<div class="ttc" id="aclassQGCMapEngine_html_ad8eb032ef892a536ac052224a159a48e"><div class="ttname"><a href="classQGCMapEngine.html#ad8eb032ef892a536ac052224a159a48e">QGCMapEngine::init</a></div><div class="ttdeci">void init(const QString &amp;databasePath)</div><div class="ttdef"><b>Definition</b> <a href="QGCMapEngine_8cpp_source.html#l00079">QGCMapEngine.cpp:79</a></div></div>
 <div class="ttc" id="aclassQGCMapTask_html"><div class="ttname"><a href="classQGCMapTask.html">QGCMapTask</a></div><div class="ttdef"><b>Definition</b> <a href="QGCMapTaskBase_8h_source.html#l00006">QGCMapTaskBase.h:7</a></div></div>
 <div class="ttc" id="aclassQGCMapTask_html_a69ac69d198c7e296bd46daf594702f31a6a70b03fe15be4f743e6fbf8034e5115"><div class="ttname"><a href="classQGCMapTask.html#a69ac69d198c7e296bd46daf594702f31a6a70b03fe15be4f743e6fbf8034e5115">QGCMapTask::TaskType::taskInit</a></div><div class="ttdeci">@ taskInit</div></div>
 <div class="ttc" id="aclassQGCPruneCacheTask_html"><div class="ttname"><a href="classQGCPruneCacheTask.html">QGCPruneCacheTask</a></div><div class="ttdef"><b>Definition</b> <a href="QGCMapTasks_8h_source.html#l00218">QGCMapTasks.h:219</a></div></div>

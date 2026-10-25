@@ -68,6 +68,7 @@ var namespaceGStreamer =
     [ "didExternalPluginLoaderFail", "namespaceGStreamer.html#a63b9e9022c6e0b9bb4fe9b2ed2e5f44b", null ],
     [ "disposeChild", "namespaceGStreamer.html#a0644c93e797b9aec44a1bb617ca200d7", null ],
     [ "firstSrcPad", "namespaceGStreamer.html#a0d8980666dd58f74dd96a60ec0cc058d", null ],
+    [ "flushAndDisposeChild", "namespaceGStreamer.html#ae6db975b3b9b3ee7c34fd72b151aa276", null ],
     [ "forEachPlugin", "namespaceGStreamer.html#a52033f70a4ce478ef300982e4a10518a", null ],
     [ "forEachVideoDecoderFactory", "namespaceGStreamer.html#ac52c2ec31fff27b748b56af0de977a87", null ],
     [ "graphicsApiName", "namespaceGStreamer.html#ae1b7c1d45f0a87ffbc35af357ca15283", null ],

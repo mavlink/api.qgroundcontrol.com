@@ -294,207 +294,205 @@ $(document).ready(function(){initNavTree('AppSettings_8qml_source.html',''); ini
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    SettingsPagesModel { id: settingsPagesModel }</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    ColumnLayout {</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        id:                 leftPanel</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        width:              Math.max(buttonColumn.implicitWidth, _fullListWidth, ScreenTools.isMobile ? 0 : ScreenTools.defaultFontPixelWidth * 22)</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        anchors.topMargin:  _verticalMargin</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        anchors.top:        parent.top</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        anchors.bottom:     parent.bottom</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        anchors.leftMargin: _horizontalMargin</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        anchors.left:       parent.left</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        spacing:            _verticalMargin / 2</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        QGCTextField {</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            id:                 searchField</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            objectName:         &quot;settings_searchField&quot;</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            Layout.fillWidth:   true</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            placeholderText:    qsTr(&quot;Search settings...&quot;)</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            onTextChanged: {</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                settingsView._searchQuery = text</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            }</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        }</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        QGCFlickable {</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            id:                 buttonList</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            objectName:         &quot;settings_buttonList&quot;</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            Layout.fillWidth:   true</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            Layout.fillHeight:  true</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            contentHeight:      buttonColumn.height + _verticalMargin</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            flickableDirection:  Flickable.VerticalFlick</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            clip:               true</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    Rectangle {</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        anchors.fill:       leftPanel</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        anchors.margins:    -_horizontalMargin * 2</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        color:              qgcPal.windowPanel</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        border.color:       qgcPal.borderSubtle</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        radius:             ScreenTools.defaultBorderRadius</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    ColumnLayout {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        id:                 leftPanel</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        width:              Math.max(buttonColumn.implicitWidth, _fullListWidth, ScreenTools.isMobile ? 0 : ScreenTools.defaultFontPixelWidth * 22)</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        anchors.topMargin:  _verticalMargin * 1.5</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        anchors.bottomMargin: _verticalMargin * 1.5</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        anchors.top:        parent.top</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        anchors.bottom:     parent.bottom</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        anchors.leftMargin: _horizontalMargin * 3</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        anchors.left:       parent.left</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        spacing:            _verticalMargin / 2</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        QGCTextField {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            id:                 searchField</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            objectName:         &quot;settings_searchField&quot;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            Layout.fillWidth:   true</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            placeholderText:    qsTr(&quot;Search settings...&quot;)</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            onTextChanged: {</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                settingsView._searchQuery = text</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            }</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        }</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        ColumnLayout {</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            id:         buttonColumn</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            width:      buttonList.width</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            spacing:    0</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            Repeater {</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                id:     buttonRepeater</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                model:  settingsPagesModel</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        QGCFlickable {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            id:                 buttonList</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>            objectName:         &quot;settings_buttonList&quot;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            Layout.fillWidth:   true</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            Layout.fillHeight:  true</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            contentHeight:      buttonColumn.height + _verticalMargin</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            flickableDirection:  Flickable.VerticalFlick</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            clip:               true</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                ColumnLayout {</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                    id:     pageColumn</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                    spacing: 0</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                    Layout.fillWidth: true</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        ColumnLayout {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            id:         buttonColumn</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            width:      buttonList.width</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>            spacing:    0</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                    required property int index</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                    required property var model</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                    property string pageName:    model.name ?? &quot;&quot;</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                    property string pageUrl:     model.url ?? &quot;&quot;</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                    property string pageIconUrl: model.iconUrl ?? &quot;&quot;</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                    property var    pageVisible: model.pageVisible ?? function() { return true }</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                    property var    pageSections: pageVisible() ? settingsView._pageSections(model) : []</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                    property var    visiblePageSections: pageSections.filter(function(section) {</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                        return section.visible</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                    })</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                    property bool pageAvailable: pageVisible() &amp;&amp;</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                                                 (pageSections.length === 0 || visiblePageSections.length &gt; 0)</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                    property bool isSelected: settingsView._selectedPageIndex === index</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                    property bool hasMultipleSections: visiblePageSections.length &gt; 1</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                    property bool isSearching: settingsView._searchQuery.trim() !== &quot;&quot;</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                    property bool matchesSearch: pageAvailable &amp;&amp; settingsView._pageMatchesSearch(index)</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                    property bool isExpanded: hasMultipleSections &amp;&amp; (isSearching ? matchesSearch : settingsView._isExpanded(index))</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                    onPageSectionsChanged: {</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                        let sections = pageSections ?? []</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                        let visibleCount = sections.filter(function(section) { return section.visible }).length</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                        if (isSelected &amp;&amp; pageAvailable &amp;&amp; settingsView._selectedSectionIndex !== -1 &amp;&amp;</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                                (visibleCount &lt;= 1 ||</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                                 !settingsView._sectionAvailable(sections, settingsView._selectedSectionIndex))) {</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                            settingsView._navigateTo(index, -1)</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>                        }</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                    }</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                    onPageAvailableChanged: {</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>                        if (isSelected &amp;&amp; !pageAvailable) {</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                            settingsView._navigateToFirstAvailablePage()</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                        }</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>                    }</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                    visible: {</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                        if (pageName === &quot;Divider&quot;) return settingsView._dividerVisible(index)</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                        if (!pageAvailable) return false</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                        if (isSearching) return matchesSearch</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                        return true</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                    }</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                    SidebarDivider {</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                        objectName: pageName === &quot;Divider&quot; ? &quot;settingsDivider_&quot; + index : &quot;&quot;</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                        visible:    pageName === &quot;Divider&quot;</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                    }</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                    // Page button</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                    SettingsButton {</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                        Layout.fillWidth: true</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                        objectName:    &quot;settingsButton_&quot; + (model.nameKey ?? pageName)</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                        text:          pageName</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                        icon.source:   pageIconUrl</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                        expandable:    hasMultipleSections</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>                        expanded:      isExpanded</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>                        checked:       isSelected &amp;&amp; settingsView._selectedSectionIndex === -1</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>                        visible:       pageName !== &quot;Divider&quot; &amp;&amp; pageAvailable</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>                        onClicked: {</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>                            if (mainWindow.allowViewSwitch()) {</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>                                settingsView._navigateTo(index, -1)</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>                                if (hasMultipleSections) {</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>                                    // Toggle expand/collapse when re-clicking the same page</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>                                    if (isSelected &amp;&amp; isExpanded) {</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>                                        settingsView._setExpanded(index, false)</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>                                    } else if (!isExpanded) {</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>                                        settingsView._setExpanded(index, true)</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>                                    }</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>                                }</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>                            }</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>                        }</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                        onToggleExpand: {</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>                            if (!mainWindow.allowViewSwitch()) {</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>                                return</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>                            }</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>                            var expanding = !isExpanded</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                            settingsView._setExpanded(index, expanding)</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>                            if (!expanding &amp;&amp; isSelected) {</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>                                settingsView._navigateTo(index, -1)</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>                            }</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>                        }</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>                    }</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>                    // Section sub-items (indented, shown when page is expanded)</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>                    Repeater {</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>                        model: isExpanded ? visiblePageSections : []</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>                        Button {</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                            id:             sectionBtn</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>                            Layout.fillWidth: true</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>                            padding:        ScreenTools.defaultFontPixelWidth * 0.75</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>                            leftPadding:    ScreenTools.defaultFontPixelWidth</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>                            hoverEnabled:   !ScreenTools.isMobile</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>                            property int sectionIndex: modelData.index</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>                            property bool sectionChecked: pageColumn.isSelected &amp;&amp; settingsView._selectedSectionIndex === sectionIndex</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>                            property bool sectionMatchesSearch: {</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>                                if (!pageColumn.isSearching) return true</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>                                var matches = settingsView._matchingSections(pageColumn.index)</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>                                return matches.indexOf(sectionIndex) !== -1</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>                            }</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>                            property color textColor: sectionChecked || pressed ? qgcPal.buttonHighlightText : qgcPal.buttonText</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>                            visible: sectionMatchesSearch</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> </div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>                            background: Rectangle {</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>                                color:   qgcPal.buttonHighlight</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>                                opacity: sectionBtn.sectionChecked || sectionBtn.pressed ? 1 : sectionBtn.enabled &amp;&amp; sectionBtn.hovered ? 0.2 : 0</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>                                radius:  ScreenTools.defaultFontPixelWidth / 2</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>                            }</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span> </div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>                            contentItem: QGCLabel {</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>                                text:  modelData.name</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>                                color: sectionBtn.textColor</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>                                font.pointSize: ScreenTools.defaultFontPointSize * 0.9</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>                                horizontalAlignment: Text.AlignLeft</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>                            }</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>                            onClicked: {</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>                                if (mainWindow.allowViewSwitch()) {</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>                                    settingsView._navigateTo(pageColumn.index, sectionIndex)</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>                                }</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>                            }</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                        }</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>                    }</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>                }</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>            }</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        }</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>    }</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>    }</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span> </div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>    Rectangle {</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>        id:                     divider</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>        anchors.topMargin:      _verticalMargin</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>        anchors.bottomMargin:   _verticalMargin</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>        anchors.leftMargin:     _horizontalMargin</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>        anchors.left:           leftPanel.right</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>        anchors.top:            parent.top</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>        anchors.bottom:         parent.bottom</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>        width:                  1</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        color:                  qgcPal.windowShade</div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>    }</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span> </div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>    //-- Panel Contents</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>    Loader {</div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        id:                     rightPanel</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        objectName:             &quot;settings_rightPanel&quot;</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>        anchors.leftMargin:     _horizontalMargin</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>        anchors.rightMargin:    _horizontalMargin</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>        anchors.topMargin:      _verticalMargin</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>        anchors.bottomMargin:   _verticalMargin</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>        anchors.left:           divider.right</div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>        anchors.right:          parent.right</div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>        anchors.top:            parent.top</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>        anchors.bottom:         parent.bottom</div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>    }</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>}</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>            Repeater {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                id:     buttonRepeater</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                model:  settingsPagesModel</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                ColumnLayout {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                    id:     pageColumn</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                    spacing: 0</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                    Layout.fillWidth: true</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                    required property int index</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                    required property var model</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                    property string pageName:    model.name ?? &quot;&quot;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                    property string pageUrl:     model.url ?? &quot;&quot;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                    property string pageIconUrl: model.iconUrl ?? &quot;&quot;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                    property var    pageVisible: model.pageVisible ?? function() { return true }</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                    property var    pageSections: pageVisible() ? settingsView._pageSections(model) : []</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                    property var    visiblePageSections: pageSections.filter(function(section) {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                        return section.visible</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                    })</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                    property bool pageAvailable: pageVisible() &amp;&amp;</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                                                 (pageSections.length === 0 || visiblePageSections.length &gt; 0)</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                    property bool isSelected: settingsView._selectedPageIndex === index</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                    property bool hasMultipleSections: visiblePageSections.length &gt; 1</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                    property bool isSearching: settingsView._searchQuery.trim() !== &quot;&quot;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                    property bool matchesSearch: pageAvailable &amp;&amp; settingsView._pageMatchesSearch(index)</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>                    property bool isExpanded: hasMultipleSections &amp;&amp; (isSearching ? matchesSearch : settingsView._isExpanded(index))</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                    onPageSectionsChanged: {</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                        let sections = pageSections ?? []</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>                        let visibleCount = sections.filter(function(section) { return section.visible }).length</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                        if (isSelected &amp;&amp; pageAvailable &amp;&amp; settingsView._selectedSectionIndex !== -1 &amp;&amp;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                                (visibleCount &lt;= 1 ||</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>                                 !settingsView._sectionAvailable(sections, settingsView._selectedSectionIndex))) {</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                            settingsView._navigateTo(index, -1)</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                        }</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                    }</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                    onPageAvailableChanged: {</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                        if (isSelected &amp;&amp; !pageAvailable) {</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                            settingsView._navigateToFirstAvailablePage()</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                        }</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                    }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                    visible: {</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                        if (pageName === &quot;Divider&quot;) return settingsView._dividerVisible(index)</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>                        if (!pageAvailable) return false</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>                        if (isSearching) return matchesSearch</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                        return true</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                    }</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                    SidebarDivider {</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                        objectName: pageName === &quot;Divider&quot; ? &quot;settingsDivider_&quot; + index : &quot;&quot;</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                        visible:    pageName === &quot;Divider&quot;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>                    }</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>                    // Page button</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>                    SettingsButton {</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>                        Layout.fillWidth: true</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>                        objectName:    &quot;settingsButton_&quot; + (model.nameKey ?? pageName)</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>                        text:          pageName</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>                        icon.source:   pageIconUrl</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>                        expandable:    hasMultipleSections</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>                        expanded:      isExpanded</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>                        checked:       isSelected &amp;&amp; settingsView._selectedSectionIndex === -1</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>                        visible:       pageName !== &quot;Divider&quot; &amp;&amp; pageAvailable</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>                        onClicked: {</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>                            if (mainWindow.allowViewSwitch()) {</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>                                settingsView._navigateTo(index, -1)</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>                                if (hasMultipleSections) {</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>                                    // Toggle expand/collapse when re-clicking the same page</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                                    if (isSelected &amp;&amp; isExpanded) {</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>                                        settingsView._setExpanded(index, false)</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>                                    } else if (!isExpanded) {</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>                                        settingsView._setExpanded(index, true)</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>                                    }</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                                }</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>                            }</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>                        }</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>                        onToggleExpand: {</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>                            if (!mainWindow.allowViewSwitch()) {</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>                                return</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>                            }</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>                            var expanding = !isExpanded</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>                            settingsView._setExpanded(index, expanding)</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>                            if (!expanding &amp;&amp; isSelected) {</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>                                settingsView._navigateTo(index, -1)</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                            }</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>                        }</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>                    }</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>                    // Section sub-items (indented, shown when page is expanded)</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>                    Repeater {</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>                        model: isExpanded ? visiblePageSections : []</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>                        Button {</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>                            id:             sectionBtn</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>                            Layout.fillWidth: true</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>                            padding:        ScreenTools.defaultFontPixelWidth * 0.75</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>                            leftPadding:    ScreenTools.defaultFontPixelWidth</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>                            hoverEnabled:   !ScreenTools.isMobile</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>                            property int sectionIndex: modelData.index</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>                            property bool sectionChecked: pageColumn.isSelected &amp;&amp; settingsView._selectedSectionIndex === sectionIndex</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>                            property bool sectionMatchesSearch: {</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>                                if (!pageColumn.isSearching) return true</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>                                var matches = settingsView._matchingSections(pageColumn.index)</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>                                return matches.indexOf(sectionIndex) !== -1</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>                            }</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>                            property color textColor: qgcPal.textPrimary</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>                            visible: sectionMatchesSearch</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span> </div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>                            background: Rectangle {</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>                                color:          sectionBtn.sectionChecked || sectionBtn.pressed ? qgcPal.accentSubtle : (sectionBtn.enabled &amp;&amp; sectionBtn.hovered ? qgcPal.windowCard : &quot;transparent&quot;)</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>                                border.width:   sectionBtn.sectionChecked || sectionBtn.pressed ? 1 : 0</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>                                border.color:   qgcPal.accent</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>                                radius:         ScreenTools.defaultFontPixelWidth / 2</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>                            }</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span> </div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>                            contentItem: QGCLabel {</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>                                text:  modelData.name</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                                color: sectionBtn.textColor</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>                                font.pointSize: ScreenTools.defaultFontPointSize * 0.9</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>                                horizontalAlignment: Text.AlignLeft</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>                            }</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span> </div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>                            onClicked: {</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>                                if (mainWindow.allowViewSwitch()) {</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>                                    settingsView._navigateTo(pageColumn.index, sectionIndex)</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>                                }</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>                            }</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>                        }</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>                    }</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>                }</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>            }</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>        }</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>    }</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>    }</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span> </div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>    //-- Panel Contents</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>    Loader {</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>        id:                     rightPanel</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        objectName:             &quot;settings_rightPanel&quot;</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        anchors.leftMargin:     _horizontalMargin * 4</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        anchors.rightMargin:    _horizontalMargin</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>        anchors.topMargin:      _verticalMargin</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>        anchors.bottomMargin:   _verticalMargin</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>        anchors.left:           leftPanel.right</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>        anchors.right:          parent.right</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>        anchors.top:            parent.top</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>        anchors.bottom:         parent.bottom</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>    }</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

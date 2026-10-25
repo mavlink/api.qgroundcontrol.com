@@ -8,6 +8,7 @@ var GStreamerHelpers_8h =
     [ "describeDecoderFactory", "GStreamerHelpers_8h.html#ac31f1da512a8516a6d77b194aa4aa5c0", null ],
     [ "disposeChild", "GStreamerHelpers_8h.html#a0644c93e797b9aec44a1bb617ca200d7", null ],
     [ "firstSrcPad", "GStreamerHelpers_8h.html#a0d8980666dd58f74dd96a60ec0cc058d", null ],
+    [ "flushAndDisposeChild", "GStreamerHelpers_8h.html#ae6db975b3b9b3ee7c34fd72b151aa276", null ],
     [ "forEachPlugin", "GStreamerHelpers_8h.html#a52033f70a4ce478ef300982e4a10518a", null ],
     [ "forEachVideoDecoderFactory", "GStreamerHelpers_8h.html#ac52c2ec31fff27b748b56af0de977a87", null ],
     [ "isHardwareDecoderFactory", "GStreamerHelpers_8h.html#aa78f2e5ccb025d8f073ac4ec3e223816", null ],

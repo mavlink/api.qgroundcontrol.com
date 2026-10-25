@@ -722,175 +722,185 @@ $(document).ready(function(){initNavTree('GstSourceFactory_8cc_source.html','');
 <div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span><span class="keywordtype">bool</span> linkUdpRtpToDepayAndParser(<a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* bin, <a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* source, <a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* depay, <a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* parser,</div>
 <div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>                                <span class="keyword">const</span> Config&amp; config, guint <a class="code hl_variable" href="GstSourceFactory_8cc.html#abf047988be20cdd77ef0b0f5e760eab3">latencyMs</a>)</div>
 <div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>{</div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>    <span class="keywordflow">if</span> (config.jitterBuffer == <a class="code hl_enumvalue" href="namespaceGStreamer_1_1SourceFactory.html#a73239d338dc101e030ac875806d0502fa6adf97f83acf6453d4a6a4b1070f3754">JitterBuffer::None</a>) {</div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>        <span class="keywordflow">if</span> (!gst_element_link_many(source, depay, parser, <span class="keyword">nullptr</span>)) {</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>            qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_element_link_many(source, depay, parser) failed&quot;</span>;</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>        }</div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>    }</div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span> </div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>    <a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* buffer = addJitterBuffer(bin, <a class="code hl_variable" href="GstSourceFactory_8cc.html#abf047988be20cdd77ef0b0f5e760eab3">latencyMs</a>);</div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>    <span class="keywordflow">if</span> (!buffer) {</div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>    <a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* upstream = source;</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>    <span class="keywordflow">if</span> (config.jitterBuffer != <a class="code hl_enumvalue" href="namespaceGStreamer_1_1SourceFactory.html#a73239d338dc101e030ac875806d0502fa6adf97f83acf6453d4a6a4b1070f3754">JitterBuffer::None</a>) {</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>        <a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* <span class="keyword">const</span> buffer = addJitterBuffer(bin, <a class="code hl_variable" href="GstSourceFactory_8cc.html#abf047988be20cdd77ef0b0f5e760eab3">latencyMs</a>);</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>        <span class="keywordflow">if</span> (!buffer) {</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>        }</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>        <span class="keywordflow">if</span> (!gst_element_link(source, buffer)) {</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>            qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_element_link(source, rtpjitterbuffer) failed&quot;</span>;</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>        }</div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>        upstream = buffer;</div>
 <div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>    }</div>
 <div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span> </div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>    <span class="keywordflow">if</span> (!gst_element_link_many(source, buffer, depay, parser, <span class="keyword">nullptr</span>)) {</div>
-<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>        qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_element_link_many(source, rtpjitterbuffer, depay, parser) failed&quot;</span>;</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>    <span class="keywordflow">if</span> (!gst_element_link(upstream, depay)) {</div>
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>        qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_element_link(upstream, depay) failed&quot;</span>;</div>
 <div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>    }</div>
 <div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span> </div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>}</div>
-<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span> </div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>}  <span class="comment">// namespace</span></div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span> </div>
-<div class="foldopen" id="foldopen00649" data-start="{" data-end="}">
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno"><a class="line" href="namespaceGStreamer_1_1SourceFactory.html#a2df831b5f903a7a96dd233cb09798853">  649</a></span><a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* <a class="code hl_function" href="namespaceGStreamer_1_1SourceFactory.html#a2df831b5f903a7a96dd233cb09798853">create</a>(<span class="keyword">const</span> QString&amp; uri, <span class="keyword">const</span> <a class="code hl_struct" href="structGStreamer_1_1SourceFactory_1_1Config.html">Config</a>&amp; config)</div>
-<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>{</div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>    <span class="keywordflow">if</span> (uri.isEmpty()) {</div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>        qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;Failed because URI is not specified&quot;</span>;</div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>    }</div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span> </div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>    <span class="keyword">const</span> guint <a class="code hl_variable" href="GstSourceFactory_8cc.html#abf047988be20cdd77ef0b0f5e760eab3">latencyMs</a> = (config.<a class="code hl_variable" href="structGStreamer_1_1SourceFactory_1_1Config.html#a6fae8808b67213d6fe242903147fc03d">latencyMs</a> &lt; 0) ? 0u : <span class="keyword">static_cast&lt;</span>guint<span class="keyword">&gt;</span>(config.<a class="code hl_variable" href="structGStreamer_1_1SourceFactory_1_1Config.html#a6fae8808b67213d6fe242903147fc03d">latencyMs</a>);</div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span> </div>
-<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>    <span class="keyword">const</span> QUrl sourceUrl(uri);</div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>    <span class="keyword">const</span> QString scheme = sourceUrl.scheme().toLower();</div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span> </div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isRtsp = scheme.startsWith(QLatin1String(<span class="stringliteral">&quot;rtsp&quot;</span>));</div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isUdpH264 = (scheme == QLatin1String(<span class="stringliteral">&quot;udp&quot;</span>));</div>
-<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isUdpH265 = (scheme == QLatin1String(<span class="stringliteral">&quot;udp265&quot;</span>));</div>
-<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isUdpMPEGTS = (scheme == QLatin1String(<span class="stringliteral">&quot;mpegts&quot;</span>));</div>
-<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isTcpMPEGTS = (scheme == QLatin1String(<span class="stringliteral">&quot;tcp&quot;</span>));</div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span> </div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>    <span class="keywordflow">if</span> (!isRtsp &amp;&amp; !isUdpH264 &amp;&amp; !isUdpH265 &amp;&amp; !isUdpMPEGTS &amp;&amp; !isTcpMPEGTS) {</div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>        qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;Unsupported URI scheme:&quot;</span> &lt;&lt; scheme &lt;&lt; <span class="stringliteral">&quot;in&quot;</span></div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>                                      &lt;&lt; <a class="code hl_function" href="namespaceQGCNetworkHelper.html#a77c9f71c4c29c985dc57ec5bb63ac70a">QGCNetworkHelper::redactedUrlForLogging</a>(sourceUrl);</div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>    }</div>
-<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span> </div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    <a class="code hl_typedef" href="namespaceGStreamer.html#ae839d799e9288392da348a95bcd02d88">GstElementPtr</a> source;</div>
-<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>    <span class="keywordflow">if</span> (isRtsp) {</div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>        source = buildRtspSource(uri, sourceUrl, config, <a class="code hl_variable" href="GstSourceFactory_8cc.html#abf047988be20cdd77ef0b0f5e760eab3">latencyMs</a>);</div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isTcpMPEGTS) {</div>
-<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>        source = buildTcpSource(sourceUrl);</div>
-<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>    } <span class="keywordflow">else</span> {  <span class="comment">// isUdpH264 || isUdpH265 || isUdpMPEGTS</span></div>
-<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>        source = buildUdpSource(sourceUrl, isUdpH264, isUdpH265);</div>
-<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>    }</div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>    <span class="keywordflow">if</span> (!source) {</div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>    }</div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span> </div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>    <a class="code hl_typedef" href="namespaceGStreamer.html#ae839d799e9288392da348a95bcd02d88">GstElementPtr</a> bin = <a class="code hl_function" href="namespaceGStreamer.html#aa5feb80fd059e0b77a58af5f797ccc41">adoptElement</a>(gst_bin_new(<span class="stringliteral">&quot;sourcebin&quot;</span>));</div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>    <span class="keywordflow">if</span> (!bin) {</div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>        qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_bin_new(&#39;sourcebin&#39;) failed&quot;</span>;</div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>    }</div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span> </div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> parserFactory = isUdpH265 ? <span class="stringliteral">&quot;h265parse&quot;</span> : <span class="stringliteral">&quot;parsebin&quot;</span>;</div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>    <a class="code hl_typedef" href="namespaceGStreamer.html#ae839d799e9288392da348a95bcd02d88">GstElementPtr</a> parser = <a class="code hl_function" href="namespaceGStreamer.html#aa5feb80fd059e0b77a58af5f797ccc41">adoptElement</a>(gst_element_factory_make(parserFactory, <span class="stringliteral">&quot;parser&quot;</span>));</div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>    <span class="keywordflow">if</span> (!parser) {</div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>        qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_element_factory_make(&quot;</span> &lt;&lt; parserFactory &lt;&lt; <span class="stringliteral">&quot;) failed&quot;</span>;</div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>    }</div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span> </div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>    <a class="code hl_typedef" href="namespaceGStreamer.html#ae839d799e9288392da348a95bcd02d88">GstElementPtr</a> rtpDepay;</div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>    <span class="keywordflow">if</span> (isUdpH265) {</div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>        <span class="comment">// UDP H.265 has no SDP/RTSP control plane. Make depayloading and parser config explicit</span></div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>        <span class="comment">// so hardware decoders, especially Android MediaCodec, see repeated VPS/SPS/PPS at IDR</span></div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>        <span class="comment">// boundaries instead of depending on parsebin&#39;s defaults after startup or reconnect.</span></div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>        rtpDepay = <a class="code hl_function" href="namespaceGStreamer.html#aa5feb80fd059e0b77a58af5f797ccc41">adoptElement</a>(gst_element_factory_make(<span class="stringliteral">&quot;rtph265depay&quot;</span>, <span class="keyword">nullptr</span>));</div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>        <span class="keywordflow">if</span> (!rtpDepay) {</div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>            qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_element_factory_make(&#39;rtph265depay&#39;) failed&quot;</span>;</div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>        }</div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>        configureH26xParser(parser.get());</div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>        configureH26xRtpDepayloader(rtpDepay.get());</div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>        <span class="comment">// parsebin creates the depayloader and codec parser only after it sees the stream caps. Configure them</span></div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>        <span class="comment">// as soon as they are autoplugged, before data flows.</span></div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>        (void) g_signal_connect(parser.get(), <span class="stringliteral">&quot;deep-element-added&quot;</span>, G_CALLBACK(configureAutopluggedElement), <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>    }</div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span> </div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>    <span class="comment">// Older Linux/system GStreamer misnegotiates parser-&gt;decoder caps; force avc/hvc1 there only.</span></div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>    <span class="comment">// Bundled 1.28+ SDKs do not need it, and the forced caps break byte-stream HW decoders.</span></div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span><span class="preprocessor">#if defined(QGC_GST_ENABLE_LEGACY_PARSEBIN_CAPS_FILTER)</span></div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>    <span class="keywordflow">if</span> (!isUdpH265) {</div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>        (void) g_signal_connect(parser.get(), <span class="stringliteral">&quot;autoplug-query&quot;</span>, G_CALLBACK(filterParserCaps), <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>    }</div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span> </div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>    <span class="comment">// From here on the bin owns every element; the borrowed pointers stay valid while bin is alive.</span></div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>    <a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* upstream = <a class="code hl_function" href="namespaceGStreamer.html#a61024c3d15d02f6b1ad8a664add1d973">addToBin</a>(bin.get(), std::move(source), <span class="stringliteral">&quot;source&quot;</span>);</div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>    <span class="keywordflow">if</span> (!upstream) {</div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>    }</div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span> </div>
-<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>    <a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* depay = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>    <span class="keywordflow">if</span> (rtpDepay) {</div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>        depay = <a class="code hl_function" href="namespaceGStreamer.html#a61024c3d15d02f6b1ad8a664add1d973">addToBin</a>(bin.get(), std::move(rtpDepay), <span class="stringliteral">&quot;rtph265depay&quot;</span>);</div>
-<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>        <span class="keywordflow">if</span> (!depay) {</div>
-<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>        }</div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>    }</div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span> </div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>    <a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* <span class="keyword">const</span> <a class="code hl_variable" href="GstSourceFactory_8cc.html#afae1f4606cfaa6b5381c2712ed1fc942">binParser</a> = <a class="code hl_function" href="namespaceGStreamer.html#a61024c3d15d02f6b1ad8a664add1d973">addToBin</a>(bin.get(), std::move(parser), <span class="stringliteral">&quot;parser&quot;</span>);</div>
-<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="GstSourceFactory_8cc.html#afae1f4606cfaa6b5381c2712ed1fc942">binParser</a>) {</div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>    }</div>
-<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span> </div>
-<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>    <span class="comment">// Android can&#39;t determine MPEG2-TS via parsebin, so create tsdemux explicitly.</span></div>
-<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>    <span class="keywordflow">if</span> (isTcpMPEGTS || isUdpMPEGTS) {</div>
-<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>        <a class="code hl_typedef" href="namespaceGStreamer.html#ae839d799e9288392da348a95bcd02d88">GstElementPtr</a> tsdemux = <a class="code hl_function" href="namespaceGStreamer.html#aa5feb80fd059e0b77a58af5f797ccc41">adoptElement</a>(gst_element_factory_make(<span class="stringliteral">&quot;tsdemux&quot;</span>, <span class="keyword">nullptr</span>));</div>
-<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>        <span class="keywordflow">if</span> (!tsdemux) {</div>
-<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>            qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_element_factory_make(&#39;tsdemux&#39;) failed&quot;</span>;</div>
-<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>        }</div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span> </div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>        <a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* <span class="keyword">const</span> demux = <a class="code hl_function" href="namespaceGStreamer.html#a61024c3d15d02f6b1ad8a664add1d973">addToBin</a>(bin.get(), std::move(tsdemux), <span class="stringliteral">&quot;tsdemux&quot;</span>);</div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>        <span class="keywordflow">if</span> (!demux) {</div>
-<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>        }</div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span> </div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>        <span class="keywordflow">if</span> (!gst_element_link(upstream, demux)) {</div>
-<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>            qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_element_link(source, tsdemux) failed&quot;</span>;</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>    <span class="comment">// Left to negotiate, rtph265depay picks hvc1, whose caps it only sets once in-band VPS/SPS/PPS arrive, so its</span></div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>    <span class="comment">// segment can go out first (GStreamer 1.28 warns) and the parameter-set gate, which handles byte-stream, stands</span></div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>    <span class="comment">// down. Byte-stream caps are set as soon as the RTP caps arrive.</span></div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceGStreamer.html#ab1664d982f198b6a880c6e2564e899b4">GstCapsPtr</a> byteStream =</div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>        <a class="code hl_function" href="namespaceGStreamer.html#a7a52af43da48c06e60f33366de2a6c55">adoptCaps</a>(gst_caps_from_string(<span class="stringliteral">&quot;video/x-h265, stream-format=(string)byte-stream, alignment=(string)au&quot;</span>));</div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>    <span class="keywordflow">if</span> (!byteStream || !gst_element_link_filtered(depay, parser, byteStream.get())) {</div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>        qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_element_link_filtered(depay, parser, byte-stream) failed&quot;</span>;</div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>    }</div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span> </div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>}</div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span> </div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>}  <span class="comment">// namespace</span></div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span> </div>
+<div class="foldopen" id="foldopen00659" data-start="{" data-end="}">
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno"><a class="line" href="namespaceGStreamer_1_1SourceFactory.html#a2df831b5f903a7a96dd233cb09798853">  659</a></span><a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* <a class="code hl_function" href="namespaceGStreamer_1_1SourceFactory.html#a2df831b5f903a7a96dd233cb09798853">create</a>(<span class="keyword">const</span> QString&amp; uri, <span class="keyword">const</span> <a class="code hl_struct" href="structGStreamer_1_1SourceFactory_1_1Config.html">Config</a>&amp; config)</div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>{</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>    <span class="keywordflow">if</span> (uri.isEmpty()) {</div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>        qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;Failed because URI is not specified&quot;</span>;</div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>    }</div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span> </div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>    <span class="keyword">const</span> guint <a class="code hl_variable" href="GstSourceFactory_8cc.html#abf047988be20cdd77ef0b0f5e760eab3">latencyMs</a> = (config.<a class="code hl_variable" href="structGStreamer_1_1SourceFactory_1_1Config.html#a6fae8808b67213d6fe242903147fc03d">latencyMs</a> &lt; 0) ? 0u : <span class="keyword">static_cast&lt;</span>guint<span class="keyword">&gt;</span>(config.<a class="code hl_variable" href="structGStreamer_1_1SourceFactory_1_1Config.html#a6fae8808b67213d6fe242903147fc03d">latencyMs</a>);</div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span> </div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>    <span class="keyword">const</span> QUrl sourceUrl(uri);</div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>    <span class="keyword">const</span> QString scheme = sourceUrl.scheme().toLower();</div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span> </div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isRtsp = scheme.startsWith(QLatin1String(<span class="stringliteral">&quot;rtsp&quot;</span>));</div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isUdpH264 = (scheme == QLatin1String(<span class="stringliteral">&quot;udp&quot;</span>));</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isUdpH265 = (scheme == QLatin1String(<span class="stringliteral">&quot;udp265&quot;</span>));</div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isUdpMPEGTS = (scheme == QLatin1String(<span class="stringliteral">&quot;mpegts&quot;</span>));</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> isTcpMPEGTS = (scheme == QLatin1String(<span class="stringliteral">&quot;tcp&quot;</span>));</div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span> </div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>    <span class="keywordflow">if</span> (!isRtsp &amp;&amp; !isUdpH264 &amp;&amp; !isUdpH265 &amp;&amp; !isUdpMPEGTS &amp;&amp; !isTcpMPEGTS) {</div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>        qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;Unsupported URI scheme:&quot;</span> &lt;&lt; scheme &lt;&lt; <span class="stringliteral">&quot;in&quot;</span></div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>                                      &lt;&lt; <a class="code hl_function" href="namespaceQGCNetworkHelper.html#a77c9f71c4c29c985dc57ec5bb63ac70a">QGCNetworkHelper::redactedUrlForLogging</a>(sourceUrl);</div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>    }</div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span> </div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>    <a class="code hl_typedef" href="namespaceGStreamer.html#ae839d799e9288392da348a95bcd02d88">GstElementPtr</a> source;</div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>    <span class="keywordflow">if</span> (isRtsp) {</div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>        source = buildRtspSource(uri, sourceUrl, config, <a class="code hl_variable" href="GstSourceFactory_8cc.html#abf047988be20cdd77ef0b0f5e760eab3">latencyMs</a>);</div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isTcpMPEGTS) {</div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>        source = buildTcpSource(sourceUrl);</div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>    } <span class="keywordflow">else</span> {  <span class="comment">// isUdpH264 || isUdpH265 || isUdpMPEGTS</span></div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>        source = buildUdpSource(sourceUrl, isUdpH264, isUdpH265);</div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>    }</div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>    <span class="keywordflow">if</span> (!source) {</div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>    }</div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span> </div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>    <a class="code hl_typedef" href="namespaceGStreamer.html#ae839d799e9288392da348a95bcd02d88">GstElementPtr</a> bin = <a class="code hl_function" href="namespaceGStreamer.html#aa5feb80fd059e0b77a58af5f797ccc41">adoptElement</a>(gst_bin_new(<span class="stringliteral">&quot;sourcebin&quot;</span>));</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>    <span class="keywordflow">if</span> (!bin) {</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>        qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_bin_new(&#39;sourcebin&#39;) failed&quot;</span>;</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>    }</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span> </div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span> parserFactory = isUdpH265 ? <span class="stringliteral">&quot;h265parse&quot;</span> : <span class="stringliteral">&quot;parsebin&quot;</span>;</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>    <a class="code hl_typedef" href="namespaceGStreamer.html#ae839d799e9288392da348a95bcd02d88">GstElementPtr</a> parser = <a class="code hl_function" href="namespaceGStreamer.html#aa5feb80fd059e0b77a58af5f797ccc41">adoptElement</a>(gst_element_factory_make(parserFactory, <span class="stringliteral">&quot;parser&quot;</span>));</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>    <span class="keywordflow">if</span> (!parser) {</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>        qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_element_factory_make(&quot;</span> &lt;&lt; parserFactory &lt;&lt; <span class="stringliteral">&quot;) failed&quot;</span>;</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>    }</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span> </div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>    <a class="code hl_typedef" href="namespaceGStreamer.html#ae839d799e9288392da348a95bcd02d88">GstElementPtr</a> rtpDepay;</div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>    <span class="keywordflow">if</span> (isUdpH265) {</div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>        <span class="comment">// UDP H.265 has no SDP/RTSP control plane. Make depayloading and parser config explicit</span></div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>        <span class="comment">// so hardware decoders, especially Android MediaCodec, see repeated VPS/SPS/PPS at IDR</span></div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>        <span class="comment">// boundaries instead of depending on parsebin&#39;s defaults after startup or reconnect.</span></div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>        rtpDepay = <a class="code hl_function" href="namespaceGStreamer.html#aa5feb80fd059e0b77a58af5f797ccc41">adoptElement</a>(gst_element_factory_make(<span class="stringliteral">&quot;rtph265depay&quot;</span>, <span class="keyword">nullptr</span>));</div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>        <span class="keywordflow">if</span> (!rtpDepay) {</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>            qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_element_factory_make(&#39;rtph265depay&#39;) failed&quot;</span>;</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>        }</div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>        configureH26xParser(parser.get());</div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>        configureH26xRtpDepayloader(rtpDepay.get());</div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>        <span class="comment">// parsebin creates the depayloader and codec parser only after it sees the stream caps. Configure them</span></div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>        <span class="comment">// as soon as they are autoplugged, before data flows.</span></div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>        (void) g_signal_connect(parser.get(), <span class="stringliteral">&quot;deep-element-added&quot;</span>, G_CALLBACK(configureAutopluggedElement), <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>    }</div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span> </div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>    <span class="comment">// Older Linux/system GStreamer misnegotiates parser-&gt;decoder caps; force avc/hvc1 there only.</span></div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>    <span class="comment">// Bundled 1.28+ SDKs do not need it, and the forced caps break byte-stream HW decoders.</span></div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span><span class="preprocessor">#if defined(QGC_GST_ENABLE_LEGACY_PARSEBIN_CAPS_FILTER)</span></div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>    <span class="keywordflow">if</span> (!isUdpH265) {</div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>        (void) g_signal_connect(parser.get(), <span class="stringliteral">&quot;autoplug-query&quot;</span>, G_CALLBACK(filterParserCaps), <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>    }</div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span> </div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>    <span class="comment">// From here on the bin owns every element; the borrowed pointers stay valid while bin is alive.</span></div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>    <a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* upstream = <a class="code hl_function" href="namespaceGStreamer.html#a61024c3d15d02f6b1ad8a664add1d973">addToBin</a>(bin.get(), std::move(source), <span class="stringliteral">&quot;source&quot;</span>);</div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>    <span class="keywordflow">if</span> (!upstream) {</div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>    }</div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span> </div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>    <a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* depay = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>    <span class="keywordflow">if</span> (rtpDepay) {</div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>        depay = <a class="code hl_function" href="namespaceGStreamer.html#a61024c3d15d02f6b1ad8a664add1d973">addToBin</a>(bin.get(), std::move(rtpDepay), <span class="stringliteral">&quot;rtph265depay&quot;</span>);</div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>        <span class="keywordflow">if</span> (!depay) {</div>
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>        }</div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>    }</div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span> </div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>    <a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* <span class="keyword">const</span> <a class="code hl_variable" href="GstSourceFactory_8cc.html#afae1f4606cfaa6b5381c2712ed1fc942">binParser</a> = <a class="code hl_function" href="namespaceGStreamer.html#a61024c3d15d02f6b1ad8a664add1d973">addToBin</a>(bin.get(), std::move(parser), <span class="stringliteral">&quot;parser&quot;</span>);</div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="GstSourceFactory_8cc.html#afae1f4606cfaa6b5381c2712ed1fc942">binParser</a>) {</div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>    }</div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span> </div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>    <span class="comment">// Android can&#39;t determine MPEG2-TS via parsebin, so create tsdemux explicitly.</span></div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>    <span class="keywordflow">if</span> (isTcpMPEGTS || isUdpMPEGTS) {</div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>        <a class="code hl_typedef" href="namespaceGStreamer.html#ae839d799e9288392da348a95bcd02d88">GstElementPtr</a> tsdemux = <a class="code hl_function" href="namespaceGStreamer.html#aa5feb80fd059e0b77a58af5f797ccc41">adoptElement</a>(gst_element_factory_make(<span class="stringliteral">&quot;tsdemux&quot;</span>, <span class="keyword">nullptr</span>));</div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>        <span class="keywordflow">if</span> (!tsdemux) {</div>
+<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>            qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_element_factory_make(&#39;tsdemux&#39;) failed&quot;</span>;</div>
 <div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>        }</div>
 <div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span> </div>
-<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>        upstream = demux;</div>
-<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>    }</div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span> </div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>    <span class="keywordflow">if</span> (isUdpH265) {</div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>        <span class="keywordflow">if</span> (!linkUdpRtpToDepayAndParser(bin.get(), upstream, depay, <a class="code hl_variable" href="GstSourceFactory_8cc.html#afae1f4606cfaa6b5381c2712ed1fc942">binParser</a>, config, <a class="code hl_variable" href="GstSourceFactory_8cc.html#abf047988be20cdd77ef0b0f5e760eab3">latencyMs</a>)) {</div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>        }</div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>        <span class="keywordflow">if</span> (!addStaticGhostPad(<a class="code hl_variable" href="GstSourceFactory_8cc.html#afae1f4606cfaa6b5381c2712ed1fc942">binParser</a>)) {</div>
-<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>        }</div>
-<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>        <span class="keywordflow">if</span> (!linkSourceToParser(bin.get(), upstream, <a class="code hl_variable" href="GstSourceFactory_8cc.html#afae1f4606cfaa6b5381c2712ed1fc942">binParser</a>, config, <a class="code hl_variable" href="GstSourceFactory_8cc.html#abf047988be20cdd77ef0b0f5e760eab3">latencyMs</a>, isTcpMPEGTS || isUdpMPEGTS,</div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>                                isRtsp)) {</div>
-<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>        }</div>
-<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>    }</div>
-<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span> </div>
-<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>    <span class="keywordflow">return</span> bin.release();</div>
-<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>}</div>
-</div>
-<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span> </div>
-<div class="foldopen" id="foldopen00781" data-start="{" data-end="}">
-<div class="line"><a id="l00781" name="l00781"></a><span class="lineno"><a class="line" href="namespaceGStreamer_1_1SourceFactory.html#a75654df9a64b8bed21ab6495e5f055e7">  781</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceGStreamer_1_1SourceFactory.html#a75654df9a64b8bed21ab6495e5f055e7">gateOnParameterSets</a>(GstPad* depayloaderSrc, <span class="keywordtype">bool</span> h265)</div>
-<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>{</div>
-<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>    (void) gst_pad_add_probe(depayloaderSrc, GST_PAD_PROBE_TYPE_BUFFER, holdUntilParameterSets,</div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>                             <span class="keyword">new</span> ParameterSetGate(h265),</div>
-<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>                             [](gpointer gate) { <span class="keyword">delete</span> <span class="keyword">static_cast&lt;</span>ParameterSetGate*<span class="keyword">&gt;</span>(gate); });</div>
-<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>}</div>
-</div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>        <a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* <span class="keyword">const</span> demux = <a class="code hl_function" href="namespaceGStreamer.html#a61024c3d15d02f6b1ad8a664add1d973">addToBin</a>(bin.get(), std::move(tsdemux), <span class="stringliteral">&quot;tsdemux&quot;</span>);</div>
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>        <span class="keywordflow">if</span> (!demux) {</div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>        }</div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span> </div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>        <span class="keywordflow">if</span> (!gst_element_link(upstream, demux)) {</div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>            qCWarning(GstSourceFactoryLog) &lt;&lt; <span class="stringliteral">&quot;gst_element_link(source, tsdemux) failed&quot;</span>;</div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>        }</div>
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span> </div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>        upstream = demux;</div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>    }</div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span> </div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>    <span class="keywordflow">if</span> (isUdpH265) {</div>
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>        <span class="keywordflow">if</span> (!linkUdpRtpToDepayAndParser(bin.get(), upstream, depay, <a class="code hl_variable" href="GstSourceFactory_8cc.html#afae1f4606cfaa6b5381c2712ed1fc942">binParser</a>, config, <a class="code hl_variable" href="GstSourceFactory_8cc.html#abf047988be20cdd77ef0b0f5e760eab3">latencyMs</a>)) {</div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>        }</div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>        <span class="keywordflow">if</span> (!addStaticGhostPad(<a class="code hl_variable" href="GstSourceFactory_8cc.html#afae1f4606cfaa6b5381c2712ed1fc942">binParser</a>)) {</div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>        }</div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>        <span class="keywordflow">if</span> (!linkSourceToParser(bin.get(), upstream, <a class="code hl_variable" href="GstSourceFactory_8cc.html#afae1f4606cfaa6b5381c2712ed1fc942">binParser</a>, config, <a class="code hl_variable" href="GstSourceFactory_8cc.html#abf047988be20cdd77ef0b0f5e760eab3">latencyMs</a>, isTcpMPEGTS || isUdpMPEGTS,</div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>                                isRtsp)) {</div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>        }</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>    }</div>
 <div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span> </div>
-<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>}  <span class="comment">// namespace GStreamer::SourceFactory</span></div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>    <span class="keywordflow">return</span> bin.release();</div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>}</div>
 </div>
-<div class="ttc" id="aGStreamerHelpers_8cc_html_a5b41c5ae4505891e6c53e26df197e02b"><div class="ttname"><a href="GStreamerHelpers_8cc.html#a5b41c5ae4505891e6c53e26df197e02b">prefix</a></div><div class="ttdeci">const char * prefix</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00133">GStreamerHelpers.cc:133</a></div></div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span> </div>
+<div class="foldopen" id="foldopen00791" data-start="{" data-end="}">
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno"><a class="line" href="namespaceGStreamer_1_1SourceFactory.html#a75654df9a64b8bed21ab6495e5f055e7">  791</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceGStreamer_1_1SourceFactory.html#a75654df9a64b8bed21ab6495e5f055e7">gateOnParameterSets</a>(GstPad* depayloaderSrc, <span class="keywordtype">bool</span> h265)</div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>{</div>
+<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>    (void) gst_pad_add_probe(depayloaderSrc, GST_PAD_PROBE_TYPE_BUFFER, holdUntilParameterSets,</div>
+<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>                             <span class="keyword">new</span> ParameterSetGate(h265),</div>
+<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>                             [](gpointer gate) { <span class="keyword">delete</span> <span class="keyword">static_cast&lt;</span>ParameterSetGate*<span class="keyword">&gt;</span>(gate); });</div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>}</div>
+</div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span> </div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>}  <span class="comment">// namespace GStreamer::SourceFactory</span></div>
+</div>
+<div class="ttc" id="aGStreamerHelpers_8cc_html_a5b41c5ae4505891e6c53e26df197e02b"><div class="ttname"><a href="GStreamerHelpers_8cc.html#a5b41c5ae4505891e6c53e26df197e02b">prefix</a></div><div class="ttdeci">const char * prefix</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00156">GStreamerHelpers.cc:156</a></div></div>
 <div class="ttc" id="aGStreamerHelpers_8h_html"><div class="ttname"><a href="GStreamerHelpers_8h.html">GStreamerHelpers.h</a></div></div>
 <div class="ttc" id="aGstScoped_8h_html"><div class="ttname"><a href="GstScoped_8h.html">GstScoped.h</a></div></div>
 <div class="ttc" id="aGstSourceFactory_8cc_html_abf047988be20cdd77ef0b0f5e760eab3"><div class="ttname"><a href="GstSourceFactory_8cc.html#abf047988be20cdd77ef0b0f5e760eab3">latencyMs</a></div><div class="ttdeci">guint latencyMs</div><div class="ttdef"><b>Definition</b> <a href="GstSourceFactory_8cc_source.html#l00363">GstSourceFactory.cc:363</a></div></div>
@@ -902,13 +912,13 @@ $(document).ready(function(){initNavTree('GstSourceFactory_8cc_source.html','');
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>
 <div class="ttc" id="aQGCNetworkHelper_8h_html"><div class="ttname"><a href="QGCNetworkHelper_8h.html">QGCNetworkHelper.h</a></div></div>
 <div class="ttc" id="anamespaceGStreamer_1_1SourceFactory_html"><div class="ttname"><a href="namespaceGStreamer_1_1SourceFactory.html">GStreamer::SourceFactory</a></div><div class="ttdef"><b>Definition</b> <a href="GstSourceFactory_8cc_source.html#l00304">GstSourceFactory.cc:304</a></div></div>
-<div class="ttc" id="anamespaceGStreamer_1_1SourceFactory_html_a2df831b5f903a7a96dd233cb09798853"><div class="ttname"><a href="namespaceGStreamer_1_1SourceFactory.html#a2df831b5f903a7a96dd233cb09798853">GStreamer::SourceFactory::create</a></div><div class="ttdeci">GstElement * create(const QString &amp;uri, const Config &amp;config)</div><div class="ttdef"><b>Definition</b> <a href="GstSourceFactory_8cc_source.html#l00649">GstSourceFactory.cc:649</a></div></div>
+<div class="ttc" id="anamespaceGStreamer_1_1SourceFactory_html_a2df831b5f903a7a96dd233cb09798853"><div class="ttname"><a href="namespaceGStreamer_1_1SourceFactory.html#a2df831b5f903a7a96dd233cb09798853">GStreamer::SourceFactory::create</a></div><div class="ttdeci">GstElement * create(const QString &amp;uri, const Config &amp;config)</div><div class="ttdef"><b>Definition</b> <a href="GstSourceFactory_8cc_source.html#l00659">GstSourceFactory.cc:659</a></div></div>
 <div class="ttc" id="anamespaceGStreamer_1_1SourceFactory_html_a73239d338dc101e030ac875806d0502fa6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="namespaceGStreamer_1_1SourceFactory.html#a73239d338dc101e030ac875806d0502fa6adf97f83acf6453d4a6a4b1070f3754">GStreamer::SourceFactory::JitterBuffer::None</a></div><div class="ttdeci">@ None</div><div class="ttdoc">No playout buffering; omits an explicit buffer or sets rtspsrc latency to zero.</div></div>
-<div class="ttc" id="anamespaceGStreamer_1_1SourceFactory_html_a75654df9a64b8bed21ab6495e5f055e7"><div class="ttname"><a href="namespaceGStreamer_1_1SourceFactory.html#a75654df9a64b8bed21ab6495e5f055e7">GStreamer::SourceFactory::gateOnParameterSets</a></div><div class="ttdeci">void gateOnParameterSets(GstPad *depayloaderSrc, bool h265)</div><div class="ttdef"><b>Definition</b> <a href="GstSourceFactory_8cc_source.html#l00781">GstSourceFactory.cc:781</a></div></div>
-<div class="ttc" id="anamespaceGStreamer_html"><div class="ttname"><a href="namespaceGStreamer.html">GStreamer</a></div><div class="ttdef"><b>Definition</b> <a href="GStreamer_8cc_source.html#l00047">GStreamer.cc:47</a></div></div>
-<div class="ttc" id="anamespaceGStreamer_html_a0644c93e797b9aec44a1bb617ca200d7"><div class="ttname"><a href="namespaceGStreamer.html#a0644c93e797b9aec44a1bb617ca200d7">GStreamer::disposeChild</a></div><div class="ttdeci">void disposeChild(GstElement *element)</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00047">GStreamerHelpers.cc:47</a></div></div>
+<div class="ttc" id="anamespaceGStreamer_1_1SourceFactory_html_a75654df9a64b8bed21ab6495e5f055e7"><div class="ttname"><a href="namespaceGStreamer_1_1SourceFactory.html#a75654df9a64b8bed21ab6495e5f055e7">GStreamer::SourceFactory::gateOnParameterSets</a></div><div class="ttdeci">void gateOnParameterSets(GstPad *depayloaderSrc, bool h265)</div><div class="ttdef"><b>Definition</b> <a href="GstSourceFactory_8cc_source.html#l00791">GstSourceFactory.cc:791</a></div></div>
+<div class="ttc" id="anamespaceGStreamer_html"><div class="ttname"><a href="namespaceGStreamer.html">GStreamer</a></div><div class="ttdef"><b>Definition</b> <a href="GStreamer_8cc_source.html#l00048">GStreamer.cc:48</a></div></div>
+<div class="ttc" id="anamespaceGStreamer_html_a0644c93e797b9aec44a1bb617ca200d7"><div class="ttname"><a href="namespaceGStreamer.html#a0644c93e797b9aec44a1bb617ca200d7">GStreamer::disposeChild</a></div><div class="ttdeci">void disposeChild(GstElement *element)</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00075">GStreamerHelpers.cc:75</a></div></div>
 <div class="ttc" id="anamespaceGStreamer_html_a1acb105efbcd2acf396c1da069fb93ff"><div class="ttname"><a href="namespaceGStreamer.html#a1acb105efbcd2acf396c1da069fb93ff">GStreamer::adoptGChar</a></div><div class="ttdeci">GCharPtr adoptGChar(gchar *str) noexcept</div><div class="ttdef"><b>Definition</b> <a href="GstScoped_8h_source.html#l00133">GstScoped.h:133</a></div></div>
-<div class="ttc" id="anamespaceGStreamer_html_a61024c3d15d02f6b1ad8a664add1d973"><div class="ttname"><a href="namespaceGStreamer.html#a61024c3d15d02f6b1ad8a664add1d973">GStreamer::addToBin</a></div><div class="ttdeci">GstElement * addToBin(GstElement *bin, GstElementPtr element, const char *what)</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00062">GStreamerHelpers.cc:62</a></div></div>
+<div class="ttc" id="anamespaceGStreamer_html_a61024c3d15d02f6b1ad8a664add1d973"><div class="ttname"><a href="namespaceGStreamer.html#a61024c3d15d02f6b1ad8a664add1d973">GStreamer::addToBin</a></div><div class="ttdeci">GstElement * addToBin(GstElement *bin, GstElementPtr element, const char *what)</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00085">GStreamerHelpers.cc:85</a></div></div>
 <div class="ttc" id="anamespaceGStreamer_html_a7a52af43da48c06e60f33366de2a6c55"><div class="ttname"><a href="namespaceGStreamer.html#a7a52af43da48c06e60f33366de2a6c55">GStreamer::adoptCaps</a></div><div class="ttdeci">GstCapsPtr adoptCaps(GstCaps *caps) noexcept</div><div class="ttdef"><b>Definition</b> <a href="GstScoped_8h_source.html#l00108">GstScoped.h:108</a></div></div>
 <div class="ttc" id="anamespaceGStreamer_html_a81e950b3e14000bf473043dce7193497"><div class="ttname"><a href="namespaceGStreamer.html#a81e950b3e14000bf473043dce7193497">GStreamer::GCharPtr</a></div><div class="ttdeci">std::unique_ptr&lt; gchar, GFreeDeleter &gt; GCharPtr</div><div class="ttdef"><b>Definition</b> <a href="GstScoped_8h_source.html#l00070">GstScoped.h:70</a></div></div>
 <div class="ttc" id="anamespaceGStreamer_html_a87eb199c95c743f5a5c3d804124cd0a8"><div class="ttname"><a href="namespaceGStreamer.html#a87eb199c95c743f5a5c3d804124cd0a8">GStreamer::GstObjectPtr</a></div><div class="ttdeci">std::unique_ptr&lt; GstObject, GstObjectDeleter &gt; GstObjectPtr</div><div class="ttdef"><b>Definition</b> <a href="GstScoped_8h_source.html#l00058">GstScoped.h:58</a></div></div>

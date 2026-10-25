@@ -58,10 +58,9 @@ var searchData=
   ['transectstylecomplexitem_2eh_55',['TransectStyleComplexItem.h',['../TransectStyleComplexItem_8h.html',1,'']]],
   ['transectstylecomplexitemeditor_2eqml_56',['TransectStyleComplexItemEditor.qml',['../TransectStyleComplexItemEditor_8qml.html',1,'']]],
   ['transectstylecomplexitemstats_2eqml_57',['TransectStyleComplexItemStats.qml',['../TransectStyleComplexItemStats_8qml.html',1,'']]],
-  ['transectstylecomplexitemtabbar_2eqml_58',['TransectStyleComplexItemTabBar.qml',['../TransectStyleComplexItemTabBar_8qml.html',1,'']]],
-  ['transectstylecomplexitemterrainfollow_2eqml_59',['TransectStyleComplexItemTerrainFollow.qml',['../TransectStyleComplexItemTerrainFollow_8qml.html',1,'']]],
-  ['transectstylemapvisuals_2eqml_60',['TransectStyleMapVisuals.qml',['../TransectStyleMapVisuals_8qml.html',1,'']]],
-  ['transformeditor_2eqml_61',['TransformEditor.qml',['../TransformEditor_8qml.html',1,'']]],
-  ['transformpositioncontroller_2ecc_62',['TransformPositionController.cc',['../TransformPositionController_8cc.html',1,'']]],
-  ['transformpositioncontroller_2eh_63',['TransformPositionController.h',['../TransformPositionController_8h.html',1,'']]]
+  ['transectstylecomplexitemterrainfollow_2eqml_58',['TransectStyleComplexItemTerrainFollow.qml',['../TransectStyleComplexItemTerrainFollow_8qml.html',1,'']]],
+  ['transectstylemapvisuals_2eqml_59',['TransectStyleMapVisuals.qml',['../TransectStyleMapVisuals_8qml.html',1,'']]],
+  ['transformeditor_2eqml_60',['TransformEditor.qml',['../TransformEditor_8qml.html',1,'']]],
+  ['transformpositioncontroller_2ecc_61',['TransformPositionController.cc',['../TransformPositionController_8cc.html',1,'']]],
+  ['transformpositioncontroller_2eh_62',['TransformPositionController.h',['../TransformPositionController_8h.html',1,'']]]
 ];

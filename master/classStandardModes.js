@@ -4,6 +4,7 @@ var classStandardModes =
     [ "StandardModes", "classStandardModes.html#a6e22d08fe63b561fd79d1fad283c6aec", null ],
     [ "availableModesMonitorReceived", "classStandardModes.html#ad4c0163b3fe0013c590b6a1035254b4a", null ],
     [ "gotMessage", "classStandardModes.html#a6d977397eff4b80b87e9c87d4fd76b46", null ],
+    [ "modeList", "classStandardModes.html#a8d63c836349cf72cb7bd6d145d3b664b", null ],
     [ "modesUpdated", "classStandardModes.html#a48d43ab6746af64fee351224382355a6", null ],
     [ "request", "classStandardModes.html#a7e5f69d555d5c449989bb3ecf78804ac", null ],
     [ "requestCompleted", "classStandardModes.html#aa893d2d27ed37e3fa5958a98a1f496be", null ]

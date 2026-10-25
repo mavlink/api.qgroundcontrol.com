@@ -11,6 +11,7 @@ var classVehicleComponent =
     [ "KnownVehicleComponent", "classVehicleComponent.html#acbe56bb57967903bc904a4336d90c1f1", null ],
     [ "name", "classVehicleComponent.html#aedc5e78ea4b573c6d6f885f80c345a85", null ],
     [ "requiresSetup", "classVehicleComponent.html#a48f8f09feb4838886dd36888bfb11f85", null ],
+    [ "searchKeywords", "classVehicleComponent.html#a2649822ccca65e9c4f36a5a7849ffc60", null ],
     [ "sectionDisplayName", "classVehicleComponent.html#a67761e0b176983bed8abecb295a79876", null ],
     [ "sectionIds", "classVehicleComponent.html#ab06336e7cd3e124d97de0c1a9d87bf1d", null ],
     [ "sectionIdsChanged", "classVehicleComponent.html#affb5b170eb09b9c020aab060494d97e7", null ],

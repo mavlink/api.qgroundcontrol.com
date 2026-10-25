@@ -47,6 +47,7 @@ var classPlanManager =
     [ "_requestList", "classPlanManager.html#a69001c566042e03fef0c4c4cf9c72e3b", null ],
     [ "_requestNextMissionItem", "classPlanManager.html#ad6d62ec8b9a418de0227a6d954ab3bc3", null ],
     [ "_sendError", "classPlanManager.html#a8bb2c529e4ee9a4b76f681b759cef114", null ],
+    [ "_sendMissionItem", "classPlanManager.html#aedd1e8d6baca732625534aad6209eb33", null ],
     [ "_startAckTimeout", "classPlanManager.html#a821f0bd2da3a459d74ce3506472bf61b", null ],
     [ "_writeMissionCount", "classPlanManager.html#ada15eda137155d3f4feccdbfce0d5cf7", null ],
     [ "_writeMissionItemsWorker", "classPlanManager.html#a6a5c9ad1ea9b9dc20d20a87130281250", null ],

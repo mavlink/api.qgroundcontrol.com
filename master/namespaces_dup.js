@@ -361,6 +361,9 @@ var namespaces_dup =
       [ "formatAsText", "namespaceLogFormatter.html#a2d8222d1c76628705d5ebb2ac693a266", null ],
       [ "formatCsvRow", "namespaceLogFormatter.html#a63804fe79a1917deacf907f61f8ede05", null ]
     ] ],
+    [ "MAVLinkMessageInfo", "namespaceMAVLinkMessageInfo.html", [
+      [ "byId", "namespaceMAVLinkMessageInfo.html#a98e39e72dd7e5dc54b0f808601a3ef16", null ]
+    ] ],
     [ "MAVLinkSigning", "namespaceMAVLinkSigning.html", "namespaceMAVLinkSigning" ],
     [ "Mixer", "namespaceMixer.html", "namespaceMixer" ],
     [ "MonotonicClock", "namespaceMonotonicClock.html", [
@@ -412,6 +415,7 @@ var namespaces_dup =
       [ "setupPostApp", "namespacePlatform.html#a47c9e42710d883700596e8acc3bcaae4", null ],
       [ "showMultipleInstanceError", "namespacePlatform.html#afc5c30b79fec330ef978e5ae6b1a79b8", null ]
     ] ],
+    [ "PX4SerialPortConfig", "namespacePX4SerialPortConfig.html", "namespacePX4SerialPortConfig" ],
     [ "PX4ULogUtility", "namespacePX4ULogUtility.html", "namespacePX4ULogUtility" ],
     [ "QGC", "namespaceQGC.html", "namespaceQGC" ],
     [ "QGCCommandLineParser", "namespaceQGCCommandLineParser.html", "namespaceQGCCommandLineParser" ],
@@ -473,6 +477,14 @@ var namespaces_dup =
     ] ],
     [ "QGClibarchive", "namespaceQGClibarchive.html", "namespaceQGClibarchive" ],
     [ "QGCNetworkHelper", "namespaceQGCNetworkHelper.html", "namespaceQGCNetworkHelper" ],
+    [ "QGCPlanarGeometry", "namespaceQGCPlanarGeometry.html", [
+      [ "bufferPolyline", "namespaceQGCPlanarGeometry.html#aa690d6919c99dcf877ed9c38142cc5d5", null ],
+      [ "intersectLine", "namespaceQGCPlanarGeometry.html#a731096093681fc1580202a788ec37645", null ],
+      [ "intersectLines", "namespaceQGCPlanarGeometry.html#a7558daeee59e854bd5e957c9322f86d4", null ],
+      [ "joinContours", "namespaceQGCPlanarGeometry.html#aa66b4dff3edd1114af1c6da9a3ca9e8e", null ],
+      [ "offsetPolygon", "namespaceQGCPlanarGeometry.html#a6baf146f5103abfeb0ba82885220562e", null ],
+      [ "offsetPolyline", "namespaceQGCPlanarGeometry.html#af8e9c259ecbd0c09264cc87ceb5d77b9", null ]
+    ] ],
     [ "QGCRhiCapture", "namespaceQGCRhiCapture.html", "namespaceQGCRhiCapture" ],
     [ "QGCSensors", "namespaceQGCSensors.html", "namespaceQGCSensors" ],
     [ "QGCSqlHelper", "namespaceQGCSqlHelper.html", "namespaceQGCSqlHelper" ],

@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('PX4ULogUtility_8cc_source.html',''); i
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">const</span> std::span&lt;const uint8_t&gt; header{<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>uint8_t*<span class="keyword">&gt;</span>(data), <a class="code hl_variable" href="namespacePX4ULogUtility.html#ad011fabfdaed4f809ba4258c83269ecf">kHeaderSize</a>};</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">return</span> *LittleEndian::read&lt;uint64_t&gt;(header, 8);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">return</span> LittleEndian::read&lt;uint64_t&gt;(header, 8).value_or(0);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
 </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>

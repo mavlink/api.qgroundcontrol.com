@@ -793,172 +793,173 @@ $(document).ready(function(){initNavTree('MainWindow_8qml_source.html',''); init
 <div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>                id:             backgroundRect</div>
 <div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>                anchors.fill:   parent</div>
 <div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>                color:          QGroundControl.globalPalette.window</div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>                radius:         indicatorDrawer._margins</div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>                opacity:        0.85</div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>            }</div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span> </div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>            Rectangle {</div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>                objectName:                 &quot;indicatorDrawerExpandButton&quot;</div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>                anchors.horizontalCenter:   backgroundRect.right</div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>                anchors.verticalCenter:     backgroundRect.top</div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>                width:                      ScreenTools.largeFontPixelHeight</div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>                height:                     width</div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>                radius:                     width / 2</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>                color:                      QGroundControl.globalPalette.button</div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>                border.color:               QGroundControl.globalPalette.buttonText</div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>                visible:                    indicatorDrawerLoader.item &amp;&amp; indicatorDrawerLoader.item._showExpand &amp;&amp; !indicatorDrawer._expanded</div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span> </div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>                QGCLabel {</div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>                    anchors.centerIn:   parent</div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>                    text:               &quot;&gt;&quot;</div>
-<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>                    color:              QGroundControl.globalPalette.buttonText</div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>                }</div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span> </div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>                QGCMouseArea {</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>                    fillItem: parent</div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>                    onClicked: indicatorDrawer._expanded = true</div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>                }</div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>            }</div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>        }</div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span> </div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>        contentItem: QGCFlickable {</div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>            id:             indicatorDrawerLoaderFlickable</div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>            implicitWidth:  indicatorDrawer._fillWindow ? _availableWidth : Math.min(_availableWidth, indicatorDrawerLoader.width)</div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>            implicitHeight: indicatorDrawer._fillWindow ? _availableHeight : Math.min(_availableHeight, indicatorDrawerLoader.height)</div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>            contentWidth:   indicatorDrawerLoader.width</div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>            contentHeight:  indicatorDrawerLoader.height</div>
-<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span> </div>
-<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>            property real _availableWidth:  mainWindow.contentItem.width - (2 * indicatorDrawer._margins) - (indicatorDrawer.padding * 2)</div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>            property real _availableHeight: mainWindow.contentItem.height - ScreenTools.toolbarHeight - (2 * indicatorDrawer._margins) - (indicatorDrawer.padding * 2)</div>
-<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span> </div>
-<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>            Loader {</div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>                id:         indicatorDrawerLoader</div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>                objectName: &quot;indicatorDrawerLoader&quot;</div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>                width:      indicatorDrawer._fillWindow ? indicatorDrawerLoaderFlickable.width : undefined</div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span> </div>
-<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>                Binding {</div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>                    target:     indicatorDrawerLoader.item</div>
-<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>                    property:   &quot;expanded&quot;</div>
-<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>                    value:      indicatorDrawer._expanded</div>
-<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>                }</div>
-<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span> </div>
-<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>                Binding {</div>
-<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>                    target:     indicatorDrawerLoader.item</div>
-<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>                    property:   &quot;drawer&quot;</div>
-<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>                    value:      indicatorDrawer</div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>                }</div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>            }</div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>        }</div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>    }</div>
-<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span> </div>
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>    // Analyze page items (both in-panel and popped-out windows) are created with mainWindow as their</div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>    // QObject parent so their lifetime is not tied to AnalyzeView. This lets a popped-out window</div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>    // survive AnalyzeView being unloaded from the tool drawer.</div>
-<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span> </div>
-<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>    // Tracks the analyze page item currently shown inside AnalyzeView&#39;s panel (not popped out).</div>
-<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>    // null when no page is loaded or the item has been handed off to a popup window.</div>
-<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>    property var _inPanelAnalyzePage: null</div>
-<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span> </div>
-<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>    // Called by AnalyzeView.Component.onDestruction to destroy the in-panel item while</div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>    // panelContainer is still alive.</div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>    function destroyInPanelAnalyzePage() {</div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>        if (_inPanelAnalyzePage) {</div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>            _inPanelAnalyzePage.destroy()</div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>            _inPanelAnalyzePage = null</div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>        }</div>
-<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>    }</div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span> </div>
-<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>    // Called by AnalyzeView to create an analyze page item owned by mainWindow.</div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>    // The caller sets the visual parent to panelContainer after creation.</div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>    function createAnalyzePage(source) {</div>
-<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>        if (_inPanelAnalyzePage) {</div>
-<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>            _inPanelAnalyzePage.destroy()</div>
-<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>            _inPanelAnalyzePage = null</div>
-<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>        }</div>
-<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>        var component = Qt.createComponent(source)</div>
-<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>        if (component.status !== Component.Ready) {</div>
-<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>            console.warn(&quot;createAnalyzePage failed source:&quot;, source, &quot;errorString:&quot;, component.errorString())</div>
-<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>            return null</div>
-<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>        }</div>
-<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>        _inPanelAnalyzePage = component.createObject(mainWindow)</div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>        return _inPanelAnalyzePage</div>
-<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>    }</div>
-<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span> </div>
-<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>    // Called by AnalyzeView when the in-panel item is handed off to a popup window.</div>
-<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>    // Clears _inPanelAnalyzePage so destroyInPanelAnalyzePage() does not destroy it</div>
-<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>    // when AnalyzeView is torn down.</div>
-<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>    function analyzePageMovedToPopup() {</div>
-<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>        _inPanelAnalyzePage = null</div>
-<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>    }</div>
-<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span> </div>
-<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>    function createWindowedAnalyzePage(title, source, requiresVehicle, existingItem) {</div>
-<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>        var windowedPage = windowedAnalyzePage.createObject(mainWindow)</div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>        windowedPage.title = title</div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>        windowedPage.requiresVehicle = requiresVehicle</div>
-<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>        if (existingItem) {</div>
-<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>            windowedPage.adoptItem(existingItem)</div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>        } else {</div>
-<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>            windowedPage.source = source</div>
-<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>        }</div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>        windowedPage.visible = true</div>
-<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>    }</div>
-<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span> </div>
-<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>    Component {</div>
-<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>        id: windowedAnalyzePage</div>
-<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span> </div>
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>        Window {</div>
-<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>            width:      ScreenTools.defaultFontPixelWidth  * 100</div>
-<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>            height:     ScreenTools.defaultFontPixelHeight * 40</div>
-<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>            visible:    false</div>
-<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span> </div>
-<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>            property alias source: loader.source</div>
-<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>            property bool requiresVehicle: false</div>
-<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span> </div>
-<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>            function adoptItem(item) {</div>
-<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>                loader.visible = false</div>
-<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>                loader.source = &quot;&quot;</div>
-<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>                item.parent = contentRect</div>
-<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>                item.anchors.fill = contentRect</div>
-<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>                item.popped = true</div>
-<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>                item.visible = true</div>
-<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>            }</div>
-<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span> </div>
-<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>            Connections {</div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>                target: QGroundControl.multiVehicleManager</div>
-<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>                function onActiveVehicleChanged() {</div>
-<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>                    if (requiresVehicle) {</div>
-<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>                        close()</div>
-<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>                    }</div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>                }</div>
-<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>            }</div>
-<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span> </div>
-<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>            Rectangle {</div>
-<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>                id:             contentRect</div>
-<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>                color:          QGroundControl.globalPalette.window</div>
-<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>                anchors.fill:   parent</div>
-<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span> </div>
-<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>                Loader {</div>
-<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>                    id:             loader</div>
-<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>                    anchors.fill:   parent</div>
-<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>                    onLoaded:       item.popped = true</div>
-<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>                }</div>
-<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>            }</div>
-<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span> </div>
-<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>            onClosing: {</div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>                visible = false</div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>                // Destroy any reparented children (not owned by loader)</div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>                for (var i = contentRect.children.length - 1; i &gt;= 0; i--) {</div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>                    var child = contentRect.children[i]</div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>                    if (child !== loader) {</div>
-<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>                        child.destroy()</div>
-<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>                    }</div>
-<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>                }</div>
-<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>                source = &quot;&quot;</div>
-<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>                Qt.callLater(destroy)</div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>            }</div>
-<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>        }</div>
-<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>    }</div>
-<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>}</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>                border.color:   QGroundControl.globalPalette.borderSubtle</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>                radius:         indicatorDrawer._margins</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>                opacity:        0.85</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>            }</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span> </div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>            Rectangle {</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>                objectName:                 &quot;indicatorDrawerExpandButton&quot;</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>                anchors.horizontalCenter:   backgroundRect.right</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>                anchors.verticalCenter:     backgroundRect.top</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>                width:                      ScreenTools.largeFontPixelHeight</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>                height:                     width</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>                radius:                     width / 2</div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>                color:                      QGroundControl.globalPalette.windowCard</div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>                border.color:               QGroundControl.globalPalette.textPrimary</div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>                visible:                    indicatorDrawerLoader.item &amp;&amp; indicatorDrawerLoader.item._showExpand &amp;&amp; !indicatorDrawer._expanded</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span> </div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>                QGCLabel {</div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>                    anchors.centerIn:   parent</div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>                    text:               &quot;&gt;&quot;</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>                    color:              QGroundControl.globalPalette.textPrimary</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>                }</div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span> </div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>                QGCMouseArea {</div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>                    fillItem: parent</div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>                    onClicked: indicatorDrawer._expanded = true</div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>                }</div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>            }</div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>        }</div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span> </div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>        contentItem: QGCFlickable {</div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>            id:             indicatorDrawerLoaderFlickable</div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>            implicitWidth:  indicatorDrawer._fillWindow ? _availableWidth : Math.min(_availableWidth, indicatorDrawerLoader.width)</div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>            implicitHeight: indicatorDrawer._fillWindow ? _availableHeight : Math.min(_availableHeight, indicatorDrawerLoader.height)</div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>            contentWidth:   indicatorDrawerLoader.width</div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>            contentHeight:  indicatorDrawerLoader.height</div>
+<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span> </div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>            property real _availableWidth:  mainWindow.contentItem.width - (2 * indicatorDrawer._margins) - (indicatorDrawer.padding * 2)</div>
+<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>            property real _availableHeight: mainWindow.contentItem.height - ScreenTools.toolbarHeight - (2 * indicatorDrawer._margins) - (indicatorDrawer.padding * 2)</div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span> </div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>            Loader {</div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>                id:         indicatorDrawerLoader</div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>                objectName: &quot;indicatorDrawerLoader&quot;</div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>                width:      indicatorDrawer._fillWindow ? indicatorDrawerLoaderFlickable.width : undefined</div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span> </div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>                Binding {</div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>                    target:     indicatorDrawerLoader.item</div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>                    property:   &quot;expanded&quot;</div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>                    value:      indicatorDrawer._expanded</div>
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>                }</div>
+<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span> </div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>                Binding {</div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>                    target:     indicatorDrawerLoader.item</div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>                    property:   &quot;drawer&quot;</div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>                    value:      indicatorDrawer</div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>                }</div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>            }</div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>        }</div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>    }</div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span> </div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>    // Analyze page items (both in-panel and popped-out windows) are created with mainWindow as their</div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>    // QObject parent so their lifetime is not tied to AnalyzeView. This lets a popped-out window</div>
+<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>    // survive AnalyzeView being unloaded from the tool drawer.</div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span> </div>
+<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>    // Tracks the analyze page item currently shown inside AnalyzeView&#39;s panel (not popped out).</div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>    // null when no page is loaded or the item has been handed off to a popup window.</div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>    property var _inPanelAnalyzePage: null</div>
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span> </div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>    // Called by AnalyzeView.Component.onDestruction to destroy the in-panel item while</div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>    // panelContainer is still alive.</div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>    function destroyInPanelAnalyzePage() {</div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>        if (_inPanelAnalyzePage) {</div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>            _inPanelAnalyzePage.destroy()</div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>            _inPanelAnalyzePage = null</div>
+<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>        }</div>
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>    }</div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span> </div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>    // Called by AnalyzeView to create an analyze page item owned by mainWindow.</div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>    // The caller sets the visual parent to panelContainer after creation.</div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>    function createAnalyzePage(source) {</div>
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>        if (_inPanelAnalyzePage) {</div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>            _inPanelAnalyzePage.destroy()</div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>            _inPanelAnalyzePage = null</div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>        }</div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>        var component = Qt.createComponent(source)</div>
+<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>        if (component.status !== Component.Ready) {</div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>            console.warn(&quot;createAnalyzePage failed source:&quot;, source, &quot;errorString:&quot;, component.errorString())</div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>            return null</div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>        }</div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>        _inPanelAnalyzePage = component.createObject(mainWindow)</div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>        return _inPanelAnalyzePage</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>    }</div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span> </div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>    // Called by AnalyzeView when the in-panel item is handed off to a popup window.</div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>    // Clears _inPanelAnalyzePage so destroyInPanelAnalyzePage() does not destroy it</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>    // when AnalyzeView is torn down.</div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>    function analyzePageMovedToPopup() {</div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>        _inPanelAnalyzePage = null</div>
+<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>    }</div>
+<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span> </div>
+<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>    function createWindowedAnalyzePage(title, source, requiresVehicle, existingItem) {</div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>        var windowedPage = windowedAnalyzePage.createObject(mainWindow)</div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>        windowedPage.title = title</div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>        windowedPage.requiresVehicle = requiresVehicle</div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>        if (existingItem) {</div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>            windowedPage.adoptItem(existingItem)</div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>        } else {</div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>            windowedPage.source = source</div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>        }</div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>        windowedPage.visible = true</div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>    }</div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span> </div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>    Component {</div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>        id: windowedAnalyzePage</div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span> </div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>        Window {</div>
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>            width:      ScreenTools.defaultFontPixelWidth  * 100</div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>            height:     ScreenTools.defaultFontPixelHeight * 40</div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>            visible:    false</div>
+<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span> </div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>            property alias source: loader.source</div>
+<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>            property bool requiresVehicle: false</div>
+<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span> </div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>            function adoptItem(item) {</div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>                loader.visible = false</div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>                loader.source = &quot;&quot;</div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>                item.parent = contentRect</div>
+<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>                item.anchors.fill = contentRect</div>
+<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>                item.popped = true</div>
+<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>                item.visible = true</div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>            }</div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span> </div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>            Connections {</div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>                target: QGroundControl.multiVehicleManager</div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>                function onActiveVehicleChanged() {</div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>                    if (requiresVehicle) {</div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>                        close()</div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>                    }</div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>                }</div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>            }</div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span> </div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>            Rectangle {</div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>                id:             contentRect</div>
+<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>                color:          QGroundControl.globalPalette.window</div>
+<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>                anchors.fill:   parent</div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span> </div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>                Loader {</div>
+<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>                    id:             loader</div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>                    anchors.fill:   parent</div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>                    onLoaded:       item.popped = true</div>
+<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>                }</div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>            }</div>
+<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span> </div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>            onClosing: {</div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>                visible = false</div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>                // Destroy any reparented children (not owned by loader)</div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>                for (var i = contentRect.children.length - 1; i &gt;= 0; i--) {</div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>                    var child = contentRect.children[i]</div>
+<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>                    if (child !== loader) {</div>
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>                        child.destroy()</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>                    }</div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>                }</div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>                source = &quot;&quot;</div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>                Qt.callLater(destroy)</div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>            }</div>
+<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>        }</div>
+<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>    }</div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -8,7 +8,7 @@ var classFailureInjection =
     [ "logInjection", "classFailureInjection.html#ac786fd9261e4f010f79b7938772d43e1", null ],
     [ "logRow", "classFailureInjection.html#ab34eeab8277dc8bb2343bf86f2f7808e", null ],
     [ "markUnitReset", "classFailureInjection.html#a7fa370312cb1924b0dd5b1a4dda6d9c9", null ],
-    [ "notifyActiveVehicle", "classFailureInjection.html#a7349d7cd5901ab63f3d7920c476b5364", null ],
+    [ "notifyActiveVehicle", "classFailureInjection.html#a5848461acadb19dd1eb12bc87c584719", null ],
     [ "resolvePendingInterrupted", "classFailureInjection.html#a3baaa1fb067161464145a22b0e6e3358", null ],
     [ "resolveResult", "classFailureInjection.html#ad9b332174c6dcb20dbe93060f818b61d", null ],
     [ "types", "classFailureInjection.html#a69bb8a25834a386cde601e4654150b8d", null ],

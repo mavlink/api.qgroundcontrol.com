@@ -10,7 +10,7 @@ var namespaceMAVLinkSigning =
     [ "checkSigningLinkId", "namespaceMAVLinkSigning.html#a17982f26dbf56e3009de39218e395a6a", null ],
     [ "createSetupSigning", "namespaceMAVLinkSigning.html#a8f553ad7fd7338adfe3e9725af8e43bd", null ],
     [ "currentSigningTimestampTicks", "namespaceMAVLinkSigning.html#a81693386c0b29dff1daab8377e508f73", null ],
-    [ "encodeSetupSigning", "namespaceMAVLinkSigning.html#a29c0095b7cd1384bfb2927852970bdc9", null ],
+    [ "encodeSetupSigning", "namespaceMAVLinkSigning.html#afd4727af80a096456e4fbba1c5d7b170", null ],
     [ "insecureConnectionAcceptUnsignedCallback", "namespaceMAVLinkSigning.html#aee6a741375606660e530838b65d979b5", null ],
     [ "isMessageSigned", "namespaceMAVLinkSigning.html#aab0248df228a43ec97763e46c04406fa", null ],
     [ "logSigningFailure", "namespaceMAVLinkSigning.html#abbd217ba676a51f965345477354944fc", null ],

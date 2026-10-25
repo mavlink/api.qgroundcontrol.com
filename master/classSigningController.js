@@ -24,7 +24,7 @@ var classSigningController =
     [ "stateChanged", "classSigningController.html#a2737687de82b54be6e117efbcf2db032", null ],
     [ "status", "classSigningController.html#abe280c0167dd154b0ef297a1d7a83ea6", null ],
     [ "statusText", "classSigningController.html#ab4d1240497f15d54fbbc1b57e9ef95ce", null ],
-    [ "tryBeginDisable", "classSigningController.html#a79ef8a1b86cc1025c8a7518e26f74651", null ],
-    [ "tryBeginEnable", "classSigningController.html#a535eb9432d99e335b83b029f06886283", null ],
+    [ "tryBeginDisable", "classSigningController.html#ad36e33e071c3210411e9672dc0e47ed7", null ],
+    [ "tryBeginEnable", "classSigningController.html#a585e04458f7f8f522ff8238a34c584d5", null ],
     [ "wallClockRefreshActiveForTesting", "classSigningController.html#addc688f0e7abb3f9a3bf85a3edd71825", null ]
 ];

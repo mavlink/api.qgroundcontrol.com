@@ -9,7 +9,9 @@ var classPX4FirmwarePlugin =
     [ "adjustIncomingMavlinkMessage", "classPX4FirmwarePlugin.html#a110ecabe119b711f88d51c29d380fb13", null ],
     [ "autoDisarmParameter", "classPX4FirmwarePlugin.html#a796db73e5bf367fab3a1bd3f99fbace9", null ],
     [ "autopilotPlugin", "classPX4FirmwarePlugin.html#acfdb630c1222ab3983173305ca30c0c5", null ],
+    [ "createVehicleReadiness", "classPX4FirmwarePlugin.html#a122cdbf574fb57996ed5761506c4c882", null ],
     [ "expandedToolbarIndicatorSource", "classPX4FirmwarePlugin.html#a97b6567635e5d5a3e58747d4b6f67c50", null ],
+    [ "externalFlightModeName", "classPX4FirmwarePlugin.html#a674db5da808c1893b82a04c4d24d12f7", null ],
     [ "fixedWingAirSpeedLimitsAvailable", "classPX4FirmwarePlugin.html#a70f33b7cb6cc000fdf7250d92f9fff16", null ],
     [ "flightMode", "classPX4FirmwarePlugin.html#a256a0aca661d1732e13c34b62871c40a", null ],
     [ "flightModes", "classPX4FirmwarePlugin.html#a93e8647fb28b40f6fbc2b427d3896b52", null ],
@@ -51,5 +53,6 @@ var classPX4FirmwarePlugin =
     [ "supportsNegativeThrust", "classPX4FirmwarePlugin.html#aaa12f69cf63d25ff1025eca2534bf62f", null ],
     [ "takeControlFlightMode", "classPX4FirmwarePlugin.html#a688c7011b6660e5b372a5f03d5ae729b", null ],
     [ "takeOffFlightMode", "classPX4FirmwarePlugin.html#a2c33618f647cbda255e0f5ad1405a757", null ],
-    [ "updateAvailableFlightModes", "classPX4FirmwarePlugin.html#a5a3037cd350effc93b627160b5a374f9", null ]
+    [ "updateAvailableFlightModes", "classPX4FirmwarePlugin.html#a5a3037cd350effc93b627160b5a374f9", null ],
+    [ "kExternalFlightModeCount", "classPX4FirmwarePlugin.html#a814183ba55d8fc9fff558a57129ad3ff", null ]
 ];

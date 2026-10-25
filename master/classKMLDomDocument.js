@@ -8,6 +8,7 @@ var classKMLDomDocument =
     [ "addLookAt", "classKMLDomDocument.html#a39fc82d68e4308d96055005c968238dd", null ],
     [ "addPlacemark", "classKMLDomDocument.html#ae5ee4fd1371f079b391cd667802f7625", null ],
     [ "addPoint", "classKMLDomDocument.html#a7dbcac838beecf2b920302cb9ec52379", null ],
+    [ "addPolygon", "classKMLDomDocument.html#aa2367d4a296ccc0e8927beaa4c3087be", null ],
     [ "addPolygon", "classKMLDomDocument.html#a3b4c930bb9e82c8fae79d50f5f08a82c", null ],
     [ "addPolyStyle", "classKMLDomDocument.html#a18c60c1ba1341e3bcc28b0e07e3f63a4", null ],
     [ "addStyle", "classKMLDomDocument.html#af84af2655c8ecb3dd53abe1abad119e3", null ],

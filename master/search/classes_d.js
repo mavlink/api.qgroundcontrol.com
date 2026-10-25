@@ -75,13 +75,14 @@ var searchData=
   ['mocklinkworker_72',['MockLinkWorker',['../classMockLinkWorker.html',1,'']]],
   ['mockvideostreamserver_73',['MockVideoStreamServer',['../classMockVideoStreamServer.html',1,'']]],
   ['mode_74',['Mode',['../structStandardModes_1_1Mode.html',1,'StandardModes']]],
-  ['monhw_75',['MonHw',['../structUBX_1_1MonHw.html',1,'UBX']]],
-  ['monrf_76',['MonRf',['../structUBX_1_1MonRf.html',1,'UBX']]],
-  ['monrfblock_77',['MonRfBlock',['../structUBX_1_1MonRfBlock.html',1,'UBX']]],
-  ['monver_78',['MonVer',['../structUBX_1_1MonVer.html',1,'UBX']]],
-  ['monverextension_79',['MonVerExtension',['../structUBX_1_1MonVerExtension.html',1,'UBX']]],
-  ['motorassignment_80',['MotorAssignment',['../classMotorAssignment.html',1,'']]],
-  ['motorcomponent_81',['MotorComponent',['../classMotorComponent.html',1,'']]],
-  ['msgoutkey_82',['MsgOutKey',['../structUBX_1_1MsgOutKey.html',1,'UBX']]],
-  ['multivehiclemanager_83',['MultiVehicleManager',['../classMultiVehicleManager.html',1,'']]]
+  ['modegroupresults_75',['ModeGroupResults',['../structHealthAndArmingCheckReport_1_1ModeGroupResults.html',1,'HealthAndArmingCheckReport']]],
+  ['monhw_76',['MonHw',['../structUBX_1_1MonHw.html',1,'UBX']]],
+  ['monrf_77',['MonRf',['../structUBX_1_1MonRf.html',1,'UBX']]],
+  ['monrfblock_78',['MonRfBlock',['../structUBX_1_1MonRfBlock.html',1,'UBX']]],
+  ['monver_79',['MonVer',['../structUBX_1_1MonVer.html',1,'UBX']]],
+  ['monverextension_80',['MonVerExtension',['../structUBX_1_1MonVerExtension.html',1,'UBX']]],
+  ['motorassignment_81',['MotorAssignment',['../classMotorAssignment.html',1,'']]],
+  ['motorcomponent_82',['MotorComponent',['../classMotorComponent.html',1,'']]],
+  ['msgoutkey_83',['MsgOutKey',['../structUBX_1_1MsgOutKey.html',1,'UBX']]],
+  ['multivehiclemanager_84',['MultiVehicleManager',['../classMultiVehicleManager.html',1,'']]]
 ];

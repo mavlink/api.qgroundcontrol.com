@@ -133,7 +133,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9bc0f34df99d98f61d9465f2b9dda108" id="r_a9bc0f34df99d98f61d9465f2b9dda108"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMAVLinkEventManager.html#a9bc0f34df99d98f61d9465f2b9dda108">handleEventMessage</a> (const <a class="el" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> &amp;message)</td></tr>
 <tr class="separator:a9bc0f34df99d98f61d9465f2b9dda108"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a829a8e5640c7c8d8c559027526e265f6" id="r_a829a8e5640c7c8d8c559027526e265f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMAVLinkEventManager.html#a829a8e5640c7c8d8c559027526e265f6">setMetadata</a> (uint8_t compid, const QString &amp;metadataJsonFileName)</td></tr>
+<tr class="memdesc:a829a8e5640c7c8d8c559027526e265f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load event metadata JSON for a component.  <br /></td></tr>
 <tr class="separator:a829a8e5640c7c8d8c559027526e265f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b76a8e4db0df9415e3a0a8177f746b1" id="r_a7b76a8e4db0df9415e3a0a8177f746b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMAVLinkEventManager.html#a7b76a8e4db0df9415e3a0a8177f746b1">modeGroup</a> (uint8_t compid, uint32_t customMode) const</td></tr>
+<tr class="separator:a7b76a8e4db0df9415e3a0a8177f746b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4b56cac039a12926564f139b112b94d" id="r_ac4b56cac039a12926564f139b112b94d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMAVLinkEventManager.html#ac4b56cac039a12926564f139b112b94d">healthAndArmingChecksSupported</a> (uint8_t compid) const</td></tr>
 <tr class="separator:ac4b56cac039a12926564f139b112b94d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -166,9 +169,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MAVLinkEventManager_8cc_source.html#l00018">18</a> of file <a class="el" href="MAVLinkEventManager_8cc_source.html">MAVLinkEventManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MAVLinkEventManager_8cc_source.html#l00017">17</a> of file <a class="el" href="MAVLinkEventManager_8cc_source.html">MAVLinkEventManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="classVehicle.html#ab56d31b0164d88862f7e1cf70acc691e">Vehicle::flightModeChanged()</a>.</p>
+<p class="reference">References <a class="el" href="classVehicle.html#ab408f37b578fe7056f02f39d73f9451e">Vehicle::effectiveCustomModeChanged()</a>.</p>
 
 </div>
 </div>
@@ -215,9 +218,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Route MAVLink event protocol messages (EVENT, CURRENT_EVENT_SEQUENCE, RESPONSE_EVENT_ERROR) to the <a class="el" href="classEventHandler.html" title="Drives the MAVLink events protocol for a single component.">EventHandler</a> for the source component. </p>
 
-<p class="definition">Definition at line <a class="el" href="MAVLinkEventManager_8cc_source.html#l00041">41</a> of file <a class="el" href="MAVLinkEventManager_8cc_source.html">MAVLinkEventManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MAVLinkEventManager_8cc_source.html#l00040">40</a> of file <a class="el" href="MAVLinkEventManager_8cc_source.html">MAVLinkEventManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="EventHandler_8cc_source.html#l00130">EventHandler::handleEvents()</a>.</p>
+<p class="reference">References <a class="el" href="EventHandler_8cc_source.html#l00121">EventHandler::handleEvents()</a>.</p>
 
 </div>
 </div>
@@ -236,7 +239,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MAVLinkEventManager_8cc_source.html#l00036">36</a> of file <a class="el" href="MAVLinkEventManager_8cc_source.html">MAVLinkEventManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MAVLinkEventManager_8cc_source.html#l00035">35</a> of file <a class="el" href="MAVLinkEventManager_8cc_source.html">MAVLinkEventManager.cc</a>.</p>
 
 </div>
 </div>
@@ -257,7 +260,38 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>True if an <a class="el" href="classEventHandler.html" title="Drives the MAVLink events protocol for a single component.">EventHandler</a> already exists for this component and it reports the health_and_arming_check protocol as supported. </p>
 
-<p class="definition">Definition at line <a class="el" href="MAVLinkEventManager_8cc_source.html#l00046">46</a> of file <a class="el" href="MAVLinkEventManager_8cc_source.html">MAVLinkEventManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MAVLinkEventManager_8cc_source.html#l00045">45</a> of file <a class="el" href="MAVLinkEventManager_8cc_source.html">MAVLinkEventManager.cc</a>.</p>
+
+</div>
+</div>
+<a id="a7b76a8e4db0df9415e3a0a8177f746b1" name="a7b76a8e4db0df9415e3a0a8177f746b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b76a8e4db0df9415e3a0a8177f746b1">&#9670;&#160;</a></span>modeGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MAVLinkEventManager::modeGroup </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>compid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>customMode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Health and arming check mode group of a custom mode, from the component's metadata. -1 if the component or mode is unknown. </p>
+
+<p class="definition">Definition at line <a class="el" href="MAVLinkEventManager_8cc_source.html#l00059">59</a> of file <a class="el" href="MAVLinkEventManager_8cc_source.html">MAVLinkEventManager.cc</a>.</p>
 
 </div>
 </div>
@@ -286,11 +320,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Load event metadata JSON for a component, then compute takeoff and mission mode groups and publish them to the report. </p>
 
-<p class="definition">Definition at line <a class="el" href="MAVLinkEventManager_8cc_source.html#l00055">55</a> of file <a class="el" href="MAVLinkEventManager_8cc_source.html">MAVLinkEventManager.cc</a>.</p>
+<p>Load event metadata JSON for a component. </p>
 
-<p class="reference">References <a class="el" href="Vehicle_8h_source.html#l00462">Vehicle::firmwarePlugin()</a>, <a class="el" href="EventHandler_8cc_source.html#l00160">EventHandler::getModeGroup()</a>, <a class="el" href="Vehicle_8cc_source.html#l02600">Vehicle::missionFlightMode()</a>, <a class="el" href="FirmwarePlugin_8cc_source.html#l00086">FirmwarePlugin::setFlightMode()</a>, <a class="el" href="EventHandler_8cc_source.html#l00135">EventHandler::setMetadata()</a>, and <a class="el" href="FirmwarePlugin_8h_source.html#l00165">FirmwarePlugin::takeOffFlightMode()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MAVLinkEventManager_8cc_source.html#l00054">54</a> of file <a class="el" href="MAVLinkEventManager_8cc_source.html">MAVLinkEventManager.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="EventHandler_8cc_source.html#l00126">EventHandler::setMetadata()</a>.</p>
 
 </div>
 </div>

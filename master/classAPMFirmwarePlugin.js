@@ -10,6 +10,7 @@ var classAPMFirmwarePlugin =
     [ "autopilotPlugin", "classAPMFirmwarePlugin.html#acadfb327b7ba4f4d0270ad60ced977bd", null ],
     [ "calcAltOffsetP", "classAPMFirmwarePlugin.html#ac82f04d6a02d2ea0253b701169137f49", null ],
     [ "calcAltOffsetPT", "classAPMFirmwarePlugin.html#a369fa931b60f3ae46f7e27a21a1ae2f7", null ],
+    [ "createVehicleReadiness", "classAPMFirmwarePlugin.html#a81556bf17f8388a9496271d91f656a49", null ],
     [ "expandedToolbarIndicatorSource", "classAPMFirmwarePlugin.html#a110b844d3987b3d697816096788fadb5", null ],
     [ "fixedWingAirSpeedLimitsAvailable", "classAPMFirmwarePlugin.html#a4f327d225f4e01bdd25b1ee9ed0f83cf", null ],
     [ "flightMode", "classAPMFirmwarePlugin.html#a1adc5b276060859f08656a6b0e4850ce", null ],

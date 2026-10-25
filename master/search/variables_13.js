@@ -118,7 +118,7 @@ var searchData=
   ['stopiomanager_115',['stopIoManager',['../structAndroidSerial_1_1JniMethodCache.html#a3f820e34aabd36c5d13f044bc3378570',1,'AndroidSerial::JniMethodCache']]],
   ['stoptakingphotosname_116',['stopTakingPhotosName',['../classLandingComplexItem.html#a0b983e86af276591d194f735b7b5e3e6',1,'LandingComplexItem']]],
   ['stoptakingvideoname_117',['stopTakingVideoName',['../classLandingComplexItem.html#a1a361dd5f6842d7f8df8ef9b477cab82',1,'LandingComplexItem']]],
-  ['stream_118',['stream',['../classGPSNMEAStream.html#ac679a698cd7e843f716c0d687aea5643',1,'GPSNMEAStream::STREAM'],['../structGPSReceiverFamily.html#a17b29525c0ac7d6d5bafa4a9502b74de',1,'GPSReceiverFamily::stream']]],
+  ['stream_118',['stream',['../structGPSReceiverFamily.html#a17b29525c0ac7d6d5bafa4a9502b74de',1,'GPSReceiverFamily::stream'],['../classGPSNMEAStream.html#ac679a698cd7e843f716c0d687aea5643',1,'GPSNMEAStream::STREAM']]],
   ['streamcount_119',['streamCount',['../structSigningStatus.html#a28081bbcec7352cd5cdc451f94d22632',1,'SigningStatus']]],
   ['stressunittests_120',['stressUnitTests',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#a82e2ae9574cfcf0eb0a092d5eeb1a95a',1,'QGCCommandLineParser::CommandLineParseResult']]],
   ['stressunittestscount_121',['stressUnitTestsCount',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#ab26701a8d320dc4cc014bf2fd5b0836f',1,'QGCCommandLineParser::CommandLineParseResult']]],
@@ -151,6 +151,6 @@ var searchData=
   ['sync_148',['sync',['../structSBF_1_1BlockHeader.html#a272f2ab549444602d0a2fe743d3656f2',1,'SBF::BlockHeader::sync'],['../struct__GstQgcVideoSinkBin.html#a354b5e3bbe789ad52cf1abfa24a3fed8',1,'_GstQgcVideoSinkBin::sync']]],
   ['sync1_149',['sync1',['../namespaceSBF.html#a26b1f719de864c3545f399cfff008bf4',1,'SBF::SYNC1'],['../namespaceUBX.html#afa1df933924b100c73a62845a54d0fe0',1,'UBX::SYNC1']]],
   ['sync2_150',['sync2',['../namespaceUBX.html#a00b3d78fe9a7781b21fba3c0ab9b1363',1,'UBX::SYNC2'],['../namespaceSBF.html#acce5b2d9628d5cbbdceb0fd635f3f3eb',1,'SBF::SYNC2']]],
-  ['systemid_151',['systemId',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#aa7bf42a5401b5c4552db2b7e27178992',1,'QGCCommandLineParser::CommandLineParseResult']]],
+  ['systemid_151',['systemId',['../structQGCCommandLineParser_1_1CommandLineParseResult.html#a1c0b222ae79b5d62b3886302d68f9ce7',1,'QGCCommandLineParser::CommandLineParseResult']]],
   ['systemlocation_152',['systemlocation',['../classQSerialPortPrivate.html#ae428bc4a4dc7680de709591ccfc0fcea',1,'QSerialPortPrivate::systemLocation'],['../structSerialPortManager_1_1Port.html#aa5fb71b952c96e92e1a8e4e26612984b',1,'SerialPortManager::Port::systemLocation'],['../structSerialPortManager_1_1Reservation.html#a8a2e9096a716415dec22dff3645513f1',1,'SerialPortManager::Reservation::systemLocation']]]
 ];

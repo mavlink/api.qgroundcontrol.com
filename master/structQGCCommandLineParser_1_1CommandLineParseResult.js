@@ -25,9 +25,11 @@ var structQGCCommandLineParser_1_1CommandLineParseResult =
     [ "statusCode", "structQGCCommandLineParser_1_1CommandLineParseResult.html#a9b1469ddc5eccd81d957a24d3bc49cba", null ],
     [ "stressUnitTests", "structQGCCommandLineParser_1_1CommandLineParseResult.html#a82e2ae9574cfcf0eb0a092d5eeb1a95a", null ],
     [ "stressUnitTestsCount", "structQGCCommandLineParser_1_1CommandLineParseResult.html#ab26701a8d320dc4cc014bf2fd5b0836f", null ],
-    [ "systemId", "structQGCCommandLineParser_1_1CommandLineParseResult.html#aa7bf42a5401b5c4552db2b7e27178992", null ],
+    [ "systemId", "structQGCCommandLineParser_1_1CommandLineParseResult.html#a1c0b222ae79b5d62b3886302d68f9ce7", null ],
     [ "unitTestOutput", "structQGCCommandLineParser_1_1CommandLineParseResult.html#ada87a75e992aa6443a43636c6f4a604b", null ],
     [ "unitTests", "structQGCCommandLineParser_1_1CommandLineParseResult.html#a943da3934499a51cd04cdf3ad0f6e954", null ],
+    [ "unitTestShardCount", "structQGCCommandLineParser_1_1CommandLineParseResult.html#a8a6fa1437dbd1eaaf39f01efc9d6d6d9", null ],
+    [ "unitTestShardIndex", "structQGCCommandLineParser_1_1CommandLineParseResult.html#af9b5e3bebbbaa1b9cd47ec6718f025df", null ],
     [ "unknownOptions", "structQGCCommandLineParser_1_1CommandLineParseResult.html#a501664758dd9244f7a908e38cb81f925", null ],
     [ "useSwRast", "structQGCCommandLineParser_1_1CommandLineParseResult.html#ad2fec5165dd4a0441521f3697f179e7e", null ],
     [ "versionText", "structQGCCommandLineParser_1_1CommandLineParseResult.html#a78769f21789d5bb3f80e27d9059d1bc3", null ]

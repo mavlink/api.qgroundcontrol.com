@@ -10,6 +10,8 @@ var dir_bead8a69af810b80826c377a439de6fe =
     [ "APMParameterMetaData.cc", "APMParameterMetaData_8cc.html", null ],
     [ "APMParameterMetaData.h", "APMParameterMetaData_8h.html", "APMParameterMetaData_8h" ],
     [ "APMSupportForwardingIndicator.qml", "APMSupportForwardingIndicator_8qml.html", null ],
+    [ "APMVehicleReadiness.cc", "APMVehicleReadiness_8cc.html", null ],
+    [ "APMVehicleReadiness.h", "APMVehicleReadiness_8h.html", "APMVehicleReadiness_8h" ],
     [ "ArduCopterFirmwarePlugin.cc", "ArduCopterFirmwarePlugin_8cc.html", null ],
     [ "ArduCopterFirmwarePlugin.h", "ArduCopterFirmwarePlugin_8h.html", "ArduCopterFirmwarePlugin_8h" ],
     [ "ArduPlaneFirmwarePlugin.cc", "ArduPlaneFirmwarePlugin_8cc.html", null ],

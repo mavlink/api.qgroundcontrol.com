@@ -8,5 +8,8 @@ var classFactPanelController =
     [ "getParameterFact", "classFactPanelController.html#a165778b4869a6fb0711587f1d21dc495", null ],
     [ "missingParametersAvailable", "classFactPanelController.html#a1365fcba6638b51600682a2f2db1525a", null ],
     [ "parameterExists", "classFactPanelController.html#abfd8493f4409e58fc9968f9122774268", null ],
+    [ "setSuppressRebootMessage", "classFactPanelController.html#a50c818df5328882e24db7c85a1009e6c", null ],
+    [ "suppressRebootMessage", "classFactPanelController.html#adcac24d7ac0a8badd91a0b1eaea4532f", null ],
+    [ "suppressRebootMessageChanged", "classFactPanelController.html#aa69466dfbe46f3017e911ca343c4c065", null ],
     [ "_vehicle", "classFactPanelController.html#ad5f0b6d670df079684a92bc980cfadd3", null ]
 ];

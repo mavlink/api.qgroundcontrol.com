@@ -8,5 +8,7 @@ var dir_df2f8bfe41413ecc4c8cad2ba72a69b8 =
     [ "PX4FirmwarePluginFactory.h", "PX4FirmwarePluginFactory_8h.html", "PX4FirmwarePluginFactory_8h" ],
     [ "PX4FlightModeIndicator.qml", "PX4FlightModeIndicator_8qml.html", null ],
     [ "PX4ParameterMetaData.cc", "PX4ParameterMetaData_8cc.html", null ],
-    [ "PX4ParameterMetaData.h", "PX4ParameterMetaData_8h.html", "PX4ParameterMetaData_8h" ]
+    [ "PX4ParameterMetaData.h", "PX4ParameterMetaData_8h.html", "PX4ParameterMetaData_8h" ],
+    [ "PX4VehicleReadiness.cc", "PX4VehicleReadiness_8cc.html", null ],
+    [ "PX4VehicleReadiness.h", "PX4VehicleReadiness_8h.html", "PX4VehicleReadiness_8h" ]
 ];

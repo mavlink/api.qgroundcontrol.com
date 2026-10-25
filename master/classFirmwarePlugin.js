@@ -41,6 +41,7 @@ var classFirmwarePlugin =
     [ "createAutotune", "classFirmwarePlugin.html#a8cc8c490f0616d2c4df3b71d51961a03", null ],
     [ "createCameraControl", "classFirmwarePlugin.html#afbd746b17c203ecfe79f2a9347298aff", null ],
     [ "createCameraManager", "classFirmwarePlugin.html#ae097df83872fa103774940dec7cbdd9a", null ],
+    [ "createVehicleReadiness", "classFirmwarePlugin.html#a3670156468b0d945804ec3653c055c68", null ],
     [ "defaultJoystickTXMode", "classFirmwarePlugin.html#adbfa52c513ab756f8002b0e4a9381d5d", null ],
     [ "expandedToolbarIndicatorSource", "classFirmwarePlugin.html#a794f3c55a637541770129e16c59a708e", null ],
     [ "factGroups", "classFirmwarePlugin.html#ae1e138db8dd564eaab6d646d5fd7cbde", null ],

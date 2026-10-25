@@ -320,7 +320,7 @@ $(document).ready(function(){initNavTree('BatteryIndicator_8qml_source.html','')
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>                                return qgcPal.colorYellow</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                            }</div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                        } else {</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                            return qgcPal.text</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                            return qgcPal.textPrimary</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                        }</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                    case MAVLinkEnums.MAV_BATTERY_CHARGE_STATE_LOW:</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                        return qgcPal.colorOrange</div>
@@ -330,7 +330,7 @@ $(document).ready(function(){initNavTree('BatteryIndicator_8qml_source.html','')
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                    case MAVLinkEnums.MAV_BATTERY_CHARGE_STATE_UNHEALTHY:</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                        return qgcPal.colorRed</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                    default:</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                        return qgcPal.text</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                        return qgcPal.textPrimary</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                }</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            }</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
@@ -430,7 +430,7 @@ $(document).ready(function(){initNavTree('BatteryIndicator_8qml_source.html','')
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                QGCLabel {</div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>                    Layout.alignment:       Qt.AlignHCenter</div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>                    verticalAlignment:      Text.AlignVCenter</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>                    color:                  qgcPal.text</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>                    color:                  qgcPal.textPrimary</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>                    text:                   getBatteryPercentageText()</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>                    font.pointSize:         _showBoth ? ScreenTools.defaultFontPointSize : ScreenTools.mediumFontPointSize</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>                    visible:                _showBoth || _showPercentage</div>
@@ -439,7 +439,7 @@ $(document).ready(function(){initNavTree('BatteryIndicator_8qml_source.html','')
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>                QGCLabel {</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>                    Layout.alignment:       Qt.AlignHCenter</div>
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>                    font.pointSize:         _showBoth ? ScreenTools.defaultFontPointSize : ScreenTools.mediumFontPointSize</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>                    color:                  qgcPal.text</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>                    color:                  qgcPal.textPrimary</div>
 <div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>                    text:                   getBatteryVoltageText()</div>
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>                    visible:                _showBoth || _showVoltage</div>
 <div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>                }</div>
@@ -471,7 +471,7 @@ $(document).ready(function(){initNavTree('BatteryIndicator_8qml_source.html','')
 <div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>            Repeater {</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>                model: _activeVehicle ? _activeVehicle.batteries : 0</div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>                SettingsGroupLayout {</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>                QGCGroupBox {</div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>                    heading:        qsTr(&quot;Battery %1&quot;).arg(_activeVehicle.batteries.length === 1 ? qsTr(&quot;Status&quot;) : object.id.rawValue)</div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>                    contentSpacing: 0</div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>                    showDividers:   false</div>
@@ -540,7 +540,7 @@ $(document).ready(function(){initNavTree('BatteryIndicator_8qml_source.html','')
 <div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span> </div>
 <div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>            FactPanelController { id: controller }</div>
 <div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span> </div>
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>            SettingsGroupLayout {</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>            QGCGroupBox {</div>
 <div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>                heading:            qsTr(&quot;Battery Display&quot;)</div>
 <div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>                Layout.fillWidth:   true</div>
 <div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span> </div>
@@ -655,7 +655,7 @@ $(document).ready(function(){initNavTree('BatteryIndicator_8qml_source.html','')
 <div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>                source:             _activeVehicle.expandedToolbarIndicatorSource(&quot;Battery&quot;)</div>
 <div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>            }</div>
 <div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span> </div>
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>            SettingsGroupLayout {</div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>            QGCGroupBox {</div>
 <div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>                visible: _activeVehicle.autopilotPlugin.knownVehicleComponentAvailable(AutoPilotPlugin.KnownPowerVehicleComponent) &amp;&amp;</div>
 <div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>                            QGroundControl.corePlugin.showAdvancedUI</div>
 <div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span> </div>

@@ -19,6 +19,8 @@ var classMockLinkMissionItemHandler =
       [ "FailWriteRequest0ErrorAck", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea39ea33057d499e0ed9138083dd6ddad5", null ],
       [ "FailWriteRequest1ErrorAck", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea3336def22ff95ada20aae5f6e591ab60", null ],
       [ "FailWriteFinalAckNoResponse", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea1b85898df41b8df2168f755bbad83619", null ],
+      [ "FailWriteFinalAckFirstResponse", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54eafe9a7545841a87f7ec9845deae0e6407", null ],
+      [ "FailWriteFinalAckErrorOnResend", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54eac0932ee712d3aebdb655b4a4e21d3b2c", null ],
       [ "FailWriteFinalAckErrorAck", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea83e0a24b7ea81f623c8e05b1f84d4aad", null ],
       [ "FailWriteFinalAckMissingRequests", "classMockLinkMissionItemHandler.html#a9e746f8fcf0260c6a126060c95e0d54ea14c897ae69c223ec79101d25ffcbbf71", null ]
     ] ],

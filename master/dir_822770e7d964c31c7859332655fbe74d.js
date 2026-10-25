@@ -12,6 +12,7 @@ var dir_822770e7d964c31c7859332655fbe74d =
     [ "GPSIndicator.qml", "GPSIndicator_8qml.html", null ],
     [ "GPSIndicatorPage.qml", "GPSIndicatorPage_8qml.html", null ],
     [ "JoystickIndicator.qml", "JoystickIndicator_8qml.html", null ],
+    [ "MainStatusChecklistHost.qml", "MainStatusChecklistHost_8qml.html", null ],
     [ "MainStatusIndicator.qml", "MainStatusIndicator_8qml.html", null ],
     [ "MainStatusIndicatorOfflinePage.qml", "MainStatusIndicatorOfflinePage_8qml.html", null ],
     [ "ModeIndicator.qml", "ModeIndicator_8qml.html", null ],

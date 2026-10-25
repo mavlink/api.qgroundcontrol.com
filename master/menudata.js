@@ -328,6 +328,7 @@ var menudata={children:[
 {text:"d",url:"functions_rela.html#index_d"},
 {text:"f",url:"functions_rela.html#index_f"},
 {text:"g",url:"functions_rela.html#index_g"},
+{text:"h",url:"functions_rela.html#index_h"},
 {text:"i",url:"functions_rela.html#index_i"},
 {text:"j",url:"functions_rela.html#index_j"},
 {text:"l",url:"functions_rela.html#index_l"},

@@ -9,7 +9,7 @@ var classVehicleCameraControl =
     [ "_findStream", "classVehicleCameraControl.html#a50443db701bed14627224eb2b196207b", null ],
     [ "_findStream", "classVehicleCameraControl.html#ac8f60586e4a9083480a9327db33dde4e", null ],
     [ "_initWhenReady", "classVehicleCameraControl.html#a3fd5827e0c771c0716ba07c50305451f", null ],
-    [ "_mavCommandResult", "classVehicleCameraControl.html#aa27ff451a5fa327e7a45dc9c2e88ac5e", null ],
+    [ "_mavCommandResult", "classVehicleCameraControl.html#a01aa226aff7753393fef954ae945ff00", null ],
     [ "_onVideoManagerRecordingChanged", "classVehicleCameraControl.html#a2b5b64bad26543a76c55bd9233e1557d", null ],
     [ "_paramDone", "classVehicleCameraControl.html#ad4aba6eb2cec0bdd1f558c364fad4f66", null ],
     [ "_recTimerHandler", "classVehicleCameraControl.html#aaf89c8573ffd08037789ba39d6436f7f", null ],

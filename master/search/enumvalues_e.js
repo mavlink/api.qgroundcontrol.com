@@ -26,7 +26,8 @@ var searchData=
   ['notequal_23',['NotEqual',['../classCondition.html#a8b207c23c454fc65ab58e7adc0bc8ff1a19bb0af2c3c530538cb41aff7f235b96',1,'Condition']]],
   ['notgnss_24',['NotGNSS',['../namespaceGPSConnectionErrors.html#a2ff0fc1851f78a580d11991e4de40168a804cd73a5af77ae29abd005bcbea6d1d',1,'GPSConnectionErrors']]],
   ['notopenerror_25',['NotOpenError',['../classQSerialPort.html#aa31f0921d43bb30acfe9a6cc5abbe6b0ad65f82617fd433e5f56bff97a0cd2b32',1,'QSerialPort']]],
-  ['notreadyforsavedata_26',['NotReadyForSaveData',['../classVisualMissionItem.html#a0d5e189c5204846d744a4def0521f7b3ae5d2534e9c514d42cd816edb2e04ef39',1,'VisualMissionItem']]],
-  ['notreadyforsaveterrain_27',['NotReadyForSaveTerrain',['../classVisualMissionItem.html#a0d5e189c5204846d744a4def0521f7b3adbaad2a20e05d6d2261298b2fc8b7c2f',1,'VisualMissionItem']]],
-  ['ntrip_28',['Ntrip',['../classGPSCorrectionSettings.html#ae260d66a573e00741f9b72ec40a6a403a5c10c24c615bd17f004af64cfa980454',1,'GPSCorrectionSettings']]]
+  ['notready_26',['NotReady',['../classVehicleReadiness.html#a80f4ba0c31ef93f0904f725c94e67b2dadd353567e8118a2b8df4e822e59084ab',1,'VehicleReadiness']]],
+  ['notreadyforsavedata_27',['NotReadyForSaveData',['../classVisualMissionItem.html#a0d5e189c5204846d744a4def0521f7b3ae5d2534e9c514d42cd816edb2e04ef39',1,'VisualMissionItem']]],
+  ['notreadyforsaveterrain_28',['NotReadyForSaveTerrain',['../classVisualMissionItem.html#a0d5e189c5204846d744a4def0521f7b3adbaad2a20e05d6d2261298b2fc8b7c2f',1,'VisualMissionItem']]],
+  ['ntrip_29',['Ntrip',['../classGPSCorrectionSettings.html#ae260d66a573e00741f9b72ec40a6a403a5c10c24c615bd17f004af64cfa980454',1,'GPSCorrectionSettings']]]
 ];

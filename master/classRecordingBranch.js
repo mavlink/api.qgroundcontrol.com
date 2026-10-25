@@ -6,7 +6,7 @@ var classRecordingBranch =
     [ "makeFileSink", "classRecordingBranch.html#adea410be93ba5511ccad0059f8bfef75", null ],
     [ "onBusElement", "classRecordingBranch.html#a8d2b200859d857dc3d93e570beda1bd2", null ],
     [ "onBusEos", "classRecordingBranch.html#a78af8ae2d8ea493c035e9623d6576b7e", null ],
-    [ "onBusError", "classRecordingBranch.html#ac01bc6babc07231895d8a2412dec8470", null ],
+    [ "onBusError", "classRecordingBranch.html#af0a46bfc6a6338e56bf21064f63a7272", null ],
     [ "reset", "classRecordingBranch.html#af33d18e3a4cf4ba488031e93a72961c0", null ],
     [ "start", "classRecordingBranch.html#a07555c0553467df5f9d8c3444cd50a8e", null ],
     [ "stop", "classRecordingBranch.html#abc009445e223517e75bea4484020ff1b", null ],

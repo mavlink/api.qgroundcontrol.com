@@ -44,5 +44,6 @@ var searchData=
   ['framer_41',['framer',['../classGPSStreamDemux_1_1Framer.html',1,'GPSStreamDemux::Framer'],['../classNMEA_1_1Framer.html',1,'NMEA::Framer']]],
   ['ftpcontroller_42',['FTPController',['../classFTPController.html',1,'']]],
   ['ftpmanager_43',['FTPManager',['../classFTPManager.html',1,'']]],
-  ['functionstate_44',['FunctionState',['../classFunctionState.html',1,'']]]
+  ['function_44',['Function',['../structPX4SerialPortConfig_1_1Function.html',1,'PX4SerialPortConfig']]],
+  ['functionstate_45',['FunctionState',['../classFunctionState.html',1,'']]]
 ];

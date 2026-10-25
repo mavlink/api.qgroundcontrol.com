@@ -7,10 +7,13 @@ var classCorridorScanComplexItem =
       [ "EntryPointStartOppositeEndOppositeSide", "classCorridorScanComplexItem.html#acf67a5dc35a877736f5e655fcea9ef65a85a2d5d40991aaad6540e633cbb3326e", null ]
     ] ],
     [ "CorridorScanComplexItem", "classCorridorScanComplexItem.html#a6f98f3e3b302cf2bc195fad3df55a495", null ],
+    [ "_surveyAreaBoundaries", "classCorridorScanComplexItem.html#a6a7f10224e569482521f3ea8572f1a9c", null ],
     [ "abbreviation", "classCorridorScanComplexItem.html#ad238924cbe6ce191af455341bd1d1cbc", null ],
     [ "additionalTimeDelay", "classCorridorScanComplexItem.html#a129d8bbcc82133e00adc1ffc9bc2227f", null ],
     [ "commandDescription", "classCorridorScanComplexItem.html#ae9f0459e0a722c6003979cf24b18fbec", null ],
     [ "commandName", "classCorridorScanComplexItem.html#ae7b2bd7d6572fe70263aab9a81af5fab", null ],
+    [ "corridorBoundaries", "classCorridorScanComplexItem.html#a65683936623ea8903f7c394bf0deb0b1", null ],
+    [ "corridorBoundariesChanged", "classCorridorScanComplexItem.html#a15b38654c87797cb2901818d0ccf0129", null ],
     [ "corridorPolyline", "classCorridorScanComplexItem.html#a417d226ae862b5519642b0e57a902266", null ],
     [ "corridorWidth", "classCorridorScanComplexItem.html#a1bf111abb91a577da028d27fb56c1a1f", null ],
     [ "load", "classCorridorScanComplexItem.html#a0a8fa73bec7bcf9a585d142df184dd2a", null ],

@@ -55,6 +55,8 @@ var dir_fa2d24d1d21adf55afa7869063ad1e9a =
     [ "PreFlightRCCheck.qml", "PreFlightRCCheck_8qml.html", null ],
     [ "PreFlightSensorsHealthCheck.qml", "PreFlightSensorsHealthCheck_8qml.html", null ],
     [ "PreFlightSoundCheck.qml", "PreFlightSoundCheck_8qml.html", null ],
+    [ "PreVehicleCheckList.qml", "PreVehicleCheckList_8qml.html", null ],
+    [ "PreVehicleChecks.qml", "PreVehicleChecks_8qml.html", null ],
     [ "ProximityRadarValues.qml", "ProximityRadarValues_8qml.html", null ],
     [ "ProximityRadarVideoView.qml", "ProximityRadarVideoView_8qml.html", null ],
     [ "RoverChecklist.qml", "RoverChecklist_8qml.html", null ],

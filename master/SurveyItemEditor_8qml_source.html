@@ -186,24 +186,39 @@ $(document).ready(function(){initNavTree('SurveyItemEditor_8qml_source.html','')
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                        fact:       missionItem.flyAlternateTransects,</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                        enabled:    true,</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                        visible:    _vehicle ? (_vehicle.fixedWing || _vehicle.vtol) : false</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                    }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                ]</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    KMLOrSHPFileDialog {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        id:             kmlOrSHPLoadDialog</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        title:          qsTr(&quot;Select Polygon File&quot;)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                    },</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                    {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                        text:       qsTr(&quot;Split concave polygons&quot;),</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                        fact:       missionItem.splitConcavePolygons,</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                        enabled:    true,</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                        visible:    true</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                    }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                ]</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            }</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        onAcceptedForLoad: (file) =&gt; {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            missionItem.surveyAreaPolygon.loadKMLOrSHPFile(file)</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            missionItem.resetState = false</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>            //editorMap.mapFitFunctions.fitMapViewportTomissionItems()</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            close()</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        }</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            QGCLabel {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                Layout.columnSpan:  2</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                Layout.fillWidth:   true</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                wrapMode:           Text.WordWrap</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                font.pointSize:     ScreenTools.smallFontPointSize</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                text:               qsTr(&quot;Images are also taken across concave gaps when images in turnarounds is enabled.&quot;)</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                visible:            !forPresets &amp;&amp; missionItem.splitConcavePolygons.rawValue &amp;&amp; missionItem.cameraTriggerInTurnAround.rawValue</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    KMLOrSHPFileDialog {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        id:             kmlOrSHPLoadDialog</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        title:          qsTr(&quot;Select Polygon File&quot;)</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        onAcceptedForLoad: (file) =&gt; {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            missionItem.surveyAreaPolygon.loadKMLOrSHPFile(file)</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            missionItem.resetState = false</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            //editorMap.mapFitFunctions.fitMapViewportTomissionItems()</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            close()</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
