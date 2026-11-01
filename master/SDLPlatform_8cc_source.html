@@ -139,31 +139,31 @@ $(document).ready(function(){initNavTree('SDLPlatform_8cc_source.html',''); init
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">// ============================================================================</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="namespaceSDLPlatform.html#a510445207a68b8183ee300fde130aebf">   36</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceSDLPlatform.html#a510445207a68b8183ee300fde130aebf">setHint</a>(<span class="keyword">const</span> QString &amp;name, <span class="keyword">const</span> QString &amp;value)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="namespaceSDLPlatform.html#a510445207a68b8183ee300fde130aebf">   36</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceSDLPlatform.html#a510445207a68b8183ee300fde130aebf">setHint</a>(<span class="keyword">const</span> QString &amp;<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, <span class="keyword">const</span> QString &amp;value)</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">return</span> SDL_SetHint(qPrintable(name), qPrintable(value));</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">return</span> SDL_SetHint(qPrintable(<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>), qPrintable(value));</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
 </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
 <div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="namespaceSDLPlatform.html#a1c292dead01a850d90dc2a40dcc771ab">   41</a></span>QString <a class="code hl_function" href="namespaceSDLPlatform.html#a1c292dead01a850d90dc2a40dcc771ab">getHint</a>(<span class="keyword">const</span> QString &amp;name)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="namespaceSDLPlatform.html#a1c292dead01a850d90dc2a40dcc771ab">   41</a></span>QString <a class="code hl_function" href="namespaceSDLPlatform.html#a1c292dead01a850d90dc2a40dcc771ab">getHint</a>(<span class="keyword">const</span> QString &amp;<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *value = SDL_GetHint(qPrintable(name));</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *value = SDL_GetHint(qPrintable(<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>));</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">return</span> value ? QString::fromUtf8(value) : QString();</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
 </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespaceSDLPlatform.html#a82ebfca4fdadbc45e21ab6dcc1c37d26">   47</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceSDLPlatform.html#a82ebfca4fdadbc45e21ab6dcc1c37d26">getHintBoolean</a>(<span class="keyword">const</span> QString &amp;name, <span class="keywordtype">bool</span> defaultValue)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespaceSDLPlatform.html#a82ebfca4fdadbc45e21ab6dcc1c37d26">   47</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceSDLPlatform.html#a82ebfca4fdadbc45e21ab6dcc1c37d26">getHintBoolean</a>(<span class="keyword">const</span> QString &amp;<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, <span class="keywordtype">bool</span> defaultValue)</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">return</span> SDL_GetHintBoolean(qPrintable(name), defaultValue);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">return</span> SDL_GetHintBoolean(qPrintable(<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>), defaultValue);</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
 </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespaceSDLPlatform.html#a4145f6f6402f8c035ac22dfc26b8fbe9">   52</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceSDLPlatform.html#a4145f6f6402f8c035ac22dfc26b8fbe9">resetHint</a>(<span class="keyword">const</span> QString &amp;name)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespaceSDLPlatform.html#a4145f6f6402f8c035ac22dfc26b8fbe9">   52</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceSDLPlatform.html#a4145f6f6402f8c035ac22dfc26b8fbe9">resetHint</a>(<span class="keyword">const</span> QString &amp;<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> SDL_ResetHint(qPrintable(name));</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> SDL_ResetHint(qPrintable(<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>));</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
 </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
@@ -432,6 +432,7 @@ $(document).ready(function(){initNavTree('SDLPlatform_8cc_source.html',''); init
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>} <span class="comment">// namespace SDLPlatform</span></div>
 </div>
+<div class="ttc" id="aGStreamer_8cc_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition</b> <a href="GStreamer_8cc_source.html#l00078">GStreamer.cc:78</a></div></div>
 <div class="ttc" id="aSDLPlatform_8h_html"><div class="ttname"><a href="SDLPlatform_8h.html">SDLPlatform.h</a></div></div>
 <div class="ttc" id="anamespaceSDLPlatform_html"><div class="ttname"><a href="namespaceSDLPlatform.html">SDLPlatform</a></div><div class="ttdef"><b>Definition</b> <a href="SDLPlatform_8cc_source.html#l00011">SDLPlatform.cc:11</a></div></div>
 <div class="ttc" id="anamespaceSDLPlatform_html_a14cb047a1f1e8bff987b79b3c0db8a54"><div class="ttname"><a href="namespaceSDLPlatform.html#a14cb047a1f1e8bff987b79b3c0db8a54">SDLPlatform::isTV</a></div><div class="ttdeci">bool isTV()</div><div class="ttdoc">Check if running on a TV device.</div><div class="ttdef"><b>Definition</b> <a href="SDLPlatform_8cc_source.html#l00125">SDLPlatform.cc:125</a></div></div>

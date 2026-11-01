@@ -10,5 +10,7 @@ var classPX4EscComponent =
     [ "setupComplete", "classPX4EscComponent.html#ace6315d015fdf4e107445a1c043e46aa", null ],
     [ "setupCompleteChangedTriggerList", "classPX4EscComponent.html#ac7ded5d50dbcfdca10e2c9b2d2cd5c50", null ],
     [ "setupSource", "classPX4EscComponent.html#a92cd91c437b41d8caa1d82b56944db1e", null ],
+    [ "summaryChangedTriggerList", "classPX4EscComponent.html#ab634b1b173897a9531cae63ff6a397d1", null ],
+    [ "summaryItems", "classPX4EscComponent.html#a3b52c811a0fa5df79997a24da2e6b54e", null ],
     [ "summaryQmlSource", "classPX4EscComponent.html#a6289f0eac888e6679889c547e37fd878", null ]
 ];

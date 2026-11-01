@@ -28,7 +28,7 @@ var classPlanMasterController =
     [ "planCreatorsChanged", "classPlanMasterController.html#a54f84b25318ba713d071430fdf107a4b", null ],
     [ "promptForPlanUsageOnVehicleChange", "classPlanMasterController.html#a3c33cebc13b1d3846da8990a8c262c1d", null ],
     [ "rallyPointController", "classPlanMasterController.html#a6e74fe8a73e04fcc70c053a1a241f1f8", null ],
-    [ "readyForSaveState", "classPlanMasterController.html#a2f38de3457f7c23a648ff5738f80151b", null ],
+    [ "readyForSaveState", "classPlanMasterController.html#ae70b5680a2f3e98361aa700ad3c8cdfe", null ],
     [ "removeAll", "classPlanMasterController.html#a01dcde513c605df6bd38c710464c0f5b", null ],
     [ "removeAllFromVehicle", "classPlanMasterController.html#adff73ce0517f093211e1c662033696b6", null ],
     [ "saveNameFilters", "classPlanMasterController.html#a2ad804cc0909bcd9b9df6bb2802b97cd", null ],

@@ -221,7 +221,7 @@ $(document).ready(function(){initNavTree('ULogFullHandler_8cc_source.html',''); 
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classULogFullHandler.html#aedb529166109ae3e31c094fd3f819db7">  110</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classULogFullHandler.html#aedb529166109ae3e31c094fd3f819db7">ULogFullHandler::headerComplete</a>()</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>{</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    _headerComplete = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;[name, fmt] : _formats) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;[<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, fmt] : _formats) {</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        fmt-&gt;resolveDefinition(_formats);</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
@@ -409,8 +409,8 @@ $(document).ready(function(){initNavTree('ULogFullHandler_8cc_source.html',''); 
 <div class="foldopen" id="foldopen00293" data-start="{" data-end="}">
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno"><a class="line" href="classULogFullHandler.html#a0527a2f48e5e1c75ace14bd370835588">  293</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classULogFullHandler.html#a0527a2f48e5e1c75ace14bd370835588">ULogFullHandler::parameter</a>(<span class="keyword">const</span> ulog_cpp::Parameter &amp;param)</div>
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>{</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keyword">const</span> QString name = QString::fromStdString(param.field().name());</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keywordflow">if</span> (name.isEmpty()) {</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keyword">const</span> QString <a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a> = QString::fromStdString(param.field().name());</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>.isEmpty()) {</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    }</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
@@ -426,7 +426,7 @@ $(document).ready(function(){initNavTree('ULogFullHandler_8cc_source.html',''); 
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    }</div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
 <div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    QVariantMap row;</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    row[QStringLiteral(<span class="stringliteral">&quot;name&quot;</span>)]    = name;</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    row[QStringLiteral(<span class="stringliteral">&quot;name&quot;</span>)]    = <a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>;</div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    row[QStringLiteral(<span class="stringliteral">&quot;value&quot;</span>)]   = value;</div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    row[QStringLiteral(<span class="stringliteral">&quot;isFloat&quot;</span>)] = isFloat;</div>
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    <span class="comment">// hasDefault / defaultValue / isDefault are filled in by finalize() once all</span></div>
@@ -438,8 +438,8 @@ $(document).ready(function(){initNavTree('ULogFullHandler_8cc_source.html',''); 
 <div class="foldopen" id="foldopen00320" data-start="{" data-end="}">
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno"><a class="line" href="classULogFullHandler.html#a87f2b5b9c418246d52767ffe504b1a4c">  320</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classULogFullHandler.html#a87f2b5b9c418246d52767ffe504b1a4c">ULogFullHandler::parameterDefault</a>(<span class="keyword">const</span> ulog_cpp::ParameterDefault &amp;param_default)</div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>{</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keyword">const</span> QString name = QString::fromStdString(param_default.field().name());</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    <span class="keywordflow">if</span> (name.isEmpty()) {</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keyword">const</span> QString <a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a> = QString::fromStdString(param_default.field().name());</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>.isEmpty()) {</div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    }</div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="keywordflow">try</span> {</div>
@@ -449,7 +449,7 @@ $(document).ready(function(){initNavTree('ULogFullHandler_8cc_source.html',''); 
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        <span class="keyword">using </span>DT = ulog_cpp::ulog_parameter_default_type_t;</div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        <span class="keywordflow">if</span> ((<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(param_default.defaultType()) &amp;</div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>             <span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(DT::system)) != 0) {</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>            _paramDefaults[name] = defaultVal;</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>            _paramDefaults[<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>] = defaultVal;</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>        }</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;) {</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        <span class="comment">// Ignore unreadable defaults</span></div>
@@ -541,8 +541,8 @@ $(document).ready(function(){initNavTree('ULogFullHandler_8cc_source.html',''); 
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>    <span class="comment">// messages have been collected.</span></div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _result.<a class="code hl_variable" href="structLogParseResult.html#a4e86cbcd1cd3f55ac714907b63f05af6">parameters</a>.size(); i++) {</div>
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>        QVariantMap row = _result.<a class="code hl_variable" href="structLogParseResult.html#a4e86cbcd1cd3f55ac714907b63f05af6">parameters</a>[i].toMap();</div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>        <span class="keyword">const</span> QString name = row.value(QStringLiteral(<span class="stringliteral">&quot;name&quot;</span>)).toString();</div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>        <span class="keyword">const</span> <span class="keyword">auto</span> it = _paramDefaults.constFind(name);</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>        <span class="keyword">const</span> QString <a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a> = row.value(QStringLiteral(<span class="stringliteral">&quot;name&quot;</span>)).toString();</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>        <span class="keyword">const</span> <span class="keyword">auto</span> it = _paramDefaults.constFind(<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>);</div>
 <div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>        <span class="keywordflow">if</span> (it != _paramDefaults.constEnd()) {</div>
 <div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>            <span class="keyword">const</span> <span class="keywordtype">double</span> defaultVal = it.value();</div>
 <div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>            <span class="keyword">const</span> QVariant valueVariant = row.value(QStringLiteral(<span class="stringliteral">&quot;value&quot;</span>));</div>
@@ -572,7 +572,8 @@ $(document).ready(function(){initNavTree('ULogFullHandler_8cc_source.html',''); 
 <div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>    _result.<a class="code hl_variable" href="structLogParseResult.html#a68cd8b3128f29e16e0eb7f64e43776e0">ok</a> = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>}</div>
 </div>
-<div class="ttc" id="aGStreamerHelpers_8cc_html_a5b41c5ae4505891e6c53e26df197e02b"><div class="ttname"><a href="GStreamerHelpers_8cc.html#a5b41c5ae4505891e6c53e26df197e02b">prefix</a></div><div class="ttdeci">const char * prefix</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00156">GStreamerHelpers.cc:156</a></div></div>
+<div class="ttc" id="aGStreamerHelpers_8cc_html_a5b41c5ae4505891e6c53e26df197e02b"><div class="ttname"><a href="GStreamerHelpers_8cc.html#a5b41c5ae4505891e6c53e26df197e02b">prefix</a></div><div class="ttdeci">const char * prefix</div><div class="ttdef"><b>Definition</b> <a href="GStreamerHelpers_8cc_source.html#l00207">GStreamerHelpers.cc:207</a></div></div>
+<div class="ttc" id="aGStreamer_8cc_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition</b> <a href="GStreamer_8cc_source.html#l00078">GStreamer.cc:78</a></div></div>
 <div class="ttc" id="aLogParseResultPrivate_8h_html"><div class="ttname"><a href="LogParseResultPrivate_8h.html">LogParseResultPrivate.h</a></div></div>
 <div class="ttc" id="aLogParseResultPrivate_8h_html_a38a5ef5d8850a2e3d4ec867c65a79d63"><div class="ttname"><a href="LogParseResultPrivate_8h.html#a38a5ef5d8850a2e3d4ec867c65a79d63">ProgressCallback</a></div><div class="ttdeci">std::function&lt; void(float)&gt; ProgressCallback</div><div class="ttdef"><b>Definition</b> <a href="LogParseResultPrivate_8h_source.html#l00020">LogParseResultPrivate.h:20</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>

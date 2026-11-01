@@ -1,14 +1,27 @@
 var classRallyPoint =
 [
-    [ "RallyPoint", "classRallyPoint.html#a913aa78cbd6b5c7e05f3da227dda0e45", null ],
+    [ "RallyPoint", "classRallyPoint.html#a55fbc5ac6651c93a9a390523280a60ef", null ],
     [ "RallyPoint", "classRallyPoint.html#af55afcb15f4e5c11a29acac8e35edda4", null ],
     [ "~RallyPoint", "classRallyPoint.html#afbfb6d15812acb5ed726df137cb22b8a", null ],
+    [ "altitude", "classRallyPoint.html#a2cb643f6396f5c1ce795bb932786430c", null ],
+    [ "altitudeFrame", "classRallyPoint.html#acd9f8208bcda7720202d42f65fce3090", null ],
+    [ "altitudeFrameChanged", "classRallyPoint.html#a74d008a4ff548fa71fad3fabb4d8241e", null ],
+    [ "altitudeFrameFromMavFrame", "classRallyPoint.html#a66ee22ee5c319f4c3c149b4c04aa3af1", null ],
+    [ "changeAltitudeFrame", "classRallyPoint.html#a8bfca1e9c51a18da696ac9b1a811f7ef", null ],
     [ "coordinate", "classRallyPoint.html#a0247e1efc04cc5bba1b7519c8f2c9f65", null ],
     [ "coordinateChanged", "classRallyPoint.html#acf6e69020990f1a7af5b19030231aff2", null ],
     [ "dirty", "classRallyPoint.html#a828eca0eeb17137d8f5b7bb4877173f5", null ],
     [ "dirtyChanged", "classRallyPoint.html#a7821189da9d00b543b6cc81cfac928fe", null ],
     [ "getDefaultFactAltitude", "classRallyPoint.html#a3c4c5213794e5ae1ef18ae05a70000f6", null ],
+    [ "latitude", "classRallyPoint.html#aede0481eae682d39fca757be6a57da13", null ],
+    [ "longitude", "classRallyPoint.html#a2d3f3168ff5a41738bffea2d67a148eb", null ],
+    [ "mavFrame", "classRallyPoint.html#af3996aa004d96b6eba98db59e6a3f87d", null ],
     [ "operator=", "classRallyPoint.html#a5dbc5d325194f1384ed7a11a401f3aa8", null ],
+    [ "setAltitudeFrame", "classRallyPoint.html#a2c3c17bb4be14bf9ae64fda0ac205397", null ],
     [ "setCoordinate", "classRallyPoint.html#a21cc14ad8b8754e1b16740d0b2d7e228", null ],
-    [ "setDirty", "classRallyPoint.html#aee24628c38e57639d8f0d13de1f435f0", null ]
+    [ "setDirty", "classRallyPoint.html#aee24628c38e57639d8f0d13de1f435f0", null ],
+    [ "terrainQueryFailed", "classRallyPoint.html#ab5378ae9d2b0f56caf5efe0e69ebdd1f", null ],
+    [ "terrainQueryFailedChanged", "classRallyPoint.html#a24d18e1c35090f89c9529c90f340a355", null ],
+    [ "terrainQueryPending", "classRallyPoint.html#aa96cc96b02bf3a794feb20c6912912c5", null ],
+    [ "useTerrainAltitude", "classRallyPoint.html#abb376b30d36fbae70472d4c4ed3024a2", null ]
 ];

@@ -30,13 +30,14 @@ var hierarchy =
     [ "Unicore::Plan::BaseStation", "structUnicore_1_1Plan_1_1BaseStation.html", null ],
     [ "GstQgc::BinChain", "classGstQgc_1_1BinChain.html", null ],
     [ "SBF::BlockHeader", "structSBF_1_1BlockHeader.html", null ],
+    [ "BranchContext", "structBranchContext.html", null ],
     [ "OsmParserThread::BuildingType_t", "structOsmParserThread_1_1BuildingType__t.html", null ],
+    [ "GStreamer::Environment::BundledRuntime", "structGStreamer_1_1Environment_1_1BundledRuntime.html", null ],
     [ "CalibrationResult", "structCalibrationResult.html", null ],
     [ "QGCCameraManager::CameraInfoRequestContext", "structQGCCameraManager_1_1CameraInfoRequestContext.html", null ],
     [ "CameraMetaData", "classCameraMetaData.html", null ],
     [ "MockLinkCamera::CameraState", "structMockLinkCamera_1_1CameraState.html", null ],
     [ "QGCCameraManager::CameraStruct", "structQGCCameraManager_1_1CameraStruct.html", null ],
-    [ "GstQgc::CapsInfo", "structGstQgc_1_1CapsInfo.html", null ],
     [ "TerrainAreaQuery::CarpetHeightInfo_t", "structTerrainAreaQuery_1_1CarpetHeightInfo__t.html", null ],
     [ "UBX::CfgKey< T >", "structUBX_1_1CfgKey.html", null ],
     [ "UBX::CfgKey< uint8_t >", "structUBX_1_1CfgKey.html", null ],
@@ -49,6 +50,7 @@ var hierarchy =
     [ "RemoteControlCalibrationController::ChannelInfo", "structRemoteControlCalibrationController_1_1ChannelInfo.html", null ],
     [ "UBX::CheckedValsetBatch< Capacity >", "structUBX_1_1CheckedValsetBatch.html", null ],
     [ "UBX::CheckedValsetBatch< Plan::VALSET_CAPACITY >", "structUBX_1_1CheckedValsetBatch.html", null ],
+    [ "PX4FlightModeConfig::Choice", "structPX4FlightModeConfig_1_1Choice.html", null ],
     [ "Femto::Plan::Command", "structFemto_1_1Plan_1_1Command.html", null ],
     [ "GPSCommandSequence::Command", "structGPSCommandSequence_1_1Command.html", null ],
     [ "Unicore::Plan::Command", "structUnicore_1_1Plan_1_1Command.html", null ],
@@ -56,6 +58,7 @@ var hierarchy =
     [ "Condition", "classCondition.html", null ],
     [ "ActuatorActions::Config", "structActuatorActions_1_1Config.html", null ],
     [ "GStreamer::SourceFactory::Config", "structGStreamer_1_1SourceFactory_1_1Config.html", null ],
+    [ "VideoReceiver::Config", "structVideoReceiver_1_1Config.html", null ],
     [ "GPSCorrectionManager::Configuration", "structGPSCorrectionManager_1_1Configuration.html", null ],
     [ "NTRIPGgaReporter::Configuration", "structNTRIPGgaReporter_1_1Configuration.html", null ],
     [ "NTRIPManager::Configuration", "structNTRIPManager_1_1Configuration.html", null ],
@@ -86,6 +89,7 @@ var hierarchy =
     [ "UBX::EpochAssembler", "classUBX_1_1EpochAssembler.html", null ],
     [ "ErrorRecoveryBuilder", "classErrorRecoveryBuilder.html", null ],
     [ "ExponentialBackoff", "classExponentialBackoff.html", null ],
+    [ "PipelineSession::Failure", "structPipelineSession_1_1Failure.html", null ],
     [ "NTRIPSourceTableController::FetchAttempt", "structNTRIPSourceTableController_1_1FetchAttempt.html", null ],
     [ "Wire::Field< Member, Offset >", "structWire_1_1Field.html", null ],
     [ "QuectelCodec::Fields", "classQuectelCodec_1_1Fields.html", null ],
@@ -184,6 +188,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "GPSWriteResult", "structGPSWriteResult.html", null ],
+    [ "GstQgc::GpuBinPreference", "structGstQgc_1_1GpuBinPreference.html", null ],
     [ "ElevationTilePyramid::Grid", "structElevationTilePyramid_1_1Grid.html", null ],
     [ "NMEA::GST", "structNMEA_1_1GST.html", null ],
     [ "GStreamer::GstCapsDeleter", "structGStreamer_1_1GstCapsDeleter.html", null ],
@@ -206,7 +211,6 @@ var hierarchy =
     [ "StateHistoryRecorder::HistoryEntry", "structStateHistoryRecorder_1_1HistoryEntry.html", null ],
     [ "GstHw::GstHwImportCache< Key, Resource, Capacity >::Hit", "structGstHw_1_1GstHwImportCache_1_1Hit.html", null ],
     [ "SurfaceAnalysis::Hole", "structSurfaceAnalysis_1_1Hole.html", null ],
-    [ "HwBuffers::HwBufferEnvConfig", "structHwBuffers_1_1HwBufferEnvConfig.html", null ],
     [ "HwResolvedPathCache", "structHwResolvedPathCache.html", null ],
     [ "HwVideoBufferContext", "structHwVideoBufferContext.html", null ],
     [ "UBX::Identity", "structUBX_1_1Identity.html", null ],
@@ -247,6 +251,14 @@ var hierarchy =
     [ "Wire::Layout< UBX::NavSvinfoChannel >", "structWire_1_1Layout_3_01UBX_1_1NavSvinfoChannel_01_4.html", null ],
     [ "Wire::Layout< UBX::SecSig >", "structWire_1_1Layout_3_01UBX_1_1SecSig_01_4.html", null ],
     [ "NMEA::LineFramer", "classNMEA_1_1LineFramer.html", null ],
+    [ "DecodingBranch::Listener", "classDecodingBranch_1_1Listener.html", [
+      [ "PipelineSession::Listener", "classPipelineSession_1_1Listener.html", [
+        [ "GstReceiverWorker", "classGstReceiverWorker.html", null ]
+      ] ]
+    ] ],
+    [ "RecordingBranch::Listener", "classRecordingBranch_1_1Listener.html", [
+      [ "PipelineSession::Listener", "classPipelineSession_1_1Listener.html", null ]
+    ] ],
     [ "LogEntry", "structLogEntry.html", null ],
     [ "StateMachineLogger::LogEntry", "structStateMachineLogger_1_1LogEntry.html", null ],
     [ "MockLinkFTP::LogFile", "structMockLinkFTP_1_1LogFile.html", null ],
@@ -332,6 +344,7 @@ var hierarchy =
     [ "UBX::Plan::MessageRate", "structUBX_1_1Plan_1_1MessageRate.html", null ],
     [ "UBX::MessageRates", "structUBX_1_1MessageRates.html", null ],
     [ "UBX::MessageSchema", "structUBX_1_1MessageSchema.html", null ],
+    [ "GStreamer::MissingPluginFeature", "structGStreamer_1_1MissingPluginFeature.html", null ],
     [ "MissionFlightStatus_t", "structMissionFlightStatus__t.html", null ],
     [ "MissionFlightStatusCalculator", "classMissionFlightStatusCalculator.html", null ],
     [ "Mixer::MixerOption", "structMixer_1_1MixerOption.html", null ],
@@ -386,11 +399,13 @@ var hierarchy =
     [ "PipelineDotDumper", "classPipelineDotDumper.html", null ],
     [ "MockLinkGimbal::PitchYawCommand", "structMockLinkGimbal_1_1PitchYawCommand.html", null ],
     [ "CpuVideoFramePool::PlaneLayout", "structCpuVideoFramePool_1_1PlaneLayout.html", null ],
+    [ "GstHw::PlaneLayout", "structGstHw_1_1PlaneLayout.html", null ],
     [ "PX4SerialPortConfig::Port", "structPX4SerialPortConfig_1_1Port.html", null ],
     [ "SerialPortManager::Port", "structSerialPortManager_1_1Port.html", null ],
     [ "SBF::PVTGeodetic", "structSBF_1_1PVTGeodetic.html", null ],
     [ "px4_custom_mode", "unionpx4__custom__mode.html", null ],
     [ "PX4CustomMode", "structPX4CustomMode.html", null ],
+    [ "PX4SensorDevice", "classPX4SensorDevice.html", null ],
     [ "QAbstractItemModel", null, [
       [ "LoggingCategoryTreeModel", "classLoggingCategoryTreeModel.html", null ],
       [ "ObjectItemModelBase", "classObjectItemModelBase.html", [
@@ -633,6 +648,7 @@ var hierarchy =
       [ "GeoScene", "classGeoScene.html", null ],
       [ "GeoTagController", "classGeoTagController.html", null ],
       [ "GimbalController", "classGimbalController.html", null ],
+      [ "GstReceiverWorker", "classGstReceiverWorker.html", null ],
       [ "HealthAndArmingCheckProblem", "classHealthAndArmingCheckProblem.html", null ],
       [ "HealthAndArmingCheckReport", "classHealthAndArmingCheckReport.html", null ],
       [ "HeightField", "classHeightField.html", null ],
@@ -725,6 +741,8 @@ var hierarchy =
         [ "APMParameterMetaData", "classAPMParameterMetaData.html", null ],
         [ "PX4ParameterMetaData", "classPX4ParameterMetaData.html", null ]
       ] ],
+      [ "PipelineSession", "classPipelineSession.html", null ],
+      [ "PiperTtsPlugin", "classPiperTtsPlugin.html", null ],
       [ "PlanCreator", "classPlanCreator.html", [
         [ "BlankPlanCreator", "classBlankPlanCreator.html", null ],
         [ "CorridorScanPlanCreator", "classCorridorScanPlanCreator.html", null ],
@@ -932,11 +950,10 @@ var hierarchy =
       [ "VehicleSupports", "classVehicleSupports.html", null ],
       [ "VideoManager", "classVideoManager.html", null ],
       [ "VideoReceiver", "classVideoReceiver.html", [
-        [ "GstVideoReceiver", "classGstVideoReceiver.html", null ],
-        [ "QtMultimediaReceiver", "classQtMultimediaReceiver.html", [
-          [ "UVCReceiver", "classUVCReceiver.html", null ]
-        ] ]
+        [ "GstVideoReceiver", "classGstVideoReceiver.html", null ]
       ] ],
+      [ "VideoRecordingService", "classVideoRecordingService.html", null ],
+      [ "VideoStreamController", "classVideoStreamController.html", null ],
       [ "Viewer3DCameraController", "classViewer3DCameraController.html", null ],
       [ "Viewer3DGeoCoordinateType", "classViewer3DGeoCoordinateType.html", null ],
       [ "Viewer3DManager", "classViewer3DManager.html", null ],
@@ -1060,6 +1077,12 @@ var hierarchy =
     [ "QStringListModel", null, [
       [ "MAVLinkConsoleController", "classMAVLinkConsoleController.html", null ]
     ] ],
+    [ "QTextToSpeechEngine", null, [
+      [ "PiperTtsEngine", "classPiperTtsEngine.html", null ]
+    ] ],
+    [ "QTextToSpeechPlugin", null, [
+      [ "PiperTtsPlugin", "classPiperTtsPlugin.html", null ]
+    ] ],
     [ "QThread", null, [
       [ "Joystick", "classJoystick.html", [
         [ "JoystickSDL", "classJoystickSDL.html", null ]
@@ -1067,10 +1090,9 @@ var hierarchy =
       [ "QGCCacheWorker", "classQGCCacheWorker.html", null ]
     ] ],
     [ "QVideoFrameTextures", null, [
-      [ "GstHwFrameTexturesBase", "classGstHwFrameTexturesBase.html", [
-        [ "GstGlFrameTextures", "classGstGlFrameTextures.html", null ]
-      ] ]
+      [ "GstHwFrameTexturesBase", "classGstHwFrameTexturesBase.html", null ]
     ] ],
+    [ "RallyPointData", "structRallyPointData.html", null ],
     [ "GPSCommandSequence::RawReply", "structGPSCommandSequence_1_1RawReply.html", null ],
     [ "ReadTimestamp", "classReadTimestamp.html", null ],
     [ "GPSDriver::State::ReceiveCycle", "structGPSDriver_1_1State_1_1ReceiveCycle.html", null ],
@@ -1080,8 +1102,11 @@ var hierarchy =
     [ "GPSReceiverMessages::ReceiverStatus", "structGPSReceiverMessages_1_1ReceiverStatus.html", null ],
     [ "RecordingBranch", "classRecordingBranch.html", null ],
     [ "RecordingFinalizer", "classRecordingFinalizer.html", null ],
+    [ "GStreamer::SelfTest::RegisteredPlugin", "structGStreamer_1_1SelfTest_1_1RegisteredPlugin.html", null ],
     [ "ActuatorGeometry::RenderOptions", "structActuatorGeometry_1_1RenderOptions.html", null ],
+    [ "GstQgc::RenderTarget", "structGstQgc_1_1RenderTarget.html", null ],
     [ "SurfaceAnalysis::Report", "structSurfaceAnalysis_1_1Report.html", null ],
+    [ "RecordingBranch::Request", "structRecordingBranch_1_1Request.html", null ],
     [ "QGCNetworkHelper::RequestConfig", "structQGCNetworkHelper_1_1RequestConfig.html", null ],
     [ "SerialPortManager::Reservation", "structSerialPortManager_1_1Reservation.html", null ],
     [ "GPSCommandSequence::Result", "structGPSCommandSequence_1_1Result.html", null ],
@@ -1110,6 +1135,7 @@ var hierarchy =
     [ "ScheduledTask", "classScheduledTask.html", null ],
     [ "QGCSqlHelper::ScopedConnection", "classQGCSqlHelper_1_1ScopedConnection.html", null ],
     [ "GstHwPathTelemetry::ScopedMapTimer", "classGstHwPathTelemetry_1_1ScopedMapTimer.html", null ],
+    [ "GStreamer::ScopedSignal", "classGStreamer_1_1ScopedSignal.html", null ],
     [ "SurfaceAnalysis::Seam", "structSurfaceAnalysis_1_1Seam.html", null ],
     [ "UBX::SecSig", "structUBX_1_1SecSig.html", null ],
     [ "PositionManager::Notified::Selection", "structPositionManager_1_1Notified_1_1Selection.html", null ],
@@ -1119,10 +1145,14 @@ var hierarchy =
     [ "SerialPortSettleTracker", "classSerialPortSettleTracker.html", null ],
     [ "MockLinkGimbal::SetAttitudeCommand", "structMockLinkGimbal_1_1SetAttitudeCommand.html", null ],
     [ "Ashtech::Plan::Setting", "structAshtech_1_1Plan_1_1Setting.html", null ],
+    [ "PipelineSession::Settings", "structPipelineSession_1_1Settings.html", null ],
+    [ "VideoStreamResolver::Settings", "structVideoStreamResolver_1_1Settings.html", null ],
     [ "SetTotalsResult", "structSetTotalsResult.html", null ],
     [ "SigningChannel", "classSigningChannel.html", null ],
     [ "SigningFailure", "classSigningFailure.html", null ],
     [ "SigningStatus", "structSigningStatus.html", null ],
+    [ "GstQgc::SinkCapsPolicy", "structGstQgc_1_1SinkCapsPolicy.html", null ],
+    [ "GstHwPathTelemetry::Snapshot", "structGstHwPathTelemetry_1_1Snapshot.html", null ],
     [ "GPSIntegrityReport::Spoofing", "structGPSIntegrityReport_1_1Spoofing.html", null ],
     [ "GPSCancelToken::State", "structGPSCancelToken_1_1State.html", null ],
     [ "GPSDriver::State", "structGPSDriver_1_1State.html", null ],
@@ -1162,6 +1192,7 @@ var hierarchy =
     [ "ParameterMetaData::ValueDescPair", "structParameterMetaData_1_1ValueDescPair.html", null ],
     [ "Mixer::ActuatorType::Values", "structMixer_1_1ActuatorType_1_1Values.html", null ],
     [ "ADSB::VehicleInfo_t", "structADSB_1_1VehicleInfo__t.html", null ],
+    [ "VehicleSummaryItem", "classVehicleSummaryItem.html", null ],
     [ "VehicleTypes", "structVehicleTypes.html", [
       [ "MavCommandQueue", "classMavCommandQueue.html", null ],
       [ "MessageIntervalManager", "classMessageIntervalManager.html", null ],

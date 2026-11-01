@@ -7,6 +7,10 @@ var classAirframeComponent =
     [ "requiresSetup", "classAirframeComponent.html#a0eb7d2546689d7a4a3aeb577f031d6b0", null ],
     [ "setupComplete", "classAirframeComponent.html#acfc2522fad1e7d24bde336e10f9671ed", null ],
     [ "setupCompleteChangedTriggerList", "classAirframeComponent.html#adea6cee227068587838ce66ef9a0096b", null ],
+    [ "setupOrder", "classAirframeComponent.html#aac2bfd791a61fd9eac76e8eb1aa53dab", null ],
     [ "setupSource", "classAirframeComponent.html#ad572dce99d54ef456d7086bed7384eba", null ],
-    [ "summaryQmlSource", "classAirframeComponent.html#a90dbdb791d68a1a6899d5cab90ffa2fd", null ]
+    [ "setupTriggerSignals", "classAirframeComponent.html#aa99dfbce233ca1fddac66a0be76d7f4d", null ],
+    [ "summaryChangedTriggerList", "classAirframeComponent.html#a05c86637cda5255c14443fea8929f172", null ],
+    [ "summaryItems", "classAirframeComponent.html#a4a450a0e7bd8a30ca9d0aecd85b1cf46", null ],
+    [ "summaryQmlSource", "classAirframeComponent.html#a153081ee3b2f8b1892497b5a3ae79438", null ]
 ];

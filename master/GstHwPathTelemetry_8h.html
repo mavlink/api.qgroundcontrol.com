@@ -98,7 +98,8 @@ $(document).ready(function(){initNavTree('GstHwPathTelemetry_8h.html',''); initR
   <div class="headertitle"><div class="title">GstHwPathTelemetry.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QtCore/QElapsedTimer&gt;</code><br />
+<div class="textblock"><code>#include &lt;array&gt;</code><br />
+<code>#include &lt;QtCore/QElapsedTimer&gt;</code><br />
 <code>#include &lt;QtCore/qglobal.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -106,14 +107,14 @@ $(document).ready(function(){initNavTree('GstHwPathTelemetry_8h.html',''); initR
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="GstHwPathTelemetry_8h__incl.svg" width="475" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="GstHwPathTelemetry_8h__incl.svg" width="555" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="GstHwPathTelemetry_8h__dep__incl.svg" width="100%" height="580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="GstHwPathTelemetry_8h__dep__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="GstHwPathTelemetry_8h_source.html">Go to the source code of this file.</a></p>
@@ -122,6 +123,9 @@ $(document).ready(function(){initNavTree('GstHwPathTelemetry_8h.html',''); initR
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHwPathTelemetry_1_1ScopedMapTimer.html">GstHwPathTelemetry::ScopedMapTimer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAII timer: records mapTextures() wall time into the path's EWMA on scope exit.  <a href="classGstHwPathTelemetry_1_1ScopedMapTimer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGstHwPathTelemetry_1_1Snapshot.html">GstHwPathTelemetry::Snapshot</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every counter and fallback reason at one instant; a reader's baseline for counts since then.  <a href="structGstHwPathTelemetry_1_1Snapshot.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -133,16 +137,14 @@ Namespaces</h2></td></tr>
 Enumerations</h2></td></tr>
 <tr class="memitem:af08ef8a00adf4b7a955c934ad72eeeaf" id="r_af08ef8a00adf4b7a955c934ad72eeeaf"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeaf">GstHwPathTelemetry::HwFallbackReason</a> { <br />
 &#160;&#160;<a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafaf59f07edfa950dcaae336d6cb6b197b0">GstHwPathTelemetry::NoExt</a>
-, <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa033f01b12d2d41ee92f75615d97dda94">GstHwPathTelemetry::ModifierRejected</a>
 , <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafabd4f4d315b0da78e5a960e84e80b3e57">GstHwPathTelemetry::EglBadMatch</a>
 , <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa2676124b3e52c860757784ee4aad8ed0">GstHwPathTelemetry::ValidateFailed</a>
+, <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa5cf2164b961918b38d26cb03c045c4f5">GstHwPathTelemetry::UnknownMemType</a>
 , <br />
-&#160;&#160;<a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa5cf2164b961918b38d26cb03c045c4f5">GstHwPathTelemetry::UnknownMemType</a>
-, <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa14335fc308a018e6718209cf0f1c7960">GstHwPathTelemetry::MapFailed</a>
+&#160;&#160;<a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa14335fc308a018e6718209cf0f1c7960">GstHwPathTelemetry::MapFailed</a>
 , <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa3d3cd09d7403cd4d764353cf67f77289">GstHwPathTelemetry::VulkanNoSync</a>
 , <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa4aa02d4b768781ae5b883e8f5337231f">GstHwPathTelemetry::ImportUnsupported</a>
-, <br />
-&#160;&#160;<a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafadd3ff01c06a07a752666c18e1f7efaf8">GstHwPathTelemetry::_Count</a>
+, <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafadd3ff01c06a07a752666c18e1f7efaf8">GstHwPathTelemetry::_Count</a>
 <br />
  }</td></tr>
 <tr class="memdesc:af08ef8a00adf4b7a955c934ad72eeeaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specific cause a GPU path was rejected for a sample; surfaced as a per-(path,reason) breakdown.  <a href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeaf">More...</a><br /></td></tr>
@@ -168,21 +170,18 @@ Functions</h2></td></tr>
 <tr class="separator:a4919a882459cebd07d69101db6fb614c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae84e45e0d0a746b4fa355a1a29990101" id="r_ae84e45e0d0a746b4fa355a1a29990101"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstHwPathTelemetry.html#ae84e45e0d0a746b4fa355a1a29990101">GstHwPathTelemetry::peek</a> (<a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> path, <a class="el" href="namespaceGstHwPathTelemetry.html#a16e9937fb520a82225bf0cebd6ca3857">Counter</a> counter) noexcept</td></tr>
 <tr class="separator:ae84e45e0d0a746b4fa355a1a29990101"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa35809a21a59e961bb9c700e497e475" id="r_afa35809a21a59e961bb9c700e497e475"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstHwPathTelemetry.html#afa35809a21a59e961bb9c700e497e475">GstHwPathTelemetry::take</a> (<a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> path, <a class="el" href="namespaceGstHwPathTelemetry.html#a16e9937fb520a82225bf0cebd6ca3857">Counter</a> counter) noexcept</td></tr>
-<tr class="memdesc:afa35809a21a59e961bb9c700e497e475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads and resets.  <br /></td></tr>
-<tr class="separator:afa35809a21a59e961bb9c700e497e475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2610f83ab1499f9b2237326f5c20b869" id="r_a2610f83ab1499f9b2237326f5c20b869"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstHwPathTelemetry.html#a2610f83ab1499f9b2237326f5c20b869">GstHwPathTelemetry::recordMapDuration</a> (<a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> path, qint64 nsecs) noexcept</td></tr>
 <tr class="memdesc:a2610f83ab1499f9b2237326f5c20b869"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-path mapTextures() wall-time, fed into an EWMA; peek returns the smoothed value in microseconds.  <br /></td></tr>
 <tr class="separator:a2610f83ab1499f9b2237326f5c20b869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f13a6d54ae7adc92bd749440c5bb8e8" id="r_a4f13a6d54ae7adc92bd749440c5bb8e8"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstHwPathTelemetry.html#a4f13a6d54ae7adc92bd749440c5bb8e8">GstHwPathTelemetry::peekMapDurationUsEwma</a> (<a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> path) noexcept</td></tr>
 <tr class="separator:a4f13a6d54ae7adc92bd749440c5bb8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18246831e1ea98aeeac5c4d9394d6374" id="r_a18246831e1ea98aeeac5c4d9394d6374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstHwPathTelemetry.html#a18246831e1ea98aeeac5c4d9394d6374">GstHwPathTelemetry::recordFallbackReason</a> (<a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> attemptedPath, <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeaf">HwFallbackReason</a> <a class="el" href="HwBuffers_8cc.html#a4df95772ac39ca7dd724fbc77a3676ff">reason</a>) noexcept</td></tr>
+<tr class="memitem:a18246831e1ea98aeeac5c4d9394d6374" id="r_a18246831e1ea98aeeac5c4d9394d6374"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstHwPathTelemetry.html#a18246831e1ea98aeeac5c4d9394d6374">GstHwPathTelemetry::recordFallbackReason</a> (<a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> attemptedPath, <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeaf">HwFallbackReason</a> reason) noexcept</td></tr>
 <tr class="memdesc:a18246831e1ea98aeeac5c4d9394d6374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-(path,reason) fallback accounting; lets a bug report show <em>why</em> a path demoted to CPU.  <br /></td></tr>
 <tr class="separator:a18246831e1ea98aeeac5c4d9394d6374"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38a2998ce9444f774b13519fcb575bd7" id="r_a38a2998ce9444f774b13519fcb575bd7"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstHwPathTelemetry.html#a38a2998ce9444f774b13519fcb575bd7">GstHwPathTelemetry::peekFallbackReason</a> (<a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> attemptedPath, <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeaf">HwFallbackReason</a> <a class="el" href="HwBuffers_8cc.html#a4df95772ac39ca7dd724fbc77a3676ff">reason</a>) noexcept</td></tr>
+<tr class="memitem:a38a2998ce9444f774b13519fcb575bd7" id="r_a38a2998ce9444f774b13519fcb575bd7"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstHwPathTelemetry.html#a38a2998ce9444f774b13519fcb575bd7">GstHwPathTelemetry::peekFallbackReason</a> (<a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> attemptedPath, <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeaf">HwFallbackReason</a> reason) noexcept</td></tr>
 <tr class="separator:a38a2998ce9444f774b13519fcb575bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeefeb8d09481c9b106b8dcf9f4b5e95c" id="r_aeefeb8d09481c9b106b8dcf9f4b5e95c"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstHwPathTelemetry.html#aeefeb8d09481c9b106b8dcf9f4b5e95c">GstHwPathTelemetry::takeFallbackReason</a> (<a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> attemptedPath, <a class="el" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeaf">HwFallbackReason</a> <a class="el" href="HwBuffers_8cc.html#a4df95772ac39ca7dd724fbc77a3676ff">reason</a>) noexcept</td></tr>
-<tr class="separator:aeefeb8d09481c9b106b8dcf9f4b5e95c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae7c6b468c90e3228266f2a60fea641" id="r_a6ae7c6b468c90e3228266f2a60fea641"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGstHwPathTelemetry_1_1Snapshot.html">Snapshot</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstHwPathTelemetry.html#a6ae7c6b468c90e3228266f2a60fea641">GstHwPathTelemetry::snapshot</a> () noexcept</td></tr>
+<tr class="separator:a6ae7c6b468c90e3228266f2a60fea641"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -9,6 +9,7 @@ var GstScoped_8h =
     [ "GStreamer::GstStructureDeleter", "structGStreamer_1_1GstStructureDeleter.html", "structGStreamer_1_1GstStructureDeleter" ],
     [ "GStreamer::GFreeDeleter", "structGStreamer_1_1GFreeDeleter.html", "structGStreamer_1_1GFreeDeleter" ],
     [ "GStreamer::GErrorDeleter", "structGStreamer_1_1GErrorDeleter.html", "structGStreamer_1_1GErrorDeleter" ],
+    [ "GStreamer::ScopedSignal", "classGStreamer_1_1ScopedSignal.html", "classGStreamer_1_1ScopedSignal" ],
     [ "GStreamer::PadProbe", "classGStreamer_1_1PadProbe.html", "classGStreamer_1_1PadProbe" ],
     [ "GCharPtr", "GstScoped_8h.html#a81e950b3e14000bf473043dce7193497", null ],
     [ "GErrorPtr", "GstScoped_8h.html#a7800a33ef3ba2d0ec51dd501a427e60d", null ],
@@ -37,5 +38,7 @@ var GstScoped_8h =
     [ "adoptObject", "GstScoped_8h.html#aa319e5c0b4f11efe61e3a839b5abc49c", null ],
     [ "adoptPad", "GstScoped_8h.html#aebf8ee6512e5ba8bd0e81885ab4fa7fd", null ],
     [ "adoptQuery", "GstScoped_8h.html#a32b242be1931c098c9b275a762733421", null ],
-    [ "adoptStructure", "GstScoped_8h.html#a25a288491b9027805f625def869db5d4", null ]
+    [ "adoptStructure", "GstScoped_8h.html#a25a288491b9027805f625def869db5d4", null ],
+    [ "makeElement", "GstScoped_8h.html#a3ec367ea9370c5c8a46d8572f9d27855", null ],
+    [ "shareObject", "GstScoped_8h.html#a85eb5336be398a2874574f19cbda36fd", null ]
 ];

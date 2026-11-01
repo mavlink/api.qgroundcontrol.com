@@ -19,7 +19,7 @@ var searchData=
   ['gstbusptr_16',['GstBusPtr',['../namespaceGStreamer.html#aee554c11bb5dffc76c4abfa3d989f79f',1,'GStreamer']]],
   ['gstcapsptr_17',['GstCapsPtr',['../namespaceGStreamer.html#ab1664d982f198b6a880c6e2564e899b4',1,'GStreamer']]],
   ['gstcontextptr_18',['GstContextPtr',['../namespaceGStreamer.html#ae9cce8abaa199d29c954f9498fbda301',1,'GStreamer']]],
-  ['gstelement_19',['GstElement',['../MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3',1,'MockVideoStreamServer.h']]],
+  ['gstelement_19',['gstelement',['../GStreamer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3',1,'GstElement:&#160;GStreamer.h'],['../MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3',1,'GstElement:&#160;MockVideoStreamServer.h']]],
   ['gstelementptr_20',['GstElementPtr',['../namespaceGStreamer.html#ae839d799e9288392da348a95bcd02d88',1,'GStreamer']]],
   ['gsteventptr_21',['GstEventPtr',['../namespaceGStreamer.html#a171bacfaacc39d7b5b46ccb39a8bec54',1,'GStreamer']]],
   ['gstfactoryptr_22',['GstFactoryPtr',['../namespaceGStreamer.html#a52b9487a93b747cf73dbe9e5c69d4d49',1,'GStreamer']]],

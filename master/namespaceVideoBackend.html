@@ -106,14 +106,8 @@ Classes</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:aeab12a4bdf3248cf3c073b0e2a32b7c8" id="r_aeab12a4bdf3248cf3c073b0e2a32b7c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVideoReceiver.html">VideoReceiver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVideoBackend.html#aeab12a4bdf3248cf3c073b0e2a32b7c8">createReceiver</a> (QObject *parent)</td></tr>
 <tr class="separator:aeab12a4bdf3248cf3c073b0e2a32b7c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb22acdd3f8cd5e66b04422a5d8d5103" id="r_acb22acdd3f8cd5e66b04422a5d8d5103"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVideoBackend.html#acb22acdd3f8cd5e66b04422a5d8d5103">createSink</a> (QQuickItem *widget, QObject *parent)</td></tr>
-<tr class="separator:acb22acdd3f8cd5e66b04422a5d8d5103"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68d875abb814ad76c29ee1bc7ed7f820" id="r_a68d875abb814ad76c29ee1bc7ed7f820"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVideoBackend.html#a68d875abb814ad76c29ee1bc7ed7f820">releaseSink</a> (void *sink)</td></tr>
-<tr class="separator:a68d875abb814ad76c29ee1bc7ed7f820"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a409f6d92456c147d0a1b7a5be8b05bc1" id="r_a409f6d92456c147d0a1b7a5be8b05bc1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVideoBackend.html#a409f6d92456c147d0a1b7a5be8b05bc1">gpuZeroCopyAllowedForCurrentGraphicsApi</a> (bool forceCpuVideoPath, bool forceSoftwareDecoder)</td></tr>
-<tr class="memdesc:a409f6d92456c147d0a1b7a5be8b05bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies backend-wide sink policy before constructing the <a class="el" href="namespaceGStreamer.html">GStreamer</a> sink.  <br /></td></tr>
-<tr class="separator:a409f6d92456c147d0a1b7a5be8b05bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae73ab67483f0e9c4a3cf7fa8a114f072" id="r_ae73ab67483f0e9c4a3cf7fa8a114f072"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVideoBackend.html#ae73ab67483f0e9c4a3cf7fa8a114f072">needsAsyncInit</a> () noexcept</td></tr>
+<tr class="memdesc:ae73ab67483f0e9c4a3cf7fa8a114f072"><td class="mdescLeft">&#160;</td><td class="mdescRight">True when a streaming backend that requires asynchronous global init is compiled in (<a class="el" href="namespaceGStreamer.html">GStreamer</a>).  <br /></td></tr>
 <tr class="separator:ae73ab67483f0e9c4a3cf7fa8a114f072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac19cb64ec736db72823e497128be492c" id="r_ac19cb64ec736db72823e497128be492c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVideoBackend.html#ac19cb64ec736db72823e497128be492c">disabledForUnitTests</a> ()</td></tr>
 <tr class="memdesc:ac19cb64ec736db72823e497128be492c"><td class="mdescLeft">&#160;</td><td class="mdescRight">True when the backend should be skipped under unit tests (opt back in with QGC_TEST_ENABLE_GSTREAMER).  <br /></td></tr>
@@ -122,17 +116,18 @@ Functions</h2></td></tr>
 <tr class="separator:a1b3d0d50e62e39cf25f11a51346d8d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23b934d2eaf1a74a42f3e08fcfdd4fc0" id="r_a23b934d2eaf1a74a42f3e08fcfdd4fc0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVideoBackend.html#a23b934d2eaf1a74a42f3e08fcfdd4fc0">initialize</a> (const QStringList &amp;arguments, const <a class="el" href="structVideoBackend_1_1EnvPrepResult.html">EnvPrepResult</a> &amp;envResult)</td></tr>
 <tr class="separator:a23b934d2eaf1a74a42f3e08fcfdd4fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30801e77fcd9c7ecc4e0ea1272021f43" id="r_a30801e77fcd9c7ecc4e0ea1272021f43"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVideoBackend.html#a30801e77fcd9c7ecc4e0ea1272021f43">selfTest</a> ()</td></tr>
+<tr class="memdesc:a30801e77fcd9c7ecc4e0ea1272021f43"><td class="mdescLeft">&#160;</td><td class="mdescRight">The boot test's check that the initialized backend decodes and records; true without <a class="el" href="namespaceGStreamer.html">GStreamer</a>.  <br /></td></tr>
+<tr class="separator:a30801e77fcd9c7ecc4e0ea1272021f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46daf9a130244a6b8414a2d4f6d6e0a6" id="r_a46daf9a130244a6b8414a2d4f6d6e0a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVideoBackend.html#a46daf9a130244a6b8414a2d4f6d6e0a6">applyDecoderPriorities</a> (int rawOption)</td></tr>
 <tr class="separator:a46daf9a130244a6b8414a2d4f6d6e0a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ae0474089d6393762187513110a4e1e" id="r_a9ae0474089d6393762187513110a4e1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVideoBackend.html#a9ae0474089d6393762187513110a4e1e">onMainWindowReady</a> (QQuickWindow *window)</td></tr>
 <tr class="separator:a9ae0474089d6393762187513110a4e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed735e1a0566db76356ec832feb0fdcb" id="r_aed735e1a0566db76356ec832feb0fdcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVideoBackend.html#aed735e1a0566db76356ec832feb0fdcb">bindDebugLevelFact</a> (<a class="el" href="classFact.html">Fact</a> *fact, QObject *context)</td></tr>
 <tr class="separator:aed735e1a0566db76356ec832feb0fdcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98a3f7f9351b7273e56e59009123f901" id="r_a98a3f7f9351b7273e56e59009123f901"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceVideoBackend.html#a98a3f7f9351b7273e56e59009123f901">attachSink</a> (QObject *receiver, void *sink, QQuickItem *widget)</td></tr>
-<tr class="separator:a98a3f7f9351b7273e56e59009123f901"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Backend-neutral video backend facade: object creation plus process/runtime lifecycle. Selects <a class="el" href="namespaceGStreamer.html">GStreamer</a> or QtMultimedia at compile time via QGC_GST_STREAMING so callers (<a class="el" href="classVideoManager.html">VideoManager</a>, <a class="el" href="classQGCCorePlugin.html" title="Extension mechanism for generic, non-firmware-specific customization of QGC.">QGCCorePlugin</a>) never name a concrete backend. </p>
+<div class="textblock"><p>Backend-neutral video backend facade: receiver creation plus process/runtime lifecycle. Selects <a class="el" href="namespaceGStreamer.html">GStreamer</a> at compile time via QGC_GST_STREAMING so callers (<a class="el" href="classVideoManager.html">VideoManager</a>, <a class="el" href="classQGCCorePlugin.html" title="Extension mechanism for generic, non-firmware-specific customization of QGC.">QGCCorePlugin</a>) never name a concrete backend. Without <a class="el" href="namespaceGStreamer.html">GStreamer</a> there is no network video backend: <a class="el" href="namespaceVideoBackend.html#aeab12a4bdf3248cf3c073b0e2a32b7c8">createReceiver()</a> returns nullptr. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a46daf9a130244a6b8414a2d4f6d6e0a6" name="a46daf9a130244a6b8414a2d4f6d6e0a6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a46daf9a130244a6b8414a2d4f6d6e0a6">&#9670;&#160;</a></span>applyDecoderPriorities()</h2>
@@ -150,47 +145,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00110">110</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00056">56</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00400">GStreamer::setCodecPriorities()</a>.</p>
-
-</div>
-</div>
-<a id="a98a3f7f9351b7273e56e59009123f901" name="a98a3f7f9351b7273e56e59009123f901"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a98a3f7f9351b7273e56e59009123f901">&#9670;&#160;</a></span>attachSink()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void VideoBackend::attachSink </td>
-          <td>(</td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>receiver</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>sink</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QQuickItem *&#160;</td>
-          <td class="paramname"><em>widget</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00138">138</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
-
-<p class="reference">References <a class="el" href="GStreamer_8cc_source.html#l00388">GStreamer::attachAppSink()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00450">GStreamer::setCodecPriorities()</a>.</p>
 
 </div>
 </div>
@@ -220,11 +177,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00128">128</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00074">74</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamer_8cc_source.html#l00408">GStreamer::bindDebugLevelFact()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamer_8cc_source.html#l00420">GStreamer::bindDebugLevelFact()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoManager_8cc_source.html#l00167">VideoManager::init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoManager_8cc_source.html#l00189">VideoManager::init()</a>.</p>
 
 </div>
 </div>
@@ -244,45 +201,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00046">46</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00011">11</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamer_8cc_source.html#l00342">GStreamer::createVideoReceiver()</a>, and <a class="el" href="QtMultimediaReceiver_8cc_source.html#l00123">QtMultimediaReceiver::createVideoReceiver()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamer_8cc_source.html#l00385">GStreamer::createVideoReceiver()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="QGCCorePlugin_8cc_source.html#l00323">QGCCorePlugin::createVideoReceiver()</a>.</p>
-
-</div>
-</div>
-<a id="acb22acdd3f8cd5e66b04422a5d8d5103" name="acb22acdd3f8cd5e66b04422a5d8d5103"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb22acdd3f8cd5e66b04422a5d8d5103">&#9670;&#160;</a></span>createSink()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * VideoBackend::createSink </td>
-          <td>(</td>
-          <td class="paramtype">QQuickItem *&#160;</td>
-          <td class="paramname"><em>widget</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>parent</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00055">55</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
-
-<p class="reference">References <a class="el" href="GStreamer_8h_source.html#l00034">GStreamer::VideoSinkConfig::conversionElement</a>, <a class="el" href="GStreamer_8cc_source.html#l00306">GStreamer::createVideoSink()</a>, <a class="el" href="QtMultimediaReceiver_8cc_source.html#l00100">QtMultimediaReceiver::createVideoSink()</a>, <a class="el" href="GStreamer_8h_source.html#l00035">GStreamer::VideoSinkConfig::disablePixelAspectRatio</a>, <a class="el" href="GStreamer_8h_source.html#l00020">GStreamer::ForceVideoDecoderSoftware</a>, <a class="el" href="GStreamer_8h_source.html#l00036">GStreamer::VideoSinkConfig::gpuZeroCopy</a>, <a class="el" href="VideoBackend_8cc_source.html#l00035">gpuZeroCopyAllowedForCurrentGraphicsApi()</a>, <a class="el" href="SettingsManager_8cc_source.html#l00052">SettingsManager::instance()</a>, <a class="el" href="QGCApplication_8h_source.html#l00028">qApp</a>, and <a class="el" href="SettingsManager_8cc_source.html#l00143">SettingsManager::videoSettings()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="QGCCorePlugin_8cc_source.html#l00328">QGCCorePlugin::createVideoSink()</a>.</p>
 
 </div>
 </div>
@@ -303,45 +226,11 @@ Functions</h2></td></tr>
 
 <p>True when the backend should be skipped under unit tests (opt back in with QGC_TEST_ENABLE_GSTREAMER). </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00084">84</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00021">21</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="QGCApplication_8h_source.html#l00035">qgcApp</a>, and <a class="el" href="AppMessages_8cc_source.html#l00030">QGC::runningUnitTests()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoManager_8cc_source.html#l00050">VideoManager::VideoManager()</a>.</p>
-
-</div>
-</div>
-<a id="a409f6d92456c147d0a1b7a5be8b05bc1" name="a409f6d92456c147d0a1b7a5be8b05bc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a409f6d92456c147d0a1b7a5be8b05bc1">&#9670;&#160;</a></span>gpuZeroCopyAllowedForCurrentGraphicsApi()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool VideoBackend::gpuZeroCopyAllowedForCurrentGraphicsApi </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>forceCpuVideoPath</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>forceSoftwareDecoder</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Applies backend-wide sink policy before constructing the <a class="el" href="namespaceGStreamer.html">GStreamer</a> sink. </p>
-
-<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00035">35</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="VideoBackend_8cc_source.html#l00055">createSink()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoManager_8cc_source.html#l00127">VideoManager::startVideoBackendInit()</a>.</p>
 
 </div>
 </div>
@@ -371,11 +260,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00099">99</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00036">36</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoBackend_8h_source.html#l00043">VideoBackend::EnvPrepResult::error</a>, <a class="el" href="GStreamer_8cc_source.html#l00287">GStreamer::initialize()</a>, and <a class="el" href="VideoBackend_8h_source.html#l00042">VideoBackend::EnvPrepResult::ok</a>.</p>
+<p class="reference">References <a class="el" href="VideoBackend_8h_source.html#l00036">VideoBackend::EnvPrepResult::error</a>, <a class="el" href="GStreamer_8cc_source.html#l00307">GStreamer::initialize()</a>, and <a class="el" href="VideoBackend_8h_source.html#l00035">VideoBackend::EnvPrepResult::ok</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoManager_8cc_source.html#l00077">VideoManager::startVideoBackendInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoManager_8cc_source.html#l00127">VideoManager::startVideoBackendInit()</a>.</p>
 
 </div>
 </div>
@@ -401,11 +290,12 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>True when a streaming backend that requires asynchronous global init is compiled in (<a class="el" href="namespaceGStreamer.html">GStreamer</a>). QtMultimedia needs no global init, so callers treat it as ready immediately. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoBackend_8h_source.html#l00027">27</a> of file <a class="el" href="VideoBackend_8h_source.html">VideoBackend.h</a>.</p>
+<p>True when a streaming backend that requires asynchronous global init is compiled in (<a class="el" href="namespaceGStreamer.html">GStreamer</a>). </p>
 
-<p class="reference">Referenced by <a class="el" href="VideoManager_8cc_source.html#l00167">VideoManager::init()</a>, <a class="el" href="VideoManager_8cc_source.html#l00077">VideoManager::startVideoBackendInit()</a>, <a class="el" href="VideoManager_8cc_source.html#l00050">VideoManager::VideoManager()</a>, and <a class="el" href="VideoManager_8cc_source.html#l00108">VideoManager::waitForVideoBackendReady()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoBackend_8h_source.html#l00019">19</a> of file <a class="el" href="VideoBackend_8h_source.html">VideoBackend.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="VideoManager_8cc_source.html#l00127">VideoManager::startVideoBackendInit()</a>.</p>
 
 </div>
 </div>
@@ -425,11 +315,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00119">119</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00065">65</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamer_8cc_source.html#l00470">GStreamer::onMainWindowReady()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamer_8cc_source.html#l00462">GStreamer::onMainWindowReady()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoManager_8cc_source.html#l00167">VideoManager::init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoManager_8cc_source.html#l00189">VideoManager::init()</a>.</p>
 
 </div>
 </div>
@@ -448,35 +338,36 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00089">89</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00026">26</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamerEnvironment_8h_source.html#l00014">GStreamer::Environment::ValidationResult::error</a>, <a class="el" href="GStreamerEnvironment_8h_source.html#l00013">GStreamer::Environment::ValidationResult::ok</a>, and <a class="el" href="GStreamer_8cc_source.html#l00189">GStreamer::prepareEnvironment()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamerEnvironment_8h_source.html#l00015">GStreamer::Environment::ValidationResult::error</a>, <a class="el" href="GStreamerEnvironment_8h_source.html#l00014">GStreamer::Environment::ValidationResult::ok</a>, and <a class="el" href="GStreamer_8cc_source.html#l00216">GStreamer::prepareEnvironment()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoManager_8cc_source.html#l00077">VideoManager::startVideoBackendInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoManager_8cc_source.html#l00127">VideoManager::startVideoBackendInit()</a>.</p>
 
 </div>
 </div>
-<a id="a68d875abb814ad76c29ee1bc7ed7f820" name="a68d875abb814ad76c29ee1bc7ed7f820"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68d875abb814ad76c29ee1bc7ed7f820">&#9670;&#160;</a></span>releaseSink()</h2>
+<a id="a30801e77fcd9c7ecc4e0ea1272021f43" name="a30801e77fcd9c7ecc4e0ea1272021f43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30801e77fcd9c7ecc4e0ea1272021f43">&#9670;&#160;</a></span>selfTest()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void VideoBackend::releaseSink </td>
+          <td class="memname">bool VideoBackend::selfTest </td>
           <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>sink</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00075">75</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
+<p>The boot test's check that the initialized backend decodes and records; true without <a class="el" href="namespaceGStreamer.html">GStreamer</a>. </p>
 
-<p class="reference">References <a class="el" href="GStreamer_8cc_source.html#l00334">GStreamer::releaseVideoSink()</a>, and <a class="el" href="QtMultimediaReceiver_8cc_source.html#l00113">QtMultimediaReceiver::releaseVideoSink()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoBackend_8cc_source.html#l00047">47</a> of file <a class="el" href="VideoBackend_8cc_source.html">VideoBackend.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QGCCorePlugin_8cc_source.html#l00333">QGCCorePlugin::releaseVideoSink()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamerSelfTest_8cc_source.html#l00739">GStreamer::selfTest()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="QGCApplication_8cc_source.html#l00228">QGCApplication::init()</a>.</p>
 
 </div>
 </div>

@@ -6,6 +6,7 @@ var classParameterEditorDiff =
     [ "componentId", "classParameterEditorDiff.html#a58ddd4f594f8061a486b7662605a01cd", null ],
     [ "fileValue", "classParameterEditorDiff.html#a18cae26bf605662dbfcbcafd8a948961", null ],
     [ "fileValueVar", "classParameterEditorDiff.html#af1d48f69c977241bae692fd1d7328bd2", null ],
+    [ "invalidFileValue", "classParameterEditorDiff.html#a197da7146c328b39828c5d731e168079", null ],
     [ "load", "classParameterEditorDiff.html#a65ed3ebd549cb0809b4b0032b90df959", null ],
     [ "name", "classParameterEditorDiff.html#a20a8a5397a954b7ad4f342b323b8447a", null ],
     [ "noVehicleValue", "classParameterEditorDiff.html#a5ae3821962c9bbcc1a7b16f36763bb27", null ],

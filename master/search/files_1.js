@@ -25,6 +25,7 @@ var searchData=
   ['bluetoothworker_2eh_22',['BluetoothWorker.h',['../BluetoothWorker_8h.html',1,'']]],
   ['bootloader_2ecc_23',['Bootloader.cc',['../Bootloader_8cc.html',1,'']]],
   ['bootloader_2eh_24',['Bootloader.h',['../Bootloader_8h.html',1,'']]],
-  ['bulkrefreshjob_2ecc_25',['BulkRefreshJob.cc',['../BulkRefreshJob_8cc.html',1,'']]],
-  ['bulkrefreshjob_2eh_26',['BulkRefreshJob.h',['../BulkRefreshJob_8h.html',1,'']]]
+  ['branchcontext_2eh_25',['BranchContext.h',['../BranchContext_8h.html',1,'']]],
+  ['bulkrefreshjob_2ecc_26',['BulkRefreshJob.cc',['../BulkRefreshJob_8cc.html',1,'']]],
+  ['bulkrefreshjob_2eh_27',['BulkRefreshJob.h',['../BulkRefreshJob_8h.html',1,'']]]
 ];

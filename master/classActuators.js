@@ -8,6 +8,7 @@ var classActuators =
     [ "actuatorOutputs", "classActuators.html#a0598d6c0c21ccacd2ac9dc1f4a19f6c0", null ],
     [ "actuatorOutputsChanged", "classActuators.html#a10f47db8795474bdbfbb3a9b34e8a90e", null ],
     [ "actuatorTest", "classActuators.html#a5520379d6faa72c3b045b2ae434c33ac", null ],
+    [ "channelsByFunction", "classActuators.html#acc608de68602e5d21d5009a41d443dcd", null ],
     [ "hasUnsetRequiredFunctions", "classActuators.html#abf7d87e611e9e8dcca9a4d8a3b27a286", null ],
     [ "hasUnsetRequiredFunctionsChanged", "classActuators.html#a249dbed48800f3823e1afd7c028066f8", null ],
     [ "imageClicked", "classActuators.html#a863c6146522aa3ea4915a90b81a3a9fd", null ],

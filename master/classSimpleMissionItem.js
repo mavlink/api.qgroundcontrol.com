@@ -40,6 +40,8 @@ var classSimpleMissionItem =
     [ "lastSequenceNumber", "classSimpleMissionItem.html#a95280e373c1fd927b6e926082b2da995", null ],
     [ "load", "classSimpleMissionItem.html#ad0f8aa701f0deeb5fcab3df8b9d2ce99", null ],
     [ "load", "classSimpleMissionItem.html#ac082dc7974e1b878421893b27b5c994d", null ],
+    [ "loiterDistance", "classSimpleMissionItem.html#a58d3d26f7a81eb8331cfc136ae901867", null ],
+    [ "loiterDistanceChanged", "classSimpleMissionItem.html#a9c51fa67faec1053fb5002131610849c", null ],
     [ "loiterRadius", "classSimpleMissionItem.html#ac1a97ad7bd76b1720ecd5420f83e0166", null ],
     [ "loiterRadiusChanged", "classSimpleMissionItem.html#a590ad82db6699cf1095ad452fe0bdc1d", null ],
     [ "mapVisualQML", "classSimpleMissionItem.html#a99d299fbed4d071f7863c150f43d4f5d", null ],

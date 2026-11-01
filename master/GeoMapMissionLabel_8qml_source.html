@@ -116,101 +116,167 @@ $(document).ready(function(){initNavTree('GeoMapMissionLabel_8qml_source.html','
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>import QGroundControl.Controls</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>import QGroundControl.GeoMap</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>/// Point marker for complex mission item visuals: same colored dot that</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>/// crossfades into a 3D sphere as GeoMapWaypointItem, plus an always-visible</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>/// side text label (e.g. &quot;Loiter&quot;, &quot;Land&quot;).</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>GeoMapItem {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    id: root</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    property int index: -1     ///&lt; Sequence number shown in the dot; &lt; 0 shows none</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    property string label: &quot;&quot;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    property bool checked: false</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    property real size: ScreenTools.defaultFontPixelHeight * 1.5</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    width: size</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    height: size</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    anchorPoint: Qt.point(width / 2, height / 2)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    // altitudeMode defaults to ClampToGround (GeoMapItem); callers may override</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    QGCPalette { id: qgcPal; colorGroupEnabled: root.enabled }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    // Same conventions as GeoMapWaypointItem / MissionItemIndexLabel:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    // checked is &quot;green&quot; and grown, everything else the plain indicator color</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    readonly property color _markerColor: root.checked ? &quot;green&quot; : qgcPal.mapIndicator</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    readonly property real _indicatorSize: root.checked ? root.size : root.size * 0.75</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    readonly property var _camera: scene ? scene.camera : null</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    // Constant apparent size, same technique as GeoMapWaypointItem: scene</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    // units per screen pixel at the camera&#39;s look-at distance. Built-in</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    // QtQuick3D meshes are 100 units across.</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    readonly property real _modelScale: _camera</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        ? root._indicatorSize * _camera.distance * _camera.unitsPerPixelAtUnitDistance / 100</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        : 1</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    Rectangle {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        anchors.centerIn: parent</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        width: root._indicatorSize</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        height: root._indicatorSize</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        radius: width / 2</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        color: root._markerColor</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        opacity: root.contentOpacity2D</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    QGCLabel {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        anchors.centerIn: parent</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        // MissionItemIndexLabel convention: single-char label lives inside the dot</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        text: root.index &gt;= 0 ? root.index : (root.label.length === 1 ? root.label : &quot;&quot;)</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        color: &quot;white&quot;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        font.bold: true</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    GeoMapDropShadow {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        id: dropShadow</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        geoItem: root</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        indicatorSize: root._indicatorSize</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    Rectangle {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        anchors.left: parent.right</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        anchors.leftMargin: ScreenTools.defaultFontPixelWidth / 2</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        anchors.verticalCenter: parent.verticalCenter</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        width: sideLabel.width + ScreenTools.defaultFontPixelWidth</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        height: sideLabel.height</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        radius: height / 2</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        color: root._markerColor</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        visible: root.label.length &gt; 1</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        QGCLabel {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            id: sideLabel</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            anchors.centerIn: parent</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            text: root.label</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            color: &quot;white&quot;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    delegate3D: Component {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        Node {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            Node {</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                scale: Qt.vector3d(root._modelScale, root._modelScale, root._modelScale)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                Model {</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                    source: &quot;#Sphere&quot;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                    materials: PrincipledMaterial {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                        baseColor: root._markerColor</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                    }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                }</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            }</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            GeoMapDropLine {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                dropLength: dropShadow.dropLength</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>                lineScale: dropShadow.dropLineScale</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                lineColor: root._markerColor</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            }</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>import &quot;GeoMapAltitude.js&quot; as GeoMapAltitude</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>/// Point marker for complex mission item visuals: same colored dot that</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>/// crossfades into a 3D sphere as GeoMapWaypointItem, plus an always-visible</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>/// side text label (e.g. &quot;Loiter&quot;, &quot;Land&quot;).</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>GeoMapItem {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    id: root</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    property int index: -1     ///&lt; Sequence number shown in the dot; &lt; 0 shows none</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    property string label: &quot;&quot;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    property bool checked: false</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    property real size: ScreenTools.defaultFontPixelHeight * 1.5</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    property bool pickable: false   ///&lt; The marker takes clicks and drags; false lets them through to the map</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    property bool draggable: false  ///&lt; The marker can be dragged; the map is not panned meanwhile</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    property bool groundMarker: false ///&lt; A position on the ground: lies flat on the terrain in 3D instead of a sphere</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    property var dragHeightAt: null   ///&lt; function(coordinate): height in meters at a position, for markers whose height follows it</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    // Same conventions as GeoMapWaypointItem / MissionItemIndexLabel:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    // checked is &quot;green&quot; and grown, everything else the plain indicator color</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    readonly property color _markerColor: root.checked ? &quot;green&quot; : qgcPal.mapIndicator</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    readonly property real _indicatorSize: root.checked ? root.size : root.size * 0.75</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    readonly property var _camera: scene ? scene.camera : null</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    // Constant apparent size, same technique as GeoMapWaypointItem: scene</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    // units per screen pixel at the camera&#39;s look-at distance. Built-in</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    // QtQuick3D meshes are 100 units across.</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    readonly property real _modelScale: _camera</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        ? root._indicatorSize * _camera.distance * _camera.unitsPerPixelAtUnitDistance / 100</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        : 1</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    readonly property real _groundOpacity: root.groundMarker &amp;&amp; root.scene ? root.scene.terrainScale : 0</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    // Ground meters for the dot&#39;s radius at the marker&#39;s own camera distance; the scene is in mercator units,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    // which are 1/cos(latitude) ground meters</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    readonly property real _groundRadiusMeters: {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        if (!root.groundMarker || !root._camera || !root.coordinate.isValid) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            return 0</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        const markerDistance = root._camera.scenePosition.minus(root.scenePosition).length()</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        return (root._indicatorSize / 2) * markerDistance * root._camera.unitsPerPixelAtUnitDistance</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>               * Math.cos(root.coordinate.latitude * Math.PI / 180)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    signal clicked()</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    signal dragged(var coordinate)  ///&lt; Position the marker was dragged to</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    signal dragFinished()</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    objectName: &quot;geoMapMissionLabel&quot;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    width: size</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    height: size</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    anchorPoint: Qt.point(width / 2, height / 2)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    crossfade3D: !groundMarker</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    delegate3D: groundMarker ? null : sphereComponent</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    // altitudeMode defaults to ClampToGround (GeoMapItem); callers may override</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    QGCPalette { id: qgcPal; colorGroupEnabled: root.enabled }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    // A ground marker lies flat on the terrain in 3D, the same size as the dot it replaces</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    GeoMapCircle {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        objectName: &quot;geoMapGroundMarkerCircle&quot;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        x: -root.x</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        y: -root.y</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        visible: root.groundMarker &amp;&amp; opacity &gt; 0</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        opacity: root._groundOpacity</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        scene: root.scene</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        surfaceModel: root.surfaceModel</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        center: root.coordinate</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        radiusMeters: root._groundRadiusMeters</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        strokeColor: &quot;transparent&quot;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        strokeWidth: 0</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        fillColor: root._markerColor</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    Rectangle {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        anchors.centerIn: parent</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        width: root._indicatorSize</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        height: root._indicatorSize</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        radius: width / 2</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        color: root._markerColor</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        opacity: root.groundMarker ? 1 - root._groundOpacity : root.contentOpacity2D</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    QGCLabel {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        anchors.centerIn: parent</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        // MissionItemIndexLabel convention: single-char label lives inside the dot</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        text: root.index &gt;= 0 ? root.index : (root.label.length === 1 ? root.label : &quot;&quot;)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        color: &quot;white&quot;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        font.bold: true</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    GeoMapMarkerMouseArea {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        anchors.fill: parent</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        marker: root</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        enabled: root.pickable</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        draggable: root.draggable</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        onMarkerClicked: root.clicked()</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        onDragFinished: root.dragFinished()</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        onDragged: (target) =&gt; {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            // Absolute markers sit on the horizontal plane at their altitude, ground-clamped ones on the rendered terrain</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            const camera = root.scene.camera</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            const coordinate = root.altitudeMode === GeoMapItem.Absolute</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>                ? GeoMapAltitude.coordinateUnderCursor(camera, target, root.scenePosition.z,</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>                                                       root.scene.verticalScale * root.scene.terrainScale, root.dragHeightAt)</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>                : root.surfaceModel.surfaceCoordinateAtScreenPoint(camera, target, root.scene.verticalScale * root.scene.terrainScale)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            if (coordinate.isValid) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>                root.dragged(coordinate)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    GeoMapDropShadow {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        id: dropShadow</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        objectName: &quot;geoMapDropShadow&quot;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        geoItem: root</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        indicatorSize: root._indicatorSize</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    Rectangle {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        anchors.left: parent.right</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        anchors.leftMargin: ScreenTools.defaultFontPixelWidth / 2</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        anchors.verticalCenter: parent.verticalCenter</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        width: sideLabel.width + ScreenTools.defaultFontPixelWidth</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        height: sideLabel.height</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        radius: height / 2</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        color: root._markerColor</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        visible: root.label.length &gt; 1</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        QGCLabel {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            id: sideLabel</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            anchors.centerIn: parent</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            text: root.label</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            color: &quot;white&quot;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        }</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    Component {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        id: sphereComponent</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        Node {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>            Node {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                scale: Qt.vector3d(root._modelScale, root._modelScale, root._modelScale)</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>                Model {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                    source: &quot;#Sphere&quot;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                    materials: PrincipledMaterial {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                        baseColor: root._markerColor</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                    }</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            GeoMapDropLine {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                dropLength: dropShadow.dropLength</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                lineScale: dropShadow.dropLineScale</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>                lineColor: root._markerColor</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

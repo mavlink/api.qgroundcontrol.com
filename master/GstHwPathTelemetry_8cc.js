@@ -6,6 +6,5 @@ var GstHwPathTelemetry_8cc =
     [ "record", "GstHwPathTelemetry_8cc.html#a4919a882459cebd07d69101db6fb614c", null ],
     [ "recordFallbackReason", "GstHwPathTelemetry_8cc.html#a18246831e1ea98aeeac5c4d9394d6374", null ],
     [ "recordMapDuration", "GstHwPathTelemetry_8cc.html#a2610f83ab1499f9b2237326f5c20b869", null ],
-    [ "take", "GstHwPathTelemetry_8cc.html#afa35809a21a59e961bb9c700e497e475", null ],
-    [ "takeFallbackReason", "GstHwPathTelemetry_8cc.html#aeefeb8d09481c9b106b8dcf9f4b5e95c", null ]
+    [ "snapshot", "GstHwPathTelemetry_8cc.html#a6ae7c6b468c90e3228266f2a60fea641", null ]
 ];

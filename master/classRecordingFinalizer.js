@@ -7,8 +7,7 @@ var classRecordingFinalizer =
     ] ],
     [ "arm", "classRecordingFinalizer.html#aacd30f50c611d354e6b3288fd5e13c60", null ],
     [ "disarm", "classRecordingFinalizer.html#a094e4ffd840d2d7cd398a6d7ba2e5cd7", null ],
-    [ "outcome", "classRecordingFinalizer.html#a808d708d541e3ba78ce148d3440ddfcc", null ],
+    [ "outcome", "classRecordingFinalizer.html#ae2d1faf4d62826eb013598966295649e", null ],
     [ "settle", "classRecordingFinalizer.html#aaff88748896fa3c40d5e8af438b4053c", null ],
-    [ "settleFrom", "classRecordingFinalizer.html#ad9003fad6ce064cae8c59ca3879e0662", null ],
-    [ "wait", "classRecordingFinalizer.html#a8ddf070f55362a2a504fb8b1e5058911", null ]
+    [ "settleFrom", "classRecordingFinalizer.html#ad9003fad6ce064cae8c59ca3879e0662", null ]
 ];

@@ -95,6 +95,5 @@ var searchData=
   ['qserialportinfo_92',['QSerialPortInfo',['../classQSerialPortInfo.html',1,'']]],
   ['qserialportinfoprivate_93',['QSerialPortInfoPrivate',['../classQSerialPortInfoPrivate.html',1,'']]],
   ['qserialportprivate_94',['QSerialPortPrivate',['../classQSerialPortPrivate.html',1,'']]],
-  ['qtmultimediareceiver_95',['QtMultimediaReceiver',['../classQtMultimediaReceiver.html',1,'']]],
-  ['qtruntimescheduler_96',['QtRuntimeScheduler',['../classQtRuntimeScheduler.html',1,'']]]
+  ['qtruntimescheduler_95',['QtRuntimeScheduler',['../classQtRuntimeScheduler.html',1,'']]]
 ];

@@ -15,6 +15,5 @@ var searchData=
   ['update_12',['Update',['../structNMEA_1_1SatelliteAssembler_1_1Update.html',1,'NMEA::SatelliteAssembler']]],
   ['updatestats_13',['UpdateStats',['../structSurfaceModel_1_1UpdateStats.html',1,'SurfaceModel']]],
   ['urlfactory_14',['UrlFactory',['../classUrlFactory.html',1,'']]],
-  ['utcdate_15',['UtcDate',['../structNMEA_1_1UtcDate.html',1,'NMEA']]],
-  ['uvcreceiver_16',['UVCReceiver',['../classUVCReceiver.html',1,'']]]
+  ['utcdate_15',['UtcDate',['../structNMEA_1_1UtcDate.html',1,'NMEA']]]
 ];

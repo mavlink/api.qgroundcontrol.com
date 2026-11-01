@@ -508,12 +508,12 @@ $(document).ready(function(){initNavTree('LogManager_8cc_source.html',''); initR
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>    <span class="keyword">const</span> QString path = _fileWriter-&gt;<a class="code hl_function" href="classQGCFileWriter.html#ad9f7932c7150e46a49f783229339c994">filePath</a>();</div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>    <span class="keyword">const</span> QFileInfo fileInfo(path);</div>
 <div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>    <span class="keyword">const</span> QString dir = fileInfo.absolutePath();</div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>    <span class="keyword">const</span> QString name = fileInfo.baseName();</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>    <span class="keyword">const</span> QString <a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a> = fileInfo.baseName();</div>
 <div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>    <span class="keyword">const</span> QString ext = fileInfo.completeSuffix();</div>
 <div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span> </div>
 <div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = _maxBackupFiles - 1; i &gt;= 1; --i) {</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>        <span class="keyword">const</span> QString from = QStringLiteral(<span class="stringliteral">&quot;%1/%2.%3.%4&quot;</span>).arg(dir, name).arg(i).arg(ext);</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>        <span class="keyword">const</span> QString to = QStringLiteral(<span class="stringliteral">&quot;%1/%2.%3.%4&quot;</span>).arg(dir, name).arg(i + 1).arg(ext);</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>        <span class="keyword">const</span> QString from = QStringLiteral(<span class="stringliteral">&quot;%1/%2.%3.%4&quot;</span>).arg(dir, <a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>).arg(i).arg(ext);</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>        <span class="keyword">const</span> QString to = QStringLiteral(<span class="stringliteral">&quot;%1/%2.%3.%4&quot;</span>).arg(dir, <a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>).arg(i + 1).arg(ext);</div>
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>        <span class="keywordflow">if</span> (QFile::exists(to)) {</div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>            (void)QFile::remove(to);</div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>        }</div>
@@ -522,7 +522,7 @@ $(document).ready(function(){initNavTree('LogManager_8cc_source.html',''); initR
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>        }</div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>    }</div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span> </div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    <span class="keyword">const</span> QString firstBackup = QStringLiteral(<span class="stringliteral">&quot;%1/%2.1.%3&quot;</span>).arg(dir, name, ext);</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    <span class="keyword">const</span> QString firstBackup = QStringLiteral(<span class="stringliteral">&quot;%1/%2.1.%3&quot;</span>).arg(dir, <a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, ext);</div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>    (void)QFile::rename(path, firstBackup);</div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span> </div>
 <div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>    _fileWriter-&gt;<a class="code hl_function" href="classQGCFileWriter.html#a9d6888e045a3d6afa8f5de3fabfc26eb">setFilePath</a>(path);</div>
@@ -691,6 +691,7 @@ $(document).ready(function(){initNavTree('LogManager_8cc_source.html',''); initR
 <div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>    <span class="keywordflow">return</span> entry;</div>
 <div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>}</div>
 <div class="ttc" id="aAppSettings_8h_html"><div class="ttname"><a href="AppSettings_8h.html">AppSettings.h</a></div></div>
+<div class="ttc" id="aGStreamer_8cc_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition</b> <a href="GStreamer_8cc_source.html#l00078">GStreamer.cc:78</a></div></div>
 <div class="ttc" id="aLogFormatter_8h_html"><div class="ttname"><a href="LogFormatter_8h.html">LogFormatter.h</a></div></div>
 <div class="ttc" id="aLogManagerSettings_8h_html"><div class="ttname"><a href="LogManagerSettings_8h.html">LogManagerSettings.h</a></div></div>
 <div class="ttc" id="aLogManager_8cc_html_a155260a9772b34bdee8c90606883ebc8"><div class="ttname"><a href="LogManager_8cc.html#a155260a9772b34bdee8c90606883ebc8">s_echoToStderr</a></div><div class="ttdeci">static std::atomic&lt; bool &gt; s_echoToStderr</div><div class="ttdef"><b>Definition</b> <a href="LogManager_8cc_source.html#l00044">LogManager.cc:44</a></div></div>

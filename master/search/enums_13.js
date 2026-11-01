@@ -1,13 +1,14 @@
 var searchData=
 [
-  ['tasktype_0',['TaskType',['../classQGCMapTask.html#a69ac69d198c7e296bd46daf594702f31',1,'QGCMapTask']]],
-  ['temperatureunits_1',['TemperatureUnits',['../classUnitsSettings.html#a20ac7a84597670c3370111536ff1ddc9',1,'UnitsSettings']]],
-  ['textmod_2',['TextMod',['../classAudioOutput.html#a58b2d1a7d5b0720bf2d261462cd8de5e',1,'AudioOutput']]],
-  ['theme_3',['Theme',['../classQGCPalette.html#a5e5dfd80c6b66a7b02f5147e918b905c',1,'QGCPalette']]],
-  ['thermalviewmode_4',['ThermalViewMode',['../classMavlinkCameraControlInterface.html#ae50cea54c40e0bb1e2f6950d9f854544',1,'MavlinkCameraControlInterface']]],
-  ['tilestate_5',['TileState',['../structQGCTile.html#a9e47ec1e89debdca4ec927e2c4461940',1,'QGCTile']]],
-  ['transactiontype_5ft_6',['TransactionType_t',['../classPlanManager.html#aae587787ec6b603649e9e922a049fa79',1,'PlanManager']]],
-  ['transitionreason_7',['TransitionReason',['../classStateHistoryRecorder.html#aab67d02c9b0dfc3cf3b0dcf278a511fd',1,'StateHistoryRecorder']]],
-  ['trigger_8',['Trigger',['../structNMEA_1_1NavigationUpdate.html#a803b511ec2d60dbd136826a7482d3057',1,'NMEA::NavigationUpdate']]],
-  ['type_9',['type',['../structNMEA_1_1NavigationUpdate.html#ac8a65b8e91b29dcadebcf23db85b8967',1,'NMEA::NavigationUpdate::Type'],['../structActuatorActions_1_1Config.html#a8e9187acc813ed0131a212a99427445a',1,'ActuatorActions::Config::Type'],['../structActuatorGeometry.html#af7841751ef9e6ac838cc523e3ca76339',1,'ActuatorGeometry::Type']]]
+  ['takeofffailuremode_5ft_0',['TakeoffFailureMode_t',['../classMockLink.html#a15101e8513428606a4b48d2cfcbbe060',1,'MockLink']]],
+  ['tasktype_1',['TaskType',['../classQGCMapTask.html#a69ac69d198c7e296bd46daf594702f31',1,'QGCMapTask']]],
+  ['temperatureunits_2',['TemperatureUnits',['../classUnitsSettings.html#a20ac7a84597670c3370111536ff1ddc9',1,'UnitsSettings']]],
+  ['textmod_3',['TextMod',['../classAudioOutput.html#a58b2d1a7d5b0720bf2d261462cd8de5e',1,'AudioOutput']]],
+  ['theme_4',['Theme',['../classQGCPalette.html#a5e5dfd80c6b66a7b02f5147e918b905c',1,'QGCPalette']]],
+  ['thermalviewmode_5',['ThermalViewMode',['../classMavlinkCameraControlInterface.html#ae50cea54c40e0bb1e2f6950d9f854544',1,'MavlinkCameraControlInterface']]],
+  ['tilestate_6',['TileState',['../structQGCTile.html#a9e47ec1e89debdca4ec927e2c4461940',1,'QGCTile']]],
+  ['transactiontype_5ft_7',['TransactionType_t',['../classPlanManager.html#aae587787ec6b603649e9e922a049fa79',1,'PlanManager']]],
+  ['transitionreason_8',['TransitionReason',['../classStateHistoryRecorder.html#aab67d02c9b0dfc3cf3b0dcf278a511fd',1,'StateHistoryRecorder']]],
+  ['trigger_9',['Trigger',['../structNMEA_1_1NavigationUpdate.html#a803b511ec2d60dbd136826a7482d3057',1,'NMEA::NavigationUpdate']]],
+  ['type_10',['type',['../structNMEA_1_1NavigationUpdate.html#ac8a65b8e91b29dcadebcf23db85b8967',1,'NMEA::NavigationUpdate::Type'],['../structActuatorActions_1_1Config.html#a8e9187acc813ed0131a212a99427445a',1,'ActuatorActions::Config::Type'],['../structActuatorGeometry.html#af7841751ef9e6ac838cc523e3ca76339',1,'ActuatorGeometry::Type']]]
 ];

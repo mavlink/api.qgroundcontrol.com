@@ -321,7 +321,18 @@ var namespaces_dup =
     [ "GstHwPathTelemetry", "namespaceGstHwPathTelemetry.html", "namespaceGstHwPathTelemetry" ],
     [ "GstQgc", "namespaceGstQgc.html", "namespaceGstQgc" ],
     [ "GStreamer", "namespaceGStreamer.html", "namespaceGStreamer" ],
-    [ "HwBuffers", "namespaceHwBuffers.html", "namespaceHwBuffers" ],
+    [ "HwBuffers", "namespaceHwBuffers.html", [
+      [ "answerSinkBinContextQuery", "namespaceHwBuffers.html#a27a0a9a44a70e27e6ff1af895a6add09", null ],
+      [ "connectMainWindow", "namespaceHwBuffers.html#a911bee0f3e52e59ad896a0dbcffd5eae", null ],
+      [ "dmaBufImportDisplay", "namespaceHwBuffers.html#a5a3ccb8436a29a81a6862b5311a8845b", null ],
+      [ "extraPathStatsSince", "namespaceHwBuffers.html#a5bcc14e4738f9c8b47e6eaf161c6eeaa", null ],
+      [ "makeAdapterContext", "namespaceHwBuffers.html#ad7482e3e15db9cdb4147d0c105bdf496", null ],
+      [ "onBusSyncMessage", "namespaceHwBuffers.html#a2992e0eac9cc13ef282d784f26378e5a", null ],
+      [ "onPipelineError", "namespaceHwBuffers.html#a98ffeecc94f8512ac037380ed1d504c2", null ],
+      [ "onPipelineRestart", "namespaceHwBuffers.html#a4e4016e32dd396eae3a94db89b904dc6", null ],
+      [ "proposeDeviceBoundPool", "namespaceHwBuffers.html#a14765eec880891c0651a2f17ceada160", null ],
+      [ "resetCachedGpuResources", "namespaceHwBuffers.html#a6f2ab6a1aef22e4d4d0d45052ac3ff58", null ]
+    ] ],
     [ "JsonParsing", "namespaceJsonParsing.html", "namespaceJsonParsing" ],
     [ "JsonSchemaValidator", "namespaceJsonSchemaValidator.html", [
       [ "validate", "namespaceJsonSchemaValidator.html#a72c7d2d8682c3393c8d6680303f6769d", null ]
@@ -415,6 +426,7 @@ var namespaces_dup =
       [ "setupPostApp", "namespacePlatform.html#a47c9e42710d883700596e8acc3bcaae4", null ],
       [ "showMultipleInstanceError", "namespacePlatform.html#afc5c30b79fec330ef978e5ae6b1a79b8", null ]
     ] ],
+    [ "PX4FlightModeConfig", "namespacePX4FlightModeConfig.html", "namespacePX4FlightModeConfig" ],
     [ "PX4SerialPortConfig", "namespacePX4SerialPortConfig.html", "namespacePX4SerialPortConfig" ],
     [ "PX4ULogUtility", "namespacePX4ULogUtility.html", "namespacePX4ULogUtility" ],
     [ "QGC", "namespaceQGC.html", "namespaceQGC" ],
@@ -558,6 +570,19 @@ var namespaces_dup =
       [ "parseGeoTagData", "namespaceULogParser.html#a918d2fe41d1621d82ae289ef48b17c36", null ]
     ] ],
     [ "Unicore", "namespaceUnicore.html", "namespaceUnicore" ],
+    [ "UVCDevices", "namespaceUVCDevices.html", [
+      [ "deviceExists", "namespaceUVCDevices.html#ae586575901c80d89c5dba927585a3d57", null ],
+      [ "deviceNames", "namespaceUVCDevices.html#a35114100b4612f157db11980281bd070", null ],
+      [ "requestPermission", "namespaceUVCDevices.html#ae90c17384d1ba2a59a8321c0a1a0fd57", null ]
+    ] ],
+    [ "VehicleSummaryState", "namespaceVehicleSummaryState.html", [
+      [ "State", "namespaceVehicleSummaryState.html#a5328df7bc26e17f230677631696b096f", [
+        [ "Normal", "namespaceVehicleSummaryState.html#a5328df7bc26e17f230677631696b096fa2bcd08db371493519b964627a5e65a4d", null ],
+        [ "Attention", "namespaceVehicleSummaryState.html#a5328df7bc26e17f230677631696b096fa091a06d9f96906928b3f5543a9d82a2c", null ],
+        [ "Muted", "namespaceVehicleSummaryState.html#a5328df7bc26e17f230677631696b096fa5c056e47748d030f99a8691c647cdcdc", null ]
+      ] ]
+    ] ],
     [ "VideoBackend", "namespaceVideoBackend.html", "namespaceVideoBackend" ],
+    [ "VideoStreamResolver", "namespaceVideoStreamResolver.html", "namespaceVideoStreamResolver" ],
     [ "Wire", "namespaceWire.html", "namespaceWire" ]
 ];

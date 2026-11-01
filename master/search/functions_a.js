@@ -24,7 +24,7 @@ var searchData=
   ['jnistoragepermissionsresult_21',['jniStoragePermissionsResult',['../namespaceAndroidInterface.html#a44c60e070147a4cb65bdcb6533b45ea4',1,'AndroidInterface']]],
   ['joincontours_22',['joinContours',['../namespaceQGCPlanarGeometry.html#aa66b4dff3edd1114af1c6da9a3ca9e8e',1,'QGCPlanarGeometry']]],
   ['joinpath_23',['joinPath',['../namespaceQGCFileHelper.html#a7fb1699a7fbd1ab62a1db78caa761e7b',1,'QGCFileHelper']]],
-  ['joystick_24',['joystick',['../classJoystickConfigController.html#a00c1cc878601914082834dc0e0831121',1,'JoystickConfigController::joystick()'],['../classJoystick.html#a2bbd948b770757c44a69443dd4438615',1,'Joystick::Joystick()']]],
+  ['joystick_24',['joystick',['../classJoystick.html#a2bbd948b770757c44a69443dd4438615',1,'Joystick::Joystick()'],['../classJoystickConfigController.html#a00c1cc878601914082834dc0e0831121',1,'JoystickConfigController::joystick()']]],
   ['joystickactions_25',['joystickActions',['../classQGCCorePlugin.html#a8c4ff832bd1773cf73f024b1db58177e',1,'QGCCorePlugin']]],
   ['joystickbyname_26',['joystickByName',['../classJoystickManager.html#aa0093a926ded60762d2f0708e9c9c068',1,'JoystickManager']]],
   ['joystickchanged_27',['joystickChanged',['../classJoystickConfigController.html#a4332eb6f3214a8c16bd5064c8b426782',1,'JoystickConfigController']]],

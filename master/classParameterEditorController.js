@@ -10,6 +10,8 @@ var classParameterEditorController =
     [ "currentCategoryChanged", "classParameterEditorController.html#ab7d98cf244d5e22c5428a0fe96aa18c8", null ],
     [ "currentGroup", "classParameterEditorController.html#af1fb6740490f3cb8b4f93bd8b9edfba1", null ],
     [ "currentGroupChanged", "classParameterEditorController.html#a42f431a7b14a90a5213dbab554f84dde", null ],
+    [ "diffInvalidParams", "classParameterEditorController.html#a07bac9e5cdd336844be1636916c65b7b", null ],
+    [ "diffInvalidParamsChanged", "classParameterEditorController.html#adc5473a1c2a1d79bb2928c42a618a2ad", null ],
     [ "diffList", "classParameterEditorController.html#a53abe04966bc2a9156ab6f3dc25fb7bf", null ],
     [ "diffMissingParams", "classParameterEditorController.html#a152ab484e57dd610abb6e7a11958040c", null ],
     [ "diffMissingParamsChanged", "classParameterEditorController.html#a10a114406bac4c18f9605d8eda819e1d", null ],

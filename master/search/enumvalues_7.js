@@ -6,7 +6,7 @@ var searchData=
   ['gga_3',['Gga',['../structGPSObservation.html#aeda3b3fb9df64b33b49554326f46079fa9a5850c4e2f5aa52f3682a4415df35de',1,'GPSObservation']]],
   ['glmemory_4',['GlMemory',['../GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbafe5a5431c838ce97b43a39101e22968d',1,'GstHwTypes.h']]],
   ['glonass_5',['GLONASS',['../GPSReceiverReports_8h.html#a43579d1af08197c81deb36670a1c50d0a48549df6f41418cb94b963fe84894cd6',1,'GPSReceiverReports.h']]],
-  ['glupload_6',['GlUpload',['../namespaceHwBuffers.html#a3ca53fb4b508fa4314284ba48f0ac98aad983c55302c92306dcce76f29686febf',1,'HwBuffers']]],
+  ['glupload_6',['GlUpload',['../namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841ad983c55302c92306dcce76f29686febf',1,'GstQgc']]],
   ['gps_7',['GPS',['../GPSReceiverReports_8h.html#a43579d1af08197c81deb36670a1c50d0a8c578de37278ada488d763ea86c5cf20',1,'GPSReceiverReports.h']]],
   ['gps_5fdisable_8',['GPS_DISABLE',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a6ed0dc4ada0eabe3ec16ca2132588b1c',1,'APM']]],
   ['gps_5fdisable_5fyaw_9',['GPS_DISABLE_YAW',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a9b74646b202bfcb34c13b7ee5a590d1e',1,'APM']]],

@@ -11,5 +11,7 @@ var classPX4FailsafesComponent =
     [ "setupComplete", "classPX4FailsafesComponent.html#a65ac839bcb3e6e5449625e4848ceb2a9", null ],
     [ "setupCompleteChangedTriggerList", "classPX4FailsafesComponent.html#aaa155944141eeb084cc186e58c78cd56", null ],
     [ "setupSource", "classPX4FailsafesComponent.html#adc3907c010dcb74dbc64066bfbd74c81", null ],
+    [ "summaryChangedTriggerList", "classPX4FailsafesComponent.html#ac6cfc66d355c0556651b44f22bfcea19", null ],
+    [ "summaryItems", "classPX4FailsafesComponent.html#ab621eaeb0d7b5fee6cb618417b0593af", null ],
     [ "summaryQmlSource", "classPX4FailsafesComponent.html#aeab73b32fc907b6297ad41d66ff5db22", null ]
 ];

@@ -714,31 +714,31 @@ $(document).ready(function(){initNavTree('QGCNetworkHelper_8cc_source.html','');
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span><span class="comment">// ============================================================================</span></div>
 <div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span> </div>
 <div class="foldopen" id="foldopen00576" data-start="{" data-end="}">
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno"><a class="line" href="namespaceQGCNetworkHelper.html#a4f97ce7bf0a753ef97d768b89895a948">  576</a></span>QHttpPart <a class="code hl_function" href="namespaceQGCNetworkHelper.html#a4f97ce7bf0a753ef97d768b89895a948">createFormField</a>(<span class="keyword">const</span> QString&amp; name, <span class="keyword">const</span> QString&amp; value)</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno"><a class="line" href="namespaceQGCNetworkHelper.html#a4f97ce7bf0a753ef97d768b89895a948">  576</a></span>QHttpPart <a class="code hl_function" href="namespaceQGCNetworkHelper.html#a4f97ce7bf0a753ef97d768b89895a948">createFormField</a>(<span class="keyword">const</span> QString&amp; <a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, <span class="keyword">const</span> QString&amp; value)</div>
 <div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>{</div>
 <div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>    QHttpPart part;</div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>    part.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral(<span class="stringliteral">&quot;form-data; name=\&quot;%1\&quot;&quot;</span>).arg(name));</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>    part.setHeader(QNetworkRequest::ContentDispositionHeader, QStringLiteral(<span class="stringliteral">&quot;form-data; name=\&quot;%1\&quot;&quot;</span>).arg(<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>));</div>
 <div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>    part.setBody(value.toUtf8());</div>
 <div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>    <span class="keywordflow">return</span> part;</div>
 <div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>}</div>
 </div>
 <div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span> </div>
 <div class="foldopen" id="foldopen00584" data-start="{" data-end="}">
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno"><a class="line" href="namespaceQGCNetworkHelper.html#aab66e7410c33f40e21f26329b7ae31ea">  584</a></span>QHttpPart <a class="code hl_function" href="namespaceQGCNetworkHelper.html#aab66e7410c33f40e21f26329b7ae31ea">createFilePart</a>(<span class="keyword">const</span> QString&amp; name, <span class="keyword">const</span> QString&amp; fileName, <span class="keyword">const</span> QString&amp; contentType, QIODevice* device)</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno"><a class="line" href="namespaceQGCNetworkHelper.html#aab66e7410c33f40e21f26329b7ae31ea">  584</a></span>QHttpPart <a class="code hl_function" href="namespaceQGCNetworkHelper.html#aab66e7410c33f40e21f26329b7ae31ea">createFilePart</a>(<span class="keyword">const</span> QString&amp; <a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, <span class="keyword">const</span> QString&amp; fileName, <span class="keyword">const</span> QString&amp; contentType, QIODevice* device)</div>
 <div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>{</div>
 <div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    QHttpPart part;</div>
 <div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>    part.setHeader(QNetworkRequest::ContentTypeHeader, <a class="code hl_function" href="namespaceQGCNetworkHelper.html#a620ebdfd1dfb5136bb97121f9e1cc627">contentType</a>);</div>
 <div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>    part.setHeader(QNetworkRequest::ContentDispositionHeader,</div>
-<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>                   QStringLiteral(<span class="stringliteral">&quot;form-data; name=\&quot;%1\&quot;; filename=\&quot;%2\&quot;&quot;</span>).arg(name, fileName));</div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>                   QStringLiteral(<span class="stringliteral">&quot;form-data; name=\&quot;%1\&quot;; filename=\&quot;%2\&quot;&quot;</span>).arg(<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, fileName));</div>
 <div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>    part.setBodyDevice(device);</div>
 <div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>    <span class="keywordflow">return</span> part;</div>
 <div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>}</div>
 </div>
 <div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
 <div class="foldopen" id="foldopen00594" data-start="{" data-end="}">
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno"><a class="line" href="namespaceQGCNetworkHelper.html#aa35811cfdac135e56266c9b0fb7323af">  594</a></span>QHttpPart <a class="code hl_function" href="namespaceQGCNetworkHelper.html#aab66e7410c33f40e21f26329b7ae31ea">createFilePart</a>(<span class="keyword">const</span> QString&amp; name, <span class="keyword">const</span> QString&amp; fileName, QIODevice* device)</div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno"><a class="line" href="namespaceQGCNetworkHelper.html#aa35811cfdac135e56266c9b0fb7323af">  594</a></span>QHttpPart <a class="code hl_function" href="namespaceQGCNetworkHelper.html#aab66e7410c33f40e21f26329b7ae31ea">createFilePart</a>(<span class="keyword">const</span> QString&amp; <a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, <span class="keyword">const</span> QString&amp; fileName, QIODevice* device)</div>
 <div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>{</div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceQGCNetworkHelper.html#aab66e7410c33f40e21f26329b7ae31ea">createFilePart</a>(name, fileName, <a class="code hl_variable" href="namespaceQGCNetworkHelper.html#a28c769e4a3a590587e7e95f6f4d130c7">kContentTypeOctetStream</a>, device);</div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceQGCNetworkHelper.html#aab66e7410c33f40e21f26329b7ae31ea">createFilePart</a>(<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, fileName, <a class="code hl_variable" href="namespaceQGCNetworkHelper.html#a28c769e4a3a590587e7e95f6f4d130c7">kContentTypeOctetStream</a>, device);</div>
 <div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>}</div>
 </div>
 <div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span> </div>
@@ -1149,6 +1149,7 @@ $(document).ready(function(){initNavTree('QGCNetworkHelper_8cc_source.html','');
 </div>
 <div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span> </div>
 <div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span>}  <span class="comment">// namespace QGCNetworkHelper</span></div>
+<div class="ttc" id="aGStreamer_8cc_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition</b> <a href="GStreamer_8cc_source.html#l00078">GStreamer.cc:78</a></div></div>
 <div class="ttc" id="aQGCCompression_8cc_html_a5e7e27258e59f4c4a80e5fb757024a2d"><div class="ttname"><a href="QGCCompression_8cc.html#a5e7e27258e59f4c4a80e5fb757024a2d">error</a></div><div class="ttdeci">Error error</div><div class="ttdef"><b>Definition</b> <a href="QGCCompression_8cc_source.html#l00114">QGCCompression.cc:114</a></div></div>
 <div class="ttc" id="aQGCCompression_8h_html"><div class="ttname"><a href="QGCCompression_8h.html">QGCCompression.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>

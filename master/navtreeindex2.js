@@ -39,8 +39,6 @@ var NAVTREEINDEX2 =
 "AirframeComponentController_8cc_source.html":[5,0,0,5,3,10],
 "AirframeComponentController_8h.html":[5,0,0,5,3,11],
 "AirframeComponentController_8h_source.html":[5,0,0,5,3,11],
-"AirframeComponentSummary_8qml.html":[5,0,0,5,3,12],
-"AirframeComponentSummary_8qml_source.html":[5,0,0,5,3,12],
 "AirframeComponent_8cc.html":[5,0,0,5,3,5],
 "AirframeComponent_8cc_source.html":[5,0,0,5,3,5],
 "AirframeComponent_8h.html":[5,0,0,5,3,6],
@@ -67,9 +65,6 @@ var NAVTREEINDEX2 =
 "AndroidInit_8cc.html#a8d146227c428dfa49c37f9a70062e005":[5,0,0,2,3,4],
 "AndroidInit_8cc.html#a8e593f6ac1beb76a1a62b861dc29b2fa":[5,0,0,2,3,1],
 "AndroidInit_8cc.html#a95200a236c47646d098af3c0683938f2":[5,0,0,2,3,2],
-"AndroidInit_8cc.html#aa2122f89c1d3a32da322af355134123d":[5,0,0,2,3,6],
-"AndroidInit_8cc.html#aaed5aa2ac527d082644cebccec405017":[5,0,0,2,3,7],
-"AndroidInit_8cc.html#ad46a541cc41bd27d64f210b565e0ca4f":[5,0,0,2,3,5],
 "AndroidInit_8cc.html#aefeb6170ff0af6d2544a2610450a9410":[5,0,0,2,3,3],
 "AndroidInit_8cc_source.html":[5,0,0,2,3],
 "AndroidInterface_8cc.html":[5,0,0,2,4],
@@ -249,5 +244,10 @@ var NAVTREEINDEX2 =
 "AppSettings_8h_source.html":[5,0,0,25,5],
 "AppSettings_8qml.html":[5,0,0,23,3],
 "AppSettings_8qml_source.html":[5,0,0,23,3],
-"ArduCopterFirmwarePlugin_8cc.html":[5,0,0,9,0,12]
+"ArduCopterFirmwarePlugin_8cc.html":[5,0,0,9,0,12],
+"ArduCopterFirmwarePlugin_8cc_source.html":[5,0,0,9,0,12],
+"ArduCopterFirmwarePlugin_8h.html":[5,0,0,9,0,13],
+"ArduCopterFirmwarePlugin_8h_source.html":[5,0,0,9,0,13],
+"ArduPlaneFirmwarePlugin_8cc.html":[5,0,0,9,0,14],
+"ArduPlaneFirmwarePlugin_8cc_source.html":[5,0,0,9,0,14]
 };

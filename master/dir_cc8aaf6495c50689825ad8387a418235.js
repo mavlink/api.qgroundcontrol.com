@@ -7,5 +7,6 @@ var dir_cc8aaf6495c50689825ad8387a418235 =
     [ "AutoPilotPlugin.cc", "AutoPilotPlugin_8cc.html", "AutoPilotPlugin_8cc" ],
     [ "AutoPilotPlugin.h", "AutoPilotPlugin_8h.html", "AutoPilotPlugin_8h" ],
     [ "VehicleComponent.cc", "VehicleComponent_8cc.html", "VehicleComponent_8cc" ],
-    [ "VehicleComponent.h", "VehicleComponent_8h.html", "VehicleComponent_8h" ]
+    [ "VehicleComponent.h", "VehicleComponent_8h.html", "VehicleComponent_8h" ],
+    [ "VehicleSummaryItem.h", "VehicleSummaryItem_8h.html", "VehicleSummaryItem_8h" ]
 ];

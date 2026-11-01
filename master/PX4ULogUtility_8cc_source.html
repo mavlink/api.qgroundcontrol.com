@@ -232,8 +232,8 @@ $(document).ready(function(){initNavTree('PX4ULogUtility_8cc_source.html',''); i
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        qCWarning(PX4ULogUtilityLog) &lt;&lt; <span class="stringliteral">&quot;Failed to parse&quot;</span> &lt;&lt; QString::fromStdString(_targetMessageName)</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                                  &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; exception.what();</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        QStringList fields;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string &amp;name : _messageFormat-&gt;fieldNames()) {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            fields.append(QString::fromStdString(name));</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> std::string &amp;<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a> : _messageFormat-&gt;fieldNames()) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            fields.append(QString::fromStdString(<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>));</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        }</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        qCDebug(PX4ULogUtilityLog) &lt;&lt; <span class="stringliteral">&quot;Available fields:&quot;</span> &lt;&lt; fields;</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
@@ -253,8 +253,8 @@ $(document).ready(function(){initNavTree('PX4ULogUtility_8cc_source.html',''); i
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    errorMessage.clear();</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keyword">auto</span> handler = std::make_shared&lt;MessageHandler&gt;(messageName, callback, errorMessage);</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    ulog_cpp::Reader parser(handler);</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    parser.readChunk(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>uint8_t*<span class="keyword">&gt;</span>(data), <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(size));</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    ulog_cpp::Reader <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a11d4321f6addb981b1662a87d2a483a0">parser</a>(handler);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a11d4321f6addb981b1662a87d2a483a0">parser</a>.readChunk(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>uint8_t*<span class="keyword">&gt;</span>(data), <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(size));</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">if</span> (handler-&gt;hadFatalError()) {</div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        errorMessage = QStringLiteral(<span class="stringliteral">&quot;Could not parse ULog&quot;</span>);</div>
@@ -272,6 +272,8 @@ $(document).ready(function(){initNavTree('PX4ULogUtility_8cc_source.html',''); i
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>} <span class="comment">// namespace PX4ULogUtility</span></div>
 </div>
+<div class="ttc" id="aGStreamerSelfTest_8cc_html_a11d4321f6addb981b1662a87d2a483a0"><div class="ttname"><a href="GStreamerSelfTest_8cc.html#a11d4321f6addb981b1662a87d2a483a0">parser</a></div><div class="ttdeci">const char * parser</div><div class="ttdef"><b>Definition</b> <a href="GStreamerSelfTest_8cc_source.html#l00067">GStreamerSelfTest.cc:67</a></div></div>
+<div class="ttc" id="aGStreamer_8cc_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition</b> <a href="GStreamer_8cc_source.html#l00078">GStreamer.cc:78</a></div></div>
 <div class="ttc" id="aLittleEndian_8h_html"><div class="ttname"><a href="LittleEndian_8h.html">LittleEndian.h</a></div></div>
 <div class="ttc" id="aPX4ULogUtility_8h_html"><div class="ttname"><a href="PX4ULogUtility_8h.html">PX4ULogUtility.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>

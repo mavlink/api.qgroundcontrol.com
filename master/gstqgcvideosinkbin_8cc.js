@@ -3,6 +3,7 @@ var gstqgcvideosinkbin_8cc =
     [ "_GstQgcVideoSinkBin", "struct__GstQgcVideoSinkBin.html", "struct__GstQgcVideoSinkBin" ],
     [ "GST_CAT_DEFAULT", "gstqgcvideosinkbin_8cc.html#adef911caed7c65a1643062817f4a59d7", null ],
     [ "gst_qgc_video_sink_bin_parent_class", "gstqgcvideosinkbin_8cc.html#a693e99147a078d8d5f57790622749e9a", null ],
+    [ "add_converter", "gstqgcvideosinkbin_8cc.html#adc7786b7c8e8a97b22350ceff845cca6", null ],
     [ "G_DEFINE_FINAL_TYPE", "gstqgcvideosinkbin_8cc.html#a7f1525a08c70677114b632c161782212", null ],
     [ "GST_ELEMENT_REGISTER_DEFINE_WITH_CODE", "gstqgcvideosinkbin_8cc.html#af0ba70074232dd05314aebfa5e5155ee", null ],
     [ "gst_qgc_video_sink_bin_change_state", "gstqgcvideosinkbin_8cc.html#aa629645c96f3bd5c440986a2e8da0951", null ],
@@ -15,9 +16,7 @@ var gstqgcvideosinkbin_8cc =
     [ "gst_qgc_video_sink_bin_make_conversion_element", "gstqgcvideosinkbin_8cc.html#a02a45529762579a78a57c6368799009a", null ],
     [ "gst_qgc_video_sink_bin_set_property", "gstqgcvideosinkbin_8cc.html#a18a1d551b40c1c08d7a225f57bb2f282", null ],
     [ "gst_qgc_video_sink_bin_setup", "gstqgcvideosinkbin_8cc.html#a372cba4c3e5498097b9726bf0ceacb27", null ],
-    [ "wireCpuPath", "gstqgcvideosinkbin_8cc.html#a120a8349f1a2bc8405553fca9a719dfe", null ],
-    [ "wireGlUploadPath", "gstqgcvideosinkbin_8cc.html#ac265e892ae8c16001fd8c62015bf4ec8", null ],
-    [ "wireGpuPath", "gstqgcvideosinkbin_8cc.html#aacf90042f451f43a63ffac71bb6136b1", null ],
+    [ "select_gpu_bin", "gstqgcvideosinkbin_8cc.html#a4b77619f703eb2aea24286431d9e53ae", null ],
     [ "properties", "gstqgcvideosinkbin_8cc.html#a3cdac116630040974e90b173303c8464", null ],
     [ "sink_factory", "gstqgcvideosinkbin_8cc.html#a7c3b88a6174b442587875b361d888720", null ]
 ];

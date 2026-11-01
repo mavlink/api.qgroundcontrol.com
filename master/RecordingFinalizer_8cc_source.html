@@ -103,87 +103,53 @@ $(document).ready(function(){initNavTree('RecordingFinalizer_8cc_source.html',''
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;gst/gst.h&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QtCore/QMutexLocker&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classRecordingFinalizer.html#aacd30f50c611d354e6b3288fd5e13c60">    8</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classRecordingFinalizer.html#aacd30f50c611d354e6b3288fd5e13c60">RecordingFinalizer::arm</a>(<a class="code hl_typedef" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* fileSink)</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    QMutexLocker lock(&amp;_mutex);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    _fileSink = <a class="code hl_function" href="namespaceGStreamer.html#aa5feb80fd059e0b77a58af5f797ccc41">GStreamer::adoptElement</a>(GST_ELEMENT(gst_object_ref(fileSink)));</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    _outcome = <a class="code hl_enumvalue" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7fa2d13df6f8b5e4c5af9f87e0dc39df69d">Outcome::Pending</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classRecordingFinalizer.html#aacd30f50c611d354e6b3288fd5e13c60">    6</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classRecordingFinalizer.html#aacd30f50c611d354e6b3288fd5e13c60">RecordingFinalizer::arm</a>(<a class="code hl_typedef" href="GStreamer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a>* fileSink)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>{</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    _fileSink = <a class="code hl_function" href="namespaceGStreamer.html#aa5feb80fd059e0b77a58af5f797ccc41">GStreamer::adoptElement</a>(GST_ELEMENT(gst_object_ref(fileSink)));</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    _outcome = <a class="code hl_enumvalue" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7fa2d13df6f8b5e4c5af9f87e0dc39df69d">Outcome::Pending</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>}</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classRecordingFinalizer.html#a094e4ffd840d2d7cd398a6d7ba2e5cd7">   15</a></span><a class="code hl_enumeration" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7f">RecordingFinalizer::Outcome</a> <a class="code hl_function" href="classRecordingFinalizer.html#a094e4ffd840d2d7cd398a6d7ba2e5cd7">RecordingFinalizer::disarm</a>()</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    QMutexLocker lock(&amp;_mutex);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    _fileSink.reset();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">return</span> std::exchange(_outcome, <a class="code hl_enumvalue" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7fa2d13df6f8b5e4c5af9f87e0dc39df69d">Outcome::Pending</a>);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classRecordingFinalizer.html#a094e4ffd840d2d7cd398a6d7ba2e5cd7">   12</a></span><a class="code hl_enumeration" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7f">RecordingFinalizer::Outcome</a> <a class="code hl_function" href="classRecordingFinalizer.html#a094e4ffd840d2d7cd398a6d7ba2e5cd7">RecordingFinalizer::disarm</a>()</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    _fileSink.reset();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordflow">return</span> std::exchange(_outcome, <a class="code hl_enumvalue" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7fa2d13df6f8b5e4c5af9f87e0dc39df69d">Outcome::Pending</a>);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
 </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classRecordingFinalizer.html#a808d708d541e3ba78ce148d3440ddfcc">   22</a></span><a class="code hl_enumeration" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7f">RecordingFinalizer::Outcome</a> <a class="code hl_function" href="classRecordingFinalizer.html#a808d708d541e3ba78ce148d3440ddfcc">RecordingFinalizer::outcome</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    QMutexLocker lock(&amp;_mutex);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> _outcome;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classRecordingFinalizer.html#aaff88748896fa3c40d5e8af438b4053c">   18</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classRecordingFinalizer.html#aaff88748896fa3c40d5e8af438b4053c">RecordingFinalizer::settle</a>(<a class="code hl_enumeration" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7f">Outcome</a> outcome)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> (!_fileSink || (_outcome != <a class="code hl_enumvalue" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7fa2d13df6f8b5e4c5af9f87e0dc39df69d">Outcome::Pending</a>)) {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    _outcome = <a class="code hl_function" href="classRecordingFinalizer.html#ae2d1faf4d62826eb013598966295649e">outcome</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classRecordingFinalizer.html#aaff88748896fa3c40d5e8af438b4053c">   28</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classRecordingFinalizer.html#aaff88748896fa3c40d5e8af438b4053c">RecordingFinalizer::settle</a>(<a class="code hl_enumeration" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7f">Outcome</a> outcome)</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    QMutexLocker lock(&amp;_mutex);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> _settleLocked(<a class="code hl_function" href="classRecordingFinalizer.html#a808d708d541e3ba78ce148d3440ddfcc">outcome</a>);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classRecordingFinalizer.html#ad9003fad6ce064cae8c59ca3879e0662">   27</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classRecordingFinalizer.html#ad9003fad6ce064cae8c59ca3879e0662">RecordingFinalizer::settleFrom</a>(GstObject* source, <a class="code hl_enumeration" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7f">Outcome</a> outcome, <span class="keywordtype">bool</span>* belongs)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> fromRecording =</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        _fileSink &amp;&amp; source &amp;&amp; gst_object_has_as_ancestor(source, GST_OBJECT_CAST(_fileSink.get()));</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">if</span> (belongs) {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        *belongs = fromRecording;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">return</span> fromRecording &amp;&amp; <a class="code hl_function" href="classRecordingFinalizer.html#aaff88748896fa3c40d5e8af438b4053c">settle</a>(<a class="code hl_function" href="classRecordingFinalizer.html#ae2d1faf4d62826eb013598966295649e">outcome</a>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
 </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classRecordingFinalizer.html#ad9003fad6ce064cae8c59ca3879e0662">   34</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classRecordingFinalizer.html#ad9003fad6ce064cae8c59ca3879e0662">RecordingFinalizer::settleFrom</a>(GstObject* source, <a class="code hl_enumeration" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7f">Outcome</a> outcome, <span class="keywordtype">bool</span>* belongs)</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    QMutexLocker lock(&amp;_mutex);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> fromRecording =</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        _fileSink &amp;&amp; source &amp;&amp; gst_object_has_as_ancestor(source, GST_OBJECT_CAST(_fileSink.get()));</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">if</span> (belongs) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        *belongs = fromRecording;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> fromRecording &amp;&amp; _settleLocked(<a class="code hl_function" href="classRecordingFinalizer.html#a808d708d541e3ba78ce148d3440ddfcc">outcome</a>);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
-</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classRecordingFinalizer.html#a8ddf070f55362a2a504fb8b1e5058911">   45</a></span><a class="code hl_enumeration" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7f">RecordingFinalizer::Outcome</a> <a class="code hl_function" href="classRecordingFinalizer.html#a8ddf070f55362a2a504fb8b1e5058911">RecordingFinalizer::wait</a>(QDeadlineTimer deadline)</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    QMutexLocker lock(&amp;_mutex);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">while</span> (_outcome == <a class="code hl_enumvalue" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7fa2d13df6f8b5e4c5af9f87e0dc39df69d">Outcome::Pending</a>) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">if</span> (!_settled.wait(&amp;_mutex, deadline)) {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">return</span> _outcome;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
-</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keywordtype">bool</span> RecordingFinalizer::_settleLocked(Outcome outcome)</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">if</span> (!_fileSink || (_outcome != <a class="code hl_enumvalue" href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7fa2d13df6f8b5e4c5af9f87e0dc39df69d">Outcome::Pending</a>)) {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    _outcome = <a class="code hl_function" href="classRecordingFinalizer.html#a808d708d541e3ba78ce148d3440ddfcc">outcome</a>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    _settled.wakeAll();</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
-<div class="ttc" id="aMockVideoStreamServer_8h_html_a8b2d14560b8b4c41de69fe2bd2ce6fa3"><div class="ttname"><a href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a></div><div class="ttdeci">struct _GstElement GstElement</div><div class="ttdef"><b>Definition</b> <a href="MockVideoStreamServer_8h_source.html#l00007">MockVideoStreamServer.h:7</a></div></div>
+<div class="ttc" id="aGStreamer_8h_html_a8b2d14560b8b4c41de69fe2bd2ce6fa3"><div class="ttname"><a href="GStreamer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a></div><div class="ttdeci">struct _GstElement GstElement</div><div class="ttdef"><b>Definition</b> <a href="GStreamer_8h_source.html#l00010">GStreamer.h:10</a></div></div>
 <div class="ttc" id="aRecordingFinalizer_8h_html"><div class="ttname"><a href="RecordingFinalizer_8h.html">RecordingFinalizer.h</a></div></div>
-<div class="ttc" id="aclassRecordingFinalizer_html_a094e4ffd840d2d7cd398a6d7ba2e5cd7"><div class="ttname"><a href="classRecordingFinalizer.html#a094e4ffd840d2d7cd398a6d7ba2e5cd7">RecordingFinalizer::disarm</a></div><div class="ttdeci">Outcome disarm()</div><div class="ttdoc">Returns how the recording ended.</div><div class="ttdef"><b>Definition</b> <a href="RecordingFinalizer_8cc_source.html#l00015">RecordingFinalizer.cc:15</a></div></div>
-<div class="ttc" id="aclassRecordingFinalizer_html_a4619db5601aec41d4fff50e6e6908d7f"><div class="ttname"><a href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7f">RecordingFinalizer::Outcome</a></div><div class="ttdeci">Outcome</div><div class="ttdef"><b>Definition</b> <a href="RecordingFinalizer_8h_source.html#l00017">RecordingFinalizer.h:18</a></div></div>
+<div class="ttc" id="aclassRecordingFinalizer_html_a094e4ffd840d2d7cd398a6d7ba2e5cd7"><div class="ttname"><a href="classRecordingFinalizer.html#a094e4ffd840d2d7cd398a6d7ba2e5cd7">RecordingFinalizer::disarm</a></div><div class="ttdeci">Outcome disarm()</div><div class="ttdoc">Returns how the recording ended.</div><div class="ttdef"><b>Definition</b> <a href="RecordingFinalizer_8cc_source.html#l00012">RecordingFinalizer.cc:12</a></div></div>
+<div class="ttc" id="aclassRecordingFinalizer_html_a4619db5601aec41d4fff50e6e6908d7f"><div class="ttname"><a href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7f">RecordingFinalizer::Outcome</a></div><div class="ttdeci">Outcome</div><div class="ttdef"><b>Definition</b> <a href="RecordingFinalizer_8h_source.html#l00012">RecordingFinalizer.h:13</a></div></div>
 <div class="ttc" id="aclassRecordingFinalizer_html_a4619db5601aec41d4fff50e6e6908d7fa2d13df6f8b5e4c5af9f87e0dc39df69d"><div class="ttname"><a href="classRecordingFinalizer.html#a4619db5601aec41d4fff50e6e6908d7fa2d13df6f8b5e4c5af9f87e0dc39df69d">RecordingFinalizer::Outcome::Pending</a></div><div class="ttdeci">@ Pending</div></div>
-<div class="ttc" id="aclassRecordingFinalizer_html_a808d708d541e3ba78ce148d3440ddfcc"><div class="ttname"><a href="classRecordingFinalizer.html#a808d708d541e3ba78ce148d3440ddfcc">RecordingFinalizer::outcome</a></div><div class="ttdeci">Outcome outcome() const</div><div class="ttdef"><b>Definition</b> <a href="RecordingFinalizer_8cc_source.html#l00022">RecordingFinalizer.cc:22</a></div></div>
-<div class="ttc" id="aclassRecordingFinalizer_html_a8ddf070f55362a2a504fb8b1e5058911"><div class="ttname"><a href="classRecordingFinalizer.html#a8ddf070f55362a2a504fb8b1e5058911">RecordingFinalizer::wait</a></div><div class="ttdeci">Outcome wait(QDeadlineTimer deadline)</div><div class="ttdoc">Blocks until the recording ends or deadline expires; returns Pending on timeout.</div><div class="ttdef"><b>Definition</b> <a href="RecordingFinalizer_8cc_source.html#l00045">RecordingFinalizer.cc:45</a></div></div>
-<div class="ttc" id="aclassRecordingFinalizer_html_aacd30f50c611d354e6b3288fd5e13c60"><div class="ttname"><a href="classRecordingFinalizer.html#aacd30f50c611d354e6b3288fd5e13c60">RecordingFinalizer::arm</a></div><div class="ttdeci">void arm(GstElement *fileSink)</div><div class="ttdef"><b>Definition</b> <a href="RecordingFinalizer_8cc_source.html#l00008">RecordingFinalizer.cc:8</a></div></div>
-<div class="ttc" id="aclassRecordingFinalizer_html_aaff88748896fa3c40d5e8af438b4053c"><div class="ttname"><a href="classRecordingFinalizer.html#aaff88748896fa3c40d5e8af438b4053c">RecordingFinalizer::settle</a></div><div class="ttdeci">bool settle(Outcome outcome)</div><div class="ttdoc">Settles the armed recording with outcome unless it already ended. Returns whether this call settled i...</div><div class="ttdef"><b>Definition</b> <a href="RecordingFinalizer_8cc_source.html#l00028">RecordingFinalizer.cc:28</a></div></div>
-<div class="ttc" id="aclassRecordingFinalizer_html_ad9003fad6ce064cae8c59ca3879e0662"><div class="ttname"><a href="classRecordingFinalizer.html#ad9003fad6ce064cae8c59ca3879e0662">RecordingFinalizer::settleFrom</a></div><div class="ttdeci">bool settleFrom(GstObject *source, Outcome outcome, bool *belongs=nullptr)</div><div class="ttdoc">As settle(), but only when source is (inside) the armed file sink. belongs reports that membership.</div><div class="ttdef"><b>Definition</b> <a href="RecordingFinalizer_8cc_source.html#l00034">RecordingFinalizer.cc:34</a></div></div>
+<div class="ttc" id="aclassRecordingFinalizer_html_aacd30f50c611d354e6b3288fd5e13c60"><div class="ttname"><a href="classRecordingFinalizer.html#aacd30f50c611d354e6b3288fd5e13c60">RecordingFinalizer::arm</a></div><div class="ttdeci">void arm(GstElement *fileSink)</div><div class="ttdef"><b>Definition</b> <a href="RecordingFinalizer_8cc_source.html#l00006">RecordingFinalizer.cc:6</a></div></div>
+<div class="ttc" id="aclassRecordingFinalizer_html_aaff88748896fa3c40d5e8af438b4053c"><div class="ttname"><a href="classRecordingFinalizer.html#aaff88748896fa3c40d5e8af438b4053c">RecordingFinalizer::settle</a></div><div class="ttdeci">bool settle(Outcome outcome)</div><div class="ttdoc">Settles the armed recording with outcome unless it already ended. Returns whether this call settled i...</div><div class="ttdef"><b>Definition</b> <a href="RecordingFinalizer_8cc_source.html#l00018">RecordingFinalizer.cc:18</a></div></div>
+<div class="ttc" id="aclassRecordingFinalizer_html_ad9003fad6ce064cae8c59ca3879e0662"><div class="ttname"><a href="classRecordingFinalizer.html#ad9003fad6ce064cae8c59ca3879e0662">RecordingFinalizer::settleFrom</a></div><div class="ttdeci">bool settleFrom(GstObject *source, Outcome outcome, bool *belongs=nullptr)</div><div class="ttdoc">As settle(), but only when source is (inside) the armed file sink. belongs reports that membership.</div><div class="ttdef"><b>Definition</b> <a href="RecordingFinalizer_8cc_source.html#l00027">RecordingFinalizer.cc:27</a></div></div>
+<div class="ttc" id="aclassRecordingFinalizer_html_ae2d1faf4d62826eb013598966295649e"><div class="ttname"><a href="classRecordingFinalizer.html#ae2d1faf4d62826eb013598966295649e">RecordingFinalizer::outcome</a></div><div class="ttdeci">Outcome outcome() const</div><div class="ttdef"><b>Definition</b> <a href="RecordingFinalizer_8h_source.html#l00023">RecordingFinalizer.h:23</a></div></div>
 <div class="ttc" id="anamespaceGStreamer_html_aa5feb80fd059e0b77a58af5f797ccc41"><div class="ttname"><a href="namespaceGStreamer.html#aa5feb80fd059e0b77a58af5f797ccc41">GStreamer::adoptElement</a></div><div class="ttdeci">GstElementPtr adoptElement(GstElement *element) noexcept</div><div class="ttdef"><b>Definition</b> <a href="GstScoped_8h_source.html#l00078">GstScoped.h:78</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

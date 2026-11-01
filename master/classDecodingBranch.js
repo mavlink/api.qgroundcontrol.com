@@ -1,15 +1,18 @@
 var classDecodingBranch =
 [
-    [ "DecodingBranch", "classDecodingBranch.html#a5b736654274f8366adeaf4844d66f9a0", null ],
-    [ "build", "classDecodingBranch.html#af3f1d3a0ab5af61c2f3180150e4e72b7", null ],
-    [ "decoder", "classDecodingBranch.html#a4df0d99987899963643647d3b0b43a5a", null ],
-    [ "decoderName", "classDecodingBranch.html#a6fcad42c957e5ba37532f49f6727e21d", null ],
-    [ "isDecoding", "classDecodingBranch.html#a046de8a070ca35795374cd5a794a2229", null ],
-    [ "onBusCapsInfo", "classDecodingBranch.html#a829444f7db627a1717767235e0e8dd91", null ],
-    [ "onDecoderPad", "classDecodingBranch.html#ac47c462484a5c3e454c298010885c145", null ],
+    [ "Listener", "classDecodingBranch_1_1Listener.html", "classDecodingBranch_1_1Listener" ],
+    [ "DecodingBranch", "classDecodingBranch.html#affa2c577d216e0fc43c3c91d2b8a1219", null ],
+    [ "~DecodingBranch", "classDecodingBranch.html#ab84193cf589d5deb99e905f549c5fb71", null ],
+    [ "DecodingBranch", "classDecodingBranch.html#a4235d97841b280e4f90d3c5de1dede93", null ],
+    [ "build", "classDecodingBranch.html#a5e4eea2c3864918245a3a800ada9d2aa", null ],
+    [ "displaying", "classDecodingBranch.html#a184248ad8e550476bd0e5f4b8bc6b8a5", null ],
+    [ "isCurrent", "classDecodingBranch.html#ad24f912ef97b390b285940d1b0a25f0a", null ],
     [ "onSourceStreaming", "classDecodingBranch.html#a244798772f3e89b19733d34f55c4b007", null ],
+    [ "operator=", "classDecodingBranch.html#aafc808ce62c90ffc2c91da40bf045f0b", null ],
     [ "reset", "classDecodingBranch.html#a889d12e6cbd5615d68df29a335e7bd8c", null ],
+    [ "restartDecoder", "classDecodingBranch.html#af9311e7d738578e92b2393298fff2469", null ],
+    [ "setVideoSink", "classDecodingBranch.html#ae2f58570ad62c51133061821db253400", null ],
     [ "sinkPathStats", "classDecodingBranch.html#a88b9557dbad3ce437bb589e052d05e9a", null ],
-    [ "start", "classDecodingBranch.html#abd1ae3f4b1936d3129b0e37cd06445a0", null ],
-    [ "stop", "classDecodingBranch.html#a5e39d83913fa71b30e47f965ece44498", null ]
+    [ "valve", "classDecodingBranch.html#a051f796016eb754ba2218a4593d47766", null ],
+    [ "kMaxDecoderRestarts", "classDecodingBranch.html#a349f0d4f778631755bca49d5338e6f1e", null ]
 ];

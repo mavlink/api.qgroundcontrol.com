@@ -112,10 +112,12 @@ $(document).ready(function(){initNavTree('gstqgcqvideosink_8cc.html',''); initRe
 <code>#include &lt;QtCore/QMetaObject&gt;</code><br />
 <code>#include &lt;QtCore/QMutex&gt;</code><br />
 <code>#include &lt;QtCore/QMutexLocker&gt;</code><br />
+<code>#include &lt;QtCore/QSize&gt;</code><br />
 <code>#include &lt;QtMultimedia/QVideoFrame&gt;</code><br />
 <code>#include &lt;QtMultimedia/QVideoFrameFormat&gt;</code><br />
 <code>#include &lt;QtMultimedia/QVideoSink&gt;</code><br />
 <code>#include &quot;<a class="el" href="GstQgcAllocation_8h_source.html">GstQgcAllocation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GstQgcCaps_8h_source.html">GstQgcCaps.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GstHwVideoInfo_8h_source.html">HwBuffers/common/GstHwVideoInfo.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="HwBuffers_8h_source.html">HwBuffers/common/HwBuffers.h</a>&quot;</code><br />
@@ -176,6 +178,8 @@ Functions</h2></td></tr>
 <tr class="separator:a11f009c7c0b6172a7bb36b16e5d96f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f9e5c3365c3ddcb1edf2caa93c019eb" id="r_a0f9e5c3365c3ddcb1edf2caa93c019eb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcqvideosink_8cc.html#a0f9e5c3365c3ddcb1edf2caa93c019eb">gst_qgc_q_video_sink_get_property</a> (GObject *obj, guint id, GValue *val, GParamSpec *pspec)</td></tr>
 <tr class="separator:a0f9e5c3365c3ddcb1edf2caa93c019eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f40aec06b5137b3e1ee7aebae559516" id="r_a0f40aec06b5137b3e1ee7aebae559516"><td class="memItemLeft" align="right" valign="top">static GstCaps *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcqvideosink_8cc.html#a0f40aec06b5137b3e1ee7aebae559516">gst_qgc_q_video_sink_get_caps</a> (GstBaseSink *bsink, GstCaps *filter)</td></tr>
+<tr class="separator:a0f40aec06b5137b3e1ee7aebae559516"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a093ee88e37ef054ef0cf681d51d2621f" id="r_a093ee88e37ef054ef0cf681d51d2621f"><td class="memItemLeft" align="right" valign="top">static gboolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcqvideosink_8cc.html#a093ee88e37ef054ef0cf681d51d2621f">gst_qgc_q_video_sink_set_caps</a> (GstBaseSink *bsink, GstCaps *caps)</td></tr>
 <tr class="separator:a093ee88e37ef054ef0cf681d51d2621f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f89363127202a258c5a8c9a3b57a37e" id="r_a2f89363127202a258c5a8c9a3b57a37e"><td class="memItemLeft" align="right" valign="top">static GstFlowReturn&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcqvideosink_8cc.html#a2f89363127202a258c5a8c9a3b57a37e">gst_qgc_q_video_sink_show_frame</a> (GstVideoSink *vsink, GstBuffer *buf)</td></tr>
@@ -192,12 +196,11 @@ Functions</h2></td></tr>
 <tr class="separator:a4bd259d3b364a740d0f9a346cacfbcf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a432121b9f681e4d94d47bebcc87cd4e8" id="r_a432121b9f681e4d94d47bebcc87cd4e8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcqvideosink_8cc.html#a432121b9f681e4d94d47bebcc87cd4e8">gst_qgc_q_video_sink_class_init</a> (GstQgcQVideoSinkClass *klass)</td></tr>
 <tr class="separator:a432121b9f681e4d94d47bebcc87cd4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb0312bee0ce84315a2f3c81396d3a5d" id="r_afb0312bee0ce84315a2f3c81396d3a5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGstQgc_1_1CapsInfo.html">CapsInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstQgc.html#afb0312bee0ce84315a2f3c81396d3a5d">GstQgc::parseCapsInfo</a> (GstMessage *message)</td></tr>
-<tr class="memdesc:afb0312bee0ce84315a2f3c81396d3a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The negotiated format and size a kCapsInfoMessage carries.  <br /></td></tr>
-<tr class="separator:afb0312bee0ce84315a2f3c81396d3a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1364de3b57df0fdb17fbf8ee4ff03504" id="r_a1364de3b57df0fdb17fbf8ee4ff03504"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstQgc.html#a1364de3b57df0fdb17fbf8ee4ff03504">GstQgc::configureSinkCaps</a> (<a class="el" href="GStreamer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *sink, <a class="el" href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841">GpuBinMode</a> gpuBin, bool squarePixels)</td></tr>
+<tr class="separator:a1364de3b57df0fdb17fbf8ee4ff03504"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37fa898d6741b4f9797cc01dafc04b2b" id="r_a37fa898d6741b4f9797cc01dafc04b2b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstQgc.html#a37fa898d6741b4f9797cc01dafc04b2b">GstQgc::sinkFramesField</a> (<a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a> path) noexcept</td></tr>
 <tr class="separator:a37fa898d6741b4f9797cc01dafc04b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7d2cb18c4fc055b3fc4771e5b64b95b" id="r_af7d2cb18c4fc055b3fc4771e5b64b95b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceGStreamer.html#a43742f2e88e6a9e3464e94de557afd89">GStreamer::GstStructurePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstQgc.html#af7d2cb18c4fc055b3fc4771e5b64b95b">GstQgc::frameStats</a> (<a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *sinkOrBin)</td></tr>
+<tr class="memitem:af7d2cb18c4fc055b3fc4771e5b64b95b" id="r_af7d2cb18c4fc055b3fc4771e5b64b95b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceGStreamer.html#a43742f2e88e6a9e3464e94de557afd89">GStreamer::GstStructurePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstQgc.html#af7d2cb18c4fc055b3fc4771e5b64b95b">GstQgc::frameStats</a> (<a class="el" href="GStreamer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *sinkOrBin)</td></tr>
 <tr class="memdesc:af7d2cb18c4fc055b3fc4771e5b64b95b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The "frame-stats" of <code>sinkOrBin</code>, a qgcqvideosink or the qgcvideosinkbin around one; null for other elements.  <br /></td></tr>
 <tr class="separator:af7d2cb18c4fc055b3fc4771e5b64b95b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97dd5facaa5d0231845b63b6ef677f31" id="r_a97dd5facaa5d0231845b63b6ef677f31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGstQgc_1_1PathStats.html">PathStats</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGstQgc.html#a97dd5facaa5d0231845b63b6ef677f31">GstQgc::formatSinkStats</a> (const GstStructure *stats, const GstStructure *since) noexcept</td></tr>
@@ -206,11 +209,10 @@ Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a26e2485c5fd610ac13e266fb32008cf7" id="r_a26e2485c5fd610ac13e266fb32008cf7"><td class="memItemLeft" align="right" valign="top">static GstStaticPadTemplate&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcqvideosink_8cc.html#a26e2485c5fd610ac13e266fb32008cf7">sink_template</a></td></tr>
+<tr class="memdesc:a26e2485c5fd610ac13e266fb32008cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">get_caps narrows this to the formats and memory the sink takes for its render target.  <br /></td></tr>
 <tr class="separator:a26e2485c5fd610ac13e266fb32008cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ce579be34770792ca493d547d2e31e6" id="r_a5ce579be34770792ca493d547d2e31e6"><td class="memItemLeft" align="right" valign="top">constexpr quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcqvideosink_8cc.html#a5ce579be34770792ca493d547d2e31e6">kMaxConsecutiveMapFailures</a> = 120</td></tr>
 <tr class="separator:a5ce579be34770792ca493d547d2e31e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab148123f117b01089062d2bee013617c" id="r_ab148123f117b01089062d2bee013617c"><td class="memItemLeft" align="right" valign="top">constexpr int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gstqgcqvideosink_8cc.html#ab148123f117b01089062d2bee013617c">kPtsResyncThresholdNs</a> = static_cast&lt;int64_t&gt;(GST_SECOND)</td></tr>
-<tr class="separator:ab148123f117b01089062d2bee013617c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="adef911caed7c65a1643062817f4a59d7" name="adef911caed7c65a1643062817f4a59d7"></a>
@@ -225,7 +227,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00029">29</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00031">31</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
 </div>
 </div>
@@ -252,7 +254,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="ab04a0655cd1e3bcac5e8f48c18df1a57a0c8740aea5fab3cd51fcff7416b60926" name="ab04a0655cd1e3bcac5e8f48c18df1a57a0c8740aea5fab3cd51fcff7416b60926"></a>PROP_FRAME_STATS&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00216">216</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00298">298</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
 </div>
 </div>
@@ -281,9 +283,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00574">574</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00659">659</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="gstqgcqvideosink_8cc_source.html#l00246">gst_qgc_q_video_sink_constructed()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00500">gst_qgc_q_video_sink_event()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00252">gst_qgc_q_video_sink_finalize()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00294">gst_qgc_q_video_sink_get_property()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00552">gst_qgc_q_video_sink_propose_allocation()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00566">gst_qgc_q_video_sink_query()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00327">gst_qgc_q_video_sink_set_caps()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00260">gst_qgc_q_video_sink_set_property()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00392">gst_qgc_q_video_sink_show_frame()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00519">gst_qgc_q_video_sink_start()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00533">gst_qgc_q_video_sink_stop()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00220">PROP_ACTIVE</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00225">PROP_FRAME_STATS</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00224">PROP_FRAMES_DELIVERED</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00223">PROP_FRAMES_DROPPED</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00222">PROP_FRAMES_INPUT</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00221">PROP_GPU_ZEROCOPY</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00219">PROP_QVIDEOSINK</a>, and <a class="el" href="gstqgcqvideosink_8cc_source.html#l00213">sink_template</a>.</p>
+<p class="reference">References <a class="el" href="gstqgcqvideosink_8cc_source.html#l00328">gst_qgc_q_video_sink_constructed()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00566">gst_qgc_q_video_sink_event()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00334">gst_qgc_q_video_sink_finalize()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00407">gst_qgc_q_video_sink_get_caps()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00374">gst_qgc_q_video_sink_get_property()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00628">gst_qgc_q_video_sink_propose_allocation()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00642">gst_qgc_q_video_sink_query()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00418">gst_qgc_q_video_sink_set_caps()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00343">gst_qgc_q_video_sink_set_property()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00472">gst_qgc_q_video_sink_show_frame()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00594">gst_qgc_q_video_sink_start()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00608">gst_qgc_q_video_sink_stop()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00302">PROP_ACTIVE</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00307">PROP_FRAME_STATS</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00306">PROP_FRAMES_DELIVERED</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00305">PROP_FRAMES_DROPPED</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00304">PROP_FRAMES_INPUT</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00303">PROP_GPU_ZEROCOPY</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00301">PROP_QVIDEOSINK</a>, and <a class="el" href="gstqgcqvideosink_8cc_source.html#l00295">sink_template</a>.</p>
 
 </div>
 </div>
@@ -311,9 +313,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00246">246</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00328">328</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00574">gst_qgc_q_video_sink_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00659">gst_qgc_q_video_sink_class_init()</a>.</p>
 
 </div>
 </div>
@@ -351,9 +353,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00500">500</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00566">566</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00574">gst_qgc_q_video_sink_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00659">gst_qgc_q_video_sink_class_init()</a>.</p>
 
 </div>
 </div>
@@ -381,9 +383,49 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00252">252</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00334">334</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00574">gst_qgc_q_video_sink_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00659">gst_qgc_q_video_sink_class_init()</a>.</p>
+
+</div>
+</div>
+<a id="a0f40aec06b5137b3e1ee7aebae559516" name="a0f40aec06b5137b3e1ee7aebae559516"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f40aec06b5137b3e1ee7aebae559516">&#9670;&#160;</a></span>gst_qgc_q_video_sink_get_caps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static GstCaps * gst_qgc_q_video_sink_get_caps </td>
+          <td>(</td>
+          <td class="paramtype">GstBaseSink *&#160;</td>
+          <td class="paramname"><em>bsink</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GstCaps *&#160;</td>
+          <td class="paramname"><em>filter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00407">407</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00659">gst_qgc_q_video_sink_class_init()</a>.</p>
 
 </div>
 </div>
@@ -433,11 +475,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00294">294</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00374">374</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="gstqgcqvideosink_8cc_source.html#l00220">PROP_ACTIVE</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00225">PROP_FRAME_STATS</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00224">PROP_FRAMES_DELIVERED</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00223">PROP_FRAMES_DROPPED</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00222">PROP_FRAMES_INPUT</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00221">PROP_GPU_ZEROCOPY</a>, and <a class="el" href="gstqgcqvideosink_8cc_source.html#l00219">PROP_QVIDEOSINK</a>.</p>
+<p class="reference">References <a class="el" href="gstqgcqvideosink_8cc_source.html#l00302">PROP_ACTIVE</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00307">PROP_FRAME_STATS</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00306">PROP_FRAMES_DELIVERED</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00305">PROP_FRAMES_DROPPED</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00304">PROP_FRAMES_INPUT</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00303">PROP_GPU_ZEROCOPY</a>, and <a class="el" href="gstqgcqvideosink_8cc_source.html#l00301">PROP_QVIDEOSINK</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00574">gst_qgc_q_video_sink_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00659">gst_qgc_q_video_sink_class_init()</a>.</p>
 
 </div>
 </div>
@@ -465,7 +507,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00231">231</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00313">313</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
 </div>
 </div>
@@ -503,11 +545,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00552">552</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00628">628</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GstQgcAllocation_8cc_source.html#l00062">GstQgc::populateAllocationQuery()</a>.</p>
+<p class="reference">References <a class="el" href="GstQgcAllocation_8cc_source.html#l00071">GstQgc::populateAllocationQuery()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00574">gst_qgc_q_video_sink_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00659">gst_qgc_q_video_sink_class_init()</a>.</p>
 
 </div>
 </div>
@@ -545,11 +587,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00566">566</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00642">642</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="HwBuffers_8cc_source.html#l00247">HwBuffers::answerSinkBinContextQuery()</a>.</p>
+<p class="reference">References <a class="el" href="HwBuffers_8cc_source.html#l00148">HwBuffers::answerSinkBinContextQuery()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00574">gst_qgc_q_video_sink_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00659">gst_qgc_q_video_sink_class_init()</a>.</p>
 
 </div>
 </div>
@@ -587,11 +629,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00327">327</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00418">418</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GstQgcFrameMap_8cc_source.html#l00169">applyColorimetry()</a>, <a class="el" href="GstHwVideoInfo_8cc_source.html#l00022">GstHw::dmaDrmAwareVideoInfo()</a>, <a class="el" href="gstqgcqvideosink_8h_source.html#l00025">GstQgc::kCapsInfoMessage</a>, and <a class="el" href="GstQgcFrameMap_8cc_source.html#l00074">toQtPixelFormat()</a>.</p>
+<p class="reference">References <a class="el" href="GstQgcFrameMap_8cc_source.html#l00167">applyColorimetry()</a>, <a class="el" href="GstHwVideoInfo_8cc_source.html#l00022">GstHw::dmaDrmAwareVideoInfo()</a>, and <a class="el" href="GstQgcFrameMap_8cc_source.html#l00075">toQtPixelFormat()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00574">gst_qgc_q_video_sink_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00659">gst_qgc_q_video_sink_class_init()</a>.</p>
 
 </div>
 </div>
@@ -641,11 +683,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00260">260</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00343">343</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="gstqgcqvideosink_8cc_source.html#l00220">PROP_ACTIVE</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00221">PROP_GPU_ZEROCOPY</a>, and <a class="el" href="gstqgcqvideosink_8cc_source.html#l00219">PROP_QVIDEOSINK</a>.</p>
+<p class="reference">References <a class="el" href="gstqgcqvideosink_8cc_source.html#l00302">PROP_ACTIVE</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00303">PROP_GPU_ZEROCOPY</a>, and <a class="el" href="gstqgcqvideosink_8cc_source.html#l00301">PROP_QVIDEOSINK</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00574">gst_qgc_q_video_sink_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00659">gst_qgc_q_video_sink_class_init()</a>.</p>
 
 </div>
 </div>
@@ -683,11 +725,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00392">392</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00472">472</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GstQgcFrameMap_8cc_source.html#l00216">applyCropMeta()</a>, <a class="el" href="GstQgcFrameMap_8cc_source.html#l00145">applyOrientationAndTiming()</a>, <a class="el" href="GstQgcFrameMap_8h_source.html#l00040">MappedFrame::demoted</a>, <a class="el" href="GstQgcFrameMap_8h_source.html#l00038">MappedFrame::frame</a>, <a class="el" href="GstHwTypes_8h_source.html#l00023">HwVideoBufferContext::gpuEnabled</a>, <a class="el" href="GstQgcFrameMap_8h_source.html#l00039">MappedFrame::gpuPath</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00387">kMaxConsecutiveMapFailures</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00390">kPtsResyncThresholdNs</a>, <a class="el" href="GstQgcFrameMap_8cc_source.html#l00224">mapSampleToFrame()</a>, <a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">None</a>, and <a class="el" href="GstHwTypes_8h_source.html#l00034">GstHw::toString()</a>.</p>
+<p class="reference">References <a class="el" href="GstQgcFrameMap_8cc_source.html#l00214">applyCropMeta()</a>, <a class="el" href="GstQgcFrameMap_8cc_source.html#l00146">applyOrientationAndTiming()</a>, <a class="el" href="GstQgcFrameMap_8h_source.html#l00041">MappedFrame::demoted</a>, <a class="el" href="GstQgcCaps_8h_source.html#l00021">GstQgc::SinkCapsPolicy::dmaBufDisplay</a>, <a class="el" href="GstHwTypes_8h_source.html#l00024">HwVideoBufferContext::dmaBufEglDisplay</a>, <a class="el" href="GStreamerSelfTest_8cc_source.html#l00076">format</a>, <a class="el" href="GstQgcFrameMap_8h_source.html#l00039">MappedFrame::frame</a>, <a class="el" href="GstHwTypes_8h_source.html#l00023">HwVideoBufferContext::gpuEnabled</a>, <a class="el" href="GstQgcFrameMap_8h_source.html#l00040">MappedFrame::gpuPath</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00470">kMaxConsecutiveMapFailures</a>, <a class="el" href="GstQgcFrameMap_8cc_source.html#l00222">mapSampleToFrame()</a>, <a class="el" href="GstQgcFrameMap_8h_source.html#l00042">MappedFrame::noCpuLayout</a>, <a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">None</a>, and <a class="el" href="GstHwTypes_8h_source.html#l00034">GstHw::toString()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00574">gst_qgc_q_video_sink_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00659">gst_qgc_q_video_sink_class_init()</a>.</p>
 
 </div>
 </div>
@@ -715,11 +757,11 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00519">519</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00594">594</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="HwBuffers_8cc_source.html#l00223">HwBuffers::makeAdapterContext()</a>.</p>
+<p class="reference">References <a class="el" href="HwBuffers_8cc_source.html#l00107">HwBuffers::makeAdapterContext()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00574">gst_qgc_q_video_sink_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00659">gst_qgc_q_video_sink_class_init()</a>.</p>
 
 </div>
 </div>
@@ -747,9 +789,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00533">533</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00608">608</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00574">gst_qgc_q_video_sink_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00659">gst_qgc_q_video_sink_class_init()</a>.</p>
 
 </div>
 </div>
@@ -774,35 +816,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00387">387</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00470">470</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00392">gst_qgc_q_video_sink_show_frame()</a>.</p>
-
-</div>
-</div>
-<a id="ab148123f117b01089062d2bee013617c" name="ab148123f117b01089062d2bee013617c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab148123f117b01089062d2bee013617c">&#9670;&#160;</a></span>kPtsResyncThresholdNs</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr int64_t kPtsResyncThresholdNs = static_cast&lt;int64_t&gt;(GST_SECOND)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00390">390</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00392">gst_qgc_q_video_sink_show_frame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00472">gst_qgc_q_video_sink_show_frame()</a>.</p>
 
 </div>
 </div>
@@ -826,12 +842,13 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">    GST_STATIC_PAD_TEMPLATE(<span class="stringliteral">&quot;sink&quot;</span>, GST_PAD_SINK, GST_PAD_ALWAYS, GST_STATIC_CAPS_ANY)</div>
-</div><!-- fragment --><p>Pad template — sink accepts any video caps. The downstream conversion (videoconvert/glupload) already happens upstream in qgcvideosinkbin. </p>
+<div class="line">    GST_STATIC_PAD_TEMPLATE(<span class="stringliteral">&quot;sink&quot;</span>, GST_PAD_SINK, GST_PAD_ALWAYS, GST_STATIC_CAPS(<span class="stringliteral">&quot;video/x-raw(ANY)&quot;</span>))</div>
+</div><!-- fragment -->
+<p>get_caps narrows this to the formats and memory the sink takes for its render target. </p>
 
-<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00213">213</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="gstqgcqvideosink_8cc_source.html#l00295">295</a> of file <a class="el" href="gstqgcqvideosink_8cc_source.html">gstqgcqvideosink.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00574">gst_qgc_q_video_sink_class_init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00659">gst_qgc_q_video_sink_class_init()</a>.</p>
 
 </div>
 </div>

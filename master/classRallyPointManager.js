@@ -13,12 +13,12 @@ var classRallyPointManager =
     [ "error", "classRallyPointManager.html#acaa87fea6f1aaa4ab9148708328d87ff", null ],
     [ "inProgressChanged", "classRallyPointManager.html#a052f015abc299d1db4b83f8a0368df37", null ],
     [ "loadComplete", "classRallyPointManager.html#a52ac30a7909954f6b667b92f2d54c21b", null ],
-    [ "points", "classRallyPointManager.html#aa42436c21c31067573afeb2a861d5761", null ],
+    [ "points", "classRallyPointManager.html#aa4d0c1be256b241055ad6baf61b77d00", null ],
     [ "removeAll", "classRallyPointManager.html#a335986f6fa7edc3ed4151753fee77d68", null ],
     [ "removeAllComplete", "classRallyPointManager.html#ab74a51c4e9ac8ab59c97cad4fb979fbf", null ],
     [ "sendComplete", "classRallyPointManager.html#a6b2ddfe93868635321df1de63d7f0bdd", null ],
-    [ "sendToVehicle", "classRallyPointManager.html#a1a50a80ea03cd034f9b76ff67100a51d", null ],
+    [ "sendToVehicle", "classRallyPointManager.html#a0893a63c90216fb4e0d0a1c0cd4dcbcf", null ],
     [ "supported", "classRallyPointManager.html#a33c785c1e49b1588aa6ffb658f5d2d97", null ],
-    [ "_rgPoints", "classRallyPointManager.html#a963e31bb37dcb2301b32887cf2363df3", null ],
-    [ "_rgSendPoints", "classRallyPointManager.html#abc0ade12001bed1f26264726f41deed8", null ]
+    [ "_rgPoints", "classRallyPointManager.html#a1d8cb1809fab3ae7639ba4756838344f", null ],
+    [ "_rgSendPoints", "classRallyPointManager.html#aa44d048d114b52176379dafe27c4763a", null ]
 ];

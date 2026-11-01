@@ -1,0 +1,27 @@
+var classPiperTtsEngine =
+[
+    [ "PiperTtsEngine", "classPiperTtsEngine.html#a83f8bac4ea8628d15833bc5fc0956688", null ],
+    [ "~PiperTtsEngine", "classPiperTtsEngine.html#a84358232b9fa89b99e65df60e6516725", null ],
+    [ "availableLocales", "classPiperTtsEngine.html#a50efaacb4f9805e4bd6e645a2cca8252", null ],
+    [ "availableVoices", "classPiperTtsEngine.html#a10ec2b900fbaecf87338285200bab4ab", null ],
+    [ "capabilities", "classPiperTtsEngine.html#af390d09a389604c964e11044bce0d450", null ],
+    [ "errorReason", "classPiperTtsEngine.html#a670456eba0c9e3a05b7f66e3116a282a", null ],
+    [ "errorString", "classPiperTtsEngine.html#af5bc714b0a58e6bc05f0588c6d48508b", null ],
+    [ "isAvailable", "classPiperTtsEngine.html#a45fc6b4baacffc4ebaba64c9ca88c9d4", null ],
+    [ "locale", "classPiperTtsEngine.html#a31acced3adc4fe08ac7da3589cce029c", null ],
+    [ "pause", "classPiperTtsEngine.html#a3c8ce7916e8ae5ffdd643519f7b69922", null ],
+    [ "pitch", "classPiperTtsEngine.html#ad0b6e59eb1ffdb5987eb774bc7f2e5c2", null ],
+    [ "rate", "classPiperTtsEngine.html#a05ed048c93ebb8cb559324baf32cf569", null ],
+    [ "resume", "classPiperTtsEngine.html#a846b65b817517a9bc7f0d549a5b6b7a1", null ],
+    [ "say", "classPiperTtsEngine.html#af7f2813555ca3636b2d21d90c1c20dd9", null ],
+    [ "setLocale", "classPiperTtsEngine.html#a7a5eb1a5d3bc9f5425fbde3e1731259e", null ],
+    [ "setPitch", "classPiperTtsEngine.html#a47f98ef6eed3cbbf70fd44d782da04e5", null ],
+    [ "setRate", "classPiperTtsEngine.html#a5a2a04b697f3fb5ed476ed66a1914f45", null ],
+    [ "setVoice", "classPiperTtsEngine.html#a7178157405a3c4db58fc3de41d449746", null ],
+    [ "setVolume", "classPiperTtsEngine.html#aaa6b216221ad509a387ee68a32db5561", null ],
+    [ "state", "classPiperTtsEngine.html#a0796127c82d104917d3c3f7653e0d63a", null ],
+    [ "stop", "classPiperTtsEngine.html#ab9903328d541041612279a62de8bb2f6", null ],
+    [ "synthesize", "classPiperTtsEngine.html#a1624565ca747ffb64aefe79c8595ea32", null ],
+    [ "voice", "classPiperTtsEngine.html#aba09610ed7f0461b8caf287d65580180", null ],
+    [ "volume", "classPiperTtsEngine.html#a922fb1fad7d3fd5b0a9c96f92a535825", null ]
+];

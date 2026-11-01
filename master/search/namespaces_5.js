@@ -17,5 +17,6 @@ var searchData=
   ['gstqgc_14',['GstQgc',['../namespaceGstQgc.html',1,'']]],
   ['gstreamer_15',['GStreamer',['../namespaceGStreamer.html',1,'']]],
   ['gstreamer_3a_3aenvironment_16',['Environment',['../namespaceGStreamer_1_1Environment.html',1,'GStreamer']]],
-  ['gstreamer_3a_3asourcefactory_17',['SourceFactory',['../namespaceGStreamer_1_1SourceFactory.html',1,'GStreamer']]]
+  ['gstreamer_3a_3aselftest_17',['SelfTest',['../namespaceGStreamer_1_1SelfTest.html',1,'GStreamer']]],
+  ['gstreamer_3a_3asourcefactory_18',['SourceFactory',['../namespaceGStreamer_1_1SourceFactory.html',1,'GStreamer']]]
 ];

@@ -11,5 +11,7 @@ var classPX4CollisionComponent =
     [ "setupComplete", "classPX4CollisionComponent.html#ae37075860f6eb96efa9a5809373a4d28", null ],
     [ "setupCompleteChangedTriggerList", "classPX4CollisionComponent.html#a47af3cc67fbf27cb4cd66941d00633cc", null ],
     [ "setupSource", "classPX4CollisionComponent.html#a5d6bf1d272468c7203afabec4ac24ff2", null ],
+    [ "summaryChangedTriggerList", "classPX4CollisionComponent.html#a46242224a32955eebcfaa5d0d3212b41", null ],
+    [ "summaryItems", "classPX4CollisionComponent.html#acb1c3f09c19cb680f349b273a662e8e5", null ],
     [ "summaryQmlSource", "classPX4CollisionComponent.html#a6ae290652992bc343aff5007fe0c1494", null ]
 ];

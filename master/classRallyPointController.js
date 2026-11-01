@@ -23,5 +23,6 @@ var classRallyPointController =
     [ "showPlanFromManagerVehicle", "classRallyPointController.html#a59653a1ae048c855646243baccfa7b56", null ],
     [ "start", "classRallyPointController.html#a9ef46545b5608a5fb94369e80029f06f", null ],
     [ "supported", "classRallyPointController.html#a3af527b59f3be751b148023ad4e591b0", null ],
-    [ "syncInProgress", "classRallyPointController.html#a626740b8d6a27b78f88f68df6a4177e4", null ]
+    [ "syncInProgress", "classRallyPointController.html#a626740b8d6a27b78f88f68df6a4177e4", null ],
+    [ "terrainQueryPending", "classRallyPointController.html#abafa863ea5052d813b097c0251b7786d", null ]
 ];

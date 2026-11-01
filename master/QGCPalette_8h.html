@@ -125,11 +125,11 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aa8048ede2292fa579db591a4490cea80" id="r_aa8048ede2292fa579db591a4490cea80"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCPalette_8h.html#aa8048ede2292fa579db591a4490cea80">DECLARE_QGC_COLOR</a>(name,  lightDisabled,  lightEnabled,  darkDisabled,  darkEnabled)</td></tr>
+<tr class="memitem:aa8048ede2292fa579db591a4490cea80" id="r_aa8048ede2292fa579db591a4490cea80"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCPalette_8h.html#aa8048ede2292fa579db591a4490cea80">DECLARE_QGC_COLOR</a>(<a class="el" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>,  lightDisabled,  lightEnabled,  darkDisabled,  darkEnabled)</td></tr>
 <tr class="separator:aa8048ede2292fa579db591a4490cea80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a971508dcbd9c7335270fa074e04326bd" id="r_a971508dcbd9c7335270fa074e04326bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCPalette_8h.html#a971508dcbd9c7335270fa074e04326bd">DECLARE_QGC_NONTHEMED_COLOR</a>(name,  disabledColor,  enabledColor)</td></tr>
+<tr class="memitem:a971508dcbd9c7335270fa074e04326bd" id="r_a971508dcbd9c7335270fa074e04326bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCPalette_8h.html#a971508dcbd9c7335270fa074e04326bd">DECLARE_QGC_NONTHEMED_COLOR</a>(<a class="el" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>,  disabledColor,  enabledColor)</td></tr>
 <tr class="separator:a971508dcbd9c7335270fa074e04326bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a48bc350d3fdcbca5b208f4ef6a81f8" id="r_a2a48bc350d3fdcbca5b208f4ef6a81f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCPalette_8h.html#a2a48bc350d3fdcbca5b208f4ef6a81f8">DECLARE_QGC_SINGLE_COLOR</a>(name,  color)</td></tr>
+<tr class="memitem:a2a48bc350d3fdcbca5b208f4ef6a81f8" id="r_a2a48bc350d3fdcbca5b208f4ef6a81f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCPalette_8h.html#a2a48bc350d3fdcbca5b208f4ef6a81f8">DECLARE_QGC_SINGLE_COLOR</a>(<a class="el" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>,  color)</td></tr>
 <tr class="separator:a2a48bc350d3fdcbca5b208f4ef6a81f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acccc1e682bb8802142320dc832973280" id="r_acccc1e682bb8802142320dc832973280"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="QGCPalette_8h.html#acccc1e682bb8802142320dc832973280">DEFINE_QGC_COLOR</a>(NAME,  SETNAME)</td></tr>
 <tr class="separator:acccc1e682bb8802142320dc832973280"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,7 +145,7 @@ Macros</h2></td></tr>
           <td class="memname">#define DECLARE_QGC_COLOR</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">name, </td>
+          <td class="paramname"><a class="el" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -183,13 +183,14 @@ Macros</h2></td></tr>
 <div class="line">            { QColor(lightDisabled), QColor(lightEnabled) }, \</div>
 <div class="line">            { QColor(darkDisabled), QColor(darkEnabled) } \</div>
 <div class="line">        }; \</div>
-<div class="line">        QGCCorePlugin::instance()-&gt;paletteOverride(#name, colorInfo); \</div>
-<div class="line">        _colorInfoMap[Light][ColorGroupEnabled][QStringLiteral(#name)] = colorInfo[Light][ColorGroupEnabled]; \</div>
-<div class="line">        _colorInfoMap[Light][ColorGroupDisabled][QStringLiteral(#name)] = colorInfo[Light][ColorGroupDisabled]; \</div>
-<div class="line">        _colorInfoMap[Dark][ColorGroupEnabled][QStringLiteral(#name)] = colorInfo[Dark][ColorGroupEnabled]; \</div>
-<div class="line">        _colorInfoMap[Dark][ColorGroupDisabled][QStringLiteral(#name)] = colorInfo[Dark][ColorGroupDisabled]; \</div>
-<div class="line">        _colors &lt;&lt; #name; \</div>
+<div class="line">        QGCCorePlugin::instance()-&gt;paletteOverride(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, colorInfo); \</div>
+<div class="line">        _colorInfoMap[Light][ColorGroupEnabled][QStringLiteral(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)] = colorInfo[Light][ColorGroupEnabled]; \</div>
+<div class="line">        _colorInfoMap[Light][ColorGroupDisabled][QStringLiteral(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)] = colorInfo[Light][ColorGroupDisabled]; \</div>
+<div class="line">        _colorInfoMap[Dark][ColorGroupEnabled][QStringLiteral(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)] = colorInfo[Dark][ColorGroupEnabled]; \</div>
+<div class="line">        _colorInfoMap[Dark][ColorGroupDisabled][QStringLiteral(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)] = colorInfo[Dark][ColorGroupDisabled]; \</div>
+<div class="line">        _colors &lt;&lt; #<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>; \</div>
 <div class="line">    }</div>
+<div class="ttc" id="aGStreamer_8cc_html_a8f8f80d37794cde9472343e4487ba3eb"><div class="ttname"><a href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a></div><div class="ttdeci">const char * name</div><div class="ttdef"><b>Definition</b> <a href="GStreamer_8cc_source.html#l00078">GStreamer.cc:78</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="QGCPalette_8h_source.html#l00008">8</a> of file <a class="el" href="QGCPalette_8h_source.html">QGCPalette.h</a>.</p>
 
@@ -205,7 +206,7 @@ Macros</h2></td></tr>
           <td class="memname">#define DECLARE_QGC_NONTHEMED_COLOR</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">name, </td>
+          <td class="paramname"><a class="el" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -231,12 +232,12 @@ Macros</h2></td></tr>
 <div class="line">            { QColor(disabledColor), QColor(enabledColor) }, \</div>
 <div class="line">            { QColor(disabledColor), QColor(enabledColor) } \</div>
 <div class="line">        }; \</div>
-<div class="line">        QGCCorePlugin::instance()-&gt;paletteOverride(#name, colorInfo); \</div>
-<div class="line">        _colorInfoMap[Light][ColorGroupEnabled][QStringLiteral(#name)] = colorInfo[Light][ColorGroupEnabled]; \</div>
-<div class="line">        _colorInfoMap[Light][ColorGroupDisabled][QStringLiteral(#name)] = colorInfo[Light][ColorGroupDisabled]; \</div>
-<div class="line">        _colorInfoMap[Dark][ColorGroupEnabled][QStringLiteral(#name)] = colorInfo[Dark][ColorGroupEnabled]; \</div>
-<div class="line">        _colorInfoMap[Dark][ColorGroupDisabled][QStringLiteral(#name)] = colorInfo[Dark][ColorGroupDisabled]; \</div>
-<div class="line">        _colors &lt;&lt; #name; \</div>
+<div class="line">        QGCCorePlugin::instance()-&gt;paletteOverride(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, colorInfo); \</div>
+<div class="line">        _colorInfoMap[Light][ColorGroupEnabled][QStringLiteral(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)] = colorInfo[Light][ColorGroupEnabled]; \</div>
+<div class="line">        _colorInfoMap[Light][ColorGroupDisabled][QStringLiteral(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)] = colorInfo[Light][ColorGroupDisabled]; \</div>
+<div class="line">        _colorInfoMap[Dark][ColorGroupEnabled][QStringLiteral(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)] = colorInfo[Dark][ColorGroupEnabled]; \</div>
+<div class="line">        _colorInfoMap[Dark][ColorGroupDisabled][QStringLiteral(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)] = colorInfo[Dark][ColorGroupDisabled]; \</div>
+<div class="line">        _colors &lt;&lt; #<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>; \</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="QGCPalette_8h_source.html#l00022">22</a> of file <a class="el" href="QGCPalette_8h_source.html">QGCPalette.h</a>.</p>
@@ -253,7 +254,7 @@ Macros</h2></td></tr>
           <td class="memname">#define DECLARE_QGC_SINGLE_COLOR</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname">name, </td>
+          <td class="paramname"><a class="el" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -273,12 +274,12 @@ Macros</h2></td></tr>
 <div class="line">            { QColor(color), QColor(color) }, \</div>
 <div class="line">            { QColor(color), QColor(color) } \</div>
 <div class="line">        }; \</div>
-<div class="line">        QGCCorePlugin::instance()-&gt;paletteOverride(#name, colorInfo); \</div>
-<div class="line">        _colorInfoMap[Light][ColorGroupEnabled][QStringLiteral(#name)] = colorInfo[Light][ColorGroupEnabled]; \</div>
-<div class="line">        _colorInfoMap[Light][ColorGroupDisabled][QStringLiteral(#name)] = colorInfo[Light][ColorGroupDisabled]; \</div>
-<div class="line">        _colorInfoMap[Dark][ColorGroupEnabled][QStringLiteral(#name)] = colorInfo[Dark][ColorGroupEnabled]; \</div>
-<div class="line">        _colorInfoMap[Dark][ColorGroupDisabled][QStringLiteral(#name)] = colorInfo[Dark][ColorGroupDisabled]; \</div>
-<div class="line">        _colors &lt;&lt; #name; \</div>
+<div class="line">        QGCCorePlugin::instance()-&gt;paletteOverride(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, colorInfo); \</div>
+<div class="line">        _colorInfoMap[Light][ColorGroupEnabled][QStringLiteral(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)] = colorInfo[Light][ColorGroupEnabled]; \</div>
+<div class="line">        _colorInfoMap[Light][ColorGroupDisabled][QStringLiteral(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)] = colorInfo[Light][ColorGroupDisabled]; \</div>
+<div class="line">        _colorInfoMap[Dark][ColorGroupEnabled][QStringLiteral(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)] = colorInfo[Dark][ColorGroupEnabled]; \</div>
+<div class="line">        _colorInfoMap[Dark][ColorGroupDisabled][QStringLiteral(#<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)] = colorInfo[Dark][ColorGroupDisabled]; \</div>
+<div class="line">        _colors &lt;&lt; #<a class="code hl_variable" href="GStreamer_8cc.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>; \</div>
 <div class="line">    }</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="QGCPalette_8h_source.html#l00036">36</a> of file <a class="el" href="QGCPalette_8h_source.html">QGCPalette.h</a>.</p>

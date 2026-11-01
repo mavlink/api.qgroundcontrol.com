@@ -211,14 +211,12 @@ var searchData=
   ['qserialportinfo_2eh_208',['qserialportinfo.h',['../qserialportinfo_8h.html',1,'']]],
   ['qserialportinfo_5fandroid_2ecpp_209',['qserialportinfo_android.cpp',['../qserialportinfo__android_8cpp.html',1,'']]],
   ['qserialportinfo_5fp_2eh_210',['qserialportinfo_p.h',['../qserialportinfo__p_8h.html',1,'']]],
-  ['qtmultimediareceiver_2ecc_211',['QtMultimediaReceiver.cc',['../QtMultimediaReceiver_8cc.html',1,'']]],
-  ['qtmultimediareceiver_2eh_212',['QtMultimediaReceiver.h',['../QtMultimediaReceiver_8h.html',1,'']]],
-  ['qtruntimescheduler_2ecc_213',['QtRuntimeScheduler.cc',['../QtRuntimeScheduler_8cc.html',1,'']]],
-  ['qtruntimescheduler_2eh_214',['QtRuntimeScheduler.h',['../QtRuntimeScheduler_8h.html',1,'']]],
-  ['qtserialportexports_2eh_215',['qtserialportexports.h',['../qtserialportexports_8h.html',1,'']]],
-  ['qtserialportversion_2eh_216',['qtserialportversion.h',['../qtserialportversion_8h.html',1,'']]],
-  ['quectelcodec_2eh_217',['QuectelCodec.h',['../QuectelCodec_8h.html',1,'']]],
-  ['quectelplan_2ecc_218',['QuectelPlan.cc',['../QuectelPlan_8cc.html',1,'']]],
-  ['quectelplan_2eh_219',['QuectelPlan.h',['../QuectelPlan_8h.html',1,'']]],
-  ['quectelprotocol_2ecc_220',['QuectelProtocol.cc',['../QuectelProtocol_8cc.html',1,'']]]
+  ['qtruntimescheduler_2ecc_211',['QtRuntimeScheduler.cc',['../QtRuntimeScheduler_8cc.html',1,'']]],
+  ['qtruntimescheduler_2eh_212',['QtRuntimeScheduler.h',['../QtRuntimeScheduler_8h.html',1,'']]],
+  ['qtserialportexports_2eh_213',['qtserialportexports.h',['../qtserialportexports_8h.html',1,'']]],
+  ['qtserialportversion_2eh_214',['qtserialportversion.h',['../qtserialportversion_8h.html',1,'']]],
+  ['quectelcodec_2eh_215',['QuectelCodec.h',['../QuectelCodec_8h.html',1,'']]],
+  ['quectelplan_2ecc_216',['QuectelPlan.cc',['../QuectelPlan_8cc.html',1,'']]],
+  ['quectelplan_2eh_217',['QuectelPlan.h',['../QuectelPlan_8h.html',1,'']]],
+  ['quectelprotocol_2ecc_218',['QuectelProtocol.cc',['../QuectelProtocol_8cc.html',1,'']]]
 ];

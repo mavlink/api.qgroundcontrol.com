@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['parametereditorcontroller_0',['ParameterEditorController',['../classParameterManager.html#ac6da1f1899d68f64ce84ab5b650c14af',1,'ParameterManager']]],
-  ['positionmanagertest_1',['positionmanagertest',['../classGPSSourceHealth.html#ab45ac32aecac2bc376745278e825b153',1,'GPSSourceHealth::PositionManagerTest'],['../classPositionManager.html#ab45ac32aecac2bc376745278e825b153',1,'PositionManager::PositionManagerTest']]]
+  ['qgcapplication_0',['QGCApplication',['../classAppSettings.html#ad3b93a47a47378c778a1c1063bf3d4e1',1,'AppSettings']]],
+  ['qgccameraparamio_1',['QGCCameraParamIO',['../classMavlinkCameraControlInterface.html#a754713ff2cc3238313e8b0b7306dea86',1,'MavlinkCameraControlInterface']]],
+  ['qgcserialportinfotest_2',['QGCSerialPortInfoTest',['../classQGCSerialPortInfo.html#a0d001a5918866d3536f73b0a94998141',1,'QGCSerialPortInfo']]],
+  ['qgeomapreplyqgctest_3',['QGeoMapReplyQGCTest',['../classQGeoTiledMapReplyQGC.html#aecb5684aa71dc3f523dee20a1e276f5d',1,'QGeoTiledMapReplyQGC']]]
 ];

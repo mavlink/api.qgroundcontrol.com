@@ -7,10 +7,11 @@ var searchData=
   ['receiverindex_4',['ReceiverIndex',['../classVehicleGPSFactGroup.html#a85be6f25faef7ce82682f7494f8a7539',1,'VehicleGPSFactGroup']]],
   ['receiverrole_5',['ReceiverRole',['../classRTKSettings.html#ad0aeabc41ce0fb7500e76383ada657ab',1,'RTKSettings']]],
   ['regionoperation_6',['RegionOperation',['../classRemoteIDSettings.html#ac731ea1dddd578a58b52009768f2e062',1,'RemoteIDSettings']]],
-  ['reply_7',['Reply',['../namespaceUnicore_1_1Plan.html#a6637641787271ded32d1eb784cec79ad',1,'Unicore::Plan']]],
-  ['requestmessagefailuremode_5ft_8',['RequestMessageFailureMode_t',['../classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5',1,'MockLink']]],
-  ['requestmessageresulthandlerfailurecode_5ft_9',['RequestMessageResultHandlerFailureCode_t',['../structVehicleTypes.html#a9ce049e2f1375e132c762eb6cb63db0f',1,'VehicleTypes']]],
-  ['role_10',['role',['../classQGCArchiveModel.html#aa2677402779a284f0ee65d576d55edeb',1,'QGCArchiveModel::Role'],['../structLogEntry.html#a16604a76fec3f30308d55e8c0ead18e9',1,'LogEntry::Role']]],
-  ['roles_11',['roles',['../classSurfacePatchModel.html#a9ec2a11be55d2683f02678c16e365f16',1,'SurfacePatchModel::Roles'],['../classNTRIPSourceTableModel.html#a1e524e62cc4d6dbc42b1deefbf200e17',1,'NTRIPSourceTableModel::Roles'],['../classLoggingCategoryFlatModel.html#ad76851c285a28aa986944ec9a90f04e0',1,'LoggingCategoryFlatModel::Roles'],['../classLoggingCategoryTreeModel.html#a2e031477a1f40b4ab3c980d8999bc0fe',1,'LoggingCategoryTreeModel::Roles'],['../classGeoTagImageModel.html#a0e38381de2dc5ec37b3391b75c13ed65',1,'GeoTagImageModel::Roles']]],
-  ['rtcmcontent_12',['RTCMContent',['../namespaceUBX_1_1Plan.html#a13b0acf9b3034b61334de1636c9f809f',1,'UBX::Plan']]]
+  ['renderbackend_7',['RenderBackend',['../namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1',1,'GstQgc']]],
+  ['reply_8',['Reply',['../namespaceUnicore_1_1Plan.html#a6637641787271ded32d1eb784cec79ad',1,'Unicore::Plan']]],
+  ['requestmessagefailuremode_5ft_9',['RequestMessageFailureMode_t',['../classMockLink.html#a1fcc8cbbc6c8b4782b63065d0622f5a5',1,'MockLink']]],
+  ['requestmessageresulthandlerfailurecode_5ft_10',['RequestMessageResultHandlerFailureCode_t',['../structVehicleTypes.html#a9ce049e2f1375e132c762eb6cb63db0f',1,'VehicleTypes']]],
+  ['role_11',['role',['../structLogEntry.html#a16604a76fec3f30308d55e8c0ead18e9',1,'LogEntry::Role'],['../classQGCArchiveModel.html#aa2677402779a284f0ee65d576d55edeb',1,'QGCArchiveModel::Role'],['../namespaceVideoStreamResolver.html#a406dd3f43213d9ab0b31cc6cf0fc916a',1,'VideoStreamResolver::Role']]],
+  ['roles_12',['roles',['../classGeoTagImageModel.html#a0e38381de2dc5ec37b3391b75c13ed65',1,'GeoTagImageModel::Roles'],['../classLoggingCategoryTreeModel.html#a2e031477a1f40b4ab3c980d8999bc0fe',1,'LoggingCategoryTreeModel::Roles'],['../classLoggingCategoryFlatModel.html#ad76851c285a28aa986944ec9a90f04e0',1,'LoggingCategoryFlatModel::Roles'],['../classNTRIPSourceTableModel.html#a1e524e62cc4d6dbc42b1deefbf200e17',1,'NTRIPSourceTableModel::Roles'],['../classSurfacePatchModel.html#a9ec2a11be55d2683f02678c16e365f16',1,'SurfacePatchModel::Roles']]],
+  ['rtcmcontent_13',['RTCMContent',['../namespaceUBX_1_1Plan.html#a13b0acf9b3034b61334de1636c9f809f',1,'UBX::Plan']]]
 ];

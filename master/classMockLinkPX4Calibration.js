@@ -12,9 +12,14 @@ var classMockLinkPX4Calibration =
     [ "MockLinkPX4Calibration", "classMockLinkPX4Calibration.html#a2b7b436e01b684efecefe6ab8debd8c7", null ],
     [ "calibrationActive", "classMockLinkPX4Calibration.html#a3474f345bee8432e52dfdfe36be53065", null ],
     [ "cancel", "classMockLinkPX4Calibration.html#aae175fea3141390465b98035dbe54324", null ],
+    [ "fail", "classMockLinkPX4Calibration.html#a12554d6072773653be422f3b1ba14d97", null ],
     [ "run10HzTasks", "classMockLinkPX4Calibration.html#ac437627d8594e3a1fc60181b7b35169a", null ],
+    [ "setInlineCalibrationStalls", "classMockLinkPX4Calibration.html#ad6329b7ff68b171188f097893af2f133", null ],
     [ "setPose", "classMockLinkPX4Calibration.html#a817544d138dc80d56c63d8c97f8d3608", null ],
     [ "startAccelCalibration", "classMockLinkPX4Calibration.html#ad49d424c99af54348ce3c82d33b6131b", null ],
+    [ "startBaroCalibration", "classMockLinkPX4Calibration.html#aa60c103b3ec87fd65ad5fc7977ac9d10", null ],
+    [ "startGyroCalibration", "classMockLinkPX4Calibration.html#a83bafac3ec9a738aab0038a1ce3edc4d", null ],
+    [ "startLevelCalibration", "classMockLinkPX4Calibration.html#a8651e3b21d9eb1ca4718fd4a72208b21", null ],
     [ "startMagCalibration", "classMockLinkPX4Calibration.html#a225c2fb7a779105b7ddde5c043a26776", null ],
     [ "kSideCount", "classMockLinkPX4Calibration.html#a124a79c22eb71d264a0fc08997d1ea2a", null ]
 ];

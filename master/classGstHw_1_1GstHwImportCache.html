@@ -130,7 +130,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abc580a758c8325d7da49585bcf1f09c8" id="r_abc580a758c8325d7da49585bcf1f09c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGstHw_1_1GstHwImportCache_1_1Hit.html">Hit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHw_1_1GstHwImportCache.html#abc580a758c8325d7da49585bcf1f09c8">find</a> (const Key &amp;key)</td></tr>
 <tr class="memdesc:abc580a758c8325d7da49585bcf1f09c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">MRU-promoting lookup. The resource pointer is invalidated by the next insert/eraseIf/clear on this cache.  <br /></td></tr>
 <tr class="separator:abc580a758c8325d7da49585bcf1f09c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63e9062f855634b8bc52cc8946246832" id="r_a63e9062f855634b8bc52cc8946246832"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGstHw_1_1GstHwImportCache_1_1Hit.html">Hit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHw_1_1GstHwImportCache.html#a63e9062f855634b8bc52cc8946246832">insert</a> (const Key &amp;key, Resource resource)</td></tr>
+<tr class="memitem:a63e9062f855634b8bc52cc8946246832" id="r_a63e9062f855634b8bc52cc8946246832"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGstHw_1_1GstHwImportCache_1_1Hit.html">Hit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHw_1_1GstHwImportCache.html#a63e9062f855634b8bc52cc8946246832">insert</a> (const Key &amp;key, Resource <a class="el" href="GStreamerSelfTest_8cc.html#a97b7ef5a69a288651ec0d5acbe75d36d">resource</a>)</td></tr>
 <tr class="separator:a63e9062f855634b8bc52cc8946246832"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81d2903aa1c5bcfecdef1b78afb86c24" id="r_a81d2903aa1c5bcfecdef1b78afb86c24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHw_1_1GstHwImportCache.html#a81d2903aa1c5bcfecdef1b78afb86c24">pin</a> (<a class="el" href="classGstHw_1_1GstHwImportCache.html#aca9a7bb2ec0f0352b649a81be330acd2">EntryId</a> id) noexcept</td></tr>
 <tr class="memdesc:a81d2903aa1c5bcfecdef1b78afb86c24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Keeps entry <code>id</code> from being destroyed until a matching <a class="el" href="classGstHw_1_1GstHwImportCache.html#a5603d411667dcc74730d1b75e6257606" title="Releases one pin(). A parked entry is destroyed by the next drainDeferred() once its last pin is gone...">unpin()</a>; no-op for an unknown id.  <br /></td></tr>
@@ -155,10 +155,10 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class Key, class Resource, std::size_t Capacity&gt;<br />
-class GstHw::GstHwImportCache&lt; Key, Resource, Capacity &gt;</div><p>Bounded LRU cache for GPU import resources (EGLImages, imported VkImages, staging textures) sized for the handful of buffers a decoder pool recycles: a flat array searched linearly, so lookups and inserts never allocate.</p>
+class GstHw::GstHwImportCache&lt; Key, Resource, Capacity &gt;</div><p>Bounded LRU cache for GPU import resources sized for the handful of buffers a decoder pool recycles: a flat array searched linearly, so lookups and inserts never allocate. Serves the AHardwareBuffer path (EGLImages) and the D3D12 path (staging resources).</p>
 <p>Pinned entries (a frame bundle still samples them) are never destroyed: eviction skips them, and erase/clear park them until unpinned. Entries removed where <code>destroyableHere</code> rejects them (e.g. off the render thread that owns the GPU object) are parked as well; <a class="el" href="classGstHw_1_1GstHwImportCache.html#a7ffa8e71056bb6060f66cf262f12391f" title="Destroys parked entries that are unpinned and destroyable on the calling thread.">drainDeferred()</a> destroys parked entries once both conditions allow it. Not internally synchronized — the caller serializes access. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00019">19</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00020">20</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a21fe9b88a65fc0fbce71de60b89c2dd1" name="a21fe9b88a65fc0fbce71de60b89c2dd1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21fe9b88a65fc0fbce71de60b89c2dd1">&#9670;&#160;</a></span>CanDestroyFn</h2>
@@ -174,7 +174,7 @@ template&lt;class Key , class Resource , std::size_t Capacity&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00023">23</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00024">24</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
 
 </div>
 </div>
@@ -192,7 +192,7 @@ template&lt;class Key , class Resource , std::size_t Capacity&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00022">22</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00023">23</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
 
 </div>
 </div>
@@ -212,7 +212,7 @@ template&lt;class Key , class Resource , std::size_t Capacity&gt; </div>
 
 <p>Identifies one inserted entry for <a class="el" href="classGstHw_1_1GstHwImportCache.html#a81d2903aa1c5bcfecdef1b78afb86c24" title="Keeps entry id from being destroyed until a matching unpin(); no-op for an unknown id.">pin()</a>/unpin(), also after it is parked; never 0. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00025">25</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00026">26</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
 
 </div>
 </div>
@@ -253,7 +253,7 @@ template&lt;class Key , class Resource , std::size_t Capacity&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00035">35</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00036">36</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
 
 </div>
 </div>
@@ -284,9 +284,9 @@ template&lt;class Key , class Resource , std::size_t Capacity&gt; </div>
 
 <p>Static teardown: entries still pinned or not destroyable on this thread are leaked, never destroyed unsafely. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00041">41</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00042">42</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
 
-<p class="reference">References <a class="el" href="GstHwImportCache_8h_source.html#l00125">GstHw::GstHwImportCache&lt; Key, Resource, Capacity &gt;::clear()</a>, and <a class="el" href="GstHwImportCache_8h_source.html#l00131">GstHw::GstHwImportCache&lt; Key, Resource, Capacity &gt;::drainDeferred()</a>.</p>
+<p class="reference">References <a class="el" href="GstHwImportCache_8h_source.html#l00126">GstHw::GstHwImportCache&lt; Key, Resource, Capacity &gt;::clear()</a>, and <a class="el" href="GstHwImportCache_8h_source.html#l00132">GstHw::GstHwImportCache&lt; Key, Resource, Capacity &gt;::drainDeferred()</a>.</p>
 
 </div>
 </div>
@@ -344,11 +344,11 @@ template&lt;class Key , class Resource , std::size_t Capacity&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00125">125</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00126">126</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
 
-<p class="reference">References <a class="el" href="GstHwImportCache_8h_source.html#l00116">GstHw::GstHwImportCache&lt; Key, Resource, Capacity &gt;::eraseIf()</a>.</p>
+<p class="reference">References <a class="el" href="GstHwImportCache_8h_source.html#l00117">GstHw::GstHwImportCache&lt; Key, Resource, Capacity &gt;::eraseIf()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstHwImportCache_8h_source.html#l00041">GstHw::GstHwImportCache&lt; Key, Resource, Capacity &gt;::~GstHwImportCache()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstHwImportCache_8h_source.html#l00042">GstHw::GstHwImportCache&lt; Key, Resource, Capacity &gt;::~GstHwImportCache()</a>.</p>
 
 </div>
 </div>
@@ -379,9 +379,9 @@ template&lt;class Key , class Resource , std::size_t Capacity&gt; </div>
 
 <p>Destroys parked entries that are unpinned and destroyable on the calling thread. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00131">131</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00132">132</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstHwImportCache_8h_source.html#l00041">GstHw::GstHwImportCache&lt; Key, Resource, Capacity &gt;::~GstHwImportCache()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstHwImportCache_8h_source.html#l00042">GstHw::GstHwImportCache&lt; Key, Resource, Capacity &gt;::~GstHwImportCache()</a>.</p>
 
 </div>
 </div>
@@ -415,9 +415,9 @@ template&lt;class Pred &gt; </div>
 
 <p>Removes every live entry for which <code>pred(key, resource)</code> holds. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00116">116</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00117">117</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstHwImportCache_8h_source.html#l00125">GstHw::GstHwImportCache&lt; Key, Resource, Capacity &gt;::clear()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstHwImportCache_8h_source.html#l00126">GstHw::GstHwImportCache&lt; Key, Resource, Capacity &gt;::clear()</a>.</p>
 
 </div>
 </div>
@@ -449,7 +449,7 @@ template&lt;class Key , class Resource , std::size_t Capacity&gt; </div>
 
 <p>MRU-promoting lookup. The resource pointer is invalidated by the next insert/eraseIf/clear on this cache. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00051">51</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00052">52</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
 
 </div>
 </div>
@@ -490,7 +490,9 @@ template&lt;class Key , class Resource , std::size_t Capacity&gt; </div>
 </div><div class="memdoc">
 <p>Stores <code>resource</code> under <code>key</code>, replacing any entry for it and evicting the least recently used unpinned entry when full. Fails, retiring <code>resource</code>, when every slot is pinned. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00064">64</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00065">65</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+
+<p class="reference">References <a class="el" href="GStreamerSelfTest_8cc_source.html#l00065">resource</a>.</p>
 
 </div>
 </div>
@@ -549,7 +551,7 @@ template&lt;class Key , class Resource , std::size_t Capacity&gt; </div>
 
 <p>Entries removed from the cache but not yet destroyed (pinned, or awaiting their owner thread). </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00153">153</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00154">154</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
 
 </div>
 </div>
@@ -581,7 +583,7 @@ template&lt;class Key , class Resource , std::size_t Capacity&gt; </div>
 
 <p>Keeps entry <code>id</code> from being destroyed until a matching <a class="el" href="classGstHw_1_1GstHwImportCache.html#a5603d411667dcc74730d1b75e6257606" title="Releases one pin(). A parked entry is destroyed by the next drainDeferred() once its last pin is gone...">unpin()</a>; no-op for an unknown id. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00099">99</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00100">100</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
 
 </div>
 </div>
@@ -610,7 +612,7 @@ template&lt;class Key , class Resource , std::size_t Capacity&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00143">143</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00144">144</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
 
 </div>
 </div>
@@ -642,7 +644,7 @@ template&lt;class Key , class Resource , std::size_t Capacity&gt; </div>
 
 <p>Releases one <a class="el" href="classGstHw_1_1GstHwImportCache.html#a81d2903aa1c5bcfecdef1b78afb86c24" title="Keeps entry id from being destroyed until a matching unpin(); no-op for an unknown id.">pin()</a>. A parked entry is destroyed by the next <a class="el" href="classGstHw_1_1GstHwImportCache.html#a7ffa8e71056bb6060f66cf262f12391f" title="Destroys parked entries that are unpinned and destroyable on the calling thread.">drainDeferred()</a> once its last pin is gone. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00107">107</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwImportCache_8h_source.html#l00108">108</a> of file <a class="el" href="GstHwImportCache_8h_source.html">GstHwImportCache.h</a>.</p>
 
 </div>
 </div>

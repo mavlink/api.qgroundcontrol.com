@@ -10,5 +10,7 @@ var classPX4SerialPortsComponent =
     [ "setupComplete", "classPX4SerialPortsComponent.html#acf61df5d4619340a9db109e024a27b10", null ],
     [ "setupCompleteChangedTriggerList", "classPX4SerialPortsComponent.html#a8c1b3101af70653122eade87d5a27e1f", null ],
     [ "setupSource", "classPX4SerialPortsComponent.html#ad725c1efb32f565fa9a2ae3b678162ee", null ],
+    [ "summaryChangedTriggerList", "classPX4SerialPortsComponent.html#aaecd373ccfcb1a1dc2b3d4803d6210f3", null ],
+    [ "summaryItems", "classPX4SerialPortsComponent.html#a5f541954e10c2f1081dc06b3a2e51258", null ],
     [ "summaryQmlSource", "classPX4SerialPortsComponent.html#a7ec4759b5bb97cd9c077e1cb56d7ef4c", null ]
 ];

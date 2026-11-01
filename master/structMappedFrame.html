@@ -109,11 +109,14 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a4cd6578d6a329d2f7d4b4e6f399343c5" id="r_a4cd6578d6a329d2f7d4b4e6f399343c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMappedFrame.html#a4cd6578d6a329d2f7d4b4e6f399343c5">demoted</a> = false</td></tr>
 <tr class="memdesc:a4cd6578d6a329d2f7d4b4e6f399343c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A GPU path was requested for this stream but this frame fell back to CPU.  <br /></td></tr>
 <tr class="separator:a4cd6578d6a329d2f7d4b4e6f399343c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59efabb8f9f4a5d178e443c93f35b5eb" id="r_a59efabb8f9f4a5d178e443c93f35b5eb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMappedFrame.html#a59efabb8f9f4a5d178e443c93f35b5eb">noCpuLayout</a> = false</td></tr>
+<tr class="memdesc:a59efabb8f9f4a5d178e443c93f35b5eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dropped instead of read as linear rows, which would show it scrambled.  <br /></td></tr>
+<tr class="separator:a59efabb8f9f4a5d178e443c93f35b5eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Sample-to-frame result (GPU wins when it can, CPU fallback). <a class="el" href="GstQgcFrameMap_8cc.html#ac474695c15d1b7677107b37fcddbe093">mapSampleToFrame()</a> does NOT take the caller's refs on <code>buffer/<code>caps:</code> a</code> GPU frame holds its own GstSample, a zero-copy CPU frame its own buffer ref. </p>
+<div class="textblock"><p>Sample-to-frame result (GPU wins when it can, CPU fallback). <a class="el" href="GstQgcFrameMap_8cc.html#ac474695c15d1b7677107b37fcddbe093">mapSampleToFrame()</a> does NOT take the caller's refs on <code>buffer/<code>caps:</code> a</code> GPU frame holds its own GstSample, a zero-copy CPU frame its own buffer ref. A frame no GPU path takes whose layout the CPU can't read (a tiled DMA_DRM modifier) comes back invalid, with noCpuLayout set. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstQgcFrameMap_8h_source.html#l00036">36</a> of file <a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcFrameMap_8h_source.html#l00037">37</a> of file <a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a4cd6578d6a329d2f7d4b4e6f399343c5" name="a4cd6578d6a329d2f7d4b4e6f399343c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4cd6578d6a329d2f7d4b4e6f399343c5">&#9670;&#160;</a></span>demoted</h2>
@@ -129,9 +132,9 @@ Public Attributes</h2></td></tr>
 
 <p>A GPU path was requested for this stream but this frame fell back to CPU. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstQgcFrameMap_8h_source.html#l00040">40</a> of file <a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcFrameMap_8h_source.html#l00041">41</a> of file <a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00392">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="GstQgcFrameMap_8cc_source.html#l00224">mapSampleToFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00472">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="GstQgcFrameMap_8cc_source.html#l00222">mapSampleToFrame()</a>.</p>
 
 </div>
 </div>
@@ -147,9 +150,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstQgcFrameMap_8h_source.html#l00038">38</a> of file <a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcFrameMap_8h_source.html#l00039">39</a> of file <a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00392">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="GstQgcFrameMap_8cc_source.html#l00224">mapSampleToFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00472">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="GstQgcFrameMap_8cc_source.html#l00222">mapSampleToFrame()</a>.</p>
 
 </div>
 </div>
@@ -167,9 +170,29 @@ Public Attributes</h2></td></tr>
 
 <p>None for a CPU frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstQgcFrameMap_8h_source.html#l00039">39</a> of file <a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcFrameMap_8h_source.html#l00040">40</a> of file <a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00392">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="GstQgcFrameMap_8cc_source.html#l00224">mapSampleToFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00472">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="GstQgcFrameMap_8cc_source.html#l00222">mapSampleToFrame()</a>.</p>
+
+</div>
+</div>
+<a id="a59efabb8f9f4a5d178e443c93f35b5eb" name="a59efabb8f9f4a5d178e443c93f35b5eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59efabb8f9f4a5d178e443c93f35b5eb">&#9670;&#160;</a></span>noCpuLayout</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MappedFrame::noCpuLayout = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dropped instead of read as linear rows, which would show it scrambled. </p>
+
+<p class="definition">Definition at line <a class="el" href="GstQgcFrameMap_8h_source.html#l00042">42</a> of file <a class="el" href="GstQgcFrameMap_8h_source.html">GstQgcFrameMap.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00472">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="GstQgcFrameMap_8cc_source.html#l00222">mapSampleToFrame()</a>.</p>
 
 </div>
 </div>

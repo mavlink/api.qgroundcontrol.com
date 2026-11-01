@@ -11,5 +11,7 @@ var classPX4ReturnLandComponent =
     [ "setupComplete", "classPX4ReturnLandComponent.html#a6f22075e50c05fb6c572c3c1ad584ad9", null ],
     [ "setupCompleteChangedTriggerList", "classPX4ReturnLandComponent.html#ae16d5167878dd9a9d56e61bed0702604", null ],
     [ "setupSource", "classPX4ReturnLandComponent.html#a55b204b21118da92f5f3d08c72edabb9", null ],
+    [ "summaryChangedTriggerList", "classPX4ReturnLandComponent.html#a92ba6fd86824321e918969160e8205c7", null ],
+    [ "summaryItems", "classPX4ReturnLandComponent.html#ac436d797b8cbe270fd0d2f6fd67231b3", null ],
     [ "summaryQmlSource", "classPX4ReturnLandComponent.html#ab806218fed2aeeb9f926947f05483214", null ]
 ];

@@ -325,7 +325,6 @@ var menudata={children:[
 {text:"Related Symbols",url:"functions_rela.html",children:[
 {text:"a",url:"functions_rela.html#index_a"},
 {text:"c",url:"functions_rela.html#index_c"},
-{text:"d",url:"functions_rela.html#index_d"},
 {text:"f",url:"functions_rela.html#index_f"},
 {text:"g",url:"functions_rela.html#index_g"},
 {text:"h",url:"functions_rela.html#index_h"},
@@ -386,10 +385,8 @@ var menudata={children:[
 {text:"r",url:"globals_func_r.html#index_r"},
 {text:"s",url:"globals_func_s.html#index_s"},
 {text:"t",url:"globals_func_t.html#index_t"},
-{text:"u",url:"globals_func_u.html#index_u"},
-{text:"w",url:"globals_func_w.html#index_w"}]},
+{text:"u",url:"globals_func_u.html#index_u"}]},
 {text:"Variables",url:"globals_vars.html",children:[
-{text:"_",url:"globals_vars.html#index__5F"},
 {text:"a",url:"globals_vars.html#index_a"},
 {text:"b",url:"globals_vars.html#index_b"},
 {text:"c",url:"globals_vars.html#index_c"},
@@ -402,6 +399,7 @@ var menudata={children:[
 {text:"k",url:"globals_vars.html#index_k"},
 {text:"l",url:"globals_vars.html#index_l"},
 {text:"m",url:"globals_vars.html#index_m"},
+{text:"n",url:"globals_vars.html#index_n"},
 {text:"p",url:"globals_vars.html#index_p"},
 {text:"q",url:"globals_vars.html#index_q"},
 {text:"r",url:"globals_vars.html#index_r"},

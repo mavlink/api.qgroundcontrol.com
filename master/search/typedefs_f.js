@@ -7,6 +7,7 @@ var searchData=
   ['requestmessageresulthandler_4',['RequestMessageResultHandler',['../structVehicleTypes.html#a46bfc59bf8b2578f7cc565e6142729cb',1,'VehicleTypes']]],
   ['reservationptr_5',['ReservationPtr',['../classSerialPortManager.html#a0b6410beb42668b5cbe773efd9e8c9dc',1,'SerialPortManager']]],
   ['retryaction_6',['RetryAction',['../classRetryTransition.html#a8a693a2e00c7f7385accb1eaed8b7cd3',1,'RetryTransition']]],
-  ['rollbackaction_7',['RollbackAction',['../classRollbackState.html#ae5dc5089ced27a75afe9ddc2693ad508',1,'RollbackState']]],
-  ['rules_8',['Rules',['../namespaceMixer.html#a6db84602ee26ac053aa6d33c561130d2',1,'Mixer']]]
+  ['role_7',['Role',['../classVideoStreamController.html#a7a5f2d1b26e854be6c2e72632b32ee01',1,'VideoStreamController']]],
+  ['rollbackaction_8',['RollbackAction',['../classRollbackState.html#ae5dc5089ced27a75afe9ddc2693ad508',1,'RollbackState']]],
+  ['rules_9',['Rules',['../namespaceMixer.html#a6db84602ee26ac053aa6d33c561130d2',1,'Mixer']]]
 ];

@@ -1,6 +1,7 @@
 var namespaceGstHwPathTelemetry =
 [
     [ "ScopedMapTimer", "classGstHwPathTelemetry_1_1ScopedMapTimer.html", "classGstHwPathTelemetry_1_1ScopedMapTimer" ],
+    [ "Snapshot", "structGstHwPathTelemetry_1_1Snapshot.html", "structGstHwPathTelemetry_1_1Snapshot" ],
     [ "Counter", "namespaceGstHwPathTelemetry.html#a16e9937fb520a82225bf0cebd6ca3857", [
       [ "MapFailures", "namespaceGstHwPathTelemetry.html#a16e9937fb520a82225bf0cebd6ca3857ac407f71e3db11881900f763e450e47ce", null ],
       [ "TextureReuse", "namespaceGstHwPathTelemetry.html#a16e9937fb520a82225bf0cebd6ca3857ad7eaceb77ce426c0c6de8a95182ef449", null ],
@@ -13,7 +14,6 @@ var namespaceGstHwPathTelemetry =
     ] ],
     [ "HwFallbackReason", "namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeaf", [
       [ "NoExt", "namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafaf59f07edfa950dcaae336d6cb6b197b0", null ],
-      [ "ModifierRejected", "namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa033f01b12d2d41ee92f75615d97dda94", null ],
       [ "EglBadMatch", "namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafabd4f4d315b0da78e5a960e84e80b3e57", null ],
       [ "ValidateFailed", "namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa2676124b3e52c860757784ee4aad8ed0", null ],
       [ "UnknownMemType", "namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa5cf2164b961918b38d26cb03c045c4f5", null ],
@@ -29,6 +29,5 @@ var namespaceGstHwPathTelemetry =
     [ "record", "namespaceGstHwPathTelemetry.html#a4919a882459cebd07d69101db6fb614c", null ],
     [ "recordFallbackReason", "namespaceGstHwPathTelemetry.html#a18246831e1ea98aeeac5c4d9394d6374", null ],
     [ "recordMapDuration", "namespaceGstHwPathTelemetry.html#a2610f83ab1499f9b2237326f5c20b869", null ],
-    [ "take", "namespaceGstHwPathTelemetry.html#afa35809a21a59e961bb9c700e497e475", null ],
-    [ "takeFallbackReason", "namespaceGstHwPathTelemetry.html#aeefeb8d09481c9b106b8dcf9f4b5e95c", null ]
+    [ "snapshot", "namespaceGstHwPathTelemetry.html#a6ae7c6b468c90e3228266f2a60fea641", null ]
 ];

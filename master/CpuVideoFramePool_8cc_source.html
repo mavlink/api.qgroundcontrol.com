@@ -119,8 +119,8 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span>PooledCpuVideoBuffer final : <span class="keyword">public</span> QAbstractVideoBuffer</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    PooledCpuVideoBuffer(QVideoFrameFormat format, <a class="code hl_struct" href="structCpuVideoFramePool_1_1PlaneLayout.html">CpuVideoFramePool::PlaneLayout</a> layout, QByteArray backing)</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        : _format(std::move(<a class="code hl_function" href="namespaceLogFormatter.html#a8ee6aabd40509c19c84a3cad40dca45e">format</a>)), _layout(layout), _backing(std::move(backing))</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    PooledCpuVideoBuffer(QVideoFrameFormat <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>, <a class="code hl_struct" href="structCpuVideoFramePool_1_1PlaneLayout.html">CpuVideoFramePool::PlaneLayout</a> layout, QByteArray backing)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        : _format(std::move(<a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>)), _layout(layout), _backing(std::move(backing))</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {}</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    ~PooledCpuVideoBuffer()<span class="keyword"> override</span></div>
@@ -131,9 +131,9 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        }</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    MapData map(QVideoFrame::MapMode <a class="code hl_variable" href="HwBuffers_8cc.html#ae11dc4ebd90116130a78bbbe75dc3f03">mode</a>)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    MapData map(QVideoFrame::MapMode mode)<span class="keyword"> override</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="HwBuffers_8cc.html#ae11dc4ebd90116130a78bbbe75dc3f03">mode</a> == QVideoFrame::NotMapped) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">if</span> (mode == QVideoFrame::NotMapped) {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="keywordflow">return</span> {};</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        MapData data;</div>
@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span> data;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    QVideoFrameFormat <a class="code hl_function" href="namespaceLogFormatter.html#a8ee6aabd40509c19c84a3cad40dca45e">format</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> _format; }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    QVideoFrameFormat <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> _format; }</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    QVideoFrameFormat _format;</div>
@@ -160,11 +160,11 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">class </span>MapThroughGstVideoBuffer final : <span class="keyword">public</span> QAbstractVideoBuffer</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    MapThroughGstVideoBuffer(GstBuffer* buffer, <span class="keyword">const</span> GstVideoInfo&amp; info, QVideoFrameFormat format,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    MapThroughGstVideoBuffer(GstBuffer* buffer, <span class="keyword">const</span> GstVideoInfo&amp; info, QVideoFrameFormat <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>,</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                             <a class="code hl_typedef" href="classCpuVideoFramePool.html#a285998ae9f4f5206a9c7df6640b659e2">CpuVideoFramePool::PinnedFrameCounter</a> pinned)</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        : _buffer(gst_buffer_ref(buffer))</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        , _info(info)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        , _format(std::move(<a class="code hl_function" href="namespaceLogFormatter.html#a8ee6aabd40509c19c84a3cad40dca45e">format</a>))</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        , _format(std::move(<a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>))</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        , _pinned(std::move(pinned))</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    {}</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
@@ -175,14 +175,14 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        _pinned-&gt;fetch_sub(1, std::memory_order_relaxed);</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    MapData map(QVideoFrame::MapMode <a class="code hl_variable" href="HwBuffers_8cc.html#ae11dc4ebd90116130a78bbbe75dc3f03">mode</a>)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    MapData map(QVideoFrame::MapMode mode)<span class="keyword"> override</span></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">return</span> (<a class="code hl_variable" href="HwBuffers_8cc.html#ae11dc4ebd90116130a78bbbe75dc3f03">mode</a> == QVideoFrame::ReadOnly) ? _cpuView.map(_buffer, _info) : MapData{};</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">return</span> (mode == QVideoFrame::ReadOnly) ? _cpuView.map(_buffer, _info) : MapData{};</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> unmap()<span class="keyword"> override </span>{ _cpuView.unmap(); }</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    QVideoFrameFormat <a class="code hl_function" href="namespaceLogFormatter.html#a8ee6aabd40509c19c84a3cad40dca45e">format</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> _format; }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    QVideoFrameFormat <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> _format; }</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    GstBuffer* _buffer;</div>
@@ -279,12 +279,12 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 </div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>QByteArray CpuVideoFramePool::acquireBacking(<span class="keyword">const</span> <a class="code hl_struct" href="structCpuVideoFramePool_1_1PlaneLayout.html">PlaneLayout</a>&amp; layout, QSize size,</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                                             QVideoFrameFormat::PixelFormat format)</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                                             QVideoFrameFormat::PixelFormat <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>)</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>{</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    QMutexLocker lock(&amp;_mutex);</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; _slots.size(); ++i) {</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keyword">auto</span>&amp; slot = _slots[i];</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="keywordflow">if</span> (slot.size == size &amp;&amp; slot.format == format) {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="keywordflow">if</span> (slot.size == size &amp;&amp; slot.format == <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>) {</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            <span class="comment">// (size,format) implies a fixed byteSize; discard any stale mis-sized backing and keep scanning rather</span></div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            <span class="comment">// than stranding it, which would force a permanent miss loop.</span></div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            <span class="keywordflow">while</span> (slot.availableCount &gt; 0) {</div>
@@ -301,12 +301,12 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>}</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
 <div class="foldopen" id="foldopen00192" data-start="{" data-end="}">
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classCpuVideoFramePool.html#a7266098dcbddf40abf6e4fc123e2eab5">  192</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classCpuVideoFramePool.html#a7266098dcbddf40abf6e4fc123e2eab5">CpuVideoFramePool::releaseBacking</a>(QSize size, QVideoFrameFormat::PixelFormat format, QByteArray&amp;&amp; backing)</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classCpuVideoFramePool.html#a7266098dcbddf40abf6e4fc123e2eab5">  192</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classCpuVideoFramePool.html#a7266098dcbddf40abf6e4fc123e2eab5">CpuVideoFramePool::releaseBacking</a>(QSize size, QVideoFrameFormat::PixelFormat <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>, QByteArray&amp;&amp; backing)</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>{</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    QMutexLocker lock(&amp;_mutex);</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; _slots.size(); ++i) {</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="keyword">auto</span>&amp; slot = _slots[i];</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keywordflow">if</span> (slot.size == size &amp;&amp; slot.format == format) {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keywordflow">if</span> (slot.size == size &amp;&amp; slot.format == <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>) {</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            <span class="keywordflow">if</span> (slot.availableCount &lt; kMaxPerSlot) {</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                slot.available[slot.availableCount++] = std::move(backing);</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            }</div>
@@ -328,31 +328,31 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        *target = Slot{};</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    }</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    target-&gt;size = size;</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    target-&gt;format = format;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    target-&gt;format = <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>;</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    target-&gt;available[0] = std::move(backing);</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    target-&gt;availableCount = 1;</div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>}</div>
 </div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
 <div class="foldopen" id="foldopen00224" data-start="{" data-end="}">
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="classCpuVideoFramePool.html#abf9daee644f860851ce7287eda93c8dd">  224</a></span>QVideoFrame <a class="code hl_function" href="classCpuVideoFramePool.html#abf9daee644f860851ce7287eda93c8dd">CpuVideoFramePool::acquireFrame</a>(<span class="keyword">const</span> QVideoFrameFormat&amp; format, <span class="keyword">const</span> GstVideoInfo&amp; info)</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="classCpuVideoFramePool.html#abf9daee644f860851ce7287eda93c8dd">  224</a></span>QVideoFrame <a class="code hl_function" href="classCpuVideoFramePool.html#abf9daee644f860851ce7287eda93c8dd">CpuVideoFramePool::acquireFrame</a>(<span class="keyword">const</span> QVideoFrameFormat&amp; <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>, <span class="keyword">const</span> GstVideoInfo&amp; info)</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>{</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structCpuVideoFramePool_1_1PlaneLayout.html">PlaneLayout</a> layout = <a class="code hl_function" href="classCpuVideoFramePool.html#a918db495ed0fc6059fbb719c3e3f6260">computeLayout</a>(info);</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keywordflow">if</span> (layout.<a class="code hl_variable" href="structCpuVideoFramePool_1_1PlaneLayout.html#adeedae2c9922ff7b4c9cb3e1e0a0c95d">planeCount</a> == 0 || layout.<a class="code hl_variable" href="structCpuVideoFramePool_1_1PlaneLayout.html#aa9f8fddad8dae07da75d73e81287d798">byteSize</a> &lt;= 0) {</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        <span class="keywordflow">return</span> {};</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    }</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    QByteArray backing = acquireBacking(layout, format.frameSize(), format.pixelFormat());</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keyword">auto</span> buffer = std::make_unique&lt;PooledCpuVideoBuffer&gt;(format, layout, std::move(backing));</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    QByteArray backing = acquireBacking(layout, <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>.frameSize(), <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>.pixelFormat());</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keyword">auto</span> buffer = std::make_unique&lt;PooledCpuVideoBuffer&gt;(<a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>, layout, std::move(backing));</div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordflow">return</span> QVideoFrame(std::move(buffer));</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>}</div>
 </div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
 <div class="foldopen" id="foldopen00235" data-start="{" data-end="}">
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="classCpuVideoFramePool.html#a0e26efcb638ec597665e5d9ab6eb0548">  235</a></span>std::unique_ptr&lt;QAbstractVideoBuffer&gt; <a class="code hl_function" href="classCpuVideoFramePool.html#a0e26efcb638ec597665e5d9ab6eb0548">CpuVideoFramePool::wrapZeroCopy</a>(GstBuffer* buffer, <span class="keyword">const</span> GstVideoInfo&amp; info,</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                                                                      <span class="keyword">const</span> QVideoFrameFormat&amp; format,</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                                                                      <span class="keyword">const</span> QVideoFrameFormat&amp; <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>,</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                                                                      <span class="keyword">const</span> <a class="code hl_typedef" href="classCpuVideoFramePool.html#a285998ae9f4f5206a9c7df6640b659e2">PinnedFrameCounter</a>&amp; pinned)</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>{</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keywordflow">if</span> (!buffer || !format.isValid() || !pinned) {</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keywordflow">if</span> (!buffer || !<a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>.isValid() || !pinned) {</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    }</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <span class="comment">// Each zero-copy frame pins a decoder buffer; past the cap copy instead so a GUI stall can&#39;t drain a fixed-size</span></div>
@@ -360,7 +360,7 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordflow">if</span> (!tryReservePinnedFrame(*pinned)) {</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    }</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keyword">auto</span> buf = std::make_unique&lt;MapThroughGstVideoBuffer&gt;(buffer, info, format, pinned);</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keyword">auto</span> buf = std::make_unique&lt;MapThroughGstVideoBuffer&gt;(buffer, info, <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>, pinned);</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="comment">// Probe mappability: system memory always maps, GPU memory that slipped past the factory does not (caller copies).</span></div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="comment">// Keep the mapping rather than unmapping — the sink&#39;s subsequent map() reuses it instead of re-running the map.</span></div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keyword">const</span> <span class="keyword">auto</span> probe = buf-&gt;map(QVideoFrame::ReadOnly);</div>
@@ -373,9 +373,9 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
 <div class="foldopen" id="foldopen00257" data-start="{" data-end="}">
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno"><a class="line" href="classCpuVideoFramePool.html#a582dcc72f7c4db07bd186f67241d0e31">  257</a></span>QVideoFrame <a class="code hl_function" href="classCpuVideoFramePool.html#a582dcc72f7c4db07bd186f67241d0e31">CpuVideoFramePool::copyFromBuffer</a>(GstBuffer* buffer, <span class="keyword">const</span> GstVideoInfo&amp; videoInfo,</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                                              <span class="keyword">const</span> QVideoFrameFormat&amp; format)</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                                              <span class="keyword">const</span> QVideoFrameFormat&amp; <a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>)</div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>{</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="keywordflow">if</span> (!buffer || !format.isValid()) {</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <span class="keywordflow">if</span> (!buffer || !<a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>.isValid()) {</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keywordflow">return</span> {};</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    }</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
@@ -391,7 +391,7 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="keyword">const</span> GstVideoFrame&amp; gstFrame = source.<a class="code hl_function" href="classCpuVideoFramePool_1_1FrameMapping.html#a6da6be86236066095f2424af487a12ba">frame</a>();</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    QVideoFrame videoFrame = <a class="code hl_function" href="classCpuVideoFramePool.html#a2cd7872c303f835198a2fc525784a785">instance</a>().<a class="code hl_function" href="classCpuVideoFramePool.html#abf9daee644f860851ce7287eda93c8dd">acquireFrame</a>(format, videoInfo);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    QVideoFrame videoFrame = <a class="code hl_function" href="classCpuVideoFramePool.html#a2cd7872c303f835198a2fc525784a785">instance</a>().<a class="code hl_function" href="classCpuVideoFramePool.html#abf9daee644f860851ce7287eda93c8dd">acquireFrame</a>(<a class="code hl_variable" href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a>, videoInfo);</div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <span class="keywordflow">if</span> (!videoFrame.isValid() || !videoFrame.map(QVideoFrame::WriteOnly)) {</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        <span class="keywordflow">return</span> {};</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    }</div>
@@ -441,8 +441,8 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>}</div>
 </div>
 <div class="ttc" id="aCpuVideoFramePool_8h_html"><div class="ttname"><a href="CpuVideoFramePool_8h.html">CpuVideoFramePool.h</a></div></div>
+<div class="ttc" id="aGStreamerSelfTest_8cc_html_a6b20164d8be3388044e0c65eb7a3f9f2"><div class="ttname"><a href="GStreamerSelfTest_8cc.html#a6b20164d8be3388044e0c65eb7a3f9f2">format</a></div><div class="ttdeci">VideoReceiver::FileFormat format</div><div class="ttdef"><b>Definition</b> <a href="GStreamerSelfTest_8cc_source.html#l00076">GStreamerSelfTest.cc:76</a></div></div>
 <div class="ttc" id="aGstHwVideoInfo_8h_html"><div class="ttname"><a href="GstHwVideoInfo_8h.html">GstHwVideoInfo.h</a></div></div>
-<div class="ttc" id="aHwBuffers_8cc_html_ae11dc4ebd90116130a78bbbe75dc3f03"><div class="ttname"><a href="HwBuffers_8cc.html#ae11dc4ebd90116130a78bbbe75dc3f03">mode</a></div><div class="ttdeci">GpuBinMode mode</div><div class="ttdef"><b>Definition</b> <a href="HwBuffers_8cc_source.html#l00089">HwBuffers.cc:89</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>
 <div class="ttc" id="aclassCpuVideoFramePool_1_1FrameMapping_html"><div class="ttname"><a href="classCpuVideoFramePool_1_1FrameMapping.html">CpuVideoFramePool::FrameMapping</a></div><div class="ttdef"><b>Definition</b> <a href="CpuVideoFramePool_8h_source.html#l00059">CpuVideoFramePool.h:60</a></div></div>
@@ -460,9 +460,8 @@ $(document).ready(function(){initNavTree('CpuVideoFramePool_8cc_source.html','')
 <div class="ttc" id="aclassCpuVideoFramePool_html_a918db495ed0fc6059fbb719c3e3f6260"><div class="ttname"><a href="classCpuVideoFramePool.html#a918db495ed0fc6059fbb719c3e3f6260">CpuVideoFramePool::computeLayout</a></div><div class="ttdeci">static PlaneLayout computeLayout(const GstVideoInfo &amp;info)</div><div class="ttdoc">Destination plane layout mirroring info (strides/offsets from the decoder). planeCount==0 means unsup...</div><div class="ttdef"><b>Definition</b> <a href="CpuVideoFramePool_8cc_source.html#l00116">CpuVideoFramePool.cc:116</a></div></div>
 <div class="ttc" id="aclassCpuVideoFramePool_html_abf9daee644f860851ce7287eda93c8dd"><div class="ttname"><a href="classCpuVideoFramePool.html#abf9daee644f860851ce7287eda93c8dd">CpuVideoFramePool::acquireFrame</a></div><div class="ttdeci">QVideoFrame acquireFrame(const QVideoFrameFormat &amp;format, const GstVideoInfo &amp;info)</div><div class="ttdoc">Returns a pool-backed frame sized to info, or freshly allocates on a pool miss; invalid if unsupporte...</div><div class="ttdef"><b>Definition</b> <a href="CpuVideoFramePool_8cc_source.html#l00224">CpuVideoFramePool.cc:224</a></div></div>
 <div class="ttc" id="aclassCpuVideoFramePool_html_add7a00ce90c42c427a48654fd8121fa7"><div class="ttname"><a href="classCpuVideoFramePool.html#add7a00ce90c42c427a48654fd8121fa7">CpuVideoFramePool::mapDataFor</a></div><div class="ttdeci">static QAbstractVideoBuffer::MapData mapDataFor(const GstVideoFrame &amp;frame)</div><div class="ttdoc">Qt map data for a frame mapped with gst_video_frame_map, each plane sized by its own row count.</div><div class="ttdef"><b>Definition</b> <a href="CpuVideoFramePool_8cc_source.html#l00133">CpuVideoFramePool.cc:133</a></div></div>
-<div class="ttc" id="anamespaceGstHw_html_a204f7713d05c920475050df3e1919618"><div class="ttname"><a href="namespaceGstHw.html#a204f7713d05c920475050df3e1919618">GstHw::planeHeight</a></div><div class="ttdeci">int planeHeight(const GstVideoInfo &amp;info, int plane)</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoInfo_8cc_source.html#l00046">GstHwVideoInfo.cc:46</a></div></div>
-<div class="ttc" id="anamespaceGstHw_html_a507bef02f9fe5c3b855aa35c7ef771c2"><div class="ttname"><a href="namespaceGstHw.html#a507bef02f9fe5c3b855aa35c7ef771c2">GstHw::planeRowBytes</a></div><div class="ttdeci">int planeRowBytes(const GstVideoInfo &amp;info, int plane)</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoInfo_8cc_source.html#l00055">GstHwVideoInfo.cc:55</a></div></div>
-<div class="ttc" id="anamespaceLogFormatter_html_a8ee6aabd40509c19c84a3cad40dca45e"><div class="ttname"><a href="namespaceLogFormatter.html#a8ee6aabd40509c19c84a3cad40dca45e">LogFormatter::format</a></div><div class="ttdeci">QByteArray format(const QList&lt; LogEntry &gt; &amp;entries, int fmt)</div><div class="ttdef"><b>Definition</b> <a href="LogFormatter_8cc_source.html#l00041">LogFormatter.cc:41</a></div></div>
+<div class="ttc" id="anamespaceGstHw_html_a204f7713d05c920475050df3e1919618"><div class="ttname"><a href="namespaceGstHw.html#a204f7713d05c920475050df3e1919618">GstHw::planeHeight</a></div><div class="ttdeci">int planeHeight(const GstVideoInfo &amp;info, int plane)</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoInfo_8cc_source.html#l00060">GstHwVideoInfo.cc:60</a></div></div>
+<div class="ttc" id="anamespaceGstHw_html_a507bef02f9fe5c3b855aa35c7ef771c2"><div class="ttname"><a href="namespaceGstHw.html#a507bef02f9fe5c3b855aa35c7ef771c2">GstHw::planeRowBytes</a></div><div class="ttdeci">int planeRowBytes(const GstVideoInfo &amp;info, int plane)</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoInfo_8cc_source.html#l00077">GstHwVideoInfo.cc:77</a></div></div>
 <div class="ttc" id="anamespaceSBF_1_1Plan_html_a0f958787ecfbecd85046b3f847f6367e"><div class="ttname"><a href="namespaceSBF_1_1Plan.html#a0f958787ecfbecd85046b3f847f6367e">SBF::Plan::base</a></div><div class="ttdeci">GPSCommandSequence base(QByteArrayView port, const GPSBaseStationConfig &amp;base)</div><div class="ttdoc">Streams RTCM3 corrections and the PVTGeodetic survey status over port in the mode base selects.</div><div class="ttdef"><b>Definition</b> <a href="SBFPlan_8cc_source.html#l00049">SBFPlan.cc:49</a></div></div>
 <div class="ttc" id="astructCpuVideoFramePool_1_1PlaneLayout_html"><div class="ttname"><a href="structCpuVideoFramePool_1_1PlaneLayout.html">CpuVideoFramePool::PlaneLayout</a></div><div class="ttdef"><b>Definition</b> <a href="CpuVideoFramePool_8h_source.html#l00042">CpuVideoFramePool.h:43</a></div></div>
 <div class="ttc" id="astructCpuVideoFramePool_1_1PlaneLayout_html_a3c144f1731e074146f9ab4b4aeb38ef7"><div class="ttname"><a href="structCpuVideoFramePool_1_1PlaneLayout.html#a3c144f1731e074146f9ab4b4aeb38ef7">CpuVideoFramePool::PlaneLayout::planeOffset</a></div><div class="ttdeci">qsizetype planeOffset[4]</div><div class="ttdef"><b>Definition</b> <a href="CpuVideoFramePool_8h_source.html#l00047">CpuVideoFramePool.h:47</a></div></div>

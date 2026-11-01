@@ -31,7 +31,7 @@ var searchData=
   ['booltrueifpositive_28',['BoolTrueIfPositive',['../structParameter.html#a92d19f3579e0f17884816bbaf0413e5eaf01caa5e7329609c0882d8a08cb46f57',1,'Parameter']]],
   ['boottest_29',['BootTest',['../namespaceQGCCommandLineParser.html#aa014bff8744784249bd0f779ebb0deccabdebfc4d7c08e6ca8b6bced35af5ce14',1,'QGCCommandLineParser']]],
   ['both_30',['Both',['../classQGCArchiveWatcher.html#ae77de53fa4d5da43748b7d543e2f6020a130c5b3473c57faa76e2a1c54e26f88e',1,'QGCArchiveWatcher']]],
-  ['brake_31',['brake',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a339b39a390ee79dff016d790edd2fac7',1,'APM::BRAKE'],['../structAPMCopterMode.html#a0c1acd0660670de405dbcb9ed0587ea0aea9750ba544c1c7c8064f5204eb6d6de',1,'APMCopterMode::BRAKE']]],
+  ['brake_31',['brake',['../structAPMCopterMode.html#a0c1acd0660670de405dbcb9ed0587ea0aea9750ba544c1c7c8064f5204eb6d6de',1,'APMCopterMode::BRAKE'],['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a339b39a390ee79dff016d790edd2fac7',1,'APM::BRAKE']]],
   ['buttona_32',['ButtonA',['../classJoystick.html#ad2387a003c9041a8ec7767116e709d46ad370aa35adef2deacefc6aba9926c32a',1,'Joystick']]],
   ['buttonb_33',['ButtonB',['../classJoystick.html#ad2387a003c9041a8ec7767116e709d46a6a219b562ff4e13353d3196fb0f86748',1,'Joystick']]],
   ['buttonback_34',['ButtonBack',['../classJoystick.html#ad2387a003c9041a8ec7767116e709d46aa825aae6c0fd849c5ed13397a6590d2a',1,'Joystick']]],
@@ -48,8 +48,9 @@ var searchData=
   ['buttonleftstick_45',['ButtonLeftStick',['../classJoystick.html#ad2387a003c9041a8ec7767116e709d46a70b57e86160731645936da22899587f6',1,'Joystick']]],
   ['buttonrightshoulder_46',['ButtonRightShoulder',['../classJoystick.html#ad2387a003c9041a8ec7767116e709d46a0b8d60a4d5c42c0af4d626e78fc96c2a',1,'Joystick']]],
   ['buttonrightstick_47',['ButtonRightStick',['../classJoystick.html#ad2387a003c9041a8ec7767116e709d46aead991c763c70feccc428e0f2ec037d0',1,'Joystick']]],
-  ['buttonstart_48',['ButtonStart',['../classJoystick.html#ad2387a003c9041a8ec7767116e709d46a30a5abce71b5b4a783ebddf7047ca0e1',1,'Joystick']]],
-  ['buttonx_49',['ButtonX',['../classJoystick.html#ad2387a003c9041a8ec7767116e709d46ad8f585657506f2026ed335a6175ba23a',1,'Joystick']]],
-  ['buttony_50',['ButtonY',['../classJoystick.html#ad2387a003c9041a8ec7767116e709d46a6c0c3896289cda12e93058086b0ebc86',1,'Joystick']]],
-  ['bzip2_51',['BZIP2',['../namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5a800edd55a1e18b397e3d5d826f85ce34',1,'QGCCompression']]]
+  ['buttons_48',['Buttons',['../namespacePX4FlightModeConfig.html#aab99cb87b7eb2726a996590d0bf1ba1ca5b3ec15499a125805b5bbf8e4afcec8c',1,'PX4FlightModeConfig']]],
+  ['buttonstart_49',['ButtonStart',['../classJoystick.html#ad2387a003c9041a8ec7767116e709d46a30a5abce71b5b4a783ebddf7047ca0e1',1,'Joystick']]],
+  ['buttonx_50',['ButtonX',['../classJoystick.html#ad2387a003c9041a8ec7767116e709d46ad8f585657506f2026ed335a6175ba23a',1,'Joystick']]],
+  ['buttony_51',['ButtonY',['../classJoystick.html#ad2387a003c9041a8ec7767116e709d46a6c0c3896289cda12e93058086b0ebc86',1,'Joystick']]],
+  ['bzip2_52',['BZIP2',['../namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5a800edd55a1e18b397e3d5d826f85ce34',1,'QGCCompression']]]
 ];

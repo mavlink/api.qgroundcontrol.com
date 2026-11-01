@@ -137,10 +137,10 @@ $(document).ready(function(){initNavTree('PX4FlightModes_8qml_source.html',''); 
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    readonly property int   _modeChannel:       _modeChannelFact ? _modeChannelFact.rawValue : 0</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    readonly property int   _buttonMask:        _buttonMaskFact ? _buttonMaskFact.rawValue : 0</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    readonly property string _method: {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        const method = ModeRows.selectionMethod(_modeChannel, _buttonMask)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        const method = controller.selectionMethod(_modeChannel, _buttonMask)</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        return (method === &quot;none&quot; &amp;&amp; _chosenMethod !== &quot;&quot;) ? _chosenMethod : method</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    readonly property var _buttonChannels: ModeRows.buttonChannels(_buttonMask)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    readonly property var _buttonChannels: controller.buttonChannels(_buttonMask)</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    readonly property var _modeChannelValue: _method === &quot;switch&quot; ? _channelValue(_modeChannel) : undefined</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    readonly property int _activeSlot: {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        if (_method === &quot;switch&quot;) {</div>
@@ -158,7 +158,7 @@ $(document).ready(function(){initNavTree('PX4FlightModes_8qml_source.html',''); 
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        function onRcChannelValuesChanged() {</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            if (_method === &quot;buttons&quot;) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                _lastButtonSlot = ModeRows.nextButtonSlot(_lastButtonSlot, _buttonMask, _channelValue)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                _lastButtonSlot = ModeRows.nextButtonSlot(_lastButtonSlot, _buttonChannels, _channelValue)</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            }</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        }</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
@@ -259,7 +259,7 @@ $(document).ready(function(){initNavTree('PX4FlightModes_8qml_source.html',''); 
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    function _modeChoices(fact) {</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        return ModeRows.modeChoices(fact.name, fact.enumStrings, fact.enumValues, controller.externalModeNames, fact.rawValue)</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        return controller.modeChoices(fact.name, fact.enumStrings, fact.enumValues, controller.externalModeNames, fact.rawValue)</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    }</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    /// Name of the mode a slot selects, empty when the slot is unassigned</div>
@@ -268,7 +268,7 @@ $(document).ready(function(){initNavTree('PX4FlightModes_8qml_source.html',''); 
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        if (!fact || fact.rawValue &lt; 0 || fact.enumIndex &lt; 0) {</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            return &quot;&quot;</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        }</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        return ModeRows.modeName(fact.name, fact.enumStrings, fact.enumValues, controller.externalModeNames, fact.rawValue)</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        return controller.modeName(fact.name, fact.enumStrings, fact.enumValues, controller.externalModeNames, fact.rawValue)</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    function _setMethod(method) {</div>
@@ -484,7 +484,7 @@ $(document).ready(function(){initNavTree('PX4FlightModes_8qml_source.html',''); 
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>                                        Layout.preferredWidth:  ScreenTools.defaultFontPixelWidth * 40</div>
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>                                        color:                  qgcPal.warningText</div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>                                        text: {</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>                                            const ignored = ModeRows.ignoredButtonChannels(_buttonMask)</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>                                            const ignored = controller.ignoredButtonChannels(_buttonMask)</div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>                                            return ignored.length &gt; 0 ?</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>                                                       qsTr(&quot;PX4 ignores %1, as only the lowest six channels select a slot.&quot;)</div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>                                                           .arg(ignored.map(channel =&gt; qsTr(&quot;Ch %1&quot;).arg(channel)).join(&quot;, &quot;)) :</div>

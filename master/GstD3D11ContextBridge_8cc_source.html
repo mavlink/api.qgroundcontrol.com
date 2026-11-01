@@ -103,96 +103,81 @@ $(document).ready(function(){initNavTree('GstD3D11ContextBridge_8cc_source.html'
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#if defined(QGC_HAS_GST_D3D11_GPU_PATH)</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;d3d11.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;d3d11_4.h&gt;</span>  <span class="comment">// ID3D11Multithread</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;gst/d3d11/gstd3d11.h&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;rhi/qrhi.h&gt;</span>  <span class="comment">// QRhi::Implementation enum only; no runtime use across threads</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="GstD3DContextBridge_8h.html">GstD3DContextBridge.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="QGCRhiCapture_8h.html">QGCRhiCapture.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(GstD3D11BridgeLog, <span class="stringliteral">&quot;Video.GStreamer.HwBuffers.GstD3D11Bridge&quot;</span>)</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>namespace {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kContextTypes[] = {GST_D3D11_DEVICE_HANDLE_CONTEXT_TYPE};</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class </span>D3D11ContextBridge final : <span class="keyword">public</span> GstD3DContextBridge</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">constexpr</span> D3D11ContextBridge() noexcept</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        : GstD3DContextBridge(&quot;<a class="code hl_enumvalue" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbad51c33ce106109ecd1596d83a11632a5">D3D11</a>&quot;, kContextTypes, &amp;GstD3D11BridgeLog, <span class="keywordtype">int</span>(QRhi::<a class="code hl_enumvalue" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbad51c33ce106109ecd1596d83a11632a5">D3D11</a>))</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {}</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    GstObject* createDevice() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    GstContext* makeDeviceContext(GstObject* device) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">constinit</span> D3D11ContextBridge s_bridge;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>GstObject* D3D11ContextBridge::createDevice()</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">// Snapshot populated on the render thread (sceneGraphInitialized); only atomic loads here.</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">auto</span>* dev = <span class="keyword">static_cast&lt;</span>ID3D11Device*<span class="keyword">&gt;</span>(<a class="code hl_function" href="namespaceQGCRhiCapture.html#a86d550bfa8509fd17d282033d8f08f20">QGCRhiCapture::deviceSnapshot</a>().<a class="code hl_variable" href="structQGCRhiCapture_1_1DeviceSnapshot.html#ab42bb434778b2992f76c9a6b64011e34">d3d11Device</a>.load(std::memory_order_acquire));</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span> (!dev) {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        qCWarning(GstD3D11BridgeLog) &lt;&lt; <span class="stringliteral">&quot;QRhi D3D11 snapshot missing ID3D11Device*&quot;</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">// QRhi creates this device with devFlags=0 (qrhid3d11.cpp) — no multithread protection. GStreamer&#39;s streaming</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">// thread and the QRhi render thread share its immediate context, so guard it explicitly. Idempotent: a no-op if</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">// GStreamer or a future QRhi already enabled it.</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    ID3D11DeviceContext* immediate = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    dev-&gt;GetImmediateContext(&amp;immediate);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (immediate) {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        ID3D11Multithread* multithread = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span> (SUCCEEDED(immediate-&gt;QueryInterface(__uuidof(ID3D11Multithread), <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">void</span>**<span class="keyword">&gt;</span>(&amp;multithread))) &amp;&amp;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            multithread) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            multithread-&gt;SetMultithreadProtected(TRUE);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            multithread-&gt;Release();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        }</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        immediate-&gt;Release();</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="comment">// gst_d3d11_device_new_wrapped: shared device keeps textures QRhi-sampleable without keyed-mutex transfer.</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    GstD3D11Device* device = gst_d3d11_device_new_wrapped(dev);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (!device) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        qCWarning(GstD3D11BridgeLog) &lt;&lt; <span class="stringliteral">&quot;gst_d3d11_device_new_wrapped failed&quot;</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">const</span> gint64 expectedLuid = <a class="code hl_function" href="namespaceQGCRhiCapture.html#a86d550bfa8509fd17d282033d8f08f20">QGCRhiCapture::deviceSnapshot</a>().<a class="code hl_variable" href="structQGCRhiCapture_1_1DeviceSnapshot.html#ac55d05145fe66a6f47f59027da525aa9">adapterLuid</a>.load(std::memory_order_acquire);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    logAdapterMatch(expectedLuid, device);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">return</span> GST_OBJECT(device);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>GstContext* D3D11ContextBridge::makeDeviceContext(GstObject* device)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="comment">// gst_d3d11_context_new gst_object_ref&#39;s the device internally; caller retains ownership.</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">return</span> gst_d3d11_context_new(GST_D3D11_DEVICE_CAST(device));</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}  <span class="comment">// namespace</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>GstContextBridgeBase&amp; GstD3D11ContextBridge::instance()</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> s_bridge;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>GstD3D11Device* GstD3D11ContextBridge::currentDevice()</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> GST_D3D11_DEVICE_CAST(s_bridge.refDevice());</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#endif  </span><span class="comment">// QGC_HAS_GST_D3D11_GPU_PATH</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;gst/d3d11/gstd3d11.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;rhi/qrhi.h&gt;</span>  <span class="comment">// QRhi::Implementation enum only; no runtime use across threads</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="GstD3DContextBridge_8h.html">GstD3DContextBridge.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="QGCRhiCapture_8h.html">QGCRhiCapture.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(GstD3D11BridgeLog, <span class="stringliteral">&quot;Video.GStreamer.HwBuffers.GstD3D11Bridge&quot;</span>)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>namespace {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kContextTypes[] = {GST_D3D11_DEVICE_HANDLE_CONTEXT_TYPE};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span>D3D11ContextBridge final : <span class="keyword">public</span> GstD3DContextBridge</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">constexpr</span> D3D11ContextBridge() noexcept</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        : GstD3DContextBridge(&quot;<a class="code hl_enumvalue" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbad51c33ce106109ecd1596d83a11632a5">D3D11</a>&quot;, kContextTypes, &amp;GstD3D11BridgeLog, <span class="keywordtype">int</span>(QRhi::<a class="code hl_enumvalue" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbad51c33ce106109ecd1596d83a11632a5">D3D11</a>))</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    GstObject* createDevice() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    GstContext* makeDeviceContext(GstObject* device) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">constinit</span> D3D11ContextBridge s_bridge;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>GstObject* D3D11ContextBridge::createDevice()</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// Snapshot populated on the render thread (sceneGraphInitialized); only atomic loads here.</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">auto</span>* dev = <span class="keyword">static_cast&lt;</span>ID3D11Device*<span class="keyword">&gt;</span>(<a class="code hl_function" href="namespaceQGCRhiCapture.html#a86d550bfa8509fd17d282033d8f08f20">QGCRhiCapture::deviceSnapshot</a>().<a class="code hl_variable" href="structQGCRhiCapture_1_1DeviceSnapshot.html#ab42bb434778b2992f76c9a6b64011e34">d3d11Device</a>.load(std::memory_order_acquire));</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (!dev) {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        qCWarning(GstD3D11BridgeLog) &lt;&lt; <span class="stringliteral">&quot;QRhi D3D11 snapshot missing ID3D11Device*&quot;</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">// gst_d3d11_device_new_wrapped: shared device keeps textures QRhi-sampleable without keyed-mutex transfer. Its</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">// elements share QRhi&#39;s immediate context, which QGCRhiCapture made multithread-protected before publishing it.</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    GstD3D11Device* device = gst_d3d11_device_new_wrapped(dev);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> (!device) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        qCWarning(GstD3D11BridgeLog) &lt;&lt; <span class="stringliteral">&quot;gst_d3d11_device_new_wrapped failed&quot;</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">const</span> gint64 expectedLuid = <a class="code hl_function" href="namespaceQGCRhiCapture.html#a86d550bfa8509fd17d282033d8f08f20">QGCRhiCapture::deviceSnapshot</a>().<a class="code hl_variable" href="structQGCRhiCapture_1_1DeviceSnapshot.html#ac55d05145fe66a6f47f59027da525aa9">adapterLuid</a>.load(std::memory_order_acquire);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    logAdapterMatch(expectedLuid, device);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> GST_OBJECT(device);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>GstContext* D3D11ContextBridge::makeDeviceContext(GstObject* device)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>{</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="comment">// gst_d3d11_context_new gst_object_ref&#39;s the device internally; caller retains ownership.</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> gst_d3d11_context_new(GST_D3D11_DEVICE_CAST(device));</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}  <span class="comment">// namespace</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>GstContextBridgeBase&amp; GstD3D11ContextBridge::instance()</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">return</span> s_bridge;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>GstD3D11Device* GstD3D11ContextBridge::currentDevice()</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">return</span> GST_D3D11_DEVICE_CAST(s_bridge.refDevice());</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif  </span><span class="comment">// QGC_HAS_GST_D3D11_GPU_PATH</span></div>
 <div class="ttc" id="aGstD3D11ContextBridge_8h_html"><div class="ttname"><a href="GstD3D11ContextBridge_8h.html">GstD3D11ContextBridge.h</a></div></div>
 <div class="ttc" id="aGstD3DContextBridge_8h_html"><div class="ttname"><a href="GstD3DContextBridge_8h.html">GstD3DContextBridge.h</a></div></div>
 <div class="ttc" id="aGstHwTypes_8h_html_a4764d9dd1160ac64fd7f4a240241ffbbad51c33ce106109ecd1596d83a11632a5"><div class="ttname"><a href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbad51c33ce106109ecd1596d83a11632a5">HwVideoBufferPath::D3D11</a></div><div class="ttdeci">@ D3D11</div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>
 <div class="ttc" id="aQGCRhiCapture_8h_html"><div class="ttname"><a href="QGCRhiCapture_8h.html">QGCRhiCapture.h</a></div></div>
-<div class="ttc" id="anamespaceQGCRhiCapture_html_a86d550bfa8509fd17d282033d8f08f20"><div class="ttname"><a href="namespaceQGCRhiCapture.html#a86d550bfa8509fd17d282033d8f08f20">QGCRhiCapture::deviceSnapshot</a></div><div class="ttdeci">DeviceSnapshot &amp; deviceSnapshot() noexcept</div><div class="ttdoc">Returns the global snapshot. Atomic fields make individual reads thread-safe.</div><div class="ttdef"><b>Definition</b> <a href="QGCRhiCapture_8cc_source.html#l00103">QGCRhiCapture.cc:103</a></div></div>
+<div class="ttc" id="anamespaceQGCRhiCapture_html_a86d550bfa8509fd17d282033d8f08f20"><div class="ttname"><a href="namespaceQGCRhiCapture.html#a86d550bfa8509fd17d282033d8f08f20">QGCRhiCapture::deviceSnapshot</a></div><div class="ttdeci">DeviceSnapshot &amp; deviceSnapshot() noexcept</div><div class="ttdoc">Returns the global snapshot. Atomic fields make individual reads thread-safe.</div><div class="ttdef"><b>Definition</b> <a href="QGCRhiCapture_8cc_source.html#l00152">QGCRhiCapture.cc:152</a></div></div>
 <div class="ttc" id="astructQGCRhiCapture_1_1DeviceSnapshot_html_ab42bb434778b2992f76c9a6b64011e34"><div class="ttname"><a href="structQGCRhiCapture_1_1DeviceSnapshot.html#ab42bb434778b2992f76c9a6b64011e34">QGCRhiCapture::DeviceSnapshot::d3d11Device</a></div><div class="ttdeci">std::atomic&lt; void * &gt; d3d11Device</div><div class="ttdoc">ID3D11Device* (Windows only)</div><div class="ttdef"><b>Definition</b> <a href="QGCRhiCapture_8h_source.html#l00024">QGCRhiCapture.h:24</a></div></div>
 <div class="ttc" id="astructQGCRhiCapture_1_1DeviceSnapshot_html_ac55d05145fe66a6f47f59027da525aa9"><div class="ttname"><a href="structQGCRhiCapture_1_1DeviceSnapshot.html#ac55d05145fe66a6f47f59027da525aa9">QGCRhiCapture::DeviceSnapshot::adapterLuid</a></div><div class="ttdeci">std::atomic&lt; qint64 &gt; adapterLuid</div><div class="ttdoc">Composed (high&lt;&lt;32)|low LUID, 0 if unknown.</div><div class="ttdef"><b>Definition</b> <a href="QGCRhiCapture_8h_source.html#l00026">QGCRhiCapture.h:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

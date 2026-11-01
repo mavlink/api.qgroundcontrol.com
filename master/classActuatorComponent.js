@@ -7,6 +7,8 @@ var classActuatorComponent =
     [ "requiresSetup", "classActuatorComponent.html#aea6ad316a213c72a7a694f1eeccf7a29", null ],
     [ "setupComplete", "classActuatorComponent.html#abf42dd6d0f35d597aeb1e1201fce65bd", null ],
     [ "setupCompleteChangedTriggerList", "classActuatorComponent.html#a8b8e2eaf6c6ebeaace30a430b0b6709d", null ],
+    [ "setupOrder", "classActuatorComponent.html#a2b767b67394b87b3ac6acee6be20731c", null ],
     [ "setupSource", "classActuatorComponent.html#a37a663c83b99dfc2e1a566ec9f06431e", null ],
+    [ "summaryItems", "classActuatorComponent.html#a5bdba0cfaa2776a5559e56283320daa6", null ],
     [ "summaryQmlSource", "classActuatorComponent.html#a288df00f7028a4d763f023518c5a424c", null ]
 ];

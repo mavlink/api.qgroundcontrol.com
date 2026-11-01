@@ -1,7 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"GPSCommandChannel_8h.html#a72540ef0196eb46c652af1bc9f8f8d79":[5,0,0,16,0,2,9,3],
-"GPSCommandChannel_8h_source.html":[5,0,0,16,0,2,9],
 "GPSCommand_8h.html":[5,0,0,16,0,2,7],
 "GPSCommand_8h.html#a0d399f23c4b0c8cd3f63d3526347538f":[5,0,0,16,0,2,7,8],
 "GPSCommand_8h.html#a15b99b25071fb2eca82bb1fe8e753b3d":[5,0,0,16,0,2,7,9],
@@ -249,5 +247,7 @@ var NAVTREEINDEX6 =
 "GPSReceiverMessages_8h_source.html":[5,0,0,16,5,8],
 "GPSReceiverReports_8h.html":[5,0,0,16,0,0,8],
 "GPSReceiverReports_8h.html#a0b6d72538ba0f5e8472130dd818016a0":[5,0,0,16,0,0,8,8],
-"GPSReceiverReports_8h.html#a42231c9b8a924181acab90100acf5704":[5,0,0,16,0,0,8,11]
+"GPSReceiverReports_8h.html#a42231c9b8a924181acab90100acf5704":[5,0,0,16,0,0,8,11],
+"GPSReceiverReports_8h.html#a43579d1af08197c81deb36670a1c50d0":[5,0,0,16,0,0,8,9],
+"GPSReceiverReports_8h.html#a43579d1af08197c81deb36670a1c50d0a10b5ac7cdca8f06ca82238f8f3b2d119":[5,0,0,16,0,0,8,9,5]
 };

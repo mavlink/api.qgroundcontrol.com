@@ -12,6 +12,7 @@ var classPX4FirmwarePlugin =
     [ "createVehicleReadiness", "classPX4FirmwarePlugin.html#a122cdbf574fb57996ed5761506c4c882", null ],
     [ "expandedToolbarIndicatorSource", "classPX4FirmwarePlugin.html#a97b6567635e5d5a3e58747d4b6f67c50", null ],
     [ "externalFlightModeName", "classPX4FirmwarePlugin.html#a674db5da808c1893b82a04c4d24d12f7", null ],
+    [ "externalFlightModeNames", "classPX4FirmwarePlugin.html#ae7fc7a7207d619dfc198359c8771717a", null ],
     [ "fixedWingAirSpeedLimitsAvailable", "classPX4FirmwarePlugin.html#a70f33b7cb6cc000fdf7250d92f9fff16", null ],
     [ "flightMode", "classPX4FirmwarePlugin.html#a256a0aca661d1732e13c34b62871c40a", null ],
     [ "flightModes", "classPX4FirmwarePlugin.html#a93e8647fb28b40f6fbc2b427d3896b52", null ],

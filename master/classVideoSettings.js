@@ -5,8 +5,6 @@ var classVideoSettings =
     [ "mpegtsVideoSource", "classVideoSettings.html#a23c06747b69e529a119aeed8f3079258", null ],
     [ "pruneUnavailableDecoders", "classVideoSettings.html#ab796ee83c0149f64429bd5aa6c388d50", null ],
     [ "rtspVideoSource", "classVideoSettings.html#a05a9b12f6009e70b69bb0983ca271f68", null ],
-    [ "streamConfigured", "classVideoSettings.html#a5c4730a828121f227c8169faaa9a6d68", null ],
-    [ "streamConfiguredChanged", "classVideoSettings.html#ace39efc60701a93b74c4498b3a2468bd", null ],
     [ "tcpVideoSource", "classVideoSettings.html#a3141b103485ac8db50405529b39a8646", null ],
     [ "udp264VideoSource", "classVideoSettings.html#a8d7ba27f3ae38ec05b1ef4f6d6d17570", null ],
     [ "udp265VideoSource", "classVideoSettings.html#a74903288b0a8e1c005868d9b45723af6", null ],

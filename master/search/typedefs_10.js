@@ -15,7 +15,7 @@ var searchData=
   ['skipaction_12',['SkipAction',['../classSkippableAsyncState.html#a08acfd95ff9203fc2d4c9f8a025853ea',1,'SkippableAsyncState']]],
   ['skippredicate_13',['skippredicate',['../classSkippableAsyncState.html#a813b54acb4f55d80026f7cad55741805',1,'SkippableAsyncState::SkipPredicate'],['../classRetryableRequestMessageState.html#a0d0235de4de432aeaaa11706295449c4',1,'RetryableRequestMessageState::SkipPredicate']]],
   ['sourcefactory_14',['SourceFactory',['../classPositionManager.html#ac3dcd95600cee3183a9f61e700e6b007',1,'PositionManager']]],
-  ['state_15',['State',['../classSigningController.html#a27552430017fe145379e0c71177ff404',1,'SigningController']]],
+  ['state_15',['state',['../classSigningController.html#a27552430017fe145379e0c71177ff404',1,'SigningController::State'],['../classVehicleSummaryItem.html#a6e22c28318b87071aae714a4ac95121e',1,'VehicleSummaryItem::State']]],
   ['stepaction_16',['StepAction',['../classSequenceState.html#a27b204187ba2feb18a8ae72384e90019',1,'SequenceState']]],
   ['strategy_17',['Strategy',['../classFallbackChainState.html#a0b2e76c10489831b91e8c387106a3816',1,'FallbackChainState']]]
 ];

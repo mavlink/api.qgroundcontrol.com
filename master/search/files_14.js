@@ -28,6 +28,6 @@ var searchData=
   ['unicoreprotocol_2ecc_25',['UnicoreProtocol.cc',['../UnicoreProtocol_8cc.html',1,'']]],
   ['unitssettings_2ecc_26',['UnitsSettings.cc',['../UnitsSettings_8cc.html',1,'']]],
   ['unitssettings_2eh_27',['UnitsSettings.h',['../UnitsSettings_8h.html',1,'']]],
-  ['uvcreceiver_2ecc_28',['UVCReceiver.cc',['../UVCReceiver_8cc.html',1,'']]],
-  ['uvcreceiver_2eh_29',['UVCReceiver.h',['../UVCReceiver_8h.html',1,'']]]
+  ['uvcdevices_2ecc_28',['UVCDevices.cc',['../UVCDevices_8cc.html',1,'']]],
+  ['uvcdevices_2eh_29',['UVCDevices.h',['../UVCDevices_8h.html',1,'']]]
 ];

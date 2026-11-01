@@ -11,8 +11,11 @@ var GStreamerHelpers_8h =
     [ "flushAndDisposeChild", "GStreamerHelpers_8h.html#ae6db975b3b9b3ee7c34fd72b151aa276", null ],
     [ "forEachPlugin", "GStreamerHelpers_8h.html#a52033f70a4ce478ef300982e4a10518a", null ],
     [ "forEachVideoDecoderFactory", "GStreamerHelpers_8h.html#ac52c2ec31fff27b748b56af0de977a87", null ],
+    [ "holdPadUntilLinked", "GStreamerHelpers_8h.html#a2fa0f8b32fbf7198393c862f52efb7bf", null ],
     [ "isHardwareDecoderFactory", "GStreamerHelpers_8h.html#aa78f2e5ccb025d8f073ac4ec3e223816", null ],
     [ "isValidRtspUri", "GStreamerHelpers_8h.html#ad515edbe277ccb5d353862caa230ab46", null ],
+    [ "requestKeyframe", "GStreamerHelpers_8h.html#aef0c192977f7286ef66143afe94c557a", null ],
+    [ "sendEventAsync", "GStreamerHelpers_8h.html#a76d788d8c5115efb1f6c8843f86c2708", null ],
     [ "setCodecPriorities", "GStreamerHelpers_8h.html#a460ec1598a3ff1da45620d4e291d241c", null ],
     [ "setCodecPriorities", "GStreamerHelpers_8h.html#a8fa5efb3bb1e31531b89b895c5970071", null ]
 ];

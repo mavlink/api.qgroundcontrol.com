@@ -54,20 +54,28 @@ var annotated_dup =
     ] ],
     [ "GstHw", "namespaceGstHw.html", [
       [ "GstHwImportCache", "classGstHw_1_1GstHwImportCache.html", "classGstHw_1_1GstHwImportCache" ],
-      [ "MapDiagnostics", "structGstHw_1_1MapDiagnostics.html", "structGstHw_1_1MapDiagnostics" ]
+      [ "MapDiagnostics", "structGstHw_1_1MapDiagnostics.html", "structGstHw_1_1MapDiagnostics" ],
+      [ "PlaneLayout", "structGstHw_1_1PlaneLayout.html", "structGstHw_1_1PlaneLayout" ]
     ] ],
     [ "GstHwPathTelemetry", "namespaceGstHwPathTelemetry.html", [
-      [ "ScopedMapTimer", "classGstHwPathTelemetry_1_1ScopedMapTimer.html", "classGstHwPathTelemetry_1_1ScopedMapTimer" ]
+      [ "ScopedMapTimer", "classGstHwPathTelemetry_1_1ScopedMapTimer.html", "classGstHwPathTelemetry_1_1ScopedMapTimer" ],
+      [ "Snapshot", "structGstHwPathTelemetry_1_1Snapshot.html", "structGstHwPathTelemetry_1_1Snapshot" ]
     ] ],
     [ "GstQgc", "namespaceGstQgc.html", [
       [ "BinChain", "classGstQgc_1_1BinChain.html", "classGstQgc_1_1BinChain" ],
-      [ "CapsInfo", "structGstQgc_1_1CapsInfo.html", "structGstQgc_1_1CapsInfo" ],
+      [ "GpuBinPreference", "structGstQgc_1_1GpuBinPreference.html", "structGstQgc_1_1GpuBinPreference" ],
       [ "PathStats", "structGstQgc_1_1PathStats.html", "structGstQgc_1_1PathStats" ],
+      [ "RenderTarget", "structGstQgc_1_1RenderTarget.html", "structGstQgc_1_1RenderTarget" ],
+      [ "SinkCapsPolicy", "structGstQgc_1_1SinkCapsPolicy.html", "structGstQgc_1_1SinkCapsPolicy" ],
       [ "VideoFormatEntry", "structGstQgc_1_1VideoFormatEntry.html", "structGstQgc_1_1VideoFormatEntry" ]
     ] ],
     [ "GStreamer", "namespaceGStreamer.html", [
       [ "Environment", "namespaceGStreamer_1_1Environment.html", [
+        [ "BundledRuntime", "structGStreamer_1_1Environment_1_1BundledRuntime.html", "structGStreamer_1_1Environment_1_1BundledRuntime" ],
         [ "ValidationResult", "structGStreamer_1_1Environment_1_1ValidationResult.html", "structGStreamer_1_1Environment_1_1ValidationResult" ]
+      ] ],
+      [ "SelfTest", "namespaceGStreamer_1_1SelfTest.html", [
+        [ "RegisteredPlugin", "structGStreamer_1_1SelfTest_1_1RegisteredPlugin.html", "structGStreamer_1_1SelfTest_1_1RegisteredPlugin" ]
       ] ],
       [ "SourceFactory", "namespaceGStreamer_1_1SourceFactory.html", [
         [ "Config", "structGStreamer_1_1SourceFactory_1_1Config.html", "structGStreamer_1_1SourceFactory_1_1Config" ]
@@ -81,12 +89,11 @@ var annotated_dup =
       [ "GstObjectDeleter", "structGStreamer_1_1GstObjectDeleter.html", "structGStreamer_1_1GstObjectDeleter" ],
       [ "GstQueryDeleter", "structGStreamer_1_1GstQueryDeleter.html", "structGStreamer_1_1GstQueryDeleter" ],
       [ "GstStructureDeleter", "structGStreamer_1_1GstStructureDeleter.html", "structGStreamer_1_1GstStructureDeleter" ],
+      [ "MissingPluginFeature", "structGStreamer_1_1MissingPluginFeature.html", "structGStreamer_1_1MissingPluginFeature" ],
       [ "PadProbe", "classGStreamer_1_1PadProbe.html", "classGStreamer_1_1PadProbe" ],
+      [ "ScopedSignal", "classGStreamer_1_1ScopedSignal.html", "classGStreamer_1_1ScopedSignal" ],
       [ "TeeBranch", "structGStreamer_1_1TeeBranch.html", "structGStreamer_1_1TeeBranch" ],
       [ "VideoSinkConfig", "structGStreamer_1_1VideoSinkConfig.html", "structGStreamer_1_1VideoSinkConfig" ]
-    ] ],
-    [ "HwBuffers", "namespaceHwBuffers.html", [
-      [ "HwBufferEnvConfig", "structHwBuffers_1_1HwBufferEnvConfig.html", "structHwBuffers_1_1HwBufferEnvConfig" ]
     ] ],
     [ "JsonParsing", "namespaceJsonParsing.html", [
       [ "KeyValidateInfo", "structJsonParsing_1_1KeyValidateInfo.html", "structJsonParsing_1_1KeyValidateInfo" ]
@@ -128,6 +135,9 @@ var annotated_dup =
       [ "UtcDate", "structNMEA_1_1UtcDate.html", "structNMEA_1_1UtcDate" ],
       [ "VTG", "structNMEA_1_1VTG.html", "structNMEA_1_1VTG" ],
       [ "ZDA", "structNMEA_1_1ZDA.html", "structNMEA_1_1ZDA" ]
+    ] ],
+    [ "PX4FlightModeConfig", "namespacePX4FlightModeConfig.html", [
+      [ "Choice", "structPX4FlightModeConfig_1_1Choice.html", "structPX4FlightModeConfig_1_1Choice" ]
     ] ],
     [ "PX4SerialPortConfig", "namespacePX4SerialPortConfig.html", [
       [ "Function", "structPX4SerialPortConfig_1_1Function.html", "structPX4SerialPortConfig_1_1Function" ],
@@ -256,6 +266,9 @@ var annotated_dup =
     [ "VideoBackend", "namespaceVideoBackend.html", [
       [ "EnvPrepResult", "structVideoBackend_1_1EnvPrepResult.html", "structVideoBackend_1_1EnvPrepResult" ]
     ] ],
+    [ "VideoStreamResolver", "namespaceVideoStreamResolver.html", [
+      [ "Settings", "structVideoStreamResolver_1_1Settings.html", "structVideoStreamResolver_1_1Settings" ]
+    ] ],
     [ "Wire", "namespaceWire.html", [
       [ "detail", "namespaceWire_1_1detail.html", [
         [ "MemberPointer", "structWire_1_1detail_1_1MemberPointer.html", null ],
@@ -371,6 +384,7 @@ var annotated_dup =
     [ "BluetoothLink", "classBluetoothLink.html", "classBluetoothLink" ],
     [ "BluetoothWorker", "classBluetoothWorker.html", "classBluetoothWorker" ],
     [ "Bootloader", "classBootloader.html", "classBootloader" ],
+    [ "BranchContext", "structBranchContext.html", "structBranchContext" ],
     [ "BulkRefreshJob", "classBulkRefreshJob.html", "classBulkRefreshJob" ],
     [ "CalibrationResult", "structCalibrationResult.html", "structCalibrationResult" ],
     [ "CameraCalc", "classCameraCalc.html", "classCameraCalc" ],
@@ -552,10 +566,10 @@ var annotated_dup =
     [ "GPSSurveyReport", "structGPSSurveyReport.html", "structGPSSurveyReport" ],
     [ "GPSTransport", "classGPSTransport.html", "classGPSTransport" ],
     [ "GPSWriteResult", "structGPSWriteResult.html", "structGPSWriteResult" ],
-    [ "GstGlFrameTextures", "classGstGlFrameTextures.html", "classGstGlFrameTextures" ],
     [ "GstHwFrameTexturesBase", "classGstHwFrameTexturesBase.html", "classGstHwFrameTexturesBase" ],
     [ "GstHwMapTail", "structGstHwMapTail.html", "structGstHwMapTail" ],
     [ "GstHwVideoBuffer", "classGstHwVideoBuffer.html", "classGstHwVideoBuffer" ],
+    [ "GstReceiverWorker", "classGstReceiverWorker.html", "classGstReceiverWorker" ],
     [ "GstVideoReceiver", "classGstVideoReceiver.html", "classGstVideoReceiver" ],
     [ "GuardedTransition", "classGuardedTransition.html", "classGuardedTransition" ],
     [ "HealthAndArmingCheckProblem", "classHealthAndArmingCheckProblem.html", "classHealthAndArmingCheckProblem" ],
@@ -712,6 +726,9 @@ var annotated_dup =
     [ "PatchTextureData", "classPatchTextureData.html", "classPatchTextureData" ],
     [ "PauseVehicleThenChangeAltData_t", "structPauseVehicleThenChangeAltData__t.html", "structPauseVehicleThenChangeAltData__t" ],
     [ "PipelineDotDumper", "classPipelineDotDumper.html", "classPipelineDotDumper" ],
+    [ "PipelineSession", "classPipelineSession.html", "classPipelineSession" ],
+    [ "PiperTtsEngine", "classPiperTtsEngine.html", "classPiperTtsEngine" ],
+    [ "PiperTtsPlugin", "classPiperTtsPlugin.html", "classPiperTtsPlugin" ],
     [ "PlanCreator", "classPlanCreator.html", "classPlanCreator" ],
     [ "PlanElementController", "classPlanElementController.html", "classPlanElementController" ],
     [ "PlanManager", "classPlanManager.html", "classPlanManager" ],
@@ -741,6 +758,7 @@ var annotated_dup =
     [ "PX4ParameterMetaData", "classPX4ParameterMetaData.html", "classPX4ParameterMetaData" ],
     [ "PX4RadioComponent", "classPX4RadioComponent.html", "classPX4RadioComponent" ],
     [ "PX4ReturnLandComponent", "classPX4ReturnLandComponent.html", "classPX4ReturnLandComponent" ],
+    [ "PX4SensorDevice", "classPX4SensorDevice.html", "classPX4SensorDevice" ],
     [ "PX4SerialPortRow", "classPX4SerialPortRow.html", "classPX4SerialPortRow" ],
     [ "PX4SerialPortsComponent", "classPX4SerialPortsComponent.html", "classPX4SerialPortsComponent" ],
     [ "PX4SerialPortsController", "classPX4SerialPortsController.html", "classPX4SerialPortsController" ],
@@ -835,12 +853,12 @@ var annotated_dup =
     [ "QSerialPortInfo", "classQSerialPortInfo.html", "classQSerialPortInfo" ],
     [ "QSerialPortInfoPrivate", "classQSerialPortInfoPrivate.html", "classQSerialPortInfoPrivate" ],
     [ "QSerialPortPrivate", "classQSerialPortPrivate.html", "classQSerialPortPrivate" ],
-    [ "QtMultimediaReceiver", "classQtMultimediaReceiver.html", "classQtMultimediaReceiver" ],
     [ "QtRuntimeScheduler", "classQtRuntimeScheduler.html", "classQtRuntimeScheduler" ],
     [ "RadioComponentController", "classRadioComponentController.html", "classRadioComponentController" ],
     [ "RadioStatusFactGroup", "classRadioStatusFactGroup.html", "classRadioStatusFactGroup" ],
     [ "RallyPoint", "classRallyPoint.html", "classRallyPoint" ],
     [ "RallyPointController", "classRallyPointController.html", "classRallyPointController" ],
+    [ "RallyPointData", "structRallyPointData.html", "structRallyPointData" ],
     [ "RallyPointManager", "classRallyPointManager.html", "classRallyPointManager" ],
     [ "RCChannelMonitorController", "classRCChannelMonitorController.html", "classRCChannelMonitorController" ],
     [ "RCToParamDialogController", "classRCToParamDialogController.html", "classRCToParamDialogController" ],
@@ -972,7 +990,6 @@ var annotated_dup =
     [ "ULogFullHandler", "classULogFullHandler.html", "classULogFullHandler" ],
     [ "UnitsSettings", "classUnitsSettings.html", "classUnitsSettings" ],
     [ "UrlFactory", "classUrlFactory.html", "classUrlFactory" ],
-    [ "UVCReceiver", "classUVCReceiver.html", "classUVCReceiver" ],
     [ "Vehicle", "classVehicle.html", "classVehicle" ],
     [ "VehicleCameraControl", "classVehicleCameraControl.html", "classVehicleCameraControl" ],
     [ "VehicleClockFactGroup", "classVehicleClockFactGroup.html", "classVehicleClockFactGroup" ],
@@ -992,6 +1009,7 @@ var annotated_dup =
     [ "VehicleRPMFactGroup", "classVehicleRPMFactGroup.html", "classVehicleRPMFactGroup" ],
     [ "VehicleSetpointFactGroup", "classVehicleSetpointFactGroup.html", "classVehicleSetpointFactGroup" ],
     [ "VehicleSigningController", "classVehicleSigningController.html", "classVehicleSigningController" ],
+    [ "VehicleSummaryItem", "classVehicleSummaryItem.html", "classVehicleSummaryItem" ],
     [ "VehicleSupports", "classVehicleSupports.html", "classVehicleSupports" ],
     [ "VehicleTemperatureFactGroup", "classVehicleTemperatureFactGroup.html", "classVehicleTemperatureFactGroup" ],
     [ "VehicleTypes", "structVehicleTypes.html", "structVehicleTypes" ],
@@ -999,7 +1017,9 @@ var annotated_dup =
     [ "VehicleWindFactGroup", "classVehicleWindFactGroup.html", "classVehicleWindFactGroup" ],
     [ "VideoManager", "classVideoManager.html", "classVideoManager" ],
     [ "VideoReceiver", "classVideoReceiver.html", "classVideoReceiver" ],
+    [ "VideoRecordingService", "classVideoRecordingService.html", "classVideoRecordingService" ],
     [ "VideoSettings", "classVideoSettings.html", "classVideoSettings" ],
+    [ "VideoStreamController", "classVideoStreamController.html", "classVideoStreamController" ],
     [ "Viewer3DCameraController", "classViewer3DCameraController.html", "classViewer3DCameraController" ],
     [ "Viewer3DGeoCoordinateType", "classViewer3DGeoCoordinateType.html", "classViewer3DGeoCoordinateType" ],
     [ "Viewer3DInstancing", "classViewer3DInstancing.html", "classViewer3DInstancing" ],

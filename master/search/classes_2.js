@@ -19,6 +19,8 @@ var searchData=
   ['bluetoothlink_16',['BluetoothLink',['../classBluetoothLink.html',1,'']]],
   ['bluetoothworker_17',['BluetoothWorker',['../classBluetoothWorker.html',1,'']]],
   ['bootloader_18',['Bootloader',['../classBootloader.html',1,'']]],
-  ['buildingtype_5ft_19',['BuildingType_t',['../structOsmParserThread_1_1BuildingType__t.html',1,'OsmParserThread']]],
-  ['bulkrefreshjob_20',['BulkRefreshJob',['../classBulkRefreshJob.html',1,'']]]
+  ['branchcontext_19',['BranchContext',['../structBranchContext.html',1,'']]],
+  ['buildingtype_5ft_20',['BuildingType_t',['../structOsmParserThread_1_1BuildingType__t.html',1,'OsmParserThread']]],
+  ['bulkrefreshjob_21',['BulkRefreshJob',['../classBulkRefreshJob.html',1,'']]],
+  ['bundledruntime_22',['BundledRuntime',['../structGStreamer_1_1Environment_1_1BundledRuntime.html',1,'GStreamer::Environment']]]
 ];

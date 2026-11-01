@@ -8,5 +8,8 @@ var classFlightModesComponent =
     [ "setupComplete", "classFlightModesComponent.html#a54538e1e6496f43ede8064a7dd15eb96", null ],
     [ "setupCompleteChangedTriggerList", "classFlightModesComponent.html#ae9cb51c663afb35a16a2fc2bc1216c16", null ],
     [ "setupSource", "classFlightModesComponent.html#a938ccd25f8d4d350d602c3a31c4a0e00", null ],
+    [ "setupTriggerSignals", "classFlightModesComponent.html#abf598254e63ec8f90fbde87ed8c754d1", null ],
+    [ "summaryChangedTriggerList", "classFlightModesComponent.html#a6e8ca1db2d6ec7d8181a5738921398de", null ],
+    [ "summaryItems", "classFlightModesComponent.html#a67395fd806d009fcdfc1bb95de89ac45", null ],
     [ "summaryQmlSource", "classFlightModesComponent.html#a7e1367f7f27448365ae32f9a86251b69", null ]
 ];

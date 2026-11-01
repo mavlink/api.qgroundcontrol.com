@@ -7,5 +7,6 @@ var searchData=
   ['ubx_3a_3aplan_4',['Plan',['../namespaceUBX_1_1Plan.html',1,'UBX']]],
   ['ulogparser_5',['ULogParser',['../namespaceULogParser.html',1,'']]],
   ['unicore_6',['Unicore',['../namespaceUnicore.html',1,'']]],
-  ['unicore_3a_3aplan_7',['Plan',['../namespaceUnicore_1_1Plan.html',1,'Unicore']]]
+  ['unicore_3a_3aplan_7',['Plan',['../namespaceUnicore_1_1Plan.html',1,'Unicore']]],
+  ['uvcdevices_8',['UVCDevices',['../namespaceUVCDevices.html',1,'']]]
 ];
