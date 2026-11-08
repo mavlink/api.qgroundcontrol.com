@@ -7,12 +7,9 @@ var classStreamWatchdog =
       [ "Decoder", "classStreamWatchdog.html#af594837cbfa45f9b8d90951552acdd7bae6818a215084646ac80a1a07561ecf35", null ]
     ] ],
     [ "check", "classStreamWatchdog.html#a71c0f3c4cd08c8047088930b5aff8441", null ],
-    [ "nextReconnectDelay", "classStreamWatchdog.html#a0e745bd724e57aae895ca3105f6de728", null ],
     [ "noteSinkFrame", "classStreamWatchdog.html#a1e6a6a47075a414ab453b256a6a43664", null ],
     [ "noteSourceFrame", "classStreamWatchdog.html#ac20dbaa0733b9b2811a057ff4eb5f924", null ],
     [ "now", "classStreamWatchdog.html#af279a12c3c1b592537432a67498c5e5d", null ],
-    [ "reconnectAttempts", "classStreamWatchdog.html#adf2ab0afb1cdd379c95c24e9f76a70d1", null ],
-    [ "resetBackoff", "classStreamWatchdog.html#a96eea9f70e1f8547a6b46c6fe31c98e9", null ],
     [ "start", "classStreamWatchdog.html#a2664da54bae7e8c99b92c61c83852e31", null ],
     [ "startSinkClock", "classStreamWatchdog.html#a96d277daf4c5e8b41f4eae3523d00a1f", null ]
 ];

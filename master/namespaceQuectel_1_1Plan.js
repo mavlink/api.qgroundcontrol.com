@@ -1,6 +1,7 @@
 var namespaceQuectel_1_1Plan =
 [
     [ "MessageRate", "structQuectel_1_1Plan_1_1MessageRate.html", "structQuectel_1_1Plan_1_1MessageRate" ],
+    [ "Fields", "classQuectel_1_1Plan_1_1Fields.html", "classQuectel_1_1Plan_1_1Fields" ],
     [ "acknowledgement", "namespaceQuectel_1_1Plan.html#a092a4628a8af10754d77e1813674ade2", null ],
     [ "command", "namespaceQuectel_1_1Plan.html#a05ad5d5f6b47416577e2e05b04d29454", null ],
     [ "messageRates", "namespaceQuectel_1_1Plan.html#a92b288270a2d6a9259b9de7f3975b16f", null ],

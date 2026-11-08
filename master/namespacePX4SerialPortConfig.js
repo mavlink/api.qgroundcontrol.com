@@ -1,8 +1,8 @@
 var namespacePX4SerialPortConfig =
 [
+    [ "Port", "structPX4SerialPortConfig_1_1Port.html", "structPX4SerialPortConfig_1_1Port" ],
     [ "Function", "structPX4SerialPortConfig_1_1Function.html", "structPX4SerialPortConfig_1_1Function" ],
     [ "ParamWrite", "structPX4SerialPortConfig_1_1ParamWrite.html", "structPX4SerialPortConfig_1_1ParamWrite" ],
-    [ "Port", "structPX4SerialPortConfig_1_1Port.html", "structPX4SerialPortConfig_1_1Port" ],
     [ "assignPort", "namespacePX4SerialPortConfig.html#a2edef65b4e70e923d57b01ff281171f0", null ],
     [ "baudParamName", "namespacePX4SerialPortConfig.html#acfadc4fc6ef9966c8f978e2977195acc", null ],
     [ "functionLabel", "namespacePX4SerialPortConfig.html#aaf7783fcb45b7219018bd52684c6d40d", null ],

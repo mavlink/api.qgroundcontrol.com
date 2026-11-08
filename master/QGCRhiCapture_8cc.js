@@ -1,7 +1,7 @@
 var QGCRhiCapture_8cc =
 [
-    [ "cachedRhi", "QGCRhiCapture_8cc.html#a73fd0fc405f41931d20089596749d602", null ],
-    [ "connectWindow", "QGCRhiCapture_8cc.html#a7f32da349828923bad28d7086ce08085", null ],
-    [ "deviceSnapshot", "QGCRhiCapture_8cc.html#a86d550bfa8509fd17d282033d8f08f20", null ],
-    [ "qtEglDisplay", "QGCRhiCapture_8cc.html#acf33991de88405ad74a2966adfc411ec", null ]
+    [ "QGCRhiCapture::cachedRhi", "namespaceQGCRhiCapture.html#a73fd0fc405f41931d20089596749d602", null ],
+    [ "QGCRhiCapture::connectWindow", "namespaceQGCRhiCapture.html#a7f32da349828923bad28d7086ce08085", null ],
+    [ "QGCRhiCapture::deviceSnapshot", "namespaceQGCRhiCapture.html#a86d550bfa8509fd17d282033d8f08f20", null ],
+    [ "QGCRhiCapture::qtEglDisplay", "namespaceQGCRhiCapture.html#acf33991de88405ad74a2966adfc411ec", null ]
 ];

@@ -11,7 +11,6 @@ var QGCMAVLinkTypes_8h =
     [ "mavlink_command_long_t", "QGCMAVLinkTypes_8h.html#a90e42f5abeeee26a207594d175983e46", null ],
     [ "mavlink_event_t", "QGCMAVLinkTypes_8h.html#a0169c974568bea6c66992696c93ebcdd", null ],
     [ "mavlink_high_latency2_t", "QGCMAVLinkTypes_8h.html#a8257d44c402ddd4a58a2d2be6061ce55", null ],
-    [ "mavlink_message_t", "QGCMAVLinkTypes_8h.html#a2c54d7cd4caccb07d328e60c00f6147c", null ],
     [ "mavlink_obstacle_distance_t", "QGCMAVLinkTypes_8h.html#ae6f2cc96c4a0ddc4b9fd3ff0eed88717", null ],
     [ "mavlink_param_ext_ack_t", "QGCMAVLinkTypes_8h.html#a64211182419a8fa100ace8e7501eb5dc", null ],
     [ "mavlink_param_ext_value_t", "QGCMAVLinkTypes_8h.html#a5b3a03aafd33c31eb83e38f78b9a99a8", null ],

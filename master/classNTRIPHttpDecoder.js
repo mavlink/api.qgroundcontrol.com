@@ -1,7 +1,7 @@
 var classNTRIPHttpDecoder =
 [
-    [ "Result", "structNTRIPHttpDecoder_1_1Result.html", "structNTRIPHttpDecoder_1_1Result" ],
     [ "Status", "structNTRIPHttpDecoder_1_1Status.html", "structNTRIPHttpDecoder_1_1Status" ],
+    [ "Result", "structNTRIPHttpDecoder_1_1Result.html", "structNTRIPHttpDecoder_1_1Result" ],
     [ "NTRIPHttpDecoder", "classNTRIPHttpDecoder.html#af92696f4838b7e0a439180c70de0735f", null ],
     [ "awaitingErrorBody", "classNTRIPHttpDecoder.html#a7ff3bb8159209191257a946f07e65882", null ],
     [ "feed", "classNTRIPHttpDecoder.html#a86cd745a4c9a74376e661e91f80fe4b6", null ],

@@ -1,10 +1,10 @@
 var namespaceQGClibarchive =
 [
     [ "ArchiveReader", "classQGClibarchive_1_1ArchiveReader.html", "classQGClibarchive_1_1ArchiveReader" ],
-    [ "ArchiveEntry", "namespaceQGClibarchive.html#a36f407e2efb2b1867aaa9ed1866d1527", null ],
-    [ "ArchiveStats", "namespaceQGClibarchive.html#af48370d3d3d29cb3acf4cf6070dbee64", null ],
-    [ "EntryFilter", "namespaceQGClibarchive.html#a048d7afe208de33cd458bd890515261d", null ],
-    [ "ProgressCallback", "namespaceQGClibarchive.html#a232010105d238475d7540b81106ecce4", null ],
+    [ "ArchiveEntry", "namespaceQGClibarchive.html#a9befa18e37aa0497f6a721ee58a0e121", null ],
+    [ "ArchiveStats", "namespaceQGClibarchive.html#ac8a536594c0fce8a192441e3703b58f5", null ],
+    [ "EntryFilter", "namespaceQGClibarchive.html#af665c785123f14c13c19f37259445973", null ],
+    [ "ProgressCallback", "namespaceQGClibarchive.html#a49b5699110395ba9b6aaeb5aa275ac7c", null ],
     [ "ReaderMode", "namespaceQGClibarchive.html#a26151fa42367cd4c640dd3435f65e120", [
       [ "AllFormats", "namespaceQGClibarchive.html#a26151fa42367cd4c640dd3435f65e120a2798fb45b8bbcd8948de1413ec449b48", null ],
       [ "RawFormat", "namespaceQGClibarchive.html#a26151fa42367cd4c640dd3435f65e120ac7359bd00dc54ffd8cc1cc9435321660", null ]
@@ -34,5 +34,6 @@ var namespaceQGClibarchive =
     [ "listArchiveEntriesDetailed", "namespaceQGClibarchive.html#a6c9fa0e1546070fd3cc4d8cb1125f595", null ],
     [ "openArchiveForReading", "namespaceQGClibarchive.html#a60a47226e0add3ba3361e12b5eb8d66d", null ],
     [ "toArchiveEntry", "namespaceQGClibarchive.html#a974dbb5721cb1a2ef9628b38a08d97b6", null ],
-    [ "validateArchive", "namespaceQGClibarchive.html#a9837bb9e3aa91c61224d08a1ac206b90", null ]
+    [ "validateArchive", "namespaceQGClibarchive.html#a9837bb9e3aa91c61224d08a1ac206b90", null ],
+    [ "kDefaultFilePermissions", "namespaceQGClibarchive.html#ac9380b65b4a601c224cfd34a900a3933", null ]
 ];

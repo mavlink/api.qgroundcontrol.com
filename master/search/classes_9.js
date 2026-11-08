@@ -5,7 +5,8 @@ var searchData=
   ['imageprotocolmanager_2',['ImageProtocolManager',['../classImageProtocolManager.html',1,'']]],
   ['impl_3',['Impl',['../structEventHandler_1_1Impl.html',1,'EventHandler']]],
   ['initialconnectstatemachine_4',['InitialConnectStateMachine',['../classInitialConnectStateMachine.html',1,'']]],
-  ['inpatchstep_5',['InPatchStep',['../structSurfaceAnalysis_1_1InPatchStep.html',1,'SurfaceAnalysis']]],
-  ['instrumentvaluedata_6',['InstrumentValueData',['../classInstrumentValueData.html',1,'']]],
-  ['internaltransition_7',['InternalTransition',['../classInternalTransition.html',1,'']]]
+  ['initparams_5',['InitParams',['../structVideoBackend_1_1InitParams.html',1,'VideoBackend']]],
+  ['inpatchstep_6',['InPatchStep',['../structSurfaceAnalysis_1_1InPatchStep.html',1,'SurfaceAnalysis']]],
+  ['instrumentvaluedata_7',['InstrumentValueData',['../classInstrumentValueData.html',1,'']]],
+  ['internaltransition_8',['InternalTransition',['../classInternalTransition.html',1,'']]]
 ];

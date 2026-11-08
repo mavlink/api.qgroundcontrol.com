@@ -11,5 +11,5 @@ var classGstVideoReceiver =
     [ "onStartRecording", "classGstVideoReceiver.html#a7da9036c7f326d49914dea23b651a8e2", null ],
     [ "onStopRecording", "classGstVideoReceiver.html#af59f3b9817ed1b3bb74830d5e6c8c176", null ],
     [ "onVideoOutputChanged", "classGstVideoReceiver.html#aa25395534aea173a60e7b8c46960f7c5", null ],
-    [ "GstVideoReceiverTest", "classGstVideoReceiver.html#a26f446a3c8228331213e0b218f16d7c6", null ]
+    [ "GstVideoReceiverTestBase", "classGstVideoReceiver.html#a8cd13426f129dc62f9893156c765c49b", null ]
 ];

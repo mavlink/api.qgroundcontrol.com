@@ -7,7 +7,7 @@ var GPSProtocolEvent_8h =
     [ "GPSRTCMFrame", "structGPSRTCMFrame.html", "structGPSRTCMFrame" ],
     [ "GPSInputProtocol", "structGPSInputProtocol.html", "structGPSInputProtocol" ],
     [ "GPSEventBatch", "structGPSEventBatch.html", "structGPSEventBatch" ],
-    [ "GPSProtocolEvent", "GPSProtocolEvent_8h.html#a691333aaf12d42edab91dd6885b4d156", null ],
+    [ "GPSProtocolEvent", "GPSProtocolEvent_8h.html#a3e3ceeb0424cfc0e48455801c015e5c6", null ],
     [ "GPSReceiveUpdate", "GPSProtocolEvent_8h.html#aed79e9b8cbec231849c89efbb7a40c3d", [
       [ "Position", "GPSProtocolEvent_8h.html#aed79e9b8cbec231849c89efbb7a40c3da52f5e0bc3859bc5f5e25130b6c7e8881", null ],
       [ "Satellites", "GPSProtocolEvent_8h.html#aed79e9b8cbec231849c89efbb7a40c3da8a630b8d4a00217911f8cb52c3a6c14d", null ],

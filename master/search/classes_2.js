@@ -22,5 +22,6 @@ var searchData=
   ['branchcontext_19',['BranchContext',['../structBranchContext.html',1,'']]],
   ['buildingtype_5ft_20',['BuildingType_t',['../structOsmParserThread_1_1BuildingType__t.html',1,'OsmParserThread']]],
   ['bulkrefreshjob_21',['BulkRefreshJob',['../classBulkRefreshJob.html',1,'']]],
-  ['bundledruntime_22',['BundledRuntime',['../structGStreamer_1_1Environment_1_1BundledRuntime.html',1,'GStreamer::Environment']]]
+  ['bundledruntime_22',['BundledRuntime',['../structGStreamer_1_1Environment_1_1BundledRuntime.html',1,'GStreamer::Environment']]],
+  ['bundlelayout_23',['BundleLayout',['../structGStreamer_1_1Environment_1_1BundleLayout.html',1,'GStreamer::Environment']]]
 ];

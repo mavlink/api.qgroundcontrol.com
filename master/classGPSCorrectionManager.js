@@ -1,8 +1,8 @@
 var classGPSCorrectionManager =
 [
-    [ "Configuration", "structGPSCorrectionManager_1_1Configuration.html", "structGPSCorrectionManager_1_1Configuration" ],
     [ "UdpInputConfiguration", "structGPSCorrectionManager_1_1UdpInputConfiguration.html", "structGPSCorrectionManager_1_1UdpInputConfiguration" ],
     [ "UdpOutputConfiguration", "structGPSCorrectionManager_1_1UdpOutputConfiguration.html", "structGPSCorrectionManager_1_1UdpOutputConfiguration" ],
+    [ "Configuration", "structGPSCorrectionManager_1_1Configuration.html", "structGPSCorrectionManager_1_1Configuration" ],
     [ "State", "classGPSCorrectionManager.html#ab5e27d2bc18965976fa758820fb4b03d", [
       [ "Inactive", "classGPSCorrectionManager.html#ab5e27d2bc18965976fa758820fb4b03da3cab03c00dbd11bc3569afa0748013f0", null ],
       [ "Waiting", "classGPSCorrectionManager.html#ab5e27d2bc18965976fa758820fb4b03da5706de961fb376d701be6e7762d8b09c", null ],

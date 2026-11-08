@@ -6,6 +6,7 @@ var dir_1744fc0d40e4957df71ac89780f60661 =
     [ "MAVLinkInspector", "dir_6d506937dc7e091de40daa346aa6c6d4.html", "dir_6d506937dc7e091de40daa346aa6c6d4" ],
     [ "OnboardLogs", "dir_052375fe0c9e1fb205d033e224ca2974.html", "dir_052375fe0c9e1fb205d033e224ca2974" ],
     [ "Vibration", "dir_dc0384b9db80d5c2c2b1237494e221b8.html", "dir_dc0384b9db80d5c2c2b1237494e221b8" ],
+    [ "VideoRecordings", "dir_1c3dd0f7618d4f60315450f796fe3b44.html", "dir_1c3dd0f7618d4f60315450f796fe3b44" ],
     [ "AnalyzePage.qml", "AnalyzePage_8qml.html", null ],
     [ "AnalyzeView.qml", "AnalyzeView_8qml.html", null ]
 ];

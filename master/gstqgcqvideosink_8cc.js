@@ -2,9 +2,7 @@ var gstqgcqvideosink_8cc =
 [
     [ "_GstQgcQVideoSink", "struct__GstQgcQVideoSink.html", "struct__GstQgcQVideoSink" ],
     [ "GST_CAT_DEFAULT", "gstqgcqvideosink_8cc.html#adef911caed7c65a1643062817f4a59d7", null ],
-    [ "configureSinkCaps", "gstqgcqvideosink_8cc.html#a1364de3b57df0fdb17fbf8ee4ff03504", null ],
-    [ "formatSinkStats", "gstqgcqvideosink_8cc.html#a97dd5facaa5d0231845b63b6ef677f31", null ],
-    [ "frameStats", "gstqgcqvideosink_8cc.html#af7d2cb18c4fc055b3fc4771e5b64b95b", null ],
+    [ "GstQgc::configureSinkCaps", "namespaceGstQgc.html#a1364de3b57df0fdb17fbf8ee4ff03504", null ],
     [ "gst_qgc_q_video_sink_class_init", "gstqgcqvideosink_8cc.html#a432121b9f681e4d94d47bebcc87cd4e8", null ],
     [ "gst_qgc_q_video_sink_constructed", "gstqgcqvideosink_8cc.html#a0a5bb9daa1c176b64ac9fb021fe3b1ba", null ],
     [ "gst_qgc_q_video_sink_event", "gstqgcqvideosink_8cc.html#aa10a0bbb750374bc7688745f6026f9db", null ],
@@ -19,7 +17,5 @@ var gstqgcqvideosink_8cc =
     [ "gst_qgc_q_video_sink_show_frame", "gstqgcqvideosink_8cc.html#a2f89363127202a258c5a8c9a3b57a37e", null ],
     [ "gst_qgc_q_video_sink_start", "gstqgcqvideosink_8cc.html#a083961f1636905b2f9aa24f161744b91", null ],
     [ "gst_qgc_q_video_sink_stop", "gstqgcqvideosink_8cc.html#a686edab0d5e17a8ac985c998f0402e1c", null ],
-    [ "sinkFramesField", "gstqgcqvideosink_8cc.html#a37fa898d6741b4f9797cc01dafc04b2b", null ],
-    [ "kMaxConsecutiveMapFailures", "gstqgcqvideosink_8cc.html#a5ce579be34770792ca493d547d2e31e6", null ],
     [ "sink_template", "gstqgcqvideosink_8cc.html#a26e2485c5fd610ac13e266fb32008cf7", null ]
 ];

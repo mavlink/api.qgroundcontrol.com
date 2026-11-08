@@ -1,7 +1,7 @@
 var classGPSStreamDemux =
 [
-    [ "Framer", "classGPSStreamDemux_1_1Framer.html", "classGPSStreamDemux_1_1Framer" ],
     [ "Handler", "classGPSStreamDemux_1_1Handler.html", "classGPSStreamDemux_1_1Handler" ],
+    [ "Framer", "classGPSStreamDemux_1_1Framer.html", "classGPSStreamDemux_1_1Framer" ],
     [ "GPSStreamDemux", "classGPSStreamDemux.html#a4bc9813b4d6e8af223c5304a641dd743", null ],
     [ "~GPSStreamDemux", "classGPSStreamDemux.html#a2fca5e812c2b61d429aeae3b82b907d6", null ],
     [ "push", "classGPSStreamDemux.html#acaf54324e02e61a456af92105f120eda", null ],

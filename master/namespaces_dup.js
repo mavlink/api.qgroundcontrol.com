@@ -317,12 +317,14 @@ var namespaces_dup =
       [ "configureMainWindow", "namespaceGraphicsSetup.html#a76b888fc245743668299f88ebefac4c1", null ],
       [ "configureMainWindowOnCreation", "namespaceGraphicsSetup.html#a86275c835e91fbf953675c93dd472358", null ]
     ] ],
+    [ "GstD3D12StagingPool", "namespaceGstD3D12StagingPool.html", "namespaceGstD3D12StagingPool" ],
     [ "GstHw", "namespaceGstHw.html", "namespaceGstHw" ],
     [ "GstHwPathTelemetry", "namespaceGstHwPathTelemetry.html", "namespaceGstHwPathTelemetry" ],
     [ "GstQgc", "namespaceGstQgc.html", "namespaceGstQgc" ],
     [ "GStreamer", "namespaceGStreamer.html", "namespaceGStreamer" ],
     [ "HwBuffers", "namespaceHwBuffers.html", [
       [ "answerSinkBinContextQuery", "namespaceHwBuffers.html#a27a0a9a44a70e27e6ff1af895a6add09", null ],
+      [ "configureQtGraphics", "namespaceHwBuffers.html#a0f53e9673ded5a26c20941c95e5d6b30", null ],
       [ "connectMainWindow", "namespaceHwBuffers.html#a911bee0f3e52e59ad896a0dbcffd5eae", null ],
       [ "dmaBufImportDisplay", "namespaceHwBuffers.html#a5a3ccb8436a29a81a6862b5311a8845b", null ],
       [ "extraPathStatsSince", "namespaceHwBuffers.html#a5bcc14e4738f9c8b47e6eaf161c6eeaa", null ],
@@ -416,7 +418,7 @@ var namespaces_dup =
       [ "FAMILY", "namespacePassive.html#a0e9553a8acdab2d6614e716faa18e984", null ]
     ] ],
     [ "PatchMesh", "namespacePatchMesh.html", [
-      [ "LodDeltas", "namespacePatchMesh.html#a39ead0b7e144ea0fa5511bf9e6ead9b2", null ],
+      [ "LodDeltas", "namespacePatchMesh.html#ab11ac4ff9bb01bfdd4083128bd220946", null ],
       [ "surfaceHeight", "namespacePatchMesh.html#a5394223f92030204e882c4fb35ba9ca9", null ],
       [ "vertexHeight", "namespacePatchMesh.html#adde85b6cc6935a4eacf71f1c910b33af", null ]
     ] ],
@@ -539,6 +541,9 @@ var namespaces_dup =
       [ "resetHints", "namespaceSDLPlatform.html#a40f012bccc6b27063225e91ddc1ac5fd", null ],
       [ "setHint", "namespaceSDLPlatform.html#a510445207a68b8183ee300fde130aebf", null ]
     ] ],
+    [ "SharedVideoFrame", "namespaceSharedVideoFrame.html", [
+      [ "withOwnMetadata", "namespaceSharedVideoFrame.html#a8265a08d0fae606feda7451abea6efe1", null ]
+    ] ],
     [ "SHPFileHelper", "namespaceSHPFileHelper.html", [
       [ "_loadShape", "namespaceSHPFileHelper.html#a5379701ac6b4eb4ec8db6786b1ea67fe", null ],
       [ "_validateSHPFiles", "namespaceSHPFileHelper.html#a737b0837e0df645e75c41c5673ef2825", null ],
@@ -571,8 +576,13 @@ var namespaces_dup =
     ] ],
     [ "Unicore", "namespaceUnicore.html", "namespaceUnicore" ],
     [ "UVCDevices", "namespaceUVCDevices.html", [
+      [ "device", "namespaceUVCDevices.html#a785d22717beb22926308c3a207d1cf3a", null ],
       [ "deviceExists", "namespaceUVCDevices.html#ae586575901c80d89c5dba927585a3d57", null ],
       [ "deviceNames", "namespaceUVCDevices.html#a35114100b4612f157db11980281bd070", null ],
+      [ "format", "namespaceUVCDevices.html#ace0aa10741529237780d7c5a145cf42f", null ],
+      [ "formatName", "namespaceUVCDevices.html#a592d3a2ff25403cfa9376a851e70034f", null ],
+      [ "formatNames", "namespaceUVCDevices.html#a327eae6878080b53b3670ca94449976e", null ],
+      [ "pixelFormatName", "namespaceUVCDevices.html#aaf4dcb345632b23a9796fc8edf1ec536", null ],
       [ "requestPermission", "namespaceUVCDevices.html#ae90c17384d1ba2a59a8321c0a1a0fd57", null ]
     ] ],
     [ "VehicleSummaryState", "namespaceVehicleSummaryState.html", [
@@ -582,7 +592,20 @@ var namespaces_dup =
         [ "Muted", "namespaceVehicleSummaryState.html#a5328df7bc26e17f230677631696b096fa5c056e47748d030f99a8691c647cdcdc", null ]
       ] ]
     ] ],
-    [ "VideoBackend", "namespaceVideoBackend.html", "namespaceVideoBackend" ],
+    [ "VideoDecoder", "namespaceVideoDecoder.html", [
+      [ "Options", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2", [
+        [ "ForceVideoDecoderDefault", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a7d4060ee732515584357a6b90b85c554", null ],
+        [ "ForceVideoDecoderSoftware", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2acfd097bdd6105deaa576e6795c5935df", null ],
+        [ "ForceVideoDecoderNVIDIA", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a69bdba2a5c9be5b943d2e4d5c66a7d1e", null ],
+        [ "ForceVideoDecoderVAAPI", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2ac77c3dad8c635d5d8d342287fc9343b8", null ],
+        [ "ForceVideoDecoderDirectX3D", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2af9d7d2b4daaeadb07321348832448031", null ],
+        [ "ForceVideoDecoderVideoToolbox", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a33a1a42cfaf8d130d0595d98c1ce19b9", null ],
+        [ "ForceVideoDecoderIntel", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a73692a15da3349aab320e547aa50d593", null ],
+        [ "ForceVideoDecoderVulkan", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a3ae0db4c048ec42e2accd3963da1a7d4", null ],
+        [ "ForceVideoDecoderHardware", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a4a141f32f4f46e13efaa4f94c89efecf", null ]
+      ] ]
+    ] ],
+    [ "VideoScreenshot", "namespaceVideoScreenshot.html", "namespaceVideoScreenshot" ],
     [ "VideoStreamResolver", "namespaceVideoStreamResolver.html", "namespaceVideoStreamResolver" ],
     [ "Wire", "namespaceWire.html", "namespaceWire" ]
 ];

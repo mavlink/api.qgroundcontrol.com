@@ -15,7 +15,7 @@ var searchData=
   ['commandsupportedresult_12',['CommandSupportedResult',['../classFirmwarePluginInstanceData.html#a1c6d665a4804c4eb92e66bc551581d08',1,'FirmwarePluginInstanceData']]],
   ['compressionlevel_13',['CompressionLevel',['../namespaceQGCCompression.html#a5293269680acb2a4429884885795b1c3',1,'QGCCompression']]],
   ['connectionstatus_14',['ConnectionStatus',['../classNTRIPManager.html#a40006373c9a6a14aaf93a09019e55061',1,'NTRIPManager']]],
-  ['connectiontype_15',['connectiontype',['../classRTKSettings.html#a01696e528141f0dd0d997c8dfe759fd6',1,'RTKSettings::ConnectionType'],['../namespaceQGCNetworkHelper.html#a3001d2002d17561f5767730045bdf9a3',1,'QGCNetworkHelper::ConnectionType']]],
+  ['connectiontype_15',['ConnectionType',['../classRTKSettings.html#a01696e528141f0dd0d997c8dfe759fd6',1,'RTKSettings::ConnectionType'],['../namespaceQGCNetworkHelper.html#a3001d2002d17561f5767730045bdf9a3',1,'QGCNetworkHelper::ConnectionType']]],
   ['controlline_16',['ControlLine',['../namespaceAndroidSerial.html#aac2dd9b989ea453e709894cb17e95011',1,'AndroidSerial']]],
   ['coordinateformat_17',['CoordinateFormat',['../classUnitsSettings.html#a2294fcb3926f584af75d12e55ca32bc4',1,'UnitsSettings']]],
   ['coordtype_18',['CoordType',['../classTransectStyleComplexItem.html#afcfa254bf8d7ddbdeadabd20ffe5d583',1,'TransectStyleComplexItem']]],

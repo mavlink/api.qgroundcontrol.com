@@ -22,5 +22,6 @@ var searchData=
   ['esriworldstreetmapprovider_19',['EsriWorldStreetMapProvider',['../classEsriWorldStreetMapProvider.html',1,'']]],
   ['eventhandler_20',['EventHandler',['../classEventHandler.html',1,'']]],
   ['eventqueuedstate_21',['EventQueuedState',['../classEventQueuedState.html',1,'']]],
-  ['exponentialbackoff_22',['ExponentialBackoff',['../classExponentialBackoff.html',1,'']]]
+  ['exif_22',['Exif',['../structVideoScreenshot_1_1Exif.html',1,'VideoScreenshot']]],
+  ['exponentialbackoff_23',['ExponentialBackoff',['../classExponentialBackoff.html',1,'']]]
 ];

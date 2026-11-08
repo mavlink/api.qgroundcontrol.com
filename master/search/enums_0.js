@@ -10,7 +10,8 @@ var searchData=
   ['areaunits_7',['AreaUnits',['../classUnitsSettings.html#aca83aeb9f913ebabedfa6c496d060b7a',1,'UnitsSettings']]],
   ['authenticationstate_8',['AuthenticationState',['../classVehicleGPSFactGroup.html#abda24ba54497b1c5ba764a8e0e8961fd',1,'VehicleGPSFactGroup']]],
   ['autopilotstacktype_5ft_9',['AutoPilotStackType_t',['../classFirmwareUpgradeController.html#a8a4105dc791b708e21192e54c7c34cba',1,'FirmwareUpgradeController']]],
-  ['aux_5ffunc_10',['AUX_FUNC',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03',1,'APM']]],
-  ['availableinfotype_11',['AvailableInfoType',['../namespaceADSB.html#ad441a129e1fe41f2eedc7ac84dfacf04',1,'ADSB']]],
-  ['axisfunction_5ft_12',['AxisFunction_t',['../classJoystick.html#a29afe0a72d52ef70e0536879a5136abf',1,'Joystick']]]
+  ['autoreconnectchange_10',['AutoReconnectChange',['../classStreamSupervisor.html#a29794295c4cc5c776b169eb6cbf1eaab',1,'StreamSupervisor']]],
+  ['aux_5ffunc_11',['AUX_FUNC',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03',1,'APM']]],
+  ['availableinfotype_12',['AvailableInfoType',['../namespaceADSB.html#ad441a129e1fe41f2eedc7ac84dfacf04',1,'ADSB']]],
+  ['axisfunction_5ft_13',['AxisFunction_t',['../classJoystick.html#a29afe0a72d52ef70e0536879a5136abf',1,'Joystick']]]
 ];

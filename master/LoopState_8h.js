@@ -1,4 +1,4 @@
 var LoopState_8h =
 [
-    [ "LoopState< T >", "classLoopState.html", "classLoopState" ]
+    [ "LoopState&lt; T &gt;", "classLoopState.html", "classLoopState" ]
 ];

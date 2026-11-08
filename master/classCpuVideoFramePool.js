@@ -1,8 +1,8 @@
 var classCpuVideoFramePool =
 [
-    [ "FrameMapping", "classCpuVideoFramePool_1_1FrameMapping.html", "classCpuVideoFramePool_1_1FrameMapping" ],
     [ "PlaneLayout", "structCpuVideoFramePool_1_1PlaneLayout.html", "structCpuVideoFramePool_1_1PlaneLayout" ],
-    [ "PinnedFrameCounter", "classCpuVideoFramePool.html#a285998ae9f4f5206a9c7df6640b659e2", null ],
+    [ "FrameMapping", "classCpuVideoFramePool_1_1FrameMapping.html", "classCpuVideoFramePool_1_1FrameMapping" ],
+    [ "PinnedFrameCounter", "classCpuVideoFramePool.html#a11cea971877b2b80d62bec2affd20dc7", null ],
     [ "acquireFrame", "classCpuVideoFramePool.html#abf9daee644f860851ce7287eda93c8dd", null ],
     [ "computeLayout", "classCpuVideoFramePool.html#a918db495ed0fc6059fbb719c3e3f6260", null ],
     [ "copyFromBuffer", "classCpuVideoFramePool.html#a582dcc72f7c4db07bd186f67241d0e31", null ],

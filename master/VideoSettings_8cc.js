@@ -8,7 +8,7 @@ var VideoSettings_8cc =
     [ "DECLARE_SETTINGSFACT_NO_FUNC", "VideoSettings_8cc.html#aca758f25222d6bc39daa7ea7e0fbc52f", null ],
     [ "DECLARE_SETTINGSFACT_NO_FUNC", "VideoSettings_8cc.html#ae5e1d66f5f8da11315b1bae71e635467", null ],
     [ "DECLARE_SETTINGSFACT_NO_FUNC", "VideoSettings_8cc.html#a2072e87a95217475141b33403a1998a1", null ],
+    [ "DECLARE_SETTINGSFACT_NO_FUNC", "VideoSettings_8cc.html#a90469d977b2ffe6ce3f53174d9a03f52", null ],
     [ "DECLARE_SETTINGSFACT_NO_FUNC", "VideoSettings_8cc.html#acfcb6a04d3467395bec389a4a28b5613", null ],
-    [ "DECLARE_SETTINGSFACT_NO_FUNC", "VideoSettings_8cc.html#a5f9d629df4ba1ca7941fc35313ade82b", null ],
-    [ "kGstEnabled", "VideoSettings_8cc.html#ab525d3d957660cc8caefaaf0fcdb9dae", null ]
+    [ "DECLARE_SETTINGSFACT_NO_FUNC", "VideoSettings_8cc.html#a5f9d629df4ba1ca7941fc35313ade82b", null ]
 ];

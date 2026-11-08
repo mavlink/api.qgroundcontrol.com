@@ -1,7 +1,7 @@
 var dir_b136a70f7c46ae19dccad782a08bdc6c =
 [
     [ "UBXConfigKeys.h", "UBXConfigKeys_8h.html", "UBXConfigKeys_8h" ],
-    [ "UBXConfigurator.cc", "UBXConfigurator_8cc.html", null ],
+    [ "UBXConfigurator.cc", "UBXConfigurator_8cc.html", "UBXConfigurator_8cc" ],
     [ "UBXDecoder.cc", "UBXDecoder_8cc.html", null ],
     [ "UBXEpochAssembler.cc", "UBXEpochAssembler_8cc.html", null ],
     [ "UBXEpochAssembler.h", "UBXEpochAssembler_8h.html", "UBXEpochAssembler_8h" ],

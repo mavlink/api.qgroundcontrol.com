@@ -4,7 +4,7 @@ var searchData=
   ['failurehandler_1',['FailureHandler',['../classRetryableRequestMessageState.html#a5857dd103a142174ba5eb851a6ad5e87',1,'RetryableRequestMessageState']]],
   ['firmwareclass_5ft_2',['FirmwareClass_t',['../structQGCMAVLinkTypes.html#a83989013164d6c570b1b85a9ce06a5c0',1,'QGCMAVLinkTypes']]],
   ['fixquality_3',['FixQuality',['../structGPSObservation.html#a01b48c12c1c2a04c65bc1d12ececfd5a',1,'GPSObservation']]],
-  ['fixtype_4',['fixtype',['../structGPSNavigationValues.html#a9b230123f5ceff4890fdcfc117adfb2b',1,'GPSNavigationValues::FixType'],['../structGPSPositionReport.html#a91e05ce0c8147d0726b41516a02fda1c',1,'GPSPositionReport::FixType']]],
+  ['fixtype_4',['FixType',['../structGPSNavigationValues.html#a9b230123f5ceff4890fdcfc117adfb2b',1,'GPSNavigationValues::FixType'],['../structGPSPositionReport.html#a91e05ce0c8147d0726b41516a02fda1c',1,'GPSPositionReport::FixType']]],
   ['flightmodecustommodemap_5',['FlightModeCustomModeMap',['../FirmwarePlugin_8h.html#a6d8996b0cd846ee20f81ee703e2fa8c4',1,'FirmwarePlugin.h']]],
   ['flightmodelist_6',['FlightModeList',['../FirmwarePlugin_8h.html#af31dc4a9a73ff39e58f8f097cef38b46',1,'FirmwarePlugin.h']]],
   ['flightpathsegmenthashtable_7',['FlightPathSegmentHashTable',['../MissionController_8h.html#ae130079eb03654c81a7760aa49eed4aa',1,'MissionController.h']]],

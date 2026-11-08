@@ -1,17 +1,17 @@
 var annotated_dup =
 [
     [ "ActuatorActions", "namespaceActuatorActions.html", [
+      [ "Config", "structActuatorActions_1_1Config.html", "structActuatorActions_1_1Config" ],
       [ "Action", "classActuatorActions_1_1Action.html", "classActuatorActions_1_1Action" ],
-      [ "ActionGroup", "classActuatorActions_1_1ActionGroup.html", "classActuatorActions_1_1ActionGroup" ],
-      [ "Config", "structActuatorActions_1_1Config.html", "structActuatorActions_1_1Config" ]
+      [ "ActionGroup", "classActuatorActions_1_1ActionGroup.html", "classActuatorActions_1_1ActionGroup" ]
     ] ],
     [ "ActuatorOutputs", "namespaceActuatorOutputs.html", [
-      [ "ActuatorOutput", "classActuatorOutputs_1_1ActuatorOutput.html", "classActuatorOutputs_1_1ActuatorOutput" ],
-      [ "ActuatorOutputChannel", "classActuatorOutputs_1_1ActuatorOutputChannel.html", "classActuatorOutputs_1_1ActuatorOutputChannel" ],
-      [ "ActuatorOutputSubgroup", "classActuatorOutputs_1_1ActuatorOutputSubgroup.html", "classActuatorOutputs_1_1ActuatorOutputSubgroup" ],
+      [ "ConfigParameter", "classActuatorOutputs_1_1ConfigParameter.html", "classActuatorOutputs_1_1ConfigParameter" ],
       [ "ChannelConfig", "classActuatorOutputs_1_1ChannelConfig.html", "classActuatorOutputs_1_1ChannelConfig" ],
       [ "ChannelConfigInstance", "classActuatorOutputs_1_1ChannelConfigInstance.html", "classActuatorOutputs_1_1ChannelConfigInstance" ],
-      [ "ConfigParameter", "classActuatorOutputs_1_1ConfigParameter.html", "classActuatorOutputs_1_1ConfigParameter" ]
+      [ "ActuatorOutputChannel", "classActuatorOutputs_1_1ActuatorOutputChannel.html", "classActuatorOutputs_1_1ActuatorOutputChannel" ],
+      [ "ActuatorOutputSubgroup", "classActuatorOutputs_1_1ActuatorOutputSubgroup.html", "classActuatorOutputs_1_1ActuatorOutputSubgroup" ],
+      [ "ActuatorOutput", "classActuatorOutputs_1_1ActuatorOutput.html", "classActuatorOutputs_1_1ActuatorOutput" ]
     ] ],
     [ "ActuatorTesting", "namespaceActuatorTesting.html", [
       [ "Actuator", "classActuatorTesting_1_1Actuator.html", "classActuatorTesting_1_1Actuator" ],
@@ -24,8 +24,8 @@ var annotated_dup =
       [ "JniLocalRef", "classAndroidInterface_1_1JniLocalRef.html", "classAndroidInterface_1_1JniLocalRef" ]
     ] ],
     [ "AndroidSerial", "namespaceAndroidSerial.html", [
-      [ "JniContext", "structAndroidSerial_1_1JniContext.html", "structAndroidSerial_1_1JniContext" ],
-      [ "JniMethodCache", "structAndroidSerial_1_1JniMethodCache.html", "structAndroidSerial_1_1JniMethodCache" ]
+      [ "JniMethodCache", "structAndroidSerial_1_1JniMethodCache.html", "structAndroidSerial_1_1JniMethodCache" ],
+      [ "JniContext", "structAndroidSerial_1_1JniContext.html", "structAndroidSerial_1_1JniContext" ]
     ] ],
     [ "APMDataFlashUtility", "namespaceAPMDataFlashUtility.html", [
       [ "MessageFormat", "structAPMDataFlashUtility_1_1MessageFormat.html", "structAPMDataFlashUtility_1_1MessageFormat" ]
@@ -52,6 +52,9 @@ var annotated_dup =
     [ "GPSReceiverMessages", "namespaceGPSReceiverMessages.html", [
       [ "ReceiverStatus", "structGPSReceiverMessages_1_1ReceiverStatus.html", "structGPSReceiverMessages_1_1ReceiverStatus" ]
     ] ],
+    [ "GstD3D12StagingPool", "namespaceGstD3D12StagingPool.html", [
+      [ "SlotLease", "classGstD3D12StagingPool_1_1SlotLease.html", "classGstD3D12StagingPool_1_1SlotLease" ]
+    ] ],
     [ "GstHw", "namespaceGstHw.html", [
       [ "GstHwImportCache", "classGstHw_1_1GstHwImportCache.html", "classGstHw_1_1GstHwImportCache" ],
       [ "MapDiagnostics", "structGstHw_1_1MapDiagnostics.html", "structGstHw_1_1MapDiagnostics" ],
@@ -63,37 +66,50 @@ var annotated_dup =
     ] ],
     [ "GstQgc", "namespaceGstQgc.html", [
       [ "BinChain", "classGstQgc_1_1BinChain.html", "classGstQgc_1_1BinChain" ],
-      [ "GpuBinPreference", "structGstQgc_1_1GpuBinPreference.html", "structGstQgc_1_1GpuBinPreference" ],
-      [ "PathStats", "structGstQgc_1_1PathStats.html", "structGstQgc_1_1PathStats" ],
-      [ "RenderTarget", "structGstQgc_1_1RenderTarget.html", "structGstQgc_1_1RenderTarget" ],
       [ "SinkCapsPolicy", "structGstQgc_1_1SinkCapsPolicy.html", "structGstQgc_1_1SinkCapsPolicy" ],
+      [ "FrameDelivery", "classGstQgc_1_1FrameDelivery.html", "classGstQgc_1_1FrameDelivery" ],
+      [ "GpuBinPreference", "structGstQgc_1_1GpuBinPreference.html", "structGstQgc_1_1GpuBinPreference" ],
+      [ "PathSession", "classGstQgc_1_1PathSession.html", "classGstQgc_1_1PathSession" ],
+      [ "RenderTarget", "structGstQgc_1_1RenderTarget.html", "structGstQgc_1_1RenderTarget" ],
+      [ "SinkCounters", "classGstQgc_1_1SinkCounters.html", "classGstQgc_1_1SinkCounters" ],
+      [ "PathStats", "structGstQgc_1_1PathStats.html", "structGstQgc_1_1PathStats" ],
       [ "VideoFormatEntry", "structGstQgc_1_1VideoFormatEntry.html", "structGstQgc_1_1VideoFormatEntry" ]
     ] ],
     [ "GStreamer", "namespaceGStreamer.html", [
-      [ "Environment", "namespaceGStreamer_1_1Environment.html", [
-        [ "BundledRuntime", "structGStreamer_1_1Environment_1_1BundledRuntime.html", "structGStreamer_1_1Environment_1_1BundledRuntime" ],
-        [ "ValidationResult", "structGStreamer_1_1Environment_1_1ValidationResult.html", "structGStreamer_1_1Environment_1_1ValidationResult" ]
-      ] ],
-      [ "SelfTest", "namespaceGStreamer_1_1SelfTest.html", [
-        [ "RegisteredPlugin", "structGStreamer_1_1SelfTest_1_1RegisteredPlugin.html", "structGStreamer_1_1SelfTest_1_1RegisteredPlugin" ]
-      ] ],
       [ "SourceFactory", "namespaceGStreamer_1_1SourceFactory.html", [
         [ "Config", "structGStreamer_1_1SourceFactory_1_1Config.html", "structGStreamer_1_1SourceFactory_1_1Config" ]
       ] ],
-      [ "GErrorDeleter", "structGStreamer_1_1GErrorDeleter.html", "structGStreamer_1_1GErrorDeleter" ],
-      [ "GFreeDeleter", "structGStreamer_1_1GFreeDeleter.html", "structGStreamer_1_1GFreeDeleter" ],
-      [ "GstCapsDeleter", "structGStreamer_1_1GstCapsDeleter.html", "structGStreamer_1_1GstCapsDeleter" ],
-      [ "GstContextDeleter", "structGStreamer_1_1GstContextDeleter.html", "structGStreamer_1_1GstContextDeleter" ],
-      [ "GstEventDeleter", "structGStreamer_1_1GstEventDeleter.html", "structGStreamer_1_1GstEventDeleter" ],
-      [ "GstMessageDeleter", "structGStreamer_1_1GstMessageDeleter.html", "structGStreamer_1_1GstMessageDeleter" ],
+      [ "Environment", "namespaceGStreamer_1_1Environment.html", [
+        [ "ValidationResult", "structGStreamer_1_1Environment_1_1ValidationResult.html", "structGStreamer_1_1Environment_1_1ValidationResult" ],
+        [ "BundledRuntime", "structGStreamer_1_1Environment_1_1BundledRuntime.html", "structGStreamer_1_1Environment_1_1BundledRuntime" ],
+        [ "BundleLayout", "structGStreamer_1_1Environment_1_1BundleLayout.html", "structGStreamer_1_1Environment_1_1BundleLayout" ]
+      ] ],
+      [ "SelfTest", "namespaceGStreamer_1_1SelfTest.html", [
+        [ "RegisteredPlugin", "structGStreamer_1_1SelfTest_1_1RegisteredPlugin.html", "structGStreamer_1_1SelfTest_1_1RegisteredPlugin" ],
+        [ "Sample", "structGStreamer_1_1SelfTest_1_1Sample.html", "structGStreamer_1_1SelfTest_1_1Sample" ],
+        [ "RecordingFormat", "structGStreamer_1_1SelfTest_1_1RecordingFormat.html", "structGStreamer_1_1SelfTest_1_1RecordingFormat" ],
+        [ "DecodeResult", "structGStreamer_1_1SelfTest_1_1DecodeResult.html", "structGStreamer_1_1SelfTest_1_1DecodeResult" ]
+      ] ],
+      [ "VideoSinkConfig", "structGStreamer_1_1VideoSinkConfig.html", "structGStreamer_1_1VideoSinkConfig" ],
+      [ "MissingPluginFeature", "structGStreamer_1_1MissingPluginFeature.html", "structGStreamer_1_1MissingPluginFeature" ],
+      [ "DecoderInfo", "structGStreamer_1_1DecoderInfo.html", "structGStreamer_1_1DecoderInfo" ],
+      [ "RankTraits", "structGStreamer_1_1RankTraits.html", "structGStreamer_1_1RankTraits" ],
+      [ "RankChange", "structGStreamer_1_1RankChange.html", "structGStreamer_1_1RankChange" ],
+      [ "RankPlan", "structGStreamer_1_1RankPlan.html", "structGStreamer_1_1RankPlan" ],
+      [ "DecoderRankApplier", "classGStreamer_1_1DecoderRankApplier.html", "classGStreamer_1_1DecoderRankApplier" ],
+      [ "ScopedDecoderOption", "classGStreamer_1_1ScopedDecoderOption.html", "classGStreamer_1_1ScopedDecoderOption" ],
+      [ "Runtime", "classGStreamer_1_1Runtime.html", "classGStreamer_1_1Runtime" ],
       [ "GstObjectDeleter", "structGStreamer_1_1GstObjectDeleter.html", "structGStreamer_1_1GstObjectDeleter" ],
       [ "GstQueryDeleter", "structGStreamer_1_1GstQueryDeleter.html", "structGStreamer_1_1GstQueryDeleter" ],
+      [ "GstCapsDeleter", "structGStreamer_1_1GstCapsDeleter.html", "structGStreamer_1_1GstCapsDeleter" ],
+      [ "GstMessageDeleter", "structGStreamer_1_1GstMessageDeleter.html", "structGStreamer_1_1GstMessageDeleter" ],
+      [ "GstEventDeleter", "structGStreamer_1_1GstEventDeleter.html", "structGStreamer_1_1GstEventDeleter" ],
+      [ "GstContextDeleter", "structGStreamer_1_1GstContextDeleter.html", "structGStreamer_1_1GstContextDeleter" ],
       [ "GstStructureDeleter", "structGStreamer_1_1GstStructureDeleter.html", "structGStreamer_1_1GstStructureDeleter" ],
-      [ "MissingPluginFeature", "structGStreamer_1_1MissingPluginFeature.html", "structGStreamer_1_1MissingPluginFeature" ],
-      [ "PadProbe", "classGStreamer_1_1PadProbe.html", "classGStreamer_1_1PadProbe" ],
+      [ "GFreeDeleter", "structGStreamer_1_1GFreeDeleter.html", "structGStreamer_1_1GFreeDeleter" ],
+      [ "GErrorDeleter", "structGStreamer_1_1GErrorDeleter.html", "structGStreamer_1_1GErrorDeleter" ],
       [ "ScopedSignal", "classGStreamer_1_1ScopedSignal.html", "classGStreamer_1_1ScopedSignal" ],
-      [ "TeeBranch", "structGStreamer_1_1TeeBranch.html", "structGStreamer_1_1TeeBranch" ],
-      [ "VideoSinkConfig", "structGStreamer_1_1VideoSinkConfig.html", "structGStreamer_1_1VideoSinkConfig" ]
+      [ "PadProbe", "classGStreamer_1_1PadProbe.html", "classGStreamer_1_1PadProbe" ]
     ] ],
     [ "JsonParsing", "namespaceJsonParsing.html", [
       [ "KeyValidateInfo", "structJsonParsing_1_1KeyValidateInfo.html", "structJsonParsing_1_1KeyValidateInfo" ]
@@ -102,47 +118,47 @@ var annotated_dup =
       [ "DetectSnapshot", "structMAVLinkSigning_1_1DetectSnapshot.html", "structMAVLinkSigning_1_1DetectSnapshot" ]
     ] ],
     [ "Mixer", "namespaceMixer.html", [
+      [ "MixerParameter", "structMixer_1_1MixerParameter.html", "structMixer_1_1MixerParameter" ],
       [ "ActuatorType", "structMixer_1_1ActuatorType.html", "structMixer_1_1ActuatorType" ],
+      [ "MixerOption", "structMixer_1_1MixerOption.html", "structMixer_1_1MixerOption" ],
+      [ "Rule", "structMixer_1_1Rule.html", "structMixer_1_1Rule" ],
+      [ "ConfigParameter", "classMixer_1_1ConfigParameter.html", "classMixer_1_1ConfigParameter" ],
       [ "ChannelConfig", "classMixer_1_1ChannelConfig.html", "classMixer_1_1ChannelConfig" ],
+      [ "ChannelConfigVirtualAxis", "classMixer_1_1ChannelConfigVirtualAxis.html", "classMixer_1_1ChannelConfigVirtualAxis" ],
       [ "ChannelConfigInstance", "classMixer_1_1ChannelConfigInstance.html", "classMixer_1_1ChannelConfigInstance" ],
       [ "ChannelConfigInstanceVirtualAxis", "classMixer_1_1ChannelConfigInstanceVirtualAxis.html", "classMixer_1_1ChannelConfigInstanceVirtualAxis" ],
-      [ "ChannelConfigVirtualAxis", "classMixer_1_1ChannelConfigVirtualAxis.html", "classMixer_1_1ChannelConfigVirtualAxis" ],
-      [ "ConfigParameter", "classMixer_1_1ConfigParameter.html", "classMixer_1_1ConfigParameter" ],
       [ "MixerChannel", "classMixer_1_1MixerChannel.html", "classMixer_1_1MixerChannel" ],
       [ "MixerConfigGroup", "classMixer_1_1MixerConfigGroup.html", "classMixer_1_1MixerConfigGroup" ],
-      [ "MixerOption", "structMixer_1_1MixerOption.html", "structMixer_1_1MixerOption" ],
-      [ "MixerParameter", "structMixer_1_1MixerParameter.html", "structMixer_1_1MixerParameter" ],
-      [ "Mixers", "classMixer_1_1Mixers.html", "classMixer_1_1Mixers" ],
-      [ "Rule", "structMixer_1_1Rule.html", "structMixer_1_1Rule" ]
+      [ "Mixers", "classMixer_1_1Mixers.html", "classMixer_1_1Mixers" ]
     ] ],
     [ "NMEA", "namespaceNMEA.html", [
-      [ "Frame", "structNMEA_1_1Frame.html", "structNMEA_1_1Frame" ],
       [ "Framer", "classNMEA_1_1Framer.html", "classNMEA_1_1Framer" ],
-      [ "GGA", "structNMEA_1_1GGA.html", "structNMEA_1_1GGA" ],
-      [ "GLL", "structNMEA_1_1GLL.html", "structNMEA_1_1GLL" ],
-      [ "GST", "structNMEA_1_1GST.html", "structNMEA_1_1GST" ],
-      [ "GSV", "structNMEA_1_1GSV.html", "structNMEA_1_1GSV" ],
       [ "LineFramer", "classNMEA_1_1LineFramer.html", "classNMEA_1_1LineFramer" ],
       [ "NavigationEpoch", "structNMEA_1_1NavigationEpoch.html", "structNMEA_1_1NavigationEpoch" ],
-      [ "NavigationEpochAssembler", "classNMEA_1_1NavigationEpochAssembler.html", "classNMEA_1_1NavigationEpochAssembler" ],
-      [ "NavigationStatus", "structNMEA_1_1NavigationStatus.html", "structNMEA_1_1NavigationStatus" ],
       [ "NavigationUpdate", "structNMEA_1_1NavigationUpdate.html", "structNMEA_1_1NavigationUpdate" ],
-      [ "RMC", "structNMEA_1_1RMC.html", "structNMEA_1_1RMC" ],
-      [ "SatelliteAssembler", "classNMEA_1_1SatelliteAssembler.html", "classNMEA_1_1SatelliteAssembler" ],
+      [ "NavigationEpochAssembler", "classNMEA_1_1NavigationEpochAssembler.html", "classNMEA_1_1NavigationEpochAssembler" ],
       [ "SatelliteData", "structNMEA_1_1SatelliteData.html", "structNMEA_1_1SatelliteData" ],
       [ "SatelliteSystem", "structNMEA_1_1SatelliteSystem.html", "structNMEA_1_1SatelliteSystem" ],
+      [ "GSV", "structNMEA_1_1GSV.html", "structNMEA_1_1GSV" ],
+      [ "SatelliteAssembler", "classNMEA_1_1SatelliteAssembler.html", "classNMEA_1_1SatelliteAssembler" ],
       [ "Sentence", "structNMEA_1_1Sentence.html", "structNMEA_1_1Sentence" ],
+      [ "Frame", "structNMEA_1_1Frame.html", "structNMEA_1_1Frame" ],
+      [ "GGA", "structNMEA_1_1GGA.html", "structNMEA_1_1GGA" ],
       [ "UtcDate", "structNMEA_1_1UtcDate.html", "structNMEA_1_1UtcDate" ],
+      [ "RMC", "structNMEA_1_1RMC.html", "structNMEA_1_1RMC" ],
+      [ "GLL", "structNMEA_1_1GLL.html", "structNMEA_1_1GLL" ],
       [ "VTG", "structNMEA_1_1VTG.html", "structNMEA_1_1VTG" ],
-      [ "ZDA", "structNMEA_1_1ZDA.html", "structNMEA_1_1ZDA" ]
+      [ "ZDA", "structNMEA_1_1ZDA.html", "structNMEA_1_1ZDA" ],
+      [ "NavigationStatus", "structNMEA_1_1NavigationStatus.html", "structNMEA_1_1NavigationStatus" ],
+      [ "GST", "structNMEA_1_1GST.html", "structNMEA_1_1GST" ]
     ] ],
     [ "PX4FlightModeConfig", "namespacePX4FlightModeConfig.html", [
       [ "Choice", "structPX4FlightModeConfig_1_1Choice.html", "structPX4FlightModeConfig_1_1Choice" ]
     ] ],
     [ "PX4SerialPortConfig", "namespacePX4SerialPortConfig.html", [
+      [ "Port", "structPX4SerialPortConfig_1_1Port.html", "structPX4SerialPortConfig_1_1Port" ],
       [ "Function", "structPX4SerialPortConfig_1_1Function.html", "structPX4SerialPortConfig_1_1Function" ],
-      [ "ParamWrite", "structPX4SerialPortConfig_1_1ParamWrite.html", "structPX4SerialPortConfig_1_1ParamWrite" ],
-      [ "Port", "structPX4SerialPortConfig_1_1Port.html", "structPX4SerialPortConfig_1_1Port" ]
+      [ "ParamWrite", "structPX4SerialPortConfig_1_1ParamWrite.html", "structPX4SerialPortConfig_1_1ParamWrite" ]
     ] ],
     [ "PX4ULogUtility", "namespacePX4ULogUtility.html", [
       [ "MessageHandler", "classPX4ULogUtility_1_1MessageHandler.html", "classPX4ULogUtility_1_1MessageHandler" ]
@@ -169,23 +185,24 @@ var annotated_dup =
       [ "DeviceSnapshot", "structQGCRhiCapture_1_1DeviceSnapshot.html", "structQGCRhiCapture_1_1DeviceSnapshot" ]
     ] ],
     [ "QGCSensors", "namespaceQGCSensors.html", [
-      [ "QGCAmbientTemperature", "classQGCSensors_1_1QGCAmbientTemperature.html", "classQGCSensors_1_1QGCAmbientTemperature" ],
       [ "QGCAmbientTemperatureFilter", "classQGCSensors_1_1QGCAmbientTemperatureFilter.html", "classQGCSensors_1_1QGCAmbientTemperatureFilter" ],
-      [ "QGCCompass", "classQGCSensors_1_1QGCCompass.html", "classQGCSensors_1_1QGCCompass" ],
-      [ "QGCCompassFilter", "classQGCSensors_1_1QGCCompassFilter.html", "classQGCSensors_1_1QGCCompassFilter" ],
+      [ "QGCAmbientTemperature", "classQGCSensors_1_1QGCAmbientTemperature.html", "classQGCSensors_1_1QGCAmbientTemperature" ],
+      [ "QGCPressureFilter", "classQGCSensors_1_1QGCPressureFilter.html", "classQGCSensors_1_1QGCPressureFilter" ],
       [ "QGCPressure", "classQGCSensors_1_1QGCPressure.html", "classQGCSensors_1_1QGCPressure" ],
-      [ "QGCPressureFilter", "classQGCSensors_1_1QGCPressureFilter.html", "classQGCSensors_1_1QGCPressureFilter" ]
+      [ "QGCCompassFilter", "classQGCSensors_1_1QGCCompassFilter.html", "classQGCSensors_1_1QGCCompassFilter" ],
+      [ "QGCCompass", "classQGCSensors_1_1QGCCompass.html", "classQGCSensors_1_1QGCCompass" ]
     ] ],
     [ "QGCSqlHelper", "namespaceQGCSqlHelper.html", [
       [ "ScopedConnection", "classQGCSqlHelper_1_1ScopedConnection.html", "classQGCSqlHelper_1_1ScopedConnection" ],
       [ "Transaction", "classQGCSqlHelper_1_1Transaction.html", "classQGCSqlHelper_1_1Transaction" ]
     ] ],
     [ "QRangeModel", null, [
-      [ "RowOptions< NTRIPMountpoint >", "structQRangeModel_1_1RowOptions_3_01NTRIPMountpoint_01_4.html", "structQRangeModel_1_1RowOptions_3_01NTRIPMountpoint_01_4" ]
+      [ "RowOptions&lt; NTRIPMountpoint &gt;", "structQRangeModel_1_1RowOptions_3_01NTRIPMountpoint_01_4.html", "structQRangeModel_1_1RowOptions_3_01NTRIPMountpoint_01_4" ]
     ] ],
     [ "Quectel", "namespaceQuectel.html", [
       [ "Plan", "namespaceQuectel_1_1Plan.html", [
-        [ "MessageRate", "structQuectel_1_1Plan_1_1MessageRate.html", "structQuectel_1_1Plan_1_1MessageRate" ]
+        [ "MessageRate", "structQuectel_1_1Plan_1_1MessageRate.html", "structQuectel_1_1Plan_1_1MessageRate" ],
+        [ "Fields", "classQuectel_1_1Plan_1_1Fields.html", "classQuectel_1_1Plan_1_1Fields" ]
       ] ]
     ] ],
     [ "QuectelCodec", "namespaceQuectelCodec.html", [
@@ -199,72 +216,72 @@ var annotated_dup =
       [ "JoystickLock", "classSDLJoystick_1_1JoystickLock.html", "classSDLJoystick_1_1JoystickLock" ]
     ] ],
     [ "SurfaceAnalysis", "namespaceSurfaceAnalysis.html", [
-      [ "BadHeights", "structSurfaceAnalysis_1_1BadHeights.html", "structSurfaceAnalysis_1_1BadHeights" ],
-      [ "Hole", "structSurfaceAnalysis_1_1Hole.html", "structSurfaceAnalysis_1_1Hole" ],
-      [ "InPatchStep", "structSurfaceAnalysis_1_1InPatchStep.html", "structSurfaceAnalysis_1_1InPatchStep" ],
-      [ "Report", "structSurfaceAnalysis_1_1Report.html", "structSurfaceAnalysis_1_1Report" ],
       [ "Seam", "structSurfaceAnalysis_1_1Seam.html", "structSurfaceAnalysis_1_1Seam" ],
-      [ "ViewState", "structSurfaceAnalysis_1_1ViewState.html", "structSurfaceAnalysis_1_1ViewState" ]
+      [ "Hole", "structSurfaceAnalysis_1_1Hole.html", "structSurfaceAnalysis_1_1Hole" ],
+      [ "BadHeights", "structSurfaceAnalysis_1_1BadHeights.html", "structSurfaceAnalysis_1_1BadHeights" ],
+      [ "InPatchStep", "structSurfaceAnalysis_1_1InPatchStep.html", "structSurfaceAnalysis_1_1InPatchStep" ],
+      [ "ViewState", "structSurfaceAnalysis_1_1ViewState.html", "structSurfaceAnalysis_1_1ViewState" ],
+      [ "Report", "structSurfaceAnalysis_1_1Report.html", "structSurfaceAnalysis_1_1Report" ]
     ] ],
     [ "TileMath", "namespaceTileMath.html", [
       [ "TileKey", "structTileMath_1_1TileKey.html", "structTileMath_1_1TileKey" ]
     ] ],
     [ "UBX", "namespaceUBX.html", [
       [ "Plan", "namespaceUBX_1_1Plan.html", [
-        [ "MessageRate", "structUBX_1_1Plan_1_1MessageRate.html", "structUBX_1_1Plan_1_1MessageRate" ],
-        [ "RTCMOutput", "structUBX_1_1Plan_1_1RTCMOutput.html", "structUBX_1_1Plan_1_1RTCMOutput" ],
-        [ "UnexpectedOutput", "structUBX_1_1Plan_1_1UnexpectedOutput.html", "structUBX_1_1Plan_1_1UnexpectedOutput" ],
+        [ "ValsetItem", "structUBX_1_1Plan_1_1ValsetItem.html", "structUBX_1_1Plan_1_1ValsetItem" ],
         [ "ValsetBatch", "structUBX_1_1Plan_1_1ValsetBatch.html", "structUBX_1_1Plan_1_1ValsetBatch" ],
-        [ "ValsetItem", "structUBX_1_1Plan_1_1ValsetItem.html", "structUBX_1_1Plan_1_1ValsetItem" ]
+        [ "UnexpectedOutput", "structUBX_1_1Plan_1_1UnexpectedOutput.html", "structUBX_1_1Plan_1_1UnexpectedOutput" ],
+        [ "MessageRate", "structUBX_1_1Plan_1_1MessageRate.html", "structUBX_1_1Plan_1_1MessageRate" ],
+        [ "RTCMOutput", "structUBX_1_1Plan_1_1RTCMOutput.html", "structUBX_1_1Plan_1_1RTCMOutput" ]
       ] ],
-      [ "Ack", "structUBX_1_1Ack.html", "structUBX_1_1Ack" ],
-      [ "Acknowledgement", "structUBX_1_1Acknowledgement.html", "structUBX_1_1Acknowledgement" ],
       [ "CfgKey", "structUBX_1_1CfgKey.html", "structUBX_1_1CfgKey" ],
-      [ "CfgMsg", "structUBX_1_1CfgMsg.html", "structUBX_1_1CfgMsg" ],
-      [ "CfgMsgRates", "structUBX_1_1CfgMsgRates.html", "structUBX_1_1CfgMsgRates" ],
-      [ "CfgNav5", "structUBX_1_1CfgNav5.html", "structUBX_1_1CfgNav5" ],
-      [ "CfgPrt", "structUBX_1_1CfgPrt.html", "structUBX_1_1CfgPrt" ],
-      [ "CfgRate", "structUBX_1_1CfgRate.html", "structUBX_1_1CfgRate" ],
-      [ "CfgTmode3", "structUBX_1_1CfgTmode3.html", "structUBX_1_1CfgTmode3" ],
-      [ "CheckedValsetBatch", "structUBX_1_1CheckedValsetBatch.html", "structUBX_1_1CheckedValsetBatch" ],
+      [ "MsgOutKey", "structUBX_1_1MsgOutKey.html", "structUBX_1_1MsgOutKey" ],
       [ "ConfigurationValue", "structUBX_1_1ConfigurationValue.html", "structUBX_1_1ConfigurationValue" ],
       [ "ConfigurationValueCursor", "classUBX_1_1ConfigurationValueCursor.html", "classUBX_1_1ConfigurationValueCursor" ],
       [ "ConfigurationValues", "structUBX_1_1ConfigurationValues.html", "structUBX_1_1ConfigurationValues" ],
+      [ "CheckedValsetBatch", "structUBX_1_1CheckedValsetBatch.html", "structUBX_1_1CheckedValsetBatch" ],
       [ "EpochAssembler", "classUBX_1_1EpochAssembler.html", "classUBX_1_1EpochAssembler" ],
+      [ "MessageId", "structUBX_1_1MessageId.html", "structUBX_1_1MessageId" ],
       [ "Frame", "structUBX_1_1Frame.html", "structUBX_1_1Frame" ],
       [ "FrameDecoder", "classUBX_1_1FrameDecoder.html", "classUBX_1_1FrameDecoder" ],
-      [ "Identity", "structUBX_1_1Identity.html", "structUBX_1_1Identity" ],
-      [ "MessageId", "structUBX_1_1MessageId.html", "structUBX_1_1MessageId" ],
-      [ "MessageRates", "structUBX_1_1MessageRates.html", "structUBX_1_1MessageRates" ],
-      [ "MessageSchema", "structUBX_1_1MessageSchema.html", "structUBX_1_1MessageSchema" ],
-      [ "MonHw", "structUBX_1_1MonHw.html", "structUBX_1_1MonHw" ],
-      [ "MonRf", "structUBX_1_1MonRf.html", "structUBX_1_1MonRf" ],
-      [ "MonRfBlock", "structUBX_1_1MonRfBlock.html", "structUBX_1_1MonRfBlock" ],
-      [ "MonVer", "structUBX_1_1MonVer.html", "structUBX_1_1MonVer" ],
-      [ "MonVerExtension", "structUBX_1_1MonVerExtension.html", "structUBX_1_1MonVerExtension" ],
-      [ "MsgOutKey", "structUBX_1_1MsgOutKey.html", "structUBX_1_1MsgOutKey" ],
-      [ "NavDop", "structUBX_1_1NavDop.html", "structUBX_1_1NavDop" ],
       [ "NavHpposllh", "structUBX_1_1NavHpposllh.html", "structUBX_1_1NavHpposllh" ],
+      [ "NavDop", "structUBX_1_1NavDop.html", "structUBX_1_1NavDop" ],
       [ "NavPvt", "structUBX_1_1NavPvt.html", "structUBX_1_1NavPvt" ],
-      [ "NavSat", "structUBX_1_1NavSat.html", "structUBX_1_1NavSat" ],
-      [ "NavSatSatellite", "structUBX_1_1NavSatSatellite.html", "structUBX_1_1NavSatSatellite" ],
       [ "NavStatus", "structUBX_1_1NavStatus.html", "structUBX_1_1NavStatus" ],
       [ "NavSvin", "structUBX_1_1NavSvin.html", "structUBX_1_1NavSvin" ],
+      [ "NavSat", "structUBX_1_1NavSat.html", "structUBX_1_1NavSat" ],
+      [ "NavSatSatellite", "structUBX_1_1NavSatSatellite.html", "structUBX_1_1NavSatSatellite" ],
       [ "NavSvinfo", "structUBX_1_1NavSvinfo.html", "structUBX_1_1NavSvinfo" ],
       [ "NavSvinfoChannel", "structUBX_1_1NavSvinfoChannel.html", "structUBX_1_1NavSvinfoChannel" ],
-      [ "Protocol", "classUBX_1_1Protocol.html", "classUBX_1_1Protocol" ],
-      [ "ReceiverController", "classUBX_1_1ReceiverController.html", "classUBX_1_1ReceiverController" ],
+      [ "MonHw", "structUBX_1_1MonHw.html", "structUBX_1_1MonHw" ],
+      [ "MonRfBlock", "structUBX_1_1MonRfBlock.html", "structUBX_1_1MonRfBlock" ],
+      [ "MonRf", "structUBX_1_1MonRf.html", "structUBX_1_1MonRf" ],
+      [ "SecSig", "structUBX_1_1SecSig.html", "structUBX_1_1SecSig" ],
+      [ "MonVer", "structUBX_1_1MonVer.html", "structUBX_1_1MonVer" ],
+      [ "MonVerExtension", "structUBX_1_1MonVerExtension.html", "structUBX_1_1MonVerExtension" ],
+      [ "Ack", "structUBX_1_1Ack.html", "structUBX_1_1Ack" ],
+      [ "CfgPrt", "structUBX_1_1CfgPrt.html", "structUBX_1_1CfgPrt" ],
+      [ "CfgRate", "structUBX_1_1CfgRate.html", "structUBX_1_1CfgRate" ],
+      [ "CfgNav5", "structUBX_1_1CfgNav5.html", "structUBX_1_1CfgNav5" ],
+      [ "CfgMsg", "structUBX_1_1CfgMsg.html", "structUBX_1_1CfgMsg" ],
+      [ "CfgMsgRates", "structUBX_1_1CfgMsgRates.html", "structUBX_1_1CfgMsgRates" ],
+      [ "CfgTmode3", "structUBX_1_1CfgTmode3.html", "structUBX_1_1CfgTmode3" ],
+      [ "MessageSchema", "structUBX_1_1MessageSchema.html", "structUBX_1_1MessageSchema" ],
       [ "ReceiverProfile", "structUBX_1_1ReceiverProfile.html", "structUBX_1_1ReceiverProfile" ],
-      [ "SecSig", "structUBX_1_1SecSig.html", "structUBX_1_1SecSig" ]
+      [ "Identity", "structUBX_1_1Identity.html", "structUBX_1_1Identity" ],
+      [ "Protocol", "classUBX_1_1Protocol.html", "classUBX_1_1Protocol" ],
+      [ "Acknowledgement", "structUBX_1_1Acknowledgement.html", "structUBX_1_1Acknowledgement" ],
+      [ "MessageRates", "structUBX_1_1MessageRates.html", "structUBX_1_1MessageRates" ],
+      [ "ReceiverController", "classUBX_1_1ReceiverController.html", "classUBX_1_1ReceiverController" ]
     ] ],
     [ "Unicore", "namespaceUnicore.html", [
       [ "Plan", "namespaceUnicore_1_1Plan.html", [
-        [ "BaseStation", "structUnicore_1_1Plan_1_1BaseStation.html", "structUnicore_1_1Plan_1_1BaseStation" ],
-        [ "Command", "structUnicore_1_1Plan_1_1Command.html", "structUnicore_1_1Plan_1_1Command" ]
+        [ "Command", "structUnicore_1_1Plan_1_1Command.html", "structUnicore_1_1Plan_1_1Command" ],
+        [ "BaseStation", "structUnicore_1_1Plan_1_1BaseStation.html", "structUnicore_1_1Plan_1_1BaseStation" ]
       ] ]
     ] ],
-    [ "VideoBackend", "namespaceVideoBackend.html", [
-      [ "EnvPrepResult", "structVideoBackend_1_1EnvPrepResult.html", "structVideoBackend_1_1EnvPrepResult" ]
+    [ "VideoScreenshot", "namespaceVideoScreenshot.html", [
+      [ "Exif", "structVideoScreenshot_1_1Exif.html", "structVideoScreenshot_1_1Exif" ]
     ] ],
     [ "VideoStreamResolver", "namespaceVideoStreamResolver.html", [
       [ "Settings", "structVideoStreamResolver_1_1Settings.html", "structVideoStreamResolver_1_1Settings" ]
@@ -272,34 +289,34 @@ var annotated_dup =
     [ "Wire", "namespaceWire.html", [
       [ "detail", "namespaceWire_1_1detail.html", [
         [ "MemberPointer", "structWire_1_1detail_1_1MemberPointer.html", null ],
-        [ "MemberPointer< Value Class::* >", "structWire_1_1detail_1_1MemberPointer_3_01Value_01Class_1_1_5_01_4.html", "structWire_1_1detail_1_1MemberPointer_3_01Value_01Class_1_1_5_01_4" ]
+        [ "MemberPointer&lt; Value Class::* &gt;", "structWire_1_1detail_1_1MemberPointer_3_01Value_01Class_1_1_5_01_4.html", "structWire_1_1detail_1_1MemberPointer_3_01Value_01Class_1_1_5_01_4" ]
       ] ],
-      [ "Field", "structWire_1_1Field.html", "structWire_1_1Field" ],
+      [ "Layout&lt; SBF::BlockHeader &gt;", "structWire_1_1Layout_3_01SBF_1_1BlockHeader_01_4.html", "structWire_1_1Layout_3_01SBF_1_1BlockHeader_01_4" ],
+      [ "Layout&lt; SBF::PVTGeodetic &gt;", "structWire_1_1Layout_3_01SBF_1_1PVTGeodetic_01_4.html", "structWire_1_1Layout_3_01SBF_1_1PVTGeodetic_01_4" ],
+      [ "Layout&lt; UBX::NavHpposllh &gt;", "structWire_1_1Layout_3_01UBX_1_1NavHpposllh_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavHpposllh_01_4" ],
+      [ "Layout&lt; UBX::NavDop &gt;", "structWire_1_1Layout_3_01UBX_1_1NavDop_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavDop_01_4" ],
+      [ "Layout&lt; UBX::NavPvt &gt;", "structWire_1_1Layout_3_01UBX_1_1NavPvt_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavPvt_01_4" ],
+      [ "Layout&lt; UBX::NavStatus &gt;", "structWire_1_1Layout_3_01UBX_1_1NavStatus_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavStatus_01_4" ],
+      [ "Layout&lt; UBX::NavSvin &gt;", "structWire_1_1Layout_3_01UBX_1_1NavSvin_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavSvin_01_4" ],
+      [ "Layout&lt; UBX::NavSat &gt;", "structWire_1_1Layout_3_01UBX_1_1NavSat_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavSat_01_4" ],
+      [ "Layout&lt; UBX::NavSatSatellite &gt;", "structWire_1_1Layout_3_01UBX_1_1NavSatSatellite_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavSatSatellite_01_4" ],
+      [ "Layout&lt; UBX::NavSvinfo &gt;", "structWire_1_1Layout_3_01UBX_1_1NavSvinfo_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavSvinfo_01_4" ],
+      [ "Layout&lt; UBX::NavSvinfoChannel &gt;", "structWire_1_1Layout_3_01UBX_1_1NavSvinfoChannel_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavSvinfoChannel_01_4" ],
+      [ "Layout&lt; UBX::MonHw &gt;", "structWire_1_1Layout_3_01UBX_1_1MonHw_01_4.html", "structWire_1_1Layout_3_01UBX_1_1MonHw_01_4" ],
+      [ "Layout&lt; UBX::MonRfBlock &gt;", "structWire_1_1Layout_3_01UBX_1_1MonRfBlock_01_4.html", "structWire_1_1Layout_3_01UBX_1_1MonRfBlock_01_4" ],
+      [ "Layout&lt; UBX::MonRf &gt;", "structWire_1_1Layout_3_01UBX_1_1MonRf_01_4.html", "structWire_1_1Layout_3_01UBX_1_1MonRf_01_4" ],
+      [ "Layout&lt; UBX::SecSig &gt;", "structWire_1_1Layout_3_01UBX_1_1SecSig_01_4.html", "structWire_1_1Layout_3_01UBX_1_1SecSig_01_4" ],
+      [ "Layout&lt; UBX::MonVer &gt;", "structWire_1_1Layout_3_01UBX_1_1MonVer_01_4.html", "structWire_1_1Layout_3_01UBX_1_1MonVer_01_4" ],
+      [ "Layout&lt; UBX::MonVerExtension &gt;", "structWire_1_1Layout_3_01UBX_1_1MonVerExtension_01_4.html", "structWire_1_1Layout_3_01UBX_1_1MonVerExtension_01_4" ],
+      [ "Layout&lt; UBX::Ack &gt;", "structWire_1_1Layout_3_01UBX_1_1Ack_01_4.html", "structWire_1_1Layout_3_01UBX_1_1Ack_01_4" ],
+      [ "Layout&lt; UBX::CfgPrt &gt;", "structWire_1_1Layout_3_01UBX_1_1CfgPrt_01_4.html", "structWire_1_1Layout_3_01UBX_1_1CfgPrt_01_4" ],
+      [ "Layout&lt; UBX::CfgRate &gt;", "structWire_1_1Layout_3_01UBX_1_1CfgRate_01_4.html", "structWire_1_1Layout_3_01UBX_1_1CfgRate_01_4" ],
+      [ "Layout&lt; UBX::CfgNav5 &gt;", "structWire_1_1Layout_3_01UBX_1_1CfgNav5_01_4.html", "structWire_1_1Layout_3_01UBX_1_1CfgNav5_01_4" ],
+      [ "Layout&lt; UBX::CfgMsg &gt;", "structWire_1_1Layout_3_01UBX_1_1CfgMsg_01_4.html", "structWire_1_1Layout_3_01UBX_1_1CfgMsg_01_4" ],
+      [ "Layout&lt; UBX::CfgMsgRates &gt;", "structWire_1_1Layout_3_01UBX_1_1CfgMsgRates_01_4.html", "structWire_1_1Layout_3_01UBX_1_1CfgMsgRates_01_4" ],
+      [ "Layout&lt; UBX::CfgTmode3 &gt;", "structWire_1_1Layout_3_01UBX_1_1CfgTmode3_01_4.html", "structWire_1_1Layout_3_01UBX_1_1CfgTmode3_01_4" ],
       [ "Layout", "structWire_1_1Layout.html", null ],
-      [ "Layout< SBF::BlockHeader >", "structWire_1_1Layout_3_01SBF_1_1BlockHeader_01_4.html", "structWire_1_1Layout_3_01SBF_1_1BlockHeader_01_4" ],
-      [ "Layout< SBF::PVTGeodetic >", "structWire_1_1Layout_3_01SBF_1_1PVTGeodetic_01_4.html", "structWire_1_1Layout_3_01SBF_1_1PVTGeodetic_01_4" ],
-      [ "Layout< UBX::Ack >", "structWire_1_1Layout_3_01UBX_1_1Ack_01_4.html", "structWire_1_1Layout_3_01UBX_1_1Ack_01_4" ],
-      [ "Layout< UBX::CfgMsg >", "structWire_1_1Layout_3_01UBX_1_1CfgMsg_01_4.html", "structWire_1_1Layout_3_01UBX_1_1CfgMsg_01_4" ],
-      [ "Layout< UBX::CfgMsgRates >", "structWire_1_1Layout_3_01UBX_1_1CfgMsgRates_01_4.html", "structWire_1_1Layout_3_01UBX_1_1CfgMsgRates_01_4" ],
-      [ "Layout< UBX::CfgNav5 >", "structWire_1_1Layout_3_01UBX_1_1CfgNav5_01_4.html", "structWire_1_1Layout_3_01UBX_1_1CfgNav5_01_4" ],
-      [ "Layout< UBX::CfgPrt >", "structWire_1_1Layout_3_01UBX_1_1CfgPrt_01_4.html", "structWire_1_1Layout_3_01UBX_1_1CfgPrt_01_4" ],
-      [ "Layout< UBX::CfgRate >", "structWire_1_1Layout_3_01UBX_1_1CfgRate_01_4.html", "structWire_1_1Layout_3_01UBX_1_1CfgRate_01_4" ],
-      [ "Layout< UBX::CfgTmode3 >", "structWire_1_1Layout_3_01UBX_1_1CfgTmode3_01_4.html", "structWire_1_1Layout_3_01UBX_1_1CfgTmode3_01_4" ],
-      [ "Layout< UBX::MonHw >", "structWire_1_1Layout_3_01UBX_1_1MonHw_01_4.html", "structWire_1_1Layout_3_01UBX_1_1MonHw_01_4" ],
-      [ "Layout< UBX::MonRf >", "structWire_1_1Layout_3_01UBX_1_1MonRf_01_4.html", "structWire_1_1Layout_3_01UBX_1_1MonRf_01_4" ],
-      [ "Layout< UBX::MonRfBlock >", "structWire_1_1Layout_3_01UBX_1_1MonRfBlock_01_4.html", "structWire_1_1Layout_3_01UBX_1_1MonRfBlock_01_4" ],
-      [ "Layout< UBX::MonVer >", "structWire_1_1Layout_3_01UBX_1_1MonVer_01_4.html", "structWire_1_1Layout_3_01UBX_1_1MonVer_01_4" ],
-      [ "Layout< UBX::MonVerExtension >", "structWire_1_1Layout_3_01UBX_1_1MonVerExtension_01_4.html", "structWire_1_1Layout_3_01UBX_1_1MonVerExtension_01_4" ],
-      [ "Layout< UBX::NavDop >", "structWire_1_1Layout_3_01UBX_1_1NavDop_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavDop_01_4" ],
-      [ "Layout< UBX::NavHpposllh >", "structWire_1_1Layout_3_01UBX_1_1NavHpposllh_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavHpposllh_01_4" ],
-      [ "Layout< UBX::NavPvt >", "structWire_1_1Layout_3_01UBX_1_1NavPvt_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavPvt_01_4" ],
-      [ "Layout< UBX::NavSat >", "structWire_1_1Layout_3_01UBX_1_1NavSat_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavSat_01_4" ],
-      [ "Layout< UBX::NavSatSatellite >", "structWire_1_1Layout_3_01UBX_1_1NavSatSatellite_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavSatSatellite_01_4" ],
-      [ "Layout< UBX::NavStatus >", "structWire_1_1Layout_3_01UBX_1_1NavStatus_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavStatus_01_4" ],
-      [ "Layout< UBX::NavSvin >", "structWire_1_1Layout_3_01UBX_1_1NavSvin_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavSvin_01_4" ],
-      [ "Layout< UBX::NavSvinfo >", "structWire_1_1Layout_3_01UBX_1_1NavSvinfo_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavSvinfo_01_4" ],
-      [ "Layout< UBX::NavSvinfoChannel >", "structWire_1_1Layout_3_01UBX_1_1NavSvinfoChannel_01_4.html", "structWire_1_1Layout_3_01UBX_1_1NavSvinfoChannel_01_4" ],
-      [ "Layout< UBX::SecSig >", "structWire_1_1Layout_3_01UBX_1_1SecSig_01_4.html", "structWire_1_1Layout_3_01UBX_1_1SecSig_01_4" ]
+      [ "Field", "structWire_1_1Field.html", "structWire_1_1Field" ]
     ] ],
     [ "_GstQgcQVideoSink", "struct__GstQgcQVideoSink.html", "struct__GstQgcQVideoSink" ],
     [ "_GstQgcVideoSinkBin", "struct__GstQgcVideoSinkBin.html", "struct__GstQgcVideoSinkBin" ],
@@ -442,6 +459,7 @@ var annotated_dup =
     [ "FactMetaData", "classFactMetaData.html", "classFactMetaData" ],
     [ "FactPanelController", "classFactPanelController.html", "classFactPanelController" ],
     [ "FactValueGrid", "classFactValueGrid.html", "classFactValueGrid" ],
+    [ "FactValueGridLayouts", "classFactValueGridLayouts.html", "classFactValueGridLayouts" ],
     [ "FailureInjection", "classFailureInjection.html", "classFailureInjection" ],
     [ "FailureInjectionComponent", "classFailureInjectionComponent.html", "classFailureInjectionComponent" ],
     [ "FallbackChainState", "classFallbackChainState.html", "classFallbackChainState" ],
@@ -566,10 +584,15 @@ var annotated_dup =
     [ "GPSSurveyReport", "structGPSSurveyReport.html", "structGPSSurveyReport" ],
     [ "GPSTransport", "classGPSTransport.html", "classGPSTransport" ],
     [ "GPSWriteResult", "structGPSWriteResult.html", "structGPSWriteResult" ],
+    [ "GstBusPump", "classGstBusPump.html", "classGstBusPump" ],
     [ "GstHwFrameTexturesBase", "classGstHwFrameTexturesBase.html", "classGstHwFrameTexturesBase" ],
     [ "GstHwMapTail", "structGstHwMapTail.html", "structGstHwMapTail" ],
     [ "GstHwVideoBuffer", "classGstHwVideoBuffer.html", "classGstHwVideoBuffer" ],
+    [ "GStreamerVideoBackend", "classGStreamerVideoBackend.html", "classGStreamerVideoBackend" ],
+    [ "GstReceiverRequest", "structGstReceiverRequest.html", "structGstReceiverRequest" ],
+    [ "GstReceiverStatus", "structGstReceiverStatus.html", "structGstReceiverStatus" ],
     [ "GstReceiverWorker", "classGstReceiverWorker.html", "classGstReceiverWorker" ],
+    [ "GstRecordingRequest", "structGstRecordingRequest.html", "structGstRecordingRequest" ],
     [ "GstVideoReceiver", "classGstVideoReceiver.html", "classGstVideoReceiver" ],
     [ "GuardedTransition", "classGuardedTransition.html", "classGuardedTransition" ],
     [ "HealthAndArmingCheckProblem", "classHealthAndArmingCheckProblem.html", "classHealthAndArmingCheckProblem" ],
@@ -727,6 +750,7 @@ var annotated_dup =
     [ "PauseVehicleThenChangeAltData_t", "structPauseVehicleThenChangeAltData__t.html", "structPauseVehicleThenChangeAltData__t" ],
     [ "PipelineDotDumper", "classPipelineDotDumper.html", "classPipelineDotDumper" ],
     [ "PipelineSession", "classPipelineSession.html", "classPipelineSession" ],
+    [ "PipelineStatsProbe", "classPipelineStatsProbe.html", "classPipelineStatsProbe" ],
     [ "PiperTtsEngine", "classPiperTtsEngine.html", "classPiperTtsEngine" ],
     [ "PiperTtsPlugin", "classPiperTtsPlugin.html", "classPiperTtsPlugin" ],
     [ "PlanCreator", "classPlanCreator.html", "classPlanCreator" ],
@@ -853,7 +877,9 @@ var annotated_dup =
     [ "QSerialPortInfo", "classQSerialPortInfo.html", "classQSerialPortInfo" ],
     [ "QSerialPortInfoPrivate", "classQSerialPortInfoPrivate.html", "classQSerialPortInfoPrivate" ],
     [ "QSerialPortPrivate", "classQSerialPortPrivate.html", "classQSerialPortPrivate" ],
+    [ "QtMultimediaVideoReceiver", "classQtMultimediaVideoReceiver.html", "classQtMultimediaVideoReceiver" ],
     [ "QtRuntimeScheduler", "classQtRuntimeScheduler.html", "classQtRuntimeScheduler" ],
+    [ "QtVideoRecorder", "classQtVideoRecorder.html", "classQtVideoRecorder" ],
     [ "RadioComponentController", "classRadioComponentController.html", "classRadioComponentController" ],
     [ "RadioStatusFactGroup", "classRadioStatusFactGroup.html", "classRadioStatusFactGroup" ],
     [ "RallyPoint", "classRallyPoint.html", "classRallyPoint" ],
@@ -865,6 +891,7 @@ var annotated_dup =
     [ "ReadTimestamp", "classReadTimestamp.html", "classReadTimestamp" ],
     [ "RecordingBranch", "classRecordingBranch.html", "classRecordingBranch" ],
     [ "RecordingFinalizer", "classRecordingFinalizer.html", "classRecordingFinalizer" ],
+    [ "RecordingPlan", "classRecordingPlan.html", "classRecordingPlan" ],
     [ "RemoteControlCalibrationController", "classRemoteControlCalibrationController.html", "classRemoteControlCalibrationController" ],
     [ "RemoteIDManager", "classRemoteIDManager.html", "classRemoteIDManager" ],
     [ "RemoteIDSettings", "classRemoteIDSettings.html", "classRemoteIDSettings" ],
@@ -930,10 +957,12 @@ var annotated_dup =
     [ "StatkartTopoMapProvider", "classStatkartTopoMapProvider.html", "classStatkartTopoMapProvider" ],
     [ "StatusText", "classStatusText.html", "classStatusText" ],
     [ "StatusTextHandler", "classStatusTextHandler.html", "classStatusTextHandler" ],
+    [ "StreamSupervisor", "classStreamSupervisor.html", "classStreamSupervisor" ],
     [ "StreamWatchdog", "classStreamWatchdog.html", "classStreamWatchdog" ],
     [ "StructureScanComplexItem", "classStructureScanComplexItem.html", "classStructureScanComplexItem" ],
     [ "StructureScanPlanCreator", "classStructureScanPlanCreator.html", "classStructureScanPlanCreator" ],
     [ "SubMachineState", "classSubMachineState.html", "classSubMachineState" ],
+    [ "SubtitleTrack", "classSubtitleTrack.html", "classSubtitleTrack" ],
     [ "SubtitleWriter", "classSubtitleWriter.html", "classSubtitleWriter" ],
     [ "SurfaceModel", "classSurfaceModel.html", "classSurfaceModel" ],
     [ "SurfacePatchModel", "classSurfacePatchModel.html", "classSurfacePatchModel" ],
@@ -949,6 +978,8 @@ var annotated_dup =
     [ "TCPGPSTransport", "classTCPGPSTransport.html", "classTCPGPSTransport" ],
     [ "TCPLink", "classTCPLink.html", "classTCPLink" ],
     [ "TCPWorker", "classTCPWorker.html", "classTCPWorker" ],
+    [ "TeeBranchHead", "classTeeBranchHead.html", "classTeeBranchHead" ],
+    [ "TelemetryBarValues", "classTelemetryBarValues.html", "classTelemetryBarValues" ],
     [ "TerrainAreaQuery", "classTerrainAreaQuery.html", "classTerrainAreaQuery" ],
     [ "TerrainAtCoordinateBatchManager", "classTerrainAtCoordinateBatchManager.html", "classTerrainAtCoordinateBatchManager" ],
     [ "TerrainAtCoordinateQuery", "classTerrainAtCoordinateQuery.html", "classTerrainAtCoordinateQuery" ],
@@ -990,6 +1021,9 @@ var annotated_dup =
     [ "ULogFullHandler", "classULogFullHandler.html", "classULogFullHandler" ],
     [ "UnitsSettings", "classUnitsSettings.html", "classUnitsSettings" ],
     [ "UrlFactory", "classUrlFactory.html", "classUrlFactory" ],
+    [ "UVCCameraController", "classUVCCameraController.html", "classUVCCameraController" ],
+    [ "UVCFrameRelay", "classUVCFrameRelay.html", "classUVCFrameRelay" ],
+    [ "UVCStreamMonitor", "classUVCStreamMonitor.html", "classUVCStreamMonitor" ],
     [ "Vehicle", "classVehicle.html", "classVehicle" ],
     [ "VehicleCameraControl", "classVehicleCameraControl.html", "classVehicleCameraControl" ],
     [ "VehicleClockFactGroup", "classVehicleClockFactGroup.html", "classVehicleClockFactGroup" ],
@@ -1015,11 +1049,17 @@ var annotated_dup =
     [ "VehicleTypes", "structVehicleTypes.html", "structVehicleTypes" ],
     [ "VehicleVibrationFactGroup", "classVehicleVibrationFactGroup.html", "classVehicleVibrationFactGroup" ],
     [ "VehicleWindFactGroup", "classVehicleWindFactGroup.html", "classVehicleWindFactGroup" ],
+    [ "VideoBackend", "classVideoBackend.html", "classVideoBackend" ],
     [ "VideoManager", "classVideoManager.html", "classVideoManager" ],
     [ "VideoReceiver", "classVideoReceiver.html", "classVideoReceiver" ],
+    [ "VideoRecordingList", "classVideoRecordingList.html", "classVideoRecordingList" ],
     [ "VideoRecordingService", "classVideoRecordingService.html", "classVideoRecordingService" ],
     [ "VideoSettings", "classVideoSettings.html", "classVideoSettings" ],
     [ "VideoStreamController", "classVideoStreamController.html", "classVideoStreamController" ],
+    [ "VideoStreamStats", "structVideoStreamStats.html", "structVideoStreamStats" ],
+    [ "VideoStreamStatsMeter", "classVideoStreamStatsMeter.html", "classVideoStreamStatsMeter" ],
+    [ "VideoStreamStatsSampler", "classVideoStreamStatsSampler.html", "classVideoStreamStatsSampler" ],
+    [ "VideoTelemetryOverlay", "classVideoTelemetryOverlay.html", "classVideoTelemetryOverlay" ],
     [ "Viewer3DCameraController", "classViewer3DCameraController.html", "classViewer3DCameraController" ],
     [ "Viewer3DGeoCoordinateType", "classViewer3DGeoCoordinateType.html", "classViewer3DGeoCoordinateType" ],
     [ "Viewer3DInstancing", "classViewer3DInstancing.html", "classViewer3DInstancing" ],

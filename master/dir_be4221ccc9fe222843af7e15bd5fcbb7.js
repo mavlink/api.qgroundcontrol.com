@@ -15,5 +15,8 @@ var dir_be4221ccc9fe222843af7e15bd5fcbb7 =
     [ "MockLinkPX4Calibration.cc", "MockLinkPX4Calibration_8cc.html", "MockLinkPX4Calibration_8cc" ],
     [ "MockLinkPX4Calibration.h", "MockLinkPX4Calibration_8h.html", "MockLinkPX4Calibration_8h" ],
     [ "MockLinkWorker.cc", "MockLinkWorker_8cc.html", null ],
-    [ "MockLinkWorker.h", "MockLinkWorker_8h.html", "MockLinkWorker_8h" ]
+    [ "MockLinkWorker.h", "MockLinkWorker_8h.html", "MockLinkWorker_8h" ],
+    [ "MockVideoStreamServer.cc", "MockVideoStreamServer_8cc.html", null ],
+    [ "MockVideoStreamServer.h", "MockVideoStreamServer_8h.html", "MockVideoStreamServer_8h" ],
+    [ "MockVideoStreamServerNull.cc", "MockVideoStreamServerNull_8cc.html", null ]
 ];

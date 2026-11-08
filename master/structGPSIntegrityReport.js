@@ -1,8 +1,8 @@
 var structGPSIntegrityReport =
 [
-    [ "Antenna", "structGPSIntegrityReport_1_1Antenna.html", "structGPSIntegrityReport_1_1Antenna" ],
     [ "Jamming", "structGPSIntegrityReport_1_1Jamming.html", "structGPSIntegrityReport_1_1Jamming" ],
     [ "Spoofing", "structGPSIntegrityReport_1_1Spoofing.html", "structGPSIntegrityReport_1_1Spoofing" ],
+    [ "Antenna", "structGPSIntegrityReport_1_1Antenna.html", "structGPSIntegrityReport_1_1Antenna" ],
     [ "AntennaState", "structGPSIntegrityReport.html#a13129b5c8c6426427c831b9dcc9387f2", [
       [ "Unknown", "structGPSIntegrityReport.html#a13129b5c8c6426427c831b9dcc9387f2a88183b946cc5f0e8c96b2e66e1c74a7e", null ],
       [ "Ok", "structGPSIntegrityReport.html#a13129b5c8c6426427c831b9dcc9387f2aa60852f204ed8028c1c58808b746d115", null ],

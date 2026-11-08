@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['sending_5frate_5fmsec_0',['SENDING_RATE_MSEC',['../RemoteIDManager_8cc.html#a2d1613c5932ff6f55f6cd70f0dc086c9',1,'RemoteIDManager.cc']]]
+  ['request_5foperator_5fcontrol_5fallow_5ftakeover_5ftimeout_5fmsecs_0',['REQUEST_OPERATOR_CONTROL_ALLOW_TAKEOVER_TIMEOUT_MSECS',['../Vehicle_8cc.html#a985da56372037db4b537d0bb212b47da',1,'Vehicle.cc']]],
+  ['rid_5ftimeout_1',['RID_TIMEOUT',['../RemoteIDManager_8cc.html#acc1aeefe0c95e54b99ee0339eece34ac',1,'RemoteIDManager.cc']]]
 ];

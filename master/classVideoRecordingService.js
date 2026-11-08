@@ -1,6 +1,6 @@
 var classVideoRecordingService =
 [
-    [ "VideoRecordingService", "classVideoRecordingService.html#a308276569724f929250ec712f3f2604f", null ],
+    [ "VideoRecordingService", "classVideoRecordingService.html#a5896255af97be6b5b442397065036a20", null ],
     [ "~VideoRecordingService", "classVideoRecordingService.html#a4e725ecd7aca7b43c6e4334b21450e9d", null ],
     [ "pruneStorage", "classVideoRecordingService.html#afef9e085b7a14df2ae2922aeef4b43c5", null ],
     [ "recording", "classVideoRecordingService.html#a4b8ed21954452efcc5c805d9bbe3cc3f", null ],

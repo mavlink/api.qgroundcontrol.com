@@ -1,7 +1,7 @@
 var classQGCCameraManager =
 [
-    [ "CameraInfoRequestContext", "structQGCCameraManager_1_1CameraInfoRequestContext.html", "structQGCCameraManager_1_1CameraInfoRequestContext" ],
     [ "CameraStruct", "structQGCCameraManager_1_1CameraStruct.html", "structQGCCameraManager_1_1CameraStruct" ],
+    [ "CameraInfoRequestContext", "structQGCCameraManager_1_1CameraInfoRequestContext.html", "structQGCCameraManager_1_1CameraInfoRequestContext" ],
     [ "QGCCameraManager", "classQGCCameraManager.html#a563ba9a15c7b88cfe7db51f434b8945a", null ],
     [ "~QGCCameraManager", "classQGCCameraManager.html#a03a4d065c5561e516e164cde0bd15633", null ],
     [ "_activeJoystickChanged", "classQGCCameraManager.html#add81b04757e47c90fbc669e3d543c9b7", null ],

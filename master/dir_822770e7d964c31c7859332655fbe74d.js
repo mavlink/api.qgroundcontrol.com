@@ -27,5 +27,6 @@ var dir_822770e7d964c31c7859332655fbe74d =
     [ "SignalStrength.qml", "SignalStrength_8qml.html", null ],
     [ "StatusPill.qml", "StatusPill_8qml.html", null ],
     [ "TelemetryRSSIIndicator.qml", "TelemetryRSSIIndicator_8qml.html", null ],
-    [ "VehicleMessageList.qml", "VehicleMessageList_8qml.html", null ]
+    [ "VehicleMessageList.qml", "VehicleMessageList_8qml.html", null ],
+    [ "VideoStreamIndicator.qml", "VideoStreamIndicator_8qml.html", null ]
 ];

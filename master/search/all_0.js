@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['1_2026_0',['Live pipeline visualizer (&lt;tt&gt;gst-dots-viewer&lt;/tt&gt;, GStreamer ≥ 1.26)',['../md_src_2VideoManager_2VideoReceiver_2GStreamer_2README.html#autotoc_md35',1,'']]]
+  ['1_2026_0',['Live pipeline visualizer (&lt;span class=&quot;tt&quot;&gt;gst-dots-viewer&lt;/span&gt;, GStreamer ≥ 1.26)',['../dir_b576ff9da4174a54288db11cc55a2673.html#autotoc_md36',1,'']]]
 ];

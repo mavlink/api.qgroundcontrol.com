@@ -1,11 +1,11 @@
 var namespaceSurfaceAnalysis =
 [
-    [ "BadHeights", "structSurfaceAnalysis_1_1BadHeights.html", "structSurfaceAnalysis_1_1BadHeights" ],
-    [ "Hole", "structSurfaceAnalysis_1_1Hole.html", "structSurfaceAnalysis_1_1Hole" ],
-    [ "InPatchStep", "structSurfaceAnalysis_1_1InPatchStep.html", "structSurfaceAnalysis_1_1InPatchStep" ],
-    [ "Report", "structSurfaceAnalysis_1_1Report.html", "structSurfaceAnalysis_1_1Report" ],
     [ "Seam", "structSurfaceAnalysis_1_1Seam.html", "structSurfaceAnalysis_1_1Seam" ],
+    [ "Hole", "structSurfaceAnalysis_1_1Hole.html", "structSurfaceAnalysis_1_1Hole" ],
+    [ "BadHeights", "structSurfaceAnalysis_1_1BadHeights.html", "structSurfaceAnalysis_1_1BadHeights" ],
+    [ "InPatchStep", "structSurfaceAnalysis_1_1InPatchStep.html", "structSurfaceAnalysis_1_1InPatchStep" ],
     [ "ViewState", "structSurfaceAnalysis_1_1ViewState.html", "structSurfaceAnalysis_1_1ViewState" ],
+    [ "Report", "structSurfaceAnalysis_1_1Report.html", "structSurfaceAnalysis_1_1Report" ],
     [ "HoleCause", "namespaceSurfaceAnalysis.html#a09d8ac52384bf353985f4f18125c598b", [
       [ "NoPatch", "namespaceSurfaceAnalysis.html#a09d8ac52384bf353985f4f18125c598ba0999bbe93fb2f520b611556a13d69b95", null ],
       [ "SuppressedCovered", "namespaceSurfaceAnalysis.html#a09d8ac52384bf353985f4f18125c598ba3bec5d54212099b49abad761c6d9027f", null ],

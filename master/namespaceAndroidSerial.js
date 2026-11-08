@@ -1,7 +1,7 @@
 var namespaceAndroidSerial =
 [
-    [ "JniContext", "structAndroidSerial_1_1JniContext.html", "structAndroidSerial_1_1JniContext" ],
     [ "JniMethodCache", "structAndroidSerial_1_1JniMethodCache.html", "structAndroidSerial_1_1JniMethodCache" ],
+    [ "JniContext", "structAndroidSerial_1_1JniContext.html", "structAndroidSerial_1_1JniContext" ],
     [ "ControlLine", "namespaceAndroidSerial.html#aac2dd9b989ea453e709894cb17e95011", [
       [ "RtsControlLine", "namespaceAndroidSerial.html#aac2dd9b989ea453e709894cb17e95011a84d34735ddf98d4c3854d449c898dd29", null ],
       [ "CtsControlLine", "namespaceAndroidSerial.html#aac2dd9b989ea453e709894cb17e95011ad9fbc40f3ac0a3569e119736c1de35cf", null ],

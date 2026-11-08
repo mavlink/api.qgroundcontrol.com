@@ -12,11 +12,12 @@ var searchData=
   ['gpstime_9',['GPSTime',['../namespaceGPSTime.html',1,'']]],
   ['gpstypes_10',['GPSTypes',['../namespaceGPSTypes.html',1,'']]],
   ['graphicssetup_11',['GraphicsSetup',['../namespaceGraphicsSetup.html',1,'']]],
-  ['gsthw_12',['GstHw',['../namespaceGstHw.html',1,'']]],
-  ['gsthwpathtelemetry_13',['GstHwPathTelemetry',['../namespaceGstHwPathTelemetry.html',1,'']]],
-  ['gstqgc_14',['GstQgc',['../namespaceGstQgc.html',1,'']]],
-  ['gstreamer_15',['GStreamer',['../namespaceGStreamer.html',1,'']]],
-  ['gstreamer_3a_3aenvironment_16',['Environment',['../namespaceGStreamer_1_1Environment.html',1,'GStreamer']]],
-  ['gstreamer_3a_3aselftest_17',['SelfTest',['../namespaceGStreamer_1_1SelfTest.html',1,'GStreamer']]],
-  ['gstreamer_3a_3asourcefactory_18',['SourceFactory',['../namespaceGStreamer_1_1SourceFactory.html',1,'GStreamer']]]
+  ['gstd3d12stagingpool_12',['GstD3D12StagingPool',['../namespaceGstD3D12StagingPool.html',1,'']]],
+  ['gsthw_13',['GstHw',['../namespaceGstHw.html',1,'']]],
+  ['gsthwpathtelemetry_14',['GstHwPathTelemetry',['../namespaceGstHwPathTelemetry.html',1,'']]],
+  ['gstqgc_15',['GstQgc',['../namespaceGstQgc.html',1,'']]],
+  ['gstreamer_16',['GStreamer',['../namespaceGStreamer.html',1,'']]],
+  ['gstreamer_3a_3aenvironment_17',['Environment',['../namespaceGStreamer_1_1Environment.html',1,'GStreamer']]],
+  ['gstreamer_3a_3aselftest_18',['SelfTest',['../namespaceGStreamer_1_1SelfTest.html',1,'GStreamer']]],
+  ['gstreamer_3a_3asourcefactory_19',['SourceFactory',['../namespaceGStreamer_1_1SourceFactory.html',1,'GStreamer']]]
 ];

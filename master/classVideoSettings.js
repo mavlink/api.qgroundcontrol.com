@@ -1,5 +1,15 @@
 var classVideoSettings =
 [
+    [ "VideoBackendChoice", "classVideoSettings.html#a8c5752316512291033930a85a66e7d27", [
+      [ "VideoBackendGStreamer", "classVideoSettings.html#a8c5752316512291033930a85a66e7d27a9a2382c0c6649699e34a690c8769da6c", null ],
+      [ "VideoBackendQtMultimedia", "classVideoSettings.html#a8c5752316512291033930a85a66e7d27ae41d3b52fbb32aaae3df947905b96447", null ]
+    ] ],
+    [ "VideoFit", "classVideoSettings.html#a9c07987e8c26e46317d9148d65025b9a", [
+      [ "VideoFitWidth", "classVideoSettings.html#a9c07987e8c26e46317d9148d65025b9aa94ef308475f95dba3442b49c7af9d740", null ],
+      [ "VideoFitHeight", "classVideoSettings.html#a9c07987e8c26e46317d9148d65025b9aa775042d251c642566f370241a51bbc7f", null ],
+      [ "VideoFitFill", "classVideoSettings.html#a9c07987e8c26e46317d9148d65025b9aa780005c45b5c160f4cb3e25ca49e451a", null ],
+      [ "VideoFitNoCrop", "classVideoSettings.html#a9c07987e8c26e46317d9148d65025b9aab7c4e4bb24397ea33777cb869e8a3411", null ]
+    ] ],
     [ "VideoSettings", "classVideoSettings.html#ae73354df049290fc3f8b1e46f5dd60db", null ],
     [ "disabledVideoSource", "classVideoSettings.html#a6776959f0dce0e49407d40a745520531", null ],
     [ "mpegtsVideoSource", "classVideoSettings.html#a23c06747b69e529a119aeed8f3079258", null ],

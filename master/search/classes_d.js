@@ -47,7 +47,7 @@ var searchData=
   ['messagehandler_44',['MessageHandler',['../classPX4ULogUtility_1_1MessageHandler.html',1,'PX4ULogUtility']]],
   ['messageid_45',['MessageId',['../structUBX_1_1MessageId.html',1,'UBX']]],
   ['messageintervalmanager_46',['MessageIntervalManager',['../classMessageIntervalManager.html',1,'']]],
-  ['messagerate_47',['messagerate',['../structQuectel_1_1Plan_1_1MessageRate.html',1,'Quectel::Plan::MessageRate'],['../structUBX_1_1Plan_1_1MessageRate.html',1,'UBX::Plan::MessageRate']]],
+  ['messagerate_47',['MessageRate',['../structQuectel_1_1Plan_1_1MessageRate.html',1,'Quectel::Plan::MessageRate'],['../structUBX_1_1Plan_1_1MessageRate.html',1,'UBX::Plan::MessageRate']]],
   ['messagerates_48',['MessageRates',['../structUBX_1_1MessageRates.html',1,'UBX']]],
   ['messageschema_49',['MessageSchema',['../structUBX_1_1MessageSchema.html',1,'UBX']]],
   ['missingpluginfeature_50',['MissingPluginFeature',['../structGStreamer_1_1MissingPluginFeature.html',1,'GStreamer']]],

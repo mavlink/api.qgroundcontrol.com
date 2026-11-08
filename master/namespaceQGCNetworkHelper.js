@@ -1,8 +1,8 @@
 var namespaceQGCNetworkHelper =
 [
     [ "RequestConfig", "structQGCNetworkHelper_1_1RequestConfig.html", "structQGCNetworkHelper_1_1RequestConfig" ],
-    [ "HttpMethod", "namespaceQGCNetworkHelper.html#a08373f13dc1025f6ec3e546a3057f564", null ],
-    [ "HttpStatusCode", "namespaceQGCNetworkHelper.html#a140a3c2c244cdfbea620f2a187258ab1", null ],
+    [ "HttpMethod", "namespaceQGCNetworkHelper.html#a78575c930dbc8f930d7523c07122e66c", null ],
+    [ "HttpStatusCode", "namespaceQGCNetworkHelper.html#a372cad5f9e3fd7996216ec481c89e192", null ],
     [ "ConnectionType", "namespaceQGCNetworkHelper.html#a3001d2002d17561f5767730045bdf9a3", [
       [ "None", "namespaceQGCNetworkHelper.html#a3001d2002d17561f5767730045bdf9a3a6adf97f83acf6453d4a6a4b1070f3754", null ],
       [ "Unknown", "namespaceQGCNetworkHelper.html#a3001d2002d17561f5767730045bdf9a3a88183b946cc5f0e8c96b2e66e1c74a7e", null ],

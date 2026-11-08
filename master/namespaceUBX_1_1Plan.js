@@ -1,10 +1,10 @@
 var namespaceUBX_1_1Plan =
 [
+    [ "ValsetItem", "structUBX_1_1Plan_1_1ValsetItem.html", "structUBX_1_1Plan_1_1ValsetItem" ],
+    [ "ValsetBatch", "structUBX_1_1Plan_1_1ValsetBatch.html", "structUBX_1_1Plan_1_1ValsetBatch" ],
+    [ "UnexpectedOutput", "structUBX_1_1Plan_1_1UnexpectedOutput.html", "structUBX_1_1Plan_1_1UnexpectedOutput" ],
     [ "MessageRate", "structUBX_1_1Plan_1_1MessageRate.html", "structUBX_1_1Plan_1_1MessageRate" ],
     [ "RTCMOutput", "structUBX_1_1Plan_1_1RTCMOutput.html", "structUBX_1_1Plan_1_1RTCMOutput" ],
-    [ "UnexpectedOutput", "structUBX_1_1Plan_1_1UnexpectedOutput.html", "structUBX_1_1Plan_1_1UnexpectedOutput" ],
-    [ "ValsetBatch", "structUBX_1_1Plan_1_1ValsetBatch.html", "structUBX_1_1Plan_1_1ValsetBatch" ],
-    [ "ValsetItem", "structUBX_1_1Plan_1_1ValsetItem.html", "structUBX_1_1Plan_1_1ValsetItem" ],
     [ "NakPolicy", "namespaceUBX_1_1Plan.html#a916b222d7c3d47152e70345c9ac2f6fd", [
       [ "Fail", "namespaceUBX_1_1Plan.html#a916b222d7c3d47152e70345c9ac2f6fdaceaa0734f0b3c738120c67344d8f3ec1", null ],
       [ "Tolerate", "namespaceUBX_1_1Plan.html#a916b222d7c3d47152e70345c9ac2f6fda8385bd2f53fe984c94b55163ce8df660", null ],

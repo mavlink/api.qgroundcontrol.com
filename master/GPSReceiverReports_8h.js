@@ -19,15 +19,15 @@ var GPSReceiverReports_8h =
       [ "SBAS", "GPSReceiverReports_8h.html#a43579d1af08197c81deb36670a1c50d0a34dd33959e729910d676a3108e81ac7f", null ],
       [ "NavIC", "GPSReceiverReports_8h.html#a43579d1af08197c81deb36670a1c50d0a484c278c53f4efde35098108fe89a175", null ]
     ] ],
-    [ "GPSFixQuality", "GPSReceiverReports_8h.html#acb09a6143790b4ca000dad228a7b3748", [
-      [ "Unknown", "GPSReceiverReports_8h.html#acb09a6143790b4ca000dad228a7b3748a88183b946cc5f0e8c96b2e66e1c74a7e", null ],
-      [ "NoFix", "GPSReceiverReports_8h.html#acb09a6143790b4ca000dad228a7b3748a7458f6cf09e53df9495d3ee0d11868c4", null ],
-      [ "Fix2D", "GPSReceiverReports_8h.html#acb09a6143790b4ca000dad228a7b3748ad6800eded02a7eaceb638929dbd9ea55", null ],
-      [ "Fix3D", "GPSReceiverReports_8h.html#acb09a6143790b4ca000dad228a7b3748ad791aa90d108c9b0c76ec28cd4dfbb0f", null ],
-      [ "Differential", "GPSReceiverReports_8h.html#acb09a6143790b4ca000dad228a7b3748a1c2eaa5d56340808f2a94368501e5496", null ],
-      [ "RTKFloat", "GPSReceiverReports_8h.html#acb09a6143790b4ca000dad228a7b3748a54ae0c22a519fdddb751088d57c6b7dd", null ],
-      [ "RTKFixed", "GPSReceiverReports_8h.html#acb09a6143790b4ca000dad228a7b3748af0dbc34719fd78c631e96c80f0a34335", null ],
-      [ "Extrapolated", "GPSReceiverReports_8h.html#acb09a6143790b4ca000dad228a7b3748a94e6a82e363b2f395cbe9321cbc445e7", null ]
+    [ "GPSFixQualities::GPSFixQuality", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748", [
+      [ "GPSFixQualities::GPSFixQuality::Unknown", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748a88183b946cc5f0e8c96b2e66e1c74a7e", null ],
+      [ "GPSFixQualities::GPSFixQuality::NoFix", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748a7458f6cf09e53df9495d3ee0d11868c4", null ],
+      [ "GPSFixQualities::GPSFixQuality::Fix2D", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748ad6800eded02a7eaceb638929dbd9ea55", null ],
+      [ "GPSFixQualities::GPSFixQuality::Fix3D", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748ad791aa90d108c9b0c76ec28cd4dfbb0f", null ],
+      [ "GPSFixQualities::GPSFixQuality::Differential", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748a1c2eaa5d56340808f2a94368501e5496", null ],
+      [ "GPSFixQualities::GPSFixQuality::RTKFloat", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748a54ae0c22a519fdddb751088d57c6b7dd", null ],
+      [ "GPSFixQualities::GPSFixQuality::RTKFixed", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748af0dbc34719fd78c631e96c80f0a34335", null ],
+      [ "GPSFixQualities::GPSFixQuality::Extrapolated", "namespaceGPSFixQualities.html#acb09a6143790b4ca000dad228a7b3748a94e6a82e363b2f395cbe9321cbc445e7", null ]
     ] ],
     [ "gpsFixQualityFromValue", "GPSReceiverReports_8h.html#a42231c9b8a924181acab90100acf5704", null ]
 ];

@@ -2,8 +2,8 @@ var namespaceQGCCompression =
 [
     [ "ArchiveEntry", "structQGCCompression_1_1ArchiveEntry.html", "structQGCCompression_1_1ArchiveEntry" ],
     [ "ArchiveStats", "structQGCCompression_1_1ArchiveStats.html", "structQGCCompression_1_1ArchiveStats" ],
-    [ "EntryFilter", "namespaceQGCCompression.html#a31b317a56a2a66a39df0f0dc5253d1e0", null ],
-    [ "ProgressCallback", "namespaceQGCCompression.html#ac456cbd09587d97bc7994bbd6ae75cfd", null ],
+    [ "EntryFilter", "namespaceQGCCompression.html#ac79e5a331f371232c9ad01d27249eaa4", null ],
+    [ "ProgressCallback", "namespaceQGCCompression.html#ae3f3da0dca71827f7c37f498a1d6197c", null ],
     [ "CompressionLevel", "namespaceQGCCompression.html#a5293269680acb2a4429884885795b1c3", [
       [ "None", "namespaceQGCCompression.html#a5293269680acb2a4429884885795b1c3a6adf97f83acf6453d4a6a4b1070f3754", null ],
       [ "Fast", "namespaceQGCCompression.html#a5293269680acb2a4429884885795b1c3ae16b5b7f26f54214445cbe38d72c2828", null ],
@@ -90,5 +90,5 @@ var namespaceQGCCompression =
     [ "kDefaultFilePermissions", "namespaceQGCCompression.html#ac9380b65b4a601c224cfd34a900a3933", null ],
     [ "kHeaderCompressed", "namespaceQGCCompression.html#a1734b7c486b7f90a0ff1e80c97fe9502", null ],
     [ "kHeaderUncompressed", "namespaceQGCCompression.html#ae3eb9985004531855922d48d355b07d6", null ],
-    [ "s_lastCompressionRatio", "namespaceQGCCompression.html#a7aa3247e948563b47ac4d251b8830454", null ]
+    [ "s_lastCompressionRatio", "namespaceQGCCompression.html#ab16011b52d3bf6ab88a276fbde0df801", null ]
 ];

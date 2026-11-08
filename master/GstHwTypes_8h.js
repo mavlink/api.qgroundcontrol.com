@@ -12,6 +12,6 @@ var GstHwTypes_8h =
       [ "Vulkan", "GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba38625270231b647116c80bcbc4f9d1d8", null ],
       [ "_Count", "GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbadd3ff01c06a07a752666c18e1f7efaf8", null ]
     ] ],
-    [ "toString", "GstHwTypes_8h.html#ad9d2de3b278ffd4aeee0880422c37841", null ],
-    [ "kPathCount", "GstHwTypes_8h.html#a839c04819e241cc876a76d3183e46390", null ]
+    [ "GstHw::toString", "namespaceGstHw.html#ad9d2de3b278ffd4aeee0880422c37841", null ],
+    [ "GstHw::kPathCount", "namespaceGstHw.html#a839c04819e241cc876a76d3183e46390", null ]
 ];

@@ -1,5 +1,21 @@
 var namespaceNMEA =
 [
+    [ "SatelliteIds", "namespaceNMEA_1_1SatelliteIds.html", [
+      [ "BEIDOU_EXTENDED_FIRST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#a643d8a5eeb48f8a5f9452ad9bc8bc65a", null ],
+      [ "BEIDOU_EXTENDED_LAST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#a5e233e77f2fe54beb080d972c373b1c4", null ],
+      [ "BEIDOU_LEGACY_FIRST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#afdea8f9a830304426939c7b242492c64", null ],
+      [ "BEIDOU_LEGACY_LAST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#a7a62a22f2836207b443c6fd9056c08e3", null ],
+      [ "FIRST_LOCAL_ID", "namespaceNMEA_1_1SatelliteIds.html#a4551355722ef2c31ce99c50593eac325", null ],
+      [ "GALILEO_FIRST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#acfaf6d16cb7541ee7ae8887ecf7d73b4", null ],
+      [ "GALILEO_LAST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#aa9f1cd2b35f1585c819a7b3b77a35d3a", null ],
+      [ "GLONASS_FIRST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#aa833b44949104b1029b5c94072a414a9", null ],
+      [ "GLONASS_LAST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#a983c49e940591d3f32e59d9dcf10444b", null ],
+      [ "QZSS_FIRST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#a1000f7a56b33cbcadf32840cc2bee0a4", null ],
+      [ "QZSS_LAST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#a1f520926663b8d3acbecb07262499bef", null ],
+      [ "SBAS_FIRST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#abc5412e170b8074823af20df1dbbcaf9", null ],
+      [ "SBAS_FIRST_PRN", "namespaceNMEA_1_1SatelliteIds.html#ac5881845aad497360f2f81a2e5fc075f", null ],
+      [ "SBAS_LAST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#ab08b900297352b66c349eb72bf84021f", null ]
+    ] ],
     [ "Field", "namespaceNMEA_1_1Field.html", [
       [ "GGA_ALTITUDE", "namespaceNMEA_1_1Field.html#aafd591294d5c9e05e66bc97370ca985e", null ],
       [ "GGA_ALTITUDE_UNITS", "namespaceNMEA_1_1Field.html#a7583a5c62d027ebfc9052ec9adfcb2eb", null ],
@@ -49,10 +65,6 @@ var namespaceNMEA =
       [ "ZDA_MONTH", "namespaceNMEA_1_1Field.html#a6fdd0edce21e7903ede40fa0ceb586a4", null ],
       [ "ZDA_YEAR", "namespaceNMEA_1_1Field.html#abdff3e74ffc0ee17eec3f9985710b31b", null ]
     ] ],
-    [ "FixDimension", "namespaceNMEA_1_1FixDimension.html", [
-      [ "NO_FIX", "namespaceNMEA_1_1FixDimension.html#a75dcb5a5b0091e5d7a107f3d4385d61a", null ],
-      [ "THREE_D", "namespaceNMEA_1_1FixDimension.html#a0cec79284de740d7eb05aa768d198ecd", null ]
-    ] ],
     [ "GgaQuality", "namespaceNMEA_1_1GgaQuality.html", [
       [ "DIFFERENTIAL", "namespaceNMEA_1_1GgaQuality.html#a35e414f8fcfa13463bceda2294f58d44", null ],
       [ "ESTIMATED", "namespaceNMEA_1_1GgaQuality.html#a47817836103327cd6859a3bb05d737b3", null ],
@@ -63,42 +75,30 @@ var namespaceNMEA =
       [ "RTK_FIXED", "namespaceNMEA_1_1GgaQuality.html#a858d06012d2e01827c0fe26d73cbf24a", null ],
       [ "RTK_FLOAT", "namespaceNMEA_1_1GgaQuality.html#a1ab45162aa82416608193edcde6ebedb", null ]
     ] ],
-    [ "SatelliteIds", "namespaceNMEA_1_1SatelliteIds.html", [
-      [ "BEIDOU_EXTENDED_FIRST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#a643d8a5eeb48f8a5f9452ad9bc8bc65a", null ],
-      [ "BEIDOU_EXTENDED_LAST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#a5e233e77f2fe54beb080d972c373b1c4", null ],
-      [ "BEIDOU_LEGACY_FIRST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#afdea8f9a830304426939c7b242492c64", null ],
-      [ "BEIDOU_LEGACY_LAST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#a7a62a22f2836207b443c6fd9056c08e3", null ],
-      [ "FIRST_LOCAL_ID", "namespaceNMEA_1_1SatelliteIds.html#a4551355722ef2c31ce99c50593eac325", null ],
-      [ "GALILEO_FIRST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#acfaf6d16cb7541ee7ae8887ecf7d73b4", null ],
-      [ "GALILEO_LAST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#aa9f1cd2b35f1585c819a7b3b77a35d3a", null ],
-      [ "GLONASS_FIRST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#aa833b44949104b1029b5c94072a414a9", null ],
-      [ "GLONASS_LAST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#a983c49e940591d3f32e59d9dcf10444b", null ],
-      [ "QZSS_FIRST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#a1000f7a56b33cbcadf32840cc2bee0a4", null ],
-      [ "QZSS_LAST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#a1f520926663b8d3acbecb07262499bef", null ],
-      [ "SBAS_FIRST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#abc5412e170b8074823af20df1dbbcaf9", null ],
-      [ "SBAS_FIRST_PRN", "namespaceNMEA_1_1SatelliteIds.html#ac5881845aad497360f2f81a2e5fc075f", null ],
-      [ "SBAS_LAST_NMEA_ID", "namespaceNMEA_1_1SatelliteIds.html#ab08b900297352b66c349eb72bf84021f", null ]
+    [ "FixDimension", "namespaceNMEA_1_1FixDimension.html", [
+      [ "NO_FIX", "namespaceNMEA_1_1FixDimension.html#a75dcb5a5b0091e5d7a107f3d4385d61a", null ],
+      [ "THREE_D", "namespaceNMEA_1_1FixDimension.html#a0cec79284de740d7eb05aa768d198ecd", null ]
     ] ],
-    [ "Frame", "structNMEA_1_1Frame.html", "structNMEA_1_1Frame" ],
     [ "Framer", "classNMEA_1_1Framer.html", "classNMEA_1_1Framer" ],
-    [ "GGA", "structNMEA_1_1GGA.html", "structNMEA_1_1GGA" ],
-    [ "GLL", "structNMEA_1_1GLL.html", "structNMEA_1_1GLL" ],
-    [ "GST", "structNMEA_1_1GST.html", "structNMEA_1_1GST" ],
-    [ "GSV", "structNMEA_1_1GSV.html", "structNMEA_1_1GSV" ],
     [ "LineFramer", "classNMEA_1_1LineFramer.html", "classNMEA_1_1LineFramer" ],
     [ "NavigationEpoch", "structNMEA_1_1NavigationEpoch.html", "structNMEA_1_1NavigationEpoch" ],
-    [ "NavigationEpochAssembler", "classNMEA_1_1NavigationEpochAssembler.html", "classNMEA_1_1NavigationEpochAssembler" ],
-    [ "NavigationStatus", "structNMEA_1_1NavigationStatus.html", "structNMEA_1_1NavigationStatus" ],
     [ "NavigationUpdate", "structNMEA_1_1NavigationUpdate.html", "structNMEA_1_1NavigationUpdate" ],
-    [ "RMC", "structNMEA_1_1RMC.html", "structNMEA_1_1RMC" ],
-    [ "SatelliteAssembler", "classNMEA_1_1SatelliteAssembler.html", "classNMEA_1_1SatelliteAssembler" ],
+    [ "NavigationEpochAssembler", "classNMEA_1_1NavigationEpochAssembler.html", "classNMEA_1_1NavigationEpochAssembler" ],
     [ "SatelliteData", "structNMEA_1_1SatelliteData.html", "structNMEA_1_1SatelliteData" ],
     [ "SatelliteSystem", "structNMEA_1_1SatelliteSystem.html", "structNMEA_1_1SatelliteSystem" ],
+    [ "GSV", "structNMEA_1_1GSV.html", "structNMEA_1_1GSV" ],
+    [ "SatelliteAssembler", "classNMEA_1_1SatelliteAssembler.html", "classNMEA_1_1SatelliteAssembler" ],
     [ "Sentence", "structNMEA_1_1Sentence.html", "structNMEA_1_1Sentence" ],
+    [ "Frame", "structNMEA_1_1Frame.html", "structNMEA_1_1Frame" ],
+    [ "GGA", "structNMEA_1_1GGA.html", "structNMEA_1_1GGA" ],
     [ "UtcDate", "structNMEA_1_1UtcDate.html", "structNMEA_1_1UtcDate" ],
+    [ "RMC", "structNMEA_1_1RMC.html", "structNMEA_1_1RMC" ],
+    [ "GLL", "structNMEA_1_1GLL.html", "structNMEA_1_1GLL" ],
     [ "VTG", "structNMEA_1_1VTG.html", "structNMEA_1_1VTG" ],
     [ "ZDA", "structNMEA_1_1ZDA.html", "structNMEA_1_1ZDA" ],
-    [ "SatelliteEpoch", "namespaceNMEA.html#a7c253de47c32050ad5969d433f9426bd", null ],
+    [ "NavigationStatus", "structNMEA_1_1NavigationStatus.html", "structNMEA_1_1NavigationStatus" ],
+    [ "GST", "structNMEA_1_1GST.html", "structNMEA_1_1GST" ],
+    [ "SatelliteEpoch", "namespaceNMEA.html#aa680171a32415dd87335595ac71d380c", null ],
     [ "checksum", "namespaceNMEA.html#abdf04cb47a0905c618473a0609c7f78b", null ],
     [ "coordinate", "namespaceNMEA.html#a47dea32c9d196dbc964ab73c97cebfd7", null ],
     [ "degreesFromDegreesMinutes", "namespaceNMEA.html#a9b5e326d55b4f360e1d3d472deb5ac86", null ],
