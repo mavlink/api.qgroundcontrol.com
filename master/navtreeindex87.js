@@ -1,5 +1,12 @@
 var NAVTREEINDEX87 =
 {
+"structNMEA_1_1VTG.html#ae13088d6618282c6cfa3c093bbebb85c":[0,0,44,19,0],
+"structNMEA_1_1VTG.html#ae13088d6618282c6cfa3c093bbebb85c":[2,0,21,15,0],
+"structNMEA_1_1ZDA.html":[0,0,44,20],
+"structNMEA_1_1ZDA.html":[2,0,21,16],
+"structNMEA_1_1ZDA.html#aa4c409fce65dbec6cc083aab35f9a660":[0,0,44,20,0],
+"structNMEA_1_1ZDA.html#aa4c409fce65dbec6cc083aab35f9a660":[2,0,21,16,0],
+"structNMEA_1_1ZDA.html#aa86c1da8301fe79a6a229b57133a5295":[0,0,44,20,1],
 "structNMEA_1_1ZDA.html#aa86c1da8301fe79a6a229b57133a5295":[2,0,21,16,1],
 "structNTRIPConnectionConfig.html":[2,0,433],
 "structNTRIPConnectionConfig.html#a0d8204a9ad4b2654c7e239ade3a45b10":[2,0,433,3],
@@ -242,12 +249,5 @@ var NAVTREEINDEX87 =
 "structQGCCommandLineParser_1_1CommandLineParseResult.html#a82e2ae9574cfcf0eb0a092d5eeb1a95a":[2,0,26,0,18],
 "structQGCCommandLineParser_1_1CommandLineParseResult.html#a8a6fa1437dbd1eaaf39f01efc9d6d6d9":[0,0,55,0,23],
 "structQGCCommandLineParser_1_1CommandLineParseResult.html#a8a6fa1437dbd1eaaf39f01efc9d6d6d9":[2,0,26,0,23],
-"structQGCCommandLineParser_1_1CommandLineParseResult.html#a943da3934499a51cd04cdf3ad0f6e954":[0,0,55,0,22],
-"structQGCCommandLineParser_1_1CommandLineParseResult.html#a943da3934499a51cd04cdf3ad0f6e954":[2,0,26,0,22],
-"structQGCCommandLineParser_1_1CommandLineParseResult.html#a9b1469ddc5eccd81d957a24d3bc49cba":[0,0,55,0,17],
-"structQGCCommandLineParser_1_1CommandLineParseResult.html#a9b1469ddc5eccd81d957a24d3bc49cba":[2,0,26,0,17],
-"structQGCCommandLineParser_1_1CommandLineParseResult.html#aaa447c61cd4fd1ba48359d4b9e1d2196":[0,0,55,0,7],
-"structQGCCommandLineParser_1_1CommandLineParseResult.html#aaa447c61cd4fd1ba48359d4b9e1d2196":[2,0,26,0,7],
-"structQGCCommandLineParser_1_1CommandLineParseResult.html#ab26701a8d320dc4cc014bf2fd5b0836f":[0,0,55,0,19],
-"structQGCCommandLineParser_1_1CommandLineParseResult.html#ab26701a8d320dc4cc014bf2fd5b0836f":[2,0,26,0,19]
+"structQGCCommandLineParser_1_1CommandLineParseResult.html#a943da3934499a51cd04cdf3ad0f6e954":[0,0,55,0,22]
 };

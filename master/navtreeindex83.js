@@ -1,5 +1,12 @@
 var NAVTREEINDEX83 =
 {
+"structGPSNavigationValues.html#acb9fcd3fc1a4c24c144d89a914f110a2":[2,0,270,1],
+"structGPSNavigationValues.html#ae645b97aa7d7844b5e46880adaa620c5":[2,0,270,8],
+"structGPSNavigationValues.html#afc35207c9ed53ea8fa3c7cff99695160":[2,0,270,11],
+"structGPSObservation.html":[2,0,273],
+"structGPSObservation.html#a01b48c12c1c2a04c65bc1d12ececfd5a":[2,0,273,0],
+"structGPSObservation.html#a14db49ef055f32d0f31eac6cd04fa469":[2,0,273,11],
+"structGPSObservation.html#a20ca4c9e1cb0f443cae7640203d894a4":[2,0,273,12],
 "structGPSObservation.html#a22d8dc7c398f24da7ca8ed5c250ef1bd":[2,0,273,7],
 "structGPSObservation.html#a30f0c8a9166e95424a7cb3b43971edfc":[2,0,273,15],
 "structGPSObservation.html#a66265749c3a0cfd5920559ff74c429f5":[2,0,273,5],
@@ -242,12 +249,5 @@ var NAVTREEINDEX83 =
 "structGStreamer_1_1GFreeDeleter.html#a46641a393e7a3f0a527ac05eb1233795":[2,0,17,19,0],
 "structGStreamer_1_1GstCapsDeleter.html":[0,0,32,14],
 "structGStreamer_1_1GstCapsDeleter.html":[2,0,17,14],
-"structGStreamer_1_1GstCapsDeleter.html#aa15ee01f4ab76a268b00ce323c6b59ab":[0,0,32,14,0],
-"structGStreamer_1_1GstCapsDeleter.html#aa15ee01f4ab76a268b00ce323c6b59ab":[2,0,17,14,0],
-"structGStreamer_1_1GstContextDeleter.html":[0,0,32,17],
-"structGStreamer_1_1GstContextDeleter.html":[2,0,17,17],
-"structGStreamer_1_1GstContextDeleter.html#a3d2ffe77decf36391d3eac41d62833a6":[0,0,32,17,0],
-"structGStreamer_1_1GstContextDeleter.html#a3d2ffe77decf36391d3eac41d62833a6":[2,0,17,17,0],
-"structGStreamer_1_1GstEventDeleter.html":[0,0,32,16],
-"structGStreamer_1_1GstEventDeleter.html":[2,0,17,16]
+"structGStreamer_1_1GstCapsDeleter.html#aa15ee01f4ab76a268b00ce323c6b59ab":[0,0,32,14,0]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX37 =
 {
+"classMapPositionTracker.html#a41b44a47ec3b427fadcc1664504cd9ea":[2,0,384,28],
+"classMapPositionTracker.html#a45264e8ed5e990299683d0879d6f7dbc":[2,0,384,18],
+"classMapPositionTracker.html#a4ba9a97346ab9a12d80195da1ed7542e":[2,0,384,17],
+"classMapPositionTracker.html#a51e316deac746c4d610006e5aef96a3b":[2,0,384,0],
 "classMapPositionTracker.html#a56ad0ef41b65e1b58505be7f9e5743a8":[2,0,384,15],
 "classMapPositionTracker.html#a576bda5e7c07f3fca3a036ee188a8ce2":[2,0,384,12],
 "classMapPositionTracker.html#a653c15d4ec8f2ea9725bfef49ec46294":[2,0,384,31],
@@ -245,9 +249,5 @@ var NAVTREEINDEX37 =
 "classMavlinkCameraControlInterface.html#a9d7771de9f5d39098a76e2eccd2afd1c":[2,0,395,86],
 "classMavlinkCameraControlInterface.html#a9dbcdffc916192fb7452f56f667292aa":[2,0,395,158],
 "classMavlinkCameraControlInterface.html#a9ee13275d8fd39c4e9b5bd49405250ef":[2,0,395,75],
-"classMavlinkCameraControlInterface.html#aa0e80316236c797bbbdcbe3652a96ccf":[2,0,395,78],
-"classMavlinkCameraControlInterface.html#aa213c19f248298b5a4ba7cf9a2c1f31f":[2,0,395,132],
-"classMavlinkCameraControlInterface.html#aa3865c2efe7d8cc0818348f276ba9d59":[2,0,395,121],
-"classMavlinkCameraControlInterface.html#aa65698b0e371e47efa0e2f1f50bac631":[2,0,395,115],
-"classMavlinkCameraControlInterface.html#aa7b50d91aa613227644ea377c8c7deeb":[2,0,395,14]
+"classMavlinkCameraControlInterface.html#aa0e80316236c797bbbdcbe3652a96ccf":[2,0,395,78]
 };

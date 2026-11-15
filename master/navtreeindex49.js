@@ -1,5 +1,9 @@
 var NAVTREEINDEX49 =
 {
+"classQGCDeleteTileSetTask.html#a04925fe4cc165d5c51252d65b4cb536d":[2,0,534,3],
+"classQGCDeleteTileSetTask.html#a1d6f235489be3ad823ac48de99d6e076":[2,0,534,1],
+"classQGCDeleteTileSetTask.html#a7c9244db1f6f2fc21854ff4d47bddc07":[2,0,534,0],
+"classQGCDeleteTileSetTask.html#ac02eb48b7cf73f86202ffa6b518ef317":[2,0,534,2],
 "classQGCDeleteTileSetTask.html#ae309f3fa9796102666b737f7279efe3d":[2,0,534,4],
 "classQGCEventTransition.html":[2,0,535],
 "classQGCEventTransition.html#a3dba8390e9b6016855c959345c06c30a":[2,0,535,3],
@@ -243,11 +247,7 @@ var NAVTREEINDEX49 =
 "classQGCLoggingCategoryManager.html#adbc7884475962b2fbb3e7070b5c33fa2":[2,0,554,4],
 "classQGCLoggingCategoryManager.html#ae20a7d072dbca0082e23c3abaca3bb2f":[2,0,554,5],
 "classQGCMAVLink.html":[2,0,562],
-"classQGCMAVLink.html#a0abd91cf0ac39fb58161312eebbde6c0":[2,0,562,33],
-"classQGCMAVLink.html#a161892ebe440d352ea90a3b2237020c2":[2,0,562,37],
-"classQGCMAVLink.html#a17668c35c3fa65cf4881a2c15f88e9c6":[2,0,562,18],
-"classQGCMAVLink.html#a1c583f8ea8ae8e654506c31fd877b33f":[2,0,562,16],
-"classQGCMAVLink.html#a2171dc12dedd0e78d7fae7f35f7bb027":[2,0,562,10],
-"classQGCMAVLink.html#a23d17101a269df215eb4b7014b2f02a1":[2,0,562,34],
-"classQGCMAVLink.html#a25e778ae74604d4174b66c0139173203":[2,0,562,1]
+"classQGCMAVLink.html#a0abd91cf0ac39fb58161312eebbde6c0":[2,0,562,35],
+"classQGCMAVLink.html#a161892ebe440d352ea90a3b2237020c2":[2,0,562,39],
+"classQGCMAVLink.html#a17668c35c3fa65cf4881a2c15f88e9c6":[2,0,562,20]
 };

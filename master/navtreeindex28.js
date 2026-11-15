@@ -1,5 +1,8 @@
 var NAVTREEINDEX28 =
 {
+"classGPSDriver.html#a9bc88ba308ebc9f54b68e0c5e7ba6c64":[2,0,259,5],
+"classGPSDriver.html#ab0e4f1f253fcea5a393d9e4125e10dc6":[2,0,259,7],
+"classGPSDriver.html#acb4460f8bb040757d60477f0dbd36829":[2,0,259,2],
 "classGPSDriver.html#ace6797b810b6259467a33d3882b401c2":[2,0,259,6],
 "classGPSDriver.html#ace8251fbea5c323d859e03bdafdeb1b4":[2,0,259,1],
 "classGPSDriver.html#ae80486b3f4d82fa91c02229a5c89e175":[2,0,259,4],
@@ -246,8 +249,5 @@ var NAVTREEINDEX28 =
 "classGPSSettingsBindings.html#acfa4e86e47abf0116c00ce2ad110eedb":[2,0,303,2],
 "classGPSSettingsBindings.html#ad415854a761eed25d6398b8aabf66c70":[2,0,303,0],
 "classGPSSettingsBindings.html#ae597956d04a0c18f0345038898632a34":[2,0,303,5],
-"classGPSSourceHealth.html":[2,0,304],
-"classGPSSourceHealth.html#a2b0938bda95c91eda1e119d28c7fa4b3":[2,0,304,8],
-"classGPSSourceHealth.html#a2f94a62d1907e657c611c82f83a09c4a":[2,0,304,1],
-"classGPSSourceHealth.html#a4db8b8fb64672941e70c560dbea30d8a":[2,0,304,4]
+"classGPSSourceHealth.html":[2,0,304]
 };

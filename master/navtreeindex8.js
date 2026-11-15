@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"MAVLinkChartController_8cc.html":[3,0,0,1,3,1],
 "MAVLinkChartController_8cc.html#adab0b1ef7f10650d078f8442201baa03":[3,0,0,1,3,1,0],
 "MAVLinkChartController_8cc_source.html":[3,0,0,1,3,1],
 "MAVLinkChartController_8h.html":[3,0,0,1,3,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "MissionManager_8cc.html":[3,0,0,21,37],
 "MissionManager_8cc_source.html":[3,0,0,21,37],
 "MissionManager_8h.html":[3,0,0,21,38],
-"MissionManager_8h_source.html":[3,0,0,21,38],
-"MissionSettingsEditor_8qml.html":[3,0,0,22,24]
+"MissionManager_8h_source.html":[3,0,0,21,38]
 };

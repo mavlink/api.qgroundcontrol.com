@@ -502,6 +502,9 @@ var namespaces_dup =
     [ "QGCRhiCapture", "namespaceQGCRhiCapture.html", "namespaceQGCRhiCapture" ],
     [ "QGCSensors", "namespaceQGCSensors.html", "namespaceQGCSensors" ],
     [ "QGCSqlHelper", "namespaceQGCSqlHelper.html", "namespaceQGCSqlHelper" ],
+    [ "QGCUnitTest", "namespaceQGCUnitTest.html", [
+      [ "handleTestOptions", "namespaceQGCUnitTest.html#afae112541c133456dbad0bc2d6f68247", null ]
+    ] ],
     [ "QT_BEGIN_NAMESPACE", "namespaceQT__BEGIN__NAMESPACE.html", [
       [ "baudRateToSpeed", "namespaceQT__BEGIN__NAMESPACE.html#aacd7ed17991aba4a8a298304417387d9", null ]
     ] ],

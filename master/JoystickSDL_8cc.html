@@ -107,12 +107,13 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="JoystickSDL_8h_source.html">JoystickSDL.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="JoystickManager_8h_source.html">JoystickManager.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="SDLJoystick_8h_source.html">SDLJoystick.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="QGCLoggingCategory_8h_source.html">QGCLoggingCategory.h</a>&quot;</code><br />
-<code>#include &lt;QtCore/QMetaObject&gt;</code><br />
-<code>#include &lt;QtCore/QThread&gt;</code><br />
 <code>#include &lt;array&gt;</code><br />
+<code>#include &lt;QtCore/QMetaObject&gt;</code><br />
+<code>#include &lt;QtCore/QMutex&gt;</code><br />
+<code>#include &lt;QtCore/QThread&gt;</code><br />
+<code>#include &quot;<a class="el" href="JoystickManager_8h_source.html">JoystickManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="QGCLoggingCategory_8h_source.html">QGCLoggingCategory.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SDLJoystick_8h_source.html">SDLJoystick.h</a>&quot;</code><br />
 <code>#include &lt;SDL3/SDL.h&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Include dependency graph for JoystickSDL.cc:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -131,7 +132,7 @@ Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a7161bd6607610843d69a26803c4389e6" id="r_a7161bd6607610843d69a26803c4389e6"><td class="memItemLeft" align="right" valign="top">static QMap&lt; QString, <a class="el" href="classJoystick.html">Joystick</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7161bd6607610843d69a26803c4389e6">s_discoveryCache</a></td></tr>
-<tr class="memdesc:a7161bd6607610843d69a26803c4389e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discovery cache - main thread only, cleared in shutdown().  <br /></td></tr>
+<tr class="memitem:aa96cb3f8284dc92a20d2a51d4a99295f" id="r_aa96cb3f8284dc92a20d2a51d4a99295f"><td class="memItemLeft" align="right" valign="top">static QMutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa96cb3f8284dc92a20d2a51d4a99295f">s_discoveryCacheMutex</a></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="ad2003b4bac060df9e52e96f0411705a6" name="ad2003b4bac060df9e52e96f0411705a6"></a>
@@ -163,11 +164,11 @@ Variables</h2></td></tr>
 
 <p>SDL event watcher - uses Qt::QueuedConnection for thread safety. </p>
 
-<p class="definition">Definition at line <a class="el" href="JoystickSDL_8cc_source.html#l00025">25</a> of file <a class="el" href="JoystickSDL_8cc_source.html">JoystickSDL.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="JoystickSDL_8cc_source.html#l00030">30</a> of file <a class="el" href="JoystickSDL_8cc_source.html">JoystickSDL.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="JoystickManager_8cc_source.html#l00081">JoystickManager::instance()</a>, and <a class="el" href="JoystickSDL_8cc_source.html#l00025">sdlEventWatcher()</a>.</p>
+<p class="reference">References <a class="el" href="JoystickManager_8cc_source.html#l00081">JoystickManager::instance()</a>, and <a class="el" href="JoystickSDL_8cc_source.html#l00030">sdlEventWatcher()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="JoystickSDL_8cc_source.html#l00157">JoystickSDL::init()</a>, <a class="el" href="JoystickSDL_8cc_source.html#l00025">sdlEventWatcher()</a>, and <a class="el" href="JoystickSDL_8cc_source.html#l00167">JoystickSDL::shutdown()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="JoystickSDL_8cc_source.html#l00162">JoystickSDL::init()</a>, <a class="el" href="JoystickSDL_8cc_source.html#l00030">sdlEventWatcher()</a>, and <a class="el" href="JoystickSDL_8cc_source.html#l00172">JoystickSDL::shutdown()</a>.</p>
 
 </div>
 </div>
@@ -191,12 +192,37 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Discovery cache - the last discover()'s joysticks. Only the main thread changes it; shutdown() empties it. The mutex guards the map alone, for the copy discover() returns off the main thread. Lock order: the SDL joystick lock, if held, comes first, and nothing that can block or re-enter runs under the mutex (only a copy, swap or assignment of the map). </p>
 
-<p>Discovery cache - main thread only, cleared in shutdown(). </p>
+<p class="definition">Definition at line <a class="el" href="JoystickSDL_8cc_source.html#l00026">26</a> of file <a class="el" href="JoystickSDL_8cc_source.html">JoystickSDL.cc</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="JoystickSDL_8cc_source.html#l00022">22</a> of file <a class="el" href="JoystickSDL_8cc_source.html">JoystickSDL.cc</a>.</p>
+<p class="reference">Referenced by <a class="el" href="JoystickSDL_8cc_source.html#l00187">JoystickSDL::discover()</a>, and <a class="el" href="JoystickSDL_8cc_source.html#l00172">JoystickSDL::shutdown()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="JoystickSDL_8cc_source.html#l00178">JoystickSDL::discover()</a>, and <a class="el" href="JoystickSDL_8cc_source.html#l00167">JoystickSDL::shutdown()</a>.</p>
+</div>
+</div>
+<a id="aa96cb3f8284dc92a20d2a51d4a99295f" name="aa96cb3f8284dc92a20d2a51d4a99295f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa96cb3f8284dc92a20d2a51d4a99295f">&#9670;&#160;</a></span>s_discoveryCacheMutex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMutex s_discoveryCacheMutex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="JoystickSDL_8cc_source.html#l00027">27</a> of file <a class="el" href="JoystickSDL_8cc_source.html">JoystickSDL.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="JoystickSDL_8cc_source.html#l00187">JoystickSDL::discover()</a>, and <a class="el" href="JoystickSDL_8cc_source.html#l00172">JoystickSDL::shutdown()</a>.</p>
 
 </div>
 </div>

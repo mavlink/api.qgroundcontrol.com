@@ -1,5 +1,10 @@
 var NAVTREEINDEX69 =
 {
+"classVehicleSummaryItem.html#aac4f5b6fd4ddb5300f9bf5ba68c49e1d":[2,0,770,6],
+"classVehicleSummaryItem.html#af000426d2adb4fb94283a9f1828810a6":[2,0,770,2],
+"classVehicleSupports.html":[2,0,771],
+"classVehicleSupports.html#a084e15b67da6bd1255c97bb25087159a":[2,0,771,15],
+"classVehicleSupports.html#a2f0e3ea04751eb6a624d4ef5c6039fcc":[2,0,771,2],
 "classVehicleSupports.html#a30edc6c377875251d59f7557018b6165":[2,0,771,7],
 "classVehicleSupports.html#a3e23dca09993b1407ca2b036114d7045":[2,0,771,10],
 "classVehicleSupports.html#a479d5c99a760cbacf88191f6fc591d02":[2,0,771,18],
@@ -244,10 +249,5 @@ var NAVTREEINDEX69 =
 "classVideoStreamController.html#ade2da894458bd3c52189caec9268a784":[2,0,782,10],
 "classVideoStreamController.html#adefbb6714077dfadaf5356cd6b888fc5":[2,0,782,1],
 "classVideoStreamController.html#ae2a98824ab4c0fbe224d882c9de6c643":[2,0,782,6],
-"classVideoStreamController.html#af3170695e72f298c6ea62afe92374ab7":[2,0,782,31],
-"classVideoStreamController.html#af372ffc4a2b5d58c263bf2e6b71f055e":[2,0,782,42],
-"classVideoStreamStatsMeter.html":[2,0,784],
-"classVideoStreamStatsMeter.html#a1351f6b4e1591e51a8c5c5d6b9129856":[2,0,784,4],
-"classVideoStreamStatsMeter.html#a5a00b5f39726ce03f460cb0a0f67ec68":[2,0,784,3],
-"classVideoStreamStatsMeter.html#a735ff4120ea108665c1c13cea40b6ac9":[2,0,784,6]
+"classVideoStreamController.html#af3170695e72f298c6ea62afe92374ab7":[2,0,782,31]
 };

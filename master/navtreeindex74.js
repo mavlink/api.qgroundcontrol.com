@@ -1,5 +1,10 @@
 var NAVTREEINDEX74 =
 {
+"namespaceAndroidSerial.html#a771b5b8a3d56153c575c6eb95b44a8c4":[0,0,5,53],
+"namespaceAndroidSerial.html#a7a33676098907967aa0634e11da492fc":[0,0,5,15],
+"namespaceAndroidSerial.html#a80c26ba62177fb086229909defab5fda":[0,0,5,46],
+"namespaceAndroidSerial.html#a83ed5f2dd0eb59617d62ba8ddf4ff681":[0,0,5,49],
+"namespaceAndroidSerial.html#a85f5ff10c171d91f313b33c49deedcad":[0,0,5,24],
 "namespaceAndroidSerial.html#a86f22fa15cbe980db82af5d93e443ba3":[0,0,5,65],
 "namespaceAndroidSerial.html#a8773b464ed158a7200d9691f83726d77":[0,0,5,19],
 "namespaceAndroidSerial.html#aa1a969f627c5b3d94eced9f16491409f":[0,0,5,20],
@@ -244,10 +249,5 @@ var NAVTREEINDEX74 =
 "namespaceGStreamer.html#a8828344602b56ca594afcea6f51b7792":[0,0,32,28],
 "namespaceGStreamer.html#a8c63be6fc9a1c48d3d5b719dbc0b5c92":[0,0,32,87],
 "namespaceGStreamer.html#a8d6568bd4d05df0fdbeb8b33ca88dc07":[0,0,32,34],
-"namespaceGStreamer.html#a8fa5efb3bb1e31531b89b895c5970071":[0,0,32,94],
-"namespaceGStreamer.html#a95870ac9edf722e28c79adb02585a2c1":[0,0,32,81],
-"namespaceGStreamer.html#aa0178768e515e15ef992fdb10f3975ed":[0,0,32,61],
-"namespaceGStreamer.html#aa1e5f6d0e94dd075094627ecc20acae3":[0,0,32,47],
-"namespaceGStreamer.html#aa319e5c0b4f11efe61e3a839b5abc49c":[0,0,32,53],
-"namespaceGStreamer.html#aa5feb80fd059e0b77a58af5f797ccc41":[0,0,32,46]
+"namespaceGStreamer.html#a8fa5efb3bb1e31531b89b895c5970071":[0,0,32,94]
 };

@@ -1,5 +1,11 @@
 var NAVTREEINDEX52 =
 {
+"classQGCSensors_1_1QGCAmbientTemperature.html#a884614720d9d2fa566bad2a5d5c31e4c":[0,0,63,1,2],
+"classQGCSensors_1_1QGCAmbientTemperature.html#a884614720d9d2fa566bad2a5d5c31e4c":[2,0,31,1,2],
+"classQGCSensors_1_1QGCAmbientTemperature.html#a9c908fdf1ed3fc1fb0d50345a94ad258":[0,0,63,1,5],
+"classQGCSensors_1_1QGCAmbientTemperature.html#a9c908fdf1ed3fc1fb0d50345a94ad258":[2,0,31,1,5],
+"classQGCSensors_1_1QGCAmbientTemperature.html#abef75c96e18b1979a6445c321f104f00":[0,0,63,1,6],
+"classQGCSensors_1_1QGCAmbientTemperature.html#abef75c96e18b1979a6445c321f104f00":[2,0,31,1,6],
 "classQGCSensors_1_1QGCAmbientTemperature.html#adaa08c067e18b5988d39108fa3235ff8":[0,0,63,1,0],
 "classQGCSensors_1_1QGCAmbientTemperature.html#adaa08c067e18b5988d39108fa3235ff8":[2,0,31,1,0],
 "classQGCSensors_1_1QGCAmbientTemperatureFilter.html":[0,0,63,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX52 =
 "classQGCStateMachineEvent.html#a6511968fa0a14ead261b7a71af0f1a54":[2,0,581,3],
 "classQGCStateMachineEvent.html#aedf7c066fab9ebbbecab36fbcec996a3":[2,0,581,2],
 "classQGCStateMachineEvent.html#af1938b468eef59275c85ae4bed4bd0c4":[2,0,581,1],
-"classQGCTileCacheDatabase.html":[2,0,583],
-"classQGCTileCacheDatabase.html#a012c5c426cb57f6e8f8f6311dd5883be":[2,0,583,12],
-"classQGCTileCacheDatabase.html#a32c811940c3529446ff548e155cadfd7":[2,0,583,5],
-"classQGCTileCacheDatabase.html#a32e088809e10a384b987824c8bad8f36":[2,0,583,23],
-"classQGCTileCacheDatabase.html#a54e31a8d004d7af4b755e18112358dcd":[2,0,583,4],
-"classQGCTileCacheDatabase.html#a593601bb4328d65a40690d5dff6f3fce":[2,0,583,25],
-"classQGCTileCacheDatabase.html#a593a172eac56118c646f0b91a1e1e56a":[2,0,583,21]
+"classQGCTileCacheDatabase.html":[2,0,583]
 };

@@ -11,8 +11,9 @@ var searchData=
   ['qgcrhicapture_8',['QGCRhiCapture',['../namespaceQGCRhiCapture.html',1,'']]],
   ['qgcsensors_9',['QGCSensors',['../namespaceQGCSensors.html',1,'']]],
   ['qgcsqlhelper_10',['QGCSqlHelper',['../namespaceQGCSqlHelper.html',1,'']]],
-  ['qt_5fbegin_5fnamespace_11',['QT_BEGIN_NAMESPACE',['../namespaceQT__BEGIN__NAMESPACE.html',1,'']]],
-  ['quectel_12',['Quectel',['../namespaceQuectel.html',1,'']]],
-  ['quectel_3a_3aplan_13',['Plan',['../namespaceQuectel_1_1Plan.html',1,'Quectel']]],
-  ['quectelcodec_14',['QuectelCodec',['../namespaceQuectelCodec.html',1,'']]]
+  ['qgcunittest_11',['QGCUnitTest',['../namespaceQGCUnitTest.html',1,'']]],
+  ['qt_5fbegin_5fnamespace_12',['QT_BEGIN_NAMESPACE',['../namespaceQT__BEGIN__NAMESPACE.html',1,'']]],
+  ['quectel_13',['Quectel',['../namespaceQuectel.html',1,'']]],
+  ['quectel_3a_3aplan_14',['Plan',['../namespaceQuectel_1_1Plan.html',1,'Quectel']]],
+  ['quectelcodec_15',['QuectelCodec',['../namespaceQuectelCodec.html',1,'']]]
 ];

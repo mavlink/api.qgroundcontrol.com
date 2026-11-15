@@ -1,5 +1,11 @@
 var NAVTREEINDEX51 =
 {
+"classQGCMapPolygon.html#a79e7bf4caf9c127280a9efca5a53d819":[2,0,559,59],
+"classQGCMapPolygon.html#a7ba262dd65a974a4c16b82bc06a6dcf9":[2,0,559,55],
+"classQGCMapPolygon.html#a7cfb8c61ad2e020004f6b65e8cb12046":[2,0,559,19],
+"classQGCMapPolygon.html#a7ec6a929df6021fdfca4418ac1c952dc":[2,0,559,15],
+"classQGCMapPolygon.html#a828ad14f235a1858221fe8582c9b0a33":[2,0,559,61],
+"classQGCMapPolygon.html#a932ab515a336a5503ade833bac51a769":[2,0,559,41],
 "classQGCMapPolygon.html#a93f2431276095274a65a98899380265a":[2,0,559,1],
 "classQGCMapPolygon.html#a940500fa1eef821b101ccc9399bf1703":[2,0,559,50],
 "classQGCMapPolygon.html#a95cf2ff2b6e99a9089b8a2740035b3ac":[2,0,559,37],
@@ -243,11 +249,5 @@ var NAVTREEINDEX51 =
 "classQGCSensors_1_1QGCAmbientTemperature.html#a0748bca54734740c958b9f77d1b5092f":[0,0,63,1,1],
 "classQGCSensors_1_1QGCAmbientTemperature.html#a0748bca54734740c958b9f77d1b5092f":[2,0,31,1,1],
 "classQGCSensors_1_1QGCAmbientTemperature.html#a3e6f48324d5c6c318c6e9e5476c398be":[0,0,63,1,4],
-"classQGCSensors_1_1QGCAmbientTemperature.html#a3e6f48324d5c6c318c6e9e5476c398be":[2,0,31,1,4],
-"classQGCSensors_1_1QGCAmbientTemperature.html#a884614720d9d2fa566bad2a5d5c31e4c":[0,0,63,1,2],
-"classQGCSensors_1_1QGCAmbientTemperature.html#a884614720d9d2fa566bad2a5d5c31e4c":[2,0,31,1,2],
-"classQGCSensors_1_1QGCAmbientTemperature.html#a9c908fdf1ed3fc1fb0d50345a94ad258":[0,0,63,1,5],
-"classQGCSensors_1_1QGCAmbientTemperature.html#a9c908fdf1ed3fc1fb0d50345a94ad258":[2,0,31,1,5],
-"classQGCSensors_1_1QGCAmbientTemperature.html#abef75c96e18b1979a6445c321f104f00":[0,0,63,1,6],
-"classQGCSensors_1_1QGCAmbientTemperature.html#abef75c96e18b1979a6445c321f104f00":[2,0,31,1,6]
+"classQGCSensors_1_1QGCAmbientTemperature.html#a3e6f48324d5c6c318c6e9e5476c398be":[2,0,31,1,4]
 };

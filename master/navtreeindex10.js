@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"PX4BatteryController_8cc_source.html":[3,0,0,5,3,39],
 "PX4BatteryController_8h.html":[3,0,0,5,3,40],
 "PX4BatteryController_8h_source.html":[3,0,0,5,3,40],
 "PX4BatteryIndicator_8qml.html":[3,0,0,9,1,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "PlanPanelGroupHeader_8qml_source.html":[3,0,0,22,33],
 "PlanPanelIconButton_8qml.html":[3,0,0,22,34],
 "PlanPanelIconButton_8qml_source.html":[3,0,0,22,34],
-"PlanPanelRow_8qml.html":[3,0,0,22,35],
-"PlanPanelRow_8qml_source.html":[3,0,0,22,35]
+"PlanPanelRow_8qml.html":[3,0,0,22,35]
 };

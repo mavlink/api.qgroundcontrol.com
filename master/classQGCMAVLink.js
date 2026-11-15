@@ -20,6 +20,8 @@ var classQGCMAVLink =
     [ "~QGCMAVLink", "classQGCMAVLink.html#aec8c1a06e642c84128645cb607f9d527", null ],
     [ "allFirmwareClasses", "classQGCMAVLink.html#a37f223a170a6d90dc0e8ac8c0ac83bdf", null ],
     [ "allVehicleClasses", "classQGCMAVLink.html#afe8aa45d9aedef68bd693e43bbb5334a", null ],
+    [ "boundedStringField", "classQGCMAVLink.html#a72cf8de101e074f0199ab8384c00c7a9", null ],
+    [ "boundedStringField", "classQGCMAVLink.html#ae2207f47f5080080ca375981c89a8480", null ],
     [ "compIdToString", "classQGCMAVLink.html#a7c9dd7523310d2892b80b4bfeaf5f2d1", null ],
     [ "firmwareClass", "classQGCMAVLink.html#aab680e1f306d77049fb51736798489b8", null ],
     [ "firmwareClassToAutopilot", "classQGCMAVLink.html#a8764c7087f8c8e686b4d5d7b831d0ae6", null ],

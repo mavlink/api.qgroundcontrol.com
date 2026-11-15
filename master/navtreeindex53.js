@@ -1,5 +1,11 @@
 var NAVTREEINDEX53 =
 {
+"classQGCTileCacheDatabase.html#a012c5c426cb57f6e8f8f6311dd5883be":[2,0,583,12],
+"classQGCTileCacheDatabase.html#a32c811940c3529446ff548e155cadfd7":[2,0,583,5],
+"classQGCTileCacheDatabase.html#a32e088809e10a384b987824c8bad8f36":[2,0,583,23],
+"classQGCTileCacheDatabase.html#a54e31a8d004d7af4b755e18112358dcd":[2,0,583,4],
+"classQGCTileCacheDatabase.html#a593601bb4328d65a40690d5dff6f3fce":[2,0,583,25],
+"classQGCTileCacheDatabase.html#a593a172eac56118c646f0b91a1e1e56a":[2,0,583,21],
 "classQGCTileCacheDatabase.html#a66b2f0fe6bb094d82a86822539a51f27":[2,0,583,19],
 "classQGCTileCacheDatabase.html#a6c69e8e63b0974ac1ce9cf0bfdec23a1":[2,0,583,9],
 "classQGCTileCacheDatabase.html#a6dfbfcb9727c04dd664595aa61addf55":[2,0,583,13],
@@ -243,11 +249,5 @@ var NAVTREEINDEX53 =
 "classQSerialPort.html#a62ab4348249442e2b6e2d22e40e02ed5a9c8fa72ff2db207123b24647072aa2c3":[2,0,599,1,3],
 "classQSerialPort.html#a62ab4348249442e2b6e2d22e40e02ed5aaf55c960cd95d67fda1ec4ef30408c85":[2,0,599,1,2],
 "classQSerialPort.html#a6a95f45127c46a3395862a5d1395333d":[2,0,599,22],
-"classQSerialPort.html#a6a97042ad76242070a7a57c26238679f":[2,0,599,20],
-"classQSerialPort.html#a6bbab6615bcd8bcc3a838e2c182b5e5c":[2,0,599,24],
-"classQSerialPort.html#a7a2377f79359b54a0c7ba31afaad6b3b":[2,0,599,58],
-"classQSerialPort.html#a7c44328cfcfd6ec9519cc99a427be8e9":[2,0,599,23],
-"classQSerialPort.html#a7c58206c8db3cea14f0b06d158a14e48":[2,0,599,8],
-"classQSerialPort.html#a7cc5f4375402803e95a3f5b67e528d2e":[2,0,599,61],
-"classQSerialPort.html#a7e9459ef00adaf13f6ca87141331a1e0":[2,0,599,28]
+"classQSerialPort.html#a6a97042ad76242070a7a57c26238679f":[2,0,599,20]
 };

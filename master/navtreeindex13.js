@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"QGeoTiledMappingManagerEngineQGC_8cpp_source.html":[3,0,0,24,26],
 "QGeoTiledMappingManagerEngineQGC_8h.html":[3,0,0,24,27],
 "QGeoTiledMappingManagerEngineQGC_8h_source.html":[3,0,0,24,27],
 "QGroundControlQmlGlobal_8cc.html":[3,0,0,23,129],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "ScreenTools_8qml.html":[3,0,0,23,143],
 "ScreenTools_8qml_source.html":[3,0,0,23,143],
 "ScriptingComponent_8cc.html":[3,0,0,5,1,17],
-"ScriptingComponent_8cc_source.html":[3,0,0,5,1,17],
-"ScriptingComponent_8h.html":[3,0,0,5,1,18]
+"ScriptingComponent_8cc_source.html":[3,0,0,5,1,17]
 };

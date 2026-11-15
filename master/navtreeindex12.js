@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"QGCLoggingCategoryManager_8cc_source.html":[3,0,0,28,9,3],
 "QGCLoggingCategoryManager_8h.html":[3,0,0,28,9,4],
 "QGCLoggingCategoryManager_8h_source.html":[3,0,0,28,9,4],
 "QGCLoggingCategory_8cc.html":[3,0,0,28,9,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "QGeoTiledMapQGC_8cpp_source.html":[3,0,0,24,28],
 "QGeoTiledMapQGC_8h.html":[3,0,0,24,29],
 "QGeoTiledMapQGC_8h_source.html":[3,0,0,24,29],
-"QGeoTiledMappingManagerEngineQGC_8cpp.html":[3,0,0,24,26],
-"QGeoTiledMappingManagerEngineQGC_8cpp_source.html":[3,0,0,24,26]
+"QGeoTiledMappingManagerEngineQGC_8cpp.html":[3,0,0,24,26]
 };

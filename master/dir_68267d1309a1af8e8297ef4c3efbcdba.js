@@ -35,5 +35,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "main.cc", "main_8cc.html", "main_8cc" ],
     [ "pch.h", "pch_8h.html", null ],
     [ "QGCApplication.cc", "QGCApplication_8cc.html", null ],
-    [ "QGCApplication.h", "QGCApplication_8h.html", "QGCApplication_8h" ]
+    [ "QGCApplication.h", "QGCApplication_8h.html", "QGCApplication_8h" ],
+    [ "UnitTestEntryPoint.h", "UnitTestEntryPoint_8h.html", "UnitTestEntryPoint_8h" ]
 ];

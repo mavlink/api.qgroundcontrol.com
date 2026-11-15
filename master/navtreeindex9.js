@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"MissionSettingsEditor_8qml.html":[3,0,0,22,24],
 "MissionSettingsEditor_8qml_source.html":[3,0,0,22,24],
 "MissionSettingsItem_8cc.html":[3,0,0,21,39],
 "MissionSettingsItem_8cc_source.html":[3,0,0,21,39],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "PX4BatteryComponent_8h_source.html":[3,0,0,5,3,37],
 "PX4BatteryComponent_8qml.html":[3,0,0,5,3,38],
 "PX4BatteryComponent_8qml_source.html":[3,0,0,5,3,38],
-"PX4BatteryController_8cc.html":[3,0,0,5,3,39],
-"PX4BatteryController_8cc_source.html":[3,0,0,5,3,39]
+"PX4BatteryController_8cc.html":[3,0,0,5,3,39]
 };

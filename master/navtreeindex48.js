@@ -1,5 +1,9 @@
 var NAVTREEINDEX48 =
 {
+"classQGCCachedFileDownload.html#a7eff08e7f9c02d2faeedd1818f5b90bc":[2,0,522,11],
+"classQGCCachedFileDownload.html#a8857a230b5f712d87f9564a51b79727a":[2,0,522,17],
+"classQGCCachedFileDownload.html#a8b3cfa4f6e26aed95342f8059c82108c":[2,0,522,13],
+"classQGCCachedFileDownload.html#a8d7b6ce44116da11d1a12510fa75a19c":[2,0,522,12],
 "classQGCCachedFileDownload.html#a8f03c6f12c291acc464a3bd9e00ee825":[2,0,522,34],
 "classQGCCachedFileDownload.html#a9c4a3b9e1b93d82179ecc253d4d4addb":[2,0,522,1],
 "classQGCCachedFileDownload.html#a9f02af9fc4fe906ecf268dea84ee7620":[2,0,522,4],
@@ -245,9 +249,5 @@ var NAVTREEINDEX48 =
 "classQGCDecompressDevice.html#abe3862f4eb05c4242dc258dde879c57f":[2,0,533,7],
 "classQGCDecompressDevice.html#adbd03381dfe55e825814a52211456959":[2,0,533,1],
 "classQGCDecompressDevice.html#ae9253fb84ebe5b4e44ff2d278e9e24a0":[2,0,533,5],
-"classQGCDeleteTileSetTask.html":[2,0,534],
-"classQGCDeleteTileSetTask.html#a04925fe4cc165d5c51252d65b4cb536d":[2,0,534,3],
-"classQGCDeleteTileSetTask.html#a1d6f235489be3ad823ac48de99d6e076":[2,0,534,1],
-"classQGCDeleteTileSetTask.html#a7c9244db1f6f2fc21854ff4d47bddc07":[2,0,534,0],
-"classQGCDeleteTileSetTask.html#ac02eb48b7cf73f86202ffa6b518ef317":[2,0,534,2]
+"classQGCDeleteTileSetTask.html":[2,0,534]
 };

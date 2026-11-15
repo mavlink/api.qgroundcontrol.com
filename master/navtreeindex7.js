@@ -51,6 +51,7 @@ var NAVTREEINDEX7 =
 "JoystickManager_8h_source.html":[3,0,0,17,3],
 "JoystickSDL_8cc.html":[3,0,0,17,4],
 "JoystickSDL_8cc.html#a7161bd6607610843d69a26803c4389e6":[3,0,0,17,4,1],
+"JoystickSDL_8cc.html#aa96cb3f8284dc92a20d2a51d4a99295f":[3,0,0,17,4,2],
 "JoystickSDL_8cc.html#ad2003b4bac060df9e52e96f0411705a6":[3,0,0,17,4,0],
 "JoystickSDL_8cc_source.html":[3,0,0,17,4],
 "JoystickSDL_8h.html":[3,0,0,17,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "LoggingCategoryModel_8h.html":[3,0,0,28,9,2],
 "LoggingCategoryModel_8h_source.html":[3,0,0,28,9,2],
 "LoopState_8h.html":[3,0,0,28,17,1,14],
-"LoopState_8h_source.html":[3,0,0,28,17,1,14],
-"MAVLinkChartController_8cc.html":[3,0,0,1,3,1]
+"LoopState_8h_source.html":[3,0,0,28,17,1,14]
 };

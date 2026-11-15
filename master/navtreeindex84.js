@@ -1,5 +1,12 @@
 var NAVTREEINDEX84 =
 {
+"structGStreamer_1_1GstCapsDeleter.html#aa15ee01f4ab76a268b00ce323c6b59ab":[2,0,17,14,0],
+"structGStreamer_1_1GstContextDeleter.html":[0,0,32,17],
+"structGStreamer_1_1GstContextDeleter.html":[2,0,17,17],
+"structGStreamer_1_1GstContextDeleter.html#a3d2ffe77decf36391d3eac41d62833a6":[0,0,32,17,0],
+"structGStreamer_1_1GstContextDeleter.html#a3d2ffe77decf36391d3eac41d62833a6":[2,0,17,17,0],
+"structGStreamer_1_1GstEventDeleter.html":[0,0,32,16],
+"structGStreamer_1_1GstEventDeleter.html":[2,0,17,16],
 "structGStreamer_1_1GstEventDeleter.html#a9d351d88ab75fc420a43c4968aee136a":[0,0,32,16,0],
 "structGStreamer_1_1GstEventDeleter.html#a9d351d88ab75fc420a43c4968aee136a":[2,0,17,16,0],
 "structGStreamer_1_1GstMessageDeleter.html":[0,0,32,15],
@@ -242,12 +249,5 @@ var NAVTREEINDEX84 =
 "structGstQgc_1_1VideoFormatEntry.html#ae97527e7c4cf7750d2418b63c565f072":[0,0,31,8,3],
 "structGstQgc_1_1VideoFormatEntry.html#ae97527e7c4cf7750d2418b63c565f072":[2,0,16,8,3],
 "structGstReceiverRequest.html":[2,0,316],
-"structGstReceiverRequest.html#a12709a0fc6e35dae8f33bac7917c6991":[2,0,316,2],
-"structGstReceiverRequest.html#a15927a708d6b7a77fb0180c376a8197d":[2,0,316,1],
-"structGstReceiverRequest.html#a180381473727dc2e09d28369120a582d":[2,0,316,4],
-"structGstReceiverRequest.html#a62d086f089da2040499d25f8e169577f":[2,0,316,0],
-"structGstReceiverRequest.html#aa2bfa00150e9b19ef8e90d8e3ef920d5":[2,0,316,5],
-"structGstReceiverRequest.html#ad743c2df5709249d906e9034a97c9734":[2,0,316,3],
-"structGstReceiverStatus.html":[2,0,317],
-"structGstReceiverStatus.html#a23d257616fb8108193037426334fb1a3":[2,0,317,0]
+"structGstReceiverRequest.html#a12709a0fc6e35dae8f33bac7917c6991":[2,0,316,2]
 };

@@ -32,7 +32,6 @@ var classVehicleCameraControl =
     [ "autoStream", "classVehicleCameraControl.html#a5eba6e908fb579d037572069b3f4d1f5", null ],
     [ "batteryRemaining", "classVehicleCameraControl.html#a4f1b8ba4f2b27944ee18767369aba6fb", null ],
     [ "batteryRemainingStr", "classVehicleCameraControl.html#a50eefd56e5d41839666b2e85bd0b1cb5", null ],
-    [ "boundedStringField", "classVehicleCameraControl.html#af78d7e75ecb7cefc9c4476d85df12e33", null ],
     [ "cacheFileToken", "classVehicleCameraControl.html#a424985019b8fbedb021b3be387624ecb", null ],
     [ "capturePhotosState", "classVehicleCameraControl.html#a3149bf6bc9424c0ec986ea3a9f56036b", null ],
     [ "capturesPhotos", "classVehicleCameraControl.html#a0c16ceb3f590373066be74618ce948b7", null ],

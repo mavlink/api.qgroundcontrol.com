@@ -1,5 +1,10 @@
 var NAVTREEINDEX77 =
 {
+"namespaceQGCCompression.html#a0ef25b6a5f074267bfdccf5ed0d874a2":[0,0,56,54],
+"namespaceQGCCompression.html#a13285748433c899ec879df10a7378b69":[0,0,56,11],
+"namespaceQGCCompression.html#a14e77386e025cffbd91c75d4387b4683":[0,0,56,24],
+"namespaceQGCCompression.html#a1734b7c486b7f90a0ff1e80c97fe9502":[0,0,56,57],
+"namespaceQGCCompression.html#a1d53b50e448de68e0a22683e0b91f5ea":[0,0,56,23],
 "namespaceQGCCompression.html#a1ecc29aedf734bf8ca80e52addac1546":[0,0,56,12],
 "namespaceQGCCompression.html#a25eeeed4d955de8ce6f0f9bce3741712":[0,0,56,34],
 "namespaceQGCCompression.html#a2a3d391b5552565f7057d7a433f9d0a2":[0,0,56,36],
@@ -241,13 +246,8 @@ var NAVTREEINDEX77 =
 "namespaceQGCSqlHelper.html#a3e6fee9f199817506d329e69f68cfe84":[0,0,64,2],
 "namespaceQGCSqlHelper.html#a41d57b0131771aaf8a0efaa4ef1eaa45":[0,0,64,4],
 "namespaceQGCSqlHelper.html#a6abd6aa7f3eec0ac661801759186c503":[0,0,64,6],
+"namespaceQGCUnitTest.html":[0,0,65],
+"namespaceQGCUnitTest.html#afae112541c133456dbad0bc2d6f68247":[0,0,65,0],
 "namespaceQGClibarchive.html":[0,0,59],
-"namespaceQGClibarchive.html#a108faf96d4d227bfc528ddf81ce781a8":[0,0,59,24],
-"namespaceQGClibarchive.html#a11eefc2b284b567518bbef5859f1c8b2":[0,0,59,20],
-"namespaceQGClibarchive.html#a148d418f837ee4fe29811d472263b9b0":[0,0,59,26],
-"namespaceQGClibarchive.html#a14e68c20ff0a9fe17efb4429768afdc4":[0,0,59,22],
-"namespaceQGClibarchive.html#a18c21672f325b49a5e9579d8c9535b50":[0,0,59,13],
-"namespaceQGClibarchive.html#a25beb9f35249828dea334fc0c9ca4df8":[0,0,59,25],
-"namespaceQGClibarchive.html#a26151fa42367cd4c640dd3435f65e120":[0,0,59,5],
-"namespaceQGClibarchive.html#a26151fa42367cd4c640dd3435f65e120a2798fb45b8bbcd8948de1413ec449b48":[0,0,59,5,0]
+"namespaceQGClibarchive.html#a108faf96d4d227bfc528ddf81ce781a8":[0,0,59,24]
 };

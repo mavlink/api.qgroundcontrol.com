@@ -1,5 +1,8 @@
 var NAVTREEINDEX17 =
 {
+"Viewer3DMapProvider_8cc.html":[3,0,0,31,10],
+"Viewer3DMapProvider_8cc_source.html":[3,0,0,31,10],
+"Viewer3DMapProvider_8h.html":[3,0,0,31,11],
 "Viewer3DMapProvider_8h_source.html":[3,0,0,31,11],
 "Viewer3DModel_8qml.html":[3,0,0,31,1,1,2],
 "Viewer3DModel_8qml_source.html":[3,0,0,31,1,1,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX17 =
 "classAPMFirmwarePlugin.html#a73b452dc465faffdc0e63b62166876d4":[2,0,70,20],
 "classAPMFirmwarePlugin.html#a74114b45a1d806df2e64dee582b89a8e":[2,0,70,21],
 "classAPMFirmwarePlugin.html#a76915434ea6805bb056656f56ad949fa":[2,0,70,1],
-"classAPMFirmwarePlugin.html#a76a7bd287dc10b75c1d512d10dc8ba7c":[2,0,70,25],
-"classAPMFirmwarePlugin.html#a78dde3bc3915e851c01258f0f0a12f54":[2,0,70,34],
-"classAPMFirmwarePlugin.html#a7a6404fcc5c0ac1bfddd7eef85ea35de":[2,0,70,14],
-"classAPMFirmwarePlugin.html#a7be2fff662da14ca8c52e21078747d85":[2,0,70,2]
+"classAPMFirmwarePlugin.html#a76a7bd287dc10b75c1d512d10dc8ba7c":[2,0,70,25]
 };

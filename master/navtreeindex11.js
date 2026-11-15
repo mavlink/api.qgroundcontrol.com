@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"PlanPanelRow_8qml_source.html":[3,0,0,22,35],
 "PlanPanelTabBar_8qml.html":[3,0,0,22,36],
 "PlanPanelTabBar_8qml_source.html":[3,0,0,22,36],
 "PlanPanel_8qml.html":[3,0,0,22,32],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "QGCListView_8qml.html":[3,0,0,23,96],
 "QGCListView_8qml_source.html":[3,0,0,23,96],
 "QGCLoggingCategoryManager_8cc.html":[3,0,0,28,9,3],
-"QGCLoggingCategoryManager_8cc.html#aea4425eb041bc748fdce312a582374d5":[3,0,0,28,9,3,0],
-"QGCLoggingCategoryManager_8cc_source.html":[3,0,0,28,9,3]
+"QGCLoggingCategoryManager_8cc.html#aea4425eb041bc748fdce312a582374d5":[3,0,0,28,9,3,0]
 };

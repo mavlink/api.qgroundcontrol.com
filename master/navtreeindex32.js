@@ -1,5 +1,9 @@
 var NAVTREEINDEX32 =
 {
+"classGuardedTransition.html#a873e1dc7755d654e25ab081ef30f6883":[2,0,321,3],
+"classGuardedTransition.html#a95049a349c54d85b52b776c3fea6e048":[2,0,321,5],
+"classGuardedTransition.html#aab465d1f72b3b1f19fa83448f5c8e789":[2,0,321,4],
+"classGuardedTransition.html#ace3ea9b59e4149ac1466015844de1dab":[2,0,321,2],
 "classHealthAndArmingCheckProblem.html":[2,0,322],
 "classHealthAndArmingCheckProblem.html#a13831ac9ce0c889fb49b552a1c69449d":[2,0,322,7],
 "classHealthAndArmingCheckProblem.html#a22c1d9ce75866699c9298ceed7df3bb0":[2,0,322,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX32 =
 "classJoystick.html#a8cd39a90e9fed228723dacc0831e7815":[2,0,338,127],
 "classJoystick.html#a8e737dafd3a3494fb8ba00cf3dbc0edf":[2,0,338,23],
 "classJoystick.html#a8f217a20bef2502b99ac19fff4808832":[2,0,338,83],
-"classJoystick.html#a901f7ec250e8ad259c9e9d8426208159":[2,0,338,142],
-"classJoystick.html#a90bf5c1700d27fab1c7da6e12de8b176":[2,0,338,69],
-"classJoystick.html#a910eb1bee9fb0bb5ff5b5e7e75b208c3":[2,0,338,120],
-"classJoystick.html#a91749cc8283439b292e90541f3619e4e":[2,0,338,31],
-"classJoystick.html#a98a2545e0646ab8a053eacff818d769c":[2,0,338,90]
+"classJoystick.html#a901f7ec250e8ad259c9e9d8426208159":[2,0,338,142]
 };
