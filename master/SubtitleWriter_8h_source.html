@@ -130,46 +130,49 @@ $(function() {
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classSubtitleWriter.html#a04ce0f8fc5cc64b8ded26464c243bb2a">SubtitleWriter</a>(QObject* parent = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="classSubtitleWriter.html#ad545054c3a0ea8947e722d5a1269d794">~SubtitleWriter</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classSubtitleWriter.html#a5d4b1acac6d6e01d2f0f2e44c7039357">startCapturingTelemetry</a>(<span class="keyword">const</span> QString&amp; <a class="code hl_function" href="classSubtitleWriter.html#a192bdea83af48ff5d1edfca9a77aa5cd">videoFile</a>, QSize videoSize);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classSubtitleWriter.html#a4f021f80a9a7a5f0a67d47da5a7febc1">stopCapturingTelemetry</a>();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classSubtitleWriter.html#af61fd0df7a8390a1ba1472159c9df0a1">   31</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classSubtitleWriter.html#af61fd0df7a8390a1ba1472159c9df0a1">capturing</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _file.isOpen(); }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classSubtitleWriter.html#a192bdea83af48ff5d1edfca9a77aa5cd">   34</a></span>    QString <a class="code hl_function" href="classSubtitleWriter.html#a192bdea83af48ff5d1edfca9a77aa5cd">videoFile</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _videoFile; }</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">struct </span>Sample</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        qint64 startMs = -1;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        QStringList names;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        QStringList values;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        QString date;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    };</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> _captureTelemetry();</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    Sample _sample(qint64 startMs) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> _writeSample(<span class="keyword">const</span> Sample&amp; sample, qint64 endMs);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    QFile _file;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    QString _videoFile;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    TelemetryBarValues _telemetry;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    QSize _size;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">int</span> _rowWidth = 0;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    QElapsedTimer _elapsed;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    QTimer _timer;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    Sample _pending;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> _kSampleRate = 1;  </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">static</span> QString <a class="code hl_function" href="classSubtitleWriter.html#a41dbab99e6a32e464822cec02e0dad89">subtitleFile</a>(<span class="keyword">const</span> QString&amp; <a class="code hl_function" href="classSubtitleWriter.html#a192bdea83af48ff5d1edfca9a77aa5cd">videoFile</a>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classSubtitleWriter.html#a5d4b1acac6d6e01d2f0f2e44c7039357">startCapturingTelemetry</a>(<span class="keyword">const</span> QString&amp; <a class="code hl_function" href="classSubtitleWriter.html#a192bdea83af48ff5d1edfca9a77aa5cd">videoFile</a>, QSize videoSize);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classSubtitleWriter.html#a4f021f80a9a7a5f0a67d47da5a7febc1">stopCapturingTelemetry</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classSubtitleWriter.html#af61fd0df7a8390a1ba1472159c9df0a1">   34</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classSubtitleWriter.html#af61fd0df7a8390a1ba1472159c9df0a1">capturing</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _file.isOpen(); }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classSubtitleWriter.html#a192bdea83af48ff5d1edfca9a77aa5cd">   37</a></span>    QString <a class="code hl_function" href="classSubtitleWriter.html#a192bdea83af48ff5d1edfca9a77aa5cd">videoFile</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _videoFile; }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">struct </span>Sample</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        qint64 startMs = -1;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        QStringList names;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        QStringList values;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        QString dateTime;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    };</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> _captureTelemetry();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    Sample _sample(qint64 startMs) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> _writeSample(<span class="keyword">const</span> Sample&amp; sample, qint64 endMs);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    QFile _file;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    QString _videoFile;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    TelemetryBarValues _telemetry;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    QSize _size;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">int</span> _rowWidth = 0;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    QElapsedTimer _elapsed;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    QTimer _timer;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    Sample _pending;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> _kSampleRate = 1;  </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
 </div>
 <div class="ttc" id="aTelemetryBarValues_8h_html"><div class="ttname"><a href="TelemetryBarValues_8h.html">TelemetryBarValues.h</a></div></div>
 <div class="ttc" id="aclassSubtitleWriter_html_a04ce0f8fc5cc64b8ded26464c243bb2a"><div class="ttname"><a href="classSubtitleWriter.html#a04ce0f8fc5cc64b8ded26464c243bb2a">SubtitleWriter::SubtitleWriter</a></div><div class="ttdeci">SubtitleWriter(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="SubtitleWriter_8cc_source.html#l00033">SubtitleWriter.cc:33</a></div></div>
-<div class="ttc" id="aclassSubtitleWriter_html_a192bdea83af48ff5d1edfca9a77aa5cd"><div class="ttname"><a href="classSubtitleWriter.html#a192bdea83af48ff5d1edfca9a77aa5cd">SubtitleWriter::videoFile</a></div><div class="ttdeci">QString videoFile() const</div><div class="ttdoc">The video file the current capture belongs to.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">SubtitleWriter.h:34</a></div></div>
-<div class="ttc" id="aclassSubtitleWriter_html_a4f021f80a9a7a5f0a67d47da5a7febc1"><div class="ttname"><a href="classSubtitleWriter.html#a4f021f80a9a7a5f0a67d47da5a7febc1">SubtitleWriter::stopCapturingTelemetry</a></div><div class="ttdeci">void stopCapturingTelemetry()</div><div class="ttdef"><b>Definition</b> <a href="SubtitleWriter_8cc_source.html#l00096">SubtitleWriter.cc:96</a></div></div>
-<div class="ttc" id="aclassSubtitleWriter_html_a5d4b1acac6d6e01d2f0f2e44c7039357"><div class="ttname"><a href="classSubtitleWriter.html#a5d4b1acac6d6e01d2f0f2e44c7039357">SubtitleWriter::startCapturingTelemetry</a></div><div class="ttdeci">void startCapturingTelemetry(const QString &amp;videoFile, QSize videoSize)</div><div class="ttdef"><b>Definition</b> <a href="SubtitleWriter_8cc_source.html#l00044">SubtitleWriter.cc:44</a></div></div>
+<div class="ttc" id="aclassSubtitleWriter_html_a192bdea83af48ff5d1edfca9a77aa5cd"><div class="ttname"><a href="classSubtitleWriter.html#a192bdea83af48ff5d1edfca9a77aa5cd">SubtitleWriter::videoFile</a></div><div class="ttdeci">QString videoFile() const</div><div class="ttdoc">The video file the current capture belongs to.</div><div class="ttdef"><b>Definition</b> <a href="#l00037">SubtitleWriter.h:37</a></div></div>
+<div class="ttc" id="aclassSubtitleWriter_html_a41dbab99e6a32e464822cec02e0dad89"><div class="ttname"><a href="classSubtitleWriter.html#a41dbab99e6a32e464822cec02e0dad89">SubtitleWriter::subtitleFile</a></div><div class="ttdeci">static QString subtitleFile(const QString &amp;videoFile)</div><div class="ttdoc">The subtitle file that goes with videoFile: &quot;&lt;videoFile without extension&gt;.ass&quot;.</div><div class="ttdef"><b>Definition</b> <a href="SubtitleWriter_8cc_source.html#l00044">SubtitleWriter.cc:44</a></div></div>
+<div class="ttc" id="aclassSubtitleWriter_html_a4f021f80a9a7a5f0a67d47da5a7febc1"><div class="ttname"><a href="classSubtitleWriter.html#a4f021f80a9a7a5f0a67d47da5a7febc1">SubtitleWriter::stopCapturingTelemetry</a></div><div class="ttdeci">void stopCapturingTelemetry()</div><div class="ttdef"><b>Definition</b> <a href="SubtitleWriter_8cc_source.html#l00101">SubtitleWriter.cc:101</a></div></div>
+<div class="ttc" id="aclassSubtitleWriter_html_a5d4b1acac6d6e01d2f0f2e44c7039357"><div class="ttname"><a href="classSubtitleWriter.html#a5d4b1acac6d6e01d2f0f2e44c7039357">SubtitleWriter::startCapturingTelemetry</a></div><div class="ttdeci">void startCapturingTelemetry(const QString &amp;videoFile, QSize videoSize)</div><div class="ttdef"><b>Definition</b> <a href="SubtitleWriter_8cc_source.html#l00050">SubtitleWriter.cc:50</a></div></div>
 <div class="ttc" id="aclassSubtitleWriter_html_ad545054c3a0ea8947e722d5a1269d794"><div class="ttname"><a href="classSubtitleWriter.html#ad545054c3a0ea8947e722d5a1269d794">SubtitleWriter::~SubtitleWriter</a></div><div class="ttdeci">~SubtitleWriter() override</div><div class="ttdef"><b>Definition</b> <a href="SubtitleWriter_8cc_source.html#l00039">SubtitleWriter.cc:39</a></div></div>
 <div class="ttc" id="aclassSubtitleWriter_html_aeadea1bd1aac0f64882c1b224125ff36"><div class="ttname"><a href="classSubtitleWriter.html#aeadea1bd1aac0f64882c1b224125ff36">SubtitleWriter::SubtitleWriterTest</a></div><div class="ttdeci">friend class SubtitleWriterTest</div><div class="ttdef"><b>Definition</b> <a href="#l00020">SubtitleWriter.h:20</a></div></div>
-<div class="ttc" id="aclassSubtitleWriter_html_af61fd0df7a8390a1ba1472159c9df0a1"><div class="ttname"><a href="classSubtitleWriter.html#af61fd0df7a8390a1ba1472159c9df0a1">SubtitleWriter::capturing</a></div><div class="ttdeci">bool capturing() const</div><div class="ttdef"><b>Definition</b> <a href="#l00031">SubtitleWriter.h:31</a></div></div>
+<div class="ttc" id="aclassSubtitleWriter_html_af61fd0df7a8390a1ba1472159c9df0a1"><div class="ttname"><a href="classSubtitleWriter.html#af61fd0df7a8390a1ba1472159c9df0a1">SubtitleWriter::capturing</a></div><div class="ttdeci">bool capturing() const</div><div class="ttdef"><b>Definition</b> <a href="#l00034">SubtitleWriter.h:34</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

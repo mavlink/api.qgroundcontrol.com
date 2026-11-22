@@ -1,6 +1,6 @@
 var classGstHwVideoBuffer =
 [
-    [ "GstHwVideoBuffer", "classGstHwVideoBuffer.html#a22a42d3e4a8e93dba174454c2ca354db", null ],
+    [ "GstHwVideoBuffer", "classGstHwVideoBuffer.html#a46b9c812682c8a990f68e0deed93d77d", null ],
     [ "~GstHwVideoBuffer", "classGstHwVideoBuffer.html#a5af42ae2c502740295679fb6260e75b6", null ],
     [ "checkMapPreconditions", "classGstHwVideoBuffer.html#ad4a86d91b25c19ba989dc4514b650471", null ],
     [ "format", "classGstHwVideoBuffer.html#a672248501aaf8bf80ad93d513b20b3a8", null ],

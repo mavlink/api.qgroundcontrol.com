@@ -53,6 +53,7 @@ var classSimulatedCameraControl =
     [ "setCameraModePhoto", "classSimulatedCameraControl.html#a5a0779da950157c2a9bcc4c35ecabce3", null ],
     [ "setCameraModeVideo", "classSimulatedCameraControl.html#ae5bbe86705abd3d6a8b68dbb272c6f26", null ],
     [ "setCurrentStream", "classSimulatedCameraControl.html#a97924d58a0ce52e25fb1921ab68bc63e", null ],
+    [ "setExtraStreams", "classSimulatedCameraControl.html#a388dd85286b46e2c21129dea414fb35e", null ],
     [ "setFocusLevel", "classSimulatedCameraControl.html#aa337a9434236966106472c8aee129d40", null ],
     [ "setPhotoCaptureMode", "classSimulatedCameraControl.html#a40ad4dcf1c41244bb9bb1376c43c3d80", null ],
     [ "setPhotoLapse", "classSimulatedCameraControl.html#a71485900d7eda2096d237fba42dab796", null ],

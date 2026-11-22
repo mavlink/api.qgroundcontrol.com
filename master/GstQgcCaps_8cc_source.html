@@ -117,144 +117,182 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="GstQgcVideoFormats_8h.html">GstQgcVideoFormats.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="GstDmaDrmCaps_8h.html">HwBuffers/dmabuf/GstDmaDrmCaps.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceGstQgc.html">GstQgc</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">static_assert</span>(<a class="code hl_enumeration" href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841">GpuBinMode</a>{} == <a class="code hl_enumvalue" href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841af6124225f7555a9190621c9886890973">GpuBinMode::Passthrough</a>,</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>              <span class="stringliteral">&quot;SinkCapsPolicy::gpuBin&#39;s value-initialized default must be Passthrough&quot;</span>);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span>{</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#if defined(QGC_HAS_GST_DMABUF_GPU_PATH)</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>std::string sinkDmaDrmCaps([[maybe_unused]] <span class="keywordtype">void</span>* display)</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    std::string caps;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#if GST_CHECK_VERSION(1, 24, 0)</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">const</span> std::vector&lt;GstVideoFormat&gt; formats = <a class="code hl_function" href="namespaceGstQgc.html#a889444e0d20a99b3aa02dbef716e0b64">advertisedFormats</a>(<a class="code hl_variable" href="namespaceGstQgc.html#a5cac256aae1af3a7326cf3ce88b2f1a9">kOfferDmaDrm</a>);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// Best-effort: advertise the GPU&#39;s actually-supported (format, modifier) pairs (EGL query) so modifier-aware</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// drivers negotiate a tiling QGC&#39;s importer can consume. Additive; empty on any query failure.</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    caps += <a class="code hl_function" href="namespaceGstHw.html#a34a92fdd0352acfe03c2584a136b4cfb">GstHw::buildSupportedDmaDrmCaps</a>(formats, display);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> caps;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// texture-target=2D is load-bearing: the GL path samples GL_TEXTURE_2D only, and it makes glcolorconvert convert</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// amcvideodec&#39;s external-OES Surface textures; with the default ANY target external-OES passes through and is sampled</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// black.</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kGlMemory2D = <span class="stringliteral">&quot;video/x-raw(memory:GLMemory), texture-target=2D&quot;</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">// What the D3D12Convert bin&#39;s d3d12convert outputs: single-plane formats, the only ones Qt&#39;s D3D12 QRhi can sample.</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kD3D12MemoryRgb = <span class="stringliteral">&quot;video/x-raw(memory:D3D12Memory)&quot;</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kD3D12ConvertFormats = <span class="stringliteral">&quot;(string){ RGBA, BGRA }&quot;</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>std::string gpuMemoryCaps(<span class="keyword">const</span> <a class="code hl_struct" href="structGstQgc_1_1SinkCapsPolicy.html">SinkCapsPolicy</a>&amp; policy, <span class="keyword">const</span> std::string&amp; formats)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    std::string caps;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    [[maybe_unused]] <span class="keyword">const</span> <span class="keyword">auto</span> offer = [&amp;caps, &amp;formats](<span class="keyword">const</span> <span class="keywordtype">char</span>* mediaType) {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        caps += mediaType;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        caps += <span class="stringliteral">&quot;, format=&quot;</span>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        caps += formats;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        caps += <span class="stringliteral">&quot;; &quot;</span>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    };</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">switch</span> (policy.target.backend) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1a760716b590ee7c0adc25f434f577d8be">RenderBackend::OpenGL</a>:</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            <span class="comment">// DMABuf and AHardwareBuffer reach Qt as EGLImages on its EGLDisplay; GLMemory through the GL share group,</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="comment">// which gst-gl joins on EGL and GLX.</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#if defined(QGC_HAS_GST_DMABUF_GPU_PATH)</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">if</span> (policy.target.egl &amp;&amp; policy.dmaBufDisplay) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                caps += sinkDmaDrmCaps(policy.dmaBufDisplay);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                <span class="comment">// Legacy memory:DMABuf covers v4l2h264dec/Mali/V3D LINEAR. Unrestricted DMA_DRM is never offered (only</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                <span class="comment">// the importable modifiers above): gst-va iHD would negotiate tiled+CCS, which no per-plane import can</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                <span class="comment">// read.</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                offer(<span class="stringliteral">&quot;video/x-raw(memory:DMABuf)&quot;</span>);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#if defined(QGC_HAS_GST_GLMEMORY_GPU_PATH)</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">if</span> (policy.target.sharesGlContext() &amp;&amp; (policy.gpuBin != <a class="code hl_enumvalue" href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841adbf50db07bf453b305b0329833949e1d">GpuBinMode::DirectDmaBuf</a>)) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                offer(kGlMemory2D);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="GstScoped_8h.html">GstScoped.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="GstDmaDrmCaps_8h.html">HwBuffers/dmabuf/GstDmaDrmCaps.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceGstQgc.html">GstQgc</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">static_assert</span>(<a class="code hl_enumeration" href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841">GpuBinMode</a>{} == <a class="code hl_enumvalue" href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841af6124225f7555a9190621c9886890973">GpuBinMode::Passthrough</a>,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>              <span class="stringliteral">&quot;SinkCapsPolicy::gpuBin&#39;s value-initialized default must be Passthrough&quot;</span>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#if defined(QGC_HAS_GST_DMABUF_GPU_PATH)</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>std::string sinkDmaDrmCaps([[maybe_unused]] <span class="keywordtype">void</span>* display)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    std::string caps;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#if GST_CHECK_VERSION(1, 24, 0)</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">const</span> std::vector&lt;GstVideoFormat&gt; formats = <a class="code hl_function" href="namespaceGstQgc.html#a889444e0d20a99b3aa02dbef716e0b64">advertisedFormats</a>(<a class="code hl_variable" href="namespaceGstQgc.html#a5cac256aae1af3a7326cf3ce88b2f1a9">kOfferDmaDrm</a>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// Best-effort: advertise the GPU&#39;s actually-supported (format, modifier) pairs (EGL query) so modifier-aware</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// drivers negotiate a tiling QGC&#39;s importer can consume. Additive; empty on any query failure.</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    caps += <a class="code hl_function" href="namespaceGstHw.html#a93e66ffbaec34d7d1048e838ce92889a">GstHw::buildSupportedDmaDrmCaps</a>(formats, display);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">return</span> caps;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// texture-target=2D is load-bearing: the GL path samples GL_TEXTURE_2D only, and it makes glcolorconvert convert</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// amcvideodec&#39;s external-OES Surface textures; with the default ANY target external-OES passes through and is sampled</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// black.</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kGlMemory2D = <span class="stringliteral">&quot;video/x-raw(memory:GLMemory), texture-target=2D&quot;</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kD3D12Memory = <span class="stringliteral">&quot;video/x-raw(memory:D3D12Memory)&quot;</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">// What the D3D12Convert bin&#39;s d3d12convert outputs: single-plane formats, the only ones Qt&#39;s D3D12 QRhi can sample.</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kD3D12ConvertFormats = <span class="stringliteral">&quot;(string){ RGBA, BGRA }&quot;</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#if defined(QGC_HAS_GST_D3D11_GPU_PATH) &amp;&amp; defined(QGC_HAS_GST_D3D12_GPU_PATH)</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">// What decoders output as D3D12Memory, each one resource a Direct3D 11 device opens as a texture with both planes.</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">constexpr</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* kD3D12DecoderFormats = <span class="stringliteral">&quot;(string){ NV12, P010_10LE }&quot;</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>std::string gpuMemoryCaps(<span class="keyword">const</span> <a class="code hl_struct" href="structGstQgc_1_1SinkCapsPolicy.html">SinkCapsPolicy</a>&amp; policy, <span class="keyword">const</span> std::string&amp; formats)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    std::string caps;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    [[maybe_unused]] <span class="keyword">const</span> <span class="keyword">auto</span> offer = [&amp;caps, &amp;formats](<span class="keyword">const</span> <span class="keywordtype">char</span>* mediaType) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        caps += mediaType;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        caps += <span class="stringliteral">&quot;, format=&quot;</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        caps += formats;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        caps += <span class="stringliteral">&quot;; &quot;</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    };</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">switch</span> (policy.target.backend) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1a760716b590ee7c0adc25f434f577d8be">RenderBackend::OpenGL</a>:</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="comment">// DMABuf and AHardwareBuffer reach Qt as EGLImages on its EGLDisplay; GLMemory through the GL share group,</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="comment">// which gst-gl joins on EGL and GLX.</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#if defined(QGC_HAS_GST_DMABUF_GPU_PATH)</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">if</span> (policy.target.egl &amp;&amp; policy.dmaBufDisplay) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                caps += sinkDmaDrmCaps(policy.dmaBufDisplay);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                <span class="comment">// Legacy memory:DMABuf covers v4l2h264dec/Mali/V3D LINEAR. Unrestricted DMA_DRM is never offered (only</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="comment">// the importable modifiers above): gst-va iHD would negotiate tiled+CCS, which no per-plane import can</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <span class="comment">// read.</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                offer(<span class="stringliteral">&quot;video/x-raw(memory:DMABuf)&quot;</span>);</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            }</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#if defined(QGC_HAS_GST_AHARDWAREBUFFER_GPU_PATH)</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keywordflow">if</span> (policy.target.egl) {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                offer(<span class="stringliteral">&quot;video/x-raw(memory:AHardwareBuffer)&quot;</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#if defined(QGC_HAS_GST_GLMEMORY_GPU_PATH)</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keywordflow">if</span> (policy.target.sharesGlContext() &amp;&amp; (policy.gpuBin != <a class="code hl_enumvalue" href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841adbf50db07bf453b305b0329833949e1d">GpuBinMode::DirectDmaBuf</a>)) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                offer(kGlMemory2D);</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            }</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1a4f8b2c89cfd217fc6a442a2e62b625d1">RenderBackend::Direct3D11</a>:</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#if defined(QGC_HAS_GST_D3D11_GPU_PATH)</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            offer(<span class="stringliteral">&quot;video/x-raw(memory:D3D11Memory)&quot;</span>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#if defined(QGC_HAS_GST_AHARDWAREBUFFER_GPU_PATH)</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">if</span> (policy.target.egl) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                offer(<span class="stringliteral">&quot;video/x-raw(memory:AHardwareBuffer)&quot;</span>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            }</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="comment">// Direct3D12: D3D12Memory only through the D3D12Convert bin (buildSinkCaps). Metal: vtdec&#39;s</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="comment">// IOSurface-backed CoreVideo buffers arrive as system memory. Vulkan: no import path.</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">return</span> caps;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}  <span class="comment">// namespace</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="namespaceGstQgc.html#af977b8a70fc084d3a77f7cbb28cd0f5e">   94</a></span>std::string <a class="code hl_function" href="namespaceGstQgc.html#af977b8a70fc084d3a77f7cbb28cd0f5e">buildSinkCaps</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structGstQgc_1_1SinkCapsPolicy.html">SinkCapsPolicy</a>&amp; policy)</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">if</span> (policy.<a class="code hl_variable" href="structGstQgc_1_1SinkCapsPolicy.html#a9a4c59773899675ef3047b9f1dc8223d">gpuZeroCopy</a> &amp;&amp; (policy.<a class="code hl_variable" href="structGstQgc_1_1SinkCapsPolicy.html#a5cdd9fe3c33b492a8262f38f39aa3f40">gpuBin</a> == <a class="code hl_enumvalue" href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841ad983c55302c92306dcce76f29686febf">GpuBinMode::GlUpload</a>)) {</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <span class="keywordflow">return</span> std::string(kGlMemory2D) + <span class="stringliteral">&quot;, format=&quot;</span> + <a class="code hl_function" href="namespaceGstQgc.html#aa579365fc613b12bc374f5a749d4a25b">advertisedFormatList</a>(<a class="code hl_variable" href="namespaceGstQgc.html#a61a9a1edb57806efa894115d1615de32">kOfferGlUpload</a>);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">if</span> (policy.<a class="code hl_variable" href="structGstQgc_1_1SinkCapsPolicy.html#a9a4c59773899675ef3047b9f1dc8223d">gpuZeroCopy</a> &amp;&amp; (policy.<a class="code hl_variable" href="structGstQgc_1_1SinkCapsPolicy.html#a5cdd9fe3c33b492a8262f38f39aa3f40">gpuBin</a> == <a class="code hl_enumvalue" href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841a076d8d78e8b65d00165484f54e91b2c3">GpuBinMode::D3D12Convert</a>)) {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="comment">// d3d12convert scales as well, so it gives square pixels on the GPU.</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        std::string caps = std::string(kD3D12MemoryRgb) + <span class="stringliteral">&quot;, format=&quot;</span> + kD3D12ConvertFormats;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordflow">if</span> (policy.<a class="code hl_variable" href="structGstQgc_1_1SinkCapsPolicy.html#aa32d3f89d419df04c86bdc228086767c">squarePixels</a>) {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            caps += <span class="stringliteral">&quot;, pixel-aspect-ratio=(fraction)1/1&quot;</span>;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        }</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">return</span> caps;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keyword">const</span> std::string formats = <a class="code hl_function" href="namespaceGstQgc.html#aa579365fc613b12bc374f5a749d4a25b">advertisedFormatList</a>();</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    std::string caps = policy.<a class="code hl_variable" href="structGstQgc_1_1SinkCapsPolicy.html#a9a4c59773899675ef3047b9f1dc8223d">gpuZeroCopy</a> ? gpuMemoryCaps(policy, formats) : std::string();</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    caps += <span class="stringliteral">&quot;video/x-raw, format=&quot;</span> + formats;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">if</span> (policy.<a class="code hl_variable" href="structGstQgc_1_1SinkCapsPolicy.html#aa32d3f89d419df04c86bdc228086767c">squarePixels</a>) {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        caps += <span class="stringliteral">&quot;, pixel-aspect-ratio=(fraction)1/1&quot;</span>;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">return</span> caps;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>}</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1a4f8b2c89cfd217fc6a442a2e62b625d1">RenderBackend::Direct3D11</a>:</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#if defined(QGC_HAS_GST_D3D11_GPU_PATH)</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#if defined(QGC_HAS_GST_D3D12_GPU_PATH)</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="comment">// First: its decoder works on a device of its own, a D3D11Memory one on the device Qt renders with.</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keywordflow">if</span> (policy.d3d11OpensD3D12) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                caps += std::string(kD3D12Memory) + <span class="stringliteral">&quot;, format=&quot;</span> + kD3D12DecoderFormats + <span class="stringliteral">&quot;; &quot;</span>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            offer(<span class="stringliteral">&quot;video/x-raw(memory:D3D11Memory)&quot;</span>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1a38625270231b647116c80bcbc4f9d1d8">RenderBackend::Vulkan</a>:</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="comment">// DMA_DRM only, in the layouts Qt&#39;s Vulkan device imports: Vulkan needs the modifier, which legacy</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <span class="comment">// memory:DMABuf caps don&#39;t carry.</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#if defined(QGC_HAS_GST_DMABUF_VULKAN_IMPORT) &amp;&amp; GST_CHECK_VERSION(1, 24, 0)</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <span class="keywordflow">if</span> (policy.dmaBufDisplay) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                caps += <a class="code hl_function" href="namespaceGstHw.html#af941641534a0a69224c77b2ff1881531">GstHw::buildVulkanDmaDrmCaps</a>(<a class="code hl_function" href="namespaceGstQgc.html#a889444e0d20a99b3aa02dbef716e0b64">advertisedFormats</a>(<a class="code hl_variable" href="namespaceGstQgc.html#a5cac256aae1af3a7326cf3ce88b2f1a9">kOfferDmaDrm</a>));</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1a0544899fd197886c2958ab7cb5bdb58f">RenderBackend::Direct3D12</a>:</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1aeaa57a9b4248ce3968e718895e1c2f04">RenderBackend::Metal</a>:</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1abbb93ef26e3c101ff11cdd21cab08a94">RenderBackend::Null</a>:</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1a88183b946cc5f0e8c96b2e66e1c74a7e">RenderBackend::Unknown</a>:</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            <span class="comment">// Direct3D12: D3D12Memory only through the D3D12Convert bin (buildSinkCaps). Metal: vtdec&#39;s</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="comment">// IOSurface-backed CoreVideo buffers arrive as system memory.</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">return</span> caps;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>std::string sinkMemoryCaps(<span class="keyword">const</span> <a class="code hl_struct" href="structGstQgc_1_1SinkCapsPolicy.html">SinkCapsPolicy</a>&amp; policy)</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>{</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">if</span> (policy.gpuZeroCopy &amp;&amp; (policy.gpuBin == <a class="code hl_enumvalue" href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841ad983c55302c92306dcce76f29686febf">GpuBinMode::GlUpload</a>)) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordflow">return</span> std::string(kGlMemory2D) + <span class="stringliteral">&quot;, format=&quot;</span> + <a class="code hl_function" href="namespaceGstQgc.html#aa579365fc613b12bc374f5a749d4a25b">advertisedFormatList</a>(<a class="code hl_variable" href="namespaceGstQgc.html#a61a9a1edb57806efa894115d1615de32">kOfferGlUpload</a>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">if</span> (policy.gpuZeroCopy &amp;&amp; (policy.gpuBin == <a class="code hl_enumvalue" href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841a076d8d78e8b65d00165484f54e91b2c3">GpuBinMode::D3D12Convert</a>)) {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">return</span> std::string(kD3D12Memory) + <span class="stringliteral">&quot;, format=&quot;</span> + kD3D12ConvertFormats;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keyword">const</span> std::string formats = <a class="code hl_function" href="namespaceGstQgc.html#aa579365fc613b12bc374f5a749d4a25b">advertisedFormatList</a>();</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">return</span> (policy.gpuZeroCopy ? gpuMemoryCaps(policy, formats) : std::string()) + <span class="stringliteral">&quot;video/x-raw, format=&quot;</span> + formats;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>std::string sinkCapsWithSquarePixels(<span class="keyword">const</span> std::string&amp; caps)</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>{</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceGStreamer.html#a1087ba58d4b018ca25ccb19f444f2ac7">GStreamer::GstCapsPtr</a> parsed = <a class="code hl_function" href="namespaceGStreamer.html#a7a52af43da48c06e60f33366de2a6c55">GStreamer::adoptCaps</a>(gst_caps_from_string(caps.c_str()));</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">if</span> (!parsed) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">return</span> caps;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    gst_caps_set_simple(parsed.get(), <span class="stringliteral">&quot;pixel-aspect-ratio&quot;</span>, GST_TYPE_FRACTION, 1, 1, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="namespaceGStreamer.html#ae40d15572cb6c7070d7b8004341a5216">GStreamer::GCharPtr</a> text = <a class="code hl_function" href="namespaceGStreamer.html#a1acb105efbcd2acf396c1da069fb93ff">GStreamer::adoptGChar</a>(gst_caps_to_string(parsed.get()));</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">return</span> text ? std::string(text.get()) : caps;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>}  <span class="comment">// namespace</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="namespaceGstQgc.html#af977b8a70fc084d3a77f7cbb28cd0f5e">  142</a></span>std::string <a class="code hl_function" href="namespaceGstQgc.html#af977b8a70fc084d3a77f7cbb28cd0f5e">buildSinkCaps</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structGstQgc_1_1SinkCapsPolicy.html">SinkCapsPolicy</a>&amp; policy)</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>{</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="comment">// Square pixels in GPU memory as well as in system memory: the frame&#39;s size is all the VideoOutput has to go by.</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="comment">// Only system memory is scaled to them, by the bin&#39;s converter (and D3D12Memory by d3d12convert), so a decoder</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="comment">// with other pixels negotiates system memory.</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keyword">const</span> std::string caps = sinkMemoryCaps(policy);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordflow">return</span> policy.<a class="code hl_variable" href="structGstQgc_1_1SinkCapsPolicy.html#aa32d3f89d419df04c86bdc228086767c">squarePixels</a> ? sinkCapsWithSquarePixels(caps) : caps;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>}</div>
 </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">#ifdef QGC_UNITTEST_BUILD</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keyword">namespace </span>{</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>Q_CONSTINIT QBasicMutex s_testEnvironmentMutex;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>std::optional&lt;SinkEnvironment&gt; s_testEnvironment;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}  <span class="comment">// namespace</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>ScopedSinkEnvironmentForTest::ScopedSinkEnvironmentForTest(<span class="keyword">const</span> SinkEnvironment&amp; environment)</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>{</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keyword">const</span> QMutexLocker lock(&amp;s_testEnvironmentMutex);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    _previous = std::exchange(s_testEnvironment, environment);</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>ScopedSinkEnvironmentForTest::~ScopedSinkEnvironmentForTest()</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>{</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keyword">const</span> QMutexLocker lock(&amp;s_testEnvironmentMutex);</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    s_testEnvironment = _previous;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>}</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>std::optional&lt;SinkEnvironment&gt; sinkEnvironmentForTest()</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>{</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keyword">const</span> QMutexLocker lock(&amp;s_testEnvironmentMutex);</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordflow">return</span> s_testEnvironment;</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>}</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>}  <span class="comment">// namespace GstQgc</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">#ifdef QGC_UNITTEST_BUILD</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>Q_CONSTINIT QBasicMutex s_testEnvironmentMutex;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>std::optional&lt;SinkEnvironment&gt; s_testEnvironment;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>}  <span class="comment">// namespace</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>ScopedSinkEnvironmentForTest::ScopedSinkEnvironmentForTest(<span class="keyword">const</span> SinkEnvironment&amp; environment)</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>{</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keyword">const</span> QMutexLocker lock(&amp;s_testEnvironmentMutex);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    _previous = std::exchange(s_testEnvironment, environment);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>}</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>ScopedSinkEnvironmentForTest::~ScopedSinkEnvironmentForTest()</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>{</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keyword">const</span> QMutexLocker lock(&amp;s_testEnvironmentMutex);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    s_testEnvironment = _previous;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>}</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>std::optional&lt;SinkEnvironment&gt; sinkEnvironmentForTest()</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>{</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keyword">const</span> QMutexLocker lock(&amp;s_testEnvironmentMutex);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">return</span> s_testEnvironment;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>}</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>}  <span class="comment">// namespace GstQgc</span></div>
 <div class="ttc" id="aGstDmaDrmCaps_8h_html"><div class="ttname"><a href="GstDmaDrmCaps_8h.html">GstDmaDrmCaps.h</a></div></div>
 <div class="ttc" id="aGstQgcCaps_8h_html"><div class="ttname"><a href="GstQgcCaps_8h.html">GstQgcCaps.h</a></div></div>
 <div class="ttc" id="aGstQgcVideoFormats_8h_html"><div class="ttname"><a href="GstQgcVideoFormats_8h.html">GstQgcVideoFormats.h</a></div></div>
-<div class="ttc" id="anamespaceGstHw_html_a34a92fdd0352acfe03c2584a136b4cfb"><div class="ttname"><a href="namespaceGstHw.html#a34a92fdd0352acfe03c2584a136b4cfb">GstHw::buildSupportedDmaDrmCaps</a></div><div class="ttdeci">std::string buildSupportedDmaDrmCaps(std::span&lt; const GstVideoFormat &gt;, void *)</div><div class="ttdef"><b>Definition</b> <a href="GstDmaDrmCaps_8cc_source.html#l00225">GstDmaDrmCaps.cc:225</a></div></div>
-<div class="ttc" id="anamespaceGstQgc_html"><div class="ttname"><a href="namespaceGstQgc.html">GstQgc</a></div><div class="ttdoc">GstVideoSink that pushes decoded frames into a Qt QVideoSink; sole sink in qgcvideosinkbin....</div><div class="ttdef"><b>Definition</b> <a href="DecodingBranch_8h_source.html#l00014">DecodingBranch.h:14</a></div></div>
+<div class="ttc" id="aGstScoped_8h_html"><div class="ttname"><a href="GstScoped_8h.html">GstScoped.h</a></div></div>
+<div class="ttc" id="anamespaceGStreamer_html_a1087ba58d4b018ca25ccb19f444f2ac7"><div class="ttname"><a href="namespaceGStreamer.html#a1087ba58d4b018ca25ccb19f444f2ac7">GStreamer::GstCapsPtr</a></div><div class="ttdeci">std::unique_ptr&lt; GstCaps, GstCapsDeleter &gt; GstCapsPtr</div><div class="ttdef"><b>Definition</b> <a href="GstScoped_8h_source.html#l00066">GstScoped.h:66</a></div></div>
+<div class="ttc" id="anamespaceGStreamer_html_a1acb105efbcd2acf396c1da069fb93ff"><div class="ttname"><a href="namespaceGStreamer.html#a1acb105efbcd2acf396c1da069fb93ff">GStreamer::adoptGChar</a></div><div class="ttdeci">GCharPtr adoptGChar(gchar *str) noexcept</div><div class="ttdef"><b>Definition</b> <a href="GstScoped_8h_source.html#l00134">GstScoped.h:134</a></div></div>
+<div class="ttc" id="anamespaceGStreamer_html_a7a52af43da48c06e60f33366de2a6c55"><div class="ttname"><a href="namespaceGStreamer.html#a7a52af43da48c06e60f33366de2a6c55">GStreamer::adoptCaps</a></div><div class="ttdeci">GstCapsPtr adoptCaps(GstCaps *caps) noexcept</div><div class="ttdef"><b>Definition</b> <a href="GstScoped_8h_source.html#l00109">GstScoped.h:109</a></div></div>
+<div class="ttc" id="anamespaceGStreamer_html_ae40d15572cb6c7070d7b8004341a5216"><div class="ttname"><a href="namespaceGStreamer.html#ae40d15572cb6c7070d7b8004341a5216">GStreamer::GCharPtr</a></div><div class="ttdeci">std::unique_ptr&lt; gchar, GFreeDeleter &gt; GCharPtr</div><div class="ttdef"><b>Definition</b> <a href="GstScoped_8h_source.html#l00071">GstScoped.h:71</a></div></div>
+<div class="ttc" id="anamespaceGstHw_html_a93e66ffbaec34d7d1048e838ce92889a"><div class="ttname"><a href="namespaceGstHw.html#a93e66ffbaec34d7d1048e838ce92889a">GstHw::buildSupportedDmaDrmCaps</a></div><div class="ttdeci">std::string buildSupportedDmaDrmCaps(std::span&lt; const GstVideoFormat &gt; formats, void *display)</div></div>
+<div class="ttc" id="anamespaceGstHw_html_af941641534a0a69224c77b2ff1881531"><div class="ttname"><a href="namespaceGstHw.html#af941641534a0a69224c77b2ff1881531">GstHw::buildVulkanDmaDrmCaps</a></div><div class="ttdeci">std::string buildVulkanDmaDrmCaps(std::span&lt; const GstVideoFormat &gt; formats)</div></div>
+<div class="ttc" id="anamespaceGstQgc_html"><div class="ttname"><a href="namespaceGstQgc.html">GstQgc</a></div><div class="ttdoc">GstVideoSink that pushes decoded frames into a Qt QVideoSink; sole sink in qgcvideosinkbin....</div><div class="ttdef"><b>Definition</b> <a href="DecodingBranch_8h_source.html#l00015">DecodingBranch.h:15</a></div></div>
 <div class="ttc" id="anamespaceGstQgc_html_a5cac256aae1af3a7326cf3ce88b2f1a9"><div class="ttname"><a href="namespaceGstQgc.html#a5cac256aae1af3a7326cf3ce88b2f1a9">GstQgc::kOfferDmaDrm</a></div><div class="ttdeci">constexpr unsigned kOfferDmaDrm</div><div class="ttdoc">The EGL-derived DMA_DRM caps: formats the DMABuf importer takes with an explicit modifier.</div><div class="ttdef"><b>Definition</b> <a href="GstQgcVideoFormats_8h_source.html#l00016">GstQgcVideoFormats.h:16</a></div></div>
 <div class="ttc" id="anamespaceGstQgc_html_a61a9a1edb57806efa894115d1615de32"><div class="ttname"><a href="namespaceGstQgc.html#a61a9a1edb57806efa894115d1615de32">GstQgc::kOfferGlUpload</a></div><div class="ttdeci">constexpr unsigned kOfferGlUpload</div><div class="ttdef"><b>Definition</b> <a href="GstQgcVideoFormats_8h_source.html#l00014">GstQgcVideoFormats.h:14</a></div></div>
 <div class="ttc" id="anamespaceGstQgc_html_a6e3d0b2e760e050e2069da8ed06b7841"><div class="ttname"><a href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841">GstQgc::GpuBinMode</a></div><div class="ttdeci">GpuBinMode</div><div class="ttdef"><b>Definition</b> <a href="GstQgcGpuBin_8h_source.html#l00011">GstQgcGpuBin.h:12</a></div></div>
@@ -262,15 +300,18 @@ $(function() {
 <div class="ttc" id="anamespaceGstQgc_html_a6e3d0b2e760e050e2069da8ed06b7841ad983c55302c92306dcce76f29686febf"><div class="ttname"><a href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841ad983c55302c92306dcce76f29686febf">GstQgc::GpuBinMode::GlUpload</a></div><div class="ttdeci">@ GlUpload</div><div class="ttdoc">glupload → glcolorconvert → GLMemory 2D; gst-gl imports LINEAR and vendor-tiled DMABuf.</div><div class="ttdef"><b>Definition</b> <a href="GstQgcGpuBin_8h_source.html#l00014">GstQgcGpuBin.h:14</a></div></div>
 <div class="ttc" id="anamespaceGstQgc_html_a6e3d0b2e760e050e2069da8ed06b7841adbf50db07bf453b305b0329833949e1d"><div class="ttname"><a href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841adbf50db07bf453b305b0329833949e1d">GstQgc::GpuBinMode::DirectDmaBuf</a></div><div class="ttdeci">@ DirectDmaBuf</div><div class="ttdef"><b>Definition</b> <a href="GstQgcGpuBin_8h_source.html#l00015">GstQgcGpuBin.h:15</a></div></div>
 <div class="ttc" id="anamespaceGstQgc_html_a6e3d0b2e760e050e2069da8ed06b7841af6124225f7555a9190621c9886890973"><div class="ttname"><a href="namespaceGstQgc.html#a6e3d0b2e760e050e2069da8ed06b7841af6124225f7555a9190621c9886890973">GstQgc::GpuBinMode::Passthrough</a></div><div class="ttdeci">@ Passthrough</div><div class="ttdoc">Every compiled native memory straight into qgcqvideosink (Windows, Apple, ...).</div><div class="ttdef"><b>Definition</b> <a href="GstQgcGpuBin_8h_source.html#l00013">GstQgcGpuBin.h:13</a></div></div>
-<div class="ttc" id="anamespaceGstQgc_html_a889444e0d20a99b3aa02dbef716e0b64"><div class="ttname"><a href="namespaceGstQgc.html#a889444e0d20a99b3aa02dbef716e0b64">GstQgc::advertisedFormats</a></div><div class="ttdeci">std::vector&lt; GstVideoFormat &gt; advertisedFormats(unsigned requiredOffers=0)</div><div class="ttdoc">The advertised formats carrying every flag in requiredOffers, in table order.</div><div class="ttdef"><b>Definition</b> <a href="GstQgcVideoFormats_8h_source.html#l00057">GstQgcVideoFormats.h:57</a></div></div>
-<div class="ttc" id="anamespaceGstQgc_html_aa579365fc613b12bc374f5a749d4a25b"><div class="ttname"><a href="namespaceGstQgc.html#aa579365fc613b12bc374f5a749d4a25b">GstQgc::advertisedFormatList</a></div><div class="ttdeci">std::string advertisedFormatList(unsigned requiredOffers=0)</div><div class="ttdef"><b>Definition</b> <a href="GstQgcVideoFormats_8h_source.html#l00070">GstQgcVideoFormats.h:70</a></div></div>
+<div class="ttc" id="anamespaceGstQgc_html_a889444e0d20a99b3aa02dbef716e0b64"><div class="ttname"><a href="namespaceGstQgc.html#a889444e0d20a99b3aa02dbef716e0b64">GstQgc::advertisedFormats</a></div><div class="ttdeci">std::vector&lt; GstVideoFormat &gt; advertisedFormats(unsigned requiredOffers=0)</div><div class="ttdoc">The advertised formats carrying every flag in requiredOffers, in table order.</div><div class="ttdef"><b>Definition</b> <a href="GstQgcVideoFormats_8h_source.html#l00059">GstQgcVideoFormats.h:59</a></div></div>
+<div class="ttc" id="anamespaceGstQgc_html_aa579365fc613b12bc374f5a749d4a25b"><div class="ttname"><a href="namespaceGstQgc.html#aa579365fc613b12bc374f5a749d4a25b">GstQgc::advertisedFormatList</a></div><div class="ttdeci">std::string advertisedFormatList(unsigned requiredOffers=0)</div><div class="ttdef"><b>Definition</b> <a href="GstQgcVideoFormats_8h_source.html#l00072">GstQgcVideoFormats.h:72</a></div></div>
+<div class="ttc" id="anamespaceGstQgc_html_ab61a204b6697d9a9ed38cc03b82fbcb1a0544899fd197886c2958ab7cb5bdb58f"><div class="ttname"><a href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1a0544899fd197886c2958ab7cb5bdb58f">GstQgc::RenderBackend::Direct3D12</a></div><div class="ttdeci">@ Direct3D12</div><div class="ttdef"><b>Definition</b> <a href="GstQgcRenderTarget_8h_source.html#l00012">GstQgcRenderTarget.h:12</a></div></div>
+<div class="ttc" id="anamespaceGstQgc_html_ab61a204b6697d9a9ed38cc03b82fbcb1a38625270231b647116c80bcbc4f9d1d8"><div class="ttname"><a href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1a38625270231b647116c80bcbc4f9d1d8">GstQgc::RenderBackend::Vulkan</a></div><div class="ttdeci">@ Vulkan</div><div class="ttdef"><b>Definition</b> <a href="GstQgcRenderTarget_8h_source.html#l00014">GstQgcRenderTarget.h:14</a></div></div>
 <div class="ttc" id="anamespaceGstQgc_html_ab61a204b6697d9a9ed38cc03b82fbcb1a4f8b2c89cfd217fc6a442a2e62b625d1"><div class="ttname"><a href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1a4f8b2c89cfd217fc6a442a2e62b625d1">GstQgc::RenderBackend::Direct3D11</a></div><div class="ttdeci">@ Direct3D11</div><div class="ttdef"><b>Definition</b> <a href="GstQgcRenderTarget_8h_source.html#l00011">GstQgcRenderTarget.h:11</a></div></div>
 <div class="ttc" id="anamespaceGstQgc_html_ab61a204b6697d9a9ed38cc03b82fbcb1a760716b590ee7c0adc25f434f577d8be"><div class="ttname"><a href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1a760716b590ee7c0adc25f434f577d8be">GstQgc::RenderBackend::OpenGL</a></div><div class="ttdeci">@ OpenGL</div><div class="ttdef"><b>Definition</b> <a href="GstQgcRenderTarget_8h_source.html#l00010">GstQgcRenderTarget.h:10</a></div></div>
-<div class="ttc" id="anamespaceGstQgc_html_af977b8a70fc084d3a77f7cbb28cd0f5e"><div class="ttname"><a href="namespaceGstQgc.html#af977b8a70fc084d3a77f7cbb28cd0f5e">GstQgc::buildSinkCaps</a></div><div class="ttdeci">std::string buildSinkCaps(const SinkCapsPolicy &amp;policy)</div><div class="ttdef"><b>Definition</b> <a href="#l00094">GstQgcCaps.cc:94</a></div></div>
+<div class="ttc" id="anamespaceGstQgc_html_ab61a204b6697d9a9ed38cc03b82fbcb1a88183b946cc5f0e8c96b2e66e1c74a7e"><div class="ttname"><a href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1a88183b946cc5f0e8c96b2e66e1c74a7e">GstQgc::RenderBackend::Unknown</a></div><div class="ttdeci">@ Unknown</div><div class="ttdoc">No scene graph yet, and the GUI thread hasn&#39;t recorded the requested API either.</div><div class="ttdef"><b>Definition</b> <a href="GstQgcRenderTarget_8h_source.html#l00008">GstQgcRenderTarget.h:8</a></div></div>
+<div class="ttc" id="anamespaceGstQgc_html_ab61a204b6697d9a9ed38cc03b82fbcb1abbb93ef26e3c101ff11cdd21cab08a94"><div class="ttname"><a href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1abbb93ef26e3c101ff11cdd21cab08a94">GstQgc::RenderBackend::Null</a></div><div class="ttdeci">@ Null</div><div class="ttdoc">QRhi&#39;s Null backend or the software renderer: no GPU import.</div><div class="ttdef"><b>Definition</b> <a href="GstQgcRenderTarget_8h_source.html#l00009">GstQgcRenderTarget.h:9</a></div></div>
+<div class="ttc" id="anamespaceGstQgc_html_ab61a204b6697d9a9ed38cc03b82fbcb1aeaa57a9b4248ce3968e718895e1c2f04"><div class="ttname"><a href="namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1aeaa57a9b4248ce3968e718895e1c2f04">GstQgc::RenderBackend::Metal</a></div><div class="ttdeci">@ Metal</div><div class="ttdef"><b>Definition</b> <a href="GstQgcRenderTarget_8h_source.html#l00013">GstQgcRenderTarget.h:13</a></div></div>
+<div class="ttc" id="anamespaceGstQgc_html_af977b8a70fc084d3a77f7cbb28cd0f5e"><div class="ttname"><a href="namespaceGstQgc.html#af977b8a70fc084d3a77f7cbb28cd0f5e">GstQgc::buildSinkCaps</a></div><div class="ttdeci">std::string buildSinkCaps(const SinkCapsPolicy &amp;policy)</div><div class="ttdef"><b>Definition</b> <a href="#l00142">GstQgcCaps.cc:142</a></div></div>
 <div class="ttc" id="astructGstQgc_1_1SinkCapsPolicy_html"><div class="ttname"><a href="structGstQgc_1_1SinkCapsPolicy.html">GstQgc::SinkCapsPolicy</a></div><div class="ttdoc">Everything qgcqvideosink&#39;s caps depend on.</div><div class="ttdef"><b>Definition</b> <a href="GstQgcCaps_8h_source.html#l00014">GstQgcCaps.h:15</a></div></div>
-<div class="ttc" id="astructGstQgc_1_1SinkCapsPolicy_html_a5cdd9fe3c33b492a8262f38f39aa3f40"><div class="ttname"><a href="structGstQgc_1_1SinkCapsPolicy.html#a5cdd9fe3c33b492a8262f38f39aa3f40">GstQgc::SinkCapsPolicy::gpuBin</a></div><div class="ttdeci">GpuBinMode gpuBin</div><div class="ttdoc">qgcvideosinkbin&#39;s GPU variant in front of the sink; value-initialized, Passthrough (a standalone sink...</div><div class="ttdef"><b>Definition</b> <a href="GstQgcCaps_8h_source.html#l00018">GstQgcCaps.h:18</a></div></div>
-<div class="ttc" id="astructGstQgc_1_1SinkCapsPolicy_html_a9a4c59773899675ef3047b9f1dc8223d"><div class="ttname"><a href="structGstQgc_1_1SinkCapsPolicy.html#a9a4c59773899675ef3047b9f1dc8223d">GstQgc::SinkCapsPolicy::gpuZeroCopy</a></div><div class="ttdeci">bool gpuZeroCopy</div><div class="ttdef"><b>Definition</b> <a href="GstQgcCaps_8h_source.html#l00016">GstQgcCaps.h:16</a></div></div>
-<div class="ttc" id="astructGstQgc_1_1SinkCapsPolicy_html_aa32d3f89d419df04c86bdc228086767c"><div class="ttname"><a href="structGstQgc_1_1SinkCapsPolicy.html#aa32d3f89d419df04c86bdc228086767c">GstQgc::SinkCapsPolicy::squarePixels</a></div><div class="ttdeci">bool squarePixels</div><div class="ttdoc">Ask for square pixels in system memory, which the bin&#39;s converter scales to.</div><div class="ttdef"><b>Definition</b> <a href="GstQgcCaps_8h_source.html#l00023">GstQgcCaps.h:23</a></div></div>
+<div class="ttc" id="astructGstQgc_1_1SinkCapsPolicy_html_aa32d3f89d419df04c86bdc228086767c"><div class="ttname"><a href="structGstQgc_1_1SinkCapsPolicy.html#aa32d3f89d419df04c86bdc228086767c">GstQgc::SinkCapsPolicy::squarePixels</a></div><div class="ttdeci">bool squarePixels</div><div class="ttdoc">Ask for square pixels, in every kind of memory. The bin&#39;s converter scales system memory to them.</div><div class="ttdef"><b>Definition</b> <a href="GstQgcCaps_8h_source.html#l00026">GstQgcCaps.h:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

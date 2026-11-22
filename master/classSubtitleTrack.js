@@ -11,6 +11,5 @@ var classSubtitleTrack =
     [ "setPosition", "classSubtitleTrack.html#a9a9d42f9f3d056ad65662fb6e77ed202", null ],
     [ "setSource", "classSubtitleTrack.html#a696e1206fe2b05cb53b1f8a7b481fc30", null ],
     [ "source", "classSubtitleTrack.html#a475203330cf523b95b3200e9b8a2a37d", null ],
-    [ "sourceChanged", "classSubtitleTrack.html#a93a7e50f24e23df86abadf3d1d3d16fe", null ],
-    [ "SubtitleTrackTest", "classSubtitleTrack.html#a848d7a3e518a65194e7e568d56444b7d", null ]
+    [ "sourceChanged", "classSubtitleTrack.html#a93a7e50f24e23df86abadf3d1d3d16fe", null ]
 ];

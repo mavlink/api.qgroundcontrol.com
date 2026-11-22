@@ -1,5 +1,6 @@
 var structVideoStreamStats =
 [
+    [ "degraded", "structVideoStreamStats.html#a1135341315663a68c31cb9754db88e74", null ],
     [ "hasRtpStats", "structVideoStreamStats.html#ac66587aea103f90093b4931771720343", null ],
     [ "operator==", "structVideoStreamStats.html#abe977ee22f0b6001b55c07cc94eddd32", null ],
     [ "bitrateKbps", "structVideoStreamStats.html#aa7fe82051415f2d9999cb239dcad34e6", null ],

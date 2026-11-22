@@ -133,6 +133,8 @@ Signals</h2></td></tr>
 <tr class="memitem:a89dd2b5a5624f05c2071e5f2c07ede9c" id="r_a89dd2b5a5624f05c2071e5f2c07ede9c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89dd2b5a5624f05c2071e5f2c07ede9c">recordingStarted</a> (const QString &amp;file)</td></tr>
 <tr class="memitem:af8319c8fbd3ca5ee2521b9ded7004edd" id="r_af8319c8fbd3ca5ee2521b9ded7004edd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8319c8fbd3ca5ee2521b9ded7004edd">recordingFinished</a> (const QString &amp;file, const QString &amp;error)</td></tr>
 <tr class="memitem:a4631612e4c403045980126558ca748ef" id="r_a4631612e4c403045980126558ca748ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4631612e4c403045980126558ca748ef">errorOccurred</a> (const QString &amp;message)</td></tr>
+<tr class="memitem:aeafbb87f7a1c2a5574f0de50a1a309e1" id="r_aeafbb87f7a1c2a5574f0de50a1a309e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeafbb87f7a1c2a5574f0de50a1a309e1">graphicsDeviceLost</a> ()</td></tr>
+<tr class="memitem:a2f1b9c40f0099458f6f99fe9b190c7f8" id="r_a2f1b9c40f0099458f6f99fe9b190c7f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f1b9c40f0099458f6f99fe9b190c7f8">taskDone</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -140,16 +142,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae957d6337bc88e0af91b7abce004073b" id="r_ae957d6337bc88e0af91b7abce004073b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae957d6337bc88e0af91b7abce004073b">~GstReceiverWorker</a> () override</td></tr>
 <tr class="memitem:a803e528cffb14781edd5c7243bf9b0d3" id="r_a803e528cffb14781edd5c7243bf9b0d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a803e528cffb14781edd5c7243bf9b0d3">apply</a> (const <a class="el" href="#a7302d23d2c546a0b089a7728ba671931">Request</a> &amp;request)</td></tr>
 <tr class="memdesc:a803e528cffb14781edd5c7243bf9b0d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Steers the stream towards <code class="param">request</code>, acting on what differs from the previous one.  <br /></td></tr>
-<tr class="memitem:a1c8c8338db3319e6265b5fa310b2f549" id="r_a1c8c8338db3319e6265b5fa310b2f549"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c8c8338db3319e6265b5fa310b2f549">dumpPipelineGraph</a> (const QString &amp;tag) const</td></tr>
 <tr class="memitem:ae39ccb0b89d77a4dc116d335ad2d154b" id="r_ae39ccb0b89d77a4dc116d335ad2d154b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae39ccb0b89d77a4dc116d335ad2d154b">shutdown</a> ()</td></tr>
 <tr class="memdesc:ae39ccb0b89d77a4dc116d335ad2d154b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops everything and quits the thread.  <br /></td></tr>
+<tr class="memitem:a6ad53c56257dbb07f3f64b9f6c7e1ce1" id="r_a6ad53c56257dbb07f3f64b9f6c7e1ce1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ad53c56257dbb07f3f64b9f6c7e1ce1">setMaxRecordingPartDuration</a> (std::chrono::milliseconds duration)</td></tr>
 <tr class="memitem:aea23a756bb2903c50c21260d87354785" id="r_aea23a756bb2903c50c21260d87354785"><td class="memItemLeft" align="right" valign="top"><a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea23a756bb2903c50c21260d87354785">pipeline</a> () const</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="classGstVideoReceiver.html" title="Also logs the receiver&#39;s worker, its PipelineSession with the branches, and PipelineDotDumper.">GstVideoReceiver</a>'s worker, on a thread of its own: steers a <a class="el" href="classPipelineSession.html" title="One receiver pipeline: source ! tee, with the display and recording branches behind the tee.">PipelineSession</a> towards the receiver's latest <a class="el" href="structGstReceiverRequest.html" title="Everything the receiver asks for, as it stands after each of its requests.">GstReceiverRequest</a> (active, config, video sink, restarts, recording), reconnecting after a failure as its <a class="el" href="classStreamSupervisor.html" title="The reconnect policy both receivers share: the phase a stream is in, when a failed one connects again...">StreamSupervisor</a> decides.</p>
+<div class="textblock"><p><a class="el" href="classGstVideoReceiver.html" title="Also logs the receiver&#39;s worker, its PipelineSession with the branches, and PipelineDotDumper.">GstVideoReceiver</a>'s worker, on a thread of its own: steers a <a class="el" href="classPipelineSession.html" title="One receiver pipeline: source ! tee, with the display and recording branches behind the tee.">PipelineSession</a> towards the receiver's latest <a class="el" href="structGstReceiverRequest.html" title="Everything the receiver asks for, as it stands after each of its requests.">GstReceiverRequest</a> (active, config, video sink, restarts, reconnects, recording), reconnecting after a failure as its <a class="el" href="classStreamSupervisor.html" title="The reconnect policy both receivers share: the phase a stream is in, when a failed one connects again...">StreamSupervisor</a> decides.</p>
 <p>Reports back through its signals only, so it can outlive a receiver that stopped waiting for it. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8h_source.html#l00025">25</a> of file <a class="el" href="GstReceiverWorker_8h_source.html">GstReceiverWorker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8h_source.html#l00026">26</a> of file <a class="el" href="GstReceiverWorker_8h_source.html">GstReceiverWorker.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="a686dbbd10191fc16b8a77888fae6f9f8" name="a686dbbd10191fc16b8a77888fae6f9f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a686dbbd10191fc16b8a77888fae6f9f8">&#9670;&#160;</a></span>RecordingRequest</h2>
@@ -163,7 +165,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8h_source.html#l00031">31</a> of file <a class="el" href="GstReceiverWorker_8h_source.html">GstReceiverWorker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8h_source.html#l00032">32</a> of file <a class="el" href="GstReceiverWorker_8h_source.html">GstReceiverWorker.h</a>.</p>
 
 </div>
 </div>
@@ -179,7 +181,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8h_source.html#l00030">30</a> of file <a class="el" href="GstReceiverWorker_8h_source.html">GstReceiverWorker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8h_source.html#l00031">31</a> of file <a class="el" href="GstReceiverWorker_8h_source.html">GstReceiverWorker.h</a>.</p>
 
 </div>
 </div>
@@ -195,7 +197,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8h_source.html#l00032">32</a> of file <a class="el" href="GstReceiverWorker_8h_source.html">GstReceiverWorker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8h_source.html#l00033">33</a> of file <a class="el" href="GstReceiverWorker_8h_source.html">GstReceiverWorker.h</a>.</p>
 
 </div>
 </div>
@@ -225,7 +227,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8cc_source.html#l00023">23</a> of file <a class="el" href="GstReceiverWorker_8cc_source.html">GstReceiverWorker.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="classStreamSupervisor.html#a7f84c1b2085c8ff8e6d7e5d57e24e558">StreamSupervisor::reconnectDue()</a>, <a class="el" href="GstReceiverRequest_8h_source.html#l00040">GstReceiverStatus::state</a>, and <a class="el" href="classStreamSupervisor.html#afd12d2280e7710d6467ac42c457693d4">StreamSupervisor::stateChanged()</a>.</p>
+<p class="reference">References <a class="el" href="classStreamSupervisor.html#a7f84c1b2085c8ff8e6d7e5d57e24e558">StreamSupervisor::reconnectDue()</a>, <a class="el" href="GstReceiverRequest_8h_source.html#l00042">GstReceiverStatus::state</a>, and <a class="el" href="classStreamSupervisor.html#afd12d2280e7710d6467ac42c457693d4">StreamSupervisor::stateChanged()</a>.</p>
 
 </div>
 </div>
@@ -276,28 +278,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8cc_source.html#l00045">45</a> of file <a class="el" href="GstReceiverWorker_8cc_source.html">GstReceiverWorker.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GstReceiverRequest_8h_source.html#l00028">GstReceiverRequest::active</a>, <a class="el" href="GstReceiverRequest_8h_source.html#l00030">GstReceiverRequest::config</a>, <a class="el" href="GstReceiverRequest_8h_source.html#l00034">GstReceiverRequest::recording</a>, <a class="el" href="GstReceiverRequest_8h_source.html#l00033">GstReceiverRequest::restarts</a>, and <a class="el" href="GstReceiverRequest_8h_source.html#l00031">GstReceiverRequest::videoSink</a>.</p>
-
-</div>
-</div>
-<a id="a1c8c8338db3319e6265b5fa310b2f549" name="a1c8c8338db3319e6265b5fa310b2f549"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c8c8338db3319e6265b5fa310b2f549">&#9670;&#160;</a></span>dumpPipelineGraph()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GstReceiverWorker::dumpPipelineGraph </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>tag</em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8cc_source.html#l00143">143</a> of file <a class="el" href="GstReceiverWorker_8cc_source.html">GstReceiverWorker.cc</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00069">GstVideoReceiver::dumpPipelineGraph()</a>.</p>
+<p class="reference">References <a class="el" href="GstReceiverRequest_8h_source.html#l00028">GstReceiverRequest::active</a>, <a class="el" href="GstReceiverRequest_8h_source.html#l00030">GstReceiverRequest::config</a>, <a class="el" href="GstReceiverRequest_8h_source.html#l00035">GstReceiverRequest::reconnects</a>, <a class="el" href="GstReceiverRequest_8h_source.html#l00036">GstReceiverRequest::recording</a>, <a class="el" href="GstReceiverRequest_8h_source.html#l00033">GstReceiverRequest::restarts</a>, and <a class="el" href="GstReceiverRequest_8h_source.html#l00031">GstReceiverRequest::videoSink</a>.</p>
 
 </div>
 </div>
@@ -324,7 +305,35 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00030">GstVideoReceiver::GstVideoReceiver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00034">GstVideoReceiver::GstVideoReceiver()</a>.</p>
+
+</div>
+</div>
+<a id="aeafbb87f7a1c2a5574f0de50a1a309e1" name="aeafbb87f7a1c2a5574f0de50a1a309e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeafbb87f7a1c2a5574f0de50a1a309e1">&#9670;&#160;</a></span>graphicsDeviceLost</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GstReceiverWorker::graphicsDeviceLost </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The graphics device the stream's pipeline was given is gone: the receiver restarts the stream with a new video sink, which lets go of what they hold of it. </p>
+
+<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00034">GstVideoReceiver::GstVideoReceiver()</a>.</p>
 
 </div>
 </div>
@@ -351,7 +360,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8h_source.html#l00043">43</a> of file <a class="el" href="GstReceiverWorker_8h_source.html">GstReceiverWorker.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8h_source.html#l00047">47</a> of file <a class="el" href="GstReceiverWorker_8h_source.html">GstReceiverWorker.h</a>.</p>
 
 </div>
 </div>
@@ -382,7 +391,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00030">GstVideoReceiver::GstVideoReceiver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00034">GstVideoReceiver::GstVideoReceiver()</a>.</p>
 
 </div>
 </div>
@@ -409,7 +418,35 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00030">GstVideoReceiver::GstVideoReceiver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00034">GstVideoReceiver::GstVideoReceiver()</a>.</p>
+
+</div>
+</div>
+<a id="a6ad53c56257dbb07f3f64b9f6c7e1ce1" name="a6ad53c56257dbb07f3f64b9f6c7e1ce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ad53c56257dbb07f3f64b9f6c7e1ce1">&#9670;&#160;</a></span>setMaxRecordingPartDuration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GstReceiverWorker::setMaxRecordingPartDuration </td>
+          <td>(</td>
+          <td class="paramtype">std::chrono::milliseconds</td>          <td class="paramname"><span class="paramname"><em>duration</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>How long a part of the recordings started from now on records, instead of <a class="el" href="classRecordingPlan.html#a922c6a397ccb1954ac5f12ae966bbcd6">RecordingPlan::kMaxPartDuration</a>. For tests, which can't wait that long. </p>
+
+<p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8h_source.html#l00045">45</a> of file <a class="el" href="GstReceiverWorker_8h_source.html">GstReceiverWorker.h</a>.</p>
 
 </div>
 </div>
@@ -430,9 +467,9 @@ Public Member Functions</h2></td></tr>
 
 <p>Stops everything and quits the thread. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8cc_source.html#l00152">152</a> of file <a class="el" href="GstReceiverWorker_8cc_source.html">GstReceiverWorker.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstReceiverWorker_8cc_source.html#l00146">146</a> of file <a class="el" href="GstReceiverWorker_8cc_source.html">GstReceiverWorker.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00049">GstVideoReceiver::~GstVideoReceiver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00061">GstVideoReceiver::~GstVideoReceiver()</a>.</p>
 
 </div>
 </div>
@@ -459,7 +496,35 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00030">GstVideoReceiver::GstVideoReceiver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00034">GstVideoReceiver::GstVideoReceiver()</a>.</p>
+
+</div>
+</div>
+<a id="a2f1b9c40f0099458f6f99fe9b190c7f8" name="a2f1b9c40f0099458f6f99fe9b190c7f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f1b9c40f0099458f6f99fe9b190c7f8">&#9670;&#160;</a></span>taskDone</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GstReceiverWorker::taskDone </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A task the receiver posted has run, a request or its heartbeat: the worker still gets to them. Emitted by the receiver's posting, on the worker's thread. </p>
+
+<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00034">GstVideoReceiver::GstVideoReceiver()</a>.</p>
 
 </div>
 </div>

@@ -4,6 +4,7 @@ var searchData=
   ['qgccameraparamio_1',['QGCCameraParamIO',['../classMavlinkCameraControlInterface.html#a754713ff2cc3238313e8b0b7306dea86',1,'MavlinkCameraControlInterface']]],
   ['qgcserialportinfotest_2',['QGCSerialPortInfoTest',['../classQGCSerialPortInfo.html#a0d001a5918866d3536f73b0a94998141',1,'QGCSerialPortInfo']]],
   ['qgeomapreplyqgctest_3',['QGeoMapReplyQGCTest',['../classQGeoTiledMapReplyQGC.html#aecb5684aa71dc3f523dee20a1e276f5d',1,'QGeoTiledMapReplyQGC']]],
-  ['qtmultimediavideoreceivertest_4',['QtMultimediaVideoReceiverTest',['../classQtMultimediaVideoReceiver.html#a25e38f4c1c17ad6db2e5a823d618e26c',1,'QtMultimediaVideoReceiver']]],
-  ['qtvideorecordertest_5',['QtVideoRecorderTest',['../classQtVideoRecorder.html#a01595e7e537665db576c5ac8cf77b5ea',1,'QtVideoRecorder']]]
+  ['qserialport_4',['QSerialPort',['../classAndroidSerialBackendHost.html#a43ab488b9c18c33909fc5b3793ed050f',1,'AndroidSerialBackendHost']]],
+  ['qtmultimediavideoreceivertest_5',['QtMultimediaVideoReceiverTest',['../classQtMultimediaVideoReceiver.html#a25e38f4c1c17ad6db2e5a823d618e26c',1,'QtMultimediaVideoReceiver']]],
+  ['qtvideorecordertest_6',['QtVideoRecorderTest',['../classQtVideoRecorder.html#a01595e7e537665db576c5ac8cf77b5ea',1,'QtVideoRecorder']]]
 ];

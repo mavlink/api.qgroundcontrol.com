@@ -9,6 +9,7 @@ var GstScoped_8h =
     [ "GStreamer::GstStructureDeleter", "structGStreamer_1_1GstStructureDeleter.html", "structGStreamer_1_1GstStructureDeleter" ],
     [ "GStreamer::GFreeDeleter", "structGStreamer_1_1GFreeDeleter.html", "structGStreamer_1_1GFreeDeleter" ],
     [ "GStreamer::GErrorDeleter", "structGStreamer_1_1GErrorDeleter.html", "structGStreamer_1_1GErrorDeleter" ],
+    [ "GStreamer::MessageError", "structGStreamer_1_1MessageError.html", "structGStreamer_1_1MessageError" ],
     [ "GStreamer::ScopedSignal", "classGStreamer_1_1ScopedSignal.html", "classGStreamer_1_1ScopedSignal" ],
     [ "GStreamer::PadProbe", "classGStreamer_1_1PadProbe.html", "classGStreamer_1_1PadProbe" ],
     [ "GStreamer::GCharPtr", "namespaceGStreamer.html#ae40d15572cb6c7070d7b8004341a5216", null ],
@@ -33,6 +34,7 @@ var GstScoped_8h =
     [ "GStreamer::adoptEvent", "namespaceGStreamer.html#a48d3ec49b8c5fd30b159c7ca96526acb", null ],
     [ "GStreamer::adoptFactory", "namespaceGStreamer.html#a6a9f0a005206ac868952d9637a04c389", null ],
     [ "GStreamer::adoptFeature", "namespaceGStreamer.html#ab66cb2f92213c1592b5c0c9c387187b2", null ],
+    [ "GStreamer::adoptFloating", "namespaceGStreamer.html#a707c3338068662e4e5c4f58f47daf988", null ],
     [ "GStreamer::adoptGChar", "namespaceGStreamer.html#a1acb105efbcd2acf396c1da069fb93ff", null ],
     [ "GStreamer::adoptMessage", "namespaceGStreamer.html#ac18e2349cd2d6efb86b14faade067ec7", null ],
     [ "GStreamer::adoptObject", "namespaceGStreamer.html#aa319e5c0b4f11efe61e3a839b5abc49c", null ],
@@ -41,5 +43,6 @@ var GstScoped_8h =
     [ "GStreamer::adoptStructure", "namespaceGStreamer.html#a25a288491b9027805f625def869db5d4", null ],
     [ "GStreamer::hasElementFactory", "namespaceGStreamer.html#ad9a6c510aa2b9c098e0c051123d94ffb", null ],
     [ "GStreamer::makeElement", "namespaceGStreamer.html#a3ec367ea9370c5c8a46d8572f9d27855", null ],
+    [ "GStreamer::parseMessageError", "namespaceGStreamer.html#a8aad1f7abfc7afc59825bf8711a02f0d", null ],
     [ "GStreamer::shareObject", "namespaceGStreamer.html#a85eb5336be398a2874574f19cbda36fd", null ]
 ];

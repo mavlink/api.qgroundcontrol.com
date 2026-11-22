@@ -128,6 +128,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3c7527c273ecb547974c2b27abc5d361" id="r_a3c7527c273ecb547974c2b27abc5d361"><td class="memItemLeft" align="right" valign="top"><a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c7527c273ecb547974c2b27abc5d361">valve</a> () const</td></tr>
 <tr class="memitem:a34f47988c1dd27fcbcdf876a3f0644da" id="r_a34f47988c1dd27fcbcdf876a3f0644da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34f47988c1dd27fcbcdf876a3f0644da">contains</a> (GstObject *object) const</td></tr>
 <tr class="memdesc:a34f47988c1dd27fcbcdf876a3f0644da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">object</code> is the queue or the valve.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aced4474015a8247be690ca054b5fe772" id="r_aced4474015a8247be690ca054b5fe772"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aced4474015a8247be690ca054b5fe772">absorbFlowErrors</a> (<a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *part)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The tee ! queue ! valve head every tee branch starts with. </p>
@@ -136,6 +140,36 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="TeeBranchHead_8h_source.html#l00015">15</a> of file <a class="el" href="TeeBranchHead_8h_source.html">TeeBranchHead.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="aced4474015a8247be690ca054b5fe772" name="aced4474015a8247be690ca054b5fe772"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aced4474015a8247be690ca054b5fe772">&#9670;&#160;</a></span>absorbFlowErrors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TeeBranchHead::absorbFlowErrors </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *</td>          <td class="paramname"><span class="paramname"><em>part</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>For <code class="param">part</code>, the bin a branch links behind its valve and takes out again, before it is linked: a push into its "sink" ghost pad that fails for good posts the failure, once, as an ERROR from <code class="param">part</code> and reports success. An element inside that fails without an ERROR of its own (a refused renegotiation) is so reported as its branch's, which the session recovers from, instead of failing the tee through the open valve, and with it the stream. </p>
+
+<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00041">41</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="GstScoped_8h_source.html#l00084">GStreamer::adoptPad()</a>.</p>
+
+</div>
+</div>
 <a id="a8c3abe49587c150833c8ff8e4f32c070" name="a8c3abe49587c150833c8ff8e4f32c070"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c3abe49587c150833c8ff8e4f32c070">&#9670;&#160;</a></span>build()</h2>
 
@@ -174,9 +208,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Adds the queue and the closed valve to <code class="param">pipeline</code> and links them behind <code class="param">tee</code>. False on failure, logged with <code class="param">what</code> naming the branch; nothing stays built then. </p>
 
-<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00006">6</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00055">55</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00055">GStreamer::addToBin()</a>, <a class="el" href="GstScoped_8h_source.html#l00152">GStreamer::makeElement()</a>, <a class="el" href="BranchContext_8h_source.html#l00030">GStreamer::markBranch()</a>, <a class="el" href="TeeBranchHead_8h_source.html#l00035">queue()</a>, <a class="el" href="TeeBranchHead_8cc_source.html#l00031">reset()</a>, and <a class="el" href="TeeBranchHead_8h_source.html#l00037">valve()</a>.</p>
+<p class="reference">References <a class="el" href="GStreamerHelpers_8cc_source.html#l00077">GStreamer::addToBin()</a>, <a class="el" href="GstScoped_8h_source.html#l00178">GStreamer::makeElement()</a>, <a class="el" href="BranchContext_8h_source.html#l00030">GStreamer::markBranch()</a>, <a class="el" href="TeeBranchHead_8h_source.html#l00035">queue()</a>, <a class="el" href="TeeBranchHead_8cc_source.html#l00080">reset()</a>, and <a class="el" href="TeeBranchHead_8h_source.html#l00037">valve()</a>.</p>
 
 </div>
 </div>
@@ -197,7 +231,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Drops frames again; nothing before <a class="el" href="#a8c3abe49587c150833c8ff8e4f32c070">build()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00054">54</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00103">103</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
 
 </div>
 </div>
@@ -218,7 +252,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Whether <code class="param">object</code> is the queue or the valve. </p>
 
-<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00069">69</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00118">118</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
 
 </div>
 </div>
@@ -242,7 +276,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Connects <code class="param">callback</code> to the queue's "overrun", which fires on a streaming thread when the queue is full, before it leaks or blocks. </p>
 
-<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00038">38</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00087">87</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
 
 </div>
 </div>
@@ -263,9 +297,9 @@ Public Member Functions</h2></td></tr>
 
 <p>Lets frames through and asks upstream for a keyframe to start from. </p>
 
-<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00045">45</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00094">94</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="TeeBranchHead_8cc_source.html#l00061">requestKeyframe()</a>.</p>
+<p class="reference">References <a class="el" href="TeeBranchHead_8cc_source.html#l00110">requestKeyframe()</a>.</p>
 
 </div>
 </div>
@@ -294,7 +328,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="TeeBranchHead_8h_source.html#l00035">35</a> of file <a class="el" href="TeeBranchHead_8h_source.html">TeeBranchHead.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TeeBranchHead_8cc_source.html#l00006">build()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TeeBranchHead_8cc_source.html#l00055">build()</a>.</p>
 
 </div>
 </div>
@@ -315,11 +349,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Asks upstream for a keyframe; nothing before <a class="el" href="#a8c3abe49587c150833c8ff8e4f32c070">build()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00061">61</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00110">110</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="GstScoped_8h_source.html#l00083">GStreamer::adoptPad()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00072">GStreamer::requestKeyframe()</a>.</p>
+<p class="reference">References <a class="el" href="GstScoped_8h_source.html#l00084">GStreamer::adoptPad()</a>, and <a class="el" href="GStreamerHelpers_8cc_source.html#l00103">GStreamer::requestKeyframe()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TeeBranchHead_8cc_source.html#l00045">open()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TeeBranchHead_8cc_source.html#l00094">open()</a>.</p>
 
 </div>
 </div>
@@ -340,9 +374,9 @@ Public Member Functions</h2></td></tr>
 
 <p>Forgets the elements, which the pipeline still owns, and disconnects the overrun handler. </p>
 
-<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00031">31</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TeeBranchHead_8cc_source.html#l00080">80</a> of file <a class="el" href="TeeBranchHead_8cc_source.html">TeeBranchHead.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TeeBranchHead_8cc_source.html#l00006">build()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TeeBranchHead_8cc_source.html#l00055">build()</a>.</p>
 
 </div>
 </div>
@@ -371,7 +405,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="TeeBranchHead_8h_source.html#l00037">37</a> of file <a class="el" href="TeeBranchHead_8h_source.html">TeeBranchHead.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="TeeBranchHead_8cc_source.html#l00006">build()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="TeeBranchHead_8cc_source.html#l00055">build()</a>.</p>
 
 </div>
 </div>

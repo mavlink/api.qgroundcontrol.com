@@ -139,6 +139,10 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="#ac13dba9aec62e30bdb9d6c58ff0eb53aa5f0dc0c7e4e48e1ea3e8b451ecb2b782">Halted</a>
 <br />
  }</td></tr>
+<tr class="memitem:aab0483d9649aa834babb5a5652ccfed7" id="r_aab0483d9649aa834babb5a5652ccfed7"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab0483d9649aa834babb5a5652ccfed7">Failure</a> : uint8_t { <a class="el" href="#aab0483d9649aa834babb5a5652ccfed7ab1f023eff9a6b5308d6024e4c6b3d475">Transient</a>
+, <a class="el" href="#aab0483d9649aa834babb5a5652ccfed7a23adaa457573eeb089c33214c90d3013">Permanent</a>
+ }</td></tr>
+<tr class="memdesc:aab0483d9649aa834babb5a5652ccfed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether another session could fare better than the one that failed.  <a href="#aab0483d9649aa834babb5a5652ccfed7">More...</a><br /></td></tr>
 <tr class="memitem:a29794295c4cc5c776b169eb6cbf1eaab" id="r_a29794295c4cc5c776b169eb6cbf1eaab"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29794295c4cc5c776b169eb6cbf1eaab">AutoReconnectChange</a> : uint8_t { <a class="el" href="#a29794295c4cc5c776b169eb6cbf1eaaba6adf97f83acf6453d4a6a4b1070f3754">None</a>
 , <a class="el" href="#a29794295c4cc5c776b169eb6cbf1eaaba5f0dc0c7e4e48e1ea3e8b451ecb2b782">Halted</a>
 , <a class="el" href="#a29794295c4cc5c776b169eb6cbf1eaabae00b29fdfb3a7fa6b9fd8ad604f4390e">Resumable</a>
@@ -148,7 +152,7 @@ Public Types</h2></td></tr>
 Signals</h2></td></tr>
 <tr class="memitem:afd12d2280e7710d6467ac42c457693d4" id="r_afd12d2280e7710d6467ac42c457693d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd12d2280e7710d6467ac42c457693d4">stateChanged</a> (<a class="el" href="classVideoReceiver.html#add77a4a32e225ba7bb874c8c617b80f7">VideoReceiver::State</a> <a class="el" href="#af88eef81af0a6bb9244ba1ceb3d5a89d">state</a>)</td></tr>
 <tr class="memitem:a7f84c1b2085c8ff8e6d7e5d57e24e558" id="r_a7f84c1b2085c8ff8e6d7e5d57e24e558"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f84c1b2085c8ff8e6d7e5d57e24e558">reconnectDue</a> ()</td></tr>
-<tr class="memdesc:a7f84c1b2085c8ff8e6d7e5d57e24e558"><td class="mdescLeft">&#160;</td><td class="mdescRight">A failure's backoff has passed: the receiver starts the next session.  <br /></td></tr>
+<tr class="memdesc:a7f84c1b2085c8ff8e6d7e5d57e24e558"><td class="mdescLeft">&#160;</td><td class="mdescRight">A failure's backoff has passed, or <a class="el" href="#ac653d3550c25d202861c1ac4bda7b036">reconnectNow()</a> cut it short: the receiver starts the next session.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -157,7 +161,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af88eef81af0a6bb9244ba1ceb3d5a89d" id="r_af88eef81af0a6bb9244ba1ceb3d5a89d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVideoReceiver.html#add77a4a32e225ba7bb874c8c617b80f7">VideoReceiver::State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af88eef81af0a6bb9244ba1ceb3d5a89d">state</a> () const</td></tr>
 <tr class="memitem:ab383d0bb2e57865e7b27ea3af2fe6582" id="r_ab383d0bb2e57865e7b27ea3af2fe6582"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab383d0bb2e57865e7b27ea3af2fe6582">halted</a> () const</td></tr>
 <tr class="memitem:a3419f947ea98e0d3f2f8ec02b99b143b" id="r_a3419f947ea98e0d3f2f8ec02b99b143b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3419f947ea98e0d3f2f8ec02b99b143b">reconnectPending</a> () const</td></tr>
-<tr class="memdesc:a3419f947ea98e0d3f2f8ec02b99b143b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A failure's backoff is running; <a class="el" href="#a7f84c1b2085c8ff8e6d7e5d57e24e558" title="A failure&#39;s backoff has passed: the receiver starts the next session.">reconnectDue()</a> ends it.  <br /></td></tr>
+<tr class="memdesc:a3419f947ea98e0d3f2f8ec02b99b143b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A failure's backoff is running; <a class="el" href="#a7f84c1b2085c8ff8e6d7e5d57e24e558" title="A failure&#39;s backoff has passed, or reconnectNow() cut it short: the receiver starts the next session.">reconnectDue()</a> ends it.  <br /></td></tr>
 <tr class="memitem:ab3a0595b8869120394eb7aca9299eb35" id="r_ab3a0595b8869120394eb7aca9299eb35"><td class="memItemLeft" align="right" valign="top">const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3a0595b8869120394eb7aca9299eb35">lastFailure</a> () const</td></tr>
 <tr class="memdesc:ab3a0595b8869120394eb7aca9299eb35"><td class="mdescLeft">&#160;</td><td class="mdescRight">The failure the stream halted or reconnects after.  <br /></td></tr>
 <tr class="memitem:ab7fe006067099f1d7c8fa6a7aa9f88c4" id="r_ab7fe006067099f1d7c8fa6a7aa9f88c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7fe006067099f1d7c8fa6a7aa9f88c4">reconnectAttempts</a> () const</td></tr>
@@ -173,13 +177,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a71ad0753e372bd7535f8759ca2d5204f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A new session runs.  <br /></td></tr>
 <tr class="memitem:a67128bda7cb2e9e506676442b685617c" id="r_a67128bda7cb2e9e506676442b685617c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67128bda7cb2e9e506676442b685617c">sessionStreaming</a> ()</td></tr>
 <tr class="memdesc:a67128bda7cb2e9e506676442b685617c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The session delivers. The first call per session counts it as streamed.  <br /></td></tr>
-<tr class="memitem:a170f1a31045e5116a47b9be7be3b9f28" id="r_a170f1a31045e5116a47b9be7be3b9f28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structStreamSupervisor_1_1FailureOutcome.html">FailureOutcome</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a170f1a31045e5116a47b9be7be3b9f28">sessionFailed</a> (const QString &amp;message, bool permanent, bool autoReconnect)</td></tr>
+<tr class="memitem:a760c41bc8465aab2827a6d50b6d3ef18" id="r_a760c41bc8465aab2827a6d50b6d3ef18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structStreamSupervisor_1_1FailureOutcome.html">FailureOutcome</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a760c41bc8465aab2827a6d50b6d3ef18">sessionFailed</a> (const QString &amp;message, <a class="el" href="#aab0483d9649aa834babb5a5652ccfed7">Failure</a> failure, bool autoReconnect)</td></tr>
 <tr class="memitem:af1916a348f490fdf9bbbfeb12274ab01" id="r_af1916a348f490fdf9bbbfeb12274ab01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a29794295c4cc5c776b169eb6cbf1eaab">AutoReconnectChange</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1916a348f490fdf9bbbfeb12274ab01">autoReconnectChanged</a> (bool autoReconnect)</td></tr>
 <tr class="memdesc:af1916a348f490fdf9bbbfeb12274ab01"><td class="mdescLeft">&#160;</td><td class="mdescRight">The config's autoReconnect became <code class="param">autoReconnect</code>.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aa8ecadc08ed94c79d31ea49abcfd1cf5" id="r_aa8ecadc08ed94c79d31ea49abcfd1cf5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classVideoReceiver.html#add77a4a32e225ba7bb874c8c617b80f7">VideoReceiver::State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8ecadc08ed94c79d31ea49abcfd1cf5">stateFor</a> (<a class="el" href="#ac13dba9aec62e30bdb9d6c58ff0eb53a">Phase</a> <a class="el" href="#ab1d51a79a0e36133a142b4a062071ded">phase</a>)</td></tr>
+<tr class="memitem:ac653d3550c25d202861c1ac4bda7b036" id="r_ac653d3550c25d202861c1ac4bda7b036"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac653d3550c25d202861c1ac4bda7b036">reconnectNow</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -187,7 +188,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The reconnect policy both receivers share: the phase a stream is in, when a failed one connects again, and when it gives up. </p>
-<p>The receiver runs the sessions (a <a class="el" href="namespaceGStreamer.html">GStreamer</a> pipeline, a QMediaPlayer) and tells the supervisor what becomes of them; the supervisor reports the <a class="el" href="classVideoReceiver.html#add77a4a32e225ba7bb874c8c617b80f7">VideoReceiver::State</a> that follows and signals <a class="el" href="#a7f84c1b2085c8ff8e6d7e5d57e24e558" title="A failure&#39;s backoff has passed: the receiver starts the next session.">reconnectDue()</a> once a backoff has passed. A failure reconnects after 1 s, doubling up to 30 s, unless it is permanent or autoReconnect is off: then the stream halts until <a class="el" href="#a57de5d03e040d9638fd00a704c026178">startOver()</a>. A session that streamed had recovered, so the backoff starts over after it fails.</p>
+<p>The receiver runs the sessions (a <a class="el" href="namespaceGStreamer.html">GStreamer</a> pipeline, a QMediaPlayer) and tells the supervisor what becomes of them; the supervisor reports the <a class="el" href="classVideoReceiver.html#add77a4a32e225ba7bb874c8c617b80f7">VideoReceiver::State</a> that follows and signals <a class="el" href="#a7f84c1b2085c8ff8e6d7e5d57e24e558" title="A failure&#39;s backoff has passed, or reconnectNow() cut it short: the receiver starts the next session.">reconnectDue()</a> once a backoff has passed. A failure reconnects after 1 s, doubling up to 30 s, unless it is permanent or autoReconnect is off: then the stream halts until <a class="el" href="#a57de5d03e040d9638fd00a704c026178">startOver()</a>. A session that streamed had recovered, so the backoff starts over after it fails.</p>
 <p>Threading: the receiver's thread. </p>
 
 <p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00023">23</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
@@ -219,7 +220,39 @@ Static Public Attributes</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00044">44</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00051">51</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
+
+</div>
+</div>
+<a id="aab0483d9649aa834babb5a5652ccfed7" name="aab0483d9649aa834babb5a5652ccfed7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab0483d9649aa834babb5a5652ccfed7">&#9670;&#160;</a></span>Failure</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#aab0483d9649aa834babb5a5652ccfed7">StreamSupervisor::Failure</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether another session could fare better than the one that failed. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aab0483d9649aa834babb5a5652ccfed7ab1f023eff9a6b5308d6024e4c6b3d475" name="aab0483d9649aa834babb5a5652ccfed7ab1f023eff9a6b5308d6024e4c6b3d475"></a>Transient&#160;</td><td class="fielddoc"><p>It may, so reconnecting is worth it. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aab0483d9649aa834babb5a5652ccfed7a23adaa457573eeb089c33214c90d3013" name="aab0483d9649aa834babb5a5652ccfed7a23adaa457573eeb089c33214c90d3013"></a>Permanent&#160;</td><td class="fielddoc"><p>It can't: an unsupported stream, a missing plugin. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00038">38</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
 
 </div>
 </div>
@@ -311,9 +344,9 @@ Static Public Attributes</h2></td></tr>
 
 <p>The config's autoReconnect became <code class="param">autoReconnect</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8cc_source.html#l00100">100</a> of file <a class="el" href="StreamSupervisor_8cc_source.html">StreamSupervisor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8cc_source.html#l00101">101</a> of file <a class="el" href="StreamSupervisor_8cc_source.html">StreamSupervisor.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="StreamSupervisor_8h_source.html#l00034">Halted</a>, <a class="el" href="StreamSupervisor_8h_source.html#l00030">Idle</a>, <a class="el" href="StreamSupervisor_8h_source.html#l00046">None</a>, and <a class="el" href="StreamSupervisor_8h_source.html#l00048">Resumable</a>.</p>
+<p class="reference">References <a class="el" href="StreamSupervisor_8h_source.html#l00034">Halted</a>, <a class="el" href="StreamSupervisor_8h_source.html#l00030">Idle</a>, <a class="el" href="StreamSupervisor_8h_source.html#l00053">None</a>, and <a class="el" href="StreamSupervisor_8h_source.html#l00055">Resumable</a>.</p>
 
 </div>
 </div>
@@ -340,7 +373,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00063">63</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00068">68</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
 
 <p class="reference">References <a class="el" href="StreamSupervisor_8h_source.html#l00034">Halted</a>.</p>
 
@@ -371,7 +404,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>The failure the stream halted or reconnects after. </p>
 
-<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00069">69</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00074">74</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
 
 </div>
 </div>
@@ -398,9 +431,9 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00057">57</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00064">64</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#a7f84c1b2085c8ff8e6d7e5d57e24e558">reconnectDue()</a>, and <a class="el" href="StreamSupervisor_8cc_source.html#l00016">stateFor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#a7f84c1b2085c8ff8e6d7e5d57e24e558">reconnectDue()</a>.</p>
 
 </div>
 </div>
@@ -429,7 +462,7 @@ Static Public Attributes</h2></td></tr>
 
 <p>Failures backed off from since the backoff last started over. </p>
 
-<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00072">72</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00077">77</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
 
 </div>
 </div>
@@ -456,11 +489,33 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A failure's backoff has passed: the receiver starts the next session. </p>
+<p>A failure's backoff has passed, or <a class="el" href="#ac653d3550c25d202861c1ac4bda7b036">reconnectNow()</a> cut it short: the receiver starts the next session. </p>
 
-<p class="reference">References <a class="el" href="StreamSupervisor_8h_source.html#l00030">Idle</a>, and <a class="el" href="StreamSupervisor_8h_source.html#l00057">phase()</a>.</p>
+<p class="reference">References <a class="el" href="StreamSupervisor_8h_source.html#l00030">Idle</a>, and <a class="el" href="StreamSupervisor_8h_source.html#l00064">phase()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstReceiverWorker_8cc_source.html#l00023">GstReceiverWorker::GstReceiverWorker()</a>, and <a class="el" href="StreamSupervisor_8cc_source.html#l00005">StreamSupervisor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstReceiverWorker_8cc_source.html#l00023">GstReceiverWorker::GstReceiverWorker()</a>, <a class="el" href="StreamSupervisor_8cc_source.html#l00116">reconnectNow()</a>, and <a class="el" href="StreamSupervisor_8cc_source.html#l00005">StreamSupervisor()</a>.</p>
+
+</div>
+</div>
+<a id="ac653d3550c25d202861c1ac4bda7b036" name="ac653d3550c25d202861c1ac4bda7b036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac653d3550c25d202861c1ac4bda7b036">&#9670;&#160;</a></span>reconnectNow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StreamSupervisor::reconnectNow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The stream's source may be back: a reconnect waiting out its backoff is due now, and the backoff starts over. Nothing without one. </p>
+
+<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8cc_source.html#l00116">116</a> of file <a class="el" href="StreamSupervisor_8cc_source.html">StreamSupervisor.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="#a7f84c1b2085c8ff8e6d7e5d57e24e558">reconnectDue()</a>.</p>
 
 </div>
 </div>
@@ -487,9 +542,9 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A failure's backoff is running; <a class="el" href="#a7f84c1b2085c8ff8e6d7e5d57e24e558" title="A failure&#39;s backoff has passed: the receiver starts the next session.">reconnectDue()</a> ends it. </p>
+<p>A failure's backoff is running; <a class="el" href="#a7f84c1b2085c8ff8e6d7e5d57e24e558" title="A failure&#39;s backoff has passed, or reconnectNow() cut it short: the receiver starts the next session.">reconnectDue()</a> ends it. </p>
 
-<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00066">66</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00071">71</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
 
 </div>
 </div>
@@ -514,8 +569,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a170f1a31045e5116a47b9be7be3b9f28" name="a170f1a31045e5116a47b9be7be3b9f28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a170f1a31045e5116a47b9be7be3b9f28">&#9670;&#160;</a></span>sessionFailed()</h2>
+<a id="a760c41bc8465aab2827a6d50b6d3ef18" name="a760c41bc8465aab2827a6d50b6d3ef18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a760c41bc8465aab2827a6d50b6d3ef18">&#9670;&#160;</a></span>sessionFailed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -528,7 +583,7 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>permanent</em></span>, </td>
+          <td class="paramtype"><a class="el" href="#aab0483d9649aa834babb5a5652ccfed7">Failure</a></td>          <td class="paramname"><span class="paramname"><em>failure</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -537,11 +592,11 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The session failed, or failed to start, and the receiver ended it. Reconnects after the backoff, unless <code class="param">permanent</code> or not <code class="param">autoReconnect:</code> then halts. </p>
+<p>The session failed, or failed to start, and the receiver ended it. Reconnects after the backoff, unless <code class="param">failure</code> is permanent or not <code class="param">autoReconnect:</code> then halts. </p>
 
 <p class="definition">Definition at line <a class="el" href="StreamSupervisor_8cc_source.html#l00078">78</a> of file <a class="el" href="StreamSupervisor_8cc_source.html">StreamSupervisor.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="StreamSupervisor_8h_source.html#l00034">Halted</a>, and <a class="el" href="StreamSupervisor_8h_source.html#l00033">Reconnecting</a>.</p>
+<p class="reference">References <a class="el" href="StreamSupervisor_8h_source.html#l00034">Halted</a>, <a class="el" href="StreamSupervisor_8h_source.html#l00041">Permanent</a>, and <a class="el" href="StreamSupervisor_8h_source.html#l00033">Reconnecting</a>.</p>
 
 </div>
 </div>
@@ -618,9 +673,6 @@ Static Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classVideoReceiver.html#add77a4a32e225ba7bb874c8c617b80f7">VideoReceiver::State</a> StreamSupervisor::state </td>
@@ -629,16 +681,11 @@ Static Public Attributes</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00059">59</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8cc_source.html#l00016">16</a> of file <a class="el" href="StreamSupervisor_8cc_source.html">StreamSupervisor.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="StreamSupervisor_8cc_source.html#l00016">stateFor()</a>.</p>
+<p class="reference">References <a class="el" href="StreamSupervisor_8h_source.html#l00031">Connecting</a>, <a class="el" href="VideoReceiver_8h_source.html#l00048">VideoReceiver::Connecting</a>, <a class="el" href="StreamSupervisor_8h_source.html#l00034">Halted</a>, <a class="el" href="StreamSupervisor_8h_source.html#l00030">Idle</a>, <a class="el" href="StreamSupervisor_8h_source.html#l00033">Reconnecting</a>, <a class="el" href="VideoReceiver_8h_source.html#l00050">VideoReceiver::Reconnecting</a>, <a class="el" href="VideoReceiver_8h_source.html#l00047">VideoReceiver::Stopped</a>, <a class="el" href="StreamSupervisor_8h_source.html#l00032">Streaming</a>, and <a class="el" href="VideoReceiver_8h_source.html#l00049">VideoReceiver::Streaming</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#afd12d2280e7710d6467ac42c457693d4">stateChanged()</a>.</p>
 
@@ -667,40 +714,9 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="StreamSupervisor_8h_source.html#l00059">state()</a>.</p>
+<p class="reference">References <a class="el" href="StreamSupervisor_8cc_source.html#l00016">state()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstReceiverWorker_8cc_source.html#l00023">GstReceiverWorker::GstReceiverWorker()</a>, and <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00060">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>.</p>
-
-</div>
-</div>
-<a id="aa8ecadc08ed94c79d31ea49abcfd1cf5" name="aa8ecadc08ed94c79d31ea49abcfd1cf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8ecadc08ed94c79d31ea49abcfd1cf5">&#9670;&#160;</a></span>stateFor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classVideoReceiver.html#add77a4a32e225ba7bb874c8c617b80f7">VideoReceiver::State</a> StreamSupervisor::stateFor </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#ac13dba9aec62e30bdb9d6c58ff0eb53a">Phase</a></td>          <td class="paramname"><span class="paramname"><em>phase</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8cc_source.html#l00016">16</a> of file <a class="el" href="StreamSupervisor_8cc_source.html">StreamSupervisor.cc</a>.</p>
-
-<p class="reference">References <a class="el" href="StreamSupervisor_8h_source.html#l00031">Connecting</a>, <a class="el" href="VideoReceiver_8h_source.html#l00045">VideoReceiver::Connecting</a>, <a class="el" href="StreamSupervisor_8h_source.html#l00034">Halted</a>, <a class="el" href="StreamSupervisor_8h_source.html#l00030">Idle</a>, <a class="el" href="StreamSupervisor_8h_source.html#l00057">phase()</a>, <a class="el" href="StreamSupervisor_8h_source.html#l00033">Reconnecting</a>, <a class="el" href="VideoReceiver_8h_source.html#l00047">VideoReceiver::Reconnecting</a>, <a class="el" href="VideoReceiver_8h_source.html#l00044">VideoReceiver::Stopped</a>, <a class="el" href="StreamSupervisor_8h_source.html#l00032">Streaming</a>, and <a class="el" href="VideoReceiver_8h_source.html#l00046">VideoReceiver::Streaming</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="StreamSupervisor_8h_source.html#l00059">state()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstReceiverWorker_8cc_source.html#l00023">GstReceiverWorker::GstReceiverWorker()</a>, and <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00079">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>.</p>
 
 </div>
 </div>
@@ -770,7 +786,7 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The cap bounds worst-case recovery after a long RF outage and stays below a typical RTSP server keepalive (60 s). </p>
 
-<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00053">53</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamSupervisor_8h_source.html#l00060">60</a> of file <a class="el" href="StreamSupervisor_8h_source.html">StreamSupervisor.h</a>.</p>
 
 </div>
 </div>

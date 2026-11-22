@@ -122,11 +122,12 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2664da54bae7e8c99b92c61c83852e31" id="r_a2664da54bae7e8c99b92c61c83852e31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2664da54bae7e8c99b92c61c83852e31">start</a> (std::chrono::seconds timeout, std::chrono::milliseconds firstFrameGrace=std::chrono::milliseconds{0})</td></tr>
+<tr class="memitem:a2bca49a9dd17693465ad7a3c2b43db9f" id="r_a2bca49a9dd17693465ad7a3c2b43db9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bca49a9dd17693465ad7a3c2b43db9f">start</a> (std::chrono::seconds timeout, std::optional&lt; std::chrono::milliseconds &gt; firstFrameGrace=std::chrono::milliseconds{0})</td></tr>
 <tr class="memitem:ac20dbaa0733b9b2811a057ff4eb5f924" id="r_ac20dbaa0733b9b2811a057ff4eb5f924"><td class="memItemLeft" align="right" valign="top">quint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac20dbaa0733b9b2811a057ff4eb5f924">noteSourceFrame</a> (qint64 nowMs)</td></tr>
-<tr class="memdesc:ac20dbaa0733b9b2811a057ff4eb5f924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of source frames since <a class="el" href="#a2664da54bae7e8c99b92c61c83852e31">start()</a>.  <br /></td></tr>
+<tr class="memdesc:ac20dbaa0733b9b2811a057ff4eb5f924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of source frames since <a class="el" href="#a2bca49a9dd17693465ad7a3c2b43db9f">start()</a>.  <br /></td></tr>
 <tr class="memitem:a1e6a6a47075a414ab453b256a6a43664" id="r_a1e6a6a47075a414ab453b256a6a43664"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e6a6a47075a414ab453b256a6a43664">noteSinkFrame</a> (qint64 nowMs)</td></tr>
 <tr class="memdesc:a1e6a6a47075a414ab453b256a6a43664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true for the first sink frame since <a class="el" href="#a96d277daf4c5e8b41f4eae3523d00a1f" title="A decoder starts displaying at nowMs: its silence counts from here until the first sink frame.">startSinkClock()</a>.  <br /></td></tr>
+<tr class="memitem:abace80ba4f786e0785b28a4fa10ed6e4" id="r_abace80ba4f786e0785b28a4fa10ed6e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abace80ba4f786e0785b28a4fa10ed6e4">noteFrameWithheld</a> (qint64 nowMs)</td></tr>
 <tr class="memitem:a96d277daf4c5e8b41f4eae3523d00a1f" id="r_a96d277daf4c5e8b41f4eae3523d00a1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96d277daf4c5e8b41f4eae3523d00a1f">startSinkClock</a> (qint64 nowMs)</td></tr>
 <tr class="memdesc:a96d277daf4c5e8b41f4eae3523d00a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A decoder starts displaying at <code class="param">nowMs:</code> its silence counts from here until the first sink frame.  <br /></td></tr>
 <tr class="memitem:a71c0f3c4cd08c8047088930b5aff8441" id="r_a71c0f3c4cd08c8047088930b5aff8441"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structStreamWatchdog_1_1Result.html">Result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71c0f3c4cd08c8047088930b5aff8441">check</a> (qint64 nowMs, bool displaying)</td></tr>
@@ -139,7 +140,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Health of one receiver's stream: notices when frames stop arriving. <a class="el" href="classStreamSupervisor.html" title="The reconnect policy both receivers share: the phase a stream is in, when a failed one connects again...">StreamSupervisor</a> paces the reconnects.</p>
 <p>Times are monotonic milliseconds from <a class="el" href="#af279a12c3c1b592537432a67498c5e5d">now()</a>, passed in so the policy can be checked without waiting on a clock. Threading: <a class="el" href="#ac20dbaa0733b9b2811a057ff4eb5f924" title="Returns the number of source frames since start().">noteSourceFrame()</a> and <a class="el" href="#a1e6a6a47075a414ab453b256a6a43664" title="Returns true for the first sink frame since startSinkClock().">noteSinkFrame()</a> run on streaming threads; everything else on the receiver's worker. </p>
 
-<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8h_source.html#l00013">13</a> of file <a class="el" href="StreamWatchdog_8h_source.html">StreamWatchdog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8h_source.html#l00014">14</a> of file <a class="el" href="StreamWatchdog_8h_source.html">StreamWatchdog.h</a>.</p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
 <a id="af594837cbfa45f9b8d90951552acdd7b" name="af594837cbfa45f9b8d90951552acdd7b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af594837cbfa45f9b8d90951552acdd7b">&#9670;&#160;</a></span>Stall</h2>
@@ -168,7 +169,7 @@ Static Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8h_source.html#l00016">16</a> of file <a class="el" href="StreamWatchdog_8h_source.html">StreamWatchdog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8h_source.html#l00017">17</a> of file <a class="el" href="StreamWatchdog_8h_source.html">StreamWatchdog.h</a>.</p>
 
 </div>
 </div>
@@ -191,11 +192,31 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The first check without a source frame starts the source timeout. <code class="param">displaying:</code> a decoder is inserted, so sink frames are due. </p>
+<p>The first check without a source frame starts the source timeout, where the first frame has one. <code class="param">displaying:</code> a decoder is inserted, so sink frames are due. </p>
 
-<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8cc_source.html#l00049">49</a> of file <a class="el" href="StreamWatchdog_8cc_source.html">StreamWatchdog.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8cc_source.html#l00058">58</a> of file <a class="el" href="StreamWatchdog_8cc_source.html">StreamWatchdog.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="StreamWatchdog_8h_source.html#l00020">Decoder</a>, and <a class="el" href="StreamWatchdog_8h_source.html#l00019">Source</a>.</p>
+<p class="reference">References <a class="el" href="StreamWatchdog_8h_source.html#l00021">Decoder</a>, and <a class="el" href="StreamWatchdog_8h_source.html#l00020">Source</a>.</p>
+
+</div>
+</div>
+<a id="abace80ba4f786e0785b28a4fa10ed6e4" name="abace80ba4f786e0785b28a4fa10ed6e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abace80ba4f786e0785b28a4fa10ed6e4">&#9670;&#160;</a></span>noteFrameWithheld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StreamWatchdog::noteFrameWithheld </td>
+          <td>(</td>
+          <td class="paramtype">qint64</td>          <td class="paramname"><span class="paramname"><em>nowMs</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A frame is kept from the decoder at <code class="param">nowMs</code>, as by the display's keyframe gate: the decoder owes no frame for it, so its silence counts from here. </p>
+
+<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8cc_source.html#l00047">47</a> of file <a class="el" href="StreamWatchdog_8cc_source.html">StreamWatchdog.cc</a>.</p>
 
 </div>
 </div>
@@ -216,7 +237,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns true for the first sink frame since <a class="el" href="#a96d277daf4c5e8b41f4eae3523d00a1f" title="A decoder starts displaying at nowMs: its silence counts from here until the first sink frame.">startSinkClock()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8cc_source.html#l00037">37</a> of file <a class="el" href="StreamWatchdog_8cc_source.html">StreamWatchdog.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8cc_source.html#l00041">41</a> of file <a class="el" href="StreamWatchdog_8cc_source.html">StreamWatchdog.cc</a>.</p>
 
 </div>
 </div>
@@ -235,9 +256,9 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the number of source frames since <a class="el" href="#a2664da54bae7e8c99b92c61c83852e31">start()</a>. </p>
+<p>Returns the number of source frames since <a class="el" href="#a2bca49a9dd17693465ad7a3c2b43db9f">start()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8cc_source.html#l00030">30</a> of file <a class="el" href="StreamWatchdog_8cc_source.html">StreamWatchdog.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8cc_source.html#l00034">34</a> of file <a class="el" href="StreamWatchdog_8cc_source.html">StreamWatchdog.cc</a>.</p>
 
 </div>
 </div>
@@ -264,12 +285,14 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8cc_source.html#l00013">13</a> of file <a class="el" href="StreamWatchdog_8cc_source.html">StreamWatchdog.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8cc_source.html#l00015">15</a> of file <a class="el" href="StreamWatchdog_8cc_source.html">StreamWatchdog.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="MonotonicClock_8h_source.html#l00017">MonotonicClock::nowMs()</a>.</p>
 
 </div>
 </div>
-<a id="a2664da54bae7e8c99b92c61c83852e31" name="a2664da54bae7e8c99b92c61c83852e31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2664da54bae7e8c99b92c61c83852e31">&#9670;&#160;</a></span>start()</h2>
+<a id="a2bca49a9dd17693465ad7a3c2b43db9f" name="a2bca49a9dd17693465ad7a3c2b43db9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bca49a9dd17693465ad7a3c2b43db9f">&#9670;&#160;</a></span>start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,13 +305,13 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::chrono::milliseconds</td>          <td class="paramname"><span class="paramname"><em>firstFrameGrace</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::chrono::milliseconds{0}</span>&#160;)</td>
+          <td class="paramtype">std::optional&lt; std::chrono::milliseconds &gt;</td>          <td class="paramname"><span class="paramname"><em>firstFrameGrace</em></span><span class="paramdefsep"> = </span><span class="paramdefval">std::chrono::milliseconds{0}</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Watches a new pipeline, which stalls after <code class="param">timeout</code> (at least 1 s) without frames, or after <code class="param">timeout</code> plus <code class="param">firstFrameGrace</code> before its first frame. </p>
+<p>Watches a new pipeline, which stalls after <code class="param">timeout</code> (at least 1 s) without frames. Before its first frame it stalls after <code class="param">timeout</code> plus <code class="param">firstFrameGrace</code>, or never without one (nullopt). </p>
 
-<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8cc_source.html#l00019">19</a> of file <a class="el" href="StreamWatchdog_8cc_source.html">StreamWatchdog.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8cc_source.html#l00020">20</a> of file <a class="el" href="StreamWatchdog_8cc_source.html">StreamWatchdog.cc</a>.</p>
 
 </div>
 </div>
@@ -309,7 +332,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>A decoder starts displaying at <code class="param">nowMs:</code> its silence counts from here until the first sink frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8cc_source.html#l00043">43</a> of file <a class="el" href="StreamWatchdog_8cc_source.html">StreamWatchdog.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StreamWatchdog_8cc_source.html#l00052">52</a> of file <a class="el" href="StreamWatchdog_8cc_source.html">StreamWatchdog.cc</a>.</p>
 
 </div>
 </div>

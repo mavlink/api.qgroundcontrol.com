@@ -7,5 +7,6 @@ var classGstQgc_1_1BinChain =
     [ "commit", "classGstQgc_1_1BinChain.html#a7c0b66d75aac91047e4bcc4adaef8a04", null ],
     [ "ghostSink", "classGstQgc_1_1BinChain.html#a6a0289d713c7abf42a10ce308c6e9b6c", null ],
     [ "linkChain", "classGstQgc_1_1BinChain.html#a7f10c18b0dff817e02df0d1db4693cea", null ],
-    [ "operator=", "classGstQgc_1_1BinChain.html#a260e428ec703dcb19317b57c929cf945", null ]
+    [ "operator=", "classGstQgc_1_1BinChain.html#a260e428ec703dcb19317b57c929cf945", null ],
+    [ "kMaxElements", "classGstQgc_1_1BinChain.html#a980ce8e287a1ec754624186d42bf41d6", null ]
 ];

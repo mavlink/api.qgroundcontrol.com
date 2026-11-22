@@ -138,123 +138,139 @@ $(function() {
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    (void) QObject::disconnect(_visibilityConnection);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    _videoOutput = videoOutput;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// QQuickVideoOutput never emits windowChanged (its itemChange() skips the base), so the window is taken now; an</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// output that moves to another window is followed again from there.</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">if</span> (QQuickWindow* window = videoOutput ? videoOutput-&gt;window() : <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        _visibilityConnection = QObject::connect(window, &amp;QWindow::visibilityChanged, <span class="keyword">this</span>,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                                                 &amp;QGCQVideoSinkController::_applyWindowVisibility);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    _applyWindowVisibility();</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// Qt defect, seen in Qt 6.12.0: QQuickVideoOutput::itemChange() never calls QQuickItem::itemChange()</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// (qtmultimedia/src/multimediaquick/qquickvideooutput.cpp), so the output emits no windowChanged. The window is</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// taken now, and VideoStreamOutput.qml registers an output again after it moved to another window. Once the minimum</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// Qt has the fix, connect to QQuickItem::windowChanged here and drop that re-registration.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (QQuickWindow* window = videoOutput ? videoOutput-&gt;window() : <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        _visibilityConnection = QObject::connect(window, &amp;QWindow::visibilityChanged, <span class="keyword">this</span>,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                                                 &amp;QGCQVideoSinkController::_applyWindowVisibility);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    _applyWindowVisibility();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
 </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keywordtype">void</span> QGCQVideoSinkController::_applyWindowVisibility()</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">const</span> QWindow* <span class="keyword">const</span> window = _videoOutput ? _videoOutput-&gt;window() : <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">const</span> QWindow::Visibility visibility = window ? window-&gt;visibility() : QWindow::Hidden;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="classQGCQVideoSinkController.html#a718ae976ccbd74ba4ea1693beaf4e540">setActive</a>((visibility != QWindow::Hidden) &amp;&amp; (visibility != QWindow::Minimized));</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classQGCQVideoSinkController.html#a718ae976ccbd74ba4ea1693beaf4e540">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCQVideoSinkController.html#a718ae976ccbd74ba4ea1693beaf4e540">QGCQVideoSinkController::setActive</a>(<span class="keywordtype">bool</span> active)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">if</span> (thread() != QThread::currentThread()) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        qCCritical(QGCQVideoSinkControllerLog) &lt;&lt; <span class="stringliteral">&quot;called from wrong thread&quot;</span>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">if</span> (!_element || _bindingReleased)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    g_object_set(_element.get(), <span class="stringliteral">&quot;active&quot;</span>, active ? TRUE : FALSE, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keywordtype">void</span> QGCQVideoSinkController::_applyWindowVisibility()</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">const</span> QWindow* <span class="keyword">const</span> window = _videoOutput ? _videoOutput-&gt;window() : <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">const</span> QWindow::Visibility visibility = window ? window-&gt;visibility() : QWindow::Hidden;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_function" href="classQGCQVideoSinkController.html#a718ae976ccbd74ba4ea1693beaf4e540">setActive</a>((visibility != QWindow::Hidden) &amp;&amp; (visibility != QWindow::Minimized));</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classQGCQVideoSinkController.html#a718ae976ccbd74ba4ea1693beaf4e540">   46</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCQVideoSinkController.html#a718ae976ccbd74ba4ea1693beaf4e540">QGCQVideoSinkController::setActive</a>(<span class="keywordtype">bool</span> active)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (thread() != QThread::currentThread()) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        qCCritical(QGCQVideoSinkControllerLog) &lt;&lt; <span class="stringliteral">&quot;called from wrong thread&quot;</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    _active = active;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">if</span> (!_element || _bindingReleased)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    g_object_set(_element.get(), <span class="stringliteral">&quot;active&quot;</span>, active ? TRUE : FALSE, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
 </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
-<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classQGCQVideoSinkController.html#a7a2b6419984efd9077af4a93a4a3bcfd">   55</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCQVideoSinkController.html#a7a2b6419984efd9077af4a93a4a3bcfd">QGCQVideoSinkController::setVideoSink</a>(QPointer&lt;QVideoSink&gt; sink)</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>{</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">if</span> (thread() != QThread::currentThread()) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        qCCritical(QGCQVideoSinkControllerLog) &lt;&lt; <span class="stringliteral">&quot;called from wrong thread&quot;</span>;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> (!_element)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classQGCQVideoSinkController.html#a7a2b6419984efd9077af4a93a4a3bcfd">   58</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCQVideoSinkController.html#a7a2b6419984efd9077af4a93a4a3bcfd">QGCQVideoSinkController::setVideoSink</a>(QPointer&lt;QVideoSink&gt; sink)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (thread() != QThread::currentThread()) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        qCCritical(QGCQVideoSinkControllerLog) &lt;&lt; <span class="stringliteral">&quot;called from wrong thread&quot;</span>;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> (_sinkDestroyedConnection) {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        QObject::disconnect(_sinkDestroyedConnection);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        _sinkDestroyedConnection = {};</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    QVideoSink* raw = sink.data();</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">if</span> (!raw) {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="comment">// Caller&#39;s QVideoSink was destroyed between the call site and here — clear the</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="comment">// element&#39;s snapshot and gate show_frame until a replacement sink is installed.</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        g_object_set(_element.get(), <span class="stringliteral">&quot;active&quot;</span>, FALSE, <span class="stringliteral">&quot;qvideosink&quot;</span>, <span class="keyword">static_cast&lt;</span>gpointer<span class="keyword">&gt;</span>(<span class="keyword">nullptr</span>), <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        _bindingReleased = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        _clearVideoSinkFrame();</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    g_object_set(_element.get(), <span class="stringliteral">&quot;qvideosink&quot;</span>, <span class="keyword">static_cast&lt;</span>gpointer<span class="keyword">&gt;</span>(raw), <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">if</span> (_videoSink != raw) {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        _clearVideoSinkFrame();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    _videoSink = raw;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    _sinkDestroyedConnection =</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        QObject::connect(raw, &amp;QObject::destroyed, <span class="keyword">this</span>, [<span class="keyword">this</span>]() { <a class="code hl_function" href="classQGCQVideoSinkController.html#a7a2b6419984efd9077af4a93a4a3bcfd">setVideoSink</a>(QPointer&lt;QVideoSink&gt;()); });</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    _bindingReleased = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">if</span> (!_element)</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">if</span> (_sinkDestroyedConnection) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        QObject::disconnect(_sinkDestroyedConnection);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        _sinkDestroyedConnection = {};</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    QVideoSink* raw = sink.data();</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span> (!raw) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="comment">// Caller&#39;s QVideoSink was destroyed between the call site and here — clear the</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="comment">// element&#39;s snapshot and gate show_frame until a replacement sink is installed.</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        _releaseElementBinding();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="comment">// Unbinding turned the element off: bound again, it goes on as setActive() last asked.</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    g_object_set(_element.get(), <span class="stringliteral">&quot;qvideosink&quot;</span>, <span class="keyword">static_cast&lt;</span>gpointer<span class="keyword">&gt;</span>(raw), <span class="stringliteral">&quot;active&quot;</span>, _active ? TRUE : FALSE, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">if</span> (_videoSink != raw) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        _clearVideoSinkFrame();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    _videoSink = raw;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    _sinkDestroyedConnection =</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        QObject::connect(raw, &amp;QObject::destroyed, <span class="keyword">this</span>, [<span class="keyword">this</span>]() { <a class="code hl_function" href="classQGCQVideoSinkController.html#a7a2b6419984efd9077af4a93a4a3bcfd">setVideoSink</a>(QPointer&lt;QVideoSink&gt;()); });</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    _bindingReleased = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
 </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classQGCQVideoSinkController.html#a9a65d41c73452a472da474b28fb1846f">   86</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCQVideoSinkController.html#a9a65d41c73452a472da474b28fb1846f">QGCQVideoSinkController::prepareForRelease</a>()</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> (thread() != QThread::currentThread()) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        qCCritical(QGCQVideoSinkControllerLog) &lt;&lt; <span class="stringliteral">&quot;called from wrong thread&quot;</span>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    _releaseElementBinding();</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classQGCQVideoSinkController.html#a9a65d41c73452a472da474b28fb1846f">   88</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCQVideoSinkController.html#a9a65d41c73452a472da474b28fb1846f">QGCQVideoSinkController::prepareForRelease</a>()</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>{</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">if</span> (thread() != QThread::currentThread()) {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        qCCritical(QGCQVideoSinkControllerLog) &lt;&lt; <span class="stringliteral">&quot;called from wrong thread&quot;</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    _releaseElementBinding();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
 </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="foldopen" id="foldopen00095" data-start="{" data-end="}">
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classQGCQVideoSinkController.html#a18dfb378f53c34005af71fff7e3e5c38">   95</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCQVideoSinkController.html#a18dfb378f53c34005af71fff7e3e5c38">QGCQVideoSinkController::releaseFrame</a>()</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>{</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">if</span> (thread() != QThread::currentThread()) {</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        qCCritical(QGCQVideoSinkControllerLog) &lt;&lt; <span class="stringliteral">&quot;called from wrong thread&quot;</span>;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">if</span> (_videoSink) {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        _videoSink-&gt;setVideoFrame(QVideoFrame());</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classQGCQVideoSinkController.html#a18dfb378f53c34005af71fff7e3e5c38">   97</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classQGCQVideoSinkController.html#a18dfb378f53c34005af71fff7e3e5c38">QGCQVideoSinkController::releaseFrame</a>()</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">if</span> (thread() != QThread::currentThread()) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        qCCritical(QGCQVideoSinkControllerLog) &lt;&lt; <span class="stringliteral">&quot;called from wrong thread&quot;</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">if</span> (_videoSink) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        _videoSink-&gt;setVideoFrame(QVideoFrame());</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
 </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keywordtype">void</span> QGCQVideoSinkController::_releaseElementBinding() noexcept</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>{</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">if</span> (!_element || _bindingReleased)</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">if</span> (_sinkDestroyedConnection) {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        QObject::disconnect(_sinkDestroyedConnection);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        _sinkDestroyedConnection = {};</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    g_object_set(_element.get(), <span class="stringliteral">&quot;active&quot;</span>, FALSE, <span class="stringliteral">&quot;qvideosink&quot;</span>, <span class="keyword">static_cast&lt;</span>gpointer<span class="keyword">&gt;</span>(<span class="keyword">nullptr</span>), <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    _bindingReleased = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    _clearVideoSinkFrame();</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keywordtype">void</span> QGCQVideoSinkController::_clearVideoSinkFrame()</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>{</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <a class="code hl_function" href="classQGCQVideoSinkController.html#a18dfb378f53c34005af71fff7e3e5c38">releaseFrame</a>();</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    _videoSink.clear();</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classQGCQVideoSinkController.html#ad57520b1a7fe18df8d7708e35307e721">  108</a></span>QSize <a class="code hl_function" href="classQGCQVideoSinkController.html#ad57520b1a7fe18df8d7708e35307e721">QGCQVideoSinkController::pictureSize</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">if</span> (!_element) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    gint width = 0;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    gint height = 0;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    g_object_get(_element.get(), <span class="stringliteral">&quot;picture-width&quot;</span>, &amp;width, <span class="stringliteral">&quot;picture-height&quot;</span>, &amp;height, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">return</span> ((width &gt; 0) &amp;&amp; (height &gt; 0)) ? QSize(width, height) : QSize();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keywordtype">void</span> QGCQVideoSinkController::_releaseElementBinding()</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>{</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">if</span> (!_element || _bindingReleased)</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordflow">if</span> (_sinkDestroyedConnection) {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        QObject::disconnect(_sinkDestroyedConnection);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        _sinkDestroyedConnection = {};</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    g_object_set(_element.get(), <span class="stringliteral">&quot;active&quot;</span>, FALSE, <span class="stringliteral">&quot;qvideosink&quot;</span>, <span class="keyword">static_cast&lt;</span>gpointer<span class="keyword">&gt;</span>(<span class="keyword">nullptr</span>), <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    _bindingReleased = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    _clearVideoSinkFrame();</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>}</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keywordtype">void</span> QGCQVideoSinkController::_clearVideoSinkFrame()</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>{</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <a class="code hl_function" href="classQGCQVideoSinkController.html#a18dfb378f53c34005af71fff7e3e5c38">releaseFrame</a>();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    _videoSink.clear();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>}</div>
 <div class="ttc" id="aMockVideoStreamServer_8h_html_a8b2d14560b8b4c41de69fe2bd2ce6fa3"><div class="ttname"><a href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a></div><div class="ttdeci">struct _GstElement GstElement</div><div class="ttdef"><b>Definition</b> <a href="MockVideoStreamServer_8h_source.html#l00007">MockVideoStreamServer.h:7</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>
 <div class="ttc" id="aQGCQVideoSinkController_8h_html"><div class="ttname"><a href="QGCQVideoSinkController_8h.html">QGCQVideoSinkController.h</a></div></div>
-<div class="ttc" id="aclassQGCQVideoSinkController_html_a18dfb378f53c34005af71fff7e3e5c38"><div class="ttname"><a href="classQGCQVideoSinkController.html#a18dfb378f53c34005af71fff7e3e5c38">QGCQVideoSinkController::releaseFrame</a></div><div class="ttdeci">void releaseFrame()</div><div class="ttdef"><b>Definition</b> <a href="#l00095">QGCQVideoSinkController.cc:95</a></div></div>
+<div class="ttc" id="aclassQGCQVideoSinkController_html_a18dfb378f53c34005af71fff7e3e5c38"><div class="ttname"><a href="classQGCQVideoSinkController.html#a18dfb378f53c34005af71fff7e3e5c38">QGCQVideoSinkController::releaseFrame</a></div><div class="ttdeci">void releaseFrame()</div><div class="ttdef"><b>Definition</b> <a href="#l00097">QGCQVideoSinkController.cc:97</a></div></div>
 <div class="ttc" id="aclassQGCQVideoSinkController_html_a1ff57796e71ebe503f9d2a157e4c905d"><div class="ttname"><a href="classQGCQVideoSinkController.html#a1ff57796e71ebe503f9d2a157e4c905d">QGCQVideoSinkController::QGCQVideoSinkController</a></div><div class="ttdeci">QGCQVideoSinkController(GstElement *element, QObject *parent=nullptr)</div><div class="ttdef"><b>Definition</b> <a href="#l00014">QGCQVideoSinkController.cc:14</a></div></div>
 <div class="ttc" id="aclassQGCQVideoSinkController_html_a28940c152b5f01ec64cfdfc96825ac28"><div class="ttname"><a href="classQGCQVideoSinkController.html#a28940c152b5f01ec64cfdfc96825ac28">QGCQVideoSinkController::~QGCQVideoSinkController</a></div><div class="ttdeci">~QGCQVideoSinkController() override</div><div class="ttdef"><b>Definition</b> <a href="#l00019">QGCQVideoSinkController.cc:19</a></div></div>
-<div class="ttc" id="aclassQGCQVideoSinkController_html_a718ae976ccbd74ba4ea1693beaf4e540"><div class="ttname"><a href="classQGCQVideoSinkController.html#a718ae976ccbd74ba4ea1693beaf4e540">QGCQVideoSinkController::setActive</a></div><div class="ttdeci">void setActive(bool active)</div><div class="ttdef"><b>Definition</b> <a href="#l00044">QGCQVideoSinkController.cc:44</a></div></div>
-<div class="ttc" id="aclassQGCQVideoSinkController_html_a7a2b6419984efd9077af4a93a4a3bcfd"><div class="ttname"><a href="classQGCQVideoSinkController.html#a7a2b6419984efd9077af4a93a4a3bcfd">QGCQVideoSinkController::setVideoSink</a></div><div class="ttdeci">void setVideoSink(QPointer&lt; QVideoSink &gt; sink)</div><div class="ttdef"><b>Definition</b> <a href="#l00055">QGCQVideoSinkController.cc:55</a></div></div>
-<div class="ttc" id="aclassQGCQVideoSinkController_html_a9a65d41c73452a472da474b28fb1846f"><div class="ttname"><a href="classQGCQVideoSinkController.html#a9a65d41c73452a472da474b28fb1846f">QGCQVideoSinkController::prepareForRelease</a></div><div class="ttdeci">void prepareForRelease()</div><div class="ttdef"><b>Definition</b> <a href="#l00086">QGCQVideoSinkController.cc:86</a></div></div>
+<div class="ttc" id="aclassQGCQVideoSinkController_html_a718ae976ccbd74ba4ea1693beaf4e540"><div class="ttname"><a href="classQGCQVideoSinkController.html#a718ae976ccbd74ba4ea1693beaf4e540">QGCQVideoSinkController::setActive</a></div><div class="ttdeci">void setActive(bool active)</div><div class="ttdef"><b>Definition</b> <a href="#l00046">QGCQVideoSinkController.cc:46</a></div></div>
+<div class="ttc" id="aclassQGCQVideoSinkController_html_a7a2b6419984efd9077af4a93a4a3bcfd"><div class="ttname"><a href="classQGCQVideoSinkController.html#a7a2b6419984efd9077af4a93a4a3bcfd">QGCQVideoSinkController::setVideoSink</a></div><div class="ttdeci">void setVideoSink(QPointer&lt; QVideoSink &gt; sink)</div><div class="ttdef"><b>Definition</b> <a href="#l00058">QGCQVideoSinkController.cc:58</a></div></div>
+<div class="ttc" id="aclassQGCQVideoSinkController_html_a9a65d41c73452a472da474b28fb1846f"><div class="ttname"><a href="classQGCQVideoSinkController.html#a9a65d41c73452a472da474b28fb1846f">QGCQVideoSinkController::prepareForRelease</a></div><div class="ttdeci">void prepareForRelease()</div><div class="ttdef"><b>Definition</b> <a href="#l00088">QGCQVideoSinkController.cc:88</a></div></div>
 <div class="ttc" id="aclassQGCQVideoSinkController_html_abe7cd2927fcfa2694957613e47a04448"><div class="ttname"><a href="classQGCQVideoSinkController.html#abe7cd2927fcfa2694957613e47a04448">QGCQVideoSinkController::followWindowVisibility</a></div><div class="ttdeci">void followWindowVisibility(QQuickItem *videoOutput)</div><div class="ttdef"><b>Definition</b> <a href="#l00024">QGCQVideoSinkController.cc:24</a></div></div>
+<div class="ttc" id="aclassQGCQVideoSinkController_html_ad57520b1a7fe18df8d7708e35307e721"><div class="ttname"><a href="classQGCQVideoSinkController.html#ad57520b1a7fe18df8d7708e35307e721">QGCQVideoSinkController::pictureSize</a></div><div class="ttdeci">QSize pictureSize() const</div><div class="ttdef"><b>Definition</b> <a href="#l00108">QGCQVideoSinkController.cc:108</a></div></div>
 <div class="ttc" id="anamespaceGStreamer_html"><div class="ttname"><a href="namespaceGStreamer.html">GStreamer</a></div><div class="ttdef"><b>Definition</b> <a href="BranchContext_8h_source.html#l00013">BranchContext.h:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

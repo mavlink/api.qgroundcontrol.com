@@ -17,6 +17,5 @@ var searchData=
   ['urlfactory_14',['UrlFactory',['../classUrlFactory.html',1,'']]],
   ['utcdate_15',['UtcDate',['../structNMEA_1_1UtcDate.html',1,'NMEA']]],
   ['uvccameracontroller_16',['UVCCameraController',['../classUVCCameraController.html',1,'']]],
-  ['uvcframerelay_17',['UVCFrameRelay',['../classUVCFrameRelay.html',1,'']]],
-  ['uvcstreammonitor_18',['UVCStreamMonitor',['../classUVCStreamMonitor.html',1,'']]]
+  ['uvcstreammonitor_17',['UVCStreamMonitor',['../classUVCStreamMonitor.html',1,'']]]
 ];

@@ -10,6 +10,7 @@ var classDecodingBranch =
     [ "displaying", "classDecodingBranch.html#a184248ad8e550476bd0e5f4b8bc6b8a5", null ],
     [ "hardwareDecoder", "classDecodingBranch.html#a2093b47e45e06a15f5a2e29a869d2646", null ],
     [ "isCurrent", "classDecodingBranch.html#ad24f912ef97b390b285940d1b0a25f0a", null ],
+    [ "onGraphicsDeviceServed", "classDecodingBranch.html#a753afae0981a3558d8f33f6f45f06dcc", null ],
     [ "onSourceStreaming", "classDecodingBranch.html#a244798772f3e89b19733d34f55c4b007", null ],
     [ "operator=", "classDecodingBranch.html#aafc808ce62c90ffc2c91da40bf045f0b", null ],
     [ "reset", "classDecodingBranch.html#a889d12e6cbd5615d68df29a335e7bd8c", null ],

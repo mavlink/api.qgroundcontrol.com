@@ -124,7 +124,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5962b1cc38767f027f425dfb4a740f9" id="r_ab5962b1cc38767f027f425dfb4a740f9"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5962b1cc38767f027f425dfb4a740f9">connectUdp</a> (quint16 port, <a class="el" href="namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80">GPSType</a> type)=0</td></tr>
 <tr class="memitem:a9e9038413de295dfe1db4d0cebd92984" id="r_a9e9038413de295dfe1db4d0cebd92984"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e9038413de295dfe1db4d0cebd92984">connectSerial</a> (const QString &amp;device, <a class="el" href="namespaceGPSTypes.html#a6efb637c8d7acc0f23da31cf1f2dba80">GPSType</a> type, uint32_t baudRate, bool allowPersistentChanges, <a class="el" href="GPSReceiverConnector_8h.html#a635e7f492a09fb870a32882cd9b22daa">GPSSerialClaim</a> claim)=0</td></tr>
 <tr class="memitem:a408e2d1e0a5948ed29040997389c9abe" id="r_a408e2d1e0a5948ed29040997389c9abe"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a408e2d1e0a5948ed29040997389c9abe">serialPortAvailable</a> (const QString &amp;device) const =0</td></tr>
-<tr class="memdesc:a408e2d1e0a5948ed29040997389c9abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The device is plugged in and not in its bootloader.  <br /></td></tr>
+<tr class="memitem:a68d940945b9a3920cfb4b90ec1740b65" id="r_a68d940945b9a3920cfb4b90ec1740b65"><td class="memItemLeft" align="right" valign="top">virtual QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68d940945b9a3920cfb4b90ec1740b65">serialPortLabel</a> (const QString &amp;device) const =0</td></tr>
+<tr class="memitem:a2741c510bbc370b8f8d24d703aa7c9de" id="r_a2741c510bbc370b8f8d24d703aa7c9de"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2741c510bbc370b8f8d24d703aa7c9de">serialPortAllowed</a> (const QString &amp;device) const =0</td></tr>
 <tr class="memitem:a22060ab2c1a95fdb09152bef5e582169" id="r_a22060ab2c1a95fdb09152bef5e582169"><td class="memItemLeft" align="right" valign="top">virtual QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22060ab2c1a95fdb09152bef5e582169">rtkReceiverPorts</a> () const =0</td></tr>
 <tr class="memitem:a3033e944ee4e11780160b540f8097b9f" id="r_a3033e944ee4e11780160b540f8097b9f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="GPSReceiverConnector_8h.html#a635e7f492a09fb870a32882cd9b22daa">GPSSerialClaim</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3033e944ee4e11780160b540f8097b9f">claimSerialPort</a> (const QString &amp;device)=0</td></tr>
 <tr class="memdesc:a3033e944ee4e11780160b540f8097b9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Claims the device until the last copy is released; empty when it is in use.  <br /></td></tr>
@@ -381,6 +382,32 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a2741c510bbc370b8f8d24d703aa7c9de" name="a2741c510bbc370b8f8d24d703aa7c9de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2741c510bbc370b8f8d24d703aa7c9de">&#9670;&#160;</a></span>serialPortAllowed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GPSReceiverConnector::serialPortAllowed </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>device</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Whether <a class="el" href="namespaceQGC.html">QGC</a> may open the device. Only a USB device on Android can be one that it may not: the user has not allowed it. </p>
+
+</div>
+</div>
 <a id="a408e2d1e0a5948ed29040997389c9abe" name="a408e2d1e0a5948ed29040997389c9abe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a408e2d1e0a5948ed29040997389c9abe">&#9670;&#160;</a></span>serialPortAvailable()</h2>
 
@@ -403,8 +430,33 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>The device is plugged in and not in its bootloader. <em class="arg">device</em> is any name of its port, as the saved device is: one that survives replugging, or a system location. </p>
 
-<p>The device is plugged in and not in its bootloader. </p>
+</div>
+</div>
+<a id="a68d940945b9a3920cfb4b90ec1740b65" name="a68d940945b9a3920cfb4b90ec1740b65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68d940945b9a3920cfb4b90ec1740b65">&#9670;&#160;</a></span>serialPortLabel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QString GPSReceiverConnector::serialPortLabel </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>device</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>What a message calls the device: the system location of its port, as the device picker shows it, or the name itself while no port is listed by it. Empty for a device that then has no name the user knows it by. </p>
 
 </div>
 </div>

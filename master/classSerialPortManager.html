@@ -138,7 +138,7 @@ Public Types</h2></td></tr>
 Signals</h2></td></tr>
 <tr class="memitem:a5408f1430780631ffd537e924d514eaf" id="r_a5408f1430780631ffd537e924d514eaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5408f1430780631ffd537e924d514eaf">serialPortsChanged</a> ()</td></tr>
 <tr class="memitem:ad026a52a79a8743f234d7fdf4671ea9a" id="r_ad026a52a79a8743f234d7fdf4671ea9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad026a52a79a8743f234d7fdf4671ea9a">portsEnumerated</a> (const QStringList &amp;<a class="el" href="#aaeb79ef2312207cb65c6910762afa12a">availablePorts</a>)</td></tr>
-<tr class="memdesc:ad026a52a79a8743f234d7fdf4671ea9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted only after a fresh scan, never for a retained Android snapshot. Includes native names and paths.  <br /></td></tr>
+<tr class="memdesc:ad026a52a79a8743f234d7fdf4671ea9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted only after a fresh scan, with every name of the ports it lists.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -148,31 +148,43 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:add4f3d102d8ce1e0dc57899b9fa8d8d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">As <a class="el" href="#aaeb79ef2312207cb65c6910762afa12a">availablePorts()</a>, without reusing a scan made less than a second ago.  <br /></td></tr>
 <tr class="memitem:ac6ac9b536276748cb3ba2916dec16adf" id="r_ac6ac9b536276748cb3ba2916dec16adf"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6ac9b536276748cb3ba2916dec16adf">displayName</a> (const QString &amp;systemLocation)</td></tr>
 <tr class="memitem:ae893d9ad265e1c3fc47ce7b4e2b415f6" id="r_ae893d9ad265e1c3fc47ce7b4e2b415f6"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae893d9ad265e1c3fc47ce7b4e2b415f6">serialPorts</a> () const</td></tr>
-<tr class="memitem:ad94cd422066f6355a1c8308c2242a282" id="r_ad94cd422066f6355a1c8308c2242a282"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a0b6410beb42668b5cbe773efd9e8c9dc">ReservationPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad94cd422066f6355a1c8308c2242a282">reservePort</a> (const QString &amp;systemLocation)</td></tr>
+<tr class="memitem:ad1086fb2887f9d7b1a65806bf2f03395" id="r_ad1086fb2887f9d7b1a65806bf2f03395"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a0b6410beb42668b5cbe773efd9e8c9dc">ReservationPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1086fb2887f9d7b1a65806bf2f03395">reservePort</a> (const QString &amp;systemLocation, const QString &amp;owner={})</td></tr>
 <tr class="memitem:a267779e9c409d7ebe0b86cd1d6860483" id="r_a267779e9c409d7ebe0b86cd1d6860483"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a267779e9c409d7ebe0b86cd1d6860483">canReservePort</a> (const QString &amp;systemLocation) const</td></tr>
 <tr class="memitem:a54f2cb992ce470000ac3d3d6de468f19" id="r_a54f2cb992ce470000ac3d3d6de468f19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54f2cb992ce470000ac3d3d6de468f19">isPortReserved</a> (const QString &amp;systemLocation) const</td></tr>
-<tr class="memitem:a0b00159a69888ea8ab5aa0bad5d20501" id="r_a0b00159a69888ea8ab5aa0bad5d20501"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b00159a69888ea8ab5aa0bad5d20501">anyPortReserved</a> () const</td></tr>
+<tr class="memitem:aff8eeca024f93fd1c4e68816c0d4173c" id="r_aff8eeca024f93fd1c4e68816c0d4173c"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff8eeca024f93fd1c4e68816c0d4173c">reservationOwner</a> (const QString &amp;systemLocation) const</td></tr>
+<tr class="memdesc:aff8eeca024f93fd1c4e68816c0d4173c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The owner the port is reserved with; empty when it is not reserved or its holder gave none.  <br /></td></tr>
+<tr class="memitem:aa035e70d4a61b550d28fe4dccebc2eb3" id="r_aa035e70d4a61b550d28fe4dccebc2eb3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa035e70d4a61b550d28fe4dccebc2eb3">isSamePort</a> (const QString &amp;first, const QString &amp;second) const</td></tr>
+<tr class="memdesc:aa035e70d4a61b550d28fe4dccebc2eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether both names are of one listed port, or are the same name.  <br /></td></tr>
+<tr class="memitem:af58f896aabe7042b5fa478d957204f2f" id="r_af58f896aabe7042b5fa478d957204f2f"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af58f896aabe7042b5fa478d957204f2f">persistentName</a> (const QString &amp;name) const</td></tr>
+<tr class="memitem:acc7fe3fcb23744d339bc481728deb08d" id="r_acc7fe3fcb23744d339bc481728deb08d"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structSerialPortManager_1_1Port.html">Port</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc7fe3fcb23744d339bc481728deb08d">port</a> (const QString &amp;name) const</td></tr>
+<tr class="memitem:a2d3c10098e0c26ebf6bdd08e3db663b4" id="r_a2d3c10098e0c26ebf6bdd08e3db663b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d3c10098e0c26ebf6bdd08e3db663b4">hasAccess</a> (const QString &amp;name) const</td></tr>
+<tr class="memitem:af36ed57b0c4868c74c39105445788ed1" id="r_af36ed57b0c4868c74c39105445788ed1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af36ed57b0c4868c74c39105445788ed1">requestAccess</a> (const QString &amp;name)</td></tr>
+<tr class="memitem:a1f6fb67925a3f34ec7e7de2f61b9e512" id="r_a1f6fb67925a3f34ec7e7de2f61b9e512"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f6fb67925a3f34ec7e7de2f61b9e512">accessDenied</a> (const QString &amp;name) const</td></tr>
 <tr class="memitem:aa21d49e21083c5a0f260ab56b4a8b01f" id="r_aa21d49e21083c5a0f260ab56b4a8b01f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a0b6410beb42668b5cbe773efd9e8c9dc">ReservationPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa21d49e21083c5a0f260ab56b4a8b01f">excludeFromAutoConnect</a> (const QString &amp;systemLocation)</td></tr>
 <tr class="memdesc:aa21d49e21083c5a0f260ab56b4a8b01f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Routing exclusions survive reconnects without marking the hardware occupied.  <br /></td></tr>
 <tr class="memitem:a65a0169410d3988313956c96d2c8d694" id="r_a65a0169410d3988313956c96d2c8d694"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65a0169410d3988313956c96d2c8d694">canAutoConnectPort</a> (const QString &amp;systemLocation) const</td></tr>
 <tr class="memitem:a2bb6860b76ea5e442f5fda8d5bd0fa39" id="r_a2bb6860b76ea5e442f5fda8d5bd0fa39"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bb6860b76ea5e442f5fda8d5bd0fa39">isAutoConnectExcluded</a> (const QString &amp;systemLocation) const</td></tr>
-<tr class="memitem:afa68308eece586a4a753585b77a3de52" id="r_afa68308eece586a4a753585b77a3de52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa68308eece586a4a753585b77a3de52">setSinglePortOnly</a> (bool enabled)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a09162723dc11b2f4ae1ef7bd9fce717c" id="r_a09162723dc11b2f4ae1ef7bd9fce717c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classSerialPortManager.html">SerialPortManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09162723dc11b2f4ae1ef7bd9fce717c">instance</a> ()</td></tr>
-<tr class="memitem:a8b707e16081a117c11c87906b4e7e28b" id="r_a8b707e16081a117c11c87906b4e7e28b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b707e16081a117c11c87906b4e7e28b">isPrimaryInterface</a> (const <a class="el" href="structSerialPortManager_1_1Port.html">Port</a> &amp;port, QSet&lt; QString &gt; &amp;seenDevices)</td></tr>
+<tr class="memitem:a8b707e16081a117c11c87906b4e7e28b" id="r_a8b707e16081a117c11c87906b4e7e28b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b707e16081a117c11c87906b4e7e28b">isPrimaryInterface</a> (const <a class="el" href="structSerialPortManager_1_1Port.html">Port</a> &amp;<a class="el" href="#acc7fe3fcb23744d339bc481728deb08d">port</a>, QSet&lt; QString &gt; &amp;seenDevices)</td></tr>
 <tr class="memitem:a12ee56d5034670ee8f9e9950be98885a" id="r_a12ee56d5034670ee8f9e9950be98885a"><td class="memItemLeft" align="right" valign="top">static QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12ee56d5034670ee8f9e9950be98885a">supportedBaudRates</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a9d8c737b0c4d9e277e4409585a040f2a" id="r_a9d8c737b0c4d9e277e4409585a040f2a"><td class="memItemLeft" align="right" valign="top">static constexpr std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d8c737b0c4d9e277e4409585a040f2a">NEW_PORT_SETTLE_DELAY</a> {1000}</td></tr>
 <tr class="memdesc:a9d8c737b0c4d9e277e4409585a040f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">How long a newly listed port settles before automatic connection opens it.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a03660132d0990fe79ba1c97429ff7eea" id="r_a03660132d0990fe79ba1c97429ff7eea"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03660132d0990fe79ba1c97429ff7eea">GPSReceiverConnectionPolicyTest</a></td></tr>
+<tr class="memitem:a87260222c92771ce06df4c4f915b1c4c" id="r_a87260222c92771ce06df4c4f915b1c4c"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87260222c92771ce06df4c4f915b1c4c">LinkManagerTest</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Shared serial inventory and exclusive claims. Called on the application thread. </p>
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8h_source.html#l00018">18</a> of file <a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8h_source.html#l00019">19</a> of file <a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
 <a id="ad45088435fc7c19eae1e4fc21b2106e5" name="ad45088435fc7c19eae1e4fc21b2106e5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad45088435fc7c19eae1e4fc21b2106e5">&#9670;&#160;</a></span>Enumerator</h2>
@@ -186,7 +198,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8h_source.html#l00047">47</a> of file <a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8h_source.html#l00066">66</a> of file <a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>.</p>
 
 </div>
 </div>
@@ -202,7 +214,7 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8h_source.html#l00046">46</a> of file <a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8h_source.html#l00065">65</a> of file <a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>.</p>
 
 </div>
 </div>
@@ -234,33 +246,32 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00015">15</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00020">20</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00015">SerialPortManager()</a>.</p>
+<p class="reference">References <a class="el" href="classAndroidSerial_1_1DeviceWatcher.html#a92b76922e7776c5f11aaefac16b95b2b">AndroidSerial::DeviceWatcher::devicesChanged()</a>, <a class="el" href="AndroidSerialJni_8cc_source.html#l00274">AndroidSerial::DeviceWatcher::instance()</a>, <a class="el" href="SerialPortManager_8cc_source.html#l00108">rescan()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00020">SerialPortManager()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00019">instance()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00015">SerialPortManager()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00031">instance()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00020">SerialPortManager()</a>.</p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a0b00159a69888ea8ab5aa0bad5d20501" name="a0b00159a69888ea8ab5aa0bad5d20501"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b00159a69888ea8ab5aa0bad5d20501">&#9670;&#160;</a></span>anyPortReserved()</h2>
+<a id="a1f6fb67925a3f34ec7e7de2f61b9e512" name="a1f6fb67925a3f34ec7e7de2f61b9e512"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f6fb67925a3f34ec7e7de2f61b9e512">&#9670;&#160;</a></span>accessDenied()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool SerialPortManager::anyPortReserved </td>
+          <td class="memname">bool SerialPortManager::accessDenied </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Whether the user has refused to let <a class="el" href="namespaceQGC.html">QGC</a> open the port, and has not been asked again since. A scan of the ports follows a refusal, as it follows a grant. </p>
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00125">125</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00063">availablePorts()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00135">canReservePort()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00251">251</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
 
 </div>
 </div>
@@ -279,11 +290,11 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00063">63</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00077">77</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00125">anyPortReserved()</a>, <a class="el" href="#ad026a52a79a8743f234d7fdf4671ea9a">portsEnumerated()</a>, <a class="el" href="SerialPortManager_8h_source.html#l00069">serialPorts()</a>, and <a class="el" href="#a5408f1430780631ffd537e924d514eaf">serialPortsChanged()</a>.</p>
+<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00206">port()</a>, <a class="el" href="#ad026a52a79a8743f234d7fdf4671ea9a">portsEnumerated()</a>, <a class="el" href="SerialPortManager_8h_source.html#l00088">serialPorts()</a>, and <a class="el" href="#a5408f1430780631ffd537e924d514eaf">serialPortsChanged()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SerialLink_8cc_source.html#l00117">SerialConfiguration::connectionSettings()</a>, <a class="el" href="SerialPortManager_8cc_source.html#l00094">displayName()</a>, <a class="el" href="#ad026a52a79a8743f234d7fdf4671ea9a">portsEnumerated()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00088">rescan()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SerialLink_8cc_source.html#l00117">SerialConfiguration::connectionSettings()</a>, <a class="el" href="SerialPortManager_8cc_source.html#l00114">displayName()</a>, <a class="el" href="#ad026a52a79a8743f234d7fdf4671ea9a">portsEnumerated()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00108">rescan()</a>.</p>
 
 </div>
 </div>
@@ -302,9 +313,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00158">158</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00278">278</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00135">canReservePort()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00218">isAutoConnectExcluded()</a>.</p>
+<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00256">canReservePort()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00338">isAutoConnectExcluded()</a>.</p>
 
 </div>
 </div>
@@ -323,11 +334,11 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00135">135</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00256">256</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00125">anyPortReserved()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00120">isPortReserved()</a>.</p>
+<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00175">isPortReserved()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00158">canAutoConnectPort()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00106">reservePort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00278">canAutoConnectPort()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00124">reservePort()</a>.</p>
 
 </div>
 </div>
@@ -346,11 +357,11 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00094">94</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00114">114</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00063">availablePorts()</a>.</p>
+<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00077">availablePorts()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00206">port()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SerialLink_8cc_source.html#l00126">SerialConfiguration::cleanPortDisplayName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SerialLink_8cc_source.html#l00125">SerialConfiguration::cleanPortDisplayName()</a>.</p>
 
 </div>
 </div>
@@ -371,7 +382,29 @@ Static Public Attributes</h2></td></tr>
 
 <p>Routing exclusions survive reconnects without marking the hardware occupied. </p>
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00141">141</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00261">261</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00206">port()</a>.</p>
+
+</div>
+</div>
+<a id="a2d3c10098e0c26ebf6bdd08e3db663b4" name="a2d3c10098e0c26ebf6bdd08e3db663b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d3c10098e0c26ebf6bdd08e3db663b4">&#9670;&#160;</a></span>hasAccess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SerialPortManager::hasAccess </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Whether <a class="el" href="namespaceQGC.html">QGC</a> has the user's permission to open the port, or needs none. Android alone has such a permission, for the device of a USB port: such a port has access only while its device is attached and the user has let <a class="el" href="namespaceQGC.html">QGC</a> open it. </p>
+
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00241">241</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
 
 </div>
 </div>
@@ -398,11 +431,11 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00019">19</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00031">31</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00015">SerialPortManager()</a>.</p>
+<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00020">SerialPortManager()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SerialLink_8cc_source.html#l00126">SerialConfiguration::cleanPortDisplayName()</a>, <a class="el" href="SerialLink_8cc_source.html#l00117">SerialConfiguration::connectionSettings()</a>, <a class="el" href="LinkManager_8cc_source.html#l00140">LinkManager::createConnectedLink()</a>, <a class="el" href="LinkManager_8cc_source.html#l00067">LinkManager::init()</a>, <a class="el" href="LinkManager_8cc_source.html#l00041">LinkManager::LinkManager()</a>, <a class="el" href="GPSManager_8cc.html#a9e966d873c029fd25efef719acc525ee">Q_APPLICATION_STATIC()</a>, <a class="el" href="SerialLink_8cc_source.html#l00368">SerialLink::SerialLink()</a>, and <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00330">QGroundControlQmlGlobal::serialPortManager()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SerialLink_8cc_source.html#l00125">SerialConfiguration::cleanPortDisplayName()</a>, <a class="el" href="SerialLink_8cc_source.html#l00117">SerialConfiguration::connectionSettings()</a>, <a class="el" href="LinkManager_8cc_source.html#l00251">LinkManager::createConnectedLink()</a>, <a class="el" href="LinkManager_8cc_source.html#l00071">LinkManager::init()</a>, <a class="el" href="LinkManager_8cc_source.html#l00042">LinkManager::LinkManager()</a>, <a class="el" href="GPSManager_8cc.html#a9e966d873c029fd25efef719acc525ee">Q_APPLICATION_STATIC()</a>, <a class="el" href="SerialLink_8cc_source.html#l00367">SerialLink::SerialLink()</a>, <a class="el" href="LinkManager_8cc_source.html#l01037">LinkManager::serialPortHasFlowControl()</a>, <a class="el" href="QGroundControlQmlGlobal_8cc_source.html#l00330">QGroundControlQmlGlobal::serialPortManager()</a>, and <a class="el" href="LinkManager_8cc_source.html#l00786">LinkManager::startConfigurationEditing()</a>.</p>
 
 </div>
 </div>
@@ -421,9 +454,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00218">218</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00338">338</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00158">canAutoConnectPort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00278">canAutoConnectPort()</a>.</p>
 
 </div>
 </div>
@@ -442,9 +475,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00120">120</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00175">175</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00135">canReservePort()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00256">canReservePort()</a>.</p>
 
 </div>
 </div>
@@ -476,9 +509,82 @@ Static Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Whether <em class="arg">port</em> is the first interface listed of its physical device, which this records in <em class="arg">seenDevices</em>. A port without a device identity is always primary. </p>
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00024">24</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00036">36</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00206">port()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="SerialAutoConnect_8cc_source.html#l00026">SerialAutoConnect::update()</a>.</p>
+
+</div>
+</div>
+<a id="aa035e70d4a61b550d28fe4dccebc2eb3" name="aa035e70d4a61b550d28fe4dccebc2eb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa035e70d4a61b550d28fe4dccebc2eb3">&#9670;&#160;</a></span>isSamePort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SerialPortManager::isSamePort </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>second</em></span>&#160;) const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether both names are of one listed port, or are the same name. </p>
+
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00186">186</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+
+</div>
+</div>
+<a id="af58f896aabe7042b5fa478d957204f2f" name="af58f896aabe7042b5fa478d957204f2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af58f896aabe7042b5fa478d957204f2f">&#9670;&#160;</a></span>persistentName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString SerialPortManager::persistentName </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The name for a saved configuration to keep of the listed port with this system location or port name: the port's stable name if it has one that no other listed port shares, else its system location. Any other name is returned as it is. </p>
+
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00191">191</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00206">port()</a>.</p>
+
+</div>
+</div>
+<a id="acc7fe3fcb23744d339bc481728deb08d" name="acc7fe3fcb23744d339bc481728deb08d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc7fe3fcb23744d339bc481728deb08d">&#9670;&#160;</a></span>port()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="structSerialPortManager_1_1Port.html">SerialPortManager::Port</a> &gt; SerialPortManager::port </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The only listed port with this name, whichever of its names that is. None when no listed port has the name, or when several share it as their stable name. </p>
+
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00206">206</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00206">port()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00077">availablePorts()</a>, <a class="el" href="SerialPortManager_8cc_source.html#l00114">displayName()</a>, <a class="el" href="SerialPortManager_8cc_source.html#l00261">excludeFromAutoConnect()</a>, <a class="el" href="SerialPortManager_8cc_source.html#l00036">isPrimaryInterface()</a>, <a class="el" href="SerialPortManager_8cc_source.html#l00191">persistentName()</a>, <a class="el" href="SerialPortManager_8cc_source.html#l00206">port()</a>, <a class="el" href="SerialPortManager_8cc_source.html#l00124">reservePort()</a>, and <a class="el" href="LinkManager_8cc_source.html#l01037">LinkManager::serialPortHasFlowControl()</a>.</p>
 
 </div>
 </div>
@@ -505,11 +611,31 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Emitted only after a fresh scan, never for a retained Android snapshot. Includes native names and paths. </p>
+<p>Emitted only after a fresh scan, with every name of the ports it lists. </p>
 
-<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00063">availablePorts()</a>.</p>
+<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00077">availablePorts()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00063">availablePorts()</a>, <a class="el" href="GPSReceiver_8cc_source.html#l00057">GPSReceiver::GPSReceiver()</a>, <a class="el" href="LinkManager_8cc_source.html#l00041">LinkManager::LinkManager()</a>, and <a class="el" href="SerialLink_8cc_source.html#l00368">SerialLink::SerialLink()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00077">availablePorts()</a>, <a class="el" href="GPSReceiver_8cc_source.html#l00057">GPSReceiver::GPSReceiver()</a>, <a class="el" href="LinkManager_8cc_source.html#l00042">LinkManager::LinkManager()</a>, and <a class="el" href="SerialLink_8cc_source.html#l00367">SerialLink::SerialLink()</a>.</p>
+
+</div>
+</div>
+<a id="af36ed57b0c4868c74c39105445788ed1" name="af36ed57b0c4868c74c39105445788ed1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af36ed57b0c4868c74c39105445788ed1">&#9670;&#160;</a></span>requestAccess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SerialPortManager::requestAccess </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Asks the user to let <a class="el" href="namespaceQGC.html">QGC</a> open the port, and returns whether it did. It does not for a port that has access already, that takes no permission, or whose device is not attached. The user answers later, and the port does not open until then; a scan of the ports follows a grant. Opening a port asks by itself, once for each time its device is attached. This asks whenever it is called, also after a denial, so call it only for a connection that the user has asked for. </p>
+
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00246">246</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
 
 </div>
 </div>
@@ -530,14 +656,37 @@ Static Public Attributes</h2></td></tr>
 
 <p>As <a class="el" href="#aaeb79ef2312207cb65c6910762afa12a">availablePorts()</a>, without reusing a scan made less than a second ago. </p>
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00088">88</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00108">108</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00063">availablePorts()</a>.</p>
+<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00077">availablePorts()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="LinkManager_8cc_source.html#l00071">LinkManager::init()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00020">SerialPortManager()</a>.</p>
 
 </div>
 </div>
-<a id="ad94cd422066f6355a1c8308c2242a282" name="ad94cd422066f6355a1c8308c2242a282"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad94cd422066f6355a1c8308c2242a282">&#9670;&#160;</a></span>reservePort()</h2>
+<a id="aff8eeca024f93fd1c4e68816c0d4173c" name="aff8eeca024f93fd1c4e68816c0d4173c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff8eeca024f93fd1c4e68816c0d4173c">&#9670;&#160;</a></span>reservationOwner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString SerialPortManager::reservationOwner </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>systemLocation</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The owner the port is reserved with; empty when it is not reserved or its holder gave none. </p>
+
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00180">180</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+
+</div>
+</div>
+<a id="ad1086fb2887f9d7b1a65806bf2f03395" name="ad1086fb2887f9d7b1a65806bf2f03395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1086fb2887f9d7b1a65806bf2f03395">&#9670;&#160;</a></span>reservePort()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -545,17 +694,21 @@ Static Public Attributes</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="#a0b6410beb42668b5cbe773efd9e8c9dc">SerialPortManager::ReservationPtr</a> SerialPortManager::reservePort </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>systemLocation</em></span></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>systemLocation</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>owner</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00106">106</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00124">124</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00135">canReservePort()</a>.</p>
+<p class="reference">References <a class="el" href="SerialPortManager_8cc_source.html#l00256">canReservePort()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00206">port()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="LinkManager_8cc_source.html#l00140">LinkManager::createConnectedLink()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="LinkManager_8cc_source.html#l00251">LinkManager::createConnectedLink()</a>.</p>
 
 </div>
 </div>
@@ -582,9 +735,9 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8h_source.html#l00069">69</a> of file <a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8h_source.html#l00088">88</a> of file <a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00063">availablePorts()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00077">availablePorts()</a>, and <a class="el" href="SerialPortManager_8h_source.html#l00026">LinkManagerTest</a>.</p>
 
 </div>
 </div>
@@ -611,36 +764,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00063">availablePorts()</a>.</p>
-
-</div>
-</div>
-<a id="afa68308eece586a4a753585b77a3de52" name="afa68308eece586a4a753585b77a3de52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa68308eece586a4a753585b77a3de52">&#9670;&#160;</a></span>setSinglePortOnly()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SerialPortManager::setSinglePortOnly </td>
-          <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>enabled</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8h_source.html#l00082">82</a> of file <a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="LinkManager_8cc_source.html#l00067">LinkManager::init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SerialPortManager_8cc_source.html#l00077">availablePorts()</a>, and <a class="el" href="SerialPortManager_8h_source.html#l00026">LinkManagerTest</a>.</p>
 
 </div>
 </div>
@@ -667,11 +791,68 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00163">163</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8cc_source.html#l00283">283</a> of file <a class="el" href="SerialPortManager_8cc_source.html">SerialPortManager.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="qserialportinfo_8cpp_source.html#l00244">QSerialPortInfo::standardBaudRates()</a>.</p>
+<p class="reference">References <a class="el" href="AndroidSerialPortInfo_8cc_source.html#l00043">QSerialPortInfo::standardBaudRates()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GPSReceiver_8cc_source.html#l00414">GPSReceiver::serialBaudRates()</a>, and <a class="el" href="SerialLink_8cc_source.html#l00112">SerialConfiguration::supportedBaudRates()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SerialPortManager_8h_source.html#l00026">LinkManagerTest</a>, <a class="el" href="GPSReceiver_8cc_source.html#l00481">GPSReceiver::serialBaudRates()</a>, and <a class="el" href="SerialLink_8cc_source.html#l00112">SerialConfiguration::supportedBaudRates()</a>.</p>
+
+</div>
+</div>
+<a name="doc-related-members" id="doc-related-members"></a><h2 id="header-doc-related-members" class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a03660132d0990fe79ba1c97429ff7eea" name="a03660132d0990fe79ba1c97429ff7eea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03660132d0990fe79ba1c97429ff7eea">&#9670;&#160;</a></span>GPSReceiverConnectionPolicyTest</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class GPSReceiverConnectionPolicyTest</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8h_source.html#l00025">25</a> of file <a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>.</p>
+
+<p class="reference">References <a class="el" href="SerialPortManager_8h_source.html#l00025">GPSReceiverConnectionPolicyTest</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="SerialPortManager_8h_source.html#l00025">GPSReceiverConnectionPolicyTest</a>.</p>
+
+</div>
+</div>
+<a id="a87260222c92771ce06df4c4f915b1c4c" name="a87260222c92771ce06df4c4f915b1c4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87260222c92771ce06df4c4f915b1c4c">&#9670;&#160;</a></span>LinkManagerTest</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class LinkManagerTest</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8h_source.html#l00026">26</a> of file <a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>.</p>
+
+<p class="reference">References <a class="el" href="SerialPortManager_8h_source.html#l00026">LinkManagerTest</a>, <a class="el" href="SerialPortManager_8h_source.html#l00088">serialPorts()</a>, <a class="el" href="#a5408f1430780631ffd537e924d514eaf">serialPortsChanged()</a>, and <a class="el" href="SerialPortManager_8cc_source.html#l00283">supportedBaudRates()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="SerialPortManager_8h_source.html#l00026">LinkManagerTest</a>.</p>
 
 </div>
 </div>
@@ -698,9 +879,9 @@ Static Public Attributes</h2></td></tr>
 
 <p>How long a newly listed port settles before automatic connection opens it. </p>
 
-<p class="definition">Definition at line <a class="el" href="SerialPortManager_8h_source.html#l00054">54</a> of file <a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SerialPortManager_8h_source.html#l00073">73</a> of file <a class="el" href="SerialPortManager_8h_source.html">SerialPortManager.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SerialPortManager_8h_source.html#l00109">SerialPortSettleTracker::settled()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SerialPortManager_8h_source.html#l00172">SerialPortSettleTracker::settled()</a>.</p>
 
 </div>
 </div>

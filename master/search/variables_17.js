@@ -14,11 +14,11 @@ var searchData=
   ['wire_5fsize_11',['WIRE_SIZE',['../namespaceUBX.html#a467128e617bc878f5814e2a82f706e1a',1,'UBX']]],
   ['wnc_12',['wnc',['../structSBF_1_1PVTGeodetic.html#a13db31f0d0f433ccc2e578e453ba5122',1,'SBF::PVTGeodetic']]],
   ['worstat_13',['worstAt',['../structSurfaceAnalysis_1_1Seam.html#a93f7d7161e412bcd75ced206663ca1b2',1,'SurfaceAnalysis::Seam']]],
-  ['write_14',['write',['../structAndroidSerial_1_1JniMethodCache.html#acea65f0bc55f054d5ce8ddfc222cc50a',1,'AndroidSerial::JniMethodCache::write'],['../structGPSRuntimeIO.html#a666a9252a99eb493070dd1e64e68a506',1,'GPSRuntimeIO::write']]],
+  ['write_14',['write',['../structGPSRuntimeIO.html#a666a9252a99eb493070dd1e64e68a506',1,'GPSRuntimeIO']]],
   ['write_5fbase_5frole_15',['WRITE_BASE_ROLE',['../namespaceQuectel_1_1Plan.html#a68bf5058d18443a9e356630ab6336e31',1,'Quectel::Plan']]],
   ['write_5fbuffer_5fbytes_16',['WRITE_BUFFER_BYTES',['../classGPSTransport.html#af5a84b5bbc784e233420c2195fd82ace',1,'GPSTransport']]],
-  ['writeasync_17',['writeAsync',['../structAndroidSerial_1_1JniMethodCache.html#a3f14a52c264211178d566a7b13413330',1,'AndroidSerial::JniMethodCache']]],
-  ['writewithprogress_18',['writeWithProgress',['../structAndroidSerial_1_1JniMethodCache.html#a0fb206be3c670a5ed3ca218bb245d215',1,'AndroidSerial::JniMethodCache']]],
+  ['writeasync_17',['writeAsync',['../structAndroidSerial_1_1JniMethodCache.html#a634e03397998d94d3f39782971690207',1,'AndroidSerial::JniMethodCache']]],
+  ['writewithprogress_18',['writeWithProgress',['../structAndroidSerial_1_1JniMethodCache.html#aaca52fd25c35c88926f3f939e6e6e0f9',1,'AndroidSerial::JniMethodCache']]],
   ['written_19',['written',['../structOnboardLogDownloadData.html#a2f6211188b717b53d59c3f6ef6d3eee2',1,'OnboardLogDownloadData']]],
   ['writtenbytes_20',['writtenBytes',['../structGPSConfigurationEvidence.html#a77c2a4e9b0cf185bb5ace09488e88f29',1,'GPSConfigurationEvidence::writtenBytes'],['../structGPSWriteResult.html#a631a6a201b936709a7fb043352a269cd',1,'GPSWriteResult::writtenBytes']]]
 ];

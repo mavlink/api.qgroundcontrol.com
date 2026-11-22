@@ -7,5 +7,5 @@ var UVCDevices_8h =
     [ "UVCDevices::formatName", "namespaceUVCDevices.html#a592d3a2ff25403cfa9376a851e70034f", null ],
     [ "UVCDevices::formatNames", "namespaceUVCDevices.html#a327eae6878080b53b3670ca94449976e", null ],
     [ "UVCDevices::pixelFormatName", "namespaceUVCDevices.html#aaf4dcb345632b23a9796fc8edf1ec536", null ],
-    [ "UVCDevices::requestPermission", "namespaceUVCDevices.html#ae90c17384d1ba2a59a8321c0a1a0fd57", null ]
+    [ "UVCDevices::requestPermission", "namespaceUVCDevices.html#a4273a1f32251909b7fc86035cfe0a4b3", null ]
 ];

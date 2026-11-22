@@ -107,7 +107,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Resolves and caches the <span class="tt">QRhi*</span> driving <a class="el" href="namespaceQGC.html">QGC</a>'s main scene graph; Qt has no global RHI accessor.  
+<p>Publishes the native device of the <span class="tt">QRhi</span> driving <a class="el" href="namespaceQGC.html">QGC</a>'s main scene graph; Qt has no global RHI accessor.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -116,43 +116,15 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a73fd0fc405f41931d20089596749d602" id="r_a73fd0fc405f41931d20089596749d602"><td class="memItemLeft" align="right" valign="top">QRhi *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73fd0fc405f41931d20089596749d602">cachedRhi</a> () noexcept</td></tr>
 <tr class="memitem:a86d550bfa8509fd17d282033d8f08f20" id="r_a86d550bfa8509fd17d282033d8f08f20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structQGCRhiCapture_1_1DeviceSnapshot.html">DeviceSnapshot</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86d550bfa8509fd17d282033d8f08f20">deviceSnapshot</a> () noexcept</td></tr>
 <tr class="memdesc:a86d550bfa8509fd17d282033d8f08f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the global snapshot. Atomic fields make individual reads thread-safe.  <br /></td></tr>
-<tr class="memitem:acf33991de88405ad74a2966adfc411ec" id="r_acf33991de88405ad74a2966adfc411ec"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf33991de88405ad74a2966adfc411ec">qtEglDisplay</a> () noexcept</td></tr>
+<tr class="memitem:a4b1380109ed27c6093994635d7c655f7" id="r_a4b1380109ed27c6093994635d7c655f7"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b1380109ed27c6093994635d7c655f7">qtEglDisplay</a> ()</td></tr>
+<tr class="memitem:a18b0daa656f7de62f8cc25345a86b603" id="r_a18b0daa656f7de62f8cc25345a86b603"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18b0daa656f7de62f8cc25345a86b603">setPublishedHandler</a> (void(*handler)()) noexcept</td></tr>
 <tr class="memitem:a7f32da349828923bad28d7086ce08085" id="r_a7f32da349828923bad28d7086ce08085"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f32da349828923bad28d7086ce08085">connectWindow</a> (QQuickWindow *window)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Resolves and caches the <span class="tt">QRhi*</span> driving <a class="el" href="namespaceQGC.html">QGC</a>'s main scene graph; Qt has no global RHI accessor. </p>
+<div class="textblock"><p>Publishes the native device of the <span class="tt">QRhi</span> driving <a class="el" href="namespaceQGC.html">QGC</a>'s main scene graph; Qt has no global RHI accessor. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a73fd0fc405f41931d20089596749d602" name="a73fd0fc405f41931d20089596749d602"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73fd0fc405f41931d20089596749d602">&#9670;&#160;</a></span>cachedRhi()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QRhi * QGCRhiCapture::cachedRhi </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Cached QRhi* maintained by sceneGraph signals. The QRhi is owned by the render thread and destroyed right after sceneGraphInvalidated clears this cache, so dereference it only on the render thread or the GUI thread; streaming and bus threads must use <a class="el" href="#a86d550bfa8509fd17d282033d8f08f20" title="Returns the global snapshot. Atomic fields make individual reads thread-safe.">deviceSnapshot()</a> instead. </p>
-
-<p class="definition">Definition at line <a class="el" href="QGCRhiCapture_8cc_source.html#l00161">161</a> of file <a class="el" href="QGCRhiCapture_8cc_source.html">QGCRhiCapture.cc</a>.</p>
-
-</div>
-</div>
 <a id="a7f32da349828923bad28d7086ce08085" name="a7f32da349828923bad28d7086ce08085"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f32da349828923bad28d7086ce08085">&#9670;&#160;</a></span>connectWindow()</h2>
 
@@ -167,13 +139,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Call once from the GUI thread once the main QQuickWindow exists; wires sceneGraph signals to maintain <a class="el" href="#a73fd0fc405f41931d20089596749d602">cachedRhi()</a> and the device snapshot. </p>
+<p>Call once from the GUI thread once the main QQuickWindow exists; wires sceneGraph signals to maintain the device snapshot. </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCRhiCapture_8cc_source.html#l00194">194</a> of file <a class="el" href="QGCRhiCapture_8cc_source.html">QGCRhiCapture.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCRhiCapture_8cc_source.html#l00239">239</a> of file <a class="el" href="QGCRhiCapture_8cc_source.html">QGCRhiCapture.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="HwBuffers_8cc_source.html#l00085">HwBuffers::resetCachedGpuResources()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="HwBuffers_8cc_source.html#l00124">HwBuffers::connectMainWindow()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HwBuffers_8cc_source.html#l00173">HwBuffers::connectMainWindow()</a>.</p>
 
 </div>
 </div>
@@ -202,14 +172,38 @@ Functions</h2></td></tr>
 
 <p>Returns the global snapshot. Atomic fields make individual reads thread-safe. </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCRhiCapture_8cc_source.html#l00166">166</a> of file <a class="el" href="QGCRhiCapture_8cc_source.html">QGCRhiCapture.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCRhiCapture_8cc_source.html#l00199">199</a> of file <a class="el" href="QGCRhiCapture_8cc_source.html">QGCRhiCapture.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstQgcRenderTarget_8cc_source.html#l00070">GstQgc::currentRenderTarget()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstQgcRenderTarget_8cc_source.html#l00070">GstQgc::currentRenderTarget()</a>, <a class="el" href="HwBuffers_8cc_source.html#l00247">HwBuffers::d3d11OpensD3D12()</a>, <a class="el" href="HwBuffers_8cc_source.html#l00206">HwBuffers::dmaBufImportDisplay()</a>, and <a class="el" href="HwBuffers_8cc_source.html#l00231">HwBuffers::graphicsAdapterLuid()</a>.</p>
 
 </div>
 </div>
-<a id="acf33991de88405ad74a2966adfc411ec" name="acf33991de88405ad74a2966adfc411ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf33991de88405ad74a2966adfc411ec">&#9670;&#160;</a></span>qtEglDisplay()</h2>
+<a id="a4b1380109ed27c6093994635d7c655f7" name="a4b1380109ed27c6093994635d7c655f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b1380109ed27c6093994635d7c655f7">&#9670;&#160;</a></span>qtEglDisplay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * QGCRhiCapture::qtEglDisplay </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The EGLDisplay (as void*) Qt's OpenGL renders with; null when Qt's OpenGL doesn't run on EGL (GLX, WGL, CGL, no OpenGL) or that isn't known yet. Taken from Qt's global share context, else from the platform integration (asked on the GUI thread only), else from the scene graph's OpenGL context once it runs. Any thread. </p>
+
+<p class="definition">Definition at line <a class="el" href="QGCRhiCapture_8cc_source.html#l00211">211</a> of file <a class="el" href="QGCRhiCapture_8cc_source.html">QGCRhiCapture.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="QGCApplication_8h_source.html#l00033">qGuiApp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GstQgcRenderTarget_8cc_source.html#l00070">GstQgc::currentRenderTarget()</a>, and <a class="el" href="HwBuffers_8cc_source.html#l00206">HwBuffers::dmaBufImportDisplay()</a>.</p>
+
+</div>
+</div>
+<a id="a18b0daa656f7de62f8cc25345a86b603" name="a18b0daa656f7de62f8cc25345a86b603"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18b0daa656f7de62f8cc25345a86b603">&#9670;&#160;</a></span>setPublishedHandler()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,9 +212,9 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void * QGCRhiCapture::qtEglDisplay </td>
+          <td class="memname">void QGCRhiCapture::setPublishedHandler </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">void(*</td>          <td class="paramname"><span class="paramname"><em>handler&#160;</em></span>)()</td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -230,13 +224,11 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The EGLDisplay (as void*) Qt's OpenGL renders with; null when Qt's OpenGL doesn't run on EGL (GLX, WGL, CGL, no OpenGL) or that isn't known yet. Taken from Qt's global share context, else from the platform integration (asked on the GUI thread only), else from the scene graph's OpenGL context once it runs. Any thread. </p>
+<p>Has <code class="param">handler</code> called after each publication of a device in <a class="el" href="#a86d550bfa8509fd17d282033d8f08f20" title="Returns the global snapshot. Atomic fields make individual reads thread-safe.">deviceSnapshot()</a>, on the thread that publishes it (the render thread); null for none. </p>
 
-<p class="definition">Definition at line <a class="el" href="QGCRhiCapture_8cc_source.html#l00171">171</a> of file <a class="el" href="QGCRhiCapture_8cc_source.html">QGCRhiCapture.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QGCRhiCapture_8cc_source.html#l00234">234</a> of file <a class="el" href="QGCRhiCapture_8cc_source.html">QGCRhiCapture.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCApplication_8h_source.html#l00033">qGuiApp</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="GstQgcRenderTarget_8cc_source.html#l00070">GstQgc::currentRenderTarget()</a>, and <a class="el" href="HwBuffers_8cc_source.html#l00157">HwBuffers::dmaBufImportDisplay()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HwBuffers_8cc_source.html#l00240">HwBuffers::setGraphicsDevicePublishedHandler()</a>.</p>
 
 </div>
 </div>

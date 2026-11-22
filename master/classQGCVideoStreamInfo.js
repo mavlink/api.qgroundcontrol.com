@@ -1,7 +1,6 @@
 var classQGCVideoStreamInfo =
 [
     [ "QGCVideoStreamInfo", "classQGCVideoStreamInfo.html#a8c72ff8bdbf5ed5745c8075d6b99a0bb", null ],
-    [ "~QGCVideoStreamInfo", "classQGCVideoStreamInfo.html#a74782fe7706371ec9dc13b1d65857480", null ],
     [ "aspectRatio", "classQGCVideoStreamInfo.html#a8c1f98c3d42c08031b359cb87908ee32", null ],
     [ "bitrate", "classQGCVideoStreamInfo.html#aea9c0f766c4c2087a64c40b31479108b", null ],
     [ "encoding", "classQGCVideoStreamInfo.html#a9788482ddad8c9a428c7b31551c73341", null ],

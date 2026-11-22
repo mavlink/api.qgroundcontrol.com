@@ -3,7 +3,7 @@ var searchData=
   ['jamflags_0',['jamFlags',['../structUBX_1_1SecSig.html#a77e1a778712d80cb40950099f999a0c7',1,'UBX::SecSig']]],
   ['jamming_1',['jamming',['../structGPSIntegrityReport.html#a25bf03fde802487e313fdfd0b9cf5c96',1,'GPSIntegrityReport']]],
   ['jitterbuffer_2',['jitterBuffer',['../structGStreamer_1_1SourceFactory_1_1Config.html#acfca5990a20c077f93f66da72ff060e1',1,'GStreamer::SourceFactory::Config']]],
-  ['jitterms_3',['jitterMs',['../structVideoStreamStats.html#aaf2bef729d8a543170d928e15a59e4d6',1,'VideoStreamStats']]],
+  ['jitterms_3',['jitterMs',['../structGStreamer_1_1RtpPacketCounts.html#ad7942b663f13cb59a9c6caaac92c443b',1,'GStreamer::RtpPacketCounts::jitterMs'],['../structVideoStreamStats.html#aaf2bef729d8a543170d928e15a59e4d6',1,'VideoStreamStats::jitterMs']]],
   ['jsoncirclekey_4',['jsonCircleKey',['../classQGCMapCircle.html#a5ffbc322cc5f11a251c50f11a561aa7b',1,'QGCMapCircle']]],
   ['jsoncomplexitemtypekey_5',['jsonComplexItemTypeKey',['../classComplexMissionItem.html#a4111791e69fcb570ffe33657be8b75e0',1,'ComplexMissionItem']]],
   ['jsoncomplexitemtypevalue_6',['jsonComplexItemTypeValue',['../classCorridorScanComplexItem.html#ae8435312bfac18506cffa7b87d11c519',1,'CorridorScanComplexItem::jsonComplexItemTypeValue'],['../classFixedWingLandingComplexItem.html#a35b2ba21f619ee9d58819998d0902ff1',1,'FixedWingLandingComplexItem::jsonComplexItemTypeValue'],['../classStructureScanComplexItem.html#a7619796ec3c5b54ab347290aff903590',1,'StructureScanComplexItem::jsonComplexItemTypeValue'],['../classSurveyComplexItem.html#a2acb951261c8ae212a147587178ed9dd',1,'SurveyComplexItem::jsonComplexItemTypeValue'],['../classVTOLLandingComplexItem.html#af7ce3792c41f7f765d4f2699dfbcf0d8',1,'VTOLLandingComplexItem::jsonComplexItemTypeValue']]],

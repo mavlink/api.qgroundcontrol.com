@@ -124,7 +124,6 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a280b17be1f6abf92fb82d36c91ca5bad" id="r_a280b17be1f6abf92fb82d36c91ca5bad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a280b17be1f6abf92fb82d36c91ca5bad">statsChanged</a> ()</td></tr>
-<tr class="memitem:a1fb7e1b969b0b7d1792603ee8846a6fa" id="r_a1fb7e1b969b0b7d1792603ee8846a6fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fb7e1b969b0b7d1792603ee8846a6fa">cameraNameChanged</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -138,15 +137,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a286efd6b47003dd3497f27a4717b7ddf" id="r_a286efd6b47003dd3497f27a4717b7ddf"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a286efd6b47003dd3497f27a4717b7ddf">videoSize</a> () const</td></tr>
 <tr class="memitem:a10ab4c6e92d9ddc9f8b4017a1f999584" id="r_a10ab4c6e92d9ddc9f8b4017a1f999584"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10ab4c6e92d9ddc9f8b4017a1f999584">cameraFrameRate</a> () const</td></tr>
 <tr class="memdesc:a10ab4c6e92d9ddc9f8b4017a1f999584"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frame rate the camera was set up for; 0 while unknown.  <br /></td></tr>
-<tr class="memitem:a60f296a993e6b163c2cf5be13d55bc86" id="r_a60f296a993e6b163c2cf5be13d55bc86"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60f296a993e6b163c2cf5be13d55bc86">cameraName</a> () const</td></tr>
-<tr class="memdesc:a60f296a993e6b163c2cf5be13d55bc86"><td class="mdescLeft">&#160;</td><td class="mdescRight">The camera's description; empty while no camera is attached.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a6cfb25e93fd9d31498f1182339d0155a" id="r_a6cfb25e93fd9d31498f1182339d0155a"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cfb25e93fd9d31498f1182339d0155a">UVCStreamMonitorTest</a></td></tr>
+<tr class="memitem:a7280235664cbda3c37b2c2fda0b9e3c0" id="r_a7280235664cbda3c37b2c2fda0b9e3c0"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7280235664cbda3c37b2c2fda0b9e3c0">VideoManagerTest</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Measures the USB camera on display, from the frames its capture session hands the video sink, about once a second while frames arrive. <a class="el" href="classUVCCameraController.html">UVCCameraController</a> attaches its camera and the sink of the registered VideoOutput.</p>
+<div class="textblock"><p>Measures the USB camera on display, from the frames its capture session hands the video sink, about once a second while frames arrive. <a class="el" href="classUVCCameraController.html">UVCCameraController</a> attaches its camera and the sink of its VideoOutput, and publishes the stats as its own.</p>
 <p>stats fills valid, fps, codec (the camera's capture format, e.g. "MJPEG" or "YUYV"), gpuPath ("CPU" for frames in memory, "GPU" for textures) and uptimeMs; the network stream fields keep their defaults. </p>
 
 <p class="definition">Definition at line <a class="el" href="UVCStreamMonitor_8h_source.html#l00027">27</a> of file <a class="el" href="UVCStreamMonitor_8h_source.html">UVCStreamMonitor.h</a>.</p>
@@ -180,9 +178,9 @@ Friends</h2></td></tr>
 
 <p><code class="param">clock</code> defaults to the steady clock. </p>
 
-<p class="definition">Definition at line <a class="el" href="UVCStreamMonitor_8cc_source.html#l00028">28</a> of file <a class="el" href="UVCStreamMonitor_8cc_source.html">UVCStreamMonitor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UVCStreamMonitor_8cc_source.html#l00022">22</a> of file <a class="el" href="UVCStreamMonitor_8cc_source.html">UVCStreamMonitor.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UVCStreamMonitor_8h_source.html#l00038">UVCStreamMonitorTest</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UVCStreamMonitor_8h_source.html#l00038">VideoManagerTest</a>.</p>
 
 </div>
 </div>
@@ -208,7 +206,7 @@ Friends</h2></td></tr>
 
 <p>Measures the frames <code class="param">videoSink</code> receives from <code class="param">camera</code> (optional), in place of any other sink attached. </p>
 
-<p class="definition">Definition at line <a class="el" href="UVCStreamMonitor_8cc_source.html#l00037">37</a> of file <a class="el" href="UVCStreamMonitor_8cc_source.html">UVCStreamMonitor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UVCStreamMonitor_8cc_source.html#l00031">31</a> of file <a class="el" href="UVCStreamMonitor_8cc_source.html">UVCStreamMonitor.cc</a>.</p>
 
 </div>
 </div>
@@ -241,60 +239,6 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a60f296a993e6b163c2cf5be13d55bc86" name="a60f296a993e6b163c2cf5be13d55bc86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60f296a993e6b163c2cf5be13d55bc86">&#9670;&#160;</a></span>cameraName()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QString UVCStreamMonitor::cameraName </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>The camera's description; empty while no camera is attached. </p>
-
-<p class="definition">Definition at line <a class="el" href="UVCStreamMonitor_8h_source.html#l00057">57</a> of file <a class="el" href="UVCStreamMonitor_8h_source.html">UVCStreamMonitor.h</a>.</p>
-
-</div>
-</div>
-<a id="a1fb7e1b969b0b7d1792603ee8846a6fa" name="a1fb7e1b969b0b7d1792603ee8846a6fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1fb7e1b969b0b7d1792603ee8846a6fa">&#9670;&#160;</a></span>cameraNameChanged</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void UVCStreamMonitor::cameraNameChanged </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a488e807dd78d544c8fd510d219857f93" name="a488e807dd78d544c8fd510d219857f93"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a488e807dd78d544c8fd510d219857f93">&#9670;&#160;</a></span>detach()</h2>
 
@@ -312,7 +256,7 @@ Friends</h2></td></tr>
 
 <p>Stops measuring. </p>
 
-<p class="definition">Definition at line <a class="el" href="UVCStreamMonitor_8cc_source.html#l00059">59</a> of file <a class="el" href="UVCStreamMonitor_8cc_source.html">UVCStreamMonitor.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="UVCStreamMonitor_8cc_source.html#l00049">49</a> of file <a class="el" href="UVCStreamMonitor_8cc_source.html">UVCStreamMonitor.cc</a>.</p>
 
 </div>
 </div>
@@ -366,7 +310,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="UVCCameraController_8cc_source.html#l00050">UVCCameraController::UVCCameraController()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UVCCameraController_8cc_source.html#l00055">UVCCameraController::UVCCameraController()</a>.</p>
 
 </div>
 </div>
@@ -418,11 +362,39 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="UVCStreamMonitor_8h_source.html#l00037">37</a> of file <a class="el" href="UVCStreamMonitor_8h_source.html">UVCStreamMonitor.h</a>.</p>
+
+<p class="reference">References <a class="el" href="UVCStreamMonitor_8h_source.html#l00037">UVCStreamMonitorTest</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="UVCStreamMonitor_8h_source.html#l00037">UVCStreamMonitorTest</a>.</p>
+
+</div>
+</div>
+<a id="a7280235664cbda3c37b2c2fda0b9e3c0" name="a7280235664cbda3c37b2c2fda0b9e3c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7280235664cbda3c37b2c2fda0b9e3c0">&#9670;&#160;</a></span>VideoManagerTest</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class VideoManagerTest</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 <p class="definition">Definition at line <a class="el" href="UVCStreamMonitor_8h_source.html#l00038">38</a> of file <a class="el" href="UVCStreamMonitor_8h_source.html">UVCStreamMonitor.h</a>.</p>
 
-<p class="reference">References <a class="el" href="UVCStreamMonitor_8cc_source.html#l00028">UVCStreamMonitor()</a>, and <a class="el" href="UVCStreamMonitor_8h_source.html#l00038">UVCStreamMonitorTest</a>.</p>
+<p class="reference">References <a class="el" href="UVCStreamMonitor_8cc_source.html#l00022">UVCStreamMonitor()</a>, and <a class="el" href="UVCStreamMonitor_8h_source.html#l00038">VideoManagerTest</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UVCStreamMonitor_8h_source.html#l00038">UVCStreamMonitorTest</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UVCStreamMonitor_8h_source.html#l00038">VideoManagerTest</a>.</p>
 
 </div>
 </div>

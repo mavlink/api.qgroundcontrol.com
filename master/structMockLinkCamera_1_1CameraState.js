@@ -24,5 +24,6 @@ var structMockLinkCamera_1_1CameraState =
     [ "trackRecBottomY", "structMockLinkCamera_1_1CameraState.html#ab070e517505a0db687e112f2c3f59e79", null ],
     [ "trackRecTopX", "structMockLinkCamera_1_1CameraState.html#a6b2506df765fca9b999abac1a1978e4d", null ],
     [ "trackRecTopY", "structMockLinkCamera_1_1CameraState.html#a0542d9b7164e876e152d2a485dc7ad16", null ],
+    [ "transmittedStreams", "structMockLinkCamera_1_1CameraState.html#ad5aa8dd2b4523f2075418dbe1910b8ca", null ],
     [ "zoomLevel", "structMockLinkCamera_1_1CameraState.html#a073fe78c923093282f35fdf3c7016ded", null ]
 ];

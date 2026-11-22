@@ -10,7 +10,7 @@ var namespaceGstHwPathTelemetry =
       [ "ImageCacheHits", "namespaceGstHwPathTelemetry.html#a16e9937fb520a82225bf0cebd6ca3857a7b1c3ca0ca59de08609c07038754fde0", null ],
       [ "ImageCacheMisses", "namespaceGstHwPathTelemetry.html#a16e9937fb520a82225bf0cebd6ca3857ad756f5ef82f044f784d2634ffd7fd108", null ],
       [ "ProducerFenceTimeouts", "namespaceGstHwPathTelemetry.html#a16e9937fb520a82225bf0cebd6ca3857a5ca57e12d77adc4f2e3dd02796b62161", null ],
-      [ "_Count", "namespaceGstHwPathTelemetry.html#a16e9937fb520a82225bf0cebd6ca3857add3ff01c06a07a752666c18e1f7efaf8", null ]
+      [ "Count", "namespaceGstHwPathTelemetry.html#a16e9937fb520a82225bf0cebd6ca3857ae93f994f01c537c4e2f7d8528c3eb5e9", null ]
     ] ],
     [ "HwFallbackReason", "namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeaf", [
       [ "NoExt", "namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafaf59f07edfa950dcaae336d6cb6b197b0", null ],
@@ -20,11 +20,9 @@ var namespaceGstHwPathTelemetry =
       [ "MapFailed", "namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa14335fc308a018e6718209cf0f1c7960", null ],
       [ "VulkanNoSync", "namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa3d3cd09d7403cd4d764353cf67f77289", null ],
       [ "ImportUnsupported", "namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa4aa02d4b768781ae5b883e8f5337231f", null ],
-      [ "_Count", "namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafadd3ff01c06a07a752666c18e1f7efaf8", null ]
+      [ "Count", "namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafae93f994f01c537c4e2f7d8528c3eb5e9", null ]
     ] ],
     [ "fail", "namespaceGstHwPathTelemetry.html#a06ec67426a7d3836d32dec7e33f58ee0", null ],
-    [ "peek", "namespaceGstHwPathTelemetry.html#ae84e45e0d0a746b4fa355a1a29990101", null ],
-    [ "peekFallbackReason", "namespaceGstHwPathTelemetry.html#a38a2998ce9444f774b13519fcb575bd7", null ],
     [ "peekMapDurationUsEwma", "namespaceGstHwPathTelemetry.html#a4f13a6d54ae7adc92bd749440c5bb8e8", null ],
     [ "record", "namespaceGstHwPathTelemetry.html#a4919a882459cebd07d69101db6fb614c", null ],
     [ "recordFallbackReason", "namespaceGstHwPathTelemetry.html#a18246831e1ea98aeeac5c4d9394d6374", null ],

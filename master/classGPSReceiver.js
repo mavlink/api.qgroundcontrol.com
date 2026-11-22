@@ -31,6 +31,7 @@ var classGPSReceiver =
     [ "receiverIdentity", "classGPSReceiver.html#afea1470568adecc0273049e5a8d68692", null ],
     [ "reconnecting", "classGPSReceiver.html#a8a06320a35f4b40c2558a3e394b74354", null ],
     [ "serialBaudRates", "classGPSReceiver.html#a2bb83681ff16e3ff8e60f24d28121cfe", null ],
+    [ "serialDeviceRenamed", "classGPSReceiver.html#a9310f707a45a4994232add206586d1a4", null ],
     [ "serialPortEntries", "classGPSReceiver.html#a78b0b20c2419a70fdd4e6771300a79b4", null ],
     [ "serialPortEntriesChanged", "classGPSReceiver.html#a6d0d43f256a9cdd8e37bd10fa6e07024", null ],
     [ "serialSupported", "classGPSReceiver.html#ad3a9b1fdee3f83c6b54579adbd97b69b", null ],

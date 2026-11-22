@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/VideoManager/GStreamer/HwBuffers/common/HwBuffers.cc File Reference</title>
+<title>QGroundControl: src/VideoManager/GStreamer/HwBuffers/HwBuffers.cc File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="jquery.js"></script>
@@ -107,8 +107,11 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="HwBuffers_8h_source.html">HwBuffers.h</a>&quot;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;atomic&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;QtCore/QCoreApplication&gt;</code><br />
 <code>#include &lt;QtQuick/QQuickWindow&gt;</code><br />
 <code>#include &lt;QtQuick/QSGRendererInterface&gt;</code><br />
@@ -128,18 +131,23 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a98ffeecc94f8512ac037380ed1d504c2" id="r_a98ffeecc94f8512ac037380ed1d504c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a98ffeecc94f8512ac037380ed1d504c2">HwBuffers::onPipelineError</a> (const GError *error, const gchar *debug) noexcept</td></tr>
 <tr class="memitem:a2992e0eac9cc13ef282d784f26378e5a" id="r_a2992e0eac9cc13ef282d784f26378e5a"><td class="memItemLeft" align="right" valign="top">GstBusSyncReply&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a2992e0eac9cc13ef282d784f26378e5a">HwBuffers::onBusSyncMessage</a> (GstMessage *msg) noexcept</td></tr>
-<tr class="memitem:a4e4016e32dd396eae3a94db89b904dc6" id="r_a4e4016e32dd396eae3a94db89b904dc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a4e4016e32dd396eae3a94db89b904dc6">HwBuffers::onPipelineRestart</a> () noexcept</td></tr>
-<tr class="memitem:a6f2ab6a1aef22e4d4d0d45052ac3ff58" id="r_a6f2ab6a1aef22e4d4d0d45052ac3ff58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a6f2ab6a1aef22e4d4d0d45052ac3ff58">HwBuffers::resetCachedGpuResources</a> () noexcept</td></tr>
-<tr class="memitem:a0f53e9673ded5a26c20941c95e5d6b30" id="r_a0f53e9673ded5a26c20941c95e5d6b30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a0f53e9673ded5a26c20941c95e5d6b30">HwBuffers::configureQtGraphics</a> (bool softwareRendering) noexcept</td></tr>
-<tr class="memitem:a911bee0f3e52e59ad896a0dbcffd5eae" id="r_a911bee0f3e52e59ad896a0dbcffd5eae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a911bee0f3e52e59ad896a0dbcffd5eae">HwBuffers::connectMainWindow</a> (QQuickWindow *window) noexcept</td></tr>
+<tr class="memitem:aa8588b93e3f268c6a902368bb05221b0" id="r_aa8588b93e3f268c6a902368bb05221b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#aa8588b93e3f268c6a902368bb05221b0">HwBuffers::onPipelineRestart</a> ()</td></tr>
+<tr class="memitem:a5aa21558cf9a1b50a000b30291d2f0e5" id="r_a5aa21558cf9a1b50a000b30291d2f0e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a5aa21558cf9a1b50a000b30291d2f0e5">HwBuffers::resetCachedGpuResources</a> ()</td></tr>
+<tr class="memitem:a4370e7716fed38ac88430277a5fb9e57" id="r_a4370e7716fed38ac88430277a5fb9e57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a4370e7716fed38ac88430277a5fb9e57">HwBuffers::onGraphicsDeviceRemoved</a> ()</td></tr>
+<tr class="memitem:a95dc6e1ee985ca7bf23218371709f173" id="r_a95dc6e1ee985ca7bf23218371709f173"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a95dc6e1ee985ca7bf23218371709f173">HwBuffers::graphicsDeviceLost</a> () noexcept</td></tr>
+<tr class="memitem:a6a5a83b554d68b598017ffe00978ac31" id="r_a6a5a83b554d68b598017ffe00978ac31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a6a5a83b554d68b598017ffe00978ac31">HwBuffers::configureQtGraphics</a> (bool softwareRendering)</td></tr>
+<tr class="memitem:ad596d1597afb7badf7a3148ceeb371a4" id="r_ad596d1597afb7badf7a3148ceeb371a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#ad596d1597afb7badf7a3148ceeb371a4">HwBuffers::softwareRenderingRequested</a> () noexcept</td></tr>
+<tr class="memdesc:ad596d1597afb7badf7a3148ceeb371a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">What <a class="el" href="namespaceHwBuffers.html#a6a5a83b554d68b598017ffe00978ac31">configureQtGraphics()</a> was told: the user asked for software rendering (&ndash;swrast). Safe off the GUI thread.  <br /></td></tr>
+<tr class="memitem:a67c5d74dd5b7b00271f9d21244b69c7f" id="r_a67c5d74dd5b7b00271f9d21244b69c7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a67c5d74dd5b7b00271f9d21244b69c7f">HwBuffers::connectMainWindow</a> (QQuickWindow *window)</td></tr>
 <tr class="memitem:ad7482e3e15db9cdb4147d0c105bdf496" id="r_ad7482e3e15db9cdb4147d0c105bdf496"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHwVideoBufferContext.html">HwVideoBufferContext</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#ad7482e3e15db9cdb4147d0c105bdf496">HwBuffers::makeAdapterContext</a> (bool gpuEnabled) noexcept</td></tr>
 <tr class="memitem:a5a3ccb8436a29a81a6862b5311a8845b" id="r_a5a3ccb8436a29a81a6862b5311a8845b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a5a3ccb8436a29a81a6862b5311a8845b">HwBuffers::dmaBufImportDisplay</a> () noexcept</td></tr>
-<tr class="memitem:a27a0a9a44a70e27e6ff1af895a6add09" id="r_a27a0a9a44a70e27e6ff1af895a6add09"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a27a0a9a44a70e27e6ff1af895a6add09">HwBuffers::answerSinkBinContextQuery</a> (GstQuery *query) noexcept</td></tr>
-<tr class="memdesc:a27a0a9a44a70e27e6ff1af895a6add09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Synchronously answer GST_QUERY_CONTEXT through the GPU paths' context bridges; false -&gt; let bus NEED_CONTEXT run.  <br /></td></tr>
+<tr class="memitem:a017f8ae136772a0de9162731559a844d" id="r_a017f8ae136772a0de9162731559a844d"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a017f8ae136772a0de9162731559a844d">HwBuffers::graphicsAdapterLuid</a> () noexcept</td></tr>
+<tr class="memitem:a55e7c8d805bf31a0bc18581c428d5cce" id="r_a55e7c8d805bf31a0bc18581c428d5cce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a55e7c8d805bf31a0bc18581c428d5cce">HwBuffers::setGraphicsDevicePublishedHandler</a> (void(*handler)()) noexcept</td></tr>
+<tr class="memitem:a0c2afd1d62ae847d97a1d1347c431a3b" id="r_a0c2afd1d62ae847d97a1d1347c431a3b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a0c2afd1d62ae847d97a1d1347c431a3b">HwBuffers::d3d11OpensD3D12</a> () noexcept</td></tr>
+<tr class="memitem:acf5032952f531181f2bfe940a5d9dd54" id="r_acf5032952f531181f2bfe940a5d9dd54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#acf5032952f531181f2bfe940a5d9dd54">HwBuffers::answerSinkBinContextQuery</a> (GstQuery *query, <a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *sink) noexcept</td></tr>
 <tr class="memitem:a14765eec880891c0651a2f17ceada160" id="r_a14765eec880891c0651a2f17ceada160"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a14765eec880891c0651a2f17ceada160">HwBuffers::proposeDeviceBoundPool</a> (GstQuery *query, GstCaps *caps, const GstVideoInfo *vinfo, gsize size, guint minBuffers) noexcept</td></tr>
-<tr class="memitem:a5bcc14e4738f9c8b47e6eaf161c6eeaa" id="r_a5bcc14e4738f9c8b47e6eaf161c6eeaa"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a5bcc14e4738f9c8b47e6eaf161c6eeaa">HwBuffers::extraPathStatsSince</a> (const <a class="el" href="structGstHwPathTelemetry_1_1Snapshot.html">GstHwPathTelemetry::Snapshot</a> &amp;baseline) noexcept</td></tr>
+<tr class="memitem:a7f48de0f932b2cf868be5e55d47a892d" id="r_a7f48de0f932b2cf868be5e55d47a892d"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceHwBuffers.html#a7f48de0f932b2cf868be5e55d47a892d">HwBuffers::extraPathStatsSince</a> (const <a class="el" href="structGstHwPathTelemetry_1_1Snapshot.html">GstHwPathTelemetry::Snapshot</a> &amp;baseline)</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -154,7 +162,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_e70d0c0f198ee0280d1f11c0ba8073e0.html">VideoManager</a></li><li class="navelem"><a href="dir_b576ff9da4174a54288db11cc55a2673.html">GStreamer</a></li><li class="navelem"><a href="dir_7009dfa9a99377bcb908b8b6c443db90.html">HwBuffers</a></li><li class="navelem"><a href="dir_03928ed366b7413be50a162da6fa6250.html">common</a></li><li class="navelem"><a href="HwBuffers_8cc.html">HwBuffers.cc</a></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_e70d0c0f198ee0280d1f11c0ba8073e0.html">VideoManager</a></li><li class="navelem"><a href="dir_b576ff9da4174a54288db11cc55a2673.html">GStreamer</a></li><li class="navelem"><a href="dir_7009dfa9a99377bcb908b8b6c443db90.html">HwBuffers</a></li><li class="navelem"><a href="HwBuffers_8cc.html">HwBuffers.cc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

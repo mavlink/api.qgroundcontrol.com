@@ -14,6 +14,8 @@ var hierarchy =
     [ "AirframeComponentAirframes", "classAirframeComponentAirframes.html", null ],
     [ "AirframeComponentAirframes::AirframeInfo_t", "structAirframeComponentAirframes_1_1AirframeInfo__t.html", null ],
     [ "AirframeComponentAirframes::AirframeType_t", "structAirframeComponentAirframes_1_1AirframeType__t.html", null ],
+    [ "AndroidSerialBackend", "classAndroidSerialBackend.html", null ],
+    [ "AndroidSerialBackendHost", "classAndroidSerialBackendHost.html", null ],
     [ "GPSIntegrityReport::Antenna", "structGPSIntegrityReport_1_1Antenna.html", null ],
     [ "APMCopterMode", "structAPMCopterMode.html", null ],
     [ "APMCustomMode", "structAPMCustomMode.html", null ],
@@ -72,6 +74,7 @@ var hierarchy =
     [ "TransectStyleComplexItem::CoordInfo_t", "structTransectStyleComplexItem_1_1CoordInfo__t.html", null ],
     [ "VideoStreamStatsMeter::Counters", "structVideoStreamStatsMeter_1_1Counters.html", null ],
     [ "CpuVideoFramePool", "classCpuVideoFramePool.html", null ],
+    [ "QSerialPortInfo::Data", "structQSerialPortInfo_1_1Data.html", null ],
     [ "DatabaseResult", "structDatabaseResult.html", null ],
     [ "ulog_cpp::DataHandlerInterface", null, [
       [ "PX4ULogUtility::MessageHandler", "classPX4ULogUtility_1_1MessageHandler.html", null ],
@@ -110,6 +113,7 @@ var hierarchy =
     [ "UBX::Frame", "structUBX_1_1Frame.html", null ],
     [ "UBX::FrameDecoder", "classUBX_1_1FrameDecoder.html", null ],
     [ "GstQgc::FrameDelivery", "classGstQgc_1_1FrameDelivery.html", null ],
+    [ "FrameGeometry", "structFrameGeometry.html", null ],
     [ "CpuVideoFramePool::FrameMapping", "classCpuVideoFramePool_1_1FrameMapping.html", null ],
     [ "GPSStreamDemux::Framer", "classGPSStreamDemux_1_1Framer.html", null ],
     [ "NMEA::Framer", "classNMEA_1_1Framer.html", null ],
@@ -231,9 +235,36 @@ var hierarchy =
     [ "VideoBackend::InitParams", "structVideoBackend_1_1InitParams.html", null ],
     [ "SurfaceAnalysis::InPatchStep", "structSurfaceAnalysis_1_1InPatchStep.html", null ],
     [ "GPSIntegrityReport::Jamming", "structGPSIntegrityReport_1_1Jamming.html", null ],
-    [ "AndroidSerial::JniContext", "structAndroidSerial_1_1JniContext.html", null ],
+    [ "AndroidSerial::JavaBinding&lt; Id &gt;", "structAndroidSerial_1_1JavaBinding.html", null ],
+    [ "AndroidSerial::JavaBinding&lt; jfieldID &gt;", "structAndroidSerial_1_1JavaBinding.html", [
+      [ "AndroidSerial::JavaField< jstring >", "structAndroidSerial_1_1JavaField.html", null ],
+      [ "AndroidSerial::JavaField< jint >", "structAndroidSerial_1_1JavaField.html", null ],
+      [ "AndroidSerial::JavaField< jboolean >", "structAndroidSerial_1_1JavaField.html", null ],
+      [ "AndroidSerial::JavaField< T >", "structAndroidSerial_1_1JavaField.html", null ]
+    ] ],
+    [ "AndroidSerial::JavaBinding&lt; jmethodID &gt;", "structAndroidSerial_1_1JavaBinding.html", [
+      [ "AndroidSerial::JavaMethod< QtJniTypes::QGCUsbSerialPortInfo[]>", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jboolean, jstring >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jlong, jstring >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jstring >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jint, jlong, jbyteArray, jint, jint, jint, jstring >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jint, jstring, jlong >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jint, jlong >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jboolean, jlong >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jbyteArray, jlong, jint, jint >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jint, jlong, jbyteArray, jint, jint >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jint, jlong, jbyteArray, jint >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jint, jlong, jint, jint, jint, jint >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jint, jlong, jint >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jintArray, jlong >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jint, jlong, jboolean >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< jint, jlong, jboolean, jboolean >", "structAndroidSerial_1_1JavaMethod.html", null ],
+      [ "AndroidSerial::JavaMethod< Ret, Args >", "structAndroidSerial_1_1JavaMethod.html", null ]
+    ] ],
+    [ "AndroidSerial::JavaBindingList&lt; Id &gt;", "structAndroidSerial_1_1JavaBindingList.html", null ],
     [ "AndroidInterface::JniLocalRef&lt; T &gt;", "classAndroidInterface_1_1JniLocalRef.html", null ],
     [ "AndroidSerial::JniMethodCache", "structAndroidSerial_1_1JniMethodCache.html", null ],
+    [ "AndroidSerial::JniPortInfoFields", "structAndroidSerial_1_1JniPortInfoFields.html", null ],
     [ "QGCCorePlugin::JoystickAction", "structQGCCorePlugin_1_1JoystickAction.html", null ],
     [ "SDLJoystick::JoystickLock", "classSDLJoystick_1_1JoystickLock.html", null ],
     [ "JsonParsing::KeyValidateInfo", "structJsonParsing_1_1KeyValidateInfo.html", null ],
@@ -263,6 +294,7 @@ var hierarchy =
     [ "Wire::Layout&lt; UBX::NavSvinfo &gt;", "structWire_1_1Layout_3_01UBX_1_1NavSvinfo_01_4.html", null ],
     [ "Wire::Layout&lt; UBX::NavSvinfoChannel &gt;", "structWire_1_1Layout_3_01UBX_1_1NavSvinfoChannel_01_4.html", null ],
     [ "Wire::Layout&lt; UBX::SecSig &gt;", "structWire_1_1Layout_3_01UBX_1_1SecSig_01_4.html", null ],
+    [ "FactValueGrid::LayoutFact", "structFactValueGrid_1_1LayoutFact.html", null ],
     [ "NMEA::LineFramer", "classNMEA_1_1LineFramer.html", null ],
     [ "DecodingBranch::Listener", "classDecodingBranch_1_1Listener.html", [
       [ "PipelineSession::Listener", "classPipelineSession_1_1Listener.html", [
@@ -351,6 +383,7 @@ var hierarchy =
     [ "MAVLinkStreamConfig", "classMAVLinkStreamConfig.html", null ],
     [ "Wire::detail::MemberPointer&lt; typename &gt;", "structWire_1_1detail_1_1MemberPointer.html", null ],
     [ "Wire::detail::MemberPointer&lt; Value Class::* &gt;", "structWire_1_1detail_1_1MemberPointer_3_01Value_01Class_1_1_5_01_4.html", null ],
+    [ "GStreamer::MessageError", "structGStreamer_1_1MessageError.html", null ],
     [ "APMDataFlashUtility::MessageFormat", "structAPMDataFlashUtility_1_1MessageFormat.html", null ],
     [ "UBX::MessageId", "structUBX_1_1MessageId.html", null ],
     [ "Quectel::Plan::MessageRate", "structQuectel_1_1Plan_1_1MessageRate.html", null ],
@@ -414,9 +447,9 @@ var hierarchy =
     [ "PipelineStatsProbe", "classPipelineStatsProbe.html", null ],
     [ "MockLinkGimbal::PitchYawCommand", "structMockLinkGimbal_1_1PitchYawCommand.html", null ],
     [ "CpuVideoFramePool::PlaneLayout", "structCpuVideoFramePool_1_1PlaneLayout.html", null ],
-    [ "GstHw::PlaneLayout", "structGstHw_1_1PlaneLayout.html", null ],
     [ "PX4SerialPortConfig::Port", "structPX4SerialPortConfig_1_1Port.html", null ],
     [ "SerialPortManager::Port", "structSerialPortManager_1_1Port.html", null ],
+    [ "AndroidSerial::PortListener", "classAndroidSerial_1_1PortListener.html", null ],
     [ "SBF::PVTGeodetic", "structSBF_1_1PVTGeodetic.html", null ],
     [ "px4_custom_mode", "unionpx4__custom__mode.html", null ],
     [ "PX4CustomMode", "structPX4CustomMode.html", null ],
@@ -515,9 +548,6 @@ var hierarchy =
       ] ],
       [ "QSerialPort", "classQSerialPort.html", null ]
     ] ],
-    [ "QIODevicePrivate", null, [
-      [ "QSerialPortPrivate", "classQSerialPortPrivate.html", null ]
-    ] ],
     [ "QObject", null, [
       [ "ADSBTCPLink", "classADSBTCPLink.html", null ],
       [ "ADSBVehicle", "classADSBVehicle.html", null ],
@@ -538,6 +568,7 @@ var hierarchy =
       [ "Airframe", "classAirframe.html", null ],
       [ "AirframeType", "classAirframeType.html", null ],
       [ "AndroidEvents", "classAndroidEvents.html", null ],
+      [ "AndroidSerial::DeviceWatcher", "classAndroidSerial_1_1DeviceWatcher.html", null ],
       [ "AudioOutput", "classAudioOutput.html", null ],
       [ "AutoPilotPlugin", "classAutoPilotPlugin.html", [
         [ "APMAutoPilotPlugin", "classAPMAutoPilotPlugin.html", null ],
@@ -916,8 +947,6 @@ var hierarchy =
       [ "TrajectoryPoints", "classTrajectoryPoints.html", null ],
       [ "TransformPositionController", "classTransformPositionController.html", null ],
       [ "UDPWorker", "classUDPWorker.html", null ],
-      [ "UVCCameraController", "classUVCCameraController.html", null ],
-      [ "UVCFrameRelay", "classUVCFrameRelay.html", null ],
       [ "UVCStreamMonitor", "classUVCStreamMonitor.html", null ],
       [ "UdpForwarder", "classUdpForwarder.html", null ],
       [ "VehicleComponent", "classVehicleComponent.html", [
@@ -974,7 +1003,8 @@ var hierarchy =
       [ "VideoManager", "classVideoManager.html", null ],
       [ "VideoReceiver", "classVideoReceiver.html", [
         [ "GstVideoReceiver", "classGstVideoReceiver.html", null ],
-        [ "QtMultimediaVideoReceiver", "classQtMultimediaVideoReceiver.html", null ]
+        [ "QtMultimediaVideoReceiver", "classQtMultimediaVideoReceiver.html", null ],
+        [ "UVCCameraController", "classUVCCameraController.html", null ]
       ] ],
       [ "VideoRecordingList", "classVideoRecordingList.html", null ],
       [ "VideoRecordingService", "classVideoRecordingService.html", null ],
@@ -1044,11 +1074,9 @@ var hierarchy =
     [ "QRangeModel", null, [
       [ "NTRIPSourceTableModel", "classNTRIPSourceTableModel.html", null ]
     ] ],
-    [ "QSerialPortErrorInfo", "classQSerialPortErrorInfo.html", null ],
     [ "QSerialPortInfo", "classQSerialPortInfo.html", [
       [ "QGCSerialPortInfo", "classQGCSerialPortInfo.html", null ]
     ] ],
-    [ "QSerialPortInfoPrivate", "classQSerialPortInfoPrivate.html", null ],
     [ "QSignalTransition", null, [
       [ "QGCSignalTransition", "classQGCSignalTransition.html", [
         [ "GuardedTransition", "classGuardedTransition.html", null ],
@@ -1130,7 +1158,7 @@ var hierarchy =
     [ "UBX::ReceiverProfile", "structUBX_1_1ReceiverProfile.html", null ],
     [ "GPSReceiverMessages::ReceiverStatus", "structGPSReceiverMessages_1_1ReceiverStatus.html", null ],
     [ "RecordingBranch", "classRecordingBranch.html", null ],
-    [ "RecordingFinalizer", "classRecordingFinalizer.html", null ],
+    [ "VideoReceiver::RecordingEncoding", "structVideoReceiver_1_1RecordingEncoding.html", null ],
     [ "GStreamer::SelfTest::RecordingFormat", "structGStreamer_1_1SelfTest_1_1RecordingFormat.html", null ],
     [ "RecordingPlan", "classRecordingPlan.html", null ],
     [ "GStreamer::SelfTest::RegisteredPlugin", "structGStreamer_1_1SelfTest_1_1RegisteredPlugin.html", null ],
@@ -1158,10 +1186,11 @@ var hierarchy =
     [ "RTCMMessageCountQmlType", "structRTCMMessageCountQmlType.html", null ],
     [ "UBX::Plan::RTCMOutput", "structUBX_1_1Plan_1_1RTCMOutput.html", null ],
     [ "VideoStreamStatsMeter::RtpCounters", "structVideoStreamStatsMeter_1_1RtpCounters.html", null ],
+    [ "RtpPacketCounter", "classRtpPacketCounter.html", null ],
+    [ "GStreamer::RtpPacketCounts", "structGStreamer_1_1RtpPacketCounts.html", null ],
     [ "Mixer::Rule", "structMixer_1_1Rule.html", null ],
     [ "Mixer::Rule::RuleItem", "structMixer_1_1Rule_1_1RuleItem.html", null ],
     [ "RunGuard", "classRunGuard.html", null ],
-    [ "GStreamer::Runtime", "classGStreamer_1_1Runtime.html", null ],
     [ "GStreamer::SelfTest::Sample", "structGStreamer_1_1SelfTest_1_1Sample.html", null ],
     [ "NMEA::SatelliteAssembler", "classNMEA_1_1SatelliteAssembler.html", null ],
     [ "GPSDecodedData::SatelliteCounts", "classGPSDecodedData_1_1SatelliteCounts.html", null ],
@@ -1190,7 +1219,6 @@ var hierarchy =
     [ "GstQgc::SinkCapsPolicy", "structGstQgc_1_1SinkCapsPolicy.html", null ],
     [ "GstQgc::SinkCounters", "classGstQgc_1_1SinkCounters.html", null ],
     [ "GstQgc::FrameDelivery::Slot", "structGstQgc_1_1FrameDelivery_1_1Slot.html", null ],
-    [ "GstD3D12StagingPool::SlotLease", "classGstD3D12StagingPool_1_1SlotLease.html", null ],
     [ "GstHwPathTelemetry::Snapshot", "structGstHwPathTelemetry_1_1Snapshot.html", null ],
     [ "QtMultimediaVideoReceiver::Source", "structQtMultimediaVideoReceiver_1_1Source.html", null ],
     [ "GPSIntegrityReport::Spoofing", "structGPSIntegrityReport_1_1Spoofing.html", null ],
@@ -1227,7 +1255,6 @@ var hierarchy =
     [ "SurfaceModel::UpdateStats", "structSurfaceModel_1_1UpdateStats.html", null ],
     [ "UrlFactory", "classUrlFactory.html", null ],
     [ "NMEA::UtcDate", "structNMEA_1_1UtcDate.html", null ],
-    [ "GStreamer::Environment::ValidationResult", "structGStreamer_1_1Environment_1_1ValidationResult.html", null ],
     [ "KMLSchemaValidator::ValidationResult", "structKMLSchemaValidator_1_1ValidationResult.html", null ],
     [ "UBX::Plan::ValsetBatch", "structUBX_1_1Plan_1_1ValsetBatch.html", null ],
     [ "UBX::Plan::ValsetItem", "structUBX_1_1Plan_1_1ValsetItem.html", null ],
@@ -1246,7 +1273,6 @@ var hierarchy =
       [ "GStreamerVideoBackend", "classGStreamerVideoBackend.html", null ]
     ] ],
     [ "GstQgc::VideoFormatEntry", "structGstQgc_1_1VideoFormatEntry.html", null ],
-    [ "GStreamer::VideoSinkConfig", "structGStreamer_1_1VideoSinkConfig.html", null ],
     [ "VideoStreamStats", "structVideoStreamStats.html", null ],
     [ "VideoStreamStatsMeter", "classVideoStreamStatsMeter.html", null ],
     [ "VideoStreamStatsSampler", "classVideoStreamStatsSampler.html", null ],

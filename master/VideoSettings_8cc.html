@@ -107,9 +107,8 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="VideoSettings_8h_source.html">VideoSettings.h</a>&quot;</code><br />
-<code>#include &lt;QtCore/QSettings&gt;</code><br />
 <code>#include &lt;QtCore/QVariantList&gt;</code><br />
-<code>#include &quot;<a class="el" href="QGCLoggingCategory_8h_source.html">QGCLoggingCategory.h</a>&quot;</code><br />
+<code>#include &lt;QtMultimedia/QMediaDevices&gt;</code><br />
 <code>#include &quot;<a class="el" href="UVCDevices_8h_source.html">UVCDevices.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="VideoBackend_8h_source.html">VideoBackend.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Include dependency graph for VideoSettings.cc:</div>
@@ -121,20 +120,54 @@ $(function() {
 </div>
 <p><a href="VideoSettings_8cc_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a9682123c91134a6cc870c3e7eedd186a" id="r_a9682123c91134a6cc870c3e7eedd186a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9682123c91134a6cc870c3e7eedd186a">DECLARE_VIDEO_SETTINGSFACT_VISIBLE</a>(NAME,  VISIBLE)</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa01ddd9158165981cb81fb9f770932b0" id="r_aa01ddd9158165981cb81fb9f770932b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa01ddd9158165981cb81fb9f770932b0">DECLARE_SETTINGGROUP</a> (Video, &quot;Video&quot;)</td></tr>
 <tr class="memitem:a5f9d629df4ba1ca7941fc35313ade82b" id="r_a5f9d629df4ba1ca7941fc35313ade82b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f9d629df4ba1ca7941fc35313ade82b">DECLARE_SETTINGSFACT_NO_FUNC</a> (<a class="el" href="classVideoSettings.html">VideoSettings</a>, videoSource)</td></tr>
-<tr class="memitem:a90469d977b2ffe6ce3f53174d9a03f52" id="r_a90469d977b2ffe6ce3f53174d9a03f52"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90469d977b2ffe6ce3f53174d9a03f52">DECLARE_SETTINGSFACT_NO_FUNC</a> (<a class="el" href="classVideoSettings.html">VideoSettings</a>, videoBackend)</td></tr>
-<tr class="memitem:a1365f56724addda6269835a7d88c0b06" id="r_a1365f56724addda6269835a7d88c0b06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1365f56724addda6269835a7d88c0b06">DECLARE_SETTINGSFACT_NO_FUNC</a> (<a class="el" href="classVideoSettings.html">VideoSettings</a>, forceVideoDecoder)</td></tr>
-<tr class="memitem:a4e2dd34fcae43b7daf1081717f1ea30f" id="r_a4e2dd34fcae43b7daf1081717f1ea30f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e2dd34fcae43b7daf1081717f1ea30f">DECLARE_SETTINGSFACT_NO_FUNC</a> (<a class="el" href="classVideoSettings.html">VideoSettings</a>, lowLatencyMode)</td></tr>
-<tr class="memitem:aca758f25222d6bc39daa7ea7e0fbc52f" id="r_aca758f25222d6bc39daa7ea7e0fbc52f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca758f25222d6bc39daa7ea7e0fbc52f">DECLARE_SETTINGSFACT_NO_FUNC</a> (<a class="el" href="classVideoSettings.html">VideoSettings</a>, rtpJitterLatencyMs)</td></tr>
-<tr class="memitem:ae5e1d66f5f8da11315b1bae71e635467" id="r_ae5e1d66f5f8da11315b1bae71e635467"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5e1d66f5f8da11315b1bae71e635467">DECLARE_SETTINGSFACT_NO_FUNC</a> (<a class="el" href="classVideoSettings.html">VideoSettings</a>, rtspAutoReconnect)</td></tr>
-<tr class="memitem:a3506c8d59439a5b22678f3647113f2e5" id="r_a3506c8d59439a5b22678f3647113f2e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3506c8d59439a5b22678f3647113f2e5">DECLARE_SETTINGSFACT_NO_FUNC</a> (<a class="el" href="classVideoSettings.html">VideoSettings</a>, forceCpuVideoPath)</td></tr>
-<tr class="memitem:acfcb6a04d3467395bec389a4a28b5613" id="r_acfcb6a04d3467395bec389a4a28b5613"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfcb6a04d3467395bec389a4a28b5613">DECLARE_SETTINGSFACT_NO_FUNC</a> (<a class="el" href="classVideoSettings.html">VideoSettings</a>, videoConversionElement)</td></tr>
-<tr class="memitem:a5c6fe523842d8b1bb4d182de65ee99ae" id="r_a5c6fe523842d8b1bb4d182de65ee99ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c6fe523842d8b1bb4d182de65ee99ae">DECLARE_SETTINGSFACT_NO_FUNC</a> (<a class="el" href="classVideoSettings.html">VideoSettings</a>, disablePixelAspectRatio)</td></tr>
-<tr class="memitem:a2072e87a95217475141b33403a1998a1" id="r_a2072e87a95217475141b33403a1998a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2072e87a95217475141b33403a1998a1">DECLARE_SETTINGSFACT_NO_FUNC</a> (<a class="el" href="classVideoSettings.html">VideoSettings</a>, rtspTimeout)</td></tr>
+<tr class="memitem:a94bde20895f3ad4f2ddf75fac4e4a9ae" id="r_a94bde20895f3ad4f2ddf75fac4e4a9ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94bde20895f3ad4f2ddf75fac4e4a9ae">DECLARE_SETTINGSFACT_NO_FUNC</a> (<a class="el" href="classVideoSettings.html">VideoSettings</a>, uvcTileCamera)</td></tr>
+<tr class="memitem:a5d8543a1747ad6c77136401293f5ed9a" id="r_a5d8543a1747ad6c77136401293f5ed9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d8543a1747ad6c77136401293f5ed9a">DECLARE_VIDEO_SETTINGSFACT_VISIBLE</a> (forceCpuVideoPath, <a class="el" href="classVideoBackend.html#a6ea64e38380806384b89c060478837b5">VideoBackend::instance</a>().capabilities().gpuVideoPath) void <a class="el" href="classVideoSettings.html">VideoSettings</a></td></tr>
 </table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="a9682123c91134a6cc870c3e7eedd186a" name="a9682123c91134a6cc870c3e7eedd186a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9682123c91134a6cc870c3e7eedd186a">&#9670;&#160;</a></span>DECLARE_VIDEO_SETTINGSFACT_VISIBLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DECLARE_VIDEO_SETTINGSFACT_VISIBLE</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>NAME</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>VISIBLE</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a>(<a class="code hl_class" href="classVideoSettings.html">VideoSettings</a>, NAME)        \</div>
+<div class="line">    {                                                        \</div>
+<div class="line">        if (!_##NAME##<a class="code hl_class" href="classFact.html">Fact</a>) {                                \</div>
+<div class="line">            _##NAME##<a class="code hl_class" href="classFact.html">Fact</a> = _createSettingsFact(NAME##Name); \</div>
+<div class="line">            _##NAME##<a class="code hl_class" href="classFact.html">Fact</a>-&gt;setUserVisible(VISIBLE);          \</div>
+<div class="line">        }                                                    \</div>
+<div class="line">        <span class="keywordflow">return</span> _##NAME##<a class="code hl_class" href="classFact.html">Fact</a>;                                \</div>
+<div class="line">    }</div>
+<div class="ttc" id="aSettingsGroup_8h_html_a868cabc6e02919fdbdc5e40133cc22e3"><div class="ttname"><a href="SettingsGroup_8h.html#a868cabc6e02919fdbdc5e40133cc22e3">DECLARE_SETTINGSFACT_NO_FUNC</a></div><div class="ttdeci">#define DECLARE_SETTINGSFACT_NO_FUNC(CLASS, NAME)</div><div class="ttdef"><b>Definition</b> <a href="SettingsGroup_8h_source.html#l00027">SettingsGroup.h:27</a></div></div>
+<div class="ttc" id="aclassFact_html"><div class="ttname"><a href="classFact.html">Fact</a></div><div class="ttdoc">A Fact is used to hold a single value within the system.</div><div class="ttdef"><b>Definition</b> <a href="Fact_8h_source.html#l00014">Fact.h:15</a></div></div>
+<div class="ttc" id="aclassVideoSettings_html"><div class="ttname"><a href="classVideoSettings.html">VideoSettings</a></div><div class="ttdef"><b>Definition</b> <a href="VideoSettings_8h_source.html#l00011">VideoSettings.h:12</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00150">150</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="VideoSettings_8cc_source.html#l00167">DECLARE_VIDEO_SETTINGSFACT_VISIBLE()</a>.</p>
+
+</div>
+</div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="aa01ddd9158165981cb81fb9f770932b0" name="aa01ddd9158165981cb81fb9f770932b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa01ddd9158165981cb81fb9f770932b0">&#9670;&#160;</a></span>DECLARE_SETTINGGROUP()</h2>
@@ -155,14 +188,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00026">26</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
-
-<p class="reference">References <a class="el" href="UVCDevices_8cc_source.html#l00011">UVCDevices::deviceNames()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00023">23</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
 
 </div>
 </div>
-<a id="a5c6fe523842d8b1bb4d182de65ee99ae" name="a5c6fe523842d8b1bb4d182de65ee99ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c6fe523842d8b1bb4d182de65ee99ae">&#9670;&#160;</a></span>DECLARE_SETTINGSFACT_NO_FUNC() <span class="overload">[1/10]</span></h2>
+<a id="a94bde20895f3ad4f2ddf75fac4e4a9ae" name="a94bde20895f3ad4f2ddf75fac4e4a9ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94bde20895f3ad4f2ddf75fac4e4a9ae">&#9670;&#160;</a></span>DECLARE_SETTINGSFACT_NO_FUNC() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,203 +206,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">disablePixelAspectRatio</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+          <td class="paramtype">uvcTileCamera</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00214">214</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00137">137</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
 
-</div>
-</div>
-<a id="a3506c8d59439a5b22678f3647113f2e5" name="a3506c8d59439a5b22678f3647113f2e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3506c8d59439a5b22678f3647113f2e5">&#9670;&#160;</a></span>DECLARE_SETTINGSFACT_NO_FUNC() <span class="overload">[2/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DECLARE_SETTINGSFACT_NO_FUNC </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classVideoSettings.html">VideoSettings</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">forceCpuVideoPath</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00192">192</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
-
-<p class="reference">References <a class="el" href="VideoBackend_8cc_source.html#l00028">VideoBackend::instance()</a>.</p>
-
-</div>
-</div>
-<a id="a1365f56724addda6269835a7d88c0b06" name="a1365f56724addda6269835a7d88c0b06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1365f56724addda6269835a7d88c0b06">&#9670;&#160;</a></span>DECLARE_SETTINGSFACT_NO_FUNC() <span class="overload">[3/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DECLARE_SETTINGSFACT_NO_FUNC </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classVideoSettings.html">VideoSettings</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">forceVideoDecoder</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00154">154</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
-
-</div>
-</div>
-<a id="a4e2dd34fcae43b7daf1081717f1ea30f" name="a4e2dd34fcae43b7daf1081717f1ea30f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e2dd34fcae43b7daf1081717f1ea30f">&#9670;&#160;</a></span>DECLARE_SETTINGSFACT_NO_FUNC() <span class="overload">[4/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DECLARE_SETTINGSFACT_NO_FUNC </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classVideoSettings.html">VideoSettings</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">lowLatencyMode</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00164">164</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
-
-</div>
-</div>
-<a id="aca758f25222d6bc39daa7ea7e0fbc52f" name="aca758f25222d6bc39daa7ea7e0fbc52f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca758f25222d6bc39daa7ea7e0fbc52f">&#9670;&#160;</a></span>DECLARE_SETTINGSFACT_NO_FUNC() <span class="overload">[5/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DECLARE_SETTINGSFACT_NO_FUNC </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classVideoSettings.html">VideoSettings</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">rtpJitterLatencyMs</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00174">174</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
-
-</div>
-</div>
-<a id="ae5e1d66f5f8da11315b1bae71e635467" name="ae5e1d66f5f8da11315b1bae71e635467"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5e1d66f5f8da11315b1bae71e635467">&#9670;&#160;</a></span>DECLARE_SETTINGSFACT_NO_FUNC() <span class="overload">[6/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DECLARE_SETTINGSFACT_NO_FUNC </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classVideoSettings.html">VideoSettings</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">rtspAutoReconnect</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00183">183</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
-
-</div>
-</div>
-<a id="a2072e87a95217475141b33403a1998a1" name="a2072e87a95217475141b33403a1998a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2072e87a95217475141b33403a1998a1">&#9670;&#160;</a></span>DECLARE_SETTINGSFACT_NO_FUNC() <span class="overload">[7/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DECLARE_SETTINGSFACT_NO_FUNC </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classVideoSettings.html">VideoSettings</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">rtspTimeout</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00224">224</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
-
-</div>
-</div>
-<a id="a90469d977b2ffe6ce3f53174d9a03f52" name="a90469d977b2ffe6ce3f53174d9a03f52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90469d977b2ffe6ce3f53174d9a03f52">&#9670;&#160;</a></span>DECLARE_SETTINGSFACT_NO_FUNC() <span class="overload">[8/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DECLARE_SETTINGSFACT_NO_FUNC </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classVideoSettings.html">VideoSettings</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">videoBackend</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00145">145</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
-
-</div>
-</div>
-<a id="acfcb6a04d3467395bec389a4a28b5613" name="acfcb6a04d3467395bec389a4a28b5613"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfcb6a04d3467395bec389a4a28b5613">&#9670;&#160;</a></span>DECLARE_SETTINGSFACT_NO_FUNC() <span class="overload">[9/10]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">DECLARE_SETTINGSFACT_NO_FUNC </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classVideoSettings.html">VideoSettings</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">videoConversionElement</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00205">205</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
+<p class="reference">References <a class="el" href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged()</a>.</p>
 
 </div>
 </div>
 <a id="a5f9d629df4ba1ca7941fc35313ade82b" name="a5f9d629df4ba1ca7941fc35313ade82b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f9d629df4ba1ca7941fc35313ade82b">&#9670;&#160;</a></span>DECLARE_SETTINGSFACT_NO_FUNC() <span class="overload">[10/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f9d629df4ba1ca7941fc35313ade82b">&#9670;&#160;</a></span>DECLARE_SETTINGSFACT_NO_FUNC() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -389,9 +236,34 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00128">128</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00123">123</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="SettingsGroup_8h_source.html#l00027">DECLARE_SETTINGSFACT_NO_FUNC</a>.</p>
+<p class="reference">References <a class="el" href="SettingsGroup_8h_source.html#l00027">DECLARE_SETTINGSFACT_NO_FUNC</a>, and <a class="el" href="classFact.html#a832a24b1e80771c8bf76dc9fbf699fad">Fact::rawValueChanged()</a>.</p>
+
+</div>
+</div>
+<a id="a5d8543a1747ad6c77136401293f5ed9a" name="a5d8543a1747ad6c77136401293f5ed9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d8543a1747ad6c77136401293f5ed9a">&#9670;&#160;</a></span>DECLARE_VIDEO_SETTINGSFACT_VISIBLE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DECLARE_VIDEO_SETTINGSFACT_VISIBLE </td>
+          <td>(</td>
+          <td class="paramtype">forceCpuVideoPath</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classVideoBackend.html#a6ea64e38380806384b89c060478837b5">VideoBackend::instance</a>().capabilities().</td>          <td class="paramname"><span class="paramname"><em>gpuVideoPath</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="VideoSettings_8cc_source.html#l00167">167</a> of file <a class="el" href="VideoSettings_8cc_source.html">VideoSettings.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="SettingsGroup_8h_source.html#l00072">SettingsGroup::_nameToMetaDataMap</a>, <a class="el" href="VideoSettings_8cc_source.html#l00150">DECLARE_VIDEO_SETTINGSFACT_VISIBLE</a>, <a class="el" href="VideoDecoderOptions_8h_source.html#l00010">DirectX3D</a>, <a class="el" href="VideoDecoderOptions_8h_source.html#l00012">Intel</a>, <a class="el" href="VideoDecoderOptions_8h_source.html#l00008">NVIDIA</a>, <a class="el" href="VideoDecoderOptions_8h_source.html#l00009">VAAPI</a>, <a class="el" href="VideoDecoderOptions_8h_source.html#l00011">VideoToolbox</a>, and <a class="el" href="VideoDecoderOptions_8h_source.html#l00013">Vulkan</a>.</p>
 
 </div>
 </div>

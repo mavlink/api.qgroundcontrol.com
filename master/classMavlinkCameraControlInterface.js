@@ -125,6 +125,7 @@ var classMavlinkCameraControlInterface =
     [ "setCameraModePhoto", "classMavlinkCameraControlInterface.html#a02e63c7b94e563407e87dd954f88b0be", null ],
     [ "setCameraModeVideo", "classMavlinkCameraControlInterface.html#ada51e28e504b5d9755f905b9f15c3b29", null ],
     [ "setCurrentStream", "classMavlinkCameraControlInterface.html#ab183f3181d5bc932703872caf6939952", null ],
+    [ "setExtraStreams", "classMavlinkCameraControlInterface.html#a91c569f24736827174288468225e9f71", null ],
     [ "setFocusLevel", "classMavlinkCameraControlInterface.html#a9d7771de9f5d39098a76e2eccd2afd1c", null ],
     [ "setPhotoCaptureMode", "classMavlinkCameraControlInterface.html#a8c617f24f7cafc8f7373a3ad937d606a", null ],
     [ "setPhotoLapse", "classMavlinkCameraControlInterface.html#a479fba0acdebfd02164108eb7850116b", null ],

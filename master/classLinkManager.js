@@ -36,6 +36,7 @@ var classLinkManager =
     [ "removeConfiguration", "classLinkManager.html#a8462ec668d642a8aa6d070e4c2939bf7", null ],
     [ "saveLinkConfigurationList", "classLinkManager.html#af197ac229342177da52e54063343d37b", null ],
     [ "serialBaudRates", "classLinkManager.html#ab5a19c1ce8a310ad783c247e483cab2f", null ],
+    [ "serialPortHasFlowControl", "classLinkManager.html#a194ffb89e6bea9f887eb2449b4b96f2f", null ],
     [ "serialPorts", "classLinkManager.html#a2b5e6265ef904eb869716590ccb052ed", null ],
     [ "serialPortStrings", "classLinkManager.html#ab3ae710c3c4c0dcecfdd942448f46646", null ],
     [ "setConnectionsAllowed", "classLinkManager.html#a5913701e25978332d855e731818c81bf", null ],

@@ -122,6 +122,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a827e5c4f362e192a93502a1d2295ee37" id="r_a827e5c4f362e192a93502a1d2295ee37"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a827e5c4f362e192a93502a1d2295ee37">onRecordingFileClosed</a> (const QString &amp;file, const QString &amp;error)=0</td></tr>
 <tr class="memdesc:a827e5c4f362e192a93502a1d2295ee37"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">file</code> is closed; <code class="param">error</code> is empty when it was finalized cleanly.  <br /></td></tr>
 <tr class="memitem:aec62a34cc2fc1806539ebd599d134b12" id="r_aec62a34cc2fc1806539ebd599d134b12"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec62a34cc2fc1806539ebd599d134b12">onRecordingFailed</a> (const QString &amp;file, const QString &amp;error, bool fileOpened)=0</td></tr>
+<tr class="memitem:aa40162bd99df979637ca672186670008" id="r_aa40162bd99df979637ca672186670008"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa40162bd99df979637ca672186670008">onRecordingNeedsNewFile</a> (const QString &amp;file)=0</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -129,7 +130,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="RecordingBranch_8h_source.html#l00029">29</a> of file <a class="el" href="RecordingBranch_8h_source.html">RecordingBranch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RecordingBranch_8h_source.html#l00035">35</a> of file <a class="el" href="RecordingBranch_8h_source.html">RecordingBranch.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a55862220f90040174beab5af301fb09f" name="a55862220f90040174beab5af301fb09f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55862220f90040174beab5af301fb09f">&#9670;&#160;</a></span>~Listener()</h2>
@@ -247,6 +248,32 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p><code class="param">file</code> got its first frame. </p>
+
+</div>
+</div>
+<a id="aa40162bd99df979637ca672186670008" name="aa40162bd99df979637ca672186670008"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa40162bd99df979637ca672186670008">&#9670;&#160;</a></span>onRecordingNeedsNewFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void RecordingBranch::Listener::onRecordingNeedsNewFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><code class="param">file</code> isn't to take what follows: an MP4 or MOV is about to run out of the header space it reserved, or the stream's caps changed, and a file holds one format. The recording goes on, without losing a frame, in the file the listener requests in answer. </p>
 
 </div>
 </div>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QGroundControl: src/VideoManager/GStreamer/Pipeline/GstSourceFactory.cc File Reference</title>
+<title>QGroundControl: src/VideoManager/GStreamer/Source/GstSourceFactory.cc File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="jquery.js"></script>
@@ -107,19 +107,24 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="GstSourceFactory_8h_source.html">GstSourceFactory.h</a>&quot;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;cstdio&gt;</code><br />
 <code>#include &lt;gst/gst.h&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
 <code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;QtCore/QByteArray&gt;</code><br />
 <code>#include &lt;QtCore/QFile&gt;</code><br />
 <code>#include &lt;QtCore/QUrl&gt;</code><br />
+<code>#include &lt;QtNetwork/QHostAddress&gt;</code><br />
 <code>#include &quot;<a class="el" href="GStreamerHelpers_8h_source.html">GStreamerHelpers.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GstH26xParameterSetGate_8h_source.html">GstH26xParameterSetGate.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GstRtpPacketProbe_8h_source.html">GstRtpPacketProbe.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GstRtspSource_8h_source.html">GstRtspSource.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GstScoped_8h_source.html">GstScoped.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GstSourceUri_8h_source.html">GstSourceUri.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="QGCLoggingCategory_8h_source.html">QGCLoggingCategory.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="QGCNetworkHelper_8h_source.html">QGCNetworkHelper.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="VideoStreamUri_8h_source.html">VideoStreamUri.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Include dependency graph for GstSourceFactory.cc:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -135,10 +140,16 @@ Namespaces</h2></td></tr>
 <tr class="memitem:GStreamer_3A_3ASourceFactory" id="r_GStreamer_3A_3ASourceFactory"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1SourceFactory.html">GStreamer::SourceFactory</a></td></tr>
 <tr class="memdesc:namespaceGStreamer_1_1SourceFactory"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RTSP source <a class="el" href="namespaceGStreamer_1_1SourceFactory.html#a2df831b5f903a7a96dd233cb09798853">GStreamer::SourceFactory::create()</a> builds, with <a class="el" href="namespaceQGC.html">QGC</a>'s transport, latency and retransmission policy. <br /></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a25b6a5021f80d27ef237ff3ab763ada3" id="r_a25b6a5021f80d27ef237ff3ab763ada3"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1SourceFactory.html#a25b6a5021f80d27ef237ff3ab763ada3">GStreamer::SourceFactory::Transport</a> </td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a426c930dbbe4ee5c64e29f071210539d" id="r_a426c930dbbe4ee5c64e29f071210539d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1SourceFactory.html#a426c930dbbe4ee5c64e29f071210539d">GStreamer::SourceFactory::udpReceiveBufferSize</a> ()</td></tr>
+<tr class="memitem:a116a13133fe683c68025c5f052b6f05b" id="r_a116a13133fe683c68025c5f052b6f05b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1SourceFactory.html#a116a13133fe683c68025c5f052b6f05b">GStreamer::SourceFactory::reportDroppedPackets</a> (<a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *jitterBuffer)</td></tr>
 <tr class="memitem:a2df831b5f903a7a96dd233cb09798853" id="r_a2df831b5f903a7a96dd233cb09798853"><td class="memItemLeft" align="right" valign="top"><a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1SourceFactory.html#a2df831b5f903a7a96dd233cb09798853">GStreamer::SourceFactory::create</a> (const QString &amp;uri, const <a class="el" href="structGStreamer_1_1SourceFactory_1_1Config.html">Config</a> &amp;config)</td></tr>
-<tr class="memitem:add3350a3a4663599cd7270bac0e8fefa" id="r_add3350a3a4663599cd7270bac0e8fefa"><td class="memItemLeft" align="right" valign="top">std::chrono::milliseconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1SourceFactory.html#add3350a3a4663599cd7270bac0e8fefa">GStreamer::SourceFactory::connectGracePeriod</a> (const QString &amp;uri)</td></tr>
+<tr class="memitem:af981377c6c9e549e5161ff914b92d55a" id="r_af981377c6c9e549e5161ff914b92d55a"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::chrono::milliseconds &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1SourceFactory.html#af981377c6c9e549e5161ff914b92d55a">GStreamer::SourceFactory::connectGracePeriod</a> (const QString &amp;uri)</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -153,7 +164,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_e70d0c0f198ee0280d1f11c0ba8073e0.html">VideoManager</a></li><li class="navelem"><a href="dir_b576ff9da4174a54288db11cc55a2673.html">GStreamer</a></li><li class="navelem"><a href="dir_b4f4868540c087407603e08936879a5f.html">Pipeline</a></li><li class="navelem"><a href="GstSourceFactory_8cc.html">GstSourceFactory.cc</a></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_e70d0c0f198ee0280d1f11c0ba8073e0.html">VideoManager</a></li><li class="navelem"><a href="dir_b576ff9da4174a54288db11cc55a2673.html">GStreamer</a></li><li class="navelem"><a href="dir_0edde08ddace7a8213e6b92e591d0d99.html">Source</a></li><li class="navelem"><a href="GstSourceFactory_8cc.html">GstSourceFactory.cc</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

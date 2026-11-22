@@ -135,15 +135,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a85686b2b9b79666f9cea4e4bfdd1deb0" id="r_a85686b2b9b79666f9cea4e4bfdd1deb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85686b2b9b79666f9cea4e4bfdd1deb0">run10HzTasks</a> ()</td></tr>
 <tr class="memdesc:a85686b2b9b79666f9cea4e4bfdd1deb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update camera states (call from 10Hz tasks).  <br /></td></tr>
 <tr class="memitem:a3f9b29503a55db5d181e65a51319efbf" id="r_a3f9b29503a55db5d181e65a51319efbf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f9b29503a55db5d181e65a51319efbf">handleMavlinkMessage</a> (const <a class="el" href="QGCCorePlugin_8h.html#a2c54d7cd4caccb07d328e60c00f6147c">mavlink_message_t</a> &amp;msg)</td></tr>
+<tr class="memitem:aecce0608cbeb91de710e99c83c5fe42a" id="r_aecce0608cbeb91de710e99c83c5fe42a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecce0608cbeb91de710e99c83c5fe42a">streamTransmitted</a> (uint8_t compId, uint8_t streamId)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Simulates MAVLink Camera Protocol v2 components for <a class="el" href="classMockLink.html">MockLink</a>. </p>
 <p>Two cameras are provided: Camera 1 (MAV_COMP_ID_CAMERA) – full-featured: video capture, photo capture, mode switching, basic zoom, video streaming (udp://127.0.0.1:5600, H.264 RTP, 1920×1080 @ 30 fps), and image capture while in video mode. Camera 2 (MAV_COMP_ID_CAMERA2) – photo-only: image capture only; video, mode switching, zoom, focus, and streaming commands are denied.</p>
-<p>Supported MAVLink commands: MAV_CMD_REQUEST_MESSAGE (CAMERA_INFORMATION, CAMERA_SETTINGS, STORAGE_INFORMATION, CAMERA_CAPTURE_STATUS, VIDEO_STREAM_INFORMATION, VIDEO_STREAM_STATUS) MAV_CMD_REQUEST_CAMERA_INFORMATION / SETTINGS / STORAGE / CAPTURE_STATUS MAV_CMD_REQUEST_VIDEO_STREAM_INFORMATION / STATUS MAV_CMD_SET_CAMERA_MODE MAV_CMD_IMAGE_START_CAPTURE / IMAGE_STOP_CAPTURE MAV_CMD_VIDEO_START_CAPTURE / VIDEO_STOP_CAPTURE MAV_CMD_STORAGE_FORMAT MAV_CMD_SET_CAMERA_ZOOM / SET_CAMERA_FOCUS MAV_CMD_RESET_CAMERA_SETTINGS MAV_CMD_CAMERA_TRACK_POINT / TRACK_RECTANGLE / STOP_TRACKING</p>
+<p>Supported MAVLink commands: MAV_CMD_REQUEST_MESSAGE (CAMERA_INFORMATION, CAMERA_SETTINGS, STORAGE_INFORMATION, CAMERA_CAPTURE_STATUS, VIDEO_STREAM_INFORMATION, VIDEO_STREAM_STATUS) MAV_CMD_REQUEST_CAMERA_INFORMATION / SETTINGS / STORAGE / CAPTURE_STATUS MAV_CMD_REQUEST_VIDEO_STREAM_INFORMATION / STATUS MAV_CMD_VIDEO_START_STREAMING / VIDEO_STOP_STREAMING MAV_CMD_SET_CAMERA_MODE MAV_CMD_IMAGE_START_CAPTURE / IMAGE_STOP_CAPTURE MAV_CMD_VIDEO_START_CAPTURE / VIDEO_STOP_CAPTURE MAV_CMD_STORAGE_FORMAT MAV_CMD_SET_CAMERA_ZOOM / SET_CAMERA_FOCUS MAV_CMD_RESET_CAMERA_SETTINGS MAV_CMD_CAMERA_TRACK_POINT / TRACK_RECTANGLE / STOP_TRACKING</p>
 <p>Simulated storage: 16 GiB total, 8 GiB free, SD card.</p>
 <p>Spec-minimal (MAVLink camera protocol v2): CAMERA_CAPTURE_STATUS is only sent on request, never pushed after a command ack; the GCS must poll for it. CAMERA_IMAGE_CAPTURED is broadcast per captured image, as the protocol requires. </p>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkCamera_8h_source.html#l00039">39</a> of file <a class="el" href="MockLinkCamera_8h_source.html">MockLinkCamera.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkCamera_8h_source.html#l00040">40</a> of file <a class="el" href="MockLinkCamera_8h_source.html">MockLinkCamera.h</a>.</p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
 <a id="abf86927cc7834c058804a938abd9c9a4" name="abf86927cc7834c058804a938abd9c9a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf86927cc7834c058804a938abd9c9a4">&#9670;&#160;</a></span>ImageCaptureStatus</h2>
@@ -169,7 +170,7 @@ Public Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="MockLinkCamera_8h_source.html#l00043">43</a> of file <a class="el" href="MockLinkCamera_8h_source.html">MockLinkCamera.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MockLinkCamera_8h_source.html#l00044">44</a> of file <a class="el" href="MockLinkCamera_8h_source.html">MockLinkCamera.h</a>.</p>
 
 </div>
 </div>
@@ -314,7 +315,7 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="MockLinkCamera_8cc_source.html#l00094">94</a> of file <a class="el" href="MockLinkCamera_8cc_source.html">MockLinkCamera.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="MockLinkCamera_8h_source.html#l00052">MockLinkCamera::CameraState::compId</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00060">MockLinkCamera::CameraState::image_interval</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00059">MockLinkCamera::CameraState::image_status</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00044">ImageCaptureIdle</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00046">ImageCaptureInterval</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00047">ImageCaptureIntervalCapture</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00056">MockLinkCamera::CameraState::imagesCaptured</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00063">MockLinkCamera::CameraState::intervalLastCaptureMs</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00062">MockLinkCamera::CameraState::intervalRemaining</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00061">MockLinkCamera::CameraState::singleShotStartMs</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00077">MockLinkCamera::CameraState::trackAnchorX</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00078">MockLinkCamera::CameraState::trackAnchorY</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00066">MockLinkCamera::CameraState::trackingMode</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00076">MockLinkCamera::CameraState::trackingStartMs</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00074">MockLinkCamera::CameraState::trackingStatusIntervalUs</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00075">MockLinkCamera::CameraState::trackingStatusLastSentMs</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00067">MockLinkCamera::CameraState::trackPointX</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00068">MockLinkCamera::CameraState::trackPointY</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00072">MockLinkCamera::CameraState::trackRecBottomX</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00073">MockLinkCamera::CameraState::trackRecBottomY</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00070">MockLinkCamera::CameraState::trackRecTopX</a>, and <a class="el" href="MockLinkCamera_8h_source.html#l00071">MockLinkCamera::CameraState::trackRecTopY</a>.</p>
+<p class="reference">References <a class="el" href="MockLinkCamera_8h_source.html#l00053">MockLinkCamera::CameraState::compId</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00061">MockLinkCamera::CameraState::image_interval</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00060">MockLinkCamera::CameraState::image_status</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00045">ImageCaptureIdle</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00047">ImageCaptureInterval</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00048">ImageCaptureIntervalCapture</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00057">MockLinkCamera::CameraState::imagesCaptured</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00064">MockLinkCamera::CameraState::intervalLastCaptureMs</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00063">MockLinkCamera::CameraState::intervalRemaining</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00062">MockLinkCamera::CameraState::singleShotStartMs</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00079">MockLinkCamera::CameraState::trackAnchorX</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00080">MockLinkCamera::CameraState::trackAnchorY</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00068">MockLinkCamera::CameraState::trackingMode</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00078">MockLinkCamera::CameraState::trackingStartMs</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00076">MockLinkCamera::CameraState::trackingStatusIntervalUs</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00077">MockLinkCamera::CameraState::trackingStatusLastSentMs</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00069">MockLinkCamera::CameraState::trackPointX</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00070">MockLinkCamera::CameraState::trackPointY</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00074">MockLinkCamera::CameraState::trackRecBottomX</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00075">MockLinkCamera::CameraState::trackRecBottomY</a>, <a class="el" href="MockLinkCamera_8h_source.html#l00072">MockLinkCamera::CameraState::trackRecTopX</a>, and <a class="el" href="MockLinkCamera_8h_source.html#l00073">MockLinkCamera::CameraState::trackRecTopY</a>.</p>
 
 </div>
 </div>
@@ -336,6 +337,32 @@ Public Member Functions</h2></td></tr>
 <p>Send heartbeats for all simulated camera components (call from 10Hz tasks). </p>
 
 <p class="definition">Definition at line <a class="el" href="MockLinkCamera_8cc_source.html#l00076">76</a> of file <a class="el" href="MockLinkCamera_8cc_source.html">MockLinkCamera.cc</a>.</p>
+
+</div>
+</div>
+<a id="aecce0608cbeb91de710e99c83c5fe42a" name="aecce0608cbeb91de710e99c83c5fe42a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecce0608cbeb91de710e99c83c5fe42a">&#9670;&#160;</a></span>streamTransmitted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MockLinkCamera::streamTransmitted </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>compId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>streamId</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Whether camera <code class="param">compId</code> transmits its stream <code class="param">streamId:</code> its first stream until MAV_CMD_VIDEO_STOP_STREAMING, another one after MAV_CMD_VIDEO_START_STREAMING. </p>
+
+<p class="definition">Definition at line <a class="el" href="MockLinkCamera_8cc_source.html#l00187">187</a> of file <a class="el" href="MockLinkCamera_8cc_source.html">MockLinkCamera.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="MockLinkCamera_8h_source.html#l00065">MockLinkCamera::CameraState::transmittedStreams</a>.</p>
 
 </div>
 </div>

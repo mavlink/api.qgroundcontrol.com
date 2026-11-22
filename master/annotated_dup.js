@@ -25,7 +25,13 @@ var annotated_dup =
     ] ],
     [ "AndroidSerial", "namespaceAndroidSerial.html", [
       [ "JniMethodCache", "structAndroidSerial_1_1JniMethodCache.html", "structAndroidSerial_1_1JniMethodCache" ],
-      [ "JniContext", "structAndroidSerial_1_1JniContext.html", "structAndroidSerial_1_1JniContext" ]
+      [ "JniPortInfoFields", "structAndroidSerial_1_1JniPortInfoFields.html", "structAndroidSerial_1_1JniPortInfoFields" ],
+      [ "PortListener", "classAndroidSerial_1_1PortListener.html", "classAndroidSerial_1_1PortListener" ],
+      [ "DeviceWatcher", "classAndroidSerial_1_1DeviceWatcher.html", "classAndroidSerial_1_1DeviceWatcher" ],
+      [ "JavaBinding", "structAndroidSerial_1_1JavaBinding.html", "structAndroidSerial_1_1JavaBinding" ],
+      [ "JavaBindingList", "structAndroidSerial_1_1JavaBindingList.html", "structAndroidSerial_1_1JavaBindingList" ],
+      [ "JavaMethod", "structAndroidSerial_1_1JavaMethod.html", "structAndroidSerial_1_1JavaMethod" ],
+      [ "JavaField", "structAndroidSerial_1_1JavaField.html", "structAndroidSerial_1_1JavaField" ]
     ] ],
     [ "APMDataFlashUtility", "namespaceAPMDataFlashUtility.html", [
       [ "MessageFormat", "structAPMDataFlashUtility_1_1MessageFormat.html", "structAPMDataFlashUtility_1_1MessageFormat" ]
@@ -52,13 +58,9 @@ var annotated_dup =
     [ "GPSReceiverMessages", "namespaceGPSReceiverMessages.html", [
       [ "ReceiverStatus", "structGPSReceiverMessages_1_1ReceiverStatus.html", "structGPSReceiverMessages_1_1ReceiverStatus" ]
     ] ],
-    [ "GstD3D12StagingPool", "namespaceGstD3D12StagingPool.html", [
-      [ "SlotLease", "classGstD3D12StagingPool_1_1SlotLease.html", "classGstD3D12StagingPool_1_1SlotLease" ]
-    ] ],
     [ "GstHw", "namespaceGstHw.html", [
       [ "GstHwImportCache", "classGstHw_1_1GstHwImportCache.html", "classGstHw_1_1GstHwImportCache" ],
-      [ "MapDiagnostics", "structGstHw_1_1MapDiagnostics.html", "structGstHw_1_1MapDiagnostics" ],
-      [ "PlaneLayout", "structGstHw_1_1PlaneLayout.html", "structGstHw_1_1PlaneLayout" ]
+      [ "MapDiagnostics", "structGstHw_1_1MapDiagnostics.html", "structGstHw_1_1MapDiagnostics" ]
     ] ],
     [ "GstHwPathTelemetry", "namespaceGstHwPathTelemetry.html", [
       [ "ScopedMapTimer", "classGstHwPathTelemetry_1_1ScopedMapTimer.html", "classGstHwPathTelemetry_1_1ScopedMapTimer" ],
@@ -76,11 +78,7 @@ var annotated_dup =
       [ "VideoFormatEntry", "structGstQgc_1_1VideoFormatEntry.html", "structGstQgc_1_1VideoFormatEntry" ]
     ] ],
     [ "GStreamer", "namespaceGStreamer.html", [
-      [ "SourceFactory", "namespaceGStreamer_1_1SourceFactory.html", [
-        [ "Config", "structGStreamer_1_1SourceFactory_1_1Config.html", "structGStreamer_1_1SourceFactory_1_1Config" ]
-      ] ],
       [ "Environment", "namespaceGStreamer_1_1Environment.html", [
-        [ "ValidationResult", "structGStreamer_1_1Environment_1_1ValidationResult.html", "structGStreamer_1_1Environment_1_1ValidationResult" ],
         [ "BundledRuntime", "structGStreamer_1_1Environment_1_1BundledRuntime.html", "structGStreamer_1_1Environment_1_1BundledRuntime" ],
         [ "BundleLayout", "structGStreamer_1_1Environment_1_1BundleLayout.html", "structGStreamer_1_1Environment_1_1BundleLayout" ]
       ] ],
@@ -90,7 +88,9 @@ var annotated_dup =
         [ "RecordingFormat", "structGStreamer_1_1SelfTest_1_1RecordingFormat.html", "structGStreamer_1_1SelfTest_1_1RecordingFormat" ],
         [ "DecodeResult", "structGStreamer_1_1SelfTest_1_1DecodeResult.html", "structGStreamer_1_1SelfTest_1_1DecodeResult" ]
       ] ],
-      [ "VideoSinkConfig", "structGStreamer_1_1VideoSinkConfig.html", "structGStreamer_1_1VideoSinkConfig" ],
+      [ "SourceFactory", "namespaceGStreamer_1_1SourceFactory.html", [
+        [ "Config", "structGStreamer_1_1SourceFactory_1_1Config.html", "structGStreamer_1_1SourceFactory_1_1Config" ]
+      ] ],
       [ "MissingPluginFeature", "structGStreamer_1_1MissingPluginFeature.html", "structGStreamer_1_1MissingPluginFeature" ],
       [ "DecoderInfo", "structGStreamer_1_1DecoderInfo.html", "structGStreamer_1_1DecoderInfo" ],
       [ "RankTraits", "structGStreamer_1_1RankTraits.html", "structGStreamer_1_1RankTraits" ],
@@ -98,7 +98,6 @@ var annotated_dup =
       [ "RankPlan", "structGStreamer_1_1RankPlan.html", "structGStreamer_1_1RankPlan" ],
       [ "DecoderRankApplier", "classGStreamer_1_1DecoderRankApplier.html", "classGStreamer_1_1DecoderRankApplier" ],
       [ "ScopedDecoderOption", "classGStreamer_1_1ScopedDecoderOption.html", "classGStreamer_1_1ScopedDecoderOption" ],
-      [ "Runtime", "classGStreamer_1_1Runtime.html", "classGStreamer_1_1Runtime" ],
       [ "GstObjectDeleter", "structGStreamer_1_1GstObjectDeleter.html", "structGStreamer_1_1GstObjectDeleter" ],
       [ "GstQueryDeleter", "structGStreamer_1_1GstQueryDeleter.html", "structGStreamer_1_1GstQueryDeleter" ],
       [ "GstCapsDeleter", "structGStreamer_1_1GstCapsDeleter.html", "structGStreamer_1_1GstCapsDeleter" ],
@@ -108,8 +107,10 @@ var annotated_dup =
       [ "GstStructureDeleter", "structGStreamer_1_1GstStructureDeleter.html", "structGStreamer_1_1GstStructureDeleter" ],
       [ "GFreeDeleter", "structGStreamer_1_1GFreeDeleter.html", "structGStreamer_1_1GFreeDeleter" ],
       [ "GErrorDeleter", "structGStreamer_1_1GErrorDeleter.html", "structGStreamer_1_1GErrorDeleter" ],
+      [ "MessageError", "structGStreamer_1_1MessageError.html", "structGStreamer_1_1MessageError" ],
       [ "ScopedSignal", "classGStreamer_1_1ScopedSignal.html", "classGStreamer_1_1ScopedSignal" ],
-      [ "PadProbe", "classGStreamer_1_1PadProbe.html", "classGStreamer_1_1PadProbe" ]
+      [ "PadProbe", "classGStreamer_1_1PadProbe.html", "classGStreamer_1_1PadProbe" ],
+      [ "RtpPacketCounts", "structGStreamer_1_1RtpPacketCounts.html", "structGStreamer_1_1RtpPacketCounts" ]
     ] ],
     [ "JsonParsing", "namespaceJsonParsing.html", [
       [ "KeyValidateInfo", "structJsonParsing_1_1KeyValidateInfo.html", "structJsonParsing_1_1KeyValidateInfo" ]
@@ -333,6 +334,8 @@ var annotated_dup =
     [ "AirframeComponentController", "classAirframeComponentController.html", "classAirframeComponentController" ],
     [ "AirframeType", "classAirframeType.html", "classAirframeType" ],
     [ "AndroidEvents", "classAndroidEvents.html", "classAndroidEvents" ],
+    [ "AndroidSerialBackend", "classAndroidSerialBackend.html", "classAndroidSerialBackend" ],
+    [ "AndroidSerialBackendHost", "classAndroidSerialBackendHost.html", "classAndroidSerialBackendHost" ],
     [ "APMAdvancedTuningCopterComponent", "classAPMAdvancedTuningCopterComponent.html", "classAPMAdvancedTuningCopterComponent" ],
     [ "APMAirframeComponent", "classAPMAirframeComponent.html", "classAPMAirframeComponent" ],
     [ "APMAirframeComponentController", "classAPMAirframeComponentController.html", "classAPMAirframeComponentController" ],
@@ -483,6 +486,7 @@ var annotated_dup =
     [ "FlightPathSegment", "classFlightPathSegment.html", "classFlightPathSegment" ],
     [ "FlyViewSettings", "classFlyViewSettings.html", "classFlyViewSettings" ],
     [ "FollowMe", "classFollowMe.html", "classFollowMe" ],
+    [ "FrameGeometry", "structFrameGeometry.html", "structFrameGeometry" ],
     [ "FTPController", "classFTPController.html", "classFTPController" ],
     [ "FTPManager", "classFTPManager.html", "classFTPManager" ],
     [ "FunctionState", "classFunctionState.html", "classFunctionState" ],
@@ -873,10 +877,7 @@ var annotated_dup =
     [ "QmlObjectTreeModel", "classQmlObjectTreeModel.html", "classQmlObjectTreeModel" ],
     [ "QmlUnitsConversion", "classQmlUnitsConversion.html", "classQmlUnitsConversion" ],
     [ "QSerialPort", "classQSerialPort.html", "classQSerialPort" ],
-    [ "QSerialPortErrorInfo", "classQSerialPortErrorInfo.html", "classQSerialPortErrorInfo" ],
     [ "QSerialPortInfo", "classQSerialPortInfo.html", "classQSerialPortInfo" ],
-    [ "QSerialPortInfoPrivate", "classQSerialPortInfoPrivate.html", "classQSerialPortInfoPrivate" ],
-    [ "QSerialPortPrivate", "classQSerialPortPrivate.html", "classQSerialPortPrivate" ],
     [ "QtMultimediaVideoReceiver", "classQtMultimediaVideoReceiver.html", "classQtMultimediaVideoReceiver" ],
     [ "QtRuntimeScheduler", "classQtRuntimeScheduler.html", "classQtRuntimeScheduler" ],
     [ "QtVideoRecorder", "classQtVideoRecorder.html", "classQtVideoRecorder" ],
@@ -890,7 +891,6 @@ var annotated_dup =
     [ "RCToParamDialogController", "classRCToParamDialogController.html", "classRCToParamDialogController" ],
     [ "ReadTimestamp", "classReadTimestamp.html", "classReadTimestamp" ],
     [ "RecordingBranch", "classRecordingBranch.html", "classRecordingBranch" ],
-    [ "RecordingFinalizer", "classRecordingFinalizer.html", "classRecordingFinalizer" ],
     [ "RecordingPlan", "classRecordingPlan.html", "classRecordingPlan" ],
     [ "RemoteControlCalibrationController", "classRemoteControlCalibrationController.html", "classRemoteControlCalibrationController" ],
     [ "RemoteIDManager", "classRemoteIDManager.html", "classRemoteIDManager" ],
@@ -911,6 +911,7 @@ var annotated_dup =
     [ "RTCMMessageCountQmlType", "structRTCMMessageCountQmlType.html", null ],
     [ "RTCMUdpInput", "classRTCMUdpInput.html", "classRTCMUdpInput" ],
     [ "RTKSettings", "classRTKSettings.html", "classRTKSettings" ],
+    [ "RtpPacketCounter", "classRtpPacketCounter.html", "classRtpPacketCounter" ],
     [ "RunGuard", "classRunGuard.html", "classRunGuard" ],
     [ "RuntimeScheduler", "classRuntimeScheduler.html", "classRuntimeScheduler" ],
     [ "ScheduledTask", "classScheduledTask.html", "classScheduledTask" ],
@@ -1022,7 +1023,6 @@ var annotated_dup =
     [ "UnitsSettings", "classUnitsSettings.html", "classUnitsSettings" ],
     [ "UrlFactory", "classUrlFactory.html", "classUrlFactory" ],
     [ "UVCCameraController", "classUVCCameraController.html", "classUVCCameraController" ],
-    [ "UVCFrameRelay", "classUVCFrameRelay.html", "classUVCFrameRelay" ],
     [ "UVCStreamMonitor", "classUVCStreamMonitor.html", "classUVCStreamMonitor" ],
     [ "Vehicle", "classVehicle.html", "classVehicle" ],
     [ "VehicleCameraControl", "classVehicleCameraControl.html", "classVehicleCameraControl" ],

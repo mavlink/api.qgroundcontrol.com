@@ -8,6 +8,8 @@ var classGPSReceiverConnector =
     [ "endConnection", "classGPSReceiverConnector.html#aa96633ed664151de13b22b55d9166d2b", null ],
     [ "hasReceiver", "classGPSReceiverConnector.html#a32b4312c232095e73d0fc99d2300a31e", null ],
     [ "rtkReceiverPorts", "classGPSReceiverConnector.html#a22060ab2c1a95fdb09152bef5e582169", null ],
+    [ "serialPortAllowed", "classGPSReceiverConnector.html#a2741c510bbc370b8f8d24d703aa7c9de", null ],
     [ "serialPortAvailable", "classGPSReceiverConnector.html#a408e2d1e0a5948ed29040997389c9abe", null ],
+    [ "serialPortLabel", "classGPSReceiverConnector.html#a68d940945b9a3920cfb4b90ec1740b65", null ],
     [ "setConnectionError", "classGPSReceiverConnector.html#a4a420db5e1132efce6234e07751141a6", null ]
 ];

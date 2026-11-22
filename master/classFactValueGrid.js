@@ -1,5 +1,6 @@
 var classFactValueGrid =
 [
+    [ "LayoutFact", "structFactValueGrid_1_1LayoutFact.html", "structFactValueGrid_1_1LayoutFact" ],
     [ "FontSize", "classFactValueGrid.html#aa0426be81b52fd789f9819794245099c", [
       [ "DefaultFontSize", "classFactValueGrid.html#aa0426be81b52fd789f9819794245099ca1a98421ed202da61a07c8d31af3336b7", null ],
       [ "SmallFontSize", "classFactValueGrid.html#aa0426be81b52fd789f9819794245099ca05202ee77766f8e26b28c428e5debab8", null ],
@@ -19,6 +20,7 @@ var classFactValueGrid =
     [ "fontSize", "classFactValueGrid.html#aeb6bd31024ac0e1a27df39c8d2c87cb4", null ],
     [ "fontSizeChanged", "classFactValueGrid.html#ae8d81a7e7c1d5a6da0b72ab4ee0111d8", null ],
     [ "iconNames", "classFactValueGrid.html#a4ab88bbddbd8ad0f18a27e48b57dfbeb", null ],
+    [ "layoutFacts", "classFactValueGrid.html#a2c88f1a6d0d117e276785e4462faa069", null ],
     [ "resetToDefaults", "classFactValueGrid.html#a11a8799ac6c0db570a8c42c08fe3b349", null ],
     [ "rowCountChanged", "classFactValueGrid.html#a3a612cb6dad5a4e5137fa902e6d6d27f", null ],
     [ "setFontSize", "classFactValueGrid.html#a88606b13f9b33ce6b19a3c60b0fca3bf", null ],

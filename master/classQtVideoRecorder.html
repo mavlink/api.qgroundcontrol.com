@@ -137,9 +137,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2b9cc8547ccf047a4aea5c35c53a1936"><td class="mdescLeft">&#160;</td><td class="mdescRight">From the first encoded frame until the recorder stops.  <br /></td></tr>
 <tr class="memitem:ae3511dda488ccc7f0605c8b7461ae7ac" id="r_ae3511dda488ccc7f0605c8b7461ae7ac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3511dda488ccc7f0605c8b7461ae7ac">active</a> () const</td></tr>
 <tr class="memdesc:ae3511dda488ccc7f0605c8b7461ae7ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recording, or waiting for the first frame to encode.  <br /></td></tr>
-<tr class="memitem:af27acd6bd859894d743e17c3e2d5b4a7" id="r_af27acd6bd859894d743e17c3e2d5b4a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af27acd6bd859894d743e17c3e2d5b4a7">start</a> (const QString &amp;file, QMediaFormat::FileFormat <a class="el" href="#a6ee2c9b11c015c1b91ef553ee89c9862">container</a>, QMediaFormat::VideoCodec codec=QMediaFormat::VideoCodec::Unspecified)</td></tr>
+<tr class="memitem:ac9e899a141efd059d72026eb08aedeec" id="r_ac9e899a141efd059d72026eb08aedeec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9e899a141efd059d72026eb08aedeec">start</a> (const QString &amp;file, QMediaFormat::FileFormat <a class="el" href="#a6ee2c9b11c015c1b91ef553ee89c9862">container</a>, QMediaFormat::VideoCodec codec=QMediaFormat::VideoCodec::Unspecified, QMediaRecorder::Quality quality=QMediaRecorder::HighQuality)</td></tr>
 <tr class="memitem:a08fc5a37a153574e4f3536635022bb69" id="r_a08fc5a37a153574e4f3536635022bb69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08fc5a37a153574e4f3536635022bb69">stop</a> ()</td></tr>
-<tr class="memitem:a554f040c2b81c3f2d2201cc4c2ee686e" id="r_a554f040c2b81c3f2d2201cc4c2ee686e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a554f040c2b81c3f2d2201cc4c2ee686e">stopAndWait</a> (int timeoutMs)</td></tr>
+<tr class="memitem:aa60c5bc6801fdad4ced400549b4376e5" id="r_aa60c5bc6801fdad4ced400549b4376e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa60c5bc6801fdad4ced400549b4376e5">stopAndWait</a> (std::chrono::milliseconds timeout=<a class="el" href="#a700927c2c7a9cbda0a0b96da0767b114">kFinishTimeout</a>)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -151,6 +151,13 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:ac5c51778bfc8802e71f6223825139ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the codec of key <code class="param">key</code>, such as "H.264", for display.  <br /></td></tr>
 <tr class="memitem:a6ee2c9b11c015c1b91ef553ee89c9862" id="r_a6ee2c9b11c015c1b91ef553ee89c9862"><td class="memItemLeft" align="right" valign="top">static QMediaFormat::FileFormat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ee2c9b11c015c1b91ef553ee89c9862">container</a> (<a class="el" href="classVideoReceiver.html#a9e7c155dd24f76261f8861d9ec466035">VideoReceiver::FileFormat</a> format)</td></tr>
 <tr class="memdesc:a6ee2c9b11c015c1b91ef553ee89c9862"><td class="mdescLeft">&#160;</td><td class="mdescRight">The container of <code class="param">format</code>.  <br /></td></tr>
+<tr class="memitem:aad032eebc980de20b816a51ef694c86f" id="r_aad032eebc980de20b816a51ef694c86f"><td class="memItemLeft" align="right" valign="top">static QMediaRecorder::Quality&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad032eebc980de20b816a51ef694c86f">recordingQuality</a> (int value)</td></tr>
+<tr class="memdesc:aad032eebc980de20b816a51ef694c86f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The quality of value <code class="param">value</code>, one of VideoSettings::uvcRecordingQuality's; HighQuality for any other.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a700927c2c7a9cbda0a0b96da0767b114" id="r_a700927c2c7a9cbda0a0b96da0767b114"><td class="memItemLeft" align="right" valign="top">static constexpr std::chrono::seconds&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a700927c2c7a9cbda0a0b96da0767b114">kFinishTimeout</a> {5}</td></tr>
+<tr class="memdesc:a700927c2c7a9cbda0a0b96da0767b114"><td class="mdescLeft">&#160;</td><td class="mdescRight">How long an owner going away waits for a recording's file to be finished.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -158,9 +165,9 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Records the video of a QMediaCaptureSession with Qt Multimedia's encoders: a USB camera's (<a class="el" href="classUVCCameraController.html">UVCCameraController</a>), or a stream's decoded frames fed in through a QVideoFrameInput (<a class="el" href="classQtMultimediaVideoReceiver.html">QtMultimediaVideoReceiver</a>). The capture session records with <a class="el" href="#aca5ef8fb9df5471937465c2bd15b5a8f">mediaRecorder()</a>, which outlives it: a session going away mid-recording makes it finish the file and report it.</p>
-<p><a class="el" href="#af27acd6bd859894d743e17c3e2d5b4a7">start()</a> records to "&lt;file without suffix&gt;.&lt;suffix of the format used&gt;", trying <a class="el" href="#a16d123667429e98855ffddf0f2941079">recordingFormats()</a> in turn until one encodes. <a class="el" href="#aa3baaaa2793867e33c3054b6062c6275">recordingStarted()</a> follows once the first frame is encoded, or <a class="el" href="#a9ac4cb12f166d008e197bff4b5862498" title="error is empty for a recording that finished normally.">recordingFinished()</a> with an error; a failed attempt leaves no file behind. Recordings carry their start time and <a class="el" href="classVideoReceiver.html#aa1f223a713c624eff1b321c8cb9b54ea" title="The comment recordings carry, of GStreamer and of a USB camera alike: the application and its version...">VideoReceiver::recordingComment()</a>. </p>
+<p><a class="el" href="#ac9e899a141efd059d72026eb08aedeec">start()</a> records to "&lt;file without suffix&gt;.&lt;suffix of the format used&gt;", at the quality asked for, trying <a class="el" href="#a16d123667429e98855ffddf0f2941079">recordingFormats()</a> in turn until one encodes. <a class="el" href="#aa3baaaa2793867e33c3054b6062c6275">recordingStarted()</a> follows once the first frame is encoded, or <a class="el" href="#a9ac4cb12f166d008e197bff4b5862498" title="error is empty for a recording that finished normally.">recordingFinished()</a> with an error; a failed attempt leaves no file behind. Recordings carry their start time and <a class="el" href="classVideoReceiver.html#aa1f223a713c624eff1b321c8cb9b54ea" title="The comment recordings carry, of GStreamer and of a USB camera alike: the application and its version...">VideoReceiver::recordingComment()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8h_source.html#l00019">19</a> of file <a class="el" href="QtVideoRecorder_8h_source.html">QtVideoRecorder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8h_source.html#l00022">22</a> of file <a class="el" href="QtVideoRecorder_8h_source.html">QtVideoRecorder.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9e51d1e91d6da15215e41265f31f32b6" name="a9e51d1e91d6da15215e41265f31f32b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e51d1e91d6da15215e41265f31f32b6">&#9670;&#160;</a></span>QtVideoRecorder()</h2>
@@ -242,7 +249,7 @@ Friends</h2></td></tr>
 
 <p>Recording, or waiting for the first frame to encode. </p>
 
-<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8h_source.html#l00035">35</a> of file <a class="el" href="QtVideoRecorder_8h_source.html">QtVideoRecorder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8h_source.html#l00041">41</a> of file <a class="el" href="QtVideoRecorder_8h_source.html">QtVideoRecorder.h</a>.</p>
 
 </div>
 </div>
@@ -273,9 +280,9 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8cc_source.html#l00155">155</a> of file <a class="el" href="QtVideoRecorder_8cc_source.html">QtVideoRecorder.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00054">VideoReceiver::Mkv</a>, <a class="el" href="VideoReceiver_8h_source.html#l00055">VideoReceiver::Mov</a>, and <a class="el" href="VideoReceiver_8h_source.html#l00056">VideoReceiver::Mp4</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00057">VideoReceiver::Mkv</a>, <a class="el" href="VideoReceiver_8h_source.html#l00058">VideoReceiver::Mov</a>, and <a class="el" href="VideoReceiver_8h_source.html#l00059">VideoReceiver::Mp4</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00168">QtMultimediaVideoReceiver::onStartRecording()</a>, <a class="el" href="QtVideoRecorder_8cc_source.html#l00120">recordingCodecs()</a>, <a class="el" href="QtVideoRecorder_8cc_source.html#l00083">recordingFormats()</a>, <a class="el" href="QtVideoRecorder_8cc_source.html#l00168">start()</a>, and <a class="el" href="VideoRecordingService_8cc_source.html#l00084">VideoRecordingService::startRecording()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00196">QtMultimediaVideoReceiver::onStartRecording()</a>, <a class="el" href="UVCCameraController_8cc_source.html#l00176">UVCCameraController::onStartRecording()</a>, <a class="el" href="QtVideoRecorder_8cc_source.html#l00120">recordingCodecs()</a>, <a class="el" href="QtVideoRecorder_8cc_source.html#l00083">recordingFormats()</a>, and <a class="el" href="QtVideoRecorder_8cc_source.html#l00174">start()</a>.</p>
 
 </div>
 </div>
@@ -302,7 +309,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8h_source.html#l00029">29</a> of file <a class="el" href="QtVideoRecorder_8h_source.html">QtVideoRecorder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8h_source.html#l00035">35</a> of file <a class="el" href="QtVideoRecorder_8h_source.html">QtVideoRecorder.h</a>.</p>
 
 </div>
 </div>
@@ -331,9 +338,9 @@ Friends</h2></td></tr>
 
 <p>From the first encoded frame until the recorder stops. </p>
 
-<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8h_source.html#l00032">32</a> of file <a class="el" href="QtVideoRecorder_8h_source.html">QtVideoRecorder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8h_source.html#l00038">38</a> of file <a class="el" href="QtVideoRecorder_8h_source.html">QtVideoRecorder.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#a43f96d0e42acd373c46804322c93295c">recordingChanged()</a>, and <a class="el" href="QtVideoRecorder_8cc_source.html#l00213">stopAndWait()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#a43f96d0e42acd373c46804322c93295c">recordingChanged()</a>, and <a class="el" href="QtVideoRecorder_8cc_source.html#l00225">stopAndWait()</a>.</p>
 
 </div>
 </div>
@@ -360,9 +367,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="QtVideoRecorder_8h_source.html#l00032">recording()</a>.</p>
+<p class="reference">References <a class="el" href="QtVideoRecorder_8h_source.html#l00038">recording()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00060">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, <a class="el" href="QtVideoRecorder_8cc_source.html#l00064">QtVideoRecorder()</a>, <a class="el" href="QtVideoRecorder_8cc_source.html#l00213">stopAndWait()</a>, and <a class="el" href="UVCCameraController_8cc_source.html#l00050">UVCCameraController::UVCCameraController()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00079">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, <a class="el" href="QtVideoRecorder_8cc_source.html#l00064">QtVideoRecorder()</a>, <a class="el" href="QtVideoRecorder_8cc_source.html#l00225">stopAndWait()</a>, and <a class="el" href="UVCCameraController_8cc_source.html#l00055">UVCCameraController::UVCCameraController()</a>.</p>
 
 </div>
 </div>
@@ -393,7 +400,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8cc_source.html#l00143">143</a> of file <a class="el" href="QtVideoRecorder_8cc_source.html">QtVideoRecorder.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QtVideoRecorder_8cc_source.html#l00150">recordingCodecName()</a>, and <a class="el" href="VideoRecordingService_8cc_source.html#l00084">VideoRecordingService::startRecording()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QtVideoRecorder_8cc_source.html#l00150">recordingCodecName()</a>.</p>
 
 </div>
 </div>
@@ -426,7 +433,7 @@ Friends</h2></td></tr>
 
 <p class="reference">References <a class="el" href="QtVideoRecorder_8cc_source.html#l00143">recordingCodec()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UVCCameraController_8h_source.html#l00150">UVCCameraController::recordingCodecName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UVCCameraController_8h_source.html#l00137">UVCCameraController::recordingCodecName()</a>.</p>
 
 </div>
 </div>
@@ -458,7 +465,7 @@ Friends</h2></td></tr>
 
 <p class="reference">References <a class="el" href="QtVideoRecorder_8cc_source.html#l00155">container()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="UVCCameraController_8h_source.html#l00148">UVCCameraController::recordingCodecs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UVCCameraController_8h_source.html#l00135">UVCCameraController::recordingCodecs()</a>.</p>
 
 </div>
 </div>
@@ -491,7 +498,7 @@ Friends</h2></td></tr>
 
 <p><code class="param">error</code> is empty for a recording that finished normally. </p>
 
-<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00060">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, <a class="el" href="QtVideoRecorder_8cc_source.html#l00168">start()</a>, and <a class="el" href="UVCCameraController_8cc_source.html#l00050">UVCCameraController::UVCCameraController()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00079">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, <a class="el" href="QtVideoRecorder_8cc_source.html#l00174">start()</a>, and <a class="el" href="UVCCameraController_8cc_source.html#l00055">UVCCameraController::UVCCameraController()</a>.</p>
 
 </div>
 </div>
@@ -521,13 +528,42 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The formats <a class="el" href="#af27acd6bd859894d743e17c3e2d5b4a7">start()</a> tries for <code class="param">container</code>, best first: <code class="param">codec</code> where Qt can encode it, then H.264 and the other codecs Qt can encode here, down to software MPEG-2. In <code class="param">container</code> where Qt can write it, else in another container. Qt counts a hardware encoder as encodable even where the hardware turns it down, hence the fallbacks. </p>
+<p>The formats <a class="el" href="#ac9e899a141efd059d72026eb08aedeec">start()</a> tries for <code class="param">container</code>, best first: <code class="param">codec</code> where Qt can encode it, then H.264 and the other codecs Qt can encode here, down to software MPEG-2. In <code class="param">container</code> where Qt can write it, else in another container. Qt counts a hardware encoder as encodable even where the hardware turns it down, hence the fallbacks. </p>
 
 <p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8cc_source.html#l00083">83</a> of file <a class="el" href="QtVideoRecorder_8cc_source.html">QtVideoRecorder.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="QtVideoRecorder_8cc_source.html#l00155">container()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QtVideoRecorder_8cc_source.html#l00168">start()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QtVideoRecorder_8cc_source.html#l00174">start()</a>.</p>
+
+</div>
+</div>
+<a id="aad032eebc980de20b816a51ef694c86f" name="aad032eebc980de20b816a51ef694c86f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad032eebc980de20b816a51ef694c86f">&#9670;&#160;</a></span>recordingQuality()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMediaRecorder::Quality QtVideoRecorder::recordingQuality </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The quality of value <code class="param">value</code>, one of VideoSettings::uvcRecordingQuality's; HighQuality for any other. </p>
+
+<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8cc_source.html#l00168">168</a> of file <a class="el" href="QtVideoRecorder_8cc_source.html">QtVideoRecorder.cc</a>.</p>
 
 </div>
 </div>
@@ -554,12 +590,12 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00060">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, <a class="el" href="QtVideoRecorder_8cc_source.html#l00064">QtVideoRecorder()</a>, and <a class="el" href="UVCCameraController_8cc_source.html#l00050">UVCCameraController::UVCCameraController()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00079">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, <a class="el" href="QtVideoRecorder_8cc_source.html#l00064">QtVideoRecorder()</a>, and <a class="el" href="UVCCameraController_8cc_source.html#l00055">UVCCameraController::UVCCameraController()</a>.</p>
 
 </div>
 </div>
-<a id="af27acd6bd859894d743e17c3e2d5b4a7" name="af27acd6bd859894d743e17c3e2d5b4a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af27acd6bd859894d743e17c3e2d5b4a7">&#9670;&#160;</a></span>start()</h2>
+<a id="ac9e899a141efd059d72026eb08aedeec" name="ac9e899a141efd059d72026eb08aedeec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9e899a141efd059d72026eb08aedeec">&#9670;&#160;</a></span>start()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -577,13 +613,18 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QMediaFormat::VideoCodec</td>          <td class="paramname"><span class="paramname"><em>codec</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QMediaFormat::VideoCodec::Unspecified</span>&#160;)</td>
+          <td class="paramtype">QMediaFormat::VideoCodec</td>          <td class="paramname"><span class="paramname"><em>codec</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QMediaFormat::VideoCodec::Unspecified</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QMediaRecorder::Quality</td>          <td class="paramname"><span class="paramname"><em>quality</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QMediaRecorder::HighQuality</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Records the capture session <a class="el" href="#aca5ef8fb9df5471937465c2bd15b5a8f">mediaRecorder()</a> is set on to <code class="param">file</code>, in <code class="param">container</code> and <code class="param">codec</code> where Qt can encode them: see <a class="el" href="#a16d123667429e98855ffddf0f2941079">recordingFormats()</a>. Reports <a class="el" href="#a9ac4cb12f166d008e197bff4b5862498" title="error is empty for a recording that finished normally.">recordingFinished()</a> with an error when no format encodes. </p>
+<p>Records the capture session <a class="el" href="#aca5ef8fb9df5471937465c2bd15b5a8f">mediaRecorder()</a> is set on to <code class="param">file</code>, in <code class="param">container</code> and <code class="param">codec</code> where Qt can encode them: see <a class="el" href="#a16d123667429e98855ffddf0f2941079">recordingFormats()</a>. <code class="param">quality</code> sets how large the file gets: Qt encodes for a constant quality, or for a bit rate it works out from one where the encoder takes only that (Android, iOS, Intel Macs). Reports <a class="el" href="#a9ac4cb12f166d008e197bff4b5862498" title="error is empty for a recording that finished normally.">recordingFinished()</a> with an error when no format encodes. </p>
 
-<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8cc_source.html#l00168">168</a> of file <a class="el" href="QtVideoRecorder_8cc_source.html">QtVideoRecorder.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8cc_source.html#l00174">174</a> of file <a class="el" href="QtVideoRecorder_8cc_source.html">QtVideoRecorder.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="QtVideoRecorder_8cc_source.html#l00155">container()</a>, <a class="el" href="#a9ac4cb12f166d008e197bff4b5862498">recordingFinished()</a>, and <a class="el" href="QtVideoRecorder_8cc_source.html#l00083">recordingFormats()</a>.</p>
 
@@ -604,14 +645,14 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8cc_source.html#l00207">207</a> of file <a class="el" href="QtVideoRecorder_8cc_source.html">QtVideoRecorder.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8cc_source.html#l00219">219</a> of file <a class="el" href="QtVideoRecorder_8cc_source.html">QtVideoRecorder.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QtVideoRecorder_8cc_source.html#l00213">stopAndWait()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QtVideoRecorder_8cc_source.html#l00225">stopAndWait()</a>.</p>
 
 </div>
 </div>
-<a id="a554f040c2b81c3f2d2201cc4c2ee686e" name="a554f040c2b81c3f2d2201cc4c2ee686e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a554f040c2b81c3f2d2201cc4c2ee686e">&#9670;&#160;</a></span>stopAndWait()</h2>
+<a id="aa60c5bc6801fdad4ced400549b4376e5" name="aa60c5bc6801fdad4ced400549b4376e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa60c5bc6801fdad4ced400549b4376e5">&#9670;&#160;</a></span>stopAndWait()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -619,16 +660,16 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">void QtVideoRecorder::stopAndWait </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeoutMs</em></span></td><td>)</td>
+          <td class="paramtype">std::chrono::milliseconds</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#a700927c2c7a9cbda0a0b96da0767b114">kFinishTimeout</a></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Stops recording and waits up to <code class="param">timeoutMs</code> for the file to be finished: Qt writes it on its own thread, which the application's exit would cut short. </p>
+<p>Stops recording and waits up to <code class="param">timeout</code> for the file to be finished: Qt writes it on its own thread, which the application's exit would cut short. </p>
 
-<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8cc_source.html#l00213">213</a> of file <a class="el" href="QtVideoRecorder_8cc_source.html">QtVideoRecorder.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8cc_source.html#l00225">225</a> of file <a class="el" href="QtVideoRecorder_8cc_source.html">QtVideoRecorder.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QtVideoRecorder_8h_source.html#l00032">recording()</a>, <a class="el" href="#a43f96d0e42acd373c46804322c93295c">recordingChanged()</a>, and <a class="el" href="QtVideoRecorder_8cc_source.html#l00207">stop()</a>.</p>
+<p class="reference">References <a class="el" href="QtVideoRecorder_8h_source.html#l00038">recording()</a>, <a class="el" href="#a43f96d0e42acd373c46804322c93295c">recordingChanged()</a>, and <a class="el" href="QtVideoRecorder_8cc_source.html#l00219">stop()</a>.</p>
 
 </div>
 </div>
@@ -653,17 +694,44 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8h_source.html#l00023">23</a> of file <a class="el" href="QtVideoRecorder_8h_source.html">QtVideoRecorder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8h_source.html#l00026">26</a> of file <a class="el" href="QtVideoRecorder_8h_source.html">QtVideoRecorder.h</a>.</p>
 
-<p class="reference">References <a class="el" href="QtVideoRecorder_8h_source.html#l00023">QtVideoRecorderTest</a>.</p>
+<p class="reference">References <a class="el" href="QtVideoRecorder_8h_source.html#l00026">QtVideoRecorderTest</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QtVideoRecorder_8h_source.html#l00023">QtVideoRecorderTest</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QtVideoRecorder_8h_source.html#l00026">QtVideoRecorderTest</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a700927c2c7a9cbda0a0b96da0767b114" name="a700927c2c7a9cbda0a0b96da0767b114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a700927c2c7a9cbda0a0b96da0767b114">&#9670;&#160;</a></span>kFinishTimeout</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::chrono::seconds QtVideoRecorder::kFinishTimeout {5}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>How long an owner going away waits for a recording's file to be finished. </p>
+
+<p class="definition">Definition at line <a class="el" href="QtVideoRecorder_8h_source.html#l00030">30</a> of file <a class="el" href="QtVideoRecorder_8h_source.html">QtVideoRecorder.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/VideoManager/Recording/<a class="el" href="QtVideoRecorder_8h_source.html">QtVideoRecorder.h</a></li>
-<li>src/VideoManager/Recording/<a class="el" href="QtVideoRecorder_8cc_source.html">QtVideoRecorder.cc</a></li>
+<li>src/VideoManager/QtMultimedia/<a class="el" href="QtVideoRecorder_8h_source.html">QtVideoRecorder.h</a></li>
+<li>src/VideoManager/QtMultimedia/<a class="el" href="QtVideoRecorder_8cc_source.html">QtVideoRecorder.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

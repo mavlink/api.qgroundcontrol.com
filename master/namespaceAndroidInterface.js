@@ -1,15 +1,19 @@
 var namespaceAndroidInterface =
 [
     [ "JniLocalRef", "classAndroidInterface_1_1JniLocalRef.html", "classAndroidInterface_1_1JniLocalRef" ],
-    [ "callStaticBooleanMethod", "namespaceAndroidInterface.html#a0c74b21aab2003eb9beb1b7fe2c64547", null ],
-    [ "callStaticIntMethod", "namespaceAndroidInterface.html#a4617e9a525382352b4adf0adb30103eb", null ],
+    [ "BackgroundWork", "namespaceAndroidInterface.html#aaa72e9b566ac813df3bd4754206c9930", [
+      [ "VehicleLink", "namespaceAndroidInterface.html#aaa72e9b566ac813df3bd4754206c9930ae22b63ffbbf06f774344ab04a3899f8d", null ],
+      [ "VideoRecording", "namespaceAndroidInterface.html#aaa72e9b566ac813df3bd4754206c9930ae1ff48054403b149f903eb40e16ec86e", null ]
+    ] ],
     [ "checkStoragePermissions", "namespaceAndroidInterface.html#a1de144acd3a125271bdc37028e50e01d", null ],
     [ "getSDCardPath", "namespaceAndroidInterface.html#a703f485cd79da09c6010b4f7c67b24e1", null ],
+    [ "javaLogCategory", "namespaceAndroidInterface.html#a3c2c5a9887509e3bf63cba3455c32e84", null ],
     [ "jniLogDebug", "namespaceAndroidInterface.html#a20c48a7f792ff325b881df0b323900f0", null ],
     [ "jniLogWarning", "namespaceAndroidInterface.html#a6e5849a57d07fc56696949356011f7f0", null ],
     [ "jniOnImportResult", "namespaceAndroidInterface.html#a09b2e1818f5d243330d2bed812772238", null ],
     [ "jniStoragePermissionsResult", "namespaceAndroidInterface.html#a44c60e070147a4cb65bdcb6533b45ea4", null ],
     [ "openFileImportDialog", "namespaceAndroidInterface.html#aa776b89a15f63ed5d006cc0f1b171d1b", null ],
+    [ "setBackgroundWork", "namespaceAndroidInterface.html#a71f1cafdc7343c1d7d4168e0ebcb119c", null ],
     [ "setKeepScreenOn", "namespaceAndroidInterface.html#ac3a3e10e135cd22c9235cc03c8542ec3", null ],
     [ "setNativeMethods", "namespaceAndroidInterface.html#a37655535e6d148db88d5452ccc092b9b", null ],
     [ "kJniQGCActivityClassName", "namespaceAndroidInterface.html#aee2999b3ba41c6ff7cca11f41270ada9", null ],

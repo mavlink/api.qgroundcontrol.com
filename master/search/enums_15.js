@@ -5,6 +5,7 @@ var searchData=
   ['verticaldistanceunits_2',['VerticalDistanceUnits',['../classUnitsSettings.html#a22c428defeb232b91194a5a9c173e037',1,'UnitsSettings']]],
   ['videobackendchoice_3',['VideoBackendChoice',['../classVideoSettings.html#a8c5752316512291033930a85a66e7d27',1,'VideoSettings']]],
   ['videocapturestatus_4',['VideoCaptureStatus',['../classMavlinkCameraControlInterface.html#ab7f9cce7a1999a8e5e9049acb5803f2b',1,'MavlinkCameraControlInterface']]],
-  ['videofit_5',['VideoFit',['../classVideoSettings.html#a9c07987e8c26e46317d9148d65025b9a',1,'VideoSettings']]],
-  ['videostreamtype_6',['VideoStreamType',['../classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afd',1,'MockConfiguration']]]
+  ['videodecoderoption_5',['VideoDecoderOption',['../VideoDecoderOptions_8h.html#a15c65ca87a71a16d48f8f7ce0ed148d4',1,'VideoDecoderOptions.h']]],
+  ['videofit_6',['VideoFit',['../classVideoSettings.html#a9c07987e8c26e46317d9148d65025b9a',1,'VideoSettings']]],
+  ['videostreamtype_7',['VideoStreamType',['../classMockConfiguration.html#a2a9b9cc697eaccbb5f387ecb848d3afd',1,'MockConfiguration']]]
 ];

@@ -119,6 +119,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7f10c18b0dff817e02df0d1db4693cea" id="r_a7f10c18b0dff817e02df0d1db4693cea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f10c18b0dff817e02df0d1db4693cea">linkChain</a> (std::initializer_list&lt; <a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> * &gt; chain)</td></tr>
 <tr class="memitem:a6a0289d713c7abf42a10ce308c6e9b6c" id="r_a6a0289d713c7abf42a10ce308c6e9b6c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a0289d713c7abf42a10ce308c6e9b6c">ghostSink</a> (<a class="el" href="MockVideoStreamServer_8h.html#a8b2d14560b8b4c41de69fe2bd2ce6fa3">GstElement</a> *head)</td></tr>
 <tr class="memitem:a7c0b66d75aac91047e4bcc4adaef8a04" id="r_a7c0b66d75aac91047e4bcc4adaef8a04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c0b66d75aac91047e4bcc4adaef8a04">commit</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a980ce8e287a1ec754624186d42bf41d6" id="r_a980ce8e287a1ec754624186d42bf41d6"><td class="memItemLeft" align="right" valign="top">static constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a980ce8e287a1ec754624186d42bf41d6">kMaxElements</a> = 5</td></tr>
+<tr class="memdesc:a980ce8e287a1ec754624186d42bf41d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The longest chain qgcvideosinkbin builds: videoconvert ! videoscale ! glupload ! glcolorconvert ! qgcqvideosink.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Linked element chain with automatic rollback: <a class="el" href="#aea48ba57e93862d76d960819c025911b">adopt()</a> elements, <a class="el" href="#a7f10c18b0dff817e02df0d1db4693cea">linkChain()</a> in flow order, <a class="el" href="#a6a0289d713c7abf42a10ce308c6e9b6c">ghostSink()</a> the head, <a class="el" href="#a7c0b66d75aac91047e4bcc4adaef8a04">commit()</a> on success; ~BinChain unwinds the rest. </p>
@@ -148,7 +153,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstQgcBinChain_8h_source.html#l00015">15</a> of file <a class="el" href="GstQgcBinChain_8h_source.html">GstQgcBinChain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcBinChain_8h_source.html#l00018">18</a> of file <a class="el" href="GstQgcBinChain_8h_source.html">GstQgcBinChain.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="#a5b6b583006a86cbefccf3a739325014d">BinChain()</a>, and <a class="el" href="#a260e428ec703dcb19317b57c929cf945">operator=()</a>.</p>
 
@@ -177,7 +182,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstQgcBinChain_8h_source.html#l00019">19</a> of file <a class="el" href="GstQgcBinChain_8h_source.html">GstQgcBinChain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcBinChain_8h_source.html#l00022">22</a> of file <a class="el" href="GstQgcBinChain_8h_source.html">GstQgcBinChain.h</a>.</p>
 
 </div>
 </div>
@@ -204,7 +209,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="GstQgcBinChain_8h_source.html#l00015">BinChain()</a>.</p>
+<p class="reference">References <a class="el" href="GstQgcBinChain_8h_source.html#l00018">BinChain()</a>.</p>
 
 </div>
 </div>
@@ -233,9 +238,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Adds <code class="param">element</code> to the bin and returns it (owned by the bin), or nullptr when the bin rejects it. Consumes the caller's ref, floating or not, either way. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstQgcBinChain_8h_source.html#l00037">37</a> of file <a class="el" href="GstQgcBinChain_8h_source.html">GstQgcBinChain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcBinChain_8h_source.html#l00040">40</a> of file <a class="el" href="GstQgcBinChain_8h_source.html">GstQgcBinChain.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00150">add_converter()</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00189">gst_qgc_video_sink_bin_setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00141">add_converter()</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00180">gst_qgc_video_sink_bin_setup()</a>.</p>
 
 </div>
 </div>
@@ -262,9 +267,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstQgcBinChain_8h_source.html#l00089">89</a> of file <a class="el" href="GstQgcBinChain_8h_source.html">GstQgcBinChain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcBinChain_8h_source.html#l00092">92</a> of file <a class="el" href="GstQgcBinChain_8h_source.html">GstQgcBinChain.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00189">gst_qgc_video_sink_bin_setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00180">gst_qgc_video_sink_bin_setup()</a>.</p>
 
 </div>
 </div>
@@ -291,9 +296,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstQgcBinChain_8h_source.html#l00070">70</a> of file <a class="el" href="GstQgcBinChain_8h_source.html">GstQgcBinChain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcBinChain_8h_source.html#l00073">73</a> of file <a class="el" href="GstQgcBinChain_8h_source.html">GstQgcBinChain.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00189">gst_qgc_video_sink_bin_setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00180">gst_qgc_video_sink_bin_setup()</a>.</p>
 
 </div>
 </div>
@@ -320,9 +325,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstQgcBinChain_8h_source.html#l00055">55</a> of file <a class="el" href="GstQgcBinChain_8h_source.html">GstQgcBinChain.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcBinChain_8h_source.html#l00058">58</a> of file <a class="el" href="GstQgcBinChain_8h_source.html">GstQgcBinChain.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00150">add_converter()</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00189">gst_qgc_video_sink_bin_setup()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00141">add_converter()</a>, and <a class="el" href="gstqgcvideosinkbin_8cc_source.html#l00180">gst_qgc_video_sink_bin_setup()</a>.</p>
 
 </div>
 </div>
@@ -349,7 +354,34 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="GstQgcBinChain_8h_source.html#l00015">BinChain()</a>.</p>
+<p class="reference">References <a class="el" href="GstQgcBinChain_8h_source.html#l00018">BinChain()</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a980ce8e287a1ec754624186d42bf41d6" name="a980ce8e287a1ec754624186d42bf41d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a980ce8e287a1ec754624186d42bf41d6">&#9670;&#160;</a></span>kMaxElements</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t GstQgc::BinChain::kMaxElements = 5</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The longest chain qgcvideosinkbin builds: videoconvert ! videoscale ! glupload ! glcolorconvert ! qgcqvideosink. </p>
+
+<p class="definition">Definition at line <a class="el" href="GstQgcBinChain_8h_source.html#l00016">16</a> of file <a class="el" href="GstQgcBinChain_8h_source.html">GstQgcBinChain.h</a>.</p>
 
 </div>
 </div>

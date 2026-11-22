@@ -115,41 +115,67 @@ $(function() {
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>VideoOutput {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    id: root</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    required property VideoStreamController stream</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    property bool _completed: false</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    // VideoOutput never emits windowChanged (QQuickVideoOutput::itemChange() doesn&#39;t chain up), so follow the</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    // parent&#39;s window. Moving to another window (PiP pop-out) needs a re-registration.</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    readonly property QtObject _window: parent ? parent.Window.window : null</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    // A lost stream&#39;s last frame stays up while it reconnects; a stopped or replaced stream&#39;s is cleared.</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    readonly property bool _keepsFrame: root.stream.decoding || root.stream.reconnecting</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    // Do NOT set `orientation` here — VideoOutput composes orientation on top of the</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    // QVideoFrame&#39;s own rotation()/mirrored() metadata that qgcqvideosink forwards from</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    // GstVideoOrientationMeta. Setting it would double-rotate any stream with orientation tags.</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    endOfStreamPolicy: VideoOutput.KeepLastFrame</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    opacity: root.stream.decoding ? 1 : 0.5</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    on_KeepsFrameChanged: {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        if (!root._keepsFrame) {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            root.clearOutput()</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    on_WindowChanged: {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        if (root._completed &amp;&amp; root._window) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            root.stream.registerVideoOutput(root)</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    Component.onCompleted: {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        root._completed = true</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        root.stream.registerVideoOutput(root)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    Component.onDestruction: root.stream.unregisterVideoOutput(root)</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    /// The stream shown. The output follows a change of it: the main picture&#39;s stream is another one once a stream</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    /// in a tile takes its place.</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    required property VideoStreamController stream</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    property bool _completed: false</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    property VideoStreamController _registeredStream: null</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    // Qt defect, seen in Qt 6.12.0: QQuickVideoOutput::itemChange() never calls QQuickItem::itemChange()</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    // (qtmultimedia/src/multimediaquick/qquickvideooutput.cpp), so a VideoOutput emits no windowChanged and its own</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    // Window.window goes stale. Hence the parent&#39;s window; moving to another window (PiP pop-out) needs a</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    // re-registration. Once the minimum Qt has the fix, QGCQVideoSinkController can connect to windowChanged, and</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    // _window, _completed and on_WindowChanged can go.</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    readonly property QtObject _window: parent ? parent.Window.window : null</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    // A lost stream&#39;s last frame stays up while it reconnects; a stopped or replaced stream&#39;s is cleared.</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    readonly property bool _keepsFrame: root.stream.decoding || root.stream.reconnecting</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    // Registers with the stream, anew if it is the same one. The stream it leaves keeps playing into the output that</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    // takes over from this one, if one registers in the same pass.</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    function _register() {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        if (root._registeredStream &amp;&amp; root._registeredStream !== root.stream) {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            root._registeredStream.unregisterVideoOutput(root)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        root._registeredStream = root.stream</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        root.stream.registerVideoOutput(root)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    // The rotation the camera reports for the stream (VIDEO_STREAM_INFORMATION.rotation). VideoOutput applies its</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    // orientation on top of each frame&#39;s own rotation and mirroring, which qgcqvideosink takes from the stream&#39;s</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    // orientation tag: a stream that carries a tag and also reports a rotation is turned by both.</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    orientation: root.stream.rotation</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    endOfStreamPolicy: VideoOutput.KeepLastFrame</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    opacity: root.stream.decoding ? 1 : 0.5</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    on_KeepsFrameChanged: {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        if (!root._keepsFrame) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            root.clearOutput()</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    on_WindowChanged: {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        if (root._completed &amp;&amp; root._window) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            root._register()</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    onStreamChanged: {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        if (root._completed) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            root._register()</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    Component.onCompleted: {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        root._completed = true</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        root._register()</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    Component.onDestruction: {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        if (root._registeredStream) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            root._registeredStream.unregisterVideoOutput(root)</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

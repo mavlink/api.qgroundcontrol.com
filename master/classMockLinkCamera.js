@@ -11,5 +11,6 @@ var classMockLinkCamera =
     [ "~MockLinkCamera", "classMockLinkCamera.html#ad5ac65d444b0de0ef5b2470c665438a3", null ],
     [ "handleMavlinkMessage", "classMockLinkCamera.html#a3f9b29503a55db5d181e65a51319efbf", null ],
     [ "run10HzTasks", "classMockLinkCamera.html#a85686b2b9b79666f9cea4e4bfdd1deb0", null ],
-    [ "sendCameraHeartbeats", "classMockLinkCamera.html#a018230395cb7a98b582c8f7cddab0028", null ]
+    [ "sendCameraHeartbeats", "classMockLinkCamera.html#a018230395cb7a98b582c8f7cddab0028", null ],
+    [ "streamTransmitted", "classMockLinkCamera.html#aecce0608cbeb91de710e99c83c5fe42a", null ]
 ];

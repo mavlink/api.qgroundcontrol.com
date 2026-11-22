@@ -6,7 +6,6 @@ var dir_9cfa324ed1c359ccf5ceca041be7f601 =
     [ "GstQgcBinChain.h", "GstQgcBinChain_8h.html", "GstQgcBinChain_8h" ],
     [ "GstQgcCaps.cc", "GstQgcCaps_8cc.html", "GstQgcCaps_8cc" ],
     [ "GstQgcCaps.h", "GstQgcCaps_8h.html", "GstQgcCaps_8h" ],
-    [ "gstqgcelements.cc", "gstqgcelements_8cc.html", "gstqgcelements_8cc" ],
     [ "gstqgcelements.h", "gstqgcelements_8h.html", "gstqgcelements_8h" ],
     [ "GstQgcFrameDelivery.cc", "GstQgcFrameDelivery_8cc.html", "GstQgcFrameDelivery_8cc" ],
     [ "GstQgcFrameDelivery.h", "GstQgcFrameDelivery_8h.html", "GstQgcFrameDelivery_8h" ],

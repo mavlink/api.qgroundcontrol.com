@@ -3,7 +3,9 @@ var namespaceVideoStreamResolver =
     [ "Settings", "structVideoStreamResolver_1_1Settings.html", "structVideoStreamResolver_1_1Settings" ],
     [ "Role", "namespaceVideoStreamResolver.html#a406dd3f43213d9ab0b31cc6cf0fc916a", [
       [ "Primary", "namespaceVideoStreamResolver.html#a406dd3f43213d9ab0b31cc6cf0fc916aa074de7e7c226d5c60f8af14c20725352", null ],
-      [ "Thermal", "namespaceVideoStreamResolver.html#a406dd3f43213d9ab0b31cc6cf0fc916aafdf1e200d60089abcb4a4c80ecd2bb75", null ]
+      [ "Thermal", "namespaceVideoStreamResolver.html#a406dd3f43213d9ab0b31cc6cf0fc916aafdf1e200d60089abcb4a4c80ecd2bb75", null ],
+      [ "Camera", "namespaceVideoStreamResolver.html#a406dd3f43213d9ab0b31cc6cf0fc916aa967d35e40f3f95b1f538bd248640bf3b", null ],
+      [ "Tile", "namespaceVideoStreamResolver.html#a406dd3f43213d9ab0b31cc6cf0fc916aac5457c5f3cfb4da8638ce7190f8e5152", null ]
     ] ],
     [ "displayConfig", "namespaceVideoStreamResolver.html#a2553e43ca865119413624885bed8fc10", null ],
     [ "isAutoStream", "namespaceVideoStreamResolver.html#ac4cf64b81b1af613a34bf12ec45480c6", null ],

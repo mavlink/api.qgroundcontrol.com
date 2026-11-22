@@ -8,7 +8,7 @@ var searchData=
   ['zda_5fmin_5ffields_5',['ZDA_MIN_FIELDS',['../namespaceNMEA_1_1Field.html#a744584ff8ef16674e6e88473b0bae8a9',1,'NMEA::Field']]],
   ['zda_5fmonth_6',['ZDA_MONTH',['../namespaceNMEA_1_1Field.html#a6fdd0edce21e7903ede40fa0ceb586a4',1,'NMEA::Field']]],
   ['zda_5fyear_7',['ZDA_YEAR',['../namespaceNMEA_1_1Field.html#abdff3e74ffc0ee17eec3f9985710b31b',1,'NMEA::Field']]],
-  ['zero_20copy_20diagnostics_8',['DMABuf zero-copy diagnostics',['../dir_b576ff9da4174a54288db11cc55a2673.html#autotoc_md22',1,'']]],
+  ['zero_20copy_20diagnostics_8',['DMABuf zero-copy diagnostics',['../dir_b576ff9da4174a54288db11cc55a2673.html#autotoc_md27',1,'']]],
   ['zerocopypathname_9',['zeroCopyPathName',['../namespaceGstQgc.html#ace11769eb8391fd6e6757583edd30316',1,'GstQgc']]],
   ['zigzag_10',['ZIGZAG',['../structAPMCopterMode.html#a0c1acd0660670de405dbcb9ed0587ea0aa26ff467336022b81ba3f2b4f9025176',1,'APMCopterMode::ZIGZAG'],['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a9f034247950cbe3eabda7c2ade5483dc',1,'APM::ZIGZAG']]],
   ['zigzag_5fauto_11',['ZIGZAG_Auto',['../namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03ab876b5dc8a08acf8081878fcfbcf52c1',1,'APM']]],

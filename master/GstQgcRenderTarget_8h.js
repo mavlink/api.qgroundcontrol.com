@@ -10,7 +10,7 @@ var GstQgcRenderTarget_8h =
       [ "GstQgc::RenderBackend::Metal", "namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1aeaa57a9b4248ce3968e718895e1c2f04", null ],
       [ "GstQgc::RenderBackend::Vulkan", "namespaceGstQgc.html#ab61a204b6697d9a9ed38cc03b82fbcb1a38625270231b647116c80bcbc4f9d1d8", null ]
     ] ],
-    [ "GstQgc::currentRenderTarget", "namespaceGstQgc.html#a5b9ef36668bc5b4b7256fd0c658c9f3c", null ],
+    [ "GstQgc::currentRenderTarget", "namespaceGstQgc.html#a022c1c7e3bc8b8d61019f4edcc3305e4", null ],
     [ "GstQgc::toString", "namespaceGstQgc.html#a416a854b5b8ef8d9e5cf82eeeeb0aa3a", null ],
     [ "GstQgc::zeroCopyPathName", "namespaceGstQgc.html#ace11769eb8391fd6e6757583edd30316", null ]
 ];

@@ -107,7 +107,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>What a receiver was asked to record, across the sessions reconnects start.  
+<p>What a receiver was asked to record, across the sessions reconnects start and the hours it runs for.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="RecordingPlan_8h_source.html">RecordingPlan.h</a>&gt;</code></p>
@@ -118,31 +118,39 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0a4162abdee22a0176e88d8eba2581a1" id="r_a0a4162abdee22a0176e88d8eba2581a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a4162abdee22a0176e88d8eba2581a1">RecordingPlan</a> (const QString &amp;<a class="el" href="#a525a09dace5e907f3c2c9ed15a8fd043">file</a>, <a class="el" href="classVideoReceiver.html#a9e7c155dd24f76261f8861d9ec466035">VideoReceiver::FileFormat</a> <a class="el" href="#aad951888415394a09e22a6ff05554f10">format</a>)</td></tr>
-<tr class="memitem:a525a09dace5e907f3c2c9ed15a8fd043" id="r_a525a09dace5e907f3c2c9ed15a8fd043"><td class="memItemLeft" align="right" valign="top">const QString &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a525a09dace5e907f3c2c9ed15a8fd043">file</a> () const</td></tr>
+<tr class="memitem:a12ce1060163ac908f419ca9de2d7f21d" id="r_a12ce1060163ac908f419ca9de2d7f21d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12ce1060163ac908f419ca9de2d7f21d">RecordingPlan</a> (const QString &amp;file, <a class="el" href="classVideoReceiver.html#a9e7c155dd24f76261f8861d9ec466035">VideoReceiver::FileFormat</a> <a class="el" href="#aad951888415394a09e22a6ff05554f10">format</a>, std::chrono::milliseconds maxPartDuration=<a class="el" href="#a922c6a397ccb1954ac5f12ae966bbcd6">kMaxPartDuration</a>)</td></tr>
 <tr class="memitem:aad951888415394a09e22a6ff05554f10" id="r_aad951888415394a09e22a6ff05554f10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVideoReceiver.html#a9e7c155dd24f76261f8861d9ec466035">VideoReceiver::FileFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad951888415394a09e22a6ff05554f10">format</a> () const</td></tr>
 <tr class="memitem:ade39853c74530b6e257b8d7d1f7bbe7c" id="r_ade39853c74530b6e257b8d7d1f7bbe7c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade39853c74530b6e257b8d7d1f7bbe7c">part</a> () const</td></tr>
 <tr class="memitem:a53a0724c09735ae50911d84452d3ff26" id="r_a53a0724c09735ae50911d84452d3ff26"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53a0724c09735ae50911d84452d3ff26">currentFile</a> () const</td></tr>
 <tr class="memdesc:a53a0724c09735ae50911d84452d3ff26"><td class="mdescLeft">&#160;</td><td class="mdescRight">The file the current part records to.  <br /></td></tr>
 <tr class="memitem:a89a436e33e7b6467f9979c2f55183a57" id="r_a89a436e33e7b6467f9979c2f55183a57"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89a436e33e7b6467f9979c2f55183a57">opened</a> () const</td></tr>
 <tr class="memdesc:a89a436e33e7b6467f9979c2f55183a57"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current part got a frame.  <br /></td></tr>
-<tr class="memitem:a096349af4b6129aa0e5385a0c8357c81" id="r_a096349af4b6129aa0e5385a0c8357c81"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a096349af4b6129aa0e5385a0c8357c81">onFileOpened</a> (const QString &amp;<a class="el" href="#a525a09dace5e907f3c2c9ed15a8fd043">file</a>, Clock::time_point now=Clock::now())</td></tr>
+<tr class="memitem:a096349af4b6129aa0e5385a0c8357c81" id="r_a096349af4b6129aa0e5385a0c8357c81"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a096349af4b6129aa0e5385a0c8357c81">onFileOpened</a> (const QString &amp;file, Clock::time_point now=Clock::now())</td></tr>
 <tr class="memdesc:a096349af4b6129aa0e5385a0c8357c81"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">file</code> got its first frame at <code class="param">now</code>. False, changing nothing, unless it is the current part's file.  <br /></td></tr>
-<tr class="memitem:a8abf4253d4e38a2181a6bc9fd0426168" id="r_a8abf4253d4e38a2181a6bc9fd0426168"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8abf4253d4e38a2181a6bc9fd0426168">onSessionEnded</a> ()</td></tr>
-<tr class="memdesc:a8abf4253d4e38a2181a6bc9fd0426168"><td class="mdescLeft">&#160;</td><td class="mdescRight">The session ended: the next one records the next part, if the current one got frames.  <br /></td></tr>
+<tr class="memitem:afc2a2e731be28b421b081cd5c7bcf035" id="r_afc2a2e731be28b421b081cd5c7bcf035"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc2a2e731be28b421b081cd5c7bcf035">onFileClosed</a> (const QString &amp;file)</td></tr>
+<tr class="memdesc:afc2a2e731be28b421b081cd5c7bcf035"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code class="param">file</code> is closed. Counts for the one that opened last only: a file of an earlier recording can close late.  <br /></td></tr>
+<tr class="memitem:a428ee235cf987aade4bade081d61e0dd" id="r_a428ee235cf987aade4bade081d61e0dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a428ee235cf987aade4bade081d61e0dd">partDue</a> (Clock::time_point now=Clock::now()) const</td></tr>
+<tr class="memdesc:a428ee235cf987aade4bade081d61e0dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current part has recorded for its maximum duration by <code class="param">now</code>.  <br /></td></tr>
+<tr class="memitem:a8bbd8781d514e23ed32595613bfeb06d" id="r_a8bbd8781d514e23ed32595613bfeb06d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8bbd8781d514e23ed32595613bfeb06d">nextPart</a> ()</td></tr>
 <tr class="memitem:a381533efc0ba8ad7215ba0a5ba36c931" id="r_a381533efc0ba8ad7215ba0a5ba36c931"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a381533efc0ba8ad7215ba0a5ba36c931">recordingMs</a> (Clock::time_point now=Clock::now()) const</td></tr>
 <tr class="memdesc:a381533efc0ba8ad7215ba0a5ba36c931"><td class="mdescLeft">&#160;</td><td class="mdescRight">For <a class="el" href="structVideoStreamStats.html#adc57b9d893f424097d26d31482ef0be0" title="While recording: for how long, and the bytes written to its files so far.">VideoStreamStats::recordingMs</a>: since the first part got its first frame; -1 before.  <br /></td></tr>
 <tr class="memitem:aa5c65f4ac172d70ef822a8ef5a43994e" id="r_aa5c65f4ac172d70ef822a8ef5a43994e"><td class="memItemLeft" align="right" valign="top">qint64&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5c65f4ac172d70ef822a8ef5a43994e">bytesWritten</a> () const</td></tr>
-<tr class="memdesc:aa5c65f4ac172d70ef822a8ef5a43994e"><td class="mdescLeft">&#160;</td><td class="mdescRight">For <a class="el" href="structVideoStreamStats.html#a1168822de22e5bd9ff973c8239585005">VideoStreamStats::recordingBytes</a>: the size of the parts' files so far.  <br /></td></tr>
+<tr class="memdesc:aa5c65f4ac172d70ef822a8ef5a43994e"><td class="mdescLeft">&#160;</td><td class="mdescRight">For <a class="el" href="structVideoStreamStats.html#a1168822de22e5bd9ff973c8239585005">VideoStreamStats::recordingBytes</a>: what the parts' files held when they closed, and the open one holds now.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a0780b04d7c5c9da47ebede9dc2aca970" id="r_a0780b04d7c5c9da47ebede9dc2aca970"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0780b04d7c5c9da47ebede9dc2aca970">partFile</a> (const QString &amp;<a class="el" href="#a525a09dace5e907f3c2c9ed15a8fd043">file</a>, int <a class="el" href="#ade39853c74530b6e257b8d7d1f7bbe7c">part</a>)</td></tr>
+<tr class="memitem:a72277d587b0cd765da64195b47c55b02" id="r_a72277d587b0cd765da64195b47c55b02"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72277d587b0cd765da64195b47c55b02">insertBeforeExtension</a> (const QString &amp;file, const QString &amp;tag)</td></tr>
+<tr class="memdesc:a72277d587b0cd765da64195b47c55b02"><td class="mdescLeft">&#160;</td><td class="mdescRight">"&lt;base&gt;&lt;tag&gt;.&lt;ext&gt;" for <code class="param">file</code> "&lt;base&gt;.&lt;ext&gt;", and "&lt;file&gt;&lt;tag&gt;" for one without an extension.  <br /></td></tr>
+<tr class="memitem:a0780b04d7c5c9da47ebede9dc2aca970" id="r_a0780b04d7c5c9da47ebede9dc2aca970"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0780b04d7c5c9da47ebede9dc2aca970">partFile</a> (const QString &amp;file, int <a class="el" href="#ade39853c74530b6e257b8d7d1f7bbe7c">part</a>)</td></tr>
 <tr class="memdesc:a0780b04d7c5c9da47ebede9dc2aca970"><td class="mdescLeft">&#160;</td><td class="mdescRight">"&lt;base&gt;_part&lt;part&gt;.&lt;ext&gt;" for <code class="param">file</code> "&lt;base&gt;.&lt;ext&gt;"; <code class="param">file</code> itself for part 1.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a922c6a397ccb1954ac5f12ae966bbcd6" id="r_a922c6a397ccb1954ac5f12ae966bbcd6"><td class="memItemLeft" align="right" valign="top">static constexpr std::chrono::minutes&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a922c6a397ccb1954ac5f12ae966bbcd6">kMaxPartDuration</a> {60}</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>What a receiver was asked to record, across the sessions reconnects start. </p>
-<p>Owns <a class="el" href="classVideoReceiver.html#a4969734c2003e67d33d26f5b45564afe">VideoReceiver::startRecording()</a>'s file contract for a receiver that records the stream as it arrives: the first session records to the file asked for, and each later one, once the part before got frames, to "&lt;base&gt;_part&lt;N&gt;.&lt;ext&gt;", N counting from 2. A receiver that encodes the frames anew keeps one part. Also tells the recording's time and size for <a class="el" href="structVideoStreamStats.html">VideoStreamStats</a>. </p>
+<div class="textblock"><p>What a receiver was asked to record, across the sessions reconnects start and the hours it runs for. </p>
+<p>Owns <a class="el" href="classVideoReceiver.html#a4969734c2003e67d33d26f5b45564afe">VideoReceiver::startRecording()</a>'s file contract for a receiver that records the stream as it arrives: it starts in the file asked for and continues in "&lt;base&gt;_part&lt;N&gt;.&lt;ext&gt;", N counting from 2, after each session that got frames and whenever a part has recorded for kMaxPartDuration. A receiver that encodes the frames anew keeps one part. Also tells the recording's time and size for <a class="el" href="structVideoStreamStats.html">VideoStreamStats</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="RecordingPlan_8h_source.html#l00016">16</a> of file <a class="el" href="RecordingPlan_8h_source.html">RecordingPlan.h</a>.</p>
 </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>
@@ -163,8 +171,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0a4162abdee22a0176e88d8eba2581a1" name="a0a4162abdee22a0176e88d8eba2581a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a4162abdee22a0176e88d8eba2581a1">&#9670;&#160;</a></span>RecordingPlan()</h2>
+<a id="a12ce1060163ac908f419ca9de2d7f21d" name="a12ce1060163ac908f419ca9de2d7f21d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ce1060163ac908f419ca9de2d7f21d">&#9670;&#160;</a></span>RecordingPlan()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,14 +185,19 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classVideoReceiver.html#a9e7c155dd24f76261f8861d9ec466035">VideoReceiver::FileFormat</a></td>          <td class="paramname"><span class="paramname"><em>format</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="classVideoReceiver.html#a9e7c155dd24f76261f8861d9ec466035">VideoReceiver::FileFormat</a></td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::chrono::milliseconds</td>          <td class="paramname"><span class="paramname"><em>maxPartDuration</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="#a922c6a397ccb1954ac5f12ae966bbcd6">kMaxPartDuration</a></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="RecordingPlan_8cc_source.html#l00007">7</a> of file <a class="el" href="RecordingPlan_8cc_source.html">RecordingPlan.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="RecordingPlan_8h_source.html#l00026">file()</a>, and <a class="el" href="RecordingPlan_8h_source.html#l00028">format()</a>.</p>
+<p class="reference">References <a class="el" href="RecordingPlan_8h_source.html#l00033">format()</a>.</p>
 
 </div>
 </div>
@@ -204,11 +217,9 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>For <a class="el" href="structVideoStreamStats.html#a1168822de22e5bd9ff973c8239585005">VideoStreamStats::recordingBytes</a>: the size of the parts' files so far. </p>
+<p>For <a class="el" href="structVideoStreamStats.html#a1168822de22e5bd9ff973c8239585005">VideoStreamStats::recordingBytes</a>: what the parts' files held when they closed, and the open one holds now. </p>
 
-<p class="definition">Definition at line <a class="el" href="RecordingPlan_8cc_source.html#l00048">48</a> of file <a class="el" href="RecordingPlan_8cc_source.html">RecordingPlan.cc</a>.</p>
-
-<p class="reference">References <a class="el" href="RecordingPlan_8h_source.html#l00030">part()</a>, and <a class="el" href="RecordingPlan_8cc_source.html#l00012">partFile()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RecordingPlan_8cc_source.html#l00066">66</a> of file <a class="el" href="RecordingPlan_8cc_source.html">RecordingPlan.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="VideoStreamStatsSampler_8cc_source.html#l00019">VideoStreamStatsSampler::sample()</a>.</p>
 
@@ -239,40 +250,11 @@ Static Public Member Functions</h2></td></tr>
 
 <p>The file the current part records to. </p>
 
-<p class="definition">Definition at line <a class="el" href="RecordingPlan_8h_source.html#l00033">33</a> of file <a class="el" href="RecordingPlan_8h_source.html">RecordingPlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RecordingPlan_8h_source.html#l00038">38</a> of file <a class="el" href="RecordingPlan_8h_source.html">RecordingPlan.h</a>.</p>
 
-<p class="reference">References <a class="el" href="RecordingPlan_8cc_source.html#l00012">partFile()</a>.</p>
+<p class="reference">References <a class="el" href="RecordingPlan_8cc_source.html#l00021">partFile()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RecordingPlan_8cc_source.html#l00023">onFileOpened()</a>.</p>
-
-</div>
-</div>
-<a id="a525a09dace5e907f3c2c9ed15a8fd043" name="a525a09dace5e907f3c2c9ed15a8fd043"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a525a09dace5e907f3c2c9ed15a8fd043">&#9670;&#160;</a></span>file()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const QString &amp; RecordingPlan::file </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="RecordingPlan_8h_source.html#l00026">26</a> of file <a class="el" href="RecordingPlan_8h_source.html">RecordingPlan.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="RecordingPlan_8cc_source.html#l00023">onFileOpened()</a>, <a class="el" href="RecordingPlan_8cc_source.html#l00012">partFile()</a>, and <a class="el" href="RecordingPlan_8cc_source.html#l00007">RecordingPlan()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RecordingPlan_8cc_source.html#l00026">onFileOpened()</a>.</p>
 
 </div>
 </div>
@@ -299,9 +281,85 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RecordingPlan_8h_source.html#l00028">28</a> of file <a class="el" href="RecordingPlan_8h_source.html">RecordingPlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RecordingPlan_8h_source.html#l00033">33</a> of file <a class="el" href="RecordingPlan_8h_source.html">RecordingPlan.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="RecordingPlan_8cc_source.html#l00007">RecordingPlan()</a>.</p>
+
+</div>
+</div>
+<a id="a72277d587b0cd765da64195b47c55b02" name="a72277d587b0cd765da64195b47c55b02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72277d587b0cd765da64195b47c55b02">&#9670;&#160;</a></span>insertBeforeExtension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString RecordingPlan::insertBeforeExtension </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>tag</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>"&lt;base&gt;&lt;tag&gt;.&lt;ext&gt;" for <code class="param">file</code> "&lt;base&gt;.&lt;ext&gt;", and "&lt;file&gt;&lt;tag&gt;" for one without an extension. </p>
+
+<p class="definition">Definition at line <a class="el" href="RecordingPlan_8cc_source.html#l00014">14</a> of file <a class="el" href="RecordingPlan_8cc_source.html">RecordingPlan.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="RecordingPlan_8cc_source.html#l00021">partFile()</a>, and <a class="el" href="VideoStreamController_8cc_source.html#l00094">VideoStreamController::taggedFile()</a>.</p>
+
+</div>
+</div>
+<a id="a8bbd8781d514e23ed32595613bfeb06d" name="a8bbd8781d514e23ed32595613bfeb06d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bbd8781d514e23ed32595613bfeb06d">&#9670;&#160;</a></span>nextPart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RecordingPlan::nextPart </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>What is recorded next goes to the next part, if the current one got frames: after <a class="el" href="#a428ee235cf987aade4bade081d61e0dd" title="The current part has recorded for its maximum duration by now.">partDue()</a>, and once the session ended. </p>
+
+<p class="definition">Definition at line <a class="el" href="RecordingPlan_8cc_source.html#l00053">53</a> of file <a class="el" href="RecordingPlan_8cc_source.html">RecordingPlan.cc</a>.</p>
+
+</div>
+</div>
+<a id="afc2a2e731be28b421b081cd5c7bcf035" name="afc2a2e731be28b421b081cd5c7bcf035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc2a2e731be28b421b081cd5c7bcf035">&#9670;&#160;</a></span>onFileClosed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RecordingPlan::onFileClosed </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code class="param">file</code> is closed. Counts for the one that opened last only: a file of an earlier recording can close late. </p>
+
+<p class="definition">Definition at line <a class="el" href="RecordingPlan_8cc_source.html#l00040">40</a> of file <a class="el" href="RecordingPlan_8cc_source.html">RecordingPlan.cc</a>.</p>
 
 </div>
 </div>
@@ -326,30 +384,9 @@ Static Public Member Functions</h2></td></tr>
 
 <p><code class="param">file</code> got its first frame at <code class="param">now</code>. False, changing nothing, unless it is the current part's file. </p>
 
-<p class="definition">Definition at line <a class="el" href="RecordingPlan_8cc_source.html#l00023">23</a> of file <a class="el" href="RecordingPlan_8cc_source.html">RecordingPlan.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RecordingPlan_8cc_source.html#l00026">26</a> of file <a class="el" href="RecordingPlan_8cc_source.html">RecordingPlan.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="RecordingPlan_8h_source.html#l00033">currentFile()</a>, and <a class="el" href="RecordingPlan_8h_source.html#l00026">file()</a>.</p>
-
-</div>
-</div>
-<a id="a8abf4253d4e38a2181a6bc9fd0426168" name="a8abf4253d4e38a2181a6bc9fd0426168"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8abf4253d4e38a2181a6bc9fd0426168">&#9670;&#160;</a></span>onSessionEnded()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RecordingPlan::onSessionEnded </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>The session ended: the next one records the next part, if the current one got frames. </p>
-
-<p class="definition">Definition at line <a class="el" href="RecordingPlan_8cc_source.html#l00035">35</a> of file <a class="el" href="RecordingPlan_8cc_source.html">RecordingPlan.cc</a>.</p>
+<p class="reference">References <a class="el" href="RecordingPlan_8h_source.html#l00038">currentFile()</a>.</p>
 
 </div>
 </div>
@@ -378,7 +415,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>The current part got a frame. </p>
 
-<p class="definition">Definition at line <a class="el" href="RecordingPlan_8h_source.html#l00036">36</a> of file <a class="el" href="RecordingPlan_8h_source.html">RecordingPlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RecordingPlan_8h_source.html#l00041">41</a> of file <a class="el" href="RecordingPlan_8h_source.html">RecordingPlan.h</a>.</p>
 
 </div>
 </div>
@@ -405,9 +442,30 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RecordingPlan_8h_source.html#l00030">30</a> of file <a class="el" href="RecordingPlan_8h_source.html">RecordingPlan.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RecordingPlan_8h_source.html#l00035">35</a> of file <a class="el" href="RecordingPlan_8h_source.html">RecordingPlan.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RecordingPlan_8cc_source.html#l00048">bytesWritten()</a>, and <a class="el" href="RecordingPlan_8cc_source.html#l00012">partFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RecordingPlan_8cc_source.html#l00021">partFile()</a>.</p>
+
+</div>
+</div>
+<a id="a428ee235cf987aade4bade081d61e0dd" name="a428ee235cf987aade4bade081d61e0dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a428ee235cf987aade4bade081d61e0dd">&#9670;&#160;</a></span>partDue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RecordingPlan::partDue </td>
+          <td>(</td>
+          <td class="paramtype">Clock::time_point</td>          <td class="paramname"><span class="paramname"><em>now</em></span><span class="paramdefsep"> = </span><span class="paramdefval">Clock::now()</span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The current part has recorded for its maximum duration by <code class="param">now</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="RecordingPlan_8cc_source.html#l00048">48</a> of file <a class="el" href="RecordingPlan_8cc_source.html">RecordingPlan.cc</a>.</p>
 
 </div>
 </div>
@@ -440,11 +498,11 @@ Static Public Member Functions</h2></td></tr>
 
 <p>"&lt;base&gt;_part&lt;part&gt;.&lt;ext&gt;" for <code class="param">file</code> "&lt;base&gt;.&lt;ext&gt;"; <code class="param">file</code> itself for part 1. </p>
 
-<p class="definition">Definition at line <a class="el" href="RecordingPlan_8cc_source.html#l00012">12</a> of file <a class="el" href="RecordingPlan_8cc_source.html">RecordingPlan.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RecordingPlan_8cc_source.html#l00021">21</a> of file <a class="el" href="RecordingPlan_8cc_source.html">RecordingPlan.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="RecordingPlan_8h_source.html#l00026">file()</a>, and <a class="el" href="RecordingPlan_8h_source.html#l00030">part()</a>.</p>
+<p class="reference">References <a class="el" href="RecordingPlan_8cc_source.html#l00014">insertBeforeExtension()</a>, and <a class="el" href="RecordingPlan_8h_source.html#l00035">part()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RecordingPlan_8cc_source.html#l00048">bytesWritten()</a>, and <a class="el" href="RecordingPlan_8h_source.html#l00033">currentFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RecordingPlan_8h_source.html#l00038">currentFile()</a>.</p>
 
 </div>
 </div>
@@ -465,9 +523,35 @@ Static Public Member Functions</h2></td></tr>
 
 <p>For <a class="el" href="structVideoStreamStats.html#adc57b9d893f424097d26d31482ef0be0" title="While recording: for how long, and the bytes written to its files so far.">VideoStreamStats::recordingMs</a>: since the first part got its first frame; -1 before. </p>
 
-<p class="definition">Definition at line <a class="el" href="RecordingPlan_8cc_source.html#l00043">43</a> of file <a class="el" href="RecordingPlan_8cc_source.html">RecordingPlan.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RecordingPlan_8cc_source.html#l00061">61</a> of file <a class="el" href="RecordingPlan_8cc_source.html">RecordingPlan.cc</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="VideoStreamStatsSampler_8cc_source.html#l00019">VideoStreamStatsSampler::sample()</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a922c6a397ccb1954ac5f12ae966bbcd6" name="a922c6a397ccb1954ac5f12ae966bbcd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a922c6a397ccb1954ac5f12ae966bbcd6">&#9670;&#160;</a></span>kMaxPartDuration</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::chrono::minutes RecordingPlan::kMaxPartDuration {60}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>How long a part records before the next one takes over. It bounds what a file holds, for the storage limit to remove a long recording's oldest parts, and what an MP4 or MOV muxer must reserve header space for. </p>
+
+<p class="definition">Definition at line <a class="el" href="RecordingPlan_8h_source.html#l00023">23</a> of file <a class="el" href="RecordingPlan_8h_source.html">RecordingPlan.h</a>.</p>
 
 </div>
 </div>

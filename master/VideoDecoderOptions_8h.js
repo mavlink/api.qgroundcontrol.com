@@ -1,14 +1,15 @@
 var VideoDecoderOptions_8h =
 [
-    [ "VideoDecoder::Options", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2", [
-      [ "VideoDecoder::ForceVideoDecoderDefault", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a7d4060ee732515584357a6b90b85c554", null ],
-      [ "VideoDecoder::ForceVideoDecoderSoftware", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2acfd097bdd6105deaa576e6795c5935df", null ],
-      [ "VideoDecoder::ForceVideoDecoderNVIDIA", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a69bdba2a5c9be5b943d2e4d5c66a7d1e", null ],
-      [ "VideoDecoder::ForceVideoDecoderVAAPI", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2ac77c3dad8c635d5d8d342287fc9343b8", null ],
-      [ "VideoDecoder::ForceVideoDecoderDirectX3D", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2af9d7d2b4daaeadb07321348832448031", null ],
-      [ "VideoDecoder::ForceVideoDecoderVideoToolbox", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a33a1a42cfaf8d130d0595d98c1ce19b9", null ],
-      [ "VideoDecoder::ForceVideoDecoderIntel", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a73692a15da3349aab320e547aa50d593", null ],
-      [ "VideoDecoder::ForceVideoDecoderVulkan", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a3ae0db4c048ec42e2accd3963da1a7d4", null ],
-      [ "VideoDecoder::ForceVideoDecoderHardware", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a4a141f32f4f46e13efaa4f94c89efecf", null ]
-    ] ]
+    [ "VideoDecoderOption", "VideoDecoderOptions_8h.html#a15c65ca87a71a16d48f8f7ce0ed148d4", [
+      [ "Default", "VideoDecoderOptions_8h.html#a15c65ca87a71a16d48f8f7ce0ed148d4a7a1920d61156abc05a60135aefe8bc67", null ],
+      [ "Software", "VideoDecoderOptions_8h.html#a15c65ca87a71a16d48f8f7ce0ed148d4a719d067b229178f03bcfa1da4ac4dede", null ],
+      [ "NVIDIA", "VideoDecoderOptions_8h.html#a15c65ca87a71a16d48f8f7ce0ed148d4aa2fe9051fe051f819bd739ef3e340377", null ],
+      [ "VAAPI", "VideoDecoderOptions_8h.html#a15c65ca87a71a16d48f8f7ce0ed148d4ab80a85e9723eafdfdfb1221ae4bb4bf3", null ],
+      [ "DirectX3D", "VideoDecoderOptions_8h.html#a15c65ca87a71a16d48f8f7ce0ed148d4ab9ef9201c966029f3266e9fec070006e", null ],
+      [ "VideoToolbox", "VideoDecoderOptions_8h.html#a15c65ca87a71a16d48f8f7ce0ed148d4abdac3c9f4ea608b2a4678018a5810c35", null ],
+      [ "Intel", "VideoDecoderOptions_8h.html#a15c65ca87a71a16d48f8f7ce0ed148d4aff97a9fdede09eaf6e1c8ec9f6a61dd5", null ],
+      [ "Vulkan", "VideoDecoderOptions_8h.html#a15c65ca87a71a16d48f8f7ce0ed148d4a38625270231b647116c80bcbc4f9d1d8", null ],
+      [ "Hardware", "VideoDecoderOptions_8h.html#a15c65ca87a71a16d48f8f7ce0ed148d4a3c02a379965ab0dfcd77b1c484450433", null ]
+    ] ],
+    [ "videoDecoderOptionFromSetting", "VideoDecoderOptions_8h.html#a95963591a43d1fd20be02802748286e6", null ]
 ];

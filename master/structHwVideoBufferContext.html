@@ -112,15 +112,14 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a2f6849d729316d64f759314fef0ebee8" id="r_a2f6849d729316d64f759314fef0ebee8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f6849d729316d64f759314fef0ebee8">gpuEnabled</a> = false</td></tr>
-<tr class="memitem:a356a1c9016d44fec15a72bd7c0aa6f17" id="r_a356a1c9016d44fec15a72bd7c0aa6f17"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a356a1c9016d44fec15a72bd7c0aa6f17">dmaBufEglDisplay</a> = nullptr</td></tr>
-<tr class="memdesc:a356a1c9016d44fec15a72bd7c0aa6f17"><td class="mdescLeft">&#160;</td><td class="mdescRight">EGLDisplay for the DMABuf path.  <br /></td></tr>
+<tr class="memitem:a6c128eb16b8c3982e98b17d09cf46af4" id="r_a6c128eb16b8c3982e98b17d09cf46af4"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c128eb16b8c3982e98b17d09cf46af4">dmaBufImporter</a> = nullptr</td></tr>
 <tr class="memitem:ae1798e3195bac01540b72619aa35a944" id="r_ae1798e3195bac01540b72619aa35a944"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1798e3195bac01540b72619aa35a944">ahbEglDisplay</a> = nullptr</td></tr>
 <tr class="memdesc:ae1798e3195bac01540b72619aa35a944"><td class="mdescLeft">&#160;</td><td class="mdescRight">EGLDisplay for the AHardwareBuffer path.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Inputs the factory needs to build a GPU buffer. The layout is the same in every build: EGL displays are stored as void* (EGLDisplay is a void* typedef, EGL_NO_DISPLAY is null), so no EGL header or QGC_HAS_* define is needed here. </p>
+<div class="textblock"><p>Inputs the factory needs to build a GPU buffer. The layout is the same in every build: native handles are stored as void* (EGLDisplay is a void* typedef, EGL_NO_DISPLAY is null), so no EGL or Vulkan header or QGC_HAS_* define is needed here. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00021">21</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00022">22</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="ae1798e3195bac01540b72619aa35a944" name="ae1798e3195bac01540b72619aa35a944"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae1798e3195bac01540b72619aa35a944">&#9670;&#160;</a></span>ahbEglDisplay</h2>
@@ -136,27 +135,26 @@ Public Attributes</h2></td></tr>
 
 <p>EGLDisplay for the AHardwareBuffer path. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00025">25</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00028">28</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
 
 </div>
 </div>
-<a id="a356a1c9016d44fec15a72bd7c0aa6f17" name="a356a1c9016d44fec15a72bd7c0aa6f17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a356a1c9016d44fec15a72bd7c0aa6f17">&#9670;&#160;</a></span>dmaBufEglDisplay</h2>
+<a id="a6c128eb16b8c3982e98b17d09cf46af4" name="a6c128eb16b8c3982e98b17d09cf46af4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c128eb16b8c3982e98b17d09cf46af4">&#9670;&#160;</a></span>dmaBufImporter</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void* HwVideoBufferContext::dmaBufEglDisplay = nullptr</td>
+          <td class="memname">void* HwVideoBufferContext::dmaBufImporter = nullptr</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>What the DMABuf path imports with now (<a class="el" href="namespaceHwBuffers.html#a5a3ccb8436a29a81a6862b5311a8845b">HwBuffers::dmaBufImportDisplay()</a>): Qt's EGLDisplay, or under Vulkan its VkPhysicalDevice. Null while it can't import. </p>
 
-<p>EGLDisplay for the DMABuf path. </p>
+<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00027">27</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00024">24</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00356">gst_qgc_q_video_sink_show_frame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00398">gst_qgc_q_video_sink_show_frame()</a>.</p>
 
 </div>
 </div>
@@ -172,9 +170,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00023">23</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00024">24</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00356">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="HwBuffers_8cc_source.html#l00133">HwBuffers::makeAdapterContext()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00398">gst_qgc_q_video_sink_show_frame()</a>, and <a class="el" href="HwBuffers_8cc_source.html#l00182">HwBuffers::makeAdapterContext()</a>.</p>
 
 </div>
 </div>

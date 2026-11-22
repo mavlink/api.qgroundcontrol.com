@@ -1,4 +1,5 @@
 var GstDmaDrmCaps_8h =
 [
-    [ "GstHw::buildSupportedDmaDrmCaps", "namespaceGstHw.html#a34a92fdd0352acfe03c2584a136b4cfb", null ]
+    [ "GstHw::buildSupportedDmaDrmCaps", "namespaceGstHw.html#a93e66ffbaec34d7d1048e838ce92889a", null ],
+    [ "GstHw::buildVulkanDmaDrmCaps", "namespaceGstHw.html#af941641534a0a69224c77b2ff1881531", null ]
 ];

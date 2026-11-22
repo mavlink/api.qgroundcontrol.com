@@ -1,5 +1,6 @@
 var structGstHw_1_1MapDiagnostics =
 [
+    [ "reset", "structGstHw_1_1MapDiagnostics.html#a5463cfe3a38229bb99b45a8dbf32918a", null ],
     [ "loggedBadBackend", "structGstHw_1_1MapDiagnostics.html#a939d7da9952047b1bae340bc62ffde70", null ],
     [ "loggedFirstSuccess", "structGstHw_1_1MapDiagnostics.html#ab6d2ab6ca900a2d84ebc41b4b642b689", null ],
     [ "loggedNullBuffer", "structGstHw_1_1MapDiagnostics.html#a636879f6a88ee24e36b717592ffe2de2", null ],

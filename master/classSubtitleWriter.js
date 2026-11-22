@@ -5,6 +5,7 @@ var classSubtitleWriter =
     [ "capturing", "classSubtitleWriter.html#af61fd0df7a8390a1ba1472159c9df0a1", null ],
     [ "startCapturingTelemetry", "classSubtitleWriter.html#a5d4b1acac6d6e01d2f0f2e44c7039357", null ],
     [ "stopCapturingTelemetry", "classSubtitleWriter.html#a4f021f80a9a7a5f0a67d47da5a7febc1", null ],
+    [ "subtitleFile", "classSubtitleWriter.html#a41dbab99e6a32e464822cec02e0dad89", null ],
     [ "videoFile", "classSubtitleWriter.html#a192bdea83af48ff5d1edfca9a77aa5cd", null ],
     [ "SubtitleWriterTest", "classSubtitleWriter.html#aeadea1bd1aac0f64882c1b224125ff36", null ]
 ];

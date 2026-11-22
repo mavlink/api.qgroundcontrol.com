@@ -1,11 +1,12 @@
 var classVideoRecordingService =
 [
-    [ "VideoRecordingService", "classVideoRecordingService.html#a5896255af97be6b5b442397065036a20", null ],
+    [ "VideoRecordingService", "classVideoRecordingService.html#ad8accab76aafe7b9e6cd0b8da0ee57e4", null ],
     [ "~VideoRecordingService", "classVideoRecordingService.html#a4e725ecd7aca7b43c6e4334b21450e9d", null ],
-    [ "pruneStorage", "classVideoRecordingService.html#afef9e085b7a14df2ae2922aeef4b43c5", null ],
+    [ "addSource", "classVideoRecordingService.html#a71c5b4405c245ff1b8cfb57a6583fc4c", null ],
+    [ "pruneStorage", "classVideoRecordingService.html#acbf10fd7e5210bd75894aca69d470195", null ],
     [ "recording", "classVideoRecordingService.html#a4b8ed21954452efcc5c805d9bbe3cc3f", null ],
     [ "recordingChanged", "classVideoRecordingService.html#a8546ac422af5f54b204c020fd93a6109", null ],
-    [ "recordingFile", "classVideoRecordingService.html#a4a5c40302c1f25bf2d141c54a729d8c5", null ],
+    [ "recordingFile", "classVideoRecordingService.html#adfbe3373abd660aef9cc5efd6ce032cc", null ],
     [ "startRecording", "classVideoRecordingService.html#a188bf687d407cc1a1dd72d6f62d5bd5f", null ],
     [ "stopRecording", "classVideoRecordingService.html#a0ccb68ed1da590e67206137a77adcb7f", null ],
     [ "uniqueBaseName", "classVideoRecordingService.html#acc929bf9def70fb391d9a9e0c1e5ad45", null ],

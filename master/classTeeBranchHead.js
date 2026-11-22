@@ -1,5 +1,6 @@
 var classTeeBranchHead =
 [
+    [ "absorbFlowErrors", "classTeeBranchHead.html#aced4474015a8247be690ca054b5fe772", null ],
     [ "build", "classTeeBranchHead.html#a8c3abe49587c150833c8ff8e4f32c070", null ],
     [ "close", "classTeeBranchHead.html#a68915387bb4b841a9e353125babcc130", null ],
     [ "contains", "classTeeBranchHead.html#a34f47988c1dd27fcbcdf876a3f0644da", null ],

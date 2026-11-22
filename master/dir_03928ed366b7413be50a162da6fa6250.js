@@ -8,9 +8,9 @@ var dir_03928ed366b7413be50a162da6fa6250 =
     [ "GstEglHelpers.h", "GstEglHelpers_8h.html", null ],
     [ "GstHwFrameTexturesBase.h", "GstHwFrameTexturesBase_8h.html", "GstHwFrameTexturesBase_8h" ],
     [ "GstHwImportCache.h", "GstHwImportCache_8h.html", "GstHwImportCache_8h" ],
-    [ "GstHwImportPreflight.cc", "GstHwImportPreflight_8cc.html", null ],
+    [ "GstHwImportPreflight.cc", "GstHwImportPreflight_8cc.html", "GstHwImportPreflight_8cc" ],
     [ "GstHwImportPreflight.h", "GstHwImportPreflight_8h.html", null ],
-    [ "GstHwPathRegistry.cc", "GstHwPathRegistry_8cc.html", null ],
+    [ "GstHwPathRegistry.cc", "GstHwPathRegistry_8cc.html", "GstHwPathRegistry_8cc" ],
     [ "GstHwPathRegistry.h", "GstHwPathRegistry_8h.html", null ],
     [ "GstHwPathTelemetry.cc", "GstHwPathTelemetry_8cc.html", "GstHwPathTelemetry_8cc" ],
     [ "GstHwPathTelemetry.h", "GstHwPathTelemetry_8h.html", "GstHwPathTelemetry_8h" ],
@@ -21,8 +21,6 @@ var dir_03928ed366b7413be50a162da6fa6250 =
     [ "GstHwVideoBufferFactory.h", "GstHwVideoBufferFactory_8h.html", "GstHwVideoBufferFactory_8h" ],
     [ "GstHwVideoInfo.cc", "GstHwVideoInfo_8cc.html", "GstHwVideoInfo_8cc" ],
     [ "GstHwVideoInfo.h", "GstHwVideoInfo_8h.html", "GstHwVideoInfo_8h" ],
-    [ "HwBuffers.cc", "HwBuffers_8cc.html", "HwBuffers_8cc" ],
-    [ "HwBuffers.h", "HwBuffers_8h.html", "HwBuffers_8h" ],
     [ "QGCRhiCapture.cc", "QGCRhiCapture_8cc.html", "QGCRhiCapture_8cc" ],
     [ "QGCRhiCapture.h", "QGCRhiCapture_8h.html", "QGCRhiCapture_8h" ]
 ];

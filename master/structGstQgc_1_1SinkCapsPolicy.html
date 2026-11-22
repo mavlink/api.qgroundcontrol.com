@@ -125,9 +125,10 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a5cdd9fe3c33b492a8262f38f39aa3f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">qgcvideosinkbin's GPU variant in front of the sink; value-initialized, Passthrough (a standalone sink).  <br /></td></tr>
 <tr class="memitem:a8f2a02ce7f2296dae250b4032c54b70c" id="r_a8f2a02ce7f2296dae250b4032c54b70c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGstQgc_1_1RenderTarget.html">RenderTarget</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f2a02ce7f2296dae250b4032c54b70c">target</a></td></tr>
 <tr class="memitem:aced49c0dac24fc5e97bf60411f2ee528" id="r_aced49c0dac24fc5e97bf60411f2ee528"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aced49c0dac24fc5e97bf60411f2ee528">dmaBufDisplay</a> = nullptr</td></tr>
-<tr class="memdesc:aced49c0dac24fc5e97bf60411f2ee528"><td class="mdescLeft">&#160;</td><td class="mdescRight">The EGLDisplay the DMABuf path imports with now (<a class="el" href="namespaceHwBuffers.html#a5a3ccb8436a29a81a6862b5311a8845b">HwBuffers::dmaBufImportDisplay()</a>); null while it can't import.  <br /></td></tr>
+<tr class="memitem:a22a312ea5b2a536bcd3c5b7a44a6c489" id="r_a22a312ea5b2a536bcd3c5b7a44a6c489"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22a312ea5b2a536bcd3c5b7a44a6c489">d3d11OpensD3D12</a> = false</td></tr>
+<tr class="memdesc:a22a312ea5b2a536bcd3c5b7a44a6c489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Qt's Direct3D 11 device opens a Direct3D 12 device's resources (<a class="el" href="namespaceHwBuffers.html#a0c2afd1d62ae847d97a1d1347c431a3b">HwBuffers::d3d11OpensD3D12()</a>).  <br /></td></tr>
 <tr class="memitem:aa32d3f89d419df04c86bdc228086767c" id="r_aa32d3f89d419df04c86bdc228086767c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa32d3f89d419df04c86bdc228086767c">squarePixels</a> = true</td></tr>
-<tr class="memdesc:aa32d3f89d419df04c86bdc228086767c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask for square pixels in system memory, which the bin's converter scales to.  <br /></td></tr>
+<tr class="memdesc:aa32d3f89d419df04c86bdc228086767c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask for square pixels, in every kind of memory. The bin's converter scales system memory to them.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -168,6 +169,24 @@ Friends</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a22a312ea5b2a536bcd3c5b7a44a6c489" name="a22a312ea5b2a536bcd3c5b7a44a6c489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22a312ea5b2a536bcd3c5b7a44a6c489">&#9670;&#160;</a></span>d3d11OpensD3D12</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GstQgc::SinkCapsPolicy::d3d11OpensD3D12 = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Qt's Direct3D 11 device opens a Direct3D 12 device's resources (<a class="el" href="namespaceHwBuffers.html#a0c2afd1d62ae847d97a1d1347c431a3b">HwBuffers::d3d11OpensD3D12()</a>). </p>
+
+<p class="definition">Definition at line <a class="el" href="GstQgcCaps_8h_source.html#l00024">24</a> of file <a class="el" href="GstQgcCaps_8h_source.html">GstQgcCaps.h</a>.</p>
+
+</div>
+</div>
 <a id="aced49c0dac24fc5e97bf60411f2ee528" name="aced49c0dac24fc5e97bf60411f2ee528"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aced49c0dac24fc5e97bf60411f2ee528">&#9670;&#160;</a></span>dmaBufDisplay</h2>
 
@@ -179,12 +198,11 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>What the DMABuf path imports with now (<a class="el" href="namespaceHwBuffers.html#a5a3ccb8436a29a81a6862b5311a8845b">HwBuffers::dmaBufImportDisplay()</a>): Qt's EGLDisplay, or its Vulkan device. Null while it can't import. </p>
 
-<p>The EGLDisplay the DMABuf path imports with now (<a class="el" href="namespaceHwBuffers.html#a5a3ccb8436a29a81a6862b5311a8845b">HwBuffers::dmaBufImportDisplay()</a>); null while it can't import. </p>
+<p class="definition">Definition at line <a class="el" href="GstQgcCaps_8h_source.html#l00022">22</a> of file <a class="el" href="GstQgcCaps_8h_source.html">GstQgcCaps.h</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="GstQgcCaps_8h_source.html#l00021">21</a> of file <a class="el" href="GstQgcCaps_8h_source.html">GstQgcCaps.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00356">gst_qgc_q_video_sink_show_frame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00398">gst_qgc_q_video_sink_show_frame()</a>.</p>
 
 </div>
 </div>
@@ -204,8 +222,6 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GstQgcCaps_8h_source.html#l00018">18</a> of file <a class="el" href="GstQgcCaps_8h_source.html">GstQgcCaps.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstQgcCaps_8cc_source.html#l00094">GstQgc::buildSinkCaps()</a>.</p>
-
 </div>
 </div>
 <a id="a9a4c59773899675ef3047b9f1dc8223d" name="a9a4c59773899675ef3047b9f1dc8223d"></a>
@@ -222,8 +238,6 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GstQgcCaps_8h_source.html#l00016">16</a> of file <a class="el" href="GstQgcCaps_8h_source.html">GstQgcCaps.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstQgcCaps_8cc_source.html#l00094">GstQgc::buildSinkCaps()</a>.</p>
-
 </div>
 </div>
 <a id="aa32d3f89d419df04c86bdc228086767c" name="aa32d3f89d419df04c86bdc228086767c"></a>
@@ -238,11 +252,11 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ask for square pixels in system memory, which the bin's converter scales to. </p>
+<p>Ask for square pixels, in every kind of memory. The bin's converter scales system memory to them. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstQgcCaps_8h_source.html#l00023">23</a> of file <a class="el" href="GstQgcCaps_8h_source.html">GstQgcCaps.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstQgcCaps_8h_source.html#l00026">26</a> of file <a class="el" href="GstQgcCaps_8h_source.html">GstQgcCaps.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstQgcCaps_8cc_source.html#l00094">GstQgc::buildSinkCaps()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstQgcCaps_8cc_source.html#l00142">GstQgc::buildSinkCaps()</a>.</p>
 
 </div>
 </div>

@@ -118,162 +118,119 @@ $(function() {
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(GstHwBufFactoryLog, <span class="stringliteral">&quot;Video.GStreamer.HwBuffers.Factory&quot;</span>)</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>namespace {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">class </span>LazySample</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    LazySample(GstBuffer* buffer, GstCaps* caps)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        : _buffer(buffer)</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        , _caps(caps)</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {}</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    ~LazySample()</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">if</span> (_sample) {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            gst_sample_unref(_sample);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        }</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    LazySample(<span class="keyword">const</span> LazySample&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    LazySample&amp; operator=(<span class="keyword">const</span> LazySample&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    GstSample* get()</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">if</span> (!_sample) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            _sample = gst_sample_new(_buffer, _caps, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">return</span> _sample;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    GstBuffer* _buffer = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    GstCaps* _caps = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    GstSample* _sample = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>std::unique_ptr&lt;QHwVideoBuffer&gt; selectHwVideoBuffer(LazySample&amp; sample, GstBuffer* buffer, <span class="keyword">const</span> GstVideoInfo&amp; info,</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                                                    QVideoFrameFormat format, <span class="keyword">const</span> <a class="code hl_struct" href="structHwVideoBufferContext.html">HwVideoBufferContext</a>&amp; context,</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                                                    <a class="code hl_enumeration" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a>&amp; matchedPath, <a class="code hl_struct" href="structHwResolvedPathCache.html">HwResolvedPathCache</a>* cache)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    matchedPath = <a class="code hl_enumvalue" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span> (!context.<a class="code hl_variable" href="structHwVideoBufferContext.html#a2f6849d729316d64f759314fef0ebee8">gpuEnabled</a> || !buffer) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="comment">// Plane 0&#39;s allocator is the dispatch key; gst-video buffers from a single decoder use one allocator type across</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// all planes.</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    GstMemory* mem0 = gst_buffer_peek_memory(buffer, 0);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> (!mem0) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">const</span> GType allocatorType = mem0-&gt;allocator ? G_OBJECT_TYPE(mem0-&gt;allocator) : G_TYPE_INVALID;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">if</span> (cache &amp;&amp; (allocatorType != G_TYPE_INVALID) &amp;&amp; (allocatorType == cache-&gt;<a class="code hl_variable" href="structHwResolvedPathCache.html#a0d51d5959a757122d27a2488804560a2">unmatchedAllocator</a>)) {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">// Validate before commit — failure resets matchedPath so per-path counters don&#39;t double-count.</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">auto</span> buildOrFallback = [&amp;matchedPath, &amp;info, cache](<span class="keyword">auto</span>&amp;&amp; buf) -&gt; std::unique_ptr&lt;QHwVideoBuffer&gt; {</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">if</span> (!buf || !buf-&gt;validatePlaneHandles()) {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <a class="code hl_function" href="namespaceGstHwPathTelemetry.html#a18246831e1ea98aeeac5c4d9394d6374">GstHwPathTelemetry::recordFallbackReason</a>(matchedPath, <a class="code hl_enumvalue" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa2676124b3e52c860757784ee4aad8ed0">GstHwPathTelemetry::HwFallbackReason::ValidateFailed</a>);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <span class="comment">// Some imports fail on every frame of a stream (e.g. multi-planar DMABuf under a Vulkan QRhi): warn once</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="comment">// per caps epoch, not per frame.</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">if</span> (!cache || !std::exchange(cache-&gt;<a class="code hl_variable" href="structHwResolvedPathCache.html#a6560bc30945c1b13f68fed1c0e541935">validationFailureLogged</a>, <span class="keyword">true</span>)) {</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                qCWarning(GstHwBufFactoryLog)</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                    &lt;&lt; <a class="code hl_function" href="namespaceGstHw.html#ad9d2de3b278ffd4aeee0880422c37841">GstHw::toString</a>(matchedPath) &lt;&lt; <span class="stringliteral">&quot;buffer failed plane-handle validation — CPU fallback&quot;</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            }</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">if</span> (cache) {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                cache-&gt;<a class="code hl_variable" href="structHwResolvedPathCache.html#ad5cad1051e6f42e5067f5527b34b1ad0">validated</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            matchedPath = <a class="code hl_enumvalue" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a>;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">if</span> (cache &amp;&amp; !cache-&gt;<a class="code hl_variable" href="structHwResolvedPathCache.html#ad5cad1051e6f42e5067f5527b34b1ad0">validated</a>) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            qCDebug(GstHwBufFactoryLog).noquote()</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                &lt;&lt; <span class="stringliteral">&quot;zero-copy path selected:&quot;</span> &lt;&lt; <a class="code hl_function" href="namespaceGstHw.html#ad9d2de3b278ffd4aeee0880422c37841">GstHw::toString</a>(matchedPath)</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                &lt;&lt; <span class="stringliteral">&quot;format=&quot;</span> &lt;&lt; gst_video_format_to_string(GST_VIDEO_INFO_FORMAT(&amp;info)) &lt;&lt; GST_VIDEO_INFO_WIDTH(&amp;info)</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; GST_VIDEO_INFO_HEIGHT(&amp;info);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">if</span> (cache) {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            cache-&gt;<a class="code hl_variable" href="structHwResolvedPathCache.html#af7497e4e8f15fff60e6b0575669b44fa">path</a> = matchedPath;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            cache-&gt;<a class="code hl_variable" href="structHwResolvedPathCache.html#ad5cad1051e6f42e5067f5527b34b1ad0">validated</a> = <span class="keyword">true</span>;</div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="GstHwVideoBufferFactory_8cc.html#ab59ed558493835b496c533f71cd1771c">   13</a></span>std::unique_ptr&lt;QHwVideoBuffer&gt; <a class="code hl_function" href="GstHwVideoBufferFactory_8cc.html#ab59ed558493835b496c533f71cd1771c">makeHwVideoBuffer</a>(GstBuffer* buffer, GstCaps* caps, const GstVideoInfo&amp; info,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>                                                  QVideoFrameFormat format, const <a class="code hl_struct" href="structHwVideoBufferContext.html">HwVideoBufferContext</a>&amp; context,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>                                                  <a class="code hl_enumeration" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a>&amp; matchedPath, <a class="code hl_struct" href="structHwResolvedPathCache.html">HwResolvedPathCache</a>* cache)</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    matchedPath = <a class="code hl_enumvalue" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">if</span> (!context.gpuEnabled || !buffer) {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        return nullptr;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// Plane 0&#39;s allocator is the dispatch key; gst-video buffers from a single decoder use one allocator type across</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// all planes.</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    GstMemory* mem0 = gst_buffer_peek_memory(buffer, 0);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span> (!mem0) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">const</span> GType allocatorType = mem0-&gt;allocator ? G_OBJECT_TYPE(mem0-&gt;allocator) : G_TYPE_INVALID;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (cache &amp;&amp; (allocatorType != G_TYPE_INVALID) &amp;&amp; (allocatorType == cache-&gt;unmatchedAllocator)) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Validate before commit — failure resets matchedPath so per-path counters don&#39;t double-count.</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">auto</span> buildOrFallback = [&amp;matchedPath, &amp;info, cache](<span class="keyword">auto</span>&amp;&amp; buf) -&gt; std::unique_ptr&lt;QHwVideoBuffer&gt; {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">if</span> (!buf || !buf-&gt;validatePlaneHandles()) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <a class="code hl_function" href="namespaceGstHwPathTelemetry.html#a18246831e1ea98aeeac5c4d9394d6374">GstHwPathTelemetry::recordFallbackReason</a>(matchedPath, <a class="code hl_enumvalue" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa2676124b3e52c860757784ee4aad8ed0">GstHwPathTelemetry::HwFallbackReason::ValidateFailed</a>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="comment">// Some imports fail on every frame of a stream (e.g. multi-planar DMABuf under a Vulkan QRhi): warn once</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <span class="comment">// per caps epoch, not per frame.</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <span class="keywordflow">if</span> (!cache || !std::exchange(cache-&gt;validationFailureLogged, <span class="keyword">true</span>)) {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                qCWarning(GstHwBufFactoryLog)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                    &lt;&lt; <a class="code hl_function" href="namespaceGstHw.html#ad9d2de3b278ffd4aeee0880422c37841">GstHw::toString</a>(matchedPath) &lt;&lt; <span class="stringliteral">&quot;buffer failed plane-handle validation — CPU fallback&quot;</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">if</span> (cache) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                cache-&gt;validated = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            matchedPath = <a class="code hl_enumvalue" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keywordflow">if</span> (cache &amp;&amp; !cache-&gt;validated) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            qCDebug(GstHwBufFactoryLog).noquote()</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                &lt;&lt; <span class="stringliteral">&quot;zero-copy path selected:&quot;</span> &lt;&lt; <a class="code hl_function" href="namespaceGstHw.html#ad9d2de3b278ffd4aeee0880422c37841">GstHw::toString</a>(matchedPath)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                &lt;&lt; <span class="stringliteral">&quot;format=&quot;</span> &lt;&lt; gst_video_format_to_string(GST_VIDEO_INFO_FORMAT(&amp;info)) &lt;&lt; GST_VIDEO_INFO_WIDTH(&amp;info)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                &lt;&lt; <span class="stringliteral">&quot;x&quot;</span> &lt;&lt; GST_VIDEO_INFO_HEIGHT(&amp;info);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">if</span> (cache) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            cache-&gt;path = matchedPath;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            cache-&gt;validated = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">return</span> buf;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    };</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">// A matched path owns the frame: when it declines or fails, the frame goes to the CPU without trying later paths.</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">auto</span> importThrough = [&amp;](<span class="keyword">const</span> HwPathDescriptor&amp; path) -&gt; std::unique_ptr&lt;QHwVideoBuffer&gt; {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">if</span> (path.admits &amp;&amp; !path.admits(mem0, context)) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">if</span> (cache) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                cache-&gt;validated = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        matchedPath = path.path;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="comment">// The sample a backend buffer holds, created only now that a path has matched the memory.</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        GstSample* <span class="keyword">const</span> sample = gst_sample_new(buffer, caps, <span class="keyword">nullptr</span>, <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keyword">auto</span> imported = buildOrFallback(path.construct(sample, info, format, context));</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        gst_sample_unref(sample);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">return</span> imported;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    };</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">const</span> <span class="keyword">auto</span> paths = <a class="code hl_function" href="namespaceGstHwPathRegistry.html#a806201d031f29cc12be45f33573d6389">GstHwPathRegistry::paths</a>();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="comment">// Fast path: only the paths behind a sample validated earlier this epoch are tried. Allocator and handle checks</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment">// stay per-buffer: decoders can swap memory or recycle bad handles under stable caps.</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">if</span> (cache &amp;&amp; cache-&gt;validated &amp;&amp; cache-&gt;path != <a class="code hl_enumvalue" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a>) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> HwPathDescriptor* path : paths) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <span class="keywordflow">if</span> ((path-&gt;path == cache-&gt;path) &amp;&amp; path-&gt;matches(mem0)) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                <span class="keywordflow">return</span> importThrough(*path);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        cache-&gt;validated = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> HwPathDescriptor* path : paths) {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">if</span> (path-&gt;matches(mem0)) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">return</span> importThrough(*path);</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">return</span> buf;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    };</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">// A matched path owns the frame: when it declines or fails, the frame goes to the CPU without trying later paths.</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">auto</span> importThrough = [&amp;](<span class="keyword">const</span> HwPathDescriptor&amp; path) -&gt; std::unique_ptr&lt;QHwVideoBuffer&gt; {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">if</span> (path.admits &amp;&amp; !path.admits()) {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keywordflow">if</span> (cache) {</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                cache-&gt;<a class="code hl_variable" href="structHwResolvedPathCache.html#ad5cad1051e6f42e5067f5527b34b1ad0">validated</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>            }</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        matchedPath = path.path;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">return</span> buildOrFallback(path.construct(sample.get(), info, format, context));</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    };</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">const</span> <span class="keyword">auto</span> paths = GstHwPathRegistry::paths();</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="comment">// Fast path: only the paths behind a sample validated earlier this epoch are tried. Allocator and handle checks</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="comment">// stay per-buffer: decoders can swap memory or recycle bad handles under stable caps.</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">if</span> (cache &amp;&amp; cache-&gt;<a class="code hl_variable" href="structHwResolvedPathCache.html#ad5cad1051e6f42e5067f5527b34b1ad0">validated</a> &amp;&amp; cache-&gt;<a class="code hl_variable" href="structHwResolvedPathCache.html#af7497e4e8f15fff60e6b0575669b44fa">path</a> != <a class="code hl_enumvalue" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a>) {</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> HwPathDescriptor* path : paths) {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordflow">if</span> ((path-&gt;path == cache-&gt;<a class="code hl_variable" href="structHwResolvedPathCache.html#af7497e4e8f15fff60e6b0575669b44fa">path</a>) &amp;&amp; path-&gt;matches(mem0, context)) {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                <span class="keywordflow">return</span> importThrough(*path);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            }</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        }</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        cache-&gt;<a class="code hl_variable" href="structHwResolvedPathCache.html#ad5cad1051e6f42e5067f5527b34b1ad0">validated</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> HwPathDescriptor* path : paths) {</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">if</span> (path-&gt;matches(mem0, context)) {</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <span class="keywordflow">return</span> importThrough(*path);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        }</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="comment">// No compiled path imports this allocator&#39;s memory; that holds for the whole caps epoch.</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">if</span> (cache) {</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        cache-&gt;<a class="code hl_variable" href="structHwResolvedPathCache.html#a0d51d5959a757122d27a2488804560a2">unmatchedAllocator</a> = allocatorType;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    qCDebug(GstHwBufFactoryLog) &lt;&lt; <span class="stringliteral">&quot;no zero-copy path for memory type&quot;</span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>                                &lt;&lt; (mem0-&gt;allocator ? mem0-&gt;allocator-&gt;mem_type : <span class="stringliteral">&quot;&lt;no-allocator&gt;&quot;</span>)</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                                &lt;&lt; <span class="stringliteral">&quot;— falling back to CPU&quot;</span>;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <a class="code hl_function" href="namespaceGstHwPathTelemetry.html#a18246831e1ea98aeeac5c4d9394d6374">GstHwPathTelemetry::recordFallbackReason</a>(<a class="code hl_enumvalue" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a>,</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                                             <a class="code hl_enumvalue" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa5cf2164b961918b38d26cb03c045c4f5">GstHwPathTelemetry::HwFallbackReason::UnknownMemType</a>);</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>}</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>}  <span class="comment">// namespace</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="GstHwVideoBufferFactory_8cc.html#ab59ed558493835b496c533f71cd1771c">  142</a></span>std::unique_ptr&lt;QHwVideoBuffer&gt; <a class="code hl_function" href="GstHwVideoBufferFactory_8cc.html#ab59ed558493835b496c533f71cd1771c">makeHwVideoBuffer</a>(GstBuffer* buffer, GstCaps* caps, <span class="keyword">const</span> GstVideoInfo&amp; info,</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>                                                  QVideoFrameFormat format, <span class="keyword">const</span> <a class="code hl_struct" href="structHwVideoBufferContext.html">HwVideoBufferContext</a>&amp; context,</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                                                  <a class="code hl_enumeration" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a>&amp; matchedPath, <a class="code hl_struct" href="structHwResolvedPathCache.html">HwResolvedPathCache</a>* cache)</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>{</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    LazySample sample(buffer, caps);</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordflow">return</span> selectHwVideoBuffer(sample, buffer, info, std::move(format), context, matchedPath, cache);</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>}</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// No compiled path imports this allocator&#39;s memory; that holds for the whole caps epoch.</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">if</span> (cache) {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        cache-&gt;unmatchedAllocator = allocatorType;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    qCDebug(GstHwBufFactoryLog) &lt;&lt; <span class="stringliteral">&quot;no zero-copy path for memory type&quot;</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>                                &lt;&lt; (mem0-&gt;allocator ? mem0-&gt;allocator-&gt;mem_type : <span class="stringliteral">&quot;&lt;no-allocator&gt;&quot;</span>)</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                                &lt;&lt; <span class="stringliteral">&quot;— falling back to CPU&quot;</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_function" href="namespaceGstHwPathTelemetry.html#a18246831e1ea98aeeac5c4d9394d6374">GstHwPathTelemetry::recordFallbackReason</a>(<a class="code hl_enumvalue" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a>,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                                             <a class="code hl_enumvalue" href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa5cf2164b961918b38d26cb03c045c4f5">GstHwPathTelemetry::HwFallbackReason::UnknownMemType</a>);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
 </div>
 <div class="ttc" id="aGstHwPathRegistry_8h_html"><div class="ttname"><a href="GstHwPathRegistry_8h.html">GstHwPathRegistry.h</a></div></div>
 <div class="ttc" id="aGstHwPathTelemetry_8h_html"><div class="ttname"><a href="GstHwPathTelemetry_8h.html">GstHwPathTelemetry.h</a></div></div>
 <div class="ttc" id="aGstHwTypes_8h_html_a4764d9dd1160ac64fd7f4a240241ffbb"><div class="ttname"><a href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb">HwVideoBufferPath</a></div><div class="ttdeci">HwVideoBufferPath</div><div class="ttdoc">GPU zero-copy path a frame is imported through; None means the frame takes the CPU path.</div><div class="ttdef"><b>Definition</b> <a href="GstHwTypes_8h_source.html#l00006">GstHwTypes.h:7</a></div></div>
 <div class="ttc" id="aGstHwTypes_8h_html_a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754"><div class="ttname"><a href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbba6adf97f83acf6453d4a6a4b1070f3754">HwVideoBufferPath::None</a></div><div class="ttdeci">@ None</div><div class="ttdef"><b>Definition</b> <a href="GstHwTypes_8h_source.html#l00008">GstHwTypes.h:8</a></div></div>
-<div class="ttc" id="aGstHwVideoBufferFactory_8cc_html_ab59ed558493835b496c533f71cd1771c"><div class="ttname"><a href="GstHwVideoBufferFactory_8cc.html#ab59ed558493835b496c533f71cd1771c">makeHwVideoBuffer</a></div><div class="ttdeci">std::unique_ptr&lt; QHwVideoBuffer &gt; makeHwVideoBuffer(GstBuffer *buffer, GstCaps *caps, const GstVideoInfo &amp;info, QVideoFrameFormat format, const HwVideoBufferContext &amp;context, HwVideoBufferPath &amp;matchedPath, HwResolvedPathCache *cache)</div><div class="ttdef"><b>Definition</b> <a href="#l00142">GstHwVideoBufferFactory.cc:142</a></div></div>
+<div class="ttc" id="aGstHwVideoBufferFactory_8cc_html_ab59ed558493835b496c533f71cd1771c"><div class="ttname"><a href="GstHwVideoBufferFactory_8cc.html#ab59ed558493835b496c533f71cd1771c">makeHwVideoBuffer</a></div><div class="ttdeci">std::unique_ptr&lt; QHwVideoBuffer &gt; makeHwVideoBuffer(GstBuffer *buffer, GstCaps *caps, const GstVideoInfo &amp;info, QVideoFrameFormat format, const HwVideoBufferContext &amp;context, HwVideoBufferPath &amp;matchedPath, HwResolvedPathCache *cache)</div><div class="ttdef"><b>Definition</b> <a href="#l00013">GstHwVideoBufferFactory.cc:13</a></div></div>
 <div class="ttc" id="aGstHwVideoBufferFactory_8h_html"><div class="ttname"><a href="GstHwVideoBufferFactory_8h.html">GstHwVideoBufferFactory.h</a></div></div>
 <div class="ttc" id="aGstHwVideoBuffer_8h_html"><div class="ttname"><a href="GstHwVideoBuffer_8h.html">GstHwVideoBuffer.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>
-<div class="ttc" id="anamespaceGstHwPathTelemetry_html_a18246831e1ea98aeeac5c4d9394d6374"><div class="ttname"><a href="namespaceGstHwPathTelemetry.html#a18246831e1ea98aeeac5c4d9394d6374">GstHwPathTelemetry::recordFallbackReason</a></div><div class="ttdeci">void recordFallbackReason(HwVideoBufferPath attemptedPath, HwFallbackReason reason) noexcept</div><div class="ttdoc">Per-(path,reason) fallback accounting; lets a bug report show why a path demoted to CPU.</div><div class="ttdef"><b>Definition</b> <a href="GstHwPathTelemetry_8cc_source.html#l00050">GstHwPathTelemetry.cc:50</a></div></div>
+<div class="ttc" id="anamespaceGstHwPathRegistry_html_a806201d031f29cc12be45f33573d6389"><div class="ttname"><a href="namespaceGstHwPathRegistry.html#a806201d031f29cc12be45f33573d6389">GstHwPathRegistry::paths</a></div><div class="ttdeci">std::span&lt; const HwPathDescriptor *const &gt; paths() noexcept</div><div class="ttdef"><b>Definition</b> <a href="GstHwPathRegistry_8cc_source.html#l00043">GstHwPathRegistry.cc:43</a></div></div>
+<div class="ttc" id="anamespaceGstHwPathTelemetry_html_a18246831e1ea98aeeac5c4d9394d6374"><div class="ttname"><a href="namespaceGstHwPathTelemetry.html#a18246831e1ea98aeeac5c4d9394d6374">GstHwPathTelemetry::recordFallbackReason</a></div><div class="ttdeci">void recordFallbackReason(HwVideoBufferPath attemptedPath, HwFallbackReason reason) noexcept</div><div class="ttdoc">Per-(path,reason) fallback accounting; lets a bug report show why a path demoted to CPU.</div><div class="ttdef"><b>Definition</b> <a href="GstHwPathTelemetry_8cc_source.html#l00045">GstHwPathTelemetry.cc:45</a></div></div>
 <div class="ttc" id="anamespaceGstHwPathTelemetry_html_af08ef8a00adf4b7a955c934ad72eeeafa2676124b3e52c860757784ee4aad8ed0"><div class="ttname"><a href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa2676124b3e52c860757784ee4aad8ed0">GstHwPathTelemetry::HwFallbackReason::ValidateFailed</a></div><div class="ttdeci">@ ValidateFailed</div><div class="ttdef"><b>Definition</b> <a href="GstHwPathTelemetry_8h_source.html#l00020">GstHwPathTelemetry.h:20</a></div></div>
 <div class="ttc" id="anamespaceGstHwPathTelemetry_html_af08ef8a00adf4b7a955c934ad72eeeafa5cf2164b961918b38d26cb03c045c4f5"><div class="ttname"><a href="namespaceGstHwPathTelemetry.html#af08ef8a00adf4b7a955c934ad72eeeafa5cf2164b961918b38d26cb03c045c4f5">GstHwPathTelemetry::HwFallbackReason::UnknownMemType</a></div><div class="ttdeci">@ UnknownMemType</div><div class="ttdef"><b>Definition</b> <a href="GstHwPathTelemetry_8h_source.html#l00021">GstHwPathTelemetry.h:21</a></div></div>
-<div class="ttc" id="anamespaceGstHw_html_ad9d2de3b278ffd4aeee0880422c37841"><div class="ttname"><a href="namespaceGstHw.html#ad9d2de3b278ffd4aeee0880422c37841">GstHw::toString</a></div><div class="ttdeci">constexpr const char * toString(HwVideoBufferPath path) noexcept</div><div class="ttdef"><b>Definition</b> <a href="GstHwTypes_8h_source.html#l00034">GstHwTypes.h:34</a></div></div>
+<div class="ttc" id="anamespaceGstHw_html_ad9d2de3b278ffd4aeee0880422c37841"><div class="ttname"><a href="namespaceGstHw.html#ad9d2de3b278ffd4aeee0880422c37841">GstHw::toString</a></div><div class="ttdeci">constexpr const char * toString(HwVideoBufferPath path) noexcept</div><div class="ttdef"><b>Definition</b> <a href="GstHwTypes_8h_source.html#l00037">GstHwTypes.h:37</a></div></div>
 <div class="ttc" id="astructHwResolvedPathCache_html"><div class="ttname"><a href="structHwResolvedPathCache.html">HwResolvedPathCache</a></div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBufferFactory_8h_source.html#l00016">GstHwVideoBufferFactory.h:17</a></div></div>
-<div class="ttc" id="astructHwResolvedPathCache_html_a0d51d5959a757122d27a2488804560a2"><div class="ttname"><a href="structHwResolvedPathCache.html#a0d51d5959a757122d27a2488804560a2">HwResolvedPathCache::unmatchedAllocator</a></div><div class="ttdeci">GType unmatchedAllocator</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBufferFactory_8h_source.html#l00020">GstHwVideoBufferFactory.h:20</a></div></div>
-<div class="ttc" id="astructHwResolvedPathCache_html_a6560bc30945c1b13f68fed1c0e541935"><div class="ttname"><a href="structHwResolvedPathCache.html#a6560bc30945c1b13f68fed1c0e541935">HwResolvedPathCache::validationFailureLogged</a></div><div class="ttdeci">bool validationFailureLogged</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBufferFactory_8h_source.html#l00021">GstHwVideoBufferFactory.h:21</a></div></div>
-<div class="ttc" id="astructHwResolvedPathCache_html_ad5cad1051e6f42e5067f5527b34b1ad0"><div class="ttname"><a href="structHwResolvedPathCache.html#ad5cad1051e6f42e5067f5527b34b1ad0">HwResolvedPathCache::validated</a></div><div class="ttdeci">bool validated</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBufferFactory_8h_source.html#l00019">GstHwVideoBufferFactory.h:19</a></div></div>
-<div class="ttc" id="astructHwResolvedPathCache_html_af7497e4e8f15fff60e6b0575669b44fa"><div class="ttname"><a href="structHwResolvedPathCache.html#af7497e4e8f15fff60e6b0575669b44fa">HwResolvedPathCache::path</a></div><div class="ttdeci">HwVideoBufferPath path</div><div class="ttdef"><b>Definition</b> <a href="GstHwVideoBufferFactory_8h_source.html#l00018">GstHwVideoBufferFactory.h:18</a></div></div>
-<div class="ttc" id="astructHwVideoBufferContext_html"><div class="ttname"><a href="structHwVideoBufferContext.html">HwVideoBufferContext</a></div><div class="ttdef"><b>Definition</b> <a href="GstHwTypes_8h_source.html#l00021">GstHwTypes.h:22</a></div></div>
-<div class="ttc" id="astructHwVideoBufferContext_html_a2f6849d729316d64f759314fef0ebee8"><div class="ttname"><a href="structHwVideoBufferContext.html#a2f6849d729316d64f759314fef0ebee8">HwVideoBufferContext::gpuEnabled</a></div><div class="ttdeci">bool gpuEnabled</div><div class="ttdef"><b>Definition</b> <a href="GstHwTypes_8h_source.html#l00023">GstHwTypes.h:23</a></div></div>
+<div class="ttc" id="astructHwVideoBufferContext_html"><div class="ttname"><a href="structHwVideoBufferContext.html">HwVideoBufferContext</a></div><div class="ttdef"><b>Definition</b> <a href="GstHwTypes_8h_source.html#l00022">GstHwTypes.h:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

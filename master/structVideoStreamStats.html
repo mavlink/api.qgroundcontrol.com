@@ -112,6 +112,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac66587aea103f90093b4931771720343" id="r_ac66587aea103f90093b4931771720343"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac66587aea103f90093b4931771720343">hasRtpStats</a> () const</td></tr>
+<tr class="memitem:a1135341315663a68c31cb9754db88e74" id="r_a1135341315663a68c31cb9754db88e74"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1135341315663a68c31cb9754db88e74">degraded</a> (double cameraFps) const</td></tr>
 <tr class="memitem:abe977ee22f0b6001b55c07cc94eddd32" id="r_abe977ee22f0b6001b55c07cc94eddd32"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe977ee22f0b6001b55c07cc94eddd32">operator==</a> (const <a class="el" href="structVideoStreamStats.html">VideoStreamStats</a> &amp;) const =default</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -127,7 +128,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a009e29d819f1e4628879062fdfb99477" id="r_a009e29d819f1e4628879062fdfb99477"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a009e29d819f1e4628879062fdfb99477">lossPercent</a> = -1.0</td></tr>
 <tr class="memdesc:a009e29d819f1e4628879062fdfb99477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Share of the RTP packets due in the last interval that were lost.  <br /></td></tr>
 <tr class="memitem:aaf2bef729d8a543170d928e15a59e4d6" id="r_aaf2bef729d8a543170d928e15a59e4d6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf2bef729d8a543170d928e15a59e4d6">jitterMs</a> = -1.0</td></tr>
-<tr class="memdesc:aaf2bef729d8a543170d928e15a59e4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">RTP interarrival jitter, averaged by the jitter buffer.  <br /></td></tr>
+<tr class="memdesc:aaf2bef729d8a543170d928e15a59e4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">RTP interarrival jitter (RFC 3550), averaged over the last packets.  <br /></td></tr>
 <tr class="memitem:aaab95ca004c75e5e8921f60d4f5707f0" id="r_aaab95ca004c75e5e8921f60d4f5707f0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaab95ca004c75e5e8921f60d4f5707f0">latencyMs</a> = -1.0</td></tr>
 <tr class="memdesc:aaab95ca004c75e5e8921f60d4f5707f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pipeline's minimum latency, the playout delay it adds on top of the network's.  <br /></td></tr>
 <tr class="memitem:a61f37d3c4ddcdbce56de9629c135d6a2" id="r_a61f37d3c4ddcdbce56de9629c135d6a2"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61f37d3c4ddcdbce56de9629c135d6a2">decoder</a></td></tr>
@@ -160,10 +161,40 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>One video stream's health, as its <a class="el" href="classVideoReceiver.html">VideoReceiver</a> (<a class="el" href="classUVCStreamMonitor.html">UVCStreamMonitor</a> for a USB camera) measured it last: about once a second while it streams.</p>
-<p>A field that doesn't apply to the stream is -1, which tells it apart from a measured zero: the RTP fields for a stream without an RTP jitter buffer (MPEG-TS, or UDP RTP in low-latency mode), latencyMs while the pipeline can't tell its latency, keyframeIntervalMs until two keyframes arrived and the recording fields while not recording. Strings are empty until known. </p>
+<p>A field that doesn't apply to the stream is -1, which tells it apart from a measured zero: the RTP fields for a stream whose RTP packets nothing counts (MPEG-TS, Qt Multimedia), those only an RTP jitter buffer measures (late, duplicate and retransmitted packets) for a stream without one (UDP RTP in low-latency mode), latencyMs while the pipeline can't tell its latency, keyframeIntervalMs until two keyframes arrived and the recording fields while not recording. Strings are empty until known. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00015">15</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00016">16</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a1135341315663a68c31cb9754db88e74" name="a1135341315663a68c31cb9754db88e74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1135341315663a68c31cb9754db88e74">&#9670;&#160;</a></span>degraded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool VideoStreamStats::degraded </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>cameraFps</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The stream is measured and falls short: it loses packets or drops frames now, or shows under three quarters of <code class="param">cameraFps</code>, the frame rate its camera is set up for; 0 when that isn't known. </p>
+
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00051">51</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+
+<p class="reference">References <a class="el" href="VideoStreamStats_8h_source.html#l00085">droppedFps</a>, <a class="el" href="VideoStreamStats_8h_source.html#l00062">fps</a>, <a class="el" href="VideoStreamStats_8h_source.html#l00071">lossPercent</a>, and <a class="el" href="VideoStreamStats_8h_source.html#l00059">valid</a>.</p>
+
+</div>
+</div>
 <a id="ac66587aea103f90093b4931771720343" name="ac66587aea103f90093b4931771720343"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac66587aea103f90093b4931771720343">&#9670;&#160;</a></span>hasRtpStats()</h2>
 
@@ -187,9 +218,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00046">46</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00047">47</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoStreamStats_8h_source.html#l00061">packetsLost</a>.</p>
+<p class="reference">References <a class="el" href="VideoStreamStats_8h_source.html#l00069">packetsLost</a>.</p>
 
 </div>
 </div>
@@ -232,9 +263,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Compressed video received over the last few seconds, in kbit/s; -1 for a source that can't count it (Qt Multimedia's player, a USB camera). </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00057">57</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00065">65</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoStreamStatsMeter_8cc_source.html#l00039">VideoStreamStatsMeter::update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoStreamStatsMeter_8cc_source.html#l00033">VideoStreamStatsMeter::update()</a>.</p>
 
 </div>
 </div>
@@ -252,9 +283,9 @@ Public Attributes</h2></td></tr>
 
 <p>"H.264", "H.265", ..., or a USB camera's capture format, such as "MJPEG" or "YUYV". </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00075">75</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00083">83</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00130">PipelineStatsProbe::sample()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00146">PipelineStatsProbe::sample()</a>.</p>
 
 </div>
 </div>
@@ -272,9 +303,9 @@ Public Attributes</h2></td></tr>
 
 <p>The decoder's element factory, e.g. "avdec_h264". </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00069">69</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00077">77</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PipelineSession_8cc_source.html#l00240">PipelineSession::sampleStats()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PipelineSession_8cc_source.html#l00279">PipelineSession::sampleStats()</a>.</p>
 
 </div>
 </div>
@@ -292,9 +323,9 @@ Public Attributes</h2></td></tr>
 
 <p>Since the stream started: times the decoder was replaced after an error or a stall. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00081">81</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00089">89</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PipelineSession_8cc_source.html#l00240">PipelineSession::sampleStats()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PipelineSession_8cc_source.html#l00279">PipelineSession::sampleStats()</a>.</p>
 
 </div>
 </div>
@@ -312,9 +343,9 @@ Public Attributes</h2></td></tr>
 
 <p>Frames dropped per second in the last interval. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00077">77</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00085">85</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoStreamStatsMeter_8cc_source.html#l00039">VideoStreamStatsMeter::update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoStreamStats_8h_source.html#l00051">degraded()</a>, and <a class="el" href="VideoStreamStatsMeter_8cc_source.html#l00033">VideoStreamStatsMeter::update()</a>.</p>
 
 </div>
 </div>
@@ -331,9 +362,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Frames shown per second over the last few seconds: handed to the display and not replaced by a newer frame before it was shown. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00054">54</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00062">62</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoStreamStatsMeter_8cc_source.html#l00039">VideoStreamStatsMeter::update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoStreamStats_8h_source.html#l00051">degraded()</a>, and <a class="el" href="VideoStreamStatsMeter_8cc_source.html#l00033">VideoStreamStatsMeter::update()</a>.</p>
 
 </div>
 </div>
@@ -351,9 +382,9 @@ Public Attributes</h2></td></tr>
 
 <p>Since the stream started: frames the display dropped to keep up with the stream. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00059">59</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00067">67</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoStreamStatsMeter_8cc_source.html#l00039">VideoStreamStatsMeter::update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoStreamStatsMeter_8cc_source.html#l00033">VideoStreamStatsMeter::update()</a>.</p>
 
 </div>
 </div>
@@ -371,9 +402,9 @@ Public Attributes</h2></td></tr>
 
 <p>Since the stream started: frames a zero-copy GPU path was tried for but the CPU delivered. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00079">79</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00087">87</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PipelineSession_8cc_source.html#l00240">PipelineSession::sampleStats()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PipelineSession_8cc_source.html#l00279">PipelineSession::sampleStats()</a>.</p>
 
 </div>
 </div>
@@ -390,9 +421,9 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>How decoded frames reach the display: "CPU", or a zero-copy GPU path such as "DMABuf", "GL" or "D3D11". A USB camera's frames: "CPU" or "GPU". </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00073">73</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00081">81</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PipelineSession_8cc_source.html#l00240">PipelineSession::sampleStats()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PipelineSession_8cc_source.html#l00279">PipelineSession::sampleStats()</a>.</p>
 
 </div>
 </div>
@@ -408,9 +439,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00070">70</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00078">78</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PipelineSession_8cc_source.html#l00240">PipelineSession::sampleStats()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PipelineSession_8cc_source.html#l00279">PipelineSession::sampleStats()</a>.</p>
 
 </div>
 </div>
@@ -426,11 +457,11 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>RTP interarrival jitter, averaged by the jitter buffer. </p>
+<p>RTP interarrival jitter (RFC 3550), averaged over the last packets. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00065">65</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00073">73</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00130">PipelineStatsProbe::sample()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00146">PipelineStatsProbe::sample()</a>.</p>
 
 </div>
 </div>
@@ -448,9 +479,9 @@ Public Attributes</h2></td></tr>
 
 <p>Between keyframes, from their timestamps, averaged over the last few. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00083">83</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00091">91</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00130">PipelineStatsProbe::sample()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00146">PipelineStatsProbe::sample()</a>.</p>
 
 </div>
 </div>
@@ -468,9 +499,9 @@ Public Attributes</h2></td></tr>
 
 <p>The pipeline's minimum latency, the playout delay it adds on top of the network's. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00067">67</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00075">75</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00130">PipelineStatsProbe::sample()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00146">PipelineStatsProbe::sample()</a>.</p>
 
 </div>
 </div>
@@ -488,9 +519,9 @@ Public Attributes</h2></td></tr>
 
 <p>Share of the RTP packets due in the last interval that were lost. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00063">63</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00071">71</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoStreamStatsMeter_8cc_source.html#l00039">VideoStreamStatsMeter::update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoStreamStats_8h_source.html#l00051">degraded()</a>, and <a class="el" href="VideoStreamStatsMeter_8cc_source.html#l00033">VideoStreamStatsMeter::update()</a>.</p>
 
 </div>
 </div>
@@ -506,9 +537,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00086">86</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00094">94</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00130">PipelineStatsProbe::sample()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00146">PipelineStatsProbe::sample()</a>.</p>
 
 </div>
 </div>
@@ -526,9 +557,9 @@ Public Attributes</h2></td></tr>
 
 <p>Since the stream started: RTP packets that arrived after their playout time, and duplicate RTP packets. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00085">85</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00093">93</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00130">PipelineStatsProbe::sample()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00146">PipelineStatsProbe::sample()</a>.</p>
 
 </div>
 </div>
@@ -546,9 +577,9 @@ Public Attributes</h2></td></tr>
 
 <p>RTP packets lost since the stream started. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00061">61</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00069">69</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoStreamStats_8h_source.html#l00046">hasRtpStats()</a>, and <a class="el" href="VideoStreamStatsMeter_8cc_source.html#l00039">VideoStreamStatsMeter::update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoStreamStats_8h_source.html#l00047">hasRtpStats()</a>, and <a class="el" href="VideoStreamStatsMeter_8cc_source.html#l00033">VideoStreamStatsMeter::update()</a>.</p>
 
 </div>
 </div>
@@ -566,7 +597,7 @@ Public Attributes</h2></td></tr>
 
 <p>Since the stream was started or restarted: reconnects after the stream failed. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00093">93</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00101">101</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
 </div>
 </div>
@@ -582,7 +613,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00096">96</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00104">104</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
 </div>
 </div>
@@ -600,7 +631,7 @@ Public Attributes</h2></td></tr>
 
 <p>While recording: for how long, and the bytes written to its files so far. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00095">95</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00103">103</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
 </div>
 </div>
@@ -616,9 +647,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00089">89</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00097">97</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00130">PipelineStatsProbe::sample()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00146">PipelineStatsProbe::sample()</a>.</p>
 
 </div>
 </div>
@@ -636,9 +667,9 @@ Public Attributes</h2></td></tr>
 
 <p>Since the stream started: RTP retransmissions requested (RTSP), and how many arrived in time. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00088">88</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00096">96</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00130">PipelineStatsProbe::sample()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="PipelineStatsProbe_8cc_source.html#l00146">PipelineStatsProbe::sample()</a>.</p>
 
 </div>
 </div>
@@ -656,7 +687,7 @@ Public Attributes</h2></td></tr>
 
 <p>Since the stream last connected. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00091">91</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00099">99</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
 </div>
 </div>
@@ -674,9 +705,9 @@ Public Attributes</h2></td></tr>
 
 <p>Measured at least once for the current stream; the other fields mean nothing while false. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00051">51</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamStats_8h_source.html#l00059">59</a> of file <a class="el" href="VideoStreamStats_8h_source.html">VideoStreamStats.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoStreamStatsMeter_8cc_source.html#l00039">VideoStreamStatsMeter::update()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoStreamStats_8h_source.html#l00051">degraded()</a>, and <a class="el" href="VideoStreamStatsMeter_8cc_source.html#l00033">VideoStreamStatsMeter::update()</a>.</p>
 
 </div>
 </div>

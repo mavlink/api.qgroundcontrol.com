@@ -6,6 +6,14 @@ var namespaces_dup =
     [ "ADSB", "namespaceADSB.html", "namespaceADSB" ],
     [ "AndroidInterface", "namespaceAndroidInterface.html", "namespaceAndroidInterface" ],
     [ "AndroidSerial", "namespaceAndroidSerial.html", "namespaceAndroidSerial" ],
+    [ "AndroidSerialAccess", "namespaceAndroidSerialAccess.html", [
+      [ "hasPosixSerialPorts", "namespaceAndroidSerialAccess.html#a2c829712c0143899f4c7ef702e2e6997", null ],
+      [ "hasUsbPermission", "namespaceAndroidSerialAccess.html#ad63c4f4c86eea4fafe15a70c6ee0960f", null ],
+      [ "isUsbPermissionDenied", "namespaceAndroidSerialAccess.html#a2a327c457b5c02a32d6e585db2d7b1c6", null ],
+      [ "requestUsbPermission", "namespaceAndroidSerialAccess.html#aa318af74ab8ec6dd4dfe3f2866ab08a8", null ],
+      [ "setUsePosixSerial", "namespaceAndroidSerialAccess.html#a3c0e282c70dbe26be17452e6d1e720c7", null ],
+      [ "usePosixSerial", "namespaceAndroidSerialAccess.html#a9a82cd8be3f414e9ae0de1c8dcf95b9d", null ]
+    ] ],
     [ "APM", "namespaceAPM.html", [
       [ "AUX_FUNC", "namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03", [
         [ "DO_NOTHING", "namespaceAPM.html#a38eecba0679940625d1b2985ac1a1c03a85152588b78f266b9072a73b607c7e1e", null ],
@@ -317,23 +325,36 @@ var namespaces_dup =
       [ "configureMainWindow", "namespaceGraphicsSetup.html#a76b888fc245743668299f88ebefac4c1", null ],
       [ "configureMainWindowOnCreation", "namespaceGraphicsSetup.html#a86275c835e91fbf953675c93dd472358", null ]
     ] ],
-    [ "GstD3D12StagingPool", "namespaceGstD3D12StagingPool.html", "namespaceGstD3D12StagingPool" ],
     [ "GstHw", "namespaceGstHw.html", "namespaceGstHw" ],
+    [ "GstHwImportPreflight", "namespaceGstHwImportPreflight.html", [
+      [ "preflightOrRecord", "namespaceGstHwImportPreflight.html#aed10dc6971007a4a43cb1b7ded175559", null ]
+    ] ],
+    [ "GstHwPathRegistry", "namespaceGstHwPathRegistry.html", [
+      [ "has", "namespaceGstHwPathRegistry.html#a00d98a9cbcf6665f4521fa36849d1495", null ],
+      [ "paths", "namespaceGstHwPathRegistry.html#a806201d031f29cc12be45f33573d6389", null ]
+    ] ],
     [ "GstHwPathTelemetry", "namespaceGstHwPathTelemetry.html", "namespaceGstHwPathTelemetry" ],
     [ "GstQgc", "namespaceGstQgc.html", "namespaceGstQgc" ],
     [ "GStreamer", "namespaceGStreamer.html", "namespaceGStreamer" ],
     [ "HwBuffers", "namespaceHwBuffers.html", [
-      [ "answerSinkBinContextQuery", "namespaceHwBuffers.html#a27a0a9a44a70e27e6ff1af895a6add09", null ],
-      [ "configureQtGraphics", "namespaceHwBuffers.html#a0f53e9673ded5a26c20941c95e5d6b30", null ],
-      [ "connectMainWindow", "namespaceHwBuffers.html#a911bee0f3e52e59ad896a0dbcffd5eae", null ],
+      [ "answerSinkBinContextQuery", "namespaceHwBuffers.html#acf5032952f531181f2bfe940a5d9dd54", null ],
+      [ "configureQtGraphics", "namespaceHwBuffers.html#a6a5a83b554d68b598017ffe00978ac31", null ],
+      [ "connectMainWindow", "namespaceHwBuffers.html#a67c5d74dd5b7b00271f9d21244b69c7f", null ],
+      [ "d3d11OpensD3D12", "namespaceHwBuffers.html#a0c2afd1d62ae847d97a1d1347c431a3b", null ],
       [ "dmaBufImportDisplay", "namespaceHwBuffers.html#a5a3ccb8436a29a81a6862b5311a8845b", null ],
-      [ "extraPathStatsSince", "namespaceHwBuffers.html#a5bcc14e4738f9c8b47e6eaf161c6eeaa", null ],
+      [ "extraPathStatsSince", "namespaceHwBuffers.html#a7f48de0f932b2cf868be5e55d47a892d", null ],
+      [ "graphicsAdapterLuid", "namespaceHwBuffers.html#a017f8ae136772a0de9162731559a844d", null ],
+      [ "graphicsDeviceLost", "namespaceHwBuffers.html#a95dc6e1ee985ca7bf23218371709f173", null ],
       [ "makeAdapterContext", "namespaceHwBuffers.html#ad7482e3e15db9cdb4147d0c105bdf496", null ],
       [ "onBusSyncMessage", "namespaceHwBuffers.html#a2992e0eac9cc13ef282d784f26378e5a", null ],
-      [ "onPipelineError", "namespaceHwBuffers.html#a98ffeecc94f8512ac037380ed1d504c2", null ],
-      [ "onPipelineRestart", "namespaceHwBuffers.html#a4e4016e32dd396eae3a94db89b904dc6", null ],
+      [ "onGraphicsDeviceRemoved", "namespaceHwBuffers.html#a4370e7716fed38ac88430277a5fb9e57", null ],
+      [ "onPipelineRestart", "namespaceHwBuffers.html#aa8588b93e3f268c6a902368bb05221b0", null ],
       [ "proposeDeviceBoundPool", "namespaceHwBuffers.html#a14765eec880891c0651a2f17ceada160", null ],
-      [ "resetCachedGpuResources", "namespaceHwBuffers.html#a6f2ab6a1aef22e4d4d0d45052ac3ff58", null ]
+      [ "resetCachedGpuResources", "namespaceHwBuffers.html#a5aa21558cf9a1b50a000b30291d2f0e5", null ],
+      [ "setGraphicsDevicePublishedHandler", "namespaceHwBuffers.html#a55e7c8d805bf31a0bc18581c428d5cce", null ],
+      [ "softwareRenderingRequested", "namespaceHwBuffers.html#ad596d1597afb7badf7a3148ceeb371a4", null ],
+      [ "kGraphicsDeviceLostMessage", "namespaceHwBuffers.html#a1692cd7415751934745ba29ebae6f715", null ],
+      [ "kGraphicsDeviceServedMessage", "namespaceHwBuffers.html#a7462af63f95ccfb305dfdad0ea102ca9", null ]
     ] ],
     [ "JsonParsing", "namespaceJsonParsing.html", "namespaceJsonParsing" ],
     [ "JsonSchemaValidator", "namespaceJsonSchemaValidator.html", [
@@ -383,6 +404,7 @@ var namespaces_dup =
       [ "age", "namespaceMonotonicClock.html#a5383972bd71b734459a49ada9b814d45", null ],
       [ "age", "namespaceMonotonicClock.html#a3ca1e3a88a9bcbd647129c4729a9fb60", null ],
       [ "fresh", "namespaceMonotonicClock.html#ab998615902ae9d363431a3579f765dad", null ],
+      [ "nowMs", "namespaceMonotonicClock.html#a87e2382609928ea3063b67b5a90282c7", null ],
       [ "nowUs", "namespaceMonotonicClock.html#ad062a186e3ee54be0ddf067f1f4fcd78", null ],
       [ "remaining", "namespaceMonotonicClock.html#af7352f82baaa1b63643dd9b89ad0c204", null ],
       [ "withinAge", "namespaceMonotonicClock.html#a552733fbbcf50c40117e8d573c6c55a9", null ]
@@ -505,9 +527,6 @@ var namespaces_dup =
     [ "QGCUnitTest", "namespaceQGCUnitTest.html", [
       [ "handleTestOptions", "namespaceQGCUnitTest.html#afae112541c133456dbad0bc2d6f68247", null ]
     ] ],
-    [ "QT_BEGIN_NAMESPACE", "namespaceQT__BEGIN__NAMESPACE.html", [
-      [ "baudRateToSpeed", "namespaceQT__BEGIN__NAMESPACE.html#aacd7ed17991aba4a8a298304417387d9", null ]
-    ] ],
     [ "Quectel", "namespaceQuectel.html", "namespaceQuectel" ],
     [ "QuectelCodec", "namespaceQuectelCodec.html", "namespaceQuectelCodec" ],
     [ "SBF", "namespaceSBF.html", "namespaceSBF" ],
@@ -586,7 +605,7 @@ var namespaces_dup =
       [ "formatName", "namespaceUVCDevices.html#a592d3a2ff25403cfa9376a851e70034f", null ],
       [ "formatNames", "namespaceUVCDevices.html#a327eae6878080b53b3670ca94449976e", null ],
       [ "pixelFormatName", "namespaceUVCDevices.html#aaf4dcb345632b23a9796fc8edf1ec536", null ],
-      [ "requestPermission", "namespaceUVCDevices.html#ae90c17384d1ba2a59a8321c0a1a0fd57", null ]
+      [ "requestPermission", "namespaceUVCDevices.html#a4273a1f32251909b7fc86035cfe0a4b3", null ]
     ] ],
     [ "VehicleSummaryState", "namespaceVehicleSummaryState.html", [
       [ "State", "namespaceVehicleSummaryState.html#a5328df7bc26e17f230677631696b096f", [
@@ -595,20 +614,19 @@ var namespaces_dup =
         [ "Muted", "namespaceVehicleSummaryState.html#a5328df7bc26e17f230677631696b096fa5c056e47748d030f99a8691c647cdcdc", null ]
       ] ]
     ] ],
-    [ "VideoDecoder", "namespaceVideoDecoder.html", [
-      [ "Options", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2", [
-        [ "ForceVideoDecoderDefault", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a7d4060ee732515584357a6b90b85c554", null ],
-        [ "ForceVideoDecoderSoftware", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2acfd097bdd6105deaa576e6795c5935df", null ],
-        [ "ForceVideoDecoderNVIDIA", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a69bdba2a5c9be5b943d2e4d5c66a7d1e", null ],
-        [ "ForceVideoDecoderVAAPI", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2ac77c3dad8c635d5d8d342287fc9343b8", null ],
-        [ "ForceVideoDecoderDirectX3D", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2af9d7d2b4daaeadb07321348832448031", null ],
-        [ "ForceVideoDecoderVideoToolbox", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a33a1a42cfaf8d130d0595d98c1ce19b9", null ],
-        [ "ForceVideoDecoderIntel", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a73692a15da3349aab320e547aa50d593", null ],
-        [ "ForceVideoDecoderVulkan", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a3ae0db4c048ec42e2accd3963da1a7d4", null ],
-        [ "ForceVideoDecoderHardware", "namespaceVideoDecoder.html#ac7839644dd4a377cb650ad559a4336b2a4a141f32f4f46e13efaa4f94c89efecf", null ]
-      ] ]
-    ] ],
     [ "VideoScreenshot", "namespaceVideoScreenshot.html", "namespaceVideoScreenshot" ],
     [ "VideoStreamResolver", "namespaceVideoStreamResolver.html", "namespaceVideoStreamResolver" ],
+    [ "VideoStreamUri", "namespaceVideoStreamUri.html", [
+      [ "Transport", "namespaceVideoStreamUri.html#a25b6a5021f80d27ef237ff3ab763ada3", [
+        [ "Rtsp", "namespaceVideoStreamUri.html#a25b6a5021f80d27ef237ff3ab763ada3af092816dae914c3ad3b355294aa741c1", null ],
+        [ "RtpUdpH264", "namespaceVideoStreamUri.html#a25b6a5021f80d27ef237ff3ab763ada3a4a24d9a63d81856f205bc55b14503a3f", null ],
+        [ "RtpUdpH265", "namespaceVideoStreamUri.html#a25b6a5021f80d27ef237ff3ab763ada3a47cafff0db60bf3e2d89c16f1c830b2c", null ],
+        [ "MpegTsUdp", "namespaceVideoStreamUri.html#a25b6a5021f80d27ef237ff3ab763ada3a9b64b7fd96717911429326f9ffa222b4", null ],
+        [ "MpegTsTcp", "namespaceVideoStreamUri.html#a25b6a5021f80d27ef237ff3ab763ada3a008eac90cfd6fe9f5c7fa3b71ff22129", null ]
+      ] ],
+      [ "isValidPort", "namespaceVideoStreamUri.html#aab556145a8a16c81c0c9a428affe1d07", null ],
+      [ "listens", "namespaceVideoStreamUri.html#abc77bcba861dcd64f53ef921b52771fa", null ],
+      [ "transportFor", "namespaceVideoStreamUri.html#ae7536c4c57e9af04be00ef58bc626c42", null ]
+    ] ],
     [ "Wire", "namespaceWire.html", "namespaceWire" ]
 ];

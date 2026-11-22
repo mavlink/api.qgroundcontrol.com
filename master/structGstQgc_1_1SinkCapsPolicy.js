@@ -1,6 +1,7 @@
 var structGstQgc_1_1SinkCapsPolicy =
 [
     [ "operator==", "structGstQgc_1_1SinkCapsPolicy.html#acc923d62286845a76b92b43db15e8774", null ],
+    [ "d3d11OpensD3D12", "structGstQgc_1_1SinkCapsPolicy.html#a22a312ea5b2a536bcd3c5b7a44a6c489", null ],
     [ "dmaBufDisplay", "structGstQgc_1_1SinkCapsPolicy.html#aced49c0dac24fc5e97bf60411f2ee528", null ],
     [ "gpuBin", "structGstQgc_1_1SinkCapsPolicy.html#a5cdd9fe3c33b492a8262f38f39aa3f40", null ],
     [ "gpuZeroCopy", "structGstQgc_1_1SinkCapsPolicy.html#a9a4c59773899675ef3047b9f1dc8223d", null ],

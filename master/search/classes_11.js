@@ -91,11 +91,8 @@ var searchData=
   ['qmlobjecttreemodel_88',['QmlObjectTreeModel',['../classQmlObjectTreeModel.html',1,'']]],
   ['qmlunitsconversion_89',['QmlUnitsConversion',['../classQmlUnitsConversion.html',1,'']]],
   ['qserialport_90',['QSerialPort',['../classQSerialPort.html',1,'']]],
-  ['qserialporterrorinfo_91',['QSerialPortErrorInfo',['../classQSerialPortErrorInfo.html',1,'']]],
-  ['qserialportinfo_92',['QSerialPortInfo',['../classQSerialPortInfo.html',1,'']]],
-  ['qserialportinfoprivate_93',['QSerialPortInfoPrivate',['../classQSerialPortInfoPrivate.html',1,'']]],
-  ['qserialportprivate_94',['QSerialPortPrivate',['../classQSerialPortPrivate.html',1,'']]],
-  ['qtmultimediavideoreceiver_95',['QtMultimediaVideoReceiver',['../classQtMultimediaVideoReceiver.html',1,'']]],
-  ['qtruntimescheduler_96',['QtRuntimeScheduler',['../classQtRuntimeScheduler.html',1,'']]],
-  ['qtvideorecorder_97',['QtVideoRecorder',['../classQtVideoRecorder.html',1,'']]]
+  ['qserialportinfo_91',['QSerialPortInfo',['../classQSerialPortInfo.html',1,'']]],
+  ['qtmultimediavideoreceiver_92',['QtMultimediaVideoReceiver',['../classQtMultimediaVideoReceiver.html',1,'']]],
+  ['qtruntimescheduler_93',['QtRuntimeScheduler',['../classQtRuntimeScheduler.html',1,'']]],
+  ['qtvideorecorder_94',['QtVideoRecorder',['../classQtVideoRecorder.html',1,'']]]
 ];

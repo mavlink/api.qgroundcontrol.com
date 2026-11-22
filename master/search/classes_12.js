@@ -19,7 +19,7 @@ var searchData=
   ['receiverprofile_16',['ReceiverProfile',['../structUBX_1_1ReceiverProfile.html',1,'UBX']]],
   ['receiverstatus_17',['ReceiverStatus',['../structGPSReceiverMessages_1_1ReceiverStatus.html',1,'GPSReceiverMessages']]],
   ['recordingbranch_18',['RecordingBranch',['../classRecordingBranch.html',1,'']]],
-  ['recordingfinalizer_19',['RecordingFinalizer',['../classRecordingFinalizer.html',1,'']]],
+  ['recordingencoding_19',['RecordingEncoding',['../structVideoReceiver_1_1RecordingEncoding.html',1,'VideoReceiver']]],
   ['recordingformat_20',['RecordingFormat',['../structGStreamer_1_1SelfTest_1_1RecordingFormat.html',1,'GStreamer::SelfTest']]],
   ['recordingplan_21',['RecordingPlan',['../classRecordingPlan.html',1,'']]],
   ['registeredplugin_22',['RegisteredPlugin',['../structGStreamer_1_1SelfTest_1_1RegisteredPlugin.html',1,'GStreamer::SelfTest']]],
@@ -53,9 +53,10 @@ var searchData=
   ['rtcmudpinput_50',['RTCMUdpInput',['../classRTCMUdpInput.html',1,'']]],
   ['rtksettings_51',['RTKSettings',['../classRTKSettings.html',1,'']]],
   ['rtpcounters_52',['RtpCounters',['../structVideoStreamStatsMeter_1_1RtpCounters.html',1,'VideoStreamStatsMeter']]],
-  ['rule_53',['Rule',['../structMixer_1_1Rule.html',1,'Mixer']]],
-  ['ruleitem_54',['RuleItem',['../structMixer_1_1Rule_1_1RuleItem.html',1,'Mixer::Rule']]],
-  ['runguard_55',['RunGuard',['../classRunGuard.html',1,'']]],
-  ['runtime_56',['Runtime',['../classGStreamer_1_1Runtime.html',1,'GStreamer']]],
-  ['runtimescheduler_57',['RuntimeScheduler',['../classRuntimeScheduler.html',1,'']]]
+  ['rtppacketcounter_53',['RtpPacketCounter',['../classRtpPacketCounter.html',1,'']]],
+  ['rtppacketcounts_54',['RtpPacketCounts',['../structGStreamer_1_1RtpPacketCounts.html',1,'GStreamer']]],
+  ['rule_55',['Rule',['../structMixer_1_1Rule.html',1,'Mixer']]],
+  ['ruleitem_56',['RuleItem',['../structMixer_1_1Rule_1_1RuleItem.html',1,'Mixer::Rule']]],
+  ['runguard_57',['RunGuard',['../classRunGuard.html',1,'']]],
+  ['runtimescheduler_58',['RuntimeScheduler',['../classRuntimeScheduler.html',1,'']]]
 ];

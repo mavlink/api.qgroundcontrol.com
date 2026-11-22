@@ -5,8 +5,8 @@ var searchData=
   ['xconfigmotors_2',['xConfigMotors',['../classVehicle.html#a9f95e708d94a9732aee739718abff0f8',1,'Vehicle']]],
   ['xlatcustomcameraname_3',['xlatCustomCameraName',['../classCameraCalc.html#aed5dd4f508a46e4603930dac3d36ca44',1,'CameraCalc']]],
   ['xlatmanualcameraname_4',['xlatManualCameraName',['../classCameraCalc.html#a0b7a9168e81d677d2e186a2eb194b16e',1,'CameraCalc']]],
-  ['xonxoffflowcontrol_5',['XonXoffFlowControl',['../namespaceAndroidSerial.html#abb19e7c08d557535ff09bbfec57131f6aa632c092cb6f5fbb2ba8df96ae34884a',1,'AndroidSerial']]],
-  ['xonxoffinlineflowcontrol_6',['XonXoffInlineFlowControl',['../namespaceAndroidSerial.html#abb19e7c08d557535ff09bbfec57131f6aa311403ba1ef2f339d68267f47740b26',1,'AndroidSerial']]],
+  ['xonxoff_5',['XonXoff',['../namespaceAndroidSerial.html#abb19e7c08d557535ff09bbfec57131f6a68b2e819c7ae75383d71fba14fd307cf',1,'AndroidSerial']]],
+  ['xonxoffinline_6',['XonXoffInline',['../namespaceAndroidSerial.html#abb19e7c08d557535ff09bbfec57131f6ab82a74406a196c20e7af13d51fd3e372',1,'AndroidSerial']]],
   ['xsinamespace_7',['xsiNamespace',['../classKMLDomDocument.html#a3a5cfafc1c2972910666ab5af6e0ed93',1,'KMLDomDocument']]],
   ['xtrackerror_8',['xTrackError',['../classVehicleFactGroup.html#ad94c39da531d52f7ef352dc5ad697b97',1,'VehicleFactGroup']]],
   ['xz_9',['XZ',['../namespaceQGCCompression.html#a9ed6795a888693588da89174b9f072f5a27db3b98d01e664c17a6620b222c6469',1,'QGCCompression']]]

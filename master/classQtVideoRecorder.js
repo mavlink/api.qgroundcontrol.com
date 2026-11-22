@@ -12,9 +12,11 @@ var classQtVideoRecorder =
     [ "recordingCodecs", "classQtVideoRecorder.html#aa000c8134b8441428dcf2463981f00ac", null ],
     [ "recordingFinished", "classQtVideoRecorder.html#a9ac4cb12f166d008e197bff4b5862498", null ],
     [ "recordingFormats", "classQtVideoRecorder.html#a16d123667429e98855ffddf0f2941079", null ],
+    [ "recordingQuality", "classQtVideoRecorder.html#aad032eebc980de20b816a51ef694c86f", null ],
     [ "recordingStarted", "classQtVideoRecorder.html#aa3baaaa2793867e33c3054b6062c6275", null ],
-    [ "start", "classQtVideoRecorder.html#af27acd6bd859894d743e17c3e2d5b4a7", null ],
+    [ "start", "classQtVideoRecorder.html#ac9e899a141efd059d72026eb08aedeec", null ],
     [ "stop", "classQtVideoRecorder.html#a08fc5a37a153574e4f3536635022bb69", null ],
-    [ "stopAndWait", "classQtVideoRecorder.html#a554f040c2b81c3f2d2201cc4c2ee686e", null ],
-    [ "QtVideoRecorderTest", "classQtVideoRecorder.html#a01595e7e537665db576c5ac8cf77b5ea", null ]
+    [ "stopAndWait", "classQtVideoRecorder.html#aa60c5bc6801fdad4ced400549b4376e5", null ],
+    [ "QtVideoRecorderTest", "classQtVideoRecorder.html#a01595e7e537665db576c5ac8cf77b5ea", null ],
+    [ "kFinishTimeout", "classQtVideoRecorder.html#a700927c2c7a9cbda0a0b96da0767b114", null ]
 ];

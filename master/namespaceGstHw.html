@@ -106,14 +106,15 @@ $(function() {
   <div class="headertitle"><div class="title">GstHw Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defined only in builds with the DMABuf path (QGC_HAS_GST_DMABUF_GPU_PATH) on <a class="el" href="namespaceGStreamer.html">GStreamer</a> 1.24 or later.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:GstHwImportCache" id="r_GstHwImportCache"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGstHw_1_1GstHwImportCache.html">GstHwImportCache</a></td></tr>
 <tr class="memitem:MapDiagnostics" id="r_MapDiagnostics"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGstHw_1_1MapDiagnostics.html">MapDiagnostics</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">One-shot warning flags per failure cause; paths with extra causes (D3D, IOSurface) derive and add members.  <a href="structGstHw_1_1MapDiagnostics.html#details">More...</a><br /></td></tr>
-<tr class="memitem:PlaneLayout" id="r_PlaneLayout"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGstHw_1_1PlaneLayout.html">PlaneLayout</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Byte offset and row stride of one plane within its buffer.  <a href="structGstHw_1_1PlaneLayout.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">One-shot warning flags per failure cause; paths with extra causes (DMABuf, D3D, IOSurface) derive and add members.  <a href="structGstHw_1_1MapDiagnostics.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -121,21 +122,23 @@ Functions</h2></td></tr>
 <tr class="memitem:a7212c0a0fe3a251bb71e7109a7f8bccb" id="r_a7212c0a0fe3a251bb71e7109a7f8bccb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7212c0a0fe3a251bb71e7109a7f8bccb">texturePadsPicture</a> (QSize textureSize, QSize picture, bool evenSizes)</td></tr>
 <tr class="memitem:a7b369eb7fffc5d5a6bdc360f12529928" id="r_a7b369eb7fffc5d5a6bdc360f12529928"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b369eb7fffc5d5a6bdc360f12529928">dmaDrmAwareVideoInfo</a> (GstCaps *caps, GstVideoInfo *info)</td></tr>
 <tr class="memitem:a6fab67c92084b2bc93e079d459116856" id="r_a6fab67c92084b2bc93e079d459116856"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fab67c92084b2bc93e079d459116856">hasCpuLayout</a> (GstCaps *caps)</td></tr>
-<tr class="memitem:a75a40595d21a3bb88f74a829d36f5db4" id="r_a75a40595d21a3bb88f74a829d36f5db4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75a40595d21a3bb88f74a829d36f5db4">planeWidth</a> (const GstVideoInfo &amp;info, int plane)</td></tr>
 <tr class="memitem:a204f7713d05c920475050df3e1919618" id="r_a204f7713d05c920475050df3e1919618"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a204f7713d05c920475050df3e1919618">planeHeight</a> (const GstVideoInfo &amp;info, int plane)</td></tr>
-<tr class="memitem:a202c5f5c74935c01d91e7a78ae601734" id="r_a202c5f5c74935c01d91e7a78ae601734"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGstHw_1_1PlaneLayout.html">PlaneLayout</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a202c5f5c74935c01d91e7a78ae601734">planeLayout</a> (const GstVideoInfo &amp;info, const GstVideoMeta *vmeta, int plane) noexcept</td></tr>
 <tr class="memitem:a507bef02f9fe5c3b855aa35c7ef771c2" id="r_a507bef02f9fe5c3b855aa35c7ef771c2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a507bef02f9fe5c3b855aa35c7ef771c2">planeRowBytes</a> (const GstVideoInfo &amp;info, int plane)</td></tr>
-<tr class="memitem:a34a92fdd0352acfe03c2584a136b4cfb" id="r_a34a92fdd0352acfe03c2584a136b4cfb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34a92fdd0352acfe03c2584a136b4cfb">buildSupportedDmaDrmCaps</a> (std::span&lt; const GstVideoFormat &gt;, void *)</td></tr>
+<tr class="memitem:a9c237221e59cadb633095e4ab7d4fbbb" id="r_a9c237221e59cadb633095e4ab7d4fbbb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c237221e59cadb633095e4ab7d4fbbb">setFrameSize</a> (GstVideoInfo &amp;info, int width, int height)</td></tr>
+<tr class="memitem:a93e66ffbaec34d7d1048e838ce92889a" id="r_a93e66ffbaec34d7d1048e838ce92889a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93e66ffbaec34d7d1048e838ce92889a">buildSupportedDmaDrmCaps</a> (std::span&lt; const GstVideoFormat &gt; formats, void *display)</td></tr>
+<tr class="memitem:af941641534a0a69224c77b2ff1881531" id="r_af941641534a0a69224c77b2ff1881531"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af941641534a0a69224c77b2ff1881531">buildVulkanDmaDrmCaps</a> (std::span&lt; const GstVideoFormat &gt; formats)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a839c04819e241cc876a76d3183e46390" id="r_a839c04819e241cc876a76d3183e46390"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a839c04819e241cc876a76d3183e46390">kPathCount</a> = static_cast&lt;std::size_t&gt;(<a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbadd3ff01c06a07a752666c18e1f7efaf8">HwVideoBufferPath::_Count</a>)</td></tr>
+<tr class="memitem:a839c04819e241cc876a76d3183e46390" id="r_a839c04819e241cc876a76d3183e46390"><td class="memItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a839c04819e241cc876a76d3183e46390">kPathCount</a> = static_cast&lt;std::size_t&gt;(<a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbae93f994f01c537c4e2f7d8528c3eb5e9">HwVideoBufferPath::Count</a>)</td></tr>
 <tr class="memitem:aac8d539ade26d72465e993b20175a309" id="r_aac8d539ade26d72465e993b20175a309"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac8d539ade26d72465e993b20175a309">kMaxPlanes</a> = 4</td></tr>
 <tr class="memdesc:aac8d539ade26d72465e993b20175a309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matches GST_VIDEO_MAX_PLANES (gst-video pins it at 4); single source of truth for every per-platform buffer.  <br /></td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a34a92fdd0352acfe03c2584a136b4cfb" name="a34a92fdd0352acfe03c2584a136b4cfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34a92fdd0352acfe03c2584a136b4cfb">&#9670;&#160;</a></span>buildSupportedDmaDrmCaps()</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defined only in builds with the DMABuf path (QGC_HAS_GST_DMABUF_GPU_PATH) on <a class="el" href="namespaceGStreamer.html">GStreamer</a> 1.24 or later. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a93e66ffbaec34d7d1048e838ce92889a" name="a93e66ffbaec34d7d1048e838ce92889a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93e66ffbaec34d7d1048e838ce92889a">&#9670;&#160;</a></span>buildSupportedDmaDrmCaps()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,7 +157,23 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Best-effort DMA_DRM caps string built from the (format, modifier) pairs EGL <code class="param">display</code> (Qt's EGLDisplay, as <a class="el" href="namespaceHwBuffers.html#a5a3ccb8436a29a81a6862b5311a8845b">HwBuffers::dmaBufImportDisplay()</a> returns it) reports, intersected with <code class="param">formats:</code> a pair is offered when Qt's DMABuf importer can sample every plane of the format with that modifier (no compression or auxiliary planes). Returns a single ready-to-prepend "video/x-raw(memory:DMABuf), format=DMA_DRM, drm-format={ FMT:0xMOD, ... }; " fragment, or "" on ANY failure (null display, no modifier query). Additive only: callers must keep the existing system catch-all. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstDmaDrmCaps_8cc_source.html#l00225">225</a> of file <a class="el" href="GstDmaDrmCaps_8cc_source.html">GstDmaDrmCaps.cc</a>.</p>
+</div>
+</div>
+<a id="af941641534a0a69224c77b2ff1881531" name="af941641534a0a69224c77b2ff1881531"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af941641534a0a69224c77b2ff1881531">&#9670;&#160;</a></span>buildVulkanDmaDrmCaps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string GstHw::buildVulkanDmaDrmCaps </td>
+          <td>(</td>
+          <td class="paramtype">std::span&lt; const GstVideoFormat &gt;</td>          <td class="paramname"><span class="paramname"><em>formats</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The same fragment for Qt Quick on Vulkan: the (format, modifier) pairs of <code class="param">formats</code> every plane of which Qt's Vulkan device imports as an image of its own (GstDmaBufVulkan::probeDevice()). "" until that device is known, when it can't import, and in builds without the DMABuf import under Vulkan. </p>
 
 </div>
 </div>
@@ -178,9 +197,9 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Parse <code class="param">caps</code> into <code class="param">info</code>, handling the <a class="el" href="namespaceGStreamer.html">GStreamer</a> 1.24+ DMA_DRM format that plain gst_video_info_from_caps cannot decode. False on parse failure or null args. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwVideoInfo_8cc_source.html#l00022">22</a> of file <a class="el" href="GstHwVideoInfo_8cc_source.html">GstHwVideoInfo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwVideoInfo_8cc_source.html#l00023">23</a> of file <a class="el" href="GstHwVideoInfo_8cc_source.html">GstHwVideoInfo.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00307">gst_qgc_q_video_sink_set_caps()</a>, and <a class="el" href="GstQgcAllocation_8cc_source.html#l00071">GstQgc::populateAllocationQuery()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="gstqgcqvideosink_8cc_source.html#l00346">gst_qgc_q_video_sink_set_caps()</a>, and <a class="el" href="GstQgcAllocation_8cc_source.html#l00069">GstQgc::populateAllocationQuery()</a>.</p>
 
 </div>
 </div>
@@ -200,9 +219,9 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>False for DMA_DRM caps whose modifier isn't LINEAR: a tiled or driver-chosen layout has no CPU reading, and the GstVideoInfo <a class="el" href="#a7b369eb7fffc5d5a6bdc360f12529928">dmaDrmAwareVideoInfo()</a> derives describes linear rows. True for any other caps. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwVideoInfo_8cc_source.html#l00037">37</a> of file <a class="el" href="GstHwVideoInfo_8cc_source.html">GstHwVideoInfo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwVideoInfo_8cc_source.html#l00038">38</a> of file <a class="el" href="GstHwVideoInfo_8cc_source.html">GstHwVideoInfo.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstQgcFrameMap_8cc_source.html#l00222">mapSampleToFrame()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstQgcFrameMap_8cc_source.html#l00288">mapSampleToFrame()</a>.</p>
 
 </div>
 </div>
@@ -224,47 +243,11 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Rows of <code class="param">plane</code>, taken from the first component stored in it: plane and component indices differ in general (AV12's third plane holds component 3, the full-height alpha, not the half-height V component 2). 0 for a plane without components. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwVideoInfo_8cc_source.html#l00060">60</a> of file <a class="el" href="GstHwVideoInfo_8cc_source.html">GstHwVideoInfo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwVideoInfo_8cc_source.html#l00052">52</a> of file <a class="el" href="GstHwVideoInfo_8cc_source.html">GstHwVideoInfo.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CpuVideoFramePool_8cc_source.html#l00118">CpuVideoFramePool::computeLayout()</a>, <a class="el" href="CpuVideoFramePool_8cc_source.html#l00259">CpuVideoFramePool::copyFromBuffer()</a>, and <a class="el" href="CpuVideoFramePool_8cc_source.html#l00135">CpuVideoFramePool::mapDataFor()</a>.</p>
-
-</div>
-</div>
-<a id="a202c5f5c74935c01d91e7a78ae601734" name="a202c5f5c74935c01d91e7a78ae601734"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a202c5f5c74935c01d91e7a78ae601734">&#9670;&#160;</a></span>planeLayout()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structGstHw_1_1PlaneLayout.html">PlaneLayout</a> GstHw::planeLayout </td>
-          <td>(</td>
-          <td class="paramtype">const GstVideoInfo &amp;</td>          <td class="paramname"><span class="paramname"><em>info</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const GstVideoMeta *</td>          <td class="paramname"><span class="paramname"><em>vmeta</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>plane</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Layout of plane <code class="param">plane:</code> from <code class="param">vmeta</code> when present (decoders pad rows/planes beyond the caps layout), else <code class="param">info</code>. </p>
-
-<p class="definition">Definition at line <a class="el" href="GstHwVideoInfo_8cc_source.html#l00069">69</a> of file <a class="el" href="GstHwVideoInfo_8cc_source.html">GstHwVideoInfo.cc</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CpuVideoFramePool_8cc_source.html#l00119">CpuVideoFramePool::computeLayout()</a>, <a class="el" href="CpuVideoFramePool_8cc_source.html#l00260">CpuVideoFramePool::copyFromBuffer()</a>, and <a class="el" href="CpuVideoFramePool_8cc_source.html#l00136">CpuVideoFramePool::mapDataFor()</a>.</p>
 
 </div>
 </div>
@@ -288,33 +271,40 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Bytes of image data in one row of <code class="param">plane</code>, i.e. the stride without its alignment padding: up to the last byte of any component stored in the plane. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwVideoInfo_8cc_source.html#l00077">77</a> of file <a class="el" href="GstHwVideoInfo_8cc_source.html">GstHwVideoInfo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwVideoInfo_8cc_source.html#l00061">61</a> of file <a class="el" href="GstHwVideoInfo_8cc_source.html">GstHwVideoInfo.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="CpuVideoFramePool_8cc_source.html#l00259">CpuVideoFramePool::copyFromBuffer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="CpuVideoFramePool_8cc_source.html#l00260">CpuVideoFramePool::copyFromBuffer()</a>.</p>
 
 </div>
 </div>
-<a id="a75a40595d21a3bb88f74a829d36f5db4" name="a75a40595d21a3bb88f74a829d36f5db4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75a40595d21a3bb88f74a829d36f5db4">&#9670;&#160;</a></span>planeWidth()</h2>
+<a id="a9c237221e59cadb633095e4ab7d4fbbb" name="a9c237221e59cadb633095e4ab7d4fbbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c237221e59cadb633095e4ab7d4fbbb">&#9670;&#160;</a></span>setFrameSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int GstHw::planeWidth </td>
+          <td class="memname">bool GstHw::setFrameSize </td>
           <td>(</td>
-          <td class="paramtype">const GstVideoInfo &amp;</td>          <td class="paramname"><span class="paramname"><em>info</em></span>, </td>
+          <td class="paramtype">GstVideoInfo &amp;</td>          <td class="paramname"><span class="paramname"><em>info</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>plane</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Size of <code class="param">plane</code>, taken from the first component stored in it: plane and component indices differ in general (AV12's third plane holds component 3, the full-height alpha, not the half-height V component 2). 0 for a plane without components. </p>
+<p>Gives <code class="param">info</code> the size <code class="param">width</code> x <code class="param">height</code>, with gst-video's default plane layout for it; format, colorimetry and frame rate stay. False, with <code class="param">info</code> unchanged, when the format has no layout of that size. </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwVideoInfo_8cc_source.html#l00051">51</a> of file <a class="el" href="GstHwVideoInfo_8cc_source.html">GstHwVideoInfo.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwVideoInfo_8cc_source.html#l00087">87</a> of file <a class="el" href="GstHwVideoInfo_8cc_source.html">GstHwVideoInfo.cc</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="CpuVideoFramePool_8cc_source.html#l00260">CpuVideoFramePool::copyFromBuffer()</a>.</p>
 
 </div>
 </div>
@@ -371,11 +361,11 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Label used in logs and stats. Kept out of the enum's namespace so QTest's unqualified <a class="el" href="#ad9d2de3b278ffd4aeee0880422c37841">toString()</a> can't find it through ADL for a QCOMPARE on <a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbb" title="GPU zero-copy path a frame is imported through; None means the frame takes the CPU path.">HwVideoBufferPath</a> (QTest delete[]s what <a class="el" href="#ad9d2de3b278ffd4aeee0880422c37841">toString()</a> returns). </p>
 
-<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00034">34</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00037">37</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
 
-<p class="reference">References <a class="el" href="GstHwTypes_8h_source.html#l00016">_Count</a>, <a class="el" href="GstHwTypes_8h_source.html#l00014">AHardwareBuffer</a>, <a class="el" href="GstHwTypes_8h_source.html#l00011">D3D11</a>, <a class="el" href="GstHwTypes_8h_source.html#l00012">D3D12</a>, <a class="el" href="GstHwTypes_8h_source.html#l00009">DmaBuf</a>, <a class="el" href="GstHwTypes_8h_source.html#l00010">GlMemory</a>, <a class="el" href="GstHwTypes_8h_source.html#l00013">IOSurface</a>, <a class="el" href="GstHwTypes_8h_source.html#l00008">None</a>, and <a class="el" href="GstHwTypes_8h_source.html#l00015">Vulkan</a>.</p>
+<p class="reference">References <a class="el" href="GstHwTypes_8h_source.html#l00014">AHardwareBuffer</a>, <a class="el" href="GstHwTypes_8h_source.html#l00016">Count</a>, <a class="el" href="GstHwTypes_8h_source.html#l00011">D3D11</a>, <a class="el" href="GstHwTypes_8h_source.html#l00012">D3D12</a>, <a class="el" href="GstHwTypes_8h_source.html#l00009">DmaBuf</a>, <a class="el" href="GstHwTypes_8h_source.html#l00010">GlMemory</a>, <a class="el" href="GstHwTypes_8h_source.html#l00013">IOSurface</a>, <a class="el" href="GstHwTypes_8h_source.html#l00008">None</a>, and <a class="el" href="GstHwTypes_8h_source.html#l00015">Vulkan</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HwBuffers_8cc_source.html#l00207">HwBuffers::extraPathStatsSince()</a>, <a class="el" href="GstQgcSinkStats_8cc_source.html#l00040">GstQgc::formatSinkStats()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00356">gst_qgc_q_video_sink_show_frame()</a>, <a class="el" href="HwBuffers_8cc_source.html#l00133">HwBuffers::makeAdapterContext()</a>, <a class="el" href="DecodingBranch_8cc_source.html#l00195">DecodingBranch::sampleStats()</a>, and <a class="el" href="GstQgcSinkStats_8cc_source.html#l00012">GstQgc::sinkFramesField()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HwBuffers_8cc_source.html#l00294">HwBuffers::extraPathStatsSince()</a>, <a class="el" href="GstQgcSinkStats_8cc_source.html#l00040">GstQgc::formatSinkStats()</a>, <a class="el" href="gstqgcqvideosink_8cc_source.html#l00398">gst_qgc_q_video_sink_show_frame()</a>, <a class="el" href="HwBuffers_8cc_source.html#l00182">HwBuffers::makeAdapterContext()</a>, <a class="el" href="GstHwVideoBufferFactory_8cc_source.html#l00013">makeHwVideoBuffer()</a>, <a class="el" href="DecodingBranch_8cc_source.html#l00309">DecodingBranch::sampleStats()</a>, and <a class="el" href="GstQgcSinkStats_8cc_source.html#l00012">GstQgc::sinkFramesField()</a>.</p>
 
 </div>
 </div>
@@ -404,7 +394,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="GstHwVideoBuffer_8h_source.html#l00021">21</a> of file <a class="el" href="GstHwVideoBuffer_8h_source.html">GstHwVideoBuffer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstHwVideoBuffer_8h_source.html#l00084">GstHwVideoBuffer::validatePlanes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstHwVideoBuffer_8h_source.html#l00096">GstHwVideoBuffer::validatePlanes()</a>.</p>
 
 </div>
 </div>
@@ -418,7 +408,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::size_t GstHw::kPathCount = static_cast&lt;std::size_t&gt;(<a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbadd3ff01c06a07a752666c18e1f7efaf8">HwVideoBufferPath::_Count</a>)</td>
+          <td class="memname">std::size_t GstHw::kPathCount = static_cast&lt;std::size_t&gt;(<a class="el" href="GstHwTypes_8h.html#a4764d9dd1160ac64fd7f4a240241ffbbae93f994f01c537c4e2f7d8528c3eb5e9">HwVideoBufferPath::Count</a>)</td>
         </tr>
       </table>
   </td>
@@ -428,9 +418,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00030">30</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GstHwTypes_8h_source.html#l00033">33</a> of file <a class="el" href="GstHwTypes_8h_source.html">GstHwTypes.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstQgcSinkStats_8cc_source.html#l00040">GstQgc::formatSinkStats()</a>, <a class="el" href="GstQgcSinkCounters_8cc_source.html#l00029">GstQgc::SinkCounters::frameStats()</a>, <a class="el" href="DecodingBranch_8cc_source.html#l00195">DecodingBranch::sampleStats()</a>, <a class="el" href="DecodingBranch_8cc_source.html#l00115">DecodingBranch::setVideoSink()</a>, and <a class="el" href="GstHwPathTelemetry_8cc_source.html#l00060">GstHwPathTelemetry::snapshot()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstQgcSinkStats_8cc_source.html#l00040">GstQgc::formatSinkStats()</a>, <a class="el" href="GstQgcSinkCounters_8cc_source.html#l00029">GstQgc::SinkCounters::frameStats()</a>, <a class="el" href="DecodingBranch_8cc_source.html#l00309">DecodingBranch::sampleStats()</a>, <a class="el" href="DecodingBranch_8cc_source.html#l00213">DecodingBranch::setVideoSink()</a>, and <a class="el" href="GstHwPathTelemetry_8cc_source.html#l00050">GstHwPathTelemetry::snapshot()</a>.</p>
 
 </div>
 </div>

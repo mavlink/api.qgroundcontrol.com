@@ -113,7 +113,9 @@ $(function() {
 <code>#include &lt;QtCore/QDir&gt;</code><br />
 <code>#include &lt;QtCore/QFile&gt;</code><br />
 <code>#include &lt;QtCore/QFileInfo&gt;</code><br />
+<code>#include &lt;QtCore/QHash&gt;</code><br />
 <code>#include &lt;QtCore/QRegularExpression&gt;</code><br />
+<code>#include &lt;QtCore/QSaveFile&gt;</code><br />
 <code>#include &lt;QtCore/QStandardPaths&gt;</code><br />
 <code>#include &lt;QtCore/QStringList&gt;</code><br />
 <code>#include &lt;QtCore/QSysInfo&gt;</code><br />
@@ -124,7 +126,7 @@ $(function() {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="GStreamerEnvironment_8cc__incl.svg" width="100%" height="455"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="GStreamerEnvironment_8cc__incl.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="GStreamerEnvironment_8cc_source.html">Go to the source code of this file.</a></p>
@@ -137,10 +139,11 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:afdeaaf42c216cdd0a018e85943db2800" id="r_afdeaaf42c216cdd0a018e85943db2800"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGStreamer_1_1Environment_1_1BundleLayout.html">BundleLayout</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1Environment.html#afdeaaf42c216cdd0a018e85943db2800">GStreamer::Environment::bundleLayout</a> (<a class="el" href="namespaceGStreamer_1_1Environment.html#ab669c2df344727c83bc515e2a1f259c4">DesktopInstall</a> install, const QString &amp;appDir)</td></tr>
-<tr class="memitem:af46a59abcf963a2e828cbd0014896ccd" id="r_af46a59abcf963a2e828cbd0014896ccd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGStreamer_1_1Environment_1_1ValidationResult.html">ValidationResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1Environment.html#af46a59abcf963a2e828cbd0014896ccd">GStreamer::Environment::prepareEnvironment</a> (const QString &amp;appDir)</td></tr>
+<tr class="memitem:a088569465b4535ccf0e0f95bec98b177" id="r_a088569465b4535ccf0e0f95bec98b177"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVideoBackend_1_1EnvPrepResult.html">VideoBackend::EnvPrepResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1Environment.html#a088569465b4535ccf0e0f95bec98b177">GStreamer::Environment::prepareEnvironment</a> (const QString &amp;appDir)</td></tr>
 <tr class="memitem:ad9d1cc9b0921d7df229c0445105e825a" id="r_ad9d1cc9b0921d7df229c0445105e825a"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1Environment.html#ad9d1cc9b0921d7df229c0445105e825a">GStreamer::Environment::usePrivateRegistry</a> (const QString &amp;cacheDir, const QString &amp;installPath)</td></tr>
+<tr class="memitem:a292ba7350bd1d9d1a6b1e98f95fa7205" id="r_a292ba7350bd1d9d1a6b1e98f95fa7205"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1Environment.html#a292ba7350bd1d9d1a6b1e98f95fa7205">GStreamer::Environment::writeIfChanged</a> (const QString &amp;path, QByteArrayView content)</td></tr>
 <tr class="memitem:a06332c657314ea97afa4bcddef3a41fa" id="r_a06332c657314ea97afa4bcddef3a41fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structGStreamer_1_1Environment_1_1BundledRuntime.html">BundledRuntime</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1Environment.html#a06332c657314ea97afa4bcddef3a41fa">GStreamer::Environment::bundledRuntime</a> ()</td></tr>
-<tr class="memdesc:a06332c657314ea97afa4bcddef3a41fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bundled runtime the last <a class="el" href="namespaceGStreamer.html#af5effb79c9a6f58830a2065652d3a06d">prepareEnvironment()</a> applied; empty before it ran.  <br /></td></tr>
+<tr class="memdesc:a06332c657314ea97afa4bcddef3a41fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bundled runtime the last <a class="el" href="namespaceGStreamer_1_1Environment.html#a088569465b4535ccf0e0f95bec98b177">prepareEnvironment()</a> applied; empty before it ran.  <br /></td></tr>
 <tr class="memitem:a1761b17a581d5c93c1bed1e08d9b4170" id="r_a1761b17a581d5c93c1bed1e08d9b4170"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceGStreamer_1_1Environment.html#a1761b17a581d5c93c1bed1e08d9b4170">GStreamer::Environment::logDiagnostics</a> ()</td></tr>
 </table>
 </div><!-- contents -->

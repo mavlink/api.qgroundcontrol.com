@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['≥_201_2026_0',['Live pipeline visualizer (&lt;span class=&quot;tt&quot;&gt;gst-dots-viewer&lt;/span&gt;, GStreamer ≥ 1.26)',['../dir_b576ff9da4174a54288db11cc55a2673.html#autotoc_md36',1,'']]]
+  ['—_20custom_20gstreamer_20plugin_0',['&lt;span class=&quot;tt&quot;&gt;gstqgc&lt;/span&gt; — custom GStreamer plugin',['../dir_b576ff9da4174a54288db11cc55a2673.html#autotoc_md18',1,'']]],
+  ['—_20gpu_20paths_1',['&lt;span class=&quot;tt&quot;&gt;HwBuffers&lt;/span&gt; — GPU paths',['../dir_b576ff9da4174a54288db11cc55a2673.html#autotoc_md19',1,'']]]
 ];

@@ -10,19 +10,11 @@ var dir_bbd4e0951d0a44025879659616ef8f2e =
     [ "GStreamerEnvironment.h", "GStreamerEnvironment_8h.html", "GStreamerEnvironment_8h" ],
     [ "GStreamerHelpers.cc", "GStreamerHelpers_8cc.html", "GStreamerHelpers_8cc" ],
     [ "GStreamerHelpers.h", "GStreamerHelpers_8h.html", "GStreamerHelpers_8h" ],
+    [ "GStreamerLibavWorkaround.cc", "GStreamerLibavWorkaround_8cc.html", "GStreamerLibavWorkaround_8cc" ],
+    [ "GStreamerLibavWorkaround.h", "GStreamerLibavWorkaround_8h.html", "GStreamerLibavWorkaround_8h" ],
     [ "GStreamerLogging.cc", "GStreamerLogging_8cc.html", "GStreamerLogging_8cc" ],
     [ "GStreamerLogging.h", "GStreamerLogging_8h.html", "GStreamerLogging_8h" ],
-    [ "GStreamerRuntime.cc", "GStreamerRuntime_8cc.html", null ],
-    [ "GStreamerRuntime.h", "GStreamerRuntime_8h.html", "GStreamerRuntime_8h" ],
-    [ "GStreamerSelfTest.cc", "GStreamerSelfTest_8cc.html", "GStreamerSelfTest_8cc" ],
-    [ "GStreamerSelfTest.h", "GStreamerSelfTest_8h.html", "GStreamerSelfTest_8h" ],
-    [ "GStreamerSelfTestMedia.cc", "GStreamerSelfTestMedia_8cc.html", "GStreamerSelfTestMedia_8cc" ],
-    [ "GStreamerSelfTestMedia.h", "GStreamerSelfTestMedia_8h.html", "GStreamerSelfTestMedia_8h" ],
     [ "GStreamerUdpSrcWorkaround.cc", "GStreamerUdpSrcWorkaround_8cc.html", "GStreamerUdpSrcWorkaround_8cc" ],
     [ "GStreamerUdpSrcWorkaround.h", "GStreamerUdpSrcWorkaround_8h.html", "GStreamerUdpSrcWorkaround_8h" ],
-    [ "GStreamerVideoBackend.cc", "GStreamerVideoBackend_8cc.html", null ],
-    [ "GStreamerVideoBackend.h", "GStreamerVideoBackend_8h.html", "GStreamerVideoBackend_8h" ],
-    [ "GstScoped.h", "GstScoped_8h.html", "GstScoped_8h" ],
-    [ "PipelineDotDumper.cc", "PipelineDotDumper_8cc.html", null ],
-    [ "PipelineDotDumper.h", "PipelineDotDumper_8h.html", "PipelineDotDumper_8h" ]
+    [ "GstScoped.h", "GstScoped_8h.html", "GstScoped_8h" ]
 ];

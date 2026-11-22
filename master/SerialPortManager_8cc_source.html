@@ -117,275 +117,421 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(SerialPortManagerLog, <span class="stringliteral">&quot;Comms.Serial.SerialPortManager&quot;</span>)</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><a class="code hl_function" href="ADSBVehicleManager_8cc.html#abf12ab32eab02bded3bfbb919345e8ad">Q_APPLICATION_STATIC</a>(<a class="code hl_class" href="classSerialPortManager.html">SerialPortManager</a>, _serialPortManager)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a3307af5965b6b349dfb1318133513091">   15</a></span><a class="code hl_function" href="classSerialPortManager.html#a3307af5965b6b349dfb1318133513091">SerialPortManager</a>::<a class="code hl_function" href="classSerialPortManager.html#a3307af5965b6b349dfb1318133513091">SerialPortManager</a>(QObject* parent, <a class="code hl_typedef" href="classSerialPortManager.html#ad45088435fc7c19eae1e4fc21b2106e5">Enumerator</a> enumerator)</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    : QObject(parent), _enumerator(enumerator ? std::move(enumerator) : &amp;_enumeratePorts)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{}</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="AndroidSerialAccess_8h.html">AndroidSerialAccess.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="AndroidSerialApp_8h.html">AndroidSerialApp.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><a class="code hl_define" href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a>(SerialPortManagerLog, <span class="stringliteral">&quot;Comms.Serial.SerialPortManager&quot;</span>)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><a class="code hl_function" href="ADSBVehicleManager_8cc.html#abf12ab32eab02bded3bfbb919345e8ad">Q_APPLICATION_STATIC</a>(<a class="code hl_class" href="classSerialPortManager.html">SerialPortManager</a>, _serialPortManager)</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a3307af5965b6b349dfb1318133513091">   20</a></span><a class="code hl_function" href="classSerialPortManager.html#a3307af5965b6b349dfb1318133513091">SerialPortManager</a>::<a class="code hl_function" href="classSerialPortManager.html#a3307af5965b6b349dfb1318133513091">SerialPortManager</a>(QObject* parent, <a class="code hl_typedef" href="classSerialPortManager.html#ad45088435fc7c19eae1e4fc21b2106e5">Enumerator</a> enumerator)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    : QObject(parent), _enumerator(enumerator ? std::move(enumerator) : &amp;_enumeratePorts)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// Android tells when a USB device is attached, detached or permitted, so the inventory does not wait for the</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// next caller to ask for it.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    (void) connect(<a class="code hl_function" href="classAndroidSerial_1_1DeviceWatcher.html#a40abec47c8bf4cb887a8a413881ff0c1">AndroidSerial::DeviceWatcher::instance</a>(), &amp;<a class="code hl_signal" href="classAndroidSerial_1_1DeviceWatcher.html#a92b76922e7776c5f11aaefac16b95b2b">AndroidSerial::DeviceWatcher::devicesChanged</a>, <span class="keyword">this</span>,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                   &amp;<a class="code hl_function" href="classSerialPortManager.html#add4f3d102d8ce1e0dc57899b9fa8d8d8">SerialPortManager::rescan</a>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
 </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a09162723dc11b2f4ae1ef7bd9fce717c">   19</a></span><a class="code hl_function" href="classSerialPortManager.html#a3307af5965b6b349dfb1318133513091">SerialPortManager</a>* <a class="code hl_function" href="classSerialPortManager.html#a09162723dc11b2f4ae1ef7bd9fce717c">SerialPortManager::instance</a>()</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">return</span> _serialPortManager();</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a09162723dc11b2f4ae1ef7bd9fce717c">   31</a></span><a class="code hl_function" href="classSerialPortManager.html#a3307af5965b6b349dfb1318133513091">SerialPortManager</a>* <a class="code hl_function" href="classSerialPortManager.html#a09162723dc11b2f4ae1ef7bd9fce717c">SerialPortManager::instance</a>()</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">return</span> _serialPortManager();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
 </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a8b707e16081a117c11c87906b4e7e28b">   24</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#a8b707e16081a117c11c87906b4e7e28b">SerialPortManager::isPrimaryInterface</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structSerialPortManager_1_1Port.html">Port</a>&amp; port, QSet&lt;QString&gt;&amp; seenDevices)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">if</span> (port.physicalDeviceId.isEmpty()) {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">const</span> qsizetype seen = seenDevices.size();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    seenDevices.insert(port.physicalDeviceId);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">return</span> seenDevices.size() != seen;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a8b707e16081a117c11c87906b4e7e28b">   36</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#a8b707e16081a117c11c87906b4e7e28b">SerialPortManager::isPrimaryInterface</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structSerialPortManager_1_1Port.html">Port</a>&amp; <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>, QSet&lt;QString&gt;&amp; seenDevices)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.physicalDeviceId.isEmpty()) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">const</span> qsizetype seen = seenDevices.size();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    seenDevices.insert(<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.physicalDeviceId);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">return</span> seenDevices.size() != seen;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
 </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>QList&lt;SerialPortManager::Port&gt; SerialPortManager::_enumeratePorts()</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    QList&lt;Port&gt; ports;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_class" href="classQGCSerialPortInfo.html">QGCSerialPortInfo</a>&amp; info : <a class="code hl_function" href="classQGCSerialPortInfo.html#a9812f3caa1ca8ceeab0e4bb72818ca8d">QGCSerialPortInfo::availablePorts</a>()) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        Port port;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">if</span> (info.hasVendorIdentifier() &amp;&amp; info.hasProductIdentifier() &amp;&amp; !info.serialNumber().isEmpty() &amp;&amp;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            info.serialNumber() != QStringLiteral(<span class="stringliteral">&quot;0&quot;</span>)) {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            port.physicalDeviceId = QStringLiteral(<span class="stringliteral">&quot;%1:%2:%3&quot;</span>)</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                                        .arg(info.vendorIdentifier())</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                                        .arg(info.productIdentifier())</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                                        .arg(info.serialNumber());</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_function" href="namespaceSBF_1_1Plan.html#ac3b90a12d6babe61a1370e90b2a9df55">port</a>.description = info.description();</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_function" href="namespaceSBF_1_1Plan.html#ac3b90a12d6babe61a1370e90b2a9df55">port</a>.systemLocation = info.systemLocation().trimmed();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_function" href="namespaceSBF_1_1Plan.html#ac3b90a12d6babe61a1370e90b2a9df55">port</a>.portName = info.portName().trimmed();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_function" href="namespaceSBF_1_1Plan.html#ac3b90a12d6babe61a1370e90b2a9df55">port</a>.displayName = <a class="code hl_function" href="namespaceSBF_1_1Plan.html#ac3b90a12d6babe61a1370e90b2a9df55">port</a>.portName;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keyword">const</span> QString label = <a class="code hl_function" href="namespaceSBF_1_1Plan.html#ac3b90a12d6babe61a1370e90b2a9df55">port</a>.description.isEmpty() ? info.manufacturer() : <a class="code hl_function" href="namespaceSBF_1_1Plan.html#ac3b90a12d6babe61a1370e90b2a9df55">port</a>.description;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">if</span> (!label.isEmpty()) {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <a class="code hl_function" href="namespaceSBF_1_1Plan.html#ac3b90a12d6babe61a1370e90b2a9df55">port</a>.displayName = QStringLiteral(<span class="stringliteral">&quot;%1 (%2)&quot;</span>).arg(label, <a class="code hl_function" href="namespaceSBF_1_1Plan.html#ac3b90a12d6babe61a1370e90b2a9df55">port</a>.portName);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        }</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        (void) info.getBoardInfo(<a class="code hl_function" href="namespaceSBF_1_1Plan.html#ac3b90a12d6babe61a1370e90b2a9df55">port</a>.boardType, <a class="code hl_function" href="namespaceSBF_1_1Plan.html#ac3b90a12d6babe61a1370e90b2a9df55">port</a>.boardName);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_function" href="namespaceSBF_1_1Plan.html#ac3b90a12d6babe61a1370e90b2a9df55">port</a>.bootloader = info.isBootloader();</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_function" href="namespacePX4SerialPortConfig.html#adc3befb0cbcc56b61cc73d22d33de22a">ports</a>.append(port);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacePX4SerialPortConfig.html#adc3befb0cbcc56b61cc73d22d33de22a">ports</a>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#aaeb79ef2312207cb65c6910762afa12a">   63</a></span>QList&lt;SerialPortManager::Port&gt; <a class="code hl_function" href="classSerialPortManager.html#aaeb79ef2312207cb65c6910762afa12a">SerialPortManager::availablePorts</a>()</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">// Java USB enumeration leaks handles while a port is occupied. Preserve the last</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">// snapshot instead of reporting an empty inventory and falsely declaring an unplug.</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">if</span> ((_singlePortOnly &amp;&amp; <a class="code hl_function" href="classSerialPortManager.html#a0b00159a69888ea8ab5aa0bad5d20501">anyPortReserved</a>()) || (_scanTimer.isValid() &amp;&amp; _scanTimer.elapsed() &lt; 1000)) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">return</span> _ports;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    _ports = _enumerator();</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    _scanTimer.restart();</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    QStringList identities;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    QStringList <a class="code hl_function" href="classSerialPortManager.html#ae893d9ad265e1c3fc47ce7b4e2b415f6">serialPorts</a>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_function" href="classSerialPortManager.html#ae893d9ad265e1c3fc47ce7b4e2b415f6">serialPorts</a>.reserve(_ports.size());</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_struct" href="structSerialPortManager_1_1Port.html">Port</a>&amp; port : std::as_const(_ports)) {</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <a class="code hl_function" href="classSerialPortManager.html#ae893d9ad265e1c3fc47ce7b4e2b415f6">serialPorts</a>.append(port.systemLocation);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        identities.append(port.systemLocation);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        identities.append(port.portName);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span> (_serialPorts != <a class="code hl_function" href="classSerialPortManager.html#ae893d9ad265e1c3fc47ce7b4e2b415f6">serialPorts</a>) {</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        _serialPorts = std::move(<a class="code hl_function" href="classSerialPortManager.html#ae893d9ad265e1c3fc47ce7b4e2b415f6">serialPorts</a>);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        emit <a class="code hl_signal" href="classSerialPortManager.html#a5408f1430780631ffd537e924d514eaf">serialPortsChanged</a>();</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    emit <a class="code hl_signal" href="classSerialPortManager.html#ad026a52a79a8743f234d7fdf4671ea9a">portsEnumerated</a>(identities);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> _ports;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>QList&lt;SerialPortManager::Port&gt; SerialPortManager::_enumeratePorts()</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    QList&lt;Port&gt; ports;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_class" href="classQGCSerialPortInfo.html">QGCSerialPortInfo</a>&amp; info : <a class="code hl_function" href="classQGCSerialPortInfo.html#a9812f3caa1ca8ceeab0e4bb72818ca8d">QGCSerialPortInfo::availablePorts</a>()) {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        Port <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">if</span> (info.hasVendorIdentifier() &amp;&amp; info.hasProductIdentifier() &amp;&amp; !info.serialNumber().isEmpty() &amp;&amp;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            info.serialNumber() != QStringLiteral(<span class="stringliteral">&quot;0&quot;</span>)) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.physicalDeviceId = QStringLiteral(<span class="stringliteral">&quot;%1:%2:%3&quot;</span>)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                                        .arg(info.vendorIdentifier())</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                                        .arg(info.productIdentifier())</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                                        .arg(info.serialNumber());</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.description = info.description();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.systemLocation = info.systemLocation().trimmed();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.portName = info.portName().trimmed();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.displayName = <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.portName;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.stableName = info.stableName();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.hardwareFlowControl = info.hasHardwareFlowControl();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">const</span> QString label = <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.description.isEmpty() ? info.manufacturer() : <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.description;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">if</span> (!label.isEmpty()) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.displayName = QStringLiteral(<span class="stringliteral">&quot;%1 (%2)&quot;</span>).arg(label, <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.portName);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        (void) info.getBoardInfo(<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.boardType, <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.boardName);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.bootloader = info.isBootloader();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_function" href="namespacePX4SerialPortConfig.html#adc3befb0cbcc56b61cc73d22d33de22a">ports</a>.append(<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacePX4SerialPortConfig.html#adc3befb0cbcc56b61cc73d22d33de22a">ports</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#aaeb79ef2312207cb65c6910762afa12a">   77</a></span>QList&lt;SerialPortManager::Port&gt; <a class="code hl_function" href="classSerialPortManager.html#aaeb79ef2312207cb65c6910762afa12a">SerialPortManager::availablePorts</a>()</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>{</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">if</span> (_scanTimer.isValid() &amp;&amp; _scanTimer.elapsed() &lt; 1000) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">return</span> _ports;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    _ports = _enumerator();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    _scanTimer.restart();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = _reservations.begin(); it != _reservations.end(); ++it) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">if</span> (<span class="keyword">const</span> <a class="code hl_struct" href="structSerialPortManager_1_1Port.html">Port</a>* <span class="keyword">const</span> reserved = _portNamed(it.key())) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            it-&gt;listedLocation = reserved-&gt;systemLocation;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    QStringList identities;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    QStringList <a class="code hl_function" href="classSerialPortManager.html#ae893d9ad265e1c3fc47ce7b4e2b415f6">serialPorts</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_function" href="classSerialPortManager.html#ae893d9ad265e1c3fc47ce7b4e2b415f6">serialPorts</a>.reserve(_ports.size());</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_struct" href="structSerialPortManager_1_1Port.html">Port</a>&amp; <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a> : std::as_const(_ports)) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <a class="code hl_function" href="classSerialPortManager.html#ae893d9ad265e1c3fc47ce7b4e2b415f6">serialPorts</a>.append(<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.systemLocation);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        identities.append(<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.systemLocation);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        identities.append(<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.portName);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.stableName.isEmpty()) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            identities.append(<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.stableName);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span> (_serialPorts != <a class="code hl_function" href="classSerialPortManager.html#ae893d9ad265e1c3fc47ce7b4e2b415f6">serialPorts</a>) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        _serialPorts = std::move(<a class="code hl_function" href="classSerialPortManager.html#ae893d9ad265e1c3fc47ce7b4e2b415f6">serialPorts</a>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        emit <a class="code hl_signal" href="classSerialPortManager.html#a5408f1430780631ffd537e924d514eaf">serialPortsChanged</a>();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    emit <a class="code hl_signal" href="classSerialPortManager.html#ad026a52a79a8743f234d7fdf4671ea9a">portsEnumerated</a>(identities);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">return</span> _ports;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
 </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#add4f3d102d8ce1e0dc57899b9fa8d8d8">   88</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classSerialPortManager.html#add4f3d102d8ce1e0dc57899b9fa8d8d8">SerialPortManager::rescan</a>()</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>{</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    _scanTimer.invalidate();</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    (void) <a class="code hl_function" href="classSerialPortManager.html#aaeb79ef2312207cb65c6910762afa12a">availablePorts</a>();</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#add4f3d102d8ce1e0dc57899b9fa8d8d8">  108</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classSerialPortManager.html#add4f3d102d8ce1e0dc57899b9fa8d8d8">SerialPortManager::rescan</a>()</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>{</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    _scanTimer.invalidate();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    (void) <a class="code hl_function" href="classSerialPortManager.html#aaeb79ef2312207cb65c6910762afa12a">availablePorts</a>();</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
 </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#ac6ac9b536276748cb3ba2916dec16adf">   94</a></span>QString <a class="code hl_function" href="classSerialPortManager.html#ac6ac9b536276748cb3ba2916dec16adf">SerialPortManager::displayName</a>(<span class="keyword">const</span> QString&amp; systemLocation)</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keyword">const</span> QString name = systemLocation.trimmed();</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keyword">const</span> <span class="keyword">auto</span> ports = <a class="code hl_function" href="classSerialPortManager.html#aaeb79ef2312207cb65c6910762afa12a">availablePorts</a>();</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; port : ports) {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">if</span> (port.systemLocation == name || port.portName == name) {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            <span class="keywordflow">return</span> port.displayName.isEmpty() ? port.portName : port.displayName;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#ac6ac9b536276748cb3ba2916dec16adf">  114</a></span>QString <a class="code hl_function" href="classSerialPortManager.html#ac6ac9b536276748cb3ba2916dec16adf">SerialPortManager::displayName</a>(<span class="keyword">const</span> QString&amp; systemLocation)</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>{</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    (void) <a class="code hl_function" href="classSerialPortManager.html#aaeb79ef2312207cb65c6910762afa12a">availablePorts</a>();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structSerialPortManager_1_1Port.html">Port</a>* <span class="keyword">const</span> <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a> = _portNamed(systemLocation.trimmed());</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>-&gt;displayName.isEmpty() ? <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>-&gt;portName : <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>-&gt;displayName;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>}</div>
 </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#ad94cd422066f6355a1c8308c2242a282">  106</a></span><a class="code hl_typedef" href="classSerialPortManager.html#a0b6410beb42668b5cbe773efd9e8c9dc">SerialPortManager::ReservationPtr</a> <a class="code hl_function" href="classSerialPortManager.html#ad94cd422066f6355a1c8308c2242a282">SerialPortManager::reservePort</a>(<span class="keyword">const</span> QString&amp; systemLocation)</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>{</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keyword">const</span> QString port = systemLocation.trimmed();</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classSerialPortManager.html#a267779e9c409d7ebe0b86cd1d6860483">canReservePort</a>(port)) {</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = _reservations.begin(); it != _reservations.end();) {</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        it = it.value().expired() ? _reservations.erase(it) : std::next(it);</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keyword">auto</span> reservation = std::make_shared&lt;const Reservation&gt;(<a class="code hl_struct" href="structSerialPortManager_1_1Reservation.html">Reservation</a>{port});</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    _reservations.insert(port, reservation);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span> reservation;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#ad1086fb2887f9d7b1a65806bf2f03395">  124</a></span><a class="code hl_typedef" href="classSerialPortManager.html#a0b6410beb42668b5cbe773efd9e8c9dc">SerialPortManager::ReservationPtr</a> <a class="code hl_function" href="classSerialPortManager.html#ad1086fb2887f9d7b1a65806bf2f03395">SerialPortManager::reservePort</a>(<span class="keyword">const</span> QString&amp; systemLocation, <span class="keyword">const</span> QString&amp; owner)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>{</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keyword">const</span> QString <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a> = systemLocation.trimmed();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="classSerialPortManager.html#a267779e9c409d7ebe0b86cd1d6860483">canReservePort</a>(<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>)) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = _reservations.begin(); it != _reservations.end();) {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        it = it-&gt;reservation.expired() ? _reservations.erase(it) : std::next(it);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keyword">auto</span> reservation = std::make_shared&lt;const Reservation&gt;(<a class="code hl_struct" href="structSerialPortManager_1_1Reservation.html">Reservation</a>{.systemLocation = <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>, .owner = owner});</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    _reservations.insert(<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>, {.reservation = reservation, .listedLocation = _systemLocation(<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>)});</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">return</span> reservation;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
 </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a54f2cb992ce470000ac3d3d6de468f19">  120</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#a54f2cb992ce470000ac3d3d6de468f19">SerialPortManager::isPortReserved</a>(<span class="keyword">const</span> QString&amp; systemLocation)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">return</span> !_reservations.value(systemLocation.trimmed()).expired();</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
-</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="foldopen" id="foldopen00125" data-start="{" data-end="}">
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a0b00159a69888ea8ab5aa0bad5d20501">  125</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#a0b00159a69888ea8ab5aa0bad5d20501">SerialPortManager::anyPortReserved</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; reservation : _reservations) {</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">if</span> (!reservation.expired()) {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}</div>
-</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
-<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a267779e9c409d7ebe0b86cd1d6860483">  135</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#a267779e9c409d7ebe0b86cd1d6860483">SerialPortManager::canReservePort</a>(<span class="keyword">const</span> QString&amp; systemLocation)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">return</span> !systemLocation.trimmed().isEmpty() &amp;&amp; !<a class="code hl_function" href="classSerialPortManager.html#a54f2cb992ce470000ac3d3d6de468f19">isPortReserved</a>(systemLocation) &amp;&amp;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>           !(_singlePortOnly &amp;&amp; <a class="code hl_function" href="classSerialPortManager.html#a0b00159a69888ea8ab5aa0bad5d20501">anyPortReserved</a>());</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>}</div>
-</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
-<div class="foldopen" id="foldopen00141" data-start="{" data-end="}">
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#aa21d49e21083c5a0f260ab56b4a8b01f">  141</a></span><a class="code hl_typedef" href="classSerialPortManager.html#a0b6410beb42668b5cbe773efd9e8c9dc">SerialPortManager::ReservationPtr</a> <a class="code hl_function" href="classSerialPortManager.html#aa21d49e21083c5a0f260ab56b4a8b01f">SerialPortManager::excludeFromAutoConnect</a>(<span class="keyword">const</span> QString&amp; systemLocation)</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>{</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keyword">const</span> QString port = systemLocation.trimmed();</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">if</span> (port.isEmpty()) {</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">return</span> {};</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = _autoConnectExclusions.begin(); it != _autoConnectExclusions.end();) {</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        it = it.value().expired() ? _autoConnectExclusions.erase(it) : std::next(it);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="keyword">const</span> <a class="code hl_struct" href="structSerialPortManager_1_1Port.html">SerialPortManager::Port</a>* SerialPortManager::_portNamed(<span class="keyword">const</span> QString&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">const</span> Port* found = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> Port&amp; <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a> : _ports) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.hasName(name)) {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">if</span> (found) {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        found = &amp;<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>;</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    }</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> existing = _autoConnectExclusions.value(port).lock()) {</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordflow">return</span> existing;</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    }</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keyword">auto</span> exclusion = std::make_shared&lt;const Reservation&gt;(<a class="code hl_struct" href="structSerialPortManager_1_1Reservation.html">Reservation</a>{port});</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    _autoConnectExclusions.insert(port, exclusion);</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordflow">return</span> exclusion;</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>}</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">return</span> found;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>}</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>QString SerialPortManager::_systemLocation(<span class="keyword">const</span> QString&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keyword">const</span> QString trimmed = name.trimmed();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structSerialPortManager_1_1Port.html">Port</a>* <span class="keyword">const</span> <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a> = _portNamed(trimmed);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a> ? <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>-&gt;systemLocation : trimmed;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>}</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><a class="code hl_typedef" href="classSerialPortManager.html#a0b6410beb42668b5cbe773efd9e8c9dc">SerialPortManager::ReservationPtr</a> SerialPortManager::_reservationOf(<span class="keyword">const</span> QString&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="comment">// Compared by what the names stand for now: a stable name stands for another system location once its</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="comment">// device has been replugged. A second device of the same stable name leaves it standing for neither, and</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="comment">// the reserved port is then the one at the location where the name last found it.</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keyword">const</span> QString location = _systemLocation(name);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = _reservations.cbegin(); it != _reservations.cend(); ++it) {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <a class="code hl_typedef" href="classSerialPortManager.html#a0b6410beb42668b5cbe773efd9e8c9dc">ReservationPtr</a> reservation = it-&gt;reservation.lock();</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <span class="keywordflow">if</span> (reservation &amp;&amp; (_systemLocation(it.key()) == location || it-&gt;listedLocation == location)) {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="keywordflow">return</span> reservation;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>}</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="foldopen" id="foldopen00175" data-start="{" data-end="}">
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a54f2cb992ce470000ac3d3d6de468f19">  175</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#a54f2cb992ce470000ac3d3d6de468f19">SerialPortManager::isPortReserved</a>(<span class="keyword">const</span> QString&amp; systemLocation)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">return</span> _reservationOf(systemLocation) != <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>}</div>
 </div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a65a0169410d3988313956c96d2c8d694">  158</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#a65a0169410d3988313956c96d2c8d694">SerialPortManager::canAutoConnectPort</a>(<span class="keyword">const</span> QString&amp; systemLocation)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">return</span> !<a class="code hl_function" href="classSerialPortManager.html#a2bb6860b76ea5e442f5fda8d5bd0fa39">isAutoConnectExcluded</a>(systemLocation) &amp;&amp; <a class="code hl_function" href="classSerialPortManager.html#a267779e9c409d7ebe0b86cd1d6860483">canReservePort</a>(systemLocation);</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="foldopen" id="foldopen00180" data-start="{" data-end="}">
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#aff8eeca024f93fd1c4e68816c0d4173c">  180</a></span>QString <a class="code hl_function" href="classSerialPortManager.html#aff8eeca024f93fd1c4e68816c0d4173c">SerialPortManager::reservationOwner</a>(<span class="keyword">const</span> QString&amp; systemLocation)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="classSerialPortManager.html#a0b6410beb42668b5cbe773efd9e8c9dc">ReservationPtr</a> reservation = _reservationOf(systemLocation);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keywordflow">return</span> reservation ? reservation-&gt;owner : QString();</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>}</div>
 </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="foldopen" id="foldopen00163" data-start="{" data-end="}">
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a12ee56d5034670ee8f9e9950be98885a">  163</a></span>QStringList <a class="code hl_function" href="classSerialPortManager.html#a12ee56d5034670ee8f9e9950be98885a">SerialPortManager::supportedBaudRates</a>()</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>{</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keyword">static</span> <span class="keyword">const</span> QSet&lt;qint32&gt; kDefaultSupportedBaudRates = {</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">#ifdef Q_OS_UNIX</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        50,     75,</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        110,</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="preprocessor">#ifdef Q_OS_UNIX</span></div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        150,    200,    134,</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        300,    600,    1200,</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">#ifdef Q_OS_UNIX</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        1800,</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        2400,   4800,   9600,</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        14400,</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        19200,  38400,</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        56000,</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        57600,  115200,</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        128000,</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        230400,</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        256000,</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        460800, 500000,</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="preprocessor">#ifdef Q_OS_LINUX</span></div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        576000,</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        921600,</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    };</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keyword">const</span> QList&lt;qint32&gt; activeSupportedBaudRates = <a class="code hl_function" href="classQSerialPortInfo.html#af898ab4a2a0a03ebd74048dc0def9280">QSerialPortInfo::standardBaudRates</a>();</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    QSet&lt;qint32&gt; mergedBaudRateSet(kDefaultSupportedBaudRates.constBegin(), kDefaultSupportedBaudRates.constEnd());</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    (void) mergedBaudRateSet.unite(</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        QSet&lt;qint32&gt;(activeSupportedBaudRates.constBegin(), activeSupportedBaudRates.constEnd()));</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="foldopen" id="foldopen00186" data-start="{" data-end="}">
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#aa035e70d4a61b550d28fe4dccebc2eb3">  186</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#aa035e70d4a61b550d28fe4dccebc2eb3">SerialPortManager::isSamePort</a>(<span class="keyword">const</span> QString&amp; first, <span class="keyword">const</span> QString&amp; second)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">return</span> _systemLocation(first) == _systemLocation(second);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>}</div>
+</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="foldopen" id="foldopen00191" data-start="{" data-end="}">
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#af58f896aabe7042b5fa478d957204f2f">  191</a></span>QString <a class="code hl_function" href="classSerialPortManager.html#af58f896aabe7042b5fa478d957204f2f">SerialPortManager::persistentName</a>(<span class="keyword">const</span> QString&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    QString trimmed = name.trimmed();</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_struct" href="structSerialPortManager_1_1Port.html">Port</a>&amp; <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a> : _ports) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.systemLocation != trimmed &amp;&amp; <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.portName != trimmed) {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        }</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <span class="keyword">const</span> <span class="keyword">auto</span> sharesStableName = [&amp;<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>](<span class="keyword">const</span> <a class="code hl_struct" href="structSerialPortManager_1_1Port.html">Port</a>&amp; other) { <span class="keywordflow">return</span> other.stableName == <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.stableName; };</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> findsOnlyThisPort =</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            !<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.stableName.isEmpty() &amp;&amp; std::count_if(_ports.cbegin(), _ports.cend(), sharesStableName) == 1;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">return</span> findsOnlyThisPort ? <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.stableName : <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.systemLocation;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordflow">return</span> trimmed;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>}</div>
+</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    QList&lt;qint32&gt; mergedBaudRateList = mergedBaudRateSet.values();</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    std::sort(mergedBaudRateList.begin(), mergedBaudRateList.end());</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    QStringList supportBaudRateStrings{};</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    supportBaudRateStrings.reserve(mergedBaudRateList.size());</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> qint32 rate : std::as_const(mergedBaudRateList)) {</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        supportBaudRateStrings.append(QString::number(rate));</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    }</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keywordflow">return</span> supportBaudRateStrings;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>}</div>
+<div class="foldopen" id="foldopen00206" data-start="{" data-end="}">
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">  206</a></span>std::optional&lt;SerialPortManager::Port&gt; <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">SerialPortManager::port</a>(<span class="keyword">const</span> QString&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structSerialPortManager_1_1Port.html">Port</a>* <span class="keyword">const</span> <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a> = _portNamed(name.trimmed());</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a> ? std::optional&lt;Port&gt;(*<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>) : std::nullopt;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>}</div>
 </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
-<div class="foldopen" id="foldopen00218" data-start="{" data-end="}">
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a2bb6860b76ea5e442f5fda8d5bd0fa39">  218</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#a2bb6860b76ea5e442f5fda8d5bd0fa39">SerialPortManager::isAutoConnectExcluded</a>(<span class="keyword">const</span> QString&amp; systemLocation)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keywordflow">return</span> !_autoConnectExclusions.value(systemLocation.trimmed()).expired();</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="keywordtype">bool</span> SerialPortManager::_hasPlatformAccess([[maybe_unused]] <span class="keyword">const</span> QString&amp; name)</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>{</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="comment">// Only a USB port takes a permission.</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keywordflow">return</span> !<a class="code hl_function" href="classQSerialPortInfo.html#a663580d73a36c2080386c82491900ba9">QSerialPortInfo::isUsbLocation</a>(<a class="code hl_function" href="classQSerialPortInfo.html#af55f6a9bda25b1cefc35cc378936d58a">QSerialPortInfo::portNameToSystemLocation</a>(name)) ||</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>           <a class="code hl_function" href="namespaceAndroidSerialAccess.html#ad63c4f4c86eea4fafe15a70c6ee0960f">AndroidSerialAccess::hasUsbPermission</a>(name);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>}</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="keywordtype">bool</span> SerialPortManager::_requestPlatformAccess([[maybe_unused]] <span class="keyword">const</span> QString&amp; name)</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>{</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceAndroidSerialAccess.html#aa318af74ab8ec6dd4dfe3f2866ab08a8">AndroidSerialAccess::requestUsbPermission</a>(name);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>}</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="keywordtype">bool</span> SerialPortManager::_platformAccessDenied([[maybe_unused]] <span class="keyword">const</span> QString&amp; name)</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>{</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">#ifdef Q_OS_ANDROID</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceAndroidSerialAccess.html#a2a327c457b5c02a32d6e585db2d7b1c6">AndroidSerialAccess::isUsbPermissionDenied</a>(name);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>}</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="foldopen" id="foldopen00241" data-start="{" data-end="}">
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a2d3c10098e0c26ebf6bdd08e3db663b4">  241</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#a2d3c10098e0c26ebf6bdd08e3db663b4">SerialPortManager::hasAccess</a>(<span class="keyword">const</span> QString&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="keywordflow">return</span> _hasAccess(name);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>}</div>
+</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="foldopen" id="foldopen00246" data-start="{" data-end="}">
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#af36ed57b0c4868c74c39105445788ed1">  246</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#af36ed57b0c4868c74c39105445788ed1">SerialPortManager::requestAccess</a>(<span class="keyword">const</span> QString&amp; name)</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>{</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="keywordflow">return</span> _requestAccess(name);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>}</div>
+</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="foldopen" id="foldopen00251" data-start="{" data-end="}">
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a1f6fb67925a3f34ec7e7de2f61b9e512">  251</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#a1f6fb67925a3f34ec7e7de2f61b9e512">SerialPortManager::accessDenied</a>(<span class="keyword">const</span> QString&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="keywordflow">return</span> _accessDenied(name);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>}</div>
+</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="foldopen" id="foldopen00256" data-start="{" data-end="}">
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a267779e9c409d7ebe0b86cd1d6860483">  256</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#a267779e9c409d7ebe0b86cd1d6860483">SerialPortManager::canReservePort</a>(<span class="keyword">const</span> QString&amp; systemLocation)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keywordflow">return</span> !systemLocation.trimmed().isEmpty() &amp;&amp; !<a class="code hl_function" href="classSerialPortManager.html#a54f2cb992ce470000ac3d3d6de468f19">isPortReserved</a>(systemLocation);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>}</div>
+</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="foldopen" id="foldopen00261" data-start="{" data-end="}">
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#aa21d49e21083c5a0f260ab56b4a8b01f">  261</a></span><a class="code hl_typedef" href="classSerialPortManager.html#a0b6410beb42668b5cbe773efd9e8c9dc">SerialPortManager::ReservationPtr</a> <a class="code hl_function" href="classSerialPortManager.html#aa21d49e21083c5a0f260ab56b4a8b01f">SerialPortManager::excludeFromAutoConnect</a>(<span class="keyword">const</span> QString&amp; systemLocation)</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>{</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keyword">const</span> QString <a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a> = systemLocation.trimmed();</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>.isEmpty()) {</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    }</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = _autoConnectExclusions.begin(); it != _autoConnectExclusions.end();) {</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        it = it.value().expired() ? _autoConnectExclusions.erase(it) : std::next(it);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    }</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="keywordflow">if</span> (<span class="keyword">auto</span> existing = _autoConnectExclusions.value(<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>).lock()) {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keywordflow">return</span> existing;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    }</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keyword">auto</span> exclusion = std::make_shared&lt;const Reservation&gt;(<a class="code hl_struct" href="structSerialPortManager_1_1Reservation.html">Reservation</a>{<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>});</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    _autoConnectExclusions.insert(<a class="code hl_function" href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">port</a>, exclusion);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <span class="keywordflow">return</span> exclusion;</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>}</div>
+</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="foldopen" id="foldopen00278" data-start="{" data-end="}">
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a65a0169410d3988313956c96d2c8d694">  278</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#a65a0169410d3988313956c96d2c8d694">SerialPortManager::canAutoConnectPort</a>(<span class="keyword">const</span> QString&amp; systemLocation)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keywordflow">return</span> !<a class="code hl_function" href="classSerialPortManager.html#a2bb6860b76ea5e442f5fda8d5bd0fa39">isAutoConnectExcluded</a>(systemLocation) &amp;&amp; <a class="code hl_function" href="classSerialPortManager.html#a267779e9c409d7ebe0b86cd1d6860483">canReservePort</a>(systemLocation);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>}</div>
+</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="foldopen" id="foldopen00283" data-start="{" data-end="}">
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a12ee56d5034670ee8f9e9950be98885a">  283</a></span>QStringList <a class="code hl_function" href="classSerialPortManager.html#a12ee56d5034670ee8f9e9950be98885a">SerialPortManager::supportedBaudRates</a>()</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>{</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    <span class="keyword">static</span> <span class="keyword">const</span> QSet&lt;qint32&gt; kDefaultSupportedBaudRates = {</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="preprocessor">#ifdef Q_OS_UNIX</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        50,     75,</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        110,</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="preprocessor">#ifdef Q_OS_UNIX</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        150,    200,    134,</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        300,    600,    1200,</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="preprocessor">#ifdef Q_OS_UNIX</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        1800,</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        2400,   4800,   9600,</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        14400,</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        19200,  38400,</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        56000,</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        57600,  115200,</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        128000,</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        230400,</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        256000,</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        460800, 500000,</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span><span class="preprocessor">#ifdef Q_OS_LINUX</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        576000,</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        921600,</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    };</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <span class="keyword">const</span> QList&lt;qint32&gt; activeSupportedBaudRates = <a class="code hl_function" href="classQSerialPortInfo.html#af898ab4a2a0a03ebd74048dc0def9280">QSerialPortInfo::standardBaudRates</a>();</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    QSet&lt;qint32&gt; mergedBaudRateSet(kDefaultSupportedBaudRates.constBegin(), kDefaultSupportedBaudRates.constEnd());</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    (void) mergedBaudRateSet.unite(</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        QSet&lt;qint32&gt;(activeSupportedBaudRates.constBegin(), activeSupportedBaudRates.constEnd()));</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    QList&lt;qint32&gt; mergedBaudRateList = mergedBaudRateSet.values();</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    std::sort(mergedBaudRateList.begin(), mergedBaudRateList.end());</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    QStringList supportBaudRateStrings{};</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    supportBaudRateStrings.reserve(mergedBaudRateList.size());</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> qint32 rate : std::as_const(mergedBaudRateList)) {</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        supportBaudRateStrings.append(QString::number(rate));</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    }</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    <span class="keywordflow">return</span> supportBaudRateStrings;</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>}</div>
+</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
+<div class="foldopen" id="foldopen00338" data-start="{" data-end="}">
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno"><a class="line" href="classSerialPortManager.html#a2bb6860b76ea5e442f5fda8d5bd0fa39">  338</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classSerialPortManager.html#a2bb6860b76ea5e442f5fda8d5bd0fa39">SerialPortManager::isAutoConnectExcluded</a>(<span class="keyword">const</span> QString&amp; systemLocation)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    <span class="keywordflow">return</span> !_autoConnectExclusions.value(systemLocation.trimmed()).expired();</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>}</div>
 </div>
 <div class="ttc" id="aADSBVehicleManager_8cc_html_abf12ab32eab02bded3bfbb919345e8ad"><div class="ttname"><a href="ADSBVehicleManager_8cc.html#abf12ab32eab02bded3bfbb919345e8ad">Q_APPLICATION_STATIC</a></div><div class="ttdeci">Q_APPLICATION_STATIC(ADSBVehicleManager, _adsbVehicleManager, SettingsManager::instance() -&gt;adsbVehicleManagerSettings())</div></div>
+<div class="ttc" id="aAndroidSerialAccess_8h_html"><div class="ttname"><a href="AndroidSerialAccess_8h.html">AndroidSerialAccess.h</a></div></div>
+<div class="ttc" id="aAndroidSerialApp_8h_html"><div class="ttname"><a href="AndroidSerialApp_8h.html">AndroidSerialApp.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html"><div class="ttname"><a href="QGCLoggingCategory_8h.html">QGCLoggingCategory.h</a></div></div>
 <div class="ttc" id="aQGCLoggingCategory_8h_html_abdf3c7daa4a36f86394810fac97c4a81"><div class="ttname"><a href="QGCLoggingCategory_8h.html#abdf3c7daa4a36f86394810fac97c4a81">QGC_LOGGING_CATEGORY</a></div><div class="ttdeci">#define QGC_LOGGING_CATEGORY(name, categoryStr)</div><div class="ttdef"><b>Definition</b> <a href="QGCLoggingCategory_8h_source.html#l00011">QGCLoggingCategory.h:11</a></div></div>
 <div class="ttc" id="aSerialPortManager_8h_html"><div class="ttname"><a href="SerialPortManager_8h.html">SerialPortManager.h</a></div></div>
-<div class="ttc" id="aclassQGCSerialPortInfo_html"><div class="ttname"><a href="classQGCSerialPortInfo.html">QGCSerialPortInfo</a></div><div class="ttdoc">QGC&#39;s version of Qt QSerialPortInfo. It provides additional information about board types that QGC ca...</div><div class="ttdef"><b>Definition</b> <a href="QGCSerialPortInfo_8h_source.html#l00016">QGCSerialPortInfo.h:17</a></div></div>
+<div class="ttc" id="aclassAndroidSerial_1_1DeviceWatcher_html_a40abec47c8bf4cb887a8a413881ff0c1"><div class="ttname"><a href="classAndroidSerial_1_1DeviceWatcher.html#a40abec47c8bf4cb887a8a413881ff0c1">AndroidSerial::DeviceWatcher::instance</a></div><div class="ttdeci">static DeviceWatcher * instance()</div><div class="ttdef"><b>Definition</b> <a href="AndroidSerialJni_8cc_source.html#l00274">AndroidSerialJni.cc:274</a></div></div>
+<div class="ttc" id="aclassAndroidSerial_1_1DeviceWatcher_html_a92b76922e7776c5f11aaefac16b95b2b"><div class="ttname"><a href="classAndroidSerial_1_1DeviceWatcher.html#a92b76922e7776c5f11aaefac16b95b2b">AndroidSerial::DeviceWatcher::devicesChanged</a></div><div class="ttdeci">void devicesChanged()</div></div>
+<div class="ttc" id="aclassQGCSerialPortInfo_html"><div class="ttname"><a href="classQGCSerialPortInfo.html">QGCSerialPortInfo</a></div><div class="ttdoc">QGC&#39;s version of Qt QSerialPortInfo. It provides additional information about board types that QGC ca...</div><div class="ttdef"><b>Definition</b> <a href="QGCSerialPortInfo_8h_source.html#l00011">QGCSerialPortInfo.h:12</a></div></div>
 <div class="ttc" id="aclassQGCSerialPortInfo_html_a9812f3caa1ca8ceeab0e4bb72818ca8d"><div class="ttname"><a href="classQGCSerialPortInfo.html#a9812f3caa1ca8ceeab0e4bb72818ca8d">QGCSerialPortInfo::availablePorts</a></div><div class="ttdeci">static QList&lt; QGCSerialPortInfo &gt; availablePorts()</div><div class="ttdoc">Override of QSerialPortInfo::availablePorts.</div><div class="ttdef"><b>Definition</b> <a href="QGCSerialPortInfo_8cc_source.html#l00261">QGCSerialPortInfo.cc:261</a></div></div>
-<div class="ttc" id="aclassQSerialPortInfo_html_af898ab4a2a0a03ebd74048dc0def9280"><div class="ttname"><a href="classQSerialPortInfo.html#af898ab4a2a0a03ebd74048dc0def9280">QSerialPortInfo::standardBaudRates</a></div><div class="ttdeci">static QList&lt; qint32 &gt; standardBaudRates()</div><div class="ttdoc">Returns a list of available standard baud rates supported by the target platform.</div><div class="ttdef"><b>Definition</b> <a href="qserialportinfo_8cpp_source.html#l00244">qserialportinfo.cpp:244</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html"><div class="ttname"><a href="classSerialPortManager.html">SerialPortManager</a></div><div class="ttdoc">Shared serial inventory and exclusive claims. Called on the application thread.</div><div class="ttdef"><b>Definition</b> <a href="SerialPortManager_8h_source.html#l00018">SerialPortManager.h:19</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_a09162723dc11b2f4ae1ef7bd9fce717c"><div class="ttname"><a href="classSerialPortManager.html#a09162723dc11b2f4ae1ef7bd9fce717c">SerialPortManager::instance</a></div><div class="ttdeci">static SerialPortManager * instance()</div><div class="ttdef"><b>Definition</b> <a href="#l00019">SerialPortManager.cc:19</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_a0b00159a69888ea8ab5aa0bad5d20501"><div class="ttname"><a href="classSerialPortManager.html#a0b00159a69888ea8ab5aa0bad5d20501">SerialPortManager::anyPortReserved</a></div><div class="ttdeci">bool anyPortReserved() const</div><div class="ttdef"><b>Definition</b> <a href="#l00125">SerialPortManager.cc:125</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_a0b6410beb42668b5cbe773efd9e8c9dc"><div class="ttname"><a href="classSerialPortManager.html#a0b6410beb42668b5cbe773efd9e8c9dc">SerialPortManager::ReservationPtr</a></div><div class="ttdeci">std::shared_ptr&lt; const Reservation &gt; ReservationPtr</div><div class="ttdef"><b>Definition</b> <a href="SerialPortManager_8h_source.html#l00046">SerialPortManager.h:46</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_a12ee56d5034670ee8f9e9950be98885a"><div class="ttname"><a href="classSerialPortManager.html#a12ee56d5034670ee8f9e9950be98885a">SerialPortManager::supportedBaudRates</a></div><div class="ttdeci">static QStringList supportedBaudRates()</div><div class="ttdef"><b>Definition</b> <a href="#l00163">SerialPortManager.cc:163</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_a267779e9c409d7ebe0b86cd1d6860483"><div class="ttname"><a href="classSerialPortManager.html#a267779e9c409d7ebe0b86cd1d6860483">SerialPortManager::canReservePort</a></div><div class="ttdeci">bool canReservePort(const QString &amp;systemLocation) const</div><div class="ttdef"><b>Definition</b> <a href="#l00135">SerialPortManager.cc:135</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_a2bb6860b76ea5e442f5fda8d5bd0fa39"><div class="ttname"><a href="classSerialPortManager.html#a2bb6860b76ea5e442f5fda8d5bd0fa39">SerialPortManager::isAutoConnectExcluded</a></div><div class="ttdeci">bool isAutoConnectExcluded(const QString &amp;systemLocation) const</div><div class="ttdef"><b>Definition</b> <a href="#l00218">SerialPortManager.cc:218</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_a3307af5965b6b349dfb1318133513091"><div class="ttname"><a href="classSerialPortManager.html#a3307af5965b6b349dfb1318133513091">SerialPortManager::SerialPortManager</a></div><div class="ttdeci">SerialPortManager(QObject *parent=nullptr, Enumerator enumerator={})</div><div class="ttdef"><b>Definition</b> <a href="#l00015">SerialPortManager.cc:15</a></div></div>
+<div class="ttc" id="aclassQSerialPortInfo_html_a663580d73a36c2080386c82491900ba9"><div class="ttname"><a href="classQSerialPortInfo.html#a663580d73a36c2080386c82491900ba9">QSerialPortInfo::isUsbLocation</a></div><div class="ttdeci">static bool isUsbLocation(const QString &amp;systemLocation)</div><div class="ttdef"><b>Definition</b> <a href="AndroidSerialPortInfo_8cc_source.html#l00077">AndroidSerialPortInfo.cc:77</a></div></div>
+<div class="ttc" id="aclassQSerialPortInfo_html_af55f6a9bda25b1cefc35cc378936d58a"><div class="ttname"><a href="classQSerialPortInfo.html#af55f6a9bda25b1cefc35cc378936d58a">QSerialPortInfo::portNameToSystemLocation</a></div><div class="ttdeci">static QString portNameToSystemLocation(const QString &amp;portName)</div><div class="ttdef"><b>Definition</b> <a href="AndroidSerialPortInfo_8cc_source.html#l00063">AndroidSerialPortInfo.cc:63</a></div></div>
+<div class="ttc" id="aclassQSerialPortInfo_html_af898ab4a2a0a03ebd74048dc0def9280"><div class="ttname"><a href="classQSerialPortInfo.html#af898ab4a2a0a03ebd74048dc0def9280">QSerialPortInfo::standardBaudRates</a></div><div class="ttdeci">static QList&lt; qint32 &gt; standardBaudRates()</div><div class="ttdef"><b>Definition</b> <a href="AndroidSerialPortInfo_8cc_source.html#l00043">AndroidSerialPortInfo.cc:43</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html"><div class="ttname"><a href="classSerialPortManager.html">SerialPortManager</a></div><div class="ttdoc">Shared serial inventory and exclusive claims. Called on the application thread.</div><div class="ttdef"><b>Definition</b> <a href="SerialPortManager_8h_source.html#l00019">SerialPortManager.h:20</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_a09162723dc11b2f4ae1ef7bd9fce717c"><div class="ttname"><a href="classSerialPortManager.html#a09162723dc11b2f4ae1ef7bd9fce717c">SerialPortManager::instance</a></div><div class="ttdeci">static SerialPortManager * instance()</div><div class="ttdef"><b>Definition</b> <a href="#l00031">SerialPortManager.cc:31</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_a0b6410beb42668b5cbe773efd9e8c9dc"><div class="ttname"><a href="classSerialPortManager.html#a0b6410beb42668b5cbe773efd9e8c9dc">SerialPortManager::ReservationPtr</a></div><div class="ttdeci">std::shared_ptr&lt; const Reservation &gt; ReservationPtr</div><div class="ttdef"><b>Definition</b> <a href="SerialPortManager_8h_source.html#l00065">SerialPortManager.h:65</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_a12ee56d5034670ee8f9e9950be98885a"><div class="ttname"><a href="classSerialPortManager.html#a12ee56d5034670ee8f9e9950be98885a">SerialPortManager::supportedBaudRates</a></div><div class="ttdeci">static QStringList supportedBaudRates()</div><div class="ttdef"><b>Definition</b> <a href="#l00283">SerialPortManager.cc:283</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_a1f6fb67925a3f34ec7e7de2f61b9e512"><div class="ttname"><a href="classSerialPortManager.html#a1f6fb67925a3f34ec7e7de2f61b9e512">SerialPortManager::accessDenied</a></div><div class="ttdeci">bool accessDenied(const QString &amp;name) const</div><div class="ttdef"><b>Definition</b> <a href="#l00251">SerialPortManager.cc:251</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_a267779e9c409d7ebe0b86cd1d6860483"><div class="ttname"><a href="classSerialPortManager.html#a267779e9c409d7ebe0b86cd1d6860483">SerialPortManager::canReservePort</a></div><div class="ttdeci">bool canReservePort(const QString &amp;systemLocation) const</div><div class="ttdef"><b>Definition</b> <a href="#l00256">SerialPortManager.cc:256</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_a2bb6860b76ea5e442f5fda8d5bd0fa39"><div class="ttname"><a href="classSerialPortManager.html#a2bb6860b76ea5e442f5fda8d5bd0fa39">SerialPortManager::isAutoConnectExcluded</a></div><div class="ttdeci">bool isAutoConnectExcluded(const QString &amp;systemLocation) const</div><div class="ttdef"><b>Definition</b> <a href="#l00338">SerialPortManager.cc:338</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_a2d3c10098e0c26ebf6bdd08e3db663b4"><div class="ttname"><a href="classSerialPortManager.html#a2d3c10098e0c26ebf6bdd08e3db663b4">SerialPortManager::hasAccess</a></div><div class="ttdeci">bool hasAccess(const QString &amp;name) const</div><div class="ttdef"><b>Definition</b> <a href="#l00241">SerialPortManager.cc:241</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_a3307af5965b6b349dfb1318133513091"><div class="ttname"><a href="classSerialPortManager.html#a3307af5965b6b349dfb1318133513091">SerialPortManager::SerialPortManager</a></div><div class="ttdeci">SerialPortManager(QObject *parent=nullptr, Enumerator enumerator={})</div><div class="ttdef"><b>Definition</b> <a href="#l00020">SerialPortManager.cc:20</a></div></div>
 <div class="ttc" id="aclassSerialPortManager_html_a5408f1430780631ffd537e924d514eaf"><div class="ttname"><a href="classSerialPortManager.html#a5408f1430780631ffd537e924d514eaf">SerialPortManager::serialPortsChanged</a></div><div class="ttdeci">void serialPortsChanged()</div></div>
-<div class="ttc" id="aclassSerialPortManager_html_a54f2cb992ce470000ac3d3d6de468f19"><div class="ttname"><a href="classSerialPortManager.html#a54f2cb992ce470000ac3d3d6de468f19">SerialPortManager::isPortReserved</a></div><div class="ttdeci">bool isPortReserved(const QString &amp;systemLocation) const</div><div class="ttdef"><b>Definition</b> <a href="#l00120">SerialPortManager.cc:120</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_a65a0169410d3988313956c96d2c8d694"><div class="ttname"><a href="classSerialPortManager.html#a65a0169410d3988313956c96d2c8d694">SerialPortManager::canAutoConnectPort</a></div><div class="ttdeci">bool canAutoConnectPort(const QString &amp;systemLocation) const</div><div class="ttdef"><b>Definition</b> <a href="#l00158">SerialPortManager.cc:158</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_a8b707e16081a117c11c87906b4e7e28b"><div class="ttname"><a href="classSerialPortManager.html#a8b707e16081a117c11c87906b4e7e28b">SerialPortManager::isPrimaryInterface</a></div><div class="ttdeci">static bool isPrimaryInterface(const Port &amp;port, QSet&lt; QString &gt; &amp;seenDevices)</div><div class="ttdef"><b>Definition</b> <a href="#l00024">SerialPortManager.cc:24</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_aa21d49e21083c5a0f260ab56b4a8b01f"><div class="ttname"><a href="classSerialPortManager.html#aa21d49e21083c5a0f260ab56b4a8b01f">SerialPortManager::excludeFromAutoConnect</a></div><div class="ttdeci">ReservationPtr excludeFromAutoConnect(const QString &amp;systemLocation)</div><div class="ttdoc">Routing exclusions survive reconnects without marking the hardware occupied.</div><div class="ttdef"><b>Definition</b> <a href="#l00141">SerialPortManager.cc:141</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_aaeb79ef2312207cb65c6910762afa12a"><div class="ttname"><a href="classSerialPortManager.html#aaeb79ef2312207cb65c6910762afa12a">SerialPortManager::availablePorts</a></div><div class="ttdeci">QList&lt; Port &gt; availablePorts()</div><div class="ttdef"><b>Definition</b> <a href="#l00063">SerialPortManager.cc:63</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_ac6ac9b536276748cb3ba2916dec16adf"><div class="ttname"><a href="classSerialPortManager.html#ac6ac9b536276748cb3ba2916dec16adf">SerialPortManager::displayName</a></div><div class="ttdeci">QString displayName(const QString &amp;systemLocation)</div><div class="ttdef"><b>Definition</b> <a href="#l00094">SerialPortManager.cc:94</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_ad026a52a79a8743f234d7fdf4671ea9a"><div class="ttname"><a href="classSerialPortManager.html#ad026a52a79a8743f234d7fdf4671ea9a">SerialPortManager::portsEnumerated</a></div><div class="ttdeci">void portsEnumerated(const QStringList &amp;availablePorts)</div><div class="ttdoc">Emitted only after a fresh scan, never for a retained Android snapshot. Includes native names and pat...</div></div>
-<div class="ttc" id="aclassSerialPortManager_html_ad45088435fc7c19eae1e4fc21b2106e5"><div class="ttname"><a href="classSerialPortManager.html#ad45088435fc7c19eae1e4fc21b2106e5">SerialPortManager::Enumerator</a></div><div class="ttdeci">std::function&lt; QList&lt; Port &gt;()&gt; Enumerator</div><div class="ttdef"><b>Definition</b> <a href="SerialPortManager_8h_source.html#l00047">SerialPortManager.h:47</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_ad94cd422066f6355a1c8308c2242a282"><div class="ttname"><a href="classSerialPortManager.html#ad94cd422066f6355a1c8308c2242a282">SerialPortManager::reservePort</a></div><div class="ttdeci">ReservationPtr reservePort(const QString &amp;systemLocation)</div><div class="ttdef"><b>Definition</b> <a href="#l00106">SerialPortManager.cc:106</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_add4f3d102d8ce1e0dc57899b9fa8d8d8"><div class="ttname"><a href="classSerialPortManager.html#add4f3d102d8ce1e0dc57899b9fa8d8d8">SerialPortManager::rescan</a></div><div class="ttdeci">void rescan()</div><div class="ttdoc">As availablePorts(), without reusing a scan made less than a second ago.</div><div class="ttdef"><b>Definition</b> <a href="#l00088">SerialPortManager.cc:88</a></div></div>
-<div class="ttc" id="aclassSerialPortManager_html_ae893d9ad265e1c3fc47ce7b4e2b415f6"><div class="ttname"><a href="classSerialPortManager.html#ae893d9ad265e1c3fc47ce7b4e2b415f6">SerialPortManager::serialPorts</a></div><div class="ttdeci">QStringList serialPorts() const</div><div class="ttdef"><b>Definition</b> <a href="SerialPortManager_8h_source.html#l00069">SerialPortManager.h:69</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_a54f2cb992ce470000ac3d3d6de468f19"><div class="ttname"><a href="classSerialPortManager.html#a54f2cb992ce470000ac3d3d6de468f19">SerialPortManager::isPortReserved</a></div><div class="ttdeci">bool isPortReserved(const QString &amp;systemLocation) const</div><div class="ttdef"><b>Definition</b> <a href="#l00175">SerialPortManager.cc:175</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_a65a0169410d3988313956c96d2c8d694"><div class="ttname"><a href="classSerialPortManager.html#a65a0169410d3988313956c96d2c8d694">SerialPortManager::canAutoConnectPort</a></div><div class="ttdeci">bool canAutoConnectPort(const QString &amp;systemLocation) const</div><div class="ttdef"><b>Definition</b> <a href="#l00278">SerialPortManager.cc:278</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_a8b707e16081a117c11c87906b4e7e28b"><div class="ttname"><a href="classSerialPortManager.html#a8b707e16081a117c11c87906b4e7e28b">SerialPortManager::isPrimaryInterface</a></div><div class="ttdeci">static bool isPrimaryInterface(const Port &amp;port, QSet&lt; QString &gt; &amp;seenDevices)</div><div class="ttdef"><b>Definition</b> <a href="#l00036">SerialPortManager.cc:36</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_aa035e70d4a61b550d28fe4dccebc2eb3"><div class="ttname"><a href="classSerialPortManager.html#aa035e70d4a61b550d28fe4dccebc2eb3">SerialPortManager::isSamePort</a></div><div class="ttdeci">bool isSamePort(const QString &amp;first, const QString &amp;second) const</div><div class="ttdoc">Whether both names are of one listed port, or are the same name.</div><div class="ttdef"><b>Definition</b> <a href="#l00186">SerialPortManager.cc:186</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_aa21d49e21083c5a0f260ab56b4a8b01f"><div class="ttname"><a href="classSerialPortManager.html#aa21d49e21083c5a0f260ab56b4a8b01f">SerialPortManager::excludeFromAutoConnect</a></div><div class="ttdeci">ReservationPtr excludeFromAutoConnect(const QString &amp;systemLocation)</div><div class="ttdoc">Routing exclusions survive reconnects without marking the hardware occupied.</div><div class="ttdef"><b>Definition</b> <a href="#l00261">SerialPortManager.cc:261</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_aaeb79ef2312207cb65c6910762afa12a"><div class="ttname"><a href="classSerialPortManager.html#aaeb79ef2312207cb65c6910762afa12a">SerialPortManager::availablePorts</a></div><div class="ttdeci">QList&lt; Port &gt; availablePorts()</div><div class="ttdef"><b>Definition</b> <a href="#l00077">SerialPortManager.cc:77</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_ac6ac9b536276748cb3ba2916dec16adf"><div class="ttname"><a href="classSerialPortManager.html#ac6ac9b536276748cb3ba2916dec16adf">SerialPortManager::displayName</a></div><div class="ttdeci">QString displayName(const QString &amp;systemLocation)</div><div class="ttdef"><b>Definition</b> <a href="#l00114">SerialPortManager.cc:114</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_acc7fe3fcb23744d339bc481728deb08d"><div class="ttname"><a href="classSerialPortManager.html#acc7fe3fcb23744d339bc481728deb08d">SerialPortManager::port</a></div><div class="ttdeci">std::optional&lt; Port &gt; port(const QString &amp;name) const</div><div class="ttdef"><b>Definition</b> <a href="#l00206">SerialPortManager.cc:206</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_ad026a52a79a8743f234d7fdf4671ea9a"><div class="ttname"><a href="classSerialPortManager.html#ad026a52a79a8743f234d7fdf4671ea9a">SerialPortManager::portsEnumerated</a></div><div class="ttdeci">void portsEnumerated(const QStringList &amp;availablePorts)</div><div class="ttdoc">Emitted only after a fresh scan, with every name of the ports it lists.</div></div>
+<div class="ttc" id="aclassSerialPortManager_html_ad1086fb2887f9d7b1a65806bf2f03395"><div class="ttname"><a href="classSerialPortManager.html#ad1086fb2887f9d7b1a65806bf2f03395">SerialPortManager::reservePort</a></div><div class="ttdeci">ReservationPtr reservePort(const QString &amp;systemLocation, const QString &amp;owner={})</div><div class="ttdef"><b>Definition</b> <a href="#l00124">SerialPortManager.cc:124</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_ad45088435fc7c19eae1e4fc21b2106e5"><div class="ttname"><a href="classSerialPortManager.html#ad45088435fc7c19eae1e4fc21b2106e5">SerialPortManager::Enumerator</a></div><div class="ttdeci">std::function&lt; QList&lt; Port &gt;()&gt; Enumerator</div><div class="ttdef"><b>Definition</b> <a href="SerialPortManager_8h_source.html#l00066">SerialPortManager.h:66</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_add4f3d102d8ce1e0dc57899b9fa8d8d8"><div class="ttname"><a href="classSerialPortManager.html#add4f3d102d8ce1e0dc57899b9fa8d8d8">SerialPortManager::rescan</a></div><div class="ttdeci">void rescan()</div><div class="ttdoc">As availablePorts(), without reusing a scan made less than a second ago.</div><div class="ttdef"><b>Definition</b> <a href="#l00108">SerialPortManager.cc:108</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_ae893d9ad265e1c3fc47ce7b4e2b415f6"><div class="ttname"><a href="classSerialPortManager.html#ae893d9ad265e1c3fc47ce7b4e2b415f6">SerialPortManager::serialPorts</a></div><div class="ttdeci">QStringList serialPorts() const</div><div class="ttdef"><b>Definition</b> <a href="SerialPortManager_8h_source.html#l00088">SerialPortManager.h:88</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_af36ed57b0c4868c74c39105445788ed1"><div class="ttname"><a href="classSerialPortManager.html#af36ed57b0c4868c74c39105445788ed1">SerialPortManager::requestAccess</a></div><div class="ttdeci">bool requestAccess(const QString &amp;name)</div><div class="ttdef"><b>Definition</b> <a href="#l00246">SerialPortManager.cc:246</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_af58f896aabe7042b5fa478d957204f2f"><div class="ttname"><a href="classSerialPortManager.html#af58f896aabe7042b5fa478d957204f2f">SerialPortManager::persistentName</a></div><div class="ttdeci">QString persistentName(const QString &amp;name) const</div><div class="ttdef"><b>Definition</b> <a href="#l00191">SerialPortManager.cc:191</a></div></div>
+<div class="ttc" id="aclassSerialPortManager_html_aff8eeca024f93fd1c4e68816c0d4173c"><div class="ttname"><a href="classSerialPortManager.html#aff8eeca024f93fd1c4e68816c0d4173c">SerialPortManager::reservationOwner</a></div><div class="ttdeci">QString reservationOwner(const QString &amp;systemLocation) const</div><div class="ttdoc">The owner the port is reserved with; empty when it is not reserved or its holder gave none.</div><div class="ttdef"><b>Definition</b> <a href="#l00180">SerialPortManager.cc:180</a></div></div>
+<div class="ttc" id="anamespaceAndroidSerialAccess_html_a2a327c457b5c02a32d6e585db2d7b1c6"><div class="ttname"><a href="namespaceAndroidSerialAccess.html#a2a327c457b5c02a32d6e585db2d7b1c6">AndroidSerialAccess::isUsbPermissionDenied</a></div><div class="ttdeci">bool isUsbPermissionDenied(const QString &amp;portName)</div><div class="ttdoc">Whether the port is a USB one whose device the user has denied QGC, and has not been asked for again ...</div><div class="ttdef"><b>Definition</b> <a href="AndroidSerialAccess_8cc_source.html#l00045">AndroidSerialAccess.cc:45</a></div></div>
+<div class="ttc" id="anamespaceAndroidSerialAccess_html_aa318af74ab8ec6dd4dfe3f2866ab08a8"><div class="ttname"><a href="namespaceAndroidSerialAccess.html#aa318af74ab8ec6dd4dfe3f2866ab08a8">AndroidSerialAccess::requestUsbPermission</a></div><div class="ttdeci">bool requestUsbPermission(const QString &amp;portName)</div><div class="ttdef"><b>Definition</b> <a href="AndroidSerialAccess_8cc_source.html#l00038">AndroidSerialAccess.cc:38</a></div></div>
+<div class="ttc" id="anamespaceAndroidSerialAccess_html_ad63c4f4c86eea4fafe15a70c6ee0960f"><div class="ttname"><a href="namespaceAndroidSerialAccess.html#ad63c4f4c86eea4fafe15a70c6ee0960f">AndroidSerialAccess::hasUsbPermission</a></div><div class="ttdeci">bool hasUsbPermission(const QString &amp;portName)</div><div class="ttdoc">Whether the port is a USB one whose device QGC may open.</div><div class="ttdef"><b>Definition</b> <a href="AndroidSerialAccess_8cc_source.html#l00032">AndroidSerialAccess.cc:32</a></div></div>
 <div class="ttc" id="anamespacePX4SerialPortConfig_html_adc3befb0cbcc56b61cc73d22d33de22a"><div class="ttname"><a href="namespacePX4SerialPortConfig.html#adc3befb0cbcc56b61cc73d22d33de22a">PX4SerialPortConfig::ports</a></div><div class="ttdeci">QList&lt; Port &gt; ports(const QList&lt; Function &gt; &amp;functions)</div><div class="ttdoc">Every port any function can run on, in port id order.</div><div class="ttdef"><b>Definition</b> <a href="PX4SerialPortConfig_8cc_source.html#l00129">PX4SerialPortConfig.cc:129</a></div></div>
-<div class="ttc" id="anamespaceSBF_1_1Plan_html_ac3b90a12d6babe61a1370e90b2a9df55"><div class="ttname"><a href="namespaceSBF_1_1Plan.html#ac3b90a12d6babe61a1370e90b2a9df55">SBF::Plan::port</a></div><div class="ttdeci">GPSCommandSequence port(QByteArrayView port, unsigned baud)</div><div class="ttdoc">Clears the SBF output of port, keeps a serial port at the link&#39;s baud, and selects SBF and the WGS84 ...</div><div class="ttdef"><b>Definition</b> <a href="SBFPlan_8cc_source.html#l00034">SBFPlan.cc:34</a></div></div>
-<div class="ttc" id="astructSerialPortManager_1_1Port_html"><div class="ttname"><a href="structSerialPortManager_1_1Port.html">SerialPortManager::Port</a></div><div class="ttdef"><b>Definition</b> <a href="SerialPortManager_8h_source.html#l00028">SerialPortManager.h:29</a></div></div>
-<div class="ttc" id="astructSerialPortManager_1_1Reservation_html"><div class="ttname"><a href="structSerialPortManager_1_1Reservation.html">SerialPortManager::Reservation</a></div><div class="ttdef"><b>Definition</b> <a href="SerialPortManager_8h_source.html#l00041">SerialPortManager.h:42</a></div></div>
+<div class="ttc" id="astructSerialPortManager_1_1Port_html"><div class="ttname"><a href="structSerialPortManager_1_1Port.html">SerialPortManager::Port</a></div><div class="ttdef"><b>Definition</b> <a href="SerialPortManager_8h_source.html#l00032">SerialPortManager.h:33</a></div></div>
+<div class="ttc" id="astructSerialPortManager_1_1Reservation_html"><div class="ttname"><a href="structSerialPortManager_1_1Reservation.html">SerialPortManager::Reservation</a></div><div class="ttdef"><b>Definition</b> <a href="SerialPortManager_8h_source.html#l00058">SerialPortManager.h:59</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

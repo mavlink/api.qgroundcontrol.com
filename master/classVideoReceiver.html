@@ -112,7 +112,7 @@ $(function() {
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classVideoReceiver__inherit__graph.svg" width="376" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="classVideoReceiver__inherit__graph.svg" width="564" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Collaboration diagram for VideoReceiver:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -126,6 +126,7 @@ Classes</h2></td></tr>
 <tr class="memitem:Config" id="r_Config"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVideoReceiver_1_1Config.html">Config</a></td></tr>
 <tr class="memitem:DisplayConfig" id="r_DisplayConfig"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVideoReceiver_1_1DisplayConfig.html">DisplayConfig</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">How the display sink presents frames. Construct-only: a change applies when <a class="el" href="#aebe043947e588fcd89a3853d8ba9df7f">restart()</a> rebuilds the sink.  <a href="structVideoReceiver_1_1DisplayConfig.html#details">More...</a><br /></td></tr>
+<tr class="memitem:RecordingEncoding" id="r_RecordingEncoding"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVideoReceiver_1_1RecordingEncoding.html">RecordingEncoding</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -147,7 +148,7 @@ Signals</h2></td></tr>
 <tr class="memitem:aae56976b2adc334fa1bf6d358cb477e7" id="r_aae56976b2adc334fa1bf6d358cb477e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae56976b2adc334fa1bf6d358cb477e7">decodingChanged</a> (bool <a class="el" href="#adf141f5d74eec5f1693a980e99a7b408">decoding</a>)</td></tr>
 <tr class="memitem:a2965588c4301e875760247cacec114cd" id="r_a2965588c4301e875760247cacec114cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2965588c4301e875760247cacec114cd">recordingChanged</a> (bool <a class="el" href="#a807155e86515989467791f7b7e90811d">recording</a>)</td></tr>
 <tr class="memitem:aac90f2f74dee2facef41e41212696c63" id="r_aac90f2f74dee2facef41e41212696c63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac90f2f74dee2facef41e41212696c63">recordingStarted</a> (const QString &amp;file)</td></tr>
-<tr class="memdesc:aac90f2f74dee2facef41e41212696c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">A recording file opened: the first one after <a class="el" href="#a4969734c2003e67d33d26f5b45564afe">startRecording()</a>, or the next part after a reconnect.  <br /></td></tr>
+<tr class="memdesc:aac90f2f74dee2facef41e41212696c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">A recording file opened: the first one after <a class="el" href="#a4969734c2003e67d33d26f5b45564afe">startRecording()</a>, or the recording's next part.  <br /></td></tr>
 <tr class="memitem:a8137c0eea2958893655d502f7f59bec2" id="r_a8137c0eea2958893655d502f7f59bec2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8137c0eea2958893655d502f7f59bec2">recordingFinished</a> (const QString &amp;file, const QString &amp;error)</td></tr>
 <tr class="memdesc:a8137c0eea2958893655d502f7f59bec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A recording file closed. <code class="param">error</code> is empty when the file was finalized cleanly.  <br /></td></tr>
 <tr class="memitem:a250de93e55dbc21d4788c94a3a32064f" id="r_a250de93e55dbc21d4788c94a3a32064f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a250de93e55dbc21d4788c94a3a32064f">videoSizeChanged</a> (QSize size)</td></tr>
@@ -170,18 +171,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adf141f5d74eec5f1693a980e99a7b408" id="r_adf141f5d74eec5f1693a980e99a7b408"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf141f5d74eec5f1693a980e99a7b408">decoding</a> () const</td></tr>
 <tr class="memitem:a807155e86515989467791f7b7e90811d" id="r_a807155e86515989467791f7b7e90811d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a807155e86515989467791f7b7e90811d">recording</a> () const</td></tr>
 <tr class="memitem:add8aeca1adf9d9762fa2fa711d76541d" id="r_add8aeca1adf9d9762fa2fa711d76541d"><td class="memItemLeft" align="right" valign="top">QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add8aeca1adf9d9762fa2fa711d76541d">videoSize</a> () const</td></tr>
+<tr class="memdesc:add8aeca1adf9d9762fa2fa711d76541d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of the frames as they are presented, before the orientation the VideoOutput adds.  <br /></td></tr>
 <tr class="memitem:ad7c8d8735c34f32b6a78137342537a63" id="r_ad7c8d8735c34f32b6a78137342537a63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structVideoStreamStats.html">VideoStreamStats</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7c8d8735c34f32b6a78137342537a63">stats</a> () const</td></tr>
 <tr class="memdesc:ad7c8d8735c34f32b6a78137342537a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stream's health, measured about once a second while it streams; invalid while it doesn't.  <br /></td></tr>
 <tr class="memitem:a40aaab1f3b0e5998b25fdef1d8227775" id="r_a40aaab1f3b0e5998b25fdef1d8227775"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40aaab1f3b0e5998b25fdef1d8227775">setConfig</a> (const <a class="el" href="structVideoReceiver_1_1Config.html">Config</a> &amp;<a class="el" href="#adc22e0f510bfe09961a0452d00cc07b3">config</a>)</td></tr>
 <tr class="memitem:a895c37a057e7eedf0533433458277b36" id="r_a895c37a057e7eedf0533433458277b36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a895c37a057e7eedf0533433458277b36">setDisplayConfig</a> (const <a class="el" href="structVideoReceiver_1_1DisplayConfig.html">DisplayConfig</a> &amp;<a class="el" href="#adc22e0f510bfe09961a0452d00cc07b3">config</a>)</td></tr>
 <tr class="memdesc:a895c37a057e7eedf0533433458277b36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores <code class="param">config</code> for the display sink <a class="el" href="#aebe043947e588fcd89a3853d8ba9df7f">restart()</a> builds next.  <br /></td></tr>
+<tr class="memitem:a434c024d534958231f15aed45c0e4ded" id="r_a434c024d534958231f15aed45c0e4ded"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a434c024d534958231f15aed45c0e4ded">encodesRecordings</a> () const</td></tr>
+<tr class="memitem:ab73ecb4d97bc7e1928e7d54c73f2e714" id="r_ab73ecb4d97bc7e1928e7d54c73f2e714"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structVideoReceiver_1_1RecordingEncoding.html">RecordingEncoding</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab73ecb4d97bc7e1928e7d54c73f2e714">recordingEncoding</a> () const</td></tr>
+<tr class="memitem:a263ef0a219465cffc081d4557f0696c5" id="r_a263ef0a219465cffc081d4557f0696c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a263ef0a219465cffc081d4557f0696c5">setRecordingEncoding</a> (const <a class="el" href="structVideoReceiver_1_1RecordingEncoding.html">RecordingEncoding</a> &amp;encoding)</td></tr>
+<tr class="memdesc:a263ef0a219465cffc081d4557f0696c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores <code class="param">encoding</code> for the recordings that start from now on; one in progress keeps its own.  <br /></td></tr>
 <tr class="memitem:aa10deb26fafb551b6f5929e30d1e2b3f" id="r_aa10deb26fafb551b6f5929e30d1e2b3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa10deb26fafb551b6f5929e30d1e2b3f">setActive</a> (bool <a class="el" href="#ae3f6d922a68c3fc43b2874dabc2ab996">active</a>)</td></tr>
 <tr class="memdesc:aa10deb26fafb551b6f5929e30d1e2b3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Streams while true and the URI is set. False stops the stream, any pending reconnect and any recording.  <br /></td></tr>
+<tr class="memitem:a50703c506e92b8dbe7422f93d6e981f1" id="r_a50703c506e92b8dbe7422f93d6e981f1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50703c506e92b8dbe7422f93d6e981f1">shutDown</a> ()</td></tr>
 <tr class="memitem:aebe043947e588fcd89a3853d8ba9df7f" id="r_aebe043947e588fcd89a3853d8ba9df7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebe043947e588fcd89a3853d8ba9df7f">restart</a> ()</td></tr>
+<tr class="memitem:a23f36e185a564c860911bacf0c99be9e" id="r_a23f36e185a564c860911bacf0c99be9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23f36e185a564c860911bacf0c99be9e">reconnectNow</a> ()</td></tr>
 <tr class="memitem:a4f24bbd7d714b1dae89af7e5a09bf2c8" id="r_a4f24bbd7d714b1dae89af7e5a09bf2c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f24bbd7d714b1dae89af7e5a09bf2c8">setVideoOutput</a> (QQuickItem *<a class="el" href="#a195542c4b4ab753b20c2ff151d723a51">videoOutput</a>)</td></tr>
 <tr class="memitem:a4969734c2003e67d33d26f5b45564afe" id="r_a4969734c2003e67d33d26f5b45564afe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4969734c2003e67d33d26f5b45564afe">startRecording</a> (const QString &amp;file, <a class="el" href="#a9e7c155dd24f76261f8861d9ec466035">FileFormat</a> format)</td></tr>
 <tr class="memitem:a65bd2e39390f064f8aafbf304aaf52fd" id="r_a65bd2e39390f064f8aafbf304aaf52fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65bd2e39390f064f8aafbf304aaf52fd">stopRecording</a> ()</td></tr>
-<tr class="memitem:afe83811791a1d87167a147ef33c8ee5b" id="r_afe83811791a1d87167a147ef33c8ee5b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe83811791a1d87167a147ef33c8ee5b">takeScreenshot</a> (const QString &amp;file, const <a class="el" href="structVideoScreenshot_1_1Exif.html">VideoScreenshot::Exif</a> &amp;exif={}) const</td></tr>
+<tr class="memitem:ac16049cfa7373eb9c1e3b89cb5fe8af2" id="r_ac16049cfa7373eb9c1e3b89cb5fe8af2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac16049cfa7373eb9c1e3b89cb5fe8af2">takeScreenshot</a> (const QString &amp;file, const <a class="el" href="structVideoScreenshot_1_1Exif.html">VideoScreenshot::Exif</a> &amp;exif={})</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -190,17 +198,20 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aa1f223a713c624eff1b321c8cb9b54ea" id="r_aa1f223a713c624eff1b321c8cb9b54ea"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1f223a713c624eff1b321c8cb9b54ea">recordingComment</a> ()</td></tr>
 <tr class="memdesc:aa1f223a713c624eff1b321c8cb9b54ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">The comment recordings carry, of <a class="el" href="namespaceGStreamer.html">GStreamer</a> and of a USB camera alike: the application and its version.  <br /></td></tr>
 <tr class="memitem:aa3d8d7bd9ae2b12f3ae577abf1d57907" id="r_aa3d8d7bd9ae2b12f3ae577abf1d57907"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3d8d7bd9ae2b12f3ae577abf1d57907">isValidFileFormat</a> (int format)</td></tr>
-<tr class="memitem:ae21014f2ddb3947e0bc2fc1549a399e1" id="r_ae21014f2ddb3947e0bc2fc1549a399e1"><td class="memItemLeft" align="right" valign="top">static QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae21014f2ddb3947e0bc2fc1549a399e1">presentedSize</a> (const QVideoFrame &amp;frame)</td></tr>
+<tr class="memitem:a92d112b232b0887411f9f6ac88f4dfa8" id="r_a92d112b232b0887411f9f6ac88f4dfa8"><td class="memItemLeft" align="right" valign="top">static QSize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92d112b232b0887411f9f6ac88f4dfa8">presentedSize</a> (const QVideoFrame &amp;frame, QSize pictureSize={})</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:aa5e4a3c1b8be24f5bf4354fc29ba6739" id="r_aa5e4a3c1b8be24f5bf4354fc29ba6739"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5e4a3c1b8be24f5bf4354fc29ba6739">onConfigChanged</a> ()=0</td></tr>
 <tr class="memitem:a8069516ccf18fe0d8e2eac8d76258c71" id="r_a8069516ccf18fe0d8e2eac8d76258c71"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8069516ccf18fe0d8e2eac8d76258c71">onActiveChanged</a> ()=0</td></tr>
 <tr class="memitem:af14bb551306e2782109f488d6495ad7d" id="r_af14bb551306e2782109f488d6495ad7d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af14bb551306e2782109f488d6495ad7d">onRestartRequested</a> ()=0</td></tr>
+<tr class="memitem:adb5ed2c9d0add4e11f60a12ab23e938e" id="r_adb5ed2c9d0add4e11f60a12ab23e938e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb5ed2c9d0add4e11f60a12ab23e938e">onReconnectRequested</a> ()=0</td></tr>
 <tr class="memitem:a2b961bf875fa1158ce6f3f0dd9ef76e9" id="r_a2b961bf875fa1158ce6f3f0dd9ef76e9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b961bf875fa1158ce6f3f0dd9ef76e9">onVideoOutputChanged</a> ()=0</td></tr>
 <tr class="memdesc:a2b961bf875fa1158ce6f3f0dd9ef76e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Also called when the current output is set again.  <br /></td></tr>
 <tr class="memitem:a5cb5aa52bf7853e9dbe0c4f029504933" id="r_a5cb5aa52bf7853e9dbe0c4f029504933"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cb5aa52bf7853e9dbe0c4f029504933">onStartRecording</a> (const QString &amp;file, <a class="el" href="#a9e7c155dd24f76261f8861d9ec466035">FileFormat</a> format)=0</td></tr>
 <tr class="memitem:a263b4974d32751d3e1b7b51e7ab94cde" id="r_a263b4974d32751d3e1b7b51e7ab94cde"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a263b4974d32751d3e1b7b51e7ab94cde">onStopRecording</a> ()=0</td></tr>
+<tr class="memitem:af5d5c13858cf99d6da36575be8628a42" id="r_af5d5c13858cf99d6da36575be8628a42"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5d5c13858cf99d6da36575be8628a42">onTakeScreenshot</a> (const QString &amp;file, const <a class="el" href="structVideoScreenshot_1_1Exif.html">VideoScreenshot::Exif</a> &amp;exif)</td></tr>
+<tr class="memdesc:af5d5c13858cf99d6da36575be8628a42"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ac16049cfa7373eb9c1e3b89cb5fe8af2">takeScreenshot()</a> with an output set: saves the frame on display, unless overridden.  <br /></td></tr>
 <tr class="memitem:a6dec3677d960cb00a2ab105e80377982" id="r_a6dec3677d960cb00a2ab105e80377982"><td class="memItemLeft" align="right" valign="top">QVideoSink *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6dec3677d960cb00a2ab105e80377982">videoSink</a> () const</td></tr>
 <tr class="memdesc:a6dec3677d960cb00a2ab105e80377982"><td class="mdescLeft">&#160;</td><td class="mdescRight">The VideoOutput's QVideoSink, or nullptr.  <br /></td></tr>
 <tr class="memitem:ac8132f28c0a2590489934c401d6b700b" id="r_ac8132f28c0a2590489934c401d6b700b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8132f28c0a2590489934c401d6b700b">setState</a> (<a class="el" href="#add77a4a32e225ba7bb874c8c617b80f7">State</a> <a class="el" href="#a42bd3638d40e07000bbc6ad9cf510f00">state</a>)</td></tr>
@@ -211,11 +222,11 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a684184c5d9dc58a8807e7a9ae66d97a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backends publish a new measurement, and an invalid one once the stream stops or reconnects.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>One network video stream: connects to a URI, shows it in a QML VideoOutput and records it.</p>
+<div class="textblock"><p>One video source: a network stream, which a backend's receiver connects to at the config's URI, or a local camera (<a class="el" href="classUVCCameraController.html">UVCCameraController</a>), which the URI names. Shows it in a QML VideoOutput, records it and takes its screenshots.</p>
 <p>Intent-based: callers state what they want (<a class="el" href="#a40aaab1f3b0e5998b25fdef1d8227775">setConfig()</a>, <a class="el" href="#aa10deb26fafb551b6f5929e30d1e2b3f" title="Streams while true and the URI is set. False stops the stream, any pending reconnect and any recordin...">setActive()</a>, <a class="el" href="#a4f24bbd7d714b1dae89af7e5a09bf2c8">setVideoOutput()</a>, <a class="el" href="#a4969734c2003e67d33d26f5b45564afe">startRecording()</a>) and the receiver gets there on its own, restarting after a config change and reconnecting after a failure. Call every method on the GUI thread; every signal is emitted there.</p>
 <p>Backends implement the protected on*() hooks, which run after the base stored the new value, and publish their state through the protected setters. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00028">28</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00031">31</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
 <a id="a9e7c155dd24f76261f8861d9ec466035" name="a9e7c155dd24f76261f8861d9ec466035"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e7c155dd24f76261f8861d9ec466035">&#9670;&#160;</a></span>FileFormat</h2>
@@ -244,7 +255,7 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a9e7c155dd24f76261f8861d9ec466035a7d761542d4b5ea168dc156e85a9a2949" name="a9e7c155dd24f76261f8861d9ec466035a7d761542d4b5ea168dc156e85a9a2949"></a>Mp4&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00052">52</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00055">55</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 
 </div>
 </div>
@@ -278,7 +289,7 @@ Protected Member Functions</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00042">42</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00045">45</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 
 </div>
 </div>
@@ -306,11 +317,11 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00013">13</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00016">16</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8cc_source.html#l00013">VideoReceiver()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8cc_source.html#l00016">VideoReceiver()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00030">GstVideoReceiver::GstVideoReceiver()</a>, <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00060">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00013">VideoReceiver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00034">GstVideoReceiver::GstVideoReceiver()</a>, <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00079">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, <a class="el" href="UVCCameraController_8cc_source.html#l00055">UVCCameraController::UVCCameraController()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00016">VideoReceiver()</a>.</p>
 
 </div>
 </div>
@@ -363,9 +374,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00104">104</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00120">120</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00137">QtMultimediaVideoReceiver::onActiveChanged()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00069">setActive()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00160">QtMultimediaVideoReceiver::onActiveChanged()</a>, <a class="el" href="UVCCameraController_8cc_source.html#l00093">UVCCameraController::onActiveChanged()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00072">setActive()</a>.</p>
 
 </div>
 </div>
@@ -392,9 +403,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00100">100</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00116">116</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00123">QtMultimediaVideoReceiver::onConfigChanged()</a>, <a class="el" href="VideoReceiver_8cc_source.html#l00060">setConfig()</a>, and <a class="el" href="VideoReceiver_8h_source.html#l00126">setDisplayConfig()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="UVCCameraController_8h_source.html#l00067">UVCCameraController::device()</a>, <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00146">QtMultimediaVideoReceiver::onConfigChanged()</a>, <a class="el" href="VideoReceiver_8cc_source.html#l00063">setConfig()</a>, and <a class="el" href="VideoReceiver_8h_source.html#l00143">setDisplayConfig()</a>.</p>
 
 </div>
 </div>
@@ -421,9 +432,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00112">112</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00128">128</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#aae56976b2adc334fa1bf6d358cb477e7">decodingChanged()</a>, <a class="el" href="#a263b4974d32751d3e1b7b51e7ab94cde">onStopRecording()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00161">setDecoding()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#aae56976b2adc334fa1bf6d358cb477e7">decodingChanged()</a>, <a class="el" href="#a263b4974d32751d3e1b7b51e7ab94cde">onStopRecording()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00196">setDecoding()</a>.</p>
 
 </div>
 </div>
@@ -450,9 +461,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00112">decoding()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00128">decoding()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00161">setDecoding()</a>, and <a class="el" href="VideoStreamController_8cc_source.html#l00046">VideoStreamController::setReceiver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00196">setDecoding()</a>, and <a class="el" href="VideoStreamController_8cc_source.html#l00113">VideoStreamController::setReceiver()</a>.</p>
 
 </div>
 </div>
@@ -479,7 +490,37 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00102">102</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00118">118</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+
+</div>
+</div>
+<a id="a434c024d534958231f15aed45c0e4ded" name="a434c024d534958231f15aed45c0e4ded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a434c024d534958231f15aed45c0e4ded">&#9670;&#160;</a></span>encodesRecordings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool VideoReceiver::encodesRecordings </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>True for a receiver that encodes its recordings anew, as <a class="el" href="#ab73ecb4d97bc7e1928e7d54c73f2e714">recordingEncoding()</a> says: a USB camera, or Qt Multimedia's player. False for one that records the stream as it arrives. </p>
+
+<p>Reimplemented in <a class="el" href="classQtMultimediaVideoReceiver.html#adc8c5fc410fa2fd350acd705cfbfc26e">QtMultimediaVideoReceiver</a>, and <a class="el" href="classUVCCameraController.html#a2a8dd769815bd451db5106196d490ed5">UVCCameraController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00147">147</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 
 </div>
 </div>
@@ -505,9 +546,9 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>A failure worth telling the user about (stream error with autoReconnect off, recording error). Not emitted for failures the receiver recovers from by reconnecting. </p>
+<p>A failure worth telling the user about (stream error with autoReconnect off, recording error, a screenshot that couldn't be saved). Not emitted for failures the receiver recovers from by reconnecting. </p>
 
-<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00030">GstVideoReceiver::GstVideoReceiver()</a>, <a class="el" href="VideoStreamController_8cc_source.html#l00046">VideoStreamController::setReceiver()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00112">startRecording()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00034">GstVideoReceiver::GstVideoReceiver()</a>, <a class="el" href="VideoReceiver_8cc_source.html#l00156">onTakeScreenshot()</a>, <a class="el" href="VideoStreamController_8cc_source.html#l00113">VideoStreamController::setReceiver()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00122">startRecording()</a>.</p>
 
 </div>
 </div>
@@ -536,11 +577,11 @@ Protected Member Functions</h2></td></tr>
 
 <p>"mkv", "mov" or "mp4". </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00024">24</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00027">27</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00054">Mkv</a>, <a class="el" href="VideoReceiver_8h_source.html#l00055">Mov</a>, and <a class="el" href="VideoReceiver_8h_source.html#l00056">Mp4</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00057">Mkv</a>, <a class="el" href="VideoReceiver_8h_source.html#l00058">Mov</a>, and <a class="el" href="VideoReceiver_8h_source.html#l00059">Mp4</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoRecordingService_8cc_source.html#l00154">VideoRecordingService::pruneStorage()</a>, <a class="el" href="VideoRecordingService_8cc_source.html#l00136">VideoRecordingService::recordingFile()</a>, and <a class="el" href="VideoRecordingService_8cc_source.html#l00084">VideoRecordingService::startRecording()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoRecordingService_8cc_source.html#l00191">VideoRecordingService::pruneStorage()</a>, and <a class="el" href="VideoRecordingService_8cc_source.html#l00173">VideoRecordingService::recordingFile()</a>.</p>
 
 </div>
 </div>
@@ -567,11 +608,11 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00037">37</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00040">40</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00054">Mkv</a>, and <a class="el" href="VideoReceiver_8h_source.html#l00056">Mp4</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00057">Mkv</a>, and <a class="el" href="VideoReceiver_8h_source.html#l00059">Mp4</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoRecordingService_8cc_source.html#l00084">VideoRecordingService::startRecording()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoRecordingService_8cc_source.html#l00131">VideoRecordingService::startRecording()</a>.</p>
 
 </div>
 </div>
@@ -598,9 +639,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00095">95</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00111">111</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8h_source.html#l00057">GstVideoReceiver::GstVideoReceiverTestBase</a>, <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00168">QtMultimediaVideoReceiver::onStartRecording()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00055">setName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00196">QtMultimediaVideoReceiver::onStartRecording()</a>, <a class="el" href="UVCCameraController_8cc_source.html#l00128">UVCCameraController::setFormat()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00058">setName()</a>.</p>
 
 </div>
 </div>
@@ -627,9 +668,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classGstVideoReceiver.html#a00ea769ee0375892537216da3a32a5f4">GstVideoReceiver</a>, and <a class="el" href="classQtMultimediaVideoReceiver.html#a2747cfdc926e2c54c95100d34d018237">QtMultimediaVideoReceiver</a>.</p>
+<p>Implemented in <a class="el" href="classGstVideoReceiver.html#a00ea769ee0375892537216da3a32a5f4">GstVideoReceiver</a>, <a class="el" href="classQtMultimediaVideoReceiver.html#a2747cfdc926e2c54c95100d34d018237">QtMultimediaVideoReceiver</a>, and <a class="el" href="classUVCCameraController.html#a60aa1486bda1c28d99bd4f047eff27ac">UVCCameraController</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00069">setActive()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00072">setActive()</a>.</p>
 
 </div>
 </div>
@@ -656,9 +697,38 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classGstVideoReceiver.html#a70199fb22f872df9bc6b644571f5b2f4">GstVideoReceiver</a>, and <a class="el" href="classQtMultimediaVideoReceiver.html#a29560a3084aa27afef436763f5e04dd1">QtMultimediaVideoReceiver</a>.</p>
+<p>Implemented in <a class="el" href="classGstVideoReceiver.html#a70199fb22f872df9bc6b644571f5b2f4">GstVideoReceiver</a>, <a class="el" href="classQtMultimediaVideoReceiver.html#a29560a3084aa27afef436763f5e04dd1">QtMultimediaVideoReceiver</a>, and <a class="el" href="classUVCCameraController.html#a4906942add83e339e8d37963126e9c6f">UVCCameraController</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00060">setConfig()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00063">setConfig()</a>.</p>
+
+</div>
+</div>
+<a id="adb5ed2c9d0add4e11f60a12ab23e938e" name="adb5ed2c9d0add4e11f60a12ab23e938e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb5ed2c9d0add4e11f60a12ab23e938e">&#9670;&#160;</a></span>onReconnectRequested()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void VideoReceiver::onReconnectRequested </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classGstVideoReceiver.html#a224090e50fe5a9918e813adfefbd83d5">GstVideoReceiver</a>, <a class="el" href="classQtMultimediaVideoReceiver.html#a7d3309cf04636781622d18e72052a0d4">QtMultimediaVideoReceiver</a>, and <a class="el" href="classUVCCameraController.html#a857fe7c93839459f9c12f8294762228d">UVCCameraController</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00088">reconnectNow()</a>.</p>
 
 </div>
 </div>
@@ -685,9 +755,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classGstVideoReceiver.html#a57c1a71f3bfa785dba7ded2646be848a">GstVideoReceiver</a>, and <a class="el" href="classQtMultimediaVideoReceiver.html#a27eb87c28923d3db833cfca3493d026d">QtMultimediaVideoReceiver</a>.</p>
+<p>Implemented in <a class="el" href="classGstVideoReceiver.html#a57c1a71f3bfa785dba7ded2646be848a">GstVideoReceiver</a>, <a class="el" href="classQtMultimediaVideoReceiver.html#a27eb87c28923d3db833cfca3493d026d">QtMultimediaVideoReceiver</a>, and <a class="el" href="classUVCCameraController.html#aa1057846e7d927b709c6c3830ead6e45">UVCCameraController</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00078">restart()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00081">restart()</a>.</p>
 
 </div>
 </div>
@@ -718,9 +788,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classGstVideoReceiver.html#a7da9036c7f326d49914dea23b651a8e2">GstVideoReceiver</a>, and <a class="el" href="classQtMultimediaVideoReceiver.html#a7426630781b5e3cc77b79b33a22fc4d1">QtMultimediaVideoReceiver</a>.</p>
+<p>Implemented in <a class="el" href="classGstVideoReceiver.html#a7da9036c7f326d49914dea23b651a8e2">GstVideoReceiver</a>, <a class="el" href="classQtMultimediaVideoReceiver.html#a7426630781b5e3cc77b79b33a22fc4d1">QtMultimediaVideoReceiver</a>, and <a class="el" href="classUVCCameraController.html#a0917bff87d06298bebd78961949ba33a">UVCCameraController</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00112">startRecording()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00122">startRecording()</a>.</p>
 
 </div>
 </div>
@@ -747,11 +817,50 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classGstVideoReceiver.html#af59f3b9817ed1b3bb74830d5e6c8c176">GstVideoReceiver</a>, and <a class="el" href="classQtMultimediaVideoReceiver.html#a55ae7e7ccaf941e5b7e8934d5afb1251">QtMultimediaVideoReceiver</a>.</p>
+<p>Implemented in <a class="el" href="classGstVideoReceiver.html#af59f3b9817ed1b3bb74830d5e6c8c176">GstVideoReceiver</a>, <a class="el" href="classQtMultimediaVideoReceiver.html#a55ae7e7ccaf941e5b7e8934d5afb1251">QtMultimediaVideoReceiver</a>, and <a class="el" href="classUVCCameraController.html#a5096607c117436451255ff8973db9564">UVCCameraController</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00112">decoding()</a>, <a class="el" href="VideoReceiver_8h_source.html#l00114">recording()</a>, <a class="el" href="VideoReceiver_8h_source.html#l00108">state()</a>, <a class="el" href="VideoReceiver_8h_source.html#l00119">stats()</a>, and <a class="el" href="VideoReceiver_8h_source.html#l00044">Stopped</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00128">decoding()</a>, <a class="el" href="VideoReceiver_8h_source.html#l00130">recording()</a>, <a class="el" href="VideoReceiver_8h_source.html#l00124">state()</a>, <a class="el" href="VideoReceiver_8h_source.html#l00136">stats()</a>, and <a class="el" href="VideoReceiver_8h_source.html#l00047">Stopped</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00127">stopRecording()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00137">stopRecording()</a>.</p>
+
+</div>
+</div>
+<a id="af5d5c13858cf99d6da36575be8628a42" name="af5d5c13858cf99d6da36575be8628a42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5d5c13858cf99d6da36575be8628a42">&#9670;&#160;</a></span>onTakeScreenshot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool VideoReceiver::onTakeScreenshot </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structVideoScreenshot_1_1Exif.html">VideoScreenshot::Exif</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>exif</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="#ac16049cfa7373eb9c1e3b89cb5fe8af2">takeScreenshot()</a> with an output set: saves the frame on display, unless overridden. </p>
+
+<p>Reimplemented in <a class="el" href="classUVCCameraController.html#aaa72999b5c2667a1ccab75e6b856cbb9">UVCCameraController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00156">156</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="VideoScreenshot_8cc_source.html#l00054">VideoScreenshot::displayedImage()</a>, <a class="el" href="#ae744c1ed5686e1823e65528d071fdb79">errorOccurred()</a>, <a class="el" href="VideoScreenshot_8cc_source.html#l00087">VideoScreenshot::saveImage()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00178">videoSink()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="UVCCameraController_8cc_source.html#l00265">UVCCameraController::onTakeScreenshot()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00147">takeScreenshot()</a>.</p>
 
 </div>
 </div>
@@ -780,14 +889,14 @@ Protected Member Functions</h2></td></tr>
 
 <p>Also called when the current output is set again. </p>
 
-<p>Implemented in <a class="el" href="classGstVideoReceiver.html#aa25395534aea173a60e7b8c46960f7c5">GstVideoReceiver</a>, and <a class="el" href="classQtMultimediaVideoReceiver.html#a3e87ccd8118146ef4df1985d0296352b">QtMultimediaVideoReceiver</a>.</p>
+<p>Implemented in <a class="el" href="classGstVideoReceiver.html#aa25395534aea173a60e7b8c46960f7c5">GstVideoReceiver</a>, <a class="el" href="classQtMultimediaVideoReceiver.html#a3e87ccd8118146ef4df1985d0296352b">QtMultimediaVideoReceiver</a>, and <a class="el" href="classUVCCameraController.html#aede6892c9177851a11be4ce9dab2e8c3">UVCCameraController</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00090">setVideoOutput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00100">setVideoOutput()</a>.</p>
 
 </div>
 </div>
-<a id="ae21014f2ddb3947e0bc2fc1549a399e1" name="ae21014f2ddb3947e0bc2fc1549a399e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae21014f2ddb3947e0bc2fc1549a399e1">&#9670;&#160;</a></span>presentedSize()</h2>
+<a id="a92d112b232b0887411f9f6ac88f4dfa8" name="a92d112b232b0887411f9f6ac88f4dfa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92d112b232b0887411f9f6ac88f4dfa8">&#9670;&#160;</a></span>presentedSize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -798,8 +907,12 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">QSize VideoReceiver::presentedSize </td>
           <td>(</td>
-          <td class="paramtype">const QVideoFrame &amp;</td>          <td class="paramname"><span class="paramname"><em>frame</em></span></td><td>)</td>
+          <td class="paramtype">const QVideoFrame &amp;</td>          <td class="paramname"><span class="paramname"><em>frame</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">QSize</td>          <td class="paramname"><span class="paramname"><em>pictureSize</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -808,9 +921,31 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>The size <code class="param">frame</code> is presented at: its format's viewport (the picture without decoder padding or crop), else the whole frame, turned by the rotation Qt presents it with. Invalid for an invalid frame. </p>
+<p>The size <code class="param">frame</code> is presented at: its format's viewport (the picture without decoder padding or crop), else the whole frame, turned by the rotation Qt presents it with. Invalid for an invalid frame. A valid <code class="param">pictureSize</code> stands in for the viewport's, which is smaller where it leaves out the padding of a squeezed texture. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00042">42</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00045">45</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+
+</div>
+</div>
+<a id="a23f36e185a564c860911bacf0c99be9e" name="a23f36e185a564c860911bacf0c99be9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23f36e185a564c860911bacf0c99be9e">&#9670;&#160;</a></span>reconnectNow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VideoReceiver::reconnectNow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Connects again now when the stream is waiting out a reconnect backoff, and starts the backoff over: for when the stream's source is likely back, as when its vehicle's link returned. Nothing otherwise. </p>
+
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00088">88</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="#adb5ed2c9d0add4e11f60a12ab23e938e">onReconnectRequested()</a>.</p>
 
 </div>
 </div>
@@ -837,9 +972,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00114">114</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00130">130</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#a263b4974d32751d3e1b7b51e7ab94cde">onStopRecording()</a>, <a class="el" href="#a2965588c4301e875760247cacec114cd">recordingChanged()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00169">setRecording()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#a263b4974d32751d3e1b7b51e7ab94cde">onStopRecording()</a>, <a class="el" href="#a2965588c4301e875760247cacec114cd">recordingChanged()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00204">setRecording()</a>.</p>
 
 </div>
 </div>
@@ -866,9 +1001,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00114">recording()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00130">recording()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoStreamController_8cc_source.html#l00046">VideoStreamController::setReceiver()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00169">setRecording()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoStreamController_8cc_source.html#l00113">VideoStreamController::setReceiver()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00204">setRecording()</a>.</p>
 
 </div>
 </div>
@@ -897,9 +1032,38 @@ Protected Member Functions</h2></td></tr>
 
 <p>The comment recordings carry, of <a class="el" href="namespaceGStreamer.html">GStreamer</a> and of a USB camera alike: the application and its version. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00019">19</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00022">22</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="RecordingBranch_8cc_source.html#l00095">RecordingBranch::makeFileSink()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="RecordingBranch_8cc_source.html#l00180">RecordingBranch::makeFileSink()</a>.</p>
+
+</div>
+</div>
+<a id="ab73ecb4d97bc7e1928e7d54c73f2e714" name="ab73ecb4d97bc7e1928e7d54c73f2e714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab73ecb4d97bc7e1928e7d54c73f2e714">&#9670;&#160;</a></span>recordingEncoding()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structVideoReceiver_1_1RecordingEncoding.html">RecordingEncoding</a> &amp; VideoReceiver::recordingEncoding </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00149">149</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00196">QtMultimediaVideoReceiver::onStartRecording()</a>, and <a class="el" href="UVCCameraController_8cc_source.html#l00176">UVCCameraController::onStartRecording()</a>.</p>
 
 </div>
 </div>
@@ -932,7 +1096,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>A recording file closed. <code class="param">error</code> is empty when the file was finalized cleanly. </p>
 
-<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00030">GstVideoReceiver::GstVideoReceiver()</a>, <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00060">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, and <a class="el" href="VideoStreamController_8cc_source.html#l00046">VideoStreamController::setReceiver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00034">GstVideoReceiver::GstVideoReceiver()</a>, <a class="el" href="UVCCameraController_8cc_source.html#l00176">UVCCameraController::onStartRecording()</a>, <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00079">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, <a class="el" href="VideoStreamController_8cc_source.html#l00113">VideoStreamController::setReceiver()</a>, and <a class="el" href="UVCCameraController_8cc_source.html#l00055">UVCCameraController::UVCCameraController()</a>.</p>
 
 </div>
 </div>
@@ -959,9 +1123,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A recording file opened: the first one after <a class="el" href="#a4969734c2003e67d33d26f5b45564afe">startRecording()</a>, or the next part after a reconnect. </p>
+<p>A recording file opened: the first one after <a class="el" href="#a4969734c2003e67d33d26f5b45564afe">startRecording()</a>, or the recording's next part. </p>
 
-<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00030">GstVideoReceiver::GstVideoReceiver()</a>, <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00060">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, and <a class="el" href="VideoStreamController_8cc_source.html#l00046">VideoStreamController::setReceiver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00034">GstVideoReceiver::GstVideoReceiver()</a>, <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00079">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, <a class="el" href="VideoStreamController_8cc_source.html#l00113">VideoStreamController::setReceiver()</a>, and <a class="el" href="UVCCameraController_8cc_source.html#l00055">UVCCameraController::UVCCameraController()</a>.</p>
 
 </div>
 </div>
@@ -981,9 +1145,11 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Tears the stream down and connects again now, skipping any reconnect backoff, and rebuilds the display sink so construct-only sink settings apply. No-op while inactive. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00078">78</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00081">81</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="#af14bb551306e2782109f488d6495ad7d">onRestartRequested()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00034">GstVideoReceiver::GstVideoReceiver()</a>.</p>
 
 </div>
 </div>
@@ -1004,9 +1170,11 @@ Protected Member Functions</h2></td></tr>
 
 <p>Streams while true and the URI is set. False stops the stream, any pending reconnect and any recording. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00069">69</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00072">72</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00104">active()</a>, and <a class="el" href="#a8069516ccf18fe0d8e2eac8d76258c71">onActiveChanged()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00120">active()</a>, and <a class="el" href="#a8069516ccf18fe0d8e2eac8d76258c71">onActiveChanged()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00142">shutDown()</a>.</p>
 
 </div>
 </div>
@@ -1026,9 +1194,9 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Stores <code class="param">config</code>. While active, a change to anything but autoReconnect restarts the stream; an empty URI stops it until a URI is set again. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00060">60</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00063">63</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00100">config()</a>, and <a class="el" href="#aa5e4a3c1b8be24f5bf4354fc29ba6739">onConfigChanged()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00116">config()</a>, and <a class="el" href="#aa5e4a3c1b8be24f5bf4354fc29ba6739">onConfigChanged()</a>.</p>
 
 </div>
 </div>
@@ -1055,9 +1223,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00161">161</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00196">196</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00112">decoding()</a>, and <a class="el" href="#aae56976b2adc334fa1bf6d358cb477e7">decodingChanged()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00128">decoding()</a>, and <a class="el" href="#aae56976b2adc334fa1bf6d358cb477e7">decodingChanged()</a>.</p>
 
 </div>
 </div>
@@ -1086,9 +1254,9 @@ Protected Member Functions</h2></td></tr>
 
 <p>Stores <code class="param">config</code> for the display sink <a class="el" href="#aebe043947e588fcd89a3853d8ba9df7f">restart()</a> builds next. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00126">126</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00143">143</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00100">config()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00116">config()</a>.</p>
 
 </div>
 </div>
@@ -1109,9 +1277,9 @@ Protected Member Functions</h2></td></tr>
 
 <p>Names the stream in logs and pipeline dumps. Call once, before the first setActive(true). </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00055">55</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00058">58</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00095">name()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00111">name()</a>.</p>
 
 </div>
 </div>
@@ -1138,11 +1306,40 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00169">169</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00204">204</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00114">recording()</a>, and <a class="el" href="#a2965588c4301e875760247cacec114cd">recordingChanged()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00130">recording()</a>, and <a class="el" href="#a2965588c4301e875760247cacec114cd">recordingChanged()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00060">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00079">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, and <a class="el" href="UVCCameraController_8cc_source.html#l00055">UVCCameraController::UVCCameraController()</a>.</p>
+
+</div>
+</div>
+<a id="a263ef0a219465cffc081d4557f0696c5" name="a263ef0a219465cffc081d4557f0696c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a263ef0a219465cffc081d4557f0696c5">&#9670;&#160;</a></span>setRecordingEncoding()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VideoReceiver::setRecordingEncoding </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structVideoReceiver_1_1RecordingEncoding.html">RecordingEncoding</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>encoding</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stores <code class="param">encoding</code> for the recordings that start from now on; one in progress keeps its own. </p>
+
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00152">152</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 
 </div>
 </div>
@@ -1169,11 +1366,11 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00148">148</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00183">183</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00108">state()</a>, <a class="el" href="#a5f5d046a7d610ac605fd6e7019dad2cd">stateChanged()</a>, <a class="el" href="VideoReceiver_8h_source.html#l00110">streaming()</a>, and <a class="el" href="#a613932a3475c62a1ebe806c907cfa7fa">streamingChanged()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00124">state()</a>, <a class="el" href="#a5f5d046a7d610ac605fd6e7019dad2cd">stateChanged()</a>, <a class="el" href="VideoReceiver_8h_source.html#l00126">streaming()</a>, and <a class="el" href="#a613932a3475c62a1ebe806c907cfa7fa">streamingChanged()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00060">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00079">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>.</p>
 
 </div>
 </div>
@@ -1202,9 +1399,11 @@ Protected Member Functions</h2></td></tr>
 
 <p>Backends publish a new measurement, and an invalid one once the stream stops or reconnects. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00185">185</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00220">220</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00119">stats()</a>, and <a class="el" href="#a0c10a1f9d98353c34eb765084080ce8a">statsChanged()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00136">stats()</a>, and <a class="el" href="#a0c10a1f9d98353c34eb765084080ce8a">statsChanged()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="UVCCameraController_8cc_source.html#l00055">UVCCameraController::UVCCameraController()</a>.</p>
 
 </div>
 </div>
@@ -1224,9 +1423,11 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Displays the stream in <code class="param">videoOutput</code>, a QML VideoOutput; nullptr stops displaying. Decoding runs only while an output is set. Setting the current output again binds it anew, for one that moved to another window. The output's destruction is tracked: it detaches as if nullptr had been set. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00090">90</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00100">100</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="#a2b961bf875fa1158ce6f3f0dd9ef76e9">onVideoOutputChanged()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00085">videoOutput()</a>.</p>
+<p class="reference">References <a class="el" href="#a2b961bf875fa1158ce6f3f0dd9ef76e9">onVideoOutputChanged()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00095">videoOutput()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="UVCCameraController_8cc_source.html#l00146">UVCCameraController::registerVideoOutput()</a>, and <a class="el" href="UVCCameraController_8cc_source.html#l00154">UVCCameraController::unregisterVideoOutput()</a>.</p>
 
 </div>
 </div>
@@ -1253,9 +1454,43 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00177">177</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00212">212</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="#a250de93e55dbc21d4788c94a3a32064f">videoSizeChanged()</a>.</p>
+
+</div>
+</div>
+<a id="a50703c506e92b8dbe7422f93d6e981f1" name="a50703c506e92b8dbe7422f93d6e981f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50703c506e92b8dbe7422f93d6e981f1">&#9670;&#160;</a></span>shutDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VideoReceiver::shutDown </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>setActive(false) for a receiver that outlives its use, before the application goes away: once it has finished what the exit would cut short. </p>
+
+<p>Reimplemented in <a class="el" href="classUVCCameraController.html#a6d0b4d996b6a49a605fc86da37c953d5">UVCCameraController</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00142">142</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+
+<p class="reference">References <a class="el" href="VideoReceiver_8cc_source.html#l00072">setActive()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="UVCCameraController_8cc_source.html#l00115">UVCCameraController::shutDown()</a>.</p>
 
 </div>
 </div>
@@ -1277,9 +1512,9 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Records to <code class="param">file</code> until <a class="el" href="#a65bd2e39390f064f8aafbf304aaf52fd">stopRecording()</a> or setActive(false). Accepted only while active (otherwise <a class="el" href="#ae744c1ed5686e1823e65528d071fdb79">errorOccurred()</a>); the file opens once streaming, at the next keyframe for a receiver that records the stream as it arrives. After a reconnect the recording continues, into "&lt;base&gt;_part&lt;N&gt;.&lt;ext&gt;", N counting from 2, or in the same file for a receiver that encodes the frames anew. </p>
+<p>Records to <code class="param">file</code> until <a class="el" href="#a65bd2e39390f064f8aafbf304aaf52fd">stopRecording()</a> or setActive(false). Accepted only while active (otherwise <a class="el" href="#ae744c1ed5686e1823e65528d071fdb79">errorOccurred()</a>); the file opens once streaming, at the next keyframe for a receiver that records the stream as it arrives. Such a receiver continues the recording after a reconnect, and after each hour, into "&lt;base&gt;_part&lt;N&gt;.&lt;ext&gt;", N counting from 2; one that encodes the frames anew, as <a class="el" href="#ab73ecb4d97bc7e1928e7d54c73f2e714">recordingEncoding()</a> says, keeps to the same file. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00112">112</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00122">122</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="#ae744c1ed5686e1823e65528d071fdb79">errorOccurred()</a>, and <a class="el" href="#a5cb5aa52bf7853e9dbe0c4f029504933">onStartRecording()</a>.</p>
 
@@ -1308,9 +1543,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00108">108</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00124">124</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#a263b4974d32751d3e1b7b51e7ab94cde">onStopRecording()</a>, <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00060">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, <a class="el" href="VideoReceiver_8cc_source.html#l00148">setState()</a>, and <a class="el" href="#a5f5d046a7d610ac605fd6e7019dad2cd">stateChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#a263b4974d32751d3e1b7b51e7ab94cde">onStopRecording()</a>, <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00079">QtMultimediaVideoReceiver::QtMultimediaVideoReceiver()</a>, <a class="el" href="VideoReceiver_8cc_source.html#l00183">setState()</a>, and <a class="el" href="#a5f5d046a7d610ac605fd6e7019dad2cd">stateChanged()</a>.</p>
 
 </div>
 </div>
@@ -1337,9 +1572,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00108">state()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00124">state()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoStreamController_8cc_source.html#l00046">VideoStreamController::setReceiver()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00148">setState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoStreamController_8cc_source.html#l00113">VideoStreamController::setReceiver()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00183">setState()</a>.</p>
 
 </div>
 </div>
@@ -1368,9 +1603,9 @@ Protected Member Functions</h2></td></tr>
 
 <p>The stream's health, measured about once a second while it streams; invalid while it doesn't. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00119">119</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00136">136</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="#a263b4974d32751d3e1b7b51e7ab94cde">onStopRecording()</a>, <a class="el" href="VideoReceiver_8cc_source.html#l00185">setStats()</a>, and <a class="el" href="#a0c10a1f9d98353c34eb765084080ce8a">statsChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="#a263b4974d32751d3e1b7b51e7ab94cde">onStopRecording()</a>, <a class="el" href="VideoReceiver_8cc_source.html#l00220">setStats()</a>, and <a class="el" href="#a0c10a1f9d98353c34eb765084080ce8a">statsChanged()</a>.</p>
 
 </div>
 </div>
@@ -1397,9 +1632,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00119">stats()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00136">stats()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoStreamController_8cc_source.html#l00046">VideoStreamController::setReceiver()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00185">setStats()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoStreamController_8cc_source.html#l00113">VideoStreamController::setReceiver()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00220">setStats()</a>.</p>
 
 </div>
 </div>
@@ -1418,7 +1653,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00127">127</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00137">137</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
 <p class="reference">References <a class="el" href="#a263b4974d32751d3e1b7b51e7ab94cde">onStopRecording()</a>.</p>
 
@@ -1447,11 +1682,11 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00110">110</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00126">126</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00046">Streaming</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00049">Streaming</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00148">setState()</a>, and <a class="el" href="#a613932a3475c62a1ebe806c907cfa7fa">streamingChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00183">setState()</a>, and <a class="el" href="#a613932a3475c62a1ebe806c907cfa7fa">streamingChanged()</a>.</p>
 
 </div>
 </div>
@@ -1478,14 +1713,14 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00110">streaming()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00126">streaming()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoStreamController_8cc_source.html#l00046">VideoStreamController::setReceiver()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00148">setState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoReceiver_8cc_source.html#l00183">setState()</a>.</p>
 
 </div>
 </div>
-<a id="afe83811791a1d87167a147ef33c8ee5b" name="afe83811791a1d87167a147ef33c8ee5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe83811791a1d87167a147ef33c8ee5b">&#9670;&#160;</a></span>takeScreenshot()</h2>
+<a id="ac16049cfa7373eb9c1e3b89cb5fe8af2" name="ac16049cfa7373eb9c1e3b89cb5fe8af2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac16049cfa7373eb9c1e3b89cb5fe8af2">&#9670;&#160;</a></span>takeScreenshot()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1498,15 +1733,15 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structVideoScreenshot_1_1Exif.html">VideoScreenshot::Exif</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>exif</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;) const</td>
+          <td class="paramtype">const <a class="el" href="structVideoScreenshot_1_1Exif.html">VideoScreenshot::Exif</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>exif</em></span><span class="paramdefsep"> = </span><span class="paramdefval">{}</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Saves the frame on display to <code class="param">file</code> as shown: cropped to its format's viewport, rotated and mirrored, with <code class="param">exif</code> for a JPEG. Returns false, with a warning logged, when there is no output, no frame, or the file can't be written. </p>
+<p>Saves the frame on display to <code class="param">file</code> as shown: cropped to its format's viewport, rotated and mirrored as the frame and then the VideoOutput (its orientation and mirrored properties) say, with <code class="param">exif</code> for a JPEG. The frame is converted here; it is encoded and written on the thread pool. Returns false, with a warning logged, when there is no output or no frame. A file that can't be written is reported later, through <a class="el" href="#ae744c1ed5686e1823e65528d071fdb79">errorOccurred()</a>. A receiver that takes photos saves one instead: see <a class="el" href="#af5d5c13858cf99d6da36575be8628a42" title="takeScreenshot() with an output set: saves the frame on display, unless overridden.">onTakeScreenshot()</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00132">132</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00147">147</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoScreenshot_8cc_source.html#l00087">VideoScreenshot::save()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00143">videoSink()</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8cc_source.html#l00156">onTakeScreenshot()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00178">videoSink()</a>.</p>
 
 </div>
 </div>
@@ -1525,9 +1760,9 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00085">85</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00095">95</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00095">GstVideoReceiver::onVideoOutputChanged()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00090">setVideoOutput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8cc_source.html#l00114">GstVideoReceiver::onVideoOutputChanged()</a>, <a class="el" href="UVCCameraController_8cc_source.html#l00170">UVCCameraController::onVideoOutputChanged()</a>, <a class="el" href="UVCCameraController_8cc_source.html#l00146">UVCCameraController::registerVideoOutput()</a>, <a class="el" href="VideoReceiver_8cc_source.html#l00100">setVideoOutput()</a>, and <a class="el" href="UVCCameraController_8cc_source.html#l00154">UVCCameraController::unregisterVideoOutput()</a>.</p>
 
 </div>
 </div>
@@ -1556,9 +1791,9 @@ Protected Member Functions</h2></td></tr>
 
 <p>The VideoOutput's QVideoSink, or nullptr. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00143">143</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8cc_source.html#l00178">178</a> of file <a class="el" href="VideoReceiver_8cc_source.html">VideoReceiver.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8h_source.html#l00057">GstVideoReceiver::GstVideoReceiverTestBase</a>, <a class="el" href="GstVideoReceiver_8cc_source.html#l00084">GstVideoReceiver::onRestartRequested()</a>, <a class="el" href="GstVideoReceiver_8cc_source.html#l00095">GstVideoReceiver::onVideoOutputChanged()</a>, <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00156">QtMultimediaVideoReceiver::onVideoOutputChanged()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00132">takeScreenshot()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="GstVideoReceiver_8h_source.html#l00069">GstVideoReceiver::GstVideoReceiverTestBase</a>, <a class="el" href="GstVideoReceiver_8cc_source.html#l00097">GstVideoReceiver::onRestartRequested()</a>, <a class="el" href="VideoReceiver_8cc_source.html#l00156">onTakeScreenshot()</a>, <a class="el" href="GstVideoReceiver_8cc_source.html#l00114">GstVideoReceiver::onVideoOutputChanged()</a>, <a class="el" href="QtMultimediaVideoReceiver_8cc_source.html#l00184">QtMultimediaVideoReceiver::onVideoOutputChanged()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00147">takeScreenshot()</a>.</p>
 
 </div>
 </div>
@@ -1585,7 +1820,9 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00116">116</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
+<p>The size of the frames as they are presented, before the orientation the VideoOutput adds. </p>
+
+<p class="definition">Definition at line <a class="el" href="VideoReceiver_8h_source.html#l00133">133</a> of file <a class="el" href="VideoReceiver_8h_source.html">VideoReceiver.h</a>.</p>
 
 </div>
 </div>
@@ -1612,7 +1849,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="VideoStreamController_8cc_source.html#l00046">VideoStreamController::setReceiver()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00177">setVideoSize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoStreamController_8cc_source.html#l00113">VideoStreamController::setReceiver()</a>, and <a class="el" href="VideoReceiver_8cc_source.html#l00212">setVideoSize()</a>.</p>
 
 </div>
 </div>

@@ -107,19 +107,22 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Maps the video settings and a camera's advertised stream to the stream a <a class="el" href="classVideoReceiver.html">VideoReceiver</a> plays.  
+<p>Maps the video settings and a camera's advertised stream to what a stream source's <a class="el" href="classVideoReceiver.html">VideoReceiver</a> plays.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:Settings" id="r_Settings"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVideoStreamResolver_1_1Settings.html">Settings</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The video settings <a class="el" href="#acf7df6ff05429df1cd8c43fb63e80213">resolve()</a> reads.  <a href="structVideoStreamResolver_1_1Settings.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The video settings <a class="el" href="#acf7df6ff05429df1cd8c43fb63e80213">resolve()</a> reads, and what they depend on.  <a href="structVideoStreamResolver_1_1Settings.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a406dd3f43213d9ab0b31cc6cf0fc916a" id="r_a406dd3f43213d9ab0b31cc6cf0fc916a"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a406dd3f43213d9ab0b31cc6cf0fc916a">Role</a> : uint8_t { <a class="el" href="#a406dd3f43213d9ab0b31cc6cf0fc916aa074de7e7c226d5c60f8af14c20725352">Primary</a>
 , <a class="el" href="#a406dd3f43213d9ab0b31cc6cf0fc916aafdf1e200d60089abcb4a4c80ecd2bb75">Thermal</a>
+, <a class="el" href="#a406dd3f43213d9ab0b31cc6cf0fc916aa967d35e40f3f95b1f538bd248640bf3b">Camera</a>
+, <a class="el" href="#a406dd3f43213d9ab0b31cc6cf0fc916aac5457c5f3cfb4da8638ce7190f8e5152">Tile</a>
  }</td></tr>
+<tr class="memdesc:a406dd3f43213d9ab0b31cc6cf0fc916a"><td class="mdescLeft">&#160;</td><td class="mdescRight">What a video source, each with a <a class="el" href="classVideoStreamController.html">VideoStreamController</a>, is. VideoSourceRole.Primary, ... in QML.  <a href="#a406dd3f43213d9ab0b31cc6cf0fc916a">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -130,11 +133,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ac4cf64b81b1af613a34bf12ec45480c6" id="r_ac4cf64b81b1af613a34bf12ec45480c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4cf64b81b1af613a34bf12ec45480c6">isAutoStream</a> (const <a class="el" href="classQGCVideoStreamInfo.html">QGCVideoStreamInfo</a> *streamInfo)</td></tr>
 <tr class="memdesc:ac4cf64b81b1af613a34bf12ec45480c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">True when <code class="param">streamInfo</code> advertises a URI, which then takes precedence over the manual settings.  <br /></td></tr>
 <tr class="memitem:a1bcd418f368dfabce0ae09016ab0c151" id="r_a1bcd418f368dfabce0ae09016ab0c151"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bcd418f368dfabce0ae09016ab0c151">isNetworkSource</a> (const QString &amp;videoSource)</td></tr>
-<tr class="memdesc:a1bcd418f368dfabce0ae09016ab0c151"><td class="mdescLeft">&#160;</td><td class="mdescRight">True for the manual sources a <a class="el" href="classVideoReceiver.html">VideoReceiver</a> plays (not "disabled", not a UVC camera).  <br /></td></tr>
+<tr class="memdesc:a1bcd418f368dfabce0ae09016ab0c151"><td class="mdescLeft">&#160;</td><td class="mdescRight">True for the manual sources that are network streams (not "disabled", not a local camera).  <br /></td></tr>
 <tr class="memitem:ab79c4d02eb48fb35c4b69a9600faf70b" id="r_ab79c4d02eb48fb35c4b69a9600faf70b"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab79c4d02eb48fb35c4b69a9600faf70b">transportName</a> (const QString &amp;uri)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Maps the video settings and a camera's advertised stream to the stream a <a class="el" href="classVideoReceiver.html">VideoReceiver</a> plays. </p>
+<div class="textblock"><p>Maps the video settings and a camera's advertised stream to what a stream source's <a class="el" href="classVideoReceiver.html">VideoReceiver</a> plays. </p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Enumeration Type Documentation</h2>
 <a id="a406dd3f43213d9ab0b31cc6cf0fc916a" name="a406dd3f43213d9ab0b31cc6cf0fc916a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a406dd3f43213d9ab0b31cc6cf0fc916a">&#9670;&#160;</a></span>Role</h2>
@@ -155,12 +158,20 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>What a video source, each with a <a class="el" href="classVideoStreamController.html">VideoStreamController</a>, is. VideoSourceRole.Primary, ... in QML. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a406dd3f43213d9ab0b31cc6cf0fc916aa074de7e7c226d5c60f8af14c20725352" name="a406dd3f43213d9ab0b31cc6cf0fc916aa074de7e7c226d5c60f8af14c20725352"></a>Primary&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a406dd3f43213d9ab0b31cc6cf0fc916aafdf1e200d60089abcb4a4c80ecd2bb75" name="a406dd3f43213d9ab0b31cc6cf0fc916aafdf1e200d60089abcb4a4c80ecd2bb75"></a>Thermal&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a406dd3f43213d9ab0b31cc6cf0fc916aa074de7e7c226d5c60f8af14c20725352" name="a406dd3f43213d9ab0b31cc6cf0fc916aa074de7e7c226d5c60f8af14c20725352"></a>Primary&#160;</td><td class="fielddoc"><p>The stream to display: a vehicle's current camera's current one, else the one the settings configure. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a406dd3f43213d9ab0b31cc6cf0fc916aafdf1e200d60089abcb4a4c80ecd2bb75" name="a406dd3f43213d9ab0b31cc6cf0fc916aafdf1e200d60089abcb4a4c80ecd2bb75"></a>Thermal&#160;</td><td class="fielddoc"><p>The thermal stream a vehicle's current camera advertises. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a406dd3f43213d9ab0b31cc6cf0fc916aa967d35e40f3f95b1f538bd248640bf3b" name="a406dd3f43213d9ab0b31cc6cf0fc916aa967d35e40f3f95b1f538bd248640bf3b"></a>Camera&#160;</td><td class="fielddoc"><p>The local camera: the one the video source setting names or, beside a stream, the one for a tile. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a406dd3f43213d9ab0b31cc6cf0fc916aac5457c5f3cfb4da8638ce7190f8e5152" name="a406dd3f43213d9ab0b31cc6cf0fc916aac5457c5f3cfb4da8638ce7190f8e5152"></a>Tile&#160;</td><td class="fielddoc"><p>Another stream a vehicle's cameras advertise, shown in a tile. </p>
+</td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamResolver_8h_source.html#l00017">17</a> of file <a class="el" href="VideoStreamResolver_8h_source.html">VideoStreamResolver.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamResolver_8h_source.html#l00023">23</a> of file <a class="el" href="VideoStreamResolver_8h_source.html">VideoStreamResolver.h</a>.</p>
 
 </div>
 </div>
@@ -182,9 +193,9 @@ Functions</h2></td></tr>
 
 <p>The display sink settings: GPU zero-copy unless the CPU path or a software decoder is forced. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamResolver_8cc_source.html#l00121">121</a> of file <a class="el" href="VideoStreamResolver_8cc_source.html">VideoStreamResolver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamResolver_8cc_source.html#l00132">132</a> of file <a class="el" href="VideoStreamResolver_8cc_source.html">VideoStreamResolver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoStreamResolver_8h_source.html#l00034">VideoStreamResolver::Settings::conversionElement</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00035">VideoStreamResolver::Settings::disablePixelAspectRatio</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00036">VideoStreamResolver::Settings::forceCpuVideoPath</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00037">VideoStreamResolver::Settings::forceVideoDecoder</a>, and <a class="el" href="VideoDecoderOptions_8h_source.html#l00009">VideoDecoder::ForceVideoDecoderSoftware</a>.</p>
+<p class="reference">References <a class="el" href="VideoStreamResolver_8h_source.html#l00043">VideoStreamResolver::Settings::conversionElement</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00044">VideoStreamResolver::Settings::disablePixelAspectRatio</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00045">VideoStreamResolver::Settings::forceCpuVideoPath</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00046">VideoStreamResolver::Settings::forceVideoDecoder</a>, and <a class="el" href="VideoDecoderOptions_8h_source.html#l00007">Software</a>.</p>
 
 </div>
 </div>
@@ -205,11 +216,11 @@ Functions</h2></td></tr>
 
 <p>True when <code class="param">streamInfo</code> advertises a URI, which then takes precedence over the manual settings. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamResolver_8cc_source.html#l00155">155</a> of file <a class="el" href="VideoStreamResolver_8cc_source.html">VideoStreamResolver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamResolver_8cc_source.html#l00166">166</a> of file <a class="el" href="VideoStreamResolver_8cc_source.html">VideoStreamResolver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="QGCVideoStreamInfo_8h_source.html#l00038">QGCVideoStreamInfo::uri()</a>.</p>
+<p class="reference">References <a class="el" href="QGCVideoStreamInfo_8h_source.html#l00035">QGCVideoStreamInfo::uri()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoStreamResolver_8cc_source.html#l00131">resolve()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="VideoStreamResolver_8cc_source.html#l00141">resolve()</a>.</p>
 
 </div>
 </div>
@@ -228,9 +239,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>True for the manual sources a <a class="el" href="classVideoReceiver.html">VideoReceiver</a> plays (not "disabled", not a UVC camera). </p>
+<p>True for the manual sources that are network streams (not "disabled", not a local camera). </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamResolver_8cc_source.html#l00160">160</a> of file <a class="el" href="VideoStreamResolver_8cc_source.html">VideoStreamResolver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamResolver_8cc_source.html#l00171">171</a> of file <a class="el" href="VideoStreamResolver_8cc_source.html">VideoStreamResolver.cc</a>.</p>
 
 </div>
 </div>
@@ -257,11 +268,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The stream for <code class="param">role:</code> the one <code class="param">streamInfo</code> advertises, or else, for the primary role only, the manually configured source. nullopt when there is none. Reads only its arguments: a camera's stream never changes the user's settings. </p>
+<p>What the source of <code class="param">role</code> plays: the stream <code class="param">streamInfo</code> advertises, or else, for the primary role only, the manually configured one. nullopt when there is none, as for the camera role, which plays no stream. Reads only its arguments: a camera's stream never changes the user's settings. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamResolver_8cc_source.html#l00131">131</a> of file <a class="el" href="VideoStreamResolver_8cc_source.html">VideoStreamResolver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamResolver_8cc_source.html#l00141">141</a> of file <a class="el" href="VideoStreamResolver_8cc_source.html">VideoStreamResolver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00068">VideoReceiver::Config::autoReconnect</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00033">VideoStreamResolver::Settings::autoReconnect</a>, <a class="el" href="VideoStreamResolver_8cc_source.html#l00155">isAutoStream()</a>, <a class="el" href="VideoReceiver_8h_source.html#l00065">VideoReceiver::Config::lowLatency</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00031">VideoStreamResolver::Settings::lowLatency</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00019">Primary</a>, <a class="el" href="VideoReceiver_8h_source.html#l00066">VideoReceiver::Config::rtpJitterLatencyMs</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00032">VideoStreamResolver::Settings::rtpJitterLatencyMs</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00030">VideoStreamResolver::Settings::rtspTimeoutSec</a>, <a class="el" href="VideoReceiver_8h_source.html#l00064">VideoReceiver::Config::timeout</a>, and <a class="el" href="VideoReceiver_8h_source.html#l00062">VideoReceiver::Config::uri</a>.</p>
+<p class="reference">References <a class="el" href="VideoReceiver_8h_source.html#l00072">VideoReceiver::Config::autoReconnect</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00042">VideoStreamResolver::Settings::autoReconnect</a>, <a class="el" href="VideoStreamResolver_8cc_source.html#l00166">isAutoStream()</a>, <a class="el" href="VideoReceiver_8h_source.html#l00069">VideoReceiver::Config::lowLatency</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00040">VideoStreamResolver::Settings::lowLatency</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00025">Primary</a>, <a class="el" href="VideoReceiver_8h_source.html#l00070">VideoReceiver::Config::rtpJitterLatencyMs</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00041">VideoStreamResolver::Settings::rtpJitterLatencyMs</a>, <a class="el" href="VideoStreamUri_8h_source.html#l00013">VideoStreamUri::Rtsp</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00039">VideoStreamResolver::Settings::rtspTimeoutSec</a>, <a class="el" href="VideoReceiver_8h_source.html#l00068">VideoReceiver::Config::timeout</a>, <a class="el" href="VideoStreamUri_8cc_source.html#l00007">VideoStreamUri::transportFor()</a>, and <a class="el" href="VideoReceiver_8h_source.html#l00065">VideoReceiver::Config::uri</a>.</p>
 
 </div>
 </div>
@@ -280,9 +291,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamResolver_8cc_source.html#l00102">102</a> of file <a class="el" href="VideoStreamResolver_8cc_source.html">VideoStreamResolver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamResolver_8cc_source.html#l00113">113</a> of file <a class="el" href="VideoStreamResolver_8cc_source.html">VideoStreamResolver.cc</a>.</p>
 
-<p class="reference">References <a class="el" href="VideoStreamResolver_8h_source.html#l00033">VideoStreamResolver::Settings::autoReconnect</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00034">VideoStreamResolver::Settings::conversionElement</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00035">VideoStreamResolver::Settings::disablePixelAspectRatio</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00036">VideoStreamResolver::Settings::forceCpuVideoPath</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00037">VideoStreamResolver::Settings::forceVideoDecoder</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00031">VideoStreamResolver::Settings::lowLatency</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00032">VideoStreamResolver::Settings::rtpJitterLatencyMs</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00030">VideoStreamResolver::Settings::rtspTimeoutSec</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00029">VideoStreamResolver::Settings::rtspUrl</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00028">VideoStreamResolver::Settings::tcpUrl</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00027">VideoStreamResolver::Settings::udpUrl</a>, and <a class="el" href="VideoStreamResolver_8h_source.html#l00026">VideoStreamResolver::Settings::videoSource</a>.</p>
+<p class="reference">References <a class="el" href="VideoStreamResolver_8h_source.html#l00042">VideoStreamResolver::Settings::autoReconnect</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00043">VideoStreamResolver::Settings::conversionElement</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00044">VideoStreamResolver::Settings::disablePixelAspectRatio</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00045">VideoStreamResolver::Settings::forceCpuVideoPath</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00046">VideoStreamResolver::Settings::forceVideoDecoder</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00040">VideoStreamResolver::Settings::lowLatency</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00041">VideoStreamResolver::Settings::rtpJitterLatencyMs</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00039">VideoStreamResolver::Settings::rtspTimeoutSec</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00038">VideoStreamResolver::Settings::rtspUrl</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00037">VideoStreamResolver::Settings::tcpUrl</a>, <a class="el" href="VideoStreamResolver_8h_source.html#l00036">VideoStreamResolver::Settings::udpUrl</a>, <a class="el" href="VideoDecoderOptions_8h_source.html#l00018">videoDecoderOptionFromSetting()</a>, and <a class="el" href="VideoStreamResolver_8h_source.html#l00035">VideoStreamResolver::Settings::videoSource</a>.</p>
 
 </div>
 </div>
@@ -302,9 +313,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>How a stream arrives, from its URI scheme: "RTSP", "RTP/UDP (H.264)", "MPEG-TS/TCP", ...; the upper-cased scheme for one <a class="el" href="#acf7df6ff05429df1cd8c43fb63e80213">resolve()</a> never produces, empty for an empty <code class="param">uri</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="VideoStreamResolver_8cc_source.html#l00165">165</a> of file <a class="el" href="VideoStreamResolver_8cc_source.html">VideoStreamResolver.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="VideoStreamResolver_8cc_source.html#l00176">176</a> of file <a class="el" href="VideoStreamResolver_8cc_source.html">VideoStreamResolver.cc</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="VideoStreamController_8cc_source.html#l00353">VideoStreamController::transport()</a>.</p>
+<p class="reference">References <a class="el" href="VideoStreamUri_8cc_source.html#l00007">VideoStreamUri::transportFor()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="VideoStreamController_8cc_source.html#l00491">VideoStreamController::transport()</a>.</p>
 
 </div>
 </div>
